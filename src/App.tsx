@@ -1,3 +1,25 @@
+import { Routes, Route } from 'react-router-dom'
+import { Layout } from './components/layout/Layout'
+import { Dashboard } from './pages/Dashboard'
+import { Temario } from './pages/Temario'
+import { TemaDetalle } from './pages/TemaDetalle'
+import { FlashcardsGlobal } from './pages/FlashcardsGlobal'
+import { Tests } from './pages/Tests'
+import { Simulacro } from './pages/Simulacro'
+import { Estadisticas } from './pages/Estadisticas'
+
 export default function App() {
-  return <div className="p-4 text-brand-600 font-bold">OpoDAM — cargando...</div>
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="temario" element={<Temario />} />
+        <Route path="temario/:id" element={<TemaDetalle />} />
+        <Route path="flashcards" element={<FlashcardsGlobal />} />
+        <Route path="tests" element={<Tests />} />
+        <Route path="tests/simulacro" element={<Simulacro />} />
+        <Route path="estadisticas" element={<Estadisticas />} />
+      </Route>
+    </Routes>
+  )
 }
