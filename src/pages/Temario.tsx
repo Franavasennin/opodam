@@ -9,7 +9,7 @@ export function Temario() {
   const { progreso } = useProgress()
   const navigate = useNavigate()
 
-  const grupos: Record<Bloque, typeof TEMAS_META> = {
+  const grupos: Record<Bloque, Array<typeof TEMAS_META[number]>> = {
     general:    TEMAS_META.filter(t => t.bloque === 'general'),
     especifico: TEMAS_META.filter(t => t.bloque === 'especifico'),
   }

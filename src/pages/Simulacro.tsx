@@ -19,7 +19,7 @@ export function Simulacro() {
   const [iniciado, setIniciado] = useState(false)
   const [terminado, setTerminado] = useState(false)
   const [cargando, setCargando] = useState(true)
-  const intervalo = useRef<ReturnType<typeof setInterval>>()
+  const intervalo = useRef<ReturnType<typeof setInterval> | undefined>(undefined)
 
   useEffect(() => {
     async function cargar() {

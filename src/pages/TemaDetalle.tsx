@@ -42,7 +42,7 @@ export function TemaDetalle() {
       <div className="flex overflow-x-auto border-b border-gray-100 bg-white px-4 shrink-0">
         {TABS.map(t => (
           <button key={t} onClick={() => setTab(t)}
-            className={}>
+            className={`py-3 px-3 text-sm font-medium shrink-0 border-b-2 transition-colors ${tab === t ? 'border-brand-600 text-brand-600' : 'border-transparent text-gray-500'}`}>
             {t}
           </button>
         ))}

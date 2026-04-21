@@ -68,7 +68,7 @@ export function completarVuelta(temaId: number): void {
 export function guardarResultadoTest(
   temaId: number,
   aciertos: number,
-  errores: number,
+  _errores: number,
   total: number,
 ): void {
   const p = getProgreso()
