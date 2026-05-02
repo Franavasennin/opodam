@@ -87,7 +87,7 @@ export interface ExamenResultado {
   tiempoSegundos: number
   preguntasIds: string[]
   respuestasUsuario: Record<string, number | null>
-  resultadosPorTema: Record<number, { aciertos: number; errores: number; total: number }>
+  resultadosPorTema: Record<string, RendimientoTema>
 }
 
 export interface Progreso {

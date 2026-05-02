@@ -17,7 +17,8 @@ export function getProgreso(): Progreso {
   try {
     const raw = localStorage.getItem(PROGRESO_KEY)
     if (!raw) return structuredClone(progresoInicial)
-    return JSON.parse(raw) as Progreso
+    const parsed = JSON.parse(raw) as Partial<Progreso>
+    return { ...progresoInicial, ...parsed }
   } catch {
     return structuredClone(progresoInicial)
   }
