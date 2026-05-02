@@ -7,7 +7,7 @@ import './index.css'
 // React Router v7 library mode (BrowserRouter + Routes) — intentional choice for this SPA
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/opodam/">
       <App />
     </BrowserRouter>
   </React.StrictMode>,
