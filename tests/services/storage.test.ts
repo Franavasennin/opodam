@@ -8,6 +8,9 @@ const progresoVacio: Progreso = {
   racha: { dias: 0, ultimoEstudio: null },
   tiempoTotalSegundos: 0,
   notificaciones: { hora: '19:00', activas: false },
+  historialExamenes: [],
+  sesionDiaria: null,
+  rendimientoPorTema: {},
 }
 
 beforeEach(() => localStorage.clear())

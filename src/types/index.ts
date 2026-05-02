@@ -67,10 +67,36 @@ export interface EstadoFlashcard {
   intervalo: number               // days until next review
 }
 
+export type PreguntaExt = Pregunta & { temaId: number }
+
+export interface RendimientoTema {
+  aciertos: number
+  errores: number
+  total: number
+}
+
+export interface ExamenResultado {
+  id: string        // timestamp ISO, ej: "2026-05-02T18:30:00.000Z"
+  fecha: string     // YYYY-MM-DD
+  modo: 'completo' | 'mini'
+  aciertos: number
+  errores: number
+  enBlanco: number
+  nota: number      // 0–10, 2 decimales
+  aprobado: boolean
+  tiempoSegundos: number
+  preguntasIds: string[]
+  respuestasUsuario: Record<string, number | null>
+  resultadosPorTema: Record<number, { aciertos: number; errores: number; total: number }>
+}
+
 export interface Progreso {
   temas: Record<string, ProgresoTema>
   flashcards: Record<string, EstadoFlashcard>
   racha: { dias: number; ultimoEstudio: string | null }
   tiempoTotalSegundos: number
   notificaciones: { hora: string; activas: boolean }
+  historialExamenes: ExamenResultado[]
+  sesionDiaria: { fecha: string; flashcardIds: string[]; preguntaIds: string[]; completada: boolean } | null
+  rendimientoPorTema: Record<string, RendimientoTema>
 }
