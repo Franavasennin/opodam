@@ -4,7 +4,6 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: '/opodam/',
   plugins: [
     react(),
     VitePWA({
