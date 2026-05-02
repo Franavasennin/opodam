@@ -1,0 +1,364 @@
+{
+  "id": 10,
+  "titulo": "El procedimiento administrativo. La Ley 39/2015. Fases. Los recursos administrativos: alzada, reposición y revisión",
+  "bloque": "general",
+  "secciones": [
+    {
+      "id": "s1",
+      "titulo": "La Ley 39/2015 LPACAP: ámbito y principios",
+      "contenido": "La Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (LPACAP) derogó la Ley 30/1992, e integra junto con la Ley 40/2015 el denominado 'código de la Administración'. Su ámbito subjetivo comprende la AGE, CCAA, Entidades Locales y sector público institucional. Los principios rectores son: legalidad, servicio efectivo a los ciudadanos, simplicidad, claridad, proporcionalidad, eficiencia, transparencia, participación, racionalidad, economía, celeridad, buena fe y confianza legítima. La LPACAP apuesta por la administración electrónica: las personas jurídicas y determinados colectivos están obligados a relacionarse electrónicamente con la Administración (art. 14). Los derechos de las personas en su relación con las AAPP se recogen en el art. 13: conocer el estado del procedimiento, obtener copias, formular alegaciones, actuar mediante representante, obtener información, etc."
+    },
+    {
+      "id": "s2",
+      "titulo": "Fase de iniciación del procedimiento",
+      "contenido": "El procedimiento puede iniciarse de oficio (por acuerdo del órgano competente, orden superior, petición razonada, denuncia) o a solicitud del interesado (art. 54-65). Las solicitudes deben contener los requisitos del art. 66: identificación del solicitante, hechos y razones, petición, lugar de notificación y firma. El órgano dispone de 10 días para subsanar defectos (art. 68); si no se subsana, se archivan las actuaciones. La Administración debe comunicar el inicio al interesado y le puede reclamar los documentos que ya obran en su poder. Las medidas provisionales pueden adoptarse tanto antes como durante el procedimiento para asegurar la eficacia de la resolución (art. 56). La acumulación de procedimientos es posible cuando guarden íntima conexión (art. 57)."
+    },
+    {
+      "id": "s3",
+      "titulo": "Fase de ordenación e instrucción",
+      "contenido": "La ordenación comprende el impulso de oficio, la acumulación, el despacho de los asuntos riguroso por orden de incoación salvo causa motivada, y la celeridad. La instrucción es la fase central: la Administración realiza los actos necesarios para la determinación, conocimiento y comprobación de los datos. Incluye: alegaciones (en cualquier momento antes de trámite de audiencia, art. 76), prueba (a instancia de parte o de oficio, art. 77-78), informes (preceptivos o facultativos, vinculantes o no vinculantes; plazo 10 días, ampliable a 15; si no llegan en plazo el procedimiento puede continuar salvo que sean preceptivos y determinantes, art. 79-80), y el trámite de audiencia y la información pública. El trámite de audiencia (art. 82) se da a los interesados para que examinen el expediente y formulen alegaciones en plazo no inferior a 10 días ni superior a 15 días hábiles. La información pública (art. 83) procede cuando la naturaleza del procedimiento lo requiere."
+    },
+    {
+      "id": "s4",
+      "titulo": "Fase de terminación del procedimiento",
+      "contenido": "La terminación puede ser normal (resolución, art. 88) o anormal. La resolución debe ser motivada cuando afecte derechos e intereses, sea desestimatoria, o varíe la propuesta de resolución. El plazo máximo para resolver y notificar es el fijado por norma específica (máximo 6 meses); si no hay plazo establecido son 3 meses (art. 21). Las formas de terminación anormal son: desistimiento del solicitante (art. 93-94), renuncia al derecho (art. 94), caducidad (art. 95: en procedimientos a solicitud del interesado, por inactividad imputable al mismo y transcurso de 3 meses de advertencia; en procedimientos de oficio de carácter sancionador, por exceder el plazo máximo) y terminación convencional (art. 86: acuerdos, pactos, convenios). La resolución pone fin a la vía administrativa según los casos del art. 114."
+    },
+    {
+      "id": "s5",
+      "titulo": "El recurso de alzada",
+      "contenido": "El recurso de alzada (arts. 121-122 LPACAP) se interpone contra actos que no pongan fin a la vía administrativa, ante el órgano superior jerárquico del que dictó el acto. El plazo de interposición es de 1 mes si el acto es expreso, o en cualquier momento a partir del día siguiente al que se produzca el silencio si el acto es presunto. La resolución debe dictarse en el plazo máximo de 3 meses; transcurrido sin resolución expresa, el recurso se entiende desestimado por silencio negativo. Una vez desestimado o transcurrido el plazo, queda expedita la vía contencioso-administrativa. El recurso de alzada es el mecanismo básico de control jerárquico de la Administración y su interposición es un presupuesto previo necesario para acudir a la jurisdicción contencioso-administrativa cuando el acto no agota la vía administrativa."
+    },
+    {
+      "id": "s6",
+      "titulo": "Recurso de reposición y recurso extraordinario de revisión",
+      "contenido": "El recurso potestativo de reposición (arts. 123-124 LPACAP) se interpone, con carácter potestativo y previo al contencioso-administrativo, contra actos que pongan fin a la vía administrativa. Plazo: 1 mes (acto expreso) o en cualquier momento (acto presunto). Resolución: 1 mes; el silencio es negativo. No puede interponerse el recurso contencioso-administrativo hasta que sea resuelto expresamente o se haya producido la desestimación presunta. El recurso extraordinario de revisión (arts. 125-126 LPACAP) procede contra actos firmes en vía administrativa cuando concurren causas tasadas: 1) error de hecho; 2) aparición de documentos de valor esencial ignorados al dictarse el acto; 3) resolución judicial que declare la falsedad de documentos; 4) resolución judicial que condene por prevaricación, cohecho, violencia u otra conducta punible. Plazo: 4 años desde la notificación (causa 1ª) o 3 meses desde conocimiento de los hechos (causas 2ª-4ª). La revisión de oficio (art. 106) permite a la Administración declarar la nulidad de pleno derecho sin plazo."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Fases del procedimiento administrativo (Ley 39/2015)",
+      "codigo": "flowchart TD\n    A([Inicio]) --> B{¿Quién inicia?}\n    B -->|De oficio| C[Acuerdo del órgano / denuncia / orden superior]\n    B -->|A instancia de parte| D[Solicitud art. 66]\n    D --> E{¿Correcta?}\n    E -->|No| F[Subsanación 10 días art. 68]\n    F -->|No subsana| G([Archivo])\n    E -->|Sí| H[ORDENACIÓN: impulso de oficio, acumulación]\n    C --> H\n    H --> I[INSTRUCCIÓN: alegaciones, prueba, informes, audiencia]\n    I --> J[Trámite de audiencia 10-15 días]\n    J --> K{¿Terminación?}\n    K -->|Normal| L[Resolución motivada art. 88]\n    K -->|Anormal| M[Desistimiento / Renuncia / Caducidad / Convenio]\n    L --> N{¿Agota vía admin?}\n    N -->|No| O[Recurso de ALZADA]\n    N -->|Sí| P[Recurso de REPOSICIÓN o vía judicial]"
+    },
+    {
+      "tipo": "mermaid",
+      "titulo": "Recursos administrativos: tipos y plazos",
+      "codigo": "flowchart TD\n    A[Acto administrativo] --> B{¿Pone fin a la vía administrativa?}\n    B -->|NO| C[RECURSO DE ALZADA art. 121-122]\n    C --> C1[Ante órgano superior jerárquico]\n    C1 --> C2[Plazo: 1 mes acto expreso]\n    C2 --> C3[Resolución: 3 meses / silencio NEGATIVO]\n    C3 --> D[Vía contencioso-administrativa]\n    B -->|SÍ| E{¿Recurre en vía admin?}\n    E -->|Potestativo| F[RECURSO DE REPOSICIÓN art. 123-124]\n    F --> F1[Ante mismo órgano]\n    F1 --> F2[Plazo: 1 mes / silencio NEGATIVO 1 mes]\n    F2 --> D\n    E -->|Directamente| D\n    A --> G[REVISIÓN DE OFICIO art. 106]\n    G --> G1[Nulidad de pleno derecho / sin plazo]\n    A --> H[RECURSO EXTRAORDINARIO DE REVISIÓN art. 125]\n    H --> H1[4 causas tasadas]\n    H1 --> H2[Plazo: 4 años causa 1 / 3 meses causas 2-4]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      { "id": "n1", "label": "Procedimiento\nAdministrativo\nLey 39/2015", "tipo": "central" },
+      { "id": "n2", "label": "Principios\nLPACAP", "tipo": "rama" },
+      { "id": "n3", "label": "Fase\nIniciación", "tipo": "rama" },
+      { "id": "n4", "label": "Fase\nOrdenación", "tipo": "rama" },
+      { "id": "n5", "label": "Fase\nInstrucción", "tipo": "rama" },
+      { "id": "n6", "label": "Fase\nTerminación", "tipo": "rama" },
+      { "id": "n7", "label": "Recurso\nde Alzada", "tipo": "rama" },
+      { "id": "n8", "label": "Recurso\nde Reposición", "tipo": "rama" },
+      { "id": "n9", "label": "Recurso\nExtraordinario\nRevisión", "tipo": "rama" },
+      { "id": "n10", "label": "Revisión\nde Oficio\nart. 106", "tipo": "hoja" },
+      { "id": "n11", "label": "Silencio\nen recursos", "tipo": "hoja" },
+      { "id": "n12", "label": "Plazos\nclave", "tipo": "hoja" }
+    ],
+    "aristas": [
+      { "origen": "n1", "destino": "n2" },
+      { "origen": "n1", "destino": "n3" },
+      { "origen": "n1", "destino": "n4" },
+      { "origen": "n1", "destino": "n5" },
+      { "origen": "n1", "destino": "n6" },
+      { "origen": "n1", "destino": "n7" },
+      { "origen": "n1", "destino": "n8" },
+      { "origen": "n1", "destino": "n9" },
+      { "origen": "n6", "destino": "n10" },
+      { "origen": "n7", "destino": "n11" },
+      { "origen": "n8", "destino": "n11" },
+      { "origen": "n7", "destino": "n12" },
+      { "origen": "n8", "destino": "n12" }
+    ]
+  },
+  "flashcards": [
+    {
+      "id": "t10-f01",
+      "pregunta": "¿Qué ley regula actualmente el procedimiento administrativo común?",
+      "respuesta": "La Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (LPACAP), que derogó la Ley 30/1992."
+    },
+    {
+      "id": "t10-f02",
+      "pregunta": "¿Cuáles son las formas de iniciación del procedimiento administrativo?",
+      "respuesta": "De oficio (acuerdo del órgano competente, orden superior, petición razonada de otros órganos o entidades, denuncia) o a solicitud del interesado (art. 54-65 LPACAP)."
+    },
+    {
+      "id": "t10-f03",
+      "pregunta": "¿Qué plazo tiene el interesado para subsanar una solicitud defectuosa?",
+      "respuesta": "10 días (art. 68 LPACAP). Si no subsana, se le tiene por desistido y se archivan las actuaciones."
+    },
+    {
+      "id": "t10-f04",
+      "pregunta": "¿Cuál es el plazo máximo general para resolver y notificar si no hay norma específica?",
+      "respuesta": "3 meses (art. 21.3 LPACAP). Si hay norma específica, el plazo máximo es de 6 meses salvo que una ley establezca uno mayor."
+    },
+    {
+      "id": "t10-f05",
+      "pregunta": "¿Cuántos días mínimos y máximos dura el trámite de audiencia?",
+      "respuesta": "No inferior a 10 días ni superior a 15 días hábiles (art. 82 LPACAP)."
+    },
+    {
+      "id": "t10-f06",
+      "pregunta": "¿En qué consiste la caducidad del procedimiento a instancia de parte?",
+      "respuesta": "Si la paralización es imputable al interesado, la Administración le advierte y concede 3 meses más; si sigue sin actuar, declara la caducidad y el archivo (art. 95 LPACAP)."
+    },
+    {
+      "id": "t10-f07",
+      "pregunta": "¿Ante quién se interpone el recurso de alzada y contra qué actos?",
+      "respuesta": "Ante el órgano superior jerárquico del que dictó el acto, contra actos que NO pongan fin a la vía administrativa (art. 121 LPACAP)."
+    },
+    {
+      "id": "t10-f08",
+      "pregunta": "¿Cuál es el plazo para interponer el recurso de alzada contra un acto expreso?",
+      "respuesta": "1 mes contado desde el día siguiente a la notificación del acto (art. 122.1 LPACAP)."
+    },
+    {
+      "id": "t10-f09",
+      "pregunta": "¿Cuál es el efecto del silencio administrativo en el recurso de alzada?",
+      "respuesta": "Silencio negativo: si transcurren 3 meses sin resolución expresa, el recurso se entiende desestimado y queda expedita la vía contencioso-administrativa (art. 122.2 LPACAP)."
+    },
+    {
+      "id": "t10-f10",
+      "pregunta": "¿Qué carácter tiene el recurso de reposición?",
+      "respuesta": "Potestativo (art. 123.2 LPACAP): el interesado puede optar entre interponerlo o acudir directamente a la vía contencioso-administrativa."
+    },
+    {
+      "id": "t10-f11",
+      "pregunta": "¿Ante quién se interpone el recurso de reposición y contra qué actos?",
+      "respuesta": "Ante el mismo órgano que dictó el acto (art. 123.1 LPACAP), contra actos que pongan fin a la vía administrativa."
+    },
+    {
+      "id": "t10-f12",
+      "pregunta": "¿Cuál es el plazo de resolución del recurso de reposición y el efecto del silencio?",
+      "respuesta": "1 mes para resolver; si no lo hace, silencio negativo (desestimación presunta) y queda expedita la vía contencioso-administrativa (art. 124 LPACAP)."
+    },
+    {
+      "id": "t10-f13",
+      "pregunta": "¿Cuáles son los motivos tasados del recurso extraordinario de revisión?",
+      "respuesta": "Art. 125 LPACAP: 1) Error de hecho; 2) documentos esenciales ignorados al dictarse el acto; 3) sentencia que declare la falsedad de documentos; 4) sentencia que condene por prevaricación, cohecho, violencia u otra conducta punible."
+    },
+    {
+      "id": "t10-f14",
+      "pregunta": "¿Cuál es el plazo para el recurso extraordinario de revisión por error de hecho?",
+      "respuesta": "4 años desde la notificación de la resolución impugnada (art. 126.1 LPACAP)."
+    },
+    {
+      "id": "t10-f15",
+      "pregunta": "¿Qué es la revisión de oficio y para qué tipo de actos procede sin plazo?",
+      "respuesta": "La Administración puede declarar de oficio la nulidad de pleno derecho de sus actos (art. 106 LPACAP) en cualquier momento, sin plazo."
+    },
+    {
+      "id": "t10-f16",
+      "pregunta": "¿Qué personas están obligadas a relacionarse electrónicamente con la Administración?",
+      "respuesta": "Las personas jurídicas, entidades sin personalidad jurídica, quienes ejerzan actividad profesional con colegiación obligatoria, empleados de las AAPP en sus trámites y representantes de los anteriores (art. 14.2 LPACAP)."
+    },
+    {
+      "id": "t10-f17",
+      "pregunta": "¿Cuándo puede la Administración adoptar medidas provisionales?",
+      "respuesta": "Antes de la iniciación (casos de urgencia inaplazable, art. 56.2, confirmándolas en 15 días) y durante el procedimiento. No pueden causar perjuicios irreparables ni ir más allá del fin perseguido."
+    },
+    {
+      "id": "t10-f18",
+      "pregunta": "¿Qué diferencia hay entre informes preceptivos y vinculantes?",
+      "respuesta": "Preceptivo: obligatorio solicitarlo. Vinculante: la resolución debe ajustarse a su contenido. Un informe puede ser preceptivo y no vinculante, o preceptivo y vinculante."
+    },
+    {
+      "id": "t10-f19",
+      "pregunta": "¿Qué es la terminación convencional del procedimiento?",
+      "respuesta": "El art. 86 LPACAP permite finalizar el procedimiento mediante acuerdos, pactos o convenios con los interesados, siempre que no sean contrarios al ordenamiento ni versen sobre materias no susceptibles de transacción."
+    },
+    {
+      "id": "t10-f20",
+      "pregunta": "¿Qué actos ponen fin a la vía administrativa según el art. 114 LPACAP?",
+      "respuesta": "Los de órganos sin superior jerárquico (salvo ley contraria), los de Ministros y Secretarios de Estado en AGE, los de órganos equivalentes en CCAA, las resoluciones de recursos de alzada, y los actos dictados en procedimientos de impugnación o sustitutivos de recursos."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "t10-q01",
+      "texto": "¿En qué ley se regula actualmente el procedimiento administrativo común?",
+      "opciones": [
+        "Ley 30/1992, de Régimen Jurídico de las Administraciones Públicas",
+        "Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas",
+        "Ley 40/2015, de Régimen Jurídico del Sector Público",
+        "Ley 7/1985, Reguladora de las Bases del Régimen Local"
+      ],
+      "correcta": 1,
+      "explicacion": "La Ley 39/2015 (LPACAP) derogó la Ley 30/1992 y regula actualmente el procedimiento administrativo común."
+    },
+    {
+      "id": "t10-q02",
+      "texto": "¿Cuál es el plazo para subsanar una solicitud defectuosa según el art. 68 LPACAP?",
+      "opciones": [
+        "5 días hábiles",
+        "15 días hábiles",
+        "10 días",
+        "1 mes"
+      ],
+      "correcta": 2,
+      "explicacion": "El art. 68 LPACAP establece un plazo de 10 días para que el interesado subsane los defectos de su solicitud."
+    },
+    {
+      "id": "t10-q03",
+      "texto": "El recurso de alzada se interpone contra actos que:",
+      "opciones": [
+        "Pongan fin a la vía administrativa",
+        "No pongan fin a la vía administrativa",
+        "Sean firmes en vía administrativa",
+        "Sean nulos de pleno derecho"
+      ],
+      "correcta": 1,
+      "explicacion": "El recurso de alzada (art. 121 LPACAP) se dirige contra actos que NO pongan fin a la vía administrativa."
+    },
+    {
+      "id": "t10-q04",
+      "texto": "¿Ante quién se interpone el recurso de reposición?",
+      "opciones": [
+        "Ante el órgano superior jerárquico",
+        "Ante el mismo órgano que dictó el acto",
+        "Ante el Tribunal Superior de Justicia",
+        "Ante la Audiencia Nacional"
+      ],
+      "correcta": 1,
+      "explicacion": "El recurso potestativo de reposición (art. 123 LPACAP) se interpone ante el mismo órgano que dictó el acto impugnado."
+    },
+    {
+      "id": "t10-q05",
+      "texto": "¿Cuál es el plazo máximo de resolución del recurso de alzada?",
+      "opciones": [
+        "1 mes",
+        "2 meses",
+        "3 meses",
+        "6 meses"
+      ],
+      "correcta": 2,
+      "explicacion": "La Administración dispone de 3 meses para resolver el recurso de alzada (art. 122.2 LPACAP); transcurrido ese plazo sin resolución, se entiende desestimado por silencio negativo."
+    },
+    {
+      "id": "t10-q06",
+      "texto": "¿Cuánto dura el trámite de audiencia a los interesados?",
+      "opciones": [
+        "No inferior a 5 días ni superior a 10 días",
+        "No inferior a 10 días ni superior a 15 días hábiles",
+        "Exactamente 10 días hábiles",
+        "No inferior a 15 días ni superior a 20 días"
+      ],
+      "correcta": 1,
+      "explicacion": "El art. 82 LPACAP fija el trámite de audiencia en un plazo no inferior a 10 ni superior a 15 días hábiles."
+    },
+    {
+      "id": "t10-q07",
+      "texto": "El recurso extraordinario de revisión procede contra actos que sean:",
+      "opciones": [
+        "No definitivos en vía administrativa",
+        "Definitivos pero no firmes",
+        "Firmes en vía administrativa",
+        "Presuntos por silencio positivo"
+      ],
+      "correcta": 2,
+      "explicacion": "El recurso extraordinario de revisión (art. 125 LPACAP) solo procede contra actos firmes en vía administrativa cuando concurren las causas tasadas."
+    },
+    {
+      "id": "t10-q08",
+      "texto": "¿Cuál es el plazo para interponer el recurso extraordinario de revisión por error de hecho?",
+      "opciones": [
+        "3 meses desde el conocimiento del hecho",
+        "1 año desde la notificación del acto",
+        "4 años desde la notificación del acto",
+        "2 años desde que el acto fue firme"
+      ],
+      "correcta": 2,
+      "explicacion": "El art. 126.1 LPACAP establece un plazo de 4 años desde la notificación de la resolución para la causa 1ª (error de hecho)."
+    },
+    {
+      "id": "t10-q09",
+      "texto": "La revisión de oficio de actos nulos de pleno derecho puede ejercerse:",
+      "opciones": [
+        "Solo dentro de los 4 años siguientes al acto",
+        "Solo dentro del plazo de los recursos ordinarios",
+        "En cualquier momento, sin sujeción a plazo",
+        "En el plazo de prescripción de la acción penal"
+      ],
+      "correcta": 2,
+      "explicacion": "El art. 106 LPACAP permite a la Administración declarar la nulidad de pleno derecho en cualquier momento, sin sujeción a plazo."
+    },
+    {
+      "id": "t10-q10",
+      "texto": "¿Qué efecto tiene el silencio administrativo en el recurso de reposición?",
+      "opciones": [
+        "Estimación por silencio positivo",
+        "Desestimación por silencio negativo",
+        "Suspensión del procedimiento",
+        "Caducidad del recurso"
+      ],
+      "correcta": 1,
+      "explicacion": "Transcurrido 1 mes sin resolución del recurso de reposición, el silencio es negativo (desestimación presunta), quedando expedita la vía contencioso-administrativa (art. 124 LPACAP)."
+    },
+    {
+      "id": "t10-q11",
+      "texto": "En procedimientos a instancia de parte, ¿cómo opera la caducidad por inactividad del solicitante?",
+      "opciones": [
+        "Se declara automáticamente al mes de inactividad",
+        "La Administración advierte y concede 3 meses; si sigue sin actuar, declara la caducidad",
+        "Se declara a los 6 meses desde la iniciación",
+        "Al superar el plazo máximo de resolución"
+      ],
+      "correcta": 1,
+      "explicacion": "Según el art. 95 LPACAP, la Administración advierte al interesado y le concede un plazo de 3 meses; si sigue sin actuar, declara la caducidad y archiva."
+    },
+    {
+      "id": "t10-q12",
+      "texto": "¿Cuál es el plazo para interponer el recurso de alzada contra un acto expreso?",
+      "opciones": [
+        "10 días hábiles",
+        "15 días hábiles",
+        "1 mes",
+        "2 meses"
+      ],
+      "correcta": 2,
+      "explicacion": "El art. 122.1 LPACAP establece un plazo de 1 mes para interponer el recurso de alzada cuando el acto es expreso."
+    },
+    {
+      "id": "t10-q13",
+      "texto": "¿Qué significa que un informe sea 'vinculante'?",
+      "opciones": [
+        "Que es obligatorio solicitarlo",
+        "Que la resolución debe ajustarse a su contenido",
+        "Que paraliza el procedimiento hasta su emisión",
+        "Que es emitido por órgano externo a la Administración"
+      ],
+      "correcta": 1,
+      "explicacion": "Un informe vinculante obliga a la Administración a ajustar su resolución a su contenido; no puede apartarse de él."
+    },
+    {
+      "id": "t10-q14",
+      "texto": "¿Qué personas físicas están OBLIGADAS a relacionarse electrónicamente con la Administración?",
+      "opciones": [
+        "Todas las personas físicas sin excepción",
+        "Solo los mayores de 65 años",
+        "Las que ejerzan actividad profesional con colegiación obligatoria",
+        "Solo los que tengan certificado digital en vigor"
+      ],
+      "correcta": 2,
+      "explicacion": "El art. 14.2.c LPACAP obliga a relacionarse electrónicamente a quienes ejerzan una actividad profesional que requiera colegiación obligatoria, para los trámites en esa condición."
+    },
+    {
+      "id": "t10-q15",
+      "texto": "La terminación convencional del procedimiento (art. 86 LPACAP) permite:",
+      "opciones": [
+        "Sustituir siempre la resolución por un acuerdo con el interesado sin restricciones",
+        "Finalizar el procedimiento mediante pactos salvo en materias no susceptibles de transacción",
+        "Que el interesado renuncie a sus derechos subjetivos unilateralmente",
+        "Que la Administración desista del procedimiento sancionador cuando lo estime conveniente"
+      ],
+      "correcta": 1,
+      "explicacion": "El art. 86 LPACAP permite la terminación convencional mediante acuerdos, pactos o convenios siempre que no sean contrarios al ordenamiento jurídico ni versen sobre materias no susceptibles de transacción."
+    }
+  ]
+}
