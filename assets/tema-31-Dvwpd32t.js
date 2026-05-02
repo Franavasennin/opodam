@@ -1,0 +1,107 @@
+var e=31,t=`La violencia de género. LO 1/2004. Protocolos de actuación policial ante la violencia de género. La orden de protección`,n=`especifico`,r=[{titulo:`Concepto y marco normativo de la violencia de género`,contenido:`La violencia de género es la violencia que, como manifestación de la discriminación, la situación de desigualdad y las relaciones de poder de los hombres sobre las mujeres, se ejerce sobre éstas por parte de quienes sean o hayan sido sus cónyuges o de quienes estén o hayan estado ligados a ellas por relaciones similares de afectividad, aún sin convivencia.
+
+**LO 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género (LOVG):** Marco normativo fundamental en España. Establece que el sujeto activo siempre es un hombre y el pasivo una mujer que sea o haya sido su pareja o expareja. La LOVG incluye medidas de sensibilización, prevención, detección, asistencia y protección.
+
+**Convenio de Estambul (2011):** Convenio del Consejo de Europa sobre prevención y lucha contra la violencia contra la mujer y la violencia doméstica. Ratificado por España en 2014. Establece un marco jurídico integral: prevención, protección, persecución y políticas integradas. Obliga a tipificar como delitos el acoso, la violencia sexual, el matrimonio forzoso y la mutilación genital.
+
+**Normativa canaria:** Ley 16/2003, de 8 de abril, de Prevención y Protección Integral de las Mujeres contra la Violencia de Género, primera ley autonómica española sobre violencia de género. Instituto Canario de Igualdad (ICI), creado por Ley 1/2010, de 26 de febrero.`},{titulo:`Tipos de violencia y conductas delictivas`,contenido:`La LOVG distingue diversas formas de violencia: física, psicológica, sexual, económica y social. Todas se ejercen en el ámbito de la pareja o expareja.
+
+**Tipos penales principales:**
+- **Art. 153.1 CP — Maltrato:** Causar lesión no constitutiva de delito o golpear/maltratar sin causar lesión. Pena: 6 meses a 1 año + alejamiento 6m-1a. Se aplica a violencia esporádica.
+- **Art. 173.2 CP — Violencia habitual:** Ejercer habitualmente violencia física o psíquica sobre pareja o expareja. Pena: 6 meses a 3 años + alejamiento. La habitualidad se determina por el número de actos y la proximidad temporal, no requiere condena previa.
+- **Art. 171.4 CP — Amenazas leves:** Pena de 6 meses a 1 año o trabajos en beneficio de la comunidad.
+- **Art. 172.2 CP — Coacciones leves:** Pena de 6 meses a 1 año.
+- **Art. 468 CP — Quebrantamiento de orden de protección o medida cautelar:** Pena de 6 meses a 1 año. Si hay menores presentes o la víctima es especialmente vulnerable: 1 a 3 años. El quebrantamiento consentido por la víctima no exime de responsabilidad penal al agresor (STS 26/2008).
+- **Art. 57 CP — Penas accesorias:** Prohibición de aproximarse o comunicarse con la víctima.`},{titulo:`Los Juzgados de Violencia sobre la Mujer (JVM)`,contenido:`Los **Juzgados de Violencia sobre la Mujer (JVM)** fueron creados por la LOVG como órganos judiciales especializados. Tienen competencia penal y civil simultánea, lo que les permite dictar medidas de ambas naturalezas en el mismo procedimiento.
+
+**Competencia penal:** Instrucción de los delitos tipificados en los arts. 153, 171.4, 172.2, 173.2 y 468 CP cuando la víctima sea una mujer y el autor su pareja o expareja.
+
+**Competencia civil:** Procesos de filiación, maternidad/paternidad, nulidad matrimonial, separación, divorcio, guarda y custodia, alimentos, cuando existan indicios de violencia de género.
+
+**Ventaja clave:** Evita que la víctima deba acudir a juzgados distintos para la causa penal y los asuntos civiles derivados, concentrando todo en un único órgano especializado.
+
+**Fiscalía especializada:** La LOVG creó la figura del/la Fiscal contra la Violencia sobre la Mujer en cada Fiscalía Provincial.
+
+**Unidades de Valoración Forense Integral (UVFI):** Equipos multidisciplinares adscritos a los JVM para evaluar la situación de las víctimas (médico forense, psicólogo/a forense, trabajador/a social).`},{titulo:`La orden de protección`,contenido:`La **orden de protección** fue regulada por la **Ley 27/2003, de 31 de julio, reguladora de la Orden de Protección de las Víctimas de la Violencia Doméstica**, e integrada en la LOVG para casos de violencia de género.
+
+**Concepto:** Resolución judicial que activa un estatuto integral de protección para la víctima, reuniendo en un único instrumento medidas cautelares penales y civiles.
+
+**Requisitos:** Indicios fundados de la comisión de un delito o falta de violencia doméstica/género + situación objetiva de riesgo para la víctima.
+
+**Plazo:** El juez debe pronunciarse en el plazo máximo de **72 horas** desde la solicitud.
+
+**¿Quién puede solicitarla?** La víctima, sus representantes legales, el Ministerio Fiscal, las entidades u organismos asistenciales. Las FCS pueden solicitarla en nombre de la víctima.
+
+**Medidas cautelares penales:** Prohibición de residir en el domicilio de la víctima, prohibición de aproximarse (con distancia mínima), prohibición de comunicarse, privación de tenencia de armas, suspensión de la patria potestad o régimen de visitas.
+
+**Medidas cautelares civiles:** Atribución del uso y disfrute de la vivienda familiar, determinación del régimen de custodia y visitas, prestación de alimentos.
+
+**Notificación:** La orden de protección se comunica a las FCS para su ejecución inmediata y se inscribe en el **Registro Central para la Protección de las Víctimas de la Violencia Doméstica y de Género (SIRAJ)**.`},{titulo:`Sistema VioGén y protocolos de actuación policial`,contenido:`El **Sistema VioGén** (Sistema de Seguimiento Integral en los casos de Violencia de Género) es la herramienta informática del Ministerio del Interior para la gestión del riesgo en casos de VG. Gestiona el seguimiento policial de las víctimas con orden de protección o medidas cautelares.
+
+**Cinco niveles de riesgo:**
+1. **No apreciado:** Sin medidas de protección activas.
+2. **Bajo:** Seguimiento periódico, contacto mensual.
+3. **Medio:** Seguimiento intensivo, contacto semanal.
+4. **Alto:** Seguimiento muy intensivo, contacto frecuente, posible escolta.
+5. **Extremo:** Protección policial permanente las 24 horas.
+
+**Formularios de valoración del riesgo:**
+- **VPR (Valoración Policial del Riesgo):** Primera valoración tras la denuncia.
+- **VPER (Valoración Policial de la Evolución del Riesgo):** Revisiones periódicas del nivel de riesgo.
+
+**Protocolo de actuación ante una denuncia:**
+1. Recepción de la denuncia y prestación de asistencia inmediata.
+2. Información a la víctima de sus derechos (art. 18 LOVG): ayudas, servicios, JVM, orden de protección.
+3. Cumplimentación del formulario VPR.
+4. Traslado al JVM si procede solicitar orden de protección.
+5. Registro en VioGén y seguimiento según nivel de riesgo.
+6. Coordinación con servicios sociales y recursos de atención a víctimas.
+
+**ATENPRO:** Servicio de atención y protección a víctimas de VG del Ministerio de Igualdad, gestionado por Cruz Roja. Dispositivo telefónico de atención 24h que permite a la víctima contactar con el centro de atención pulsando un botón.`},{titulo:`Derechos de las víctimas y recursos de asistencia`,contenido:`La LOVG y el **Estatuto de la Víctima del Delito (Ley 4/2015, de 27 de abril)** reconocen un amplio catálogo de derechos:
+
+**Derechos reconocidos en el art. 18 LOVG:**
+- Información sobre las medidas de protección disponibles.
+- Asistencia social integral (servicios de atención, emergencia, apoyo y recuperación).
+- Asistencia jurídica gratuita especializada desde el momento de la denuncia (art. 20 LOVG).
+- Ayudas económicas (art. 27 LOVG) para víctimas con insuficiencia de recursos.
+- Prioridad en el acceso a viviendas protegidas y residencias públicas para mayores.
+- Derechos laborales y prestaciones de la Seguridad Social (reducción/reordenación de jornada, suspensión del contrato, extinción con prestación, movilidad geográfica).
+- Derecho a la escolarización inmediata de los hijos.
+
+**Recursos de asistencia:**
+- **016:** Línea telefónica de información y asesoramiento jurídico en materia de VG (no queda registrado en la factura).
+- **ATENPRO:** Dispositivo móvil de emergencia 24h.
+- **Casas de acogida y pisos tutelados:** Para víctimas que deben abandonar su domicilio.
+- **Puntos de Encuentro Familiar:** Para las visitas con hijos en casos con orden de alejamiento.
+- **Red de Centros de Emergencia:** Acogida inmediata en situación de crisis.
+
+**En Canarias:** El **ICI (Instituto Canario de Igualdad)** coordina los recursos autonómicos de atención a víctimas de VG. La Ley Canaria 16/2003 fue pionera a nivel nacional.`}],i=[{titulo:`Tipos penales en la LO 1/2004 LOVG`,tipo:`mermaid`,contenido:`graph TD
+    A[Violencia de Género<br/>LO 1/2004] --> B[Art. 153.1 CP<br/>Maltrato esporádico<br/>6m-1a]
+    A --> C[Art. 173.2 CP<br/>Violencia habitual<br/>6m-3a]
+    A --> D[Art. 171.4 CP<br/>Amenazas leves<br/>6m-1a]
+    A --> E[Art. 172.2 CP<br/>Coacciones leves<br/>6m-1a]
+    A --> F[Art. 468 CP<br/>Quebrantamiento<br/>orden protección<br/>6m-1a / 1-3a]
+    B --> G[Sujeto activo: HOMBRE]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    G --> H[Sujeto pasivo: MUJER<br/>pareja o expareja]`},{titulo:`Niveles de riesgo VioGén y seguimiento`,tipo:`mermaid`,contenido:`graph LR
+    A[Sistema VioGén] --> B[No apreciado<br/>Sin medidas]
+    A --> C[Bajo<br/>Contacto mensual]
+    A --> D[Medio<br/>Contacto semanal]
+    A --> E[Alto<br/>Contacto frecuente]
+    A --> F[Extremo<br/>Protección 24h]
+    G[VPR<br/>Valoración inicial] --> A
+    H[VPER<br/>Revisión periódica] --> A
+    I[Orden de Protección<br/>Ley 27/2003 - 72h] --> A
+    J[JVM<br/>Competencia penal+civil] --> I`}],a={nodos:[{id:`root`,texto:`Violencia de Género
+LO 1/2004`,nivel:0},{id:`n1`,texto:`Marco normativo`,nivel:1},{id:`n2`,texto:`Tipos penales CP`,nivel:1},{id:`n3`,texto:`JVM`,nivel:1},{id:`n4`,texto:`Orden de protección`,nivel:1},{id:`n5`,texto:`Sistema VioGén`,nivel:1},{id:`n6`,texto:`Derechos víctimas`,nivel:1},{id:`n1a`,texto:`LOVG 1/2004
+Conv. Estambul 2014`,nivel:2},{id:`n2a`,texto:`153.1: maltrato
+173.2: habitual
+468: quebrantamiento`,nivel:2},{id:`n3a`,texto:`Competencia
+penal + civil`,nivel:2},{id:`n4a`,texto:`Ley 27/2003
+Plazo 72h
+SIRAJ`,nivel:2},{id:`n5a`,texto:`5 niveles riesgo
+VPR + VPER
+ATENPRO 24h`,nivel:2}],aristas:[{origen:`root`,destino:`n1`},{origen:`root`,destino:`n2`},{origen:`root`,destino:`n3`},{origen:`root`,destino:`n4`},{origen:`root`,destino:`n5`},{origen:`root`,destino:`n6`},{origen:`n1`,destino:`n1a`},{origen:`n2`,destino:`n2a`},{origen:`n3`,destino:`n3a`},{origen:`n4`,destino:`n4a`},{origen:`n5`,destino:`n5a`}]},o=[{id:`t31-f01`,pregunta:`¿Qué ley regula las medidas de protección integral contra la violencia de género en España?`,respuesta:`LO 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género (LOVG).`},{id:`t31-f02`,pregunta:`¿Cuáles son los sujetos de la violencia de género según la LOVG?`,respuesta:`Sujeto activo: hombre. Sujeto pasivo: mujer que sea o haya sido su cónyuge o pareja/expareja con o sin convivencia.`},{id:`t31-f03`,pregunta:`¿Qué es el Convenio de Estambul y cuándo fue ratificado por España?`,respuesta:`Convenio del Consejo de Europa sobre prevención y lucha contra la violencia contra la mujer (2011), ratificado por España en 2014.`},{id:`t31-f04`,pregunta:`¿Qué pena establece el art. 173.2 CP para la violencia habitual en el ámbito de la pareja?`,respuesta:`Pena de 6 meses a 3 años de prisión más prohibición de aproximarse a la víctima.`},{id:`t31-f05`,pregunta:`¿Qué pena establece el art. 153.1 CP para el maltrato esporádico en violencia de género?`,respuesta:`Pena de 6 meses a 1 año de prisión más prohibición de aproximación de 6 meses a 1 año.`},{id:`t31-f06`,pregunta:`¿Qué pena establece el art. 468 CP por quebrantamiento de la orden de protección?`,respuesta:`Pena de 6 meses a 1 año. Si hay menores presentes o víctima especialmente vulnerable: 1 a 3 años.`},{id:`t31-f07`,pregunta:`¿Qué son los Juzgados de Violencia sobre la Mujer (JVM)?`,respuesta:`Órganos judiciales especializados creados por la LOVG con competencia penal y civil simultánea en casos de violencia de género.`},{id:`t31-f08`,pregunta:`¿Qué ley regula la orden de protección de las víctimas?`,respuesta:`Ley 27/2003, de 31 de julio, reguladora de la Orden de Protección de las Víctimas de la Violencia Doméstica.`},{id:`t31-f09`,pregunta:`¿Cuál es el plazo máximo para que el juez se pronuncie sobre una orden de protección?`,respuesta:`72 horas desde la solicitud.`},{id:`t31-f10`,pregunta:`¿Qué es el Sistema VioGén?`,respuesta:`Sistema de Seguimiento Integral en los casos de Violencia de Género del Ministerio del Interior para gestión del riesgo y seguimiento policial de víctimas.`},{id:`t31-f11`,pregunta:`¿Cuántos niveles de riesgo tiene el Sistema VioGén?`,respuesta:`Cinco: no apreciado, bajo, medio, alto y extremo.`},{id:`t31-f12`,pregunta:`¿Qué significan las siglas VPR y VPER en el Sistema VioGén?`,respuesta:`VPR: Valoración Policial del Riesgo (inicial). VPER: Valoración Policial de la Evolución del Riesgo (revisiones periódicas).`},{id:`t31-f13`,pregunta:`¿Qué es el servicio ATENPRO?`,respuesta:`Servicio de atención y protección a víctimas de VG del Ministerio de Igualdad, gestionado por Cruz Roja, con dispositivo telefónico de emergencia 24 horas.`},{id:`t31-f14`,pregunta:`¿Cuál es el teléfono de información y asesoramiento en materia de violencia de género?`,respuesta:`016 (línea de información y asesoramiento jurídico; no aparece en la factura telefónica).`},{id:`t31-f15`,pregunta:`¿Qué norma canaria reguló por primera vez la violencia de género a nivel autonómico?`,respuesta:`Ley 16/2003, de 8 de abril, de Prevención y Protección Integral de las Mujeres contra la Violencia de Género, primera ley autonómica española sobre VG.`},{id:`t31-f16`,pregunta:`¿Qué es el SIRAJ en relación con la violencia de género?`,respuesta:`Registro Central para la Protección de las Víctimas de la Violencia Doméstica y de Género, donde se inscriben las órdenes de protección para conocimiento de todas las FCS.`},{id:`t31-f17`,pregunta:`¿Puede la víctima de violencia de género renunciar al proceso penal?`,respuesta:`No puede renunciar a la acción penal (es pública), pero sí puede no declarar contra su agresor al amparo del art. 416 LECrim.`},{id:`t31-f18`,pregunta:`¿Qué medidas de protección puede acordar el JVM al dictar una orden de protección?`,respuesta:`Penales: prohibición de residir, aproximarse o comunicarse con la víctima, privación de armas. Civiles: uso de vivienda, custodia de hijos, alimentos.`},{id:`t31-f19`,pregunta:`¿Qué es el ICI y qué ley lo creó?`,respuesta:`Instituto Canario de Igualdad, organismo autonómico canario que coordina la atención a víctimas de VG, creado por Ley 1/2010, de 26 de febrero.`},{id:`t31-f20`,pregunta:`¿El quebrantamiento consentido por la víctima exime de responsabilidad penal al agresor?`,respuesta:`No. El Tribunal Supremo (STS 26/2008) establece que el consentimiento de la víctima no exime de responsabilidad al agresor por el delito del art. 468 CP.`}],s=[{id:`t31-q01`,texto:`Según la LO 1/2004, ¿cuáles son los sujetos de la violencia de género?`,opciones:[`Cualquier persona en el ámbito familiar, independientemente del sexo`,`Sujeto activo: hombre; sujeto pasivo: mujer pareja o expareja`,`Sujeto activo: hombre; sujeto pasivo: cualquier mujer de su entorno`],correcta:1},{id:`t31-q02`,texto:`¿Qué pena establece el art. 173.2 CP para la violencia habitual en el ámbito de la pareja?`,opciones:[`6 meses a 3 años de prisión`,`1 a 4 años de prisión`,`6 meses a 1 año de prisión`],correcta:0},{id:`t31-q03`,texto:`¿Cuál es el plazo máximo para que el juez se pronuncie sobre la solicitud de orden de protección?`,opciones:[`24 horas`,`48 horas`,`72 horas`],correcta:2},{id:`t31-q04`,texto:`¿Qué norma creó los Juzgados de Violencia sobre la Mujer?`,opciones:[`Ley 27/2003, reguladora de la Orden de Protección`,`LO 1/2004, de Medidas de Protección Integral contra la VG`,`Ley 4/2015, del Estatuto de la Víctima del Delito`],correcta:1},{id:`t31-q05`,texto:`¿Cuántos niveles de riesgo establece el Sistema VioGén?`,opciones:[`Tres: bajo, medio y alto`,`Cuatro: bajo, medio, alto y extremo`,`Cinco: no apreciado, bajo, medio, alto y extremo`],correcta:2},{id:`t31-q06`,texto:`¿Qué pena prevé el art. 468 CP para el quebrantamiento de la orden de protección cuando hay menores presentes?`,opciones:[`1 a 3 años de prisión`,`6 meses a 1 año de prisión`,`2 a 5 años de prisión`],correcta:0},{id:`t31-q07`,texto:`El Convenio de Estambul sobre violencia contra la mujer fue ratificado por España en:`,opciones:[`2011`,`2014`,`2004`],correcta:1},{id:`t31-q08`,texto:`¿Qué recoge el formulario VPR en el Sistema VioGén?`,opciones:[`La valoración policial de la evolución del riesgo en revisiones periódicas`,`La valoración policial del riesgo inicial tras la denuncia`,`La orden de protección dictada por el JVM`],correcta:1},{id:`t31-q09`,texto:`¿Qué es el servicio ATENPRO?`,opciones:[`El registro central de órdenes de protección del Ministerio del Interior`,`El protocolo de valoración del riesgo VPR en VioGén`,`Servicio de atención y protección 24h a víctimas de VG del Ministerio de Igualdad, gestionado por Cruz Roja`],correcta:2},{id:`t31-q10`,texto:`¿Qué competencia tienen los JVM que los distingue de los juzgados ordinarios?`,opciones:[`Conocen exclusivamente de delitos relacionados con la violencia de género`,`Tienen competencia penal y civil simultánea en los casos de violencia de género`,`Son competentes para cualquier tipo de violencia doméstica con independencia del sexo de víctima y agresor`],correcta:1},{id:`t31-q11`,texto:`¿Cuál fue la primera ley autonómica española sobre violencia de género?`,opciones:[`Ley Canaria 16/2003, de Prevención y Protección Integral de las Mujeres contra la VG`,`Ley Vasca 4/2005, para la Igualdad de Mujeres y Hombres`,`Ley Catalana 5/2008, del Derecho de las Mujeres a Erradicar la Violencia Machista`],correcta:0},{id:`t31-q12`,texto:`¿Qué registro recoge las órdenes de protección dictadas para conocimiento de todas las FCS?`,opciones:[`VioGén`,`ATENPRO`,`SIRAJ (Registro Central para la Protección de las Víctimas)`],correcta:2},{id:`t31-q13`,texto:`¿Puede el consentimiento de la víctima eximir de responsabilidad al agresor por el quebrantamiento de la orden de protección?`,opciones:[`Sí, si la víctima consiente expresamente el contacto`,`No, según el Tribunal Supremo el consentimiento de la víctima no exime de responsabilidad penal`,`Solo si el juez aprecia circunstancias atenuantes`],correcta:1},{id:`t31-q14`,texto:`¿Qué ley creó el Instituto Canario de Igualdad (ICI)?`,opciones:[`Ley 16/2003, de Prevención y Protección Integral de las Mujeres contra la VG`,`Ley 1/2010, de 26 de febrero, canaria`,`LO 1/2004, de Medidas de Protección Integral contra la VG`],correcta:1},{id:`t31-q15`,texto:`Según la LOVG, ¿desde qué momento tiene derecho la víctima de violencia de género a asistencia jurídica gratuita especializada?`,opciones:[`Desde que se dicta la orden de protección`,`Desde la condena del agresor en primera instancia`,`Desde el momento de la interposición de la denuncia`],correcta:2}],c={id:31,titulo:t,bloque:n,secciones:r,esquemas:i,mapaMental:a,flashcards:o,preguntas:s};export{n as bloque,c as default,i as esquemas,o as flashcards,e as id,a as mapaMental,s as preguntas,r as secciones,t as titulo};
