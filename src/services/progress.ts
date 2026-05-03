@@ -1,5 +1,6 @@
 import type { Progreso } from '../types'
 import { getProgreso, saveProgreso } from './storage'
+import { actualizarRendimientoTema } from './examen'
 
 export function calcularPuntuacionTest(
   aciertos: number,
@@ -68,7 +69,7 @@ export function completarVuelta(temaId: number): void {
 export function guardarResultadoTest(
   temaId: number,
   aciertos: number,
-  _errores: number,
+  errores: number,
   total: number,
 ): void {
   const p = getProgreso()
@@ -79,4 +80,5 @@ export function guardarResultadoTest(
   p.temas[String(temaId)] = tema
   saveProgreso(p)
   completarVuelta(temaId)
+  actualizarRendimientoTema(temaId, aciertos, errores, total)
 }
