@@ -42,54 +42,286 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "texto": "Drogas y Tráfico\nLegislación", "nivel": 0 },
-      { "id": "n1", "texto": "Tipos penales CP", "nivel": 1 },
-      { "id": "n2", "texto": "Agravantes", "nivel": 1 },
-      { "id": "n3", "texto": "LOPSC art.36", "nivel": 1 },
-      { "id": "n4", "texto": "Alcohol conducción", "nivel": 1 },
-      { "id": "n5", "texto": "Drogas conducción", "nivel": 1 },
-      { "id": "n6", "texto": "Plan Nacional Drogas", "nivel": 1 },
-      { "id": "n1a", "texto": "368: tráfico 3-6a\n376: atenuación", "nivel": 2 },
-      { "id": "n2a", "texto": "369: notoria importancia\n369bis: organización 9-12a", "nivel": 2 },
-      { "id": "n3a", "texto": "Consumo en vía pública\nMulta 601-30.000€", "nivel": 2 },
-      { "id": "n4a", "texto": "0,60 mg/l: delito\n1,20 mg/l: agravado\n383: negativa delito", "nivel": 2 },
-      { "id": "n5a", "texto": "Sin umbral cuantitativo\nTest saliva + sangre\n383 si negativa", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "root"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n1",
+        "data": {
+          "label": "n1"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "n2"
+        },
+        "position": {
+          "x": 260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "n3"
+        },
+        "position": {
+          "x": 260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "n4"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "n5"
+        },
+        "position": {
+          "x": -260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "n6"
+        },
+        "position": {
+          "x": -260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n1a",
+        "data": {
+          "label": "n1a"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n2a",
+        "data": {
+          "label": "n2a"
+        },
+        "position": {
+          "x": 552,
+          "y": -179
+        }
+      },
+      {
+        "id": "n3a",
+        "data": {
+          "label": "n3a"
+        },
+        "position": {
+          "x": 341,
+          "y": 469
+        }
+      },
+      {
+        "id": "n4a",
+        "data": {
+          "label": "n4a"
+        },
+        "position": {
+          "x": -341,
+          "y": 469
+        }
+      },
+      {
+        "id": "n5a",
+        "data": {
+          "label": "n5a"
+        },
+        "position": {
+          "x": -552,
+          "y": -179
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "n1" },
-      { "origen": "root", "destino": "n2" },
-      { "origen": "root", "destino": "n3" },
-      { "origen": "root", "destino": "n4" },
-      { "origen": "root", "destino": "n5" },
-      { "origen": "root", "destino": "n6" },
-      { "origen": "n1", "destino": "n1a" },
-      { "origen": "n2", "destino": "n2a" },
-      { "origen": "n3", "destino": "n3a" },
-      { "origen": "n4", "destino": "n4a" },
-      { "origen": "n5", "destino": "n5a" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "n1"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "n2"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "n3"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "n4"
+      },
+      {
+        "id": "e5",
+        "source": "root",
+        "target": "n5"
+      },
+      {
+        "id": "e6",
+        "source": "root",
+        "target": "n6"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n1a"
+      },
+      {
+        "id": "e8",
+        "source": "n2",
+        "target": "n2a"
+      },
+      {
+        "id": "e9",
+        "source": "n3",
+        "target": "n3a"
+      },
+      {
+        "id": "e10",
+        "source": "n4",
+        "target": "n4a"
+      },
+      {
+        "id": "e11",
+        "source": "n5",
+        "target": "n5a"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t32-f01", "pregunta": "¿Qué pena establece el art. 368 CP para el tráfico de sustancias que causan grave daño a la salud?", "respuesta": "Pena de 3 a 6 años de prisión más multa del tanto al triplo del valor de la droga." },
-    { "id": "t32-f02", "pregunta": "¿Qué pena establece el art. 368 CP para el tráfico de cannabis (no causa grave daño)?", "respuesta": "Pena de 1 a 3 años de prisión más multa del tanto al duplo." },
-    { "id": "t32-f03", "pregunta": "¿Cuál es el umbral cuantitativo de cocaína que determina la 'notoria importancia' según la jurisprudencia?", "respuesta": "1,5 kilogramos de cocaína (Acuerdo Plenario TS 19-10-2001)." },
-    { "id": "t32-f04", "pregunta": "¿Qué regula el art. 371 CP?", "respuesta": "El tráfico de precursores (sustancias utilizadas para fabricar drogas ilícitas). Pena de 3 a 6 años." },
-    { "id": "t32-f05", "pregunta": "¿Qué infracción administrativa supone el consumo de drogas en la vía pública según la LOPSC?", "respuesta": "Infracción grave (art. 36.16 LOPSC) con multa de 601 a 30.000 euros." },
-    { "id": "t32-f06", "pregunta": "¿Cuál es la tasa de alcohol en aire espirado que determina el delito del art. 379.2 CP?", "respuesta": "0,60 mg/l de alcohol en aire espirado (1,2 g/l en sangre)." },
-    { "id": "t32-f07", "pregunta": "¿Qué pena establece el art. 383 CP para la negativa a someterse a pruebas de alcoholemia?", "respuesta": "Prisión de 6 meses a 1 año más privación del derecho a conducir de 1 a 4 años." },
-    { "id": "t32-f08", "pregunta": "¿Cuál es la tasa administrativa de alcohol en aire espirado para conductores en general?", "respuesta": "0,25 mg/l de alcohol en aire espirado (0,5 g/l en sangre). Infracción muy grave." },
-    { "id": "t32-f09", "pregunta": "¿Cuál es la tasa administrativa de alcohol para conductores noveles y profesionales?", "respuesta": "0,15 mg/l de alcohol en aire espirado (0,3 g/l en sangre)." },
-    { "id": "t32-f10", "pregunta": "¿Existe un umbral cuantitativo penal de drogas (distintas del alcohol) para el delito de conducción?", "respuesta": "No. Para las drogas no hay umbral cuantitativo; basta con acreditar que la droga influye en la conducción." },
-    { "id": "t32-f11", "pregunta": "¿Qué organismo coordina el Plan Nacional sobre Drogas?", "respuesta": "La Delegación del Gobierno para el Plan Nacional sobre Drogas, dependiente del Ministerio de Sanidad." },
-    { "id": "t32-f12", "pregunta": "¿Qué prevé el art. 376 CP en materia de tráfico de drogas?", "respuesta": "Una cláusula de atenuación: reducción de 1 a 2 grados en la pena si el culpable abandona la actividad y colabora con las autoridades." },
-    { "id": "t32-f13", "pregunta": "¿Qué reguló la LO 6/2022 en materia de drogas y conducción?", "respuesta": "Introdujo controles preventivos de drogas en conductores (sin necesidad de indicios previos), al igual que los controles de alcoholemia." },
-    { "id": "t32-f14", "pregunta": "¿Cuál es la pena para el tipo agravado del art. 379.2 CP con tasa de 1,20 mg/l de alcohol en aire espirado?", "respuesta": "Prisión de 3 a 6 meses o multa o trabajos en beneficio de la comunidad, más privación del derecho a conducir de 1 a 4 años." },
-    { "id": "t32-f15", "pregunta": "¿Qué es el 'decomiso ampliado' previsto en el art. 374 CP?", "respuesta": "La incautación no solo de la droga y efectos del delito, sino también del dinero y demás ganancias procedentes del tráfico de drogas." },
-    { "id": "t32-f16", "pregunta": "¿Qué ley canaria regula las drogodependencias en el ámbito autonómico?", "respuesta": "Ley 9/1998, de 22 de julio, sobre prevención, asistencia e inserción social en materia de drogodependencias de Canarias." },
-    { "id": "t32-f17", "pregunta": "¿Qué pena establece el art. 369 bis CP para los jefes de organizaciones dedicadas al narcotráfico?", "respuesta": "Pena de 9 a 12 años de prisión." },
-    { "id": "t32-f18", "pregunta": "¿Cómo se denomina la unidad del CNP especializada en narcotráfico?", "respuesta": "UDYCO: Unidades de Droga y Crimen Organizado." },
-    { "id": "t32-f19", "pregunta": "¿Es delito el consumo personal de drogas en España?", "respuesta": "No. El consumo personal es únicamente infracción administrativa (art. 36.16 LOPSC). Solo el tráfico es delito penal." },
-    { "id": "t32-f20", "pregunta": "¿Cuántos minutos deben transcurrir entre la primera y la segunda prueba de alcoholemia?", "respuesta": "10 minutos entre la primera y la segunda prueba de alcoholemia con el mismo etilómetro." }
+    {
+      "id": "t32-f01",
+      "pregunta": "¿Qué pena establece el art. 368 CP para el tráfico de sustancias que causan grave daño a la salud?",
+      "respuesta": "Pena de 3 a 6 años de prisión más multa del tanto al triplo del valor de la droga."
+    },
+    {
+      "id": "t32-f02",
+      "pregunta": "¿Qué pena establece el art. 368 CP para el tráfico de cannabis (no causa grave daño)?",
+      "respuesta": "Pena de 1 a 3 años de prisión más multa del tanto al duplo."
+    },
+    {
+      "id": "t32-f03",
+      "pregunta": "¿Cuál es el umbral cuantitativo de cocaína que determina la 'notoria importancia' según la jurisprudencia?",
+      "respuesta": "1,5 kilogramos de cocaína (Acuerdo Plenario TS 19-10-2001)."
+    },
+    {
+      "id": "t32-f04",
+      "pregunta": "¿Qué regula el art. 371 CP?",
+      "respuesta": "El tráfico de precursores (sustancias utilizadas para fabricar drogas ilícitas). Pena de 3 a 6 años."
+    },
+    {
+      "id": "t32-f05",
+      "pregunta": "¿Qué infracción administrativa supone el consumo de drogas en la vía pública según la LOPSC?",
+      "respuesta": "Infracción grave (art. 36.16 LOPSC) con multa de 601 a 30.000 euros."
+    },
+    {
+      "id": "t32-f06",
+      "pregunta": "¿Cuál es la tasa de alcohol en aire espirado que determina el delito del art. 379.2 CP?",
+      "respuesta": "0,60 mg/l de alcohol en aire espirado (1,2 g/l en sangre)."
+    },
+    {
+      "id": "t32-f07",
+      "pregunta": "¿Qué pena establece el art. 383 CP para la negativa a someterse a pruebas de alcoholemia?",
+      "respuesta": "Prisión de 6 meses a 1 año más privación del derecho a conducir de 1 a 4 años."
+    },
+    {
+      "id": "t32-f08",
+      "pregunta": "¿Cuál es la tasa administrativa de alcohol en aire espirado para conductores en general?",
+      "respuesta": "0,25 mg/l de alcohol en aire espirado (0,5 g/l en sangre). Infracción muy grave."
+    },
+    {
+      "id": "t32-f09",
+      "pregunta": "¿Cuál es la tasa administrativa de alcohol para conductores noveles y profesionales?",
+      "respuesta": "0,15 mg/l de alcohol en aire espirado (0,3 g/l en sangre)."
+    },
+    {
+      "id": "t32-f10",
+      "pregunta": "¿Existe un umbral cuantitativo penal de drogas (distintas del alcohol) para el delito de conducción?",
+      "respuesta": "No. Para las drogas no hay umbral cuantitativo; basta con acreditar que la droga influye en la conducción."
+    },
+    {
+      "id": "t32-f11",
+      "pregunta": "¿Qué organismo coordina el Plan Nacional sobre Drogas?",
+      "respuesta": "La Delegación del Gobierno para el Plan Nacional sobre Drogas, dependiente del Ministerio de Sanidad."
+    },
+    {
+      "id": "t32-f12",
+      "pregunta": "¿Qué prevé el art. 376 CP en materia de tráfico de drogas?",
+      "respuesta": "Una cláusula de atenuación: reducción de 1 a 2 grados en la pena si el culpable abandona la actividad y colabora con las autoridades."
+    },
+    {
+      "id": "t32-f13",
+      "pregunta": "¿Qué reguló la LO 6/2022 en materia de drogas y conducción?",
+      "respuesta": "Introdujo controles preventivos de drogas en conductores (sin necesidad de indicios previos), al igual que los controles de alcoholemia."
+    },
+    {
+      "id": "t32-f14",
+      "pregunta": "¿Cuál es la pena para el tipo agravado del art. 379.2 CP con tasa de 1,20 mg/l de alcohol en aire espirado?",
+      "respuesta": "Prisión de 3 a 6 meses o multa o trabajos en beneficio de la comunidad, más privación del derecho a conducir de 1 a 4 años."
+    },
+    {
+      "id": "t32-f15",
+      "pregunta": "¿Qué es el 'decomiso ampliado' previsto en el art. 374 CP?",
+      "respuesta": "La incautación no solo de la droga y efectos del delito, sino también del dinero y demás ganancias procedentes del tráfico de drogas."
+    },
+    {
+      "id": "t32-f16",
+      "pregunta": "¿Qué ley canaria regula las drogodependencias en el ámbito autonómico?",
+      "respuesta": "Ley 9/1998, de 22 de julio, sobre prevención, asistencia e inserción social en materia de drogodependencias de Canarias."
+    },
+    {
+      "id": "t32-f17",
+      "pregunta": "¿Qué pena establece el art. 369 bis CP para los jefes de organizaciones dedicadas al narcotráfico?",
+      "respuesta": "Pena de 9 a 12 años de prisión."
+    },
+    {
+      "id": "t32-f18",
+      "pregunta": "¿Cómo se denomina la unidad del CNP especializada en narcotráfico?",
+      "respuesta": "UDYCO: Unidades de Droga y Crimen Organizado."
+    },
+    {
+      "id": "t32-f19",
+      "pregunta": "¿Es delito el consumo personal de drogas en España?",
+      "respuesta": "No. El consumo personal es únicamente infracción administrativa (art. 36.16 LOPSC). Solo el tráfico es delito penal."
+    },
+    {
+      "id": "t32-f20",
+      "pregunta": "¿Cuántos minutos deben transcurrir entre la primera y la segunda prueba de alcoholemia?",
+      "respuesta": "10 minutos entre la primera y la segunda prueba de alcoholemia con el mismo etilómetro."
+    }
   ],
   "preguntas": [
     {

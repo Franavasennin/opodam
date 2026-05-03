@@ -42,31 +42,183 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "n1", "label": "Adm. Publica CP", "nivel": 0 },
-      { "id": "n2", "label": "Prevaricacion", "nivel": 1 },
-      { "id": "n3", "label": "Cohecho", "nivel": 1 },
-      { "id": "n4", "label": "Trafico influencias", "nivel": 1 },
-      { "id": "n5", "label": "Malversacion", "nivel": 1 },
-      { "id": "n6", "label": "Corrupcion privada", "nivel": 1 },
-      { "id": "n7", "label": "Art.445 internacional", "nivel": 1 },
-      { "id": "n8", "label": "Fraudes ilegales", "nivel": 1 },
-      { "id": "n9", "label": "Marco internacional", "nivel": 1 },
-      { "id": "n10", "label": "Art.404 inhabilitac. 7-10a", "nivel": 2 },
-      { "id": "n11", "label": "Art.419: 3-6a / Art.420: 2-4a", "nivel": 2 },
-      { "id": "n12", "label": "Merida 2003 / GRECO / OCDE 1997", "nivel": 2 }
+      {
+        "id": "n1",
+        "data": {
+          "label": "Adm. Publica CP"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Prevaricacion"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Cohecho"
+        },
+        "position": {
+          "x": 212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Trafico influencias"
+        },
+        "position": {
+          "x": 300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "Malversacion"
+        },
+        "position": {
+          "x": 212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Corrupcion privada"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Art.445 internacional"
+        },
+        "position": {
+          "x": -212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Fraudes ilegales"
+        },
+        "position": {
+          "x": -300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Marco internacional"
+        },
+        "position": {
+          "x": -212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "Art.404 inhabilitac. 7-10a"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Art.419: 3-6a / Art.420: 2-4a"
+        },
+        "position": {
+          "x": 502,
+          "y": 290
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "Merida 2003 / GRECO / OCDE 1997"
+        },
+        "position": {
+          "x": -502,
+          "y": 290
+        }
+      }
     ],
     "aristas": [
-      { "origen": "n1", "destino": "n2" },
-      { "origen": "n1", "destino": "n3" },
-      { "origen": "n1", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n1", "destino": "n7" },
-      { "origen": "n1", "destino": "n8" },
-      { "origen": "n1", "destino": "n9" },
-      { "origen": "n2", "destino": "n10" },
-      { "origen": "n3", "destino": "n11" },
-      { "origen": "n9", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n2"
+      },
+      {
+        "id": "e2",
+        "source": "n1",
+        "target": "n3"
+      },
+      {
+        "id": "e3",
+        "source": "n1",
+        "target": "n4"
+      },
+      {
+        "id": "e4",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n7"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n8"
+      },
+      {
+        "id": "e8",
+        "source": "n1",
+        "target": "n9"
+      },
+      {
+        "id": "e9",
+        "source": "n2",
+        "target": "n10"
+      },
+      {
+        "id": "e10",
+        "source": "n3",
+        "target": "n11"
+      },
+      {
+        "id": "e11",
+        "source": "n9",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [
@@ -175,105 +327,165 @@
     {
       "id": "t18-q01",
       "enunciado": "¿Cuál es la pena de la prevaricación administrativa (art. 404 CP)?",
-      "opciones": ["Prisión de 1 a 3 años", "Inhabilitación especial para empleo o cargo público de 7 a 10 años", "Multa de 12 a 24 meses"],
+      "opciones": [
+        "Prisión de 1 a 3 años",
+        "Inhabilitación especial para empleo o cargo público de 7 a 10 años",
+        "Multa de 12 a 24 meses"
+      ],
       "correcta": 1,
       "explicacion": "Art. 404 CP: dictar a sabiendas una resolución arbitraria en asunto administrativo se castiga con inhabilitación especial para empleo o cargo público de 7 a 10 años."
     },
     {
       "id": "t18-q02",
       "enunciado": "¿Cuál es la pena del cohecho pasivo propio grave (art. 419 CP) cuando el funcionario realiza un acto constitutivo de delito?",
-      "opciones": ["Multa y suspensión de funciones", "Prisión de 3 a 6 años más multa más inhabilitación de 9 a 12 años", "Prisión de 6 a 10 años"],
+      "opciones": [
+        "Multa y suspensión de funciones",
+        "Prisión de 3 a 6 años más multa más inhabilitación de 9 a 12 años",
+        "Prisión de 6 a 10 años"
+      ],
       "correcta": 1,
       "explicacion": "Art. 419 CP: cohecho para acto u omisión constitutivo de delito → prisión 3-6 años + multa del tanto al triplo + inhabilitación 9-12 años."
     },
     {
       "id": "t18-q03",
       "enunciado": "¿Cómo se castiga al particular que ofrece la dádiva en el cohecho activo (art. 424 CP)?",
-      "opciones": ["Con pena inferior en grado a la del funcionario", "Con la misma pena que al funcionario en la modalidad correspondiente", "Solo con multa económica"],
+      "opciones": [
+        "Con pena inferior en grado a la del funcionario",
+        "Con la misma pena que al funcionario en la modalidad correspondiente",
+        "Solo con multa económica"
+      ],
       "correcta": 1,
       "explicacion": "Art. 424 CP: el particular que ofrece, da o promete la dádiva recibe la misma pena que el funcionario en la modalidad de cohecho correspondiente."
     },
     {
       "id": "t18-q04",
       "enunciado": "¿Qué reforma legislativa modificó en profundidad el delito de malversación en 2022?",
-      "opciones": ["LO 10/1995", "LO 14/2022", "LO 1/2015"],
+      "opciones": [
+        "LO 10/1995",
+        "LO 14/2022",
+        "LO 1/2015"
+      ],
       "correcta": 1,
       "explicacion": "La LO 14/2022 reformó los arts. 432-435 CP, distinguiendo malversación propia (apropiación, 2-6a o 4-8a) e impropia (uso temporal, hasta 2a) y endureciendo las penas."
     },
     {
       "id": "t18-q05",
       "enunciado": "¿Cuál es la pena de la malversación propia (art. 432 CP) cuando el valor supera 50.000 €?",
-      "opciones": ["2 a 6 años", "4 a 8 años más inhabilitación absoluta", "6 a 12 años"],
+      "opciones": [
+        "2 a 6 años",
+        "4 a 8 años más inhabilitación absoluta",
+        "6 a 12 años"
+      ],
       "correcta": 1,
       "explicacion": "Art. 432 CP: malversación propia con valor >50.000 € → prisión de 4 a 8 años más inhabilitación absoluta."
     },
     {
       "id": "t18-q06",
       "enunciado": "¿Qué tipifica el art. 445 CP?",
-      "opciones": ["La corrupción entre particulares en contratos privados", "La corrupción en transacciones comerciales internacionales (soborno de funcionarios extranjeros)", "La malversación de fondos de organismos internacionales"],
+      "opciones": [
+        "La corrupción entre particulares en contratos privados",
+        "La corrupción en transacciones comerciales internacionales (soborno de funcionarios extranjeros)",
+        "La malversación de fondos de organismos internacionales"
+      ],
       "correcta": 1,
       "explicacion": "Art. 445 CP: ofrecer o conceder dádivas a agentes públicos extranjeros para que actúen u omitan actos en transacciones internacionales, implementando el Convenio OCDE de 1997."
     },
     {
       "id": "t18-q07",
       "enunciado": "¿Qué delito tipifican los arts. 286 bis a 286 quater CP?",
-      "opciones": ["La corrupción en el sector público estatal", "La corrupción en el sector privado entre empresas y directivos", "El tráfico de influencias entre funcionarios"],
+      "opciones": [
+        "La corrupción en el sector público estatal",
+        "La corrupción en el sector privado entre empresas y directivos",
+        "El tráfico de influencias entre funcionarios"
+      ],
       "correcta": 1,
       "explicacion": "Arts. 286 bis-286 quater CP: corrupción en el sector privado, introducida por LO 5/2010. Directivos o empleados que solicitan ventajas para favorecer en la contratación. Pena: 6m-4a."
     },
     {
       "id": "t18-q08",
       "enunciado": "¿Qué es la Convención de Mérida (2003)?",
-      "opciones": ["Un convenio europeo sobre cohecho de funcionarios nacionales", "La Convención de las Naciones Unidas contra la Corrupción, que obliga a tipificar soborno, malversación y blanqueo", "El protocolo del Convenio OCDE sobre soborno transnacional"],
+      "opciones": [
+        "Un convenio europeo sobre cohecho de funcionarios nacionales",
+        "La Convención de las Naciones Unidas contra la Corrupción, que obliga a tipificar soborno, malversación y blanqueo",
+        "El protocolo del Convenio OCDE sobre soborno transnacional"
+      ],
       "correcta": 1,
       "explicacion": "La Convención de Mérida (UNCAC, 2003) es el instrumento global de la ONU contra la corrupción. Obliga a tipificar soborno, malversación, blanqueo, obstrucción de la justicia y enriquecimiento ilícito."
     },
     {
       "id": "t18-q09",
       "enunciado": "¿Qué organismo supervisa el cumplimiento del Convenio Penal sobre Corrupción del Consejo de Europa?",
-      "opciones": ["OLAF (Oficina Europea Antifraude)", "GRECO (Grupo de Estados contra la Corrupción)", "Interpol División Anticorrupción"],
+      "opciones": [
+        "OLAF (Oficina Europea Antifraude)",
+        "GRECO (Grupo de Estados contra la Corrupción)",
+        "Interpol División Anticorrupción"
+      ],
       "correcta": 1,
       "explicacion": "GRECO es el organismo del Consejo de Europa que supervisa el cumplimiento del Convenio Penal sobre Corrupción (ETS 173, 1999) mediante evaluaciones periódicas por pares."
     },
     {
       "id": "t18-q10",
       "enunciado": "¿Qué define el art. 24.2 CP como funcionario público a efectos penales?",
-      "opciones": ["Solo quien tiene relación laboral indefinida con la Administración", "Todo el que por disposición de ley, elección o nombramiento participe en el ejercicio de funciones públicas", "Exclusivamente los funcionarios de carrera de las Administraciones Públicas"],
+      "opciones": [
+        "Solo quien tiene relación laboral indefinida con la Administración",
+        "Todo el que por disposición de ley, elección o nombramiento participe en el ejercicio de funciones públicas",
+        "Exclusivamente los funcionarios de carrera de las Administraciones Públicas"
+      ],
       "correcta": 1,
       "explicacion": "Art. 24.2 CP: definición amplia que incluye cargos electos, personal de organismos públicos y cualquiera que participe en el ejercicio de funciones públicas por nombramiento o elección."
     },
     {
       "id": "t18-q11",
       "enunciado": "¿Cuál es la pena del tráfico de influencias del funcionario (art. 428 CP)?",
-      "opciones": ["Multa exclusivamente", "Prisión de 1 a 2 años más multa de 6 a 10 meses", "Inhabilitación de 7 a 10 años"],
+      "opciones": [
+        "Multa exclusivamente",
+        "Prisión de 1 a 2 años más multa de 6 a 10 meses",
+        "Inhabilitación de 7 a 10 años"
+      ],
       "correcta": 1,
       "explicacion": "Art. 428 CP: el funcionario que influye valiéndose de su posición para obtener resolución con beneficio económico recibe prisión de 1 a 2 años más multa de 6 a 10 meses."
     },
     {
       "id": "t18-q12",
       "enunciado": "¿Qué pena establece el art. 408 CP para la omisión del deber de perseguir delitos?",
-      "opciones": ["Prisión de 1 a 3 años", "Inhabilitación especial de 6 meses a 2 años", "Multa de 12 a 24 meses"],
+      "opciones": [
+        "Prisión de 1 a 3 años",
+        "Inhabilitación especial de 6 meses a 2 años",
+        "Multa de 12 a 24 meses"
+      ],
       "correcta": 1,
       "explicacion": "Art. 408 CP: la autoridad o funcionario que omita promover la persecución de delitos que conozca en el ejercicio de su cargo incurre en inhabilitación especial de 6 meses a 2 años."
     },
     {
       "id": "t18-q13",
       "enunciado": "¿Qué regula la Ley 2/2023?",
-      "opciones": ["El régimen disciplinario de los funcionarios que denuncien irregularidades", "La protección de los denunciantes de infracciones del Derecho de la Unión (transposición Directiva UE 2019/1937)", "La creación de la Fiscalía Anticorrupción"],
+      "opciones": [
+        "El régimen disciplinario de los funcionarios que denuncien irregularidades",
+        "La protección de los denunciantes de infracciones del Derecho de la Unión (transposición Directiva UE 2019/1937)",
+        "La creación de la Fiscalía Anticorrupción"
+      ],
       "correcta": 1,
       "explicacion": "La Ley 2/2023 transpone la Directiva UE 2019/1937, estableciendo canales de denuncia internos y externos y protección frente a represalias para los denunciantes de infracciones."
     },
     {
       "id": "t18-q14",
       "enunciado": "¿Cuál es la pena del cohecho pasivo impropio (art. 421 CP) cuando el funcionario acepta una dádiva para un acto propio de su cargo?",
-      "opciones": ["Prisión de 1 a 3 años", "Multa de 6 a 10 meses más suspensión de funciones de 1 a 3 años", "Inhabilitación absoluta de 6 a 12 años"],
+      "opciones": [
+        "Prisión de 1 a 3 años",
+        "Multa de 6 a 10 meses más suspensión de funciones de 1 a 3 años",
+        "Inhabilitación absoluta de 6 a 12 años"
+      ],
       "correcta": 1,
       "explicacion": "Art. 421 CP (cohecho impropio o de facilitación): multa de 6 a 10 meses más suspensión de funciones de 1 a 3 años. El acto es propio del cargo y no implica infracción de deberes."
     },
     {
       "id": "t18-q15",
       "enunciado": "¿Qué tipifica el art. 436 CP (fraudes y exacciones ilegales)?",
-      "opciones": ["El cohecho de autoridades locales en contratos menores", "El fraude del funcionario en subastas o contratos públicos en que interviene por razón de su cargo", "La malversación de fondos europeos por funcionarios autonómicos"],
+      "opciones": [
+        "El cohecho de autoridades locales en contratos menores",
+        "El fraude del funcionario en subastas o contratos públicos en que interviene por razón de su cargo",
+        "La malversación de fondos europeos por funcionarios autonómicos"
+      ],
       "correcta": 1,
       "explicacion": "Art. 436 CP: el funcionario que, interviniendo por razón de su cargo en subastas o contratos públicos, defraudare a la Administración. Pena: prisión de 1 a 3 años más inhabilitación especial."
     }

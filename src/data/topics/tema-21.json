@@ -50,158 +50,394 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "n1", "texto": "Protección de Datos", "nivel": 0 },
-      { "id": "n2", "texto": "RGPD UE 2016/679 - aplicable 25/05/2018", "nivel": 1 },
-      { "id": "n3", "texto": "LO 3/2018 LOPDGDD - deroga LO 15/1999", "nivel": 1 },
-      { "id": "n4", "texto": "7 principios art. 5: licitud, finalidad, minimización, exactitud, conservación, integridad, accountability", "nivel": 2 },
-      { "id": "n5", "texto": "6 bases licitud art. 6: consentimiento, contrato, obligación legal, interés vital, interés público, interés legítimo", "nivel": 2 },
-      { "id": "n6", "texto": "Categorías especiales art. 9: datos sensibles - prohibición general con excepciones", "nivel": 2 },
-      { "id": "n7", "texto": "Derechos arts. 15-22: acceso, rectificación, supresión, limitación, portabilidad, oposición, no automatización", "nivel": 2 },
-      { "id": "n8", "texto": "DPO art. 37: obligatorio para AAPP y tratamientos a gran escala - independencia y garantía de indemnidad", "nivel": 2 },
-      { "id": "n9", "texto": "AEPD: autoridad control española - ventanilla única para tratamientos transfronterizos", "nivel": 2 },
-      { "id": "n10", "texto": "Sanciones art. 83: Nivel 1 10M€/2% - Nivel 2 20M€/4%", "nivel": 2 },
-      { "id": "n11", "texto": "Brechas art. 33: notificación AEPD en 72h - art. 34 comunicación al interesado si alto riesgo", "nivel": 2 },
-      { "id": "n12", "texto": "Derechos digitales Título X LO 3/2018: olvido redes, portabilidad, testamento digital, desconexión laboral, menores <14 años", "nivel": 2 }
+      {
+        "id": "n1",
+        "data": {
+          "label": "n1"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "n2"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "n3"
+        },
+        "position": {
+          "x": 162,
+          "y": -252
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "n4"
+        },
+        "position": {
+          "x": 273,
+          "y": -125
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "n5"
+        },
+        "position": {
+          "x": 297,
+          "y": 43
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "n6"
+        },
+        "position": {
+          "x": 227,
+          "y": 196
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "n7"
+        },
+        "position": {
+          "x": 85,
+          "y": 288
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "n8"
+        },
+        "position": {
+          "x": -85,
+          "y": 288
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "n9"
+        },
+        "position": {
+          "x": -227,
+          "y": 196
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "n10"
+        },
+        "position": {
+          "x": -297,
+          "y": 43
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "n11"
+        },
+        "position": {
+          "x": -273,
+          "y": -125
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "n12"
+        },
+        "position": {
+          "x": -162,
+          "y": -252
+        }
+      }
     ],
-    "aristas": [
-      { "desde": "n1", "hasta": "n2" },
-      { "desde": "n1", "hasta": "n3" },
-      { "desde": "n2", "hasta": "n4" },
-      { "desde": "n2", "hasta": "n5" },
-      { "desde": "n2", "hasta": "n6" },
-      { "desde": "n2", "hasta": "n7" },
-      { "desde": "n3", "hasta": "n8" },
-      { "desde": "n3", "hasta": "n9" },
-      { "desde": "n2", "hasta": "n10" },
-      { "desde": "n2", "hasta": "n11" },
-      { "desde": "n3", "hasta": "n12" }
-    ]
+    "aristas": []
   },
   "flashcards": [
-    { "id": "t21-f01", "pregunta": "¿Cuándo entró en aplicación el RGPD?", "respuesta": "El 25 de mayo de 2018. El Reglamento (UE) 2016/679 fue adoptado el 27 de abril de 2016 y entró en aplicación el 25/05/2018, derogando la Directiva 95/46/CE." },
-    { "id": "t21-f02", "pregunta": "¿Qué ley española adapta el RGPD y qué norma anterior deroga?", "respuesta": "La LO 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), que deroga la LO 15/1999 (LOPD)." },
-    { "id": "t21-f03", "pregunta": "¿Cuáles son los 7 principios del tratamiento del art. 5 RGPD?", "respuesta": "1) Licitud, lealtad y transparencia; 2) Limitación de la finalidad; 3) Minimización de datos; 4) Exactitud; 5) Limitación del plazo de conservación; 6) Integridad y confidencialidad; 7) Responsabilidad proactiva (accountability)." },
-    { "id": "t21-f04", "pregunta": "¿Cuántas bases de licitud establece el art. 6 RGPD y cuáles son?", "respuesta": "6 bases: a) Consentimiento; b) Ejecución de contrato; c) Obligación legal; d) Protección de intereses vitales; e) Interés público o ejercicio de poderes públicos; f) Interés legítimo del responsable o terceros." },
-    { "id": "t21-f05", "pregunta": "¿Qué datos son 'categorías especiales' según el art. 9 RGPD?", "respuesta": "Origen étnico o racial, opiniones políticas, convicciones religiosas o filosóficas, afiliación sindical, datos genéticos, biométricos con fines de identificación, salud, vida u orientación sexual. Su tratamiento está prohibido con carácter general salvo excepciones." },
-    { "id": "t21-f06", "pregunta": "¿Qué es el 'derecho al olvido' y en qué artículo del RGPD se regula?", "respuesta": "Derecho de supresión regulado en el art. 17 RGPD: el interesado puede solicitar que se eliminen sus datos cuando ya no sean necesarios para la finalidad, se retire el consentimiento, los datos sean tratados ilícitamente, entre otros supuestos." },
-    { "id": "t21-f07", "pregunta": "¿Qué es el derecho de portabilidad (art. 20 RGPD)?", "respuesta": "Derecho a recibir los datos personales que el interesado haya facilitado en un formato estructurado, de uso común y lectura mecánica, y a transmitirlos a otro responsable del tratamiento sin que el responsable original pueda impedirlo." },
-    { "id": "t21-f08", "pregunta": "¿En qué supuestos es obligatorio designar un DPO según el art. 37 RGPD?", "respuesta": "Es obligatorio para: 1) Autoridades u organismos públicos; 2) Responsables/encargados que realizan a gran escala actividades que requieren seguimiento habitual y sistemático de interesados; 3) Tratamiento a gran escala de categorías especiales (art. 9) o datos penales (art. 10)." },
-    { "id": "t21-f09", "pregunta": "¿Qué es la AEPD y cuál es su función en tratamientos transfronterizos?", "respuesta": "La Agencia Española de Protección de Datos es la autoridad de control en España. En tratamientos transfronterizos opera el mecanismo de 'ventanilla única': la autoridad del Estado donde el responsable tiene su establecimiento principal actúa como autoridad de control principal." },
-    { "id": "t21-f10", "pregunta": "¿Cuáles son las sanciones de Nivel 1 del art. 83.4 RGPD?", "respuesta": "Hasta 10.000.000 € o el 2% del volumen de negocio global anual del ejercicio anterior (el importe que sea mayor), por incumplimiento de obligaciones del responsable/encargado (arts. 8, 11, 25-39, 42-43 RGPD)." },
-    { "id": "t21-f11", "pregunta": "¿Cuáles son las sanciones de Nivel 2 del art. 83.5 RGPD?", "respuesta": "Hasta 20.000.000 € o el 4% del volumen de negocio global anual (el importe mayor), por infracciones de principios básicos (arts. 5, 6, 7, 9), derechos de interesados (arts. 12-22), transferencias internacionales (arts. 44-49) o incumplimiento de resoluciones de la autoridad de control." },
-    { "id": "t21-f12", "pregunta": "¿En qué plazo debe notificarse una brecha de seguridad a la autoridad de control (art. 33 RGPD)?", "respuesta": "En un plazo máximo de 72 horas desde que el responsable tenga constancia de la violación de seguridad, salvo que sea improbable que suponga un riesgo para los derechos y libertades de las personas físicas." },
-    { "id": "t21-f13", "pregunta": "¿Cuándo debe comunicarse la brecha de seguridad al interesado (art. 34 RGPD)?", "respuesta": "Cuando sea probable que la violación de seguridad entrañe un alto riesgo para los derechos y libertades de las personas físicas. En ese caso, la comunicación debe realizarse sin dilación indebida." },
-    { "id": "t21-f14", "pregunta": "¿Qué es la EIPD (Evaluación de Impacto relativa a la Protección de Datos) y cuándo es obligatoria?", "respuesta": "Análisis previo del impacto sobre la protección de datos (art. 35 RGPD). Obligatoria cuando el tratamiento pueda entrañar alto riesgo: perfiles sistemáticos, tratamiento a gran escala de categorías especiales, vigilancia sistemática de zonas de acceso público." },
-    { "id": "t21-f15", "pregunta": "¿Qué garantías requieren las transferencias internacionales de datos (arts. 45-46 RGPD)?", "respuesta": "1) Decisión de adecuación de la Comisión Europea (art. 45); 2) Garantías adecuadas: cláusulas contractuales tipo, BCR/normas corporativas vinculantes (art. 46); 3) Excepciones específicas art. 49 (consentimiento explícito, contrato, interés público vital, etc.)." },
-    { "id": "t21-f16", "pregunta": "¿Qué edad mínima establece la LOPDGDD para que los menores presten consentimiento en redes sociales sin autorización paterna?", "respuesta": "14 años. Los menores de 14 años no pueden prestar consentimiento para el tratamiento de sus datos en redes sociales y servicios de la sociedad de la información sin autorización de padres o tutores (art. 7 LOPDGDD)." },
-    { "id": "t21-f17", "pregunta": "¿En qué Título de la LOPDGDD se regulan los derechos digitales y qué derechos laborales incluye?", "respuesta": "Título X LO 3/2018. Incluye: derecho a la desconexión digital en el trabajo (art. 88), derecho a la intimidad frente a dispositivos digitales en el ámbito laboral (art. 87), uso de sistemas de videovigilancia y geolocalización en el ámbito laboral (arts. 89-90)." },
-    { "id": "t21-f18", "pregunta": "¿Qué es el 'testamento digital' reconocido en la LOPDGDD?", "respuesta": "Derecho reconocido en el Título X LOPDGDD que permite a cualquier persona, en previsión de su fallecimiento, designar a una o varias personas para que accedan a sus contenidos y datos en servicios de Internet y puedan impartir instrucciones sobre su uso, destino o supresión." },
-    { "id": "t21-f19", "pregunta": "¿Qué diferencia al 'responsable' del 'encargado' del tratamiento en el RGPD?", "respuesta": "El responsable determina los fines y medios del tratamiento. El encargado trata datos en nombre y por cuenta del responsable, conforme a sus instrucciones. Su relación debe formalizarse mediante un contrato de encargo de tratamiento (art. 28 RGPD)." },
-    { "id": "t21-f20", "pregunta": "¿Cuál es el plazo general para responder a los derechos de los interesados según la LOPDGDD?", "respuesta": "Un mes desde la recepción de la solicitud, prorrogable hasta dos meses más cuando la complejidad o el número de solicitudes lo justifique, informando al interesado de la prórroga dentro del primer mes." }
+    {
+      "id": "t21-f01",
+      "pregunta": "¿Cuándo entró en aplicación el RGPD?",
+      "respuesta": "El 25 de mayo de 2018. El Reglamento (UE) 2016/679 fue adoptado el 27 de abril de 2016 y entró en aplicación el 25/05/2018, derogando la Directiva 95/46/CE."
+    },
+    {
+      "id": "t21-f02",
+      "pregunta": "¿Qué ley española adapta el RGPD y qué norma anterior deroga?",
+      "respuesta": "La LO 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), que deroga la LO 15/1999 (LOPD)."
+    },
+    {
+      "id": "t21-f03",
+      "pregunta": "¿Cuáles son los 7 principios del tratamiento del art. 5 RGPD?",
+      "respuesta": "1) Licitud, lealtad y transparencia; 2) Limitación de la finalidad; 3) Minimización de datos; 4) Exactitud; 5) Limitación del plazo de conservación; 6) Integridad y confidencialidad; 7) Responsabilidad proactiva (accountability)."
+    },
+    {
+      "id": "t21-f04",
+      "pregunta": "¿Cuántas bases de licitud establece el art. 6 RGPD y cuáles son?",
+      "respuesta": "6 bases: a) Consentimiento; b) Ejecución de contrato; c) Obligación legal; d) Protección de intereses vitales; e) Interés público o ejercicio de poderes públicos; f) Interés legítimo del responsable o terceros."
+    },
+    {
+      "id": "t21-f05",
+      "pregunta": "¿Qué datos son 'categorías especiales' según el art. 9 RGPD?",
+      "respuesta": "Origen étnico o racial, opiniones políticas, convicciones religiosas o filosóficas, afiliación sindical, datos genéticos, biométricos con fines de identificación, salud, vida u orientación sexual. Su tratamiento está prohibido con carácter general salvo excepciones."
+    },
+    {
+      "id": "t21-f06",
+      "pregunta": "¿Qué es el 'derecho al olvido' y en qué artículo del RGPD se regula?",
+      "respuesta": "Derecho de supresión regulado en el art. 17 RGPD: el interesado puede solicitar que se eliminen sus datos cuando ya no sean necesarios para la finalidad, se retire el consentimiento, los datos sean tratados ilícitamente, entre otros supuestos."
+    },
+    {
+      "id": "t21-f07",
+      "pregunta": "¿Qué es el derecho de portabilidad (art. 20 RGPD)?",
+      "respuesta": "Derecho a recibir los datos personales que el interesado haya facilitado en un formato estructurado, de uso común y lectura mecánica, y a transmitirlos a otro responsable del tratamiento sin que el responsable original pueda impedirlo."
+    },
+    {
+      "id": "t21-f08",
+      "pregunta": "¿En qué supuestos es obligatorio designar un DPO según el art. 37 RGPD?",
+      "respuesta": "Es obligatorio para: 1) Autoridades u organismos públicos; 2) Responsables/encargados que realizan a gran escala actividades que requieren seguimiento habitual y sistemático de interesados; 3) Tratamiento a gran escala de categorías especiales (art. 9) o datos penales (art. 10)."
+    },
+    {
+      "id": "t21-f09",
+      "pregunta": "¿Qué es la AEPD y cuál es su función en tratamientos transfronterizos?",
+      "respuesta": "La Agencia Española de Protección de Datos es la autoridad de control en España. En tratamientos transfronterizos opera el mecanismo de 'ventanilla única': la autoridad del Estado donde el responsable tiene su establecimiento principal actúa como autoridad de control principal."
+    },
+    {
+      "id": "t21-f10",
+      "pregunta": "¿Cuáles son las sanciones de Nivel 1 del art. 83.4 RGPD?",
+      "respuesta": "Hasta 10.000.000 € o el 2% del volumen de negocio global anual del ejercicio anterior (el importe que sea mayor), por incumplimiento de obligaciones del responsable/encargado (arts. 8, 11, 25-39, 42-43 RGPD)."
+    },
+    {
+      "id": "t21-f11",
+      "pregunta": "¿Cuáles son las sanciones de Nivel 2 del art. 83.5 RGPD?",
+      "respuesta": "Hasta 20.000.000 € o el 4% del volumen de negocio global anual (el importe mayor), por infracciones de principios básicos (arts. 5, 6, 7, 9), derechos de interesados (arts. 12-22), transferencias internacionales (arts. 44-49) o incumplimiento de resoluciones de la autoridad de control."
+    },
+    {
+      "id": "t21-f12",
+      "pregunta": "¿En qué plazo debe notificarse una brecha de seguridad a la autoridad de control (art. 33 RGPD)?",
+      "respuesta": "En un plazo máximo de 72 horas desde que el responsable tenga constancia de la violación de seguridad, salvo que sea improbable que suponga un riesgo para los derechos y libertades de las personas físicas."
+    },
+    {
+      "id": "t21-f13",
+      "pregunta": "¿Cuándo debe comunicarse la brecha de seguridad al interesado (art. 34 RGPD)?",
+      "respuesta": "Cuando sea probable que la violación de seguridad entrañe un alto riesgo para los derechos y libertades de las personas físicas. En ese caso, la comunicación debe realizarse sin dilación indebida."
+    },
+    {
+      "id": "t21-f14",
+      "pregunta": "¿Qué es la EIPD (Evaluación de Impacto relativa a la Protección de Datos) y cuándo es obligatoria?",
+      "respuesta": "Análisis previo del impacto sobre la protección de datos (art. 35 RGPD). Obligatoria cuando el tratamiento pueda entrañar alto riesgo: perfiles sistemáticos, tratamiento a gran escala de categorías especiales, vigilancia sistemática de zonas de acceso público."
+    },
+    {
+      "id": "t21-f15",
+      "pregunta": "¿Qué garantías requieren las transferencias internacionales de datos (arts. 45-46 RGPD)?",
+      "respuesta": "1) Decisión de adecuación de la Comisión Europea (art. 45); 2) Garantías adecuadas: cláusulas contractuales tipo, BCR/normas corporativas vinculantes (art. 46); 3) Excepciones específicas art. 49 (consentimiento explícito, contrato, interés público vital, etc.)."
+    },
+    {
+      "id": "t21-f16",
+      "pregunta": "¿Qué edad mínima establece la LOPDGDD para que los menores presten consentimiento en redes sociales sin autorización paterna?",
+      "respuesta": "14 años. Los menores de 14 años no pueden prestar consentimiento para el tratamiento de sus datos en redes sociales y servicios de la sociedad de la información sin autorización de padres o tutores (art. 7 LOPDGDD)."
+    },
+    {
+      "id": "t21-f17",
+      "pregunta": "¿En qué Título de la LOPDGDD se regulan los derechos digitales y qué derechos laborales incluye?",
+      "respuesta": "Título X LO 3/2018. Incluye: derecho a la desconexión digital en el trabajo (art. 88), derecho a la intimidad frente a dispositivos digitales en el ámbito laboral (art. 87), uso de sistemas de videovigilancia y geolocalización en el ámbito laboral (arts. 89-90)."
+    },
+    {
+      "id": "t21-f18",
+      "pregunta": "¿Qué es el 'testamento digital' reconocido en la LOPDGDD?",
+      "respuesta": "Derecho reconocido en el Título X LOPDGDD que permite a cualquier persona, en previsión de su fallecimiento, designar a una o varias personas para que accedan a sus contenidos y datos en servicios de Internet y puedan impartir instrucciones sobre su uso, destino o supresión."
+    },
+    {
+      "id": "t21-f19",
+      "pregunta": "¿Qué diferencia al 'responsable' del 'encargado' del tratamiento en el RGPD?",
+      "respuesta": "El responsable determina los fines y medios del tratamiento. El encargado trata datos en nombre y por cuenta del responsable, conforme a sus instrucciones. Su relación debe formalizarse mediante un contrato de encargo de tratamiento (art. 28 RGPD)."
+    },
+    {
+      "id": "t21-f20",
+      "pregunta": "¿Cuál es el plazo general para responder a los derechos de los interesados según la LOPDGDD?",
+      "respuesta": "Un mes desde la recepción de la solicitud, prorrogable hasta dos meses más cuando la complejidad o el número de solicitudes lo justifique, informando al interesado de la prórroga dentro del primer mes."
+    }
   ],
   "preguntas": [
     {
       "id": "t21-q01",
       "enunciado": "¿Cuándo entró en aplicación el Reglamento General de Protección de Datos (RGPD)?",
-      "opciones": ["El 25 de enero de 2012", "El 25 de mayo de 2018", "El 5 de diciembre de 2018"],
+      "opciones": [
+        "El 25 de enero de 2012",
+        "El 25 de mayo de 2018",
+        "El 5 de diciembre de 2018"
+      ],
       "correcta": 1,
       "explicacion": "El RGPD (Reglamento UE 2016/679, adoptado el 27 de abril de 2016) entró en aplicación el 25 de mayo de 2018, derogando la Directiva 95/46/CE."
     },
     {
       "id": "t21-q02",
       "enunciado": "¿Qué ley española adapta el RGPD al ordenamiento interno?",
-      "opciones": ["LO 15/1999, de Protección de Datos de Carácter Personal", "LO 3/2018, de Protección de Datos Personales y garantía de los derechos digitales", "LO 7/2021, de protección de datos en el ámbito penal"],
+      "opciones": [
+        "LO 15/1999, de Protección de Datos de Carácter Personal",
+        "LO 3/2018, de Protección de Datos Personales y garantía de los derechos digitales",
+        "LO 7/2021, de protección de datos en el ámbito penal"
+      ],
       "correcta": 1,
       "explicacion": "La LO 3/2018, de 5 de diciembre (LOPDGDD), adapta el ordenamiento español al RGPD y deroga la anterior LO 15/1999 (LOPD)."
     },
     {
       "id": "t21-q03",
       "enunciado": "Según el art. 5 RGPD, ¿cuántos principios rigen el tratamiento de datos personales?",
-      "opciones": ["5 principios", "6 principios", "7 principios"],
+      "opciones": [
+        "5 principios",
+        "6 principios",
+        "7 principios"
+      ],
       "correcta": 2,
       "explicacion": "El art. 5 RGPD establece 7 principios: licitud/lealtad/transparencia, limitación de la finalidad, minimización, exactitud, limitación del plazo de conservación, integridad y confidencialidad, y responsabilidad proactiva (accountability)."
     },
     {
       "id": "t21-q04",
       "enunciado": "¿Cuántas bases de licitud para el tratamiento de datos establece el art. 6 RGPD?",
-      "opciones": ["4 bases", "5 bases", "6 bases"],
+      "opciones": [
+        "4 bases",
+        "5 bases",
+        "6 bases"
+      ],
       "correcta": 2,
       "explicacion": "El art. 6 RGPD enumera 6 bases de licitud: consentimiento, ejecución de contrato, obligación legal, protección de intereses vitales, interés público/poderes públicos e interés legítimo del responsable o de terceros."
     },
     {
       "id": "t21-q05",
       "enunciado": "¿En qué artículo del RGPD se regula el derecho de supresión (derecho al olvido)?",
-      "opciones": ["Art. 15 RGPD", "Art. 17 RGPD", "Art. 20 RGPD"],
+      "opciones": [
+        "Art. 15 RGPD",
+        "Art. 17 RGPD",
+        "Art. 20 RGPD"
+      ],
       "correcta": 1,
       "explicacion": "El derecho de supresión o 'derecho al olvido' se regula en el art. 17 RGPD. El art. 15 regula el derecho de acceso y el art. 20 el derecho de portabilidad."
     },
     {
       "id": "t21-q06",
       "enunciado": "Según el art. 33 RGPD, ¿en qué plazo máximo debe notificarse una brecha de seguridad a la autoridad de control?",
-      "opciones": ["24 horas", "48 horas", "72 horas"],
+      "opciones": [
+        "24 horas",
+        "48 horas",
+        "72 horas"
+      ],
       "correcta": 2,
       "explicacion": "El art. 33 RGPD establece un plazo máximo de 72 horas desde que el responsable tenga constancia de la violación de seguridad para notificarla a la autoridad de control competente (AEPD en España)."
     },
     {
       "id": "t21-q07",
       "enunciado": "¿Cuál es la sanción máxima de Nivel 2 del art. 83.5 RGPD?",
-      "opciones": ["10.000.000 € o el 2% del volumen de negocio global", "20.000.000 € o el 4% del volumen de negocio global", "50.000.000 € o el 10% del volumen de negocio global"],
+      "opciones": [
+        "10.000.000 € o el 2% del volumen de negocio global",
+        "20.000.000 € o el 4% del volumen de negocio global",
+        "50.000.000 € o el 10% del volumen de negocio global"
+      ],
       "correcta": 1,
       "explicacion": "El art. 83.5 RGPD (Nivel 2) establece multas de hasta 20.000.000 € o el 4% del volumen de negocio global anual del ejercicio anterior (el importe que sea mayor), para infracciones de principios básicos, derechos de interesados y transferencias internacionales."
     },
     {
       "id": "t21-q08",
       "enunciado": "¿Para qué entidades es obligatoria la designación de Delegado de Protección de Datos (DPO) según el art. 37 RGPD?",
-      "opciones": ["Únicamente para empresas con más de 50 trabajadores", "Para autoridades u organismos públicos, y responsables/encargados con tratamientos de seguimiento sistemático o a gran escala de datos especiales", "Solo para empresas que traten datos de más de 1.000 personas"],
+      "opciones": [
+        "Únicamente para empresas con más de 50 trabajadores",
+        "Para autoridades u organismos públicos, y responsables/encargados con tratamientos de seguimiento sistemático o a gran escala de datos especiales",
+        "Solo para empresas que traten datos de más de 1.000 personas"
+      ],
       "correcta": 1,
       "explicacion": "El art. 37 RGPD exige DPO para: autoridades u organismos públicos, responsables/encargados que realizan seguimiento habitual y sistemático a gran escala de interesados, y quienes traten a gran escala categorías especiales de datos o datos penales."
     },
     {
       "id": "t21-q09",
       "enunciado": "¿Qué son las 'categorías especiales de datos' del art. 9 RGPD?",
-      "opciones": ["Datos de menores de edad y datos bancarios", "Datos que revelan origen racial/étnico, opiniones políticas, convicciones religiosas, afiliación sindical, datos genéticos/biométricos, salud, vida u orientación sexual", "Datos de carácter identificativo como nombre, DNI y domicilio"],
+      "opciones": [
+        "Datos de menores de edad y datos bancarios",
+        "Datos que revelan origen racial/étnico, opiniones políticas, convicciones religiosas, afiliación sindical, datos genéticos/biométricos, salud, vida u orientación sexual",
+        "Datos de carácter identificativo como nombre, DNI y domicilio"
+      ],
       "correcta": 1,
       "explicacion": "El art. 9 RGPD define como categorías especiales (datos sensibles) los que revelan origen racial o étnico, opiniones políticas, convicciones religiosas o filosóficas, afiliación sindical, datos genéticos, biométricos con fines de identificación, salud, vida u orientación sexual. Su tratamiento está prohibido con carácter general salvo excepciones."
     },
     {
       "id": "t21-q10",
       "enunciado": "¿Qué derecho permite al interesado recibir sus datos en formato de lectura mecánica y transmitirlos a otro responsable?",
-      "opciones": ["Derecho de acceso (art. 15 RGPD)", "Derecho de portabilidad (art. 20 RGPD)", "Derecho de rectificación (art. 16 RGPD)"],
+      "opciones": [
+        "Derecho de acceso (art. 15 RGPD)",
+        "Derecho de portabilidad (art. 20 RGPD)",
+        "Derecho de rectificación (art. 16 RGPD)"
+      ],
       "correcta": 1,
       "explicacion": "El derecho de portabilidad (art. 20 RGPD) permite al interesado recibir los datos que haya facilitado en un formato estructurado, de uso común y lectura mecánica, y transmitirlos a otro responsable del tratamiento."
     },
     {
       "id": "t21-q11",
       "enunciado": "¿Cuándo es obligatoria la realización de una Evaluación de Impacto (EIPD) según el art. 35 RGPD?",
-      "opciones": ["Siempre que se traten datos de más de 100 personas", "Cuando el tratamiento pueda entrañar alto riesgo: perfiles sistemáticos, tratamiento a gran escala de datos especiales, vigilancia sistemática de zonas públicas", "Solo cuando lo ordene la AEPD mediante resolución"],
+      "opciones": [
+        "Siempre que se traten datos de más de 100 personas",
+        "Cuando el tratamiento pueda entrañar alto riesgo: perfiles sistemáticos, tratamiento a gran escala de datos especiales, vigilancia sistemática de zonas públicas",
+        "Solo cuando lo ordene la AEPD mediante resolución"
+      ],
       "correcta": 1,
       "explicacion": "El art. 35 RGPD establece que la EIPD es obligatoria cuando el tratamiento pueda suponer un alto riesgo para los derechos y libertades: evaluaciones sistemáticas mediante perfiles, tratamiento a gran escala de categorías especiales, y vigilancia sistemática de zonas de acceso público."
     },
     {
       "id": "t21-q12",
       "enunciado": "¿Qué edad mínima establece la LOPDGDD para que los menores presten consentimiento al tratamiento de datos en redes sociales sin autorización paterna?",
-      "opciones": ["12 años", "14 años", "16 años"],
+      "opciones": [
+        "12 años",
+        "14 años",
+        "16 años"
+      ],
       "correcta": 1,
       "explicacion": "El art. 7 LOPDGDD establece 14 años como edad mínima para consentir el tratamiento de datos en redes sociales y servicios de la sociedad de la información. Los menores de 14 años necesitan el consentimiento de sus padres o tutores."
     },
     {
       "id": "t21-q13",
       "enunciado": "¿En qué Título de la LO 3/2018 se regulan los derechos digitales?",
-      "opciones": ["Título VIII", "Título IX", "Título X"],
+      "opciones": [
+        "Título VIII",
+        "Título IX",
+        "Título X"
+      ],
       "correcta": 2,
       "explicacion": "El Título X de la LO 3/2018 (LOPDGDD) regula los derechos digitales, incluyendo derecho al olvido en redes sociales, portabilidad, testamento digital, desconexión digital en el trabajo, intimidad frente a dispositivos digitales, videovigilancia y geolocalización laboral."
     },
     {
       "id": "t21-q14",
       "enunciado": "¿Qué garantía documental exige el art. 28 RGPD para la relación entre responsable y encargado del tratamiento?",
-      "opciones": ["Un acuerdo de confidencialidad notarial", "Un contrato de encargo del tratamiento que recoja objeto, duración, naturaleza, finalidad, tipo de datos y obligaciones del encargado", "Una comunicación previa a la AEPD"],
+      "opciones": [
+        "Un acuerdo de confidencialidad notarial",
+        "Un contrato de encargo del tratamiento que recoja objeto, duración, naturaleza, finalidad, tipo de datos y obligaciones del encargado",
+        "Una comunicación previa a la AEPD"
+      ],
       "correcta": 1,
       "explicacion": "El art. 28 RGPD exige que la relación entre responsable y encargado se formalice mediante un contrato (u otro acto jurídico) que estipule el objeto, la duración, la naturaleza, la finalidad del tratamiento, el tipo de datos personales y las categorías de interesados, así como las obligaciones y derechos del responsable."
     },
     {
       "id": "t21-q15",
       "enunciado": "¿Qué mecanismo aplica la AEPD para los tratamientos transfronterizos de datos?",
-      "opciones": ["Mecanismo de arbitraje internacional", "Mecanismo de ventanilla única: la autoridad del Estado del establecimiento principal actúa como autoridad de control principal", "Remisión automática al Comité Europeo de Protección de Datos"],
+      "opciones": [
+        "Mecanismo de arbitraje internacional",
+        "Mecanismo de ventanilla única: la autoridad del Estado del establecimiento principal actúa como autoridad de control principal",
+        "Remisión automática al Comité Europeo de Protección de Datos"
+      ],
       "correcta": 1,
       "explicacion": "El mecanismo de 'ventanilla única' (one-stop-shop) del RGPD establece que la autoridad de control del Estado miembro donde el responsable tiene su establecimiento principal actúa como autoridad de control principal para los tratamientos transfronterizos, coordinándose con las demás autoridades nacionales."
     }

@@ -42,158 +42,450 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "texto": "Uso de la fuerza policial", "nivel": 0 },
-      { "id": "marco", "texto": "Marco normativo\nLO 2/1986 art.5.2.c)", "nivel": 1 },
-      { "id": "principios", "texto": "3 Principios\nCongruencia/Oportunidad\nProporcionalidad", "nivel": 1 },
-      { "id": "escala", "texto": "Escala de fuerza\n0 → 5 niveles", "nivel": 1 },
-      { "id": "esposas", "texto": "Esposas\nInmovilización", "nivel": 1 },
-      { "id": "porra", "texto": "Bastón / Tonfa\nContacto intermedio", "nivel": 1 },
-      { "id": "spray", "texto": "Spray OC\nGas pimienta", "nivel": 1 },
-      { "id": "taser", "texto": "TASER/CEW\nElectrochoque", "nivel": 1 },
-      { "id": "armas", "texto": "Armas de fuego\nÚltima ratio", "nivel": 1 },
-      { "id": "resp", "texto": "Responsabilidad\nPenal/Discipl/Patrim", "nivel": 1 },
-      { "id": "tortura", "texto": "Tortura art.174 CP\n2-6 años", "nivel": 2 },
-      { "id": "ld", "texto": "Legítima defensa\nart.20.4 CP", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "root"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "marco",
+        "data": {
+          "label": "marco"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "principios",
+        "data": {
+          "label": "principios"
+        },
+        "position": {
+          "x": 193,
+          "y": -230
+        }
+      },
+      {
+        "id": "escala",
+        "data": {
+          "label": "escala"
+        },
+        "position": {
+          "x": 295,
+          "y": -52
+        }
+      },
+      {
+        "id": "esposas",
+        "data": {
+          "label": "esposas"
+        },
+        "position": {
+          "x": 260,
+          "y": 150
+        }
+      },
+      {
+        "id": "porra",
+        "data": {
+          "label": "porra"
+        },
+        "position": {
+          "x": 103,
+          "y": 282
+        }
+      },
+      {
+        "id": "spray",
+        "data": {
+          "label": "spray"
+        },
+        "position": {
+          "x": -103,
+          "y": 282
+        }
+      },
+      {
+        "id": "taser",
+        "data": {
+          "label": "taser"
+        },
+        "position": {
+          "x": -260,
+          "y": 150
+        }
+      },
+      {
+        "id": "armas",
+        "data": {
+          "label": "armas"
+        },
+        "position": {
+          "x": -295,
+          "y": -52
+        }
+      },
+      {
+        "id": "resp",
+        "data": {
+          "label": "resp"
+        },
+        "position": {
+          "x": -193,
+          "y": -230
+        }
+      },
+      {
+        "id": "tortura",
+        "data": {
+          "label": "tortura"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "ld",
+        "data": {
+          "label": "ld"
+        },
+        "position": {
+          "x": 0,
+          "y": 580
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "marco" },
-      { "origen": "root", "destino": "principios" },
-      { "origen": "root", "destino": "escala" },
-      { "origen": "root", "destino": "esposas" },
-      { "origen": "root", "destino": "porra" },
-      { "origen": "root", "destino": "spray" },
-      { "origen": "root", "destino": "taser" },
-      { "origen": "root", "destino": "armas" },
-      { "origen": "root", "destino": "resp" },
-      { "origen": "resp", "destino": "tortura" },
-      { "origen": "resp", "destino": "ld" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "marco"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "principios"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "escala"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "esposas"
+      },
+      {
+        "id": "e5",
+        "source": "root",
+        "target": "porra"
+      },
+      {
+        "id": "e6",
+        "source": "root",
+        "target": "spray"
+      },
+      {
+        "id": "e7",
+        "source": "root",
+        "target": "taser"
+      },
+      {
+        "id": "e8",
+        "source": "root",
+        "target": "armas"
+      },
+      {
+        "id": "e9",
+        "source": "root",
+        "target": "resp"
+      },
+      {
+        "id": "e10",
+        "source": "resp",
+        "target": "tortura"
+      },
+      {
+        "id": "e11",
+        "source": "resp",
+        "target": "ld"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t41-f01", "pregunta": "¿Qué artículo de la LOFCS regula los principios de uso de la fuerza policial?", "respuesta": "El art. 5.2.c) de la LO 2/1986 LOFCS: congruencia, oportunidad y proporcionalidad." },
-    { "id": "t41-f02", "pregunta": "¿En qué consiste el principio de congruencia en el uso de la fuerza?", "respuesta": "El medio empleado debe ser adecuado y apto para conseguir el fin perseguido; debe existir relación lógica entre el medio y el objetivo." },
-    { "id": "t41-f03", "pregunta": "¿En qué consiste el principio de oportunidad en el uso de la fuerza?", "respuesta": "El uso de la fuerza debe ser necesario; solo se emplea cuando no existe otra alternativa menos lesiva para alcanzar el objetivo." },
-    { "id": "t41-f04", "pregunta": "¿En qué consiste el principio de proporcionalidad en el uso de la fuerza?", "respuesta": "El nivel de fuerza empleado debe ser proporcionado a la amenaza o resistencia; prohíbe el uso de fuerza excesiva." },
-    { "id": "t41-f05", "pregunta": "¿Cuáles son los tres requisitos de la legítima defensa según el art. 20.4 CP?", "respuesta": "Agresión ilegítima, necesidad racional del medio empleado para impedirla o repelerla, y falta de provocación suficiente por parte del defensor." },
-    { "id": "t41-f06", "pregunta": "¿Qué delito comete el funcionario que inflige padecimientos graves con fin de obtener información?", "respuesta": "Delito de tortura (art. 174 CP), con pena de 2 a 6 años de prisión e inhabilitación." },
-    { "id": "t41-f07", "pregunta": "¿Qué es el 'continuum de uso de la fuerza'?", "respuesta": "La escala gradual de niveles de fuerza que va desde la presencia policial (nivel 0) hasta las armas de fuego (nivel máximo), pasando por comunicación verbal, fuerza física y medios intermediarios." },
-    { "id": "t41-f08", "pregunta": "¿Cuál es la posición estándar de colocación de las esposas en un detenido?", "respuesta": "Manos a la espalda; nunca deben apretarse excesivamente ni dejar al detenido en posición prono durante tiempo prolongado." },
-    { "id": "t41-f09", "pregunta": "¿Qué es el spray OC y cuál es su efecto?", "respuesta": "Oleorresina de capsaicina (gas pimienta); causa irritación ocular intensa y de vías respiratorias que incapacita temporalmente al agresor." },
-    { "id": "t41-f10", "pregunta": "¿En qué casos están contraindicadas las armas TASER/CEW?", "respuesta": "En embarazadas, menores, personas mayores con enfermedades cardíacas, y situaciones en altura donde una caída puede ser fatal." },
-    { "id": "t41-f11", "pregunta": "¿En qué zonas corporales está prohibido golpear con el bastón de defensa?", "respuesta": "Cabeza, cuello, columna vertebral y genitales, ya que pueden causar lesiones graves o mortales." },
-    { "id": "t41-f12", "pregunta": "¿Cuál es el documento de la ONU de 1979 que regula el uso de la fuerza por funcionarios encargados de hacer cumplir la ley?", "respuesta": "El Código de Conducta para Funcionarios Encargados de hacer cumplir la Ley (Resolución AG 34/169, ONU, 1979)." },
-    { "id": "t41-f13", "pregunta": "¿Qué artículo del CEDH se vulnera cuando la fuerza policial es excesiva hasta constituir trato inhumano o degradante?", "respuesta": "El artículo 3 del Convenio Europeo de Derechos Humanos (CEDH), que prohíbe la tortura y los tratos inhumanos o degradantes." },
-    { "id": "t41-f14", "pregunta": "¿Qué artículo del CP tipifica el trato degradante sin llegar a la tortura?", "respuesta": "El artículo 175 CP, con pena de 1 a 4 años de prisión para la autoridad o funcionario que cometa actos de trato degradante." },
-    { "id": "t41-f15", "pregunta": "¿Qué documento europeo regula la ética policial incluyendo el uso de la fuerza?", "respuesta": "El Código Europeo de Ética Policial (Recomendación R(2001)10 del Consejo de Europa)." },
-    { "id": "t41-f16", "pregunta": "¿Cómo deben dispararse las pelotas de goma o foam en control de disturbios?", "respuesta": "En trayectoria rasante (rebotando en el suelo), nunca directamente al cuerpo o cabeza." },
-    { "id": "t41-f17", "pregunta": "¿Qué artículo CP regula el abuso de autoridad por funcionario?", "respuesta": "Los artículos 412 y siguientes del CP tipifican el abuso de autoridad cometido por funcionarios públicos." },
-    { "id": "t41-f18", "pregunta": "¿Qué responsabilidad tiene el Estado cuando un funcionario policial causa daños por uso excesivo de la fuerza?", "respuesta": "Responsabilidad patrimonial del Estado conforme al art. 32 de la Ley 40/2015 LRJSP (responsabilidad por funcionamiento de los servicios públicos)." },
-    { "id": "t41-f19", "pregunta": "¿Qué Principios de ONU de 1990 regulan el empleo de armas de fuego?", "respuesta": "Los Principios Básicos de Naciones Unidas sobre el Empleo de la Fuerza y de Armas de Fuego por Funcionarios Encargados de hacer cumplir la Ley (ONU, 1990)." },
-    { "id": "t41-f20", "pregunta": "¿Cuándo pueden usarse las armas de fuego según los estándares policiales?", "respuesta": "Solo como medida de última ratio, para defensa propia o de terceros frente a peligro grave e inminente para la vida o integridad física, cuando no sea posible otro medio menos lesivo." }
+    {
+      "id": "t41-f01",
+      "pregunta": "¿Qué artículo de la LOFCS regula los principios de uso de la fuerza policial?",
+      "respuesta": "El art. 5.2.c) de la LO 2/1986 LOFCS: congruencia, oportunidad y proporcionalidad."
+    },
+    {
+      "id": "t41-f02",
+      "pregunta": "¿En qué consiste el principio de congruencia en el uso de la fuerza?",
+      "respuesta": "El medio empleado debe ser adecuado y apto para conseguir el fin perseguido; debe existir relación lógica entre el medio y el objetivo."
+    },
+    {
+      "id": "t41-f03",
+      "pregunta": "¿En qué consiste el principio de oportunidad en el uso de la fuerza?",
+      "respuesta": "El uso de la fuerza debe ser necesario; solo se emplea cuando no existe otra alternativa menos lesiva para alcanzar el objetivo."
+    },
+    {
+      "id": "t41-f04",
+      "pregunta": "¿En qué consiste el principio de proporcionalidad en el uso de la fuerza?",
+      "respuesta": "El nivel de fuerza empleado debe ser proporcionado a la amenaza o resistencia; prohíbe el uso de fuerza excesiva."
+    },
+    {
+      "id": "t41-f05",
+      "pregunta": "¿Cuáles son los tres requisitos de la legítima defensa según el art. 20.4 CP?",
+      "respuesta": "Agresión ilegítima, necesidad racional del medio empleado para impedirla o repelerla, y falta de provocación suficiente por parte del defensor."
+    },
+    {
+      "id": "t41-f06",
+      "pregunta": "¿Qué delito comete el funcionario que inflige padecimientos graves con fin de obtener información?",
+      "respuesta": "Delito de tortura (art. 174 CP), con pena de 2 a 6 años de prisión e inhabilitación."
+    },
+    {
+      "id": "t41-f07",
+      "pregunta": "¿Qué es el 'continuum de uso de la fuerza'?",
+      "respuesta": "La escala gradual de niveles de fuerza que va desde la presencia policial (nivel 0) hasta las armas de fuego (nivel máximo), pasando por comunicación verbal, fuerza física y medios intermediarios."
+    },
+    {
+      "id": "t41-f08",
+      "pregunta": "¿Cuál es la posición estándar de colocación de las esposas en un detenido?",
+      "respuesta": "Manos a la espalda; nunca deben apretarse excesivamente ni dejar al detenido en posición prono durante tiempo prolongado."
+    },
+    {
+      "id": "t41-f09",
+      "pregunta": "¿Qué es el spray OC y cuál es su efecto?",
+      "respuesta": "Oleorresina de capsaicina (gas pimienta); causa irritación ocular intensa y de vías respiratorias que incapacita temporalmente al agresor."
+    },
+    {
+      "id": "t41-f10",
+      "pregunta": "¿En qué casos están contraindicadas las armas TASER/CEW?",
+      "respuesta": "En embarazadas, menores, personas mayores con enfermedades cardíacas, y situaciones en altura donde una caída puede ser fatal."
+    },
+    {
+      "id": "t41-f11",
+      "pregunta": "¿En qué zonas corporales está prohibido golpear con el bastón de defensa?",
+      "respuesta": "Cabeza, cuello, columna vertebral y genitales, ya que pueden causar lesiones graves o mortales."
+    },
+    {
+      "id": "t41-f12",
+      "pregunta": "¿Cuál es el documento de la ONU de 1979 que regula el uso de la fuerza por funcionarios encargados de hacer cumplir la ley?",
+      "respuesta": "El Código de Conducta para Funcionarios Encargados de hacer cumplir la Ley (Resolución AG 34/169, ONU, 1979)."
+    },
+    {
+      "id": "t41-f13",
+      "pregunta": "¿Qué artículo del CEDH se vulnera cuando la fuerza policial es excesiva hasta constituir trato inhumano o degradante?",
+      "respuesta": "El artículo 3 del Convenio Europeo de Derechos Humanos (CEDH), que prohíbe la tortura y los tratos inhumanos o degradantes."
+    },
+    {
+      "id": "t41-f14",
+      "pregunta": "¿Qué artículo del CP tipifica el trato degradante sin llegar a la tortura?",
+      "respuesta": "El artículo 175 CP, con pena de 1 a 4 años de prisión para la autoridad o funcionario que cometa actos de trato degradante."
+    },
+    {
+      "id": "t41-f15",
+      "pregunta": "¿Qué documento europeo regula la ética policial incluyendo el uso de la fuerza?",
+      "respuesta": "El Código Europeo de Ética Policial (Recomendación R(2001)10 del Consejo de Europa)."
+    },
+    {
+      "id": "t41-f16",
+      "pregunta": "¿Cómo deben dispararse las pelotas de goma o foam en control de disturbios?",
+      "respuesta": "En trayectoria rasante (rebotando en el suelo), nunca directamente al cuerpo o cabeza."
+    },
+    {
+      "id": "t41-f17",
+      "pregunta": "¿Qué artículo CP regula el abuso de autoridad por funcionario?",
+      "respuesta": "Los artículos 412 y siguientes del CP tipifican el abuso de autoridad cometido por funcionarios públicos."
+    },
+    {
+      "id": "t41-f18",
+      "pregunta": "¿Qué responsabilidad tiene el Estado cuando un funcionario policial causa daños por uso excesivo de la fuerza?",
+      "respuesta": "Responsabilidad patrimonial del Estado conforme al art. 32 de la Ley 40/2015 LRJSP (responsabilidad por funcionamiento de los servicios públicos)."
+    },
+    {
+      "id": "t41-f19",
+      "pregunta": "¿Qué Principios de ONU de 1990 regulan el empleo de armas de fuego?",
+      "respuesta": "Los Principios Básicos de Naciones Unidas sobre el Empleo de la Fuerza y de Armas de Fuego por Funcionarios Encargados de hacer cumplir la Ley (ONU, 1990)."
+    },
+    {
+      "id": "t41-f20",
+      "pregunta": "¿Cuándo pueden usarse las armas de fuego según los estándares policiales?",
+      "respuesta": "Solo como medida de última ratio, para defensa propia o de terceros frente a peligro grave e inminente para la vida o integridad física, cuando no sea posible otro medio menos lesivo."
+    }
   ],
   "preguntas": [
     {
       "id": "t41-q01",
       "pregunta": "¿Qué artículo de la LO 2/1986 LOFCS establece los principios de uso de la fuerza?",
-      "opciones": ["Art. 5.2.c) LOFCS", "Art. 11 LOFCS", "Art. 38 LOFCS"],
+      "opciones": [
+        "Art. 5.2.c) LOFCS",
+        "Art. 11 LOFCS",
+        "Art. 38 LOFCS"
+      ],
       "correcta": 0,
       "explicacion": "El art. 5.2.c) LOFCS obliga a los miembros de las FCSE a actuar rigiéndose por los principios de congruencia, oportunidad y proporcionalidad en la utilización de los medios a su alcance."
     },
     {
       "id": "t41-q02",
       "pregunta": "¿Cuál de los siguientes principios exige que el medio de fuerza empleado sea NECESARIO y que no exista alternativa menos lesiva?",
-      "opciones": ["Principio de proporcionalidad", "Principio de congruencia", "Principio de oportunidad"],
+      "opciones": [
+        "Principio de proporcionalidad",
+        "Principio de congruencia",
+        "Principio de oportunidad"
+      ],
       "correcta": 2,
       "explicacion": "El principio de oportunidad exige que el uso de la fuerza sea necesario, empleándose solo cuando no haya alternativa menos lesiva para conseguir el objetivo."
     },
     {
       "id": "t41-q03",
       "pregunta": "¿Qué delito comete el funcionario que inflige sufrimientos graves con finalidad coactiva o punitiva según el CP?",
-      "opciones": ["Lesiones graves (art. 149 CP)", "Tortura (art. 174 CP)", "Trato degradante (art. 175 CP)"],
+      "opciones": [
+        "Lesiones graves (art. 149 CP)",
+        "Tortura (art. 174 CP)",
+        "Trato degradante (art. 175 CP)"
+      ],
       "correcta": 1,
       "explicacion": "El art. 174 CP tipifica la tortura como delito cometido por autoridad o funcionario que inflige padecimientos graves para obtener información, castigar o intimidar; pena de 2 a 6 años."
     },
     {
       "id": "t41-q04",
       "pregunta": "¿Cuáles son los tres requisitos de la legítima defensa del art. 20.4 CP?",
-      "opciones": ["Peligro real, respuesta inmediata, aviso previo", "Agresión ilegítima, necesidad racional del medio, falta de provocación suficiente", "Amenaza grave, proporcionalidad, denuncia posterior"],
+      "opciones": [
+        "Peligro real, respuesta inmediata, aviso previo",
+        "Agresión ilegítima, necesidad racional del medio, falta de provocación suficiente",
+        "Amenaza grave, proporcionalidad, denuncia posterior"
+      ],
       "correcta": 1,
       "explicacion": "La legítima defensa requiere: agresión ilegítima, necesidad racional del medio empleado para impedirla o repelerla, y falta de provocación suficiente por parte del defensor."
     },
     {
       "id": "t41-q05",
       "pregunta": "¿En qué posición corporal es peligroso mantener a un detenido esposado durante tiempo prolongado?",
-      "opciones": ["De pie", "Prono (boca abajo)", "Sentado"],
+      "opciones": [
+        "De pie",
+        "Prono (boca abajo)",
+        "Sentado"
+      ],
       "correcta": 1,
       "explicacion": "La posición prono (boca abajo) con las manos esposadas a la espalda puede causar síndrome de muerte súbita en detención por compresión del tórax; está prohibido mantener esta posición prolongada."
     },
     {
       "id": "t41-q06",
       "pregunta": "¿Qué principio rige el uso de las armas de fuego en intervención policial?",
-      "opciones": ["Pueden usarse cuando el detenido se resiste activamente", "Son medida de última ratio, solo ante peligro grave e inminente para la vida", "Pueden usarse para intimidar sin causar daño"],
+      "opciones": [
+        "Pueden usarse cuando el detenido se resiste activamente",
+        "Son medida de última ratio, solo ante peligro grave e inminente para la vida",
+        "Pueden usarse para intimidar sin causar daño"
+      ],
       "correcta": 1,
       "explicacion": "Las armas de fuego son medida de última ratio, reservadas para defender la vida o integridad propia o ajena frente a peligro grave e inminente cuando no haya otra alternativa."
     },
     {
       "id": "t41-q07",
       "pregunta": "¿Qué produce el spray OC (gas pimienta) en la persona afectada?",
-      "opciones": ["Pérdida de consciencia inmediata", "Irritación ocular y de vías respiratorias que incapacita temporalmente", "Parálisis muscular parcial"],
+      "opciones": [
+        "Pérdida de consciencia inmediata",
+        "Irritación ocular y de vías respiratorias que incapacita temporalmente",
+        "Parálisis muscular parcial"
+      ],
       "correcta": 1,
       "explicacion": "El spray OC (oleorresina de capsaicina) provoca irritación ocular intensa y de las vías respiratorias, incapacitando temporalmente al agresor sin causar daños permanentes."
     },
     {
       "id": "t41-q08",
       "pregunta": "¿En qué zonas corporales está PROHIBIDO golpear con el bastón de defensa?",
-      "opciones": ["Piernas y brazos", "Cabeza, cuello, columna y genitales", "Abdomen y costados"],
+      "opciones": [
+        "Piernas y brazos",
+        "Cabeza, cuello, columna y genitales",
+        "Abdomen y costados"
+      ],
       "correcta": 1,
       "explicacion": "Los golpes con bastón en cabeza, cuello, columna vertebral y genitales están prohibidos por poder causar lesiones graves o la muerte."
     },
     {
       "id": "t41-q09",
       "pregunta": "¿Qué artículo del CEDH prohíbe la tortura y los tratos inhumanos o degradantes?",
-      "opciones": ["Artículo 2 CEDH", "Artículo 3 CEDH", "Artículo 5 CEDH"],
+      "opciones": [
+        "Artículo 2 CEDH",
+        "Artículo 3 CEDH",
+        "Artículo 5 CEDH"
+      ],
       "correcta": 1,
       "explicacion": "El artículo 3 del Convenio Europeo de Derechos Humanos prohíbe de forma absoluta la tortura y los tratos o penas inhumanos o degradantes."
     },
     {
       "id": "t41-q10",
       "pregunta": "¿En qué trayectoria deben dispararse las pelotas de goma en control de disturbios?",
-      "opciones": ["Directamente al torso del agresor", "Trayectoria rasante (rebotando en el suelo)", "Siempre por encima de la cabeza"],
+      "opciones": [
+        "Directamente al torso del agresor",
+        "Trayectoria rasante (rebotando en el suelo)",
+        "Siempre por encima de la cabeza"
+      ],
       "correcta": 1,
       "explicacion": "Las pelotas de goma deben dispararse en trayectoria rasante, rebotando en el suelo antes de impactar, para reducir el riesgo de lesiones graves."
     },
     {
       "id": "t41-q11",
       "pregunta": "¿Cuándo están contraindicados los dispositivos TASER/CEW?",
-      "opciones": ["Solo en menores de 14 años", "En embarazadas, menores, cardíacos y en altura", "Únicamente durante lluvias o superficies mojadas"],
+      "opciones": [
+        "Solo en menores de 14 años",
+        "En embarazadas, menores, cardíacos y en altura",
+        "Únicamente durante lluvias o superficies mojadas"
+      ],
       "correcta": 1,
       "explicacion": "El uso de TASER está contraindicado en embarazadas, menores, personas con enfermedades cardíacas y en situaciones en altura donde una caída puede ser mortal."
     },
     {
       "id": "t41-q12",
       "pregunta": "¿Qué Código de la ONU de 1979 regula el uso de la fuerza por funcionarios encargados de hacer cumplir la ley?",
-      "opciones": ["Declaración Universal de Derechos Humanos", "Código de Conducta para Funcionarios Encargados de hacer cumplir la Ley (Res. AG 34/169)", "Convención contra la Tortura"],
+      "opciones": [
+        "Declaración Universal de Derechos Humanos",
+        "Código de Conducta para Funcionarios Encargados de hacer cumplir la Ley (Res. AG 34/169)",
+        "Convención contra la Tortura"
+      ],
       "correcta": 1,
       "explicacion": "El Código de Conducta para Funcionarios Encargados de hacer cumplir la Ley fue adoptado por la Resolución 34/169 de la Asamblea General de la ONU en 1979."
     },
     {
       "id": "t41-q13",
       "pregunta": "¿Qué responsabilidad asume el Estado cuando un agente policial causa daños por uso excesivo de la fuerza?",
-      "opciones": ["Solo responde el agente personalmente", "Responsabilidad patrimonial del Estado (art. 32 Ley 40/2015)", "Solo responde disciplinariamente el agente"],
+      "opciones": [
+        "Solo responde el agente personalmente",
+        "Responsabilidad patrimonial del Estado (art. 32 Ley 40/2015)",
+        "Solo responde disciplinariamente el agente"
+      ],
       "correcta": 1,
       "explicacion": "El Estado asume responsabilidad patrimonial por los daños causados por sus funcionarios en el ejercicio de sus funciones, conforme al art. 32 de la Ley 40/2015 LRJSP."
     },
     {
       "id": "t41-q14",
       "pregunta": "¿Cuál es la pena del delito de trato degradante (art. 175 CP) cometido por funcionario?",
-      "opciones": ["6 meses a 2 años", "1 a 4 años de prisión", "2 a 6 años de prisión"],
+      "opciones": [
+        "6 meses a 2 años",
+        "1 a 4 años de prisión",
+        "2 a 6 años de prisión"
+      ],
       "correcta": 1,
       "explicacion": "El art. 175 CP establece una pena de 1 a 4 años de prisión para la autoridad o funcionario que cometa actos de trato degradante sin la gravedad de la tortura."
     },
     {
       "id": "t41-q15",
       "pregunta": "¿Qué documento europeo de 2001 recoge la ética policial incluyendo el uso proporcional de la fuerza?",
-      "opciones": ["Directiva UE 2016/680", "Código Europeo de Ética Policial (Rec. R(2001)10 del Consejo de Europa)", "Reglamento UE 2018/1862"],
+      "opciones": [
+        "Directiva UE 2016/680",
+        "Código Europeo de Ética Policial (Rec. R(2001)10 del Consejo de Europa)",
+        "Reglamento UE 2018/1862"
+      ],
       "correcta": 1,
       "explicacion": "El Código Europeo de Ética Policial (Recomendación R(2001)10 del Consejo de Europa) establece que la fuerza policial debe ser siempre proporcional al objetivo legítimo perseguido."
     }

@@ -42,54 +42,286 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "texto": "Violencia de Género\nLO 1/2004", "nivel": 0 },
-      { "id": "n1", "texto": "Marco normativo", "nivel": 1 },
-      { "id": "n2", "texto": "Tipos penales CP", "nivel": 1 },
-      { "id": "n3", "texto": "JVM", "nivel": 1 },
-      { "id": "n4", "texto": "Orden de protección", "nivel": 1 },
-      { "id": "n5", "texto": "Sistema VioGén", "nivel": 1 },
-      { "id": "n6", "texto": "Derechos víctimas", "nivel": 1 },
-      { "id": "n1a", "texto": "LOVG 1/2004\nConv. Estambul 2014", "nivel": 2 },
-      { "id": "n2a", "texto": "153.1: maltrato\n173.2: habitual\n468: quebrantamiento", "nivel": 2 },
-      { "id": "n3a", "texto": "Competencia\npenal + civil", "nivel": 2 },
-      { "id": "n4a", "texto": "Ley 27/2003\nPlazo 72h\nSIRAJ", "nivel": 2 },
-      { "id": "n5a", "texto": "5 niveles riesgo\nVPR + VPER\nATENPRO 24h", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "root"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n1",
+        "data": {
+          "label": "n1"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "n2"
+        },
+        "position": {
+          "x": 260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "n3"
+        },
+        "position": {
+          "x": 260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "n4"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "n5"
+        },
+        "position": {
+          "x": -260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "n6"
+        },
+        "position": {
+          "x": -260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n1a",
+        "data": {
+          "label": "n1a"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n2a",
+        "data": {
+          "label": "n2a"
+        },
+        "position": {
+          "x": 552,
+          "y": -179
+        }
+      },
+      {
+        "id": "n3a",
+        "data": {
+          "label": "n3a"
+        },
+        "position": {
+          "x": 341,
+          "y": 469
+        }
+      },
+      {
+        "id": "n4a",
+        "data": {
+          "label": "n4a"
+        },
+        "position": {
+          "x": -341,
+          "y": 469
+        }
+      },
+      {
+        "id": "n5a",
+        "data": {
+          "label": "n5a"
+        },
+        "position": {
+          "x": -552,
+          "y": -179
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "n1" },
-      { "origen": "root", "destino": "n2" },
-      { "origen": "root", "destino": "n3" },
-      { "origen": "root", "destino": "n4" },
-      { "origen": "root", "destino": "n5" },
-      { "origen": "root", "destino": "n6" },
-      { "origen": "n1", "destino": "n1a" },
-      { "origen": "n2", "destino": "n2a" },
-      { "origen": "n3", "destino": "n3a" },
-      { "origen": "n4", "destino": "n4a" },
-      { "origen": "n5", "destino": "n5a" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "n1"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "n2"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "n3"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "n4"
+      },
+      {
+        "id": "e5",
+        "source": "root",
+        "target": "n5"
+      },
+      {
+        "id": "e6",
+        "source": "root",
+        "target": "n6"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n1a"
+      },
+      {
+        "id": "e8",
+        "source": "n2",
+        "target": "n2a"
+      },
+      {
+        "id": "e9",
+        "source": "n3",
+        "target": "n3a"
+      },
+      {
+        "id": "e10",
+        "source": "n4",
+        "target": "n4a"
+      },
+      {
+        "id": "e11",
+        "source": "n5",
+        "target": "n5a"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t31-f01", "pregunta": "¿Qué ley regula las medidas de protección integral contra la violencia de género en España?", "respuesta": "LO 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género (LOVG)." },
-    { "id": "t31-f02", "pregunta": "¿Cuáles son los sujetos de la violencia de género según la LOVG?", "respuesta": "Sujeto activo: hombre. Sujeto pasivo: mujer que sea o haya sido su cónyuge o pareja/expareja con o sin convivencia." },
-    { "id": "t31-f03", "pregunta": "¿Qué es el Convenio de Estambul y cuándo fue ratificado por España?", "respuesta": "Convenio del Consejo de Europa sobre prevención y lucha contra la violencia contra la mujer (2011), ratificado por España en 2014." },
-    { "id": "t31-f04", "pregunta": "¿Qué pena establece el art. 173.2 CP para la violencia habitual en el ámbito de la pareja?", "respuesta": "Pena de 6 meses a 3 años de prisión más prohibición de aproximarse a la víctima." },
-    { "id": "t31-f05", "pregunta": "¿Qué pena establece el art. 153.1 CP para el maltrato esporádico en violencia de género?", "respuesta": "Pena de 6 meses a 1 año de prisión más prohibición de aproximación de 6 meses a 1 año." },
-    { "id": "t31-f06", "pregunta": "¿Qué pena establece el art. 468 CP por quebrantamiento de la orden de protección?", "respuesta": "Pena de 6 meses a 1 año. Si hay menores presentes o víctima especialmente vulnerable: 1 a 3 años." },
-    { "id": "t31-f07", "pregunta": "¿Qué son los Juzgados de Violencia sobre la Mujer (JVM)?", "respuesta": "Órganos judiciales especializados creados por la LOVG con competencia penal y civil simultánea en casos de violencia de género." },
-    { "id": "t31-f08", "pregunta": "¿Qué ley regula la orden de protección de las víctimas?", "respuesta": "Ley 27/2003, de 31 de julio, reguladora de la Orden de Protección de las Víctimas de la Violencia Doméstica." },
-    { "id": "t31-f09", "pregunta": "¿Cuál es el plazo máximo para que el juez se pronuncie sobre una orden de protección?", "respuesta": "72 horas desde la solicitud." },
-    { "id": "t31-f10", "pregunta": "¿Qué es el Sistema VioGén?", "respuesta": "Sistema de Seguimiento Integral en los casos de Violencia de Género del Ministerio del Interior para gestión del riesgo y seguimiento policial de víctimas." },
-    { "id": "t31-f11", "pregunta": "¿Cuántos niveles de riesgo tiene el Sistema VioGén?", "respuesta": "Cinco: no apreciado, bajo, medio, alto y extremo." },
-    { "id": "t31-f12", "pregunta": "¿Qué significan las siglas VPR y VPER en el Sistema VioGén?", "respuesta": "VPR: Valoración Policial del Riesgo (inicial). VPER: Valoración Policial de la Evolución del Riesgo (revisiones periódicas)." },
-    { "id": "t31-f13", "pregunta": "¿Qué es el servicio ATENPRO?", "respuesta": "Servicio de atención y protección a víctimas de VG del Ministerio de Igualdad, gestionado por Cruz Roja, con dispositivo telefónico de emergencia 24 horas." },
-    { "id": "t31-f14", "pregunta": "¿Cuál es el teléfono de información y asesoramiento en materia de violencia de género?", "respuesta": "016 (línea de información y asesoramiento jurídico; no aparece en la factura telefónica)." },
-    { "id": "t31-f15", "pregunta": "¿Qué norma canaria reguló por primera vez la violencia de género a nivel autonómico?", "respuesta": "Ley 16/2003, de 8 de abril, de Prevención y Protección Integral de las Mujeres contra la Violencia de Género, primera ley autonómica española sobre VG." },
-    { "id": "t31-f16", "pregunta": "¿Qué es el SIRAJ en relación con la violencia de género?", "respuesta": "Registro Central para la Protección de las Víctimas de la Violencia Doméstica y de Género, donde se inscriben las órdenes de protección para conocimiento de todas las FCS." },
-    { "id": "t31-f17", "pregunta": "¿Puede la víctima de violencia de género renunciar al proceso penal?", "respuesta": "No puede renunciar a la acción penal (es pública), pero sí puede no declarar contra su agresor al amparo del art. 416 LECrim." },
-    { "id": "t31-f18", "pregunta": "¿Qué medidas de protección puede acordar el JVM al dictar una orden de protección?", "respuesta": "Penales: prohibición de residir, aproximarse o comunicarse con la víctima, privación de armas. Civiles: uso de vivienda, custodia de hijos, alimentos." },
-    { "id": "t31-f19", "pregunta": "¿Qué es el ICI y qué ley lo creó?", "respuesta": "Instituto Canario de Igualdad, organismo autonómico canario que coordina la atención a víctimas de VG, creado por Ley 1/2010, de 26 de febrero." },
-    { "id": "t31-f20", "pregunta": "¿El quebrantamiento consentido por la víctima exime de responsabilidad penal al agresor?", "respuesta": "No. El Tribunal Supremo (STS 26/2008) establece que el consentimiento de la víctima no exime de responsabilidad al agresor por el delito del art. 468 CP." }
+    {
+      "id": "t31-f01",
+      "pregunta": "¿Qué ley regula las medidas de protección integral contra la violencia de género en España?",
+      "respuesta": "LO 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género (LOVG)."
+    },
+    {
+      "id": "t31-f02",
+      "pregunta": "¿Cuáles son los sujetos de la violencia de género según la LOVG?",
+      "respuesta": "Sujeto activo: hombre. Sujeto pasivo: mujer que sea o haya sido su cónyuge o pareja/expareja con o sin convivencia."
+    },
+    {
+      "id": "t31-f03",
+      "pregunta": "¿Qué es el Convenio de Estambul y cuándo fue ratificado por España?",
+      "respuesta": "Convenio del Consejo de Europa sobre prevención y lucha contra la violencia contra la mujer (2011), ratificado por España en 2014."
+    },
+    {
+      "id": "t31-f04",
+      "pregunta": "¿Qué pena establece el art. 173.2 CP para la violencia habitual en el ámbito de la pareja?",
+      "respuesta": "Pena de 6 meses a 3 años de prisión más prohibición de aproximarse a la víctima."
+    },
+    {
+      "id": "t31-f05",
+      "pregunta": "¿Qué pena establece el art. 153.1 CP para el maltrato esporádico en violencia de género?",
+      "respuesta": "Pena de 6 meses a 1 año de prisión más prohibición de aproximación de 6 meses a 1 año."
+    },
+    {
+      "id": "t31-f06",
+      "pregunta": "¿Qué pena establece el art. 468 CP por quebrantamiento de la orden de protección?",
+      "respuesta": "Pena de 6 meses a 1 año. Si hay menores presentes o víctima especialmente vulnerable: 1 a 3 años."
+    },
+    {
+      "id": "t31-f07",
+      "pregunta": "¿Qué son los Juzgados de Violencia sobre la Mujer (JVM)?",
+      "respuesta": "Órganos judiciales especializados creados por la LOVG con competencia penal y civil simultánea en casos de violencia de género."
+    },
+    {
+      "id": "t31-f08",
+      "pregunta": "¿Qué ley regula la orden de protección de las víctimas?",
+      "respuesta": "Ley 27/2003, de 31 de julio, reguladora de la Orden de Protección de las Víctimas de la Violencia Doméstica."
+    },
+    {
+      "id": "t31-f09",
+      "pregunta": "¿Cuál es el plazo máximo para que el juez se pronuncie sobre una orden de protección?",
+      "respuesta": "72 horas desde la solicitud."
+    },
+    {
+      "id": "t31-f10",
+      "pregunta": "¿Qué es el Sistema VioGén?",
+      "respuesta": "Sistema de Seguimiento Integral en los casos de Violencia de Género del Ministerio del Interior para gestión del riesgo y seguimiento policial de víctimas."
+    },
+    {
+      "id": "t31-f11",
+      "pregunta": "¿Cuántos niveles de riesgo tiene el Sistema VioGén?",
+      "respuesta": "Cinco: no apreciado, bajo, medio, alto y extremo."
+    },
+    {
+      "id": "t31-f12",
+      "pregunta": "¿Qué significan las siglas VPR y VPER en el Sistema VioGén?",
+      "respuesta": "VPR: Valoración Policial del Riesgo (inicial). VPER: Valoración Policial de la Evolución del Riesgo (revisiones periódicas)."
+    },
+    {
+      "id": "t31-f13",
+      "pregunta": "¿Qué es el servicio ATENPRO?",
+      "respuesta": "Servicio de atención y protección a víctimas de VG del Ministerio de Igualdad, gestionado por Cruz Roja, con dispositivo telefónico de emergencia 24 horas."
+    },
+    {
+      "id": "t31-f14",
+      "pregunta": "¿Cuál es el teléfono de información y asesoramiento en materia de violencia de género?",
+      "respuesta": "016 (línea de información y asesoramiento jurídico; no aparece en la factura telefónica)."
+    },
+    {
+      "id": "t31-f15",
+      "pregunta": "¿Qué norma canaria reguló por primera vez la violencia de género a nivel autonómico?",
+      "respuesta": "Ley 16/2003, de 8 de abril, de Prevención y Protección Integral de las Mujeres contra la Violencia de Género, primera ley autonómica española sobre VG."
+    },
+    {
+      "id": "t31-f16",
+      "pregunta": "¿Qué es el SIRAJ en relación con la violencia de género?",
+      "respuesta": "Registro Central para la Protección de las Víctimas de la Violencia Doméstica y de Género, donde se inscriben las órdenes de protección para conocimiento de todas las FCS."
+    },
+    {
+      "id": "t31-f17",
+      "pregunta": "¿Puede la víctima de violencia de género renunciar al proceso penal?",
+      "respuesta": "No puede renunciar a la acción penal (es pública), pero sí puede no declarar contra su agresor al amparo del art. 416 LECrim."
+    },
+    {
+      "id": "t31-f18",
+      "pregunta": "¿Qué medidas de protección puede acordar el JVM al dictar una orden de protección?",
+      "respuesta": "Penales: prohibición de residir, aproximarse o comunicarse con la víctima, privación de armas. Civiles: uso de vivienda, custodia de hijos, alimentos."
+    },
+    {
+      "id": "t31-f19",
+      "pregunta": "¿Qué es el ICI y qué ley lo creó?",
+      "respuesta": "Instituto Canario de Igualdad, organismo autonómico canario que coordina la atención a víctimas de VG, creado por Ley 1/2010, de 26 de febrero."
+    },
+    {
+      "id": "t31-f20",
+      "pregunta": "¿El quebrantamiento consentido por la víctima exime de responsabilidad penal al agresor?",
+      "respuesta": "No. El Tribunal Supremo (STS 26/2008) establece que el consentimiento de la víctima no exime de responsabilidad al agresor por el delito del art. 468 CP."
+    }
   ],
   "preguntas": [
     {

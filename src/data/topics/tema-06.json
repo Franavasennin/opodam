@@ -38,56 +38,301 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "label": "Organización Territorial del Estado", "nivel": 0 },
-      { "id": "n1", "label": "Comunidades Autónomas", "nivel": 1 },
-      { "id": "n2", "label": "Estatutos de Autonomía", "nivel": 1 },
-      { "id": "n3", "label": "Financiación autonómica", "nivel": 1 },
-      { "id": "n4", "label": "Instituciones autonómicas", "nivel": 1 },
-      { "id": "n5", "label": "17 CCAA + 2 ciudades autónomas", "nivel": 2 },
-      { "id": "n6", "label": "Arts. 148-149 CE: reparto competencias", "nivel": 2 },
-      { "id": "n7", "label": "Ley Orgánica — norma institucional básica", "nivel": 2 },
-      { "id": "n8", "label": "Régimen común (LOFCA)", "nivel": 2 },
-      { "id": "n9", "label": "Régimen foral (PV y Navarra)", "nivel": 2 },
-      { "id": "n10", "label": "Parlamento / Consejo Gobierno / Presidente", "nivel": 2 },
-      { "id": "n11", "label": "Art. 137 CE: municipios, provincias, CCAA", "nivel": 2 },
-      { "id": "n12", "label": "FCI — solidaridad interterritorial", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "Organización Territorial del Estado"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n1",
+        "data": {
+          "label": "Comunidades Autónomas"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Estatutos de Autonomía"
+        },
+        "position": {
+          "x": 285,
+          "y": -93
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Financiación autonómica"
+        },
+        "position": {
+          "x": 176,
+          "y": 243
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Instituciones autonómicas"
+        },
+        "position": {
+          "x": -176,
+          "y": 243
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "17 CCAA + 2 ciudades autónomas"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Arts. 148-149 CE: reparto competencias"
+        },
+        "position": {
+          "x": 453,
+          "y": -362
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Ley Orgánica — norma institucional básica"
+        },
+        "position": {
+          "x": 565,
+          "y": 129
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Régimen común (LOFCA)"
+        },
+        "position": {
+          "x": 252,
+          "y": 523
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Régimen foral (PV y Navarra)"
+        },
+        "position": {
+          "x": -252,
+          "y": 523
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "Parlamento / Consejo Gobierno / Presidente"
+        },
+        "position": {
+          "x": -565,
+          "y": 129
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Art. 137 CE: municipios, provincias, CCAA"
+        },
+        "position": {
+          "x": -285,
+          "y": -93
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "FCI — solidaridad interterritorial"
+        },
+        "position": {
+          "x": -453,
+          "y": -362
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "n1" },
-      { "origen": "root", "destino": "n2" },
-      { "origen": "root", "destino": "n3" },
-      { "origen": "root", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n2", "destino": "n7" },
-      { "origen": "n3", "destino": "n8" },
-      { "origen": "n3", "destino": "n9" },
-      { "origen": "n4", "destino": "n10" },
-      { "origen": "root", "destino": "n11" },
-      { "origen": "n3", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "n1"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "n2"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "n3"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "n4"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e7",
+        "source": "n2",
+        "target": "n7"
+      },
+      {
+        "id": "e8",
+        "source": "n3",
+        "target": "n8"
+      },
+      {
+        "id": "e9",
+        "source": "n3",
+        "target": "n9"
+      },
+      {
+        "id": "e10",
+        "source": "n4",
+        "target": "n10"
+      },
+      {
+        "id": "e11",
+        "source": "root",
+        "target": "n11"
+      },
+      {
+        "id": "e12",
+        "source": "n3",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t6-f01", "pregunta": "¿En qué entidades territoriales se organiza el Estado según el art. 137 CE?", "respuesta": "En municipios, provincias y Comunidades Autónomas que se constituyan, gozando todos de autonomía para la gestión de sus respectivos intereses." },
-    { "id": "t6-f02", "pregunta": "¿Cuántas Comunidades Autónomas existen en España?", "respuesta": "17 Comunidades Autónomas y 2 Ciudades Autónomas (Ceuta y Melilla)." },
-    { "id": "t6-f03", "pregunta": "¿Qué artículo de la CE enumera las materias que pueden asumir las CCAA?", "respuesta": "El art. 148 CE." },
-    { "id": "t6-f04", "pregunta": "¿Qué artículo de la CE establece las competencias exclusivas del Estado?", "respuesta": "El art. 149 CE." },
-    { "id": "t6-f05", "pregunta": "¿Qué son los Estatutos de Autonomía?", "respuesta": "La norma institucional básica de cada CA (art. 147.1 CE), aprobados como leyes orgánicas por las Cortes Generales." },
-    { "id": "t6-f06", "pregunta": "¿Qué contenido mínimo exige el art. 147.2 CE a los Estatutos de Autonomía?", "respuesta": "La denominación de la CA, la delimitación de su territorio, la denominación y organización de sus instituciones propias, y las competencias asumidas." },
-    { "id": "t6-f07", "pregunta": "¿Cuáles son los dos grandes modelos de financiación autonómica?", "respuesta": "El régimen común (LOFCA, aplicable a 15 CCAA) y el régimen foral (Concierto Económico del País Vasco y Convenio Económico de Navarra)." },
-    { "id": "t6-f08", "pregunta": "¿Qué ley orgánica regula la financiación de las CCAA de régimen común?", "respuesta": "La Ley Orgánica 8/1980, de Financiación de las Comunidades Autónomas (LOFCA)." },
-    { "id": "t6-f09", "pregunta": "¿Para qué sirve el Fondo de Compensación Interterritorial (FCI)?", "respuesta": "Para corregir los desequilibrios económicos interterritoriales y hacer efectivo el principio de solidaridad (art. 158.2 CE)." },
-    { "id": "t6-f10", "pregunta": "¿Qué es el Consejo de Política Fiscal y Financiera (CPFF)?", "respuesta": "El órgano multilateral de coordinación financiera entre el Estado y las Comunidades Autónomas." },
-    { "id": "t6-f11", "pregunta": "¿Qué instituciones básicas de autogobierno tienen las CCAA según el art. 152 CE?", "respuesta": "Una Asamblea Legislativa (Parlamento autonómico), un Consejo de Gobierno, un Presidente de la CA y un Tribunal Superior de Justicia." },
-    { "id": "t6-f12", "pregunta": "¿Cuál es la cláusula residual de competencias del art. 149.3 CE?", "respuesta": "Las materias no atribuidas expresamente al Estado y no asumidas por las CCAA en sus Estatutos corresponden al Estado." },
-    { "id": "t6-f13", "pregunta": "¿Qué disposición constitucional ampara los regímenes forales del País Vasco y Navarra?", "respuesta": "La Disposición Adicional Primera CE, que ampara y respeta los derechos históricos de los territorios forales." },
-    { "id": "t6-f14", "pregunta": "¿Qué principios enuncia el art. 2 CE en materia de organización territorial?", "respuesta": "La unidad de la Nación española, el derecho a la autonomía de las nacionalidades y regiones que la integran, y la solidaridad entre todas ellas." },
-    { "id": "t6-f15", "pregunta": "¿Cuándo puede el Estado aplicar el art. 155 CE?", "respuesta": "Cuando una CA no cumpla las obligaciones constitucionales o actúe de forma que atente gravemente al interés general de España; requiere aprobación del Senado por mayoría absoluta." },
-    { "id": "t6-f16", "pregunta": "¿Cuáles son los recursos económicos de las CCAA según el art. 157 CE?", "respuesta": "Impuestos cedidos por el Estado, recargos sobre impuestos estatales, impuestos y tasas propios, transferencias del FCI y PGE, rendimientos de su patrimonio y operaciones de crédito." },
-    { "id": "t6-f17", "pregunta": "¿Qué rango normativo tienen los Estatutos de Autonomía?", "respuesta": "Ley Orgánica, aprobada por las Cortes Generales con mayoría absoluta del Congreso de los Diputados." },
-    { "id": "t6-f18", "pregunta": "¿Qué es la Ley de Armonización del art. 150.3 CE?", "respuesta": "Una ley estatal que puede armonizar las disposiciones normativas de las CCAA, incluso en materias de su competencia, cuando lo exija el interés general, apreciado por mayoría absoluta de cada Cámara." },
-    { "id": "t6-f19", "pregunta": "¿Quién elige al Presidente de la Comunidad Autónoma?", "respuesta": "La Asamblea Legislativa (Parlamento autonómico) de entre sus miembros; es nombrado por el Rey." },
-    { "id": "t6-f20", "pregunta": "¿Qué organismo controla la actividad económica y presupuestaria de las CCAA?", "respuesta": "El Tribunal de Cuentas, órgano supremo fiscalizador de las cuentas y la gestión económica del Estado y del sector público." }
+    {
+      "id": "t6-f01",
+      "pregunta": "¿En qué entidades territoriales se organiza el Estado según el art. 137 CE?",
+      "respuesta": "En municipios, provincias y Comunidades Autónomas que se constituyan, gozando todos de autonomía para la gestión de sus respectivos intereses."
+    },
+    {
+      "id": "t6-f02",
+      "pregunta": "¿Cuántas Comunidades Autónomas existen en España?",
+      "respuesta": "17 Comunidades Autónomas y 2 Ciudades Autónomas (Ceuta y Melilla)."
+    },
+    {
+      "id": "t6-f03",
+      "pregunta": "¿Qué artículo de la CE enumera las materias que pueden asumir las CCAA?",
+      "respuesta": "El art. 148 CE."
+    },
+    {
+      "id": "t6-f04",
+      "pregunta": "¿Qué artículo de la CE establece las competencias exclusivas del Estado?",
+      "respuesta": "El art. 149 CE."
+    },
+    {
+      "id": "t6-f05",
+      "pregunta": "¿Qué son los Estatutos de Autonomía?",
+      "respuesta": "La norma institucional básica de cada CA (art. 147.1 CE), aprobados como leyes orgánicas por las Cortes Generales."
+    },
+    {
+      "id": "t6-f06",
+      "pregunta": "¿Qué contenido mínimo exige el art. 147.2 CE a los Estatutos de Autonomía?",
+      "respuesta": "La denominación de la CA, la delimitación de su territorio, la denominación y organización de sus instituciones propias, y las competencias asumidas."
+    },
+    {
+      "id": "t6-f07",
+      "pregunta": "¿Cuáles son los dos grandes modelos de financiación autonómica?",
+      "respuesta": "El régimen común (LOFCA, aplicable a 15 CCAA) y el régimen foral (Concierto Económico del País Vasco y Convenio Económico de Navarra)."
+    },
+    {
+      "id": "t6-f08",
+      "pregunta": "¿Qué ley orgánica regula la financiación de las CCAA de régimen común?",
+      "respuesta": "La Ley Orgánica 8/1980, de Financiación de las Comunidades Autónomas (LOFCA)."
+    },
+    {
+      "id": "t6-f09",
+      "pregunta": "¿Para qué sirve el Fondo de Compensación Interterritorial (FCI)?",
+      "respuesta": "Para corregir los desequilibrios económicos interterritoriales y hacer efectivo el principio de solidaridad (art. 158.2 CE)."
+    },
+    {
+      "id": "t6-f10",
+      "pregunta": "¿Qué es el Consejo de Política Fiscal y Financiera (CPFF)?",
+      "respuesta": "El órgano multilateral de coordinación financiera entre el Estado y las Comunidades Autónomas."
+    },
+    {
+      "id": "t6-f11",
+      "pregunta": "¿Qué instituciones básicas de autogobierno tienen las CCAA según el art. 152 CE?",
+      "respuesta": "Una Asamblea Legislativa (Parlamento autonómico), un Consejo de Gobierno, un Presidente de la CA y un Tribunal Superior de Justicia."
+    },
+    {
+      "id": "t6-f12",
+      "pregunta": "¿Cuál es la cláusula residual de competencias del art. 149.3 CE?",
+      "respuesta": "Las materias no atribuidas expresamente al Estado y no asumidas por las CCAA en sus Estatutos corresponden al Estado."
+    },
+    {
+      "id": "t6-f13",
+      "pregunta": "¿Qué disposición constitucional ampara los regímenes forales del País Vasco y Navarra?",
+      "respuesta": "La Disposición Adicional Primera CE, que ampara y respeta los derechos históricos de los territorios forales."
+    },
+    {
+      "id": "t6-f14",
+      "pregunta": "¿Qué principios enuncia el art. 2 CE en materia de organización territorial?",
+      "respuesta": "La unidad de la Nación española, el derecho a la autonomía de las nacionalidades y regiones que la integran, y la solidaridad entre todas ellas."
+    },
+    {
+      "id": "t6-f15",
+      "pregunta": "¿Cuándo puede el Estado aplicar el art. 155 CE?",
+      "respuesta": "Cuando una CA no cumpla las obligaciones constitucionales o actúe de forma que atente gravemente al interés general de España; requiere aprobación del Senado por mayoría absoluta."
+    },
+    {
+      "id": "t6-f16",
+      "pregunta": "¿Cuáles son los recursos económicos de las CCAA según el art. 157 CE?",
+      "respuesta": "Impuestos cedidos por el Estado, recargos sobre impuestos estatales, impuestos y tasas propios, transferencias del FCI y PGE, rendimientos de su patrimonio y operaciones de crédito."
+    },
+    {
+      "id": "t6-f17",
+      "pregunta": "¿Qué rango normativo tienen los Estatutos de Autonomía?",
+      "respuesta": "Ley Orgánica, aprobada por las Cortes Generales con mayoría absoluta del Congreso de los Diputados."
+    },
+    {
+      "id": "t6-f18",
+      "pregunta": "¿Qué es la Ley de Armonización del art. 150.3 CE?",
+      "respuesta": "Una ley estatal que puede armonizar las disposiciones normativas de las CCAA, incluso en materias de su competencia, cuando lo exija el interés general, apreciado por mayoría absoluta de cada Cámara."
+    },
+    {
+      "id": "t6-f19",
+      "pregunta": "¿Quién elige al Presidente de la Comunidad Autónoma?",
+      "respuesta": "La Asamblea Legislativa (Parlamento autonómico) de entre sus miembros; es nombrado por el Rey."
+    },
+    {
+      "id": "t6-f20",
+      "pregunta": "¿Qué organismo controla la actividad económica y presupuestaria de las CCAA?",
+      "respuesta": "El Tribunal de Cuentas, órgano supremo fiscalizador de las cuentas y la gestión económica del Estado y del sector público."
+    }
   ],
   "preguntas": [
     {

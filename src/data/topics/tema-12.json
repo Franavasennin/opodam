@@ -48,32 +48,188 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "n1", "label": "Personal\nAAPP\nTREBEP 2015", "tipo": "central" },
-      { "id": "n2", "label": "Funcionarios\nde Carrera", "tipo": "rama" },
-      { "id": "n3", "label": "Funcionarios\nInterinos", "tipo": "rama" },
-      { "id": "n4", "label": "Personal\nLaboral", "tipo": "rama" },
-      { "id": "n5", "label": "Personal\nEventual", "tipo": "rama" },
-      { "id": "n6", "label": "Derechos\nIndividuales\nart. 14", "tipo": "rama" },
-      { "id": "n7", "label": "Deberes\ny Código\nde Conducta", "tipo": "rama" },
-      { "id": "n8", "label": "Incompatibilidades\nLey 53/1984", "tipo": "rama" },
-      { "id": "n9", "label": "Régimen\nDisciplinario\narts. 93-98", "tipo": "rama" },
-      { "id": "n10", "label": "Adquisición\ny Pérdida\ncondición", "tipo": "hoja" },
-      { "id": "n11", "label": "Retribuciones\nbásicas y\ncomplementarias", "tipo": "hoja" },
-      { "id": "n12", "label": "Prescripción\nfaltas: 3·2·6m\nsanciones: 3·2·1a", "tipo": "hoja" }
+      {
+        "id": "n1",
+        "data": {
+          "label": "Personal\nAAPP\nTREBEP 2015"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Funcionarios\nde Carrera"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Funcionarios\nInterinos"
+        },
+        "position": {
+          "x": 212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Personal\nLaboral"
+        },
+        "position": {
+          "x": 300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "Personal\nEventual"
+        },
+        "position": {
+          "x": 212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Derechos\nIndividuales\nart. 14"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Deberes\ny Código\nde Conducta"
+        },
+        "position": {
+          "x": -212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Incompatibilidades\nLey 53/1984"
+        },
+        "position": {
+          "x": -300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Régimen\nDisciplinario\narts. 93-98"
+        },
+        "position": {
+          "x": -212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "Adquisición\ny Pérdida\ncondición"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Retribuciones\nbásicas y\ncomplementarias"
+        },
+        "position": {
+          "x": 502,
+          "y": 290
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "Prescripción\nfaltas: 3·2·6m\nsanciones: 3·2·1a"
+        },
+        "position": {
+          "x": -502,
+          "y": 290
+        }
+      }
     ],
     "aristas": [
-      { "origen": "n1", "destino": "n2" },
-      { "origen": "n1", "destino": "n3" },
-      { "origen": "n1", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n1", "destino": "n7" },
-      { "origen": "n1", "destino": "n8" },
-      { "origen": "n1", "destino": "n9" },
-      { "origen": "n2", "destino": "n10" },
-      { "origen": "n6", "destino": "n11" },
-      { "origen": "n9", "destino": "n12" },
-      { "origen": "n7", "destino": "n8" }
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n2"
+      },
+      {
+        "id": "e2",
+        "source": "n1",
+        "target": "n3"
+      },
+      {
+        "id": "e3",
+        "source": "n1",
+        "target": "n4"
+      },
+      {
+        "id": "e4",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n7"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n8"
+      },
+      {
+        "id": "e8",
+        "source": "n1",
+        "target": "n9"
+      },
+      {
+        "id": "e9",
+        "source": "n2",
+        "target": "n10"
+      },
+      {
+        "id": "e10",
+        "source": "n6",
+        "target": "n11"
+      },
+      {
+        "id": "e11",
+        "source": "n9",
+        "target": "n12"
+      },
+      {
+        "id": "e12",
+        "source": "n7",
+        "target": "n8"
+      }
     ]
   },
   "flashcards": [

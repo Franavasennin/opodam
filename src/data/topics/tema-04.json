@@ -38,56 +38,301 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "label": "El Gobierno (art. 97-107 CE)", "nivel": 0 },
-      { "id": "n1", "label": "Composición", "nivel": 1 },
-      { "id": "n2", "label": "Presidente", "nivel": 1 },
-      { "id": "n3", "label": "Ministros", "nivel": 1 },
-      { "id": "n4", "label": "Comisiones Delegadas", "nivel": 1 },
-      { "id": "n5", "label": "Consejo de Estado", "nivel": 1 },
-      { "id": "n6", "label": "Investidura (art. 99 CE)", "nivel": 2 },
-      { "id": "n7", "label": "Dirige política interior/exterior", "nivel": 2 },
-      { "id": "n8", "label": "Nombrado por Rey a propuesta del Pte", "nivel": 2 },
-      { "id": "n9", "label": "Coordinación interministerial", "nivel": 2 },
-      { "id": "n10", "label": "Supremo órgano consultivo (art. 107)", "nivel": 2 },
-      { "id": "n11", "label": "Pte + Viceptes + Ministros", "nivel": 2 },
-      { "id": "n12", "label": "Responsabilidad solidaria ante Congreso", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "El Gobierno (art. 97-107 CE)"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n1",
+        "data": {
+          "label": "Composición"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Presidente"
+        },
+        "position": {
+          "x": 260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Ministros"
+        },
+        "position": {
+          "x": 260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Comisiones Delegadas"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "Consejo de Estado"
+        },
+        "position": {
+          "x": -260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Investidura (art. 99 CE)"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Dirige política interior/exterior"
+        },
+        "position": {
+          "x": 502,
+          "y": -290
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Nombrado por Rey a propuesta del Pte"
+        },
+        "position": {
+          "x": 502,
+          "y": 290
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Coordinación interministerial"
+        },
+        "position": {
+          "x": 0,
+          "y": 580
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "Supremo órgano consultivo (art. 107)"
+        },
+        "position": {
+          "x": -502,
+          "y": 290
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Pte + Viceptes + Ministros"
+        },
+        "position": {
+          "x": -502,
+          "y": -290
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "Responsabilidad solidaria ante Congreso"
+        },
+        "position": {
+          "x": -260,
+          "y": -150
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "n1" },
-      { "origen": "root", "destino": "n2" },
-      { "origen": "root", "destino": "n3" },
-      { "origen": "root", "destino": "n4" },
-      { "origen": "root", "destino": "n5" },
-      { "origen": "n2", "destino": "n6" },
-      { "origen": "n2", "destino": "n7" },
-      { "origen": "n3", "destino": "n8" },
-      { "origen": "n4", "destino": "n9" },
-      { "origen": "n5", "destino": "n10" },
-      { "origen": "n1", "destino": "n11" },
-      { "origen": "root", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "n1"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "n2"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "n3"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "n4"
+      },
+      {
+        "id": "e5",
+        "source": "root",
+        "target": "n5"
+      },
+      {
+        "id": "e6",
+        "source": "n2",
+        "target": "n6"
+      },
+      {
+        "id": "e7",
+        "source": "n2",
+        "target": "n7"
+      },
+      {
+        "id": "e8",
+        "source": "n3",
+        "target": "n8"
+      },
+      {
+        "id": "e9",
+        "source": "n4",
+        "target": "n9"
+      },
+      {
+        "id": "e10",
+        "source": "n5",
+        "target": "n10"
+      },
+      {
+        "id": "e11",
+        "source": "n1",
+        "target": "n11"
+      },
+      {
+        "id": "e12",
+        "source": "root",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t4-f01", "pregunta": "¿Qué artículo de la CE regula las funciones del Gobierno?", "respuesta": "El artículo 97 CE: dirige la política interior y exterior, la Administración civil y militar y la defensa del Estado, y ejerce la función ejecutiva y la potestad reglamentaria." },
-    { "id": "t4-f02", "pregunta": "¿Cuál es la composición del Gobierno según el art. 98 CE?", "respuesta": "El Presidente, los Vicepresidentes en su caso, los Ministros y los demás miembros que establezca la ley." },
-    { "id": "t4-f03", "pregunta": "¿Ante qué órgano responde solidariamente el Gobierno de su gestión?", "respuesta": "Ante el Congreso de los Diputados." },
-    { "id": "t4-f04", "pregunta": "¿Qué ley desarrolla orgánicamente la regulación del Gobierno?", "respuesta": "La Ley 50/1997, de 27 de noviembre, del Gobierno." },
-    { "id": "t4-f05", "pregunta": "¿Qué mayoría se requiere en primera votación de investidura?", "respuesta": "Mayoría absoluta del Congreso de los Diputados." },
-    { "id": "t4-f06", "pregunta": "¿Qué ocurre si el candidato no obtiene mayoría absoluta en primera votación de investidura?", "respuesta": "Se espera 48 horas y se celebra segunda votación, en la que basta mayoría simple." },
-    { "id": "t4-f07", "pregunta": "¿Qué sucede si transcurren dos meses sin que ningún candidato obtenga la confianza del Congreso?", "respuesta": "El Rey disuelve ambas Cámaras y convoca nuevas elecciones." },
-    { "id": "t4-f08", "pregunta": "¿Quién nombra y separa a los Ministros?", "respuesta": "El Rey, a propuesta del Presidente del Gobierno (art. 100 CE)." },
-    { "id": "t4-f09", "pregunta": "¿Qué tipo de responsabilidad penal tienen los Ministros?", "respuesta": "Son aforados: responden penalmente ante la Sala Segunda del Tribunal Supremo." },
-    { "id": "t4-f10", "pregunta": "¿Qué son las Comisiones Delegadas del Gobierno?", "respuesta": "Órganos colegiados de composición restringida que facilitan la coordinación de asuntos que afectan a varios Ministerios; se crean por Real Decreto a propuesta del Presidente." },
-    { "id": "t4-f11", "pregunta": "¿Cuál es la principal función de la Comisión General de Secretarios de Estado y Subsecretarios?", "respuesta": "Actuar como órgano preparatorio de las sesiones del Consejo de Ministros, examinando los asuntos que vayan a someterse a su aprobación." },
-    { "id": "t4-f12", "pregunta": "¿Qué artículo de la CE define el Consejo de Estado?", "respuesta": "El artículo 107 CE: «El Consejo de Estado es el supremo órgano consultivo del Gobierno»." },
-    { "id": "t4-f13", "pregunta": "¿Son vinculantes los dictámenes del Consejo de Estado?", "respuesta": "Con carácter general no son vinculantes, salvo en los casos en que la ley expresamente así lo disponga." },
-    { "id": "t4-f14", "pregunta": "¿Cuántos tipos de Consejeros de Estado existen?", "respuesta": "Tres: Consejeros natos, Consejeros permanentes y Consejeros electivos." },
-    { "id": "t4-f15", "pregunta": "¿Qué ley regula el Consejo de Estado?", "respuesta": "La Ley Orgánica 3/1980, del Consejo de Estado." },
-    { "id": "t4-f16", "pregunta": "¿Puede el Presidente del Gobierno disolver las Cortes Generales?", "respuesta": "Sí, el Presidente puede proponer al Rey la disolución del Congreso, del Senado o de las Cortes Generales (art. 115 CE)." },
-    { "id": "t4-f17", "pregunta": "¿Pueden los Ministros ejercer actividades profesionales privadas?", "respuesta": "No. El art. 98.3 CE establece una incompatibilidad absoluta: no pueden ejercer otras funciones públicas no derivadas del cargo ni actividad profesional o mercantil alguna." },
-    { "id": "t4-f18", "pregunta": "¿Cómo se formalizan las decisiones del Consejo de Ministros con carácter normativo?", "respuesta": "Mediante Reales Decretos publicados en el BOE." },
-    { "id": "t4-f19", "pregunta": "¿Qué son los Ministros sin cartera?", "respuesta": "Ministros que no dirigen un departamento ministerial pero ejercen las funciones gubernativas que les encomienda el Presidente del Gobierno." },
-    { "id": "t4-f20", "pregunta": "¿Qué ocurre con el Gobierno tras la celebración de elecciones generales?", "respuesta": "Cesa automáticamente y queda en funciones hasta la toma de posesión del nuevo Gobierno, con las limitaciones establecidas en la Ley 50/1997." }
+    {
+      "id": "t4-f01",
+      "pregunta": "¿Qué artículo de la CE regula las funciones del Gobierno?",
+      "respuesta": "El artículo 97 CE: dirige la política interior y exterior, la Administración civil y militar y la defensa del Estado, y ejerce la función ejecutiva y la potestad reglamentaria."
+    },
+    {
+      "id": "t4-f02",
+      "pregunta": "¿Cuál es la composición del Gobierno según el art. 98 CE?",
+      "respuesta": "El Presidente, los Vicepresidentes en su caso, los Ministros y los demás miembros que establezca la ley."
+    },
+    {
+      "id": "t4-f03",
+      "pregunta": "¿Ante qué órgano responde solidariamente el Gobierno de su gestión?",
+      "respuesta": "Ante el Congreso de los Diputados."
+    },
+    {
+      "id": "t4-f04",
+      "pregunta": "¿Qué ley desarrolla orgánicamente la regulación del Gobierno?",
+      "respuesta": "La Ley 50/1997, de 27 de noviembre, del Gobierno."
+    },
+    {
+      "id": "t4-f05",
+      "pregunta": "¿Qué mayoría se requiere en primera votación de investidura?",
+      "respuesta": "Mayoría absoluta del Congreso de los Diputados."
+    },
+    {
+      "id": "t4-f06",
+      "pregunta": "¿Qué ocurre si el candidato no obtiene mayoría absoluta en primera votación de investidura?",
+      "respuesta": "Se espera 48 horas y se celebra segunda votación, en la que basta mayoría simple."
+    },
+    {
+      "id": "t4-f07",
+      "pregunta": "¿Qué sucede si transcurren dos meses sin que ningún candidato obtenga la confianza del Congreso?",
+      "respuesta": "El Rey disuelve ambas Cámaras y convoca nuevas elecciones."
+    },
+    {
+      "id": "t4-f08",
+      "pregunta": "¿Quién nombra y separa a los Ministros?",
+      "respuesta": "El Rey, a propuesta del Presidente del Gobierno (art. 100 CE)."
+    },
+    {
+      "id": "t4-f09",
+      "pregunta": "¿Qué tipo de responsabilidad penal tienen los Ministros?",
+      "respuesta": "Son aforados: responden penalmente ante la Sala Segunda del Tribunal Supremo."
+    },
+    {
+      "id": "t4-f10",
+      "pregunta": "¿Qué son las Comisiones Delegadas del Gobierno?",
+      "respuesta": "Órganos colegiados de composición restringida que facilitan la coordinación de asuntos que afectan a varios Ministerios; se crean por Real Decreto a propuesta del Presidente."
+    },
+    {
+      "id": "t4-f11",
+      "pregunta": "¿Cuál es la principal función de la Comisión General de Secretarios de Estado y Subsecretarios?",
+      "respuesta": "Actuar como órgano preparatorio de las sesiones del Consejo de Ministros, examinando los asuntos que vayan a someterse a su aprobación."
+    },
+    {
+      "id": "t4-f12",
+      "pregunta": "¿Qué artículo de la CE define el Consejo de Estado?",
+      "respuesta": "El artículo 107 CE: «El Consejo de Estado es el supremo órgano consultivo del Gobierno»."
+    },
+    {
+      "id": "t4-f13",
+      "pregunta": "¿Son vinculantes los dictámenes del Consejo de Estado?",
+      "respuesta": "Con carácter general no son vinculantes, salvo en los casos en que la ley expresamente así lo disponga."
+    },
+    {
+      "id": "t4-f14",
+      "pregunta": "¿Cuántos tipos de Consejeros de Estado existen?",
+      "respuesta": "Tres: Consejeros natos, Consejeros permanentes y Consejeros electivos."
+    },
+    {
+      "id": "t4-f15",
+      "pregunta": "¿Qué ley regula el Consejo de Estado?",
+      "respuesta": "La Ley Orgánica 3/1980, del Consejo de Estado."
+    },
+    {
+      "id": "t4-f16",
+      "pregunta": "¿Puede el Presidente del Gobierno disolver las Cortes Generales?",
+      "respuesta": "Sí, el Presidente puede proponer al Rey la disolución del Congreso, del Senado o de las Cortes Generales (art. 115 CE)."
+    },
+    {
+      "id": "t4-f17",
+      "pregunta": "¿Pueden los Ministros ejercer actividades profesionales privadas?",
+      "respuesta": "No. El art. 98.3 CE establece una incompatibilidad absoluta: no pueden ejercer otras funciones públicas no derivadas del cargo ni actividad profesional o mercantil alguna."
+    },
+    {
+      "id": "t4-f18",
+      "pregunta": "¿Cómo se formalizan las decisiones del Consejo de Ministros con carácter normativo?",
+      "respuesta": "Mediante Reales Decretos publicados en el BOE."
+    },
+    {
+      "id": "t4-f19",
+      "pregunta": "¿Qué son los Ministros sin cartera?",
+      "respuesta": "Ministros que no dirigen un departamento ministerial pero ejercen las funciones gubernativas que les encomienda el Presidente del Gobierno."
+    },
+    {
+      "id": "t4-f20",
+      "pregunta": "¿Qué ocurre con el Gobierno tras la celebración de elecciones generales?",
+      "respuesta": "Cesa automáticamente y queda en funciones hasta la toma de posesión del nuevo Gobierno, con las limitaciones establecidas en la Ley 50/1997."
+    }
   ],
   "preguntas": [
     {

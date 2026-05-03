@@ -42,158 +42,450 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "texto": "LPAC Ley 39/2015", "nivel": 0 },
-      { "id": "inicio", "texto": "Iniciación\nOficio / instancia", "nivel": 1 },
-      { "id": "instruccion", "texto": "Instrucción\nAlegaciones / Prueba", "nivel": 1 },
-      { "id": "terminacion", "texto": "Terminación\nResolución / Caducidad", "nivel": 1 },
-      { "id": "silencio", "texto": "Silencio 3 meses\n+ / -", "nivel": 1 },
-      { "id": "recursos", "texto": "Recursos\nAlzada / Reposición", "nivel": 1 },
-      { "id": "revision", "texto": "Revisión de oficio\nNulidad / Lesividad", "nivel": 1 },
-      { "id": "alzada", "texto": "Alzada 1 mes\nÓrgano superior", "nivel": 2 },
-      { "id": "reposicion", "texto": "Reposición 1 mes\nMismo órgano", "nivel": 2 },
-      { "id": "nulidad", "texto": "Nulidad pleno derecho\nSin plazo", "nivel": 2 },
-      { "id": "lesividad", "texto": "Lesividad 4 años\n+ contencioso", "nivel": 2 },
-      { "id": "electronica", "texto": "Admin electrónica\nObligatoria PJ", "nivel": 1 }
+      {
+        "id": "root",
+        "data": {
+          "label": "root"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "inicio",
+        "data": {
+          "label": "inicio"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "instruccion",
+        "data": {
+          "label": "instruccion"
+        },
+        "position": {
+          "x": 235,
+          "y": -187
+        }
+      },
+      {
+        "id": "terminacion",
+        "data": {
+          "label": "terminacion"
+        },
+        "position": {
+          "x": 292,
+          "y": 67
+        }
+      },
+      {
+        "id": "silencio",
+        "data": {
+          "label": "silencio"
+        },
+        "position": {
+          "x": 130,
+          "y": 270
+        }
+      },
+      {
+        "id": "recursos",
+        "data": {
+          "label": "recursos"
+        },
+        "position": {
+          "x": -130,
+          "y": 270
+        }
+      },
+      {
+        "id": "revision",
+        "data": {
+          "label": "revision"
+        },
+        "position": {
+          "x": -292,
+          "y": 67
+        }
+      },
+      {
+        "id": "alzada",
+        "data": {
+          "label": "alzada"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "reposicion",
+        "data": {
+          "label": "reposicion"
+        },
+        "position": {
+          "x": 580,
+          "y": 0
+        }
+      },
+      {
+        "id": "nulidad",
+        "data": {
+          "label": "nulidad"
+        },
+        "position": {
+          "x": 0,
+          "y": 580
+        }
+      },
+      {
+        "id": "lesividad",
+        "data": {
+          "label": "lesividad"
+        },
+        "position": {
+          "x": -580,
+          "y": 0
+        }
+      },
+      {
+        "id": "electronica",
+        "data": {
+          "label": "electronica"
+        },
+        "position": {
+          "x": -235,
+          "y": -187
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "inicio" },
-      { "origen": "root", "destino": "instruccion" },
-      { "origen": "root", "destino": "terminacion" },
-      { "origen": "root", "destino": "silencio" },
-      { "origen": "root", "destino": "recursos" },
-      { "origen": "root", "destino": "revision" },
-      { "origen": "root", "destino": "electronica" },
-      { "origen": "recursos", "destino": "alzada" },
-      { "origen": "recursos", "destino": "reposicion" },
-      { "origen": "revision", "destino": "nulidad" },
-      { "origen": "revision", "destino": "lesividad" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "inicio"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "instruccion"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "terminacion"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "silencio"
+      },
+      {
+        "id": "e5",
+        "source": "root",
+        "target": "recursos"
+      },
+      {
+        "id": "e6",
+        "source": "root",
+        "target": "revision"
+      },
+      {
+        "id": "e7",
+        "source": "root",
+        "target": "electronica"
+      },
+      {
+        "id": "e8",
+        "source": "recursos",
+        "target": "alzada"
+      },
+      {
+        "id": "e9",
+        "source": "recursos",
+        "target": "reposicion"
+      },
+      {
+        "id": "e10",
+        "source": "revision",
+        "target": "nulidad"
+      },
+      {
+        "id": "e11",
+        "source": "revision",
+        "target": "lesividad"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t39-f01", "pregunta": "¿Qué ley regula el procedimiento administrativo común en España actualmente?", "respuesta": "La Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (LPAC)." },
-    { "id": "t39-f02", "pregunta": "¿A qué Administraciones se aplica la LPAC?", "respuesta": "A la Administración General del Estado, Comunidades Autónomas, Entidades Locales y entidades de derecho público vinculadas a ellas." },
-    { "id": "t39-f03", "pregunta": "¿Cuáles son las tres fases del procedimiento administrativo?", "respuesta": "Iniciación, instrucción y terminación." },
-    { "id": "t39-f04", "pregunta": "¿Cuál es el plazo máximo de resolución cuando no lo fija la norma específica?", "respuesta": "3 meses (art. 21 LPAC), aunque el máximo absoluto es 6 meses cuando la norma lo establece." },
-    { "id": "t39-f05", "pregunta": "¿Cuál es la regla general del silencio administrativo en procedimientos iniciados a instancia de parte?", "respuesta": "El silencio positivo (estimación por silencio), salvo las excepciones legalmente previstas." },
-    { "id": "t39-f06", "pregunta": "¿En qué supuestos opera el silencio administrativo negativo?", "respuesta": "Cuando una norma lo establezca; en procedimientos que afecten al dominio o servicio público; en recursos administrativos; en procedimientos de impugnación de actos." },
-    { "id": "t39-f07", "pregunta": "¿Cuál es el plazo para interponer el recurso de alzada contra un acto expreso?", "respuesta": "1 mes desde la notificación del acto." },
-    { "id": "t39-f08", "pregunta": "¿Quién resuelve el recurso de alzada?", "respuesta": "El órgano superior jerárquico al que dictó el acto recurrido." },
-    { "id": "t39-f09", "pregunta": "¿Cuánto tiempo tiene la Administración para resolver el recurso de reposición?", "respuesta": "1 mes; transcurrido sin resolución expresa, se entiende desestimado (silencio negativo)." },
-    { "id": "t39-f10", "pregunta": "¿Qué recurso es potestativo antes de acudir al contencioso-administrativo?", "respuesta": "El recurso de reposición (arts. 123-126 LPAC), que es potestativo y previo al contencioso." },
-    { "id": "t39-f11", "pregunta": "¿En qué plazo puede revisarse de oficio un acto nulo de pleno derecho?", "respuesta": "En cualquier momento, sin plazo (art. 106 LPAC), requiriendo dictamen del Consejo de Estado u órgano equivalente." },
-    { "id": "t39-f12", "pregunta": "¿Qué es la declaración de lesividad?", "respuesta": "El mecanismo para anular actos anulables favorables: la Administración los declara lesivos en 4 años y luego interpone recurso contencioso-administrativo." },
-    { "id": "t39-f13", "pregunta": "¿Cuál es el plazo del trámite de audiencia al interesado?", "respuesta": "Entre 10 y 15 días antes de redactar la propuesta de resolución." },
-    { "id": "t39-f14", "pregunta": "¿En qué plazo deben emitirse los informes preceptivos en el procedimiento?", "respuesta": "10 días, ampliable a 15 más en casos de especial complejidad." },
-    { "id": "t39-f15", "pregunta": "¿Cuáles son las causas de nulidad de pleno derecho de los actos administrativos?", "respuesta": "Lesión de derechos fundamentales, incompetencia manifiesta, contenido imposible o constitutivo de infracción penal, prescindencia total de procedimiento, adquisición de facultades sin requisitos esenciales." },
-    { "id": "t39-f16", "pregunta": "¿Cuál es el plazo de información pública en el procedimiento administrativo?", "respuesta": "Mínimo 20 días." },
-    { "id": "t39-f17", "pregunta": "¿Cuándo caduca el procedimiento administrativo por inactividad del administrado?", "respuesta": "Cuando el interesado deja el procedimiento paralizado durante 3 meses y la Administración le advierte que transcurridos otros 3 meses se producirá la caducidad." },
-    { "id": "t39-f18", "pregunta": "¿Qué es el recurso extraordinario de revisión y cuándo procede?", "respuesta": "Recurso contra actos firmes cuando concurran causas tasadas: error de hecho, aparición de documentos o documentos falsos, resolución judicial penal. Plazo: 4 años (error de hecho) o 3 meses (resto)." },
-    { "id": "t39-f19", "pregunta": "¿Qué régimen de relación electrónica con la Administración tienen las personas jurídicas?", "respuesta": "Están obligadas a relacionarse electrónicamente con la Administración (art. 14 LPAC)." },
-    { "id": "t39-f20", "pregunta": "¿Cuál es el plazo para notificar una resolución desde que se dicta?", "respuesta": "10 días desde que se dicta la resolución (art. 40 LPAC)." }
+    {
+      "id": "t39-f01",
+      "pregunta": "¿Qué ley regula el procedimiento administrativo común en España actualmente?",
+      "respuesta": "La Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (LPAC)."
+    },
+    {
+      "id": "t39-f02",
+      "pregunta": "¿A qué Administraciones se aplica la LPAC?",
+      "respuesta": "A la Administración General del Estado, Comunidades Autónomas, Entidades Locales y entidades de derecho público vinculadas a ellas."
+    },
+    {
+      "id": "t39-f03",
+      "pregunta": "¿Cuáles son las tres fases del procedimiento administrativo?",
+      "respuesta": "Iniciación, instrucción y terminación."
+    },
+    {
+      "id": "t39-f04",
+      "pregunta": "¿Cuál es el plazo máximo de resolución cuando no lo fija la norma específica?",
+      "respuesta": "3 meses (art. 21 LPAC), aunque el máximo absoluto es 6 meses cuando la norma lo establece."
+    },
+    {
+      "id": "t39-f05",
+      "pregunta": "¿Cuál es la regla general del silencio administrativo en procedimientos iniciados a instancia de parte?",
+      "respuesta": "El silencio positivo (estimación por silencio), salvo las excepciones legalmente previstas."
+    },
+    {
+      "id": "t39-f06",
+      "pregunta": "¿En qué supuestos opera el silencio administrativo negativo?",
+      "respuesta": "Cuando una norma lo establezca; en procedimientos que afecten al dominio o servicio público; en recursos administrativos; en procedimientos de impugnación de actos."
+    },
+    {
+      "id": "t39-f07",
+      "pregunta": "¿Cuál es el plazo para interponer el recurso de alzada contra un acto expreso?",
+      "respuesta": "1 mes desde la notificación del acto."
+    },
+    {
+      "id": "t39-f08",
+      "pregunta": "¿Quién resuelve el recurso de alzada?",
+      "respuesta": "El órgano superior jerárquico al que dictó el acto recurrido."
+    },
+    {
+      "id": "t39-f09",
+      "pregunta": "¿Cuánto tiempo tiene la Administración para resolver el recurso de reposición?",
+      "respuesta": "1 mes; transcurrido sin resolución expresa, se entiende desestimado (silencio negativo)."
+    },
+    {
+      "id": "t39-f10",
+      "pregunta": "¿Qué recurso es potestativo antes de acudir al contencioso-administrativo?",
+      "respuesta": "El recurso de reposición (arts. 123-126 LPAC), que es potestativo y previo al contencioso."
+    },
+    {
+      "id": "t39-f11",
+      "pregunta": "¿En qué plazo puede revisarse de oficio un acto nulo de pleno derecho?",
+      "respuesta": "En cualquier momento, sin plazo (art. 106 LPAC), requiriendo dictamen del Consejo de Estado u órgano equivalente."
+    },
+    {
+      "id": "t39-f12",
+      "pregunta": "¿Qué es la declaración de lesividad?",
+      "respuesta": "El mecanismo para anular actos anulables favorables: la Administración los declara lesivos en 4 años y luego interpone recurso contencioso-administrativo."
+    },
+    {
+      "id": "t39-f13",
+      "pregunta": "¿Cuál es el plazo del trámite de audiencia al interesado?",
+      "respuesta": "Entre 10 y 15 días antes de redactar la propuesta de resolución."
+    },
+    {
+      "id": "t39-f14",
+      "pregunta": "¿En qué plazo deben emitirse los informes preceptivos en el procedimiento?",
+      "respuesta": "10 días, ampliable a 15 más en casos de especial complejidad."
+    },
+    {
+      "id": "t39-f15",
+      "pregunta": "¿Cuáles son las causas de nulidad de pleno derecho de los actos administrativos?",
+      "respuesta": "Lesión de derechos fundamentales, incompetencia manifiesta, contenido imposible o constitutivo de infracción penal, prescindencia total de procedimiento, adquisición de facultades sin requisitos esenciales."
+    },
+    {
+      "id": "t39-f16",
+      "pregunta": "¿Cuál es el plazo de información pública en el procedimiento administrativo?",
+      "respuesta": "Mínimo 20 días."
+    },
+    {
+      "id": "t39-f17",
+      "pregunta": "¿Cuándo caduca el procedimiento administrativo por inactividad del administrado?",
+      "respuesta": "Cuando el interesado deja el procedimiento paralizado durante 3 meses y la Administración le advierte que transcurridos otros 3 meses se producirá la caducidad."
+    },
+    {
+      "id": "t39-f18",
+      "pregunta": "¿Qué es el recurso extraordinario de revisión y cuándo procede?",
+      "respuesta": "Recurso contra actos firmes cuando concurran causas tasadas: error de hecho, aparición de documentos o documentos falsos, resolución judicial penal. Plazo: 4 años (error de hecho) o 3 meses (resto)."
+    },
+    {
+      "id": "t39-f19",
+      "pregunta": "¿Qué régimen de relación electrónica con la Administración tienen las personas jurídicas?",
+      "respuesta": "Están obligadas a relacionarse electrónicamente con la Administración (art. 14 LPAC)."
+    },
+    {
+      "id": "t39-f20",
+      "pregunta": "¿Cuál es el plazo para notificar una resolución desde que se dicta?",
+      "respuesta": "10 días desde que se dicta la resolución (art. 40 LPAC)."
+    }
   ],
   "preguntas": [
     {
       "id": "t39-q01",
       "pregunta": "¿Cuál es el plazo máximo de resolución cuando la norma específica no fija plazo, según la LPAC?",
-      "opciones": ["6 meses", "3 meses", "1 mes"],
+      "opciones": [
+        "6 meses",
+        "3 meses",
+        "1 mes"
+      ],
       "correcta": 1,
       "explicacion": "El art. 21 LPAC establece que el plazo máximo es el fijado por la norma reguladora del procedimiento y, en su defecto, 3 meses."
     },
     {
       "id": "t39-q02",
       "pregunta": "¿Cuál es la regla general del silencio administrativo en procedimientos iniciados a instancia de parte?",
-      "opciones": ["Silencio negativo", "Silencio positivo", "Depende del objeto del procedimiento"],
+      "opciones": [
+        "Silencio negativo",
+        "Silencio positivo",
+        "Depende del objeto del procedimiento"
+      ],
       "correcta": 1,
       "explicacion": "La regla general es el silencio positivo (estimación por silencio), salvo las excepciones legalmente establecidas (art. 24 LPAC)."
     },
     {
       "id": "t39-q03",
       "pregunta": "¿En qué plazo debe interponerse el recurso de alzada contra un acto expreso?",
-      "opciones": ["15 días hábiles", "1 mes", "3 meses"],
+      "opciones": [
+        "15 días hábiles",
+        "1 mes",
+        "3 meses"
+      ],
       "correcta": 1,
       "explicacion": "El recurso de alzada debe interponerse en el plazo de 1 mes desde la notificación del acto, si es expreso."
     },
     {
       "id": "t39-q04",
       "pregunta": "¿Quién resuelve el recurso de reposición?",
-      "opciones": ["El órgano superior jerárquico", "El mismo órgano que dictó el acto", "El Tribunal Contencioso-Administrativo"],
+      "opciones": [
+        "El órgano superior jerárquico",
+        "El mismo órgano que dictó el acto",
+        "El Tribunal Contencioso-Administrativo"
+      ],
       "correcta": 1,
       "explicacion": "El recurso de reposición es resuelto por el mismo órgano que dictó el acto impugnado (art. 123 LPAC)."
     },
     {
       "id": "t39-q05",
       "pregunta": "¿En qué plazo puede la Administración revisar de oficio un acto nulo de pleno derecho?",
-      "opciones": ["4 años desde que se dictó", "En cualquier momento, sin plazo", "1 año desde que se conoce la nulidad"],
+      "opciones": [
+        "4 años desde que se dictó",
+        "En cualquier momento, sin plazo",
+        "1 año desde que se conoce la nulidad"
+      ],
       "correcta": 1,
       "explicacion": "La revisión de oficio de actos nulos de pleno derecho puede instarse en cualquier momento, sin plazo (art. 106 LPAC)."
     },
     {
       "id": "t39-q06",
       "pregunta": "¿Qué recurso procede contra actos que no ponen fin a la vía administrativa?",
-      "opciones": ["Recurso de reposición", "Recurso de alzada", "Recurso de revisión"],
+      "opciones": [
+        "Recurso de reposición",
+        "Recurso de alzada",
+        "Recurso de revisión"
+      ],
       "correcta": 1,
       "explicacion": "El recurso de alzada (arts. 121-122 LPAC) procede contra resoluciones que no ponen fin a la vía administrativa."
     },
     {
       "id": "t39-q07",
       "pregunta": "¿Cuál es el plazo mínimo del período de información pública en el procedimiento?",
-      "opciones": ["10 días", "15 días", "20 días"],
+      "opciones": [
+        "10 días",
+        "15 días",
+        "20 días"
+      ],
       "correcta": 2,
       "explicacion": "El trámite de información pública debe tener una duración mínima de 20 días (art. 83 LPAC)."
     },
     {
       "id": "t39-q08",
       "pregunta": "¿En qué plazo debe emitirse un informe preceptivo solicitado en el procedimiento?",
-      "opciones": ["5 días", "10 días", "20 días"],
+      "opciones": [
+        "5 días",
+        "10 días",
+        "20 días"
+      ],
       "correcta": 1,
       "explicacion": "Los informes deben emitirse en el plazo de 10 días, ampliable a 15 en casos de especial complejidad (art. 80 LPAC)."
     },
     {
       "id": "t39-q09",
       "pregunta": "¿Cuál es el plazo del trámite de audiencia al interesado antes de la propuesta de resolución?",
-      "opciones": ["5 a 10 días", "10 a 15 días", "15 a 20 días"],
+      "opciones": [
+        "5 a 10 días",
+        "10 a 15 días",
+        "15 a 20 días"
+      ],
       "correcta": 1,
       "explicacion": "El trámite de audiencia al interesado tiene un plazo de entre 10 y 15 días (art. 82 LPAC)."
     },
     {
       "id": "t39-q10",
       "pregunta": "¿Es obligatorio para las personas jurídicas relacionarse electrónicamente con la Administración?",
-      "opciones": ["No, pueden elegir el canal", "Sí, están obligadas a hacerlo", "Solo si su facturación supera un umbral"],
+      "opciones": [
+        "No, pueden elegir el canal",
+        "Sí, están obligadas a hacerlo",
+        "Solo si su facturación supera un umbral"
+      ],
       "correcta": 1,
       "explicacion": "El art. 14 LPAC establece que las personas jurídicas están obligadas a relacionarse electrónicamente con las Administraciones Públicas."
     },
     {
       "id": "t39-q11",
       "pregunta": "¿Qué mecanismo usa la Administración para anular un acto anulable favorable para el interesado?",
-      "opciones": ["Revisión de oficio directa", "Declaración de lesividad y posterior recurso contencioso", "Recurso de reposición de oficio"],
+      "opciones": [
+        "Revisión de oficio directa",
+        "Declaración de lesividad y posterior recurso contencioso",
+        "Recurso de reposición de oficio"
+      ],
       "correcta": 1,
       "explicacion": "La declaración de lesividad (art. 107 LPAC) es el mecanismo para anular actos anulables favorables: debe declararse lesivo en 4 años y luego impugnarse ante la jurisdicción contencioso-administrativa."
     },
     {
       "id": "t39-q12",
       "pregunta": "¿Cuánto tiempo tiene la Administración para resolver el recurso de alzada?",
-      "opciones": ["1 mes", "3 meses", "6 meses"],
+      "opciones": [
+        "1 mes",
+        "3 meses",
+        "6 meses"
+      ],
       "correcta": 1,
       "explicacion": "El plazo para resolver el recurso de alzada es de 3 meses; transcurrido sin resolución, se entiende desestimado (silencio negativo)."
     },
     {
       "id": "t39-q13",
       "pregunta": "¿Cuál es el plazo para notificar una resolución desde que se dicta?",
-      "opciones": ["5 días", "10 días", "15 días"],
+      "opciones": [
+        "5 días",
+        "10 días",
+        "15 días"
+      ],
       "correcta": 1,
       "explicacion": "La resolución debe notificarse en el plazo de 10 días desde que se dicta (art. 40 LPAC)."
     },
     {
       "id": "t39-q14",
       "pregunta": "¿Qué ocurre si el interesado paraliza el procedimiento durante 3 meses?",
-      "opciones": ["El procedimiento se suspende automáticamente", "La Administración le advierte; si persiste 3 meses más, declara la caducidad", "El procedimiento continúa de oficio"],
+      "opciones": [
+        "El procedimiento se suspende automáticamente",
+        "La Administración le advierte; si persiste 3 meses más, declara la caducidad",
+        "El procedimiento continúa de oficio"
+      ],
       "correcta": 1,
       "explicacion": "La inactividad del interesado durante 3 meses obliga a la Administración a advertirle; si transcurren otros 3 meses sin actuación, se declara la caducidad (art. 95 LPAC)."
     },
     {
       "id": "t39-q15",
       "pregunta": "¿En qué plazo puede interponerse el recurso extraordinario de revisión por error de hecho?",
-      "opciones": ["3 meses", "1 año", "4 años"],
+      "opciones": [
+        "3 meses",
+        "1 año",
+        "4 años"
+      ],
       "correcta": 2,
       "explicacion": "El recurso extraordinario de revisión por error de hecho en documentos del expediente tiene un plazo de 4 años desde la notificación del acto (art. 125 LPAC)."
     }

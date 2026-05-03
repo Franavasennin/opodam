@@ -48,33 +48,193 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "n1", "label": "Procedimiento\nAdministrativo\nLey 39/2015", "tipo": "central" },
-      { "id": "n2", "label": "Principios\nLPACAP", "tipo": "rama" },
-      { "id": "n3", "label": "Fase\nIniciación", "tipo": "rama" },
-      { "id": "n4", "label": "Fase\nOrdenación", "tipo": "rama" },
-      { "id": "n5", "label": "Fase\nInstrucción", "tipo": "rama" },
-      { "id": "n6", "label": "Fase\nTerminación", "tipo": "rama" },
-      { "id": "n7", "label": "Recurso\nde Alzada", "tipo": "rama" },
-      { "id": "n8", "label": "Recurso\nde Reposición", "tipo": "rama" },
-      { "id": "n9", "label": "Recurso\nExtraordinario\nRevisión", "tipo": "rama" },
-      { "id": "n10", "label": "Revisión\nde Oficio\nart. 106", "tipo": "hoja" },
-      { "id": "n11", "label": "Silencio\nen recursos", "tipo": "hoja" },
-      { "id": "n12", "label": "Plazos\nclave", "tipo": "hoja" }
+      {
+        "id": "n1",
+        "data": {
+          "label": "Procedimiento\nAdministrativo\nLey 39/2015"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Principios\nLPACAP"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Fase\nIniciación"
+        },
+        "position": {
+          "x": 212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Fase\nOrdenación"
+        },
+        "position": {
+          "x": 300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "Fase\nInstrucción"
+        },
+        "position": {
+          "x": 212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Fase\nTerminación"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Recurso\nde Alzada"
+        },
+        "position": {
+          "x": -212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Recurso\nde Reposición"
+        },
+        "position": {
+          "x": -300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Recurso\nExtraordinario\nRevisión"
+        },
+        "position": {
+          "x": -212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "Revisión\nde Oficio\nart. 106"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Silencio\nen recursos"
+        },
+        "position": {
+          "x": 502,
+          "y": 290
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "Plazos\nclave"
+        },
+        "position": {
+          "x": -502,
+          "y": 290
+        }
+      }
     ],
     "aristas": [
-      { "origen": "n1", "destino": "n2" },
-      { "origen": "n1", "destino": "n3" },
-      { "origen": "n1", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n1", "destino": "n7" },
-      { "origen": "n1", "destino": "n8" },
-      { "origen": "n1", "destino": "n9" },
-      { "origen": "n6", "destino": "n10" },
-      { "origen": "n7", "destino": "n11" },
-      { "origen": "n8", "destino": "n11" },
-      { "origen": "n7", "destino": "n12" },
-      { "origen": "n8", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n2"
+      },
+      {
+        "id": "e2",
+        "source": "n1",
+        "target": "n3"
+      },
+      {
+        "id": "e3",
+        "source": "n1",
+        "target": "n4"
+      },
+      {
+        "id": "e4",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n7"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n8"
+      },
+      {
+        "id": "e8",
+        "source": "n1",
+        "target": "n9"
+      },
+      {
+        "id": "e9",
+        "source": "n6",
+        "target": "n10"
+      },
+      {
+        "id": "e10",
+        "source": "n7",
+        "target": "n11"
+      },
+      {
+        "id": "e11",
+        "source": "n8",
+        "target": "n11"
+      },
+      {
+        "id": "e12",
+        "source": "n7",
+        "target": "n12"
+      },
+      {
+        "id": "e13",
+        "source": "n8",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [

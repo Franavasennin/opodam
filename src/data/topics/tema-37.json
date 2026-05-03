@@ -42,158 +42,450 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "texto": "CA Canarias", "nivel": 0 },
-      { "id": "ea", "texto": "EA LO 1/2018\n183 artículos", "nivel": 1 },
-      { "id": "territorio", "texto": "7 islas + islotes\n2 capitales", "nivel": 1 },
-      { "id": "parlamento", "texto": "Parlamento\n70 diputados", "nivel": 1 },
-      { "id": "gobierno", "texto": "Gobierno\nPresidente + Consejeros", "nivel": 1 },
-      { "id": "cabildos", "texto": "7 Cabildos\nInstitución propia", "nivel": 1 },
-      { "id": "ref", "texto": "REF\nIGIC/ZEC/RIC", "nivel": 1 },
-      { "id": "barrera", "texto": "Barrera electoral\n15% insular / 4% regional", "nivel": 2 },
-      { "id": "ultrap", "texto": "Ultraperiférica\nart.349 TFUE", "nivel": 2 },
-      { "id": "tsjc", "texto": "TSJC\nCúspide judicial", "nivel": 2 },
-      { "id": "cc", "texto": "Consejo Consultivo\nÓrgano consultivo supremo", "nivel": 2 },
-      { "id": "dc", "texto": "Diputado del Común\nComisionado parlamentario", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "root"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "ea",
+        "data": {
+          "label": "ea"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "territorio",
+        "data": {
+          "label": "territorio"
+        },
+        "position": {
+          "x": 193,
+          "y": -230
+        }
+      },
+      {
+        "id": "parlamento",
+        "data": {
+          "label": "parlamento"
+        },
+        "position": {
+          "x": 295,
+          "y": -52
+        }
+      },
+      {
+        "id": "gobierno",
+        "data": {
+          "label": "gobierno"
+        },
+        "position": {
+          "x": 260,
+          "y": 150
+        }
+      },
+      {
+        "id": "cabildos",
+        "data": {
+          "label": "cabildos"
+        },
+        "position": {
+          "x": 103,
+          "y": 282
+        }
+      },
+      {
+        "id": "ref",
+        "data": {
+          "label": "ref"
+        },
+        "position": {
+          "x": -103,
+          "y": 282
+        }
+      },
+      {
+        "id": "barrera",
+        "data": {
+          "label": "barrera"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "ultrap",
+        "data": {
+          "label": "ultrap"
+        },
+        "position": {
+          "x": 0,
+          "y": 580
+        }
+      },
+      {
+        "id": "tsjc",
+        "data": {
+          "label": "tsjc"
+        },
+        "position": {
+          "x": -260,
+          "y": 150
+        }
+      },
+      {
+        "id": "cc",
+        "data": {
+          "label": "cc"
+        },
+        "position": {
+          "x": -295,
+          "y": -52
+        }
+      },
+      {
+        "id": "dc",
+        "data": {
+          "label": "dc"
+        },
+        "position": {
+          "x": -193,
+          "y": -230
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "ea" },
-      { "origen": "root", "destino": "territorio" },
-      { "origen": "root", "destino": "parlamento" },
-      { "origen": "root", "destino": "gobierno" },
-      { "origen": "root", "destino": "cabildos" },
-      { "origen": "root", "destino": "ref" },
-      { "origen": "parlamento", "destino": "barrera" },
-      { "origen": "territorio", "destino": "ultrap" },
-      { "origen": "root", "destino": "tsjc" },
-      { "origen": "root", "destino": "cc" },
-      { "origen": "root", "destino": "dc" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "ea"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "territorio"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "parlamento"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "gobierno"
+      },
+      {
+        "id": "e5",
+        "source": "root",
+        "target": "cabildos"
+      },
+      {
+        "id": "e6",
+        "source": "root",
+        "target": "ref"
+      },
+      {
+        "id": "e7",
+        "source": "parlamento",
+        "target": "barrera"
+      },
+      {
+        "id": "e8",
+        "source": "territorio",
+        "target": "ultrap"
+      },
+      {
+        "id": "e9",
+        "source": "root",
+        "target": "tsjc"
+      },
+      {
+        "id": "e10",
+        "source": "root",
+        "target": "cc"
+      },
+      {
+        "id": "e11",
+        "source": "root",
+        "target": "dc"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t37-f01", "pregunta": "¿Qué LO aprueba el Estatuto de Autonomía vigente de Canarias y cuándo?", "respuesta": "LO 1/2018, de 5 de noviembre, de reforma del Estatuto de Autonomía de Canarias." },
-    { "id": "t37-f02", "pregunta": "¿Cuántos artículos y títulos tiene el EA de Canarias de 2018?", "respuesta": "183 artículos y 11 Títulos, más un Preámbulo." },
-    { "id": "t37-f03", "pregunta": "¿Cuál fue el primer Estatuto de Autonomía de Canarias?", "respuesta": "LO 10/1982, de 10 de agosto." },
-    { "id": "t37-f04", "pregunta": "¿Cuántos diputados integran el Parlamento de Canarias?", "respuesta": "70 diputados." },
-    { "id": "t37-f05", "pregunta": "¿Cuál es la barrera electoral para obtener representación en el Parlamento de Canarias?", "respuesta": "15% de los votos válidos en la circunscripción insular, o 4% del total regional." },
-    { "id": "t37-f06", "pregunta": "¿Cuántas capitales tiene la Comunidad Autónoma de Canarias?", "respuesta": "Dos: Las Palmas de Gran Canaria y Santa Cruz de Tenerife." },
-    { "id": "t37-f07", "pregunta": "¿Quién elige al Presidente del Gobierno de Canarias?", "respuesta": "El Parlamento de Canarias, mediante investidura." },
-    { "id": "t37-f08", "pregunta": "¿Cuántos Cabildos Insulares existen en Canarias?", "respuesta": "Siete, uno por cada isla habitada." },
-    { "id": "t37-f09", "pregunta": "¿Qué artículo del TFUE reconoce a Canarias como región ultraperiférica de la UE?", "respuesta": "El artículo 349 del Tratado de Funcionamiento de la Unión Europea (TFUE)." },
-    { "id": "t37-f10", "pregunta": "¿Qué impuesto sustituye al IVA en Canarias y cuál es su tipo general?", "respuesta": "El IGIC (Impuesto General Indirecto Canario), con tipo general del 7%." },
-    { "id": "t37-f11", "pregunta": "¿Qué es la ZEC?", "respuesta": "La Zona Especial Canaria: permite tributar al 4% en el Impuesto de Sociedades a empresas que generen empleo en Canarias." },
-    { "id": "t37-f12", "pregunta": "¿Qué es la RIC en el REF canario?", "respuesta": "La Reserva para Inversiones en Canarias: permite deducir hasta el 90% de los beneficios en el IS si se reinvierten en activos en Canarias." },
-    { "id": "t37-f13", "pregunta": "¿Qué es el TSJC y dónde tiene su sede principal?", "respuesta": "El Tribunal Superior de Justicia de Canarias, cúspide judicial en el territorio canario; sede principal en Las Palmas de Gran Canaria." },
-    { "id": "t37-f14", "pregunta": "¿Cuál es la función del Consejo Consultivo de Canarias?", "respuesta": "Es el supremo órgano consultivo de la CA; emite dictámenes preceptivos en reglamentos, contratos, concesiones y recursos." },
-    { "id": "t37-f15", "pregunta": "¿Qué es la Audiencia de Cuentas de Canarias?", "respuesta": "El órgano fiscalizador de la actividad económico-financiera del sector público canario (Ley 4/1989)." },
-    { "id": "t37-f16", "pregunta": "¿Qué es el Diputado del Común?", "respuesta": "El comisionado parlamentario para la defensa de los derechos fundamentales frente a las administraciones canarias (Ley 7/2001)." },
-    { "id": "t37-f17", "pregunta": "¿Por cuánto tiempo es elegido el Diputado del Común y por qué mayoría?", "respuesta": "Cinco años, elegido por el Parlamento por mayoría de tres quintas partes." },
-    { "id": "t37-f18", "pregunta": "¿En qué disposición constitucional se reconoce el REF de Canarias?", "respuesta": "En la Disposición Adicional Tercera (DA 3.ª) de la Constitución Española." },
-    { "id": "t37-f19", "pregunta": "¿Qué vía de acceso a la autonomía utilizó Canarias y qué artículo CE la regula?", "respuesta": "La vía del artículo 151 de la Constitución Española (vía rápida o especial)." },
-    { "id": "t37-f20", "pregunta": "¿Qué función asumen los Cabildos en Canarias que en el resto de España corresponde a las Diputaciones?", "respuesta": "Los Cabildos asumen las funciones de las Diputaciones Provinciales, que no existen en Canarias." }
+    {
+      "id": "t37-f01",
+      "pregunta": "¿Qué LO aprueba el Estatuto de Autonomía vigente de Canarias y cuándo?",
+      "respuesta": "LO 1/2018, de 5 de noviembre, de reforma del Estatuto de Autonomía de Canarias."
+    },
+    {
+      "id": "t37-f02",
+      "pregunta": "¿Cuántos artículos y títulos tiene el EA de Canarias de 2018?",
+      "respuesta": "183 artículos y 11 Títulos, más un Preámbulo."
+    },
+    {
+      "id": "t37-f03",
+      "pregunta": "¿Cuál fue el primer Estatuto de Autonomía de Canarias?",
+      "respuesta": "LO 10/1982, de 10 de agosto."
+    },
+    {
+      "id": "t37-f04",
+      "pregunta": "¿Cuántos diputados integran el Parlamento de Canarias?",
+      "respuesta": "70 diputados."
+    },
+    {
+      "id": "t37-f05",
+      "pregunta": "¿Cuál es la barrera electoral para obtener representación en el Parlamento de Canarias?",
+      "respuesta": "15% de los votos válidos en la circunscripción insular, o 4% del total regional."
+    },
+    {
+      "id": "t37-f06",
+      "pregunta": "¿Cuántas capitales tiene la Comunidad Autónoma de Canarias?",
+      "respuesta": "Dos: Las Palmas de Gran Canaria y Santa Cruz de Tenerife."
+    },
+    {
+      "id": "t37-f07",
+      "pregunta": "¿Quién elige al Presidente del Gobierno de Canarias?",
+      "respuesta": "El Parlamento de Canarias, mediante investidura."
+    },
+    {
+      "id": "t37-f08",
+      "pregunta": "¿Cuántos Cabildos Insulares existen en Canarias?",
+      "respuesta": "Siete, uno por cada isla habitada."
+    },
+    {
+      "id": "t37-f09",
+      "pregunta": "¿Qué artículo del TFUE reconoce a Canarias como región ultraperiférica de la UE?",
+      "respuesta": "El artículo 349 del Tratado de Funcionamiento de la Unión Europea (TFUE)."
+    },
+    {
+      "id": "t37-f10",
+      "pregunta": "¿Qué impuesto sustituye al IVA en Canarias y cuál es su tipo general?",
+      "respuesta": "El IGIC (Impuesto General Indirecto Canario), con tipo general del 7%."
+    },
+    {
+      "id": "t37-f11",
+      "pregunta": "¿Qué es la ZEC?",
+      "respuesta": "La Zona Especial Canaria: permite tributar al 4% en el Impuesto de Sociedades a empresas que generen empleo en Canarias."
+    },
+    {
+      "id": "t37-f12",
+      "pregunta": "¿Qué es la RIC en el REF canario?",
+      "respuesta": "La Reserva para Inversiones en Canarias: permite deducir hasta el 90% de los beneficios en el IS si se reinvierten en activos en Canarias."
+    },
+    {
+      "id": "t37-f13",
+      "pregunta": "¿Qué es el TSJC y dónde tiene su sede principal?",
+      "respuesta": "El Tribunal Superior de Justicia de Canarias, cúspide judicial en el territorio canario; sede principal en Las Palmas de Gran Canaria."
+    },
+    {
+      "id": "t37-f14",
+      "pregunta": "¿Cuál es la función del Consejo Consultivo de Canarias?",
+      "respuesta": "Es el supremo órgano consultivo de la CA; emite dictámenes preceptivos en reglamentos, contratos, concesiones y recursos."
+    },
+    {
+      "id": "t37-f15",
+      "pregunta": "¿Qué es la Audiencia de Cuentas de Canarias?",
+      "respuesta": "El órgano fiscalizador de la actividad económico-financiera del sector público canario (Ley 4/1989)."
+    },
+    {
+      "id": "t37-f16",
+      "pregunta": "¿Qué es el Diputado del Común?",
+      "respuesta": "El comisionado parlamentario para la defensa de los derechos fundamentales frente a las administraciones canarias (Ley 7/2001)."
+    },
+    {
+      "id": "t37-f17",
+      "pregunta": "¿Por cuánto tiempo es elegido el Diputado del Común y por qué mayoría?",
+      "respuesta": "Cinco años, elegido por el Parlamento por mayoría de tres quintas partes."
+    },
+    {
+      "id": "t37-f18",
+      "pregunta": "¿En qué disposición constitucional se reconoce el REF de Canarias?",
+      "respuesta": "En la Disposición Adicional Tercera (DA 3.ª) de la Constitución Española."
+    },
+    {
+      "id": "t37-f19",
+      "pregunta": "¿Qué vía de acceso a la autonomía utilizó Canarias y qué artículo CE la regula?",
+      "respuesta": "La vía del artículo 151 de la Constitución Española (vía rápida o especial)."
+    },
+    {
+      "id": "t37-f20",
+      "pregunta": "¿Qué función asumen los Cabildos en Canarias que en el resto de España corresponde a las Diputaciones?",
+      "respuesta": "Los Cabildos asumen las funciones de las Diputaciones Provinciales, que no existen en Canarias."
+    }
   ],
   "preguntas": [
     {
       "id": "t37-q01",
       "pregunta": "¿Cuántos artículos tiene el Estatuto de Autonomía de Canarias aprobado por LO 1/2018?",
-      "opciones": ["150 artículos", "183 artículos", "200 artículos"],
+      "opciones": [
+        "150 artículos",
+        "183 artículos",
+        "200 artículos"
+      ],
       "correcta": 1,
       "explicacion": "La LO 1/2018 de reforma del EA de Canarias consta de 183 artículos distribuidos en 11 Títulos."
     },
     {
       "id": "t37-q02",
       "pregunta": "¿Cuántos diputados componen el Parlamento de Canarias?",
-      "opciones": ["60 diputados", "70 diputados", "80 diputados"],
+      "opciones": [
+        "60 diputados",
+        "70 diputados",
+        "80 diputados"
+      ],
       "correcta": 1,
       "explicacion": "El Parlamento de Canarias está integrado por 70 diputados elegidos por sufragio universal."
     },
     {
       "id": "t37-q03",
       "pregunta": "¿Cuál es la barrera electoral mínima a nivel insular para obtener representación en el Parlamento de Canarias?",
-      "opciones": ["5%", "10%", "15%"],
+      "opciones": [
+        "5%",
+        "10%",
+        "15%"
+      ],
       "correcta": 2,
       "explicacion": "La barrera es del 15% de los votos válidos en la circunscripción insular, o alternativamente el 4% del total regional."
     },
     {
       "id": "t37-q04",
       "pregunta": "¿Cuántas capitales tiene la Comunidad Autónoma de Canarias?",
-      "opciones": ["Una: Santa Cruz de Tenerife", "Dos: Las Palmas y Santa Cruz de Tenerife", "Tres: una por cada isla mayor"],
+      "opciones": [
+        "Una: Santa Cruz de Tenerife",
+        "Dos: Las Palmas y Santa Cruz de Tenerife",
+        "Tres: una por cada isla mayor"
+      ],
       "correcta": 1,
       "explicacion": "Canarias tiene dos capitales: Las Palmas de Gran Canaria y Santa Cruz de Tenerife, con sede alternativa de instituciones."
     },
     {
       "id": "t37-q05",
       "pregunta": "¿Quién elige al Presidente del Gobierno de Canarias?",
-      "opciones": ["El pueblo canario directamente", "El Parlamento de Canarias", "El Gobierno del Estado"],
+      "opciones": [
+        "El pueblo canario directamente",
+        "El Parlamento de Canarias",
+        "El Gobierno del Estado"
+      ],
       "correcta": 1,
       "explicacion": "El Presidente del Gobierno de Canarias es elegido por el Parlamento mediante investidura, de entre sus miembros."
     },
     {
       "id": "t37-q06",
       "pregunta": "¿Qué artículo del TFUE reconoce a Canarias como región ultraperiférica de la UE?",
-      "opciones": ["Artículo 299", "Artículo 349", "Artículo 355"],
+      "opciones": [
+        "Artículo 299",
+        "Artículo 349",
+        "Artículo 355"
+      ],
       "correcta": 1,
       "explicacion": "El artículo 349 del TFUE reconoce a Canarias (y otras regiones) como región ultraperiférica, permitiendo adaptar el Derecho comunitario."
     },
     {
       "id": "t37-q07",
       "pregunta": "¿Qué tipo general tiene el IGIC en Canarias?",
-      "opciones": ["4%", "7%", "21%"],
+      "opciones": [
+        "4%",
+        "7%",
+        "21%"
+      ],
       "correcta": 1,
       "explicacion": "El IGIC tiene un tipo general del 7%, inferior al IVA peninsular, como parte del REF especial de Canarias."
     },
     {
       "id": "t37-q08",
       "pregunta": "¿Qué es la ZEC en el contexto del REF canario?",
-      "opciones": ["Un impuesto local canario", "Una zona de tributación reducida al 4% en IS para empresas con empleo en Canarias", "Una reserva de inversiones fiscales"],
+      "opciones": [
+        "Un impuesto local canario",
+        "Una zona de tributación reducida al 4% en IS para empresas con empleo en Canarias",
+        "Una reserva de inversiones fiscales"
+      ],
       "correcta": 1,
       "explicacion": "La ZEC (Zona Especial Canaria) permite a las empresas allí implantadas tributar al 4% en el Impuesto de Sociedades si generan empleo en Canarias."
     },
     {
       "id": "t37-q09",
       "pregunta": "¿Cuántos Cabildos Insulares existen en Canarias?",
-      "opciones": ["5", "7", "9"],
+      "opciones": [
+        "5",
+        "7",
+        "9"
+      ],
       "correcta": 1,
       "explicacion": "Existen 7 Cabildos Insulares, uno por cada isla habitada del archipiélago canario."
     },
     {
       "id": "t37-q10",
       "pregunta": "¿Qué institución asume en Canarias las funciones de las Diputaciones Provinciales del resto de España?",
-      "opciones": ["Los Ayuntamientos", "Los Cabildos Insulares", "El Gobierno de Canarias"],
+      "opciones": [
+        "Los Ayuntamientos",
+        "Los Cabildos Insulares",
+        "El Gobierno de Canarias"
+      ],
       "correcta": 1,
       "explicacion": "En Canarias no existen Diputaciones Provinciales; sus funciones son asumidas por los Cabildos Insulares."
     },
     {
       "id": "t37-q11",
       "pregunta": "¿Dónde tiene su sede principal el Tribunal Superior de Justicia de Canarias?",
-      "opciones": ["Santa Cruz de Tenerife", "Las Palmas de Gran Canaria", "Alterna entre ambas capitales"],
+      "opciones": [
+        "Santa Cruz de Tenerife",
+        "Las Palmas de Gran Canaria",
+        "Alterna entre ambas capitales"
+      ],
       "correcta": 1,
       "explicacion": "El TSJC tiene su sede principal en Las Palmas de Gran Canaria, aunque también dispone de Sala en Santa Cruz de Tenerife."
     },
     {
       "id": "t37-q12",
       "pregunta": "¿Cuál es la función del Consejo Consultivo de Canarias?",
-      "opciones": ["Fiscalizar las cuentas del sector público canario", "Ser el supremo órgano consultivo de la CA emitiendo dictámenes preceptivos", "Defender los derechos de los ciudadanos ante la administración"],
+      "opciones": [
+        "Fiscalizar las cuentas del sector público canario",
+        "Ser el supremo órgano consultivo de la CA emitiendo dictámenes preceptivos",
+        "Defender los derechos de los ciudadanos ante la administración"
+      ],
       "correcta": 1,
       "explicacion": "El Consejo Consultivo es el supremo órgano consultivo de la CA; emite dictámenes preceptivos obligatorios en reglamentos, contratos y recursos."
     },
     {
       "id": "t37-q13",
       "pregunta": "¿Qué ley regula la Audiencia de Cuentas de Canarias?",
-      "opciones": ["Ley 4/1989", "Ley 7/2001", "Ley 9/2007"],
+      "opciones": [
+        "Ley 4/1989",
+        "Ley 7/2001",
+        "Ley 9/2007"
+      ],
       "correcta": 0,
       "explicacion": "La Audiencia de Cuentas de Canarias está regulada por la Ley 4/1989; es el órgano fiscalizador de la actividad económico-financiera canaria."
     },
     {
       "id": "t37-q14",
       "pregunta": "¿Por cuántos años es elegido el Diputado del Común?",
-      "opciones": ["Cuatro años", "Cinco años", "Seis años"],
+      "opciones": [
+        "Cuatro años",
+        "Cinco años",
+        "Seis años"
+      ],
       "correcta": 1,
       "explicacion": "El Diputado del Común es elegido por el Parlamento de Canarias por un período de cinco años, por mayoría de tres quintas partes."
     },
     {
       "id": "t37-q15",
       "pregunta": "¿En qué disposición de la Constitución Española se reconoce el Régimen Económico y Fiscal especial de Canarias?",
-      "opciones": ["Disposición Adicional Primera", "Disposición Adicional Tercera", "Disposición Transitoria Segunda"],
+      "opciones": [
+        "Disposición Adicional Primera",
+        "Disposición Adicional Tercera",
+        "Disposición Transitoria Segunda"
+      ],
       "correcta": 1,
       "explicacion": "La DA 3.ª CE reconoce expresamente el REF especial de Canarias, que tiene su fundamento histórico en el aislamiento geográfico del archipiélago."
     }

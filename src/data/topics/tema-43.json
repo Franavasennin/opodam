@@ -42,31 +42,183 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "n1", "texto": "Geografía de Canarias", "nivel": 0 },
-      { "id": "n2", "texto": "Situación geográfica", "nivel": 1 },
-      { "id": "n3", "texto": "Dos provincias", "nivel": 1 },
-      { "id": "n4", "texto": "7 islas / 88 municipios", "nivel": 1 },
-      { "id": "n5", "texto": "Aspectos físicos", "nivel": 1 },
-      { "id": "n6", "texto": "Demografía", "nivel": 1 },
-      { "id": "n7", "texto": "Economía", "nivel": 1 },
-      { "id": "n8", "texto": "100 km de África / 1.500 km Península", "nivel": 2 },
-      { "id": "n9", "texto": "Las Palmas: GC + Lanzarote + Fuerteventura", "nivel": 2 },
-      { "id": "n10", "texto": "Sta. Cruz: Tenerife + La Palma + Gomera + Hierro", "nivel": 2 },
-      { "id": "n11", "texto": "Teide 3.715m / 4 Parques Nacionales", "nivel": 2 },
-      { "id": "n12", "texto": "Turismo 12-16M / Plátano DOP / Pesca", "nivel": 2 }
+      {
+        "id": "n1",
+        "data": {
+          "label": "n1"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "n2"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "n3"
+        },
+        "position": {
+          "x": 260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "n4"
+        },
+        "position": {
+          "x": 260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "n5"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "n6"
+        },
+        "position": {
+          "x": -260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "n7"
+        },
+        "position": {
+          "x": -260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "n8"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "n9"
+        },
+        "position": {
+          "x": 552,
+          "y": -179
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "n10"
+        },
+        "position": {
+          "x": 341,
+          "y": 469
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "n11"
+        },
+        "position": {
+          "x": -341,
+          "y": 469
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "n12"
+        },
+        "position": {
+          "x": -552,
+          "y": -179
+        }
+      }
     ],
     "aristas": [
-      { "origen": "n1", "destino": "n2" },
-      { "origen": "n1", "destino": "n3" },
-      { "origen": "n1", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n1", "destino": "n7" },
-      { "origen": "n2", "destino": "n8" },
-      { "origen": "n3", "destino": "n9" },
-      { "origen": "n3", "destino": "n10" },
-      { "origen": "n5", "destino": "n11" },
-      { "origen": "n7", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n2"
+      },
+      {
+        "id": "e2",
+        "source": "n1",
+        "target": "n3"
+      },
+      {
+        "id": "e3",
+        "source": "n1",
+        "target": "n4"
+      },
+      {
+        "id": "e4",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n7"
+      },
+      {
+        "id": "e7",
+        "source": "n2",
+        "target": "n8"
+      },
+      {
+        "id": "e8",
+        "source": "n3",
+        "target": "n9"
+      },
+      {
+        "id": "e9",
+        "source": "n3",
+        "target": "n10"
+      },
+      {
+        "id": "e10",
+        "source": "n5",
+        "target": "n11"
+      },
+      {
+        "id": "e11",
+        "source": "n7",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [

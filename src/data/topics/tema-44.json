@@ -42,31 +42,183 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "n1", "texto": "Economía de Canarias", "nivel": 0 },
-      { "id": "n2", "texto": "REF canario", "nivel": 1 },
-      { "id": "n3", "texto": "Turismo", "nivel": 1 },
-      { "id": "n4", "texto": "Agricultura", "nivel": 1 },
-      { "id": "n5", "texto": "Pesca", "nivel": 1 },
-      { "id": "n6", "texto": "Industria y energía", "nivel": 1 },
-      { "id": "n7", "texto": "IGIC 7% / ZEC 4% IS / RIC 90%", "nivel": 2 },
-      { "id": "n8", "texto": "35% PIB / 12-16M turistas", "nivel": 2 },
-      { "id": "n9", "texto": "Plátano DOP / Tomate / Vinos DO", "nivel": 2 },
-      { "id": "n10", "texto": "Lonja Las Palmas / Caladeros africanos", "nivel": 2 },
-      { "id": "n11", "texto": "Zonas Francas / El Hierro 100% renovable", "nivel": 2 },
-      { "id": "n12", "texto": "DA 3ª CE + Art. 349 TFUE / Ley 19/1994", "nivel": 2 }
+      {
+        "id": "n1",
+        "data": {
+          "label": "n1"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "n2"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "n3"
+        },
+        "position": {
+          "x": 285,
+          "y": -93
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "n4"
+        },
+        "position": {
+          "x": 176,
+          "y": 243
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "n5"
+        },
+        "position": {
+          "x": -176,
+          "y": 243
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "n6"
+        },
+        "position": {
+          "x": -285,
+          "y": -93
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "n7"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "n8"
+        },
+        "position": {
+          "x": 502,
+          "y": -290
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "n9"
+        },
+        "position": {
+          "x": 502,
+          "y": 290
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "n10"
+        },
+        "position": {
+          "x": 0,
+          "y": 580
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "n11"
+        },
+        "position": {
+          "x": -502,
+          "y": 290
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "n12"
+        },
+        "position": {
+          "x": -502,
+          "y": -290
+        }
+      }
     ],
     "aristas": [
-      { "origen": "n1", "destino": "n2" },
-      { "origen": "n1", "destino": "n3" },
-      { "origen": "n1", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n2", "destino": "n7" },
-      { "origen": "n2", "destino": "n12" },
-      { "origen": "n3", "destino": "n8" },
-      { "origen": "n4", "destino": "n9" },
-      { "origen": "n5", "destino": "n10" },
-      { "origen": "n6", "destino": "n11" }
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n2"
+      },
+      {
+        "id": "e2",
+        "source": "n1",
+        "target": "n3"
+      },
+      {
+        "id": "e3",
+        "source": "n1",
+        "target": "n4"
+      },
+      {
+        "id": "e4",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e6",
+        "source": "n2",
+        "target": "n7"
+      },
+      {
+        "id": "e7",
+        "source": "n2",
+        "target": "n12"
+      },
+      {
+        "id": "e8",
+        "source": "n3",
+        "target": "n8"
+      },
+      {
+        "id": "e9",
+        "source": "n4",
+        "target": "n9"
+      },
+      {
+        "id": "e10",
+        "source": "n5",
+        "target": "n10"
+      },
+      {
+        "id": "e11",
+        "source": "n6",
+        "target": "n11"
+      }
     ]
   },
   "flashcards": [

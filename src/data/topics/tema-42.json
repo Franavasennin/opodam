@@ -42,158 +42,450 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "texto": "Primeros auxilios\npolicial", "nivel": 0 },
-      { "id": "pas", "texto": "Protocolo PAS\nProteger/Alertar/Socorrer", "nivel": 1 },
-      { "id": "rcp", "texto": "RCP básica\n30:2 / 100-120/min", "nivel": 1 },
-      { "id": "dea", "texto": "DEA/AED\nDesfibrilación", "nivel": 1 },
-      { "id": "cadena", "texto": "Cadena supervivencia\n6 eslabones ERC 2021", "nivel": 1 },
-      { "id": "hemorragia", "texto": "Hemorragia\nCompresión directa", "nivel": 1 },
-      { "id": "pls", "texto": "PLS\nInconsciente + respira", "nivel": 1 },
-      { "id": "heimlich", "texto": "Heimlich\nOVACE grave", "nivel": 1 },
-      { "id": "fast", "texto": "FAST\nIctus", "nivel": 1 },
-      { "id": "195cp", "texto": "Art.195 CP\nOmisión socorro", "nivel": 1 },
-      { "id": "112", "texto": "1-1-2\nCECOES Canarias", "nivel": 2 },
-      { "id": "compresiones", "texto": "5-6 cm profundidad\n10% menos/min sin RCP", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "root"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "pas",
+        "data": {
+          "label": "pas"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "rcp",
+        "data": {
+          "label": "rcp"
+        },
+        "position": {
+          "x": 193,
+          "y": -230
+        }
+      },
+      {
+        "id": "dea",
+        "data": {
+          "label": "dea"
+        },
+        "position": {
+          "x": 295,
+          "y": -52
+        }
+      },
+      {
+        "id": "cadena",
+        "data": {
+          "label": "cadena"
+        },
+        "position": {
+          "x": 260,
+          "y": 150
+        }
+      },
+      {
+        "id": "hemorragia",
+        "data": {
+          "label": "hemorragia"
+        },
+        "position": {
+          "x": 103,
+          "y": 282
+        }
+      },
+      {
+        "id": "pls",
+        "data": {
+          "label": "pls"
+        },
+        "position": {
+          "x": -103,
+          "y": 282
+        }
+      },
+      {
+        "id": "heimlich",
+        "data": {
+          "label": "heimlich"
+        },
+        "position": {
+          "x": -260,
+          "y": 150
+        }
+      },
+      {
+        "id": "fast",
+        "data": {
+          "label": "fast"
+        },
+        "position": {
+          "x": -295,
+          "y": -52
+        }
+      },
+      {
+        "id": "195cp",
+        "data": {
+          "label": "195cp"
+        },
+        "position": {
+          "x": -193,
+          "y": -230
+        }
+      },
+      {
+        "id": "112",
+        "data": {
+          "label": "112"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "compresiones",
+        "data": {
+          "label": "compresiones"
+        },
+        "position": {
+          "x": 0,
+          "y": 580
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "pas" },
-      { "origen": "root", "destino": "rcp" },
-      { "origen": "root", "destino": "dea" },
-      { "origen": "root", "destino": "cadena" },
-      { "origen": "root", "destino": "hemorragia" },
-      { "origen": "root", "destino": "pls" },
-      { "origen": "root", "destino": "heimlich" },
-      { "origen": "root", "destino": "fast" },
-      { "origen": "root", "destino": "195cp" },
-      { "origen": "pas", "destino": "112" },
-      { "origen": "rcp", "destino": "compresiones" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "pas"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "rcp"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "dea"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "cadena"
+      },
+      {
+        "id": "e5",
+        "source": "root",
+        "target": "hemorragia"
+      },
+      {
+        "id": "e6",
+        "source": "root",
+        "target": "pls"
+      },
+      {
+        "id": "e7",
+        "source": "root",
+        "target": "heimlich"
+      },
+      {
+        "id": "e8",
+        "source": "root",
+        "target": "fast"
+      },
+      {
+        "id": "e9",
+        "source": "root",
+        "target": "195cp"
+      },
+      {
+        "id": "e10",
+        "source": "pas",
+        "target": "112"
+      },
+      {
+        "id": "e11",
+        "source": "rcp",
+        "target": "compresiones"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t42-f01", "pregunta": "¿Qué significa el acrónimo PAS en primeros auxilios?", "respuesta": "Proteger (asegurar la zona), Alertar (llamar al 1-1-2) y Socorrer (prestar los primeros auxilios)." },
-    { "id": "t42-f02", "pregunta": "¿Qué artículo del CP regula la omisión del deber de socorro?", "respuesta": "El artículo 195 CP; la pena es multa de 3 a 12 meses, agravada si el causante del peligro o profesional sanitario no socorre." },
-    { "id": "t42-f03", "pregunta": "¿Cuánto tiempo máximo se dedica a comprobar si una víctima respira?", "respuesta": "No más de 10 segundos (VOS: ver, oír, sentir el aliento)." },
-    { "id": "t42-f04", "pregunta": "¿Cuál es la relación compresiones/ventilaciones en RCP básica adulto?", "respuesta": "30 compresiones torácicas seguidas de 2 ventilaciones (ratio 30:2), según las guías ERC 2021." },
-    { "id": "t42-f05", "pregunta": "¿Con qué frecuencia y profundidad deben realizarse las compresiones torácicas?", "respuesta": "Frecuencia de 100-120 compresiones por minuto; profundidad de al menos 5 cm (máximo 6 cm)." },
-    { "id": "t42-f06", "pregunta": "¿Qué es la RCP solo con compresiones (hands-only CPR)?", "respuesta": "RCP sin ventilaciones, solo compresiones torácicas continuas; indicada cuando no se domina la ventilación o se rechaza boca a boca." },
-    { "id": "t42-f07", "pregunta": "¿Cómo se colocan los parches del DEA?", "respuesta": "Uno bajo la clavícula derecha y otro bajo la axila izquierda." },
-    { "id": "t42-f08", "pregunta": "¿Cuántos minutos de RCP se realizan después de cada descarga del DEA?", "respuesta": "2 minutos de compresiones torácicas inmediatamente después de cada descarga, antes de que el DEA vuelva a analizar." },
-    { "id": "t42-f09", "pregunta": "¿Cuáles son los 6 eslabones de la cadena de supervivencia del ERC 2021?", "respuesta": "1.Reconocimiento y llamada al 1-1-2; 2.RCP precoz; 3.Desfibrilación precoz; 4.Servicios de emergencias; 5.SVA y cuidados post-RCP; 6.Recuperación." },
-    { "id": "t42-f10", "pregunta": "¿Qué significa FAST en el reconocimiento del ictus?", "respuesta": "Face (asimetría facial), Arm (debilidad de un brazo), Speech (dificultad para hablar), Time (tiempo urgente para actuar)." },
-    { "id": "t42-f11", "pregunta": "¿En qué consiste la maniobra de Heimlich?", "respuesta": "5 compresiones abdominales bruscas hacia adentro y hacia arriba en el adulto consciente con obstrucción grave de la vía aérea, alternando con 5 palmadas interescapulares." },
-    { "id": "t42-f12", "pregunta": "¿Qué es la Posición Lateral de Seguridad (PLS) y cuándo se usa?", "respuesta": "Posición en decúbito lateral que evita la broncoaspiración; se usa en víctimas inconscientes que respiran con normalidad." },
-    { "id": "t42-f13", "pregunta": "¿Cuánto tiempo hay que enfriar una quemadura con agua y a qué temperatura?", "respuesta": "10-20 minutos con agua fría a 15-20°C; nunca usar hielo, pomadas ni reventar ampollas." },
-    { "id": "t42-f14", "pregunta": "¿Cuánto reduce la supervivencia cada minuto que pasa sin iniciar RCP?", "respuesta": "Aproximadamente un 10% por cada minuto que pasa sin RCP en una parada cardiorrespiratoria." },
-    { "id": "t42-f15", "pregunta": "¿En qué posición se coloca a una víctima en shock (posición antishock)?", "respuesta": "Tumbada con las piernas elevadas 30-45 cm (Trendelenburg modificada); contraindicada si hay traumatismo craneal o torácico." },
-    { "id": "t42-f16", "pregunta": "¿Qué hacer ante una crisis convulsiva?", "respuesta": "No sujetar los miembros; proteger la cabeza; retirar objetos peligrosos; al finalizar, colocar en PLS; no introducir nada en la boca." },
-    { "id": "t42-f17", "pregunta": "¿Cuándo se aplica un torniquete en una hemorragia externa?", "respuesta": "Solo en hemorragias masivas de extremidades que no ceden con compresión directa; anotar la hora de aplicación." },
-    { "id": "t42-f18", "pregunta": "¿Qué se debe hacer ante una víctima electrocutada?", "respuesta": "NO tocar a la víctima hasta cortar la corriente eléctrica; alejarse al menos 10 metros de cables de alta tensión." },
-    { "id": "t42-f19", "pregunta": "¿Qué significa la escala AVPU de nivel de consciencia?", "respuesta": "Alert (alerta), Voice (responde a la voz), Pain (responde al dolor), Unresponsive (no responde)." },
-    { "id": "t42-f20", "pregunta": "¿Cuál es la maniobra básica para abrir la vía aérea en un adulto?", "respuesta": "La maniobra frente-mentón: una mano en la frente inclinando la cabeza hacia atrás y los dedos de la otra mano elevando el mentón." }
+    {
+      "id": "t42-f01",
+      "pregunta": "¿Qué significa el acrónimo PAS en primeros auxilios?",
+      "respuesta": "Proteger (asegurar la zona), Alertar (llamar al 1-1-2) y Socorrer (prestar los primeros auxilios)."
+    },
+    {
+      "id": "t42-f02",
+      "pregunta": "¿Qué artículo del CP regula la omisión del deber de socorro?",
+      "respuesta": "El artículo 195 CP; la pena es multa de 3 a 12 meses, agravada si el causante del peligro o profesional sanitario no socorre."
+    },
+    {
+      "id": "t42-f03",
+      "pregunta": "¿Cuánto tiempo máximo se dedica a comprobar si una víctima respira?",
+      "respuesta": "No más de 10 segundos (VOS: ver, oír, sentir el aliento)."
+    },
+    {
+      "id": "t42-f04",
+      "pregunta": "¿Cuál es la relación compresiones/ventilaciones en RCP básica adulto?",
+      "respuesta": "30 compresiones torácicas seguidas de 2 ventilaciones (ratio 30:2), según las guías ERC 2021."
+    },
+    {
+      "id": "t42-f05",
+      "pregunta": "¿Con qué frecuencia y profundidad deben realizarse las compresiones torácicas?",
+      "respuesta": "Frecuencia de 100-120 compresiones por minuto; profundidad de al menos 5 cm (máximo 6 cm)."
+    },
+    {
+      "id": "t42-f06",
+      "pregunta": "¿Qué es la RCP solo con compresiones (hands-only CPR)?",
+      "respuesta": "RCP sin ventilaciones, solo compresiones torácicas continuas; indicada cuando no se domina la ventilación o se rechaza boca a boca."
+    },
+    {
+      "id": "t42-f07",
+      "pregunta": "¿Cómo se colocan los parches del DEA?",
+      "respuesta": "Uno bajo la clavícula derecha y otro bajo la axila izquierda."
+    },
+    {
+      "id": "t42-f08",
+      "pregunta": "¿Cuántos minutos de RCP se realizan después de cada descarga del DEA?",
+      "respuesta": "2 minutos de compresiones torácicas inmediatamente después de cada descarga, antes de que el DEA vuelva a analizar."
+    },
+    {
+      "id": "t42-f09",
+      "pregunta": "¿Cuáles son los 6 eslabones de la cadena de supervivencia del ERC 2021?",
+      "respuesta": "1.Reconocimiento y llamada al 1-1-2; 2.RCP precoz; 3.Desfibrilación precoz; 4.Servicios de emergencias; 5.SVA y cuidados post-RCP; 6.Recuperación."
+    },
+    {
+      "id": "t42-f10",
+      "pregunta": "¿Qué significa FAST en el reconocimiento del ictus?",
+      "respuesta": "Face (asimetría facial), Arm (debilidad de un brazo), Speech (dificultad para hablar), Time (tiempo urgente para actuar)."
+    },
+    {
+      "id": "t42-f11",
+      "pregunta": "¿En qué consiste la maniobra de Heimlich?",
+      "respuesta": "5 compresiones abdominales bruscas hacia adentro y hacia arriba en el adulto consciente con obstrucción grave de la vía aérea, alternando con 5 palmadas interescapulares."
+    },
+    {
+      "id": "t42-f12",
+      "pregunta": "¿Qué es la Posición Lateral de Seguridad (PLS) y cuándo se usa?",
+      "respuesta": "Posición en decúbito lateral que evita la broncoaspiración; se usa en víctimas inconscientes que respiran con normalidad."
+    },
+    {
+      "id": "t42-f13",
+      "pregunta": "¿Cuánto tiempo hay que enfriar una quemadura con agua y a qué temperatura?",
+      "respuesta": "10-20 minutos con agua fría a 15-20°C; nunca usar hielo, pomadas ni reventar ampollas."
+    },
+    {
+      "id": "t42-f14",
+      "pregunta": "¿Cuánto reduce la supervivencia cada minuto que pasa sin iniciar RCP?",
+      "respuesta": "Aproximadamente un 10% por cada minuto que pasa sin RCP en una parada cardiorrespiratoria."
+    },
+    {
+      "id": "t42-f15",
+      "pregunta": "¿En qué posición se coloca a una víctima en shock (posición antishock)?",
+      "respuesta": "Tumbada con las piernas elevadas 30-45 cm (Trendelenburg modificada); contraindicada si hay traumatismo craneal o torácico."
+    },
+    {
+      "id": "t42-f16",
+      "pregunta": "¿Qué hacer ante una crisis convulsiva?",
+      "respuesta": "No sujetar los miembros; proteger la cabeza; retirar objetos peligrosos; al finalizar, colocar en PLS; no introducir nada en la boca."
+    },
+    {
+      "id": "t42-f17",
+      "pregunta": "¿Cuándo se aplica un torniquete en una hemorragia externa?",
+      "respuesta": "Solo en hemorragias masivas de extremidades que no ceden con compresión directa; anotar la hora de aplicación."
+    },
+    {
+      "id": "t42-f18",
+      "pregunta": "¿Qué se debe hacer ante una víctima electrocutada?",
+      "respuesta": "NO tocar a la víctima hasta cortar la corriente eléctrica; alejarse al menos 10 metros de cables de alta tensión."
+    },
+    {
+      "id": "t42-f19",
+      "pregunta": "¿Qué significa la escala AVPU de nivel de consciencia?",
+      "respuesta": "Alert (alerta), Voice (responde a la voz), Pain (responde al dolor), Unresponsive (no responde)."
+    },
+    {
+      "id": "t42-f20",
+      "pregunta": "¿Cuál es la maniobra básica para abrir la vía aérea en un adulto?",
+      "respuesta": "La maniobra frente-mentón: una mano en la frente inclinando la cabeza hacia atrás y los dedos de la otra mano elevando el mentón."
+    }
   ],
   "preguntas": [
     {
       "id": "t42-q01",
       "pregunta": "¿Qué significa el acrónimo PAS en actuación ante emergencias?",
-      "opciones": ["Prevenir, Avisar, Socorrer", "Proteger, Alertar, Socorrer", "Priorizar, Atender, Solicitar ayuda"],
+      "opciones": [
+        "Prevenir, Avisar, Socorrer",
+        "Proteger, Alertar, Socorrer",
+        "Priorizar, Atender, Solicitar ayuda"
+      ],
       "correcta": 1,
       "explicacion": "PAS es el protocolo básico de actuación: Proteger la zona, Alertar al 1-1-2 y Socorrer a la víctima."
     },
     {
       "id": "t42-q02",
       "pregunta": "¿Cuál es la relación compresiones/ventilaciones en RCP básica del adulto según el ERC 2021?",
-      "opciones": ["15:2", "30:2", "20:1"],
+      "opciones": [
+        "15:2",
+        "30:2",
+        "20:1"
+      ],
       "correcta": 1,
       "explicacion": "Las guías del European Resuscitation Council (ERC) 2021 establecen una relación de 30 compresiones por 2 ventilaciones en adultos."
     },
     {
       "id": "t42-q03",
       "pregunta": "¿A qué frecuencia deben realizarse las compresiones torácicas en RCP?",
-      "opciones": ["60-80 compresiones por minuto", "100-120 compresiones por minuto", "140-160 compresiones por minuto"],
+      "opciones": [
+        "60-80 compresiones por minuto",
+        "100-120 compresiones por minuto",
+        "140-160 compresiones por minuto"
+      ],
       "correcta": 1,
       "explicacion": "Las guías ERC 2021 establecen una frecuencia de 100-120 compresiones por minuto con una profundidad de al menos 5 cm (máximo 6 cm)."
     },
     {
       "id": "t42-q04",
       "pregunta": "¿Cuánto tiempo máximo se dedica a comprobar si una víctima inconsciente respira?",
-      "opciones": ["5 segundos", "10 segundos", "30 segundos"],
+      "opciones": [
+        "5 segundos",
+        "10 segundos",
+        "30 segundos"
+      ],
       "correcta": 1,
       "explicacion": "La comprobación de respiración (VOS: ver, oír, sentir) no debe durar más de 10 segundos para no demorar el inicio de la RCP."
     },
     {
       "id": "t42-q05",
       "pregunta": "¿Dónde se coloca el segundo parche del DEA (el que no va bajo la clavícula derecha)?",
-      "opciones": ["Bajo la clavícula izquierda", "Bajo la axila izquierda", "En el centro del pecho"],
+      "opciones": [
+        "Bajo la clavícula izquierda",
+        "Bajo la axila izquierda",
+        "En el centro del pecho"
+      ],
       "correcta": 1,
       "explicacion": "Los parches del DEA se colocan: uno bajo la clavícula derecha y otro bajo la axila izquierda, en posición esternal-apical."
     },
     {
       "id": "t42-q06",
       "pregunta": "¿Cuánto reduce la supervivencia cada minuto sin RCP tras una parada cardiorrespiratoria?",
-      "opciones": ["5%", "10%", "20%"],
+      "opciones": [
+        "5%",
+        "10%",
+        "20%"
+      ],
       "correcta": 1,
       "explicacion": "Cada minuto que pasa sin RCP reduce aproximadamente un 10% las posibilidades de supervivencia de la víctima en parada cardiorrespiratoria."
     },
     {
       "id": "t42-q07",
       "pregunta": "¿Qué significa FAST en el reconocimiento del ictus?",
-      "opciones": ["Fall, Arm, Speech, Time", "Face, Arm, Speech, Time", "Face, Alert, Sit, Transfer"],
+      "opciones": [
+        "Fall, Arm, Speech, Time",
+        "Face, Arm, Speech, Time",
+        "Face, Alert, Sit, Transfer"
+      ],
       "correcta": 1,
       "explicacion": "FAST: Face (asimetría facial), Arm (debilidad de un brazo), Speech (dificultad para hablar), Time (tiempo urgente: el tiempo es cerebro)."
     },
     {
       "id": "t42-q08",
       "pregunta": "¿En qué consiste la maniobra de Heimlich?",
-      "opciones": ["5 palmadas en la espalda entre los omóplatos", "5 compresiones abdominales bruscas hacia adentro y arriba en el adulto consciente", "Extensión forzada del cuello para liberar la vía aérea"],
+      "opciones": [
+        "5 palmadas en la espalda entre los omóplatos",
+        "5 compresiones abdominales bruscas hacia adentro y arriba en el adulto consciente",
+        "Extensión forzada del cuello para liberar la vía aérea"
+      ],
       "correcta": 1,
       "explicacion": "La maniobra de Heimlich consiste en 5 compresiones abdominales bruscas hacia adentro y hacia arriba en el adulto consciente con obstrucción grave de la vía aérea."
     },
     {
       "id": "t42-q09",
       "pregunta": "¿Cuándo está CONTRAINDICADA la posición antishock (Trendelenburg modificada)?",
-      "opciones": ["En personas mayores de 65 años", "Si hay traumatismo craneal o torácico", "En pacientes con diabetes"],
+      "opciones": [
+        "En personas mayores de 65 años",
+        "Si hay traumatismo craneal o torácico",
+        "En pacientes con diabetes"
+      ],
       "correcta": 1,
       "explicacion": "La posición antishock (piernas elevadas 30-45 cm) está contraindicada si existe traumatismo craneal o torácico, ya que puede agravar estas lesiones."
     },
     {
       "id": "t42-q10",
       "pregunta": "¿Qué se hace ante una víctima inconsciente que RESPIRA con normalidad?",
-      "opciones": ["Iniciar RCP inmediatamente", "Colocar en Posición Lateral de Seguridad (PLS)", "Administrar ventilaciones boca a boca"],
+      "opciones": [
+        "Iniciar RCP inmediatamente",
+        "Colocar en Posición Lateral de Seguridad (PLS)",
+        "Administrar ventilaciones boca a boca"
+      ],
       "correcta": 1,
       "explicacion": "Si la víctima está inconsciente pero respira con normalidad, se coloca en Posición Lateral de Seguridad (PLS) para evitar la broncoaspiración."
     },
     {
       "id": "t42-q11",
       "pregunta": "¿Qué artículo del CP tipifica la omisión del deber de socorro?",
-      "opciones": ["Art. 174 CP", "Art. 195 CP", "Art. 163 CP"],
+      "opciones": [
+        "Art. 174 CP",
+        "Art. 195 CP",
+        "Art. 163 CP"
+      ],
       "correcta": 1,
       "explicacion": "El art. 195 CP tipifica la omisión del deber de socorro, con pena de multa de 3 a 12 meses."
     },
     {
       "id": "t42-q12",
       "pregunta": "¿Durante cuánto tiempo y a qué temperatura se enfría una quemadura?",
-      "opciones": ["5 minutos con agua muy fría (5°C)", "10-20 minutos con agua a 15-20°C", "30 minutos con agua tibia (30°C)"],
+      "opciones": [
+        "5 minutos con agua muy fría (5°C)",
+        "10-20 minutos con agua a 15-20°C",
+        "30 minutos con agua tibia (30°C)"
+      ],
       "correcta": 1,
       "explicacion": "Las quemaduras se enfrían durante 10-20 minutos con agua fría a 15-20°C; nunca con hielo (puede causar congelación)."
     },
     {
       "id": "t42-q13",
       "pregunta": "¿Cuántos eslabones tiene la cadena de supervivencia del ERC 2021?",
-      "opciones": ["4 eslabones", "5 eslabones", "6 eslabones"],
+      "opciones": [
+        "4 eslabones",
+        "5 eslabones",
+        "6 eslabones"
+      ],
       "correcta": 2,
       "explicacion": "La cadena de supervivencia del ERC 2021 tiene 6 eslabones: reconocimiento y llamada, RCP precoz, desfibrilación precoz, servicios de emergencias, cuidados post-RCP y recuperación."
     },
     {
       "id": "t42-q14",
       "pregunta": "¿Qué debe hacerse ANTES de tocar a una víctima electrocutada?",
-      "opciones": ["Aplicar RCP inmediatamente", "Cortar la corriente eléctrica", "Mojarla con agua para disipar la corriente"],
+      "opciones": [
+        "Aplicar RCP inmediatamente",
+        "Cortar la corriente eléctrica",
+        "Mojarla con agua para disipar la corriente"
+      ],
       "correcta": 1,
       "explicacion": "Ante electrocución, NUNCA tocar a la víctima hasta cortar la corriente eléctrica; en caso de alta tensión, alejarse al menos 10 metros."
     },
     {
       "id": "t42-q15",
       "pregunta": "¿Qué significa la escala AVPU?",
-      "opciones": ["Alert, Verbal, Pain, Unconscious", "Alert, Voice, Pain, Unresponsive", "Awake, Verbal, Pressure, Unresponsive"],
+      "opciones": [
+        "Alert, Verbal, Pain, Unconscious",
+        "Alert, Voice, Pain, Unresponsive",
+        "Awake, Verbal, Pressure, Unresponsive"
+      ],
       "correcta": 1,
       "explicacion": "AVPU: Alert (alerta), Voice (responde a la voz), Pain (responde al dolor), Unresponsive (no responde). Es una escala rápida de valoración del nivel de consciencia."
     }

@@ -48,32 +48,188 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "n1", "label": "Delitos Libertad\ne Indemnidad\nSexual Tít. VIII", "tipo": "central" },
-      { "id": "n2", "label": "LO 10/2022\nmodelo\nconsentimiento", "tipo": "rama" },
-      { "id": "n3", "label": "Agresión sexual\nart. 178\n1-4/2-8 años", "tipo": "rama" },
-      { "id": "n4", "label": "Violación\nart. 179\n4-12 años", "tipo": "rama" },
-      { "id": "n5", "label": "Agravaciones\nart. 180\n5-10/12-15 años", "tipo": "rama" },
-      { "id": "n6", "label": "Menores < 16a\nart. 181\n2-6/6-12 años", "tipo": "rama" },
-      { "id": "n7", "label": "Acoso sexual\nart. 184", "tipo": "rama" },
-      { "id": "n8", "label": "Pornografía\ninfantil art. 189\n1-5 años", "tipo": "rama" },
-      { "id": "n9", "label": "Child grooming\nart. 183 bis\n1-5 años", "tipo": "rama" },
-      { "id": "n10", "label": "Edad consentim.\n16 años\nart. 183 quater", "tipo": "hoja" },
-      { "id": "n11", "label": "Libertad vigilada\nhasta 10 años\nRegistro Sexual", "tipo": "hoja" },
-      { "id": "n12", "label": "Prostitución\nmenores art. 188\n4-8 años", "tipo": "hoja" }
+      {
+        "id": "n1",
+        "data": {
+          "label": "Delitos Libertad\ne Indemnidad\nSexual Tít. VIII"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "LO 10/2022\nmodelo\nconsentimiento"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Agresión sexual\nart. 178\n1-4/2-8 años"
+        },
+        "position": {
+          "x": 193,
+          "y": -230
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Violación\nart. 179\n4-12 años"
+        },
+        "position": {
+          "x": 295,
+          "y": -52
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "Agravaciones\nart. 180\n5-10/12-15 años"
+        },
+        "position": {
+          "x": 260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Menores < 16a\nart. 181\n2-6/6-12 años"
+        },
+        "position": {
+          "x": 103,
+          "y": 282
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Acoso sexual\nart. 184"
+        },
+        "position": {
+          "x": -103,
+          "y": 282
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Pornografía\ninfantil art. 189\n1-5 años"
+        },
+        "position": {
+          "x": -260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Child grooming\nart. 183 bis\n1-5 años"
+        },
+        "position": {
+          "x": -295,
+          "y": -52
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "Edad consentim.\n16 años\nart. 183 quater"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Libertad vigilada\nhasta 10 años\nRegistro Sexual"
+        },
+        "position": {
+          "x": 0,
+          "y": 580
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "Prostitución\nmenores art. 188\n4-8 años"
+        },
+        "position": {
+          "x": -193,
+          "y": -230
+        }
+      }
     ],
     "aristas": [
-      { "origen": "n1", "destino": "n2" },
-      { "origen": "n1", "destino": "n3" },
-      { "origen": "n1", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n1", "destino": "n7" },
-      { "origen": "n1", "destino": "n8" },
-      { "origen": "n1", "destino": "n9" },
-      { "origen": "n6", "destino": "n10" },
-      { "origen": "n2", "destino": "n10" },
-      { "origen": "n5", "destino": "n11" },
-      { "origen": "n1", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n2"
+      },
+      {
+        "id": "e2",
+        "source": "n1",
+        "target": "n3"
+      },
+      {
+        "id": "e3",
+        "source": "n1",
+        "target": "n4"
+      },
+      {
+        "id": "e4",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n7"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n8"
+      },
+      {
+        "id": "e8",
+        "source": "n1",
+        "target": "n9"
+      },
+      {
+        "id": "e9",
+        "source": "n6",
+        "target": "n10"
+      },
+      {
+        "id": "e10",
+        "source": "n2",
+        "target": "n10"
+      },
+      {
+        "id": "e11",
+        "source": "n5",
+        "target": "n11"
+      },
+      {
+        "id": "e12",
+        "source": "n1",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [

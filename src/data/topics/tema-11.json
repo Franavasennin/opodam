@@ -48,32 +48,188 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "n1", "label": "Responsabilidad\nPatrimonial\nAdministración", "tipo": "central" },
-      { "id": "n2", "label": "Art. 106.2 CE\nArt. 32 LRJSP", "tipo": "rama" },
-      { "id": "n3", "label": "Características\nobjetiva · directa\nintegral", "tipo": "rama" },
-      { "id": "n4", "label": "Req. 1\nLesión antijurídica", "tipo": "rama" },
-      { "id": "n5", "label": "Req. 2\nNexo causal", "tipo": "rama" },
-      { "id": "n6", "label": "Req. 3\nImputabilidad\na la Admin.", "tipo": "rama" },
-      { "id": "n7", "label": "Exclusiones\nFuerza mayor\nDeber jurídico", "tipo": "rama" },
-      { "id": "n8", "label": "Procedimiento\n6 meses máximo", "tipo": "rama" },
-      { "id": "n9", "label": "Acción\nde Regreso\nart. 36 LRJSP", "tipo": "rama" },
-      { "id": "n10", "label": "Prescripción\n1 año\nart. 67 LPACAP", "tipo": "hoja" },
-      { "id": "n11", "label": "Responsabilidad\nsolidaria\nart. 33 LRJSP", "tipo": "hoja" },
-      { "id": "n12", "label": "Dictamen\nConsejo Estado\n+50.000 euros", "tipo": "hoja" }
+      {
+        "id": "n1",
+        "data": {
+          "label": "Responsabilidad\nPatrimonial\nAdministración"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Art. 106.2 CE\nArt. 32 LRJSP"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Características\nobjetiva · directa\nintegral"
+        },
+        "position": {
+          "x": 212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Req. 1\nLesión antijurídica"
+        },
+        "position": {
+          "x": 300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "Req. 2\nNexo causal"
+        },
+        "position": {
+          "x": 212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Req. 3\nImputabilidad\na la Admin."
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Exclusiones\nFuerza mayor\nDeber jurídico"
+        },
+        "position": {
+          "x": -212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Procedimiento\n6 meses máximo"
+        },
+        "position": {
+          "x": -300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Acción\nde Regreso\nart. 36 LRJSP"
+        },
+        "position": {
+          "x": -212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "Prescripción\n1 año\nart. 67 LPACAP"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Responsabilidad\nsolidaria\nart. 33 LRJSP"
+        },
+        "position": {
+          "x": 502,
+          "y": 290
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "Dictamen\nConsejo Estado\n+50.000 euros"
+        },
+        "position": {
+          "x": -502,
+          "y": 290
+        }
+      }
     ],
     "aristas": [
-      { "origen": "n1", "destino": "n2" },
-      { "origen": "n1", "destino": "n3" },
-      { "origen": "n1", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n1", "destino": "n7" },
-      { "origen": "n1", "destino": "n8" },
-      { "origen": "n1", "destino": "n9" },
-      { "origen": "n4", "destino": "n10" },
-      { "origen": "n8", "destino": "n12" },
-      { "origen": "n6", "destino": "n11" },
-      { "origen": "n9", "destino": "n10" }
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n2"
+      },
+      {
+        "id": "e2",
+        "source": "n1",
+        "target": "n3"
+      },
+      {
+        "id": "e3",
+        "source": "n1",
+        "target": "n4"
+      },
+      {
+        "id": "e4",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n7"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n8"
+      },
+      {
+        "id": "e8",
+        "source": "n1",
+        "target": "n9"
+      },
+      {
+        "id": "e9",
+        "source": "n4",
+        "target": "n10"
+      },
+      {
+        "id": "e10",
+        "source": "n8",
+        "target": "n12"
+      },
+      {
+        "id": "e11",
+        "source": "n6",
+        "target": "n11"
+      },
+      {
+        "id": "e12",
+        "source": "n9",
+        "target": "n10"
+      }
     ]
   },
   "flashcards": [

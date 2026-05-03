@@ -42,31 +42,183 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "n1", "label": "Orden publico CP", "nivel": 0 },
-      { "id": "n2", "label": "Rebelion", "nivel": 1 },
-      { "id": "n3", "label": "Atentado autoridad", "nivel": 1 },
-      { "id": "n4", "label": "Resistencia", "nivel": 1 },
-      { "id": "n5", "label": "Desordenes publicos", "nivel": 1 },
-      { "id": "n6", "label": "Terrorismo", "nivel": 1 },
-      { "id": "n7", "label": "Enaltecimiento", "nivel": 1 },
-      { "id": "n8", "label": "Financiacion terror.", "nivel": 1 },
-      { "id": "n9", "label": "Marco internacional", "nivel": 1 },
-      { "id": "n10", "label": "Jefes 15-25a / Part. 10-15a", "nivel": 2 },
-      { "id": "n11", "label": "Org. 8-15a / Miembros 6-12a", "nivel": 2 },
-      { "id": "n12", "label": "CETS196 / ONU2178 / Dir.2017", "nivel": 2 }
+      {
+        "id": "n1",
+        "data": {
+          "label": "Orden publico CP"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Rebelion"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Atentado autoridad"
+        },
+        "position": {
+          "x": 212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Resistencia"
+        },
+        "position": {
+          "x": 300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "Desordenes publicos"
+        },
+        "position": {
+          "x": 212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Terrorismo"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Enaltecimiento"
+        },
+        "position": {
+          "x": -212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Financiacion terror."
+        },
+        "position": {
+          "x": -300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Marco internacional"
+        },
+        "position": {
+          "x": -212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "Jefes 15-25a / Part. 10-15a"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Org. 8-15a / Miembros 6-12a"
+        },
+        "position": {
+          "x": 502,
+          "y": 290
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "CETS196 / ONU2178 / Dir.2017"
+        },
+        "position": {
+          "x": -502,
+          "y": 290
+        }
+      }
     ],
     "aristas": [
-      { "origen": "n1", "destino": "n2" },
-      { "origen": "n1", "destino": "n3" },
-      { "origen": "n1", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n1", "destino": "n7" },
-      { "origen": "n1", "destino": "n8" },
-      { "origen": "n1", "destino": "n9" },
-      { "origen": "n2", "destino": "n10" },
-      { "origen": "n6", "destino": "n11" },
-      { "origen": "n9", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n2"
+      },
+      {
+        "id": "e2",
+        "source": "n1",
+        "target": "n3"
+      },
+      {
+        "id": "e3",
+        "source": "n1",
+        "target": "n4"
+      },
+      {
+        "id": "e4",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n7"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n8"
+      },
+      {
+        "id": "e8",
+        "source": "n1",
+        "target": "n9"
+      },
+      {
+        "id": "e9",
+        "source": "n2",
+        "target": "n10"
+      },
+      {
+        "id": "e10",
+        "source": "n6",
+        "target": "n11"
+      },
+      {
+        "id": "e11",
+        "source": "n9",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [
@@ -175,105 +327,165 @@
     {
       "id": "t19-q01",
       "enunciado": "¿Cuál es la pena para los jefes y promotores del delito de rebelión (art. 472 CP)?",
-      "opciones": ["10 a 15 años de prisión", "15 a 25 años de prisión más inhabilitación absoluta", "20 a 30 años de prisión"],
+      "opciones": [
+        "10 a 15 años de prisión",
+        "15 a 25 años de prisión más inhabilitación absoluta",
+        "20 a 30 años de prisión"
+      ],
       "correcta": 1,
       "explicacion": "Art. 472 CP: los jefes, promotores y sostenedores de la rebelión son castigados con penas de 15 a 25 años de prisión más inhabilitación absoluta."
     },
     {
       "id": "t19-q02",
       "enunciado": "¿Qué reforma legislativa suprimió el delito de sedición y qué lo sustituyó?",
-      "opciones": ["LO 1/2015 lo sustituyó por la rebelión agravada", "LO 14/2022 lo suprimió y fue sustituido por los desórdenes públicos agravados del art. 557 bis CP", "LO 2/2015 lo reformó ampliando sus supuestos"],
+      "opciones": [
+        "LO 1/2015 lo sustituyó por la rebelión agravada",
+        "LO 14/2022 lo suprimió y fue sustituido por los desórdenes públicos agravados del art. 557 bis CP",
+        "LO 2/2015 lo reformó ampliando sus supuestos"
+      ],
       "correcta": 1,
       "explicacion": "La LO 14/2022 de 22 de diciembre derogó el delito de sedición (arts. 544-549 CP) y creó los desórdenes públicos agravados (art. 557 bis CP) como figura sustitutoria."
     },
     {
       "id": "t19-q03",
       "enunciado": "¿Cuál es la pena del delito de atentado cuando la víctima es miembro de las Fuerzas y Cuerpos de Seguridad (art. 550 CP)?",
-      "opciones": ["6 meses a 1 año de prisión", "2 a 4 años de prisión", "4 a 6 años de prisión"],
+      "opciones": [
+        "6 meses a 1 año de prisión",
+        "2 a 4 años de prisión",
+        "4 a 6 años de prisión"
+      ],
       "correcta": 1,
       "explicacion": "Art. 550.1 CP: cuando la víctima es miembro de las Fuerzas y Cuerpos de Seguridad, la pena es de 2 a 4 años de prisión (la pena básica por atentado a funcionario en general es de 1 a 4 años)."
     },
     {
       "id": "t19-q04",
       "enunciado": "¿Cuál es la pena del delito de resistencia o desobediencia grave a la autoridad (art. 556 CP)?",
-      "opciones": ["6 meses a 3 años de prisión", "3 meses a 1 año de prisión o multa de 6 a 18 meses", "1 a 4 años de prisión"],
+      "opciones": [
+        "6 meses a 3 años de prisión",
+        "3 meses a 1 año de prisión o multa de 6 a 18 meses",
+        "1 a 4 años de prisión"
+      ],
       "correcta": 1,
       "explicacion": "Art. 556 CP: resistencia o desobediencia grave a la autoridad o sus agentes en el ejercicio de sus funciones → prisión de 3 meses a 1 año o multa de 6 a 18 meses."
     },
     {
       "id": "t19-q05",
       "enunciado": "¿Cuál es la pena para los jefes en el delito de desórdenes públicos agravados (art. 557 bis CP)?",
-      "opciones": ["1 a 5 años de prisión", "4 a 8 años de prisión más inhabilitación", "6 a 10 años de prisión"],
+      "opciones": [
+        "1 a 5 años de prisión",
+        "4 a 8 años de prisión más inhabilitación",
+        "6 a 10 años de prisión"
+      ],
       "correcta": 1,
       "explicacion": "Art. 557 bis CP: jefes y directores de los desórdenes públicos agravados → 4 a 8 años de prisión más inhabilitación. Los partícipes: 1 a 5 años."
     },
     {
       "id": "t19-q06",
       "enunciado": "¿Cuáles son las penas para los jefes de una organización terrorista (art. 572 CP)?",
-      "opciones": ["5 a 10 años de prisión", "8 a 15 años de prisión más inhabilitación", "15 a 20 años de prisión"],
+      "opciones": [
+        "5 a 10 años de prisión",
+        "8 a 15 años de prisión más inhabilitación",
+        "15 a 20 años de prisión"
+      ],
       "correcta": 1,
       "explicacion": "Art. 572 CP: fundadores, jefes y presidentes de organizaciones terroristas → 8 a 15 años de prisión más inhabilitación especial. Miembros activos: 6-12 años. Colaboradores: 5-10 años."
     },
     {
       "id": "t19-q07",
       "enunciado": "¿Qué castiga el art. 578 CP?",
-      "opciones": ["El adoctrinamiento activo de nuevos terroristas", "El enaltecimiento o justificación de delitos de terrorismo o la humillación de sus víctimas", "La financiación de organizaciones terroristas"],
+      "opciones": [
+        "El adoctrinamiento activo de nuevos terroristas",
+        "El enaltecimiento o justificación de delitos de terrorismo o la humillación de sus víctimas",
+        "La financiación de organizaciones terroristas"
+      ],
       "correcta": 1,
       "explicacion": "Art. 578 CP: enaltecimiento o justificación pública del terrorismo o de sus autores, y los actos de descrédito o humillación de las víctimas del terrorismo. Pena: 1-3 años + inhabilitación 6-7 años."
     },
     {
       "id": "t19-q08",
       "enunciado": "¿Qué tipifica el art. 575 CP introducido por la LO 2/2015?",
-      "opciones": ["El viaje para combatir en conflictos bélicos extranjeros", "El adoctrinamiento y adiestramiento pasivo (auto-adoctrinamiento) con finalidad terrorista", "La colaboración económica con organizaciones terroristas"],
+      "opciones": [
+        "El viaje para combatir en conflictos bélicos extranjeros",
+        "El adoctrinamiento y adiestramiento pasivo (auto-adoctrinamiento) con finalidad terrorista",
+        "La colaboración económica con organizaciones terroristas"
+      ],
       "correcta": 1,
       "explicacion": "Art. 575 CP: quien accede habitualmente a contenidos de adoctrinamiento terrorista con finalidad de incorporarse a una organización o cometer actos de terrorismo → 2-5 años de prisión."
     },
     {
       "id": "t19-q09",
       "enunciado": "¿Cuál es la pena del delito de financiación del terrorismo (art. 573 CP)?",
-      "opciones": ["2 a 5 años de prisión", "5 a 10 años de prisión", "10 a 15 años de prisión"],
+      "opciones": [
+        "2 a 5 años de prisión",
+        "5 a 10 años de prisión",
+        "10 a 15 años de prisión"
+      ],
       "correcta": 1,
       "explicacion": "Art. 573 CP: financiación del terrorismo (proporcionar o recaudar fondos para delitos terroristas) → prisión de 5 a 10 años."
     },
     {
       "id": "t19-q10",
       "enunciado": "¿Qué establece la Resolución ONU 2178 (2014)?",
-      "opciones": ["La creación del Tribunal Penal Internacional para el Terrorismo", "La obligación de los Estados de tipificar el desplazamiento de combatientes terroristas extranjeros", "El régimen de sanciones económicas contra organizaciones terroristas"],
+      "opciones": [
+        "La creación del Tribunal Penal Internacional para el Terrorismo",
+        "La obligación de los Estados de tipificar el desplazamiento de combatientes terroristas extranjeros",
+        "El régimen de sanciones económicas contra organizaciones terroristas"
+      ],
       "correcta": 1,
       "explicacion": "La Resolución 2178 (2014) del Consejo de Seguridad de la ONU obliga a los Estados a tipificar y perseguir los desplazamientos de foreign terrorist fighters, su reclutamiento, financiación y apoyo."
     },
     {
       "id": "t19-q11",
       "enunciado": "¿Qué órgano judicial es competente para juzgar los delitos de terrorismo en España?",
-      "opciones": ["Los Juzgados de lo Penal de la provincia donde se cometan los hechos", "La Audiencia Nacional (Juzgados Centrales de Instrucción y Sala de lo Penal)", "El Tribunal Supremo en única instancia"],
+      "opciones": [
+        "Los Juzgados de lo Penal de la provincia donde se cometan los hechos",
+        "La Audiencia Nacional (Juzgados Centrales de Instrucción y Sala de lo Penal)",
+        "El Tribunal Supremo en única instancia"
+      ],
       "correcta": 1,
       "explicacion": "La Audiencia Nacional tiene competencia exclusiva para investigar (Juzgados Centrales de Instrucción) y juzgar (Sala de lo Penal) los delitos de terrorismo en todo el territorio nacional."
     },
     {
       "id": "t19-q12",
       "enunciado": "¿Qué reforma introdujo principalmente la LO 2/2015 en materia de terrorismo?",
-      "opciones": ["Suprimió los actos preparatorios punibles en terrorismo", "Amplió el concepto para incluir el terrorismo individual, tipificó el auto-adoctrinamiento y el viaje para adiestramiento", "Redujo las penas de los delitos de colaboración con organizaciones terroristas"],
+      "opciones": [
+        "Suprimió los actos preparatorios punibles en terrorismo",
+        "Amplió el concepto para incluir el terrorismo individual, tipificó el auto-adoctrinamiento y el viaje para adiestramiento",
+        "Redujo las penas de los delitos de colaboración con organizaciones terroristas"
+      ],
       "correcta": 1,
       "explicacion": "La LO 2/2015 amplió el concepto de terrorismo al terrorismo individual (lobo solitario), tipificó el auto-adoctrinamiento (art. 575), el viaje al extranjero para adiestramiento y reforzó la financiación."
     },
     {
       "id": "t19-q13",
       "enunciado": "¿Qué regula la Ley 29/2011 de 22 de septiembre?",
-      "opciones": ["El procedimiento especial para juicio de delitos de terrorismo", "El reconocimiento y la protección integral a las víctimas del terrorismo", "La creación del Centro Nacional de Inteligencia (CNI)"],
+      "opciones": [
+        "El procedimiento especial para juicio de delitos de terrorismo",
+        "El reconocimiento y la protección integral a las víctimas del terrorismo",
+        "La creación del Centro Nacional de Inteligencia (CNI)"
+      ],
       "correcta": 1,
       "explicacion": "La Ley 29/2011 reconoce y regula la protección integral a las víctimas del terrorismo: prestaciones económicas, asistencia sanitaria, apoyo psicológico y reconocimiento público."
     },
     {
       "id": "t19-q14",
       "enunciado": "¿Qué pena establece el art. 574 CP para el depósito de armas con finalidad terrorista?",
-      "opciones": ["5 a 10 años de prisión", "10 a 20 años de prisión", "15 a 25 años de prisión"],
+      "opciones": [
+        "5 a 10 años de prisión",
+        "10 a 20 años de prisión",
+        "15 a 25 años de prisión"
+      ],
       "correcta": 1,
       "explicacion": "Art. 574 CP: tener, fabricar, transportar o suministrar armas, municiones o explosivos en el contexto de actividad terrorista → prisión de 10 a 20 años."
     },
     {
       "id": "t19-q15",
       "enunciado": "¿Qué tipifica el art. 560 CP?",
-      "opciones": ["Los atentados contra infraestructuras digitales del Estado", "Los daños en vías férreas u otras instalaciones de transporte que interrumpan el servicio", "La perturbación del orden en actos públicos y oficiales"],
+      "opciones": [
+        "Los atentados contra infraestructuras digitales del Estado",
+        "Los daños en vías férreas u otras instalaciones de transporte que interrumpan el servicio",
+        "La perturbación del orden en actos públicos y oficiales"
+      ],
       "correcta": 1,
       "explicacion": "Art. 560 CP: dañar vías férreas, instalaciones de transporte o comunicación interrumpiendo o perturbando el servicio → prisión de 1 a 3 años más inhabilitación especial."
     }

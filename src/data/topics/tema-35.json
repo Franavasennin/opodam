@@ -42,54 +42,286 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "texto": "Policía Local\nLOFCS + Ley 6/1997", "nivel": 0 },
-      { "id": "n1", "texto": "Marco normativo", "nivel": 1 },
-      { "id": "n2", "texto": "Naturaleza/principios", "nivel": 1 },
-      { "id": "n3", "texto": "Funciones", "nivel": 1 },
-      { "id": "n4", "texto": "Coordinación FCS", "nivel": 1 },
-      { "id": "n5", "texto": "Régimen estatutario", "nivel": 1 },
-      { "id": "n6", "texto": "Ley 6/1997 Canarias", "nivel": 1 },
-      { "id": "n1a", "texto": "LOFCS arts.51-54\nLBRL art.25.2.a)", "nivel": 2 },
-      { "id": "n2a", "texto": "Instituto armado civil\nDepende del Alcalde\nTérmino municipal", "nivel": 2 },
-      { "id": "n3a", "texto": "Tráfico urbano\nPolicía admin.\nAuxilio emergencias", "nivel": 2 },
-      { "id": "n4a", "texto": "Junta Local Seguridad\nColaboración CNP/GC\nCoord. autonómica", "nivel": 2 },
-      { "id": "n5a", "texto": "Concurso-oposición\nACS formación\nMovilidad autonómica", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "root"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n1",
+        "data": {
+          "label": "n1"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "n2"
+        },
+        "position": {
+          "x": 260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "n3"
+        },
+        "position": {
+          "x": 260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "n4"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "n5"
+        },
+        "position": {
+          "x": -260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "n6"
+        },
+        "position": {
+          "x": -260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n1a",
+        "data": {
+          "label": "n1a"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n2a",
+        "data": {
+          "label": "n2a"
+        },
+        "position": {
+          "x": 552,
+          "y": -179
+        }
+      },
+      {
+        "id": "n3a",
+        "data": {
+          "label": "n3a"
+        },
+        "position": {
+          "x": 341,
+          "y": 469
+        }
+      },
+      {
+        "id": "n4a",
+        "data": {
+          "label": "n4a"
+        },
+        "position": {
+          "x": -341,
+          "y": 469
+        }
+      },
+      {
+        "id": "n5a",
+        "data": {
+          "label": "n5a"
+        },
+        "position": {
+          "x": -552,
+          "y": -179
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "n1" },
-      { "origen": "root", "destino": "n2" },
-      { "origen": "root", "destino": "n3" },
-      { "origen": "root", "destino": "n4" },
-      { "origen": "root", "destino": "n5" },
-      { "origen": "root", "destino": "n6" },
-      { "origen": "n1", "destino": "n1a" },
-      { "origen": "n2", "destino": "n2a" },
-      { "origen": "n3", "destino": "n3a" },
-      { "origen": "n4", "destino": "n4a" },
-      { "origen": "n5", "destino": "n5a" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "n1"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "n2"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "n3"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "n4"
+      },
+      {
+        "id": "e5",
+        "source": "root",
+        "target": "n5"
+      },
+      {
+        "id": "e6",
+        "source": "root",
+        "target": "n6"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n1a"
+      },
+      {
+        "id": "e8",
+        "source": "n2",
+        "target": "n2a"
+      },
+      {
+        "id": "e9",
+        "source": "n3",
+        "target": "n3a"
+      },
+      {
+        "id": "e10",
+        "source": "n4",
+        "target": "n4a"
+      },
+      {
+        "id": "e11",
+        "source": "n5",
+        "target": "n5a"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t35-f01", "pregunta": "¿Qué artículos de la LOFCS regulan las Policías Locales?", "respuesta": "Arts. 51 a 54 de la LO 2/1986, de Fuerzas y Cuerpos de Seguridad." },
-    { "id": "t35-f02", "pregunta": "¿De quién dependen las Policías Locales?", "respuesta": "Del Alcalde de cada municipio." },
-    { "id": "t35-f03", "pregunta": "¿Cuál es la naturaleza jurídica de las Policías Locales según la LOFCS?", "respuesta": "Institutos armados de naturaleza civil, dependientes de los Ayuntamientos." },
-    { "id": "t35-f04", "pregunta": "¿Qué municipios están obligados a tener Policía Local según la LBRL?", "respuesta": "Los municipios de más de 5.000 habitantes (art. 26 LBRL)." },
-    { "id": "t35-f05", "pregunta": "¿Cuál es el ámbito territorial de actuación de las Policías Locales?", "respuesta": "El término municipal correspondiente." },
-    { "id": "t35-f06", "pregunta": "¿Qué ley regula la coordinación de las Policías Locales en Canarias?", "respuesta": "Ley 6/1997, de 4 de julio, de Coordinación de las Policías Locales de Canarias." },
-    { "id": "t35-f07", "pregunta": "¿Qué organismo forma a los miembros de las Policías Locales en Canarias?", "respuesta": "La Academia Canaria de Seguridad (ACS)." },
-    { "id": "t35-f08", "pregunta": "¿Qué es la Junta Local de Seguridad?", "respuesta": "Órgano de coordinación local entre el Ayuntamiento y las FCS estatales en el municipio, presidida por el Alcalde." },
-    { "id": "t35-f09", "pregunta": "¿Pueden las Policías Locales instruir atestados por accidentes de tráfico?", "respuesta": "Sí, pero únicamente por accidentes ocurridos dentro del casco urbano." },
-    { "id": "t35-f10", "pregunta": "¿Cuáles son las escalas de la Policía Local en Canarias según la Ley 6/1997?", "respuesta": "Escala Técnica (Intendente Mayor, Intendente, Inspector Mayor, Inspector, Subinspector) y Escala Básica (Oficial y Policía)." },
-    { "id": "t35-f11", "pregunta": "¿Pueden los miembros de las Policías Locales ejercer funciones de policía judicial?", "respuesta": "Sí, en la forma establecida en el art. 29.2 LOFCS, cuando colaboran con las FCS estatales." },
-    { "id": "t35-f12", "pregunta": "¿Qué es la Comisión de Coordinación de Policías Locales de Canarias?", "respuesta": "Órgano consultivo y de coordinación entre la CA de Canarias y los municipios canarios en materia de Policías Locales." },
-    { "id": "t35-f13", "pregunta": "¿Qué norma atribuye a los municipios competencias en seguridad en espacios públicos?", "respuesta": "El art. 25.2.a) de la Ley 7/1985, reguladora de las Bases del Régimen Local (LBRL)." },
-    { "id": "t35-f14", "pregunta": "¿A quién comunica la Policía Local los hechos que rebasen sus competencias?", "respuesta": "Al Cuerpo Nacional de Policía o a la Guardia Civil, según el ámbito territorial." },
-    { "id": "t35-f15", "pregunta": "¿Quién preside las Juntas Locales de Seguridad?", "respuesta": "El Alcalde del municipio." },
-    { "id": "t35-f16", "pregunta": "¿Cuáles son los principios básicos de actuación aplicables a los miembros de las Policías Locales?", "respuesta": "Los mismos que al resto de FCS (art. 5 LOFCS): adecuación al ordenamiento jurídico, relaciones con la comunidad, trato a detenidos, dedicación profesional, secreto profesional y responsabilidad." },
-    { "id": "t35-f17", "pregunta": "¿Pueden los miembros de las Policías Locales actuar fuera de su término municipal?", "respuesta": "Solo en casos de auxilio o colaboración con otras FCS o en supuestos de emergencia previstos en la ley." },
-    { "id": "t35-f18", "pregunta": "¿Quién dirige las Policías Locales cuando se activa un plan de emergencia supramunicipal?", "respuesta": "La autoridad civil competente (autonómica o estatal, según el nivel del plan de emergencia)." },
-    { "id": "t35-f19", "pregunta": "¿Qué sistema de movilidad existe para los miembros de las Policías Locales en Canarias?", "respuesta": "Un sistema de concurso de traslados autonómico que permite la movilidad entre los diferentes cuerpos de Policía Local de Canarias." },
-    { "id": "t35-f20", "pregunta": "¿Qué artículo de la CE garantiza la autonomía local y sirve de fundamento a las Policías Locales?", "respuesta": "El art. 140 CE, que garantiza la autonomía de los municipios." }
+    {
+      "id": "t35-f01",
+      "pregunta": "¿Qué artículos de la LOFCS regulan las Policías Locales?",
+      "respuesta": "Arts. 51 a 54 de la LO 2/1986, de Fuerzas y Cuerpos de Seguridad."
+    },
+    {
+      "id": "t35-f02",
+      "pregunta": "¿De quién dependen las Policías Locales?",
+      "respuesta": "Del Alcalde de cada municipio."
+    },
+    {
+      "id": "t35-f03",
+      "pregunta": "¿Cuál es la naturaleza jurídica de las Policías Locales según la LOFCS?",
+      "respuesta": "Institutos armados de naturaleza civil, dependientes de los Ayuntamientos."
+    },
+    {
+      "id": "t35-f04",
+      "pregunta": "¿Qué municipios están obligados a tener Policía Local según la LBRL?",
+      "respuesta": "Los municipios de más de 5.000 habitantes (art. 26 LBRL)."
+    },
+    {
+      "id": "t35-f05",
+      "pregunta": "¿Cuál es el ámbito territorial de actuación de las Policías Locales?",
+      "respuesta": "El término municipal correspondiente."
+    },
+    {
+      "id": "t35-f06",
+      "pregunta": "¿Qué ley regula la coordinación de las Policías Locales en Canarias?",
+      "respuesta": "Ley 6/1997, de 4 de julio, de Coordinación de las Policías Locales de Canarias."
+    },
+    {
+      "id": "t35-f07",
+      "pregunta": "¿Qué organismo forma a los miembros de las Policías Locales en Canarias?",
+      "respuesta": "La Academia Canaria de Seguridad (ACS)."
+    },
+    {
+      "id": "t35-f08",
+      "pregunta": "¿Qué es la Junta Local de Seguridad?",
+      "respuesta": "Órgano de coordinación local entre el Ayuntamiento y las FCS estatales en el municipio, presidida por el Alcalde."
+    },
+    {
+      "id": "t35-f09",
+      "pregunta": "¿Pueden las Policías Locales instruir atestados por accidentes de tráfico?",
+      "respuesta": "Sí, pero únicamente por accidentes ocurridos dentro del casco urbano."
+    },
+    {
+      "id": "t35-f10",
+      "pregunta": "¿Cuáles son las escalas de la Policía Local en Canarias según la Ley 6/1997?",
+      "respuesta": "Escala Técnica (Intendente Mayor, Intendente, Inspector Mayor, Inspector, Subinspector) y Escala Básica (Oficial y Policía)."
+    },
+    {
+      "id": "t35-f11",
+      "pregunta": "¿Pueden los miembros de las Policías Locales ejercer funciones de policía judicial?",
+      "respuesta": "Sí, en la forma establecida en el art. 29.2 LOFCS, cuando colaboran con las FCS estatales."
+    },
+    {
+      "id": "t35-f12",
+      "pregunta": "¿Qué es la Comisión de Coordinación de Policías Locales de Canarias?",
+      "respuesta": "Órgano consultivo y de coordinación entre la CA de Canarias y los municipios canarios en materia de Policías Locales."
+    },
+    {
+      "id": "t35-f13",
+      "pregunta": "¿Qué norma atribuye a los municipios competencias en seguridad en espacios públicos?",
+      "respuesta": "El art. 25.2.a) de la Ley 7/1985, reguladora de las Bases del Régimen Local (LBRL)."
+    },
+    {
+      "id": "t35-f14",
+      "pregunta": "¿A quién comunica la Policía Local los hechos que rebasen sus competencias?",
+      "respuesta": "Al Cuerpo Nacional de Policía o a la Guardia Civil, según el ámbito territorial."
+    },
+    {
+      "id": "t35-f15",
+      "pregunta": "¿Quién preside las Juntas Locales de Seguridad?",
+      "respuesta": "El Alcalde del municipio."
+    },
+    {
+      "id": "t35-f16",
+      "pregunta": "¿Cuáles son los principios básicos de actuación aplicables a los miembros de las Policías Locales?",
+      "respuesta": "Los mismos que al resto de FCS (art. 5 LOFCS): adecuación al ordenamiento jurídico, relaciones con la comunidad, trato a detenidos, dedicación profesional, secreto profesional y responsabilidad."
+    },
+    {
+      "id": "t35-f17",
+      "pregunta": "¿Pueden los miembros de las Policías Locales actuar fuera de su término municipal?",
+      "respuesta": "Solo en casos de auxilio o colaboración con otras FCS o en supuestos de emergencia previstos en la ley."
+    },
+    {
+      "id": "t35-f18",
+      "pregunta": "¿Quién dirige las Policías Locales cuando se activa un plan de emergencia supramunicipal?",
+      "respuesta": "La autoridad civil competente (autonómica o estatal, según el nivel del plan de emergencia)."
+    },
+    {
+      "id": "t35-f19",
+      "pregunta": "¿Qué sistema de movilidad existe para los miembros de las Policías Locales en Canarias?",
+      "respuesta": "Un sistema de concurso de traslados autonómico que permite la movilidad entre los diferentes cuerpos de Policía Local de Canarias."
+    },
+    {
+      "id": "t35-f20",
+      "pregunta": "¿Qué artículo de la CE garantiza la autonomía local y sirve de fundamento a las Policías Locales?",
+      "respuesta": "El art. 140 CE, que garantiza la autonomía de los municipios."
+    }
   ],
   "preguntas": [
     {

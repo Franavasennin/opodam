@@ -42,54 +42,286 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "texto": "Protección Civil\nPLATECA", "nivel": 0 },
-      { "id": "n1", "texto": "Marco normativo", "nivel": 1 },
-      { "id": "n2", "texto": "PLATECA", "nivel": 1 },
-      { "id": "n3", "texto": "CECOES 112", "nivel": 1 },
-      { "id": "n4", "texto": "Riesgos Canarias", "nivel": 1 },
-      { "id": "n5", "texto": "Voluntariado/medios", "nivel": 1 },
-      { "id": "n6", "texto": "Sistema alertas", "nivel": 1 },
-      { "id": "n1a", "texto": "Ley 17/2015 LSNPC\nRD 407/1992 NBPC", "nivel": 2 },
-      { "id": "n2a", "texto": "4 niveles alerta\nConsejería Seguridad\nPAM municipales", "nivel": 2 },
-      { "id": "n3a", "texto": "112 central Tenerife\nCCI Gran Canaria\nCCI islas menores", "nivel": 2 },
-      { "id": "n4a", "texto": "PEVOLCA volcánico\nINFOCA incendios\nDANA inundaciones", "nivel": 2 },
-      { "id": "n5a", "texto": "AVPC voluntarios\nUME Fuerzas Armadas\nBomberos Cabildos", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "root"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n1",
+        "data": {
+          "label": "n1"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "n2"
+        },
+        "position": {
+          "x": 260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "n3"
+        },
+        "position": {
+          "x": 260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "n4"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "n5"
+        },
+        "position": {
+          "x": -260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "n6"
+        },
+        "position": {
+          "x": -260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n1a",
+        "data": {
+          "label": "n1a"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n2a",
+        "data": {
+          "label": "n2a"
+        },
+        "position": {
+          "x": 552,
+          "y": -179
+        }
+      },
+      {
+        "id": "n3a",
+        "data": {
+          "label": "n3a"
+        },
+        "position": {
+          "x": 341,
+          "y": 469
+        }
+      },
+      {
+        "id": "n4a",
+        "data": {
+          "label": "n4a"
+        },
+        "position": {
+          "x": -341,
+          "y": 469
+        }
+      },
+      {
+        "id": "n5a",
+        "data": {
+          "label": "n5a"
+        },
+        "position": {
+          "x": -552,
+          "y": -179
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "n1" },
-      { "origen": "root", "destino": "n2" },
-      { "origen": "root", "destino": "n3" },
-      { "origen": "root", "destino": "n4" },
-      { "origen": "root", "destino": "n5" },
-      { "origen": "root", "destino": "n6" },
-      { "origen": "n1", "destino": "n1a" },
-      { "origen": "n2", "destino": "n2a" },
-      { "origen": "n3", "destino": "n3a" },
-      { "origen": "n4", "destino": "n4a" },
-      { "origen": "n5", "destino": "n5a" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "n1"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "n2"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "n3"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "n4"
+      },
+      {
+        "id": "e5",
+        "source": "root",
+        "target": "n5"
+      },
+      {
+        "id": "e6",
+        "source": "root",
+        "target": "n6"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n1a"
+      },
+      {
+        "id": "e8",
+        "source": "n2",
+        "target": "n2a"
+      },
+      {
+        "id": "e9",
+        "source": "n3",
+        "target": "n3a"
+      },
+      {
+        "id": "e10",
+        "source": "n4",
+        "target": "n4a"
+      },
+      {
+        "id": "e11",
+        "source": "n5",
+        "target": "n5a"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t36-f01", "pregunta": "¿Qué ley estatal regula el Sistema Nacional de Protección Civil?", "respuesta": "Ley 17/2015, de 9 de julio, del Sistema Nacional de Protección Civil (LSNPC)." },
-    { "id": "t36-f02", "pregunta": "¿Qué es el PLATECA?", "respuesta": "El Plan Territorial de Emergencias de Canarias, instrumento básico de planificación de la respuesta ante emergencias en el archipiélago." },
-    { "id": "t36-f03", "pregunta": "¿Cuántos niveles de alerta contempla el PLATECA?", "respuesta": "Cuatro niveles: 0 (normalidad), 1 (medios locales), 2 (coordinación autonómica) y 3 (interés nacional)." },
-    { "id": "t36-f04", "pregunta": "¿Qué es el CECOES 1-1-2 Canarias?", "respuesta": "El Centro de Coordinación Operativa de Emergencias de Canarias, que gestiona las llamadas al 112 y coordina los recursos de emergencia en el archipiélago." },
-    { "id": "t36-f05", "pregunta": "¿Dónde está ubicado el CECOES central de Canarias?", "respuesta": "En Tenerife, con un Centro de Coordinación Insular (CCI) en Gran Canaria y centros insulares en el resto de islas." },
-    { "id": "t36-f06", "pregunta": "¿Qué es el PEVOLCA?", "respuesta": "El Plan Especial de Protección Civil ante Riesgo Volcánico de Canarias, integrado en el PLATECA para la gestión de emergencias volcánicas." },
-    { "id": "t36-f07", "pregunta": "¿Cuáles son los colores del semáforo de alerta volcánica?", "respuesta": "Verde (normal), amarillo (precaución), naranja (alerta) y rojo (alarma)." },
-    { "id": "t36-f08", "pregunta": "¿Qué es la UME?", "respuesta": "La Unidad Militar de Emergencias, creada por RD 416/2006, especializada en intervención ante emergencias. Intervino en el volcán de La Palma (2021)." },
-    { "id": "t36-f09", "pregunta": "¿Qué es el sistema ES-Alert?", "respuesta": "Sistema nacional de alerta por teléfono móvil (Cell Broadcast) que envía alertas de emergencia a todos los móviles en una zona, sin registro previo." },
-    { "id": "t36-f10", "pregunta": "¿Cuántos niveles de alerta meteorológica emite AEMET?", "respuesta": "Cuatro: verde (sin riesgo), amarillo (riesgo), naranja (riesgo importante) y rojo (riesgo extremo)." },
-    { "id": "t36-f11", "pregunta": "¿Qué son las Agrupaciones de Voluntarios de Protección Civil (AVPC)?", "respuesta": "Organizaciones de voluntarios dependientes de los Ayuntamientos que colaboran en tareas de prevención, extinción, rescate y apoyo logístico." },
-    { "id": "t36-f12", "pregunta": "¿Qué norma aprueba la Norma Básica de Protección Civil (NBPC)?", "respuesta": "RD 407/1992, que establece los criterios mínimos que deben cumplir los planes de protección civil de ámbito estatal, autonómico y local." },
-    { "id": "t36-f13", "pregunta": "¿A quién corresponde la dirección del PLATECA?", "respuesta": "Al Consejero competente en materia de emergencias del Gobierno de Canarias (Consejería de Seguridad)." },
-    { "id": "t36-f14", "pregunta": "¿Qué organismo monitorea la sismicidad y la actividad volcánica en Canarias?", "respuesta": "El IGN (Instituto Geográfico Nacional)." },
-    { "id": "t36-f15", "pregunta": "¿Qué son los Planes de Actuación Municipal (PAM) en el PLATECA?", "respuesta": "Los planes de emergencia elaborados por los Ayuntamientos que deben integrarse en el PLATECA." },
-    { "id": "t36-f16", "pregunta": "¿Cuál es el número europeo unificado de emergencias?", "respuesta": "El 112, gratuito y disponible 24h/365 días, que permite comunicarse con todos los servicios de emergencia." },
-    { "id": "t36-f17", "pregunta": "¿Qué organismo gestiona los servicios de bomberos en las islas canarias?", "respuesta": "Los Cabildos Insulares, que gestionan sus propios servicios de extinción de incendios y rescate." },
-    { "id": "t36-f18", "pregunta": "¿Qué permite la declaración de 'zona catastrófica' por el Gobierno del Estado?", "respuesta": "Activa ayudas económicas extraordinarias y mecanismos de coordinación estatal (art. 24 LSNPC)." },
-    { "id": "t36-f19", "pregunta": "¿Qué servicio sanitario atiende las emergencias médicas en Canarias?", "respuesta": "El SAMU (Servicio de Atención Médica Urgente), coordinado por el Servicio Canario de Salud." },
-    { "id": "t36-f20", "pregunta": "¿Qué diferencia hay entre confinamiento y evacuación en los protocolos del PLATECA?", "respuesta": "El confinamiento implica permanecer en el interior de edificios ante riesgo exterior. La evacuación implica el desalojo de la zona de riesgo (parcial o total)." }
+    {
+      "id": "t36-f01",
+      "pregunta": "¿Qué ley estatal regula el Sistema Nacional de Protección Civil?",
+      "respuesta": "Ley 17/2015, de 9 de julio, del Sistema Nacional de Protección Civil (LSNPC)."
+    },
+    {
+      "id": "t36-f02",
+      "pregunta": "¿Qué es el PLATECA?",
+      "respuesta": "El Plan Territorial de Emergencias de Canarias, instrumento básico de planificación de la respuesta ante emergencias en el archipiélago."
+    },
+    {
+      "id": "t36-f03",
+      "pregunta": "¿Cuántos niveles de alerta contempla el PLATECA?",
+      "respuesta": "Cuatro niveles: 0 (normalidad), 1 (medios locales), 2 (coordinación autonómica) y 3 (interés nacional)."
+    },
+    {
+      "id": "t36-f04",
+      "pregunta": "¿Qué es el CECOES 1-1-2 Canarias?",
+      "respuesta": "El Centro de Coordinación Operativa de Emergencias de Canarias, que gestiona las llamadas al 112 y coordina los recursos de emergencia en el archipiélago."
+    },
+    {
+      "id": "t36-f05",
+      "pregunta": "¿Dónde está ubicado el CECOES central de Canarias?",
+      "respuesta": "En Tenerife, con un Centro de Coordinación Insular (CCI) en Gran Canaria y centros insulares en el resto de islas."
+    },
+    {
+      "id": "t36-f06",
+      "pregunta": "¿Qué es el PEVOLCA?",
+      "respuesta": "El Plan Especial de Protección Civil ante Riesgo Volcánico de Canarias, integrado en el PLATECA para la gestión de emergencias volcánicas."
+    },
+    {
+      "id": "t36-f07",
+      "pregunta": "¿Cuáles son los colores del semáforo de alerta volcánica?",
+      "respuesta": "Verde (normal), amarillo (precaución), naranja (alerta) y rojo (alarma)."
+    },
+    {
+      "id": "t36-f08",
+      "pregunta": "¿Qué es la UME?",
+      "respuesta": "La Unidad Militar de Emergencias, creada por RD 416/2006, especializada en intervención ante emergencias. Intervino en el volcán de La Palma (2021)."
+    },
+    {
+      "id": "t36-f09",
+      "pregunta": "¿Qué es el sistema ES-Alert?",
+      "respuesta": "Sistema nacional de alerta por teléfono móvil (Cell Broadcast) que envía alertas de emergencia a todos los móviles en una zona, sin registro previo."
+    },
+    {
+      "id": "t36-f10",
+      "pregunta": "¿Cuántos niveles de alerta meteorológica emite AEMET?",
+      "respuesta": "Cuatro: verde (sin riesgo), amarillo (riesgo), naranja (riesgo importante) y rojo (riesgo extremo)."
+    },
+    {
+      "id": "t36-f11",
+      "pregunta": "¿Qué son las Agrupaciones de Voluntarios de Protección Civil (AVPC)?",
+      "respuesta": "Organizaciones de voluntarios dependientes de los Ayuntamientos que colaboran en tareas de prevención, extinción, rescate y apoyo logístico."
+    },
+    {
+      "id": "t36-f12",
+      "pregunta": "¿Qué norma aprueba la Norma Básica de Protección Civil (NBPC)?",
+      "respuesta": "RD 407/1992, que establece los criterios mínimos que deben cumplir los planes de protección civil de ámbito estatal, autonómico y local."
+    },
+    {
+      "id": "t36-f13",
+      "pregunta": "¿A quién corresponde la dirección del PLATECA?",
+      "respuesta": "Al Consejero competente en materia de emergencias del Gobierno de Canarias (Consejería de Seguridad)."
+    },
+    {
+      "id": "t36-f14",
+      "pregunta": "¿Qué organismo monitorea la sismicidad y la actividad volcánica en Canarias?",
+      "respuesta": "El IGN (Instituto Geográfico Nacional)."
+    },
+    {
+      "id": "t36-f15",
+      "pregunta": "¿Qué son los Planes de Actuación Municipal (PAM) en el PLATECA?",
+      "respuesta": "Los planes de emergencia elaborados por los Ayuntamientos que deben integrarse en el PLATECA."
+    },
+    {
+      "id": "t36-f16",
+      "pregunta": "¿Cuál es el número europeo unificado de emergencias?",
+      "respuesta": "El 112, gratuito y disponible 24h/365 días, que permite comunicarse con todos los servicios de emergencia."
+    },
+    {
+      "id": "t36-f17",
+      "pregunta": "¿Qué organismo gestiona los servicios de bomberos en las islas canarias?",
+      "respuesta": "Los Cabildos Insulares, que gestionan sus propios servicios de extinción de incendios y rescate."
+    },
+    {
+      "id": "t36-f18",
+      "pregunta": "¿Qué permite la declaración de 'zona catastrófica' por el Gobierno del Estado?",
+      "respuesta": "Activa ayudas económicas extraordinarias y mecanismos de coordinación estatal (art. 24 LSNPC)."
+    },
+    {
+      "id": "t36-f19",
+      "pregunta": "¿Qué servicio sanitario atiende las emergencias médicas en Canarias?",
+      "respuesta": "El SAMU (Servicio de Atención Médica Urgente), coordinado por el Servicio Canario de Salud."
+    },
+    {
+      "id": "t36-f20",
+      "pregunta": "¿Qué diferencia hay entre confinamiento y evacuación en los protocolos del PLATECA?",
+      "respuesta": "El confinamiento implica permanecer en el interior de edificios ante riesgo exterior. La evacuación implica el desalojo de la zona de riesgo (parcial o total)."
+    }
   ],
   "preguntas": [
     {

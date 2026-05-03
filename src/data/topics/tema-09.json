@@ -38,56 +38,301 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "label": "El Acto Administrativo", "nivel": 0 },
-      { "id": "n1", "label": "Concepto y elementos", "nivel": 1 },
-      { "id": "n2", "label": "Clases", "nivel": 1 },
-      { "id": "n3", "label": "Notificación", "nivel": 1 },
-      { "id": "n4", "label": "Silencio administrativo", "nivel": 1 },
-      { "id": "n5", "label": "Ejecución forzosa", "nivel": 1 },
-      { "id": "n6", "label": "Subjetivos / objetivos / formales", "nivel": 2 },
-      { "id": "n7", "label": "Favorables / desfavorables / reglados / discrecionales", "nivel": 2 },
-      { "id": "n8", "label": "10 días desde el acto / notificación electrónica", "nivel": 2 },
-      { "id": "n9", "label": "Positivo (regla gral) / Negativo (ley)", "nivel": 2 },
-      { "id": "n10", "label": "Apremio / subsidiaria / multa / compulsión", "nivel": 2 },
-      { "id": "n11", "label": "Motivación — art. 35 Ley 39/2015", "nivel": 2 },
-      { "id": "n12", "label": "Autotutela ejecutiva", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "El Acto Administrativo"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n1",
+        "data": {
+          "label": "Concepto y elementos"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Clases"
+        },
+        "position": {
+          "x": 285,
+          "y": -93
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Notificación"
+        },
+        "position": {
+          "x": 176,
+          "y": 243
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Silencio administrativo"
+        },
+        "position": {
+          "x": -176,
+          "y": 243
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "Ejecución forzosa"
+        },
+        "position": {
+          "x": -285,
+          "y": -93
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Subjetivos / objetivos / formales"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Favorables / desfavorables / reglados / discrecionales"
+        },
+        "position": {
+          "x": 453,
+          "y": -362
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "10 días desde el acto / notificación electrónica"
+        },
+        "position": {
+          "x": 565,
+          "y": 129
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Positivo (regla gral) / Negativo (ley)"
+        },
+        "position": {
+          "x": 252,
+          "y": 523
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "Apremio / subsidiaria / multa / compulsión"
+        },
+        "position": {
+          "x": -252,
+          "y": 523
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Motivación — art. 35 Ley 39/2015"
+        },
+        "position": {
+          "x": -565,
+          "y": 129
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "Autotutela ejecutiva"
+        },
+        "position": {
+          "x": -453,
+          "y": -362
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "n1" },
-      { "origen": "root", "destino": "n2" },
-      { "origen": "root", "destino": "n3" },
-      { "origen": "root", "destino": "n4" },
-      { "origen": "root", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n2", "destino": "n7" },
-      { "origen": "n3", "destino": "n8" },
-      { "origen": "n4", "destino": "n9" },
-      { "origen": "n5", "destino": "n10" },
-      { "origen": "n1", "destino": "n11" },
-      { "origen": "n5", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "n1"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "n2"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "n3"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "n4"
+      },
+      {
+        "id": "e5",
+        "source": "root",
+        "target": "n5"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e7",
+        "source": "n2",
+        "target": "n7"
+      },
+      {
+        "id": "e8",
+        "source": "n3",
+        "target": "n8"
+      },
+      {
+        "id": "e9",
+        "source": "n4",
+        "target": "n9"
+      },
+      {
+        "id": "e10",
+        "source": "n5",
+        "target": "n10"
+      },
+      {
+        "id": "e11",
+        "source": "n1",
+        "target": "n11"
+      },
+      {
+        "id": "e12",
+        "source": "n5",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t9-f01", "pregunta": "¿Qué es el acto administrativo?", "respuesta": "Toda declaración de voluntad, de juicio, de conocimiento o de deseo realizada por la Administración en el ejercicio de una potestad administrativa distinta de la reglamentaria." },
-    { "id": "t9-f02", "pregunta": "¿Cuáles son los elementos subjetivos del acto administrativo?", "respuesta": "El órgano administrativo competente, con investidura legítima y sin causa de abstención o recusación." },
-    { "id": "t9-f03", "pregunta": "¿En qué actos es obligatoria la motivación según el art. 35 Ley 39/2015?", "respuesta": "Los que limiten derechos, resuelvan recursos, sean discrecionales, se separen del criterio precedente, acuerden suspensión o medidas provisionales, y los que lo exija la ley." },
-    { "id": "t9-f04", "pregunta": "¿Qué diferencia hay entre actos reglados y discrecionales?", "respuesta": "Los reglados tienen todos los elementos determinados por la norma; los discrecionales dejan a la Administración un margen de elección entre varias soluciones legalmente posibles." },
-    { "id": "t9-f05", "pregunta": "¿En qué plazo debe practicarse la notificación tras dictarse el acto?", "respuesta": "En el plazo de diez días a partir de la fecha en que el acto haya sido dictado (art. 40 Ley 39/2015)." },
-    { "id": "t9-f06", "pregunta": "¿Qué debe contener la notificación de un acto administrativo?", "respuesta": "El texto íntegro de la resolución, indicación de si es o no definitiva en vía administrativa, los recursos que procedan, el órgano ante el que presentarlos y el plazo para interponerlos." },
-    { "id": "t9-f07", "pregunta": "¿Qué efecto tiene una notificación defectuosa?", "respuesta": "Surtirá efecto desde que el interesado realice actuaciones que impliquen conocer el acto o interponga el recurso procedente." },
-    { "id": "t9-f08", "pregunta": "¿Cuál es la regla general del silencio administrativo en procedimientos a instancia de parte?", "respuesta": "El silencio positivo (estimatorio): transcurrido el plazo máximo sin resolución, la solicitud se entiende estimada, salvo que la ley establezca expresamente el silencio negativo." },
-    { "id": "t9-f09", "pregunta": "¿Cuándo opera el silencio negativo en procedimientos iniciados a instancia de parte?", "respuesta": "En los casos expresamente previstos por la ley: procedimientos de impugnación, los que transfieran potestades sobre dominio público o servicios públicos, y los que puedan implicar daño al medio ambiente." },
-    { "id": "t9-f10", "pregunta": "¿Qué ocurre cuando vence el plazo en un procedimiento de oficio con efectos desfavorables sin resolución?", "respuesta": "Se produce la caducidad del procedimiento." },
-    { "id": "t9-f11", "pregunta": "¿Qué significa la ejecutividad del acto administrativo?", "respuesta": "Que los actos se presumen válidos y pueden ejecutarse desde que son notificados, sin necesidad de acudir a los tribunales (autotutela ejecutiva)." },
-    { "id": "t9-f12", "pregunta": "¿Cuáles son los cuatro medios de ejecución forzosa del art. 100 Ley 39/2015?", "respuesta": "Apremio sobre el patrimonio, ejecución subsidiaria, multa coercitiva y compulsión sobre las personas." },
-    { "id": "t9-f13", "pregunta": "¿En qué consiste la ejecución subsidiaria?", "respuesta": "La Administración realiza el acto en lugar del obligado, cuando la obligación no es personalísima, repercutiendo el coste al incumplidor." },
-    { "id": "t9-f14", "pregunta": "¿Para qué tipo de obligaciones se usa el apremio sobre el patrimonio?", "respuesta": "Para obligaciones económicas: permite embargar y vender bienes del deudor para hacer efectivo el crédito." },
-    { "id": "t9-f15", "pregunta": "¿Qué son los actos presuntos por silencio positivo?", "respuesta": "Actos ficticios que equivalen a una estimación de la solicitud, producen los mismos efectos que los actos expresos y pueden ser certificados por la Administración." },
-    { "id": "t9-f16", "pregunta": "¿Cuándo procede la notificación edictal?", "respuesta": "Cuando el interesado es desconocido, se ignore el lugar de notificación o se haya intentado sin efecto; se publica en el BOE y boletines oficiales correspondientes." },
-    { "id": "t9-f17", "pregunta": "¿Qué son los actos de gravamen?", "respuesta": "Actos desfavorables que limitan o restringen la esfera jurídica del destinatario (sanciones, órdenes de derribo, expropiaciones)." },
-    { "id": "t9-f18", "pregunta": "¿Qué diferencia hay entre actos definitivos y de trámite?", "respuesta": "Los definitivos ponen fin al procedimiento; los de trámite se dictan durante el procedimiento sin resolverlo." },
-    { "id": "t9-f19", "pregunta": "¿En qué ley se regula el régimen jurídico de los actos administrativos?", "respuesta": "En la Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas, arts. 34-52." },
-    { "id": "t9-f20", "pregunta": "¿Para qué obligaciones está prevista la compulsión sobre las personas?", "respuesta": "Para obligaciones personalísimas, en los casos y con la forma previstos expresamente en las leyes, con uso de la fuerza física." }
+    {
+      "id": "t9-f01",
+      "pregunta": "¿Qué es el acto administrativo?",
+      "respuesta": "Toda declaración de voluntad, de juicio, de conocimiento o de deseo realizada por la Administración en el ejercicio de una potestad administrativa distinta de la reglamentaria."
+    },
+    {
+      "id": "t9-f02",
+      "pregunta": "¿Cuáles son los elementos subjetivos del acto administrativo?",
+      "respuesta": "El órgano administrativo competente, con investidura legítima y sin causa de abstención o recusación."
+    },
+    {
+      "id": "t9-f03",
+      "pregunta": "¿En qué actos es obligatoria la motivación según el art. 35 Ley 39/2015?",
+      "respuesta": "Los que limiten derechos, resuelvan recursos, sean discrecionales, se separen del criterio precedente, acuerden suspensión o medidas provisionales, y los que lo exija la ley."
+    },
+    {
+      "id": "t9-f04",
+      "pregunta": "¿Qué diferencia hay entre actos reglados y discrecionales?",
+      "respuesta": "Los reglados tienen todos los elementos determinados por la norma; los discrecionales dejan a la Administración un margen de elección entre varias soluciones legalmente posibles."
+    },
+    {
+      "id": "t9-f05",
+      "pregunta": "¿En qué plazo debe practicarse la notificación tras dictarse el acto?",
+      "respuesta": "En el plazo de diez días a partir de la fecha en que el acto haya sido dictado (art. 40 Ley 39/2015)."
+    },
+    {
+      "id": "t9-f06",
+      "pregunta": "¿Qué debe contener la notificación de un acto administrativo?",
+      "respuesta": "El texto íntegro de la resolución, indicación de si es o no definitiva en vía administrativa, los recursos que procedan, el órgano ante el que presentarlos y el plazo para interponerlos."
+    },
+    {
+      "id": "t9-f07",
+      "pregunta": "¿Qué efecto tiene una notificación defectuosa?",
+      "respuesta": "Surtirá efecto desde que el interesado realice actuaciones que impliquen conocer el acto o interponga el recurso procedente."
+    },
+    {
+      "id": "t9-f08",
+      "pregunta": "¿Cuál es la regla general del silencio administrativo en procedimientos a instancia de parte?",
+      "respuesta": "El silencio positivo (estimatorio): transcurrido el plazo máximo sin resolución, la solicitud se entiende estimada, salvo que la ley establezca expresamente el silencio negativo."
+    },
+    {
+      "id": "t9-f09",
+      "pregunta": "¿Cuándo opera el silencio negativo en procedimientos iniciados a instancia de parte?",
+      "respuesta": "En los casos expresamente previstos por la ley: procedimientos de impugnación, los que transfieran potestades sobre dominio público o servicios públicos, y los que puedan implicar daño al medio ambiente."
+    },
+    {
+      "id": "t9-f10",
+      "pregunta": "¿Qué ocurre cuando vence el plazo en un procedimiento de oficio con efectos desfavorables sin resolución?",
+      "respuesta": "Se produce la caducidad del procedimiento."
+    },
+    {
+      "id": "t9-f11",
+      "pregunta": "¿Qué significa la ejecutividad del acto administrativo?",
+      "respuesta": "Que los actos se presumen válidos y pueden ejecutarse desde que son notificados, sin necesidad de acudir a los tribunales (autotutela ejecutiva)."
+    },
+    {
+      "id": "t9-f12",
+      "pregunta": "¿Cuáles son los cuatro medios de ejecución forzosa del art. 100 Ley 39/2015?",
+      "respuesta": "Apremio sobre el patrimonio, ejecución subsidiaria, multa coercitiva y compulsión sobre las personas."
+    },
+    {
+      "id": "t9-f13",
+      "pregunta": "¿En qué consiste la ejecución subsidiaria?",
+      "respuesta": "La Administración realiza el acto en lugar del obligado, cuando la obligación no es personalísima, repercutiendo el coste al incumplidor."
+    },
+    {
+      "id": "t9-f14",
+      "pregunta": "¿Para qué tipo de obligaciones se usa el apremio sobre el patrimonio?",
+      "respuesta": "Para obligaciones económicas: permite embargar y vender bienes del deudor para hacer efectivo el crédito."
+    },
+    {
+      "id": "t9-f15",
+      "pregunta": "¿Qué son los actos presuntos por silencio positivo?",
+      "respuesta": "Actos ficticios que equivalen a una estimación de la solicitud, producen los mismos efectos que los actos expresos y pueden ser certificados por la Administración."
+    },
+    {
+      "id": "t9-f16",
+      "pregunta": "¿Cuándo procede la notificación edictal?",
+      "respuesta": "Cuando el interesado es desconocido, se ignore el lugar de notificación o se haya intentado sin efecto; se publica en el BOE y boletines oficiales correspondientes."
+    },
+    {
+      "id": "t9-f17",
+      "pregunta": "¿Qué son los actos de gravamen?",
+      "respuesta": "Actos desfavorables que limitan o restringen la esfera jurídica del destinatario (sanciones, órdenes de derribo, expropiaciones)."
+    },
+    {
+      "id": "t9-f18",
+      "pregunta": "¿Qué diferencia hay entre actos definitivos y de trámite?",
+      "respuesta": "Los definitivos ponen fin al procedimiento; los de trámite se dictan durante el procedimiento sin resolverlo."
+    },
+    {
+      "id": "t9-f19",
+      "pregunta": "¿En qué ley se regula el régimen jurídico de los actos administrativos?",
+      "respuesta": "En la Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas, arts. 34-52."
+    },
+    {
+      "id": "t9-f20",
+      "pregunta": "¿Para qué obligaciones está prevista la compulsión sobre las personas?",
+      "respuesta": "Para obligaciones personalísimas, en los casos y con la forma previstos expresamente en las leyes, con uso de la fuerza física."
+    }
   ],
   "preguntas": [
     {

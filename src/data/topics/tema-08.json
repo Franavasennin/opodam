@@ -38,56 +38,301 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "label": "La Administración Pública", "nivel": 0 },
-      { "id": "n1", "label": "Principios art. 103 CE", "nivel": 1 },
-      { "id": "n2", "label": "Admin. General del Estado", "nivel": 1 },
-      { "id": "n3", "label": "Administración Autonómica", "nivel": 1 },
-      { "id": "n4", "label": "Administración Local", "nivel": 1 },
-      { "id": "n5", "label": "Eficacia, jerarquía, coordinación...", "nivel": 2 },
-      { "id": "n6", "label": "Ley 39/2015 y Ley 40/2015", "nivel": 2 },
-      { "id": "n7", "label": "Ministerios / Delegados del Gobierno", "nivel": 2 },
-      { "id": "n8", "label": "Consejerías / organismos autónomos", "nivel": 2 },
-      { "id": "n9", "label": "Municipio — Ayuntamiento", "nivel": 2 },
-      { "id": "n10", "label": "Provincia — Diputación", "nivel": 2 },
-      { "id": "n11", "label": "Ley 7/1985 LRBRL", "nivel": 2 },
-      { "id": "n12", "label": "Conferencias Sectoriales / Convenios", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "La Administración Pública"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n1",
+        "data": {
+          "label": "Principios art. 103 CE"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Admin. General del Estado"
+        },
+        "position": {
+          "x": 285,
+          "y": -93
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Administración Autonómica"
+        },
+        "position": {
+          "x": 176,
+          "y": 243
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Administración Local"
+        },
+        "position": {
+          "x": -176,
+          "y": 243
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "Eficacia, jerarquía, coordinación..."
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Ley 39/2015 y Ley 40/2015"
+        },
+        "position": {
+          "x": 453,
+          "y": -362
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Ministerios / Delegados del Gobierno"
+        },
+        "position": {
+          "x": 565,
+          "y": 129
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Consejerías / organismos autónomos"
+        },
+        "position": {
+          "x": 252,
+          "y": 523
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Municipio — Ayuntamiento"
+        },
+        "position": {
+          "x": -252,
+          "y": 523
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "Provincia — Diputación"
+        },
+        "position": {
+          "x": -565,
+          "y": 129
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Ley 7/1985 LRBRL"
+        },
+        "position": {
+          "x": -453,
+          "y": -362
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "Conferencias Sectoriales / Convenios"
+        },
+        "position": {
+          "x": -285,
+          "y": -93
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "n1" },
-      { "origen": "root", "destino": "n2" },
-      { "origen": "root", "destino": "n3" },
-      { "origen": "root", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n2", "destino": "n7" },
-      { "origen": "n3", "destino": "n8" },
-      { "origen": "n4", "destino": "n9" },
-      { "origen": "n4", "destino": "n10" },
-      { "origen": "n4", "destino": "n11" },
-      { "origen": "root", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "n1"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "n2"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "n3"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "n4"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e7",
+        "source": "n2",
+        "target": "n7"
+      },
+      {
+        "id": "e8",
+        "source": "n3",
+        "target": "n8"
+      },
+      {
+        "id": "e9",
+        "source": "n4",
+        "target": "n9"
+      },
+      {
+        "id": "e10",
+        "source": "n4",
+        "target": "n10"
+      },
+      {
+        "id": "e11",
+        "source": "n4",
+        "target": "n11"
+      },
+      {
+        "id": "e12",
+        "source": "root",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t8-f01", "pregunta": "¿Qué artículo de la CE establece los principios de la Administración Pública?", "respuesta": "El art. 103 CE: la Administración sirve con objetividad los intereses generales con arreglo a los principios de eficacia, jerarquía, descentralización, desconcentración y coordinación, con sometimiento pleno a la ley y al Derecho." },
-    { "id": "t8-f02", "pregunta": "¿Cuáles son los seis principios enumerados en el art. 103 CE?", "respuesta": "Objetividad, eficacia, jerarquía, descentralización, desconcentración y coordinación." },
-    { "id": "t8-f03", "pregunta": "¿Qué ley regula el Procedimiento Administrativo Común?", "respuesta": "La Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas." },
-    { "id": "t8-f04", "pregunta": "¿Qué ley regula el Régimen Jurídico del Sector Público?", "respuesta": "La Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público (LRJSP)." },
-    { "id": "t8-f05", "pregunta": "¿Quién representa a la AGE en cada Comunidad Autónoma?", "respuesta": "El Delegado del Gobierno en la CA, nombrado por Real Decreto del Consejo de Ministros." },
-    { "id": "t8-f06", "pregunta": "¿Cuál es la norma fundamental del régimen local?", "respuesta": "La Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local (LRBRL)." },
-    { "id": "t8-f07", "pregunta": "¿Cuál es el ente local básico de la organización territorial del Estado?", "respuesta": "El Municipio, con personalidad jurídica propia, gobernado por el Ayuntamiento (Alcalde y Concejales elegidos por sufragio universal)." },
-    { "id": "t8-f08", "pregunta": "¿Qué órgano gobierna la Provincia?", "respuesta": "La Diputación Provincial, cuya función es cooperar en el desarrollo municipal y asegurar la prestación de servicios en municipios de menor capacidad." },
-    { "id": "t8-f09", "pregunta": "¿Qué son las Mancomunidades de Municipios?", "respuesta": "Entidades locales voluntarias constituidas por municipios para la gestión común de obras y servicios de su competencia." },
-    { "id": "t8-f10", "pregunta": "¿Cuáles son los órganos periféricos de la AGE?", "respuesta": "El Delegado del Gobierno en cada CA y el Subdelegado del Gobierno en cada provincia." },
-    { "id": "t8-f11", "pregunta": "¿Qué son las Conferencias Sectoriales?", "respuesta": "Órganos de cooperación multilateral entre la AGE y las CCAA en una materia sectorial específica." },
-    { "id": "t8-f12", "pregunta": "¿Qué principios rigen las relaciones interadministrativas según la Ley 40/2015?", "respuesta": "Lealtad institucional, colaboración, cooperación y coordinación." },
-    { "id": "t8-f13", "pregunta": "¿Qué artículo de la CE establece el control judicial de la Administración?", "respuesta": "El art. 106 CE, que establece que los Tribunales controlan la potestad reglamentaria y la legalidad de la actuación administrativa." },
-    { "id": "t8-f14", "pregunta": "¿Qué ley regula la transparencia de las Administraciones Públicas?", "respuesta": "La Ley 19/2013, de 9 de diciembre, de Transparencia, Acceso a la Información Pública y Buen Gobierno." },
-    { "id": "t8-f15", "pregunta": "¿Qué son los organismos autónomos?", "respuesta": "Entidades de derecho público dependientes de una Administración, con personalidad jurídica propia, que gestionan servicios o actividades diferenciadas con cierto grado de autonomía." },
-    { "id": "t8-f16", "pregunta": "¿Qué ley introdujo la racionalización de la Administración Local?", "respuesta": "La Ley 27/2013, de Racionalización y Sostenibilidad de la Administración Local (LRSAL)." },
-    { "id": "t8-f17", "pregunta": "¿Qué artículo de la CE garantiza la audiencia de los ciudadanos en el procedimiento administrativo?", "respuesta": "El art. 105 CE, que garantiza la audiencia de los ciudadanos y el acceso a los archivos y registros administrativos." },
-    { "id": "t8-f18", "pregunta": "¿Qué diferencia hay entre descentralización y desconcentración?", "respuesta": "La descentralización transfiere competencias a entes con personalidad jurídica propia; la desconcentración las transfiere entre órganos de la misma entidad." },
-    { "id": "t8-f19", "pregunta": "¿Cuáles son las principales competencias municipales?", "respuesta": "Urbanismo, medio ambiente urbano, abastecimiento de agua, limpieza viaria, recogida de residuos, transporte urbano, alumbrado público, parques y jardines, y biblioteca pública." },
-    { "id": "t8-f20", "pregunta": "¿Qué principio obliga a la Administración a actuar solo en servicio del interés general?", "respuesta": "El principio de objetividad (art. 103.1 CE), que exige que la Administración sirva con objetividad los intereses generales, sin atender a intereses particulares o políticos." }
+    {
+      "id": "t8-f01",
+      "pregunta": "¿Qué artículo de la CE establece los principios de la Administración Pública?",
+      "respuesta": "El art. 103 CE: la Administración sirve con objetividad los intereses generales con arreglo a los principios de eficacia, jerarquía, descentralización, desconcentración y coordinación, con sometimiento pleno a la ley y al Derecho."
+    },
+    {
+      "id": "t8-f02",
+      "pregunta": "¿Cuáles son los seis principios enumerados en el art. 103 CE?",
+      "respuesta": "Objetividad, eficacia, jerarquía, descentralización, desconcentración y coordinación."
+    },
+    {
+      "id": "t8-f03",
+      "pregunta": "¿Qué ley regula el Procedimiento Administrativo Común?",
+      "respuesta": "La Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas."
+    },
+    {
+      "id": "t8-f04",
+      "pregunta": "¿Qué ley regula el Régimen Jurídico del Sector Público?",
+      "respuesta": "La Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público (LRJSP)."
+    },
+    {
+      "id": "t8-f05",
+      "pregunta": "¿Quién representa a la AGE en cada Comunidad Autónoma?",
+      "respuesta": "El Delegado del Gobierno en la CA, nombrado por Real Decreto del Consejo de Ministros."
+    },
+    {
+      "id": "t8-f06",
+      "pregunta": "¿Cuál es la norma fundamental del régimen local?",
+      "respuesta": "La Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local (LRBRL)."
+    },
+    {
+      "id": "t8-f07",
+      "pregunta": "¿Cuál es el ente local básico de la organización territorial del Estado?",
+      "respuesta": "El Municipio, con personalidad jurídica propia, gobernado por el Ayuntamiento (Alcalde y Concejales elegidos por sufragio universal)."
+    },
+    {
+      "id": "t8-f08",
+      "pregunta": "¿Qué órgano gobierna la Provincia?",
+      "respuesta": "La Diputación Provincial, cuya función es cooperar en el desarrollo municipal y asegurar la prestación de servicios en municipios de menor capacidad."
+    },
+    {
+      "id": "t8-f09",
+      "pregunta": "¿Qué son las Mancomunidades de Municipios?",
+      "respuesta": "Entidades locales voluntarias constituidas por municipios para la gestión común de obras y servicios de su competencia."
+    },
+    {
+      "id": "t8-f10",
+      "pregunta": "¿Cuáles son los órganos periféricos de la AGE?",
+      "respuesta": "El Delegado del Gobierno en cada CA y el Subdelegado del Gobierno en cada provincia."
+    },
+    {
+      "id": "t8-f11",
+      "pregunta": "¿Qué son las Conferencias Sectoriales?",
+      "respuesta": "Órganos de cooperación multilateral entre la AGE y las CCAA en una materia sectorial específica."
+    },
+    {
+      "id": "t8-f12",
+      "pregunta": "¿Qué principios rigen las relaciones interadministrativas según la Ley 40/2015?",
+      "respuesta": "Lealtad institucional, colaboración, cooperación y coordinación."
+    },
+    {
+      "id": "t8-f13",
+      "pregunta": "¿Qué artículo de la CE establece el control judicial de la Administración?",
+      "respuesta": "El art. 106 CE, que establece que los Tribunales controlan la potestad reglamentaria y la legalidad de la actuación administrativa."
+    },
+    {
+      "id": "t8-f14",
+      "pregunta": "¿Qué ley regula la transparencia de las Administraciones Públicas?",
+      "respuesta": "La Ley 19/2013, de 9 de diciembre, de Transparencia, Acceso a la Información Pública y Buen Gobierno."
+    },
+    {
+      "id": "t8-f15",
+      "pregunta": "¿Qué son los organismos autónomos?",
+      "respuesta": "Entidades de derecho público dependientes de una Administración, con personalidad jurídica propia, que gestionan servicios o actividades diferenciadas con cierto grado de autonomía."
+    },
+    {
+      "id": "t8-f16",
+      "pregunta": "¿Qué ley introdujo la racionalización de la Administración Local?",
+      "respuesta": "La Ley 27/2013, de Racionalización y Sostenibilidad de la Administración Local (LRSAL)."
+    },
+    {
+      "id": "t8-f17",
+      "pregunta": "¿Qué artículo de la CE garantiza la audiencia de los ciudadanos en el procedimiento administrativo?",
+      "respuesta": "El art. 105 CE, que garantiza la audiencia de los ciudadanos y el acceso a los archivos y registros administrativos."
+    },
+    {
+      "id": "t8-f18",
+      "pregunta": "¿Qué diferencia hay entre descentralización y desconcentración?",
+      "respuesta": "La descentralización transfiere competencias a entes con personalidad jurídica propia; la desconcentración las transfiere entre órganos de la misma entidad."
+    },
+    {
+      "id": "t8-f19",
+      "pregunta": "¿Cuáles son las principales competencias municipales?",
+      "respuesta": "Urbanismo, medio ambiente urbano, abastecimiento de agua, limpieza viaria, recogida de residuos, transporte urbano, alumbrado público, parques y jardines, y biblioteca pública."
+    },
+    {
+      "id": "t8-f20",
+      "pregunta": "¿Qué principio obliga a la Administración a actuar solo en servicio del interés general?",
+      "respuesta": "El principio de objetividad (art. 103.1 CE), que exige que la Administración sirva con objetividad los intereses generales, sin atender a intereses particulares o políticos."
+    }
   ],
   "preguntas": [
     {

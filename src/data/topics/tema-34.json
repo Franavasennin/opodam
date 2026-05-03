@@ -42,54 +42,286 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "texto": "Policía Canaria\nLey 9/2007", "nivel": 0 },
-      { "id": "n1", "texto": "Creación y naturaleza", "nivel": 1 },
-      { "id": "n2", "texto": "Funciones", "nivel": 1 },
-      { "id": "n3", "texto": "Estructura orgánica", "nivel": 1 },
-      { "id": "n4", "texto": "Acceso y carrera", "nivel": 1 },
-      { "id": "n5", "texto": "Régimen disciplinario", "nivel": 1 },
-      { "id": "n6", "texto": "Coordinación FCS", "nivel": 1 },
-      { "id": "n1a", "texto": "LO 2/1986 LOFCS\nEA Canarias LO 1/2018", "nivel": 2 },
-      { "id": "n2a", "texto": "Policía administrativa\nSin orden público\nColaboración FCS", "nivel": 2 },
-      { "id": "n3a", "texto": "3 escalas\nComisarías insulares\nACS formación", "nivel": 2 },
-      { "id": "n4a", "texto": "Concurso-oposición\nACS período prácticas", "nivel": 2 },
-      { "id": "n5a", "texto": "Muy graves: 6a\nGraves: 2a\nLeves: 6m prescripción", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "root"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n1",
+        "data": {
+          "label": "n1"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "n2"
+        },
+        "position": {
+          "x": 260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "n3"
+        },
+        "position": {
+          "x": 260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "n4"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "n5"
+        },
+        "position": {
+          "x": -260,
+          "y": 150
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "n6"
+        },
+        "position": {
+          "x": -260,
+          "y": -150
+        }
+      },
+      {
+        "id": "n1a",
+        "data": {
+          "label": "n1a"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n2a",
+        "data": {
+          "label": "n2a"
+        },
+        "position": {
+          "x": 552,
+          "y": -179
+        }
+      },
+      {
+        "id": "n3a",
+        "data": {
+          "label": "n3a"
+        },
+        "position": {
+          "x": 341,
+          "y": 469
+        }
+      },
+      {
+        "id": "n4a",
+        "data": {
+          "label": "n4a"
+        },
+        "position": {
+          "x": -341,
+          "y": 469
+        }
+      },
+      {
+        "id": "n5a",
+        "data": {
+          "label": "n5a"
+        },
+        "position": {
+          "x": -552,
+          "y": -179
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "n1" },
-      { "origen": "root", "destino": "n2" },
-      { "origen": "root", "destino": "n3" },
-      { "origen": "root", "destino": "n4" },
-      { "origen": "root", "destino": "n5" },
-      { "origen": "root", "destino": "n6" },
-      { "origen": "n1", "destino": "n1a" },
-      { "origen": "n2", "destino": "n2a" },
-      { "origen": "n3", "destino": "n3a" },
-      { "origen": "n4", "destino": "n4a" },
-      { "origen": "n5", "destino": "n5a" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "n1"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "n2"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "n3"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "n4"
+      },
+      {
+        "id": "e5",
+        "source": "root",
+        "target": "n5"
+      },
+      {
+        "id": "e6",
+        "source": "root",
+        "target": "n6"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n1a"
+      },
+      {
+        "id": "e8",
+        "source": "n2",
+        "target": "n2a"
+      },
+      {
+        "id": "e9",
+        "source": "n3",
+        "target": "n3a"
+      },
+      {
+        "id": "e10",
+        "source": "n4",
+        "target": "n4a"
+      },
+      {
+        "id": "e11",
+        "source": "n5",
+        "target": "n5a"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t34-f01", "pregunta": "¿Qué ley regula el Cuerpo General de la Policía Canaria?", "respuesta": "Ley 9/2007, de 13 de abril, del Cuerpo General de la Policía Canaria (LCGPC)." },
-    { "id": "t34-f02", "pregunta": "¿De qué organismo depende orgánicamente la Policía Canaria?", "respuesta": "De la Consejería competente en materia de seguridad del Gobierno de Canarias." },
-    { "id": "t34-f03", "pregunta": "¿Tiene la Policía Canaria competencia en materia de orden público?", "respuesta": "No. El mantenimiento del orden público corresponde en exclusiva a las FCS del Estado (CNP y GC)." },
-    { "id": "t34-f04", "pregunta": "¿Cuáles son las tres escalas del Cuerpo General de la Policía Canaria?", "respuesta": "Escala Superior (Inspector/Inspector Jefe), Escala Técnica (Subinspector) y Escala Básica (Oficial/Agente)." },
-    { "id": "t34-f05", "pregunta": "¿Qué es la Academia Canaria de Seguridad (ACS)?", "respuesta": "Organismo autónomo del Gobierno de Canarias que gestiona la formación básica, de ascenso y continua del personal de la Policía Canaria." },
-    { "id": "t34-f06", "pregunta": "¿Cuál es el plazo de prescripción de las faltas muy graves en la Policía Canaria?", "respuesta": "6 años." },
-    { "id": "t34-f07", "pregunta": "¿Cuál es el plazo de prescripción de las faltas graves en la Policía Canaria?", "respuesta": "2 años." },
-    { "id": "t34-f08", "pregunta": "¿Cuál es el plazo de prescripción de las faltas leves en la Policía Canaria?", "respuesta": "6 meses." },
-    { "id": "t34-f09", "pregunta": "¿Qué sanción puede imponerse por falta muy grave en la Policía Canaria?", "respuesta": "Separación del servicio (la más grave) o suspensión de funciones de 3 a 6 años." },
-    { "id": "t34-f10", "pregunta": "¿Qué es la Junta de Seguridad de Canarias?", "respuesta": "Órgano mixto de coordinación entre el Estado y la Comunidad Autónoma de Canarias en materia de seguridad, presidida conjuntamente por el Delegado del Gobierno y el Consejero competente en seguridad." },
-    { "id": "t34-f11", "pregunta": "¿Qué artículo de la CE habilita a las CC.AA. para crear policías propias?", "respuesta": "Art. 149.1.29ª CE (con los términos que establezca la LO), complementado con el art. 148.1.22ª CE." },
-    { "id": "t34-f12", "pregunta": "¿Qué ley orgánica del Estatuto de Autonomía de Canarias vigente reconoce la Policía Canaria?", "respuesta": "LO 1/2018, de 5 de noviembre, de reforma del Estatuto de Autonomía de Canarias." },
-    { "id": "t34-f13", "pregunta": "¿Cuál es la naturaleza de la Policía Canaria?", "respuesta": "Naturaleza civil, integrada en la Administración General de la Comunidad Autónoma de Canarias." },
-    { "id": "t34-f14", "pregunta": "¿Cuál es la sanción mínima por falta grave en la Policía Canaria?", "respuesta": "Suspensión de funciones de 1 día (hasta 3 años para las graves)." },
-    { "id": "t34-f15", "pregunta": "¿Qué sistema de acceso se utiliza para ingresar en la Policía Canaria?", "respuesta": "Concurso-oposición libre, convocado por el Gobierno de Canarias, con posterior período de formación en la ACS." },
-    { "id": "t34-f16", "pregunta": "¿Cuántas Comisarías Provinciales tiene la Policía Canaria?", "respuesta": "Dos: Las Palmas (Gran Canaria) y Santa Cruz de Tenerife." },
-    { "id": "t34-f17", "pregunta": "¿Qué norma regula las FCS autonómicas con carácter básico?", "respuesta": "LO 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad (LOFCS), concretamente su art. 38." },
-    { "id": "t34-f18", "pregunta": "¿Puede la Policía Canaria ejercer funciones de policía judicial?", "respuesta": "Sí, puede ejercer funciones de policía judicial cuando se las encomienden las autoridades judiciales y el Ministerio Fiscal." },
-    { "id": "t34-f19", "pregunta": "¿Tienen los funcionarios de la Policía Canaria derecho a sindicarse?", "respuesta": "Sí, tienen derecho de sindicación a través de sindicatos o asociaciones profesionales, con las limitaciones propias de los cuerpos policiales." },
-    { "id": "t34-f20", "pregunta": "¿Qué principios rigen el uso de la fuerza por los miembros de la Policía Canaria?", "respuesta": "Los principios de proporcionalidad, oportunidad y congruencia establecidos en la LOFCS." }
+    {
+      "id": "t34-f01",
+      "pregunta": "¿Qué ley regula el Cuerpo General de la Policía Canaria?",
+      "respuesta": "Ley 9/2007, de 13 de abril, del Cuerpo General de la Policía Canaria (LCGPC)."
+    },
+    {
+      "id": "t34-f02",
+      "pregunta": "¿De qué organismo depende orgánicamente la Policía Canaria?",
+      "respuesta": "De la Consejería competente en materia de seguridad del Gobierno de Canarias."
+    },
+    {
+      "id": "t34-f03",
+      "pregunta": "¿Tiene la Policía Canaria competencia en materia de orden público?",
+      "respuesta": "No. El mantenimiento del orden público corresponde en exclusiva a las FCS del Estado (CNP y GC)."
+    },
+    {
+      "id": "t34-f04",
+      "pregunta": "¿Cuáles son las tres escalas del Cuerpo General de la Policía Canaria?",
+      "respuesta": "Escala Superior (Inspector/Inspector Jefe), Escala Técnica (Subinspector) y Escala Básica (Oficial/Agente)."
+    },
+    {
+      "id": "t34-f05",
+      "pregunta": "¿Qué es la Academia Canaria de Seguridad (ACS)?",
+      "respuesta": "Organismo autónomo del Gobierno de Canarias que gestiona la formación básica, de ascenso y continua del personal de la Policía Canaria."
+    },
+    {
+      "id": "t34-f06",
+      "pregunta": "¿Cuál es el plazo de prescripción de las faltas muy graves en la Policía Canaria?",
+      "respuesta": "6 años."
+    },
+    {
+      "id": "t34-f07",
+      "pregunta": "¿Cuál es el plazo de prescripción de las faltas graves en la Policía Canaria?",
+      "respuesta": "2 años."
+    },
+    {
+      "id": "t34-f08",
+      "pregunta": "¿Cuál es el plazo de prescripción de las faltas leves en la Policía Canaria?",
+      "respuesta": "6 meses."
+    },
+    {
+      "id": "t34-f09",
+      "pregunta": "¿Qué sanción puede imponerse por falta muy grave en la Policía Canaria?",
+      "respuesta": "Separación del servicio (la más grave) o suspensión de funciones de 3 a 6 años."
+    },
+    {
+      "id": "t34-f10",
+      "pregunta": "¿Qué es la Junta de Seguridad de Canarias?",
+      "respuesta": "Órgano mixto de coordinación entre el Estado y la Comunidad Autónoma de Canarias en materia de seguridad, presidida conjuntamente por el Delegado del Gobierno y el Consejero competente en seguridad."
+    },
+    {
+      "id": "t34-f11",
+      "pregunta": "¿Qué artículo de la CE habilita a las CC.AA. para crear policías propias?",
+      "respuesta": "Art. 149.1.29ª CE (con los términos que establezca la LO), complementado con el art. 148.1.22ª CE."
+    },
+    {
+      "id": "t34-f12",
+      "pregunta": "¿Qué ley orgánica del Estatuto de Autonomía de Canarias vigente reconoce la Policía Canaria?",
+      "respuesta": "LO 1/2018, de 5 de noviembre, de reforma del Estatuto de Autonomía de Canarias."
+    },
+    {
+      "id": "t34-f13",
+      "pregunta": "¿Cuál es la naturaleza de la Policía Canaria?",
+      "respuesta": "Naturaleza civil, integrada en la Administración General de la Comunidad Autónoma de Canarias."
+    },
+    {
+      "id": "t34-f14",
+      "pregunta": "¿Cuál es la sanción mínima por falta grave en la Policía Canaria?",
+      "respuesta": "Suspensión de funciones de 1 día (hasta 3 años para las graves)."
+    },
+    {
+      "id": "t34-f15",
+      "pregunta": "¿Qué sistema de acceso se utiliza para ingresar en la Policía Canaria?",
+      "respuesta": "Concurso-oposición libre, convocado por el Gobierno de Canarias, con posterior período de formación en la ACS."
+    },
+    {
+      "id": "t34-f16",
+      "pregunta": "¿Cuántas Comisarías Provinciales tiene la Policía Canaria?",
+      "respuesta": "Dos: Las Palmas (Gran Canaria) y Santa Cruz de Tenerife."
+    },
+    {
+      "id": "t34-f17",
+      "pregunta": "¿Qué norma regula las FCS autonómicas con carácter básico?",
+      "respuesta": "LO 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad (LOFCS), concretamente su art. 38."
+    },
+    {
+      "id": "t34-f18",
+      "pregunta": "¿Puede la Policía Canaria ejercer funciones de policía judicial?",
+      "respuesta": "Sí, puede ejercer funciones de policía judicial cuando se las encomienden las autoridades judiciales y el Ministerio Fiscal."
+    },
+    {
+      "id": "t34-f19",
+      "pregunta": "¿Tienen los funcionarios de la Policía Canaria derecho a sindicarse?",
+      "respuesta": "Sí, tienen derecho de sindicación a través de sindicatos o asociaciones profesionales, con las limitaciones propias de los cuerpos policiales."
+    },
+    {
+      "id": "t34-f20",
+      "pregunta": "¿Qué principios rigen el uso de la fuerza por los miembros de la Policía Canaria?",
+      "respuesta": "Los principios de proporcionalidad, oportunidad y congruencia establecidos en la LOFCS."
+    }
   ],
   "preguntas": [
     {

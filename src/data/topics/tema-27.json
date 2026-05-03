@@ -50,158 +50,394 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "n1", "texto": "CGPC - Cuerpo General de la Policía Canaria", "nivel": 0 },
-      { "id": "n2", "texto": "Ley 9/2007 de la Policía de Canarias - fundamento art.149.1.29ª CE y LOFCS", "nivel": 1 },
-      { "id": "n3", "texto": "Instituto armado civil jerarquizado - dependiente del Gobierno de Canarias", "nivel": 1 },
-      { "id": "n4", "texto": "Funciones propias: cumplimiento leyes autonómicas, vigilancia, protección instituciones, orden público", "nivel": 2 },
-      { "id": "n5", "texto": "Funciones colaboración: seguridad ciudadana con CNP/GC, Policía Judicial, emergencias", "nivel": 2 },
-      { "id": "n6", "texto": "Escalas: Superior (Inspector General/Jefe/Inspector) - Ejecutiva (Subinspector) - Básica (Oficial/Agente)", "nivel": 2 },
-      { "id": "n7", "texto": "Acceso Escala Básica: oposición libre - requisitos: español, mayor edad, sin condena dolosa, aptitud física/psíquica", "nivel": 2 },
-      { "id": "n8", "texto": "Faltas muy graves: separación o suspensión 3-6a - prescripción 6 años", "nivel": 2 },
-      { "id": "n9", "texto": "Faltas graves: suspensión 1m-3a, traslado - prescripción 2 años", "nivel": 2 },
-      { "id": "n10", "texto": "Faltas leves: apercibimiento, multa, suspensión max 1 mes - prescripción 6 meses", "nivel": 2 },
-      { "id": "n11", "texto": "Junta de Seguridad de Canarias art.51 LOFCS: coordinación CCAA-Estado", "nivel": 2 },
-      { "id": "n12", "texto": "Consejo de Policía de Canarias art.106 LPC: órgano colegiado consultivo y coordinación policías locales", "nivel": 2 }
+      {
+        "id": "n1",
+        "data": {
+          "label": "n1"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "n2"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "n3"
+        },
+        "position": {
+          "x": 162,
+          "y": -252
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "n4"
+        },
+        "position": {
+          "x": 273,
+          "y": -125
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "n5"
+        },
+        "position": {
+          "x": 297,
+          "y": 43
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "n6"
+        },
+        "position": {
+          "x": 227,
+          "y": 196
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "n7"
+        },
+        "position": {
+          "x": 85,
+          "y": 288
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "n8"
+        },
+        "position": {
+          "x": -85,
+          "y": 288
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "n9"
+        },
+        "position": {
+          "x": -227,
+          "y": 196
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "n10"
+        },
+        "position": {
+          "x": -297,
+          "y": 43
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "n11"
+        },
+        "position": {
+          "x": -273,
+          "y": -125
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "n12"
+        },
+        "position": {
+          "x": -162,
+          "y": -252
+        }
+      }
     ],
-    "aristas": [
-      { "desde": "n1", "hasta": "n2" },
-      { "desde": "n1", "hasta": "n3" },
-      { "desde": "n1", "hasta": "n4" },
-      { "desde": "n1", "hasta": "n5" },
-      { "desde": "n1", "hasta": "n6" },
-      { "desde": "n6", "hasta": "n7" },
-      { "desde": "n1", "hasta": "n8" },
-      { "desde": "n1", "hasta": "n9" },
-      { "desde": "n1", "hasta": "n10" },
-      { "desde": "n1", "hasta": "n11" },
-      { "desde": "n1", "hasta": "n12" }
-    ]
+    "aristas": []
   },
   "flashcards": [
-    { "id": "t27-f01", "pregunta": "¿Qué ley crea y regula el Cuerpo General de la Policía Canaria?", "respuesta": "La Ley 9/2007, de 13 de abril, de la Policía de Canarias (LPC), que establece la organización, funcionamiento, régimen estatutario y disciplinario del CGPC." },
-    { "id": "t27-f02", "pregunta": "¿Cuál es la naturaleza jurídica del CGPC?", "respuesta": "Instituto armado de naturaleza civil (no militar), con estructura jerarquizada y mando único, dependiente del Gobierno de Canarias. Ejerce funciones de policía autonómica en todo el archipiélago canario." },
-    { "id": "t27-f03", "pregunta": "¿Qué artículo de la CE permite a las CCAA crear cuerpos de policía propios?", "respuesta": "El art. 149.1.29ª CE reserva al Estado la competencia exclusiva en seguridad pública, pero permite que las CCAA con Estatuto aprobado creen cuerpos de policía propios en los términos de sus Estatutos." },
-    { "id": "t27-f04", "pregunta": "¿Cuáles son las escalas del CGPC?", "respuesta": "1) Escala Superior: Inspector General, Inspector Jefe, Inspector; 2) Escala Ejecutiva: Subinspector; 3) Escala Básica: Oficial y Agente." },
-    { "id": "t27-f05", "pregunta": "¿Cómo se accede a la Escala Básica del CGPC?", "respuesta": "Mediante oposición libre. Los requisitos incluyen: nacionalidad española, mayoría de edad, no haber sido condenado por delito doloso, y aptitud física y psíquica." },
-    { "id": "t27-f06", "pregunta": "¿Cuáles son las principales funciones propias del CGPC?", "respuesta": "Velar por el cumplimiento de las leyes autonómicas; vigilancia y protección de personas, bienes y lugares; protección del Presidente, Parlamento y Gobierno de Canarias; mantenimiento del orden público en actos institucionales; vigilancia de espacios naturales protegidos; control del juego y espectáculos públicos de competencia autonómica." },
-    { "id": "t27-f07", "pregunta": "¿Qué funciones ejerce el CGPC en colaboración con las FCS del Estado?", "respuesta": "Colaboración con el CNP y la GC en seguridad ciudadana; funciones de Policía Judicial (arts. 126 CE, 547-550 LOPJ); auxilio en emergencias y catástrofes; cooperación en control de extranjeros en el marco de la legislación estatal." },
-    { "id": "t27-f08", "pregunta": "¿Qué funciones están excluidas del CGPC y reservadas al Estado?", "respuesta": "Control de fronteras, inmigración, pasaportes, armas y explosivos (art. 12.1.A LOFCS), y vigilancia de costas y fronteras marítimas en materia de control de personas." },
-    { "id": "t27-f09", "pregunta": "¿Cuál es la sanción máxima para las faltas muy graves en el régimen disciplinario del CGPC?", "respuesta": "Separación del servicio o suspensión de funciones de 3 a 6 años. Las faltas muy graves prescriben a los 6 años (art. 83 LPC)." },
-    { "id": "t27-f10", "pregunta": "¿Cuál es el plazo de prescripción de las faltas graves del CGPC?", "respuesta": "2 años. Las sanciones por faltas graves incluyen suspensión de funciones de 1 mes a 3 años, traslado forzoso o pérdida de destino." },
-    { "id": "t27-f11", "pregunta": "¿Cuál es el plazo de prescripción de las faltas leves del CGPC?", "respuesta": "6 meses. Las sanciones por faltas leves incluyen apercibimiento, multa y suspensión de funciones hasta 1 mes." },
-    { "id": "t27-f12", "pregunta": "¿Qué es la Junta de Seguridad de Canarias?", "respuesta": "El órgano de coordinación entre el Estado y la CCAA de Canarias en materia de seguridad (art. 51 LOFCS), presidida por el Presidente del Gobierno de Canarias. Adopta los criterios básicos de coordinación entre el CGPC y las FCS del Estado." },
-    { "id": "t27-f13", "pregunta": "¿Qué es el Consejo de Policía de Canarias?", "respuesta": "El órgano colegiado de participación y consulta en materia de policía autonómica (art. 106 LPC), integrado por representantes del Gobierno de Canarias, del CGPC y de las policías locales canarias. Tiene funciones consultivas y de coordinación, no ejecutivas." },
-    { "id": "t27-f14", "pregunta": "¿Cuáles son los principios básicos de actuación del CGPC?", "respuesta": "Legalidad; respeto a la dignidad y no discriminación en relaciones con la comunidad; respeto a los derechos de los detenidos; dedicación profesional; secreto profesional; responsabilidad; cooperación con la Administración de Justicia. (Art. 5 LPC, en consonancia con el art. 5 LOFCS)." },
-    { "id": "t27-f15", "pregunta": "¿Qué situación administrativa permite al miembro del CGPC cesar temporalmente en el servicio activo por condiciones físicas o psíquicas?", "respuesta": "La segunda actividad, prevista para preservar la eficacia policial cuando las condiciones físicas o psíquicas de un miembro del CGPC así lo aconsejen, permitiéndole desempeñar funciones de menor exigencia física o alejadas del servicio operativo." },
-    { "id": "t27-f16", "pregunta": "¿En qué artículos del Estatuto de Autonomía de Canarias (LO 1/2018) se regula la Policía de Canarias?", "respuesta": "En los arts. 163-168 del Estatuto de Autonomía de Canarias (LO 1/2018)." },
-    { "id": "t27-f17", "pregunta": "¿Qué ley estatal establece los principios básicos de actuación aplicables al CGPC?", "respuesta": "La LO 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad (LOFCS), cuyos arts. 38-44 regulan el marco general de las policías autonómicas y sus principios básicos de actuación." },
-    { "id": "t27-f18", "pregunta": "¿Qué restricciones tienen los miembros del CGPC respecto al derecho de huelga y sindicación?", "respuesta": "El derecho de huelga está prohibido o muy restringido, y solo pueden afiliarse a sindicatos policiales específicos, no a sindicatos de clase generales. Estas restricciones derivan de su condición de cuerpo armado y jerarquizado." },
-    { "id": "t27-f19", "pregunta": "¿Cómo se coordina el CGPC con las policías locales de Canarias?", "respuesta": "El CGPC ejerce funciones de coordinación: homogeneización de criterios de actuación, formación y capacitación conjunta, y sistemas de comunicación e información compartidos. El Consejo de Policía de Canarias es el instrumento de coordinación." },
-    { "id": "t27-f20", "pregunta": "¿Cuál es el órgano de la Administración autonómica del que depende el CGPC?", "respuesta": "La Dirección General de Seguridad y Emergencias del Gobierno de Canarias, de la que depende orgánicamente el CGPC." }
+    {
+      "id": "t27-f01",
+      "pregunta": "¿Qué ley crea y regula el Cuerpo General de la Policía Canaria?",
+      "respuesta": "La Ley 9/2007, de 13 de abril, de la Policía de Canarias (LPC), que establece la organización, funcionamiento, régimen estatutario y disciplinario del CGPC."
+    },
+    {
+      "id": "t27-f02",
+      "pregunta": "¿Cuál es la naturaleza jurídica del CGPC?",
+      "respuesta": "Instituto armado de naturaleza civil (no militar), con estructura jerarquizada y mando único, dependiente del Gobierno de Canarias. Ejerce funciones de policía autonómica en todo el archipiélago canario."
+    },
+    {
+      "id": "t27-f03",
+      "pregunta": "¿Qué artículo de la CE permite a las CCAA crear cuerpos de policía propios?",
+      "respuesta": "El art. 149.1.29ª CE reserva al Estado la competencia exclusiva en seguridad pública, pero permite que las CCAA con Estatuto aprobado creen cuerpos de policía propios en los términos de sus Estatutos."
+    },
+    {
+      "id": "t27-f04",
+      "pregunta": "¿Cuáles son las escalas del CGPC?",
+      "respuesta": "1) Escala Superior: Inspector General, Inspector Jefe, Inspector; 2) Escala Ejecutiva: Subinspector; 3) Escala Básica: Oficial y Agente."
+    },
+    {
+      "id": "t27-f05",
+      "pregunta": "¿Cómo se accede a la Escala Básica del CGPC?",
+      "respuesta": "Mediante oposición libre. Los requisitos incluyen: nacionalidad española, mayoría de edad, no haber sido condenado por delito doloso, y aptitud física y psíquica."
+    },
+    {
+      "id": "t27-f06",
+      "pregunta": "¿Cuáles son las principales funciones propias del CGPC?",
+      "respuesta": "Velar por el cumplimiento de las leyes autonómicas; vigilancia y protección de personas, bienes y lugares; protección del Presidente, Parlamento y Gobierno de Canarias; mantenimiento del orden público en actos institucionales; vigilancia de espacios naturales protegidos; control del juego y espectáculos públicos de competencia autonómica."
+    },
+    {
+      "id": "t27-f07",
+      "pregunta": "¿Qué funciones ejerce el CGPC en colaboración con las FCS del Estado?",
+      "respuesta": "Colaboración con el CNP y la GC en seguridad ciudadana; funciones de Policía Judicial (arts. 126 CE, 547-550 LOPJ); auxilio en emergencias y catástrofes; cooperación en control de extranjeros en el marco de la legislación estatal."
+    },
+    {
+      "id": "t27-f08",
+      "pregunta": "¿Qué funciones están excluidas del CGPC y reservadas al Estado?",
+      "respuesta": "Control de fronteras, inmigración, pasaportes, armas y explosivos (art. 12.1.A LOFCS), y vigilancia de costas y fronteras marítimas en materia de control de personas."
+    },
+    {
+      "id": "t27-f09",
+      "pregunta": "¿Cuál es la sanción máxima para las faltas muy graves en el régimen disciplinario del CGPC?",
+      "respuesta": "Separación del servicio o suspensión de funciones de 3 a 6 años. Las faltas muy graves prescriben a los 6 años (art. 83 LPC)."
+    },
+    {
+      "id": "t27-f10",
+      "pregunta": "¿Cuál es el plazo de prescripción de las faltas graves del CGPC?",
+      "respuesta": "2 años. Las sanciones por faltas graves incluyen suspensión de funciones de 1 mes a 3 años, traslado forzoso o pérdida de destino."
+    },
+    {
+      "id": "t27-f11",
+      "pregunta": "¿Cuál es el plazo de prescripción de las faltas leves del CGPC?",
+      "respuesta": "6 meses. Las sanciones por faltas leves incluyen apercibimiento, multa y suspensión de funciones hasta 1 mes."
+    },
+    {
+      "id": "t27-f12",
+      "pregunta": "¿Qué es la Junta de Seguridad de Canarias?",
+      "respuesta": "El órgano de coordinación entre el Estado y la CCAA de Canarias en materia de seguridad (art. 51 LOFCS), presidida por el Presidente del Gobierno de Canarias. Adopta los criterios básicos de coordinación entre el CGPC y las FCS del Estado."
+    },
+    {
+      "id": "t27-f13",
+      "pregunta": "¿Qué es el Consejo de Policía de Canarias?",
+      "respuesta": "El órgano colegiado de participación y consulta en materia de policía autonómica (art. 106 LPC), integrado por representantes del Gobierno de Canarias, del CGPC y de las policías locales canarias. Tiene funciones consultivas y de coordinación, no ejecutivas."
+    },
+    {
+      "id": "t27-f14",
+      "pregunta": "¿Cuáles son los principios básicos de actuación del CGPC?",
+      "respuesta": "Legalidad; respeto a la dignidad y no discriminación en relaciones con la comunidad; respeto a los derechos de los detenidos; dedicación profesional; secreto profesional; responsabilidad; cooperación con la Administración de Justicia. (Art. 5 LPC, en consonancia con el art. 5 LOFCS)."
+    },
+    {
+      "id": "t27-f15",
+      "pregunta": "¿Qué situación administrativa permite al miembro del CGPC cesar temporalmente en el servicio activo por condiciones físicas o psíquicas?",
+      "respuesta": "La segunda actividad, prevista para preservar la eficacia policial cuando las condiciones físicas o psíquicas de un miembro del CGPC así lo aconsejen, permitiéndole desempeñar funciones de menor exigencia física o alejadas del servicio operativo."
+    },
+    {
+      "id": "t27-f16",
+      "pregunta": "¿En qué artículos del Estatuto de Autonomía de Canarias (LO 1/2018) se regula la Policía de Canarias?",
+      "respuesta": "En los arts. 163-168 del Estatuto de Autonomía de Canarias (LO 1/2018)."
+    },
+    {
+      "id": "t27-f17",
+      "pregunta": "¿Qué ley estatal establece los principios básicos de actuación aplicables al CGPC?",
+      "respuesta": "La LO 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad (LOFCS), cuyos arts. 38-44 regulan el marco general de las policías autonómicas y sus principios básicos de actuación."
+    },
+    {
+      "id": "t27-f18",
+      "pregunta": "¿Qué restricciones tienen los miembros del CGPC respecto al derecho de huelga y sindicación?",
+      "respuesta": "El derecho de huelga está prohibido o muy restringido, y solo pueden afiliarse a sindicatos policiales específicos, no a sindicatos de clase generales. Estas restricciones derivan de su condición de cuerpo armado y jerarquizado."
+    },
+    {
+      "id": "t27-f19",
+      "pregunta": "¿Cómo se coordina el CGPC con las policías locales de Canarias?",
+      "respuesta": "El CGPC ejerce funciones de coordinación: homogeneización de criterios de actuación, formación y capacitación conjunta, y sistemas de comunicación e información compartidos. El Consejo de Policía de Canarias es el instrumento de coordinación."
+    },
+    {
+      "id": "t27-f20",
+      "pregunta": "¿Cuál es el órgano de la Administración autonómica del que depende el CGPC?",
+      "respuesta": "La Dirección General de Seguridad y Emergencias del Gobierno de Canarias, de la que depende orgánicamente el CGPC."
+    }
   ],
   "preguntas": [
     {
       "id": "t27-q01",
       "enunciado": "¿Qué ley crea y regula el Cuerpo General de la Policía Canaria?",
-      "opciones": ["LO 2/1986, de Fuerzas y Cuerpos de Seguridad", "Ley 9/2007, de 13 de abril, de la Policía de Canarias", "LO 1/2018, Estatuto de Autonomía de Canarias"],
+      "opciones": [
+        "LO 2/1986, de Fuerzas y Cuerpos de Seguridad",
+        "Ley 9/2007, de 13 de abril, de la Policía de Canarias",
+        "LO 1/2018, Estatuto de Autonomía de Canarias"
+      ],
       "correcta": 1,
       "explicacion": "La Ley 9/2007, de 13 de abril, de la Policía de Canarias (LPC) es la norma autonómica que crea y regula el CGPC, estableciendo su organización, funcionamiento, régimen estatutario y disciplinario."
     },
     {
       "id": "t27-q02",
       "enunciado": "¿Cuál es la naturaleza jurídica del CGPC?",
-      "opciones": ["Instituto armado de naturaleza militar con estructura jerarquizada", "Instituto armado de naturaleza civil con estructura jerarquizada, dependiente del Gobierno de Canarias", "Cuerpo de seguridad privada con funciones públicas delegadas"],
+      "opciones": [
+        "Instituto armado de naturaleza militar con estructura jerarquizada",
+        "Instituto armado de naturaleza civil con estructura jerarquizada, dependiente del Gobierno de Canarias",
+        "Cuerpo de seguridad privada con funciones públicas delegadas"
+      ],
       "correcta": 1,
       "explicacion": "El CGPC es un instituto armado de naturaleza civil (no militar), con estructura jerarquizada y mando único, dependiente del Gobierno de Canarias."
     },
     {
       "id": "t27-q03",
       "enunciado": "¿Cuáles son las escalas del CGPC?",
-      "opciones": ["Escala técnica, escala de gestión y escala auxiliar", "Escala Superior (Inspector General/Jefe/Inspector), Escala Ejecutiva (Subinspector) y Escala Básica (Oficial y Agente)", "Solo dos escalas: escala de mando y escala operativa"],
+      "opciones": [
+        "Escala técnica, escala de gestión y escala auxiliar",
+        "Escala Superior (Inspector General/Jefe/Inspector), Escala Ejecutiva (Subinspector) y Escala Básica (Oficial y Agente)",
+        "Solo dos escalas: escala de mando y escala operativa"
+      ],
       "correcta": 1,
       "explicacion": "El CGPC tiene tres escalas: Escala Superior (Inspector General, Inspector Jefe, Inspector), Escala Ejecutiva (Subinspector) y Escala Básica (Oficial y Agente)."
     },
     {
       "id": "t27-q04",
       "enunciado": "¿Cuál es la sanción máxima para las faltas muy graves en el régimen disciplinario del CGPC?",
-      "opciones": ["Suspensión de funciones hasta 6 meses", "Separación del servicio o suspensión de funciones de 3 a 6 años", "Traslado forzoso a otra unidad"],
+      "opciones": [
+        "Suspensión de funciones hasta 6 meses",
+        "Separación del servicio o suspensión de funciones de 3 a 6 años",
+        "Traslado forzoso a otra unidad"
+      ],
       "correcta": 1,
       "explicacion": "Las faltas muy graves se sancionan con separación del servicio o suspensión de funciones de 3 a 6 años. Prescriben a los 6 años (art. 83 LPC)."
     },
     {
       "id": "t27-q05",
       "enunciado": "¿Cuál es el plazo de prescripción de las faltas leves del CGPC?",
-      "opciones": ["3 meses", "6 meses", "1 año"],
+      "opciones": [
+        "3 meses",
+        "6 meses",
+        "1 año"
+      ],
       "correcta": 1,
       "explicacion": "Las faltas leves del CGPC prescriben a los 6 meses (art. 83 LPC). Las faltas graves prescriben a los 2 años y las muy graves a los 6 años."
     },
     {
       "id": "t27-q06",
       "enunciado": "¿Qué artículo constitucional permite a las CCAA crear cuerpos de policía propios?",
-      "opciones": ["Art. 104 CE", "Art. 149.1.29ª CE", "Art. 126 CE"],
+      "opciones": [
+        "Art. 104 CE",
+        "Art. 149.1.29ª CE",
+        "Art. 126 CE"
+      ],
       "correcta": 1,
       "explicacion": "El art. 149.1.29ª CE reserva al Estado la competencia exclusiva en seguridad pública, pero permite que las CCAA con Estatuto aprobado creen cuerpos de policía propios en los términos establecidos en sus Estatutos."
     },
     {
       "id": "t27-q07",
       "enunciado": "¿Qué es la Junta de Seguridad de Canarias?",
-      "opciones": ["El órgano de mando del CGPC presidido por el Jefe del Cuerpo", "El órgano de coordinación entre el Estado y la CCAA de Canarias en materia de seguridad, presidida por el Presidente del Gobierno de Canarias (art. 51 LOFCS)", "El órgano disciplinario supremo del CGPC"],
+      "opciones": [
+        "El órgano de mando del CGPC presidido por el Jefe del Cuerpo",
+        "El órgano de coordinación entre el Estado y la CCAA de Canarias en materia de seguridad, presidida por el Presidente del Gobierno de Canarias (art. 51 LOFCS)",
+        "El órgano disciplinario supremo del CGPC"
+      ],
       "correcta": 1,
       "explicacion": "La Junta de Seguridad de Canarias (art. 51 LOFCS) es el órgano de coordinación entre el Estado y la CCAA en materia de seguridad, presidida por el Presidente del Gobierno de Canarias."
     },
     {
       "id": "t27-q08",
       "enunciado": "¿Qué funciones están excluidas del CGPC y reservadas al Estado?",
-      "opciones": ["Vigilancia de espacios naturales protegidos y control del juego", "Control de fronteras, inmigración, pasaportes, armas y explosivos (art. 12.1.A LOFCS)", "Protección de instituciones autonómicas y orden público"],
+      "opciones": [
+        "Vigilancia de espacios naturales protegidos y control del juego",
+        "Control de fronteras, inmigración, pasaportes, armas y explosivos (art. 12.1.A LOFCS)",
+        "Protección de instituciones autonómicas y orden público"
+      ],
       "correcta": 1,
       "explicacion": "Las funciones de control de fronteras, inmigración, pasaportes, armas y explosivos están reservadas al Estado por el art. 12.1.A LOFCS. El CGPC no puede ejercer estas funciones."
     },
     {
       "id": "t27-q09",
       "enunciado": "¿Cómo se accede a la Escala Básica del CGPC?",
-      "opciones": ["Por concurso de méritos entre funcionarios de otras administraciones", "Mediante oposición libre, requiriendo nacionalidad española, mayoría de edad, ausencia de condenas por delito doloso y aptitud física y psíquica", "Por designación directa del Director General de Seguridad"],
+      "opciones": [
+        "Por concurso de méritos entre funcionarios de otras administraciones",
+        "Mediante oposición libre, requiriendo nacionalidad española, mayoría de edad, ausencia de condenas por delito doloso y aptitud física y psíquica",
+        "Por designación directa del Director General de Seguridad"
+      ],
       "correcta": 1,
       "explicacion": "El acceso a la Escala Básica se realiza por oposición libre. Los requisitos incluyen: nacionalidad española, mayoría de edad, no haber sido condenado por delito doloso, y aptitud física y psíquica."
     },
     {
       "id": "t27-q10",
       "enunciado": "¿En qué artículos del Estatuto de Autonomía de Canarias se regula la Policía de Canarias?",
-      "opciones": ["Arts. 96-107 (Cabildos Insulares)", "Arts. 163-168 del Estatuto (LO 1/2018)", "Arts. 30-53 (Parlamento de Canarias)"],
+      "opciones": [
+        "Arts. 96-107 (Cabildos Insulares)",
+        "Arts. 163-168 del Estatuto (LO 1/2018)",
+        "Arts. 30-53 (Parlamento de Canarias)"
+      ],
       "correcta": 1,
       "explicacion": "Los arts. 163-168 del Estatuto de Autonomía de Canarias (LO 1/2018) regulan la Policía de Canarias como institución autonómica."
     },
     {
       "id": "t27-q11",
       "enunciado": "¿Qué ley estatal establece el marco general de las policías autonómicas aplicable al CGPC?",
-      "opciones": ["Ley 7/1985, de Bases del Régimen Local", "LO 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad (LOFCS)", "LO 4/2015, de protección de la seguridad ciudadana"],
+      "opciones": [
+        "Ley 7/1985, de Bases del Régimen Local",
+        "LO 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad (LOFCS)",
+        "LO 4/2015, de protección de la seguridad ciudadana"
+      ],
       "correcta": 1,
       "explicacion": "La LO 2/1986 (LOFCS), en sus arts. 38-44, regula el marco general de las policías autonómicas y establece los principios básicos de actuación aplicables al CGPC."
     },
     {
       "id": "t27-q12",
       "enunciado": "¿Cuál es el plazo de prescripción de las faltas graves del CGPC?",
-      "opciones": ["6 meses", "1 año", "2 años"],
+      "opciones": [
+        "6 meses",
+        "1 año",
+        "2 años"
+      ],
       "correcta": 2,
       "explicacion": "Las faltas graves del CGPC prescriben a los 2 años (art. 83 LPC). Las sanciones incluyen suspensión de funciones de 1 mes a 3 años, traslado forzoso o pérdida de destino."
     },
     {
       "id": "t27-q13",
       "enunciado": "¿Qué es el Consejo de Policía de Canarias?",
-      "opciones": ["El órgano de mando operativo del CGPC", "El órgano colegiado de participación y consulta en materia de policía autonómica, con funciones consultivas y de coordinación con las policías locales", "El tribunal disciplinario del CGPC"],
+      "opciones": [
+        "El órgano de mando operativo del CGPC",
+        "El órgano colegiado de participación y consulta en materia de policía autonómica, con funciones consultivas y de coordinación con las policías locales",
+        "El tribunal disciplinario del CGPC"
+      ],
       "correcta": 1,
       "explicacion": "El Consejo de Policía de Canarias (art. 106 LPC) es el órgano colegiado de participación y consulta en materia de policía autonómica. Sus funciones son consultivas y de coordinación, no ejecutivas."
     },
     {
       "id": "t27-q14",
       "enunciado": "¿Qué restricciones tienen los miembros del CGPC respecto al derecho de huelga y sindicación?",
-      "opciones": ["Tienen los mismos derechos que cualquier trabajador", "El derecho de huelga está prohibido o muy restringido, y solo pueden afiliarse a sindicatos policiales específicos, no a sindicatos de clase generales", "Solo tienen restringido el derecho de huelga, pero la sindicación es libre"],
+      "opciones": [
+        "Tienen los mismos derechos que cualquier trabajador",
+        "El derecho de huelga está prohibido o muy restringido, y solo pueden afiliarse a sindicatos policiales específicos, no a sindicatos de clase generales",
+        "Solo tienen restringido el derecho de huelga, pero la sindicación es libre"
+      ],
       "correcta": 1,
       "explicacion": "Los miembros del CGPC tienen restringido el derecho de huelga y la sindicación (solo en sindicatos policiales específicos). Estas restricciones derivan de su condición de cuerpo armado y jerarquizado."
     },
     {
       "id": "t27-q15",
       "enunciado": "¿Cuáles son los principios básicos de actuación del CGPC según el art. 5 LPC?",
-      "opciones": ["Eficacia, eficiencia y economía en el uso de recursos públicos", "Legalidad, respeto a la dignidad en relaciones con la comunidad, respeto a los derechos de los detenidos, dedicación profesional, secreto profesional, responsabilidad y cooperación con la Administración de Justicia", "Jerarquía, obediencia y disciplina exclusivamente"],
+      "opciones": [
+        "Eficacia, eficiencia y economía en el uso de recursos públicos",
+        "Legalidad, respeto a la dignidad en relaciones con la comunidad, respeto a los derechos de los detenidos, dedicación profesional, secreto profesional, responsabilidad y cooperación con la Administración de Justicia",
+        "Jerarquía, obediencia y disciplina exclusivamente"
+      ],
       "correcta": 1,
       "explicacion": "El art. 5 LPC establece los principios básicos de actuación del CGPC: legalidad; respeto a la dignidad y no discriminación; respeto a los derechos de los detenidos; dedicación profesional; secreto profesional; responsabilidad; y cooperación con la Administración de Justicia."
     }

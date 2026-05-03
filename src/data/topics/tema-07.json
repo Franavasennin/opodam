@@ -38,56 +38,301 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "label": "CA de Canarias", "nivel": 0 },
-      { "id": "n1", "label": "Estatuto LO 1/2018", "nivel": 1 },
-      { "id": "n2", "label": "Parlamento de Canarias", "nivel": 1 },
-      { "id": "n3", "label": "Gobierno de Canarias", "nivel": 1 },
-      { "id": "n4", "label": "Cabildos Insulares", "nivel": 1 },
-      { "id": "n5", "label": "Capitalidad compartida: SC/LPGC", "nivel": 2 },
-      { "id": "n6", "label": "REF — Régimen Económico Fiscal", "nivel": 2 },
-      { "id": "n7", "label": "Circunscripción: la isla", "nivel": 2 },
-      { "id": "n8", "label": "Presidente + Consejeros", "nivel": 2 },
-      { "id": "n9", "label": "Investidura por Parlamento", "nivel": 2 },
-      { "id": "n10", "label": "7 Cabildos — 1 por isla mayor", "nivel": 2 },
-      { "id": "n11", "label": "Ultraperificidad UE (art. 349 TFUE)", "nivel": 2 },
-      { "id": "n12", "label": "88 municipios / Defensor del Pueblo del Común", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "CA de Canarias"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n1",
+        "data": {
+          "label": "Estatuto LO 1/2018"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Parlamento de Canarias"
+        },
+        "position": {
+          "x": 285,
+          "y": -93
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Gobierno de Canarias"
+        },
+        "position": {
+          "x": 176,
+          "y": 243
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Cabildos Insulares"
+        },
+        "position": {
+          "x": -176,
+          "y": 243
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "Capitalidad compartida: SC/LPGC"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "REF — Régimen Económico Fiscal"
+        },
+        "position": {
+          "x": 453,
+          "y": -362
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Circunscripción: la isla"
+        },
+        "position": {
+          "x": 565,
+          "y": 129
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Presidente + Consejeros"
+        },
+        "position": {
+          "x": 252,
+          "y": 523
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Investidura por Parlamento"
+        },
+        "position": {
+          "x": -252,
+          "y": 523
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "7 Cabildos — 1 por isla mayor"
+        },
+        "position": {
+          "x": -565,
+          "y": 129
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Ultraperificidad UE (art. 349 TFUE)"
+        },
+        "position": {
+          "x": -285,
+          "y": -93
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "88 municipios / Defensor del Pueblo del Común"
+        },
+        "position": {
+          "x": -453,
+          "y": -362
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "n1" },
-      { "origen": "root", "destino": "n2" },
-      { "origen": "root", "destino": "n3" },
-      { "origen": "root", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n2", "destino": "n7" },
-      { "origen": "n3", "destino": "n8" },
-      { "origen": "n3", "destino": "n9" },
-      { "origen": "n4", "destino": "n10" },
-      { "origen": "root", "destino": "n11" },
-      { "origen": "n4", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "n1"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "n2"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "n3"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "n4"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e7",
+        "source": "n2",
+        "target": "n7"
+      },
+      {
+        "id": "e8",
+        "source": "n3",
+        "target": "n8"
+      },
+      {
+        "id": "e9",
+        "source": "n3",
+        "target": "n9"
+      },
+      {
+        "id": "e10",
+        "source": "n4",
+        "target": "n10"
+      },
+      {
+        "id": "e11",
+        "source": "root",
+        "target": "n11"
+      },
+      {
+        "id": "e12",
+        "source": "n4",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t7-f01", "pregunta": "¿Qué ley orgánica contiene el Estatuto de Autonomía de Canarias vigente?", "respuesta": "La Ley Orgánica 1/2018, de 5 de noviembre, de reforma del Estatuto de Autonomía de Canarias, que derogó la LO 10/1982." },
-    { "id": "t7-f02", "pregunta": "¿Cuáles son las dos capitales de la CA de Canarias?", "respuesta": "Las Palmas de Gran Canaria y Santa Cruz de Tenerife, que ejercen de forma alternada la sede del Parlamento y del Gobierno." },
-    { "id": "t7-f03", "pregunta": "¿Cuántas islas mayores forman el archipiélago canario?", "respuesta": "Siete: Tenerife, Gran Canaria, La Palma, Lanzarote, Fuerteventura, La Gomera y El Hierro." },
-    { "id": "t7-f04", "pregunta": "¿Qué es el REF de Canarias?", "respuesta": "El Régimen Económico y Fiscal especial de Canarias, con raíces históricas en los puertos francos, que incluye beneficios como el IGIC, la ZEC y la Reserva para Inversiones en Canarias." },
-    { "id": "t7-f05", "pregunta": "¿Cuál es la circunscripción electoral en las elecciones al Parlamento de Canarias?", "respuesta": "La isla, conforme a la Ley Electoral de Canarias (Ley 7/2003), garantizando la representación de todas las islas." },
-    { "id": "t7-f06", "pregunta": "¿Qué órganos componen el Parlamento de Canarias?", "respuesta": "El Presidente del Parlamento, la Mesa, la Junta de Portavoces, los Grupos Parlamentarios, el Pleno y las Comisiones." },
-    { "id": "t7-f07", "pregunta": "¿Cómo se elige al Presidente del Gobierno de Canarias?", "respuesta": "Es elegido por el Parlamento de Canarias de entre sus miembros mediante investidura y nombrado por el Rey." },
-    { "id": "t7-f08", "pregunta": "¿Cuál es la composición del Gobierno de Canarias?", "respuesta": "El Presidente del Gobierno, los Vicepresidentes en su caso y los Consejeros, titulares de las distintas Consejerías." },
-    { "id": "t7-f09", "pregunta": "¿Qué son los Cabildos Insulares?", "respuesta": "Los órganos de gobierno, administración y representación de cada isla, reconocidos en el art. 141.4 CE, que actúan como órganos de la CA y como entidades locales." },
-    { "id": "t7-f10", "pregunta": "¿Cuántos Cabildos Insulares hay en Canarias?", "respuesta": "Siete, uno por cada isla mayor: Tenerife, Gran Canaria, La Palma, Lanzarote, Fuerteventura, La Gomera y El Hierro." },
-    { "id": "t7-f11", "pregunta": "¿Cuántos municipios tiene Canarias?", "respuesta": "88 municipios distribuidos en las siete islas." },
-    { "id": "t7-f12", "pregunta": "¿Qué es el Defensor del Pueblo del Común?", "respuesta": "El comisionado parlamentario de Canarias con funciones análogas al Defensor del Pueblo estatal en el ámbito autonómico canario." },
-    { "id": "t7-f13", "pregunta": "¿Qué reconocimiento especial tiene Canarias en la UE?", "respuesta": "Es una región ultraperiférica de la UE conforme al art. 349 TFUE, con medidas de apoyo específicas." },
-    { "id": "t7-f14", "pregunta": "¿Mediante qué mecanismo puede el Parlamento exigir la dimisión del Gobierno de Canarias?", "respuesta": "Mediante la moción de censura constructiva, que debe proponer un candidato alternativo a la Presidencia del Gobierno." },
-    { "id": "t7-f15", "pregunta": "¿Qué ley regula el sistema electoral de Canarias?", "respuesta": "La Ley 7/2003, de 20 de marzo, Electoral de Canarias." },
-    { "id": "t7-f16", "pregunta": "¿Por qué vía accedió Canarias a la autonomía?", "respuesta": "Por la vía ordinaria del art. 143 CE; el primer Estatuto fue la LO 10/1982." },
-    { "id": "t7-f17", "pregunta": "¿Cuántos títulos tiene el Estatuto de Autonomía de Canarias de 2018?", "respuesta": "Un Título Preliminar y siete Títulos (derechos, instituciones, competencias, organización territorial, economía y hacienda, relaciones institucionales y reforma)." },
-    { "id": "t7-f18", "pregunta": "¿Qué órgano consultivo tiene Canarias equivalente al Consejo de Estado?", "respuesta": "El Consejo Consultivo de Canarias, que emite dictámenes sobre asuntos que le somete el Gobierno y el Parlamento autonómico." },
-    { "id": "t7-f19", "pregunta": "¿De qué está compuesto cada Cabildo Insular?", "respuesta": "Del Presidente del Cabildo, el Consejo de Gobierno Insular y el Pleno, siendo los consejeros insulares elegidos directamente por los ciudadanos." },
-    { "id": "t7-f20", "pregunta": "¿Qué artículo de la CE reconoce los Cabildos Insulares?", "respuesta": "El art. 141.4 CE, que establece que en los archipiélagos las islas tendrán administración propia en forma de Cabildos o Consejos." }
+    {
+      "id": "t7-f01",
+      "pregunta": "¿Qué ley orgánica contiene el Estatuto de Autonomía de Canarias vigente?",
+      "respuesta": "La Ley Orgánica 1/2018, de 5 de noviembre, de reforma del Estatuto de Autonomía de Canarias, que derogó la LO 10/1982."
+    },
+    {
+      "id": "t7-f02",
+      "pregunta": "¿Cuáles son las dos capitales de la CA de Canarias?",
+      "respuesta": "Las Palmas de Gran Canaria y Santa Cruz de Tenerife, que ejercen de forma alternada la sede del Parlamento y del Gobierno."
+    },
+    {
+      "id": "t7-f03",
+      "pregunta": "¿Cuántas islas mayores forman el archipiélago canario?",
+      "respuesta": "Siete: Tenerife, Gran Canaria, La Palma, Lanzarote, Fuerteventura, La Gomera y El Hierro."
+    },
+    {
+      "id": "t7-f04",
+      "pregunta": "¿Qué es el REF de Canarias?",
+      "respuesta": "El Régimen Económico y Fiscal especial de Canarias, con raíces históricas en los puertos francos, que incluye beneficios como el IGIC, la ZEC y la Reserva para Inversiones en Canarias."
+    },
+    {
+      "id": "t7-f05",
+      "pregunta": "¿Cuál es la circunscripción electoral en las elecciones al Parlamento de Canarias?",
+      "respuesta": "La isla, conforme a la Ley Electoral de Canarias (Ley 7/2003), garantizando la representación de todas las islas."
+    },
+    {
+      "id": "t7-f06",
+      "pregunta": "¿Qué órganos componen el Parlamento de Canarias?",
+      "respuesta": "El Presidente del Parlamento, la Mesa, la Junta de Portavoces, los Grupos Parlamentarios, el Pleno y las Comisiones."
+    },
+    {
+      "id": "t7-f07",
+      "pregunta": "¿Cómo se elige al Presidente del Gobierno de Canarias?",
+      "respuesta": "Es elegido por el Parlamento de Canarias de entre sus miembros mediante investidura y nombrado por el Rey."
+    },
+    {
+      "id": "t7-f08",
+      "pregunta": "¿Cuál es la composición del Gobierno de Canarias?",
+      "respuesta": "El Presidente del Gobierno, los Vicepresidentes en su caso y los Consejeros, titulares de las distintas Consejerías."
+    },
+    {
+      "id": "t7-f09",
+      "pregunta": "¿Qué son los Cabildos Insulares?",
+      "respuesta": "Los órganos de gobierno, administración y representación de cada isla, reconocidos en el art. 141.4 CE, que actúan como órganos de la CA y como entidades locales."
+    },
+    {
+      "id": "t7-f10",
+      "pregunta": "¿Cuántos Cabildos Insulares hay en Canarias?",
+      "respuesta": "Siete, uno por cada isla mayor: Tenerife, Gran Canaria, La Palma, Lanzarote, Fuerteventura, La Gomera y El Hierro."
+    },
+    {
+      "id": "t7-f11",
+      "pregunta": "¿Cuántos municipios tiene Canarias?",
+      "respuesta": "88 municipios distribuidos en las siete islas."
+    },
+    {
+      "id": "t7-f12",
+      "pregunta": "¿Qué es el Defensor del Pueblo del Común?",
+      "respuesta": "El comisionado parlamentario de Canarias con funciones análogas al Defensor del Pueblo estatal en el ámbito autonómico canario."
+    },
+    {
+      "id": "t7-f13",
+      "pregunta": "¿Qué reconocimiento especial tiene Canarias en la UE?",
+      "respuesta": "Es una región ultraperiférica de la UE conforme al art. 349 TFUE, con medidas de apoyo específicas."
+    },
+    {
+      "id": "t7-f14",
+      "pregunta": "¿Mediante qué mecanismo puede el Parlamento exigir la dimisión del Gobierno de Canarias?",
+      "respuesta": "Mediante la moción de censura constructiva, que debe proponer un candidato alternativo a la Presidencia del Gobierno."
+    },
+    {
+      "id": "t7-f15",
+      "pregunta": "¿Qué ley regula el sistema electoral de Canarias?",
+      "respuesta": "La Ley 7/2003, de 20 de marzo, Electoral de Canarias."
+    },
+    {
+      "id": "t7-f16",
+      "pregunta": "¿Por qué vía accedió Canarias a la autonomía?",
+      "respuesta": "Por la vía ordinaria del art. 143 CE; el primer Estatuto fue la LO 10/1982."
+    },
+    {
+      "id": "t7-f17",
+      "pregunta": "¿Cuántos títulos tiene el Estatuto de Autonomía de Canarias de 2018?",
+      "respuesta": "Un Título Preliminar y siete Títulos (derechos, instituciones, competencias, organización territorial, economía y hacienda, relaciones institucionales y reforma)."
+    },
+    {
+      "id": "t7-f18",
+      "pregunta": "¿Qué órgano consultivo tiene Canarias equivalente al Consejo de Estado?",
+      "respuesta": "El Consejo Consultivo de Canarias, que emite dictámenes sobre asuntos que le somete el Gobierno y el Parlamento autonómico."
+    },
+    {
+      "id": "t7-f19",
+      "pregunta": "¿De qué está compuesto cada Cabildo Insular?",
+      "respuesta": "Del Presidente del Cabildo, el Consejo de Gobierno Insular y el Pleno, siendo los consejeros insulares elegidos directamente por los ciudadanos."
+    },
+    {
+      "id": "t7-f20",
+      "pregunta": "¿Qué artículo de la CE reconoce los Cabildos Insulares?",
+      "respuesta": "El art. 141.4 CE, que establece que en los archipiélagos las islas tendrán administración propia en forma de Cabildos o Consejos."
+    }
   ],
   "preguntas": [
     {

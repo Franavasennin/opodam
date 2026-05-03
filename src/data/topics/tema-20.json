@@ -42,31 +42,183 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "n1", "label": "LECrim Detencion", "nivel": 0 },
-      { "id": "n2", "label": "Plazo 72h CE", "nivel": 1 },
-      { "id": "n3", "label": "Terrorismo 120h", "nivel": 1 },
-      { "id": "n4", "label": "Art.490 particular", "nivel": 1 },
-      { "id": "n5", "label": "Art.492 policial", "nivel": 1 },
-      { "id": "n6", "label": "Derechos art.520", "nivel": 1 },
-      { "id": "n7", "label": "Habeas corpus", "nivel": 1 },
-      { "id": "n8", "label": "Flagrante delito", "nivel": 1 },
-      { "id": "n9", "label": "Policia judicial", "nivel": 1 },
-      { "id": "n10", "label": "24h policial / 72h judicial", "nivel": 2 },
-      { "id": "n11", "label": "LO 6/1984 - 24h resolucion", "nivel": 2 },
-      { "id": "n12", "label": "LO 13/2015 - 9 derechos", "nivel": 2 }
+      {
+        "id": "n1",
+        "data": {
+          "label": "LECrim Detencion"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Plazo 72h CE"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Terrorismo 120h"
+        },
+        "position": {
+          "x": 212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Art.490 particular"
+        },
+        "position": {
+          "x": 300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "Art.492 policial"
+        },
+        "position": {
+          "x": 212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Derechos art.520"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Habeas corpus"
+        },
+        "position": {
+          "x": -212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Flagrante delito"
+        },
+        "position": {
+          "x": -300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Policia judicial"
+        },
+        "position": {
+          "x": -212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "24h policial / 72h judicial"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "LO 6/1984 - 24h resolucion"
+        },
+        "position": {
+          "x": 502,
+          "y": 290
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "LO 13/2015 - 9 derechos"
+        },
+        "position": {
+          "x": -502,
+          "y": 290
+        }
+      }
     ],
     "aristas": [
-      { "origen": "n1", "destino": "n2" },
-      { "origen": "n1", "destino": "n3" },
-      { "origen": "n1", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n1", "destino": "n7" },
-      { "origen": "n1", "destino": "n8" },
-      { "origen": "n1", "destino": "n9" },
-      { "origen": "n2", "destino": "n10" },
-      { "origen": "n7", "destino": "n11" },
-      { "origen": "n6", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n2"
+      },
+      {
+        "id": "e2",
+        "source": "n1",
+        "target": "n3"
+      },
+      {
+        "id": "e3",
+        "source": "n1",
+        "target": "n4"
+      },
+      {
+        "id": "e4",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n7"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n8"
+      },
+      {
+        "id": "e8",
+        "source": "n1",
+        "target": "n9"
+      },
+      {
+        "id": "e9",
+        "source": "n2",
+        "target": "n10"
+      },
+      {
+        "id": "e10",
+        "source": "n7",
+        "target": "n11"
+      },
+      {
+        "id": "e11",
+        "source": "n6",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [
@@ -175,105 +327,165 @@
     {
       "id": "t20-q01",
       "enunciado": "¿Cuál es el plazo máximo de detención preventiva establecido por el art. 17.2 de la Constitución Española?",
-      "opciones": ["24 horas", "72 horas", "120 horas"],
+      "opciones": [
+        "24 horas",
+        "72 horas",
+        "120 horas"
+      ],
       "correcta": 1,
       "explicacion": "Art. 17.2 CE: ninguna persona puede estar detenida preventivamente más de 72 horas sin ser puesta en libertad o a disposición de la autoridad judicial."
     },
     {
       "id": "t20-q02",
       "enunciado": "¿Cuál es el plazo máximo en que la autoridad policial debe poner al detenido a disposición judicial o en libertad (art. 496 LECrim)?",
-      "opciones": ["12 horas", "24 horas", "48 horas"],
+      "opciones": [
+        "12 horas",
+        "24 horas",
+        "48 horas"
+      ],
       "correcta": 1,
       "explicacion": "Art. 496 LECrim: la autoridad o agente que hubiera procedido a la detención debe poner al detenido en libertad o a disposición de la autoridad judicial en el plazo de 24 horas."
     },
     {
       "id": "t20-q03",
       "enunciado": "¿Cuánto puede alcanzar el plazo de detención en delitos de terrorismo con la prórroga judicial (art. 520 bis LECrim)?",
-      "opciones": ["72 horas", "96 horas", "120 horas"],
+      "opciones": [
+        "72 horas",
+        "96 horas",
+        "120 horas"
+      ],
       "correcta": 2,
       "explicacion": "Art. 520 bis LECrim: en terrorismo el juez puede acordar una prórroga de 48 horas adicionales a las 72 constitucionales, alcanzando un total de 120 horas (5 días)."
     },
     {
       "id": "t20-q04",
       "enunciado": "¿Quién puede practicar la detención según el art. 490 LECrim?",
-      "opciones": ["Solo la autoridad o agentes de policía judicial", "Cualquier persona (particular) en los supuestos tasados: in fraganti, intento de delito y fuga de establecimiento penal", "Solo el juez o el fiscal mediante mandamiento escrito"],
+      "opciones": [
+        "Solo la autoridad o agentes de policía judicial",
+        "Cualquier persona (particular) en los supuestos tasados: in fraganti, intento de delito y fuga de establecimiento penal",
+        "Solo el juez o el fiscal mediante mandamiento escrito"
+      ],
       "correcta": 1,
       "explicacion": "Art. 490 LECrim: cualquier persona puede detener al que intente cometer un delito, al sorprendido in fraganti y al que se fugue de un establecimiento penal."
     },
     {
       "id": "t20-q05",
       "enunciado": "¿Qué norma regula el procedimiento de habeas corpus en España?",
-      "opciones": ["El art. 520 de la LECrim", "La LO 6/1984 de 24 de mayo", "El art. 17.4 de la Constitución Española"],
+      "opciones": [
+        "El art. 520 de la LECrim",
+        "La LO 6/1984 de 24 de mayo",
+        "El art. 17.4 de la Constitución Española"
+      ],
       "correcta": 1,
       "explicacion": "La LO 6/1984 de 24 de mayo regula el procedimiento de habeas corpus, que permite el control judicial de la legalidad de cualquier detención."
     },
     {
       "id": "t20-q06",
       "enunciado": "¿En qué plazo debe el juez resolver el habeas corpus?",
-      "opciones": ["48 horas", "24 horas", "72 horas"],
+      "opciones": [
+        "48 horas",
+        "24 horas",
+        "72 horas"
+      ],
       "correcta": 1,
       "explicacion": "La LO 6/1984 establece que el juez debe resolver el habeas corpus en el plazo máximo de 24 horas desde que recibe la solicitud."
     },
     {
       "id": "t20-q07",
       "enunciado": "¿Cuántos derechos reconoce el art. 520 LECrim al detenido tras la LO 13/2015?",
-      "opciones": ["6 derechos", "9 derechos", "12 derechos"],
+      "opciones": [
+        "6 derechos",
+        "9 derechos",
+        "12 derechos"
+      ],
       "correcta": 1,
       "explicacion": "La LO 13/2015, que transpuso la Directiva 2013/48/UE, amplió los derechos del art. 520 LECrim hasta 9, añadiendo el acceso a las actuaciones esenciales para impugnar la detención."
     },
     {
       "id": "t20-q08",
       "enunciado": "¿Qué consecuencia procesal tiene que el detenido declare sin asistencia letrada?",
-      "opciones": ["La declaración se considera ratificada si no se impugna en 5 días", "La declaración es nula, salvo renuncia expresa, libre y voluntaria del detenido", "La declaración es válida si hay testigos presentes"],
+      "opciones": [
+        "La declaración se considera ratificada si no se impugna en 5 días",
+        "La declaración es nula, salvo renuncia expresa, libre y voluntaria del detenido",
+        "La declaración es válida si hay testigos presentes"
+      ],
       "correcta": 1,
       "explicacion": "La ausencia de abogado en la declaración policial determina la nulidad de la declaración prestada sin asistencia letrada, salvo renuncia expresa y voluntaria (art. 520 LECrim y TS)."
     },
     {
       "id": "t20-q09",
       "enunciado": "¿Qué valor procesal tiene el atestado policial según el art. 292 LECrim?",
-      "opciones": ["Valor de prueba directa plena", "Valor de denuncia, que debe ser ratificada en el juicio oral", "Valor de confesión del detenido"],
+      "opciones": [
+        "Valor de prueba directa plena",
+        "Valor de denuncia, que debe ser ratificada en el juicio oral",
+        "Valor de confesión del detenido"
+      ],
       "correcta": 1,
       "explicacion": "El atestado policial tiene valor de denuncia, no de prueba directa. El TS lo califica de prueba documental que debe ser ratificada en el juicio oral por los agentes que lo elaboraron."
     },
     {
       "id": "t20-q10",
       "enunciado": "¿Cuál de los siguientes NO es un supuesto en que la autoridad policial tiene OBLIGACIÓN de detener (art. 492 LECrim)?",
-      "opciones": ["Al que esté procesado y en situación de rebeldía", "Al que sea sospechoso sin que existan indicios concretos de delito", "Al sorprendido in fraganti"],
+      "opciones": [
+        "Al que esté procesado y en situación de rebeldía",
+        "Al que sea sospechoso sin que existan indicios concretos de delito",
+        "Al sorprendido in fraganti"
+      ],
       "correcta": 1,
       "explicacion": "El art. 492 LECrim exige indicios concretos o una orden judicial para la detención obligatoria. La mera sospecha sin indicios no es suficiente."
     },
     {
       "id": "t20-q11",
       "enunciado": "¿Cuándo fue aprobada la Ley de Enjuiciamiento Criminal?",
-      "opciones": ["Por Real Decreto de 14 de septiembre de 1882", "Por Ley Orgánica de 14 de septiembre de 1978", "Por Real Decreto Legislativo de 24 de julio de 1955"],
+      "opciones": [
+        "Por Real Decreto de 14 de septiembre de 1882",
+        "Por Ley Orgánica de 14 de septiembre de 1978",
+        "Por Real Decreto Legislativo de 24 de julio de 1955"
+      ],
       "correcta": 0,
       "explicacion": "La LECrim fue aprobada por Real Decreto de 14 de septiembre de 1882 y continúa vigente con numerosas reformas posteriores."
     },
     {
       "id": "t20-q12",
       "enunciado": "¿Quiénes están legitimados para instar el habeas corpus?",
-      "opciones": ["Solo el propio detenido y su abogado", "El detenido, familiares directos, el Ministerio Fiscal y el defensor", "Solo el Ministerio Fiscal y el juez de guardia"],
+      "opciones": [
+        "Solo el propio detenido y su abogado",
+        "El detenido, familiares directos, el Ministerio Fiscal y el defensor",
+        "Solo el Ministerio Fiscal y el juez de guardia"
+      ],
       "correcta": 1,
       "explicacion": "La LO 6/1984 legitima para instar el habeas corpus al propio detenido, su cónyuge o conviviente, descendientes, ascendientes, hermanos, el Ministerio Fiscal y el defensor."
     },
     {
       "id": "t20-q13",
       "enunciado": "¿Qué derecho nuevo introdujo la LO 13/2015 en el art. 520 LECrim?",
-      "opciones": ["El derecho a intérprete gratuito", "El derecho de acceso a los elementos esenciales de las actuaciones para impugnar la legalidad de la detención", "El derecho a ser reconocido por médico forense"],
+      "opciones": [
+        "El derecho a intérprete gratuito",
+        "El derecho de acceso a los elementos esenciales de las actuaciones para impugnar la legalidad de la detención",
+        "El derecho a ser reconocido por médico forense"
+      ],
       "correcta": 1,
       "explicacion": "La LO 13/2015 introdujo el derecho de acceso a los elementos esenciales de las actuaciones que sean imprescindibles para impugnar la legalidad de la detención."
     },
     {
       "id": "t20-q14",
       "enunciado": "¿Qué modalidad de flagrante delito rechaza el Tribunal Supremo?",
-      "opciones": ["El flagrante propio (sorprendido en el acto)", "El flagrante presunto (sin conexión temporal y espacial directa)", "El cuasi-flagrante (persecución inmediata sin interrupción)"],
+      "opciones": [
+        "El flagrante propio (sorprendido en el acto)",
+        "El flagrante presunto (sin conexión temporal y espacial directa)",
+        "El cuasi-flagrante (persecución inmediata sin interrupción)"
+      ],
       "correcta": 1,
       "explicacion": "El TS rechaza el flagrante presunto y exige conexión temporal y espacial directa. Admite el flagrante propio y el cuasi-flagrante (persecución inmediata sin interrupción)."
     },
     {
       "id": "t20-q15",
       "enunciado": "¿Cuál es la misión de la Policía Judicial según el art. 282 LECrim?",
-      "opciones": ["Ejecutar las sentencias dictadas por los Juzgados de lo Penal", "Averiguar los delitos públicos, practicar las primeras diligencias y consignar las pruebas del delito", "Dirigir la instrucción de las causas penales bajo supervisión del Ministerio Fiscal"],
+      "opciones": [
+        "Ejecutar las sentencias dictadas por los Juzgados de lo Penal",
+        "Averiguar los delitos públicos, practicar las primeras diligencias y consignar las pruebas del delito",
+        "Dirigir la instrucción de las causas penales bajo supervisión del Ministerio Fiscal"
+      ],
       "correcta": 1,
       "explicacion": "Art. 282 LECrim: la Policía Judicial tiene como misión averiguar los delitos públicos que se cometieren en su demarcación, practicar las primeras diligencias de prevención y consignar las pruebas."
     }

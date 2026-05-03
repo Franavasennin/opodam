@@ -42,31 +42,183 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "n1", "label": "Patrimonio CP", "nivel": 0 },
-      { "id": "n2", "label": "Hurto", "nivel": 1 },
-      { "id": "n3", "label": "Robo fuerza", "nivel": 1 },
-      { "id": "n4", "label": "Robo violencia", "nivel": 1 },
-      { "id": "n5", "label": "Estafa", "nivel": 1 },
-      { "id": "n6", "label": "A. indebida", "nivel": 1 },
-      { "id": "n7", "label": "Blanqueo", "nivel": 1 },
-      { "id": "n8", "label": "Receptacion", "nivel": 1 },
-      { "id": "n9", "label": "Danios", "nivel": 1 },
-      { "id": "n10", "label": ">400e: 6m-18m / <=400e: leve", "nivel": 2 },
-      { "id": "n11", "label": "Armas: 3a6m-5a / Casa: 2-5a", "nivel": 2 },
-      { "id": "n12", "label": "Art.301 6m-6a / Imprudencia 6m-2a", "nivel": 2 }
+      {
+        "id": "n1",
+        "data": {
+          "label": "Patrimonio CP"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Hurto"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Robo fuerza"
+        },
+        "position": {
+          "x": 212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Robo violencia"
+        },
+        "position": {
+          "x": 300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "Estafa"
+        },
+        "position": {
+          "x": 212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "A. indebida"
+        },
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Blanqueo"
+        },
+        "position": {
+          "x": -212,
+          "y": 212
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Receptacion"
+        },
+        "position": {
+          "x": -300,
+          "y": 0
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Danios"
+        },
+        "position": {
+          "x": -212,
+          "y": -212
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": ">400e: 6m-18m / <=400e: leve"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Armas: 3a6m-5a / Casa: 2-5a"
+        },
+        "position": {
+          "x": 502,
+          "y": 290
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "Art.301 6m-6a / Imprudencia 6m-2a"
+        },
+        "position": {
+          "x": -502,
+          "y": 290
+        }
+      }
     ],
     "aristas": [
-      { "origen": "n1", "destino": "n2" },
-      { "origen": "n1", "destino": "n3" },
-      { "origen": "n1", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n1", "destino": "n7" },
-      { "origen": "n1", "destino": "n8" },
-      { "origen": "n1", "destino": "n9" },
-      { "origen": "n2", "destino": "n10" },
-      { "origen": "n4", "destino": "n11" },
-      { "origen": "n7", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n2"
+      },
+      {
+        "id": "e2",
+        "source": "n1",
+        "target": "n3"
+      },
+      {
+        "id": "e3",
+        "source": "n1",
+        "target": "n4"
+      },
+      {
+        "id": "e4",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n7"
+      },
+      {
+        "id": "e7",
+        "source": "n1",
+        "target": "n8"
+      },
+      {
+        "id": "e8",
+        "source": "n1",
+        "target": "n9"
+      },
+      {
+        "id": "e9",
+        "source": "n2",
+        "target": "n10"
+      },
+      {
+        "id": "e10",
+        "source": "n4",
+        "target": "n11"
+      },
+      {
+        "id": "e11",
+        "source": "n7",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [
@@ -175,105 +327,165 @@
     {
       "id": "t16-q01",
       "enunciado": "¿Cuál es el umbral económico que separa el hurto ordinario del delito leve de hurto según el art. 234 CP?",
-      "opciones": ["200 euros", "400 euros", "1.000 euros"],
+      "opciones": [
+        "200 euros",
+        "400 euros",
+        "1.000 euros"
+      ],
       "correcta": 1,
       "explicacion": "El art. 234 CP fija 400 euros: valor >400 € → delito ordinario (6 a 18 meses de prisión); valor ≤400 € → delito leve (localización permanente o multa)."
     },
     {
       "id": "t16-q02",
       "enunciado": "¿Qué elemento diferencia esencialmente el robo del hurto?",
-      "opciones": ["El valor del bien sustraído", "El uso de fuerza en las cosas o violencia/intimidación en las personas", "La premeditación del autor"],
+      "opciones": [
+        "El valor del bien sustraído",
+        "El uso de fuerza en las cosas o violencia/intimidación en las personas",
+        "La premeditación del autor"
+      ],
       "correcta": 1,
       "explicacion": "El robo exige fuerza en las cosas (art. 238) o violencia/intimidación en las personas (art. 242). El hurto carece de ambos elementos."
     },
     {
       "id": "t16-q03",
       "enunciado": "Según el art. 242.2 CP, ¿cuál es la pena del robo con violencia o intimidación cometido con armas?",
-      "opciones": ["2 a 5 años", "3 años y 6 meses a 5 años", "4 a 6 años"],
+      "opciones": [
+        "2 a 5 años",
+        "3 años y 6 meses a 5 años",
+        "4 a 6 años"
+      ],
       "correcta": 1,
       "explicacion": "Art. 242.2 CP: cuando el robo con violencia o intimidación se comete con armas o medios peligrosos la pena es de 3 años y 6 meses a 5 años."
     },
     {
       "id": "t16-q04",
       "enunciado": "¿Cuál de los siguientes supuestos NO constituye fuerza en las cosas a efectos del art. 238 CP?",
-      "opciones": ["Escalamiento", "Intimidación verbal a la víctima", "Uso de llaves falsas"],
+      "opciones": [
+        "Escalamiento",
+        "Intimidación verbal a la víctima",
+        "Uso de llaves falsas"
+      ],
       "correcta": 1,
       "explicacion": "La intimidación verbal a la víctima es violencia/intimidación en las personas (robo con violencia, art. 242), no fuerza en las cosas (art. 238)."
     },
     {
       "id": "t16-q05",
       "enunciado": "¿Qué elemento es imprescindible en la cadena causal de la estafa (art. 248 CP)?",
-      "opciones": ["Violencia o intimidación en la víctima", "Error en el sujeto pasivo que produce un acto de disposición patrimonial", "Habitualidad delictiva del autor"],
+      "opciones": [
+        "Violencia o intimidación en la víctima",
+        "Error en el sujeto pasivo que produce un acto de disposición patrimonial",
+        "Habitualidad delictiva del autor"
+      ],
       "correcta": 1,
       "explicacion": "La cadena es engaño → error → disposición patrimonial → perjuicio. Sin error causado por el engaño no puede haber estafa."
     },
     {
       "id": "t16-q06",
       "enunciado": "¿Cuál es la pena de la estafa agravada cuando el perjuicio supera 250.000 € (art. 250.2 CP)?",
-      "opciones": ["1 a 6 años", "4 a 8 años", "6 a 10 años"],
+      "opciones": [
+        "1 a 6 años",
+        "4 a 8 años",
+        "6 a 10 años"
+      ],
       "correcta": 1,
       "explicacion": "Art. 250.2 CP: perjuicio superior a 250.000 € o pluralidad de afectados conlleva pena de 4 a 8 años de prisión."
     },
     {
       "id": "t16-q07",
       "enunciado": "¿Qué delito comete quien recibe un bien en depósito y posteriormente lo vende sin autorización del propietario?",
-      "opciones": ["Hurto", "Estafa", "Apropiación indebida (art. 253 CP)"],
+      "opciones": [
+        "Hurto",
+        "Estafa",
+        "Apropiación indebida (art. 253 CP)"
+      ],
       "correcta": 2,
       "explicacion": "La apropiación indebida requiere recepción lícita del bien y posterior distracción o negativa a devolver en perjuicio del dueño."
     },
     {
       "id": "t16-q08",
       "enunciado": "¿Qué conducta define el alzamiento de bienes (art. 257 CP)?",
-      "opciones": ["Robar en casa habitada aprovechando la ausencia de los moradores", "El deudor oculta o transmite bienes para eludir el pago a sus acreedores", "Recibir bienes sabiendo que proceden de un delito"],
+      "opciones": [
+        "Robar en casa habitada aprovechando la ausencia de los moradores",
+        "El deudor oculta o transmite bienes para eludir el pago a sus acreedores",
+        "Recibir bienes sabiendo que proceden de un delito"
+      ],
       "correcta": 1,
       "explicacion": "El alzamiento de bienes es el fraude por el que el deudor coloca su patrimonio fuera del alcance de sus acreedores para frustrar su cobro."
     },
     {
       "id": "t16-q09",
       "enunciado": "¿Cuál es la pena básica del blanqueo de capitales (art. 301.1 CP)?",
-      "opciones": ["3 meses a 3 años de prisión", "6 meses a 6 años de prisión más multa hasta el triple del valor", "1 a 4 años de prisión"],
+      "opciones": [
+        "3 meses a 3 años de prisión",
+        "6 meses a 6 años de prisión más multa hasta el triple del valor",
+        "1 a 4 años de prisión"
+      ],
       "correcta": 1,
       "explicacion": "Art. 301.1 CP: prisión de 6 meses a 6 años más multa de hasta el triple del valor de los bienes objeto del blanqueo."
     },
     {
       "id": "t16-q10",
       "enunciado": "¿Qué pena corresponde al blanqueo de capitales cometido por imprudencia grave (art. 301.3 CP)?",
-      "opciones": ["Solo multa económica", "6 meses a 2 años de prisión", "1 a 3 años de prisión"],
+      "opciones": [
+        "Solo multa económica",
+        "6 meses a 2 años de prisión",
+        "1 a 3 años de prisión"
+      ],
       "correcta": 1,
       "explicacion": "Art. 301.3 CP castiga la imprudencia grave en el blanqueo con prisión de 6 meses a 2 años."
     },
     {
       "id": "t16-q11",
       "enunciado": "¿Cuál es la pena máxima de la receptación agravada (art. 299 CP) cuando el valor supera 2.500 €?",
-      "opciones": ["Hasta 2 años de prisión", "Hasta 4 años de prisión", "Hasta 6 años de prisión"],
+      "opciones": [
+        "Hasta 2 años de prisión",
+        "Hasta 4 años de prisión",
+        "Hasta 6 años de prisión"
+      ],
       "correcta": 1,
       "explicacion": "Art. 299 CP: receptación agravada por valor >2.500 € u organización tiene pena de hasta 4 años de prisión."
     },
     {
       "id": "t16-q12",
       "enunciado": "¿Qué reforma legislativa eliminó las faltas e introdujo los delitos leves en el CP?",
-      "opciones": ["LO 10/1995", "LO 1/2015", "LO 2/2019"],
+      "opciones": [
+        "LO 10/1995",
+        "LO 1/2015",
+        "LO 2/2019"
+      ],
       "correcta": 1,
       "explicacion": "La LO 1/2015 de 30 de marzo suprimió el Libro III CP (faltas) e incorporó los delitos leves en el Libro II, con el umbral de 400 euros."
     },
     {
       "id": "t16-q13",
       "enunciado": "¿Cuál es la pena del robo con fuerza en las cosas cometido en casa habitada (art. 241 CP)?",
-      "opciones": ["1 a 3 años", "2 a 5 años", "3 a 6 años"],
+      "opciones": [
+        "1 a 3 años",
+        "2 a 5 años",
+        "3 a 6 años"
+      ],
       "correcta": 1,
       "explicacion": "Art. 241.1 CP: el robo con fuerza en casa habitada, edificio o local abierto al público se castiga con pena de 2 a 5 años de prisión."
     },
     {
       "id": "t16-q14",
       "enunciado": "¿Qué artículo del CP tipifica los daños informáticos (borrado o deterioro de datos ajenos)?",
-      "opciones": ["Art. 263 CP", "Art. 264 CP", "Art. 270 CP"],
+      "opciones": [
+        "Art. 263 CP",
+        "Art. 264 CP",
+        "Art. 270 CP"
+      ],
       "correcta": 1,
       "explicacion": "Art. 264 CP tipifica el borrado, daño, deterioro, alteración o supresión de datos o programas informáticos ajenos (6 meses-3 años; hasta 5 años en infraestructuras críticas, art. 264bis)."
     },
     {
       "id": "t16-q15",
       "enunciado": "¿Cuál es la pena máxima del hurto agravado prevista en el art. 235 CP?",
-      "opciones": ["18 meses de prisión", "3 años de prisión", "5 años de prisión"],
+      "opciones": [
+        "18 meses de prisión",
+        "3 años de prisión",
+        "5 años de prisión"
+      ],
       "correcta": 1,
       "explicacion": "Art. 235 CP establece pena de 1 a 3 años de prisión para el hurto concurriendo alguna de las 11 circunstancias agravantes del precepto."
     }

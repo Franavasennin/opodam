@@ -38,56 +38,301 @@
   ],
   "mapaMental": {
     "nodos": [
-      { "id": "root", "label": "Poder Judicial y TC", "nivel": 0 },
-      { "id": "n1", "label": "Tribunal Constitucional", "nivel": 1 },
-      { "id": "n2", "label": "Tribunal Supremo", "nivel": 1 },
-      { "id": "n3", "label": "CGPJ", "nivel": 1 },
-      { "id": "n4", "label": "Organización judicial", "nivel": 1 },
-      { "id": "n5", "label": "12 magistrados / 9 años", "nivel": 2 },
-      { "id": "n6", "label": "Amparo e inconstitucionalidad", "nivel": 2 },
-      { "id": "n7", "label": "5 Salas especializadas", "nivel": 2 },
-      { "id": "n8", "label": "20 vocales + Presidente", "nivel": 2 },
-      { "id": "n9", "label": "Gobierno del Poder Judicial", "nivel": 2 },
-      { "id": "n10", "label": "AN / TSJ / Audiencias Provinciales", "nivel": 2 },
-      { "id": "n11", "label": "Independencia, inamovilidad, responsabilidad", "nivel": 2 },
-      { "id": "n12", "label": "Aforamiento altas personalidades", "nivel": 2 }
+      {
+        "id": "root",
+        "data": {
+          "label": "Poder Judicial y TC"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "n1",
+        "data": {
+          "label": "Tribunal Constitucional"
+        },
+        "position": {
+          "x": 0,
+          "y": -300
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Tribunal Supremo"
+        },
+        "position": {
+          "x": 285,
+          "y": -93
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "CGPJ"
+        },
+        "position": {
+          "x": 176,
+          "y": 243
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "label": "Organización judicial"
+        },
+        "position": {
+          "x": -176,
+          "y": 243
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "label": "12 magistrados / 9 años"
+        },
+        "position": {
+          "x": 0,
+          "y": -580
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Amparo e inconstitucionalidad"
+        },
+        "position": {
+          "x": 453,
+          "y": -362
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "5 Salas especializadas"
+        },
+        "position": {
+          "x": 565,
+          "y": 129
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "20 vocales + Presidente"
+        },
+        "position": {
+          "x": 252,
+          "y": 523
+        }
+      },
+      {
+        "id": "n9",
+        "data": {
+          "label": "Gobierno del Poder Judicial"
+        },
+        "position": {
+          "x": -252,
+          "y": 523
+        }
+      },
+      {
+        "id": "n10",
+        "data": {
+          "label": "AN / TSJ / Audiencias Provinciales"
+        },
+        "position": {
+          "x": -565,
+          "y": 129
+        }
+      },
+      {
+        "id": "n11",
+        "data": {
+          "label": "Independencia, inamovilidad, responsabilidad"
+        },
+        "position": {
+          "x": -285,
+          "y": -93
+        }
+      },
+      {
+        "id": "n12",
+        "data": {
+          "label": "Aforamiento altas personalidades"
+        },
+        "position": {
+          "x": -453,
+          "y": -362
+        }
+      }
     ],
     "aristas": [
-      { "origen": "root", "destino": "n1" },
-      { "origen": "root", "destino": "n2" },
-      { "origen": "root", "destino": "n3" },
-      { "origen": "root", "destino": "n4" },
-      { "origen": "n1", "destino": "n5" },
-      { "origen": "n1", "destino": "n6" },
-      { "origen": "n2", "destino": "n7" },
-      { "origen": "n3", "destino": "n8" },
-      { "origen": "n3", "destino": "n9" },
-      { "origen": "n4", "destino": "n10" },
-      { "origen": "root", "destino": "n11" },
-      { "origen": "n2", "destino": "n12" }
+      {
+        "id": "e1",
+        "source": "root",
+        "target": "n1"
+      },
+      {
+        "id": "e2",
+        "source": "root",
+        "target": "n2"
+      },
+      {
+        "id": "e3",
+        "source": "root",
+        "target": "n3"
+      },
+      {
+        "id": "e4",
+        "source": "root",
+        "target": "n4"
+      },
+      {
+        "id": "e5",
+        "source": "n1",
+        "target": "n5"
+      },
+      {
+        "id": "e6",
+        "source": "n1",
+        "target": "n6"
+      },
+      {
+        "id": "e7",
+        "source": "n2",
+        "target": "n7"
+      },
+      {
+        "id": "e8",
+        "source": "n3",
+        "target": "n8"
+      },
+      {
+        "id": "e9",
+        "source": "n3",
+        "target": "n9"
+      },
+      {
+        "id": "e10",
+        "source": "n4",
+        "target": "n10"
+      },
+      {
+        "id": "e11",
+        "source": "root",
+        "target": "n11"
+      },
+      {
+        "id": "e12",
+        "source": "n2",
+        "target": "n12"
+      }
     ]
   },
   "flashcards": [
-    { "id": "t5-f01", "pregunta": "¿Qué artículo de la CE establece los principios que rigen el estatuto de jueces y magistrados?", "respuesta": "El art. 117.1 CE: «independientes, inamovibles, responsables y sometidos únicamente al imperio de la ley»." },
-    { "id": "t5-f02", "pregunta": "¿Cuántos magistrados componen el Tribunal Constitucional?", "respuesta": "12 magistrados, nombrados por el Rey, con mandato de 9 años y renovación por tercios cada 3 años." },
-    { "id": "t5-f03", "pregunta": "¿Qué mayoría se requiere para la propuesta de magistrados del TC por el Congreso y el Senado?", "respuesta": "Mayoría de tres quintos (3/5) de cada Cámara." },
-    { "id": "t5-f04", "pregunta": "¿Cuáles son las principales competencias del Tribunal Constitucional?", "respuesta": "Recurso de inconstitucionalidad, cuestión de inconstitucionalidad, recurso de amparo, conflictos de competencias entre Estado y CCAA, y control previo de tratados internacionales." },
-    { "id": "t5-f05", "pregunta": "¿Qué artículo de la CE define el Tribunal Supremo?", "respuesta": "El art. 123 CE: «el órgano jurisdiccional superior en todos los órdenes, salvo lo dispuesto en materia de garantías constitucionales»." },
-    { "id": "t5-f06", "pregunta": "¿Cuántas Salas tiene el Tribunal Supremo y cuáles son?", "respuesta": "5 Salas: Primera (Civil), Segunda (Penal), Tercera (Contencioso-Administrativo), Cuarta (Social) y Quinta (Militar)." },
-    { "id": "t5-f07", "pregunta": "¿Qué es el CGPJ y cuál es su función principal?", "respuesta": "El Consejo General del Poder Judicial (art. 122.2 CE) es el órgano de gobierno del Poder Judicial, responsable del estatuto, ascensos, inspección y régimen disciplinario de jueces y magistrados." },
-    { "id": "t5-f08", "pregunta": "¿Cuántos vocales tiene el CGPJ y cuánto dura su mandato?", "respuesta": "20 vocales más el Presidente. Mandato de 5 años sin posibilidad de reelección inmediata." },
-    { "id": "t5-f09", "pregunta": "¿De cuántos vocales judiciales y juristas se compone el CGPJ?", "respuesta": "12 vocales de la carrera judicial y 8 entre abogados y juristas de reconocida competencia con más de 15 años de ejercicio." },
-    { "id": "t5-f10", "pregunta": "¿Qué tipo de asuntos conoce la Audiencia Nacional?", "respuesta": "Delitos graves de ámbito nacional: terrorismo, crimen organizado, narcotráfico internacional, delitos económicos de gran repercusión; también extradiciones y recursos contra actos de la AGE." },
-    { "id": "t5-f11", "pregunta": "¿Cuál es el órgano de cabecera de la organización judicial en cada Comunidad Autónoma?", "respuesta": "El Tribunal Superior de Justicia (TSJ)." },
-    { "id": "t5-f12", "pregunta": "¿Qué ley orgánica regula el Poder Judicial?", "respuesta": "La Ley Orgánica 6/1985, de 1 de julio, del Poder Judicial (LOPJ)." },
-    { "id": "t5-f13", "pregunta": "¿Qué ley regula el Tribunal Constitucional?", "respuesta": "La Ley Orgánica 2/1979, de 3 de octubre, del Tribunal Constitucional." },
-    { "id": "t5-f14", "pregunta": "¿Qué requisitos deben reunir los magistrados del TC?", "respuesta": "Ser nombrados entre juristas de reconocida competencia con más de 15 años de ejercicio profesional." },
-    { "id": "t5-f15", "pregunta": "¿Qué es la jurisprudencia del Tribunal Supremo?", "respuesta": "La doctrina reiterada que emana del TS, que complementa el ordenamiento jurídico con carácter vinculante para los órganos judiciales inferiores." },
-    { "id": "t5-f16", "pregunta": "¿Quién ejerce la potestad disciplinaria sobre jueces y magistrados?", "respuesta": "El Consejo General del Poder Judicial (CGPJ), a través de su Comisión Disciplinaria." },
-    { "id": "t5-f17", "pregunta": "¿Qué es el recurso de amparo?", "respuesta": "Un recurso ante el TC que protege a los ciudadanos frente a violaciones de los derechos fundamentales (arts. 14-29 CE), una vez agotadas las vías judiciales ordinarias." },
-    { "id": "t5-f18", "pregunta": "¿El Tribunal Constitucional forma parte del Poder Judicial?", "respuesta": "No. El TC es un órgano constitucional independiente del Poder Judicial, regulado en el Título IX CE, aunque ejerce funciones jurisdiccionales." },
-    { "id": "t5-f19", "pregunta": "¿Cuáles son los cuatro principios del estatuto personal de jueces y magistrados según el art. 117 CE?", "respuesta": "Independencia, inamovilidad, responsabilidad y sometimiento al imperio de la ley." },
-    { "id": "t5-f20", "pregunta": "¿Quién preside el CGPJ?", "respuesta": "El Presidente del CGPJ, que es también Presidente del Tribunal Supremo, elegido por el Pleno del CGPJ." }
+    {
+      "id": "t5-f01",
+      "pregunta": "¿Qué artículo de la CE establece los principios que rigen el estatuto de jueces y magistrados?",
+      "respuesta": "El art. 117.1 CE: «independientes, inamovibles, responsables y sometidos únicamente al imperio de la ley»."
+    },
+    {
+      "id": "t5-f02",
+      "pregunta": "¿Cuántos magistrados componen el Tribunal Constitucional?",
+      "respuesta": "12 magistrados, nombrados por el Rey, con mandato de 9 años y renovación por tercios cada 3 años."
+    },
+    {
+      "id": "t5-f03",
+      "pregunta": "¿Qué mayoría se requiere para la propuesta de magistrados del TC por el Congreso y el Senado?",
+      "respuesta": "Mayoría de tres quintos (3/5) de cada Cámara."
+    },
+    {
+      "id": "t5-f04",
+      "pregunta": "¿Cuáles son las principales competencias del Tribunal Constitucional?",
+      "respuesta": "Recurso de inconstitucionalidad, cuestión de inconstitucionalidad, recurso de amparo, conflictos de competencias entre Estado y CCAA, y control previo de tratados internacionales."
+    },
+    {
+      "id": "t5-f05",
+      "pregunta": "¿Qué artículo de la CE define el Tribunal Supremo?",
+      "respuesta": "El art. 123 CE: «el órgano jurisdiccional superior en todos los órdenes, salvo lo dispuesto en materia de garantías constitucionales»."
+    },
+    {
+      "id": "t5-f06",
+      "pregunta": "¿Cuántas Salas tiene el Tribunal Supremo y cuáles son?",
+      "respuesta": "5 Salas: Primera (Civil), Segunda (Penal), Tercera (Contencioso-Administrativo), Cuarta (Social) y Quinta (Militar)."
+    },
+    {
+      "id": "t5-f07",
+      "pregunta": "¿Qué es el CGPJ y cuál es su función principal?",
+      "respuesta": "El Consejo General del Poder Judicial (art. 122.2 CE) es el órgano de gobierno del Poder Judicial, responsable del estatuto, ascensos, inspección y régimen disciplinario de jueces y magistrados."
+    },
+    {
+      "id": "t5-f08",
+      "pregunta": "¿Cuántos vocales tiene el CGPJ y cuánto dura su mandato?",
+      "respuesta": "20 vocales más el Presidente. Mandato de 5 años sin posibilidad de reelección inmediata."
+    },
+    {
+      "id": "t5-f09",
+      "pregunta": "¿De cuántos vocales judiciales y juristas se compone el CGPJ?",
+      "respuesta": "12 vocales de la carrera judicial y 8 entre abogados y juristas de reconocida competencia con más de 15 años de ejercicio."
+    },
+    {
+      "id": "t5-f10",
+      "pregunta": "¿Qué tipo de asuntos conoce la Audiencia Nacional?",
+      "respuesta": "Delitos graves de ámbito nacional: terrorismo, crimen organizado, narcotráfico internacional, delitos económicos de gran repercusión; también extradiciones y recursos contra actos de la AGE."
+    },
+    {
+      "id": "t5-f11",
+      "pregunta": "¿Cuál es el órgano de cabecera de la organización judicial en cada Comunidad Autónoma?",
+      "respuesta": "El Tribunal Superior de Justicia (TSJ)."
+    },
+    {
+      "id": "t5-f12",
+      "pregunta": "¿Qué ley orgánica regula el Poder Judicial?",
+      "respuesta": "La Ley Orgánica 6/1985, de 1 de julio, del Poder Judicial (LOPJ)."
+    },
+    {
+      "id": "t5-f13",
+      "pregunta": "¿Qué ley regula el Tribunal Constitucional?",
+      "respuesta": "La Ley Orgánica 2/1979, de 3 de octubre, del Tribunal Constitucional."
+    },
+    {
+      "id": "t5-f14",
+      "pregunta": "¿Qué requisitos deben reunir los magistrados del TC?",
+      "respuesta": "Ser nombrados entre juristas de reconocida competencia con más de 15 años de ejercicio profesional."
+    },
+    {
+      "id": "t5-f15",
+      "pregunta": "¿Qué es la jurisprudencia del Tribunal Supremo?",
+      "respuesta": "La doctrina reiterada que emana del TS, que complementa el ordenamiento jurídico con carácter vinculante para los órganos judiciales inferiores."
+    },
+    {
+      "id": "t5-f16",
+      "pregunta": "¿Quién ejerce la potestad disciplinaria sobre jueces y magistrados?",
+      "respuesta": "El Consejo General del Poder Judicial (CGPJ), a través de su Comisión Disciplinaria."
+    },
+    {
+      "id": "t5-f17",
+      "pregunta": "¿Qué es el recurso de amparo?",
+      "respuesta": "Un recurso ante el TC que protege a los ciudadanos frente a violaciones de los derechos fundamentales (arts. 14-29 CE), una vez agotadas las vías judiciales ordinarias."
+    },
+    {
+      "id": "t5-f18",
+      "pregunta": "¿El Tribunal Constitucional forma parte del Poder Judicial?",
+      "respuesta": "No. El TC es un órgano constitucional independiente del Poder Judicial, regulado en el Título IX CE, aunque ejerce funciones jurisdiccionales."
+    },
+    {
+      "id": "t5-f19",
+      "pregunta": "¿Cuáles son los cuatro principios del estatuto personal de jueces y magistrados según el art. 117 CE?",
+      "respuesta": "Independencia, inamovilidad, responsabilidad y sometimiento al imperio de la ley."
+    },
+    {
+      "id": "t5-f20",
+      "pregunta": "¿Quién preside el CGPJ?",
+      "respuesta": "El Presidente del CGPJ, que es también Presidente del Tribunal Supremo, elegido por el Pleno del CGPJ."
+    }
   ],
   "preguntas": [
     {
