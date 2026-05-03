@@ -7,6 +7,7 @@ import { FlashcardsGlobal } from './pages/FlashcardsGlobal'
 import { Tests } from './pages/Tests'
 import { Simulacro } from './pages/Simulacro'
 import { Estadisticas } from './pages/Estadisticas'
+import { SesionDiaria } from './pages/SesionDiaria'
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="tests" element={<Tests />} />
         <Route path="tests/simulacro" element={<Simulacro />} />
         <Route path="estadisticas" element={<Estadisticas />} />
+        <Route path="sesion-diaria" element={<SesionDiaria />} />
       </Route>
     </Routes>
   )
