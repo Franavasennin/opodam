@@ -53,6 +53,7 @@ export function Examen() {
     setTiempo(cfg.minutos * 60)
     setCargando(false)
     setFase('en-curso')
+    clearInterval(intervalo.current)
     intervalo.current = setInterval(() => {
       setTiempo(t => {
         if (t <= 1) { clearInterval(intervalo.current); finalizarExamen(sel, init); return 0 }
@@ -190,7 +191,7 @@ export function Examen() {
           ))}
           <div className="flex gap-2 pt-2">
             <button onClick={() => setMarcadas(m => {
-              const next = new Set(m); next.has(p.id) ? next.delete(p.id) : next.add(p.id); return next
+              const next = new Set(m); if (next.has(p.id)) { next.delete(p.id) } else { next.add(p.id) }; return next
             })} className="border border-orange-200 text-orange-600 rounded-xl px-3 py-2 text-xs">
               {marcadas.has(p.id) ? '📌 Marcada' : '📌 Marcar'}
             </button>
