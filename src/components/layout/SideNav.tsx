@@ -5,7 +5,9 @@ const LINKS = [
   { to: '/temario',      label: 'Temario',      icon: '📚' },
   { to: '/flashcards',   label: 'Flashcards',   icon: '🃏' },
   { to: '/tests',        label: 'Tests',        icon: '📝' },
+  { to: '/examen',       label: 'Examen',       icon: '🎯' },
   { to: '/estadisticas', label: 'Estadísticas', icon: '📊' },
+  { to: '/perfil',       label: 'Perfil',       icon: '👤' },
 ]
 
 export function SideNav() {

@@ -8,6 +8,7 @@ import { FlashcardsGlobal } from './pages/FlashcardsGlobal'
 import { Tests } from './pages/Tests'
 import { Simulacro } from './pages/Simulacro'
 import { Estadisticas } from './pages/Estadisticas'
+import { Examen } from './pages/Examen'
 import { SesionDiaria } from './pages/SesionDiaria'
 import { Perfil } from './pages/Perfil'
 import { sincronizar } from './services/sync'
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="tests" element={<Tests />} />
         <Route path="tests/simulacro" element={<Simulacro />} />
         <Route path="estadisticas" element={<Estadisticas />} />
+        <Route path="examen" element={<Examen />} />
         <Route path="sesion-diaria" element={<SesionDiaria />} />
         <Route path="perfil" element={<Perfil />} />
       </Route>

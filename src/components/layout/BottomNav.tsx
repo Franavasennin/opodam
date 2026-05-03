@@ -3,9 +3,10 @@ import { NavLink } from 'react-router-dom'
 const LINKS = [
   { to: '/',             label: 'Inicio',     icon: '🏠' },
   { to: '/temario',      label: 'Temario',    icon: '📚' },
+  { to: '/examen',       label: 'Examen',     icon: '🎯' },
   { to: '/flashcards',   label: 'Flashcards', icon: '🃏' },
-  { to: '/tests',        label: 'Tests',      icon: '📝' },
   { to: '/estadisticas', label: 'Stats',      icon: '📊' },
+  { to: '/perfil',       label: 'Perfil',     icon: '👤' },
 ]
 
 export function BottomNav() {
