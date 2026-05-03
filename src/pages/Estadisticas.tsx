@@ -2,6 +2,7 @@ import { useProgress } from '../hooks/useProgress'
 import { TEMAS_META } from '../data/topics'
 import { ProgressBar } from '../components/ui/ProgressBar'
 import { Card } from '../components/ui/Card'
+import { PanelDebilidades } from '../components/ui/PanelDebilidades'
 
 export function Estadisticas() {
   const { progreso } = useProgress()
@@ -19,6 +20,7 @@ export function Estadisticas() {
   return (
     <div className="p-4 max-w-2xl mx-auto space-y-4">
       <h1 className="text-2xl font-bold pt-4">📊 Estadísticas</h1>
+      <PanelDebilidades rendimiento={progreso.rendimientoPorTema} />
       <div className="grid grid-cols-2 gap-3">
         <Card className="text-center">
           <p className="text-3xl font-bold text-brand-600">{progreso.racha.dias}</p>

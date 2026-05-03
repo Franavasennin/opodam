@@ -6,6 +6,8 @@ import { Card } from '../components/ui/Card'
 import { ProgressBar } from '../components/ui/ProgressBar'
 import { TEMAS_META, TOTAL_TEMAS } from '../data/topics'
 import { temasPrioritarios, contarVueltasGlobal } from '../services/progress'
+import { PanelDebilidades } from '../components/ui/PanelDebilidades'
+import { obtenerSesionHoy } from '../services/adaptativo'
 
 export function Dashboard() {
   const { progreso, actualizarNotificaciones } = useProgress()
@@ -24,6 +26,7 @@ export function Dashboard() {
     id => (progreso.temas[String(id)]?.vueltas ?? 0) > vueltaActual
   ).length
   const prioridad = temasPrioritarios(progreso.temas, todosIds).slice(0, 3)
+  const sesionHoy = obtenerSesionHoy()
   const porcentaje = Math.round((temasCompletados / TOTAL_TEMAS) * 100)
 
   async function activarNotificaciones() {
@@ -77,6 +80,29 @@ export function Dashboard() {
           <p className="text-sm font-medium">Simulacro</p>
         </Card>
       </div>
+
+      <Card
+        onClick={() => navigate('/sesion-diaria')}
+        className={`border-2 cursor-pointer ${
+          sesionHoy.completada
+            ? 'border-green-400 bg-green-50'
+            : 'border-brand-300 bg-brand-50'
+        }`}
+      >
+        <div className="flex items-center gap-3">
+          <span className="text-3xl">{sesionHoy.completada ? '✅' : '⚡'}</span>
+          <div>
+            <p className="text-sm font-semibold">
+              {sesionHoy.completada ? 'Sesión completada' : 'Sesión de hoy'}
+            </p>
+            <p className="text-xs text-gray-500">
+              {sesionHoy.completada ? '¡Bien hecho! Hasta mañana.' : 'Flashcards + mini-test adaptativo'}
+            </p>
+          </div>
+        </div>
+      </Card>
+
+      <PanelDebilidades rendimiento={progreso.rendimientoPorTema} />
 
       {permiso !== 'granted' && (
         <Card className="bg-brand-50 border-brand-100">
