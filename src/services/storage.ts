@@ -2,6 +2,32 @@ import type { Progreso } from '../types'
 
 export const PROGRESO_KEY = 'opodam:progreso'
 
+const ACTIVE_SLUG_KEY = 'opodam:active-slug'
+const DEFAULT_SLUG = 'cgpc'
+const LEGACY_PROGRESO_KEY = 'opodam:progreso'
+
+export function getActiveSlug(): string {
+  return localStorage.getItem(ACTIVE_SLUG_KEY) ?? DEFAULT_SLUG
+}
+
+export function setActiveSlug(slug: string): void {
+  localStorage.setItem(ACTIVE_SLUG_KEY, slug)
+}
+
+export function getProgresoKey(slug?: string): string {
+  return `opodam:${slug ?? getActiveSlug()}:progreso`
+}
+
+export function migrarProgresoLegado(): void {
+  const legacy = localStorage.getItem(LEGACY_PROGRESO_KEY)
+  if (!legacy) return
+  const newKey = getProgresoKey('cgpc')
+  if (!localStorage.getItem(newKey)) {
+    localStorage.setItem(newKey, legacy)
+  }
+  localStorage.removeItem(LEGACY_PROGRESO_KEY)
+}
+
 const progresoInicial: Progreso = {
   temas: {},
   flashcards: {},
@@ -15,7 +41,7 @@ const progresoInicial: Progreso = {
 
 export function getProgreso(): Progreso {
   try {
-    const raw = localStorage.getItem(PROGRESO_KEY)
+    const raw = localStorage.getItem(getProgresoKey())
     if (!raw) return structuredClone(progresoInicial)
     const parsed = JSON.parse(raw) as Partial<Progreso>
     return { ...progresoInicial, ...parsed }
@@ -25,11 +51,11 @@ export function getProgreso(): Progreso {
 }
 
 export function saveProgreso(progreso: Progreso): void {
-  localStorage.setItem(PROGRESO_KEY, JSON.stringify(progreso))
+  localStorage.setItem(getProgresoKey(), JSON.stringify(progreso))
 }
 
 export function resetProgreso(): void {
-  localStorage.removeItem(PROGRESO_KEY)
+  localStorage.removeItem(getProgresoKey())
 }
 
 export function exportarProgreso(): string {
