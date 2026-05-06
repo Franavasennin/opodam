@@ -4,7 +4,7 @@ export const PROGRESO_KEY = 'opodam:progreso'
 
 const ACTIVE_SLUG_KEY = 'opodam:active-slug'
 const DEFAULT_SLUG = 'cgpc'
-const LEGACY_PROGRESO_KEY = 'opodam:progreso'
+const LEGACY_PROGRESO_KEY = PROGRESO_KEY
 
 export function getActiveSlug(): string {
   return localStorage.getItem(ACTIVE_SLUG_KEY) ?? DEFAULT_SLUG

@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import { obtenerUsuario, obtenerPerfil } from '../../services/supabase'
-import { migrarProgresoLegado } from '../../services/storage'
 
 type Estado = 'cargando' | 'sin-sesion' | 'sin-perfil' | 'ok'
 
@@ -17,7 +16,6 @@ export function RutaProtegida({ children }: { children: React.ReactNode }) {
       const perfil = await obtenerPerfil()
       if (!perfil || perfil.oposiciones.length === 0) { setEstado('sin-perfil'); return }
 
-      migrarProgresoLegado()
       setEstado('ok')
     }
     verificar()

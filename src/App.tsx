@@ -2,6 +2,7 @@ import { useEffect, Suspense, lazy } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { RutaProtegida } from './components/layout/RutaProtegida'
 import { sincronizar } from './services/sync'
+import { migrarProgresoLegado } from './services/storage'
 
 // Onboarding (no protegidas)
 import OnboardingEmail from './pages/onboarding/OnboardingEmail'
@@ -28,6 +29,9 @@ const Loading = () => (
     <span className="text-slate-400 text-sm">Cargando...</span>
   </div>
 )
+
+// Run once at app startup before any rendering
+migrarProgresoLegado()
 
 export default function App() {
   useEffect(() => {
