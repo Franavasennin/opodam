@@ -8,11 +8,29 @@ create table if not exists profiles (
 
 alter table profiles enable row level security;
 
-create policy "Usuario puede ver su perfil"
-  on profiles for select using (auth.uid() = id);
+do $$ begin
+  if not exists (
+    select 1 from pg_policies where tablename = 'profiles' and policyname = 'Usuario puede ver su perfil'
+  ) then
+    create policy "Usuario puede ver su perfil"
+      on profiles for select using (auth.uid() = id);
+  end if;
+end $$;
 
-create policy "Usuario puede crear su perfil"
-  on profiles for insert with check (auth.uid() = id);
+do $$ begin
+  if not exists (
+    select 1 from pg_policies where tablename = 'profiles' and policyname = 'Usuario puede crear su perfil'
+  ) then
+    create policy "Usuario puede crear su perfil"
+      on profiles for insert with check (auth.uid() = id);
+  end if;
+end $$;
 
-create policy "Usuario puede actualizar su perfil"
-  on profiles for update using (auth.uid() = id);
+do $$ begin
+  if not exists (
+    select 1 from pg_policies where tablename = 'profiles' and policyname = 'Usuario puede actualizar su perfil'
+  ) then
+    create policy "Usuario puede actualizar su perfil"
+      on profiles for update using (auth.uid() = id);
+  end if;
+end $$;
