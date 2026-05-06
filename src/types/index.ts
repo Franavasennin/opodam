@@ -100,3 +100,10 @@ export interface Progreso {
   sesionDiaria: { fecha: string; flashcardIds: string[]; preguntaIds: string[]; completada: boolean } | null
   rendimientoPorTema: Record<string, RendimientoTema>
 }
+
+export interface Perfil {
+  id: string
+  email: string
+  oposiciones: string[]
+  created_at: string
+}
