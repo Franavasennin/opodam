@@ -1,0 +1,172 @@
+var e=43,t=`La geografía de Canarias. Las islas y municipios. Aspectos físicos, sociodemográficos y económicos`,n=`especifico`,r=[{titulo:`Situación geográfica y origen del archipiélago`,contenido:`SITUACION GEOGRAFICA Y ORIGEN DEL ARCHIPIELAGO CANARIO
+
+SITUACION GEOGRAFICA:
+- Las Islas Canarias se ubican en el Oceano Atlantico Norte, entre los paralelos 27N y 29N de latitud norte y entre los meridianos 13O y 18O de longitud oeste.
+- Se situan a unos 1.500 km al suroeste de la Peninsula Iberica y a tan solo 100-120 km al noroeste de la costa de Marruecos y el Sahara Occidental (Africa).
+- Esta proximidad a Africa y su posicion de encrucijada entre Europa, Africa y America confiere a Canarias un caracter estrategico fundamental.
+
+ORIGEN VOLCANICO:
+- Las Islas Canarias son de origen volcanico, formadas a lo largo de millones de anos por el ascenso de magma a traves de la placa africana sobre un punto caliente (hotspot).
+- Edad geologica: las islas orientales (Lanzarote, Fuerteventura) son las mas antiguas (aprox. 20 millones de anos); las occidentales (La Palma, El Hierro) son las mas jovenes (menos de 2 millones de anos).
+- Actividad volcanica actual: Canarias es una de las areas volcanicamente mas activas de Europa. Las erupciones mas recientes: La Palma 2021 (Cumbre Vieja), La Palma 1971, Lanzarote 1730-1736 y 1824, Tenerife 1909 (Chinyero).
+
+SUPERFICIE Y DISTANCIAS:
+- Superficie total del archipielago: aprox. 7.447 km2.
+- La isla mas grande: Tenerife (2.034 km2).
+- La isla mas pequena (de las habitadas): El Hierro (268 km2).
+- La Graciosa (29 km2), reconocida como isla por la LO 1/2018 EA.
+- Distancia maxima de un extremo al otro del archipielago (de La Graciosa al El Hierro): aprox. 500 km.
+
+CLIMA:
+- El clima canario es subtropical suavizado por el Oceano Atlantico y la corriente fria de Canarias (rama sur de la corriente del Golfo).
+- Temperatura media anual: 18-24C segun la altitud y orientacion.
+- Microclimas: en las islas de mayor altitud (Tenerife, Gran Canaria, La Palma) coexisten zonas aridas en el sur y zonas de laurisilva humeda en el norte.
+- Precipitaciones: escasas en las islas orientales (Lanzarote, Fuerteventura, menos de 150 mm/ano) y mas abundantes en las occidentales y a mayor altitud.
+
+DATO EXAMEN: Canarias esta a 100-120 km de Africa (Marruecos). Superficie total: aprox. 7.447 km2. Isla mas grande: Tenerife (2.034 km2). Las islas orientales son las mas antiguas (20M anos) y las occidentales las mas jovenes. Temperatura media anual: 18-24C.`},{titulo:`Las dos provincias y las siete islas`,contenido:`Canarias se organiza en dos provincias:
+
+**Provincia de Las Palmas** (capital: Las Palmas de Gran Canaria): integrada por Gran Canaria, Lanzarote y Fuerteventura, así como los islotes de La Graciosa, Alegranza, Montaña Clara, Roque del Este y Roque del Oeste.
+
+**Provincia de Santa Cruz de Tenerife** (capital: Santa Cruz de Tenerife): integrada por Tenerife, La Palma, La Gomera y El Hierro, así como los islotes de Los Roques e Isla de Lobos.
+
+Características de las siete islas principales (de mayor a menor superficie):
+- **Tenerife**: 2.034 km² (isla mayor), capital Santa Cruz de Tenerife, 31 municipios (los más de toda Canarias), punto más alto el Teide (3.715 m).
+- **Fuerteventura**: 1.660 km² (segunda en superficie), capital Puerto del Rosario, 8 municipios, isla más antigua geológicamente, conocida por sus playas y dunas de Corralejo y Jandía.
+- **Gran Canaria**: 1.560 km² (tercera en superficie), capital Las Palmas de Gran Canaria (ciudad más poblada del archipiélago, ~380.000 habitantes), 21 municipios.
+- **Lanzarote**: 845 km², capital Arrecife, 7 municipios, declarada Reserva de la Biosfera, paisaje volcánico de Timanfaya.
+- **La Palma**: 708 km², capital Santa Cruz de La Palma, 14 municipios, conocida como 'La Isla Bonita', erupción Cumbre Vieja 2021.
+- **La Gomera**: 370 km², capital San Sebastián de La Gomera, 6 municipios, Parque Nacional Garajonay (Patrimonio UNESCO).
+- **El Hierro**: 269 km² (isla menor y más occidental), capital Valverde, 3 municipios (los menos de toda Canarias), primera isla 100% renovable.`},{titulo:`Organización municipal y cabildos insulares`,contenido:`ORGANIZACION MUNICIPAL Y CABILDOS INSULARES
+
+DIVISION ADMINISTRATIVA DE CANARIAS:
+- Canarias se divide en 2 provincias, 8 islas habitadas y 88 municipios.
+- Provincia de Las Palmas: Gran Canaria, Fuerteventura, Lanzarote y La Graciosa.
+- Provincia de Santa Cruz de Tenerife: Tenerife, La Palma, La Gomera y El Hierro.
+
+MUNICIPIOS DE CANARIAS:
+- 88 municipios en total, distribuidos entre las dos provincias.
+- Los municipios mas poblados:
+   - Las Palmas de Gran Canaria: aprox. 378.000 hab. (el municipio mas poblado).
+   - Santa Cruz de Tenerife: aprox. 215.000 hab.
+   - San Cristobal de La Laguna: aprox. 160.000 hab.
+   - Telde (GC): aprox. 105.000 hab.
+   - Arona (TF, zona sur): aprox. 80.000 hab.
+   - Adeje (TF, zona sur): aprox. 65.000 hab.
+- Los municipios del sur de Tenerife y del sur de Gran Canaria han experimentado el mayor crecimiento demografico por el turismo.
+
+CABILDOS INSULARES:
+- Los Cabildos Insulares son la institucion de gobierno de cada isla, sin equivalente en el resto de Espana.
+- Fundamento: Ley de Cabildos de 1912 (primera regulacion especifica) + Ley 8/2015 de Cabildos Insulares de Canarias (ley autonomica vigente).
+- Competencias insulares: carreteras, transportes interurbanos, residuos, deportes, SEIS (bomberos), puertos insulares, espacios naturales protegidos.
+- Eleccion: los consejeros insulares son elegidos directamente por los ciudadanos de la isla cada 4 anos.
+- El Presidente del Cabildo es elegido por los consejeros.
+
+LOS 8 CABILDOS (DESDE LO 1/2018):
+1. Cabildo Insular de Gran Canaria (sede: Las Palmas de GC).
+2. Cabildo Insular de Tenerife (sede: Santa Cruz de Tenerife).
+3. Cabildo Insular de Fuerteventura (sede: Puerto del Rosario).
+4. Cabildo Insular de Lanzarote (sede: Arrecife).
+5. Cabildo Insular de La Palma (sede: Santa Cruz de La Palma).
+6. Cabildo Insular de La Gomera (sede: San Sebastian de La Gomera).
+7. Cabildo Insular de El Hierro (sede: Valverde).
+8. Cabildo Insular de La Graciosa (sede: Caleta del Sebo) - creado por LO 1/2018.
+
+DATO EXAMEN: 88 municipios en Canarias, 2 provincias, 8 Cabildos. El municipio mas poblado es Las Palmas de GC (aprox. 378.000 hab.). La Graciosa fue reconocida como isla con Cabildo propio por la LO 1/2018. Los Cabildos tienen competencias sobre SEIS (bomberos), carreteras insulares y transportes.`},{titulo:`Aspectos físicos y medioambientales`,contenido:`ASPECTOS FISICOS Y MEDIOAMBIENTALES DE CANARIAS
+
+RELIEVE:
+- La cordillera dorsal de Tenerife domina la isla con el Teide (3.715 m), el punto mas alto de Espana y del Atlantico. Es Parque Nacional y Patrimonio de la Humanidad (UNESCO).
+- Gran Canaria presenta un relieve de forma circular con el Pico de las Nieves (1.949 m) en el interior.
+- Las islas orientales (Lanzarote, Fuerteventura) son llanas o de bajo relieve, con paisajes deserticos.
+- La Palma tiene el Roque de los Muchachos (2.426 m), sede del Observatorio del Roque de los Muchachos (ORM, astrofisica internacional).
+
+HIDROGRAFIA:
+- Canarias carece de rios permanentes (excepto algunos cursos de agua intermitentes en La Palma y El Hierro).
+- Los barrancos son el principal cauce de avenidas en epoca de lluvias; en Lanzarote se construyeron los aljíbes para recoger agua.
+- El agua potable proviene principalmente de: pozos y galerías en las islas con acuiferos, desalinizadoras (especialmente en las islas orientales, las mas aridas).
+
+ESPACIOS NATURALES PROTEGIDOS:
+- Canarias tiene la mayor densidad de espacios protegidos por unidad de superficie de Espana.
+- PARQUES NACIONALES (4): Teide (Tenerife), Caldera de Taburiente (La Palma), Timanfaya (Lanzarote), Garajonay (La Gomera, Patrimonio Humanidad UNESCO).
+- PARQUES RURALES, RESERVAS NATURALES, MONUMENTOS NATURALES, PAISAJES PROTEGIDOS.
+- RED NATURA 2000: Canarias aporta numerosas Zonas de Especial Conservacion (ZEC) y Zonas de Especial Proteccion para las Aves (ZEPA).
+
+VEGETACION Y FAUNA:
+- Laurisilva: bosque subtropical relicto del Terciario, presente en las vertientes nortes de las islas occidentales y de Gran Canaria (Anaga, Los Tiles en La Palma). Patrimonio de la Humanidad en la Gomera.
+- Pinar canario: pino canario (Pinus canariensis) en medianias de Tenerife, Gran Canaria y La Palma.
+- Drago (Dracaena draco): arbol simbolo de Canarias.
+- Fauna endemica: lagarto gigante de El Hierro, lagarto gigante de La Palma, Pinzon azul de Gran Canaria, Paloma rabiche.
+
+DATO EXAMEN: El Teide (3.715 m) es el punto mas alto de Espana. Los 4 Parques Nacionales canarios son: Teide, Caldera de Taburiente, Timanfaya y Garajonay (UNESCO). El Roque de los Muchachos (La Palma, 2.426 m) alberga observatorio astronomico internacional. La laurisilva de La Gomera es Patrimonio de la Humanidad.`},{titulo:`Aspectos sociodemográficos`,contenido:`ASPECTOS SOCIODEMOGRAFICOS DE CANARIAS
+
+POBLACION TOTAL Y DISTRIBUCION:
+- Poblacion total de Canarias: aprox. 2.200.000 habitantes (2023), siendo la septima CA mas poblada de Espana.
+- Densidad: aprox. 295 hab/km2 (muy por encima de la media nacional de 93 hab/km2).
+- Las dos islas capitalinas concentran el 75% de la poblacion: Gran Canaria (aprox. 850.000 hab.) y Tenerife (aprox. 930.000 hab.).
+- Islas menores: La Palma (82.000), Lanzarote (155.000), Fuerteventura (120.000), La Gomera (21.000), El Hierro (11.000), La Graciosa (1.500).
+
+EVOLUCION DEMOGRAFICA:
+- El siglo XX vio una gran emigracion canaria hacia Cuba, Venezuela y otros paises latinoamericanos.
+- Desde los anos 70: inversion del flujo, con llegada de peninsulares y extranjeros (principalmente alemanes, britanicos y norteuropeos atraidos por el turismo y el clima).
+- Alta proporcion de poblacion extranjera: aprox. 15-18% de la poblacion es de origen extraniero (UE, latinoamericanos, africanos).
+
+ESTRUCTURA POR EDADES:
+- Canarias tiene una de las tasas de natalidad mas bajas de Espana (tasa de fecundidad inferior a 1,2 hijos por mujer).
+- Envejecimiento progresivo de la poblacion.
+- La llegada de inmigrantes jovenes compensa parcialmente el deficit demografico.
+
+MIGRACION IRREGULAR:
+- Las costas canarias son el principal punto de entrada de migracion irregular a Espana y a Europa desde Africa Occidental.
+- Desde 2020 se ha registrado un aumento exponencial de llegadas de embarcaciones irregulares (pateras, cayucos).
+- Records historicos: 2020 (mas de 23.000 llegadas) y 2023 (mas de 39.000 llegadas), convirtiendo a Canarias en la primera puerta de entrada a Europa por esta ruta.
+- La situacion ha generado una grave crisis humanitaria en los puertos y centros de acogida (MENA - Menores Extranjeros No Acompanados).
+
+IDIOMA Y CULTURA:
+- El castellano es la lengua oficial. Existen particularidades del habla canaria (influencia del espanol de America por la historia emigratoria).
+- La cultura canaria tiene influencias guanche, castellana, portuguesa y latinoamericana.
+
+DATO EXAMEN: Canarias tiene aprox. 2,2 millones de habitantes. Densidad: 295 hab/km2. Las islas capitalinas concentran el 75% de la poblacion. Canarias es el principal punto de entrada de migracion irregular a Europa (mas de 39.000 llegadas en 2023).`},{titulo:`Aspectos económicos y producciones características`,contenido:`ASPECTOS ECONOMICOS Y PRODUCCIONES CARACTERISTICAS DE CANARIAS
+
+ESTRUCTURA ECONOMICA:
+- La economia canaria esta fuertemente terciarizada: el sector servicios representa el 88% del PIB.
+- El turismo es el motor economico principal: aporta directamente el 30-35% del PIB y genera el 40% del empleo en las islas mas turisticas.
+- PIB per capita: ligeramente por debajo de la media espanola pero superior a la media de las regiones ultraperifericas de la UE.
+
+TURISMO:
+- Canarias recibe mas de 14-16 millones de turistas al ano, siendo el principal destino turistico de Espana en temporada de invierno (sol y playa).
+- Mercados emisores principales: Alemania, Reino Unido, Paises Nordicos, Peninsula Iberica.
+- Los municipios del sur de Gran Canaria (Maspalomas, San Bartolome de Tirajana) y del sur de Tenerife (Los Cristianos, Costa Adeje) son los principales polos turisticos.
+- El turismo genera tambien demandas especificas de seguridad: vigilancia de zonas turisticas, delitos contra turistas (estafas, hurtos), turismo de cruceros (coordinacion en puertos).
+
+AGRICULTURA:
+- El platano canario es el producto agricola estrella de Canarias. Principal zona de produccion: La Palma, Tenerife (norte), Gran Canaria (norte). Exportacion a la Peninsula con proteccion del REF.
+- Tomate canario: exportacion a Europa, especialmente durante el invierno. Principalmente en Gran Canaria y Tenerife.
+- Vino canario: denominaciones de origen en todas las islas (DO Tacoronte-Acentejo, DO Gran Canaria, DO La Palma, etc.). Alta calidad y creciente reconocimiento internacional.
+- Papa canaria: produccion local de variedades endemicas (papas bonitas, negras), consumo interno y comercializacion en la Peninsula.
+
+PESCA:
+- Importante sector pesquero, especialmente en Lanzarote y Fuerteventura (proximidad a caladeros del Africa Occidental).
+- Acuerdo de Pesca UE-Marruecos: permite a los pesqueros espanoles y canarios faenar en aguas marroquies.
+
+INFRAESTRUCTURAS Y LOGISTICA:
+- 7 aeropuertos internacionales (uno por isla principal).
+- Red de puertos: Las Palmas GC y Santa Cruz de Tenerife son los principales puertos de transbordo del Atlantico.
+
+DATO EXAMEN: El turismo aporta el 30-35% del PIB canario. Canarias recibe mas de 14-16 millones de turistas al ano. El platano canario es el principal producto agricola. La pesca es importante en las islas orientales (caladeros del Africa Occidental). Canarias tiene 7 aeropuertos internacionales.`}],i=[{tipo:`mermaid`,titulo:`Organización territorial de Canarias`,codigo:`graph TD
+  CA[Comunidad Autónoma de Canarias]
+  CA --> P1[Provincia Las Palmas]
+  CA --> P2[Provincia Sta. Cruz de Tenerife]
+  P1 --> I1[Gran Canaria\\n21 munic.\\n1.560 km²]
+  P1 --> I2[Lanzarote\\n7 munic.\\n845 km²]
+  P1 --> I3[Fuerteventura\\n8 munic.\\n1.660 km²]
+  P2 --> I4[Tenerife\\n31 munic.\\n2.034 km²]
+  P2 --> I5[La Palma\\n14 munic.\\n708 km²]
+  P2 --> I6[La Gomera\\n6 munic.\\n370 km²]
+  P2 --> I7[El Hierro\\n3 munic.\\n269 km²]`},{tipo:`mermaid`,titulo:`Espacios naturales protegidos UNESCO en Canarias`,codigo:`graph LR
+  UNESCO[UNESCO Canarias]
+  UNESCO --> PN1[Teide\\nPatrimonio Natural 1995\\nTenerife]
+  UNESCO --> PN2[Garajonay\\nPatrimonio Natural 1986\\nLa Gomera]
+  UNESCO --> WH[La Laguna\\nPatrimonio Cultural 1999]
+  UNESCO --> BR[Lanzarote\\nReserva Biosfera 1993]
+  UNESCO --> IC[Silbo Gomero\\nPatrimonio Inmaterial 2009]
+  BR --> BR2[Fuerteventura\\nReserva Biosfera 2009]
+  BR --> BR3[Gran Canaria\\nReserva Biosfera 2005]`}],a={nodos:[{id:`n1`,data:{label:`n1`},position:{x:0,y:0}},{id:`n2`,data:{label:`n2`},position:{x:0,y:-300}},{id:`n3`,data:{label:`n3`},position:{x:260,y:-150}},{id:`n4`,data:{label:`n4`},position:{x:260,y:150}},{id:`n5`,data:{label:`n5`},position:{x:0,y:300}},{id:`n6`,data:{label:`n6`},position:{x:-260,y:150}},{id:`n7`,data:{label:`n7`},position:{x:-260,y:-150}},{id:`n8`,data:{label:`n8`},position:{x:0,y:-580}},{id:`n9`,data:{label:`n9`},position:{x:552,y:-179}},{id:`n10`,data:{label:`n10`},position:{x:341,y:469}},{id:`n11`,data:{label:`n11`},position:{x:-341,y:469}},{id:`n12`,data:{label:`n12`},position:{x:-552,y:-179}}],aristas:[{id:`e1`,source:`n1`,target:`n2`},{id:`e2`,source:`n1`,target:`n3`},{id:`e3`,source:`n1`,target:`n4`},{id:`e4`,source:`n1`,target:`n5`},{id:`e5`,source:`n1`,target:`n6`},{id:`e6`,source:`n1`,target:`n7`},{id:`e7`,source:`n2`,target:`n8`},{id:`e8`,source:`n3`,target:`n9`},{id:`e9`,source:`n3`,target:`n10`},{id:`e10`,source:`n5`,target:`n11`},{id:`e11`,source:`n7`,target:`n12`}]},o=[{id:`t43-f01`,pregunta:`¿A qué distancia aproximada se encuentran las Islas Canarias del continente africano (cabo Juby)?`,respuesta:`A unos 100 km del cabo Juby (Marruecos) y a aproximadamente 1.500 km de la Península Ibérica.`},{id:`t43-f02`,pregunta:`¿Cuál es el punto más alto de Canarias y de España?`,respuesta:`El Teide (Tenerife), con 3.715 metros de altitud.`},{id:`t43-f03`,pregunta:`¿Cuántas islas y cuántos municipios tiene Canarias?`,respuesta:`7 islas principales y 88 municipios en total.`},{id:`t43-f04`,pregunta:`¿Qué islas integran la provincia de Las Palmas?`,respuesta:`Gran Canaria, Lanzarote y Fuerteventura (más los islotes de La Graciosa, Alegranza, Montaña Clara, Roque del Este y Roque del Oeste).`},{id:`t43-f05`,pregunta:`¿Qué islas integran la provincia de Santa Cruz de Tenerife?`,respuesta:`Tenerife, La Palma, La Gomera y El Hierro.`},{id:`t43-f06`,pregunta:`¿Cuál es la isla canaria de mayor superficie y cuántos km² tiene?`,respuesta:`Tenerife, con 2.034 km².`},{id:`t43-f07`,pregunta:`¿Cuál es la isla canaria de menor superficie y cuántos municipios tiene?`,respuesta:`El Hierro, con 269 km² y 3 municipios.`},{id:`t43-f08`,pregunta:`¿Cuántos municipios tiene Tenerife y por qué es destacable?`,respuesta:`Tenerife tiene 31 municipios, el mayor número de toda Canarias.`},{id:`t43-f09`,pregunta:`¿Cuáles son los cuatro Parques Nacionales de Canarias?`,respuesta:`Teide (Tenerife), Garajonay (La Gomera), Caldera de Taburiente (La Palma) y Timanfaya (Lanzarote).`},{id:`t43-f10`,pregunta:`¿En qué año y por qué motivo fue declarado el Teide Patrimonio de la Humanidad?`,respuesta:`En 1995 por la UNESCO como Patrimonio Natural, por sus valores geológicos y ecológicos excepcionales.`},{id:`t43-f11`,pregunta:`¿Qué ciudad canaria fue declarada Patrimonio de la Humanidad y en qué año?`,respuesta:`San Cristóbal de La Laguna (Tenerife), declarada Patrimonio Cultural de la Humanidad por la UNESCO en 1999.`},{id:`t43-f12`,pregunta:`¿Qué es el Silbo Gomero y qué reconocimiento internacional tiene?`,respuesta:`Es un sistema de comunicación silbado propio de La Gomera, declarado Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO en 2009.`},{id:`t43-f13`,pregunta:`¿Cuántos turistas recibe Canarias al año aproximadamente?`,respuesta:`Entre 12 y 16 millones de turistas al año, siendo el turismo el motor principal de la economía (35% del PIB).`},{id:`t43-f14`,pregunta:`¿Qué distinción tiene el plátano de Canarias?`,respuesta:`Cuenta con Denominación de Origen Protegida (DOP) y es la principal exportación agrícola del archipiélago.`},{id:`t43-f15`,pregunta:`¿Qué hito energético consiguió la isla de El Hierro?`,respuesta:`Fue la primera isla del mundo en alcanzar el 100% de energía renovable, gracias al sistema hidroeólico Gorona del Viento (inaugurado en 2014).`},{id:`t43-f16`,pregunta:`¿En qué año se produjo la erupción del volcán Cumbre Vieja y en qué isla?`,respuesta:`En septiembre de 2021, en la isla de La Palma.`},{id:`t43-f17`,pregunta:`¿Qué condición jurídica tiene Canarias en la Unión Europea y en qué artículo del TFUE se recoge?`,respuesta:`Es una región ultraperiférica de la UE, condición recogida en el artículo 349 del Tratado de Funcionamiento de la UE (TFUE).`},{id:`t43-f18`,pregunta:`¿Cuál es la isla canaria más antigua geológicamente?`,respuesta:`Fuerteventura, que es la más antigua del archipiélago por su origen volcánico más remoto.`},{id:`t43-f19`,pregunta:`¿Cuál es la capital insular de Lanzarote?`,respuesta:`Arrecife.`},{id:`t43-f20`,pregunta:`¿Qué porcentaje aproximado del territorio canario está protegido como espacio natural?`,respuesta:`Aproximadamente el 40% del territorio canario está protegido como espacio natural.`}],s=[{id:`t43-q01`,pregunta:`¿A qué distancia aproximada se encuentran las Islas Canarias de la costa africana más cercana?`,opciones:[`A unos 100 km del cabo Juby (Marruecos)`,`A unos 300 km del cabo Blanco (Mauritania)`,`A unos 50 km del Sáhara Occidental`],correcta:0,explicacion:`Las Islas Canarias se sitúan a unos 100 km del cabo Juby, en Marruecos, siendo el punto más cercano del continente africano.`},{id:`t43-q02`,pregunta:`¿Cuál es la altitud del Teide?`,opciones:[`3.478 metros`,`3.715 metros`,`4.100 metros`],correcta:1,explicacion:`El Teide alcanza los 3.715 metros de altitud, siendo el pico más alto de España y el tercer volcán más alto del mundo desde su base oceánica.`},{id:`t43-q03`,pregunta:`¿Cuántos municipios tiene Canarias en total?`,opciones:[`76 municipios`,`88 municipios`,`94 municipios`],correcta:1,explicacion:`Canarias cuenta con un total de 88 municipios distribuidos entre sus 7 islas principales.`},{id:`t43-q04`,pregunta:`¿Qué isla canaria tiene mayor número de municipios?`,opciones:[`Gran Canaria, con 21 municipios`,`Tenerife, con 31 municipios`,`La Palma, con 14 municipios`],correcta:1,explicacion:`Tenerife tiene 31 municipios, el mayor número de toda Canarias.`},{id:`t43-q05`,pregunta:`¿Cuál es la isla canaria de menor extensión territorial?`,opciones:[`La Gomera, con 370 km²`,`El Hierro, con 269 km²`,`Lanzarote, con 845 km²`],correcta:1,explicacion:`El Hierro es la isla menor, con 269 km², y además es la más occidental del archipiélago.`},{id:`t43-q06`,pregunta:`¿En qué año fue declarado Patrimonio de la Humanidad el Parque Nacional del Teide por la UNESCO?`,opciones:[`En 1986`,`En 1999`,`En 1995`],correcta:2,explicacion:`El Parque Nacional del Teide fue declarado Patrimonio Natural de la Humanidad por la UNESCO en 1995.`},{id:`t43-q07`,pregunta:`¿Cuál fue el primer Parque Nacional canario en ser declarado Patrimonio de la Humanidad por la UNESCO?`,opciones:[`Garajonay (La Gomera), en 1986`,`Teide (Tenerife), en 1995`,`Timanfaya (Lanzarote), en 1993`],correcta:0,explicacion:`El Parque Nacional de Garajonay (La Gomera) fue declarado Patrimonio Natural de la Humanidad en 1986, anterior al Teide (1995).`},{id:`t43-q08`,pregunta:`¿Qué ciudad canaria es Patrimonio Cultural de la Humanidad desde 1999?`,opciones:[`Las Palmas de Gran Canaria`,`Santa Cruz de Tenerife`,`San Cristóbal de La Laguna`],correcta:2,explicacion:`San Cristóbal de La Laguna (Tenerife) fue declarada Patrimonio Cultural de la Humanidad por la UNESCO en 1999 por su trazado urbano de ciudad colonial planificada.`},{id:`t43-q09`,pregunta:`¿En qué año fue declarado el Silbo Gomero Patrimonio Cultural Inmaterial de la Humanidad?`,opciones:[`En 2003`,`En 2009`,`En 2015`],correcta:1,explicacion:`El Silbo Gomero fue declarado Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO en 2009.`},{id:`t43-q10`,pregunta:`¿Cuántos turistas recibe aproximadamente Canarias al año?`,opciones:[`Entre 5 y 8 millones`,`Entre 12 y 16 millones`,`Entre 20 y 25 millones`],correcta:1,explicacion:`Canarias recibe entre 12 y 16 millones de turistas al año, siendo el turismo el motor principal de la economía con un peso de aproximadamente el 35% del PIB.`},{id:`t43-q11`,pregunta:`¿Qué distinción tiene el plátano de Canarias?`,opciones:[`Indicación Geográfica Protegida (IGP)`,`Denominación de Origen Protegida (DOP)`,`Especialidad Tradicional Garantizada (ETG)`],correcta:1,explicacion:`El plátano de Canarias cuenta con Denominación de Origen Protegida (DOP), siendo la principal exportación agrícola del archipiélago.`},{id:`t43-q12`,pregunta:`¿Cuál es la isla canaria más antigua geológicamente?`,opciones:[`Lanzarote`,`El Hierro`,`Fuerteventura`],correcta:2,explicacion:`Fuerteventura es la isla canaria más antigua geológicamente, lo que explica su relieve más erosionado y su paisaje desértico.`},{id:`t43-q13`,pregunta:`¿En qué artículo del TFUE se reconoce la condición ultraperiférica de Canarias?`,opciones:[`Artículo 299`,`Artículo 349`,`Artículo 407`],correcta:1,explicacion:`El artículo 349 del Tratado de Funcionamiento de la UE (TFUE) reconoce la condición de región ultraperiférica de Canarias, lo que justifica el trato económico diferenciado (REF).`},{id:`t43-q14`,pregunta:`¿Cuándo se produjo la erupción del volcán Cumbre Vieja en La Palma?`,opciones:[`En octubre de 2019`,`En septiembre de 2021`,`En marzo de 2022`],correcta:1,explicacion:`La erupción del volcán Cumbre Vieja tuvo lugar en septiembre de 2021 en la isla de La Palma, causando importantes daños materiales.`},{id:`t43-q15`,pregunta:`¿Cuál es la capital insular de Fuerteventura?`,opciones:[`Arrecife`,`Puerto del Rosario`,`Morro Jable`],correcta:1,explicacion:`Puerto del Rosario es la capital insular de Fuerteventura, donde se encuentran el Cabildo Insular y los principales organismos administrativos de la isla.`}],c={id:43,titulo:t,bloque:n,secciones:r,esquemas:i,mapaMental:a,flashcards:o,preguntas:s};export{n as bloque,c as default,i as esquemas,o as flashcards,e as id,a as mapaMental,s as preguntas,r as secciones,t as titulo};

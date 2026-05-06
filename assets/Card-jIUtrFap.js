@@ -1,0 +1,1 @@
+import{s as e}from"./storage-D8gLzT0n.js";var t=e();function n({children:e,className:n=``,onClick:r}){return(0,t.jsx)(`div`,{onClick:r,className:`bg-white rounded-2xl shadow-sm border border-gray-100 p-4 ${r?`cursor-pointer hover:shadow-md transition-shadow`:``} ${n}`,children:e})}export{n as t};

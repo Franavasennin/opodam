@@ -1,0 +1,201 @@
+var e=44,t=`La economía de Canarias. El Régimen Económico y Fiscal canario (REF). El turismo. La agricultura. La pesca`,n=`especifico`,r=[{titulo:`La economía canaria: estructura y características`,contenido:`LA ECONOMIA CANARIA: ESTRUCTURA Y CARACTERISTICAS
+
+CARACTERISTICAS GENERALES:
+- Canarias tiene una economia de servicios muy marcada (tertiarizacion): el sector servicios representa aprox. el 88% del PIB regional.
+- Es una economia pequena y abierta, muy dependiente del exterior para el abastecimiento de bienes manufacturados, energia y capital.
+- La condicion de archipiélago ultraperiférico conlleva costes adicionales de transporte y logistica que impactan negativamente en la competitividad.
+
+PIB Y RENTA PER CAPITA:
+- PIB de Canarias: aprox. 46.000-48.000 millones EUR (2023), equivalente al 3,6-3,8% del PIB nacional.
+- PIB per capita: aprox. 20.000-21.000 EUR (por debajo de la media espanola de 27.000-28.000 EUR, pero superior a la media de las regiones ultraperifericas de la UE).
+- El PIB per capita de Canarias oscila entre el 74-78% de la media de la UE, lo que permite recibir fondos estructurales europeos.
+
+SECTOR PRIMARIO (aprox. 2% del PIB):
+- Agricultura: platano, tomate, vino, papa canaria.
+- Pesca: principalmente en islas orientales.
+- Acuicultura: crecimiento en los ultimos anos.
+
+SECTOR SECUNDARIO (aprox. 10% del PIB):
+- Construccion: sector ciclico con impacto relevante en el empleo.
+- Industria: principalmente agroalimentaria (conservas, quesos), materiales de construccion y energia.
+- Energia: alta dependencia de los combustibles fosiles importados; crecimiento de energias renovables (especialmente en El Hierro, 100% renovable).
+
+SECTOR TERCIARIO (aprox. 88% del PIB):
+- Turismo: motor principal (30-35% del PIB).
+- Comercio: beneficiado por la baja fiscalidad del IGIC y la ZEC.
+- Transporte: logistica y transporte maritimo y aereo.
+- Servicios publicos: empleo publico en sanidad, educacion, administracion y policia (CGPC, CNP, GC).
+
+MERCADO LABORAL:
+- Tasa de paro estructuralmente alta (16-22% segun el ciclo), superior a la media nacional.
+- Alta estacionalidad del empleo por la dependencia del turismo.
+- Predominio del empleo en hosteleria, comercio y servicios.
+
+DATO EXAMEN: Canarias tiene el 88% del PIB en el sector servicios. PIB aprox. 46.000-48.000 M EUR, el 3,7% del PIB nacional. PIB per capita inferior a la media espanola (por eso recibe fondos UE). Turismo aporta el 30-35% del PIB. El Hierro es la primera isla 100% renovable de Espana.`},{titulo:`El Régimen Económico y Fiscal canario (REF)`,contenido:`EL RÉGIMEN ECONÓMICO Y FISCAL CANARIO (REF)
+
+El Régimen Económico y Fiscal (REF) de Canarias constituye el marco jurídico especial que regula la actividad económica del archipiélago, reconocido en la Disposición Adicional Tercera de la Constitución Española de 1978. Su origen histórico se remonta a los privilegios comerciales medievales otorgados tras la conquista castellana en el siglo XV, consolidándose a lo largo de los siglos como un sistema diferenciado de imposición basado en la libertad de comercio y las franquicias aduaneras.
+
+FUNDAMENTO CONSTITUCIONAL Y NORMATIVO
+
+La DA 3ª CE establece que la modificación del REF requerirá informe previo de la Comunidad Autónoma de Canarias. La Ley 19/1994 de Modificación del REF es la norma básica vigente que estructura el sistema, completada por diversas modificaciones posteriores. El REF se articula en torno a cuatro pilares fundamentales:
+
+- Franquicia aduanera y arancelaria con la Unión Europea (Canarias fuera del territorio aduanero comunitario pero dentro de la UE para otros efectos)
+- Fiscalidad indirecta diferenciada (IGIC en lugar de IVA)
+- Incentivos fiscales a la inversión y a la actividad empresarial (ZEC, RIC, DIC, REA)
+- Compensación de costes de insularidad y lejanía
+
+IMPUESTO GENERAL INDIRECTO CANARIO (IGIC)
+
+El IGIC es el impuesto equivalente al IVA aplicable en Canarias, con un tipo general del 7% frente al 21% del IVA peninsular. Cuenta con tipos reducidos: superreducido 0% (alimentación básica, medicamentos, libros), reducido 3% (transporte, telecomunicaciones), general 7%, incrementado 9,5% (automóviles, embarcaciones), especial 15% y 20% (productos de lujo, tabaco, bebidas). La diferencia impositiva supone un ahorro significativo para consumidores y empresas canarias, aunque también implica limitaciones en las devoluciones de IVA para exportaciones al resto de España.
+
+ZONA ESPECIAL CANARIA (ZEC)
+
+Creada por la Ley 19/1994, la ZEC permite a entidades inscritas tributar en el Impuesto sobre Sociedades al tipo reducido del 4% (frente al 25% general), siempre que cumplan requisitos de empleo mínimo (mínimo 5 trabajadores en las islas capitalinas, 3 en las no capitalinas) y actividad económica efectiva en Canarias. La ZEC constituye una herramienta de atracción de inversión extranjera y generación de empleo cualificado en el archipiélago, aprobada como ayuda de Estado por la Comisión Europea con vigencia prorrogada hasta 2027.
+
+RESERVA PARA INVERSIONES EN CANARIAS (RIC)
+
+La RIC permite a las empresas canarias reducir su base imponible del IS hasta el 90% de los beneficios no distribuidos, siempre que dichos beneficios se materialicen en inversiones en Canarias en un plazo de 3 años. Es uno de los incentivos más utilizados por el tejido empresarial canario, especialmente por empresas turísticas y de construcción. Su mantenimiento está sujeto a revisiones periódicas en el marco del acuerdo con la Comisión Europea sobre ayudas de Estado.
+
+DATO EXAMEN: La DA 3ª CE protege el REF requiriendo informe previo de la CCAA para modificarlo. El IGIC tiene tipo general del 7% (frente al 21% del IVA). La ZEC aplica un IS del 4% con al menos 5 empleados en islas capitalinas y 3 en islas no capitalinas. La Ley 19/1994 es la norma básica del REF vigente. Canarias está DENTRO de la UE pero FUERA del territorio aduanero comunitario.`},{titulo:`El turismo en Canarias`,contenido:`EL TURISMO EN CANARIAS
+
+IMPORTANCIA DEL TURISMO:
+- El turismo es el motor de la economia canaria, representando directamente el 30-35% del PIB y generando el 40% del empleo total de las islas.
+- Canarias es el destino turistico espanol de mayor afluencia en temporada de invierno, gracias a su clima subtropical benigno.
+
+DATOS ESTADISTICOS:
+- Llegadas de turistas: Canarias recibe entre 14 y 16 millones de turistas extranjeros al ano (antes de la pandemia de COVID-19 alcanzo un record de 15,8 millones en 2019).
+- En 2022-2023: recuperacion plena con cifras superiores al record de 2019 (mas de 16 millones en 2023).
+- Estancia media: 7-9 noches por turista.
+- Gasto medio por turista: 1.000-1.200 EUR.
+
+MERCADOS EMISORES PRINCIPALES:
+1. Reino Unido: principal mercado emisor (25-30% de los turistas extranjeros).
+2. Alemania: segundo mercado (15-20%).
+3. Paises nordicos (Suecia, Noruega, Finlandia, Dinamarca): importantes en temporada de invierno.
+4. Peninsula Iberica y resto de Espana: mercado nacional en crecimiento.
+5. Otros europeos: Paises Bajos, Belgica, Austria.
+
+PRINCIPALES POLOS TURISTICOS:
+- Gran Canaria sur: Maspalomas, Playa del Ingles, Mogan (San Bartolome de Tirajana, Mogan).
+- Tenerife sur: Los Cristianos, Las Americas, Costa Adeje, Los Gigantes.
+- Lanzarote: Puerto del Carmen, Playa Blanca, Costa Teguise.
+- Fuerteventura: Corralejo, Jandia.
+- La zona norte de Gran Canaria (Las Palmas GC) tiene un perfil de turismo urbano y de cruceros diferente al de sol y playa.
+
+MODALIDADES DE TURISMO:
+- Turismo de sol y playa: dominante.
+- Turismo de naturaleza y senderismo: creciente (Teide, Anaga, Garajonay, Roque Nublo).
+- Turismo de cruceros: Las Palmas GC y Santa Cruz de Tenerife son escalas habituales de las grandes navieras.
+- Turismo deportivo: surf (Fuerteventura, campeonatos mundiales de windsurf), ciclismo (Gran Canaria), golf.
+
+IMPACTO EN LA SEGURIDAD:
+- La alta afluencia turistica genera mayor incidencia de delitos contra turistas: hurtos en playa y hotel, estafas, agresiones en zonas de ocio nocturno.
+- La CGPC, CNP y Policias Locales refuerzan los operativos en temporada alta y en eventos masivos (Carnaval de Las Palmas y Santa Cruz de Tenerife, con mas de un millon de visitantes).
+
+DATO EXAMEN: Canarias recibe mas de 14-16 millones de turistas anuales (record: 2023). El turismo aporta el 30-35% del PIB. Principal mercado emisor: Reino Unido (25-30%). Maspalomas (GC) y Costa Adeje (TF) son los principales polos. Las Palmas GC y Santa Cruz de TF son puertos de cruceros.`},{titulo:`La agricultura en Canarias`,contenido:`LA AGRICULTURA EN CANARIAS
+
+La agricultura canaria presenta características singulares derivadas de la geografía insular, el clima subtropical y la tradición histórica del archipiélago. A pesar de su reducida aportación al PIB (en torno al 1-2%), el sector agrícola tiene gran importancia social, medioambiental y cultural, siendo el plátano canario el producto agrícola estrella y símbolo de identidad del campo isleño.
+
+EL PLÁTANO CANARIO
+
+El plátano canario (Musa acuminata cavendish) es el principal cultivo de exportación del archipiélago, con una producción anual de aproximadamente 400.000-430.000 toneladas que ocupa unas 9.000 hectáreas, principalmente en Tenerife (Valle de la Orotava, Icod de los Vinos), Gran Canaria (norte), La Palma (principal productor per cápita) y La Gomera. El plátano canario se diferencia del banano latinoamericano por su menor tamaño, mayor contenido en azúcares, aroma más intenso y cáscara más fina, atributos reconocidos por la Indicación Geográfica Protegida (IGP) 'Plátano de Canarias'.
+
+La Organización de Productores Plataneros de Canarias (ASPROCAN) es la entidad gestora que agrupa a las organizaciones de productores y gestiona las ayudas comunitarias. El acceso de Canarias al mercado interior europeo para el plátano fue objeto de negociación en la adhesión española a la CEE, obteniéndose un régimen preferencial que se ha mantenido con diversas modificaciones.
+
+OTROS CULTIVOS SIGNIFICATIVOS
+
+Además del plátano, Canarias cuenta con una diversidad de cultivos:
+- Tomate: segundo cultivo de exportación, principalmente en Gran Canaria y Tenerife, destinado al mercado del norte de Europa (Países Bajos, Alemania, Reino Unido)
+- Papa canaria: variedades autóctonas como la bonita, negra, yema de huevo o azucena, con IGP 'Papa Antigua de Canarias', cultivo de secano y regadío en medianías
+- Vinos: DO Lanzarote (vitivinicultura heroica en malpaís, cultivo en hoyos), DO Tenerife (5 denominaciones), DO Gran Canaria, DO La Palma, DO El Hierro; producción de vino malvasía histórico (apreciado por Shakespeare)
+- Aloe vera: en expansión, principalmente en Fuerteventura y Lanzarote
+- Flores y plantas ornamentales: estrelicia, proteas, aves del paraíso
+
+AGRICULTURA ECOLÓGICA Y SOSTENIBILIDAD
+
+Canarias tiene un número creciente de explotaciones con certificación ecológica. La orografía abrupta hace inviable la mecanización en muchos casos, manteniéndose técnicas tradicionales como el arado con tracción animal en zonas de medianías. Los sistemas de terrazas o bancales (andenes) son patrimonio agrícola reconocido. El Plan de Desarrollo Rural de Canarias canaliza las ayudas del FEADER (Fondo Europeo Agrícola de Desarrollo Rural).
+
+RETO DEL AGUA
+
+El agua es el principal factor limitante de la agricultura canaria. Los sistemas de captación de agua incluyen galerías (túneles horizontales que captan agua subterránea), pozos, aljibes y balsas de acumulación. La desalación marina ha ganado importancia en las islas orientales (Lanzarote, Fuerteventura, Gran Canaria). Las Comunidades de Aguas gestionan los derechos de agua en un sistema histórico peculiar donde el agua es un bien privado (herencia de la tradición jurídica canaria, a diferencia del resto de España donde es un bien público del dominio público hidráulico).
+
+DATO EXAMEN: El plátano canario tiene IGP 'Plátano de Canarias', ASPROCAN gestiona las ayudas. La papa canaria tiene IGP 'Papa Antigua de Canarias'. DO Lanzarote tiene el sistema de cultivo en hoyos en malpaís (vitivinicultura heroica). En Canarias el agua es históricamente un bien PRIVADO gestionado por Comunidades de Aguas (excepcional en el ordenamiento español). El plátano ocupa unas 9.000 ha con producción de 400.000-430.000 t/año.`},{titulo:`La pesca en Canarias`,contenido:`LA PESCA EN CANARIAS
+
+Canarias posee una larga tradición pesquera vinculada a su posición geográfica privilegiada en el Atlántico oriental, frente a las costas africanas. El archipiélago ha ejercido históricamente la pesca en caladeros del noroeste africano (Mauritania, Marruecos, Senegal), que siguen siendo fundamentales para la flota canaria a pesar de las restricciones y renegociaciones periódicas de los acuerdos de pesca.
+
+ESTRUCTURA DEL SECTOR PESQUERO
+
+El sector pesquero canario se articula en:
+- Pesca de bajura: flota artesanal que opera en aguas canarias, con especies objetivo como vieja (pargo, sargo, salema), cherne, sama, pulpo, atún, caballa y lapas. Es la modalidad más tradicional y tiene mayor valor cultural
+- Pesca de altura: flota que opera en caladeros africanos, principalmente cerqueros para atún tropical (listado, rabil, patudo) y arrastreros para demersal
+- Acuicultura: dorada, lubina, lenguado y atún rojo en granjas marinas off-shore, principalmente en Gran Canaria
+- Marisqueo: en menor escala en zonas costeras de todas las islas
+
+PUERTOS PESQUEROS PRINCIPALES
+
+Los principales puertos pesqueros son Santa Cruz de Tenerife, Las Palmas de Gran Canaria (con uno de los puertos de descarga de atún más importantes de España), La Restinga (El Hierro), San Sebastián de La Gomera y varios en Fuerteventura y Lanzarote. Las Palmas GC cuenta con el Puerto de La Luz, que es también un importante punto de avituallamiento para flotas internacionales.
+
+COFRADÍAS DE PESCADORES
+
+Las Cofradías de Pescadores son corporaciones de derecho público que representan los intereses de pescadores y armadores en cada localidad costera. Son los interlocutores ante la administración para la gestión de los recursos pesqueros en aguas canarias. En Canarias existen numerosas cofradías repartidas en las 7 islas habitadas.
+
+ACUERDOS INTERNACIONALES DE PESCA
+
+La flota canaria que opera en aguas africanas lo hace al amparo de los Acuerdos de Asociación Pesquera Sostenible (AAPS) que negocia la Unión Europea. Los más importantes para Canarias son:
+- Acuerdo UE-Marruecos: especialmente relevante por la proximidad y la cuestión del Sáhara Occidental (objeto de litigios ante el TJUE)
+- Acuerdo UE-Mauritania: permite el acceso a uno de los caladeros más ricos del mundo
+- Acuerdo UE-Senegal
+
+RECURSOS MARINOS CANARIOS
+
+Las aguas canarias presentan una alta biodiversidad marina derivada del encuentro de las corrientes Canaria (fría, proveniente del norte) y la Contracorriente Norecuatorial (cálida). Existen 11 Reservas Marinas en Canarias, incluyendo La Palma y El Hierro (pionera en 1996). El Mar de las Calmas (El Hierro) es Reserva de la Biosfera Marina. La sobreexplotación histórica de algunos caladeros ha llevado a establecer cuotas y vedas.
+
+DATO EXAMEN: Las Palmas GC tiene uno de los puertos de descarga de atún más importantes de España. La Reserva Marina de El Hierro (1996) fue pionera en Canarias. Las Cofradías de Pescadores son corporaciones de DERECHO PÚBLICO. Los AAPS los negocia la Unión Europea (no España directamente). La flota canaria opera en caladeros africanos (Mauritania, Marruecos, Senegal) al amparo de acuerdos UE. Canarias tiene aguas ricas por la confluencia de la corriente Canaria (fría) y la Contracorriente Norecuatorial (cálida).`},{titulo:`Otros sectores económicos y retos de futuro`,contenido:`OTROS SECTORES ECONÓMICOS Y RETOS DE FUTURO
+
+Además del turismo, la agricultura y la pesca, la economía canaria cuenta con otros sectores con relevancia propia y está abordando importantes retos de transformación estructural para reducir su dependencia del turismo y aumentar la resiliencia ante shocks externos.
+
+SECTOR CONSTRUCCIÓN E INMOBILIARIO
+
+Históricamente ligado al boom turístico, el sector construcción ha experimentado ciclos de expansión (1990s-2007) y contracción severa (2008-2013) muy acusados en Canarias. La recuperación post-2014 ha sido sostenida, impulsada por la demanda de alojamiento turístico, vivienda residencial y rehabilitación. El alquiler turístico ha generado tensiones en los mercados de vivienda de zonas turísticas (Santa Cruz de Tenerife, Las Palmas, Sur de Gran Canaria, Sur de Tenerife).
+
+SECTOR INDUSTRIAL Y ENERGÉTICO
+
+La industria manufacturera tiene escaso peso en Canarias (en torno al 3-4% del PIB). Destacan:
+- Industria alimentaria (derivados del plátano, conservas, ron Arehucas en Gran Canaria, ron Aldea, guindilla canaria)
+- Refinería de Santa Cruz de Tenerife (DISA/Repsol), históricamente relevante
+- Construcción naval en Las Palmas GC
+- Industria farmacéutica emergente
+
+En materia energética, Canarias tiene el reto de la transición hacia las energías renovables. El Gobierno canario aprobó la Ley 1/2023 de Transición Energética de Canarias con objetivo de 100% electricidad renovable en 2040. El Hierro es referente mundial con el sistema Gorona del Viento (hidroeólico) que ha alcanzado períodos de 100% abastecimiento renovable. Lanzarote y Fuerteventura tienen gran potencial eólico y solar. El reto es la gestión de la intermitencia en sistemas insulares aislados sin interconexión.
+
+ECONOMÍA AZUL Y DIGITAL
+
+Canarias apuesta por la economía azul (usos sostenibles del océano: acuicultura, biotecnología marina, energías oceánicas, náutica) y la economía digital. El Gobierno canario promueve a Canarias como hub tecnológico atlántico y destino para inversión en centros de datos (por su clima, posición estratégica y cables submarinos que conectan Europa-América-África).
+
+RETO DEL AGUA Y SOSTENIBILIDAD
+
+El agua sigue siendo un recurso estratégico. Canarias tiene una de las mayores densidades de instalaciones desaladoras del mundo en relación a su superficie. La gestión hídrica es competencia de los Cabildos Insulares a través de los Consejos Insulares de Aguas. La economía circular y la gestión de residuos son retos derivados del modelo de consumo turístico de alta intensidad.
+
+DEPENDENCIA E INSULARIDAD
+
+Los principales retos estructurales son:
+- Alta tasa de desempleo estructural (históricamente superior a la media española y europea)
+- Dependencia excesiva del turismo (crisis COVID-19 2020-2021 provocó caída del PIB del 20% en un año, la mayor de España)
+- Costes de transporte e insularidad que encarecen importaciones y exportaciones
+- Brecha digital inter-insular
+- Cambio climático (aumento temperatura mar, sequías, incendios forestales, subida nivel del mar)
+
+DATO EXAMEN: El Hierro tiene el sistema Gorona del Viento (hidroeólico), referente mundial en energías renovables insulares. La Ley 1/2023 de Transición Energética de Canarias fija objetivo 100% electricidad renovable en 2040. La crisis COVID-2020 provocó una caída del PIB canario del 20%, la mayor de España. La gestión del agua en Canarias corresponde a los Cabildos Insulares a través de los Consejos Insulares de Aguas. Canarias aspira a ser hub tecnológico atlántico aprovechando su posición estratégica y los cables submarinos Europa-América-África.`}],i=[{tipo:`mermaid`,titulo:`Principales instrumentos fiscales del REF canario`,codigo:`graph TD
+  REF[REF Canarias\\nDA 3ª CE + Art.349 TFUE\\nLey 19/1994]
+  REF --> IGIC[IGIC\\nImpuesto General\\nIndirecto Canario\\nTipo general: 7%]
+  REF --> ZEC[ZEC\\nZona Especial Canaria\\n4% Impuesto Sociedades]
+  REF --> RIC[RIC\\nReserva Inversiones\\nCanarias\\nDeducción hasta 90%]
+  REF --> APIC[APIC\\nArbitrio sobre\\nImportaciones]
+  REF --> FC[Franquicia Comercial\\n1.700 € viajeros]`},{tipo:`mermaid`,titulo:`Sectores económicos de Canarias`,codigo:`graph LR
+  EC[Economía Canaria]
+  EC --> T[Turismo\\n35% PIB\\n12-16M turistas/año]
+  EC --> A[Agricultura\\nPlátano DOP\\nTomate / Vinos DO]
+  EC --> P[Pesca\\nLonja Las Palmas\\nCaladeros africanos]
+  EC --> I[Industria\\nAgroalimentaria\\nZonas Francas]
+  EC --> C[Comercio\\nPuerto La Luz\\nFranquicia REF]
+  T --> UK[Reino Unido 30%\\nAlemania 20%]`}],a={nodos:[{id:`n1`,data:{label:`n1`},position:{x:0,y:0}},{id:`n2`,data:{label:`n2`},position:{x:0,y:-300}},{id:`n3`,data:{label:`n3`},position:{x:285,y:-93}},{id:`n4`,data:{label:`n4`},position:{x:176,y:243}},{id:`n5`,data:{label:`n5`},position:{x:-176,y:243}},{id:`n6`,data:{label:`n6`},position:{x:-285,y:-93}},{id:`n7`,data:{label:`n7`},position:{x:0,y:-580}},{id:`n8`,data:{label:`n8`},position:{x:502,y:-290}},{id:`n9`,data:{label:`n9`},position:{x:502,y:290}},{id:`n10`,data:{label:`n10`},position:{x:0,y:580}},{id:`n11`,data:{label:`n11`},position:{x:-502,y:290}},{id:`n12`,data:{label:`n12`},position:{x:-502,y:-290}}],aristas:[{id:`e1`,source:`n1`,target:`n2`},{id:`e2`,source:`n1`,target:`n3`},{id:`e3`,source:`n1`,target:`n4`},{id:`e4`,source:`n1`,target:`n5`},{id:`e5`,source:`n1`,target:`n6`},{id:`e6`,source:`n2`,target:`n7`},{id:`e7`,source:`n2`,target:`n12`},{id:`e8`,source:`n3`,target:`n8`},{id:`e9`,source:`n4`,target:`n9`},{id:`e10`,source:`n5`,target:`n10`},{id:`e11`,source:`n6`,target:`n11`}]},o=[{id:`t44-f01`,pregunta:`¿En qué disposición de la Constitución Española se ampara el Régimen Económico y Fiscal de Canarias?`,respuesta:`En la Disposición Adicional Tercera (DA 3ª) de la Constitución Española de 1978.`},{id:`t44-f02`,pregunta:`¿Qué ley regula el REF canario y en qué año fue aprobada?`,respuesta:`La Ley 19/1994, de 6 de julio, de modificación del Régimen Económico y Fiscal de Canarias (modificada por Ley 8/2018).`},{id:`t44-f03`,pregunta:`¿Cuál es el tipo general del IGIC?`,respuesta:`El tipo general del IGIC (Impuesto General Indirecto Canario) es el 7%.`},{id:`t44-f04`,pregunta:`¿Qué es la ZEC y qué tipo impositivo aplica al Impuesto de Sociedades?`,respuesta:`La Zona Especial Canaria (ZEC) es una zona de baja tributación que aplica un tipo reducido del 4% en el Impuesto de Sociedades para empresas que cumplan requisitos de empleo y actividad económica real en Canarias.`},{id:`t44-f05`,pregunta:`¿Qué es la RIC y qué porcentaje de deducción permite?`,respuesta:`La Reserva para Inversiones en Canarias (RIC) permite deducir hasta el 90% del beneficio no distribuido destinado a inversiones en Canarias en el Impuesto de Sociedades.`},{id:`t44-f06`,pregunta:`¿Qué porcentaje del PIB canario representa el turismo?`,respuesta:`El turismo representa aproximadamente el 35% del PIB de Canarias.`},{id:`t44-f07`,pregunta:`¿Cuál es el principal mercado emisor de turistas hacia Canarias?`,respuesta:`El Reino Unido es el principal mercado emisor, con aproximadamente el 30% del total de turistas que visitan Canarias.`},{id:`t44-f08`,pregunta:`¿Qué distinción de calidad tiene el plátano de Canarias?`,respuesta:`El plátano de Canarias cuenta con Denominación de Origen Protegida (DOP), siendo la principal exportación agrícola del archipiélago.`},{id:`t44-f09`,pregunta:`¿Cuántas Denominaciones de Origen vinícolas tiene Canarias?`,respuesta:`Canarias tiene 11 Denominaciones de Origen (DO) vinícolas: Abona, El Hierro, Gran Canaria, Ycoden-Daute-Isora, La Gomera, La Palma, Lanzarote, Monte Lentiscal, Tacoronte-Acentejo, Valle de Güímar y Valle de la Orotava.`},{id:`t44-f10`,pregunta:`¿Qué es el POSEI y para qué sirve en el contexto de la agricultura canaria?`,respuesta:`El POSEI (Programa de Opciones Específicas para la Lejanía y la Insularidad) es un instrumento de la PAC adaptado a las regiones ultraperiféricas de la UE, que proporciona ayudas específicas a la agricultura canaria para compensar sus desventajas estructurales.`},{id:`t44-f11`,pregunta:`¿Cuál es la primera Denominación de Origen de queso en Canarias?`,respuesta:`El Queso Majorero, elaborado con leche de cabra en Fuerteventura, es la primera DOP de queso en Canarias.`},{id:`t44-f12`,pregunta:`¿Qué puerto canario es uno de los más importantes del Atlántico para el tráfico mercante?`,respuesta:`El Puerto de La Luz y de Las Palmas (Las Palmas de Gran Canaria) es uno de los puertos más activos e importantes del Atlántico.`},{id:`t44-f13`,pregunta:`¿Qué es el APIC?`,respuesta:`El APIC (Arbitrio sobre Importaciones y Entregas de Mercancías en Canarias) es un impuesto propio del REF canario que sustituye al arancel exterior común de la UE en Canarias, gravando la importación y entrega de mercancías.`},{id:`t44-f14`,pregunta:`¿Qué tipo impositivo aplica el IGIC al tabaco?`,respuesta:`El IGIC aplica el tipo especial del 20% al tabaco y bebidas alcohólicas.`},{id:`t44-f15`,pregunta:`¿Qué ley nacional regula la pesca marítima en España?`,respuesta:`La Ley 33/2014, de 26 de diciembre, de pesca marítima del Estado, es la norma básica estatal que regula la pesca marítima en España.`},{id:`t44-f16`,pregunta:`¿En qué año se aprobó la Ley de Renovación y Modernización Turística de Canarias?`,respuesta:`La Ley 2/2013, de 29 de mayo, de Renovación y Modernización Turística de Canarias fue aprobada en 2013.`},{id:`t44-f17`,pregunta:`¿Qué tipo de IGIC se aplica a los alimentos básicos y medicamentos?`,respuesta:`Los alimentos básicos, agua, libros y medicamentos tributan al tipo cero (0%) del IGIC.`},{id:`t44-f18`,pregunta:`¿Qué es la Lonja de Las Palmas de Gran Canaria?`,respuesta:`La Lonja de Las Palmas de Gran Canaria es una de las más importantes de España en volumen de capturas y comercialización de pescado, ligada a la flota pesquera que opera en los caladeros del Atlántico Centro-Oriental.`},{id:`t44-f19`,pregunta:`¿Qué objetivo energético tiene el Plan de Transición Energética de Canarias?`,respuesta:`Alcanzar el 100% de generación con energías renovables para el año 2040.`},{id:`t44-f20`,pregunta:`¿Qué tipo de protección tiene el mojo canario?`,respuesta:`El mojo canario cuenta con Indicación Geográfica Protegida (IGP), reconociendo su vínculo geográfico y las características tradicionales de elaboración.`}],s=[{id:`t44-q01`,pregunta:`¿En qué disposición de la Constitución Española se ampara el Régimen Económico y Fiscal de Canarias?`,opciones:[`En la Disposición Adicional Segunda (DA 2ª)`,`En la Disposición Adicional Tercera (DA 3ª)`,`En la Disposición Transitoria Primera`],correcta:1,explicacion:`La DA 3ª de la Constitución Española ampara el Régimen Económico y Fiscal de Canarias, junto con el artículo 349 del TFUE en el ámbito europeo.`},{id:`t44-q02`,pregunta:`¿Cuál es el tipo general del IGIC en Canarias?`,opciones:[`El 4%`,`El 21%`,`El 7%`],correcta:2,explicacion:`El tipo general del IGIC es el 7%, significativamente inferior al IVA general peninsular (21%), siendo uno de los beneficios fiscales del REF.`},{id:`t44-q03`,pregunta:`¿Qué porcentaje de deducción en el Impuesto de Sociedades permite la RIC?`,opciones:[`Hasta el 60% de los beneficios no distribuidos`,`Hasta el 90% de los beneficios no distribuidos`,`El 100% de las inversiones realizadas`],correcta:1,explicacion:`La Reserva para Inversiones en Canarias (RIC) permite deducir hasta el 90% del beneficio no distribuido destinado a inversiones en Canarias en el Impuesto de Sociedades.`},{id:`t44-q04`,pregunta:`¿Qué tipo impositivo aplica la ZEC en el Impuesto de Sociedades?`,opciones:[`El 0%`,`El 4%`,`El 15%`],correcta:1,explicacion:`La Zona Especial Canaria (ZEC) aplica un tipo reducido del 4% en el Impuesto de Sociedades para las entidades inscritas que cumplan los requisitos de empleo y actividad económica real.`},{id:`t44-q05`,pregunta:`¿Cuántas Denominaciones de Origen vinícolas tiene Canarias?`,opciones:[`7 Denominaciones de Origen`,`9 Denominaciones de Origen`,`11 Denominaciones de Origen`],correcta:2,explicacion:`Canarias cuenta con 11 Denominaciones de Origen vinícolas, entre las que destacan Tacoronte-Acentejo, Lanzarote y La Palma.`},{id:`t44-q06`,pregunta:`¿Qué porcentaje del PIB canario representa el turismo aproximadamente?`,opciones:[`Alrededor del 15%`,`Alrededor del 35%`,`Alrededor del 50%`],correcta:1,explicacion:`El turismo representa aproximadamente el 35% del PIB de Canarias, siendo el motor principal de la economía del archipiélago.`},{id:`t44-q07`,pregunta:`¿Qué distinción de calidad tiene el plátano de Canarias?`,opciones:[`Indicación Geográfica Protegida (IGP)`,`Denominación de Origen Protegida (DOP)`,`Especialidad Tradicional Garantizada (ETG)`],correcta:1,explicacion:`El plátano de Canarias cuenta con Denominación de Origen Protegida (DOP), siendo la principal exportación agrícola del archipiélago.`},{id:`t44-q08`,pregunta:`¿Cuál es la ley estatal básica que regula la pesca marítima en España?`,opciones:[`Ley 3/2001, de 26 de marzo, de Pesca Marítima del Estado`,`Ley 33/2014, de 26 de diciembre, de pesca marítima del Estado`,`Real Decreto-ley 1/2017 de ordenación pesquera`],correcta:1,explicacion:`La Ley 33/2014, de 26 de diciembre, de pesca marítima del Estado es la norma básica estatal vigente que regula la pesca marítima en España.`},{id:`t44-q09`,pregunta:`¿Qué tipo del IGIC se aplica a los alimentos básicos y medicamentos?`,opciones:[`Tipo reducido (3%)`,`Tipo cero (0%)`,`Tipo especial (20%)`],correcta:1,explicacion:`Los alimentos básicos, agua, libros y medicamentos tributan al tipo cero (0%) del IGIC, estando exentos de carga impositiva.`},{id:`t44-q10`,pregunta:`¿En qué año fue aprobada la ley que regula el REF canario?`,opciones:[`En 1978`,`En 1982`,`En 1994`],correcta:2,explicacion:`La Ley 19/1994, de 6 de julio, de modificación del Régimen Económico y Fiscal de Canarias fue aprobada en 1994, posteriormente modificada por la Ley 8/2018.`},{id:`t44-q11`,pregunta:`¿Cuál es el principal mercado emisor de turistas hacia Canarias?`,opciones:[`Alemania, con aproximadamente el 30% del total`,`El Reino Unido, con aproximadamente el 30% del total`,`Francia, con aproximadamente el 25% del total`],correcta:1,explicacion:`El Reino Unido es el principal mercado emisor de turistas hacia Canarias, con aproximadamente el 30% del total, seguido de Alemania con alrededor del 20%.`},{id:`t44-q12`,pregunta:`¿Qué es el APIC en el REF canario?`,opciones:[`El Arbitrio sobre Importaciones y Entregas de Mercancías en Canarias, equivalente al arancel exterior común`,`El Arbitrio sobre Personas Inscritas en Canarias, para control fiscal de residentes`,`El Acuerdo de Promoción Industrial Canaria, para incentivos industriales`],correcta:0,explicacion:`El APIC (Arbitrio sobre Importaciones y Entregas de Mercancías en Canarias) es el impuesto que sustituye en Canarias al arancel exterior común de la UE, gravando las importaciones de mercancías.`},{id:`t44-q13`,pregunta:`¿Qué tipo del IGIC se aplica al tabaco y bebidas alcohólicas?`,opciones:[`Tipo general (7%)`,`Tipo incrementado (9,5%)`,`Tipo especial (20%)`],correcta:2,explicacion:`El tabaco y las bebidas alcohólicas tributan al tipo especial del 20% del IGIC.`},{id:`t44-q14`,pregunta:`¿Qué es el POSEI en el contexto agrícola canario?`,opciones:[`El Plan de Ordenación del Suelo y Espacios Insulares, para planificación territorial`,`El Programa de Opciones Específicas para la Lejanía y la Insularidad, instrumento de la PAC para regiones ultraperiféricas`,`El Programa de Ociosas y Secano para Explotaciones Insulares, ayuda a agricultores`],correcta:1,explicacion:`El POSEI (Programa de Opciones Específicas para la Lejanía y la Insularidad) es el instrumento de la Política Agrícola Común adaptado a las regiones ultraperiféricas, que proporciona ayudas específicas a la agricultura canaria.`},{id:`t44-q15`,pregunta:`¿Cuál es la primera Denominación de Origen de queso en Canarias?`,opciones:[`Queso Palmero (La Palma)`,`Queso Gomero (La Gomera)`,`Queso Majorero (Fuerteventura)`],correcta:2,explicacion:`El Queso Majorero, elaborado con leche de cabra majorera en Fuerteventura, fue el primer queso canario en obtener la Denominación de Origen Protegida (DOP).`}],c={id:44,titulo:t,bloque:n,secciones:r,esquemas:i,mapaMental:a,flashcards:o,preguntas:s};export{n as bloque,c as default,i as esquemas,o as flashcards,e as id,a as mapaMental,s as preguntas,r as secciones,t as titulo};

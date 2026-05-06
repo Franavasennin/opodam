@@ -1,0 +1,198 @@
+var e=42,t=`Los primeros auxilios. El soporte vital básico. La RCP. Actuación policial ante accidentes y urgencias sanitarias`,n=`especifico`,r=[{titulo:`Conceptos generales de primeros auxilios y marco legal`,contenido:`CONCEPTOS GENERALES DE PRIMEROS AUXILIOS Y MARCO LEGAL
+
+CONCEPTO DE PRIMEROS AUXILIOS:
+- Los primeros auxilios son el conjunto de medidas urgentes que se aplican a las victimas de un accidente, enfermedad brusca o catastrofe hasta que se dispone de asistencia medica cualificada.
+- El objetivo de los primeros auxilios es: salvar la vida, evitar el agravamiento de las lesiones y reducir el sufrimiento.
+- Los primeros auxilios NO son tratamiento medico: son medidas de emergencia que aplica cualquier persona (laico o semiprofesional) en los primeros minutos del incidente.
+
+MARCO LEGAL DE OBLIGACION DE SOCORRO:
+- Art. 195 CP: delito de omision del deber de socorro. Quien no socorriere a una persona en peligro manifiesto y grave, pudiendo hacerlo sin riesgo propio, incurre en prision de 3 meses a 1 ano o multa. Si el que omite es quien causo el accidente: prision de 6 meses a 2 anos.
+- Los agentes de policia tienen obligacion juridica reforzada de prestar primeros auxilios derivada de sus funciones (art. 5.2.b LOFCS: velar por la vida e integridad fisica de las personas).
+- Ley 17/2015 SNPC y Ley 9/2007 de Canarias: la Policia debe colaborar en la asistencia a victimas en emergencias.
+
+OBLIGACION DE ACTUAR: BUENA SAMARITANA:
+- Espana NO tiene ley de buen samaritano que exima de responsabilidad civil al socorrista voluntario por errores bienintencionados en los primeros auxilios.
+- Sin embargo, la jurisprudencia reconoce que la buena fe y la ausencia de imprudencia grave eximen de responsabilidad al socorrista.
+- Los agentes de policia no pueden alegar desconocimiento: deben recibir formacion periodica en RCP y primeros auxilios (en la ACS y durante la vida profesional).
+
+CHAIN OF SURVIVAL (CADENA DE SUPERVIVENCIA):
+La cadena de supervivencia en parada cardiorrespiratoria incluye 5 eslabones:
+1. Reconocimiento y llamada al 1-1-2 (o 061).
+2. RCP precoz de calidad.
+3. Desfibrilacion precoz (DEA).
+4. Soporte vital avanzado por personal sanitario.
+5. Cuidados post-resucitacion en hospital.
+
+DATO EXAMEN: Art. 195 CP: omision de socorro = 3m-1 ano prision (quien causo el accidente: 6m-2 anos). Los agentes tienen obligacion reforzada de socorrer (art. 5.2.b LOFCS). La cadena de supervivencia tiene 5 eslabones: llamada 1-1-2, RCP, DEA, soporte vital avanzado, cuidados post-UCI.`},{titulo:`El protocolo PAS y la evaluación inicial de la víctima`,contenido:`EL PROTOCOLO PAS Y LA EVALUACION INICIAL DE LA VICTIMA
+
+PROTOCOLO PAS (PROTEGER, ALERTAR, SOCORRER):
+1. P - PROTEGER (seguridad de la escena):
+   - Antes de actuar, asegurarse de que la escena es segura para el socorrista.
+   - En un accidente de trafico: colocar triangulos de presenalizacion, activar luces de emergencia, alejar el trafico.
+   - En un atentado o situacion violenta: evacuar la zona del peligro (no acercarse al agresor).
+   - NUNCA poner en riesgo la propia vida para socorrer a la victima si el peligro persiste.
+2. A - ALERTAR (llamar a los servicios de emergencia):
+   - En Canarias: llamar al 1-1-2 (emergencias integradas) o al 061 (urgencias sanitarias).
+   - Comunicar: localizacion exacta, numero de victimas, tipo de accidente, estado aproximado de las victimas.
+   - No colgar hasta que el operador lo indique.
+3. S - SOCORRER (primeros auxilios a las victimas):
+   - Aplicar los conocimientos de primeros auxilios mientras llegan los servicios de emergencia.
+   - Seguir las instrucciones del operador del 1-1-2.
+
+EVALUACION PRIMARIA (ABCDE):
+Al llegar a la victima, el protocolo de evaluacion es:
+- A (Airway - via aerea): comprobar si la via aerea esta libre. Si esta obstruida: maniobra frente-menton para abrir via aerea.
+- B (Breathing - respiracion): comprobar si respira (ver, oir, sentir: 10 segundos). Si no respira con normalidad: iniciar RCP.
+- C (Circulation - circulacion): controlar hemorragias graves con presion directa.
+- D (Disability - nivel de conciencia): evaluar nivel de consciencia (AVDN: Alerta, responde a Voz, responde a Dolor, No responde).
+- E (Exposure - exposicion): exposicion corporal para detectar lesiones ocultas.
+
+POSICION LATERAL DE SEGURIDAD (PLS):
+- Se usa en victimas inconscientes que respiran con normalidad (para evitar la aspiracion si vomitan).
+- NUNCA en victimas de trauma (accidentes de trafico, caidas) sin descartar lesion cervical.
+- Procedimiento: tumbado de lado, brazo superior por delante, rodilla superior flexionada.
+
+DATO EXAMEN: PAS: Proteger, Alertar, Socorrer. ABCDE: Airway, Breathing, Circulation, Disability, Exposure. La PLS se usa en inconscientes que respiran y sin trauma cervical. En Canarias llamar al 1-1-2 o al 061. El operador no debe colgar hasta indicarlo.`},{titulo:`La Resucitación Cardiopulmonar (RCP) básica del adulto`,contenido:`LA RESUCITACION CARDIOPULMONAR (RCP) BASICA DEL ADULTO
+
+INDICACION DE LA RCP:
+- La RCP se inicia cuando la victima esta INCONSCIENTE y NO RESPIRA con normalidad (o solo tiene gasping: respiraciones agnicas irregulares).
+- NO iniciar RCP si: la victima tiene signos evidentes de muerte (rigidez, livideces, decapitacion) o si existe instrucciones previas conocidas del paciente de no reanimar (DNR).
+
+PROTOCOLO RCP ADULTO (ERC/AHA 2021):
+1. COMPROBAR SEGURIDAD DEL ENTORNO.
+2. VERIFICAR CONCIENCIA: llamar con voz alta, sacudir los hombros.
+3. Si no responde: PEDIR AYUDA, llamar al 1-1-2. Si hay otras personas: asignar a alguien para llamar y a otro para buscar DEA.
+4. ABRIR VIA AEREA: maniobra frente-menton (inclinar la cabeza hacia atras y levantar el menton).
+5. VERIFICAR RESPIRACION: ver, oir, sentir durante MAXIMOS 10 SEGUNDOS. Si no respira normalmente: iniciar RCP.
+6. COMPRESIONES TORACICAS:
+   - Posicion: centro del pecho (mitad inferior del esternon).
+   - Frecuencia: 100-120 compresiones por minuto.
+   - Profundidad: 5-6 cm en adultos.
+   - Relacion: 30 compresiones : 2 ventilaciones.
+   - Permitir la reexpansion completa del torax entre compresiones (no apoyarse).
+7. VENTILACIONES (si se tiene formacion y no hay reticencia):
+   - 2 ventilaciones de 1 segundo cada una despues de cada 30 compresiones.
+   - Si no se pueden dar ventilaciones: compresiones continuas sin interrupciones.
+8. CONTINUAR hasta: llegada del DEA, llegada del equipo medico, o la victima recupere la consciencia y la respiracion normal.
+
+RCP EN NINOS (1-8 ANOS):
+- 5 ventilaciones iniciales antes de las compresiones.
+- Profundidad de compresiones: 1/3 del diametro del torax (unos 4-5 cm).
+- Relacion: 15 compresiones : 2 ventilaciones (si hay 2 socorristas); 30:2 si hay uno solo.
+
+DATO EXAMEN: RCP adulto (ERC 2021): 30 compresiones : 2 ventilaciones, 100-120 compresiones/min, 5-6 cm de profundidad, verificar respiracion en MAXIMO 10 segundos. En ninos: 5 ventilaciones iniciales, 15:2. Si no puede dar ventilaciones: solo compresiones.`},{titulo:`El Desfibrilador Externo Automatizado (DEA/AED)`,contenido:`EL DESFIBRILADOR EXTERNO AUTOMATIZADO (DEA/AED)
+
+CONCEPTO Y FUNCIONAMIENTO:
+- El DEA (Desfibrilador Externo Automatizado) o AED (Automated External Defibrillator) es un dispositivo medico que analiza el ritmo cardiaco de la victima y, si detecta una arritmia susceptible de desfibrilacion (fibrilacion ventricular o taquicardia ventricular sin pulso), administra una descarga electrica para restaurar el ritmo normal.
+- El DEA guia al usuario mediante instrucciones de voz. Es intuitivo y puede ser usado por personas sin formacion medica.
+
+INDICACION:
+- Solo para victimas en parada cardiorrespiratoria (inconscientes + sin respiracion normal).
+- El DEA analiza el ritmo: si es desfibrilable (FV/TVSP), sugiere la descarga. Si no lo es, indica continuar la RCP.
+
+PROTOCOLO DE USO DEL DEA:
+1. Encender el DEA y seguir las instrucciones de voz.
+2. Colocar los electrodos adhesivos sobre el pecho desnudo de la victima (segun las imagenes del dispositivo): uno debajo de la clavicula derecha y otro en el lateral izquierdo del torax (a la altura del corazon).
+3. El DEA analiza el ritmo (NADIE debe tocar a la victima durante el analisis).
+4. Si recomienda descarga: asegurarse de que nadie toca a la victima y pulsar el boton de descarga.
+5. Reiniciar RCP inmediatamente despues de la descarga (sin verificar el pulso).
+6. El DEA volvera a analizar el ritmo cada 2 minutos.
+
+DEA EN CANARIAS Y EN ESPACIO PUBLICO:
+- RD 365/2010 regulacion basica del uso de DEA por personal no sanitario en Espana (requisito de formacion basica).
+- En Canarias: Decreto 225/2010 del Gobierno de Canarias regula la instalacion de DEA en espacios publicos de uso masivo y los requisitos de formacion para su uso.
+- Lugares obligatorios de DEA en Canarias: aeropuertos, estaciones de tren y bus, grandes centros comerciales, polideportivos, playas con servicio de socorrismo.
+- Los vehiculos del CGPC en operacion deben llevar DEA o tener acceso a uno en menos de 5 minutos.
+
+DATO EXAMEN: El DEA analiza el ritmo cardiaco y descarga en FV o TVSP. Nadie debe tocar a la victima durante el analisis. Tras la descarga: reiniciar RCP inmediatamente (sin verificar pulso). En Canarias: Decreto 225/2010 regula la instalacion de DEA en espacios publicos.`},{titulo:`Actuación ante hemorragias, fracturas, quemaduras y otras urgencias`,contenido:`ACTUACION ANTE HEMORRAGIAS, FRACTURAS, QUEMADURAS Y OTRAS URGENCIAS
+
+HEMORRAGIAS:
+- Hemorragia externa: presion directa sobre la herida con apósito esteril (o tela limpia si no hay). Mantener presion continua sin aflojar.
+- Torniquete: solo en hemorragias masivas de extremidades que no ceden con presion directa (riesgo de amputacion de la extremidad si se aplica mas de 2 horas). Anotar la hora de colocacion.
+- Hemorragia nasal (epistaxis): inclinar la cabeza hacia adelante, presionar las fosas nasales durante 10-15 minutos. NO inclinar la cabeza hacia atras (riesgo de aspiracion).
+
+FRACTURAS:
+- NO reducir (no intentar recolocar el hueso) sin formacion especifica.
+- Inmovilizar la extremidad en la posicion en que se encuentra, con ferula improvisada.
+- En fracturas de columna vertebral: NO mover a la victima sin el material adecuado y formacion especifica (riesgo de lesion medular).
+- En fracturas de pelvis: inmovilizar sin comprimir la pelvis; pueden causar hemorragia interna masiva y shock.
+
+QUEMADURAS:
+- Quemadura de 1er grado (solo epidermis, rojez): enfriar con agua corriente fria durante 10-20 minutos. NO aplicar pasta de dientes, mantequilla ni hielo.
+- Quemadura de 2o grado (ampollas, dermis afectada): enfriar, cubrir con aposito limpio, NO pinchar las ampollas.
+- Quemadura de 3er grado (piel carbonizada, sin dolor por destruccion nerviosa): NO enfriar si es extensa, tapar con sabana limpia, traslado urgente.
+- Quemaduras quimicas: retirar la ropa impregnada (con guantes) y lavar abundantemente con agua corriente.
+
+OBSTRUCCION DE VIA AEREA POR CUERPO EXTRANO (MANIOBRA DE HEIMLICH):
+- Adultos conscientes: 5 golpes en la espalda (region interescapular) seguidos de 5 compresiones abdominales ascendentes (maniobra de Heimlich).
+- Lactantes: 5 golpes en espalda + 5 compresiones toracicas (NO abdominales).
+- Inconsciente: iniciar RCP (las compresiones toracicas pueden desalojar el cuerpo extrano).
+
+SHOCK:
+- Signos: palidez, sudoracion fria, taquicardia, hipotension, confusion, sed.
+- Posicion: elevar las piernas 45 grados (Trendelenburg) si es shock hipovolemico y no hay trauma craneal o toracico. Mantener caliente. Llamar al 1-1-2.
+
+DATO EXAMEN: Hemorragia: presion directa; torniquete solo si no cede. Fractura de columna: NO mover sin material. Quemaduras: enfriar con agua 10-20 min, NO hielo ni mantequilla. Obstruccion: 5 golpes espalda + 5 Heimlich (adultos conscientes). Shock: elevar piernas, mantener caliente, llamar 1-1-2.`},{titulo:`Actuación policial específica ante emergencias sanitarias`,contenido:`ACTUACION POLICIAL ESPECIFICA ANTE EMERGENCIAS SANITARIAS
+
+ACCIDENTE DE TRAFICO CON VICTIMAS:
+1. Seguridad: triangulos de presenalizacion, luces de emergencia, alejar el trafico.
+2. Llamar al 1-1-2 indicando numero de victimas y estado aproximado.
+3. NO mover a los accidentados salvo peligro inminente (incendio, hundimiento).
+4. Aplicar primeros auxilios: control de hemorragias, RCP si es necesario, PLS si esta inconsciente y respira.
+5. Aguardar la llegada del SUC 061 (Canarias), no abandonar el lugar.
+
+SUSPECHO DE INFARTO (SCA - SINDROME CORONARIO AGUDO):
+- Sintomas: dolor opresivo en el pecho que puede irradiar al brazo izquierdo, mandibula o espalda; sudoracion, nauseas, dificultad respiratoria.
+- Actuacion: posicion semisentada, llamar al 1-1-2, solicitar DEA, NO dar aspirina sin indicacion del operador medico.
+- Si pierde conciencia y no respira: iniciar RCP.
+
+CRISIS EPILEPTICA:
+- Actuacion: no sujetar al paciente, alejar objetos peligrosos, colocar algo blando bajo la cabeza, NO introducir nada en la boca.
+- Tras la crisis: PLS, llamar al 1-1-2 si: es la primera crisis, dura mas de 5 minutos, hay lesiones o la persona no recupera la conciencia en 10 minutos.
+
+REACCION ALERGICA GRAVE (ANAFILAXIA):
+- Sintomas: urticaria, angioedema (inflamacion cara/garganta), dificultad respiratoria, hipotension, perdida de conciencia.
+- Actuacion: llamar al 1-1-2, posicion tumbada con piernas elevadas (si hay hipotension), si el paciente lleva adrenalina autoinyectable (Epipen) y esta perdiendo la conciencia: aplicarla.
+
+INTOXICACION Y SOBREDOSIS:
+- Llamar al 1-1-2 / SUC 061. Informar del tipo de sustancia si se conoce.
+- NO provocar el vomito (puede agravar intoxicacion por sustancias causticas).
+- Guardar el envase o sustancia para mostrarlo al personal sanitario.
+
+ACTUACION CON PERSONAS EN ESTADO DE CRISIS PSIQUIATRICA:
+- Hablar con calma, no confrontar, no invadir el espacio personal bruscamente.
+- Llamar al 1-1-2 para que deriven el aviso al equipo de salud mental si procede.
+- La detencion de una persona con alteracion mental grave puede requerir la colaboracion del juez (internamiento no voluntario, art. 763 LEC).
+
+DATO EXAMEN: Accidente trafico: no mover victimas salvo peligro inminente. Infarto: posicion semisentada, llamar 1-1-2. Crisis epileptica: no sujetar, no introducir nada en la boca. Anafilaxia: piernas elevadas si hipotension. Intoxicacion: NO provocar el vomito. Crisis psiquiatrica: internamiento involuntario requiere autorizacion judicial (art. 763 LEC).`}],i=[{tipo:`mermaid`,titulo:`Cadena de supervivencia y RCP básica (ERC 2021)`,codigo:`graph TD
+    A[Parada cardiorrespiratoria] --> B[1. Reconocimiento
+Llamar 1-1-2]
+    B --> C[2. RCP precoz
+30:2 o solo compresiones]
+    C --> D[3. DEA precoz
+Desfibrilación]
+    D --> E[4. Servicios emergencias
+SVA]
+    E --> F[5. Cuidados post-RCP]
+    F --> G[6. Recuperación]
+    H[Compresiones 5-6 cm
+100-120/min] --> C
+    I[DEA: análisis + descarga
++ 2 min compresiones] --> D`},{tipo:`mermaid`,titulo:`Protocolo PAS y evaluación cABCDE`,codigo:`graph LR
+    A[EMERGENCIA] --> B[P: PROTEGER
+Asegurar zona]
+    B --> C[A: ALERTAR
+Llamar 1-1-2]
+    C --> D[S: SOCORRER
+cABCDE]
+    D --> E[c: Hemorragia masiva]
+    D --> F[A: Vía aérea
+Frente-mentón]
+    D --> G[B: Respiración
+VOS máx.10s]
+    D --> H[C: Circulación
+Pulso / hemorragias]
+    D --> I[D: Consciencia
+AVPU]
+    D --> J[E: Exposición
+Heridas]`}],a={nodos:[{id:`root`,data:{label:`root`},position:{x:0,y:0}},{id:`pas`,data:{label:`pas`},position:{x:0,y:-300}},{id:`rcp`,data:{label:`rcp`},position:{x:193,y:-230}},{id:`dea`,data:{label:`dea`},position:{x:295,y:-52}},{id:`cadena`,data:{label:`cadena`},position:{x:260,y:150}},{id:`hemorragia`,data:{label:`hemorragia`},position:{x:103,y:282}},{id:`pls`,data:{label:`pls`},position:{x:-103,y:282}},{id:`heimlich`,data:{label:`heimlich`},position:{x:-260,y:150}},{id:`fast`,data:{label:`fast`},position:{x:-295,y:-52}},{id:`195cp`,data:{label:`195cp`},position:{x:-193,y:-230}},{id:`112`,data:{label:`112`},position:{x:0,y:-580}},{id:`compresiones`,data:{label:`compresiones`},position:{x:0,y:580}}],aristas:[{id:`e1`,source:`root`,target:`pas`},{id:`e2`,source:`root`,target:`rcp`},{id:`e3`,source:`root`,target:`dea`},{id:`e4`,source:`root`,target:`cadena`},{id:`e5`,source:`root`,target:`hemorragia`},{id:`e6`,source:`root`,target:`pls`},{id:`e7`,source:`root`,target:`heimlich`},{id:`e8`,source:`root`,target:`fast`},{id:`e9`,source:`root`,target:`195cp`},{id:`e10`,source:`pas`,target:`112`},{id:`e11`,source:`rcp`,target:`compresiones`}]},o=[{id:`t42-f01`,pregunta:`¿Qué significa el acrónimo PAS en primeros auxilios?`,respuesta:`Proteger (asegurar la zona), Alertar (llamar al 1-1-2) y Socorrer (prestar los primeros auxilios).`},{id:`t42-f02`,pregunta:`¿Qué artículo del CP regula la omisión del deber de socorro?`,respuesta:`El artículo 195 CP; la pena es multa de 3 a 12 meses, agravada si el causante del peligro o profesional sanitario no socorre.`},{id:`t42-f03`,pregunta:`¿Cuánto tiempo máximo se dedica a comprobar si una víctima respira?`,respuesta:`No más de 10 segundos (VOS: ver, oír, sentir el aliento).`},{id:`t42-f04`,pregunta:`¿Cuál es la relación compresiones/ventilaciones en RCP básica adulto?`,respuesta:`30 compresiones torácicas seguidas de 2 ventilaciones (ratio 30:2), según las guías ERC 2021.`},{id:`t42-f05`,pregunta:`¿Con qué frecuencia y profundidad deben realizarse las compresiones torácicas?`,respuesta:`Frecuencia de 100-120 compresiones por minuto; profundidad de al menos 5 cm (máximo 6 cm).`},{id:`t42-f06`,pregunta:`¿Qué es la RCP solo con compresiones (hands-only CPR)?`,respuesta:`RCP sin ventilaciones, solo compresiones torácicas continuas; indicada cuando no se domina la ventilación o se rechaza boca a boca.`},{id:`t42-f07`,pregunta:`¿Cómo se colocan los parches del DEA?`,respuesta:`Uno bajo la clavícula derecha y otro bajo la axila izquierda.`},{id:`t42-f08`,pregunta:`¿Cuántos minutos de RCP se realizan después de cada descarga del DEA?`,respuesta:`2 minutos de compresiones torácicas inmediatamente después de cada descarga, antes de que el DEA vuelva a analizar.`},{id:`t42-f09`,pregunta:`¿Cuáles son los 6 eslabones de la cadena de supervivencia del ERC 2021?`,respuesta:`1.Reconocimiento y llamada al 1-1-2; 2.RCP precoz; 3.Desfibrilación precoz; 4.Servicios de emergencias; 5.SVA y cuidados post-RCP; 6.Recuperación.`},{id:`t42-f10`,pregunta:`¿Qué significa FAST en el reconocimiento del ictus?`,respuesta:`Face (asimetría facial), Arm (debilidad de un brazo), Speech (dificultad para hablar), Time (tiempo urgente para actuar).`},{id:`t42-f11`,pregunta:`¿En qué consiste la maniobra de Heimlich?`,respuesta:`5 compresiones abdominales bruscas hacia adentro y hacia arriba en el adulto consciente con obstrucción grave de la vía aérea, alternando con 5 palmadas interescapulares.`},{id:`t42-f12`,pregunta:`¿Qué es la Posición Lateral de Seguridad (PLS) y cuándo se usa?`,respuesta:`Posición en decúbito lateral que evita la broncoaspiración; se usa en víctimas inconscientes que respiran con normalidad.`},{id:`t42-f13`,pregunta:`¿Cuánto tiempo hay que enfriar una quemadura con agua y a qué temperatura?`,respuesta:`10-20 minutos con agua fría a 15-20°C; nunca usar hielo, pomadas ni reventar ampollas.`},{id:`t42-f14`,pregunta:`¿Cuánto reduce la supervivencia cada minuto que pasa sin iniciar RCP?`,respuesta:`Aproximadamente un 10% por cada minuto que pasa sin RCP en una parada cardiorrespiratoria.`},{id:`t42-f15`,pregunta:`¿En qué posición se coloca a una víctima en shock (posición antishock)?`,respuesta:`Tumbada con las piernas elevadas 30-45 cm (Trendelenburg modificada); contraindicada si hay traumatismo craneal o torácico.`},{id:`t42-f16`,pregunta:`¿Qué hacer ante una crisis convulsiva?`,respuesta:`No sujetar los miembros; proteger la cabeza; retirar objetos peligrosos; al finalizar, colocar en PLS; no introducir nada en la boca.`},{id:`t42-f17`,pregunta:`¿Cuándo se aplica un torniquete en una hemorragia externa?`,respuesta:`Solo en hemorragias masivas de extremidades que no ceden con compresión directa; anotar la hora de aplicación.`},{id:`t42-f18`,pregunta:`¿Qué se debe hacer ante una víctima electrocutada?`,respuesta:`NO tocar a la víctima hasta cortar la corriente eléctrica; alejarse al menos 10 metros de cables de alta tensión.`},{id:`t42-f19`,pregunta:`¿Qué significa la escala AVPU de nivel de consciencia?`,respuesta:`Alert (alerta), Voice (responde a la voz), Pain (responde al dolor), Unresponsive (no responde).`},{id:`t42-f20`,pregunta:`¿Cuál es la maniobra básica para abrir la vía aérea en un adulto?`,respuesta:`La maniobra frente-mentón: una mano en la frente inclinando la cabeza hacia atrás y los dedos de la otra mano elevando el mentón.`}],s=[{id:`t42-q01`,pregunta:`¿Qué significa el acrónimo PAS en actuación ante emergencias?`,opciones:[`Prevenir, Avisar, Socorrer`,`Proteger, Alertar, Socorrer`,`Priorizar, Atender, Solicitar ayuda`],correcta:1,explicacion:`PAS es el protocolo básico de actuación: Proteger la zona, Alertar al 1-1-2 y Socorrer a la víctima.`},{id:`t42-q02`,pregunta:`¿Cuál es la relación compresiones/ventilaciones en RCP básica del adulto según el ERC 2021?`,opciones:[`15:2`,`30:2`,`20:1`],correcta:1,explicacion:`Las guías del European Resuscitation Council (ERC) 2021 establecen una relación de 30 compresiones por 2 ventilaciones en adultos.`},{id:`t42-q03`,pregunta:`¿A qué frecuencia deben realizarse las compresiones torácicas en RCP?`,opciones:[`60-80 compresiones por minuto`,`100-120 compresiones por minuto`,`140-160 compresiones por minuto`],correcta:1,explicacion:`Las guías ERC 2021 establecen una frecuencia de 100-120 compresiones por minuto con una profundidad de al menos 5 cm (máximo 6 cm).`},{id:`t42-q04`,pregunta:`¿Cuánto tiempo máximo se dedica a comprobar si una víctima inconsciente respira?`,opciones:[`5 segundos`,`10 segundos`,`30 segundos`],correcta:1,explicacion:`La comprobación de respiración (VOS: ver, oír, sentir) no debe durar más de 10 segundos para no demorar el inicio de la RCP.`},{id:`t42-q05`,pregunta:`¿Dónde se coloca el segundo parche del DEA (el que no va bajo la clavícula derecha)?`,opciones:[`Bajo la clavícula izquierda`,`Bajo la axila izquierda`,`En el centro del pecho`],correcta:1,explicacion:`Los parches del DEA se colocan: uno bajo la clavícula derecha y otro bajo la axila izquierda, en posición esternal-apical.`},{id:`t42-q06`,pregunta:`¿Cuánto reduce la supervivencia cada minuto sin RCP tras una parada cardiorrespiratoria?`,opciones:[`5%`,`10%`,`20%`],correcta:1,explicacion:`Cada minuto que pasa sin RCP reduce aproximadamente un 10% las posibilidades de supervivencia de la víctima en parada cardiorrespiratoria.`},{id:`t42-q07`,pregunta:`¿Qué significa FAST en el reconocimiento del ictus?`,opciones:[`Fall, Arm, Speech, Time`,`Face, Arm, Speech, Time`,`Face, Alert, Sit, Transfer`],correcta:1,explicacion:`FAST: Face (asimetría facial), Arm (debilidad de un brazo), Speech (dificultad para hablar), Time (tiempo urgente: el tiempo es cerebro).`},{id:`t42-q08`,pregunta:`¿En qué consiste la maniobra de Heimlich?`,opciones:[`5 palmadas en la espalda entre los omóplatos`,`5 compresiones abdominales bruscas hacia adentro y arriba en el adulto consciente`,`Extensión forzada del cuello para liberar la vía aérea`],correcta:1,explicacion:`La maniobra de Heimlich consiste en 5 compresiones abdominales bruscas hacia adentro y hacia arriba en el adulto consciente con obstrucción grave de la vía aérea.`},{id:`t42-q09`,pregunta:`¿Cuándo está CONTRAINDICADA la posición antishock (Trendelenburg modificada)?`,opciones:[`En personas mayores de 65 años`,`Si hay traumatismo craneal o torácico`,`En pacientes con diabetes`],correcta:1,explicacion:`La posición antishock (piernas elevadas 30-45 cm) está contraindicada si existe traumatismo craneal o torácico, ya que puede agravar estas lesiones.`},{id:`t42-q10`,pregunta:`¿Qué se hace ante una víctima inconsciente que RESPIRA con normalidad?`,opciones:[`Iniciar RCP inmediatamente`,`Colocar en Posición Lateral de Seguridad (PLS)`,`Administrar ventilaciones boca a boca`],correcta:1,explicacion:`Si la víctima está inconsciente pero respira con normalidad, se coloca en Posición Lateral de Seguridad (PLS) para evitar la broncoaspiración.`},{id:`t42-q11`,pregunta:`¿Qué artículo del CP tipifica la omisión del deber de socorro?`,opciones:[`Art. 174 CP`,`Art. 195 CP`,`Art. 163 CP`],correcta:1,explicacion:`El art. 195 CP tipifica la omisión del deber de socorro, con pena de multa de 3 a 12 meses.`},{id:`t42-q12`,pregunta:`¿Durante cuánto tiempo y a qué temperatura se enfría una quemadura?`,opciones:[`5 minutos con agua muy fría (5°C)`,`10-20 minutos con agua a 15-20°C`,`30 minutos con agua tibia (30°C)`],correcta:1,explicacion:`Las quemaduras se enfrían durante 10-20 minutos con agua fría a 15-20°C; nunca con hielo (puede causar congelación).`},{id:`t42-q13`,pregunta:`¿Cuántos eslabones tiene la cadena de supervivencia del ERC 2021?`,opciones:[`4 eslabones`,`5 eslabones`,`6 eslabones`],correcta:2,explicacion:`La cadena de supervivencia del ERC 2021 tiene 6 eslabones: reconocimiento y llamada, RCP precoz, desfibrilación precoz, servicios de emergencias, cuidados post-RCP y recuperación.`},{id:`t42-q14`,pregunta:`¿Qué debe hacerse ANTES de tocar a una víctima electrocutada?`,opciones:[`Aplicar RCP inmediatamente`,`Cortar la corriente eléctrica`,`Mojarla con agua para disipar la corriente`],correcta:1,explicacion:`Ante electrocución, NUNCA tocar a la víctima hasta cortar la corriente eléctrica; en caso de alta tensión, alejarse al menos 10 metros.`},{id:`t42-q15`,pregunta:`¿Qué significa la escala AVPU?`,opciones:[`Alert, Verbal, Pain, Unconscious`,`Alert, Voice, Pain, Unresponsive`,`Awake, Verbal, Pressure, Unresponsive`],correcta:1,explicacion:`AVPU: Alert (alerta), Voice (responde a la voz), Pain (responde al dolor), Unresponsive (no responde). Es una escala rápida de valoración del nivel de consciencia.`}],c={id:42,titulo:t,bloque:n,secciones:r,esquemas:i,mapaMental:a,flashcards:o,preguntas:s};export{n as bloque,c as default,i as esquemas,o as flashcards,e as id,a as mapaMental,s as preguntas,r as secciones,t as titulo};
