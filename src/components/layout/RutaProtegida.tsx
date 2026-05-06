@@ -1,7 +1,7 @@
 // src/components/layout/RutaProtegida.tsx
 import { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
-import { obtenerUsuario, obtenerPerfil } from '../../services/supabase'
+import { supabase, obtenerPerfil } from '../../services/supabase'
 
 type Estado = 'cargando' | 'sin-sesion' | 'sin-perfil' | 'ok'
 
@@ -9,16 +9,31 @@ export function RutaProtegida({ children }: { children: React.ReactNode }) {
   const [estado, setEstado] = useState<Estado>('cargando')
 
   useEffect(() => {
-    async function verificar() {
-      const usuario = await obtenerUsuario()
-      if (!usuario) { setEstado('sin-sesion'); return }
-
-      const perfil = await obtenerPerfil()
-      if (!perfil || perfil.oposiciones.length === 0) { setEstado('sin-perfil'); return }
-
-      setEstado('ok')
+    if (!supabase) {
+      setEstado('sin-sesion')
+      return
     }
-    verificar()
+
+    // onAuthStateChange se dispara tanto con la sesión actual
+    // como cuando Supabase procesa el token del magic link en la URL
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      async (_event, session) => {
+        if (!session?.user) {
+          setEstado('sin-sesion')
+          return
+        }
+
+        const perfil = await obtenerPerfil()
+        if (!perfil || perfil.oposiciones.length === 0) {
+          setEstado('sin-perfil')
+          return
+        }
+
+        setEstado('ok')
+      }
+    )
+
+    return () => subscription.unsubscribe()
   }, [])
 
   if (estado === 'cargando') {
