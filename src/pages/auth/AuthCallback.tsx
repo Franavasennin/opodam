@@ -3,7 +3,8 @@
 // sin que React Router lo elimine con un redirect previo.
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { supabase, obtenerPerfil } from '../../services/supabase'
+import { supabase } from '../../services/supabase'
+import type { Session } from '@supabase/supabase-js'
 
 export default function AuthCallback() {
   const navigate = useNavigate()
@@ -14,23 +15,41 @@ export default function AuthCallback() {
       return
     }
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (_event, session) => {
-        if (!session?.user) return // Esperando a que Supabase procese el token
-        const perfil = await obtenerPerfil()
+    let procesado = false
+
+    async function procesarSesion(session: Session | null) {
+      if (procesado || !session?.user) return
+      procesado = true
+
+      try {
+        // Consulta directa al perfil usando session.user.id — evita getUser() al servidor
+        const { data } = await supabase!
+          .from('profiles')
+          .select('oposiciones')
+          .eq('id', session.user.id)
+          .single()
+
         navigate(
-          !perfil || perfil.oposiciones.length === 0
+          !data || (data.oposiciones as string[]).length === 0
             ? '/onboarding/oposicion'
             : '/mis-oposiciones',
           { replace: true }
         )
+      } catch {
+        navigate('/onboarding/oposicion', { replace: true })
+      }
+    }
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      async (_event, session) => {
+        await procesarSesion(session)
       }
     )
 
-    // Fallback: si en 8 segundos no hay sesión, volver al login
+    // Fallback: si en 10 segundos no hay sesión, volver al login
     const timeout = setTimeout(
-      () => navigate('/onboarding/email', { replace: true }),
-      8000
+      () => { if (!procesado) navigate('/onboarding/email', { replace: true }) },
+      10000
     )
 
     return () => { subscription.unsubscribe(); clearTimeout(timeout) }

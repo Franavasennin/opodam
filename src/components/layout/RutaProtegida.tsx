@@ -1,5 +1,5 @@
 // src/components/layout/RutaProtegida.tsx
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import { supabase } from '../../services/supabase'
 import type { Session } from '@supabase/supabase-js'
@@ -8,6 +8,7 @@ type Estado = 'cargando' | 'sin-sesion' | 'sin-perfil' | 'ok'
 
 export function RutaProtegida({ children }: { children: React.ReactNode }) {
   const [estado, setEstado] = useState<Estado>('cargando')
+  const resuelto = useRef(false)
 
   useEffect(() => {
     if (!supabase) { setEstado('sin-sesion'); return }
@@ -15,9 +16,9 @@ export function RutaProtegida({ children }: { children: React.ReactNode }) {
     let montado = true
 
     async function procesarSesion(session: Session | null) {
-      if (!montado) return
+      if (!montado || resuelto.current) return
       try {
-        if (!session?.user) { setEstado('sin-sesion'); return }
+        if (!session?.user) { resuelto.current = true; setEstado('sin-sesion'); return }
 
         // Usamos session.user.id directamente — evita un segundo getUser() al servidor
         const { data } = await supabase!
@@ -27,9 +28,10 @@ export function RutaProtegida({ children }: { children: React.ReactNode }) {
           .single()
 
         if (!montado) return
+        resuelto.current = true
         setEstado(!data || (data.oposiciones as string[]).length === 0 ? 'sin-perfil' : 'ok')
       } catch {
-        if (montado) setEstado('sin-sesion')
+        if (montado) { resuelto.current = true; setEstado('sin-sesion') }
       }
     }
 
@@ -41,7 +43,12 @@ export function RutaProtegida({ children }: { children: React.ReactNode }) {
       }
     )
 
-    return () => { montado = false; subscription.unsubscribe() }
+    // Fallback: si en 8 segundos aún no se resolvió, asumir sin sesión
+    const timeout = setTimeout(() => {
+      if (montado && !resuelto.current) { resuelto.current = true; setEstado('sin-sesion') }
+    }, 8000)
+
+    return () => { montado = false; clearTimeout(timeout); subscription.unsubscribe() }
   }, [])
 
   if (estado === 'cargando') {
