@@ -7,6 +7,15 @@ import { migrarProgresoLegado } from './services/storage'
 // Auth callback (magic link)
 import AuthCallback from './pages/auth/AuthCallback'
 
+// Si Supabase redirige al root con #access_token en el hash,
+// renderizamos AuthCallback antes de que Navigate borre el hash.
+function RootOrCallback() {
+  if (typeof window !== 'undefined' && window.location.hash.includes('access_token')) {
+    return <AuthCallback />
+  }
+  return <Navigate to="/mis-oposiciones" replace />
+}
+
 // Onboarding (no protegidas)
 import OnboardingEmail from './pages/onboarding/OnboardingEmail'
 import OnboardingConfirmar from './pages/onboarding/OnboardingConfirmar'
@@ -71,7 +80,7 @@ export default function App() {
         <Route path="/oposicion/:slug/perfil" element={<RutaProtegida><Perfil /></RutaProtegida>} />
 
         {/* Redirecciones */}
-        <Route path="/" element={<Navigate to="/mis-oposiciones" replace />} />
+        <Route path="/" element={<RootOrCallback />} />
         <Route path="*" element={<Navigate to="/mis-oposiciones" replace />} />
       </Routes>
     </Suspense>
