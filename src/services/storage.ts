@@ -2,7 +2,19 @@ import type { Progreso } from '../types'
 
 export const PROGRESO_KEY = 'opodam:progreso'
 
-const ACTIVE_SLUG_KEY = 'opodam:active-slug'
+const ACTIVE_SLUG_KEY  = 'opodam:active-slug'
+const OPOSICIONES_KEY  = 'opodam:oposiciones'
+
+export function getOposicionesLocales(): string[] {
+  try {
+    const raw = localStorage.getItem(OPOSICIONES_KEY)
+    return raw ? (JSON.parse(raw) as string[]) : []
+  } catch { return [] }
+}
+
+export function setOposicionesLocales(oposiciones: string[]): void {
+  localStorage.setItem(OPOSICIONES_KEY, JSON.stringify(oposiciones))
+}
 const DEFAULT_SLUG = 'cgpc'
 const LEGACY_PROGRESO_KEY = PROGRESO_KEY
 

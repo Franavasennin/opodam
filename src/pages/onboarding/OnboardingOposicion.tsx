@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../../data/oposiciones'
 import { crearPerfil } from '../../services/supabase'
-import { setActiveSlug } from '../../services/storage'
+import { setActiveSlug, setOposicionesLocales } from '../../services/storage'
 
 export default function OnboardingOposicion() {
   const [seleccionadas, setSeleccionadas] = useState<string[]>([])
@@ -21,13 +21,17 @@ export default function OnboardingOposicion() {
     if (seleccionadas.length === 0) return
     setCargando(true)
     setError(null)
-    const { error: err } = await crearPerfil(seleccionadas)
-    if (err) {
-      setError(`Error: ${err}`)
-      setCargando(false)
-      return
-    }
+
+    // 1. Guardar localmente primero (siempre funciona, sin red)
+    setOposicionesLocales(seleccionadas)
     setActiveSlug(seleccionadas[0])
+
+    // 2. Intentar guardar en Supabase en segundo plano (no bloquea)
+    crearPerfil(seleccionadas).catch(e =>
+      console.error('[OnboardingOposicion] Supabase sync error:', e)
+    )
+
+    // 3. Navegar inmediatamente
     navigate('/mis-oposiciones')
   }
 

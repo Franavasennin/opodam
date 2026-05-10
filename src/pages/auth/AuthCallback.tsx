@@ -4,6 +4,7 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../services/supabase'
+import { getOposicionesLocales } from '../../services/storage'
 import type { Session } from '@supabase/supabase-js'
 
 export default function AuthCallback() {
@@ -29,15 +30,21 @@ export default function AuthCallback() {
           .eq('id', session.user.id)
           .single()
 
-        navigate(
-          !data || (data.oposiciones as string[]).length === 0
-            ? '/onboarding/oposicion'
-            : '/mis-oposiciones',
-          { replace: true }
-        )
+        const tieneRemoto = data && (data.oposiciones as string[]).length > 0
+        if (tieneRemoto) {
+          navigate('/mis-oposiciones', { replace: true })
+          return
+        }
       } catch {
-        navigate('/onboarding/oposicion', { replace: true })
+        // profiles table puede no existir aún — usamos fallback local
       }
+
+      // Fallback: si hay oposiciones guardadas localmente, ir directamente a la app
+      const locales = getOposicionesLocales()
+      navigate(
+        locales.length > 0 ? '/mis-oposiciones' : '/onboarding/oposicion',
+        { replace: true }
+      )
     }
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
