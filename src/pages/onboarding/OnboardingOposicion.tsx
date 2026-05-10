@@ -23,7 +23,7 @@ export default function OnboardingOposicion() {
     setError(null)
     const { error: err } = await crearPerfil(seleccionadas)
     if (err) {
-      setError('No se pudo guardar tu selección. Inténtalo de nuevo.')
+      setError(`Error: ${err}`)
       setCargando(false)
       return
     }

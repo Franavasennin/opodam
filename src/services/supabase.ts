@@ -26,8 +26,8 @@ export async function cerrarSesion(): Promise<void> {
 
 export async function obtenerUsuario() {
   if (!supabase) return null
-  const { data } = await supabase.auth.getUser()
-  return data?.user ?? null
+  const { data } = await supabase.auth.getSession()
+  return data?.session?.user ?? null
 }
 
 export async function cargarProgresoRemoto(): Promise<Progreso | null> {
@@ -57,7 +57,8 @@ export async function guardarProgresoRemoto(progreso: Progreso): Promise<void> {
 
 export async function obtenerPerfil(): Promise<Perfil | null> {
   if (!supabase) return null
-  const { data: { user } } = await supabase.auth.getUser()
+  const { data: { session } } = await supabase.auth.getSession()
+  const user = session?.user
   if (!user) return null
 
   const { data, error } = await supabase
@@ -72,7 +73,8 @@ export async function obtenerPerfil(): Promise<Perfil | null> {
 
 export async function crearPerfil(oposiciones: string[]): Promise<{ error: string | null }> {
   if (!supabase) return { error: 'Supabase no configurado' }
-  const { data: { user } } = await supabase.auth.getUser()
+  const { data: { session } } = await supabase.auth.getSession()
+  const user = session?.user
   if (!user) return { error: 'No hay sesión activa' }
 
   const { error } = await supabase.from('profiles').upsert({
@@ -81,5 +83,6 @@ export async function crearPerfil(oposiciones: string[]): Promise<{ error: strin
     oposiciones,
   })
 
+  if (error) console.error('[crearPerfil] Supabase error:', error)
   return { error: error ? error.message : null }
 }
