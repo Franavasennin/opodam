@@ -4,7 +4,12 @@ import type { Progreso, Perfil } from '../types'
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined
 const key = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
 
-export const supabase = (url && key) ? createClient(url, key) : null
+export const supabase = (url && key) ? createClient(url, key, {
+  auth: {
+    flowType: 'implicit',   // magic link llega como #access_token= en el hash
+    detectSessionInUrl: true,
+  }
+}) : null
 
 export async function enviarMagicLink(email: string): Promise<{ error: string | null }> {
   if (!supabase) return { error: 'Supabase no configurado' }
