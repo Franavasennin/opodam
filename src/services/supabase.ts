@@ -10,7 +10,7 @@ export async function enviarMagicLink(email: string): Promise<{ error: string | 
   if (!supabase) return { error: 'Supabase no configurado' }
   const { error } = await supabase.auth.signInWithOtp({
     email,
-    options: { emailRedirectTo: window.location.origin },
+    options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
   })
   return { error: error?.message ?? null }
 }

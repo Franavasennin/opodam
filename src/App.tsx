@@ -4,6 +4,9 @@ import { RutaProtegida } from './components/layout/RutaProtegida'
 import { sincronizar } from './services/sync'
 import { migrarProgresoLegado } from './services/storage'
 
+// Auth callback (magic link)
+import AuthCallback from './pages/auth/AuthCallback'
+
 // Onboarding (no protegidas)
 import OnboardingEmail from './pages/onboarding/OnboardingEmail'
 import OnboardingConfirmar from './pages/onboarding/OnboardingConfirmar'
@@ -46,6 +49,9 @@ export default function App() {
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
+        {/* Auth callback — destino del magic link */}
+        <Route path="/auth/callback" element={<AuthCallback />} />
+
         {/* Onboarding — sin protección */}
         <Route path="/onboarding/email" element={<OnboardingEmail />} />
         <Route path="/onboarding/confirmar" element={<OnboardingConfirmar />} />
