@@ -1,0 +1,66 @@
+<h2>¿Cómo cambias de oposición dentro de la app?</h2>
+<p class="subtitle">El usuario tiene varias oposiciones activas. ¿Cómo prefiere moverse entre ellas?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="A" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9ff;padding:16px;border-radius:8px;">
+      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin-bottom:8px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+          <div style="background:#3b82f6;color:#fff;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;">CGPC</div>
+          <div style="background:#e5e7eb;color:#6b7280;border-radius:6px;padding:2px 8px;font-size:11px;">Aux. Enfermeria</div>
+        </div>
+        <div style="font-size:12px;color:#374151;font-weight:600;">Estudiando: Policia Canaria</div>
+      </div>
+      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:8px;font-size:11px;color:#6b7280;">
+        Dashboard - Temario - Flashcards - Tests...
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A - Pestanas en la cabecera</h3>
+      <p>Selector tipo tabs siempre visible en el header. Un clic cambia toda la app al contenido de esa oposicion.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="B" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9ff;padding:16px;border-radius:8px;">
+      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin-bottom:8px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-size:12px;font-weight:700;color:#374151;">Policia Canaria</div>
+          <div style="font-size:11px;color:#3b82f6;">cambiar</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:8px;font-size:11px;color:#6b7280;margin-bottom:6px;">
+        Temario CGPC - 45 temas
+      </div>
+      <div style="font-size:10px;color:#9ca3af;text-align:center;">Toca cambiar para ver las demas</div>
+    </div>
+    <div class="card-body">
+      <h3>B - Menu desplegable en el header</h3>
+      <p>Una pastilla muestra la oposicion activa. Al tocarla aparece un dropdown para seleccionar otra.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="C" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9ff;padding:16px;border-radius:8px;">
+      <div style="display:flex;gap:8px;margin-bottom:8px;">
+        <div style="flex:1;background:#3b82f6;border-radius:10px;padding:10px;color:#fff;text-align:center;">
+          <div style="font-size:10px;opacity:0.8;">En curso</div>
+          <div style="font-size:12px;font-weight:700;">CGPC</div>
+          <div style="font-size:10px;opacity:0.8;">45 temas</div>
+        </div>
+        <div style="flex:1;background:#e5e7eb;border-radius:10px;padding:10px;color:#6b7280;text-align:center;">
+          <div style="font-size:10px;">En curso</div>
+          <div style="font-size:12px;font-weight:600;">Aux. Enf.</div>
+          <div style="font-size:10px;">32 temas</div>
+        </div>
+      </div>
+      <div style="font-size:10px;color:#9ca3af;text-align:center;">Toca una tarjeta para entrar</div>
+    </div>
+    <div class="card-body">
+      <h3>C - Pantalla de inicio con tarjetas</h3>
+      <p>Al abrir la app aparece una pantalla mis oposiciones con una tarjeta por cada una. Eliges con cual trabajar hoy.</p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onboarding OpoDAM</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f1f5f9; padding: 24px 16px; }
+  h1 { font-size: 18px; font-weight: 700; color: #1e293b; margin-bottom: 4px; text-align: center; }
+  .subtitle { font-size: 13px; color: #64748b; text-align: center; margin-bottom: 24px; }
+  .flow { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; align-items: center; }
+  .screen {
+    background: #fff; border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    width: 240px; overflow: hidden; border: 2px solid #e2e8f0;
+  }
+  .screen-header {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    padding: 18px 16px 14px; text-align: center; color: #fff;
+  }
+  .screen-logo { font-size: 26px; margin-bottom: 2px; }
+  .screen-title { font-size: 14px; font-weight: 700; }
+  .screen-sub { font-size: 10px; opacity: 0.8; margin-top: 2px; }
+  .screen-body { padding: 14px; }
+  .screen-step { font-size: 10px; font-weight: 600; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .screen-label { font-size: 12px; color: #374151; margin-bottom: 8px; font-weight: 500; line-height: 1.4; }
+  .mock-input { width: 100%; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 8px 10px; font-size: 12px; color: #9ca3af; margin-bottom: 10px; background: #f9fafb; }
+  .mock-btn { width: 100%; background: #2563eb; color: #fff; border: none; border-radius: 10px; padding: 10px; font-size: 12px; font-weight: 600; }
+  .mock-btn.sec { background: #f1f5f9; color: #374151; margin-top: 8px; }
+  .helper { font-size: 10px; color: #9ca3af; margin-top: 8px; text-align: center; line-height: 1.4; }
+  .step-dots { display: flex; gap: 5px; justify-content: center; margin-bottom: 12px; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: #e2e8f0; }
+  .dot.active { background: #2563eb; width: 18px; border-radius: 3px; }
+  .confirm-icon { font-size: 36px; text-align: center; margin: 6px 0 10px; }
+  .confirm-text { font-size: 12px; color: #374151; text-align: center; line-height: 1.5; }
+  .confirm-email { font-weight: 700; color: #2563eb; }
+  .ops-list { display: flex; flex-direction: column; gap: 7px; margin-bottom: 10px; }
+  .op-item { display: flex; align-items: center; gap: 8px; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 7px 9px; }
+  .op-item.sel { border-color: #2563eb; background: #eff6ff; }
+  .op-check { width: 16px; height: 16px; border-radius: 4px; border: 2px solid #d1d5db; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; }
+  .op-item.sel .op-check { background: #2563eb; border-color: #2563eb; color: #fff; }
+  .op-name { font-size: 11px; font-weight: 600; color: #1e293b; }
+  .op-detail { font-size: 10px; color: #9ca3af; }
+  .arrow { font-size: 28px; color: #94a3b8; }
+  .screen-num { font-size: 11px; font-weight: 700; color: #64748b; text-align: center; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<h1>Flujo de registro — OpoDAM</h1>
+<p class="subtitle">Lo que ve el usuario la primera vez que abre la app</p>
+
+<div class="flow">
+
+  <!-- Pantalla 1 -->
+  <div>
+    <div class="screen-num">PANTALLA 1</div>
+    <div class="screen">
+      <div class="screen-header">
+        <div class="screen-logo">📘</div>
+        <div class="screen-title">OpoDAM</div>
+        <div class="screen-sub">Prepara tu oposicion</div>
+      </div>
+      <div class="screen-body">
+        <div class="step-dots">
+          <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+        <div class="screen-step">Paso 1 — Acceso</div>
+        <div class="screen-label">Introduce tu email para entrar</div>
+        <div class="mock-input">tu@email.com</div>
+        <button class="mock-btn">Enviar enlace de acceso</button>
+        <div class="helper">Sin contrasena. Te enviamos un enlace magico gratuito.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <!-- Pantalla 2 -->
+  <div>
+    <div class="screen-num">PANTALLA 2</div>
+    <div class="screen">
+      <div class="screen-header">
+        <div class="screen-logo">📘</div>
+        <div class="screen-title">OpoDAM</div>
+        <div class="screen-sub">Prepara tu oposicion</div>
+      </div>
+      <div class="screen-body">
+        <div class="step-dots">
+          <div class="dot"></div><div class="dot active"></div><div class="dot"></div>
+        </div>
+        <div class="confirm-icon">✉️</div>
+        <div class="confirm-text">
+          Enlace enviado a<br>
+          <span class="confirm-email">tu@email.com</span>
+        </div>
+        <div class="helper" style="margin-top:10px;">Abre el email y pulsa el enlace para continuar.</div>
+        <button class="mock-btn sec">Reenviar enlace</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <!-- Pantalla 3 -->
+  <div>
+    <div class="screen-num">PANTALLA 3</div>
+    <div class="screen">
+      <div class="screen-header">
+        <div class="screen-logo">📘</div>
+        <div class="screen-title">OpoDAM</div>
+        <div class="screen-sub">Prepara tu oposicion</div>
+      </div>
+      <div class="screen-body">
+        <div class="step-dots">
+          <div class="dot"></div><div class="dot"></div><div class="dot active"></div>
+        </div>
+        <div class="screen-step">Paso 3 — Tu oposicion</div>
+        <div class="screen-label">Selecciona a que te presentas (puedes elegir varias)</div>
+        <div class="ops-list">
+          <div class="op-item sel">
+            <div class="op-check">✓</div>
+            <div><div class="op-name">Policia Canaria (CGPC)</div><div class="op-detail">45 temas disponibles</div></div>
+          </div>
+          <div class="op-item sel">
+            <div class="op-check">✓</div>
+            <div><div class="op-name">Aux. Enfermeria</div><div class="op-detail">En preparacion</div></div>
+          </div>
+          <div class="op-item">
+            <div class="op-check"></div>
+            <div><div class="op-name">Aux. Judicial</div><div class="op-detail">Proximo</div></div>
+          </div>
+        </div>
+        <button class="mock-btn">Empezar a estudiar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
