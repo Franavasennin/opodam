@@ -16,21 +16,20 @@ export function RutaProtegida({ children }: { children: React.ReactNode }) {
 
     async function procesarSesion(session: Session | null) {
       if (!montado) return
-      if (!session?.user) { setEstado('sin-sesion'); return }
-      const perfil = await obtenerPerfil()
-      if (!montado) return
-      setEstado(!perfil || perfil.oposiciones.length === 0 ? 'sin-perfil' : 'ok')
+      try {
+        if (!session?.user) { setEstado('sin-sesion'); return }
+        const perfil = await obtenerPerfil()
+        if (!montado) return
+        setEstado(!perfil || perfil.oposiciones.length === 0 ? 'sin-perfil' : 'ok')
+      } catch {
+        if (montado) setEstado('sin-sesion')
+      }
     }
 
-    // getSession() espera a que Supabase termine de inicializarse,
-    // incluyendo el intercambio del token del magic link de la URL.
-    supabase.auth.getSession().then(({ data: { session } }) => procesarSesion(session))
-
-    // onAuthStateChange cubre cambios futuros (cerrar sesión, renovar token…).
-    // Ignoramos INITIAL_SESSION porque ya lo gestiona getSession() arriba.
+    // onAuthStateChange es la fuente principal: dispara INITIAL_SESSION
+    // (con la sesión actual o null) y luego SIGNED_IN, SIGNED_OUT, etc.
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        if (event === 'INITIAL_SESSION') return
+      async (_event, session) => {
         await procesarSesion(session)
       }
     )
