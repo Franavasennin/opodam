@@ -7,11 +7,15 @@ import { migrarProgresoLegado } from './services/storage'
 // Auth callback (magic link)
 import AuthCallback from './pages/auth/AuthCallback'
 
-// Si Supabase redirige al root con #access_token en el hash,
-// renderizamos AuthCallback antes de que Navigate borre el hash.
+// Si Supabase redirige al root con token de auth (PKCE: ?code= / Implicit: #access_token=),
+// renderizamos AuthCallback antes de que Navigate borre el parámetro.
 function RootOrCallback() {
-  if (typeof window !== 'undefined' && window.location.hash.includes('access_token')) {
-    return <AuthCallback />
+  if (typeof window !== 'undefined') {
+    const hash   = window.location.hash
+    const search = window.location.search
+    if (hash.includes('access_token') || search.includes('code=') || hash.includes('error') || search.includes('error')) {
+      return <AuthCallback />
+    }
   }
   return <Navigate to="/mis-oposiciones" replace />
 }
