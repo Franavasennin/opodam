@@ -1,12 +1,7 @@
-// Service worker de limpieza — se autodestruye inmediatamente
-// Reemplaza el SW viejo y fuerza recarga con codigo fresco
+// SW de limpieza: se desregistra y avisa a los clientes para recargar
 self.addEventListener('install', () => self.skipWaiting())
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    self.registration.unregister().then(() =>
-      self.clients.matchAll({ type: 'window' }).then(clients => {
-        clients.forEach(c => c.navigate(c.url))
-      })
-    )
-  )
+self.addEventListener('activate', async () => {
+  const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true })
+  await self.registration.unregister()
+  clients.forEach(c => c.postMessage('sw-unregistered'))
 })
