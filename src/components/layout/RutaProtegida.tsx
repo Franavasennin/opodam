@@ -1,7 +1,7 @@
 // src/components/layout/RutaProtegida.tsx
 import { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
-import { supabase, obtenerPerfil } from '../../services/supabase'
+import { supabase } from '../../services/supabase'
 import type { Session } from '@supabase/supabase-js'
 
 type Estado = 'cargando' | 'sin-sesion' | 'sin-perfil' | 'ok'
@@ -18,16 +18,23 @@ export function RutaProtegida({ children }: { children: React.ReactNode }) {
       if (!montado) return
       try {
         if (!session?.user) { setEstado('sin-sesion'); return }
-        const perfil = await obtenerPerfil()
+
+        // Usamos session.user.id directamente — evita un segundo getUser() al servidor
+        const { data } = await supabase!
+          .from('profiles')
+          .select('oposiciones')
+          .eq('id', session.user.id)
+          .single()
+
         if (!montado) return
-        setEstado(!perfil || perfil.oposiciones.length === 0 ? 'sin-perfil' : 'ok')
+        setEstado(!data || (data.oposiciones as string[]).length === 0 ? 'sin-perfil' : 'ok')
       } catch {
         if (montado) setEstado('sin-sesion')
       }
     }
 
-    // onAuthStateChange es la fuente principal: dispara INITIAL_SESSION
-    // (con la sesión actual o null) y luego SIGNED_IN, SIGNED_OUT, etc.
+    // onAuthStateChange dispara INITIAL_SESSION con la sesión actual (o null),
+    // y luego SIGNED_IN / SIGNED_OUT en cambios futuros.
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (_event, session) => {
         await procesarSesion(session)
