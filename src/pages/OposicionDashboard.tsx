@@ -24,10 +24,10 @@ export default function OposicionDashboard() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-100 px-4 py-2.5 flex items-center gap-3">
+      <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-3">
         <button
           onClick={() => navigate('/mis-oposiciones')}
-          className="text-blue-600 text-sm"
+          className="text-marca-600 hover:text-marca-700 text-sm font-medium transition-colors"
         >
           ← Inicio
         </button>
@@ -40,21 +40,24 @@ export default function OposicionDashboard() {
       </header>
 
       <main className="max-w-md mx-auto p-4">
-        <h1 className="font-bold text-slate-800 text-base mb-1">{oposicion.nombre}</h1>
-        <p className="text-sm text-slate-500 mb-5">{oposicion.descripcion}</p>
+        <h1 className="font-bold text-slate-900 text-lg mb-1">{oposicion.nombre}</h1>
+        <p className="text-sm text-slate-500 mb-6">{oposicion.descripcion}</p>
 
-        <div className="space-y-2">
+        <div className="space-y-3">
           {MENU.map(item => (
             <button
               key={item.path}
               onClick={() => navigate(`/oposicion/${slug}/${item.path}`)}
-              className="w-full flex items-center gap-3 bg-white border border-slate-100 rounded-xl px-4 py-3 text-left hover:border-slate-200 transition-colors"
+              className="w-full flex items-center gap-4 bg-white border border-slate-200 rounded-2xl shadow-sm px-4 py-4 text-left hover:shadow-md transition-shadow"
             >
-              <span className="text-xl">{item.icon}</span>
-              <div>
-                <div className="text-sm font-semibold text-slate-800">{item.label}</div>
-                <div className="text-xs text-slate-400">{item.sub}</div>
+              <span className="w-11 h-11 rounded-xl bg-marca-50 text-xl flex items-center justify-center shrink-0">
+                {item.icon}
+              </span>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-slate-900">{item.label}</div>
+                <div className="text-xs text-slate-500 mt-0.5">{item.sub}</div>
               </div>
+              <span className="text-slate-300 text-lg">›</span>
             </button>
           ))}
         </div>
