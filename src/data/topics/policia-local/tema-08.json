@@ -1,0 +1,157 @@
+{
+    "id": 8,
+    "titulo": "La Administración del Estado. Estructura y funciones. Las Comunidades Autónomas. La Administración autonómica. Distribución competencial entre el Estado y las Comunidades Autónomas. La Administración Local. Colaboración, cooperación y coordinación entre Administraciones",
+    "bloque": "general",
+    "secciones": [
+        {
+            "id": "s8-1",
+            "titulo": "La Administración General del Estado",
+            "contenido": "La Administración General del Estado se regula por la Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público. Actúa con sometimiento pleno a la Constitución, a la ley y al Derecho, sirviendo con objetividad a los intereses generales. Se organiza en órganos centrales y territoriales. Los órganos centrales comprenden los Ministros, los Secretarios de Estado, los Subsecretarios, los Secretarios Generales, los Directores Generales y los Subdirectores Generales. La organización territorial integra los Delegados del Gobierno en las Comunidades Autónomas y los Subdelegados del Gobierno en las provincias, así como la Administración General del Estado en el exterior."
+        },
+        {
+            "id": "s8-2",
+            "titulo": "Las Comunidades Autónomas y la Administración autonómica",
+            "contenido": "Las Comunidades Autónomas son entidades territoriales dotadas de autonomía política, con capacidad de autogobierno y potestad legislativa propia. Cada Comunidad Autónoma se rige por su Estatuto de Autonomía y dispone de una Administración autonómica propia para la ejecución de sus competencias, estructurada habitualmente en consejerías. La Administración autonómica actúa con personalidad jurídica única y sometida a los principios de eficacia, jerarquía, descentralización, desconcentración y coordinación. En Canarias, la Administración Pública de la Comunidad Autónoma se organiza en consejerías y cuenta con la representación insular de los Cabildos."
+        },
+        {
+            "id": "s8-3",
+            "titulo": "Distribución competencial entre el Estado y las Comunidades Autónomas",
+            "contenido": "La distribución de competencias se basa en los artículos 148 y 149 de la Constitución y en los Estatutos de Autonomía. El artículo 149 enumera las competencias exclusivas del Estado (relaciones internacionales, defensa, administración de justicia, legislación mercantil, penal y laboral, etc.). El artículo 148 enumera las materias que pueden asumir las Comunidades Autónomas. Las competencias pueden ser exclusivas, compartidas (el Estado fija la legislación básica y la Comunidad la desarrolla y ejecuta) o de ejecución. El Derecho estatal es supletorio del de las Comunidades Autónomas, y las normas estatales prevalecen en caso de conflicto sobre las materias que no sean de competencia exclusiva autonómica."
+        },
+        {
+            "id": "s8-4",
+            "titulo": "La Administración Local",
+            "contenido": "La Administración Local se regula por la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local. Son entidades locales territoriales el municipio, la provincia y la isla en los archipiélagos balear y canario. La Constitución garantiza la autonomía local para la gestión de sus respectivos intereses. El municipio es la entidad local básica, con personalidad jurídica y plena capacidad para el cumplimiento de sus fines; sus elementos son el territorio, la población y la organización. En Canarias, la isla cuenta con administración propia a través de los Cabildos Insulares."
+        },
+        {
+            "id": "s8-5",
+            "titulo": "Colaboración, cooperación y coordinación entre Administraciones",
+            "contenido": "Las relaciones entre las distintas Administraciones públicas se rigen por los principios de lealtad institucional, colaboración, cooperación y coordinación, recogidos en la Ley 40/2015. El deber de colaboración obliga a prestarse la asistencia que recíprocamente precisen y a facilitarse información. La cooperación es voluntaria y se articula mediante técnicas como las conferencias sectoriales, las comisiones bilaterales, los convenios y los consorcios. La coordinación implica que una Administración fija medios y sistemas para asegurar la coherencia de la actuación de las distintas Administraciones, especialmente cuando concurren competencias sobre una misma materia o servicio."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e8-1",
+            "titulo": "Niveles de Administración",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Administraciones Publicas] --> B[Administracion General del Estado]\n    A --> C[Administracion autonomica]\n    A --> D[Administracion Local]\n    D --> E[Municipio, provincia, isla]"
+        },
+        {
+            "id": "e8-2",
+            "titulo": "Relaciones interadministrativas",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Relaciones entre Administraciones] --> B[Colaboracion]\n    A --> C[Cooperacion - voluntaria]\n    A --> D[Coordinacion]\n    A --> E[Lealtad institucional]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Las Administraciones Públicas", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Administración del Estado", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Comunidades Autónomas", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Distribución competencial", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Administración Local", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Colaboración y coordinación", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Ley 40/2015 - órganos centrales y territoriales", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Autonomía política y consejerías", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Artículos 148 y 149 CE", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Ley 7/1985 de Bases del Régimen Local", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Municipio, provincia, isla", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Conferencias sectoriales y convenios", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Lealtad institucional", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc8-01", "anverso": "¿Qué ley regula el régimen jurídico de la Administración General del Estado?", "reverso": "La Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público." },
+        { "id": "fc8-02", "anverso": "¿Con qué sometimiento actúa la Administración?", "reverso": "Con sometimiento pleno a la Constitución, a la ley y al Derecho." },
+        { "id": "fc8-03", "anverso": "¿Cómo se organiza la Administración General del Estado?", "reverso": "En órganos centrales y órganos territoriales." },
+        { "id": "fc8-04", "anverso": "¿Qué órganos representan a la AGE en el territorio?", "reverso": "Los Delegados del Gobierno en las CC.AA. y los Subdelegados del Gobierno en las provincias." },
+        { "id": "fc8-05", "anverso": "¿Qué caracteriza a las Comunidades Autónomas?", "reverso": "La autonomía política, con capacidad de autogobierno y potestad legislativa propia." },
+        { "id": "fc8-06", "anverso": "¿Cómo se estructura habitualmente la Administración autonómica?", "reverso": "En consejerías." },
+        { "id": "fc8-07", "anverso": "¿Qué artículos regulan la distribución de competencias?", "reverso": "Los artículos 148 y 149 de la Constitución." },
+        { "id": "fc8-08", "anverso": "¿Qué enumera el artículo 149 de la Constitución?", "reverso": "Las competencias exclusivas del Estado." },
+        { "id": "fc8-09", "anverso": "¿Qué son las competencias compartidas?", "reverso": "Aquellas en las que el Estado fija la legislación básica y la Comunidad la desarrolla y ejecuta." },
+        { "id": "fc8-10", "anverso": "¿Qué carácter tiene el Derecho estatal respecto del autonómico?", "reverso": "Es supletorio del Derecho de las Comunidades Autónomas." },
+        { "id": "fc8-11", "anverso": "¿Qué ley regula la Administración Local?", "reverso": "La Ley 7/1985, Reguladora de las Bases del Régimen Local." },
+        { "id": "fc8-12", "anverso": "¿Cuáles son las entidades locales territoriales?", "reverso": "El municipio, la provincia y la isla en los archipiélagos." },
+        { "id": "fc8-13", "anverso": "¿Cuál es la entidad local básica?", "reverso": "El municipio." },
+        { "id": "fc8-14", "anverso": "¿Cuáles son los elementos del municipio?", "reverso": "El territorio, la población y la organización." },
+        { "id": "fc8-15", "anverso": "¿Qué garantiza la Constitución a las entidades locales?", "reverso": "La autonomía local para la gestión de sus respectivos intereses." },
+        { "id": "fc8-16", "anverso": "¿Qué principios rigen las relaciones entre Administraciones?", "reverso": "Lealtad institucional, colaboración, cooperación y coordinación." },
+        { "id": "fc8-17", "anverso": "¿Qué carácter tiene la cooperación entre Administraciones?", "reverso": "Es voluntaria." },
+        { "id": "fc8-18", "anverso": "¿Mediante qué técnicas se articula la cooperación?", "reverso": "Conferencias sectoriales, comisiones bilaterales, convenios y consorcios." },
+        { "id": "fc8-19", "anverso": "¿Qué implica la coordinación entre Administraciones?", "reverso": "Que una Administración fija medios y sistemas para asegurar la coherencia de la actuación." },
+        { "id": "fc8-20", "anverso": "¿Qué obliga el deber de colaboración?", "reverso": "A prestarse asistencia recíproca y a facilitarse información." }
+    ],
+    "preguntas": [
+        {
+            "id": "p8-01",
+            "enunciado": "El régimen jurídico de la Administración General del Estado se regula por:",
+            "opciones": ["La Ley 39/2015", "La Ley 40/2015, de Régimen Jurídico del Sector Público", "La Ley 7/1985", "El Estatuto de Autonomía"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 40/2015 regula el régimen jurídico del sector público y de la Administración General del Estado."
+        },
+        {
+            "id": "p8-02",
+            "enunciado": "Los Delegados del Gobierno se sitúan en el ámbito de:",
+            "opciones": ["Los municipios", "Las Comunidades Autónomas", "Las provincias", "Las islas"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los Delegados del Gobierno representan a la Administración General del Estado en las Comunidades Autónomas."
+        },
+        {
+            "id": "p8-03",
+            "enunciado": "Las competencias exclusivas del Estado se enumeran en el artículo:",
+            "opciones": ["137 CE", "148 CE", "149 CE", "150 CE"],
+            "respuestaCorrecta": 2,
+            "explicacion": "El artículo 149 de la Constitución enumera las competencias exclusivas del Estado."
+        },
+        {
+            "id": "p8-04",
+            "enunciado": "En las competencias compartidas, el Estado fija:",
+            "opciones": ["Toda la regulación", "La legislación básica", "Solo la ejecución", "Nada"],
+            "respuestaCorrecta": 1,
+            "explicacion": "En las competencias compartidas el Estado fija la legislación básica y la Comunidad la desarrolla y ejecuta."
+        },
+        {
+            "id": "p8-05",
+            "enunciado": "La Administración Local se regula principalmente por:",
+            "opciones": ["La Ley 40/2015", "La Ley 7/1985, de Bases del Régimen Local", "La Ley 39/2015", "La Constitución exclusivamente"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 7/1985, Reguladora de las Bases del Régimen Local, regula la Administración Local."
+        },
+        {
+            "id": "p8-06",
+            "enunciado": "La entidad local básica es:",
+            "opciones": ["La provincia", "El municipio", "La isla", "La comarca"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El municipio es la entidad local básica, con personalidad jurídica y plena capacidad."
+        },
+        {
+            "id": "p8-07",
+            "enunciado": "Los elementos del municipio son:",
+            "opciones": ["Territorio, población y organización", "Alcalde, Pleno y Junta", "Padrón, censo y registro", "Provincia, isla y comarca"],
+            "respuestaCorrecta": 0,
+            "explicacion": "Los elementos del municipio son el territorio, la población y la organización."
+        },
+        {
+            "id": "p8-08",
+            "enunciado": "La cooperación entre Administraciones públicas se caracteriza por ser:",
+            "opciones": ["Obligatoria", "Voluntaria", "Impuesta por el Estado", "Decidida por los tribunales"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La cooperación entre Administraciones es voluntaria y se articula mediante convenios, conferencias sectoriales y consorcios."
+        }
+    ]
+}
