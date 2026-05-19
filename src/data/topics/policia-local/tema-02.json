@@ -1,0 +1,157 @@
+{
+    "id": 2,
+    "titulo": "El derecho a la vida y a la integridad física y moral. La libertad ideológica y religiosa. Los derechos de libertad personal. Los derechos al honor, a la intimidad y a la propia imagen. El derecho de libre residencia y circulación. Las libertades de expresión e información. El derecho de reunión y manifestación. El derecho de asociación",
+    "bloque": "general",
+    "secciones": [
+        {
+            "id": "s2-1",
+            "titulo": "El derecho a la vida y la libertad ideológica y religiosa",
+            "contenido": "El artículo 15 de la Constitución reconoce el derecho de todos a la vida y a la integridad física y moral, prohibiendo la tortura y las penas o tratos inhumanos o degradantes; queda abolida la pena de muerte, salvo lo que dispongan las leyes penales militares para tiempos de guerra. El artículo 16 garantiza la libertad ideológica, religiosa y de culto de los individuos y las comunidades, sin más limitación, en sus manifestaciones, que la necesaria para el mantenimiento del orden público protegido por la ley. Nadie podrá ser obligado a declarar sobre su ideología, religión o creencias, y ninguna confesión tendrá carácter estatal."
+        },
+        {
+            "id": "s2-2",
+            "titulo": "Los derechos de libertad personal",
+            "contenido": "El artículo 17 reconoce el derecho a la libertad y a la seguridad: nadie puede ser privado de su libertad sino con la observancia de lo establecido en la ley. La detención preventiva no podrá durar más del tiempo estrictamente necesario para las averiguaciones, y en todo caso, en el plazo máximo de setenta y dos horas, el detenido deberá ser puesto en libertad o a disposición de la autoridad judicial. Toda persona detenida debe ser informada de sus derechos y de las razones de su detención, y no puede ser obligada a declarar. Se garantiza la asistencia de abogado al detenido y el procedimiento de habeas corpus."
+        },
+        {
+            "id": "s2-3",
+            "titulo": "Honor, intimidad, propia imagen y libre circulación",
+            "contenido": "El artículo 18 garantiza el derecho al honor, a la intimidad personal y familiar y a la propia imagen; el domicilio es inviolable y ninguna entrada o registro podrá hacerse sin consentimiento del titular o resolución judicial, salvo en caso de flagrante delito. Se garantiza el secreto de las comunicaciones, salvo resolución judicial, y la ley limitará el uso de la informática para proteger los datos personales. El artículo 19 reconoce a los españoles el derecho a elegir libremente su residencia y a circular por el territorio nacional, así como a entrar y salir libremente de España en los términos que la ley establezca, sin que ese derecho pueda limitarse por motivos políticos o ideológicos."
+        },
+        {
+            "id": "s2-4",
+            "titulo": "Las libertades de expresión e información",
+            "contenido": "El artículo 20 reconoce y protege el derecho a expresar y difundir libremente pensamientos, ideas y opiniones; a la producción y creación literaria, artística, científica y técnica; a la libertad de cátedra; y a comunicar o recibir libremente información veraz por cualquier medio de difusión. Estas libertades tienen su límite en el respeto a los derechos del Título I, especialmente el derecho al honor, a la intimidad, a la propia imagen y a la protección de la juventud y de la infancia. No puede restringirse mediante ningún tipo de censura previa, y el secuestro de publicaciones solo podrá acordarse en virtud de resolución judicial."
+        },
+        {
+            "id": "s2-5",
+            "titulo": "Los derechos de reunión, manifestación y asociación",
+            "contenido": "El artículo 21 reconoce el derecho de reunión pacífica y sin armas, cuyo ejercicio no necesita autorización previa. Para las reuniones en lugares de tránsito público y las manifestaciones se dará comunicación previa a la autoridad, que solo podrá prohibirlas cuando existan razones fundadas de alteración del orden público con peligro para personas o bienes. El artículo 22 reconoce el derecho de asociación; las asociaciones que persigan fines o utilicen medios tipificados como delito son ilegales; deben inscribirse en un registro a los solos efectos de publicidad; solo pueden ser disueltas o suspendidas en sus actividades en virtud de resolución judicial motivada; y se prohíben las asociaciones secretas y las de carácter paramilitar."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e2-1",
+            "titulo": "Derechos fundamentales (art. 15-22)",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Derechos fundamentales] --> B[Art. 15 - Vida e integridad]\n    A --> C[Art. 16 - Libertad ideologica y religiosa]\n    A --> D[Art. 17 - Libertad y seguridad]\n    A --> E[Art. 18 - Honor, intimidad, domicilio]\n    A --> F[Art. 20-22 - Expresion, reunion, asociacion]"
+        },
+        {
+            "id": "e2-2",
+            "titulo": "La detención preventiva",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Detencion preventiva] --> B[Tiempo estrictamente necesario]\n    A --> C[Maximo 72 horas]\n    C --> D[Libertad o a disposicion judicial]\n    A --> E[Informacion de derechos]\n    A --> F[Asistencia de abogado y habeas corpus]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Derechos fundamentales (art. 15-22)", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Vida e integridad", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Libertad ideológica y religiosa", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Libertad personal", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Honor, intimidad e imagen", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Expresión, reunión y asociación", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Abolición de la pena de muerte", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Ninguna confesión es estatal", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Detención máx. 72 horas", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Inviolabilidad del domicilio", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Secreto de las comunicaciones", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Reunión sin autorización previa", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Prohibición de asociaciones secretas", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc2-01", "anverso": "¿Qué reconoce el artículo 15 de la Constitución?", "reverso": "El derecho a la vida y a la integridad física y moral, y prohíbe la tortura y los tratos inhumanos o degradantes." },
+        { "id": "fc2-02", "anverso": "¿Está abolida la pena de muerte en España?", "reverso": "Sí, salvo lo que dispongan las leyes penales militares para tiempos de guerra." },
+        { "id": "fc2-03", "anverso": "¿Qué garantiza el artículo 16?", "reverso": "La libertad ideológica, religiosa y de culto de individuos y comunidades." },
+        { "id": "fc2-04", "anverso": "¿Puede obligarse a alguien a declarar sobre su religión?", "reverso": "No; nadie puede ser obligado a declarar sobre su ideología, religión o creencias." },
+        { "id": "fc2-05", "anverso": "¿Tiene alguna confesión carácter estatal?", "reverso": "No; ninguna confesión tendrá carácter estatal." },
+        { "id": "fc2-06", "anverso": "¿Cuál es la duración máxima de la detención preventiva?", "reverso": "El tiempo estrictamente necesario y, en todo caso, un máximo de 72 horas." },
+        { "id": "fc2-07", "anverso": "¿Qué ocurre transcurridas las 72 horas de detención?", "reverso": "El detenido debe ser puesto en libertad o a disposición de la autoridad judicial." },
+        { "id": "fc2-08", "anverso": "¿Qué procedimiento protege al detenido ilegalmente?", "reverso": "El procedimiento de habeas corpus." },
+        { "id": "fc2-09", "anverso": "¿Qué derechos garantiza el artículo 18?", "reverso": "El honor, la intimidad personal y familiar, la propia imagen y la inviolabilidad del domicilio." },
+        { "id": "fc2-10", "anverso": "¿Cuándo puede entrarse en un domicilio sin resolución judicial?", "reverso": "Con consentimiento del titular o en caso de flagrante delito." },
+        { "id": "fc2-11", "anverso": "¿Qué garantiza el artículo 18.3?", "reverso": "El secreto de las comunicaciones, salvo resolución judicial." },
+        { "id": "fc2-12", "anverso": "¿Qué reconoce el artículo 19?", "reverso": "El derecho a elegir libremente la residencia y a circular por el territorio nacional, y a entrar y salir de España." },
+        { "id": "fc2-13", "anverso": "¿Puede limitarse la libre circulación por motivos ideológicos?", "reverso": "No; ese derecho no puede limitarse por motivos políticos o ideológicos." },
+        { "id": "fc2-14", "anverso": "¿Qué libertades reconoce el artículo 20?", "reverso": "Las libertades de expresión, de creación, de cátedra y de información veraz." },
+        { "id": "fc2-15", "anverso": "¿Puede aplicarse censura previa a la libertad de expresión?", "reverso": "No; no puede restringirse mediante ningún tipo de censura previa." },
+        { "id": "fc2-16", "anverso": "¿Cómo puede acordarse el secuestro de una publicación?", "reverso": "Solo en virtud de resolución judicial." },
+        { "id": "fc2-17", "anverso": "¿Necesita autorización previa el derecho de reunión?", "reverso": "No; la reunión pacífica y sin armas no necesita autorización previa." },
+        { "id": "fc2-18", "anverso": "¿Cuándo puede prohibirse una manifestación?", "reverso": "Cuando existan razones fundadas de alteración del orden público con peligro para personas o bienes." },
+        { "id": "fc2-19", "anverso": "¿Qué asociaciones son ilegales según el artículo 22?", "reverso": "Las que persigan fines o utilicen medios tipificados como delito." },
+        { "id": "fc2-20", "anverso": "¿Qué asociaciones prohíbe expresamente la Constitución?", "reverso": "Las asociaciones secretas y las de carácter paramilitar." }
+    ],
+    "preguntas": [
+        {
+            "id": "p2-01",
+            "enunciado": "El artículo 15 de la Constitución reconoce el derecho a:",
+            "opciones": ["La libertad de expresión", "La vida y la integridad física y moral", "La intimidad personal", "La libre circulación"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 15 reconoce el derecho de todos a la vida y a la integridad física y moral."
+        },
+        {
+            "id": "p2-02",
+            "enunciado": "La pena de muerte en España está:",
+            "opciones": ["Vigente para delitos graves", "Abolida, salvo leyes penales militares en tiempo de guerra", "Abolida sin excepciones", "Decidida por cada Comunidad Autónoma"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 15 abole la pena de muerte salvo lo que dispongan las leyes penales militares para tiempos de guerra."
+        },
+        {
+            "id": "p2-03",
+            "enunciado": "La detención preventiva tendrá una duración máxima de:",
+            "opciones": ["24 horas", "48 horas", "72 horas", "96 horas"],
+            "respuestaCorrecta": 2,
+            "explicacion": "El artículo 17.2 fija un máximo de 72 horas, tras las cuales el detenido debe ser liberado o puesto a disposición judicial."
+        },
+        {
+            "id": "p2-04",
+            "enunciado": "Según el artículo 16, ninguna confesión religiosa:",
+            "opciones": ["Puede tener templos", "Tendrá carácter estatal", "Puede manifestarse en público", "Está permitida"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 16.3 establece que ninguna confesión tendrá carácter estatal."
+        },
+        {
+            "id": "p2-05",
+            "enunciado": "La entrada en un domicilio sin resolución judicial solo es posible:",
+            "opciones": ["Por orden de un superior policial", "Con consentimiento del titular o en flagrante delito", "Durante el día", "Si lo autoriza el alcalde"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 18.2 permite la entrada con consentimiento del titular o en caso de flagrante delito, además de con resolución judicial."
+        },
+        {
+            "id": "p2-06",
+            "enunciado": "La libertad de expresión del artículo 20:",
+            "opciones": ["Admite censura previa en casos graves", "No puede restringirse mediante censura previa", "Requiere autorización administrativa", "Solo protege a los periodistas"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 20.2 prohíbe que estas libertades se restrinjan mediante ningún tipo de censura previa."
+        },
+        {
+            "id": "p2-07",
+            "enunciado": "El derecho de reunión pacífica y sin armas:",
+            "opciones": ["Necesita autorización previa", "No necesita autorización previa", "Está prohibido en lugares públicos", "Solo lo autoriza el delegado del Gobierno"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 21.1 establece que el ejercicio del derecho de reunión no necesita autorización previa."
+        },
+        {
+            "id": "p2-08",
+            "enunciado": "Las asociaciones solo pueden ser disueltas o suspendidas en sus actividades:",
+            "opciones": ["Por decisión gubernativa", "En virtud de resolución judicial motivada", "Por acuerdo del Pleno municipal", "Automáticamente tras un año"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 22.4 dispone que las asociaciones solo pueden ser disueltas o suspendidas en virtud de resolución judicial motivada."
+        }
+    ]
+}
