@@ -1,0 +1,157 @@
+{
+    "id": 9,
+    "titulo": "El acto administrativo. Validez, nulidad y anulabilidad del acto administrativo. Notificación de los actos administrativos y cómputo de los plazos. El procedimiento administrativo y los recursos administrativos",
+    "bloque": "general",
+    "secciones": [
+        {
+            "id": "s9-1",
+            "titulo": "El acto administrativo",
+            "contenido": "El acto administrativo es la declaración de voluntad, juicio, conocimiento o deseo realizada por una Administración pública en el ejercicio de una potestad administrativa distinta de la potestad reglamentaria. Se regula por la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas. Los actos administrativos se producen por el órgano competente ajustándose a los requisitos y al procedimiento establecido. Su contenido debe ajustarse a lo dispuesto por el ordenamiento jurídico y ser determinado y adecuado a sus fines. Los actos serán motivados cuando limiten derechos, resuelvan recursos, se separen del criterio seguido en actuaciones precedentes o sean discrecionales, entre otros supuestos."
+        },
+        {
+            "id": "s9-2",
+            "titulo": "Validez, nulidad y anulabilidad",
+            "contenido": "Los actos de las Administraciones públicas sujetos al Derecho Administrativo se presumen válidos y producen efectos desde la fecha en que se dicten, salvo que en ellos se disponga otra cosa. Son nulos de pleno derecho los actos que lesionen derechos y libertades susceptibles de amparo constitucional, los dictados por órgano manifiestamente incompetente, los de contenido imposible, los constitutivos de infracción penal, los dictados prescindiendo total y absolutamente del procedimiento, y los que adquieran facultades careciendo de los requisitos esenciales. Son anulables los actos que incurran en cualquier infracción del ordenamiento jurídico, incluida la desviación de poder; el defecto de forma solo determina la anulabilidad cuando el acto carezca de los requisitos formales indispensables o dé lugar a indefensión."
+        },
+        {
+            "id": "s9-3",
+            "titulo": "La notificación de los actos administrativos",
+            "contenido": "La Administración debe notificar a los interesados las resoluciones y actos administrativos que afecten a sus derechos e intereses. Toda notificación debe cursarse en el plazo de diez días a partir de la fecha en que el acto se haya dictado y contener el texto íntegro de la resolución, la indicación de si pone fin o no a la vía administrativa, los recursos que procedan, el órgano ante el que presentarlos y el plazo para hacerlo. Las notificaciones se practican preferentemente por medios electrónicos. Las notificaciones defectuosas surten efecto a partir de la fecha en que el interesado realice actuaciones que supongan el conocimiento del contenido del acto o interponga el recurso procedente."
+        },
+        {
+            "id": "s9-4",
+            "titulo": "El cómputo de los plazos",
+            "contenido": "La Ley 39/2015 establece las reglas del cómputo de plazos. Los plazos expresados en días se cuentan, salvo que por ley o Derecho de la Unión Europea se disponga otro cómputo, en días hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos. Cuando los plazos se señalen por horas, se entiende que estas son hábiles. Si el plazo se fija en meses o años, se computa de fecha a fecha; cuando en el mes de vencimiento no hubiera día equivalente al inicial del cómputo, se entiende que el plazo expira el último día del mes. Cuando el último día del plazo sea inhábil, se entiende prorrogado al primer día hábil siguiente."
+        },
+        {
+            "id": "s9-5",
+            "titulo": "El procedimiento administrativo y los recursos administrativos",
+            "contenido": "El procedimiento administrativo común se inicia de oficio o a solicitud del interesado, se desarrolla mediante actos de instrucción (alegaciones, prueba, informes, audiencia del interesado) y finaliza por resolución, desistimiento, renuncia, caducidad o imposibilidad material. El plazo máximo para resolver y notificar es el fijado por la norma del procedimiento y, en su defecto, de tres meses. Contra los actos administrativos caben recursos: el recurso de alzada (contra actos que no ponen fin a la vía administrativa, ante el órgano superior jerárquico, plazo de un mes), el recurso potestativo de reposición (contra actos que ponen fin a la vía administrativa, ante el mismo órgano, plazo de un mes) y el recurso extraordinario de revisión (en supuestos tasados)."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e9-1",
+            "titulo": "Validez del acto administrativo",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Acto administrativo] --> B[Presuncion de validez]\n    A --> C[Nulidad de pleno derecho]\n    A --> D[Anulabilidad]\n    C --> E[Organo incompetente, sin procedimiento]\n    D --> F[Infraccion del ordenamiento juridico]"
+        },
+        {
+            "id": "e9-2",
+            "titulo": "Recursos administrativos",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Recursos administrativos] --> B[Alzada - organo superior, 1 mes]\n    A --> C[Reposicion - mismo organo, potestativo, 1 mes]\n    A --> D[Revision - supuestos tasados]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "El acto administrativo", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Concepto del acto", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Validez, nulidad y anulabilidad", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Notificación", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Cómputo de plazos", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Procedimiento y recursos", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Ley 39/2015", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Presunción de validez", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Plazo de 10 días para notificar", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Días hábiles", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Resolver y notificar: 3 meses", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Alzada y reposición", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Recurso extraordinario de revisión", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n6", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc9-01", "anverso": "¿Qué es un acto administrativo?", "reverso": "Una declaración de una Administración en ejercicio de una potestad administrativa distinta de la reglamentaria." },
+        { "id": "fc9-02", "anverso": "¿Qué ley regula el procedimiento administrativo común?", "reverso": "La Ley 39/2015, de 1 de octubre." },
+        { "id": "fc9-03", "anverso": "¿Cuándo deben motivarse los actos administrativos?", "reverso": "Cuando limiten derechos, resuelvan recursos, se separen del criterio precedente o sean discrecionales, entre otros." },
+        { "id": "fc9-04", "anverso": "¿Qué presunción tienen los actos administrativos?", "reverso": "La presunción de validez; producen efectos desde la fecha en que se dicten." },
+        { "id": "fc9-05", "anverso": "Cita un supuesto de nulidad de pleno derecho.", "reverso": "Los actos dictados por órgano manifiestamente incompetente por razón de la materia o el territorio." },
+        { "id": "fc9-06", "anverso": "¿Es nulo el acto dictado prescindiendo del procedimiento?", "reverso": "Sí, es nulo de pleno derecho si se prescinde total y absolutamente del procedimiento." },
+        { "id": "fc9-07", "anverso": "¿Qué es un acto anulable?", "reverso": "El que incurre en cualquier infracción del ordenamiento jurídico, incluida la desviación de poder." },
+        { "id": "fc9-08", "anverso": "¿Cuándo el defecto de forma determina la anulabilidad?", "reverso": "Cuando el acto carezca de requisitos formales indispensables o dé lugar a indefensión." },
+        { "id": "fc9-09", "anverso": "¿En qué plazo debe cursarse una notificación?", "reverso": "En el plazo de diez días a partir de la fecha en que el acto se haya dictado." },
+        { "id": "fc9-10", "anverso": "¿Qué debe contener una notificación?", "reverso": "El texto íntegro de la resolución, los recursos que procedan, el órgano y el plazo para interponerlos." },
+        { "id": "fc9-11", "anverso": "¿Cómo se practican preferentemente las notificaciones?", "reverso": "Por medios electrónicos." },
+        { "id": "fc9-12", "anverso": "¿Cómo se computan los plazos señalados en días?", "reverso": "En días hábiles, excluyendo sábados, domingos y festivos." },
+        { "id": "fc9-13", "anverso": "¿Cómo se computan los plazos fijados en meses o años?", "reverso": "De fecha a fecha." },
+        { "id": "fc9-14", "anverso": "¿Qué ocurre si el último día del plazo es inhábil?", "reverso": "El plazo se entiende prorrogado al primer día hábil siguiente." },
+        { "id": "fc9-15", "anverso": "¿Cómo puede iniciarse un procedimiento administrativo?", "reverso": "De oficio o a solicitud del interesado." },
+        { "id": "fc9-16", "anverso": "¿Cuál es el plazo supletorio para resolver y notificar?", "reverso": "Tres meses, en defecto de plazo fijado por la norma del procedimiento." },
+        { "id": "fc9-17", "anverso": "¿Contra qué actos cabe el recurso de alzada?", "reverso": "Contra actos que no ponen fin a la vía administrativa, ante el órgano superior jerárquico." },
+        { "id": "fc9-18", "anverso": "¿Qué plazo tiene el recurso de alzada?", "reverso": "Un mes si el acto es expreso." },
+        { "id": "fc9-19", "anverso": "¿Qué caracteriza al recurso de reposición?", "reverso": "Es potestativo, se interpone ante el mismo órgano que dictó el acto, en el plazo de un mes." },
+        { "id": "fc9-20", "anverso": "¿Cuándo procede el recurso extraordinario de revisión?", "reverso": "En supuestos tasados, como la aparición de documentos esenciales o errores de hecho." }
+    ],
+    "preguntas": [
+        {
+            "id": "p9-01",
+            "enunciado": "El procedimiento administrativo común se regula por:",
+            "opciones": ["La Ley 40/2015", "La Ley 39/2015, de 1 de octubre", "La Ley 7/1985", "El Código Civil"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 39/2015 regula el Procedimiento Administrativo Común de las Administraciones Públicas."
+        },
+        {
+            "id": "p9-02",
+            "enunciado": "Los actos administrativos se presumen:",
+            "opciones": ["Nulos hasta confirmación", "Válidos y producen efectos desde que se dictan", "Anulables", "Ineficaces hasta notificación"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los actos administrativos se presumen válidos y producen efectos desde la fecha en que se dicten."
+        },
+        {
+            "id": "p9-03",
+            "enunciado": "Es nulo de pleno derecho el acto dictado por:",
+            "opciones": ["Un órgano competente con defecto leve", "Órgano manifiestamente incompetente por razón de materia o territorio", "Un funcionario en prácticas", "Una Administración local"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Son nulos de pleno derecho los actos dictados por órgano manifiestamente incompetente por razón de la materia o el territorio."
+        },
+        {
+            "id": "p9-04",
+            "enunciado": "Una notificación debe cursarse en el plazo de:",
+            "opciones": ["Cinco días", "Diez días desde que se dictó el acto", "Un mes", "Tres meses"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Toda notificación debe cursarse en el plazo de diez días a partir de la fecha en que el acto se haya dictado."
+        },
+        {
+            "id": "p9-05",
+            "enunciado": "Los plazos señalados en días se computan en:",
+            "opciones": ["Días naturales", "Días hábiles", "Días laborables y festivos", "Horas"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los plazos expresados en días se cuentan en días hábiles, excluyendo sábados, domingos y festivos."
+        },
+        {
+            "id": "p9-06",
+            "enunciado": "El plazo supletorio para resolver y notificar un procedimiento es de:",
+            "opciones": ["Un mes", "Tres meses", "Seis meses", "Un año"],
+            "respuestaCorrecta": 1,
+            "explicacion": "En defecto de plazo fijado por la norma, el plazo máximo para resolver y notificar es de tres meses."
+        },
+        {
+            "id": "p9-07",
+            "enunciado": "El recurso de alzada se interpone ante:",
+            "opciones": ["El mismo órgano que dictó el acto", "El órgano superior jerárquico", "Los tribunales", "El Defensor del Pueblo"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El recurso de alzada se interpone ante el órgano superior jerárquico del que dictó el acto."
+        },
+        {
+            "id": "p9-08",
+            "enunciado": "El recurso de reposición se caracteriza por ser:",
+            "opciones": ["Obligatorio", "Potestativo, ante el mismo órgano", "Ante el órgano superior", "Sin plazo"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El recurso de reposición es potestativo y se interpone ante el mismo órgano que dictó el acto, en el plazo de un mes."
+        }
+    ]
+}
