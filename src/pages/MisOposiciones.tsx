@@ -5,6 +5,7 @@ import { obtenerPerfil, obtenerUsuario } from '../services/supabase'
 import { OPOSICIONES } from '../data/oposiciones'
 import { setActiveSlug, getOposicionesLocales } from '../services/storage'
 import type { Perfil } from '../types'
+import { BannerNutriplan } from '../components/promo/BannerNutriplan'
 
 export default function MisOposiciones() {
   const [oposicionesSlug, setOposicionesSlug] = useState<string[]>([])
@@ -84,6 +85,16 @@ export default function MisOposiciones() {
             </div>
           ))}
         </div>
+
+        <button
+          onClick={() => navigate('/procoach')}
+          className="mt-4 w-full text-left rounded-2xl border border-slate-200 bg-white shadow-sm p-4"
+        >
+          <div className="text-sm font-semibold text-slate-900">ProCoach AI</div>
+          <div className="text-xs text-slate-500">Entrenador IA para oposiciones fisicas</div>
+        </button>
+
+        <BannerNutriplan />
       </main>
     </div>
   )
