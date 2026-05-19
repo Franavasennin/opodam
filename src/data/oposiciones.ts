@@ -18,6 +18,14 @@ export const OPOSICIONES: Oposicion[] = [
     numTemas: 45,
   },
   {
+    slug: 'policia-local',
+    nombre: 'Policia Local',
+    descripcion: 'Cuerpos de Policia Local',
+    disponible: true,
+    color: '#1d4ed8',
+    numTemas: 37,
+  },
+  {
     slug: 'aux-enfermeria',
     nombre: 'Auxiliar de Enfermería',
     descripcion: 'Servicio Canario de Salud',
