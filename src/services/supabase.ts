@@ -23,7 +23,11 @@ export async function enviarMagicLink(email: string): Promise<{ error: string | 
 export async function iniciarSesionAnonima(): Promise<{ error: string | null }> {
   if (!supabase) return { error: 'Supabase no configurado' }
   // Reutilizar la sesión existente (anónima o con email) si la hay
-  const { data: { session } } = await supabase.auth.getSession()
+  const { data: { session }, error: sessionError } = await supabase.auth.getSession()
+  if (sessionError) {
+    console.error('[iniciarSesionAnonima] getSession error:', sessionError.message)
+    return { error: sessionError.message }
+  }
   if (session?.user) return { error: null }
   const { error } = await supabase.auth.signInAnonymously()
   if (error) console.error('[iniciarSesionAnonima] Supabase error:', error.message)
