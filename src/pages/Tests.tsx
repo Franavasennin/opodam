@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
 import { calcularPuntuacionTest } from '../services/progress'
-import { cargarTema, TEMAS_META } from '../data/topics'
+import { obtenerTopics } from '../data/topics'
 import type { Tema } from '../types'
 
 export function Tests() {
   const navigate = useNavigate()
+  const { slug } = useParams<{ slug: string }>()
   const { guardarTest } = useProgress()
+  const { cargarTema, TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
   const [temaId, setTemaId] = useState<number | null>(null)
   const [tema, setTema] = useState<Tema | null>(null)
   const [respuestas, setRespuestas] = useState<(number | null)[]>([])
@@ -20,6 +22,7 @@ export function Tests() {
       setRespuestas(new Array(t.preguntas.length).fill(null))
       setEnviado(false)
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [temaId])
 
   if (temaId === null) return (

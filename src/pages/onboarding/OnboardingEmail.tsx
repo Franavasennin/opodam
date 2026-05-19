@@ -17,7 +17,8 @@ export default function OnboardingEmail() {
     const { error: err } = await enviarMagicLink(email.trim())
     setCargando(false)
     if (err) {
-      setError('No se pudo enviar el enlace. Comprueba el email e inténtalo de nuevo.')
+      console.error('[enviarMagicLink] Supabase error:', err)
+      setError(`No se pudo enviar el enlace: ${err}`)
       return
     }
     navigate('/onboarding/confirmar', { state: { email } })

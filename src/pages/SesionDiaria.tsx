@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
 import { Card } from '../components/ui/Card'
-import { cargarTema, TEMAS_META } from '../data/topics'
+import { obtenerTopics } from '../data/topics'
 import { responderFlashcard } from '../services/spaced-repetition'
 import { obtenerSesionHoy, completarSesionDiaria, calcularDebilidades } from '../services/adaptativo'
 import { actualizarRendimientoTema } from '../services/examen'
@@ -12,6 +12,8 @@ type Fase = 'cargando' | 'flashcards' | 'minitest' | 'completada'
 
 export function SesionDiaria() {
   const navigate = useNavigate()
+  const { slug } = useParams<{ slug: string }>()
+  const { cargarTema, TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
   const { progreso, refrescar } = useProgress()
   const [fase, setFase] = useState<Fase>('cargando')
   const [flashcards, setFlashcards] = useState<Flashcard[]>([])
@@ -57,6 +59,7 @@ export function SesionDiaria() {
       if (fcs.length === 0 && pregSel.length === 0) { completarSesionDiaria(); refrescar() }
     }
     cargar()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function responderFC(cal: 'facil' | 'dudoso' | 'dificil') {

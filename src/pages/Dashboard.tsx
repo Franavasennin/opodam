@@ -4,7 +4,7 @@ import { useProgress } from '../hooks/useProgress'
 import { useNotifications } from '../hooks/useNotifications'
 import { Card } from '../components/ui/Card'
 import { ProgressBar } from '../components/ui/ProgressBar'
-import { TEMAS_META, TOTAL_TEMAS } from '../data/topics'
+import { obtenerTopics } from '../data/topics'
 import { temasPrioritarios, contarVueltasGlobal } from '../services/progress'
 import { PanelDebilidades } from '../components/ui/PanelDebilidades'
 import { obtenerSesionHoy } from '../services/adaptativo'
@@ -13,6 +13,8 @@ export function Dashboard() {
   const { progreso, actualizarNotificaciones } = useProgress()
   const { permiso, solicitarPermiso, programarRecordatorio } = useNotifications()
   const navigate = useNavigate()
+  // Dashboard no esta montado en ninguna ruta con :slug; usa CGPC por defecto.
+  const { TEMAS_META, TOTAL_TEMAS } = obtenerTopics('cgpc')
 
   useEffect(() => {
     if (permiso === 'granted' && progreso.notificaciones.activas) {

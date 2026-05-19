@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
 import { flashcardsPendientesHoy, responderFlashcard } from '../services/spaced-repetition'
-import { cargarTema, TEMAS_META } from '../data/topics'
+import { obtenerTopics } from '../data/topics'
 import type { Flashcard } from '../types'
 
 export function FlashcardsGlobal() {
+  const { slug } = useParams<{ slug: string }>()
   const { progreso } = useProgress()
+  const { cargarTema, TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
   const [pendientes, setPendientes] = useState<{ card: Flashcard }[]>([])
   const [indice, setIndice] = useState(0)
   const [verRespuesta, setVerRespuesta] = useState(false)
@@ -14,6 +17,11 @@ export function FlashcardsGlobal() {
   useEffect(() => {
     async function cargar() {
       const ids = flashcardsPendientesHoy(progreso.flashcards)
+      // Si no hay flashcards pendientes, no hace falta cargar ningún tema
+      if (ids.length === 0) {
+        setCargando(false)
+        return
+      }
       const resultado: { card: Flashcard }[] = []
       for (const meta of TEMAS_META) {
         try {
@@ -25,6 +33,7 @@ export function FlashcardsGlobal() {
       setCargando(false)
     }
     cargar()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (cargando) return <div className="flex justify-center py-16 text-gray-400">Cargando...</div>

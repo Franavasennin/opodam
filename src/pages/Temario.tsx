@@ -2,13 +2,14 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
-import { TEMAS_META } from '../data/topics'
+import { obtenerTopics } from '../data/topics'
 import type { Bloque } from '../types'
 
 export function Temario() {
   const { progreso } = useProgress()
   const navigate = useNavigate()
   const { slug } = useParams<{ slug: string }>()
+  const { TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
 
   const grupos: Record<Bloque, Array<typeof TEMAS_META[number]>> = {
     general:    TEMAS_META.filter(t => t.bloque === 'general'),

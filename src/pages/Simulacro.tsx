@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { calcularPuntuacionTest } from '../services/progress'
-import { cargarTema, TEMAS_META } from '../data/topics'
+import { obtenerTopics } from '../data/topics'
 import type { Pregunta } from '../types'
 
 type PreguntaExt = Pregunta & { temaId: number }
@@ -12,6 +12,8 @@ const DURACION = 120 * 60
 
 export function Simulacro() {
   const navigate = useNavigate()
+  const { slug } = useParams<{ slug: string }>()
+  const { cargarTema, TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
   const [preguntas, setPreguntas] = useState<PreguntaExt[]>([])
   const [respuestas, setRespuestas] = useState<(number | null)[]>([])
   const [indice, setIndice] = useState(0)
@@ -35,6 +37,7 @@ export function Simulacro() {
     }
     cargar()
     return () => clearInterval(intervalo.current)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function iniciar() {

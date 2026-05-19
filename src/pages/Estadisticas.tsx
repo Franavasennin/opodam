@@ -1,10 +1,13 @@
+import { useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
-import { TEMAS_META } from '../data/topics'
+import { obtenerTopics } from '../data/topics'
 import { ProgressBar } from '../components/ui/ProgressBar'
 import { Card } from '../components/ui/Card'
 import { PanelDebilidades } from '../components/ui/PanelDebilidades'
 
 export function Estadisticas() {
+  const { slug } = useParams<{ slug: string }>()
+  const { TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
   const { progreso } = useProgress()
   const horas = Math.floor(progreso.tiempoTotalSegundos / 3600)
   const mins  = Math.floor((progreso.tiempoTotalSegundos % 3600) / 60)

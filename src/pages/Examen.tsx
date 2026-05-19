@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
-import { cargarTema, TEMAS_META } from '../data/topics'
+import { useParams } from 'react-router-dom'
+import { obtenerTopics } from '../data/topics'
 import { useProgress } from '../hooks/useProgress'
 import { Card } from '../components/ui/Card'
 import type { PreguntaExt, ExamenResultado } from '../types'
@@ -19,6 +20,8 @@ const CONFIG = {
 } as const
 
 export function Examen() {
+  const { slug } = useParams<{ slug: string }>()
+  const { cargarTema, TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
   const { progreso, refrescar } = useProgress()
   const [fase, setFase] = useState<Fase>('inicio')
   const [modo, setModo] = useState<Modo>('completo')
