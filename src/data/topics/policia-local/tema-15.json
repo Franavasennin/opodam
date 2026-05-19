@@ -1,0 +1,157 @@
+{
+    "id": 15,
+    "titulo": "Los Municipios Canarios. Sesiones de los órganos municipales. Adopción de acuerdos. Información y participación ciudadana",
+    "bloque": "general",
+    "secciones": [
+        {
+            "id": "s15-1",
+            "titulo": "Los Municipios Canarios",
+            "contenido": "Los municipios canarios se rigen por la legislación básica estatal de régimen local (Ley 7/1985) y por la Ley 7/2015, de 1 de abril, de los municipios de Canarias. Esta ley autonómica refuerza la autonomía municipal, regula las competencias propias de los municipios canarios y desarrolla la organización, el funcionamiento y la participación ciudadana. El municipio es la entidad local básica de la organización territorial de Canarias y el cauce inmediato de participación ciudadana en los asuntos públicos. Goza de autonomía para la gestión de sus intereses y ejerce sus competencias bajo su propia responsabilidad."
+        },
+        {
+            "id": "s15-2",
+            "titulo": "Las sesiones de los órganos municipales",
+            "contenido": "Las sesiones del Pleno pueden ser ordinarias, extraordinarias y extraordinarias urgentes. Las ordinarias tienen periodicidad preestablecida. Las extraordinarias se celebran cuando las convoque el Alcalde o lo solicite la cuarta parte, al menos, del número legal de miembros de la Corporación. Toda sesión debe convocarse con una antelación mínima de dos días hábiles, salvo las extraordinarias urgentes. Para la válida constitución del Pleno se requiere la asistencia de un tercio del número legal de miembros, que nunca podrá ser inferior a tres; este quórum debe mantenerse durante toda la sesión, y en todo caso deben estar presentes el Alcalde y el Secretario o quienes legalmente les sustituyan."
+        },
+        {
+            "id": "s15-3",
+            "titulo": "La adopción de acuerdos",
+            "contenido": "Los acuerdos de las Corporaciones locales se adoptan, como regla general, por mayoría simple de los miembros presentes, existiendo mayoría simple cuando los votos afirmativos son más que los negativos. Se exige el voto favorable de la mayoría absoluta del número legal de miembros para la adopción de determinados acuerdos, como la aprobación y modificación del reglamento orgánico, la creación o supresión de municipios, la alteración del término municipal, la aprobación de la delimitación del término, las operaciones de crédito de cuantía elevada o la cesión de bienes a otras Administraciones. El voto puede ser afirmativo, negativo o abstención, y el Alcalde dirime los empates con su voto de calidad."
+        },
+        {
+            "id": "s15-4",
+            "titulo": "Información y participación ciudadana",
+            "contenido": "Las Corporaciones locales deben facilitar la más amplia información sobre su actividad y la participación de los ciudadanos en la vida local. Las sesiones del Pleno son públicas, salvo en los asuntos que puedan afectar al derecho al honor, la intimidad o la propia imagen. Los ciudadanos tienen derecho a obtener copias y certificaciones de los acuerdos y a consultar los archivos y registros, a ser informados, a participar en la gestión municipal y a ejercer la iniciativa popular. Las entidades locales deben establecer reglamentos orgánicos de participación ciudadana y pueden constituir órganos territoriales de gestión desconcentrada y consejos sectoriales de participación."
+        },
+        {
+            "id": "s15-5",
+            "titulo": "Instrumentos de participación y transparencia",
+            "contenido": "Entre los instrumentos de participación ciudadana destacan la iniciativa popular para proponer al Pleno la aprobación de disposiciones o actuaciones, las consultas populares sobre asuntos de competencia municipal y de especial relevancia para los intereses de los vecinos (que requieren autorización del Gobierno del Estado), el derecho de petición, los presupuestos participativos y los órganos de participación sectorial. La normativa de transparencia obliga a las entidades locales a la publicidad activa de información institucional, organizativa, económica y presupuestaria, y a garantizar el derecho de acceso a la información pública. La participación ciudadana se complementa con los medios electrónicos y la administración digital."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e15-1",
+            "titulo": "Sesiones del Pleno",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Sesiones del Pleno] --> B[Ordinarias]\n    A --> C[Extraordinarias]\n    A --> D[Extraordinarias urgentes]\n    A --> E[Quorum: un tercio, minimo 3]"
+        },
+        {
+            "id": "e15-2",
+            "titulo": "Adopción de acuerdos",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Adopcion de acuerdos] --> B[Regla general: mayoria simple]\n    A --> C[Mayoria absoluta - casos tasados]\n    A --> D[Voto de calidad del Alcalde]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Municipios canarios y sesiones", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Los municipios canarios", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Sesiones de los órganos", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Adopción de acuerdos", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Información y participación", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Instrumentos de participación", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Ley 7/2015 de municipios de Canarias", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Ordinarias, extraordinarias y urgentes", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Quórum de un tercio", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Mayoría simple y absoluta", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Sesiones del Pleno públicas", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Iniciativa popular y consultas", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Transparencia y acceso a la información", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n3", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc15-01", "anverso": "¿Qué ley autonómica regula los municipios de Canarias?", "reverso": "La Ley 7/2015, de 1 de abril, de los municipios de Canarias." },
+        { "id": "fc15-02", "anverso": "¿Qué es el municipio para la organización territorial de Canarias?", "reverso": "La entidad local básica y el cauce inmediato de participación ciudadana." },
+        { "id": "fc15-03", "anverso": "¿Qué clases de sesiones del Pleno existen?", "reverso": "Ordinarias, extraordinarias y extraordinarias urgentes." },
+        { "id": "fc15-04", "anverso": "¿Quién puede solicitar una sesión extraordinaria?", "reverso": "La cuarta parte, al menos, del número legal de miembros de la Corporación." },
+        { "id": "fc15-05", "anverso": "¿Con cuánta antelación se convoca una sesión ordinaria?", "reverso": "Con una antelación mínima de dos días hábiles." },
+        { "id": "fc15-06", "anverso": "¿Qué quórum se requiere para constituir válidamente el Pleno?", "reverso": "Un tercio del número legal de miembros, nunca inferior a tres." },
+        { "id": "fc15-07", "anverso": "¿Quién debe estar siempre presente en las sesiones del Pleno?", "reverso": "El Alcalde y el Secretario, o quienes legalmente les sustituyan." },
+        { "id": "fc15-08", "anverso": "¿Cómo se adoptan los acuerdos como regla general?", "reverso": "Por mayoría simple de los miembros presentes." },
+        { "id": "fc15-09", "anverso": "¿Cuándo hay mayoría simple?", "reverso": "Cuando los votos afirmativos son más que los negativos." },
+        { "id": "fc15-10", "anverso": "Cita un acuerdo que exige mayoría absoluta.", "reverso": "La aprobación o modificación del reglamento orgánico o la alteración del término municipal." },
+        { "id": "fc15-11", "anverso": "¿Quién dirime los empates en las votaciones?", "reverso": "El Alcalde, con su voto de calidad." },
+        { "id": "fc15-12", "anverso": "¿Son públicas las sesiones del Pleno?", "reverso": "Sí, salvo en asuntos que afecten al honor, la intimidad o la propia imagen." },
+        { "id": "fc15-13", "anverso": "¿Qué derecho de información tienen los ciudadanos?", "reverso": "Obtener copias y certificaciones de los acuerdos y consultar archivos y registros." },
+        { "id": "fc15-14", "anverso": "¿Qué es la iniciativa popular en el ámbito municipal?", "reverso": "El derecho de los vecinos a proponer al Pleno la aprobación de disposiciones o actuaciones." },
+        { "id": "fc15-15", "anverso": "¿Qué se requiere para celebrar una consulta popular municipal?", "reverso": "La autorización del Gobierno del Estado." },
+        { "id": "fc15-16", "anverso": "Cita instrumentos de participación ciudadana.", "reverso": "Iniciativa popular, consultas populares, derecho de petición y presupuestos participativos." },
+        { "id": "fc15-17", "anverso": "¿A qué obliga la normativa de transparencia a las entidades locales?", "reverso": "A la publicidad activa y a garantizar el derecho de acceso a la información pública." },
+        { "id": "fc15-18", "anverso": "¿Qué órganos de participación pueden constituir las entidades locales?", "reverso": "Consejos sectoriales de participación y órganos territoriales de gestión desconcentrada." },
+        { "id": "fc15-19", "anverso": "¿Qué tipos de voto pueden emitirse en el Pleno?", "reverso": "Afirmativo, negativo o abstención." },
+        { "id": "fc15-20", "anverso": "¿Durante cuánto tiempo debe mantenerse el quórum?", "reverso": "Durante toda la sesión." }
+    ],
+    "preguntas": [
+        {
+            "id": "p15-01",
+            "enunciado": "Los municipios de Canarias se rigen, además de por la legislación estatal, por:",
+            "opciones": ["La Ley 8/2015", "La Ley 7/2015, de los municipios de Canarias", "La Ley 29/1998", "El Estatuto de Autonomía exclusivamente"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 7/2015, de 1 de abril, regula los municipios de Canarias."
+        },
+        {
+            "id": "p15-02",
+            "enunciado": "Las sesiones del Pleno pueden ser:",
+            "opciones": ["Solo ordinarias", "Ordinarias, extraordinarias y extraordinarias urgentes", "Públicas y secretas", "Generales y especiales"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las sesiones del Pleno pueden ser ordinarias, extraordinarias y extraordinarias urgentes."
+        },
+        {
+            "id": "p15-03",
+            "enunciado": "Una sesión extraordinaria puede solicitarla:",
+            "opciones": ["Un solo concejal", "La cuarta parte del número legal de miembros", "El Secretario", "Cualquier vecino"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La sesión extraordinaria puede ser solicitada por la cuarta parte, al menos, del número legal de miembros de la Corporación."
+        },
+        {
+            "id": "p15-04",
+            "enunciado": "El quórum para la válida constitución del Pleno es:",
+            "opciones": ["La mitad más uno", "Un tercio del número legal, nunca inferior a tres", "Dos tercios", "Todos los miembros"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Se requiere la asistencia de un tercio del número legal de miembros, que nunca podrá ser inferior a tres."
+        },
+        {
+            "id": "p15-05",
+            "enunciado": "Como regla general, los acuerdos se adoptan por:",
+            "opciones": ["Mayoría absoluta", "Mayoría simple de los presentes", "Unanimidad", "Dos tercios"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Como regla general, los acuerdos se adoptan por mayoría simple de los miembros presentes."
+        },
+        {
+            "id": "p15-06",
+            "enunciado": "Los empates en las votaciones del Pleno los dirime:",
+            "opciones": ["El Secretario", "El Alcalde con voto de calidad", "El concejal de mayor edad", "Se repite la votación"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El Alcalde dirime los empates con su voto de calidad."
+        },
+        {
+            "id": "p15-07",
+            "enunciado": "Las sesiones del Pleno son:",
+            "opciones": ["Siempre secretas", "Públicas, salvo asuntos que afecten al honor o la intimidad", "Públicas sin excepción", "Privadas para los concejales"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las sesiones del Pleno son públicas, salvo en asuntos que puedan afectar al honor, la intimidad o la propia imagen."
+        },
+        {
+            "id": "p15-08",
+            "enunciado": "Para celebrar una consulta popular municipal se requiere:",
+            "opciones": ["Solo el acuerdo del Pleno", "La autorización del Gobierno del Estado", "La autorización del Cabildo", "Nada especial"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las consultas populares sobre asuntos municipales requieren autorización del Gobierno del Estado."
+        }
+    ]
+}
