@@ -1,0 +1,157 @@
+{
+    "id": 19,
+    "titulo": "Normativa sobre protección de la seguridad ciudadana. Actividades de la Policía Local en materia de protección de la seguridad ciudadana. Regulación de la utilización de videocámaras por las Fuerzas y Cuerpos de Seguridad en lugares públicos",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s19-1",
+            "titulo": "Normativa sobre protección de la seguridad ciudadana",
+            "contenido": "La protección de la seguridad ciudadana se regula por la Ley Orgánica 4/2015, de 30 de marzo, de protección de la seguridad ciudadana. Esta ley tiene por objeto la regulación de un conjunto plural y diversificado de actuaciones de distinta naturaleza orientadas a la tutela de la seguridad ciudadana, entendida como requisito indispensable para el pleno ejercicio de los derechos fundamentales y las libertades públicas. Se aplica con respeto a los principios de legalidad, igualdad de trato y no discriminación, oportunidad, proporcionalidad, eficacia, eficiencia y responsabilidad, y se somete al control administrativo y jurisdiccional. Son autoridades y órganos competentes el Ministro del Interior, los titulares de los órganos correspondientes y los Alcaldes en el ámbito de sus competencias."
+        },
+        {
+            "id": "s19-2",
+            "titulo": "Documentación e identificación personal",
+            "contenido": "La LO 4/2015 regula la documentación e identificación personal. El Documento Nacional de Identidad acredita la identidad y los datos personales de su titular, así como la nacionalidad española; es obligatorio obtenerlo a partir de los catorce años. Los agentes de las Fuerzas y Cuerpos de Seguridad pueden requerir la identificación de las personas en el cumplimiento de sus funciones de indagación o prevención cuando existan indicios de participación en una infracción, o cuando sea necesario para prevenir un delito. Si no se logra la identificación por cualquier medio, los agentes pueden requerir a quienes no pudieran ser identificados que les acompañen a dependencias policiales próximas para su identificación, por el tiempo estrictamente necesario."
+        },
+        {
+            "id": "s19-3",
+            "titulo": "Actuaciones de mantenimiento y restablecimiento de la seguridad ciudadana",
+            "contenido": "Para el mantenimiento y restablecimiento de la seguridad ciudadana, los agentes pueden practicar comprobaciones, registros y controles en vías, lugares y establecimientos públicos. Pueden realizar el registro corporal externo y superficial de la persona cuando existan indicios racionales para ello, respetando los principios de injerencia mínima y de respeto a la dignidad e intimidad. Se prevén la realización de controles en vías públicas, las medidas de seguridad extraordinarias en locales y establecimientos, y la disolución de reuniones y manifestaciones cuando concurran las circunstancias legalmente previstas. Las reuniones en lugares de tránsito público y manifestaciones requieren comunicación previa a la autoridad."
+        },
+        {
+            "id": "s19-4",
+            "titulo": "Régimen sancionador de la seguridad ciudadana",
+            "contenido": "La LO 4/2015 establece un régimen sancionador que clasifica las infracciones en muy graves, graves y leves. Las infracciones muy graves se sancionan con multa de 30.001 a 600.000 euros; las graves de 601 a 30.000 euros; y las leves de 100 a 600 euros. Son infracciones graves, entre otras, la celebración de espectáculos públicos o actividades recreativas incumpliendo la prohibición, las reuniones o manifestaciones no comunicadas en lugares de tránsito público, o la desobediencia o resistencia a la autoridad. La potestad sancionadora se ejerce mediante el correspondiente procedimiento, con garantía de los derechos de defensa, y las sanciones prescriben según su gravedad."
+        },
+        {
+            "id": "s19-5",
+            "titulo": "Utilización de videocámaras en lugares públicos",
+            "contenido": "La utilización de videocámaras por las Fuerzas y Cuerpos de Seguridad para grabar imágenes y sonidos en lugares públicos se regula por la Ley Orgánica 4/1997, de 4 de agosto, y su reglamento de desarrollo. La instalación de videocámaras fijas requiere autorización previa, otorgada por el Delegado del Gobierno, previo informe favorable de una Comisión presidida por un Magistrado. La utilización de cámaras debe respetar los principios de idoneidad e intervención mínima, ponderando la finalidad de garantizar la seguridad con la afectación a los derechos al honor, a la intimidad y a la propia imagen. Las grabaciones que no estén relacionadas con hechos delictivos deben destruirse en el plazo legalmente fijado."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e19-1",
+            "titulo": "Protección de la seguridad ciudadana",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[LO 4/2015 Seguridad Ciudadana] --> B[Documentacion e identificacion]\n    A --> C[Registros y controles]\n    A --> D[Regimen sancionador]\n    D --> E[Muy graves, graves y leves]"
+        },
+        {
+            "id": "e19-2",
+            "titulo": "Videocámaras en lugares públicos",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Videocamaras - LO 4/1997] --> B[Camaras fijas: autorizacion previa]\n    B --> C[Delegado del Gobierno]\n    C --> D[Informe de Comision con Magistrado]\n    A --> E[Idoneidad e intervencion minima]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Protección de la seguridad ciudadana", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Normativa: LO 4/2015", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Documentación e identificación", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Registros y controles", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Régimen sancionador", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Videocámaras (LO 4/1997)", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Legalidad y proporcionalidad", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "DNI obligatorio desde los 14 años", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Registro corporal externo y superficial", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Multas hasta 600.000 euros", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Infracciones muy graves, graves y leves", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Autoriza el Delegado del Gobierno", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Idoneidad e intervención mínima", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc19-01", "anverso": "¿Qué ley regula la protección de la seguridad ciudadana?", "reverso": "La Ley Orgánica 4/2015, de 30 de marzo." },
+        { "id": "fc19-02", "anverso": "¿Cómo se entiende la seguridad ciudadana?", "reverso": "Como requisito indispensable para el pleno ejercicio de los derechos fundamentales y las libertades públicas." },
+        { "id": "fc19-03", "anverso": "Cita principios de aplicación de la LO 4/2015.", "reverso": "Legalidad, igualdad de trato, oportunidad, proporcionalidad, eficacia y responsabilidad." },
+        { "id": "fc19-04", "anverso": "¿Qué autoridades son competentes en materia de seguridad ciudadana?", "reverso": "El Ministro del Interior, los titulares de los órganos correspondientes y los Alcaldes." },
+        { "id": "fc19-05", "anverso": "¿Qué acredita el Documento Nacional de Identidad?", "reverso": "La identidad, los datos personales de su titular y la nacionalidad española." },
+        { "id": "fc19-06", "anverso": "¿A partir de qué edad es obligatorio obtener el DNI?", "reverso": "A partir de los catorce años." },
+        { "id": "fc19-07", "anverso": "¿Cuándo pueden los agentes requerir la identificación de una persona?", "reverso": "Cuando existan indicios de participación en una infracción o sea necesario para prevenir un delito." },
+        { "id": "fc19-08", "anverso": "¿Qué pueden hacer los agentes si no logran identificar a una persona?", "reverso": "Requerirle que les acompañe a dependencias policiales próximas por el tiempo estrictamente necesario." },
+        { "id": "fc19-09", "anverso": "¿Qué tipo de registro corporal pueden practicar los agentes?", "reverso": "El registro corporal externo y superficial, cuando existan indicios racionales." },
+        { "id": "fc19-10", "anverso": "¿Qué principios rigen el registro corporal?", "reverso": "Los principios de injerencia mínima y de respeto a la dignidad e intimidad." },
+        { "id": "fc19-11", "anverso": "¿Cómo se clasifican las infracciones de la LO 4/2015?", "reverso": "En muy graves, graves y leves." },
+        { "id": "fc19-12", "anverso": "¿Cuál es la multa por infracción muy grave?", "reverso": "De 30.001 a 600.000 euros." },
+        { "id": "fc19-13", "anverso": "¿Cuál es la multa por infracción grave?", "reverso": "De 601 a 30.000 euros." },
+        { "id": "fc19-14", "anverso": "¿Cuál es la multa por infracción leve?", "reverso": "De 100 a 600 euros." },
+        { "id": "fc19-15", "anverso": "Cita una infracción grave de seguridad ciudadana.", "reverso": "Las reuniones o manifestaciones no comunicadas en lugares de tránsito público." },
+        { "id": "fc19-16", "anverso": "¿Qué ley regula el uso de videocámaras por las FCS en lugares públicos?", "reverso": "La Ley Orgánica 4/1997, de 4 de agosto." },
+        { "id": "fc19-17", "anverso": "¿Quién autoriza la instalación de videocámaras fijas?", "reverso": "El Delegado del Gobierno, previo informe de una Comisión presidida por un Magistrado." },
+        { "id": "fc19-18", "anverso": "¿Qué principios rigen el uso de videocámaras?", "reverso": "Los principios de idoneidad e intervención mínima." },
+        { "id": "fc19-19", "anverso": "¿Qué ocurre con las grabaciones no relacionadas con delitos?", "reverso": "Deben destruirse en el plazo legalmente fijado." },
+        { "id": "fc19-20", "anverso": "¿Qué requieren las reuniones en lugares de tránsito público?", "reverso": "Comunicación previa a la autoridad." }
+    ],
+    "preguntas": [
+        {
+            "id": "p19-01",
+            "enunciado": "La protección de la seguridad ciudadana se regula por:",
+            "opciones": ["La Ley 1/1992", "La Ley Orgánica 4/2015, de 30 de marzo", "La Ley 39/2015", "La LO 2/1986"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley Orgánica 4/2015, de 30 de marzo, regula la protección de la seguridad ciudadana."
+        },
+        {
+            "id": "p19-02",
+            "enunciado": "La obtención del DNI es obligatoria a partir de los:",
+            "opciones": ["12 años", "14 años", "16 años", "18 años"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Es obligatorio obtener el DNI a partir de los catorce años."
+        },
+        {
+            "id": "p19-03",
+            "enunciado": "Si una persona no puede ser identificada, los agentes pueden:",
+            "opciones": ["Detenerla 72 horas", "Requerirle que les acompañe a dependencias policiales para su identificación", "Sancionarla automáticamente", "Registrar su domicilio"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Pueden requerir que acompañe a dependencias policiales próximas para su identificación, por el tiempo estrictamente necesario."
+        },
+        {
+            "id": "p19-04",
+            "enunciado": "El registro corporal que pueden practicar los agentes es:",
+            "opciones": ["Integral e interno", "Externo y superficial", "Solo con orden judicial siempre", "Únicamente del equipaje"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los agentes pueden practicar el registro corporal externo y superficial cuando existan indicios racionales."
+        },
+        {
+            "id": "p19-05",
+            "enunciado": "Las infracciones de la LO 4/2015 se clasifican en:",
+            "opciones": ["Graves y leves", "Muy graves, graves y leves", "Penales y administrativas", "Mayores y menores"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La LO 4/2015 clasifica las infracciones en muy graves, graves y leves."
+        },
+        {
+            "id": "p19-06",
+            "enunciado": "La multa por una infracción muy grave de seguridad ciudadana puede llegar a:",
+            "opciones": ["30.000 euros", "600.000 euros", "100.000 euros", "6.000 euros"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las infracciones muy graves se sancionan con multa de 30.001 a 600.000 euros."
+        },
+        {
+            "id": "p19-07",
+            "enunciado": "El uso de videocámaras por las FCS en lugares públicos se regula por:",
+            "opciones": ["La LO 4/2015", "La Ley Orgánica 4/1997, de 4 de agosto", "El RGPD", "La Ley 2/2008"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley Orgánica 4/1997, de 4 de agosto, regula la utilización de videocámaras por las FCS en lugares públicos."
+        },
+        {
+            "id": "p19-08",
+            "enunciado": "La instalación de videocámaras fijas la autoriza:",
+            "opciones": ["El Alcalde", "El Delegado del Gobierno", "El juez de instrucción", "El Ministro del Interior"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La instalación de videocámaras fijas la autoriza el Delegado del Gobierno, previo informe de una Comisión presidida por un Magistrado."
+        }
+    ]
+}
