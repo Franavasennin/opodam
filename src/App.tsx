@@ -54,10 +54,13 @@ migrarProgresoLegado()
 export default function App() {
   useEffect(() => {
     iniciarSesionAnonima()
-      .then(() => sincronizar())
+      .then(({ error }) => { if (!error) return sincronizar() })
       .catch(() => { /* sin conexión, ignorar */ })
     const onVisible = () => {
-      if (document.visibilityState === 'visible') sincronizar().catch(() => {})
+      if (document.visibilityState !== 'visible') return
+      iniciarSesionAnonima()
+        .then(({ error }) => { if (!error) return sincronizar() })
+        .catch(() => {})
     }
     document.addEventListener('visibilitychange', onVisible)
     return () => document.removeEventListener('visibilitychange', onVisible)
