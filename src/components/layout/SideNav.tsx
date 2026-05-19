@@ -12,15 +12,15 @@ const LINKS = [
 
 export function SideNav() {
   return (
-    <nav className="hidden md:flex flex-col w-56 min-h-screen bg-brand-900 text-white p-4 gap-1 shrink-0">
-      <div className="text-xl font-bold text-brand-100 mb-6 px-3">OpoDAM 🚔</div>
+    <nav className="hidden md:flex flex-col w-56 min-h-screen bg-marca-900 text-white p-4 gap-1 shrink-0">
+      <div className="text-xl font-bold text-marca-100 mb-6 px-3">OpoDAM 🚔</div>
       {LINKS.map(({ to, label, icon }) => (
         <NavLink
           key={to}
           to={to}
           end={to === '/'}
           className={({ isActive }) =>
-            `flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${isActive ? 'bg-brand-600 text-white font-semibold' : 'text-brand-200 hover:bg-brand-700'}`
+            `flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${isActive ? 'bg-white/10 text-white font-semibold' : 'text-white/70 hover:bg-white/5'}`
           }
         >
           <span>{icon}</span>

@@ -6,7 +6,7 @@ export function Layout() {
   return (
     <div className="flex min-h-screen">
       <SideNav />
-      <main className="flex-1 pb-20 md:pb-0 overflow-y-auto">
+      <main className="flex-1 pb-20 md:pb-0 overflow-y-auto bg-slate-50">
         <Outlet />
       </main>
       <BottomNav />
