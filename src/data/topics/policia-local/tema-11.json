@@ -1,0 +1,157 @@
+{
+    "id": 11,
+    "titulo": "Las Administraciones Públicas Canarias: Comunidad Autónoma, Cabildos Insulares y Ayuntamientos. La Administración Pública de la Comunidad Autónoma de Canarias: organización y competencias",
+    "bloque": "general",
+    "secciones": [
+        {
+            "id": "s11-1",
+            "titulo": "Las Administraciones Públicas Canarias",
+            "contenido": "El sistema de Administraciones públicas en Canarias está integrado por tres niveles territoriales: la Administración Pública de la Comunidad Autónoma de Canarias, las Administraciones insulares (Cabildos Insulares) y las Administraciones municipales (Ayuntamientos). Las tres gozan de autonomía para la gestión de sus respectivos intereses y se relacionan entre sí conforme a los principios de lealtad institucional, coordinación, cooperación y colaboración. El Estatuto de Autonomía de Canarias (LO 1/2018) configura una organización territorial propia en la que la isla, a través del Cabildo, tiene una posición singular como institución de la Comunidad Autónoma."
+        },
+        {
+            "id": "s11-2",
+            "titulo": "La Administración Pública de la Comunidad Autónoma de Canarias",
+            "contenido": "La Administración Pública de la Comunidad Autónoma de Canarias es la organización servicial dependiente del Gobierno de Canarias, dotada de personalidad jurídica única, que actúa con sometimiento pleno al ordenamiento jurídico y sirve con objetividad a los intereses generales. Se rige por los principios de eficacia, jerarquía, descentralización, desconcentración, coordinación, transparencia y participación. Comprende la Administración general (consejerías y sus órganos) y la Administración institucional o instrumental (organismos autónomos, entidades públicas empresariales y demás entes del sector público autonómico)."
+        },
+        {
+            "id": "s11-3",
+            "titulo": "Organización de la Administración autonómica",
+            "contenido": "La Administración general de la Comunidad Autónoma de Canarias se estructura en consejerías, que son los departamentos en que se organiza el Gobierno y la Administración. Al frente de cada consejería está un Consejero. Los órganos de la Administración autonómica se clasifican en órganos superiores (Presidente, Vicepresidente y Consejeros), órganos directivos (Viceconsejeros, Secretarios Generales Técnicos, Directores Generales) y el resto de unidades administrativas. Existen también órganos territoriales y servicios desconcentrados. La creación, modificación y supresión de consejerías corresponde al Presidente de Canarias mediante decreto."
+        },
+        {
+            "id": "s11-4",
+            "titulo": "Competencias de la Comunidad Autónoma de Canarias",
+            "contenido": "La Comunidad Autónoma de Canarias asume, en el marco de la Constitución y del Estatuto de Autonomía, competencias exclusivas, de desarrollo legislativo y ejecución, y de ejecución. Entre las materias de competencia autonómica figuran la organización de sus instituciones de autogobierno, la ordenación del territorio y el urbanismo, la vivienda, el turismo, la agricultura y la ganadería, la pesca en aguas interiores, el patrimonio histórico-cultural, la sanidad, la educación, los servicios sociales, la protección civil y la seguridad pública mediante la creación de una policía propia. La Comunidad Autónoma cuenta además con el Régimen Económico y Fiscal de Canarias."
+        },
+        {
+            "id": "s11-5",
+            "titulo": "Cabildos Insulares y Ayuntamientos",
+            "contenido": "Los Cabildos Insulares son órganos de gobierno, administración y representación de cada isla e instituciones de la Comunidad Autónoma; asumen competencias propias y las que les transfiera o delegue la Comunidad Autónoma. Su régimen jurídico se completa con la Ley 8/2015, de cabildos insulares. Los Ayuntamientos son las Administraciones de los municipios canarios; se rigen por la legislación básica estatal (Ley 7/1985) y por la Ley 7/2015, de los municipios de Canarias. El Ayuntamiento se compone del Alcalde y de los concejales; sus competencias se ejercen en régimen de autonomía y bajo la propia responsabilidad, atendiendo siempre a la debida coordinación con las demás Administraciones públicas."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e11-1",
+            "titulo": "Administraciones públicas canarias",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Administraciones canarias] --> B[Comunidad Autonoma]\n    A --> C[Cabildos Insulares]\n    A --> D[Ayuntamientos]\n    B --> E[Consejerias]"
+        },
+        {
+            "id": "e11-2",
+            "titulo": "Órganos de la Administración autonómica",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Administracion autonomica] --> B[Organos superiores]\n    A --> C[Organos directivos]\n    A --> D[Unidades administrativas]\n    B --> E[Presidente, Vicepresidente, Consejeros]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Administraciones públicas canarias", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Tres niveles territoriales", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Administración autonómica", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Organización en consejerías", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Competencias de Canarias", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Cabildos y Ayuntamientos", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Comunidad, Cabildos, Ayuntamientos", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Personalidad jurídica única", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Órganos superiores y directivos", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Exclusivas, de desarrollo y de ejecución", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Régimen Económico y Fiscal", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Ley 8/2015 y Ley 7/2015", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Autonomía local", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc11-01", "anverso": "¿Qué tres niveles integran las Administraciones públicas canarias?", "reverso": "La Comunidad Autónoma, los Cabildos Insulares y los Ayuntamientos." },
+        { "id": "fc11-02", "anverso": "¿Qué principios rigen las relaciones entre las Administraciones canarias?", "reverso": "Lealtad institucional, coordinación, cooperación y colaboración." },
+        { "id": "fc11-03", "anverso": "¿De qué órgano depende la Administración autonómica?", "reverso": "Del Gobierno de Canarias." },
+        { "id": "fc11-04", "anverso": "¿Qué personalidad jurídica tiene la Administración autonómica?", "reverso": "Personalidad jurídica única." },
+        { "id": "fc11-05", "anverso": "¿Qué principios rigen la actuación de la Administración autonómica?", "reverso": "Eficacia, jerarquía, descentralización, desconcentración, coordinación, transparencia y participación." },
+        { "id": "fc11-06", "anverso": "¿En qué se estructura la Administración general de Canarias?", "reverso": "En consejerías." },
+        { "id": "fc11-07", "anverso": "¿Quién está al frente de cada consejería?", "reverso": "Un Consejero." },
+        { "id": "fc11-08", "anverso": "¿Cuáles son los órganos superiores de la Administración autonómica?", "reverso": "El Presidente, el Vicepresidente y los Consejeros." },
+        { "id": "fc11-09", "anverso": "Cita órganos directivos de la Administración autonómica.", "reverso": "Los Viceconsejeros, Secretarios Generales Técnicos y Directores Generales." },
+        { "id": "fc11-10", "anverso": "¿Quién crea o suprime consejerías?", "reverso": "El Presidente de Canarias, mediante decreto." },
+        { "id": "fc11-11", "anverso": "¿Qué tipos de competencias asume la Comunidad Autónoma?", "reverso": "Exclusivas, de desarrollo legislativo y ejecución, y de ejecución." },
+        { "id": "fc11-12", "anverso": "Cita materias de competencia autonómica.", "reverso": "Ordenación del territorio, turismo, sanidad, educación, servicios sociales y seguridad pública." },
+        { "id": "fc11-13", "anverso": "¿Qué régimen económico singular tiene Canarias?", "reverso": "El Régimen Económico y Fiscal de Canarias (REF)." },
+        { "id": "fc11-14", "anverso": "¿Qué son los Cabildos Insulares?", "reverso": "Órganos de gobierno de cada isla e instituciones de la Comunidad Autónoma." },
+        { "id": "fc11-15", "anverso": "¿Qué ley regula los Cabildos Insulares?", "reverso": "La Ley 8/2015, de cabildos insulares." },
+        { "id": "fc11-16", "anverso": "¿Qué ley regula los municipios de Canarias?", "reverso": "La Ley 7/2015, de los municipios de Canarias." },
+        { "id": "fc11-17", "anverso": "¿Qué administración gobierna los municipios canarios?", "reverso": "El Ayuntamiento." },
+        { "id": "fc11-18", "anverso": "¿De quién se compone el Ayuntamiento?", "reverso": "Del Alcalde y de los concejales." },
+        { "id": "fc11-19", "anverso": "¿Cómo ejercen los Ayuntamientos sus competencias?", "reverso": "En régimen de autonomía y bajo su propia responsabilidad." },
+        { "id": "fc11-20", "anverso": "¿Qué incluye la Administración institucional autonómica?", "reverso": "Organismos autónomos, entidades públicas empresariales y demás entes del sector público." }
+    ],
+    "preguntas": [
+        {
+            "id": "p11-01",
+            "enunciado": "Las Administraciones públicas canarias se integran por:",
+            "opciones": ["Solo la Comunidad Autónoma", "Comunidad Autónoma, Cabildos Insulares y Ayuntamientos", "Solo los Ayuntamientos", "El Estado y la Comunidad"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El sistema canario de Administraciones se integra por la Comunidad Autónoma, los Cabildos Insulares y los Ayuntamientos."
+        },
+        {
+            "id": "p11-02",
+            "enunciado": "La Administración Pública de la Comunidad Autónoma de Canarias depende de:",
+            "opciones": ["El Parlamento de Canarias", "El Gobierno de Canarias", "El Estado", "Los Cabildos"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Administración autonómica es la organización servicial dependiente del Gobierno de Canarias."
+        },
+        {
+            "id": "p11-03",
+            "enunciado": "La Administración general de Canarias se estructura en:",
+            "opciones": ["Ministerios", "Consejerías", "Direcciones insulares", "Diputaciones"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Administración general de la Comunidad Autónoma de Canarias se estructura en consejerías."
+        },
+        {
+            "id": "p11-04",
+            "enunciado": "Los órganos superiores de la Administración autonómica son:",
+            "opciones": ["Los Directores Generales", "El Presidente, el Vicepresidente y los Consejeros", "Los Viceconsejeros", "Los Secretarios Generales Técnicos"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los órganos superiores son el Presidente, el Vicepresidente y los Consejeros."
+        },
+        {
+            "id": "p11-05",
+            "enunciado": "La creación o supresión de consejerías corresponde a:",
+            "opciones": ["El Parlamento", "El Presidente de Canarias mediante decreto", "El Gobierno de España", "Los Cabildos"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La creación, modificación y supresión de consejerías corresponde al Presidente de Canarias mediante decreto."
+        },
+        {
+            "id": "p11-06",
+            "enunciado": "El régimen jurídico de los Cabildos Insulares se completa con:",
+            "opciones": ["La Ley 7/2015", "La Ley 8/2015, de cabildos insulares", "La Ley 29/1998", "La Ley 39/2015"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 8/2015 regula el régimen jurídico de los cabildos insulares."
+        },
+        {
+            "id": "p11-07",
+            "enunciado": "Los municipios de Canarias se rigen, además de por la legislación básica estatal, por:",
+            "opciones": ["La Ley 8/2015", "La Ley 7/2015, de los municipios de Canarias", "El REF", "La Ley 29/1998"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los municipios canarios se rigen por la Ley 7/1985 estatal y por la Ley 7/2015, de los municipios de Canarias."
+        },
+        {
+            "id": "p11-08",
+            "enunciado": "El Ayuntamiento se compone de:",
+            "opciones": ["El Alcalde y los concejales", "El Presidente y los consejeros", "El Pleno únicamente", "Los Cabildos"],
+            "respuestaCorrecta": 0,
+            "explicacion": "El Ayuntamiento se compone del Alcalde y de los concejales."
+        }
+    ]
+}
