@@ -42,6 +42,7 @@ const Estadisticas = lazy(() => import('./pages/Estadisticas').then(m => ({ defa
 const Examen = lazy(() => import('./pages/Examen').then(m => ({ default: m.Examen })))
 const SesionDiaria = lazy(() => import('./pages/SesionDiaria').then(m => ({ default: m.SesionDiaria })))
 const Perfil = lazy(() => import('./pages/Perfil').then(m => ({ default: m.Perfil })))
+const ProCoachAI = lazy(() => import('./pages/ProCoachAI'))
 
 const Loading = () => (
   <div className="min-h-screen flex items-center justify-center bg-slate-50">
@@ -89,6 +90,8 @@ export default function App() {
         <Route path="/oposicion/:slug/examen" element={<RutaProtegida><Examen /></RutaProtegida>} />
         <Route path="/oposicion/:slug/sesion-diaria" element={<RutaProtegida><SesionDiaria /></RutaProtegida>} />
         <Route path="/oposicion/:slug/perfil" element={<RutaProtegida><Perfil /></RutaProtegida>} />
+
+        <Route path="/procoach" element={<ProCoachAI />} />
 
         {/* Redirecciones */}
         <Route path="/" element={<RootOrCallback />} />
