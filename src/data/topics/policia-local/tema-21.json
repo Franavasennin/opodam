@@ -1,0 +1,157 @@
+{
+    "id": 21,
+    "titulo": "El sistema de protección civil. Normativa básica de Protección Civil y sus normas de desarrollo. El Sistema Canario de Emergencias: principios básicos. Conceptos y contenidos básicos de los planes de emergencia",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s21-1",
+            "titulo": "El sistema de protección civil",
+            "contenido": "La protección civil es el servicio público que protege a las personas y los bienes garantizando una respuesta adecuada ante los distintos tipos de emergencias y catástrofes originadas por causas naturales o humanas. Comprende la prevención de las situaciones de grave riesgo colectivo, calamidad o catástrofe extraordinaria; la planificación de las medidas necesarias para hacerlas frente; la intervención inmediata; y el restablecimiento de la normalidad. La protección civil se basa en los principios de cooperación, coordinación, colaboración, solidaridad, eficiencia, proximidad al ciudadano, autoprotección y responsabilidad compartida entre todas las Administraciones públicas y los ciudadanos."
+        },
+        {
+            "id": "s21-2",
+            "titulo": "Normativa básica de Protección Civil",
+            "contenido": "La normativa básica estatal es la Ley 17/2015, de 9 de julio, del Sistema Nacional de Protección Civil, que regula el conjunto de actuaciones, recursos y servicios destinados a hacer frente a las emergencias de protección civil. Las competencias se distribuyen entre el Estado, las Comunidades Autónomas y las Administraciones Locales. Las normas de desarrollo incluyen la Norma Básica de Protección Civil (RD 407/1992) y la Norma Básica de Autoprotección (RD 393/2007). El Sistema Nacional de Protección Civil integra la actividad de protección civil de todas las Administraciones, con la Red Nacional de Información sobre Protección Civil, el catálogo nacional de recursos, los planes y la formación."
+        },
+        {
+            "id": "s21-3",
+            "titulo": "El Sistema Canario de Emergencias: principios básicos",
+            "contenido": "El Sistema Canario de Emergencias se regula por la Ley 9/2007, de 13 de abril, del Sistema Canario de Seguridad y Emergencias. Integra los recursos públicos y privados destinados a la prevención, planificación, intervención y recuperación frente a situaciones de emergencia en Canarias. Sus principios básicos son: coordinación, colaboración, eficiencia, proximidad al ciudadano, autoprotección y responsabilidad pública. El centro coordinador de las emergencias es el CECOES 1-1-2, que canaliza las llamadas al teléfono único europeo de emergencias 112 y coordina la respuesta de los servicios de emergencias (policía, bomberos, sanitarios, marítimos)."
+        },
+        {
+            "id": "s21-4",
+            "titulo": "Conceptos básicos de los planes de emergencia",
+            "contenido": "Los planes de emergencia o de protección civil son los instrumentos previstos por la normativa para la respuesta organizada y coordinada ante situaciones de grave riesgo, calamidad o catástrofe. Distinguimos: los planes territoriales (Estatal, autonómico —PLATECA en Canarias—, insulares y municipales), que abordan emergencias generales en su ámbito; los planes especiales, que se ocupan de riesgos específicos cuya naturaleza requiere una metodología técnica particular (incendios forestales, inundaciones, sismos, transporte de mercancías peligrosas); y los planes de autoprotección, para centros, establecimientos y actividades con riesgo. Cada plan tiene su estructura, ámbito, fases de activación y procedimientos."
+        },
+        {
+            "id": "s21-5",
+            "titulo": "Contenido y fases de los planes de emergencia",
+            "contenido": "El contenido básico de un plan de protección civil incluye: análisis de riesgos del territorio, estructura organizativa y operativa con asignación de funciones, procedimientos de actuación, catálogo de medios y recursos, implantación y mantenimiento. Las fases típicas de respuesta son: situación de prealerta o preemergencia, alerta, emergencia (con sus niveles: situación 0, 1, 2 y 3) y vuelta a la normalidad. La dirección del plan corresponde al órgano competente según el nivel; en Canarias, en el nivel 2 corresponde al Gobierno de Canarias y en el nivel 3 al Estado, cuando se declara emergencia de interés nacional. Los ciudadanos tienen el deber de colaboración y obediencia a las órdenes que dicten las autoridades de protección civil."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e21-1",
+            "titulo": "Sistema de Protección Civil",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Proteccion Civil] --> B[Prevencion]\n    A --> C[Planificacion]\n    A --> D[Intervencion]\n    A --> E[Restablecimiento]\n    A --> F[Ley 17/2015]"
+        },
+        {
+            "id": "e21-2",
+            "titulo": "Tipos de planes de emergencia",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Planes de emergencia] --> B[Territoriales]\n    A --> C[Especiales]\n    A --> D[Autoproteccion]\n    B --> E[Estatal, autonomico - PLATECA, insulares, municipales]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Sistema de Protección Civil", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Concepto y fines", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Normativa básica", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Sistema Canario de Emergencias", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Planes de emergencia", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Contenido y fases", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Prevención, planificación, intervención", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Ley 17/2015 Sistema Nacional", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Ley 9/2007 / CECOES 1-1-2", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Territoriales, especiales y autoprotección", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "PLATECA en Canarias", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Análisis de riesgos y recursos", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Niveles: situación 0, 1, 2 y 3", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc21-01", "anverso": "¿Qué es la protección civil?", "reverso": "El servicio público que protege a las personas y los bienes garantizando una respuesta adecuada ante emergencias y catástrofes." },
+        { "id": "fc21-02", "anverso": "Cita las fases de la protección civil.", "reverso": "Prevención, planificación, intervención y restablecimiento de la normalidad." },
+        { "id": "fc21-03", "anverso": "Cita principios de la protección civil.", "reverso": "Cooperación, coordinación, colaboración, solidaridad, eficiencia, proximidad al ciudadano y autoprotección." },
+        { "id": "fc21-04", "anverso": "¿Qué ley estatal regula el Sistema Nacional de Protección Civil?", "reverso": "La Ley 17/2015, de 9 de julio." },
+        { "id": "fc21-05", "anverso": "¿Qué real decreto aprueba la Norma Básica de Protección Civil?", "reverso": "El Real Decreto 407/1992." },
+        { "id": "fc21-06", "anverso": "¿Qué real decreto aprueba la Norma Básica de Autoprotección?", "reverso": "El Real Decreto 393/2007." },
+        { "id": "fc21-07", "anverso": "¿Qué ley regula el Sistema Canario de Seguridad y Emergencias?", "reverso": "La Ley 9/2007, de 13 de abril." },
+        { "id": "fc21-08", "anverso": "¿Cuál es el centro coordinador de emergencias en Canarias?", "reverso": "El CECOES 1-1-2." },
+        { "id": "fc21-09", "anverso": "¿Qué teléfono único europeo de emergencias canaliza el CECOES?", "reverso": "El 112." },
+        { "id": "fc21-10", "anverso": "¿Qué son los planes de emergencia?", "reverso": "Instrumentos para la respuesta organizada y coordinada ante emergencias o catástrofes." },
+        { "id": "fc21-11", "anverso": "¿Qué planes territoriales existen?", "reverso": "Estatal, autonómico (PLATECA en Canarias), insulares y municipales." },
+        { "id": "fc21-12", "anverso": "¿Cómo se llama el plan territorial de Canarias?", "reverso": "PLATECA." },
+        { "id": "fc21-13", "anverso": "¿Qué son los planes especiales?", "reverso": "Planes para riesgos específicos como incendios forestales, inundaciones, sismos o transporte de mercancías peligrosas." },
+        { "id": "fc21-14", "anverso": "¿Qué es un plan de autoprotección?", "reverso": "El plan para centros, establecimientos y actividades con riesgo." },
+        { "id": "fc21-15", "anverso": "Cita contenidos básicos de un plan de protección civil.", "reverso": "Análisis de riesgos, estructura organizativa, procedimientos, catálogo de medios e implantación." },
+        { "id": "fc21-16", "anverso": "¿Qué niveles de emergencia se distinguen?", "reverso": "Situación 0, 1, 2 y 3." },
+        { "id": "fc21-17", "anverso": "¿Quién dirige el plan en una emergencia de nivel 2 en Canarias?", "reverso": "El Gobierno de Canarias." },
+        { "id": "fc21-18", "anverso": "¿Qué nivel corresponde a emergencias de interés nacional?", "reverso": "El nivel 3, declarado por el Estado." },
+        { "id": "fc21-19", "anverso": "¿Qué deber tienen los ciudadanos en protección civil?", "reverso": "El deber de colaboración y obediencia a las órdenes de las autoridades de protección civil." },
+        { "id": "fc21-20", "anverso": "Cita servicios coordinados por el CECOES.", "reverso": "Policía, bomberos, servicios sanitarios y marítimos." }
+    ],
+    "preguntas": [
+        {
+            "id": "p21-01",
+            "enunciado": "La normativa básica estatal del Sistema Nacional de Protección Civil es:",
+            "opciones": ["La Ley 2/1985", "La Ley 17/2015, de 9 de julio", "La Ley 9/2007", "La LO 4/2015"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 17/2015, de 9 de julio, regula el Sistema Nacional de Protección Civil."
+        },
+        {
+            "id": "p21-02",
+            "enunciado": "La Norma Básica de Protección Civil se aprobó por:",
+            "opciones": ["El RD 393/2007", "El RD 407/1992", "El RD 769/1987", "El RD 137/1993"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Norma Básica de Protección Civil se aprobó por el Real Decreto 407/1992."
+        },
+        {
+            "id": "p21-03",
+            "enunciado": "El Sistema Canario de Seguridad y Emergencias se regula por:",
+            "opciones": ["La Ley 17/2015", "La Ley 9/2007, de 13 de abril", "La Ley 2/2008", "La LO 4/2015"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 9/2007, de 13 de abril, regula el Sistema Canario de Seguridad y Emergencias."
+        },
+        {
+            "id": "p21-04",
+            "enunciado": "El centro coordinador de las emergencias en Canarias es:",
+            "opciones": ["El 091", "El CECOES 1-1-2", "El CECOPI", "El 092"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El CECOES 1-1-2 es el centro coordinador de emergencias y seguridad del Gobierno de Canarias."
+        },
+        {
+            "id": "p21-05",
+            "enunciado": "Los planes territoriales abordan:",
+            "opciones": ["Solo incendios forestales", "Emergencias generales en su ámbito territorial", "Solo autoprotección de empresas", "Catástrofes de interés nacional únicamente"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los planes territoriales abordan emergencias generales en su ámbito (estatal, autonómico, insular o municipal)."
+        },
+        {
+            "id": "p21-06",
+            "enunciado": "El plan territorial de Canarias se denomina:",
+            "opciones": ["PLATERCAN", "PLATECA", "PLATESPA", "PLATER"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El plan territorial de la Comunidad Autónoma de Canarias se denomina PLATECA."
+        },
+        {
+            "id": "p21-07",
+            "enunciado": "Una emergencia de nivel 2 en Canarias la dirige:",
+            "opciones": ["El Ayuntamiento", "El Gobierno de Canarias", "El Estado", "El Cabildo"],
+            "respuestaCorrecta": 1,
+            "explicacion": "En el nivel 2 la dirección corresponde al Gobierno de Canarias; el nivel 3 corresponde al Estado."
+        },
+        {
+            "id": "p21-08",
+            "enunciado": "Los ciudadanos, ante una emergencia de protección civil, tienen el deber de:",
+            "opciones": ["Marcharse del lugar", "Colaboración y obediencia a las órdenes de las autoridades", "Permanecer indiferentes", "Acudir voluntariamente sin más"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los ciudadanos tienen el deber de colaboración y obediencia a las órdenes de las autoridades de protección civil."
+        }
+    ]
+}
