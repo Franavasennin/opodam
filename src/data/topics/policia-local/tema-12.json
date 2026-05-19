@@ -1,0 +1,157 @@
+{
+    "id": 12,
+    "titulo": "Elementos del municipio. Territorio y población. Organización municipal. Competencias municipales. Atribuciones del Alcalde. Atribuciones del Pleno del Ayuntamiento. Junta de Gobierno Local, composición y atribuciones",
+    "bloque": "general",
+    "secciones": [
+        {
+            "id": "s12-1",
+            "titulo": "Elementos del municipio: territorio y población",
+            "contenido": "El municipio es la entidad local básica de la organización territorial del Estado, con personalidad jurídica y plena capacidad para el cumplimiento de sus fines. Sus elementos son el territorio, la población y la organización. El término municipal es el territorio en que el Ayuntamiento ejerce sus competencias. La población del municipio está constituida por el conjunto de personas inscritas en el padrón municipal; los inscritos constituyen la población del municipio y tienen la condición de vecinos. El padrón municipal es el registro administrativo donde constan los vecinos del municipio, y sus datos constituyen prueba de la residencia y del domicilio habitual."
+        },
+        {
+            "id": "s12-2",
+            "titulo": "Organización municipal",
+            "contenido": "La organización municipal se estructura en órganos necesarios y órganos complementarios. Son órganos necesarios de todos los Ayuntamientos el Alcalde, los Tenientes de Alcalde y el Pleno. La Junta de Gobierno Local existe en los municipios de más de 5.000 habitantes y en los de menos cuando así lo disponga su reglamento orgánico o lo acuerde el Pleno. La Comisión Especial de Cuentas existe en todos los municipios. Los municipios pueden establecer otros órganos complementarios. Los municipios de gran población se rigen por un régimen orgánico especial regulado en la Ley 7/1985."
+        },
+        {
+            "id": "s12-3",
+            "titulo": "Competencias municipales",
+            "contenido": "El municipio, para la gestión de sus intereses y en el ámbito de sus competencias, puede promover actividades y prestar servicios públicos que contribuyan a satisfacer las necesidades y aspiraciones de la comunidad vecinal. El municipio ejerce competencias propias en materias como urbanismo, medio ambiente urbano, abastecimiento de agua, residuos, vías públicas, protección civil, tráfico y movilidad, policía local, ferias y mercados, protección de la salubridad pública, cementerios, promoción del deporte y la cultura, entre otras. Los municipios deben prestar, en todo caso, los servicios mínimos obligatorios que la ley determina en función de su población."
+        },
+        {
+            "id": "s12-4",
+            "titulo": "Atribuciones del Alcalde y del Pleno",
+            "contenido": "El Alcalde es el Presidente de la Corporación; entre sus atribuciones figuran dirigir el gobierno y la administración municipal, representar al Ayuntamiento, dirigir la policía urbana, dictar bandos, el desempeño de la jefatura superior de todo el personal y la jefatura de la Policía Local, así como adoptar medidas urgentes en casos de catástrofe o grave riesgo. El Pleno, integrado por todos los concejales y presidido por el Alcalde, tiene atribuciones como el control de los órganos de gobierno, la aprobación de ordenanzas y reglamentos, los presupuestos, la aprobación de la plantilla de personal, la alteración del término municipal y el ejercicio de acciones judiciales y administrativas."
+        },
+        {
+            "id": "s12-5",
+            "titulo": "La Junta de Gobierno Local",
+            "contenido": "La Junta de Gobierno Local se integra por el Alcalde y un número de concejales no superior al tercio del número legal de los mismos, nombrados y separados libremente por el Alcalde, que da cuenta al Pleno. Su función propia es la asistencia al Alcalde en el ejercicio de sus atribuciones, así como las atribuciones que el Alcalde u otro órgano municipal le deleguen o le atribuyan las leyes. Existe en todos los municipios con población superior a 5.000 habitantes y en los de menos cuando lo disponga su reglamento orgánico o lo acuerde el Pleno. En los municipios de gran población asume un papel ejecutivo reforzado."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e12-1",
+            "titulo": "Elementos y organización del municipio",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Municipio] --> B[Territorio]\n    A --> C[Poblacion - padron]\n    A --> D[Organizacion]\n    D --> E[Alcalde, Tenientes, Pleno]\n    D --> F[Junta de Gobierno Local]"
+        },
+        {
+            "id": "e12-2",
+            "titulo": "Órganos de gobierno municipal",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Organos de gobierno] --> B[Alcalde - Presidente]\n    A --> C[Pleno - todos los concejales]\n    A --> D[Junta de Gobierno Local]\n    A --> E[Tenientes de Alcalde]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "El municipio", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Territorio y población", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Organización municipal", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Competencias municipales", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Atribuciones del Alcalde y Pleno", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Junta de Gobierno Local", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "El padrón municipal", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Órganos necesarios y complementarios", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Servicios mínimos obligatorios", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Urbanismo, policía local, tráfico", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Alcalde: jefatura de la Policía Local", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "No más de un tercio de concejales", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Asistencia al Alcalde", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc12-01", "anverso": "¿Cuál es la entidad local básica del Estado?", "reverso": "El municipio." },
+        { "id": "fc12-02", "anverso": "¿Cuáles son los elementos del municipio?", "reverso": "El territorio, la población y la organización." },
+        { "id": "fc12-03", "anverso": "¿Qué es el término municipal?", "reverso": "El territorio en que el Ayuntamiento ejerce sus competencias." },
+        { "id": "fc12-04", "anverso": "¿Quiénes constituyen la población del municipio?", "reverso": "Las personas inscritas en el padrón municipal, que tienen la condición de vecinos." },
+        { "id": "fc12-05", "anverso": "¿Qué es el padrón municipal?", "reverso": "El registro administrativo donde constan los vecinos del municipio." },
+        { "id": "fc12-06", "anverso": "¿Cuáles son los órganos necesarios de todos los Ayuntamientos?", "reverso": "El Alcalde, los Tenientes de Alcalde y el Pleno." },
+        { "id": "fc12-07", "anverso": "¿En qué municipios existe obligatoriamente la Junta de Gobierno Local?", "reverso": "En los de población superior a 5.000 habitantes." },
+        { "id": "fc12-08", "anverso": "¿En qué municipios existe la Comisión Especial de Cuentas?", "reverso": "En todos los municipios." },
+        { "id": "fc12-09", "anverso": "Cita competencias propias del municipio.", "reverso": "Urbanismo, tráfico, policía local, residuos, abastecimiento de agua y protección civil, entre otras." },
+        { "id": "fc12-10", "anverso": "¿Qué servicios debe prestar en todo caso el municipio?", "reverso": "Los servicios mínimos obligatorios determinados por la ley según su población." },
+        { "id": "fc12-11", "anverso": "¿Quién es el Presidente de la Corporación municipal?", "reverso": "El Alcalde." },
+        { "id": "fc12-12", "anverso": "¿Quién ostenta la jefatura de la Policía Local?", "reverso": "El Alcalde." },
+        { "id": "fc12-13", "anverso": "¿Quién puede dictar bandos?", "reverso": "El Alcalde." },
+        { "id": "fc12-14", "anverso": "¿De quién se integra el Pleno?", "reverso": "De todos los concejales y está presidido por el Alcalde." },
+        { "id": "fc12-15", "anverso": "Cita atribuciones del Pleno.", "reverso": "Aprobar ordenanzas, reglamentos y presupuestos, controlar los órganos de gobierno y aprobar la plantilla de personal." },
+        { "id": "fc12-16", "anverso": "¿De quién se integra la Junta de Gobierno Local?", "reverso": "Del Alcalde y un número de concejales no superior al tercio del número legal." },
+        { "id": "fc12-17", "anverso": "¿Quién nombra a los miembros de la Junta de Gobierno Local?", "reverso": "El Alcalde, libremente, dando cuenta al Pleno." },
+        { "id": "fc12-18", "anverso": "¿Cuál es la función propia de la Junta de Gobierno Local?", "reverso": "La asistencia al Alcalde en el ejercicio de sus atribuciones." },
+        { "id": "fc12-19", "anverso": "¿Qué medidas puede adoptar el Alcalde ante una catástrofe?", "reverso": "Medidas urgentes en casos de catástrofe o grave riesgo, dando cuenta al Pleno." },
+        { "id": "fc12-20", "anverso": "¿Qué órgano aprueba la alteración del término municipal?", "reverso": "El Pleno del Ayuntamiento." }
+    ],
+    "preguntas": [
+        {
+            "id": "p12-01",
+            "enunciado": "Los elementos del municipio son:",
+            "opciones": ["Alcalde, Pleno y Junta", "Territorio, población y organización", "Padrón, censo y registro", "Vecinos, residentes y transeúntes"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los elementos del municipio son el territorio, la población y la organización."
+        },
+        {
+            "id": "p12-02",
+            "enunciado": "La población del municipio está constituida por:",
+            "opciones": ["Todos los que trabajan en él", "Las personas inscritas en el padrón municipal", "Solo los propietarios de vivienda", "Los mayores de edad"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La población del municipio está constituida por el conjunto de personas inscritas en el padrón municipal."
+        },
+        {
+            "id": "p12-03",
+            "enunciado": "Son órganos necesarios de todos los Ayuntamientos:",
+            "opciones": ["Solo el Alcalde", "El Alcalde, los Tenientes de Alcalde y el Pleno", "La Junta de Gobierno Local", "Las comisiones informativas"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Son órganos necesarios de todos los Ayuntamientos el Alcalde, los Tenientes de Alcalde y el Pleno."
+        },
+        {
+            "id": "p12-04",
+            "enunciado": "La Junta de Gobierno Local existe obligatoriamente en municipios de más de:",
+            "opciones": ["1.000 habitantes", "5.000 habitantes", "20.000 habitantes", "50.000 habitantes"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Junta de Gobierno Local existe obligatoriamente en municipios de población superior a 5.000 habitantes."
+        },
+        {
+            "id": "p12-05",
+            "enunciado": "La jefatura de la Policía Local corresponde a:",
+            "opciones": ["El Pleno", "El Alcalde", "El Secretario", "La Junta de Gobierno Local"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El Alcalde ostenta la jefatura de la Policía Local y la jefatura superior de todo el personal."
+        },
+        {
+            "id": "p12-06",
+            "enunciado": "La aprobación de las ordenanzas y los presupuestos corresponde a:",
+            "opciones": ["El Alcalde", "El Pleno del Ayuntamiento", "La Junta de Gobierno Local", "El Secretario"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La aprobación de ordenanzas, reglamentos y presupuestos es una atribución del Pleno."
+        },
+        {
+            "id": "p12-07",
+            "enunciado": "La Junta de Gobierno Local se integra por el Alcalde y concejales en número no superior:",
+            "opciones": ["A la mitad del número legal", "Al tercio del número legal de concejales", "A diez concejales", "Al número de Tenientes de Alcalde"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Junta de Gobierno Local se integra por el Alcalde y concejales no superior al tercio del número legal de los mismos."
+        },
+        {
+            "id": "p12-08",
+            "enunciado": "La función propia de la Junta de Gobierno Local es:",
+            "opciones": ["Aprobar los presupuestos", "La asistencia al Alcalde en sus atribuciones", "Controlar al Pleno", "Dictar bandos"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La función propia de la Junta de Gobierno Local es la asistencia al Alcalde en el ejercicio de sus atribuciones."
+        }
+    ]
+}
