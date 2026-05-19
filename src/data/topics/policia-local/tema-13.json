@@ -1,0 +1,157 @@
+{
+    "id": 13,
+    "titulo": "El estatuto de los miembros de las Corporaciones locales. Personal al servicio de las Entidades locales. Adquisición y pérdida de la condición de funcionario. Incompatibilidades. Régimen estatutario",
+    "bloque": "general",
+    "secciones": [
+        {
+            "id": "s13-1",
+            "titulo": "El estatuto de los miembros de las Corporaciones locales",
+            "contenido": "Los miembros de las Corporaciones locales gozan, una vez que tomen posesión de su cargo, de los derechos y deberes que la legislación de régimen local y la electoral general determinan. Tienen derecho a participar con voz y voto en las sesiones de los órganos de que formen parte, a percibir retribuciones e indemnizaciones en los términos que el Pleno establezca, y a obtener información de los antecedentes necesarios para el desarrollo de su función. Entre sus deberes figuran asistir a las sesiones, abstenerse en los asuntos en que tengan interés directo y formular declaración de bienes patrimoniales y de actividades. Adquieren la condición de miembro al tomar posesión y la pierden por finalización del mandato, renuncia, fallecimiento o resolución judicial firme."
+        },
+        {
+            "id": "s13-2",
+            "titulo": "Personal al servicio de las Entidades locales",
+            "contenido": "El personal al servicio de las Entidades locales está integrado por funcionarios de carrera, personal laboral y personal eventual. Los funcionarios de carrera se clasifican en funcionarios con habilitación de carácter nacional (Secretarios, Interventores y Tesoreros) y funcionarios propios de cada Corporación. El personal laboral puede ser fijo, por tiempo indefinido o temporal. El personal eventual desempeña puestos de confianza o asesoramiento especial y su nombramiento y cese son libres. El régimen del personal local se rige por la legislación básica del Estatuto Básico del Empleado Público (Real Decreto Legislativo 5/2015), por la legislación de función pública y por la legislación de régimen local."
+        },
+        {
+            "id": "s13-3",
+            "titulo": "Adquisición y pérdida de la condición de funcionario",
+            "contenido": "La condición de funcionario de carrera se adquiere por el cumplimiento sucesivo de los siguientes requisitos: superación del proceso selectivo, nombramiento por el órgano o autoridad competente, acto de acatamiento de la Constitución y, en su caso, del Estatuto de Autonomía y del resto del ordenamiento jurídico, y toma de posesión dentro del plazo establecido. La condición de funcionario de carrera se pierde por la renuncia voluntaria, la pérdida de la nacionalidad, la jubilación total, la sanción disciplinaria de separación del servicio que tuviere carácter firme y la pena principal o accesoria de inhabilitación absoluta o especial para cargo público que tuviere carácter firme."
+        },
+        {
+            "id": "s13-4",
+            "titulo": "Incompatibilidades",
+            "contenido": "El personal al servicio de las Administraciones públicas está sujeto a un régimen de incompatibilidades regulado en la Ley 53/1984, de 26 de diciembre. El principio general es que el desempeño de un puesto de trabajo en el sector público es incompatible con el ejercicio de cualquier otro puesto, cargo, representación, profesión o actividad, sea pública o privada, por cuenta propia o ajena, que pueda impedir o menoscabar el estricto cumplimiento de los deberes o comprometer su imparcialidad o independencia. Como regla, no se puede percibir más de una remuneración con cargo a presupuestos públicos. La compatibilidad para actividades privadas requiere autorización expresa previa."
+        },
+        {
+            "id": "s13-5",
+            "titulo": "El régimen estatutario: derechos y deberes",
+            "contenido": "El régimen estatutario de los funcionarios comprende sus derechos, deberes, código de conducta, situaciones administrativas y régimen disciplinario. Entre los derechos individuales figuran la inamovilidad en la condición de funcionario de carrera, el desempeño efectivo de las funciones del cuerpo, la progresión en la carrera profesional, las retribuciones y la formación continua. Entre los deberes y el código de conducta destacan actuar con arreglo a los principios de objetividad, integridad, neutralidad, responsabilidad, imparcialidad, confidencialidad, dedicación al servicio público, transparencia, ejemplaridad, austeridad, accesibilidad, eficacia, honradez y respeto a la igualdad entre mujeres y hombres."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e13-1",
+            "titulo": "Personal de las Entidades locales",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Personal de Entidades locales] --> B[Funcionarios de carrera]\n    A --> C[Personal laboral]\n    A --> D[Personal eventual]\n    B --> E[Habilitacion nacional]\n    B --> F[Funcionarios propios]"
+        },
+        {
+            "id": "e13-2",
+            "titulo": "Adquisición y pérdida de la condición de funcionario",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Condicion de funcionario] --> B[Adquisicion]\n    A --> C[Perdida]\n    B --> D[Superar proceso + nombramiento + toma de posesion]\n    C --> E[Renuncia, jubilacion, separacion del servicio]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Estatuto del personal local", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Miembros de las Corporaciones", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Personal de las Entidades locales", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Condición de funcionario", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Incompatibilidades", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Régimen estatutario", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Derechos y deberes del cargo", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Carrera, laboral y eventual", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Adquisición y pérdida", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Superar proceso + toma de posesión", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Ley 53/1984", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Una sola remuneración pública", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Código de conducta", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n5", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc13-01", "anverso": "¿Cuándo adquieren su condición los miembros de las Corporaciones locales?", "reverso": "Al tomar posesión de su cargo." },
+        { "id": "fc13-02", "anverso": "Cita un derecho de los miembros de las Corporaciones locales.", "reverso": "Participar con voz y voto en las sesiones de los órganos de que formen parte." },
+        { "id": "fc13-03", "anverso": "¿Qué deben formular los miembros de las Corporaciones locales?", "reverso": "Declaración de bienes patrimoniales y de actividades." },
+        { "id": "fc13-04", "anverso": "¿Cuándo deben abstenerse los miembros de las Corporaciones?", "reverso": "En los asuntos en que tengan interés directo." },
+        { "id": "fc13-05", "anverso": "¿Cómo se integra el personal al servicio de las Entidades locales?", "reverso": "Por funcionarios de carrera, personal laboral y personal eventual." },
+        { "id": "fc13-06", "anverso": "¿Qué funcionarios tienen habilitación de carácter nacional?", "reverso": "Los Secretarios, Interventores y Tesoreros." },
+        { "id": "fc13-07", "anverso": "¿Qué desempeña el personal eventual?", "reverso": "Puestos de confianza o asesoramiento especial." },
+        { "id": "fc13-08", "anverso": "¿Cómo son el nombramiento y cese del personal eventual?", "reverso": "Libres." },
+        { "id": "fc13-09", "anverso": "¿Qué norma básica regula el empleo público?", "reverso": "El Estatuto Básico del Empleado Público (Real Decreto Legislativo 5/2015)." },
+        { "id": "fc13-10", "anverso": "¿Qué requisitos se exigen para adquirir la condición de funcionario de carrera?", "reverso": "Superar el proceso selectivo, nombramiento, acatamiento de la Constitución y toma de posesión." },
+        { "id": "fc13-11", "anverso": "Cita una causa de pérdida de la condición de funcionario.", "reverso": "La renuncia voluntaria, la jubilación total o la separación del servicio firme." },
+        { "id": "fc13-12", "anverso": "¿Qué pena conlleva la pérdida de la condición de funcionario?", "reverso": "La inhabilitación absoluta o especial para cargo público con carácter firme." },
+        { "id": "fc13-13", "anverso": "¿Qué ley regula las incompatibilidades del personal público?", "reverso": "La Ley 53/1984, de 26 de diciembre." },
+        { "id": "fc13-14", "anverso": "¿Cuál es el principio general en materia de incompatibilidades?", "reverso": "La incompatibilidad del puesto público con otro puesto que menoscabe los deberes o la imparcialidad." },
+        { "id": "fc13-15", "anverso": "¿Puede percibirse más de una remuneración pública?", "reverso": "Como regla, no se puede percibir más de una remuneración con cargo a presupuestos públicos." },
+        { "id": "fc13-16", "anverso": "¿Qué requiere la compatibilidad para actividades privadas?", "reverso": "Autorización expresa previa." },
+        { "id": "fc13-17", "anverso": "¿Qué comprende el régimen estatutario de los funcionarios?", "reverso": "Derechos, deberes, código de conducta, situaciones administrativas y régimen disciplinario." },
+        { "id": "fc13-18", "anverso": "¿Qué derecho protege la permanencia del funcionario de carrera?", "reverso": "La inamovilidad en la condición de funcionario de carrera." },
+        { "id": "fc13-19", "anverso": "Cita principios del código de conducta de los funcionarios.", "reverso": "Objetividad, integridad, neutralidad, imparcialidad, transparencia y ejemplaridad." },
+        { "id": "fc13-20", "anverso": "¿Qué clases de personal laboral existen?", "reverso": "Personal laboral fijo, por tiempo indefinido y temporal." }
+    ],
+    "preguntas": [
+        {
+            "id": "p13-01",
+            "enunciado": "Los miembros de las Corporaciones locales adquieren su condición:",
+            "opciones": ["Al ser proclamados electos", "Al tomar posesión de su cargo", "Al inscribirse en el censo", "Al jurar el cargo ante el Rey"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los miembros de las Corporaciones locales adquieren su condición al tomar posesión de su cargo."
+        },
+        {
+            "id": "p13-02",
+            "enunciado": "El personal al servicio de las Entidades locales se integra por:",
+            "opciones": ["Solo funcionarios de carrera", "Funcionarios de carrera, personal laboral y personal eventual", "Solo personal laboral", "Funcionarios y autónomos"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El personal local se integra por funcionarios de carrera, personal laboral y personal eventual."
+        },
+        {
+            "id": "p13-03",
+            "enunciado": "Tienen habilitación de carácter nacional:",
+            "opciones": ["Los concejales", "Los Secretarios, Interventores y Tesoreros", "El personal eventual", "Los policías locales"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los funcionarios con habilitación de carácter nacional son los Secretarios, Interventores y Tesoreros."
+        },
+        {
+            "id": "p13-04",
+            "enunciado": "El personal eventual desempeña:",
+            "opciones": ["Funciones de carrera", "Puestos de confianza o asesoramiento especial", "Funciones de habilitación nacional", "Puestos laborales fijos"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El personal eventual desempeña puestos de confianza o asesoramiento especial; su nombramiento y cese son libres."
+        },
+        {
+            "id": "p13-05",
+            "enunciado": "Para adquirir la condición de funcionario de carrera se exige, entre otros:",
+            "opciones": ["Solo aprobar el examen", "Superar el proceso selectivo, nombramiento y toma de posesión", "Tener un contrato laboral", "Ser propuesto por el Alcalde"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Se exige superar el proceso selectivo, el nombramiento, el acatamiento de la Constitución y la toma de posesión."
+        },
+        {
+            "id": "p13-06",
+            "enunciado": "El régimen de incompatibilidades del personal público se regula por:",
+            "opciones": ["La Ley 7/1985", "La Ley 53/1984, de 26 de diciembre", "La Ley 39/2015", "El Código Penal"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 53/1984, de 26 de diciembre, regula las incompatibilidades del personal al servicio de las Administraciones públicas."
+        },
+        {
+            "id": "p13-07",
+            "enunciado": "Como regla general, con cargo a presupuestos públicos se puede percibir:",
+            "opciones": ["Dos remuneraciones", "Una sola remuneración", "Tantas como puestos se ocupen", "Ninguna remuneración"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Como regla general no se puede percibir más de una remuneración con cargo a presupuestos públicos."
+        },
+        {
+            "id": "p13-08",
+            "enunciado": "El derecho que protege la permanencia del funcionario de carrera es:",
+            "opciones": ["La libre designación", "La inamovilidad en la condición de funcionario", "La excedencia forzosa", "La promoción interna"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La inamovilidad en la condición de funcionario de carrera es un derecho individual del régimen estatutario."
+        }
+    ]
+}
