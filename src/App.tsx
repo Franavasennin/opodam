@@ -30,6 +30,7 @@ function RootOrCallback() {
 // Páginas de la app (protegidas)
 import MisOposiciones from './pages/MisOposiciones'
 import OposicionDashboard from './pages/OposicionDashboard'
+import { BotonMusica } from './components/audio/BotonMusica'
 
 // Páginas existentes (lazy)
 const Temario = lazy(() => import('./pages/Temario').then(m => ({ default: m.Temario })))
@@ -67,8 +68,9 @@ export default function App() {
   }, [])
 
   return (
-    <Suspense fallback={<Loading />}>
-      <Routes>
+    <>
+      <Suspense fallback={<Loading />}>
+        <Routes>
         {/* Auth callback — destino del magic link */}
         <Route path="/auth/callback" element={<AuthCallback />} />
 
@@ -91,7 +93,9 @@ export default function App() {
         {/* Redirecciones */}
         <Route path="/" element={<RootOrCallback />} />
         <Route path="*" element={<Navigate to="/mis-oposiciones" replace />} />
-      </Routes>
-    </Suspense>
+        </Routes>
+      </Suspense>
+      <BotonMusica />
+    </>
   )
 }

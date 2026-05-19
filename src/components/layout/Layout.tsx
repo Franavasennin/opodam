@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import { BottomNav } from './BottomNav'
 import { SideNav } from './SideNav'
-import { BotonMusica } from '../audio/BotonMusica'
 
 export function Layout() {
   return (
@@ -11,7 +10,6 @@ export function Layout() {
         <Outlet />
       </main>
       <BottomNav />
-      <BotonMusica />
     </div>
   )
 }
