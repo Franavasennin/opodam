@@ -1,0 +1,157 @@
+{
+    "id": 16,
+    "titulo": "Normativa sobre los Cuerpos y Fuerzas de Seguridad. Disposiciones generales. Principios básicos de actuación. Disposiciones estatutarias comunes. Los Cuerpos y Fuerzas de Seguridad del Estado. Funciones. Escalas. Sistema de acceso. Derechos de representación colectiva. El Régimen disciplinario",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s16-1",
+            "titulo": "Normativa y disposiciones generales",
+            "contenido": "La seguridad pública es competencia exclusiva del Estado, y su mantenimiento corresponde al Gobierno de la Nación. La Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad, es la norma básica. Las Fuerzas y Cuerpos de Seguridad están integradas por las Fuerzas y Cuerpos de Seguridad del Estado, dependientes del Gobierno de la Nación; los Cuerpos de Policía dependientes de las Comunidades Autónomas; y los Cuerpos de Policía dependientes de las Corporaciones Locales. Todas ejercen sus funciones con el fin de proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana, ajustando su actuación a los principios de cooperación recíproca y coordinación."
+        },
+        {
+            "id": "s16-2",
+            "titulo": "Principios básicos de actuación",
+            "contenido": "La LO 2/1986 establece los principios básicos de actuación, comunes a todos los miembros de las Fuerzas y Cuerpos de Seguridad. Deben adecuar su actuación al ordenamiento jurídico (legalidad); actuar con absoluta neutralidad política e imparcialidad y sin discriminación; con integridad y dignidad, oponiéndose a todo acto de corrupción; con la formación necesaria y la debida obediencia jerárquica, salvo que las órdenes constituyan delito o sean contrarias a la Constitución. En sus relaciones con la comunidad deben impedir prácticas abusivas o discriminatorias; observar un trato correcto y esmerado; y actuar con la decisión necesaria, rigiéndose por los principios de congruencia, oportunidad y proporcionalidad en el uso de los medios, utilizando las armas solo en situaciones de grave riesgo para la vida."
+        },
+        {
+            "id": "s16-3",
+            "titulo": "Disposiciones estatutarias comunes",
+            "contenido": "Las disposiciones estatutarias comunes establecen que los miembros de las Fuerzas y Cuerpos de Seguridad deben jurar o prometer acatamiento a la Constitución; el documento de acreditación profesional y, en su caso, el arma reglamentaria que se les entregue no podrán ser retirados sino en los casos previstos. La pertenencia a estos Cuerpos es causa de incompatibilidad con el desempeño de cualquier otra actividad pública o privada, salvo las exceptuadas por la ley de incompatibilidades. Su régimen estatutario, formación, promoción y movilidad se rigen por su normativa específica."
+        },
+        {
+            "id": "s16-4",
+            "titulo": "Las Fuerzas y Cuerpos de Seguridad del Estado: funciones, escalas y acceso",
+            "contenido": "Las Fuerzas y Cuerpos de Seguridad del Estado son el Cuerpo Nacional de Policía (instituto armado de naturaleza civil) y la Guardia Civil (instituto armado de naturaleza militar). Entre sus funciones figuran velar por el cumplimiento de las leyes, auxiliar y proteger a las personas, vigilar y proteger edificios e instalaciones, mantener y restablecer el orden y la seguridad ciudadana, prevenir actos delictivos, investigar los delitos, captar y analizar la información de interés para el orden y la seguridad pública, y colaborar con los servicios de protección civil. La Policía Nacional se organiza en escalas (Superior, Ejecutiva, Subinspección y Básica). El acceso se realiza por procedimientos selectivos basados en los principios de igualdad, mérito y capacidad."
+        },
+        {
+            "id": "s16-5",
+            "titulo": "Representación colectiva y régimen disciplinario",
+            "contenido": "Los miembros del Cuerpo Nacional de Policía tienen derecho a constituir organizaciones sindicales de ámbito policial y a afiliarse a las mismas, así como a participar mediante representantes en el Consejo de Policía. La Guardia Civil, por su naturaleza militar, se rige por su régimen específico, con asociaciones profesionales y el Consejo de la Guardia Civil. El régimen disciplinario tipifica las faltas en muy graves, graves y leves, con sanciones que van desde la separación del servicio o la suspensión de funciones hasta la pérdida de remuneración o el apercibimiento, garantizando siempre el procedimiento sancionador y los derechos de defensa."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e16-1",
+            "titulo": "Las Fuerzas y Cuerpos de Seguridad",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Fuerzas y Cuerpos de Seguridad] --> B[Del Estado]\n    A --> C[De las Comunidades Autonomas]\n    A --> D[De las Corporaciones Locales]\n    B --> E[Policia Nacional y Guardia Civil]"
+        },
+        {
+            "id": "e16-2",
+            "titulo": "Principios básicos de actuación",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Principios basicos] --> B[Legalidad]\n    A --> C[Neutralidad e imparcialidad]\n    A --> D[Integridad y dignidad]\n    A --> E[Congruencia, oportunidad y proporcionalidad]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Fuerzas y Cuerpos de Seguridad", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Normativa y disposiciones generales", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Principios básicos de actuación", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Disposiciones estatutarias", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Cuerpos del Estado", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Representación y régimen disciplinario", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "LO 2/1986", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Legalidad, neutralidad, proporcionalidad", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Juramento y acreditación profesional", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Policía Nacional y Guardia Civil", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Escalas y acceso por mérito", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Consejo de Policía", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Faltas muy graves, graves y leves", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc16-01", "anverso": "¿De quién es competencia exclusiva la seguridad pública?", "reverso": "Del Estado; su mantenimiento corresponde al Gobierno de la Nación." },
+        { "id": "fc16-02", "anverso": "¿Qué ley orgánica regula las Fuerzas y Cuerpos de Seguridad?", "reverso": "La Ley Orgánica 2/1986, de 13 de marzo." },
+        { "id": "fc16-03", "anverso": "¿Qué tres tipos de Fuerzas y Cuerpos de Seguridad existen?", "reverso": "Las del Estado, las de las Comunidades Autónomas y las de las Corporaciones Locales." },
+        { "id": "fc16-04", "anverso": "¿Cuál es el fin de las Fuerzas y Cuerpos de Seguridad?", "reverso": "Proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana." },
+        { "id": "fc16-05", "anverso": "¿Qué principio obliga a adecuar la actuación al ordenamiento jurídico?", "reverso": "El principio de legalidad." },
+        { "id": "fc16-06", "anverso": "¿Cómo deben actuar respecto a la política?", "reverso": "Con absoluta neutralidad política e imparcialidad." },
+        { "id": "fc16-07", "anverso": "¿Deben obedecer una orden que constituya delito?", "reverso": "No; la obediencia debida no ampara órdenes que constituyan delito o sean contrarias a la Constitución." },
+        { "id": "fc16-08", "anverso": "¿Qué principios rigen el uso de los medios?", "reverso": "Congruencia, oportunidad y proporcionalidad." },
+        { "id": "fc16-09", "anverso": "¿Cuándo deben utilizarse las armas?", "reverso": "Solo en situaciones de grave riesgo para la vida o la integridad física." },
+        { "id": "fc16-10", "anverso": "¿Qué deben jurar o prometer los miembros de las FCS?", "reverso": "Acatamiento a la Constitución." },
+        { "id": "fc16-11", "anverso": "¿Cuáles son las Fuerzas y Cuerpos de Seguridad del Estado?", "reverso": "El Cuerpo Nacional de Policía y la Guardia Civil." },
+        { "id": "fc16-12", "anverso": "¿Qué naturaleza tiene el Cuerpo Nacional de Policía?", "reverso": "Instituto armado de naturaleza civil." },
+        { "id": "fc16-13", "anverso": "¿Qué naturaleza tiene la Guardia Civil?", "reverso": "Instituto armado de naturaleza militar." },
+        { "id": "fc16-14", "anverso": "Cita funciones de las FCS del Estado.", "reverso": "Velar por el cumplimiento de las leyes, mantener el orden, prevenir e investigar delitos." },
+        { "id": "fc16-15", "anverso": "¿En qué escalas se organiza la Policía Nacional?", "reverso": "Superior, Ejecutiva, Subinspección y Básica." },
+        { "id": "fc16-16", "anverso": "¿Qué principios rigen el acceso a las FCS del Estado?", "reverso": "Igualdad, mérito y capacidad." },
+        { "id": "fc16-17", "anverso": "¿Pueden sindicarse los miembros del Cuerpo Nacional de Policía?", "reverso": "Sí; tienen derecho a constituir organizaciones sindicales y afiliarse a ellas." },
+        { "id": "fc16-18", "anverso": "¿Qué órgano de participación existe en la Policía Nacional?", "reverso": "El Consejo de Policía." },
+        { "id": "fc16-19", "anverso": "¿Cómo se clasifican las faltas en el régimen disciplinario?", "reverso": "En muy graves, graves y leves." },
+        { "id": "fc16-20", "anverso": "¿Cuál es la sanción más grave del régimen disciplinario?", "reverso": "La separación del servicio." }
+    ],
+    "preguntas": [
+        {
+            "id": "p16-01",
+            "enunciado": "Las Fuerzas y Cuerpos de Seguridad se regulan por:",
+            "opciones": ["La Ley 7/1985", "La Ley Orgánica 2/1986, de 13 de marzo", "La Ley 39/2015", "La Ley 2/2008"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad, es la norma básica."
+        },
+        {
+            "id": "p16-02",
+            "enunciado": "La seguridad pública es competencia exclusiva de:",
+            "opciones": ["Las Comunidades Autónomas", "El Estado", "Los Ayuntamientos", "Los Cabildos"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La seguridad pública es competencia exclusiva del Estado; su mantenimiento corresponde al Gobierno de la Nación."
+        },
+        {
+            "id": "p16-03",
+            "enunciado": "Los miembros de las FCS deben actuar respecto de la política con:",
+            "opciones": ["Afinidad al Gobierno", "Absoluta neutralidad e imparcialidad", "Militancia activa", "Discreción opcional"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Deben actuar con absoluta neutralidad política e imparcialidad y sin discriminación."
+        },
+        {
+            "id": "p16-04",
+            "enunciado": "Una orden que constituya delito:",
+            "opciones": ["Debe obedecerse siempre", "No queda amparada por la obediencia debida", "Se obedece si la da un superior", "Se consulta al juez"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La obediencia debida no ampara las órdenes que constituyan delito o sean contrarias a la Constitución."
+        },
+        {
+            "id": "p16-05",
+            "enunciado": "El uso de los medios por las FCS se rige por los principios de:",
+            "opciones": ["Rapidez y dureza", "Congruencia, oportunidad y proporcionalidad", "Discrecionalidad", "Jerarquía únicamente"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El uso de los medios se rige por los principios de congruencia, oportunidad y proporcionalidad."
+        },
+        {
+            "id": "p16-06",
+            "enunciado": "El Cuerpo Nacional de Policía es un instituto armado de naturaleza:",
+            "opciones": ["Militar", "Civil", "Mixta", "Autonómica"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El Cuerpo Nacional de Policía es un instituto armado de naturaleza civil."
+        },
+        {
+            "id": "p16-07",
+            "enunciado": "La Policía Nacional se organiza en las escalas:",
+            "opciones": ["Alta y baja", "Superior, Ejecutiva, Subinspección y Básica", "General y especial", "Mando y tropa"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Policía Nacional se organiza en las escalas Superior, Ejecutiva, Subinspección y Básica."
+        },
+        {
+            "id": "p16-08",
+            "enunciado": "Las faltas en el régimen disciplinario de las FCS se clasifican en:",
+            "opciones": ["Graves y leves", "Muy graves, graves y leves", "Penales y administrativas", "Mayores y menores"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El régimen disciplinario tipifica las faltas en muy graves, graves y leves."
+        }
+    ]
+}
