@@ -1,0 +1,157 @@
+{
+    "id": 4,
+    "titulo": "La Corona. Las Cortes Generales: el Congreso de los Diputados y el Senado. Composición y funcionamiento. La circunscripción electoral. Inviolabilidad e inmunidad",
+    "bloque": "general",
+    "secciones": [
+        {
+            "id": "s4-1",
+            "titulo": "La Corona",
+            "contenido": "El Título II de la Constitución (artículos 56 a 65) regula la Corona. El Rey es el Jefe del Estado, símbolo de su unidad y permanencia, arbitra y modera el funcionamiento regular de las instituciones, asume la más alta representación del Estado español en las relaciones internacionales y ejerce las funciones que le atribuyen la Constitución y las leyes. La persona del Rey es inviolable y no está sujeta a responsabilidad; sus actos estarán siempre refrendados, careciendo de validez sin dicho refrendo. La Corona de España es hereditaria en los sucesores de Don Juan Carlos I de Borbón, siguiendo el orden regular de primogenitura y representación."
+        },
+        {
+            "id": "s4-2",
+            "titulo": "Funciones del Rey y el refrendo",
+            "contenido": "Corresponde al Rey, entre otras funciones: sancionar y promulgar las leyes; convocar y disolver las Cortes Generales y convocar elecciones; proponer el candidato a Presidente del Gobierno y nombrarlo; nombrar y separar a los miembros del Gobierno a propuesta de su Presidente; expedir los decretos acordados en Consejo de Ministros; el mando supremo de las Fuerzas Armadas; y ejercer el derecho de gracia con arreglo a la ley. Los actos del Rey serán refrendados por el Presidente del Gobierno y, en su caso, por los Ministros competentes; la propuesta y nombramiento del Presidente del Gobierno y la disolución prevista en el artículo 99 serán refrendados por el Presidente del Congreso."
+        },
+        {
+            "id": "s4-3",
+            "titulo": "Las Cortes Generales: el Congreso de los Diputados",
+            "contenido": "Las Cortes Generales representan al pueblo español y están formadas por el Congreso de los Diputados y el Senado; son inviolables. El Congreso se compone de un mínimo de 300 y un máximo de 400 Diputados (actualmente 350), elegidos por sufragio universal, libre, igual, directo y secreto. La circunscripción electoral es la provincia; las poblaciones de Ceuta y Melilla están representadas cada una por un Diputado. La ley distribuye el número total de Diputados asignando una representación mínima inicial a cada circunscripción y distribuyendo el resto en proporción a la población. El Congreso es elegido por cuatro años."
+        },
+        {
+            "id": "s4-4",
+            "titulo": "El Senado",
+            "contenido": "El Senado es la Cámara de representación territorial. En cada provincia se eligen cuatro Senadores por sufragio universal; en las provincias insulares cada isla o agrupación de islas con Cabildo o Consejo Insular constituye una circunscripción a efectos de elección de Senadores, correspondiendo tres a Gran Canaria, Mallorca y Tenerife, y uno a cada una de las restantes islas o agrupaciones. Ceuta y Melilla eligen cada una dos Senadores. Además, las Comunidades Autónomas designan un Senador y otro más por cada millón de habitantes de su territorio. El Senado es elegido por cuatro años."
+        },
+        {
+            "id": "s4-5",
+            "titulo": "Inviolabilidad e inmunidad de Diputados y Senadores",
+            "contenido": "Los Diputados y Senadores gozan de inviolabilidad por las opiniones manifestadas en el ejercicio de sus funciones. Durante el periodo de su mandato gozan asimismo de inmunidad y solo podrán ser detenidos en caso de flagrante delito; no podrán ser inculpados ni procesados sin la previa autorización de la Cámara respectiva (suplicatorio). En las causas contra Diputados y Senadores será competente la Sala de lo Penal del Tribunal Supremo. Las Cortes Generales son inviolables, y las reuniones de parlamentarios celebradas sin convocatoria reglamentaria no vinculan a las Cámaras."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e4-1",
+            "titulo": "La Corona",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[La Corona] --> B[Rey - Jefe del Estado]\n    B --> C[Sanciona y promulga leyes]\n    B --> D[Convoca y disuelve las Cortes]\n    B --> E[Mando supremo de las FAS]\n    A --> F[Refrendo - sin el no hay validez]"
+        },
+        {
+            "id": "e4-2",
+            "titulo": "Las Cortes Generales",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Cortes Generales] --> B[Congreso - 350 Diputados]\n    A --> C[Senado - representacion territorial]\n    B --> D[Circunscripcion: la provincia]\n    C --> E[4 Senadores por provincia]\n    A --> F[Mandato de 4 años]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Corona y Cortes Generales", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "La Corona", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Funciones del Rey", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "El Congreso", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "El Senado", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Inviolabilidad e inmunidad", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Rey: Jefe del Estado", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "El refrendo", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Sanciona leyes y disuelve Cortes", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "300-400 Diputados (350); provincia", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Cámara de representación territorial", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Suplicatorio a la Cámara", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Aforamiento ante el Tribunal Supremo", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n3", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc4-01", "anverso": "¿Quién es el Jefe del Estado según la Constitución?", "reverso": "El Rey, símbolo de la unidad y permanencia del Estado." },
+        { "id": "fc4-02", "anverso": "¿Es responsable la persona del Rey?", "reverso": "No; la persona del Rey es inviolable y no está sujeta a responsabilidad." },
+        { "id": "fc4-03", "anverso": "¿Qué ocurre con los actos del Rey sin refrendo?", "reverso": "Carecen de validez; los actos del Rey estarán siempre refrendados." },
+        { "id": "fc4-04", "anverso": "¿Cómo se sucede en la Corona de España?", "reverso": "Es hereditaria, siguiendo el orden regular de primogenitura y representación." },
+        { "id": "fc4-05", "anverso": "¿Quién tiene el mando supremo de las Fuerzas Armadas?", "reverso": "El Rey." },
+        { "id": "fc4-06", "anverso": "¿Quién refrenda con carácter general los actos del Rey?", "reverso": "El Presidente del Gobierno y, en su caso, los Ministros competentes." },
+        { "id": "fc4-07", "anverso": "¿Quién refrenda el nombramiento del Presidente del Gobierno?", "reverso": "El Presidente del Congreso de los Diputados." },
+        { "id": "fc4-08", "anverso": "¿Qué cámaras forman las Cortes Generales?", "reverso": "El Congreso de los Diputados y el Senado." },
+        { "id": "fc4-09", "anverso": "¿Cuántos Diputados tiene el Congreso?", "reverso": "Entre 300 y 400; actualmente 350." },
+        { "id": "fc4-10", "anverso": "¿Cuál es la circunscripción electoral para el Congreso?", "reverso": "La provincia; Ceuta y Melilla tienen un Diputado cada una." },
+        { "id": "fc4-11", "anverso": "¿Qué representa el Senado?", "reverso": "Es la Cámara de representación territorial." },
+        { "id": "fc4-12", "anverso": "¿Cuántos Senadores se eligen por cada provincia?", "reverso": "Cuatro Senadores por provincia." },
+        { "id": "fc4-13", "anverso": "¿Cuántos Senadores eligen Ceuta y Melilla?", "reverso": "Dos Senadores cada una." },
+        { "id": "fc4-14", "anverso": "¿Cuántos Senadores designa cada Comunidad Autónoma?", "reverso": "Uno, y otro más por cada millón de habitantes de su territorio." },
+        { "id": "fc4-15", "anverso": "¿Por cuántos años se eligen el Congreso y el Senado?", "reverso": "Por cuatro años." },
+        { "id": "fc4-16", "anverso": "¿Qué es la inviolabilidad parlamentaria?", "reverso": "La irresponsabilidad por las opiniones manifestadas en el ejercicio de sus funciones." },
+        { "id": "fc4-17", "anverso": "¿Cuándo puede ser detenido un Diputado o Senador?", "reverso": "Solo en caso de flagrante delito." },
+        { "id": "fc4-18", "anverso": "¿Qué es el suplicatorio?", "reverso": "La autorización previa de la Cámara para inculpar o procesar a un parlamentario." },
+        { "id": "fc4-19", "anverso": "¿Qué órgano juzga las causas contra Diputados y Senadores?", "reverso": "La Sala de lo Penal del Tribunal Supremo." },
+        { "id": "fc4-20", "anverso": "¿Cómo se constituye la circunscripción del Senado en provincias insulares?", "reverso": "Cada isla o agrupación con Cabildo o Consejo Insular es una circunscripción." }
+    ],
+    "preguntas": [
+        {
+            "id": "p4-01",
+            "enunciado": "Según la Constitución, el Rey es:",
+            "opciones": ["El jefe del Gobierno", "El Jefe del Estado", "El presidente de las Cortes", "El jefe del Poder Judicial"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 56 define al Rey como Jefe del Estado, símbolo de su unidad y permanencia."
+        },
+        {
+            "id": "p4-02",
+            "enunciado": "Los actos del Rey sin el debido refrendo:",
+            "opciones": ["Son válidos", "Carecen de validez", "Requieren ratificación del Senado", "Los anula el Tribunal Constitucional"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 56.3 establece que los actos del Rey estarán siempre refrendados, careciendo de validez sin dicho refrendo."
+        },
+        {
+            "id": "p4-03",
+            "enunciado": "Las Cortes Generales están formadas por:",
+            "opciones": ["El Congreso y el Gobierno", "El Congreso de los Diputados y el Senado", "El Senado y el Consejo de Estado", "El Congreso y el Tribunal Constitucional"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 66 establece que las Cortes Generales están formadas por el Congreso de los Diputados y el Senado."
+        },
+        {
+            "id": "p4-04",
+            "enunciado": "El Congreso de los Diputados se compone de un mínimo y un máximo de:",
+            "opciones": ["200 y 300", "300 y 400", "250 y 350", "350 y 450"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 68 fija un mínimo de 300 y un máximo de 400 Diputados; actualmente son 350."
+        },
+        {
+            "id": "p4-05",
+            "enunciado": "La circunscripción electoral para el Congreso de los Diputados es:",
+            "opciones": ["El municipio", "La provincia", "La Comunidad Autónoma", "El distrito"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 68.2 establece que la circunscripción electoral es la provincia."
+        },
+        {
+            "id": "p4-06",
+            "enunciado": "El Senado es definido por la Constitución como:",
+            "opciones": ["La Cámara baja", "La Cámara de representación territorial", "La Cámara legislativa única", "El órgano consultivo"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 69 define el Senado como la Cámara de representación territorial."
+        },
+        {
+            "id": "p4-07",
+            "enunciado": "Un Diputado o Senador solo puede ser detenido:",
+            "opciones": ["Con autorización del Gobierno", "En caso de flagrante delito", "Por orden de la policía", "Nunca"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La inmunidad parlamentaria implica que solo podrán ser detenidos en caso de flagrante delito."
+        },
+        {
+            "id": "p4-08",
+            "enunciado": "Las causas penales contra Diputados y Senadores son competencia de:",
+            "opciones": ["La Audiencia Nacional", "La Sala de lo Penal del Tribunal Supremo", "El Tribunal Constitucional", "El Tribunal Superior de Justicia"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 71.3 atribuye a la Sala de lo Penal del Tribunal Supremo la competencia en las causas contra Diputados y Senadores."
+        }
+    ]
+}

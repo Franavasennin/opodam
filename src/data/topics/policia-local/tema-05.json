@@ -1,0 +1,157 @@
+{
+    "id": 5,
+    "titulo": "El Gobierno de España. Composición y Funciones. Control jurisdiccional. Audiencia de los ciudadanos. La organización territorial del Estado",
+    "bloque": "general",
+    "secciones": [
+        {
+            "id": "s5-1",
+            "titulo": "El Gobierno: composición",
+            "contenido": "El Título IV de la Constitución (artículos 97 a 107) regula el Gobierno y la Administración. El Gobierno se compone del Presidente, de los Vicepresidentes en su caso, de los Ministros y de los demás miembros que establezca la ley. El Presidente dirige la acción del Gobierno y coordina las funciones de los demás miembros, sin perjuicio de la competencia y responsabilidad directa de estos en su gestión. Los miembros del Gobierno no podrán ejercer otras funciones representativas que las propias del mandato parlamentario, ni cualquier otra función pública que no derive de su cargo, ni actividad profesional o mercantil alguna."
+        },
+        {
+            "id": "s5-2",
+            "titulo": "Funciones del Gobierno",
+            "contenido": "El artículo 97 establece que el Gobierno dirige la política interior y exterior, la Administración civil y militar y la defensa del Estado, y ejerce la función ejecutiva y la potestad reglamentaria de acuerdo con la Constitución y las leyes. El Gobierno responde solidariamente de su gestión política ante el Congreso de los Diputados. El Presidente del Gobierno es investido por el Congreso conforme al procedimiento del artículo 99; el control político del Gobierno se ejerce mediante la cuestión de confianza, que plantea el Presidente, y la moción de censura, que es de carácter constructivo (debe incluir un candidato alternativo a la Presidencia)."
+        },
+        {
+            "id": "s5-3",
+            "titulo": "Control jurisdiccional y audiencia de los ciudadanos",
+            "contenido": "El artículo 106 de la Constitución dispone que los Tribunales controlan la potestad reglamentaria y la legalidad de la actuación administrativa, así como el sometimiento de esta a los fines que la justifican. Los particulares tienen derecho a ser indemnizados por toda lesión que sufran en sus bienes y derechos, salvo en los casos de fuerza mayor, siempre que la lesión sea consecuencia del funcionamiento de los servicios públicos. El artículo 105 prevé la audiencia de los ciudadanos, directamente o a través de organizaciones reconocidas por la ley, en el procedimiento de elaboración de las disposiciones que les afecten, el acceso a los archivos y registros administrativos, y la audiencia del interesado en el procedimiento de producción de los actos administrativos."
+        },
+        {
+            "id": "s5-4",
+            "titulo": "La organización territorial del Estado",
+            "contenido": "El artículo 137 de la Constitución establece que el Estado se organiza territorialmente en municipios, provincias y las Comunidades Autónomas que se constituyan; todas estas entidades gozan de autonomía para la gestión de sus respectivos intereses. La Constitución garantiza la autonomía de los municipios y de las provincias, así como el principio de solidaridad entre las distintas partes del territorio. Ninguna autoridad podrá adoptar medidas que directa o indirectamente obstaculicen la libertad de circulación y establecimiento de las personas y la libre circulación de bienes en todo el territorio español."
+        },
+        {
+            "id": "s5-5",
+            "titulo": "Las Comunidades Autónomas",
+            "contenido": "El Título VIII regula la organización territorial. Las provincias limítrofes con características históricas, culturales y económicas comunes, los territorios insulares y las provincias con entidad regional histórica pueden acceder a su autogobierno y constituirse en Comunidades Autónomas. Cada Comunidad Autónoma se rige por su Estatuto de Autonomía, norma institucional básica reconocida y amparada por el Estado como parte integrante de su ordenamiento jurídico. El artículo 149 enumera las competencias exclusivas del Estado, y el artículo 148 las que pueden asumir las Comunidades Autónomas; las materias no atribuidas expresamente al Estado pueden corresponder a las Comunidades en virtud de sus Estatutos."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e5-1",
+            "titulo": "El Gobierno",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[El Gobierno] --> B[Presidente]\n    A --> C[Vicepresidentes]\n    A --> D[Ministros]\n    A --> E[Funciones: ejecutiva y reglamentaria]\n    A --> F[Responsabilidad ante el Congreso]"
+        },
+        {
+            "id": "e5-2",
+            "titulo": "Organización territorial del Estado",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Organizacion territorial] --> B[Municipios]\n    A --> C[Provincias]\n    A --> D[Comunidades Autonomas]\n    D --> E[Estatuto de Autonomia]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "El Gobierno y el Estado", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Composición del Gobierno", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Funciones del Gobierno", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Control jurisdiccional", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Audiencia de los ciudadanos", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Organización territorial", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Presidente, Vicepresidentes, Ministros", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Función ejecutiva y reglamentaria", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Los Tribunales controlan la Administración", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Acceso a archivos y registros", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Audiencia del interesado", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Municipios, provincias y CC.AA.", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Autonomía y solidaridad", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc5-01", "anverso": "¿Qué artículos de la Constitución regulan el Gobierno?", "reverso": "Los artículos 97 a 107 (Título IV)." },
+        { "id": "fc5-02", "anverso": "¿De quién se compone el Gobierno?", "reverso": "Del Presidente, los Vicepresidentes en su caso, los Ministros y los demás miembros que establezca la ley." },
+        { "id": "fc5-03", "anverso": "¿Quién dirige la acción del Gobierno?", "reverso": "El Presidente del Gobierno." },
+        { "id": "fc5-04", "anverso": "¿Qué dirige el Gobierno según el artículo 97?", "reverso": "La política interior y exterior, la Administración civil y militar y la defensa del Estado." },
+        { "id": "fc5-05", "anverso": "¿Qué potestades ejerce el Gobierno?", "reverso": "La función ejecutiva y la potestad reglamentaria." },
+        { "id": "fc5-06", "anverso": "¿Ante quién responde políticamente el Gobierno?", "reverso": "Ante el Congreso de los Diputados, de forma solidaria." },
+        { "id": "fc5-07", "anverso": "¿Qué instrumentos de control político existen sobre el Gobierno?", "reverso": "La cuestión de confianza y la moción de censura." },
+        { "id": "fc5-08", "anverso": "¿Qué característica tiene la moción de censura en España?", "reverso": "Es constructiva: debe incluir un candidato alternativo a la Presidencia." },
+        { "id": "fc5-09", "anverso": "¿Qué controlan los Tribunales según el artículo 106?", "reverso": "La potestad reglamentaria y la legalidad de la actuación administrativa." },
+        { "id": "fc5-10", "anverso": "¿Cuándo tienen derecho los particulares a ser indemnizados?", "reverso": "Por toda lesión consecuencia del funcionamiento de los servicios públicos, salvo fuerza mayor." },
+        { "id": "fc5-11", "anverso": "¿Qué prevé el artículo 105 de la Constitución?", "reverso": "La audiencia de los ciudadanos, el acceso a archivos y registros y la audiencia del interesado." },
+        { "id": "fc5-12", "anverso": "¿Cómo se organiza territorialmente el Estado?", "reverso": "En municipios, provincias y Comunidades Autónomas." },
+        { "id": "fc5-13", "anverso": "¿Qué garantiza el artículo 137?", "reverso": "La autonomía de municipios, provincias y CC.AA. para la gestión de sus intereses." },
+        { "id": "fc5-14", "anverso": "¿Qué norma rige cada Comunidad Autónoma?", "reverso": "Su Estatuto de Autonomía, norma institucional básica." },
+        { "id": "fc5-15", "anverso": "¿Qué artículo enumera las competencias exclusivas del Estado?", "reverso": "El artículo 149 de la Constitución." },
+        { "id": "fc5-16", "anverso": "¿Qué artículo recoge las competencias que pueden asumir las CC.AA.?", "reverso": "El artículo 148 de la Constitución." },
+        { "id": "fc5-17", "anverso": "¿Pueden los miembros del Gobierno ejercer actividad mercantil?", "reverso": "No; no pueden ejercer actividad profesional o mercantil alguna." },
+        { "id": "fc5-18", "anverso": "¿Qué principio rige las relaciones entre las partes del territorio?", "reverso": "El principio de solidaridad." },
+        { "id": "fc5-19", "anverso": "¿Cómo se inviste al Presidente del Gobierno?", "reverso": "Por el Congreso de los Diputados conforme al procedimiento del artículo 99." },
+        { "id": "fc5-20", "anverso": "¿Puede obstaculizarse la libre circulación de bienes en el territorio?", "reverso": "No; ninguna autoridad puede adoptar medidas que la obstaculicen." }
+    ],
+    "preguntas": [
+        {
+            "id": "p5-01",
+            "enunciado": "El Gobierno se compone del Presidente, los Vicepresidentes en su caso, los Ministros y:",
+            "opciones": ["Los Senadores", "Los demás miembros que establezca la ley", "Los Secretarios de Estado obligatoriamente", "Los Delegados del Gobierno"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 98.1 define la composición del Gobierno incluyendo los demás miembros que establezca la ley."
+        },
+        {
+            "id": "p5-02",
+            "enunciado": "Según el artículo 97, el Gobierno ejerce:",
+            "opciones": ["La función legislativa", "La función ejecutiva y la potestad reglamentaria", "La función jurisdiccional", "El control constitucional"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 97 atribuye al Gobierno la función ejecutiva y la potestad reglamentaria."
+        },
+        {
+            "id": "p5-03",
+            "enunciado": "El Gobierno responde políticamente ante:",
+            "opciones": ["El Senado", "El Congreso de los Diputados", "El Tribunal Constitucional", "El Rey"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 108 establece que el Gobierno responde solidariamente de su gestión ante el Congreso de los Diputados."
+        },
+        {
+            "id": "p5-04",
+            "enunciado": "La moción de censura en España se caracteriza por ser:",
+            "opciones": ["Destructiva", "Constructiva, con candidato alternativo", "Automática", "Decidida por el Senado"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La moción de censura es constructiva: debe incluir un candidato alternativo a la Presidencia del Gobierno."
+        },
+        {
+            "id": "p5-05",
+            "enunciado": "Según el artículo 106, los Tribunales controlan:",
+            "opciones": ["Las leyes del Parlamento", "La potestad reglamentaria y la legalidad de la actuación administrativa", "Las sentencias del Tribunal Constitucional", "Los tratados internacionales"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 106.1 atribuye a los Tribunales el control de la potestad reglamentaria y la legalidad de la actuación administrativa."
+        },
+        {
+            "id": "p5-06",
+            "enunciado": "El Estado se organiza territorialmente en:",
+            "opciones": ["Provincias y regiones", "Municipios, provincias y Comunidades Autónomas", "Comarcas y municipios", "Distritos y provincias"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 137 establece la organización en municipios, provincias y Comunidades Autónomas."
+        },
+        {
+            "id": "p5-07",
+            "enunciado": "La norma institucional básica de una Comunidad Autónoma es:",
+            "opciones": ["La Constitución", "El Estatuto de Autonomía", "El Reglamento del Parlamento autonómico", "La ley de presupuestos"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 147 define el Estatuto de Autonomía como la norma institucional básica de cada Comunidad Autónoma."
+        },
+        {
+            "id": "p5-08",
+            "enunciado": "Las competencias exclusivas del Estado se enumeran en el artículo:",
+            "opciones": ["137", "148", "149", "150"],
+            "respuestaCorrecta": 2,
+            "explicacion": "El artículo 149 de la Constitución enumera las competencias exclusivas del Estado."
+        }
+    ]
+}
