@@ -1,0 +1,157 @@
+{
+    "id": 14,
+    "titulo": "Las Ordenanzas municipales. Reglamentos y Bandos. Procedimiento de elaboración y aprobación. Régimen sancionador. Clasificación de las infracciones. Sanciones. Licencias o autorizaciones municipales: tipos y actividades sujetas",
+    "bloque": "general",
+    "secciones": [
+        {
+            "id": "s14-1",
+            "titulo": "Ordenanzas, reglamentos y bandos",
+            "contenido": "Las entidades locales, en el ámbito de sus competencias, tienen potestad reglamentaria, que se manifiesta en la aprobación de ordenanzas y reglamentos y, por parte de los Alcaldes, de bandos. El reglamento orgánico regula la propia organización y funcionamiento del Ayuntamiento. Las ordenanzas son normas de carácter general que regulan materias de competencia municipal y obligan a los ciudadanos en el término municipal. Los bandos son disposiciones que dicta el Alcalde sobre asuntos de su competencia, generalmente de carácter recordatorio de normas vigentes o ante situaciones de necesidad; no pueden contradecir lo dispuesto en las ordenanzas ni en normas de rango superior."
+        },
+        {
+            "id": "s14-2",
+            "titulo": "Procedimiento de elaboración y aprobación",
+            "contenido": "La aprobación de las ordenanzas y reglamentos locales sigue un procedimiento regulado en la Ley 7/1985: aprobación inicial por el Pleno, información pública y audiencia a los interesados por un plazo mínimo de treinta días para la presentación de reclamaciones y sugerencias, resolución de todas las reclamaciones presentadas y aprobación definitiva por el Pleno. En caso de que no se presente ninguna reclamación o sugerencia, se entiende definitivamente adoptado el acuerdo hasta entonces provisional. Las ordenanzas se publican íntegramente en el Boletín Oficial de la Provincia y no entran en vigor hasta que se haya publicado su texto completo y haya transcurrido el plazo de quince días hábiles."
+        },
+        {
+            "id": "s14-3",
+            "titulo": "El régimen sancionador municipal",
+            "contenido": "Las entidades locales pueden, en defecto de normativa sectorial específica, establecer en sus ordenanzas tipos de infracciones y sanciones para la adecuada ordenación de las relaciones de convivencia y del uso de los servicios, equipamientos, infraestructuras, instalaciones y espacios públicos. La potestad sancionadora se ejerce respetando los principios de legalidad, tipicidad, irretroactividad, proporcionalidad, culpabilidad y presunción de inocencia. El procedimiento sancionador, regulado en la Ley 39/2015, garantiza al presunto responsable la separación entre la fase instructora y la sancionadora, así como el derecho a ser informado de los hechos imputados y a formular alegaciones."
+        },
+        {
+            "id": "s14-4",
+            "titulo": "Clasificación de las infracciones y sanciones",
+            "contenido": "Las infracciones a las ordenanzas locales se clasifican en muy graves, graves y leves. Para los supuestos en que no exista normativa sectorial, la Ley 7/1985 establece límites máximos de las multas: las infracciones muy graves hasta 3.000 euros, las graves hasta 1.500 euros y las leves hasta 750 euros. La clasificación se realiza atendiendo a criterios como la intensidad de la perturbación del orden, la convivencia o el servicio público, los daños causados a las instalaciones o equipamientos, y la reincidencia. Las sanciones se gradúan en función de la existencia de intencionalidad, la naturaleza de los perjuicios causados y la reincidencia."
+        },
+        {
+            "id": "s14-5",
+            "titulo": "Licencias y autorizaciones municipales",
+            "contenido": "La licencia o autorización municipal es un acto administrativo por el que la Administración local permite a un particular el ejercicio de una actividad o la realización de una obra, comprobando previamente su adecuación a la legalidad. Existen, entre otras, licencias de obras (mayor y menor), licencias de actividad o de apertura de establecimientos, licencias de ocupación de la vía pública y autorizaciones para espectáculos públicos. La tendencia normativa actual sustituye buena parte de las licencias previas por la declaración responsable y la comunicación previa, instrumentos que permiten iniciar la actividad sin esperar a una resolución expresa, sin perjuicio de las facultades de comprobación, control e inspección de la Administración."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e14-1",
+            "titulo": "Normas locales",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Potestad normativa local] --> B[Reglamento organico]\n    A --> C[Ordenanzas]\n    A --> D[Bandos del Alcalde]\n    C --> E[Aprobacion inicial y definitiva por el Pleno]"
+        },
+        {
+            "id": "e14-2",
+            "titulo": "Infracciones y sanciones",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Infracciones a ordenanzas] --> B[Muy graves - hasta 3000 euros]\n    A --> C[Graves - hasta 1500 euros]\n    A --> D[Leves - hasta 750 euros]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Ordenanzas y régimen sancionador", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Ordenanzas, reglamentos y bandos", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Elaboración y aprobación", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Régimen sancionador", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Infracciones y sanciones", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Licencias y autorizaciones", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Potestad reglamentaria local", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Información pública 30 días", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Principios de legalidad y tipicidad", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Muy graves, graves y leves", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Multas: 3000 / 1500 / 750 euros", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Licencias de obras y de actividad", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Declaración responsable", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc14-01", "anverso": "¿Qué potestad permite a las entidades locales aprobar ordenanzas?", "reverso": "La potestad reglamentaria." },
+        { "id": "fc14-02", "anverso": "¿Qué regula el reglamento orgánico?", "reverso": "La propia organización y funcionamiento del Ayuntamiento." },
+        { "id": "fc14-03", "anverso": "¿Qué son las ordenanzas municipales?", "reverso": "Normas de carácter general que regulan materias de competencia municipal y obligan en el término municipal." },
+        { "id": "fc14-04", "anverso": "¿Qué son los bandos?", "reverso": "Disposiciones que dicta el Alcalde sobre asuntos de su competencia." },
+        { "id": "fc14-05", "anverso": "¿Pueden los bandos contradecir las ordenanzas?", "reverso": "No; los bandos no pueden contradecir las ordenanzas ni normas de rango superior." },
+        { "id": "fc14-06", "anverso": "¿Quién aprueba inicialmente una ordenanza?", "reverso": "El Pleno del Ayuntamiento." },
+        { "id": "fc14-07", "anverso": "¿Cuál es el plazo mínimo de información pública de una ordenanza?", "reverso": "Treinta días para presentar reclamaciones y sugerencias." },
+        { "id": "fc14-08", "anverso": "¿Qué ocurre si no se presentan reclamaciones a una ordenanza?", "reverso": "Se entiende definitivamente adoptado el acuerdo provisional." },
+        { "id": "fc14-09", "anverso": "¿Dónde se publican íntegramente las ordenanzas?", "reverso": "En el Boletín Oficial de la Provincia." },
+        { "id": "fc14-10", "anverso": "¿Cuándo entra en vigor una ordenanza?", "reverso": "Tras la publicación íntegra de su texto y el transcurso de quince días hábiles." },
+        { "id": "fc14-11", "anverso": "¿Qué principios rigen la potestad sancionadora?", "reverso": "Legalidad, tipicidad, irretroactividad, proporcionalidad, culpabilidad y presunción de inocencia." },
+        { "id": "fc14-12", "anverso": "¿Qué garantiza el procedimiento sancionador?", "reverso": "La separación entre la fase instructora y la sancionadora." },
+        { "id": "fc14-13", "anverso": "¿Cómo se clasifican las infracciones a las ordenanzas?", "reverso": "En muy graves, graves y leves." },
+        { "id": "fc14-14", "anverso": "¿Cuál es el límite máximo de multa por infracción muy grave (sin normativa sectorial)?", "reverso": "Hasta 3.000 euros." },
+        { "id": "fc14-15", "anverso": "¿Cuál es el límite máximo de multa por infracción grave?", "reverso": "Hasta 1.500 euros." },
+        { "id": "fc14-16", "anverso": "¿Cuál es el límite máximo de multa por infracción leve?", "reverso": "Hasta 750 euros." },
+        { "id": "fc14-17", "anverso": "¿Qué es una licencia municipal?", "reverso": "Un acto administrativo que permite a un particular ejercer una actividad o realizar una obra." },
+        { "id": "fc14-18", "anverso": "Cita tipos de licencias municipales.", "reverso": "Licencias de obras, de actividad o apertura, de ocupación de la vía pública." },
+        { "id": "fc14-19", "anverso": "¿Qué instrumentos sustituyen a muchas licencias previas?", "reverso": "La declaración responsable y la comunicación previa." },
+        { "id": "fc14-20", "anverso": "¿Pierde la Administración el control con la declaración responsable?", "reverso": "No; conserva sus facultades de comprobación, control e inspección." }
+    ],
+    "preguntas": [
+        {
+            "id": "p14-01",
+            "enunciado": "Las ordenanzas municipales son aprobadas por:",
+            "opciones": ["El Alcalde", "El Pleno del Ayuntamiento", "La Junta de Gobierno Local", "El Secretario"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La aprobación inicial y definitiva de las ordenanzas corresponde al Pleno del Ayuntamiento."
+        },
+        {
+            "id": "p14-02",
+            "enunciado": "Los bandos son dictados por:",
+            "opciones": ["El Pleno", "El Alcalde", "La Junta de Gobierno", "El Cabildo"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los bandos son disposiciones que dicta el Alcalde sobre asuntos de su competencia."
+        },
+        {
+            "id": "p14-03",
+            "enunciado": "El plazo mínimo de información pública en la elaboración de una ordenanza es de:",
+            "opciones": ["Diez días", "Quince días", "Treinta días", "Dos meses"],
+            "respuestaCorrecta": 2,
+            "explicacion": "El plazo mínimo de información pública y audiencia a los interesados es de treinta días."
+        },
+        {
+            "id": "p14-04",
+            "enunciado": "Las ordenanzas municipales se publican íntegramente en:",
+            "opciones": ["El BOE", "El Boletín Oficial de la Provincia", "El tablón del Ayuntamiento solo", "El BOC"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las ordenanzas se publican íntegramente en el Boletín Oficial de la Provincia."
+        },
+        {
+            "id": "p14-05",
+            "enunciado": "Las infracciones a las ordenanzas locales se clasifican en:",
+            "opciones": ["Graves y leves", "Muy graves, graves y leves", "Mayores y menores", "Penales y administrativas"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las infracciones a las ordenanzas se clasifican en muy graves, graves y leves."
+        },
+        {
+            "id": "p14-06",
+            "enunciado": "El límite máximo de multa por una infracción muy grave, en defecto de normativa sectorial, es de:",
+            "opciones": ["750 euros", "1.500 euros", "3.000 euros", "6.000 euros"],
+            "respuestaCorrecta": 2,
+            "explicacion": "La Ley 7/1985 fija un límite máximo de 3.000 euros para las infracciones muy graves."
+        },
+        {
+            "id": "p14-07",
+            "enunciado": "El procedimiento sancionador garantiza:",
+            "opciones": ["La unión de instrucción y sanción", "La separación entre la fase instructora y la sancionadora", "La ausencia de alegaciones", "La sanción automática"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El procedimiento sancionador garantiza la separación entre la fase instructora y la sancionadora."
+        },
+        {
+            "id": "p14-08",
+            "enunciado": "El instrumento que permite iniciar una actividad sin esperar resolución expresa es:",
+            "opciones": ["La licencia de obras", "La declaración responsable o comunicación previa", "El bando", "La ordenanza"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La declaración responsable y la comunicación previa permiten iniciar la actividad sin esperar a una resolución expresa."
+        }
+    ]
+}
