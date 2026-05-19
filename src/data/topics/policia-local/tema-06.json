@@ -1,0 +1,157 @@
+{
+    "id": 6,
+    "titulo": "El Poder Judicial. El Ministerio Fiscal: composición y funciones. El Tribunal Constitucional: composición y funciones. El Tribunal Supremo. El Tribunal Superior de Justicia de Canarias: composición y funciones",
+    "bloque": "general",
+    "secciones": [
+        {
+            "id": "s6-1",
+            "titulo": "El Poder Judicial",
+            "contenido": "El Título VI de la Constitución (artículos 117 a 127) regula el Poder Judicial. La justicia emana del pueblo y se administra en nombre del Rey por Jueces y Magistrados integrantes del Poder Judicial, independientes, inamovibles, responsables y sometidos únicamente al imperio de la ley. El ejercicio de la potestad jurisdiccional, juzgando y haciendo ejecutar lo juzgado, corresponde exclusivamente a los Juzgados y Tribunales determinados por las leyes. El principio de unidad jurisdiccional es la base de la organización y funcionamiento de los Tribunales. El órgano de gobierno del Poder Judicial es el Consejo General del Poder Judicial."
+        },
+        {
+            "id": "s6-2",
+            "titulo": "El Consejo General del Poder Judicial",
+            "contenido": "El Consejo General del Poder Judicial es el órgano de gobierno del Poder Judicial. Su Presidente es a su vez el Presidente del Tribunal Supremo. Está integrado por el Presidente del Tribunal Supremo, que lo preside, y por veinte miembros nombrados por el Rey por un periodo de cinco años: doce entre Jueces y Magistrados y ocho entre abogados y otros juristas de reconocida competencia con más de quince años de ejercicio profesional. La ley establece su estatuto y régimen de incompatibilidades, así como sus funciones, en particular en materia de nombramientos, ascensos, inspección y régimen disciplinario."
+        },
+        {
+            "id": "s6-3",
+            "titulo": "El Ministerio Fiscal",
+            "contenido": "El artículo 124 de la Constitución regula el Ministerio Fiscal, que tiene por misión promover la acción de la justicia en defensa de la legalidad, de los derechos de los ciudadanos y del interés público tutelado por la ley, de oficio o a petición de los interesados, así como velar por la independencia de los Tribunales y procurar ante estos la satisfacción del interés social. Ejerce sus funciones por medio de órganos propios conforme a los principios de unidad de actuación y dependencia jerárquica y con sujeción a los principios de legalidad e imparcialidad. El Fiscal General del Estado es nombrado por el Rey, a propuesta del Gobierno, oído el Consejo General del Poder Judicial."
+        },
+        {
+            "id": "s6-4",
+            "titulo": "El Tribunal Constitucional",
+            "contenido": "El Título IX (artículos 159 a 165) regula el Tribunal Constitucional, intérprete supremo de la Constitución, independiente de los demás órganos constitucionales y sometido solo a la Constitución y a su Ley Orgánica. Se compone de doce miembros nombrados por el Rey: cuatro a propuesta del Congreso por mayoría de tres quintos, cuatro a propuesta del Senado con idéntica mayoría, dos a propuesta del Gobierno y dos a propuesta del Consejo General del Poder Judicial. Son designados por un periodo de nueve años y se renuevan por terceras partes cada tres. Conoce, entre otros, del recurso y la cuestión de inconstitucionalidad, del recurso de amparo y de los conflictos de competencia."
+        },
+        {
+            "id": "s6-5",
+            "titulo": "El Tribunal Supremo y el Tribunal Superior de Justicia de Canarias",
+            "contenido": "El Tribunal Supremo, con jurisdicción en toda España, es el órgano jurisdiccional superior en todos los órdenes, salvo lo dispuesto en materia de garantías constitucionales. Se organiza en Salas: de lo Civil, de lo Penal, de lo Contencioso-Administrativo, de lo Social y de lo Militar. El Tribunal Superior de Justicia de Canarias culmina la organización judicial en el ámbito territorial de la Comunidad Autónoma de Canarias, sin perjuicio de la jurisdicción que corresponde al Tribunal Supremo. Tiene su sede en Las Palmas de Gran Canaria y se compone de las Salas de lo Civil y Penal, de lo Contencioso-Administrativo y de lo Social."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e6-1",
+            "titulo": "El Poder Judicial",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Poder Judicial] --> B[Jueces y Magistrados independientes]\n    A --> C[Unidad jurisdiccional]\n    A --> D[Consejo General del Poder Judicial]\n    D --> E[Presidente + 20 vocales]"
+        },
+        {
+            "id": "e6-2",
+            "titulo": "El Tribunal Constitucional",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Tribunal Constitucional] --> B[12 miembros, 9 años]\n    A --> C[Recurso de inconstitucionalidad]\n    A --> D[Recurso de amparo]\n    A --> E[Conflictos de competencia]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "El Poder Judicial", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Poder Judicial", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Ministerio Fiscal", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Tribunal Constitucional", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Tribunal Supremo", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "TSJ de Canarias", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Jueces independientes e inamovibles", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Defiende la legalidad", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "12 miembros, 9 años", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Órgano superior en todos los órdenes", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Cinco Salas", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Culmina la organización judicial en Canarias", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Sede en Las Palmas de Gran Canaria", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc6-01", "anverso": "¿De quién emana la justicia según la Constitución?", "reverso": "La justicia emana del pueblo y se administra en nombre del Rey." },
+        { "id": "fc6-02", "anverso": "¿Cuáles son las notas características de Jueces y Magistrados?", "reverso": "Independientes, inamovibles, responsables y sometidos únicamente al imperio de la ley." },
+        { "id": "fc6-03", "anverso": "¿En qué consiste la potestad jurisdiccional?", "reverso": "En juzgar y hacer ejecutar lo juzgado." },
+        { "id": "fc6-04", "anverso": "¿Cuál es la base de la organización de los Tribunales?", "reverso": "El principio de unidad jurisdiccional." },
+        { "id": "fc6-05", "anverso": "¿Cuál es el órgano de gobierno del Poder Judicial?", "reverso": "El Consejo General del Poder Judicial." },
+        { "id": "fc6-06", "anverso": "¿Quién preside el Consejo General del Poder Judicial?", "reverso": "El Presidente del Tribunal Supremo." },
+        { "id": "fc6-07", "anverso": "¿Cuántos vocales integran el CGPJ además del Presidente?", "reverso": "Veinte vocales nombrados por cinco años." },
+        { "id": "fc6-08", "anverso": "¿Cuál es la misión del Ministerio Fiscal?", "reverso": "Promover la acción de la justicia en defensa de la legalidad, los derechos de los ciudadanos y el interés público." },
+        { "id": "fc6-09", "anverso": "¿Bajo qué principios actúa el Ministerio Fiscal?", "reverso": "Unidad de actuación, dependencia jerárquica, legalidad e imparcialidad." },
+        { "id": "fc6-10", "anverso": "¿Quién nombra al Fiscal General del Estado?", "reverso": "El Rey, a propuesta del Gobierno, oído el Consejo General del Poder Judicial." },
+        { "id": "fc6-11", "anverso": "¿Qué es el Tribunal Constitucional?", "reverso": "El intérprete supremo de la Constitución." },
+        { "id": "fc6-12", "anverso": "¿Cuántos miembros tiene el Tribunal Constitucional?", "reverso": "Doce miembros nombrados por el Rey." },
+        { "id": "fc6-13", "anverso": "¿Por cuántos años se designa a los magistrados del TC?", "reverso": "Por nueve años, renovándose por terceras partes cada tres." },
+        { "id": "fc6-14", "anverso": "¿Cuántos miembros del TC propone el Congreso?", "reverso": "Cuatro, por mayoría de tres quintos." },
+        { "id": "fc6-15", "anverso": "¿De qué conoce el Tribunal Constitucional?", "reverso": "Del recurso y la cuestión de inconstitucionalidad, del recurso de amparo y de los conflictos de competencia." },
+        { "id": "fc6-16", "anverso": "¿Qué es el Tribunal Supremo?", "reverso": "El órgano jurisdiccional superior en todos los órdenes, salvo en garantías constitucionales." },
+        { "id": "fc6-17", "anverso": "¿En qué Salas se organiza el Tribunal Supremo?", "reverso": "Civil, Penal, Contencioso-Administrativo, Social y Militar." },
+        { "id": "fc6-18", "anverso": "¿Qué órgano culmina la organización judicial en Canarias?", "reverso": "El Tribunal Superior de Justicia de Canarias." },
+        { "id": "fc6-19", "anverso": "¿Dónde tiene su sede el TSJ de Canarias?", "reverso": "En Las Palmas de Gran Canaria." },
+        { "id": "fc6-20", "anverso": "¿Qué Salas componen el TSJ de Canarias?", "reverso": "Las Salas de lo Civil y Penal, de lo Contencioso-Administrativo y de lo Social." }
+    ],
+    "preguntas": [
+        {
+            "id": "p6-01",
+            "enunciado": "Según la Constitución, la justicia se administra en nombre de:",
+            "opciones": ["El Gobierno", "El Rey", "Las Cortes Generales", "El pueblo directamente"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 117 establece que la justicia emana del pueblo y se administra en nombre del Rey."
+        },
+        {
+            "id": "p6-02",
+            "enunciado": "El órgano de gobierno del Poder Judicial es:",
+            "opciones": ["El Tribunal Supremo", "El Consejo General del Poder Judicial", "El Ministerio de Justicia", "El Tribunal Constitucional"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 122 establece que el Consejo General del Poder Judicial es el órgano de gobierno del Poder Judicial."
+        },
+        {
+            "id": "p6-03",
+            "enunciado": "El Consejo General del Poder Judicial, además del Presidente, está integrado por:",
+            "opciones": ["Doce vocales", "Veinte vocales", "Quince vocales", "Ocho vocales"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El CGPJ está integrado por el Presidente del Tribunal Supremo y veinte vocales."
+        },
+        {
+            "id": "p6-04",
+            "enunciado": "El Ministerio Fiscal actúa con sujeción a los principios de:",
+            "opciones": ["Discrecionalidad y oportunidad", "Legalidad e imparcialidad", "Publicidad y contradicción", "Independencia absoluta"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 124.2 establece que el Ministerio Fiscal actúa con sujeción a los principios de legalidad e imparcialidad."
+        },
+        {
+            "id": "p6-05",
+            "enunciado": "El Tribunal Constitucional se compone de:",
+            "opciones": ["Diez miembros", "Doce miembros", "Quince miembros", "Veinte miembros"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 159 establece que el Tribunal Constitucional se compone de doce miembros nombrados por el Rey."
+        },
+        {
+            "id": "p6-06",
+            "enunciado": "Los magistrados del Tribunal Constitucional son designados por un periodo de:",
+            "opciones": ["Cinco años", "Seis años", "Nueve años", "Doce años"],
+            "respuestaCorrecta": 2,
+            "explicacion": "Son designados por nueve años y se renuevan por terceras partes cada tres."
+        },
+        {
+            "id": "p6-07",
+            "enunciado": "El órgano jurisdiccional superior en todos los órdenes, salvo garantías constitucionales, es:",
+            "opciones": ["El Tribunal Constitucional", "El Tribunal Supremo", "La Audiencia Nacional", "El Tribunal Superior de Justicia"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 123 define al Tribunal Supremo como órgano jurisdiccional superior en todos los órdenes, salvo en materia de garantías constitucionales."
+        },
+        {
+            "id": "p6-08",
+            "enunciado": "El Tribunal Superior de Justicia de Canarias tiene su sede en:",
+            "opciones": ["Santa Cruz de Tenerife", "Las Palmas de Gran Canaria", "Madrid", "La Laguna"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El Tribunal Superior de Justicia de Canarias tiene su sede en Las Palmas de Gran Canaria."
+        }
+    ]
+}
