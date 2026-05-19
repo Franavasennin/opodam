@@ -1,0 +1,157 @@
+{
+    "id": 10,
+    "titulo": "La jurisdicción contencioso-administrativa. Procedimientos ordinarios y especiales. El proceso contencioso-administrativo. Las partes, actos impugnables. La ejecución de la sentencia",
+    "bloque": "general",
+    "secciones": [
+        {
+            "id": "s10-1",
+            "titulo": "La jurisdicción contencioso-administrativa",
+            "contenido": "La jurisdicción contencioso-administrativa se regula por la Ley 29/1998, de 13 de julio. Conoce de las pretensiones que se deduzcan en relación con la actuación de las Administraciones públicas sujeta al Derecho Administrativo, con las disposiciones generales de rango inferior a la ley y con los decretos legislativos cuando excedan los límites de la delegación. Tiene por objeto controlar la legalidad de la actividad administrativa y garantizar los derechos e intereses legítimos de los ciudadanos frente a las Administraciones. Sus órganos son los Juzgados de lo Contencioso-Administrativo, los Juzgados Centrales, las Salas de lo Contencioso-Administrativo de los Tribunales Superiores de Justicia, la Audiencia Nacional y el Tribunal Supremo."
+        },
+        {
+            "id": "s10-2",
+            "titulo": "Las partes del proceso",
+            "contenido": "En el proceso contencioso-administrativo existen una parte demandante y una parte demandada. Están legitimadas como demandantes las personas físicas o jurídicas que ostenten un derecho o interés legítimo, así como determinadas corporaciones, asociaciones y entidades en defensa de intereses colectivos. Se considera parte demandada a las Administraciones públicas o cualesquiera de los órganos contra cuya actividad se dirija el recurso, y a las personas o entidades cuyos derechos o intereses legítimos pudieran quedar afectados por la estimación de las pretensiones (codemandados). El Ministerio Fiscal interviene en los procesos en los términos que la ley establece."
+        },
+        {
+            "id": "s10-3",
+            "titulo": "Los actos impugnables",
+            "contenido": "Es admisible el recurso contencioso-administrativo en relación con las disposiciones de carácter general y con los actos expresos y presuntos de la Administración pública que pongan fin a la vía administrativa, ya sean definitivos o de trámite si estos deciden directa o indirectamente el fondo del asunto, determinan la imposibilidad de continuar el procedimiento, producen indefensión o perjuicio irreparable a derechos o intereses legítimos. También es impugnable la inactividad de la Administración y sus actuaciones materiales que constituyan vía de hecho. No son susceptibles de recurso los actos confirmatorios de otros consentidos por no haber sido recurridos en tiempo y forma."
+        },
+        {
+            "id": "s10-4",
+            "titulo": "Procedimientos ordinario y especiales",
+            "contenido": "El procedimiento contencioso-administrativo ordinario se inicia mediante escrito de interposición del recurso, al que sigue la reclamación del expediente administrativo, la demanda, la contestación, la fase de prueba, las conclusiones y la sentencia. Existe además un procedimiento abreviado para asuntos de menor cuantía y en materia de personal, extranjería e inadmisión de peticiones de asilo, que se tramita de forma más ágil mediante vista oral. Entre los procedimientos especiales destacan el de protección de los derechos fundamentales de la persona, la cuestión de ilegalidad y el procedimiento en los casos de suspensión administrativa previa de acuerdos."
+        },
+        {
+            "id": "s10-5",
+            "titulo": "La ejecución de la sentencia",
+            "contenido": "Las sentencias firmes deben ejecutarse en sus propios términos. La potestad de hacer ejecutar las sentencias corresponde a los Juzgados y Tribunales que hayan conocido del asunto en primera o única instancia. Las partes están obligadas a cumplir las sentencias en la forma y los términos que en ellas se consignen, y todas las personas y entidades públicas y privadas deben prestar la colaboración requerida para la debida y completa ejecución de lo resuelto. Transcurridos los plazos señalados para el total cumplimiento del fallo sin que este se hubiera llevado a efecto, el órgano jurisdiccional adoptará, previa audiencia de las partes, las medidas necesarias para lograr la efectividad de lo mandado."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e10-1",
+            "titulo": "Jurisdicción contencioso-administrativa",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Jurisdiccion contencioso-administrativa] --> B[Ley 29/1998]\n    A --> C[Controla la legalidad administrativa]\n    A --> D[Juzgados y Salas de lo C-A]\n    A --> E[Tribunal Supremo]"
+        },
+        {
+            "id": "e10-2",
+            "titulo": "El proceso contencioso-administrativo",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Proceso C-A] --> B[Interposicion del recurso]\n    B --> C[Demanda y contestacion]\n    C --> D[Prueba y conclusiones]\n    D --> E[Sentencia]\n    E --> F[Ejecucion]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Jurisdicción contencioso-administrativa", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "La jurisdicción", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Las partes", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Actos impugnables", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Procedimientos", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Ejecución de la sentencia", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Ley 29/1998", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Demandante y demandada", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Disposiciones generales y actos", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Ordinario y abreviado", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Especial de derechos fundamentales", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Sentencias firmes en sus términos", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Deber de colaboración", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc10-01", "anverso": "¿Qué ley regula la jurisdicción contencioso-administrativa?", "reverso": "La Ley 29/1998, de 13 de julio." },
+        { "id": "fc10-02", "anverso": "¿De qué conoce la jurisdicción contencioso-administrativa?", "reverso": "De las pretensiones relativas a la actuación administrativa sujeta al Derecho Administrativo." },
+        { "id": "fc10-03", "anverso": "¿Cuál es el objeto de esta jurisdicción?", "reverso": "Controlar la legalidad de la actividad administrativa y garantizar los derechos de los ciudadanos." },
+        { "id": "fc10-04", "anverso": "Cita órganos de la jurisdicción contencioso-administrativa.", "reverso": "Los Juzgados de lo Contencioso-Administrativo, las Salas de los TSJ, la Audiencia Nacional y el Tribunal Supremo." },
+        { "id": "fc10-05", "anverso": "¿Quién está legitimado como demandante?", "reverso": "Quien ostente un derecho o interés legítimo." },
+        { "id": "fc10-06", "anverso": "¿Quién es la parte demandada?", "reverso": "La Administración o el órgano contra cuya actividad se dirige el recurso." },
+        { "id": "fc10-07", "anverso": "¿Qué son los codemandados?", "reverso": "Las personas cuyos derechos o intereses pudieran quedar afectados por la estimación de las pretensiones." },
+        { "id": "fc10-08", "anverso": "¿Qué actos son impugnables ante esta jurisdicción?", "reverso": "Las disposiciones generales y los actos expresos y presuntos que pongan fin a la vía administrativa." },
+        { "id": "fc10-09", "anverso": "¿Es impugnable la inactividad de la Administración?", "reverso": "Sí, también la inactividad y las actuaciones materiales constitutivas de vía de hecho." },
+        { "id": "fc10-10", "anverso": "¿Son recurribles los actos confirmatorios de actos consentidos?", "reverso": "No; no son susceptibles de recurso los actos confirmatorios de otros consentidos." },
+        { "id": "fc10-11", "anverso": "¿Cómo se inicia el procedimiento ordinario?", "reverso": "Mediante escrito de interposición del recurso." },
+        { "id": "fc10-12", "anverso": "¿Qué fases tiene el procedimiento ordinario?", "reverso": "Interposición, demanda, contestación, prueba, conclusiones y sentencia." },
+        { "id": "fc10-13", "anverso": "¿Para qué asuntos existe el procedimiento abreviado?", "reverso": "Para asuntos de menor cuantía y en materia de personal, extranjería e inadmisión de asilo." },
+        { "id": "fc10-14", "anverso": "¿Cómo se tramita el procedimiento abreviado?", "reverso": "De forma más ágil, mediante vista oral." },
+        { "id": "fc10-15", "anverso": "Cita un procedimiento especial.", "reverso": "El de protección de los derechos fundamentales de la persona." },
+        { "id": "fc10-16", "anverso": "¿Cómo deben ejecutarse las sentencias firmes?", "reverso": "En sus propios términos." },
+        { "id": "fc10-17", "anverso": "¿A quién corresponde hacer ejecutar las sentencias?", "reverso": "A los Juzgados y Tribunales que hayan conocido del asunto en primera o única instancia." },
+        { "id": "fc10-18", "anverso": "¿Quién debe colaborar en la ejecución de las sentencias?", "reverso": "Todas las personas y entidades públicas y privadas." },
+        { "id": "fc10-19", "anverso": "¿Qué es la cuestión de ilegalidad?", "reverso": "Un procedimiento especial sobre la validez de una disposición general." },
+        { "id": "fc10-20", "anverso": "¿Qué ocurre si no se cumple el fallo en plazo?", "reverso": "El órgano jurisdiccional adopta, previa audiencia, las medidas necesarias para la efectividad de lo mandado." }
+    ],
+    "preguntas": [
+        {
+            "id": "p10-01",
+            "enunciado": "La jurisdicción contencioso-administrativa se regula por:",
+            "opciones": ["La Ley 39/2015", "La Ley 29/1998, de 13 de julio", "La Ley 40/2015", "La Ley 1/2000"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 29/1998, de 13 de julio, regula la jurisdicción contencioso-administrativa."
+        },
+        {
+            "id": "p10-02",
+            "enunciado": "El objeto de la jurisdicción contencioso-administrativa es:",
+            "opciones": ["Juzgar delitos", "Controlar la legalidad de la actividad administrativa", "Resolver conflictos entre particulares", "Interpretar la Constitución"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Esta jurisdicción tiene por objeto controlar la legalidad de la actividad administrativa y garantizar los derechos de los ciudadanos."
+        },
+        {
+            "id": "p10-03",
+            "enunciado": "Está legitimado como demandante en el proceso contencioso-administrativo quien:",
+            "opciones": ["Sea funcionario", "Ostente un derecho o interés legítimo", "Sea español", "Tenga abogado"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Están legitimadas como demandantes las personas que ostenten un derecho o interés legítimo."
+        },
+        {
+            "id": "p10-04",
+            "enunciado": "¿Es impugnable la inactividad de la Administración?",
+            "opciones": ["No, nunca", "Sí, junto con la vía de hecho", "Solo si hay sanción", "Solo en materia tributaria"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Es impugnable la inactividad de la Administración y sus actuaciones materiales constitutivas de vía de hecho."
+        },
+        {
+            "id": "p10-05",
+            "enunciado": "Los actos confirmatorios de actos consentidos:",
+            "opciones": ["Son siempre recurribles", "No son susceptibles de recurso", "Solo los recurre el Fiscal", "Se recurren ante el Tribunal Constitucional"],
+            "respuestaCorrecta": 1,
+            "explicacion": "No son susceptibles de recurso los actos confirmatorios de otros consentidos por no haber sido recurridos en tiempo y forma."
+        },
+        {
+            "id": "p10-06",
+            "enunciado": "El procedimiento abreviado se tramita mediante:",
+            "opciones": ["Escrito únicamente", "Vista oral", "Arbitraje", "Mediación"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El procedimiento abreviado se tramita de forma más ágil mediante vista oral."
+        },
+        {
+            "id": "p10-07",
+            "enunciado": "Las sentencias firmes deben ejecutarse:",
+            "opciones": ["Si la Administración lo acepta", "En sus propios términos", "Solo si hay recurso", "Cuando lo decida el Gobierno"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las sentencias firmes deben ejecutarse en sus propios términos."
+        },
+        {
+            "id": "p10-08",
+            "enunciado": "La potestad de hacer ejecutar las sentencias corresponde a:",
+            "opciones": ["La Administración demandada", "Los Juzgados y Tribunales que conocieron del asunto", "El Ministerio Fiscal", "El Defensor del Pueblo"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La potestad de hacer ejecutar las sentencias corresponde a los Juzgados y Tribunales que hayan conocido del asunto en primera o única instancia."
+        }
+    ]
+}
