@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { RutaProtegida } from './components/layout/RutaProtegida'
 import { sincronizar } from './services/sync'
 import { migrarProgresoLegado } from './services/storage'
+import { iniciarSesionAnonima } from './services/supabase'
 
 // Auth callback (magic link)
 import AuthCallback from './pages/auth/AuthCallback'
@@ -21,9 +22,10 @@ function RootOrCallback() {
 }
 
 // Onboarding (no protegidas)
-import OnboardingEmail from './pages/onboarding/OnboardingEmail'
-import OnboardingConfirmar from './pages/onboarding/OnboardingConfirmar'
-import OnboardingOposicion from './pages/onboarding/OnboardingOposicion'
+// AUTH DESACTIVADO — reactivar mas adelante:
+// import OnboardingEmail from './pages/onboarding/OnboardingEmail'
+// import OnboardingConfirmar from './pages/onboarding/OnboardingConfirmar'
+// import OnboardingOposicion from './pages/onboarding/OnboardingOposicion'
 
 // Páginas de la app (protegidas)
 import MisOposiciones from './pages/MisOposiciones'
@@ -51,7 +53,9 @@ migrarProgresoLegado()
 
 export default function App() {
   useEffect(() => {
-    sincronizar().catch(() => { /* sin conexión, ignorar */ })
+    iniciarSesionAnonima()
+      .then(() => sincronizar())
+      .catch(() => { /* sin conexión, ignorar */ })
     const onVisible = () => {
       if (document.visibilityState === 'visible') sincronizar().catch(() => {})
     }
@@ -65,10 +69,8 @@ export default function App() {
         {/* Auth callback — destino del magic link */}
         <Route path="/auth/callback" element={<AuthCallback />} />
 
-        {/* Onboarding — sin protección */}
-        <Route path="/onboarding/email" element={<OnboardingEmail />} />
-        <Route path="/onboarding/confirmar" element={<OnboardingConfirmar />} />
-        <Route path="/onboarding/oposicion" element={<OnboardingOposicion />} />
+        {/* AUTH DESACTIVADO — reactivar mas adelante.
+            Rutas de onboarding y AuthCallback conservadas pero sin montar. */}
 
         {/* App protegida */}
         <Route path="/mis-oposiciones" element={<RutaProtegida><MisOposiciones /></RutaProtegida>} />
