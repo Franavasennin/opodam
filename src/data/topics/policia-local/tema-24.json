@@ -1,0 +1,157 @@
+{
+    "id": 24,
+    "titulo": "Los delitos contra el patrimonio y contra el orden socioeconómico. Hurtos, robos, robo y hurto de uso de vehículos, usurpación, defraudaciones: estafas y apropiación indebida",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s24-1",
+            "titulo": "Los delitos contra el patrimonio: hurtos",
+            "contenido": "Los delitos contra el patrimonio y contra el orden socioeconómico se regulan en los artículos 234 a 304 ter del Código Penal. El hurto (artículos 234-236) consiste en tomar con ánimo de lucro las cosas muebles ajenas sin la voluntad de su dueño y sin emplear fuerza en las cosas ni violencia o intimidación en las personas. Se castiga con prisión de 6 a 18 meses si la cuantía supera los 400 euros; cuando la cuantía no excede de 400 euros se trata como delito leve sancionable con multa. Existen tipos agravados (objetos de valor histórico-artístico, electricidad o agua, instrumentos para la prestación de un servicio público, etc.)."
+        },
+        {
+            "id": "s24-2",
+            "titulo": "El robo: con fuerza en las cosas y con violencia o intimidación",
+            "contenido": "El robo (artículos 237-242) es la sustracción de cosa mueble ajena empleando fuerza en las cosas para acceder o abandonar el lugar donde estas se encuentran, o violencia o intimidación en las personas. El robo con fuerza en las cosas (artículos 237-241) se castiga con prisión de 1 a 3 años; constituye fuerza el escalamiento, rompimiento de pared, techo o suelo, fractura de puertas o ventanas, uso de llaves falsas, inutilización de sistemas específicos de alarma o guarda y descubrimiento de claves. El robo con violencia o intimidación (artículo 242) se castiga con prisión de 2 a 5 años, agravado si se utilizan armas u otros medios peligrosos o si hay especial vulnerabilidad de la víctima."
+        },
+        {
+            "id": "s24-3",
+            "titulo": "Robo y hurto de uso de vehículos. Usurpación",
+            "contenido": "El robo y hurto de uso de vehículos (artículo 244) castiga a quien sustrajere o utilizare sin la debida autorización un vehículo a motor o ciclomotor ajeno, cuya cuantía exceda de 400 euros, sin ánimo de apropiárselo, con la pena de trabajos en beneficio de la comunidad o multa, agravada si concurre fuerza en las cosas o violencia o intimidación. La usurpación (artículos 245-247) protege el patrimonio inmobiliario; comprende la ocupación con violencia o intimidación de inmuebles ajenos y la ocupación, sin autorización debida, de un inmueble que no constituya morada o el mantenimiento en él, así como la alteración de términos o lindes y el desvío de aguas."
+        },
+        {
+            "id": "s24-4",
+            "titulo": "Las estafas",
+            "contenido": "Las estafas (artículos 248-251 bis) se cometen por quienes, con ánimo de lucro, utilizaren engaño bastante para producir error en otro, induciéndolo a realizar un acto de disposición en perjuicio propio o ajeno. Se castiga con prisión de 6 meses a 3 años si la cuantía excede de 400 euros (delito leve si no excede). Son agravados los supuestos como la afectación a bienes de primera necesidad o utilidad social, abuso de firma, simulación de pleito o empleo de medios fraudulentos. Las estafas informáticas, las defraudaciones de fluido eléctrico y análogas, la administración fraudulenta y las estafas procesales también tienen regulación específica."
+        },
+        {
+            "id": "s24-5",
+            "titulo": "La apropiación indebida",
+            "contenido": "La apropiación indebida (artículos 252-254) se comete por quien, en perjuicio de otro, se apropiare, para sí o para un tercero, de dinero, efectos, valores o cualquier otra cosa mueble que hubiera recibido en depósito, comisión o custodia, o le hubiera sido confiada en virtud de cualquier otro título que produzca la obligación de entregarla o devolverla, o negare haberlas recibido. Se castiga con prisión de 6 meses a 3 años si la cuantía excede de 400 euros. El artículo 253 castiga la administración desleal en perjuicio del patrimonio administrado. El artículo 254 sanciona la apropiación de cosa mueble ajena perdida o de dueño desconocido cuando se conozca al titular y no se restituya."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e24-1",
+            "titulo": "Delitos contra el patrimonio",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Patrimonio] --> B[Hurto]\n    A --> C[Robo con fuerza]\n    A --> D[Robo con violencia o intimidacion]\n    A --> E[Hurto y robo de uso de vehiculos]\n    A --> F[Usurpacion]\n    A --> G[Estafa y apropiacion indebida]"
+        },
+        {
+            "id": "e24-2",
+            "titulo": "Tipos de robo",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Robo] --> B[Con fuerza en las cosas]\n    B --> C[Escalamiento, fractura, llaves falsas]\n    A --> D[Con violencia o intimidacion]\n    D --> E[Agravado con armas o vulnerabilidad]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Delitos contra el patrimonio", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Hurtos", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Robos", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Vehículos y usurpación", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Estafas", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Apropiación indebida", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Cuantía 400 euros (delito vs. leve)", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Fuerza en cosas o violencia/intimidación", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Artículo 242 - violencia/intimidación", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Artículo 244 - vehículos", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Engaño bastante y error", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Depósito, comisión, custodia", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Administración desleal", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n3", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc24-01", "anverso": "¿En qué artículos del Código Penal se regulan los delitos contra el patrimonio?", "reverso": "En los artículos 234 a 304 ter del Código Penal." },
+        { "id": "fc24-02", "anverso": "¿En qué consiste el hurto?", "reverso": "Tomar con ánimo de lucro cosas muebles ajenas sin la voluntad del dueño y sin fuerza ni violencia o intimidación." },
+        { "id": "fc24-03", "anverso": "¿A partir de qué cuantía el hurto es delito (no leve)?", "reverso": "Cuando la cuantía supera los 400 euros." },
+        { "id": "fc24-04", "anverso": "¿Qué pena tiene el hurto?", "reverso": "Prisión de 6 a 18 meses, si la cuantía es superior a 400 euros." },
+        { "id": "fc24-05", "anverso": "¿Qué diferencia el robo del hurto?", "reverso": "El robo requiere fuerza en las cosas o violencia o intimidación en las personas." },
+        { "id": "fc24-06", "anverso": "Cita supuestos de fuerza en las cosas.", "reverso": "El escalamiento, la fractura de puertas o ventanas, el uso de llaves falsas o la inutilización de sistemas de alarma." },
+        { "id": "fc24-07", "anverso": "¿Qué pena tiene el robo con fuerza en las cosas?", "reverso": "Prisión de 1 a 3 años." },
+        { "id": "fc24-08", "anverso": "¿Qué pena tiene el robo con violencia o intimidación?", "reverso": "Prisión de 2 a 5 años (agravado si se usan armas o hay vulnerabilidad de la víctima)." },
+        { "id": "fc24-09", "anverso": "¿Qué artículo castiga el robo y hurto de uso de vehículos?", "reverso": "El artículo 244 del Código Penal." },
+        { "id": "fc24-10", "anverso": "¿Qué pena básica tiene el hurto de uso de vehículos?", "reverso": "Trabajos en beneficio de la comunidad o multa." },
+        { "id": "fc24-11", "anverso": "¿Qué protege el delito de usurpación?", "reverso": "El patrimonio inmobiliario." },
+        { "id": "fc24-12", "anverso": "Cita conductas de usurpación.", "reverso": "Ocupación con violencia o intimidación, ocupación de inmueble que no constituye morada y alteración de lindes." },
+        { "id": "fc24-13", "anverso": "¿Cuáles son los elementos típicos de la estafa?", "reverso": "Ánimo de lucro, engaño bastante, error y acto de disposición perjudicial." },
+        { "id": "fc24-14", "anverso": "¿Qué pena tiene la estafa básica?", "reverso": "Prisión de 6 meses a 3 años si la cuantía excede de 400 euros." },
+        { "id": "fc24-15", "anverso": "Cita tipos especiales de estafa.", "reverso": "Estafa informática, defraudación de fluido eléctrico, administración fraudulenta y estafa procesal." },
+        { "id": "fc24-16", "anverso": "¿Qué es la apropiación indebida?", "reverso": "Apropiarse de dinero, efectos o cosas muebles recibidos en depósito, comisión o custodia, en perjuicio de otro." },
+        { "id": "fc24-17", "anverso": "¿Qué pena tiene la apropiación indebida?", "reverso": "Prisión de 6 meses a 3 años si la cuantía excede de 400 euros." },
+        { "id": "fc24-18", "anverso": "¿Qué castiga el artículo 253 CP?", "reverso": "La administración desleal en perjuicio del patrimonio administrado." },
+        { "id": "fc24-19", "anverso": "¿Qué tipifica el artículo 254 CP?", "reverso": "La apropiación de cosa mueble ajena perdida o de dueño desconocido cuando se conozca al titular y no se restituya." },
+        { "id": "fc24-20", "anverso": "¿Cuándo se considera robo con uso de armas?", "reverso": "Cuando se utilizan armas u otros medios peligrosos en la violencia o intimidación." }
+    ],
+    "preguntas": [
+        {
+            "id": "p24-01",
+            "enunciado": "El hurto pasa a ser delito (no leve) cuando la cuantía supera:",
+            "opciones": ["100 euros", "400 euros", "600 euros", "1.000 euros"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El hurto se castiga como delito si la cuantía supera los 400 euros; si no, como delito leve."
+        },
+        {
+            "id": "p24-02",
+            "enunciado": "La fuerza en las cosas en el robo incluye:",
+            "opciones": ["Solo la rotura de puertas", "Escalamiento, fractura, llaves falsas e inutilización de alarmas", "Solo la violencia física", "Solo el uso de armas"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 238 CP incluye escalamiento, fractura, uso de llaves falsas e inutilización de sistemas de alarma."
+        },
+        {
+            "id": "p24-03",
+            "enunciado": "El robo con violencia o intimidación se castiga con:",
+            "opciones": ["Multa", "Prisión de 2 a 5 años", "Prisión de 6 a 18 meses", "Trabajos en beneficio de la comunidad"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 242 CP castiga el robo con violencia o intimidación con prisión de 2 a 5 años."
+        },
+        {
+            "id": "p24-04",
+            "enunciado": "El robo y hurto de uso de vehículos se regula en:",
+            "opciones": ["El artículo 234 CP", "El artículo 244 CP", "El artículo 248 CP", "El artículo 252 CP"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 244 del Código Penal regula el robo y hurto de uso de vehículos."
+        },
+        {
+            "id": "p24-05",
+            "enunciado": "El delito de usurpación protege:",
+            "opciones": ["El honor", "El patrimonio inmobiliario", "La libertad", "La intimidad"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La usurpación (arts. 245-247 CP) protege el patrimonio inmobiliario."
+        },
+        {
+            "id": "p24-06",
+            "enunciado": "Para la estafa se requiere:",
+            "opciones": ["Solo ánimo de lucro", "Engaño bastante, error y acto de disposición perjudicial", "Violencia", "Solo el resultado dañoso"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La estafa requiere ánimo de lucro, engaño bastante, error y un acto de disposición perjudicial."
+        },
+        {
+            "id": "p24-07",
+            "enunciado": "La apropiación indebida se castiga con:",
+            "opciones": ["Solo multa", "Prisión de 6 meses a 3 años si la cuantía supera 400 euros", "Prisión de 5 años siempre", "Inhabilitación"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Se castiga con prisión de 6 meses a 3 años si la cuantía excede de 400 euros."
+        },
+        {
+            "id": "p24-08",
+            "enunciado": "La administración desleal se regula en:",
+            "opciones": ["El artículo 248 CP", "El artículo 253 CP", "El artículo 234 CP", "El artículo 244 CP"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 253 del Código Penal regula la administración desleal."
+        }
+    ]
+}
