@@ -1,0 +1,157 @@
+{
+    "id": 25,
+    "titulo": "Delitos relativos a la ordenación del territorio y protección del medio ambiente. Delitos contra la seguridad colectiva: incendios, delitos contra la salud pública y contra la seguridad del tráfico. Las falsedades. Delitos contra la administración pública. Delitos contra el orden público",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s25-1",
+            "titulo": "Delitos sobre la ordenación del territorio y medio ambiente",
+            "contenido": "Los delitos relativos a la ordenación del territorio (artículos 319-320 CP) sancionan a quienes llevan a cabo obras de urbanización, construcción o edificación no autorizables en suelos no urbanizables protegidos, o construcciones no autorizables fuera de estos. Los delitos contra los recursos naturales y el medio ambiente (artículos 325 y siguientes) castigan al que, contraviniendo las leyes u otras disposiciones, provoque o realice directa o indirectamente emisiones, vertidos, radiaciones, extracciones o excavaciones, aterramientos, ruidos, vibraciones, inyecciones o depósitos en la atmósfera, el suelo, el subsuelo o las aguas, terrestres, subterráneas o marítimas, que cause o pueda causar daños sustanciales a la calidad del aire, del suelo o de las aguas, o a animales o plantas."
+        },
+        {
+            "id": "s25-2",
+            "titulo": "Delitos de incendios y contra la salud pública",
+            "contenido": "Los delitos de incendios (artículos 351-358) castigan al que provoca incendio que comporte un peligro para la vida o integridad física de las personas, con prisión de 10 a 20 años en el tipo básico; el incendio forestal tiene tipos propios. Los delitos contra la salud pública (artículos 359 y siguientes) abarcan el tráfico de drogas (cultivo, elaboración, tráfico, transporte, posesión con destino al tráfico), la elaboración o despacho de sustancias nocivas para la salud o productos químicos peligrosos sin autorización y los delitos contra la salud alimentaria. Las penas son severas cuando se trate de sustancias que causen grave daño a la salud y se agravan por la cantidad y por la pertenencia a organizaciones."
+        },
+        {
+            "id": "s25-3",
+            "titulo": "Delitos contra la seguridad del tráfico",
+            "contenido": "Los delitos contra la seguridad vial (artículos 379-385 ter) incluyen: conducción con exceso punible de velocidad (más de 60 km/h en vías urbanas o más de 80 km/h en interurbanas sobre el límite); conducción bajo los efectos del alcohol o las drogas, así como con una tasa de alcohol superior a 0,60 mg/l en aire espirado o 1,2 g/l en sangre; conducción temeraria o con manifiesto desprecio para la vida; negativa a someterse a las pruebas legalmente establecidas; conducción sin permiso (por nulidad, pérdida de vigencia, pérdida total de puntos o sin haberlo obtenido nunca); y el abandono del lugar del accidente."
+        },
+        {
+            "id": "s25-4",
+            "titulo": "Falsedades y delitos contra la Administración pública",
+            "contenido": "Las falsedades (artículos 386-403 bis) comprenden la falsificación de moneda, efectos timbrados, documentos públicos, oficiales y mercantiles, documentos privados y certificados, y la usurpación del estado civil o de funciones públicas. Los delitos contra la Administración pública (artículos 404-445) incluyen prevaricación administrativa, abandono de destino, desobediencia y denegación de auxilio, infidelidad en la custodia de documentos, violación de secretos, cohecho (pasivo y activo), tráfico de influencias, malversación, fraudes y exacciones ilegales, negociaciones prohibidas, abusos en el ejercicio de la función pública y, en particular, los delitos cometidos por funcionarios contra las garantías constitucionales de los ciudadanos."
+        },
+        {
+            "id": "s25-5",
+            "titulo": "Delitos contra el orden público",
+            "contenido": "Los delitos contra el orden público (artículos 544-557 ter) incluyen la sedición, los atentados contra la autoridad, sus agentes y los funcionarios públicos, la resistencia y desobediencia graves, los desórdenes públicos (con o sin alteración del orden con armas), la tenencia, tráfico y depósito de armas, municiones o explosivos, y los delitos de terrorismo (artículos 571-580 bis). El atentado se castiga con prisión que se agrava cuando se utilice arma u otro medio peligroso o se cause lesión grave, o cuando el sujeto pasivo sea miembro de las Fuerzas y Cuerpos de Seguridad, dada su condición de autoridad."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e25-1",
+            "titulo": "Delitos contra la seguridad colectiva",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Seguridad colectiva] --> B[Incendios]\n    A --> C[Salud publica - drogas]\n    A --> D[Seguridad del trafico]\n    D --> E[Velocidad, alcohol/drogas, temeridad]"
+        },
+        {
+            "id": "e25-2",
+            "titulo": "Delitos contra el orden público",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Orden publico] --> B[Atentado y resistencia]\n    A --> C[Desordenes publicos]\n    A --> D[Tenencia y trafico de armas]\n    A --> E[Terrorismo]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Seguridad colectiva y orden público", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Ordenación del territorio y medio ambiente", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Incendios y salud pública", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Seguridad del tráfico", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Falsedades y Administración", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Orden público", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Arts. 319 y 325 CP", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Drogas y sustancias nocivas", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Alcohol 0,60 mg/l o 1,2 g/l", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Velocidad +60/+80 km/h", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Cohecho, prevaricación, malversación", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Atentado a agentes de la autoridad", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Tenencia ilícita de armas y terrorismo", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc25-01", "anverso": "¿Qué artículos regulan los delitos sobre la ordenación del territorio?", "reverso": "Los artículos 319 y 320 del Código Penal." },
+        { "id": "fc25-02", "anverso": "¿Qué castigan los delitos contra el medio ambiente?", "reverso": "Las emisiones, vertidos, ruidos, vibraciones o depósitos que causen o puedan causar daños sustanciales a la calidad del aire, suelo, aguas, animales o plantas." },
+        { "id": "fc25-03", "anverso": "¿Qué castiga el delito de incendio del artículo 351 CP?", "reverso": "Provocar incendio que comporte un peligro para la vida o integridad física de las personas." },
+        { "id": "fc25-04", "anverso": "¿Qué pena tiene el incendio del tipo básico?", "reverso": "Prisión de 10 a 20 años." },
+        { "id": "fc25-05", "anverso": "¿Qué conductas comprende el delito contra la salud pública por drogas?", "reverso": "Cultivo, elaboración, tráfico, transporte y posesión con destino al tráfico." },
+        { "id": "fc25-06", "anverso": "¿A partir de qué tasa de alcohol es delito conducir?", "reverso": "Más de 0,60 mg/l en aire espirado o 1,2 g/l en sangre." },
+        { "id": "fc25-07", "anverso": "¿A partir de qué velocidad es delito de exceso en vía urbana?", "reverso": "Más de 60 km/h sobre el límite." },
+        { "id": "fc25-08", "anverso": "¿A partir de qué velocidad es delito en vía interurbana?", "reverso": "Más de 80 km/h sobre el límite." },
+        { "id": "fc25-09", "anverso": "¿Es delito negarse a las pruebas de alcoholemia?", "reverso": "Sí; la negativa a someterse a las pruebas legalmente establecidas constituye delito." },
+        { "id": "fc25-10", "anverso": "¿Qué castiga el delito de conducción sin permiso?", "reverso": "Conducir por nulidad, pérdida de vigencia, pérdida total de puntos o sin haberlo obtenido nunca." },
+        { "id": "fc25-11", "anverso": "¿En qué consisten las falsedades?", "reverso": "En la falsificación de moneda, documentos públicos, oficiales, mercantiles, privados, certificados y usurpación de estado civil o funciones." },
+        { "id": "fc25-12", "anverso": "¿Qué es la prevaricación administrativa?", "reverso": "Dictar a sabiendas una resolución arbitraria en un asunto administrativo por autoridad o funcionario público." },
+        { "id": "fc25-13", "anverso": "¿Qué es el cohecho pasivo?", "reverso": "Aceptar o solicitar dádivas por el funcionario para realizar u omitir un acto propio del cargo." },
+        { "id": "fc25-14", "anverso": "¿Qué es la malversación?", "reverso": "La sustracción o consentimiento de la sustracción de caudales o efectos públicos por funcionario." },
+        { "id": "fc25-15", "anverso": "Cita delitos contra el orden público.", "reverso": "Atentado, resistencia, desórdenes públicos, tenencia de armas y terrorismo." },
+        { "id": "fc25-16", "anverso": "¿Quién es sujeto pasivo del atentado además de la autoridad?", "reverso": "Sus agentes y los funcionarios públicos en el ejercicio de sus funciones." },
+        { "id": "fc25-17", "anverso": "¿Qué agrava la pena del atentado?", "reverso": "El uso de arma u otro medio peligroso o la causación de lesión grave." },
+        { "id": "fc25-18", "anverso": "¿Son los miembros de las FCS autoridad?", "reverso": "Sí; tienen la condición de agentes de la autoridad en el ejercicio de sus funciones." },
+        { "id": "fc25-19", "anverso": "¿Qué castiga el desorden público?", "reverso": "La alteración grave del orden público, con o sin armas, recogida en los artículos 557 y ss." },
+        { "id": "fc25-20", "anverso": "¿En qué artículos del CP se regulan los delitos de terrorismo?", "reverso": "En los artículos 571 a 580 bis." }
+    ],
+    "preguntas": [
+        {
+            "id": "p25-01",
+            "enunciado": "Los delitos contra el medio ambiente protegen frente a:",
+            "opciones": ["Solo emisiones a la atmósfera", "Emisiones, vertidos, ruidos y depósitos que dañen aire, suelo, aguas o ecosistemas", "Únicamente vertidos al mar", "Solo daños a animales protegidos"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 325 CP protege frente a emisiones, vertidos, ruidos, vibraciones y depósitos que dañen aire, suelo, aguas o ecosistemas."
+        },
+        {
+            "id": "p25-02",
+            "enunciado": "Conducir con una tasa superior a 1,2 g/l en sangre constituye:",
+            "opciones": ["Sanción administrativa", "Delito contra la seguridad del tráfico", "Atestado leve", "Ningún ilícito"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La conducción con tasa superior a 0,60 mg/l en aire o 1,2 g/l en sangre constituye delito contra la seguridad del tráfico."
+        },
+        {
+            "id": "p25-03",
+            "enunciado": "Es delito de exceso de velocidad en vía urbana superar el límite en:",
+            "opciones": ["20 km/h", "40 km/h", "60 km/h", "80 km/h"],
+            "respuestaCorrecta": 2,
+            "explicacion": "En vía urbana, superar el límite en más de 60 km/h constituye delito contra la seguridad del tráfico."
+        },
+        {
+            "id": "p25-04",
+            "enunciado": "La negativa a someterse a las pruebas de alcoholemia o drogas:",
+            "opciones": ["Es una infracción leve", "Constituye delito contra la seguridad del tráfico", "Es una falta civil", "No tiene consecuencias"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La negativa a someterse a las pruebas legalmente establecidas constituye delito contra la seguridad del tráfico."
+        },
+        {
+            "id": "p25-05",
+            "enunciado": "Dictar una resolución arbitraria a sabiendas por autoridad o funcionario es:",
+            "opciones": ["Cohecho", "Prevaricación administrativa", "Malversación", "Tráfico de influencias"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La prevaricación administrativa consiste en dictar a sabiendas resolución arbitraria por autoridad o funcionario público."
+        },
+        {
+            "id": "p25-06",
+            "enunciado": "El cohecho pasivo consiste en:",
+            "opciones": ["Sobornar a un funcionario", "Aceptar o solicitar el funcionario dádivas por su cargo", "Sustraer caudales públicos", "Falsificar documentos"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El cohecho pasivo consiste en aceptar o solicitar el funcionario dádivas por realizar u omitir un acto propio del cargo."
+        },
+        {
+            "id": "p25-07",
+            "enunciado": "El atentado contra agentes de la autoridad se agrava cuando:",
+            "opciones": ["Se cometa por la noche", "Se utilice arma u otro medio peligroso o se cause lesión grave", "El autor sea español", "Se cometa fuera de servicio"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Se agrava cuando se utiliza arma u otro medio peligroso o se causa lesión grave."
+        },
+        {
+            "id": "p25-08",
+            "enunciado": "Los delitos de terrorismo se regulan en el Código Penal en:",
+            "opciones": ["Los artículos 234-244", "Los artículos 571 a 580 bis", "Los artículos 138-140", "Los artículos 386-403"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los delitos de terrorismo se regulan en los artículos 571 a 580 bis del Código Penal."
+        }
+    ]
+}
