@@ -1,0 +1,157 @@
+{
+    "id": 27,
+    "titulo": "Ley Orgánica 5/2000, de 12 de enero, reguladora de la responsabilidad penal de los menores: de las medidas; instrucción del procedimiento; medidas cautelares; ejecución de las medidas",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s27-1",
+            "titulo": "Ámbito de aplicación y principios",
+            "contenido": "La Ley Orgánica 5/2000, de 12 de enero, reguladora de la responsabilidad penal de los menores, se aplica para exigir la responsabilidad de las personas mayores de catorce años y menores de dieciocho por la comisión de hechos tipificados como delitos en el Código Penal o leyes penales especiales. La ley tiene naturaleza formalmente penal pero materialmente sancionadora-educativa, primando el interés superior del menor. Los menores de 14 años no son responsables conforme a esta ley, sin perjuicio de la aplicación de la normativa de protección. Las personas entre 18 y 21 años quedaron fuera de su ámbito de aplicación tras la reforma legislativa."
+        },
+        {
+            "id": "s27-2",
+            "titulo": "De las medidas aplicables",
+            "contenido": "Las medidas susceptibles de ser impuestas a los menores son educativas y orientadas a la reinserción. Pueden ser privativas de libertad (internamiento en régimen cerrado, semiabierto o abierto; internamiento terapéutico; permanencia de fin de semana) y no privativas de libertad (tratamiento ambulatorio, asistencia a un centro de día, libertad vigilada, prohibición de aproximarse o comunicarse con la víctima, convivencia con otra persona, familia o grupo educativo, prestaciones en beneficio de la comunidad, realización de tareas socio-educativas, amonestación, privación del permiso de conducción o de armas, e inhabilitación absoluta). El juez elige la medida atendiendo al interés del menor."
+        },
+        {
+            "id": "s27-3",
+            "titulo": "Instrucción del procedimiento",
+            "contenido": "La instrucción del procedimiento corresponde al Ministerio Fiscal, que dirige la investigación y promueve la acción judicial. La policía judicial actúa bajo su dirección y cuenta con los grupos de menores (GRUME en el CNP, EMUME en la Guardia Civil) y unidades equivalentes en otros cuerpos. Recibida la denuncia o el atestado, el Fiscal incoa el expediente, practica las diligencias necesarias y resuelve sobre la continuación del procedimiento, el archivo o el sobreseimiento, pudiendo proponer la conciliación o reparación entre menor y víctima. Para los actos judiciales conoce el Juez de Menores."
+        },
+        {
+            "id": "s27-4",
+            "titulo": "Medidas cautelares",
+            "contenido": "Durante la instrucción, el Ministerio Fiscal puede solicitar al Juez de Menores la adopción de medidas cautelares, siempre con sujeción al principio del interés superior del menor y a los principios de proporcionalidad y necesidad. Las medidas cautelares posibles son: la custodia en el propio domicilio o en el de otra persona, familia o grupo educativo; el internamiento en centro en el régimen adecuado; la libertad vigilada; la prohibición de aproximarse o comunicarse con la víctima, su familia u otras personas; y el alejamiento. El internamiento cautelar tiene duración máxima de seis meses, prorrogable por otros tres por resolución motivada."
+        },
+        {
+            "id": "s27-5",
+            "titulo": "Ejecución de las medidas",
+            "contenido": "La ejecución de las medidas corresponde a las Comunidades Autónomas, conforme a la legislación vigente y bajo el control judicial del Juez de Menores que las dictó. La Comunidad Autónoma designa los centros y los equipos profesionales (técnicos, educadores, psicólogos, trabajadores sociales) que diseñan y ejecutan el programa individualizado de ejecución de la medida. Durante la ejecución, el Juez de Menores resuelve sobre incidencias, modificaciones (sustitución por otra medida, suspensión o reducción) y conclusión, oyendo siempre al Ministerio Fiscal, al equipo técnico y, en su caso, al letrado del menor. El menor mantiene sus derechos fundamentales y las garantías propias de la ley."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e27-1",
+            "titulo": "Responsabilidad penal del menor",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[LO 5/2000] --> B[Edad: 14-17 años]\n    A --> C[Naturaleza educativa]\n    A --> D[Interes superior del menor]\n    A --> E[Juez de Menores]"
+        },
+        {
+            "id": "e27-2",
+            "titulo": "Medidas aplicables",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Medidas] --> B[Privativas de libertad]\n    A --> C[No privativas de libertad]\n    B --> D[Internamiento cerrado, semiabierto, abierto, terapeutico]\n    C --> E[Libertad vigilada, tareas socio-educativas, amonestacion]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Responsabilidad penal del menor", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Ámbito y principios", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Medidas aplicables", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Instrucción", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Medidas cautelares", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Ejecución", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "LO 5/2000 (14-17 años)", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Privativas y no privativas", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Ministerio Fiscal", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "GRUME y EMUME", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Internamiento cautelar 6+3 meses", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Competencia de las CC.AA.", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Control del Juez de Menores", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc27-01", "anverso": "¿Qué ley regula la responsabilidad penal del menor?", "reverso": "La Ley Orgánica 5/2000, de 12 de enero." },
+        { "id": "fc27-02", "anverso": "¿A qué edades se aplica la LO 5/2000?", "reverso": "A los mayores de catorce años y menores de dieciocho." },
+        { "id": "fc27-03", "anverso": "¿Son responsables penalmente los menores de 14 años?", "reverso": "No; los menores de 14 años no son responsables conforme a la LO 5/2000." },
+        { "id": "fc27-04", "anverso": "¿Qué naturaleza tienen las medidas?", "reverso": "Sancionadora-educativa, orientadas a la reinserción." },
+        { "id": "fc27-05", "anverso": "¿Qué principio rige la elección de la medida?", "reverso": "El interés superior del menor." },
+        { "id": "fc27-06", "anverso": "Cita medidas privativas de libertad.", "reverso": "Internamiento en régimen cerrado, semiabierto o abierto, internamiento terapéutico y permanencia de fin de semana." },
+        { "id": "fc27-07", "anverso": "Cita medidas no privativas de libertad.", "reverso": "Libertad vigilada, tratamiento ambulatorio, tareas socio-educativas, prestaciones en beneficio de la comunidad y amonestación." },
+        { "id": "fc27-08", "anverso": "¿A quién corresponde la instrucción?", "reverso": "Al Ministerio Fiscal." },
+        { "id": "fc27-09", "anverso": "¿Qué órgano juzga en el procedimiento de menores?", "reverso": "El Juez de Menores." },
+        { "id": "fc27-10", "anverso": "¿Cómo se llaman las unidades policiales especializadas en menores del CNP?", "reverso": "Los Grupos de Menores (GRUME)." },
+        { "id": "fc27-11", "anverso": "¿Y las de la Guardia Civil?", "reverso": "Los Equipos Mujer-Menor (EMUME)." },
+        { "id": "fc27-12", "anverso": "¿Puede el Fiscal proponer la conciliación entre menor y víctima?", "reverso": "Sí, puede proponer la conciliación o reparación entre menor y víctima." },
+        { "id": "fc27-13", "anverso": "¿Quién acuerda las medidas cautelares?", "reverso": "El Juez de Menores, a instancia del Ministerio Fiscal." },
+        { "id": "fc27-14", "anverso": "Cita medidas cautelares.", "reverso": "Custodia en domicilio, internamiento, libertad vigilada, prohibición de aproximación y alejamiento." },
+        { "id": "fc27-15", "anverso": "¿Cuánto dura el internamiento cautelar?", "reverso": "Seis meses, prorrogables por otros tres por resolución motivada." },
+        { "id": "fc27-16", "anverso": "¿A quién corresponde la ejecución de las medidas?", "reverso": "A las Comunidades Autónomas, bajo control judicial." },
+        { "id": "fc27-17", "anverso": "¿Quién controla la ejecución de la medida?", "reverso": "El Juez de Menores que la dictó." },
+        { "id": "fc27-18", "anverso": "¿Quién diseña el programa individualizado de ejecución?", "reverso": "El equipo técnico designado por la Comunidad Autónoma." },
+        { "id": "fc27-19", "anverso": "¿Puede modificarse una medida durante su ejecución?", "reverso": "Sí, el Juez puede sustituirla, suspenderla o reducirla oyendo al Fiscal, al equipo técnico y al letrado." },
+        { "id": "fc27-20", "anverso": "¿Mantienen los menores sus derechos durante la ejecución?", "reverso": "Sí, conservan los derechos fundamentales y las garantías propias de la ley." }
+    ],
+    "preguntas": [
+        {
+            "id": "p27-01",
+            "enunciado": "La LO 5/2000 se aplica a los menores de:",
+            "opciones": ["12 a 16 años", "14 a 18 años", "16 a 21 años", "18 a 21 años"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La LO 5/2000 se aplica a los mayores de catorce años y menores de dieciocho."
+        },
+        {
+            "id": "p27-02",
+            "enunciado": "Los menores de catorce años:",
+            "opciones": ["Son responsables como adultos", "No son responsables conforme a la LO 5/2000", "Cumplen mitad de pena", "Quedan en libertad vigilada"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los menores de catorce años no son responsables penalmente conforme a la LO 5/2000."
+        },
+        {
+            "id": "p27-03",
+            "enunciado": "Las medidas aplicables a los menores tienen naturaleza:",
+            "opciones": ["Puramente retributiva", "Educativa orientada a la reinserción", "Civil compensatoria", "Mercantil"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las medidas son educativas y orientadas a la reinserción del menor."
+        },
+        {
+            "id": "p27-04",
+            "enunciado": "La instrucción del procedimiento de menores corresponde a:",
+            "opciones": ["El Juez de Menores", "El Ministerio Fiscal", "La Policía Judicial sola", "El Defensor del Pueblo"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La instrucción del procedimiento de menores corresponde al Ministerio Fiscal."
+        },
+        {
+            "id": "p27-05",
+            "enunciado": "Las unidades policiales especializadas en menores del CNP se denominan:",
+            "opciones": ["GRECO", "GRUME (Grupos de Menores)", "EMUME", "TEDAX"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los Grupos de Menores (GRUME) son las unidades especializadas del CNP en menores."
+        },
+        {
+            "id": "p27-06",
+            "enunciado": "El internamiento cautelar de un menor tiene una duración máxima inicial de:",
+            "opciones": ["Tres meses", "Seis meses (prorrogables por tres)", "Un año", "Dos años"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El internamiento cautelar dura seis meses, prorrogables por otros tres por resolución motivada."
+        },
+        {
+            "id": "p27-07",
+            "enunciado": "La ejecución de las medidas impuestas a menores corresponde a:",
+            "opciones": ["El Estado", "Las Comunidades Autónomas, bajo control judicial", "Los Ayuntamientos", "El Ministerio del Interior"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La ejecución de las medidas corresponde a las Comunidades Autónomas, bajo el control del Juez de Menores."
+        },
+        {
+            "id": "p27-08",
+            "enunciado": "Durante la ejecución, el Juez puede:",
+            "opciones": ["No intervenir hasta el final", "Sustituir, suspender o reducir la medida oyendo al Fiscal y al equipo técnico", "Solo prorrogarla", "Únicamente revocarla"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El Juez puede sustituir, suspender o reducir la medida durante la ejecución, oyendo al Fiscal, al equipo técnico y al letrado."
+        }
+    ]
+}
