@@ -1,0 +1,157 @@
+{
+    "id": 22,
+    "titulo": "Las relaciones entre policía y sociedad. Policía comunitaria o de proximidad. Sistemas de patrullaje. Recogida y tratamiento de datos. Creación y gestión de archivos. Protección de datos de carácter personal",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s22-1",
+            "titulo": "Las relaciones entre policía y sociedad",
+            "contenido": "Las relaciones entre la policía y la sociedad parten de la idea de que la policía es una institución al servicio de la comunidad y depositaria de la confianza ciudadana. La policía debe observar un trato correcto y esmerado con los ciudadanos, atender requerimientos y prestar protección, evitando prácticas abusivas o discriminatorias. La interacción se basa en la legitimidad, la transparencia y la rendición de cuentas. Una sociedad democrática exige una policía cercana, profesional y respetuosa con los derechos y libertades, que actúe con criterios de servicio público y que mantenga canales abiertos de comunicación con la ciudadanía."
+        },
+        {
+            "id": "s22-2",
+            "titulo": "Policía comunitaria o de proximidad",
+            "contenido": "La policía comunitaria o de proximidad es un modelo de actuación policial orientado a integrar a la policía en la vida de los barrios y municipios, con presencia constante, conocimiento del entorno y trabajo cooperativo con vecinos, asociaciones, comercios y otros servicios públicos. Sus rasgos son: asignación territorial estable, prevención y resolución de problemas concretos, participación ciudadana, anticipación al delito y reducción del sentimiento de inseguridad. El policía de proximidad actúa como referente del barrio, promueve la mediación en pequeños conflictos, identifica necesidades de seguridad y canaliza la información hacia el resto del cuerpo y otras Administraciones."
+        },
+        {
+            "id": "s22-3",
+            "titulo": "Sistemas de patrullaje",
+            "contenido": "El patrullaje es la actividad operativa básica de la policía. Se distinguen varios sistemas: el patrullaje a pie, propio del modelo de proximidad, que favorece el contacto con la ciudadanía; el patrullaje motorizado (vehículo o moto), que permite mayor cobertura territorial y rapidez de respuesta; el patrullaje en bicicleta, frecuente en zonas peatonales y turísticas; el patrullaje a caballo o canino, en zonas concretas; y el patrullaje mixto, que combina varios sistemas. El patrullaje puede ser preventivo (presencia disuasoria), reactivo (respuesta a incidentes) o focalizado (orientado a un problema o lugar concreto), y se planifica en función del análisis de la actividad delictiva."
+        },
+        {
+            "id": "s22-4",
+            "titulo": "Recogida y tratamiento de datos. Creación y gestión de archivos",
+            "contenido": "La policía recoge y trata datos en el ejercicio de sus funciones: datos identificativos, biométricos, sobre antecedentes, denuncias, atestados, accidentes, fotografías o grabaciones. La recogida se realiza con sujeción al principio de finalidad, recogiéndose solo los datos necesarios para el ejercicio de las funciones policiales y respetando los derechos del interesado. La creación y gestión de los archivos policiales requiere disposición legal o reglamentaria que la habilite, definir el responsable del tratamiento, las finalidades, los datos tratados y las medidas de seguridad. Los archivos policiales tienen niveles de seguridad altos debido a la naturaleza sensible de la información."
+        },
+        {
+            "id": "s22-5",
+            "titulo": "Protección de datos de carácter personal",
+            "contenido": "La protección de datos personales se rige por el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD). Para los tratamientos con fines policiales se aplica la Ley Orgánica 7/2021, de 26 de mayo, que traspone la Directiva (UE) 2016/680. Los principios son: licitud, lealtad y transparencia; limitación de la finalidad; minimización; exactitud; limitación del plazo de conservación; integridad y confidencialidad; y responsabilidad proactiva. Los interesados disponen de los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad, con las modulaciones propias del tratamiento policial. La autoridad de control es la Agencia Española de Protección de Datos (AEPD)."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e22-1",
+            "titulo": "Sistemas de patrullaje",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Patrullaje] --> B[A pie - proximidad]\n    A --> C[Motorizado]\n    A --> D[Bicicleta]\n    A --> E[Mixto]\n    A --> F[Preventivo, reactivo, focalizado]"
+        },
+        {
+            "id": "e22-2",
+            "titulo": "Protección de datos",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Proteccion de datos] --> B[RGPD]\n    A --> C[LOPDGDD - LO 3/2018]\n    A --> D[LO 7/2021 - fines policiales]\n    A --> E[AEPD]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Policía, sociedad y datos", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Policía y sociedad", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Policía de proximidad", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Sistemas de patrullaje", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Recogida y archivos", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Protección de datos", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Servicio público y confianza ciudadana", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Asignación territorial estable", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "A pie, motorizado, mixto", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Principio de finalidad", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Niveles de seguridad altos", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "RGPD y LO 3/2018", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "LO 7/2021 y AEPD", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc22-01", "anverso": "¿Qué es la policía para la sociedad?", "reverso": "Una institución al servicio de la comunidad y depositaria de la confianza ciudadana." },
+        { "id": "fc22-02", "anverso": "¿Qué trato debe observar la policía con los ciudadanos?", "reverso": "Un trato correcto y esmerado, sin prácticas abusivas ni discriminatorias." },
+        { "id": "fc22-03", "anverso": "¿Qué es la policía de proximidad?", "reverso": "Un modelo orientado a integrar a la policía en la vida de los barrios con presencia constante y trabajo cooperativo." },
+        { "id": "fc22-04", "anverso": "Cita rasgos de la policía de proximidad.", "reverso": "Asignación territorial estable, prevención, participación ciudadana y anticipación al delito." },
+        { "id": "fc22-05", "anverso": "¿Qué papel asume el policía de proximidad?", "reverso": "Referente del barrio, mediador y canal de información hacia el resto del cuerpo." },
+        { "id": "fc22-06", "anverso": "¿Qué es el patrullaje?", "reverso": "La actividad operativa básica de la policía." },
+        { "id": "fc22-07", "anverso": "¿Qué sistema de patrullaje favorece el contacto con la ciudadanía?", "reverso": "El patrullaje a pie, propio del modelo de proximidad." },
+        { "id": "fc22-08", "anverso": "¿Qué tipos de patrullaje según su finalidad existen?", "reverso": "Preventivo, reactivo y focalizado." },
+        { "id": "fc22-09", "anverso": "¿En función de qué se planifica el patrullaje?", "reverso": "Del análisis de la actividad delictiva." },
+        { "id": "fc22-10", "anverso": "¿Qué principio rige la recogida de datos por la policía?", "reverso": "El principio de finalidad: solo los datos necesarios para el ejercicio de las funciones policiales." },
+        { "id": "fc22-11", "anverso": "¿Qué se requiere para crear un archivo policial?", "reverso": "Disposición legal o reglamentaria que lo habilite y la definición de finalidades, datos y medidas de seguridad." },
+        { "id": "fc22-12", "anverso": "¿Qué niveles de seguridad tienen los archivos policiales?", "reverso": "Niveles de seguridad altos por la naturaleza sensible de la información." },
+        { "id": "fc22-13", "anverso": "¿Qué reglamento europeo regula la protección de datos?", "reverso": "El Reglamento (UE) 2016/679 (RGPD)." },
+        { "id": "fc22-14", "anverso": "¿Qué ley orgánica española regula la protección de datos?", "reverso": "La Ley Orgánica 3/2018, de 5 de diciembre (LOPDGDD)." },
+        { "id": "fc22-15", "anverso": "¿Qué ley orgánica regula el tratamiento con fines policiales?", "reverso": "La Ley Orgánica 7/2021, de 26 de mayo." },
+        { "id": "fc22-16", "anverso": "Cita principios de la protección de datos.", "reverso": "Licitud, limitación de la finalidad, minimización, exactitud, integridad y responsabilidad proactiva." },
+        { "id": "fc22-17", "anverso": "Cita derechos del interesado en materia de datos.", "reverso": "Acceso, rectificación, supresión, oposición, limitación y portabilidad." },
+        { "id": "fc22-18", "anverso": "¿Cuál es la autoridad de control en España?", "reverso": "La Agencia Española de Protección de Datos (AEPD)." },
+        { "id": "fc22-19", "anverso": "¿Qué directiva traspone la LO 7/2021?", "reverso": "La Directiva (UE) 2016/680." },
+        { "id": "fc22-20", "anverso": "¿Cómo deben ejercerse los derechos en el tratamiento policial?", "reverso": "Con las modulaciones propias del tratamiento policial previstas en la LO 7/2021." }
+    ],
+    "preguntas": [
+        {
+            "id": "p22-01",
+            "enunciado": "La policía debe observar con los ciudadanos:",
+            "opciones": ["Un trato impersonal", "Un trato correcto y esmerado, sin prácticas discriminatorias", "Indiferencia profesional", "Uso siempre de la fuerza"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La policía debe observar un trato correcto y esmerado, evitando prácticas abusivas o discriminatorias."
+        },
+        {
+            "id": "p22-02",
+            "enunciado": "La policía de proximidad se caracteriza por:",
+            "opciones": ["Movilidad y rotación permanente", "Asignación territorial estable y trabajo cooperativo con la comunidad", "Patrullaje únicamente nocturno", "Actuación reactiva exclusivamente"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La policía de proximidad tiene asignación territorial estable, trabajo cooperativo y prevención de problemas."
+        },
+        {
+            "id": "p22-03",
+            "enunciado": "El patrullaje a pie es propio del modelo de:",
+            "opciones": ["Patrullaje motorizado", "Policía de proximidad", "Patrullaje aéreo", "Policía judicial"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El patrullaje a pie es propio del modelo de proximidad y favorece el contacto con la ciudadanía."
+        },
+        {
+            "id": "p22-04",
+            "enunciado": "Los tipos de patrullaje según su finalidad son:",
+            "opciones": ["Diurno y nocturno", "Preventivo, reactivo y focalizado", "Urbano y rural", "Civil y militar"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Según su finalidad, el patrullaje puede ser preventivo, reactivo o focalizado."
+        },
+        {
+            "id": "p22-05",
+            "enunciado": "El principio que rige la recogida policial de datos es el de:",
+            "opciones": ["Finalidad", "Discrecionalidad", "Confianza", "Oportunidad"],
+            "respuestaCorrecta": 0,
+            "explicacion": "El principio de finalidad impone recoger solo los datos necesarios para el ejercicio de las funciones policiales."
+        },
+        {
+            "id": "p22-06",
+            "enunciado": "El RGPD se identifica con:",
+            "opciones": ["La LO 3/2018", "El Reglamento (UE) 2016/679", "La LO 7/2021", "La Directiva 2016/680"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El RGPD es el Reglamento (UE) 2016/679 de protección de datos personales."
+        },
+        {
+            "id": "p22-07",
+            "enunciado": "El tratamiento de datos con fines policiales se rige por:",
+            "opciones": ["La Ley 39/2015", "La Ley Orgánica 7/2021, de 26 de mayo", "El Reglamento de Armas", "La Ley 2/2008"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley Orgánica 7/2021, de 26 de mayo, regula el tratamiento de datos con fines policiales."
+        },
+        {
+            "id": "p22-08",
+            "enunciado": "La autoridad de control en materia de protección de datos en España es:",
+            "opciones": ["El Defensor del Pueblo", "La Agencia Española de Protección de Datos (AEPD)", "El Tribunal Constitucional", "El Consejo de Transparencia"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Agencia Española de Protección de Datos (AEPD) es la autoridad de control en materia de protección de datos en España."
+        }
+    ]
+}
