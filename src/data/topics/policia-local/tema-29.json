@@ -1,0 +1,157 @@
+{
+    "id": 29,
+    "titulo": "Tráfico, circulación y seguridad vial. Normas reguladoras. Normas de comportamiento en la circulación de vehículos y peatones. Bebidas alcohólicas y sustancias estupefacientes. Límites de velocidad y distancias. Prioridad de paso. Incorporación a la circulación. Cambios de dirección, sentido y marcha atrás",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s29-1",
+            "titulo": "Normativa reguladora del tráfico",
+            "contenido": "La normativa básica en materia de tráfico, circulación y seguridad vial está constituida por el Texto Refundido de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial (Real Decreto Legislativo 6/2015, de 30 de octubre) y el Reglamento General de Circulación (Real Decreto 1428/2003). Las competencias se distribuyen entre el Estado (a través de la Dirección General de Tráfico, DGT, y la Agrupación de Tráfico de la Guardia Civil) y las Comunidades Autónomas con competencias transferidas (Cataluña y País Vasco). Los Ayuntamientos tienen competencias en vías urbanas: ordenación, gestión, vigilancia y disciplina del tráfico, ejercidas por la Policía Local."
+        },
+        {
+            "id": "s29-2",
+            "titulo": "Normas de comportamiento en la circulación de vehículos y peatones",
+            "contenido": "El Reglamento General de Circulación establece normas comunes para conductores y peatones. Los conductores deben mantener su propia libertad de movimientos, el campo necesario de visión y la atención permanente en la conducción. Los peatones circulan, fuera de poblado, por la izquierda en sentido contrario a la marcha de los vehículos; en poblado utilizan las aceras y, donde no las haya, por las zonas más alejadas del centro de la calzada. El cruce de calzadas se efectúa por los pasos de peatones o, en su defecto, por las zonas más adecuadas con el menor entorpecimiento posible. La señalización tiene preferencia sobre las normas reguladoras de la circulación."
+        },
+        {
+            "id": "s29-3",
+            "titulo": "Bebidas alcohólicas y sustancias estupefacientes",
+            "contenido": "La tasa máxima de alcohol permitida con carácter general es de 0,5 g/l en sangre o 0,25 mg/l en aire espirado. Para conductores profesionales y de transporte de mercancías peligrosas la tasa es de 0,3 g/l en sangre o 0,15 mg/l en aire. Para conductores noveles (durante los dos primeros años) la tasa es la misma profesional (0,3/0,15). Los conductores no pueden hacerlo bajo los efectos de estupefacientes, psicotrópicos o sustancias análogas. La superación punible (delito) se produce con tasas superiores a 0,6 mg/l en aire o 1,2 g/l en sangre. La negativa a someterse a las pruebas constituye delito de desobediencia."
+        },
+        {
+            "id": "s29-4",
+            "titulo": "Límites de velocidad y distancias",
+            "contenido": "Los límites genéricos de velocidad son: 120 km/h en autopistas y autovías; 90 km/h en carreteras convencionales; 50 km/h en vías urbanas con un único carril por sentido y 30 km/h en vías urbanas con plataforma única o un único carril (desde 2021), siendo 20 km/h en vías con plataforma única acera-calzada. Los conductores deben adaptar su velocidad a las características y estado de la vía, del vehículo, de la carga, climatológicas, etc. Deben dejar entre vehículos la distancia de seguridad necesaria para detenerse sin colisionar (regla práctica del medio del marcador del cuentakilómetros en metros)."
+        },
+        {
+            "id": "s29-5",
+            "titulo": "Prioridad, incorporación y maniobras",
+            "contenido": "La prioridad de paso entre vehículos se rige por la señalización, y en su defecto por las reglas generales: prioridad del vehículo que viene por la derecha en intersecciones; prioridad para vehículos de transporte público, de emergencias en servicio urgente o vehículos especiales. Los peatones tienen preferencia en los pasos de peatones señalizados sin semáforo, en las vías peatonales y al cruzar en zonas con prioridad peatonal. La incorporación a la circulación se realiza tras observación previa, señalización adecuada y cediendo el paso a los vehículos que circulen por la vía. Los cambios de dirección o sentido y la marcha atrás exigen observación, señalización y se realizan a velocidad reducida; la marcha atrás está prohibida en autopistas y autovías y en las vías de un solo sentido."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e29-1",
+            "titulo": "Tasas de alcohol",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Tasas de alcohol] --> B[General: 0,5 g/l sangre - 0,25 mg/l aire]\n    A --> C[Profesionales y noveles: 0,3 g/l - 0,15 mg/l]\n    A --> D[Delito: 1,2 g/l sangre o 0,6 mg/l aire]"
+        },
+        {
+            "id": "e29-2",
+            "titulo": "Límites de velocidad",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Velocidad] --> B[Autopistas y autovias: 120 km/h]\n    A --> C[Carreteras convencionales: 90 km/h]\n    A --> D[Vias urbanas: 50 km/h]\n    A --> E[Plataforma unica: 30 o 20 km/h]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Tráfico y seguridad vial", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Normativa reguladora", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Normas de comportamiento", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Alcohol y drogas", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Velocidad y distancias", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Prioridad y maniobras", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "RDL 6/2015 y RD 1428/2003", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Peatones por izquierda fuera de poblado", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "0,5/0,25 - 0,3/0,15 - 1,2/0,6", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "120 / 90 / 50 / 30 km/h", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Distancia de seguridad", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Prioridad por la derecha", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Marcha atrás prohibida en autopistas", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n5", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc29-01", "anverso": "¿Qué norma constituye el texto refundido de la Ley de Tráfico?", "reverso": "El Real Decreto Legislativo 6/2015, de 30 de octubre." },
+        { "id": "fc29-02", "anverso": "¿Qué real decreto aprueba el Reglamento General de Circulación?", "reverso": "El Real Decreto 1428/2003." },
+        { "id": "fc29-03", "anverso": "¿Qué Comunidades Autónomas tienen las competencias de tráfico transferidas?", "reverso": "Cataluña y País Vasco." },
+        { "id": "fc29-04", "anverso": "¿En qué ámbito ejercen las competencias de tráfico los Ayuntamientos?", "reverso": "En las vías urbanas, a través de la Policía Local." },
+        { "id": "fc29-05", "anverso": "¿Por dónde circulan los peatones fuera de poblado?", "reverso": "Por la izquierda, en sentido contrario a la marcha de los vehículos." },
+        { "id": "fc29-06", "anverso": "¿Por dónde circulan los peatones en poblado?", "reverso": "Por las aceras y, en su defecto, por zonas alejadas del centro de la calzada." },
+        { "id": "fc29-07", "anverso": "¿Cuál es la tasa general de alcohol permitida?", "reverso": "0,5 g/l en sangre o 0,25 mg/l en aire espirado." },
+        { "id": "fc29-08", "anverso": "¿Cuál es la tasa para conductores profesionales y noveles?", "reverso": "0,3 g/l en sangre o 0,15 mg/l en aire espirado." },
+        { "id": "fc29-09", "anverso": "¿A partir de qué tasa la conducción es delito?", "reverso": "Más de 1,2 g/l en sangre o 0,6 mg/l en aire espirado." },
+        { "id": "fc29-10", "anverso": "¿Qué constituye la negativa a las pruebas?", "reverso": "Delito de desobediencia contra la seguridad vial." },
+        { "id": "fc29-11", "anverso": "¿Cuál es el límite genérico en autopista o autovía?", "reverso": "120 km/h." },
+        { "id": "fc29-12", "anverso": "¿Y en carretera convencional?", "reverso": "90 km/h." },
+        { "id": "fc29-13", "anverso": "¿Y en vías urbanas con un solo carril por sentido?", "reverso": "50 km/h." },
+        { "id": "fc29-14", "anverso": "¿Y en vías urbanas con plataforma única o un único carril (desde 2021)?", "reverso": "30 km/h, o 20 km/h con plataforma única acera-calzada." },
+        { "id": "fc29-15", "anverso": "¿Qué distancia debe mantenerse entre vehículos?", "reverso": "La necesaria para poder detenerse sin colisionar (distancia de seguridad)." },
+        { "id": "fc29-16", "anverso": "¿Quién tiene preferencia en una intersección sin señalización?", "reverso": "El vehículo que viene por la derecha." },
+        { "id": "fc29-17", "anverso": "¿Quién tiene preferencia en un paso de peatones sin semáforo?", "reverso": "Los peatones." },
+        { "id": "fc29-18", "anverso": "¿Cómo se realiza la incorporación a la circulación?", "reverso": "Tras observación, señalización y cediendo el paso a los vehículos de la vía." },
+        { "id": "fc29-19", "anverso": "¿Dónde está prohibida la marcha atrás?", "reverso": "En autopistas, autovías y en vías de un solo sentido." },
+        { "id": "fc29-20", "anverso": "¿Qué prevalece sobre las normas generales de la circulación?", "reverso": "La señalización." }
+    ],
+    "preguntas": [
+        {
+            "id": "p29-01",
+            "enunciado": "La normativa básica de tráfico es:",
+            "opciones": ["La Ley 7/1985", "El Real Decreto Legislativo 6/2015 y el RD 1428/2003", "La LO 4/2015", "La Ley 9/2007"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El Texto Refundido de la Ley de Tráfico es el RDL 6/2015; el Reglamento General de Circulación es el RD 1428/2003."
+        },
+        {
+            "id": "p29-02",
+            "enunciado": "Los peatones, fuera de poblado, circulan:",
+            "opciones": ["Por la derecha", "Por la izquierda, en sentido contrario a la marcha", "Por el centro de la calzada", "Únicamente por arcenes"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los peatones circulan, fuera de poblado, por la izquierda en sentido contrario a la marcha de los vehículos."
+        },
+        {
+            "id": "p29-03",
+            "enunciado": "La tasa máxima general de alcohol es:",
+            "opciones": ["0,3 g/l en sangre", "0,5 g/l en sangre o 0,25 mg/l en aire", "0,6 mg/l en aire", "1,2 g/l en sangre"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La tasa máxima general es 0,5 g/l en sangre o 0,25 mg/l en aire espirado."
+        },
+        {
+            "id": "p29-04",
+            "enunciado": "Para conductores noveles y profesionales la tasa máxima es:",
+            "opciones": ["0,5 g/l", "0,3 g/l en sangre o 0,15 mg/l en aire", "0,25 mg/l en aire", "0,6 mg/l en aire"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Para conductores noveles y profesionales la tasa es 0,3 g/l en sangre o 0,15 mg/l en aire."
+        },
+        {
+            "id": "p29-05",
+            "enunciado": "El límite genérico en autopista y autovía es:",
+            "opciones": ["100 km/h", "110 km/h", "120 km/h", "130 km/h"],
+            "respuestaCorrecta": 2,
+            "explicacion": "El límite genérico en autopistas y autovías es de 120 km/h."
+        },
+        {
+            "id": "p29-06",
+            "enunciado": "En vías urbanas con un único carril por sentido el límite es:",
+            "opciones": ["30 km/h", "50 km/h", "60 km/h", "70 km/h"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El límite en vías urbanas con un único carril por sentido es de 50 km/h."
+        },
+        {
+            "id": "p29-07",
+            "enunciado": "En una intersección sin señalización, la preferencia corresponde a:",
+            "opciones": ["El vehículo más rápido", "El vehículo que viene por la derecha", "El vehículo más grande", "El primero que llegó"],
+            "respuestaCorrecta": 1,
+            "explicacion": "En ausencia de señalización, la prioridad corresponde al vehículo que viene por la derecha."
+        },
+        {
+            "id": "p29-08",
+            "enunciado": "La marcha atrás está prohibida en:",
+            "opciones": ["Calles peatonales únicamente", "Autopistas, autovías y vías de un solo sentido", "Solo en cuestas", "Solo en intersecciones"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La marcha atrás está prohibida en autopistas, autovías y vías de un solo sentido."
+        }
+    ]
+}
