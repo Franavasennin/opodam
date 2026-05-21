@@ -4,6 +4,7 @@ import { obtenerTopics } from '../data/topics'
 import { useProgress } from '../hooks/useProgress'
 import { Card } from '../components/ui/Card'
 import type { PreguntaExt, ExamenResultado } from '../types'
+import { getPreguntaCorrecta } from '../types'
 import {
   calcularNotaExamen,
   calcularDebilidadesPorExamen,
@@ -68,9 +69,9 @@ export function Examen() {
   function finalizarExamen(prgs = preguntas, resps = respuestas) {
     clearInterval(intervalo.current)
     const correctasMap: Record<string, number> = {}
-    prgs.forEach(p => { correctasMap[p.id] = p.correcta })
-    const aciertos = prgs.filter(p => resps[p.id] === p.correcta).length
-    const errores  = prgs.filter(p => resps[p.id] !== null && resps[p.id] !== p.correcta).length
+    prgs.forEach(p => { correctasMap[p.id] = getPreguntaCorrecta(p) })
+    const aciertos = prgs.filter(p => resps[p.id] === getPreguntaCorrecta(p)).length
+    const errores  = prgs.filter(p => resps[p.id] !== null && resps[p.id] !== getPreguntaCorrecta(p)).length
     const enBlanco = prgs.filter(p => resps[p.id] === null).length
     const nota     = calcularNotaExamen(aciertos, errores)
     const porTema  = calcularDebilidadesPorExamen(
@@ -285,7 +286,7 @@ export function Examen() {
         </div>
         {preguntas.map((p, i) => {
           const elegida  = resultado.respuestasUsuario[p.id]
-          const correcta = p.correcta
+          const correcta = getPreguntaCorrecta(p)
           const color = elegida === null ? 'border-gray-200'
             : elegida === correcta ? 'border-green-400 bg-green-50' : 'border-red-400 bg-red-50'
           return (

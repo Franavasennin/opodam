@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { calcularPuntuacionTest } from '../services/progress'
 import { obtenerTopics } from '../data/topics'
 import type { Pregunta } from '../types'
+import { getPreguntaCorrecta } from '../types'
 
 type PreguntaExt = Pregunta & { temaId: number }
 
@@ -65,8 +66,8 @@ export function Simulacro() {
   )
 
   if (terminado) {
-    const aciertos = respuestas.filter((r, i) => r === preguntas[i]?.correcta).length
-    const errores  = respuestas.filter((r, i) => r !== null && r !== preguntas[i]?.correcta).length
+    const aciertos = respuestas.filter((r, i) => preguntas[i] && r === getPreguntaCorrecta(preguntas[i])).length
+    const errores  = respuestas.filter((r, i) => r !== null && preguntas[i] && r !== getPreguntaCorrecta(preguntas[i])).length
     const punt = calcularPuntuacionTest(aciertos, errores, preguntas.length)
     return (
       <div className="p-4 max-w-2xl mx-auto space-y-4">

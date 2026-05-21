@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { responderFlashcard, inicializarFlashcards } from '../../services/spaced-repetition'
 import type { Tema } from '../../types'
+import { getFlashcardFront, getFlashcardBack } from '../../types'
 
 interface Props { tema: Tema; onVueltaCompleta: () => void }
 
@@ -33,10 +34,10 @@ export function FlashcardsTab({ tema, onVueltaCompleta }: Props) {
       <p className="text-xs text-gray-400 text-right">{indice + 1}/{cards.length}</p>
       <div onClick={() => setVerRespuesta(true)}
         className="min-h-48 bg-white border border-gray-100 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer hover:shadow-md transition-shadow text-center">
-        <p className="text-sm font-medium text-gray-800">{card.pregunta}</p>
+        <p className="text-sm font-medium text-gray-800">{getFlashcardFront(card)}</p>
         {!verRespuesta
           ? <p className="text-xs text-gray-400 mt-4">Toca para ver la respuesta</p>
-          : <p className="text-sm text-brand-700 font-semibold mt-4 border-t border-gray-100 pt-4 w-full">{card.respuesta}</p>
+          : <p className="text-sm text-brand-700 font-semibold mt-4 border-t border-gray-100 pt-4 w-full">{getFlashcardBack(card)}</p>
         }
       </div>
       {verRespuesta && (

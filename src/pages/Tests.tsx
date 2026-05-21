@@ -4,6 +4,7 @@ import { useProgress } from '../hooks/useProgress'
 import { calcularPuntuacionTest } from '../services/progress'
 import { obtenerTopics } from '../data/topics'
 import type { Tema } from '../types'
+import { getPreguntaCorrecta } from '../types'
 
 export function Tests() {
   const navigate = useNavigate()
@@ -55,8 +56,8 @@ export function Tests() {
 
   if (!tema) return <div className="min-h-screen bg-slate-50 flex justify-center py-16 text-slate-400">Cargando...</div>
 
-  const aciertos = respuestas.filter((r, i) => r === tema.preguntas[i].correcta).length
-  const errores  = respuestas.filter((r, i) => r !== null && r !== tema.preguntas[i].correcta).length
+  const aciertos = respuestas.filter((r, i) => r === getPreguntaCorrecta(tema.preguntas[i])).length
+  const errores  = respuestas.filter((r, i) => r !== null && r !== getPreguntaCorrecta(tema.preguntas[i])).length
 
   function enviar() {
     guardarTest(tema!.id, aciertos, errores, tema!.preguntas.length)
@@ -79,9 +80,9 @@ export function Tests() {
           <p className="text-sm text-slate-700 mt-3">✅ {aciertos} aciertos · ❌ {errores} errores</p>
         </div>
         {tema.preguntas.map((p, i) => (
-          <div key={i} className={`bg-white border border-slate-200 rounded-2xl shadow-sm p-4 border-l-4 ${respuestas[i] === p.correcta ? 'border-l-emerald-500' : 'border-l-red-500'}`}>
+          <div key={i} className={`bg-white border border-slate-200 rounded-2xl shadow-sm p-4 border-l-4 ${respuestas[i] === getPreguntaCorrecta(p) ? 'border-l-emerald-500' : 'border-l-red-500'}`}>
             <p className="text-sm font-semibold text-slate-900">{p.enunciado}</p>
-            <p className="text-xs text-slate-500 mt-1">Correcta: {p.opciones[p.correcta]}</p>
+            <p className="text-xs text-slate-500 mt-1">Correcta: {p.opciones[getPreguntaCorrecta(p)]}</p>
             <p className="text-xs text-slate-400 mt-1 italic">{p.explicacion}</p>
           </div>
         ))}

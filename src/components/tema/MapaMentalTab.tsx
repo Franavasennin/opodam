@@ -11,6 +11,8 @@ interface Props { tema: Tema }
 
 function buildLayout(rawNodos: any[], rawAristas: any[]): { nodes: Node[]; edges: Edge[] } {
   const isFormatA = rawNodos.length > 0 && rawNodos[0].data && rawNodos[0].position
+  // Formato C (policia-local): { id, texto, nivel, x, y } + aristas { desde, hasta }
+  const isFormatC = rawNodos.length > 0 && (rawNodos[0].texto !== undefined || rawNodos[0].nivel !== undefined)
 
   if (isFormatA) {
     const nodes: Node[] = rawNodos.map(n => ({
@@ -23,6 +25,50 @@ function buildLayout(rawNodos: any[], rawAristas: any[]): { nodes: Node[]; edges
       target: a.target,
       style: { stroke: '#4361ee', strokeWidth: 1.5 },
     }))
+    return { nodes, edges }
+  }
+
+  if (isFormatC) {
+    const hasCoords = rawNodos.some((n: any) => (n.x ?? 0) !== 0 || (n.y ?? 0) !== 0)
+    const positions: Record<string, { x: number; y: number }> = {}
+    if (hasCoords) {
+      rawNodos.forEach((n: any) => { positions[n.id] = { x: n.x ?? 0, y: n.y ?? 0 } })
+    } else {
+      const byLevel: Record<number, string[]> = {}
+      rawNodos.forEach((n: any) => {
+        const lv = n.nivel ?? 0
+        if (!byLevel[lv]) byLevel[lv] = []
+        byLevel[lv].push(n.id)
+      })
+      const radii = [0, 260, 500, 740, 980]
+      Object.entries(byLevel).forEach(([lvStr, ids]) => {
+        const lv = parseInt(lvStr)
+        if (lv === 0) {
+          ids.forEach(id => { positions[id] = { x: 0, y: 0 } })
+          return
+        }
+        const r = radii[lv] ?? lv * 260
+        ids.forEach((id, i) => {
+          const angle = (2 * Math.PI * i) / Math.max(ids.length, 1) - Math.PI / 2
+          positions[id] = { x: Math.round(Math.cos(angle) * r), y: Math.round(Math.sin(angle) * r) }
+        })
+      })
+    }
+
+    const nodes: Node[] = rawNodos.map((n: any) => ({
+      id: n.id,
+      data: { label: n.texto ?? n.label ?? n.id },
+      position: positions[n.id] ?? { x: 0, y: 0 },
+      style: nodeStyle((n.nivel ?? 0) === 0),
+    }))
+    const edges: Edge[] = rawAristas
+      .map((a: any, i: number) => ({
+        id: a.id ?? `e${i}`,
+        source: a.desde ?? a.source ?? a.origen,
+        target: a.hasta ?? a.target ?? a.destino,
+        style: { stroke: '#4361ee', strokeWidth: 1.5 },
+      }))
+      .filter((e: Edge) => e.source && e.target)
     return { nodes, edges }
   }
 

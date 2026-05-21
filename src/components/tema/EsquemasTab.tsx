@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import mermaid from 'mermaid'
 import type { Tema } from '../../types'
+import { getMermaidCode } from '../../types'
 
 mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { primaryColor: '#4361ee' } })
 
@@ -13,7 +14,9 @@ export function EsquemasTab({ tema }: Props) {
     refs.current.forEach(async (el, i) => {
       if (!el) return
       try {
-        const { svg } = await mermaid.render(`mermaid-${tema.id}-${i}`, tema.esquemas[i].codigo)
+        const code = getMermaidCode(tema.esquemas[i])
+        if (!code) { el.innerHTML = '<p class="text-gray-400 text-sm">Sin contenido</p>'; return }
+        const { svg } = await mermaid.render(`mermaid-${tema.id}-${i}`, code)
         el.innerHTML = svg
       } catch {
         el.innerHTML = '<p class="text-red-500 text-sm">Error al renderizar esquema</p>'

@@ -5,38 +5,72 @@ export interface Seccion {
   contenido: string
 }
 
+// Esquemas: cgpc usa `codigo`, policia-local usa `contenido`
 export interface EsquemaMermaid {
   tipo: 'mermaid'
   titulo: string
-  codigo: string
+  codigo?: string
+  contenido?: string
+  id?: string
 }
 
+// Nodo mapa mental: formato A (cgpc) {id, data:{label}, position:{x,y}}
+//                   formato B (policia-local) {id, texto, nivel, x, y}
 export interface NodoMapa {
   id: string
-  data: { label: string }
-  position: { x: number; y: number }
+  data?: { label: string }
+  position?: { x: number; y: number }
+  texto?: string
+  label?: string
+  nivel?: number
+  x?: number
+  y?: number
   type?: string
 }
 
+// Arista mapa mental: cgpc {id, source, target}; policia-local {desde, hasta}
 export interface AristaMapa {
-  id: string
-  source: string
-  target: string
+  id?: string
+  source?: string
+  target?: string
+  desde?: string
+  hasta?: string
+  origen?: string
+  destino?: string
   label?: string
 }
 
+// Flashcard: cgpc {pregunta, respuesta}; policia-local {anverso, reverso}
 export interface Flashcard {
   id: string
-  pregunta: string
-  respuesta: string
+  pregunta?: string
+  respuesta?: string
+  anverso?: string
+  reverso?: string
 }
 
+// Pregunta: cgpc {opciones[3], correcta:0-2}; policia-local {opciones[4], respuestaCorrecta:0-3}
 export interface Pregunta {
   id: string
   enunciado: string
-  opciones: [string, string, string]
-  correcta: 0 | 1 | 2
+  opciones: string[]
+  correcta?: number
+  respuestaCorrecta?: number
   explicacion: string
+}
+
+// Helpers de normalización entre ambos formatos
+export function getMermaidCode(e: EsquemaMermaid): string {
+  return e.codigo ?? e.contenido ?? ''
+}
+export function getFlashcardFront(c: Flashcard): string {
+  return c.pregunta ?? c.anverso ?? ''
+}
+export function getFlashcardBack(c: Flashcard): string {
+  return c.respuesta ?? c.reverso ?? ''
+}
+export function getPreguntaCorrecta(p: Pregunta): number {
+  return p.respuestaCorrecta ?? p.correcta ?? 0
 }
 
 export type Bloque = 'general' | 'especifico'

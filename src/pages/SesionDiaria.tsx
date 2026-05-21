@@ -7,6 +7,7 @@ import { responderFlashcard } from '../services/spaced-repetition'
 import { obtenerSesionHoy, completarSesionDiaria, calcularDebilidades } from '../services/adaptativo'
 import { actualizarRendimientoTema } from '../services/examen'
 import type { Flashcard, PreguntaExt } from '../types'
+import { getPreguntaCorrecta, getFlashcardFront, getFlashcardBack } from '../types'
 
 type Fase = 'cargando' | 'flashcards' | 'minitest' | 'completada'
 
@@ -86,7 +87,7 @@ export function SesionDiaria() {
       preguntas.forEach((p, i) => {
         if (!porTema[p.temaId]) porTema[p.temaId] = { aciertos: 0, errores: 0, total: 0 }
         porTema[p.temaId].total++
-        if (respuestas[i] === p.correcta) porTema[p.temaId].aciertos++
+        if (respuestas[i] === getPreguntaCorrecta(p)) porTema[p.temaId].aciertos++
         else if (respuestas[i] !== null) porTema[p.temaId].errores++
       })
       Object.entries(porTema).forEach(([id, r]) =>
@@ -105,7 +106,7 @@ export function SesionDiaria() {
   }
 
   if (fase === 'completada') {
-    const aciertos = preguntas.filter((p, i) => respuestas[i] === p.correcta).length
+    const aciertos = preguntas.filter((p, i) => respuestas[i] === getPreguntaCorrecta(p)).length
     return (
       <div className="p-4 max-w-2xl mx-auto text-center py-12 space-y-4">
         <div className="text-6xl">🎉</div>
@@ -135,10 +136,10 @@ export function SesionDiaria() {
         <p className="text-xs text-gray-400">Flashcards {fcIndice + 1}/{flashcards.length}</p>
         <div onClick={() => setFcVerRespuesta(true)}
           className="min-h-48 bg-white border border-gray-100 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer hover:shadow-md transition-shadow text-center">
-          <p className="text-sm font-medium text-gray-800">{card.pregunta}</p>
+          <p className="text-sm font-medium text-gray-800">{getFlashcardFront(card)}</p>
           {!fcVerRespuesta
             ? <p className="text-xs text-gray-400 mt-4">Toca para ver la respuesta</p>
-            : <p className="text-sm text-brand-700 font-semibold mt-4 border-t pt-4 w-full">{card.respuesta}</p>
+            : <p className="text-sm text-brand-700 font-semibold mt-4 border-t pt-4 w-full">{getFlashcardBack(card)}</p>
           }
         </div>
         {fcVerRespuesta && (
@@ -174,7 +175,7 @@ export function SesionDiaria() {
       {p.opciones.map((op, j) => {
         let cls = 'border-gray-100 hover:bg-gray-50'
         if (mostrandoExplicacion) {
-          if (j === p.correcta) cls = 'border-green-400 bg-green-50'
+          if (j === getPreguntaCorrecta(p)) cls = 'border-green-400 bg-green-50'
           else if (j === respActual) cls = 'border-red-400 bg-red-50'
         } else if (respActual === j) {
           cls = 'border-brand-500 bg-brand-50'
