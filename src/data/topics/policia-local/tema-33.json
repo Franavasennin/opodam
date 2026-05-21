@@ -1,0 +1,157 @@
+{
+    "id": 33,
+    "titulo": "Régimen sancionador: infracciones y sanciones. Tipificación de las faltas y graduación de las sanciones. Responsabilidad. Prescripción. Procedimiento sancionador: fases. Pérdida de puntos. Recursos. Medidas cautelares: inmovilización y retirada del vehículo",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s33-1",
+            "titulo": "Infracciones y sanciones en materia de tráfico",
+            "contenido": "El régimen sancionador del tráfico se regula en el Texto Refundido de la Ley de Tráfico (RDL 6/2015) y en el Reglamento del Procedimiento Sancionador en Materia de Tráfico (RD 320/1994). Las infracciones se clasifican en muy graves, graves y leves. Las multas son: 500 euros para las muy graves, 200 euros para las graves y 100 euros para las leves, con posibilidad de agravación o atenuación según las circunstancias. Algunas infracciones llevan aparejada la pérdida de puntos del permiso de conducir, conforme al anexo II de la Ley. La responsabilidad puede recaer sobre el conductor, el titular del vehículo o el arrendatario a largo plazo, según los casos."
+        },
+        {
+            "id": "s33-2",
+            "titulo": "Tipificación y graduación de las sanciones",
+            "contenido": "Son infracciones muy graves, entre otras: conducir con tasa de alcohol superior a la permitida en grado punible administrativo (pero sin alcanzar el delictivo), conducir bajo influencia de drogas, exceso punible de velocidad, conducción temeraria, negativa a las pruebas (en vía administrativa), uso del teléfono móvil sin manos libres y conducir sin permiso. Las infracciones graves incluyen excesos menores de velocidad, no respetar señales de prioridad, no usar el cinturón o el casco. Las leves son el resto. La sanción puede agravarse por la peligrosidad, la reincidencia o por las circunstancias del vehículo o de la vía."
+        },
+        {
+            "id": "s33-3",
+            "titulo": "Responsabilidad, prescripción y procedimiento",
+            "contenido": "El titular del vehículo es responsable de las infracciones por estacionamiento y por incumplimiento de la obligación de identificar al conductor. Las infracciones leves prescriben a los tres meses y las graves y muy graves a los seis meses. Las sanciones graves y muy graves prescriben a los cuatro años y las leves al año. El procedimiento sancionador comprende: iniciación (de oficio mediante denuncia), instrucción (con audiencia del interesado), propuesta de resolución y resolución. La denuncia notificada en el acto al conductor inicia el procedimiento; en otros supuestos se notifica en el domicilio. El pronto pago en plazo de 20 días naturales conlleva la reducción del 50% de la sanción y la conclusión del procedimiento (salvo en pérdida de puntos)."
+        },
+        {
+            "id": "s33-4",
+            "titulo": "Pérdida de puntos y recursos",
+            "contenido": "El permiso por puntos asigna a cada conductor un saldo inicial de doce puntos (8 si es novel o el conductor ha sido sancionado por pérdida total previa). Determinadas infracciones detraen entre 2 y 6 puntos del saldo; la pérdida total conlleva la pérdida de la vigencia del permiso. El conductor puede recuperar puntos por buen comportamiento o realizando cursos de sensibilización y reeducación vial. Contra las resoluciones sancionadoras cabe recurso potestativo de reposición en el plazo de un mes ante el mismo órgano, y recurso contencioso-administrativo ante los Juzgados de lo Contencioso-Administrativo en el plazo de dos meses."
+        },
+        {
+            "id": "s33-5",
+            "titulo": "Medidas cautelares: inmovilización y retirada del vehículo",
+            "contenido": "Los agentes encargados de la vigilancia del tráfico pueden adoptar medidas cautelares cuando concurran los supuestos legales: la inmovilización del vehículo (por carencia de seguro obligatorio, ITV desfavorable, conductor sin permiso, alcoholemia o drogas, exceso de carga o velocidad, etc.) y la retirada del vehículo de la vía pública con su depósito en lugar habilitado (por obstaculizar la circulación, presentar un peligro, estar abandonado o constituir parada o estacionamiento prohibidos). Los gastos de inmovilización y depósito corren por cuenta del responsable. El agente debe informar al conductor de los motivos y de la posibilidad de cesar la medida si subsana la causa."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e33-1",
+            "titulo": "Clases de infracciones y multas",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Infracciones] --> B[Muy graves - 500 euros]\n    A --> C[Graves - 200 euros]\n    A --> D[Leves - 100 euros]\n    A --> E[Algunas con perdida de puntos]"
+        },
+        {
+            "id": "e33-2",
+            "titulo": "Medidas cautelares",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Medidas cautelares] --> B[Inmovilizacion del vehiculo]\n    A --> C[Retirada y deposito]\n    B --> D[Sin seguro, ITV, sin permiso, alcoholemia]\n    C --> E[Obstaculizar, peligro, abandono]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Régimen sancionador del tráfico", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Infracciones y multas", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Tipificación y graduación", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Responsabilidad y prescripción", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Puntos y recursos", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Medidas cautelares", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Muy graves, graves, leves", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "500/200/100 euros", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Titular y conductor", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Prescripción 3/6 meses y 1/4 años", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "12 puntos (8 noveles)", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Reposición y contencioso", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Inmovilización y retirada", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n5", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc33-01", "anverso": "¿Cómo se clasifican las infracciones de tráfico?", "reverso": "En muy graves, graves y leves." },
+        { "id": "fc33-02", "anverso": "¿Cuál es la multa por infracción muy grave?", "reverso": "500 euros, con posibilidad de agravación o atenuación." },
+        { "id": "fc33-03", "anverso": "¿Y por infracción grave?", "reverso": "200 euros." },
+        { "id": "fc33-04", "anverso": "¿Y por infracción leve?", "reverso": "100 euros." },
+        { "id": "fc33-05", "anverso": "Cita infracciones muy graves.", "reverso": "Exceso punible de velocidad, alcoholemia o drogas, conducción temeraria, negativa a las pruebas y uso del móvil sin manos libres." },
+        { "id": "fc33-06", "anverso": "¿De quién es la responsabilidad por estacionamiento?", "reverso": "Del titular del vehículo." },
+        { "id": "fc33-07", "anverso": "¿Y por incumplimiento del deber de identificar al conductor?", "reverso": "También del titular del vehículo." },
+        { "id": "fc33-08", "anverso": "¿Cuándo prescriben las infracciones leves?", "reverso": "A los tres meses." },
+        { "id": "fc33-09", "anverso": "¿Y las graves y muy graves?", "reverso": "A los seis meses." },
+        { "id": "fc33-10", "anverso": "¿Cuándo prescriben las sanciones leves?", "reverso": "Al año." },
+        { "id": "fc33-11", "anverso": "¿Y las sanciones graves y muy graves?", "reverso": "A los cuatro años." },
+        { "id": "fc33-12", "anverso": "¿Qué reducción conlleva el pronto pago?", "reverso": "El 50% de la multa si se paga en 20 días naturales." },
+        { "id": "fc33-13", "anverso": "¿Cuántos puntos tiene el saldo inicial general del permiso?", "reverso": "12 puntos." },
+        { "id": "fc33-14", "anverso": "¿Y el saldo inicial del conductor novel?", "reverso": "8 puntos." },
+        { "id": "fc33-15", "anverso": "¿Cuántos puntos puede detraer una infracción?", "reverso": "Entre 2 y 6 puntos, según el tipo." },
+        { "id": "fc33-16", "anverso": "¿Cómo se recuperan puntos?", "reverso": "Por buen comportamiento o realizando cursos de sensibilización y reeducación vial." },
+        { "id": "fc33-17", "anverso": "¿Qué recurso administrativo cabe contra una sanción?", "reverso": "El recurso potestativo de reposición en el plazo de un mes." },
+        { "id": "fc33-18", "anverso": "¿Y el recurso judicial?", "reverso": "El recurso contencioso-administrativo en el plazo de dos meses." },
+        { "id": "fc33-19", "anverso": "Cita causas de inmovilización del vehículo.", "reverso": "Carencia de seguro, ITV desfavorable, conductor sin permiso, alcoholemia o exceso de carga." },
+        { "id": "fc33-20", "anverso": "¿Quién paga los gastos de retirada y depósito del vehículo?", "reverso": "El responsable del vehículo." }
+    ],
+    "preguntas": [
+        {
+            "id": "p33-01",
+            "enunciado": "Las infracciones de tráfico se clasifican en:",
+            "opciones": ["Mayores y menores", "Muy graves, graves y leves", "Penales y administrativas", "Solo graves y leves"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las infracciones de tráfico se clasifican en muy graves, graves y leves."
+        },
+        {
+            "id": "p33-02",
+            "enunciado": "La multa por una infracción muy grave es, por regla general, de:",
+            "opciones": ["100 euros", "200 euros", "500 euros", "1.000 euros"],
+            "respuestaCorrecta": 2,
+            "explicacion": "La multa por una infracción muy grave es de 500 euros, con posibilidad de agravación o atenuación."
+        },
+        {
+            "id": "p33-03",
+            "enunciado": "Las infracciones leves prescriben a los:",
+            "opciones": ["Un mes", "Tres meses", "Seis meses", "Un año"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las infracciones leves prescriben a los tres meses; las graves y muy graves a los seis meses."
+        },
+        {
+            "id": "p33-04",
+            "enunciado": "El pronto pago en plazo de 20 días naturales conlleva:",
+            "opciones": ["Una reducción del 30%", "Una reducción del 50% y la terminación del procedimiento", "Un aumento de la sanción", "La pérdida de puntos automática"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El pronto pago conlleva una reducción del 50% de la sanción y la conclusión del procedimiento (sin afectar a la pérdida de puntos)."
+        },
+        {
+            "id": "p33-05",
+            "enunciado": "El saldo inicial del permiso por puntos es de:",
+            "opciones": ["8 puntos para todos", "12 puntos en general; 8 para noveles", "15 puntos", "Sin saldo inicial"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El saldo inicial es de 12 puntos, salvo para conductores noveles o sancionados con pérdida total previa, cuyo saldo es de 8."
+        },
+        {
+            "id": "p33-06",
+            "enunciado": "Una infracción de tráfico puede detraer entre:",
+            "opciones": ["1 y 4 puntos", "2 y 6 puntos", "5 y 10 puntos", "10 y 15 puntos"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las infracciones que conllevan pérdida de puntos detraen entre 2 y 6 puntos según el tipo."
+        },
+        {
+            "id": "p33-07",
+            "enunciado": "Contra una resolución sancionadora cabe recurso potestativo de:",
+            "opciones": ["Alzada", "Reposición en el plazo de un mes", "Revisión", "Casación"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Cabe recurso potestativo de reposición en el plazo de un mes ante el mismo órgano que dictó la resolución."
+        },
+        {
+            "id": "p33-08",
+            "enunciado": "Procede la inmovilización del vehículo, entre otros, por:",
+            "opciones": ["Color del vehículo", "Carencia de seguro obligatorio o conductor sin permiso", "No llevar pañuelos a bordo", "Conducir con música alta"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La inmovilización procede, entre otros supuestos, por carencia de seguro obligatorio o por conducir sin permiso."
+        }
+    ]
+}
