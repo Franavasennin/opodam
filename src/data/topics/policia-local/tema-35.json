@@ -1,0 +1,157 @@
+{
+    "id": 35,
+    "titulo": "Protección del medio ambiente. Normativa sobre emisiones y vertidos contaminantes. Humos, ruidos y vibraciones. Régimen sancionador en las infracciones administrativas",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s35-1",
+            "titulo": "Protección del medio ambiente: marco general",
+            "contenido": "La protección del medio ambiente se reconoce en el artículo 45 de la Constitución como derecho de todos a disfrutar de un medio ambiente adecuado y deber de conservarlo. Los poderes públicos velan por la utilización racional de los recursos naturales y deben establecer las sanciones penales o, en su caso, administrativas y la obligación de reparar el daño causado. La distribución de competencias se rige por el artículo 149.1.23ª CE: el Estado dicta la legislación básica sobre protección del medio ambiente; las Comunidades Autónomas establecen normas adicionales de protección y la ejecución; los municipios ejercen competencias en medio ambiente urbano (parques y jardines, gestión de residuos, contaminación atmosférica, acústica, etc.)."
+        },
+        {
+            "id": "s35-2",
+            "titulo": "Emisiones a la atmósfera y vertidos contaminantes",
+            "contenido": "La protección frente a las emisiones contaminantes a la atmósfera se rige por la Ley 34/2007, de calidad del aire y protección de la atmósfera, y por la normativa estatal y europea de prevención y control integrados de la contaminación (Ley 16/2002). Los focos emisores requieren autorización ambiental integrada o autorización específica según su impacto. Las aguas se protegen frente a vertidos contaminantes mediante la legislación de aguas (Texto Refundido aprobado por RDL 1/2001) y la normativa autonómica; los vertidos requieren autorización del organismo de cuenca o de la Administración hidráulica autonómica, y deben respetar los límites de las sustancias contaminantes."
+        },
+        {
+            "id": "s35-3",
+            "titulo": "Humos, ruidos y vibraciones",
+            "contenido": "La normativa de calidad del aire establece valores límite y de alerta para contaminantes (NOx, PM10, ozono, etc.). Las emisiones de humos de las actividades industriales y de los vehículos se controlan mediante inspecciones técnicas (ITV en vehículos) y revisiones periódicas. La contaminación acústica se regula por la Ley 37/2003, del Ruido, y por las normativas autonómicas y ordenanzas municipales. Se fijan objetivos de calidad acústica para distintos tipos de zonas (residencial, sanitaria, industrial, etc.) y se exigen medidas correctoras a las actividades emisoras. Los Ayuntamientos elaboran mapas de ruido en las grandes ciudades y planes de acción para reducirlo."
+        },
+        {
+            "id": "s35-4",
+            "titulo": "Régimen sancionador ambiental",
+            "contenido": "Las infracciones administrativas en materia ambiental se clasifican generalmente en muy graves, graves y leves, atendiendo al daño causado al medio, a la salud o a los recursos naturales, y a la reincidencia. Las sanciones comprenden multas (que pueden ser muy elevadas, hasta varios millones de euros para las infracciones muy graves), suspensión o revocación de autorizaciones, clausura del establecimiento, inhabilitación para contratar con el sector público y, además, la obligación de reparar el daño ambiental causado (responsabilidad medioambiental, Ley 26/2007). Las sanciones se imponen por el órgano competente según la materia y la cuantía, previo procedimiento sancionador con todas las garantías."
+        },
+        {
+            "id": "s35-5",
+            "titulo": "Actuación policial y municipal en materia ambiental",
+            "contenido": "La Policía Local desempeña funciones esenciales en la vigilancia y control del cumplimiento de la normativa ambiental urbana: ruidos, emisiones de humos, vertidos a la red municipal, limpieza viaria, residuos sólidos urbanos, animales, contaminación lumínica y abandono de vehículos. Levanta actas de denuncia, recoge muestras y solicita la intervención de los servicios técnicos. Asimismo colabora con el SEPRONA de la Guardia Civil, los agentes de medio ambiente autonómicos y otros cuerpos especializados en infracciones que afecten al medio natural o protegido. En caso de delito ambiental, da cuenta a la autoridad judicial conforme a la Ley de Enjuiciamiento Criminal."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e35-1",
+            "titulo": "Medio ambiente: marco competencial",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Medio ambiente] --> B[Articulo 45 CE]\n    A --> C[Estado: legislacion basica]\n    A --> D[CCAA: normas adicionales y ejecucion]\n    A --> E[Municipios: medio ambiente urbano]"
+        },
+        {
+            "id": "e35-2",
+            "titulo": "Sectores de protección",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Sectores] --> B[Atmosfera y emisiones]\n    A --> C[Aguas y vertidos]\n    A --> D[Ruido y vibraciones]\n    A --> E[Residuos y suelos]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Protección del medio ambiente", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Marco general", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Emisiones y vertidos", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Humos, ruidos y vibraciones", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Régimen sancionador", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Actuación policial y municipal", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Artículo 45 CE", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Ley 34/2007 y Ley 16/2002", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Vertidos: RDL 1/2001 aguas", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Ley 37/2003 del Ruido", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Multas elevadas y reparación", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Policía Local: actas y muestras", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "SEPRONA y agentes de medio ambiente", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n3", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc35-01", "anverso": "¿Qué artículo de la CE reconoce el derecho al medio ambiente?", "reverso": "El artículo 45 de la Constitución." },
+        { "id": "fc35-02", "anverso": "¿Qué deber impone el artículo 45?", "reverso": "El deber de conservar el medio ambiente y el de los poderes públicos de velar por la utilización racional de los recursos." },
+        { "id": "fc35-03", "anverso": "¿En qué artículo se distribuye la competencia ambiental?", "reverso": "El artículo 149.1.23ª CE." },
+        { "id": "fc35-04", "anverso": "¿Qué competencia tiene el Estado en medio ambiente?", "reverso": "Dicta la legislación básica de protección." },
+        { "id": "fc35-05", "anverso": "¿Y las Comunidades Autónomas?", "reverso": "Pueden establecer normas adicionales de protección y la ejecución." },
+        { "id": "fc35-06", "anverso": "¿Y los municipios?", "reverso": "Competencias en medio ambiente urbano: parques, residuos, contaminación atmosférica y acústica." },
+        { "id": "fc35-07", "anverso": "¿Qué ley regula la calidad del aire y la atmósfera?", "reverso": "La Ley 34/2007, de calidad del aire y protección de la atmósfera." },
+        { "id": "fc35-08", "anverso": "¿Qué ley regula la prevención y control integrados de la contaminación?", "reverso": "La Ley 16/2002." },
+        { "id": "fc35-09", "anverso": "¿Qué requieren los vertidos a las aguas?", "reverso": "Autorización del organismo de cuenca o de la Administración hidráulica autonómica." },
+        { "id": "fc35-10", "anverso": "¿Qué ley regula la contaminación acústica?", "reverso": "La Ley 37/2003, del Ruido." },
+        { "id": "fc35-11", "anverso": "¿Qué fijan los objetivos de calidad acústica?", "reverso": "Niveles máximos según el tipo de zona (residencial, sanitaria, industrial, etc.)." },
+        { "id": "fc35-12", "anverso": "¿Qué deben elaborar los Ayuntamientos en grandes ciudades?", "reverso": "Mapas de ruido y planes de acción para reducirlo." },
+        { "id": "fc35-13", "anverso": "¿Cómo se clasifican las infracciones ambientales?", "reverso": "En muy graves, graves y leves." },
+        { "id": "fc35-14", "anverso": "Cita sanciones en materia ambiental.", "reverso": "Multas, suspensión o revocación de autorizaciones, clausura del establecimiento e inhabilitación." },
+        { "id": "fc35-15", "anverso": "¿Qué obligación adicional acompaña a la sanción ambiental?", "reverso": "La obligación de reparar el daño ambiental causado." },
+        { "id": "fc35-16", "anverso": "¿Qué ley regula la responsabilidad medioambiental?", "reverso": "La Ley 26/2007." },
+        { "id": "fc35-17", "anverso": "Cita funciones de la Policía Local en medio ambiente urbano.", "reverso": "Vigilancia de ruidos, humos, vertidos, residuos, limpieza y abandono de vehículos." },
+        { "id": "fc35-18", "anverso": "¿Con qué unidad estatal colabora la Policía Local en materia ambiental?", "reverso": "Con el SEPRONA de la Guardia Civil." },
+        { "id": "fc35-19", "anverso": "¿Qué hace la Policía Local ante un delito ambiental?", "reverso": "Da cuenta a la autoridad judicial conforme a la Ley de Enjuiciamiento Criminal." },
+        { "id": "fc35-20", "anverso": "¿Cómo se controlan las emisiones de humos de los vehículos?", "reverso": "Mediante la ITV y revisiones periódicas." }
+    ],
+    "preguntas": [
+        {
+            "id": "p35-01",
+            "enunciado": "El derecho al medio ambiente se reconoce en el artículo:",
+            "opciones": ["35 CE", "45 CE", "53 CE", "139 CE"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 45 de la Constitución reconoce el derecho a un medio ambiente adecuado y el deber de conservarlo."
+        },
+        {
+            "id": "p35-02",
+            "enunciado": "La legislación básica de medio ambiente corresponde a:",
+            "opciones": ["Las Comunidades Autónomas", "El Estado (art. 149.1.23ª CE)", "Los municipios", "La Unión Europea exclusivamente"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El artículo 149.1.23ª CE atribuye al Estado la legislación básica sobre protección del medio ambiente."
+        },
+        {
+            "id": "p35-03",
+            "enunciado": "La calidad del aire y la protección de la atmósfera se regulan por:",
+            "opciones": ["La Ley 37/2003", "La Ley 34/2007", "La Ley 26/2007", "El RDL 1/2001"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 34/2007 regula la calidad del aire y la protección de la atmósfera."
+        },
+        {
+            "id": "p35-04",
+            "enunciado": "La contaminación acústica se regula por:",
+            "opciones": ["La Ley 26/2007", "La Ley 37/2003, del Ruido", "La Ley 34/2007", "El RDL 6/2015"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 37/2003, del Ruido, regula la contaminación acústica."
+        },
+        {
+            "id": "p35-05",
+            "enunciado": "Los grandes municipios deben elaborar:",
+            "opciones": ["Solo ordenanzas", "Mapas de ruido y planes de acción", "Solo informes anuales", "Solo censos"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los Ayuntamientos de las grandes ciudades elaboran mapas de ruido y planes de acción para reducirlo."
+        },
+        {
+            "id": "p35-06",
+            "enunciado": "Las infracciones ambientales se clasifican en:",
+            "opciones": ["Graves y leves", "Muy graves, graves y leves", "Penales y administrativas", "Mayores y menores"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las infracciones ambientales se clasifican en muy graves, graves y leves según el daño causado."
+        },
+        {
+            "id": "p35-07",
+            "enunciado": "Además de la sanción, una infracción ambiental conlleva:",
+            "opciones": ["Solo amonestación", "La obligación de reparar el daño ambiental causado", "Una felicitación", "Multa diferida"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Junto a la sanción se impone la obligación de reparar el daño ambiental causado (Ley 26/2007)."
+        },
+        {
+            "id": "p35-08",
+            "enunciado": "La unidad de la Guardia Civil especializada en medio ambiente es:",
+            "opciones": ["EMUME", "SEPRONA", "GAR", "UPR"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El SEPRONA es el Servicio de Protección de la Naturaleza de la Guardia Civil."
+        }
+    ]
+}
