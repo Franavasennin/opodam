@@ -1,0 +1,157 @@
+{
+    "id": 32,
+    "titulo": "Las autorizaciones administrativas. Permisos y licencias de conducción. Permisos de circulación y documentación de los vehículos. La matriculación. La declaración de nulidad o lesividad y pérdida de vigencia. Suspensión cautelar",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s32-1",
+            "titulo": "Las autorizaciones administrativas en tráfico",
+            "contenido": "Las autorizaciones administrativas en materia de tráfico son los actos por los que la Administración habilita a personas y vehículos para circular conforme a la normativa. El órgano competente es, con carácter general, la Dirección General de Tráfico (DGT) y sus Jefaturas Provinciales, sin perjuicio de las competencias de las Comunidades Autónomas con traspasos efectuados (Cataluña y País Vasco) y de las autoridades locales. La normativa aplicable es el Texto Refundido de la Ley de Tráfico (RDL 6/2015) y el Reglamento General de Conductores (RD 818/2009). Las autorizaciones son de carácter personal o real, con una vigencia condicionada al cumplimiento de los requisitos legales."
+        },
+        {
+            "id": "s32-2",
+            "titulo": "Permisos y licencias de conducción",
+            "contenido": "Para conducir vehículos a motor y ciclomotores es necesario disponer del correspondiente permiso o licencia. Los permisos se clasifican en clases según el vehículo: AM (ciclomotores y vehículos para personas con movilidad reducida), A1, A2 y A (motocicletas con distintas potencias y edades), B (turismos y vehículos hasta 3.500 kg de MMA), C1 y C (camiones), D1 y D (autobuses), y permisos del grupo BE, C1E, CE, D1E y DE para conjuntos. Para acceder al permiso se exige edad mínima, aptitud psicofísica, superar pruebas teórica y práctica. La vigencia del permiso B es de 10 años hasta los 65, y de 5 años a partir de esa edad; los de las categorías C y D tienen vigencia menor."
+        },
+        {
+            "id": "s32-3",
+            "titulo": "Permiso de circulación y documentación de los vehículos",
+            "contenido": "Todo vehículo a motor y remolque cuyas características exijan matriculación debe disponer de permiso de circulación, expedido por la DGT a nombre del titular. El permiso acredita la legalidad de la circulación del vehículo en el territorio nacional. La tarjeta de Inspección Técnica de Vehículos (ITV) recoge las características técnicas. El conductor debe llevar consigo durante la circulación el permiso o licencia de conducción, el permiso de circulación, la tarjeta de ITV y el justificante del seguro obligatorio. La carencia del permiso de circulación o su no exhibición ante la autoridad constituyen infracciones administrativas."
+        },
+        {
+            "id": "s32-4",
+            "titulo": "La matriculación",
+            "contenido": "La matriculación es el acto administrativo por el que la DGT asigna una matrícula a un vehículo, le otorga el permiso de circulación y permite su uso legal en las vías públicas. Es obligatoria con carácter previo a la puesta en circulación, salvo los supuestos exentos. La matrícula se compone de cuatro cifras y tres letras (sistema actual desde el año 2000) y tiene carácter permanente: acompaña al vehículo durante toda su vida útil. La transmisión del vehículo no implica cambio de matrícula, pero sí la obligación de notificar el cambio de titular en plazo. La baja del vehículo se solicita cuando se desguace o quede definitivamente fuera de uso."
+        },
+        {
+            "id": "s32-5",
+            "titulo": "Declaración de nulidad o lesividad, pérdida de vigencia y suspensión cautelar",
+            "contenido": "La declaración de nulidad de las autorizaciones procede en los supuestos del artículo 47 de la Ley 39/2015 (incompetencia manifiesta, falta total de procedimiento, contenido imposible, etc.). La declaración de lesividad permite a la Administración impugnar ante la jurisdicción contencioso-administrativa sus propios actos declarativos de derechos cuando los considere lesivos para el interés público. La pérdida de vigencia se produce, entre otras causas, por la pérdida total de los puntos asignados al permiso, por la pérdida de las condiciones psicofísicas requeridas o por sanción firme de privación del derecho a conducir. La suspensión cautelar puede acordarse durante la tramitación del expediente sancionador, como medida provisional para garantizar la seguridad."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e32-1",
+            "titulo": "Permisos de conducción",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Permisos] --> B[AM - ciclomotores]\n    A --> C[A1, A2, A - motos]\n    A --> D[B - turismos]\n    A --> E[C1, C - camiones]\n    A --> F[D1, D - autobuses]"
+        },
+        {
+            "id": "e32-2",
+            "titulo": "Vigencia y pérdida del permiso",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Vigencia y perdida] --> B[Vigencia: 10 anos hasta 65, despues 5]\n    A --> C[Perdida por puntos]\n    A --> D[Perdida por psicofisica]\n    A --> E[Sancion firme]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Autorizaciones administrativas", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Autorizaciones en tráfico", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Permisos de conducción", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Permiso de circulación y documentación", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Matriculación", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Nulidad, lesividad y suspensión", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "DGT y Jefaturas Provinciales", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "RD 818/2009 Reglamento de Conductores", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Vigencia 10 años (5 desde los 65)", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Permiso, ITV, seguro", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "4 cifras + 3 letras", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Pérdida total de puntos", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Suspensión cautelar", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n3", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc32-01", "anverso": "¿Qué órgano expide las autorizaciones de tráfico con carácter general?", "reverso": "La Dirección General de Tráfico (DGT) y sus Jefaturas Provinciales." },
+        { "id": "fc32-02", "anverso": "¿Qué reglamento regula los permisos de conducción?", "reverso": "El Reglamento General de Conductores, RD 818/2009." },
+        { "id": "fc32-03", "anverso": "¿Qué permiso habilita para conducir ciclomotores?", "reverso": "El permiso AM." },
+        { "id": "fc32-04", "anverso": "¿Qué permiso habilita para conducir motocicletas hasta determinadas potencias?", "reverso": "Los permisos A1, A2 y A, según potencia y edad." },
+        { "id": "fc32-05", "anverso": "¿Qué permiso es necesario para turismos hasta 3.500 kg de MMA?", "reverso": "El permiso B." },
+        { "id": "fc32-06", "anverso": "¿Qué permisos habilitan para camiones?", "reverso": "Los permisos C1 y C." },
+        { "id": "fc32-07", "anverso": "¿Qué permisos habilitan para autobuses?", "reverso": "Los permisos D1 y D." },
+        { "id": "fc32-08", "anverso": "¿Cuál es la vigencia del permiso B hasta los 65 años?", "reverso": "10 años." },
+        { "id": "fc32-09", "anverso": "¿Cuál es la vigencia del permiso B a partir de los 65?", "reverso": "5 años." },
+        { "id": "fc32-10", "anverso": "¿Qué documento expide la DGT junto con la matrícula?", "reverso": "El permiso de circulación." },
+        { "id": "fc32-11", "anverso": "¿Qué recoge la tarjeta de la ITV?", "reverso": "Las características técnicas del vehículo." },
+        { "id": "fc32-12", "anverso": "¿Qué documentos debe llevar el conductor durante la circulación?", "reverso": "Permiso o licencia, permiso de circulación, tarjeta de ITV y justificante del seguro." },
+        { "id": "fc32-13", "anverso": "¿Qué es la matriculación?", "reverso": "El acto por el que la DGT asigna matrícula al vehículo y le otorga el permiso de circulación." },
+        { "id": "fc32-14", "anverso": "¿Cómo se compone la matrícula española actual?", "reverso": "Cuatro cifras y tres letras (sistema vigente desde el año 2000)." },
+        { "id": "fc32-15", "anverso": "¿Cambia la matrícula al transmitir el vehículo?", "reverso": "No; la matrícula es permanente, pero hay que notificar el cambio de titular." },
+        { "id": "fc32-16", "anverso": "¿Cuándo procede la declaración de nulidad?", "reverso": "En los supuestos del artículo 47 de la Ley 39/2015 (incompetencia, contenido imposible, etc.)." },
+        { "id": "fc32-17", "anverso": "¿Qué es la declaración de lesividad?", "reverso": "El medio para impugnar ante la jurisdicción contencioso-administrativa actos propios declarativos de derechos lesivos al interés público." },
+        { "id": "fc32-18", "anverso": "Cita causas de pérdida de vigencia del permiso.", "reverso": "Pérdida total de puntos, pérdida de condiciones psicofísicas y sanción firme de privación del derecho a conducir." },
+        { "id": "fc32-19", "anverso": "¿Cuándo puede acordarse la suspensión cautelar?", "reverso": "Durante la tramitación de un expediente sancionador, como medida provisional." },
+        { "id": "fc32-20", "anverso": "¿Qué Comunidades tienen competencias de tráfico transferidas?", "reverso": "Cataluña y País Vasco." }
+    ],
+    "preguntas": [
+        {
+            "id": "p32-01",
+            "enunciado": "El permiso necesario para conducir ciclomotores es:",
+            "opciones": ["A1", "AM", "B", "A2"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El permiso AM habilita para conducir ciclomotores."
+        },
+        {
+            "id": "p32-02",
+            "enunciado": "Para turismos hasta 3.500 kg de MMA se necesita el permiso:",
+            "opciones": ["A", "B", "C1", "D"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El permiso B habilita para turismos hasta 3.500 kg de MMA."
+        },
+        {
+            "id": "p32-03",
+            "enunciado": "La vigencia del permiso B hasta los 65 años es de:",
+            "opciones": ["5 años", "10 años", "15 años", "Indefinida"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Hasta los 65 años la vigencia del permiso B es de 10 años; a partir de esa edad, 5 años."
+        },
+        {
+            "id": "p32-04",
+            "enunciado": "El permiso de circulación de un vehículo lo expide:",
+            "opciones": ["El Ayuntamiento", "La DGT", "El Ministerio del Interior", "La Policía Local"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Dirección General de Tráfico expide el permiso de circulación a nombre del titular."
+        },
+        {
+            "id": "p32-05",
+            "enunciado": "El conductor debe llevar durante la circulación:",
+            "opciones": ["Solo el DNI", "Permiso o licencia, permiso de circulación, ITV y seguro", "Solo el permiso de conducir", "Solo el seguro"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El conductor debe llevar permiso o licencia de conducción, permiso de circulación, tarjeta de ITV y justificante del seguro obligatorio."
+        },
+        {
+            "id": "p32-06",
+            "enunciado": "Las matrículas actuales en España (desde 2000) tienen:",
+            "opciones": ["3 cifras y 3 letras", "4 cifras y 3 letras", "5 cifras y 2 letras", "2 cifras y 4 letras"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El sistema vigente desde el año 2000 emplea cuatro cifras y tres letras."
+        },
+        {
+            "id": "p32-07",
+            "enunciado": "La declaración de lesividad permite a la Administración:",
+            "opciones": ["Anular sus actos automáticamente", "Impugnar sus actos declarativos de derechos ante la jurisdicción", "Sancionar al particular", "Revisar el permiso del conductor"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La declaración de lesividad permite impugnar ante la jurisdicción contencioso-administrativa los propios actos declarativos de derechos lesivos al interés público."
+        },
+        {
+            "id": "p32-08",
+            "enunciado": "El permiso de conducir pierde vigencia, entre otras causas, por:",
+            "opciones": ["Cambio de domicilio", "Pérdida total de los puntos asignados", "Cambio de vehículo", "Vencimiento del seguro"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La pérdida total de los puntos asignados al permiso conlleva la pérdida de su vigencia."
+        }
+    ]
+}
