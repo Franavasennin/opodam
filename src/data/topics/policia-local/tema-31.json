@@ -1,0 +1,157 @@
+{
+    "id": 31,
+    "titulo": "La señalización. Normas generales sobre señales. Prioridad entre señales. Formato e idioma de las señales. Mantenimiento de señales y señales circunstanciales. Retirada, sustitución y alteración de señales",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s31-1",
+            "titulo": "La señalización: concepto y clases",
+            "contenido": "La señalización es el conjunto de signos colocados en la vía que indican a sus usuarios la forma correcta y segura de circular y les informan, advierten o regulan la circulación. Se regula por el Reglamento General de Circulación y por la Instrucción 8.1-IC de Señalización Vertical y la 8.2-IC de Marcas Viales. Las señales se clasifican en: verticales (de advertencia de peligro, de reglamentación, de indicación y de orientación), marcas viales horizontales, semáforos, señales y órdenes de los agentes de circulación, balizamientos, paneles direccionales y señales de los conductores. Todas tienen carácter obligatorio para los usuarios de la vía."
+        },
+        {
+            "id": "s31-2",
+            "titulo": "Normas generales y prioridad entre señales",
+            "contenido": "Las señales informan o ordenan; su contenido se aplica al lugar concreto en que se sitúan o a tramos delimitados por otras. La obediencia a las señales es obligatoria para todos los usuarios de la vía. El orden de prevalencia, de mayor a menor, es: 1º) las señales y órdenes de los agentes de circulación; 2º) las señales circunstanciales que modifiquen el régimen normal y las señales de balizamiento fijas; 3º) los semáforos; 4º) las señales verticales de circulación; 5º) las marcas viales. En caso de discrepancia entre dos señales del mismo tipo, prevalece la más restrictiva."
+        },
+        {
+            "id": "s31-3",
+            "titulo": "Formato e idioma de las señales",
+            "contenido": "Las señales deben ajustarse al formato, dimensiones, colores, símbolos y leyendas establecidos en las normas técnicas, asegurando su visibilidad, comprensión y uniformidad. Las inscripciones en las señales fijas se expresarán en castellano y, en su caso, en la lengua oficial de la Comunidad Autónoma; en la lengua oficial autonómica figurarán primero, salvo lo que dispongan las leyes. En las señales de información se incluyen los símbolos internacionales reconocidos. La señalización debe ser perceptible bajo condiciones normales de visibilidad y de noche, con materiales reflectantes y, en su caso, retroiluminación."
+        },
+        {
+            "id": "s31-4",
+            "titulo": "Mantenimiento y señales circunstanciales",
+            "contenido": "La responsabilidad del mantenimiento de las señales corresponde al titular de la vía: el Ministerio o las Administraciones autonómicas y locales según sea la titularidad de la carretera. Las señales deben conservarse en estado óptimo (limpieza, visibilidad, retrorreflectancia). Las señales circunstanciales son aquellas que se colocan con motivo de obras, accidentes, situaciones meteorológicas adversas, controles o regulaciones temporales; su finalidad es advertir y ordenar la circulación temporalmente. Tienen carácter preferente sobre las señales fijas mientras estén vigentes y deben retirarse en cuanto cese la circunstancia que las motivó."
+        },
+        {
+            "id": "s31-5",
+            "titulo": "Retirada, sustitución y alteración de señales",
+            "contenido": "La retirada, sustitución, traslado o cualquier modificación de una señal corresponde a la autoridad titular de la vía o a sus servicios competentes. Está prohibido alterar, ocultar o deteriorar las señales, así como colocar carteles, anuncios o instalaciones que puedan confundir o distraer a los usuarios. La realización de obras, instalaciones o actividades que afecten a las señales requiere autorización previa, y la persona o entidad que las realice debe restablecer la señalización al estado anterior. La infracción de estas normas constituye sanción administrativa y, en su caso, delito de daños o contra la seguridad vial."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e31-1",
+            "titulo": "Clases de señales",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Senalizacion] --> B[Verticales: peligro, reglamentacion, indicacion]\n    A --> C[Marcas viales]\n    A --> D[Semaforos]\n    A --> E[Agentes de circulacion]\n    A --> F[Balizamientos]"
+        },
+        {
+            "id": "e31-2",
+            "titulo": "Orden de prioridad entre señales",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Agentes de circulacion] --> B[Senales circunstanciales]\n    B --> C[Semaforos]\n    C --> D[Senales verticales]\n    D --> E[Marcas viales]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "La señalización", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Concepto y clases", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Normas generales", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Formato e idioma", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Mantenimiento y circunstanciales", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Retirada y alteración", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Verticales, marcas y semáforos", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Obligatorias para todos los usuarios", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Castellano + lengua autonómica", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Materiales reflectantes", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Prefieren señales circunstanciales", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Titular de la vía", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Sanción administrativa o penal", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc31-01", "anverso": "¿Qué es la señalización?", "reverso": "El conjunto de signos colocados en la vía que indican a sus usuarios la forma correcta y segura de circular." },
+        { "id": "fc31-02", "anverso": "¿Qué reglamento regula la señalización en circulación?", "reverso": "El Reglamento General de Circulación (RD 1428/2003) y las instrucciones técnicas 8.1-IC y 8.2-IC." },
+        { "id": "fc31-03", "anverso": "Cita clases de señales verticales.", "reverso": "De advertencia de peligro, de reglamentación, de indicación y de orientación." },
+        { "id": "fc31-04", "anverso": "¿Tienen carácter obligatorio las señales?", "reverso": "Sí; son obligatorias para todos los usuarios de la vía." },
+        { "id": "fc31-05", "anverso": "¿Cuál es el primer puesto en el orden de prevalencia entre señales?", "reverso": "Las señales y órdenes de los agentes de circulación." },
+        { "id": "fc31-06", "anverso": "¿Qué prevalece sobre los semáforos?", "reverso": "Las señales y órdenes de los agentes y las señales circunstanciales." },
+        { "id": "fc31-07", "anverso": "¿Qué prevalecen sobre las marcas viales?", "reverso": "Las señales verticales." },
+        { "id": "fc31-08", "anverso": "¿Qué señal prevalece cuando hay discrepancia entre dos del mismo tipo?", "reverso": "La más restrictiva." },
+        { "id": "fc31-09", "anverso": "¿En qué idiomas figuran las inscripciones de señales fijas?", "reverso": "En castellano y, en su caso, en la lengua oficial de la Comunidad Autónoma." },
+        { "id": "fc31-10", "anverso": "¿Por qué llevan las señales materiales reflectantes?", "reverso": "Para asegurar la perceptibilidad de noche y en condiciones de poca visibilidad." },
+        { "id": "fc31-11", "anverso": "¿A quién corresponde el mantenimiento de las señales?", "reverso": "Al titular de la vía (Estado, Comunidad Autónoma o Administración Local)." },
+        { "id": "fc31-12", "anverso": "¿Qué son las señales circunstanciales?", "reverso": "Las colocadas por obras, accidentes, meteorología adversa, controles o regulaciones temporales." },
+        { "id": "fc31-13", "anverso": "¿Qué prevalecen sobre las señales fijas mientras estén vigentes?", "reverso": "Las señales circunstanciales." },
+        { "id": "fc31-14", "anverso": "¿Cuándo deben retirarse las señales circunstanciales?", "reverso": "En cuanto cese la circunstancia que las motivó." },
+        { "id": "fc31-15", "anverso": "¿A quién corresponde retirar o sustituir una señal?", "reverso": "A la autoridad titular de la vía o a sus servicios competentes." },
+        { "id": "fc31-16", "anverso": "¿Está permitido alterar u ocultar señales?", "reverso": "No; está prohibido alterar, ocultar o deteriorar las señales." },
+        { "id": "fc31-17", "anverso": "¿Qué requieren las obras que afectan a la señalización?", "reverso": "Autorización previa, con obligación de restablecer la señalización al estado anterior." },
+        { "id": "fc31-18", "anverso": "¿Puede ser delito alterar señales de tráfico?", "reverso": "Sí, puede constituir delito de daños o contra la seguridad vial, además de sanción administrativa." },
+        { "id": "fc31-19", "anverso": "¿Pueden colocarse anuncios cerca de la vía?", "reverso": "Solo si no pueden confundirse con la señalización ni distraer a los usuarios." },
+        { "id": "fc31-20", "anverso": "¿Por qué deben mantenerse limpias las señales?", "reverso": "Para conservar su visibilidad y retrorreflectancia." }
+    ],
+    "preguntas": [
+        {
+            "id": "p31-01",
+            "enunciado": "Las señales son:",
+            "opciones": ["Recomendaciones para los conductores", "Obligatorias para todos los usuarios de la vía", "Solo obligatorias para vehículos a motor", "Vinculantes solo si lo decide la policía"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La obediencia a las señales es obligatoria para todos los usuarios de la vía."
+        },
+        {
+            "id": "p31-02",
+            "enunciado": "El primer lugar en el orden de prevalencia entre señales lo ocupan:",
+            "opciones": ["Los semáforos", "Las señales y órdenes de los agentes de circulación", "Las marcas viales", "Las señales verticales"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las señales y órdenes de los agentes de circulación prevalecen sobre todas las demás."
+        },
+        {
+            "id": "p31-03",
+            "enunciado": "En caso de discrepancia entre dos señales del mismo tipo:",
+            "opciones": ["Prevalece la más antigua", "Prevalece la más restrictiva", "Prevalece la más nueva", "Se ignoran ambas"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Cuando dos señales del mismo tipo entran en contradicción, prevalece la más restrictiva."
+        },
+        {
+            "id": "p31-04",
+            "enunciado": "Las inscripciones de las señales fijas en una Comunidad Autónoma con lengua propia figuran:",
+            "opciones": ["Solo en castellano", "En castellano y en la lengua autonómica", "Solo en la lengua autonómica", "Solo en inglés"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las inscripciones figuran en castellano y, en su caso, en la lengua oficial autonómica."
+        },
+        {
+            "id": "p31-05",
+            "enunciado": "El mantenimiento de las señales corresponde a:",
+            "opciones": ["Los conductores", "El titular de la vía", "Los Ayuntamientos en todo caso", "Los seguros"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La responsabilidad del mantenimiento corresponde al titular de la vía."
+        },
+        {
+            "id": "p31-06",
+            "enunciado": "Las señales circunstanciales:",
+            "opciones": ["No prevalecen sobre las fijas", "Prevalecen sobre las señales fijas mientras estén vigentes", "Son meras recomendaciones", "Solo se utilizan de noche"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las señales circunstanciales prevalecen sobre las fijas mientras dure la situación que las motiva."
+        },
+        {
+            "id": "p31-07",
+            "enunciado": "La alteración u ocultación de señales:",
+            "opciones": ["No tiene consecuencias", "Está prohibida y puede ser sanción o delito", "Es una infracción civil", "Es una falta solo si se hace de noche"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Está prohibido alterar, ocultar o deteriorar las señales; puede constituir sanción administrativa y, en su caso, delito."
+        },
+        {
+            "id": "p31-08",
+            "enunciado": "Las obras que afectan a la señalización requieren:",
+            "opciones": ["Solo aviso a la prensa", "Autorización previa y restablecimiento posterior de la señalización", "Permiso del seguro", "Ninguna formalidad"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las obras que afectan a la señalización requieren autorización previa y restablecimiento posterior al estado anterior."
+        }
+    ]
+}
