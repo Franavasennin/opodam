@@ -1,0 +1,157 @@
+{
+    "id": 37,
+    "titulo": "Población y Ecología humana. Estructura de la población en Canarias. Multiculturalismo y cohesión social. Normativa actual en materia de extranjería. El análisis de los fenómenos demográficos en Canarias",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s37-1",
+            "titulo": "Población y Ecología humana",
+            "contenido": "La ecología humana estudia las relaciones entre las poblaciones humanas y su entorno físico, social y cultural. El estudio de la población combina la demografía (medición estadística de la población, su estructura y dinámica) con el análisis social, geográfico y ambiental. Variables clave son la natalidad, la mortalidad, la fecundidad, el saldo migratorio, la esperanza de vida, la estructura por edades y sexos y la distribución territorial. Los indicadores demográficos básicos son la tasa bruta de natalidad, la tasa bruta de mortalidad, el crecimiento vegetativo, la tasa de fecundidad y los movimientos migratorios."
+        },
+        {
+            "id": "s37-2",
+            "titulo": "Estructura de la población en Canarias",
+            "contenido": "La población de Canarias supera los 2,2 millones de habitantes, con una alta densidad poblacional (más de 290 hab/km²) y una marcada concentración insular: cerca del 82% reside en Tenerife y Gran Canaria. La estructura por edades muestra un proceso de envejecimiento creciente, con disminución de la natalidad y aumento de la esperanza de vida. La estructura productiva, dominada por el sector servicios (turismo, comercio), condiciona la distribución y los desplazamientos de la población. Coexisten zonas urbanas densas (Las Palmas, Santa Cruz, La Laguna, Telde, áreas turísticas) y zonas rurales en regresión. Las migraciones internas y externas configuran un paisaje humano dinámico y plural."
+        },
+        {
+            "id": "s37-3",
+            "titulo": "Multiculturalismo y cohesión social",
+            "contenido": "Canarias es una sociedad multicultural por su historia y por su posición geoestratégica, con presencia significativa de personas procedentes de América Latina, África, Europa y Asia. La cohesión social se sustenta en la convivencia, el respeto a los derechos humanos, la igualdad de oportunidades, la no discriminación y la integración. Las políticas públicas autonómicas y municipales promueven planes de integración, programas educativos interculturales, atención sociosanitaria y mediación intercultural. Las Fuerzas y Cuerpos de Seguridad y, en particular, las Policías Locales tienen un papel esencial en la prevención de delitos de odio, la atención a las víctimas y la promoción de la convivencia."
+        },
+        {
+            "id": "s37-4",
+            "titulo": "Normativa actual en materia de extranjería",
+            "contenido": "La normativa básica estatal es la Ley Orgánica 4/2000, de 11 de enero, sobre derechos y libertades de los extranjeros en España y su integración social, y su reglamento de desarrollo (RD 557/2011). Distingue entre extranjeros en situación regular o irregular, con distintos derechos y deberes. Regula la entrada, residencia, trabajo y salida del territorio español, las autorizaciones de residencia (temporal y de larga duración), las visas, el régimen comunitario (RD 240/2007) para ciudadanos UE y familiares, y las medidas de control fronterizo. Existen procedimientos de protección internacional (asilo y refugio) regulados por la Ley 12/2009. Las infracciones se clasifican en muy graves, graves y leves, con sanciones de multa y, en su caso, expulsión."
+        },
+        {
+            "id": "s37-5",
+            "titulo": "Fenómenos demográficos en Canarias y actuación policial",
+            "contenido": "Canarias es punto de llegada de flujos migratorios irregulares procedentes de África a través de la denominada Ruta Canaria. La gestión humanitaria y de seguridad de estos flujos implica al Estado (FCSE, Cruz Roja, Salvamento Marítimo), a las Comunidades Autónomas (servicios sociales y de protección de menores), a los Cabildos y a los Ayuntamientos. Las Policías Locales colaboran en tareas de orden público, identificación, mediación intercultural y protección a las personas migrantes en municipios costeros. El estudio de los fenómenos demográficos canarios incluye análisis del envejecimiento, la fecundidad, los movimientos pendulares por motivos laborales, la presión sobre la vivienda y la sostenibilidad del territorio."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e37-1",
+            "titulo": "Indicadores demográficos básicos",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Demografia] --> B[Natalidad]\n    A --> C[Mortalidad]\n    A --> D[Fecundidad]\n    A --> E[Esperanza de vida]\n    A --> F[Migraciones]"
+        },
+        {
+            "id": "e37-2",
+            "titulo": "Normativa de extranjería",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Extranjeria] --> B[LO 4/2000]\n    A --> C[RD 557/2011 reglamento]\n    A --> D[RD 240/2007 regimen UE]\n    A --> E[Ley 12/2009 asilo]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Población y ecología humana", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Ecología y demografía", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Estructura en Canarias", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Multiculturalismo y cohesión", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Normativa de extranjería", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Fenómenos y actuación policial", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Indicadores básicos", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "2,2 millones, 82% en GC y TF", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Integración y convivencia", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Prevención delitos de odio", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "LO 4/2000 y RD 557/2011", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Asilo y protección internacional", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Ruta Canaria y mediación", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n5", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc37-01", "anverso": "¿Qué estudia la ecología humana?", "reverso": "Las relaciones entre las poblaciones humanas y su entorno físico, social y cultural." },
+        { "id": "fc37-02", "anverso": "Cita variables clave del estudio demográfico.", "reverso": "Natalidad, mortalidad, fecundidad, saldo migratorio, esperanza de vida y estructura por edades." },
+        { "id": "fc37-03", "anverso": "Cita indicadores demográficos básicos.", "reverso": "Tasa bruta de natalidad, tasa bruta de mortalidad, crecimiento vegetativo y tasa de fecundidad." },
+        { "id": "fc37-04", "anverso": "¿Cuántos habitantes tiene Canarias aproximadamente?", "reverso": "Más de 2,2 millones de habitantes." },
+        { "id": "fc37-05", "anverso": "¿Cuál es la densidad poblacional aproximada de Canarias?", "reverso": "Más de 290 hab/km²." },
+        { "id": "fc37-06", "anverso": "¿En qué islas se concentra la mayor parte de la población?", "reverso": "En Tenerife y Gran Canaria, con aproximadamente el 82%." },
+        { "id": "fc37-07", "anverso": "¿Qué proceso demográfico vive Canarias?", "reverso": "Envejecimiento creciente con disminución de la natalidad y aumento de la esperanza de vida." },
+        { "id": "fc37-08", "anverso": "¿Qué sector económico domina y condiciona la población?", "reverso": "El sector servicios, especialmente turismo y comercio." },
+        { "id": "fc37-09", "anverso": "¿Por qué es Canarias una sociedad multicultural?", "reverso": "Por su historia y su posición geoestratégica, con presencia de población americana, africana, europea y asiática." },
+        { "id": "fc37-10", "anverso": "¿En qué se sustenta la cohesión social?", "reverso": "En la convivencia, el respeto a los derechos humanos, la igualdad y la no discriminación." },
+        { "id": "fc37-11", "anverso": "¿Qué papel tienen las Policías Locales en este ámbito?", "reverso": "Prevención de delitos de odio, atención a las víctimas y promoción de la convivencia." },
+        { "id": "fc37-12", "anverso": "¿Cuál es la ley básica de extranjería en España?", "reverso": "La Ley Orgánica 4/2000, de 11 de enero." },
+        { "id": "fc37-13", "anverso": "¿Cuál es su reglamento de desarrollo?", "reverso": "El Real Decreto 557/2011." },
+        { "id": "fc37-14", "anverso": "¿Qué real decreto regula el régimen comunitario?", "reverso": "El Real Decreto 240/2007, para ciudadanos UE y sus familiares." },
+        { "id": "fc37-15", "anverso": "¿Qué ley regula el asilo y la protección internacional?", "reverso": "La Ley 12/2009, de 30 de octubre." },
+        { "id": "fc37-16", "anverso": "¿Cómo se clasifican las infracciones de extranjería?", "reverso": "En muy graves, graves y leves, con multa y, en su caso, expulsión." },
+        { "id": "fc37-17", "anverso": "¿Qué es la Ruta Canaria?", "reverso": "La ruta migratoria irregular procedente de África hacia las islas Canarias." },
+        { "id": "fc37-18", "anverso": "¿Quiénes intervienen en la atención a estos flujos?", "reverso": "FCSE, Salvamento Marítimo, Cruz Roja, Comunidad Autónoma, Cabildos y Ayuntamientos." },
+        { "id": "fc37-19", "anverso": "¿Cómo colaboran las Policías Locales en municipios costeros?", "reverso": "En orden público, identificación, mediación intercultural y protección a las personas migrantes." },
+        { "id": "fc37-20", "anverso": "Cita retos demográficos actuales de Canarias.", "reverso": "Envejecimiento, presión sobre la vivienda, movimientos pendulares y sostenibilidad del territorio." }
+    ],
+    "preguntas": [
+        {
+            "id": "p37-01",
+            "enunciado": "La ecología humana estudia:",
+            "opciones": ["Solo el medio físico", "Las relaciones entre poblaciones humanas y su entorno físico, social y cultural", "Solo la flora y fauna", "Solo la genética humana"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La ecología humana estudia las relaciones entre las poblaciones humanas y su entorno físico, social y cultural."
+        },
+        {
+            "id": "p37-02",
+            "enunciado": "La mayor parte de la población canaria se concentra en:",
+            "opciones": ["Lanzarote y La Palma", "Tenerife y Gran Canaria", "El Hierro y La Gomera", "Fuerteventura y La Palma"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Aproximadamente el 82% de la población canaria reside en Tenerife y Gran Canaria."
+        },
+        {
+            "id": "p37-03",
+            "enunciado": "Canarias atraviesa un proceso demográfico de:",
+            "opciones": ["Rejuvenecimiento", "Envejecimiento creciente", "Estancamiento puro", "Despoblación masiva en todas las islas"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Canarias vive un envejecimiento creciente, con disminución de la natalidad y aumento de la esperanza de vida."
+        },
+        {
+            "id": "p37-04",
+            "enunciado": "La ley básica española de extranjería es:",
+            "opciones": ["La LO 4/2015", "La Ley Orgánica 4/2000, de 11 de enero", "La LO 1/2004", "La LO 5/2000"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley Orgánica 4/2000, de 11 de enero, es la ley básica de extranjería en España."
+        },
+        {
+            "id": "p37-05",
+            "enunciado": "El reglamento de desarrollo de la Ley de Extranjería es:",
+            "opciones": ["El RD 240/2007", "El RD 557/2011", "El RD 137/1993", "El RD 1428/2003"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El Real Decreto 557/2011 es el reglamento de la Ley de Extranjería."
+        },
+        {
+            "id": "p37-06",
+            "enunciado": "El régimen comunitario de ciudadanos UE se regula por:",
+            "opciones": ["La LO 4/2000", "El RD 240/2007", "La Ley 12/2009", "El RD 557/2011"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El Real Decreto 240/2007 regula el régimen comunitario para ciudadanos de la UE y sus familiares."
+        },
+        {
+            "id": "p37-07",
+            "enunciado": "El asilo y la protección internacional se regulan por:",
+            "opciones": ["La LO 4/2015", "La Ley 12/2009, de 30 de octubre", "La LO 4/2000", "El RD 240/2007"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 12/2009, de 30 de octubre, regula el derecho de asilo y la protección subsidiaria."
+        },
+        {
+            "id": "p37-08",
+            "enunciado": "Las infracciones de la Ley de Extranjería se clasifican en:",
+            "opciones": ["Graves y leves", "Muy graves, graves y leves", "Penales y administrativas", "Mayores y menores"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las infracciones de extranjería se clasifican en muy graves, graves y leves, con multa y, en su caso, expulsión."
+        }
+    ]
+}
