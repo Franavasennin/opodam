@@ -43,6 +43,7 @@ const Examen = lazy(() => import('./pages/Examen').then(m => ({ default: m.Exame
 const SesionDiaria = lazy(() => import('./pages/SesionDiaria').then(m => ({ default: m.SesionDiaria })))
 const Perfil = lazy(() => import('./pages/Perfil').then(m => ({ default: m.Perfil })))
 const ProCoachAI = lazy(() => import('./pages/ProCoachAI'))
+const ProCoachChat = lazy(() => import('./pages/ProCoachChat'))
 const Equivalencias = lazy(() => import('./pages/Equivalencias'))
 
 const Loading = () => (
@@ -93,6 +94,7 @@ export default function App() {
         <Route path="/oposicion/:slug/perfil" element={<RutaProtegida><Perfil /></RutaProtegida>} />
 
         <Route path="/procoach" element={<ProCoachAI />} />
+        <Route path="/procoach/chat" element={<ProCoachChat />} />
         <Route path="/equivalencias" element={<Equivalencias />} />
 
         {/* Redirecciones */}

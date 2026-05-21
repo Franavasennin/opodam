@@ -29,6 +29,12 @@ export default function ProCoachAI() {
               <div className="text-xs text-slate-500">Especialista GC, Policia, FF.AA. Espana</div>
             </div>
           </div>
+          <button
+            onClick={() => navigate('/procoach/chat')}
+            className="mt-3 w-full bg-marca-600 hover:bg-marca-700 transition-colors text-white text-sm font-semibold rounded-xl py-2.5"
+          >
+            Hablar con DELTA
+          </button>
         </div>
 
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4">
