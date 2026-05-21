@@ -1,0 +1,157 @@
+{
+    "id": 34,
+    "titulo": "Actividad en materia de sanidad, consumo y abastos. Obras y edificación: competencias y licencias. Régimen Jurídico de los espectáculos públicos y de las actividades clasificadas. Licencias y autorizaciones",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s34-1",
+            "titulo": "Actividad municipal en sanidad, consumo y abastos",
+            "contenido": "Los municipios ejercen competencias en materia de protección de la salubridad pública, consumo y abastos. En sanidad municipal corresponde el control sanitario del medio ambiente urbano (aguas, residuos, ruidos), de las actividades alimentarias en mataderos, mercados, comercios y establecimientos de restauración, y de cementerios y servicios funerarios. En consumo, los Ayuntamientos colaboran en la información y protección de las personas consumidoras, mantienen oficinas municipales de información al consumidor (OMIC) y vigilan los establecimientos. En abastos, supervisan los mercados, lonjas y servicios de mercados municipales. La Policía Local interviene como agente inspector en estos ámbitos, levantando actas de denuncia y dando cuenta a los servicios técnicos."
+        },
+        {
+            "id": "s34-2",
+            "titulo": "Obras y edificación: competencias municipales y licencias",
+            "contenido": "Los municipios ejercen competencias en urbanismo, planeamiento, gestión, ejecución y disciplina urbanística. Toda obra requiere licencia urbanística o, en su caso, declaración responsable o comunicación previa: licencia de obras mayores para nuevas construcciones, ampliaciones y reformas importantes; licencia de obras menores para obras de escasa entidad; y declaración responsable o comunicación previa para obras de simple reparación o conservación que no afecten a la estructura o estética. La licencia se otorga previo informe técnico y jurídico y exige el pago de la tasa correspondiente. La Policía Local supervisa el cumplimiento de las licencias y denuncia las obras sin autorización."
+        },
+        {
+            "id": "s34-3",
+            "titulo": "Régimen jurídico de los espectáculos públicos",
+            "contenido": "La organización y celebración de espectáculos públicos y actividades recreativas se rige por la legislación estatal básica, la normativa autonómica (en Canarias, la Ley 7/2011, de actividades clasificadas y espectáculos públicos) y las ordenanzas municipales. Los espectáculos públicos comprenden conciertos, festejos, ferias y atracciones; las actividades recreativas, hosteleras, deportivas o lúdicas. Requieren autorización administrativa previa o, en su caso, declaración responsable; deben cumplir condiciones de seguridad, aforo, evacuación, accesibilidad, higiene y horarios. La Policía Local controla el cumplimiento de la normativa y, en su caso, la suspensión o desalojo en supuestos de riesgo grave."
+        },
+        {
+            "id": "s34-4",
+            "titulo": "Actividades clasificadas",
+            "contenido": "Las actividades clasificadas son aquellas que pueden generar molestias, riesgos para la salud o el medio ambiente. La Ley 7/2011, de actividades clasificadas y espectáculos públicos de Canarias, regula su régimen jurídico junto con la legislación estatal sobre prevención y control de la contaminación. Las actividades se someten a control mediante licencia de actividad o, en su caso, declaración responsable o comunicación previa, según su impacto. La instalación o ejercicio sin autorización es infracción administrativa. La Policía Local interviene en la vigilancia, control y disciplina de estas actividades, así como en el cumplimiento de las medidas correctoras que se impongan."
+        },
+        {
+            "id": "s34-5",
+            "titulo": "Licencias y autorizaciones municipales: tipos y régimen",
+            "contenido": "Las licencias y autorizaciones municipales son actos administrativos que permiten al particular ejercer una actividad o realizar una obra, comprobando su adecuación al ordenamiento. Pueden ser licencias urbanísticas (obras, primera ocupación, segregación), de actividad (apertura y funcionamiento), de ocupación de la vía pública (terrazas, vados, contenedores), de tenencia de animales potencialmente peligrosos, de espectáculos públicos y otras. Su tramitación se ajusta a la Ley 39/2015 y, en su caso, a las normas específicas. La declaración responsable y la comunicación previa han sustituido en muchos casos a la licencia previa, sin perjuicio de las facultades de comprobación e inspección del Ayuntamiento."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e34-1",
+            "titulo": "Competencias municipales en estas materias",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Competencias municipales] --> B[Sanidad y consumo]\n    A --> C[Obras y urbanismo]\n    A --> D[Espectaculos publicos]\n    A --> E[Actividades clasificadas]"
+        },
+        {
+            "id": "e34-2",
+            "titulo": "Vías de control",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Vias de control] --> B[Licencia previa]\n    A --> C[Declaracion responsable]\n    A --> D[Comunicacion previa]\n    A --> E[Inspeccion posterior]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Actividades municipales", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Sanidad, consumo y abastos", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Obras y edificación", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Espectáculos públicos", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Actividades clasificadas", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Licencias y autorizaciones", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Salubridad y OMIC", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Licencia de obras mayor/menor", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Ley 7/2011 Canarias", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Seguridad, aforo, accesibilidad", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Molestias y medio ambiente", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Urbanísticas, actividad, vía pública", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Declaración responsable y comunicación previa", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n4", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n6", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc34-01", "anverso": "¿Qué competencia municipal abarca el control de aguas, residuos y ruidos?", "reverso": "La protección de la salubridad pública (sanidad municipal)." },
+        { "id": "fc34-02", "anverso": "¿Qué oficinas mantienen los municipios en materia de consumo?", "reverso": "Las Oficinas Municipales de Información al Consumidor (OMIC)." },
+        { "id": "fc34-03", "anverso": "¿En qué interviene la Policía Local en estas materias?", "reverso": "Como agente inspector, levantando actas y dando cuenta a los servicios técnicos." },
+        { "id": "fc34-04", "anverso": "¿Qué requiere toda obra para realizarse?", "reverso": "Licencia urbanística o, en su caso, declaración responsable o comunicación previa." },
+        { "id": "fc34-05", "anverso": "¿Qué es una licencia de obras mayor?", "reverso": "La requerida para nuevas construcciones, ampliaciones y reformas importantes." },
+        { "id": "fc34-06", "anverso": "¿Y la licencia de obras menor?", "reverso": "La requerida para obras de escasa entidad." },
+        { "id": "fc34-07", "anverso": "¿Para qué obras basta una declaración responsable?", "reverso": "Para obras de simple reparación o conservación que no afecten a la estructura ni a la estética." },
+        { "id": "fc34-08", "anverso": "¿Qué supervisa la Policía Local en obras?", "reverso": "El cumplimiento de las licencias y denuncia las obras sin autorización." },
+        { "id": "fc34-09", "anverso": "¿Qué ley canaria regula los espectáculos públicos y actividades clasificadas?", "reverso": "La Ley 7/2011, de actividades clasificadas y espectáculos públicos de Canarias." },
+        { "id": "fc34-10", "anverso": "¿Qué son los espectáculos públicos?", "reverso": "Conciertos, festejos, ferias y atracciones organizados para el público." },
+        { "id": "fc34-11", "anverso": "¿Qué requieren los espectáculos públicos?", "reverso": "Autorización administrativa previa o, en su caso, declaración responsable." },
+        { "id": "fc34-12", "anverso": "¿Qué aspectos deben cumplir los espectáculos?", "reverso": "Seguridad, aforo, evacuación, accesibilidad, higiene y horarios." },
+        { "id": "fc34-13", "anverso": "¿Qué son las actividades clasificadas?", "reverso": "Aquellas que pueden generar molestias o riesgos para la salud o el medio ambiente." },
+        { "id": "fc34-14", "anverso": "¿Qué control requieren las actividades clasificadas?", "reverso": "Licencia de actividad o, en su caso, declaración responsable o comunicación previa." },
+        { "id": "fc34-15", "anverso": "¿Qué hace la Policía Local en una actividad sin autorización?", "reverso": "Vigila, denuncia y, en su caso, propone la suspensión o desalojo." },
+        { "id": "fc34-16", "anverso": "Cita tipos de licencias urbanísticas.", "reverso": "Obras, primera ocupación y segregación, entre otras." },
+        { "id": "fc34-17", "anverso": "Cita tipos de licencias de actividad u ocupación.", "reverso": "Apertura, terrazas, vados, contenedores y tenencia de animales potencialmente peligrosos." },
+        { "id": "fc34-18", "anverso": "¿Por qué norma se tramitan estas licencias con carácter general?", "reverso": "Por la Ley 39/2015 y la normativa sectorial específica." },
+        { "id": "fc34-19", "anverso": "¿Qué pierde la Administración con la declaración responsable?", "reverso": "Nada esencial: mantiene sus facultades de comprobación, control e inspección." },
+        { "id": "fc34-20", "anverso": "¿Quién puede ordenar el desalojo de un espectáculo por riesgo grave?", "reverso": "La autoridad municipal, asistida por la Policía Local." }
+    ],
+    "preguntas": [
+        {
+            "id": "p34-01",
+            "enunciado": "La oficina municipal de información al consumidor se denomina:",
+            "opciones": ["OMIC", "OAIC", "OPL", "ARC"],
+            "respuestaCorrecta": 0,
+            "explicacion": "La OMIC (Oficina Municipal de Información al Consumidor) presta servicios de información y protección a las personas consumidoras."
+        },
+        {
+            "id": "p34-02",
+            "enunciado": "La realización de nuevas construcciones o ampliaciones requiere:",
+            "opciones": ["Solo declaración responsable", "Licencia de obras mayor", "Comunicación previa", "Solo aviso al Ayuntamiento"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las nuevas construcciones, ampliaciones y reformas importantes requieren licencia de obras mayor."
+        },
+        {
+            "id": "p34-03",
+            "enunciado": "La normativa canaria sobre actividades clasificadas y espectáculos públicos es:",
+            "opciones": ["La Ley 6/1997", "La Ley 7/2011", "La Ley 8/2015", "El Reglamento de Armas"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La Ley 7/2011, de actividades clasificadas y espectáculos públicos, es la norma canaria de referencia."
+        },
+        {
+            "id": "p34-04",
+            "enunciado": "Los espectáculos públicos requieren para su celebración:",
+            "opciones": ["Solo permiso verbal", "Autorización administrativa previa o declaración responsable", "Comunicación al BOE", "Una comunicación a hacienda"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los espectáculos públicos requieren autorización administrativa previa o, en su caso, declaración responsable."
+        },
+        {
+            "id": "p34-05",
+            "enunciado": "Las actividades clasificadas son aquellas que:",
+            "opciones": ["No tienen impacto", "Pueden generar molestias o riesgos para la salud o el medio ambiente", "Son meramente comerciales", "Están prohibidas"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las actividades clasificadas son las que pueden generar molestias, riesgos para la salud o el medio ambiente."
+        },
+        {
+            "id": "p34-06",
+            "enunciado": "Las licencias municipales se tramitan, con carácter general, conforme a:",
+            "opciones": ["La Ley 7/1985 únicamente", "La Ley 39/2015 y normativa sectorial específica", "Solo el Código Civil", "La Ley 40/2015"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Las licencias municipales se tramitan conforme a la Ley 39/2015 y a la normativa sectorial específica."
+        },
+        {
+            "id": "p34-07",
+            "enunciado": "Con la declaración responsable la Administración:",
+            "opciones": ["Pierde toda potestad", "Conserva sus facultades de comprobación, control e inspección", "Renuncia al control", "Solo cobra tasas"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Con la declaración responsable la Administración conserva sus facultades de comprobación, control e inspección."
+        },
+        {
+            "id": "p34-08",
+            "enunciado": "El desalojo de un espectáculo por riesgo grave lo puede ordenar:",
+            "opciones": ["Cualquier vecino", "La autoridad municipal, asistida por la Policía Local", "El organizador del evento", "La Junta Local de Seguridad"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La autoridad municipal, asistida por la Policía Local, puede ordenar la suspensión o desalojo en supuestos de riesgo grave."
+        }
+    ]
+}
