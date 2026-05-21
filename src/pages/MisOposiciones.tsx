@@ -89,10 +89,23 @@ export default function MisOposiciones() {
           </section>
         )}
 
+        {/* Equivalencias entre temarios */}
+        <button
+          onClick={() => navigate('/equivalencias')}
+          className="mt-5 w-full text-left rounded-2xl border border-slate-200 bg-white shadow-sm p-4 hover:border-marca-600 transition-colors flex items-center gap-3"
+        >
+          <span className="text-2xl shrink-0">🔀</span>
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-bold text-slate-900">Equivalencias entre temarios</div>
+            <div className="text-xs text-slate-500">Cruce CGPC ↔ Policía Local para estudiar lo común una sola vez</div>
+          </div>
+          <span className="text-marca-600 text-xl shrink-0">›</span>
+        </button>
+
         {/* ProCoach AI */}
         <button
           onClick={() => navigate('/procoach')}
-          className="mt-5 w-full text-left rounded-2xl border border-slate-200 bg-white shadow-sm p-4 hover:border-marca-600 transition-colors flex items-center gap-3"
+          className="mt-3 w-full text-left rounded-2xl border border-slate-200 bg-white shadow-sm p-4 hover:border-marca-600 transition-colors flex items-center gap-3"
         >
           <span className="text-2xl shrink-0">💪</span>
           <div className="flex-1 min-w-0">
