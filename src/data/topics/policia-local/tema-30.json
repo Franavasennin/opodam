@@ -1,0 +1,157 @@
+{
+    "id": 30,
+    "titulo": "Adelantamientos. Parada y estacionamiento. Cruce de pasos a nivel y puentes levadizos. Otras normas de circulación: apagado de motor, cinturón, casco y elementos de seguridad. Tiempo de descanso y conducción. Peatones. Auxilio. Publicidad. Animales",
+    "bloque": "especifico",
+    "secciones": [
+        {
+            "id": "s30-1",
+            "titulo": "Adelantamientos",
+            "contenido": "El adelantamiento es la maniobra por la que un vehículo se desplaza lateralmente para superar a otro que circula en el mismo sentido. Se efectúa por la izquierda del vehículo adelantado, salvo cuando este haya indicado el propósito de cambiar de dirección a la izquierda, en cuyo caso se hace por la derecha. Antes de iniciar la maniobra, el conductor debe asegurarse de tener visibilidad y espacio libres suficientes, advertir su intención con el indicador correspondiente, y verificar que ningún conductor que le siga haya iniciado a su vez el adelantamiento. Durante el adelantamiento debe dejar una distancia lateral suficiente y reincorporarse a su carril de origen lo antes posible sin obstaculizar al adelantado. Está prohibido adelantar en curvas y cambios de rasante de visibilidad reducida, en pasos para peatones y en pasos a nivel."
+        },
+        {
+            "id": "s30-2",
+            "titulo": "Parada y estacionamiento",
+            "contenido": "La parada es la inmovilización de un vehículo durante un tiempo inferior a dos minutos sin que su conductor pueda abandonarlo. El estacionamiento es la inmovilización que no se considera parada ni detención por causa de la circulación. Ambas se realizarán de forma que el vehículo no obstaculice la circulación ni constituya riesgo para los demás usuarios. Están prohibidas la parada y el estacionamiento en curvas y cambios de rasante de visibilidad reducida, en pasos a nivel, en pasos para peatones o ciclistas, en intersecciones, sobre raíles del tranvía, en lugares donde se impida la visibilidad de la señalización o donde dificulten el giro, y en cualquier sitio donde lo prohíban señales o marcas viales."
+        },
+        {
+            "id": "s30-3",
+            "titulo": "Cruce de pasos a nivel, puentes levadizos y túneles",
+            "contenido": "El paso a nivel es el cruce a nivel de la calzada con una vía férrea. Los conductores deben extremar la prudencia, respetar la señalización y no detenerse sobre los raíles ni iniciar el cruce si no puede completarse sin obstaculizar. Los puentes levadizos exigen el mismo nivel de atención y respeto a la señalización. Los túneles requieren encender las luces de cruce o de carretera, no detener el vehículo salvo emergencia, mantener la distancia de seguridad y, en caso de avería o accidente, abandonar el vehículo y seguir las señales de evacuación. Se prohíbe el cambio de sentido y la marcha atrás en túneles, salvo regulación expresa."
+        },
+        {
+            "id": "s30-4",
+            "titulo": "Otras normas: cinturón, casco, elementos de seguridad y descanso",
+            "contenido": "Los conductores y ocupantes deben utilizar el cinturón de seguridad y los sistemas de retención infantil homologados; los menores cuya estatura sea inferior o igual a 135 cm deben viajar en los asientos traseros con su sistema. Los conductores y pasajeros de motocicletas y ciclomotores deben llevar casco homologado, así como los ciclistas menores de 16 años y, en vías interurbanas, todos los ciclistas. El motor debe apagarse en las paradas. Los conductores profesionales deben respetar los tiempos máximos de conducción y los descansos obligatorios establecidos en la normativa europea (Reglamento CE 561/2006): conducción diaria 9 horas (ampliable a 10 dos veces por semana), descanso diario de 11 horas (reducible a 9), descanso semanal de 45 horas (reducible a 24)."
+        },
+        {
+            "id": "s30-5",
+            "titulo": "Peatones, auxilio, publicidad y animales",
+            "contenido": "Los peatones deben respetar las señales y la indicación de los agentes; los conductores deben ceder el paso en pasos peatonales sin semáforo y en zonas peatonales. El deber de auxilio impone al conductor implicado en un accidente detenerse, evitar nuevos accidentes, prestar o procurar auxilio a las víctimas y comunicar el siniestro a la autoridad. La publicidad estática o dinámica en las vías y en sus inmediaciones está sometida a autorización y prohibida cuando pueda producir confusión con la señalización o distraer la atención de los conductores. La presencia de animales sueltos en la vía está prohibida; los conductores de animales deben circular por los caminos de servicio o, en su defecto, por la izquierda de la vía atendiendo a las normas específicas."
+        }
+    ],
+    "esquemas": [
+        {
+            "id": "e30-1",
+            "titulo": "Adelantamientos: regla general",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Adelantamiento] --> B[Por la izquierda]\n    A --> C[Visibilidad y espacio]\n    A --> D[Indicador y reincorporacion]\n    A --> E[Prohibido en curvas, pasos y rasantes]"
+        },
+        {
+            "id": "e30-2",
+            "titulo": "Parada y estacionamiento",
+            "tipo": "mermaid",
+            "contenido": "graph TD\n    A[Parada vs Estacionamiento] --> B[Parada: menor de 2 min, sin abandonar]\n    A --> C[Estacionamiento: el resto]\n    A --> D[Prohibidos en curvas, pasos peatonales, intersecciones, rieles]"
+        }
+    ],
+    "mapaMental": {
+        "nodos": [
+            { "id": "n1", "texto": "Normas de circulación", "nivel": 0, "x": 0, "y": 0 },
+            { "id": "n2", "texto": "Adelantamientos", "nivel": 1, "x": 0, "y": -200 },
+            { "id": "n3", "texto": "Parada y estacionamiento", "nivel": 1, "x": 190, "y": -62 },
+            { "id": "n4", "texto": "Pasos a nivel y túneles", "nivel": 1, "x": 118, "y": 162 },
+            { "id": "n5", "texto": "Cinturón, casco y descanso", "nivel": 1, "x": -118, "y": 162 },
+            { "id": "n6", "texto": "Peatones, auxilio, animales", "nivel": 1, "x": -190, "y": -62 },
+            { "id": "n7", "texto": "Por la izquierda, con visibilidad", "nivel": 2, "x": 0, "y": -360 },
+            { "id": "n8", "texto": "Parada menor de 2 minutos", "nivel": 2, "x": 340, "y": -110 },
+            { "id": "n9", "texto": "Prohibición en curvas y pasos", "nivel": 2, "x": 340, "y": 30 },
+            { "id": "n10", "texto": "Luces en túneles", "nivel": 2, "x": 210, "y": 300 },
+            { "id": "n11", "texto": "Sillas hasta 135 cm en asientos traseros", "nivel": 2, "x": -210, "y": 300 },
+            { "id": "n12", "texto": "Reglamento CE 561/2006", "nivel": 2, "x": -340, "y": 30 },
+            { "id": "n13", "texto": "Deber de auxilio en accidentes", "nivel": 2, "x": -340, "y": -110 }
+        ],
+        "aristas": [
+            { "desde": "n1", "hasta": "n2" },
+            { "desde": "n1", "hasta": "n3" },
+            { "desde": "n1", "hasta": "n4" },
+            { "desde": "n1", "hasta": "n5" },
+            { "desde": "n1", "hasta": "n6" },
+            { "desde": "n2", "hasta": "n7" },
+            { "desde": "n3", "hasta": "n8" },
+            { "desde": "n3", "hasta": "n9" },
+            { "desde": "n4", "hasta": "n10" },
+            { "desde": "n5", "hasta": "n11" },
+            { "desde": "n5", "hasta": "n12" },
+            { "desde": "n6", "hasta": "n13" }
+        ]
+    },
+    "flashcards": [
+        { "id": "fc30-01", "anverso": "¿Qué es el adelantamiento?", "reverso": "La maniobra por la que un vehículo se desplaza lateralmente para superar a otro que circula en el mismo sentido." },
+        { "id": "fc30-02", "anverso": "¿Por qué lado se realiza el adelantamiento como regla general?", "reverso": "Por la izquierda del vehículo adelantado." },
+        { "id": "fc30-03", "anverso": "¿Cuándo se adelanta por la derecha?", "reverso": "Cuando el vehículo adelantado haya indicado el propósito de cambiar de dirección a la izquierda." },
+        { "id": "fc30-04", "anverso": "Cita lugares donde está prohibido adelantar.", "reverso": "Curvas y cambios de rasante de visibilidad reducida, pasos para peatones y pasos a nivel." },
+        { "id": "fc30-05", "anverso": "¿Qué es la parada?", "reverso": "La inmovilización del vehículo durante menos de dos minutos sin que el conductor pueda abandonarlo." },
+        { "id": "fc30-06", "anverso": "¿Qué es el estacionamiento?", "reverso": "La inmovilización que no es parada ni detención por causa de la circulación." },
+        { "id": "fc30-07", "anverso": "Cita lugares con prohibición de parada y estacionamiento.", "reverso": "Curvas y rasantes de visibilidad reducida, pasos a nivel, pasos peatonales, intersecciones y raíles de tranvía." },
+        { "id": "fc30-08", "anverso": "¿Qué debe hacerse al cruzar un paso a nivel?", "reverso": "Extremar la prudencia, respetar la señalización y no detenerse sobre los raíles." },
+        { "id": "fc30-09", "anverso": "¿Qué luces deben encenderse en un túnel?", "reverso": "Las de cruce o las de carretera, según convenga." },
+        { "id": "fc30-10", "anverso": "¿Está permitida la marcha atrás en un túnel?", "reverso": "No, salvo regulación expresa." },
+        { "id": "fc30-11", "anverso": "¿Quién debe llevar cinturón de seguridad?", "reverso": "Todos los ocupantes del vehículo, en todos los asientos que lo tengan." },
+        { "id": "fc30-12", "anverso": "¿Hasta qué estatura los menores deben usar sistemas de retención infantil?", "reverso": "Hasta 135 cm; deben viajar en los asientos traseros." },
+        { "id": "fc30-13", "anverso": "¿Es obligatorio el casco para los ciclistas?", "reverso": "Sí para los menores de 16 años y, en vías interurbanas, para todos los ciclistas." },
+        { "id": "fc30-14", "anverso": "¿Qué reglamento europeo regula los tiempos de conducción y descanso?", "reverso": "El Reglamento CE 561/2006." },
+        { "id": "fc30-15", "anverso": "¿Cuál es la conducción diaria máxima?", "reverso": "9 horas, ampliables a 10 dos veces por semana." },
+        { "id": "fc30-16", "anverso": "¿Cuál es el descanso diario obligatorio?", "reverso": "11 horas, reducible a 9 con limitaciones." },
+        { "id": "fc30-17", "anverso": "¿Qué obliga el deber de auxilio?", "reverso": "Detenerse, evitar nuevos accidentes, prestar o procurar auxilio y comunicar el siniestro." },
+        { "id": "fc30-18", "anverso": "¿Cuándo se prohíbe la publicidad junto a la vía?", "reverso": "Cuando pueda confundirse con la señalización o distraer la atención de los conductores." },
+        { "id": "fc30-19", "anverso": "¿Pueden circular animales sueltos por la vía?", "reverso": "No; está prohibida la presencia de animales sueltos en la vía." },
+        { "id": "fc30-20", "anverso": "¿Por dónde circulan los conductores de animales en defecto de caminos de servicio?", "reverso": "Por la izquierda de la vía, atendiendo a las normas específicas." }
+    ],
+    "preguntas": [
+        {
+            "id": "p30-01",
+            "enunciado": "El adelantamiento se realiza, como regla general:",
+            "opciones": ["Por la derecha", "Por la izquierda del vehículo adelantado", "Por el carril central", "Indistintamente"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Como regla general, el adelantamiento se efectúa por la izquierda del vehículo adelantado."
+        },
+        {
+            "id": "p30-02",
+            "enunciado": "La parada se diferencia del estacionamiento en que:",
+            "opciones": ["Dura menos de dos minutos y el conductor no abandona el vehículo", "Es siempre con el motor en marcha", "Solo se realiza en aparcamientos", "Es lo mismo que el estacionamiento"],
+            "respuestaCorrecta": 0,
+            "explicacion": "La parada es la inmovilización durante menos de dos minutos sin que el conductor pueda abandonar el vehículo."
+        },
+        {
+            "id": "p30-03",
+            "enunciado": "Está prohibido adelantar:",
+            "opciones": ["En recta", "En curvas y rasantes de visibilidad reducida, pasos peatonales y pasos a nivel", "En autopista", "En carretera convencional"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El adelantamiento está prohibido en curvas y cambios de rasante de visibilidad reducida, en pasos para peatones y en pasos a nivel."
+        },
+        {
+            "id": "p30-04",
+            "enunciado": "En un túnel hay que encender:",
+            "opciones": ["Las luces de posición solamente", "Las luces de cruce o de carretera", "Las luces antiniebla siempre", "Ninguna luz"],
+            "respuestaCorrecta": 1,
+            "explicacion": "En los túneles hay que encender las luces de cruce o las de carretera, según convenga."
+        },
+        {
+            "id": "p30-05",
+            "enunciado": "Los menores con estatura igual o inferior a 135 cm deben:",
+            "opciones": ["Viajar en cualquier asiento sin retención", "Viajar en asientos traseros con sistema de retención infantil", "Llevar solo cinturón normal", "No viajar"],
+            "respuestaCorrecta": 1,
+            "explicacion": "Los menores de hasta 135 cm deben viajar en los asientos traseros con su sistema de retención infantil."
+        },
+        {
+            "id": "p30-06",
+            "enunciado": "El tiempo máximo de conducción diaria (general) es de:",
+            "opciones": ["8 horas", "9 horas, ampliable a 10 dos veces por semana", "10 horas fijas", "12 horas"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El Reglamento CE 561/2006 establece una conducción diaria máxima de 9 horas, ampliable a 10 dos veces por semana."
+        },
+        {
+            "id": "p30-07",
+            "enunciado": "El deber de auxilio en un accidente obliga al conductor implicado a:",
+            "opciones": ["Marcharse inmediatamente", "Detenerse, evitar nuevos accidentes, auxiliar y comunicar el siniestro", "Solo llamar al seguro", "Esperar a la policía sin más"],
+            "respuestaCorrecta": 1,
+            "explicacion": "El deber de auxilio impone detenerse, evitar nuevos accidentes, prestar o procurar auxilio y comunicar el siniestro a la autoridad."
+        },
+        {
+            "id": "p30-08",
+            "enunciado": "La publicidad en las vías está prohibida cuando:",
+            "opciones": ["Es nocturna", "Puede confundirse con la señalización o distraer al conductor", "Es de productos sanitarios", "Es luminosa"],
+            "respuestaCorrecta": 1,
+            "explicacion": "La publicidad está prohibida cuando pueda confundirse con la señalización o distraer la atención de los conductores."
+        }
+    ]
+}
