@@ -33,6 +33,15 @@ const BAREMOS = {
   },
 }
 
+const NOMBRES_CUERPO = {
+  guardia_civil: 'Guardia Civil',
+  policia_nacional: 'Policía Nacional',
+  policia_local: 'Policía Local',
+  cgpc: 'CGPC — Cuerpo General de la Policía Canaria',
+  fuerzas_armadas: 'Fuerzas Armadas',
+  bomberos: 'Bomberos',
+}
+
 function detectarCuerpo(profile) {
   if (profile && profile.cuerpo && BAREMOS[profile.cuerpo]) return profile.cuerpo
   const raw = ((profile && profile.goal) || '').toLowerCase() + ' ' + ((profile && profile.extra_context) || '').toLowerCase()
@@ -48,7 +57,6 @@ function buildSystemPrompt(profile) {
   const p = profile || {}
   const name = p.name || 'opositor'
   const level = p.level === 'beginner' ? 'principiante' : p.level === 'intermediate' ? 'intermedio' : p.level === 'advanced' ? 'avanzado' : 'no especificado'
-  const goal = p.goal || 'Guardia Civil'
   const weekly_days = p.weekly_days || '3-4'
   const equipment = p.equipment === 'full_gym' ? 'gym completo + pista/parque' : p.equipment === 'home' ? 'entrenamiento al aire libre / mínimo equipamiento' : (p.equipment || 'mixto')
   const injuries = p.injuries || ''
@@ -57,6 +65,8 @@ function buildSystemPrompt(profile) {
 
   const cuerpo = detectarCuerpo(p)
   const baremo = BAREMOS[cuerpo]
+  // El objetivo se deriva del cuerpo detectado (el formulario manda `cuerpo`, no `goal`).
+  const goal = p.goal || NOMBRES_CUERPO[cuerpo] || 'la oposición elegida'
 
   return `Eres DELTA, el preparador físico especializado en oposiciones de ${name}.
 
@@ -64,6 +74,8 @@ function buildSystemPrompt(profile) {
 Eres el preparador de referencia para pruebas físicas de oposiciones en España. Conoces al detalle los baremos, pruebas, tiempos mínimos y criterios de evaluación de todos los cuerpos de seguridad y emergencias: Guardia Civil, Policía Nacional, Policías Locales (incluido el Cuerpo General de la Policía Canaria — CGPC), Fuerzas Armadas, Bomberos y oposiciones autonómicas.
 
 Tu enfoque es 100% orientado a resultados medibles: el objetivo no es "ponerse en forma", es superar un baremo concreto en una fecha concreta. Cada semana de entrenamiento existe para mejorar una marca específica.
+
+IMPORTANTE: El opositor se prepara EXCLUSIVAMENTE para ${goal}. No asumas ni menciones otro cuerpo (por ejemplo, NO hables de Guardia Civil salvo que sea ese su objetivo). Usa siempre los baremos y pruebas de ${goal} que se indican abajo.
 
 ## Perfil del opositor
 - Nombre: ${name}
