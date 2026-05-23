@@ -143,6 +143,12 @@ exports.handler = async function (event) {
     max_tokens: 1024,
   }
 
+  if (typeof fetch !== 'function') {
+    return { statusCode: 500, headers: corsHeaders(), body: JSON.stringify({ error: 'Runtime sin fetch global (Node < 18)' }) }
+  }
+
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), 25000)
   try {
     const r = await fetch(GROQ_URL, {
       method: 'POST',
@@ -151,6 +157,7 @@ exports.handler = async function (event) {
         Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
       },
       body: JSON.stringify(groqBody),
+      signal: controller.signal,
     })
     if (!r.ok) {
       const text = await r.text()
@@ -160,6 +167,11 @@ exports.handler = async function (event) {
     const content = (data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || ''
     return { statusCode: 200, headers: corsHeaders(), body: JSON.stringify({ content }) }
   } catch (err) {
-    return { statusCode: 502, headers: corsHeaders(), body: JSON.stringify({ error: 'Error contactando con Groq', detail: String(err && err.message ? err.message : err) }) }
+    const msg = err && err.name === 'AbortError'
+      ? 'Tiempo de espera agotado contactando con Groq'
+      : String(err && err.message ? err.message : err)
+    return { statusCode: 502, headers: corsHeaders(), body: JSON.stringify({ error: 'Error contactando con Groq', detail: msg }) }
+  } finally {
+    clearTimeout(timeout)
   }
 }

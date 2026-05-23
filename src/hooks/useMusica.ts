@@ -4,32 +4,37 @@ const CLAVE = 'opodam.musica'
 
 interface AudioState {
   ctx: AudioContext
-  oscillators: OscillatorNode[]
   noise: AudioBufferSourceNode | null
+  timer: ReturnType<typeof setInterval> | null
 }
 
+// Escala pentatónica mayor de C (suave, sin disonancias): C4 D4 E4 G4 A4 C5 D5 E5
+const NOTAS = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25]
+
+// Música de concentración generativa: notas tipo campana en escala pentatónica
+// (siempre consonante) + un colchón de aire muy suave. Sin drones graves de "motor".
 function crearAmbient(): AudioState | null {
   try {
     const AC: typeof AudioContext = (window as any).AudioContext || (window as any).webkitAudioContext
     if (!AC) return null
     const ctx = new AC()
+
     const master = ctx.createGain()
-    master.gain.value = 0.12
+    master.gain.value = 0.0001
     master.connect(ctx.destination)
+    master.gain.exponentialRampToValueAtTime(0.5, ctx.currentTime + 3)
 
-    // Tríada mayor grave (C3, E3, G3) como drone
-    const freqs = [130.81, 164.81, 196.00]
-    const oscillators: OscillatorNode[] = freqs.map(f => {
-      const osc = ctx.createOscillator()
-      osc.type = 'sine'
-      osc.frequency.value = f
-      const g = ctx.createGain()
-      g.gain.value = 0.18
-      osc.connect(g).connect(master)
-      return osc
-    })
+    // Reverb sencillo (delay con realimentación) para dar sensación de espacio
+    const delay = ctx.createDelay(1.0)
+    delay.delayTime.value = 0.33
+    const feedback = ctx.createGain()
+    feedback.gain.value = 0.35
+    const wet = ctx.createGain()
+    wet.gain.value = 0.45
+    delay.connect(feedback).connect(delay)
+    delay.connect(wet).connect(master)
 
-    // Ruido rosa con filtro paso bajo
+    // Colchón de aire: ruido rosa muy filtrado y a volumen bajísimo
     const bufSize = 2 * ctx.sampleRate
     const buffer = ctx.createBuffer(1, bufSize, ctx.sampleRate)
     const data = buffer.getChannelData(0)
@@ -49,15 +54,42 @@ function crearAmbient(): AudioState | null {
     noise.buffer = buffer
     noise.loop = true
     const noiseGain = ctx.createGain()
-    noiseGain.gain.value = 0.35
+    noiseGain.gain.value = 0.04
     const lp = ctx.createBiquadFilter()
     lp.type = 'lowpass'
-    lp.frequency.value = 800
+    lp.frequency.value = 1200
     noise.connect(lp).connect(noiseGain).connect(master)
-
-    oscillators.forEach(o => o.start())
     noise.start()
-    return { ctx, oscillators, noise }
+
+    // Toca una nota tipo campana con envolvente suave (ataque lento, cola larga)
+    function tocarNota(freq: number, dur: number) {
+      const now = ctx.currentTime
+      const osc = ctx.createOscillator()
+      osc.type = 'triangle'
+      osc.frequency.value = freq
+      const g = ctx.createGain()
+      g.gain.setValueAtTime(0.0001, now)
+      g.gain.exponentialRampToValueAtTime(0.16, now + 0.6)
+      g.gain.exponentialRampToValueAtTime(0.0001, now + dur)
+      osc.connect(g)
+      g.connect(master)
+      g.connect(delay)
+      osc.start(now)
+      osc.stop(now + dur + 0.1)
+    }
+
+    // Patrón generativo: cada ~2.8 s una nota aleatoria de la pentatónica;
+    // de vez en cuando una nota de apoyo grave, creando una melodía calmada.
+    let idx = 0
+    const timer = setInterval(() => {
+      tocarNota(NOTAS[Math.floor(Math.random() * NOTAS.length)], 3.5 + Math.random() * 1.5)
+      if (idx % 3 === 0) tocarNota(NOTAS[Math.floor(Math.random() * 3)] / 2, 4)
+      idx++
+    }, 2800)
+
+    tocarNota(NOTAS[0], 4)
+
+    return { ctx, noise, timer }
   } catch {
     return null
   }
@@ -65,7 +97,7 @@ function crearAmbient(): AudioState | null {
 
 function detener(state: AudioState | null) {
   if (!state) return
-  try { state.oscillators.forEach(o => { try { o.stop() } catch {} }) } catch {}
+  try { if (state.timer) clearInterval(state.timer) } catch {}
   try { state.noise?.stop() } catch {}
   try { state.ctx.close() } catch {}
 }
