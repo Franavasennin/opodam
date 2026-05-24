@@ -1,6 +1,6 @@
 const { test } = require('node:test')
 const assert = require('node:assert')
-const { buildSystemPrompt, normalizarFlashcard, normalizarPregunta } = require('./tutor-chat.cjs')
+const { buildSystemPrompt, normalizarFlashcard, normalizarPregunta } = require('../functions/tutor-chat.cjs')
 
 test('normalizarFlashcard soporta ambos formatos', () => {
   assert.deepStrictEqual(
