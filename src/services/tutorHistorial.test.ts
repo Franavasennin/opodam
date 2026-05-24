@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 
 // Mock del módulo supabase ANTES de importar el servicio.
 // vi.hoisted garantiza que los mocks existen cuando vi.mock (hoisteado) corre.
-const { obtenerUsuario, single, select, upsert, from } = vi.hoisted(() => {
+const { obtenerUsuario, single, upsert, from } = vi.hoisted(() => {
   const single = vi.fn()
   const eq2 = vi.fn(() => ({ single }))
   const eq1 = vi.fn(() => ({ eq: eq2 }))

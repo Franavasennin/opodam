@@ -16,8 +16,8 @@ function construirContexto(oposicion: string, tema: Tema): ContextoTema {
     temaId: tema.id,
     titulo: tema.titulo,
     secciones: tema.secciones ?? [],
-    flashcards: (tema.flashcards ?? []) as ContextoTema['flashcards'],
-    preguntas: (tema.preguntas ?? []) as ContextoTema['preguntas'],
+    flashcards: (tema.flashcards ?? []) as unknown as ContextoTema['flashcards'],
+    preguntas: (tema.preguntas ?? []) as unknown as ContextoTema['preguntas'],
   }
 }
 

@@ -6,6 +6,8 @@ import { TeoriaTab } from '../components/tema/TeoriaTab'
 import { EsquemasTab } from '../components/tema/EsquemasTab'
 import { MapaMentalTab } from '../components/tema/MapaMentalTab'
 import { FlashcardsTab } from '../components/tema/FlashcardsTab'
+import { BotonTutor } from '../components/tutor/BotonTutor'
+import { TutorPanel } from '../components/tutor/TutorPanel'
 import type { Tema } from '../types'
 
 const TABS = ["Teoria", "Esquemas", "Mapa Mental", "Flashcards"] as const
@@ -17,6 +19,7 @@ export function TemaDetalle() {
   const navigate = useNavigate()
   const [tema, setTema] = useState<Tema | null>(null)
   const [tab, setTab] = useState<Tab>("Teoria")
+  const [tutorAbierto, setTutorAbierto] = useState(false)
   const { progreso, marcarTeoriaLeida, marcarVueltaCompleta } = useProgress()
   const { cargarTema } = obtenerTopics(slug ?? 'cgpc')
 
@@ -56,6 +59,14 @@ export function TemaDetalle() {
         {tab === "Mapa Mental" && <MapaMentalTab tema={tema} />}
         {tab === "Flashcards"  && <FlashcardsTab tema={tema} onVueltaCompleta={() => marcarVueltaCompleta(temaId)} />}
       </div>
+
+      <BotonTutor onClick={() => setTutorAbierto(true)} />
+      <TutorPanel
+        oposicion={slug ?? 'cgpc'}
+        tema={tema}
+        abierto={tutorAbierto}
+        onCerrar={() => setTutorAbierto(false)}
+      />
     </div>
   )
 }
