@@ -3,7 +3,7 @@ import mermaid from 'mermaid'
 import type { Tema } from '../../types'
 import { getMermaidCode } from '../../types'
 
-mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { primaryColor: '#4361ee' } })
+mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: 'base', themeVariables: { primaryColor: '#4361ee' } })
 
 interface Props { tema: Tema }
 

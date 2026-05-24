@@ -41,40 +41,68 @@ Si la duda NO está cubierta por el contenido del tema, puedes responder con tu 
 ${bloque}`
 }
 
-function corsHeaders() {
+const MAX_MENSAJES = 40
+const MAX_CONTENIDO_CHARS = 8000
+
+// Si ALLOWED_ORIGINS está definida (lista separada por comas), solo se permite ese
+// origen; si no, se mantiene '*' para no romper despliegues sin configurar.
+function resolverOrigen(event) {
+  const permitidas = (process.env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean)
+  if (permitidas.length === 0) return '*'
+  const origin = (event && event.headers && (event.headers.origin || event.headers.Origin)) || ''
+  return permitidas.includes(origin) ? origin : permitidas[0]
+}
+
+function corsHeaders(event) {
   return {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': resolverOrigen(event),
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
+    'Vary': 'Origin',
     'Content-Type': 'application/json',
   }
 }
 
+// Valida que messages sea un array de turnos { role, content } razonables.
+// Devuelve string con el error, o null si es válido.
+function validarMensajes(messages) {
+  if (!Array.isArray(messages) || messages.length === 0) return 'Falta el array de mensajes'
+  if (messages.length > MAX_MENSAJES) return 'Demasiados mensajes'
+  for (const m of messages) {
+    if (!m || typeof m !== 'object') return 'Mensaje inválido'
+    if (m.role !== 'user' && m.role !== 'assistant') return 'Rol de mensaje inválido'
+    if (typeof m.content !== 'string') return 'Contenido de mensaje inválido'
+    if (m.content.length > MAX_CONTENIDO_CHARS) return 'Mensaje demasiado largo'
+  }
+  return null
+}
+
 exports.handler = async function (event) {
   if (event.httpMethod === 'OPTIONS') {
-    return { statusCode: 204, headers: corsHeaders(), body: '' }
+    return { statusCode: 204, headers: corsHeaders(event), body: '' }
   }
   if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, headers: corsHeaders(), body: JSON.stringify({ error: 'Method Not Allowed' }) }
+    return { statusCode: 405, headers: corsHeaders(event), body: JSON.stringify({ error: 'Method Not Allowed' }) }
   }
   if (!process.env.GROQ_API_KEY) {
-    return { statusCode: 500, headers: corsHeaders(), body: JSON.stringify({ error: 'GROQ_API_KEY no configurada en el servidor' }) }
+    return { statusCode: 500, headers: corsHeaders(event), body: JSON.stringify({ error: 'GROQ_API_KEY no configurada en el servidor' }) }
   }
 
   let payload
   try {
     payload = JSON.parse(event.body || '{}')
   } catch {
-    return { statusCode: 400, headers: corsHeaders(), body: JSON.stringify({ error: 'JSON invalido' }) }
+    return { statusCode: 400, headers: corsHeaders(event), body: JSON.stringify({ error: 'JSON invalido' }) }
   }
 
   const { messages, contexto } = payload
-  if (!Array.isArray(messages) || messages.length === 0) {
-    return { statusCode: 400, headers: corsHeaders(), body: JSON.stringify({ error: 'Falta el array de mensajes' }) }
+  const errMsgs = validarMensajes(messages)
+  if (errMsgs) {
+    return { statusCode: 400, headers: corsHeaders(event), body: JSON.stringify({ error: errMsgs }) }
   }
 
   if (typeof fetch !== 'function') {
-    return { statusCode: 500, headers: corsHeaders(), body: JSON.stringify({ error: 'Runtime sin fetch global (Node < 18)' }) }
+    return { statusCode: 500, headers: corsHeaders(event), body: JSON.stringify({ error: 'Runtime sin fetch global (Node < 18)' }) }
   }
 
   const recientes = messages.slice(-MEMORIA_MENSAJES)
@@ -97,16 +125,16 @@ exports.handler = async function (event) {
     })
     if (!r.ok) {
       const text = await r.text()
-      return { statusCode: r.status, headers: corsHeaders(), body: JSON.stringify({ error: 'Groq error', detail: text }) }
+      return { statusCode: r.status, headers: corsHeaders(event), body: JSON.stringify({ error: 'Groq error', detail: text }) }
     }
     const data = await r.json()
     const content = (data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || ''
-    return { statusCode: 200, headers: corsHeaders(), body: JSON.stringify({ content }) }
+    return { statusCode: 200, headers: corsHeaders(event), body: JSON.stringify({ content }) }
   } catch (err) {
     const msg = err && err.name === 'AbortError'
       ? 'Tiempo de espera agotado contactando con Groq'
       : String(err && err.message ? err.message : err)
-    return { statusCode: 502, headers: corsHeaders(), body: JSON.stringify({ error: 'Error contactando con Groq', detail: msg }) }
+    return { statusCode: 502, headers: corsHeaders(event), body: JSON.stringify({ error: 'Error contactando con Groq', detail: msg }) }
   } finally {
     clearTimeout(timeout)
   }
