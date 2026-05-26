@@ -1,157 +1,541 @@
 {
-    "id": 30,
-    "titulo": "Adelantamientos. Parada y estacionamiento. Cruce de pasos a nivel y puentes levadizos. Otras normas de circulación: apagado de motor, cinturón, casco y elementos de seguridad. Tiempo de descanso y conducción. Peatones. Auxilio. Publicidad. Animales",
-    "bloque": "especifico",
-    "secciones": [
-        {
-            "id": "s30-1",
-            "titulo": "Adelantamientos",
-            "contenido": "El adelantamiento es la maniobra por la que un vehículo se desplaza lateralmente para superar a otro que circula en el mismo sentido. Se efectúa por la izquierda del vehículo adelantado, salvo cuando este haya indicado el propósito de cambiar de dirección a la izquierda, en cuyo caso se hace por la derecha. Antes de iniciar la maniobra, el conductor debe asegurarse de tener visibilidad y espacio libres suficientes, advertir su intención con el indicador correspondiente, y verificar que ningún conductor que le siga haya iniciado a su vez el adelantamiento. Durante el adelantamiento debe dejar una distancia lateral suficiente y reincorporarse a su carril de origen lo antes posible sin obstaculizar al adelantado. Está prohibido adelantar en curvas y cambios de rasante de visibilidad reducida, en pasos para peatones y en pasos a nivel."
-        },
-        {
-            "id": "s30-2",
-            "titulo": "Parada y estacionamiento",
-            "contenido": "La parada es la inmovilización de un vehículo durante un tiempo inferior a dos minutos sin que su conductor pueda abandonarlo. El estacionamiento es la inmovilización que no se considera parada ni detención por causa de la circulación. Ambas se realizarán de forma que el vehículo no obstaculice la circulación ni constituya riesgo para los demás usuarios. Están prohibidas la parada y el estacionamiento en curvas y cambios de rasante de visibilidad reducida, en pasos a nivel, en pasos para peatones o ciclistas, en intersecciones, sobre raíles del tranvía, en lugares donde se impida la visibilidad de la señalización o donde dificulten el giro, y en cualquier sitio donde lo prohíban señales o marcas viales."
-        },
-        {
-            "id": "s30-3",
-            "titulo": "Cruce de pasos a nivel, puentes levadizos y túneles",
-            "contenido": "El paso a nivel es el cruce a nivel de la calzada con una vía férrea. Los conductores deben extremar la prudencia, respetar la señalización y no detenerse sobre los raíles ni iniciar el cruce si no puede completarse sin obstaculizar. Los puentes levadizos exigen el mismo nivel de atención y respeto a la señalización. Los túneles requieren encender las luces de cruce o de carretera, no detener el vehículo salvo emergencia, mantener la distancia de seguridad y, en caso de avería o accidente, abandonar el vehículo y seguir las señales de evacuación. Se prohíbe el cambio de sentido y la marcha atrás en túneles, salvo regulación expresa."
-        },
-        {
-            "id": "s30-4",
-            "titulo": "Otras normas: cinturón, casco, elementos de seguridad y descanso",
-            "contenido": "Los conductores y ocupantes deben utilizar el cinturón de seguridad y los sistemas de retención infantil homologados; los menores cuya estatura sea inferior o igual a 135 cm deben viajar en los asientos traseros con su sistema. Los conductores y pasajeros de motocicletas y ciclomotores deben llevar casco homologado, así como los ciclistas menores de 16 años y, en vías interurbanas, todos los ciclistas. El motor debe apagarse en las paradas. Los conductores profesionales deben respetar los tiempos máximos de conducción y los descansos obligatorios establecidos en la normativa europea (Reglamento CE 561/2006): conducción diaria 9 horas (ampliable a 10 dos veces por semana), descanso diario de 11 horas (reducible a 9), descanso semanal de 45 horas (reducible a 24)."
-        },
-        {
-            "id": "s30-5",
-            "titulo": "Peatones, auxilio, publicidad y animales",
-            "contenido": "Los peatones deben respetar las señales y la indicación de los agentes; los conductores deben ceder el paso en pasos peatonales sin semáforo y en zonas peatonales. El deber de auxilio impone al conductor implicado en un accidente detenerse, evitar nuevos accidentes, prestar o procurar auxilio a las víctimas y comunicar el siniestro a la autoridad. La publicidad estática o dinámica en las vías y en sus inmediaciones está sometida a autorización y prohibida cuando pueda producir confusión con la señalización o distraer la atención de los conductores. La presencia de animales sueltos en la vía está prohibida; los conductores de animales deben circular por los caminos de servicio o, en su defecto, por la izquierda de la vía atendiendo a las normas específicas."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e30-1",
-            "titulo": "Adelantamientos: regla general",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Adelantamiento] --> B[Por la izquierda]\n    A --> C[Visibilidad y espacio]\n    A --> D[Indicador y reincorporacion]\n    A --> E[Prohibido en curvas, pasos y rasantes]"
-        },
-        {
-            "id": "e30-2",
-            "titulo": "Parada y estacionamiento",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Parada vs Estacionamiento] --> B[Parada: menor de 2 min, sin abandonar]\n    A --> C[Estacionamiento: el resto]\n    A --> D[Prohibidos en curvas, pasos peatonales, intersecciones, rieles]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Normas de circulación", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Adelantamientos", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Parada y estacionamiento", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Pasos a nivel y túneles", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Cinturón, casco y descanso", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Peatones, auxilio, animales", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Por la izquierda, con visibilidad", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Parada menor de 2 minutos", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Prohibición en curvas y pasos", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Luces en túneles", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Sillas hasta 135 cm en asientos traseros", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Reglamento CE 561/2006", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Deber de auxilio en accidentes", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n3", "hasta": "n9" },
-            { "desde": "n4", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n5", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 30,
+  "titulo": "Adelantamientos. Parada y estacionamiento. Cruce de pasos a nivel y puentes levadizos. Otras normas de circulación: apagado de motor. Cinturón, casco y restantes elementos de seguridad. Tiempo de descanso y conducción. Peatones. Auxilio. Publicidad. Animales.",
+  "bloque": "especifico",
+  "secciones": [
+    {
+      "titulo": "1. Real Decreto Legislativo 6/2015, de 30 de octubre, p",
+      "contenido": "BIBLIOGRAFÍA • Normativas. • Real Decreto Legislativo 6/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial. o Art.33-52 • Real Decreto 1428/2003, de 21 de noviembre, por el que se aprueba el Reglamento General de Circulación para la aplicación y desarrollo del texto articulado de la Ley sobre tráfico, circulación de vehículos a motor y seguridad vial, aprobado por el Real De o Art. 82-130 2 \f REAL DECRETO LEGISLATIVO 6/2015, DE 30 DE OCTUBRE, POR EL QUE SE APRUEBA EL TEXTO REFUNDIDO DE LA LEY SOBRE TRÁFICO, CIRCULACIÓN DE VEHÍCULOS A MOTOR Y SEGURIDAD VIAL. TÍTULO II NORMAS DE COMPORTAMIENTO EN LA CIRCULACIÓN CAPÍTULO II CIRCULACIÓN DE VEHÍCULOS SECCIÓN 6.ª ADELANTAMIENTO ARTÍCULO 33. NORMAS GENERALES. 1. En todas las carreteras, como norma general, el adelantamiento debe efectuarse por la izquierda del vehículo que se pretenda adelantar. 2. Por excepción, y si existe espacio suficiente para ello, el adelantamiento se efectuará por la derecha y adoptando las máximas precauciones, cuando el conductor del vehículo al que se pretenda adelantar esté indicando claramente su propósito de cambiar de dirección a la izquierda o parar en ese lado, así como en las vías con circulación en ambos sentidos, a los tranvías que marchen por la zona central. 3. Reglamentariamente se establecerán otras posibles excepciones a la norma general señalada en el apartado 1 y particularidades de la maniobra de adelantamiento en función de las características de la vía. ARTÍCULO 34. PRECAUCIONES PREVIAS. 1. Antes de iniciar un adelantamiento que requiera desplazamiento lateral, el conductor que se proponga adelantar debe advertirlo con suficiente antelación, con las señales preceptivas, y comprobar que en el carril que pretende utilizar para el adelantamiento existe espacio libre suficiente para que la maniobra no ponga en peligro ni entorpezca a quienes circulen en sentido contrario, teniendo en cuenta la velocidad propia y la de los demás usuarios afectados. En caso contrario, debe abstenerse de efectuarla. 2. 2. También debe cerciorarse de que el conductor del vehículo que le precede en el mismo carril no ha indicado su propósito de iniciar el adelantamiento, en cuyo caso debe respetar la preferencia que le asiste. No obstante, si después de un tiempo prudencial, el conductor del citado vehículo no la ejerciera, podrá iniciar la maniobra de adelantamiento, advirtiéndole previamente con señal acústica u óptica. 3. Asimismo debe asegurarse de que no se ha iniciado la maniobra de adelantar a su vehículo por parte de ningún conductor que le siga por el mismo carril, y de que dispone de espacio suficiente para volver a su carril cuando termine el adelantamiento. 4. No se considera adelantamiento, a efectos de estas normas, los realizados entre ciclistas que circulen en grupo. 3 \f ARTÍCULO 35. EJECUCIÓN. 1. Durante la ejecución del adelantamiento, el conductor que lo efectúe debe llevar su vehículo a una velocidad notoriamente superior a la del que pretende adelantar y dejar entre ambos una separación lateral suficiente para realizarlo con seguridad. 2. Si después de iniciar la maniobra de adelantamiento advierte que se producen circunstancias que puedan hacer difícil la finalización del mismo sin provocar riesgos, reducirá rápidamente su marcha y volverá de nuevo a su carril, advirtiéndolo a los que le siguen con las señales preceptivas. 3."
     },
-    "flashcards": [
-        { "id": "fc30-01", "anverso": "¿Qué es el adelantamiento?", "reverso": "La maniobra por la que un vehículo se desplaza lateralmente para superar a otro que circula en el mismo sentido." },
-        { "id": "fc30-02", "anverso": "¿Por qué lado se realiza el adelantamiento como regla general?", "reverso": "Por la izquierda del vehículo adelantado." },
-        { "id": "fc30-03", "anverso": "¿Cuándo se adelanta por la derecha?", "reverso": "Cuando el vehículo adelantado haya indicado el propósito de cambiar de dirección a la izquierda." },
-        { "id": "fc30-04", "anverso": "Cita lugares donde está prohibido adelantar.", "reverso": "Curvas y cambios de rasante de visibilidad reducida, pasos para peatones y pasos a nivel." },
-        { "id": "fc30-05", "anverso": "¿Qué es la parada?", "reverso": "La inmovilización del vehículo durante menos de dos minutos sin que el conductor pueda abandonarlo." },
-        { "id": "fc30-06", "anverso": "¿Qué es el estacionamiento?", "reverso": "La inmovilización que no es parada ni detención por causa de la circulación." },
-        { "id": "fc30-07", "anverso": "Cita lugares con prohibición de parada y estacionamiento.", "reverso": "Curvas y rasantes de visibilidad reducida, pasos a nivel, pasos peatonales, intersecciones y raíles de tranvía." },
-        { "id": "fc30-08", "anverso": "¿Qué debe hacerse al cruzar un paso a nivel?", "reverso": "Extremar la prudencia, respetar la señalización y no detenerse sobre los raíles." },
-        { "id": "fc30-09", "anverso": "¿Qué luces deben encenderse en un túnel?", "reverso": "Las de cruce o las de carretera, según convenga." },
-        { "id": "fc30-10", "anverso": "¿Está permitida la marcha atrás en un túnel?", "reverso": "No, salvo regulación expresa." },
-        { "id": "fc30-11", "anverso": "¿Quién debe llevar cinturón de seguridad?", "reverso": "Todos los ocupantes del vehículo, en todos los asientos que lo tengan." },
-        { "id": "fc30-12", "anverso": "¿Hasta qué estatura los menores deben usar sistemas de retención infantil?", "reverso": "Hasta 135 cm; deben viajar en los asientos traseros." },
-        { "id": "fc30-13", "anverso": "¿Es obligatorio el casco para los ciclistas?", "reverso": "Sí para los menores de 16 años y, en vías interurbanas, para todos los ciclistas." },
-        { "id": "fc30-14", "anverso": "¿Qué reglamento europeo regula los tiempos de conducción y descanso?", "reverso": "El Reglamento CE 561/2006." },
-        { "id": "fc30-15", "anverso": "¿Cuál es la conducción diaria máxima?", "reverso": "9 horas, ampliables a 10 dos veces por semana." },
-        { "id": "fc30-16", "anverso": "¿Cuál es el descanso diario obligatorio?", "reverso": "11 horas, reducible a 9 con limitaciones." },
-        { "id": "fc30-17", "anverso": "¿Qué obliga el deber de auxilio?", "reverso": "Detenerse, evitar nuevos accidentes, prestar o procurar auxilio y comunicar el siniestro." },
-        { "id": "fc30-18", "anverso": "¿Cuándo se prohíbe la publicidad junto a la vía?", "reverso": "Cuando pueda confundirse con la señalización o distraer la atención de los conductores." },
-        { "id": "fc30-19", "anverso": "¿Pueden circular animales sueltos por la vía?", "reverso": "No; está prohibida la presencia de animales sueltos en la vía." },
-        { "id": "fc30-20", "anverso": "¿Por dónde circulan los conductores de animales en defecto de caminos de servicio?", "reverso": "Por la izquierda de la vía, atendiendo a las normas específicas." }
+    {
+      "titulo": "2. ARTÍCULO 36",
+      "contenido": "El conductor del vehículo que ha efectuado el adelantamiento debe volver a su carril tan pronto como le sea posible y de modo gradual, sin obligar a otros usuarios a modificar su trayectoria o velocidad y advirtiéndolo a través de las señales preceptivas. 4. El conductor de un vehículo que pretenda realizar un adelantamiento a un ciclo o ciclomotor, o conjunto de ellos, debe realizarlo ocupando parte o la totalidad del carril contiguo o contrario, en su caso, de la calzada y guardando una anchura de seguridad de, al menos, 1,5 metros, salvo cuando la calzada cuente con más de un carril por sentido, en cuyo caso será obligatorio el cambio completo de carril. Queda prohibido adelantar poniendo en peligro o entorpeciendo a ciclistas que circulen en sentido contrario, incluso si estos ciclistas circulan por el arcén. ARTÍCULO 36. VEHÍCULO ADELANTADO. 1. El conductor que advierta que otro que le sigue tiene el propósito de adelantar a su vehículo estará obligado a ceñirse al borde derecho de la calzada, salvo en el supuesto de cambio de dirección a la izquierda o de parada en ese mismo lado a que se refiere el artículo 33.2, en que deberá ceñirse a la izquierda todo lo posible, pero sin interferir la marcha de los vehículos que puedan circular en sentido contrario. 2. Se prohíbe al conductor del vehículo que va a ser adelantado aumentar la velocidad o efectuar maniobras que impidan o dificulten el adelantamiento. Asimismo está obligado a disminuir la velocidad de su vehículo cuando, una vez iniciada la maniobra de adelantamiento, se produzca alguna situación que entrañe peligro para su propio vehículo, para el vehículo que la está efectuando, para los que circulan en sentido contrario o para cualquier otro usuario de la vía. ARTÍCULO 37. PROHIBICIONES. Queda prohibido adelantar: a) En las curvas y cambios de rasante de visibilidad reducida y, en general, en todo lugar o circunstancia en que la visibilidad disponible no sea suficiente para poder efectuar la maniobra o desistir de ella una vez iniciada, a no ser que los dos sentidos de circulación estén claramente delimitados y la maniobra pueda efectuarse sin invadir la zona reservada al sentido contrario. b) En los pasos para peatones señalizados como tales y en los pasos a nivel y en sus proximidades. c) En las intersecciones y en sus proximidades, salvo cuando: 1.º Se trate de una glorieta. 2.º El adelantamiento deba efectuarse por la derecha, según lo previsto en el artículo 33.2. 3.º La calzada en que se realice tenga preferencia en la intersección y haya señal expresa que lo indique. 4.º El adelantamiento se realice a vehículos de dos ruedas. ARTÍCULO 38. SUPUESTOS ESPECIALES. Cuando un vehículo se encuentre inmovilizado en un tramo de vía en que esté prohibido el adelantamiento, ocupando en todo o en parte la calzada en el carril del sentido de la marcha, y siempre que la inmovilización no responda a las necesidades del tráfico, puede ser rebasado, aunque para ello haya que ocupar parte del carril izquierdo de la calzada. En todo caso, hay que cerciorarse previamente de que la maniobra se puede realizar sin peligro. En estas mismas circunstancias se podrá adelantar a las bicicletas. 4 \f SECCIÓN 7.ª PARADA Y ESTACIONAMIENTO ARTÍCULO 39. NORMAS GENERALES. 1. La parada o el estacionamiento de un vehículo en vías interurbanas debe efectuarse siempre fuera de la calzada, en el lado derecho de la misma y dejando libre, cuando exista, la parte transitable del arcén. 2."
+    },
+    {
+      "titulo": "3. ARTÍCULO 40",
+      "contenido": "Cuando en vías urbanas tenga que realizarse en la calzada o en el arcén se situará el vehículo lo más cerca posible de su borde derecho, salvo en las vías de único sentido, en las que se podrá situar también en el lado izquierdo. 3. La parada y el estacionamiento deben efectuarse de tal manera que el vehículo no obstaculice la circulación ni constituya un riesgo para el resto de los usuarios de la vía, cuidando especialmente la colocación del mismo y evitando que pueda ponerse en movimiento en ausencia del conductor, de acuerdo con las normas que reglamentariamente se establezcan. En vías urbanas se permite la parada o el estacionamiento de las grúas de auxilio en carretera por el tiempo indispensable para efectuar la retirada de los vehículos averiados o accidentados, siempre que no se cree un nuevo peligro, ni se cause obstáculo a la circulación. 4. El régimen de parada y estacionamiento en vías urbanas se regulará por ordenanza municipal, pudiendo adoptarse las medidas necesarias para evitar el entorpecimiento del tráfico, entre ellas, limitaciones horarias de duración del estacionamiento, así como las medidas correctoras precisas, incluida la retirada del vehículo o su inmovilización cuando no disponga de título que autorice el estacionamiento en zonas limitadas en tiempo o exceda del tiempo autorizado hasta que se logre la identificación del conductor. ARTÍCULO 40. PROHIBICIONES. 1. Queda prohibido parar en los siguientes casos: a) En las curvas y cambios de rasante de visibilidad reducida, en sus proximidades y en los túneles. b) En los pasos a nivel, pasos para ciclistas y pasos para peatones. c) En los carriles o partes de la vía reservados exclusivamente para la circulación o para el servicio de determinados usuarios. d) En las intersecciones y en sus proximidades. e) Sobre los raíles de tranvías o tan cerca de ellos que pueda entorpecerse su circulación. f) En los lugares donde se impida la visibilidad de la señalización a los usuarios a quienes les afecte u obligue a hacer maniobras. g) En autovías o autopistas, salvo en las zonas habilitadas para ello. h) En los carriles destinados al uso exclusivo del transporte público urbano, o en los reservados para las bicicletas. i) En las zonas destinadas para estacionamiento y parada de uso exclusivo para el transporte público urbano. j) En zonas señalizadas para uso exclusivo de personas con discapacidad y pasos para peatones. 2. Queda prohibido estacionar en los siguientes casos: a) En todos los descritos en el apartado anterior. b) En los lugares habilitados por la autoridad municipal como de estacionamiento con limitación horaria, conforme a la regulación del sistema utilizado para ello, sin disponer del título que lo autorice o cuando, disponiendo de él, se mantenga estacionado el vehículo en exceso sobre el tiempo máximo permitido por la autorización. c) En zonas señalizadas para carga y descarga. d) En zonas señalizadas para uso exclusivo de personas con discapacidad. e) Sobre las aceras, paseos y demás zonas destinadas al paso de los peatones. No obstante, los municipios, a través de ordenanza municipal, podrán regular la parada y el estacionamiento de los vehículos de dos ruedas sobre las aceras y paseos siempre que no se perjudique ni se entorpezca el tránsito de los peatones por ellas, atendiendo a las necesidades de aquellos que puedan llevar algún objeto voluminoso y, especialmente, las de aquellas personas que tengan alguna discapacidad. f) Delante de los vados señalizados correctamente. g) En doble fila."
+    },
+    {
+      "titulo": "4. ARTÍCULO 41",
+      "contenido": "5 \f SECCIÓN 8.ª CRUCE DE PASOS A NIVEL Y PUENTES LEVADIZOS ARTÍCULO 41. NORMAS GENERALES. 1. El conductor debe extremar la prudencia y reducir la velocidad al aproximarse a un paso a nivel o a un puente levadizo. 2. El usuario que al llegar a un paso a nivel o a un puente levadizo lo encuentre cerrado o con la barrera o semibarrera en movimiento, debe detenerse en el carril correspondiente hasta que tenga paso libre. 3. El cruce de la vía férrea debe realizarse sin demora y después de haberse cerciorado de que, por las circunstancias de la circulación o por otras causas, no existe riesgo de quedar inmovilizado dentro del paso. 4. Los pasos a nivel y puentes levadizos estarán debidamente señalizados por el titular de la vía. ARTÍCULO 42. BLOQUEO DE PASOS A NIVEL. Cuando por razones de fuerza mayor un vehículo quede detenido en un paso a nivel o se produzca la caída de su carga dentro del mismo, el conductor está obligado a adoptar las medidas adecuadas para el rápido desalojo de los ocupantes del vehículo y para dejar el paso libre en el menor tiempo posible. Si no lo consigue, adoptará inmediatamente todas las medidas a su alcance para que tanto los maquinistas de los vehículos que circulen por raíles, como los conductores del resto de los vehículos que se aproximen sean advertidos de la existencia del peligro con la suficiente antelación. SECCIÓN 9.ª UTILIZACIÓN DEL ALUMBRADO ARTÍCULO 43. USO OBLIGATORIO. 1. Los vehículos que circulen entre la puesta y la salida del sol, o a cualquier hora del día en los túneles y demás tramos de vía afectados por la señal túnel, deben llevar encendido el alumbrado que corresponda, en los términos que reglamentariamente se determine. 2. También deben llevar encendido durante el resto del día el alumbrado que reglamentariamente se establezca: a) Las motocicletas. b) Los vehículos que circulen por un carril reversible o en sentido contrario al normalmente utilizado en la calzada donde se encuentre situado, bien sea un carril que les este exclusivamente reservado o bien abierto excepcionalmente a la circulación en dicho sentido. 3. También es obligatorio utilizar el alumbrado que reglamentariamente se establezca cuando existan condiciones meteorológicas o ambientales que disminuyan sensiblemente la visibilidad, como en caso de niebla, lluvia intensa, nevada, nubes de humo o de polvo o cualquier otra circunstancia análoga. 4. Las bicicletas, además, estarán dotadas de elementos reflectantes homologados que reglamentariamente se determine. Cuando circule por vía interurbana y sea obligatorio el uso de alumbrado, el conductor de bicicleta debe llevar colocada, además, alguna prenda o elemento reflectante. SECCIÓN 10.ª ADVERTENCIAS DE LOS CONDUCTORES ARTÍCULO 44. NORMAS GENERALES. 1. El conductor está obligado a advertir al resto de los usuarios de la vía acerca de las maniobras que vaya a efectuar con su vehículo. 2. Como norma general, dichas advertencias se harán utilizando la señalización luminosa del vehículo o, en su defecto, con el brazo, de acuerdo con lo que se determine reglamentariamente. 6 \f 3. Excepcionalmente o cuando así se prevea legal o reglamentariamente se podrán emplear señales acústicas, quedando prohibido su uso inmotivado o exagerado. 4. Los vehículos de servicios de urgencia y otros vehículos especiales podrán utilizar otras señales ópticas y acústicas en los casos y en las condiciones que reglamentariamente se determinen. CAPÍTULO III OTRAS NORMAS DE CIRCULACIÓN ARTÍCULO 45. PUERTAS."
+    },
+    {
+      "titulo": "5. ARTÍCULO 46",
+      "contenido": "Se prohíbe llevar abiertas las puertas del vehículo, abrirlas antes de su completa inmovilización y abrirlas o apearse del mismo sin haberse cerciorado previamente de que ello no implica peligro o entorpecimiento para otros usuarios, especialmente cuando se refiere a conductores de bicicletas. ARTÍCULO 46. APAGADO DE MOTOR. Aun cuando el conductor no abandone su puesto, deberá parar el motor siempre que el vehículo se encuentre detenido en el interior de un túnel, en un lugar cerrado o durante la carga de combustible. ARTÍCULO 47. CINTURÓN, CASCO Y RESTANTES ELEMENTOS DE SEGURIDAD. El conductor y ocupantes de vehículos a motor y ciclomotores están obligados a utilizar el cinturón de seguridad, el casco y demás elementos de protección en los términos que reglamentariamente se determine. El conductor de un vehículo de movilidad personal estará obligado a utilizar casco de protección en los términos que reglamentariamente se determine. El conductor y, en su caso, los ocupantes de bicicletas y ciclos en general estarán obligados a utilizar el casco de protección en las vías urbanas, interurbanas y travesías, en los términos que reglamentariamente se determine siendo obligatorio su uso por los menores de dieciséis años, y también por quienes circulen por vías interurbanas. Reglamentariamente se fijarán las excepciones a lo previsto en este apartado. ARTÍCULO 48. TIEMPOS DE DESCANSO Y CONDUCCIÓN. Por razones de seguridad podrán regularse los tiempos de conducción y descanso. También podrá exigirse la presencia de más de una persona habilitada para la conducción de un solo vehículo. ARTÍCULO 49. PEATONES. 1. El peatón debe transitar por la zona peatonal, salvo cuando ésta no exista o no sea practicable, en cuyo caso podrá hacerlo por el arcén o, en su defecto, por la calzada, en los términos que reglamentariamente se determine. 2. Fuera de poblado, y en tramos de poblado incluidos en el desarrollo de una carretera que no dispongan de espacio especialmente reservado para peatones, siempre que sea posible, la circulación de los mismos se hará por su izquierda. 3. Salvo en los casos y en las condiciones que reglamentariamente se determinen, queda prohibida la circulación de peatones por autopistas y autovías. ARTÍCULO 50. ANIMALES. 1. Sólo se permite el tránsito de animales de tiro, carga o silla, cabezas de ganado aisladas, en manada o rebaño, cuando no exista itinerario practicable por vía pecuaria y siempre que vayan custodiados por alguna persona. Dicho tránsito se efectuará por la vía alternativa que tenga menor intensidad de circulación de vehículos en los términos que reglamentariamente se determine. 2. Se prohíbe la circulación de animales por autopistas y autovías. 7 \f ARTÍCULO 51. OBLIGACIONES EN CASO DE ACCIDENTE O AVERÍA. 1. El usuario de la vía que se vea implicado en un accidente de tráfico, lo presencie o tenga conocimiento de él está obligado a auxiliar o solicitar auxilio para atender a las víctimas que pueda haber, prestar su colaboración, evitar mayores peligros o daños, restablecer, en la medida de lo posible, la seguridad de la circulación y esclarecer los hechos. 2. Si por causa de accidente o avería el vehículo o su carga obstaculizan la calzada, el conductor, tras señalizar convenientemente el vehículo o el obstáculo creado, adoptará las medidas necesarias para que sea retirado en el menor tiempo posible debiendo sacarlo de la calzada y situarlo cumpliendo las normas de estacionamiento siempre que sea factible. 3."
+    },
+    {
+      "titulo": "6. ARTÍCULO 52",
+      "contenido": "Reglamentariamente se determinarán las condiciones en las que realizarán sus funciones los servicios de auxilio en carretera que acudan al lugar de un accidente o avería, así como las características que deban cumplir las empresas que los desarrollen o los vehículos y demás medios que se hayan de utilizar. ARTÍCULO 52. PUBLICIDAD. Se prohíbe la publicidad en relación con vehículos a motor que ofrezca en su argumentación escrita o verbal, en sus elementos sonoros o en sus imágenes incitación a la velocidad excesiva, a la conducción temeraria, a situaciones de peligro o cualquier otra circunstancia que suponga una conducta contraria a los principios de esta ley, o cuando dicha publicidad induzca al conductor a una falsa o no justificada sensación de seguridad. 8 \f REAL DECRETO 1428/2003, DE 21 DE NOVIEMBRE, POR EL QUE SE APRUEBA EL REGLAMENTO GENERAL DE CIRCULACIÓN PARA LA APLICACIÓN Y DESARROLLO DEL TEXTO ARTICULADO DE LA LEY SOBRE TRÁFICO, CIRCULACIÓN DE VEHÍCULOS A MOTOR Y SEGURIDAD VIAL, APROBADO POR EL REAL DECRETO LEGISLATIVO 339/1990, DE 2 DE MARZO. TÍTULO II DE LA CIRCULACIÓN DE VEHÍCULOS CAPÍTULO VII ADELANTAMIENTO SECCIÓN 1.ª ADELANTAMIENTO Y CIRCULACIÓN PARALELA ARTÍCULO 82. ADELANTAMIENTO POR LA IZQUIERDA. Excepciones. 1. En todas las vías objeto de la legislación sobre tráfico, circulación de vehículos a motor y seguridad vial, como norma general, el adelantamiento deberá efectuarse por la izquierda del vehículo que se pretende adelantar (artículo 32.1 del texto articulado). 2. Por excepción, y si existe espacio suficiente para ello, el adelantamiento se efectuará por la derecha y adoptando las máximas precauciones, cuando el conductor del vehículo al que se pretenda adelantar esté indicando claramente su propósito de cambiar de dirección a la izquierda o parar en ese lado, así como, en las vías con circulación en ambos sentidos, a los tranvías que marchen por la zona central (artículo 32.2 del texto articulado). 3. Dentro de los poblados, en las calzadas que tengan, por lo menos, dos carriles reservados a la circulación en el mismo sentido de marcha, delimitados por marcas longitudinales, se permite el adelantamiento por la derecha a condición de que el conductor del vehículo que lo efectúe se cerciore previamente de que puede hacerlo sin peligro para los demás usuarios. 4. En todos los casos en que el adelantamiento implique un desplazamiento lateral, deberá advertirse la maniobra mediante la correspondiente señal óptica a que se refiere el artículo 109. 5. Las infracciones a las normas de este precepto tendrán la consideración de graves, conforme se prevé en el artículo 65.4.c) del texto articulado. ARTÍCULO 83. ADELANTAMIENTO EN CALZADAS DE VARIOS CARRILES. 1. En las calzadas que tengan, por lo menos, dos carriles reservados a la circulación en el sentido de su marcha, el conductor que vaya a efectuar un nuevo adelantamiento podrá permanecer en el carril que haya utilizado para el anterior, a condición de cerciorarse de que puede hacerlo sin molestia indebida para los conductores de vehículos que circulen detrás del suyo más velozmente. 2. Cuando la densidad de la circulación sea tal que los vehículos ocupen toda la anchura de la calzada y sólo puedan circular a una velocidad que dependa de la del que los precede en su carril, el hecho de que los de un carril circulen más rápidamente que los de otro no será considerado como un adelantamiento."
+    },
+    {
+      "titulo": "7. artículo 65",
+      "contenido": "9 \f En esta situación, ningún conductor deberá cambiar de carril para adelantar ni para efectuar cualquier otra maniobra que no sea prepararse a girar a la derecha o a la izquierda, salir de la calzada o tomar determinada dirección. 3. En todo tramo de vía en que existan carriles de aceleración o deceleración o carriles o partes de la vía destinadas exclusivamente al tráfico de determinados vehículos, tampoco se considerará adelantamiento el hecho de que se avance más rápidamente por aquellos que por los normales de circulación, o viceversa. 4. Las infracciones a las normas de este precepto tendrán la consideración de graves, conforme se prevé en el artículo 65.4.c) del texto articulado. SECCIÓN 2.ª NORMAS GENERALES DEL ADELANTAMIENTO ARTÍCULO 84. OBLIGACIONES DEL QUE ADELANTA ANTES DE INICIAR LA MANIOBRA. 1. Antes de iniciar un adelantamiento que requiera desplazamiento lateral, el conductor que se proponga adelantar deberá advertirlo con suficiente antelación con las señales preceptivas y comprobar que en el carril que pretende utilizar para el adelantamiento existe espacio libre suficiente para que la maniobra no ponga en peligro ni entorpezca a quienes circulen en sentido contrario, teniendo en cuenta la velocidad propia y la de los demás usuarios afectados. En caso contrario, deberá abstenerse de efectuarla (artículo 33.1 del texto articulado). Ningún conductor deberá de adelantar a varios vehículos si no tiene la total seguridad de que, al presentarse otro en sentido contrario, puede desviarse hacia el lado derecho sin causar perjuicios o poner en situación de peligro a alguno de los vehículos adelantados. En calzadas con doble sentido de circulación y tres carriles separados por marcas longitudinales discontinuas, el adelantamiento solamente se podrá efectuar cuando los conductores que circulen en sentido contrario no hayan ocupado el carril central para efectuar un adelantamiento a su vez. 2. También deberá cerciorarse de que el conductor del vehículo que le precede en el mismo carril no ha indicado su propósito de desplazamiento hacia el mismo lado; en tal caso, deberá respetar la preferencia que le asiste. No obstante, si después de un tiempo prudencial el conductor del citado vehículo no ejerciera su derecho prioritario, se podrá iniciar la maniobra de adelantamiento, advirtiéndoselo previamente con señal acústica u óptica (artículo 33.2 del texto articulado). Se prohíbe, en todo caso, adelantar a los vehículos que ya estén adelantando a otro si el conductor del tercer vehículo, para efectuar dicha maniobra, ha de invadir la parte de la calzada reservada a la circulación en sentido contrario. 3. Asimismo, deberá asegurarse de que ningún conductor que le siga por el mismo carril ha iniciado la maniobra de adelantar a su vehículo, y de que dispone de espacio suficiente para reintegrarse a su carril cuando termine el adelantamiento (artículo 33.3 del texto articulado). 4. Las señales preceptivas que el conductor deberá utilizar antes de iniciar su desplazamiento lateral serán las prescritas en el artículo 109. 5. A los efectos de este artículo, no se consideran adelantamientos los producidos entre ciclistas que circulen en grupo (artículo 33.4 del texto articulado). 6. Las infracciones a las normas de este artículo tendrán la consideración de graves, conforme se prevé en el artículo 65.4.c) del texto articulado. SECCIÓN 3.ª EJECUCIÓN DEL ADELANTAMIENTO ARTÍCULO 85. OBLIGACIONES DEL QUE ADELANTA DURANTE LA EJECUCIÓN DE LA MANIOBRA. 1."
+    },
+    {
+      "titulo": "8. artículo 34",
+      "contenido": "Durante la ejecución del adelantamiento, el conductor que lo efectúe deberá llevar su vehículo a una velocidad notoriamente superior a la del que pretende adelantar y dejar entre ambos una separación lateral suficiente para realizarlo con seguridad (artículo 34.1 del texto articulado). 2. Si después de iniciar la maniobra de adelantamiento advirtiera que se producen circunstancias que puedan hacer difícil su finalización sin provocar riesgos, reducirá rápidamente su marcha, 10 \f regresará de nuevo a su carril y lo advertirá a los que le siguen con las señales preceptivas (artículo 34.2 del texto articulado). 3. El conductor del vehículo que ha efectuado el adelantamiento deberá reintegrarse a su carril tan pronto como le sea posible y de modo gradual, sin obligar a otros usuarios a modificar su trayectoria o velocidad, y advertirlo a través de las señales preceptivas (artículo 34.3 del texto articulado). 4. Cuando se adelante fuera de poblado a peatones, animales, a vehículos de dos ruedas o de tracción animal, a vehículos inmovilizados en la vía o a los vehículos de auxilio cuando estén realizando operaciones de auxilio y rescate, se deberá realizar la maniobra ocupando parte o la totalidad del carril contiguo de la calzada, siempre y cuando existan las condiciones precisas para realizar el adelantamiento en las condiciones previstas en este reglamento; en todo caso, la separación lateral no será inferior a 1,50 metros. Queda expresamente prohibido adelantar poniendo en peligro o entorpeciendo a ciclistas que circulen en sentido contrario. Cuando el adelantamiento se efectúe a cualquier otro vehículo distinto de los aludidos en el párrafo anterior, o tenga lugar en poblado, el conductor del vehículo que ha de adelantar dejará un margen lateral de seguridad proporcional a la velocidad y a la anchura y características de la calzada. 5. El conductor de un vehículo de dos ruedas que pretenda adelantar fuera de poblado a otro cualquiera lo hará de forma que entre aquél y las partes más salientes del vehículo que adelanta quede un espacio no inferior a 1,50 metros. 6. Las infracciones a las normas de este precepto tendrán la consideración de graves, conforme se prevé en el artículo 65.4.c) del texto articulado. SECCIÓN 4.ª VEHÍCULO ADELANTADO ARTÍCULO 86. OBLIGACIONES DE SU CONDUCTOR. 1. El conductor que advierta que otro que le sigue tiene el propósito de adelantar a su vehículo estará obligado a ceñirse al borde derecho de la calzada, salvo en los supuestos de giros o cambios de dirección a la izquierda o de parada en ese mismo lado a que se refiere el artículo 82.2, en que deberá ceñirse a la izquierda todo lo posible, pero sin interferir la marcha de los vehículos que puedan circular en sentido contrario (artículo 35.1 del texto articulado). En el caso de que no sea posible ceñirse por completo al borde derecho de la calzada y, sin embargo, el adelantamiento pueda efectuarse con seguridad, el conductor de cualquiera de los vehículos a que se refiere el apartado 3 que vaya a ser adelantado indicará la posibilidad de ello al que se acerque, extendiendo el brazo horizontalmente y moviéndolo repetidas veces de atrás adelante, con el dorso de la mano hacia atrás, o poniendo en funcionamiento el intermitente derecho, cuando no crea conveniente hacer la señal con el brazo. 2. Se prohíbe al conductor del vehículo que va a ser adelantado aumentar la velocidad o efectuar maniobras que impidan o dificulten el adelantamiento."
+    },
+    {
+      "titulo": "9. artículo 35",
+      "contenido": "También estará obligado a disminuir la velocidad de su vehículo cuando, una vez iniciada la maniobra de adelantamiento, se produzca alguna situación que entrañe peligro para su propio vehículo, para el vehículo que la está efectuando, para los que circulan en sentido contrario o para cualquier otro usuario de la vía (artículo 35.2 del texto articulado). No obstante lo dispuesto en el párrafo anterior, cuando el adelantante diera muestras inequívocas de desistir de la maniobra reduciendo su velocidad, el conductor del vehículo al que se pretende adelantar no estará obligado a disminuir la suya, si con ello pone en peligro la seguridad de la circulación, aunque sí estará obligado a facilitar al conductor adelantante la vuelta a su carril. 3. Los conductores de vehículos pesados, de grandes dimensiones u obligados a respetar un límite específico de velocidad deberán bien aminorar la marcha o apartarse cuanto antes al arcén, si resulta practicable, para dejar paso a los que le siguen, cuando la densidad de la circulación en sentido contrario, la anchura insuficiente de la calzada, su perfil o estado no permitan ser adelantados con facilidad y sin peligro. 4. Las infracciones a las normas de este precepto tendrán la consideración de graves, conforme se prevé en el artículo 65.4.c) del texto articulado. 11 \fSECCIÓN 5.ª MANIOBRAS DE ADELANTAMIENTO QUE ATENTAN A LA SEGURIDAD VIAL ARTÍCULO 87. PROHIBICIONES. 1. Queda prohibido adelantar: a) En las curvas y cambios de rasante de visibilidad reducida y, en general, en todo lugar o circunstancia en que la visibilidad disponible no sea suficiente para poder efectuar la maniobra o desistir de ella una vez iniciada, a no ser que los dos sentidos de la circulación estén claramente delimitados y la maniobra pueda efectuarse sin invadir la zona reservada al sentido contrario (artículo 36.1 del texto articulado). De conformidad con lo dispuesto en el párrafo anterior, se prohíbe, en concreto, el adelantamiento detrás de un vehículo que realiza la misma maniobra, cuando las dimensiones del vehículo que la efectúa en primer lugar impide la visibilidad de la parte delantera de la vía al conductor del vehículo que le sigue. b) En los pasos para peatones señalizados como tales, en las intersecciones con vías para ciclistas, en los pasos a nivel y en sus proximidades (artículo 36.2 del texto articulado). No obstante, dicha prohibición no será aplicable cuando el adelantamiento se realice a vehículos de dos ruedas que por sus reducidas dimensiones no impidan la visibilidad lateral, en un paso a nivel o sus proximidades, previas las oportunas señales acústicas u ópticas. Tampoco será aplicable dicha prohibición en un paso para peatones señalizado cuando el adelantamiento a cualquier vehículo se realice a una velocidad tan suficientemente reducida que permita detenerse a tiempo si surgiera peligro de atropello. c) En las intersecciones y en sus proximidades, salvo cuando: 1.º Se trate de una plaza de circulación giratoria o glorieta. 2.º El adelantamiento deba efectuarse por la derecha, según lo previsto en el artículo 82.2. 3.º La calzada en que se realice goce de prioridad en la intersección y haya señal expresa que lo indique. 4.º El adelantamiento se realice a vehículos de dos ruedas (artículo 36.3 del texto articulado). d) En los túneles, pasos inferiores y tramos de vía afectados por la señal «Túnel» (S-5) en los que sólo se disponga de un carril para el sentido de circulación del vehículo que pretende adelantar. 2."
+    },
+    {
+      "titulo": "10. artículo 65",
+      "contenido": "Las infracciones a las normas de este precepto tendrán la consideración de graves, conforme se prevé en el artículo 65.4.c) del texto articulado. SECCIÓN 6.ª SUPUESTOS EXCEPCIONALES DE OCUPACIÓN DEL SENTIDO CONTRARIO ARTÍCULO 88. VEHÍCULOS INMOVILIZADOS. 1. Cuando en un tramo de vía en el que esté prohibido el adelantamiento se encuentre inmovilizado un vehículo que, en todo o en parte, ocupe la calzada en el carril del sentido de la marcha, salvo que la inmovilización venga impuesta por las necesidades del tráfico, podrá ser rebasado, aunque para ello haya que ocupar la parte de la calzada reservada al sentido contrario, después de haberse cerciorado de que se puede realizar la maniobra sin peligro. Con idénticos requisitos se podrá adelantar a conductores de bicicletas, ciclos, ciclomotores, peatones, animales y vehículos de tracción animal, cuando por la velocidad a que circulen puedan ser adelantados sin riesgo para ellos ni para la circulación en general. 2. Las infracciones a las normas de este precepto tendrán la consideración de graves, conforme se prevé en el artículo 65.4.c) del texto articulado. ARTÍCULO 89. OBSTÁCULOS. 1. Igualmente, en las circunstancias señaladas en el artículo anterior, todo vehículo que encuentre cualquier obstáculo en su camino que le obligue a ocupar el espacio dispuesto para el sentido contrario de su marcha podrá rebasarlo, siempre que se haya cerciorado de que puede efectuarlo sin peligro. La misma precaución se observará cuando el obstáculo o el vehículo inmovilizado se encuentren en un tramo de vía en el que esté permitido el adelantamiento. 2. Las infracciones a las normas de este precepto tendrán la consideración de graves, conforme se prevé en el artículo 65.4.d) del texto articulado. 12 \f CAPÍTULO VIII PARADA Y ESTACIONAMIENTO SECCIÓN 1.ª NORMAS GENERALES DE PARADAS Y ESTACIONAMIENTOS ARTÍCULO 90. LUGARES EN QUE DEBEN EFECTUARSE. 1. La parada o el estacionamiento de un vehículo en vías interurbanas deberá efectuarse siempre fuera de la calzada, en el lado derecho de ésta y dejando libre la parte transitable del arcén (artículo 38.1 del texto articulado). Cuando por razones de emergencia no sea posible situar el vehículo fuera de la calzada y de la parte transitable del arcén, se observarán las normas contenidas en los artículos siguientes de este capítulo y las previstas en el artículo 130, en cuanto sean aplicables. 2. Cuando en vías urbanas tenga que realizarse en la calzada o en el arcén, se situará el vehículo lo más cerca posible de su borde derecho, salvo en las vías de único sentido, en las que se podrá situar también en el lado izquierdo (artículo 38.2 del texto articulado). Debe, asimismo, observarse lo dispuesto al efecto en las ordenanzas que dicten las autoridades municipales de acuerdo con lo establecido en el artículo 93. ARTÍCULO 91. MODO Y FORMA DE EJECUCIÓN. 1. La parada y el estacionamiento deberán efectuarse de tal manera que el vehículo no obstaculice la circulación ni constituya un riesgo para el resto de los usuarios de la vía, cuidando especialmente la colocación del vehículo y evitar que pueda ponerse en movimiento en ausencia del conductor (artículo 38.3 del texto articulado). 2."
+    },
+    {
+      "titulo": "11. artículo 65",
+      "contenido": "Se consideran paradas o estacionamientos en lugares peligrosos o que obstaculizan gravemente la circulación los que constituyan un riesgo u obstáculo a la circulación en los siguientes supuestos: a) Cuando la distancia entre el vehículo y el borde opuesto de la calzada o una marca longitudinal sobre ella que indique prohibición de atravesarla sea inferior a tres metros o, en cualquier caso, cuando no permita el paso de otros vehículos. b) Cuando se impida incorporarse a la circulación a otro vehículo debidamente parado o estacionado. c) Cuando se obstaculice la utilización normal del paso de salida o acceso a un inmueble de personas o animales, o de vehículos en un vado señalizado correctamente. d) Cuando se obstaculice la utilización normal de los pasos rebajados para disminuidos físicos. e) Cuando se efectúe en las medianas, separadores, isletas u otros elementos de canalización del tráfico. f) Cuando se impida el giro autorizado por la señal correspondiente. g) Cuando el estacionamiento tenga lugar en una zona reservada a carga y descarga, durante las horas de utilización. h) Cuando el estacionamiento se efectúe en doble fila sin conductor. i) Cuando el estacionamiento se efectúe en una parada de transporte público, señalizada y delimitada. j) Cuando el estacionamiento se efectúe en espacios expresamente reservados a servicios de urgencia y seguridad. k) Cuando el estacionamiento se efectúe en espacios prohibidos en vía pública calificada de atención preferente, específicamente señalizados. l) Cuando el estacionamiento se efectúe en medio de la calzada. m) Las paradas o estacionamientos que, sin estar incluidos en los párrafos anteriores, constituyan un peligro u obstaculicen gravemente el tráfico de peatones, vehículos o animales. 3. Los supuestos de paradas o estacionamientos en lugares peligrosos o que obstaculicen gravemente la circulación tienen la consideración de infracciones graves, conforme se prevé en el artículo 65.4.d) del texto articulado. 13 \f ARTÍCULO 92. COLOCACIÓN DEL VEHÍCULO. 1. La parada y el estacionamiento se realizarán situando el vehículo paralelamente al borde de la calzada. Por excepción, se permitirá otra colocación cuando las características de la vía u otras circunstancias así lo aconsejen. 2. Todo conductor que pare o estacione su vehículo deberá hacerlo de forma que permita la mejor utilización del restante espacio disponible. 3. Cuando se trate de un vehículo a motor o ciclomotor y el conductor tenga que dejar su puesto, deberá observar, además, en cuanto le fuesen de aplicación, las siguientes reglas: a) Parar el motor y desconectar el sistema de arranque y, si se alejara del vehículo, adoptar las precauciones necesarias para impedir su uso sin autorización. b) Dejar accionado el freno de estacionamiento. c) En un vehículo provisto de caja de cambios, dejar colocada la primera velocidad, en pendiente ascendente, y la marcha hacia atrás, en descendente, o, en su caso, la posición de estacionamiento."
+    },
+    {
+      "titulo": "12. ARTÍCULO 93",
+      "contenido": "d) Cuando se trate de un vehículo de más de 3.500 kilogramos de masa máxima autorizada, de un autobús o de un conjunto de vehículos y la parada o el estacionamiento se realice en un lugar con una sensible pendiente, su conductor deberá, además, dejarlo debidamente calzado, bien sea por medio de la colocación de calzos, sin que puedan emplear a tales fines elementos como piedras u otros no destinados de modo expreso a dicha función, bien por apoyo de una de las ruedas directrices en el bordillo de la acera, inclinando aquéllas hacia el centro de la calzada en las pendientes ascendentes, y hacia fuera en las pendientes descendentes. Los calzos, una vez utilizados, deberán ser retirados de las vías al reanudar la marcha. ARTÍCULO 93. ORDENANZAS MUNICIPALES. 1. El régimen de parada y estacionamiento en vías urbanas se regulará por ordenanza municipal, y podrán adoptarse las medidas necesarias para evitar el entorpecimiento del tráfico, entre ellas limitaciones horarias de duración del estacionamiento, así como las medidas correctoras precisas, incluida la retirada del vehículo o su inmovilización cuando no se halle provisto de título que habilite el estacionamiento en zonas limitadas en tiempo o excedan de la autorización concedida hasta que se logre la identificación del conductor (artículo 38.4 del texto articulado). 2. En ningún caso podrán las ordenanzas municipales oponerse, alterar, desvirtuar o inducir a confusión con los preceptos de este reglamento. SECCIÓN 2.ª NORMAS ESPECIALES DE PARADAS Y ESTACIONAMIENTOS ARTÍCULO 94. LUGARES PROHIBIDOS. 1. Queda prohibido parar: a) En las curvas y cambios de rasante de visibilidad reducida, en sus proximidades y en los túneles, pasos inferiores y tramos de vías afectados por la señal «Túnel». b) En pasos a nivel, pasos para ciclistas y pasos para peatones. c) En los carriles o parte de las vías reservados exclusivamente para la circulación o para el servicio de determinados usuarios. d) En las intersecciones y en sus proximidades si se dificulta el giro a otros vehículos, o en vías interurbanas, si se genera peligro por falta de visibilidad. e) Sobre los raíles de tranvías o tan cerca de ellos que pueda entorpecerse su circulación. f) En los lugares donde se impida la visibilidad de la señalización a los usuarios a quienes les afecte u obligue a hacer maniobras. g) En autopistas y autovías, salvo en las zonas habilitadas para ello. h) En los carriles destinados al uso exclusivo del transporte público urbano, o en los reservados para las bicicletas. i) En las zonas destinadas para estacionamiento y parada de uso exclusivo para el transporte público urbano. 14 \f j) En zonas señalizadas para uso exclusivo de minusválidos y pasos para peatones (artículo 39.1 del texto articulado). 2. Queda prohibido estacionar en los siguientes casos: a) En todos los descritos en el apartado anterior en los que está prohibida la parada. b) En los lugares habilitados por la autoridad municipal como de estacionamiento con limitación horaria sin colocar el distintivo que lo autoriza o cuando, colocado el distintivo, se mantenga estacionado el vehículo en exceso sobre el tiempo máximo permitido por la ordenanza municipal. c) En zonas señalizadas para carga y descarga. d) En zonas señalizadas para uso exclusivo de minusválidos. e) Sobre las aceras, paseos y demás zonas destinadas al paso de peatones. f) Delante de los vados señalizados correctamente. g) En doble fila (artículo 39.2 del texto articulado). 3."
+    },
+    {
+      "titulo": "13. artículo 65",
+      "contenido": "Las paradas o estacionamientos en los lugares enumerados en los párrafos a), d), e), f), g) e i) del apartado 1, en los pasos a nivel y en los carriles destinados al uso del transporte público urbano tendrán la consideración de infracciones graves, conforme se prevé en el artículo 65.4.d) del texto articulado. CAPÍTULO IX CRUCE DE PASOS A NIVEL, PUENTES MÓVILES Y TÚNELES SECCIÓN 1.ª NORMAS GENERALES SOBRE PASOS A NIVEL, PUENTES MÓVILES Y TÚNELES ARTÍCULO 95. OBLIGACIONES DE LOS USUARIOS Y TITULARES DE LAS VÍAS. 1. Todos los conductores deben extremar la prudencia y reducir la velocidad por debajo de la máxima permitida al aproximarse a un paso a nivel o a un puente móvil (artículo 40.1 del texto articulado). 2. Los usuarios que al llegar a un paso a nivel o a un puente móvil lo encuentren cerrado o con la barrera o semibarrera en movimiento deberán detenerse uno detrás de otro en el carril correspondiente hasta que tengan paso libre (artículo 40.2 del texto articulado). 3. El cruce de la vía férrea deberá realizarse sin demora y después de haberse cerciorado de que, por las circunstancias de la circulación o por otras causas, no existe riesgo de quedar inmovilizado dentro del paso (artículo 40.3 del texto articulado). 4. Los pasos a nivel y puentes móviles estarán debidamente señalizados por el titular de la vía, del modo previsto en los artículos 142, 143 junto con el apartado 4 del anexo I respecto a los semáforos circulares para vehículos y 144. 5. Los túneles de cualquier longitud y los pasos inferiores cuya longitud sea superior a 200 metros estarán debidamente señalizados. 6. En los túneles o pasos inferiores, el conductor deberá aplicar rigurosamente todas las normas de circulación relativas a ellos contenidas en este reglamento y especialmente las referidas a la prohibición de parar, estacionar, cambiar el sentido de la marcha, marchar hacia atrás y adelantar. Además, deberá utilizar el alumbrado correspondiente. Cuando no se pretenda adelantar, deberá mantenerse en todo momento una distancia de seguridad con el vehículo precedente de, al menos, 100 metros o un intervalo mínimo de cuatro segundos. En el caso de vehículos cuya masa máxima autorizada sea superior a 3.500 kilogramos, la distancia de seguridad que deberá guardar con el vehículo precedente será de, al menos, 150 metros o un intervalo mínimo de seguridad de seis segundos. En los túneles o pasos inferiores con circulación en ambos sentidos, está prohibido el adelantamiento, salvo que exista más de un carril para su sentido de circulación, en los que se podrá adelantar sin invadir el sentido contrario. 7. En todo momento, los conductores y usuarios que circulen por un túnel o paso inferior deberán obedecer las indicaciones de los semáforos y los paneles de mensaje variable, y seguir las instrucciones que les lleguen a través de megafonía o cualquier otro medio. 15 \f ARTÍCULO 96. BARRERAS, SEMIBARRERAS Y SEMÁFOROS. 1. Ningún usuario de la vía deberá penetrar en un paso a nivel cuyas barreras o semibarreras estén atravesadas en la vía o en movimiento para levantarse o colocarse atravesadas, o cuando sus semáforos impidan el paso con sus indicaciones de detención. 2. Ningún usuario de la vía deberá penetrar en un paso a nivel desprovisto de barreras, semibarreras o semáforos, sin antes haberse cerciorado de que no se acerca ningún vehículo que circule sobre raíles. 3."
+    },
+    {
+      "titulo": "14. ARTÍCULO 97",
+      "contenido": "Ningún usuario deberá penetrar en un túnel o paso inferior si en la boca de éste un semáforo no le permite el paso, con excepción de los equipos de los servicios de urgencia, asistencia mecánica y conservación de carreteras. SECCIÓN 2.ª BLOQUEO DE PASOS A NIVEL, PUENTES MÓVILES Y TÚNELES ARTÍCULO 97. DETENCIÓN DE UN VEHÍCULO EN PASO A NIVEL, PUENTE MÓVIL O TÚNEL. 1. Cuando por razones de fuerza mayor quede un vehículo detenido en un paso a nivel o se produzca la caída de su carga dentro de aquél, el conductor estará obligado a adoptar las medidas adecuadas para el rápido desalojo de los ocupantes del vehículo y para dejar el paso expedito en el menor tiempo posible. Si no lo consiguiese, adoptará inmediatamente todas las medidas a su alcance para que tanto los maquinistas de los vehículos que circulen por raíles como los conductores del resto de los vehículos que se aproximen sean advertidos de la existencia del peligro con la suficiente antelación (artículo 41 del texto articulado). 2. Las normas contenidas en el apartado anterior serán aplicables, si concurren las mismas circunstancias, cuando la detención del vehículo o la caída de su carga tenga lugar en un puente móvil. 3. Si por motivos de emergencia un conductor queda inmovilizado con su vehículo dentro de un túnel o paso inferior, deberá: a) Apagar el motor, conectar la señal de emergencia y mantener encendidas las luces de posición. b) Si es posible, dirigir el vehículo hacia la zona reservada para emergencia más próxima en el sentido de su marcha. De no existir, inmovilizará el vehículo lo más cerca posible al borde derecho de la calzada. c) Colocar y activar el dispositivo luminoso de preseñalización de peligro. d) Solicitar auxilio sin demora a través del poste de socorro (poste SOS) más próximo, si existe, y seguir las instrucciones que a través de él se le hagan llegar. e) Tanto el conductor como los demás ocupantes abandonarán el vehículo, dirigiéndose rápidamente al refugio o salida más próximos, sin que en ningún caso se transite por la calzada si existen zonas excluidas a la circulación de vehículos. f) Si se trata de una avería que permite la marcha del vehículo, deberá continuar hasta la salida del túnel o paso inferior y, si ello no fuera posible, hasta una zona reservada para emergencia. En caso de incendio, el conductor aproximará su vehículo todo lo posible hacia su derecha para no obstruir el paso a los vehículos de emergencia. Apagará el motor y dejará la llave puesta y las puertas abiertas. Tanto el conductor como los demás ocupantes abandonarán el vehículo dirigiéndose rápidamente al refugio o salida más próximos, en sentido contrario al del fuego, sin que en ningún caso se transite por la calzada si existen zonas excluidas a la circulación de vehículos. Si por necesidades de la circulación un vehículo queda inmovilizado en el interior de un túnel o paso inferior, el conductor y los pasajeros no deben abandonar el vehículo. En este caso se debe de conectar la señal de emergencia temporalmente para advertir a otros conductores que circulen detrás, mantener encendidas las luces de posición y apagar el motor. Deberá detenerse lo más lejos posible del vehículo que le precede. 16 \f CAPÍTULO X UTILIZACIÓN DEL ALUMBRADO SECCIÓN 1.ª USO OBLIGATORIO DEL ALUMBRADO ARTÍCULO 98. NORMAS GENERALES. 1."
+    },
+    {
+      "titulo": "15. ARTÍCULO 99",
+      "contenido": "Todos los vehículos que circulen entre el ocaso y la salida del sol o a cualquier hora del día en los túneles, pasos inferiores y tramos de vía afectados por la señal «Túnel» (S-5) deben llevar encendido el alumbrado que corresponda de acuerdo con lo que se determina en esta sección. 2. La regulación de los sistemas de alumbrado que no estén prohibidos, o en todo lo que no esté expresamente previsto en este capítulo o en otros preceptos de este reglamento, se ajustará a lo dispuesto en las normas reguladoras de los vehículos. 3. Las bicicletas, además, estarán dotadas de los elementos reflectantes que, debidamente homologados, se determinan en el Reglamento General de Vehículos. Cuando sea obligatorio el uso del alumbrado, los conductores de bicicletas llevarán, además, colocada alguna prenda reflectante que permita a los conductores y demás usuarios distinguirlos a una distancia de 150 metros, si circulan por vía interurbana. ARTÍCULO 99. ALUMBRADOS DE POSICIÓN Y DE GÁLIBO. 1. Todo vehículo que circule entre el ocaso y la salida del sol o bajo las condiciones a las que se refiere el artículo 106 y en el paso por túneles, pasos inferiores o tramos de vías afectados por la señal «Túnel» (S-5) deberá llevar encendidas las luces de posición y, si la anchura del vehículo excede de 2,10 metros, también la de gálibo. 2. La circulación sin alumbrado en situaciones de falta o disminución de visibilidad tendrá la consideración de infracción grave, conforme se prevé en el artículo 65.4.e) del texto articulado. ARTÍCULO 100. ALUMBRADO DE LARGO ALCANCE O CARRETERA. 1. Todo vehículo equipado con luz de largo alcance o carretera que circule a más de 40 kilómetros por hora, entre el ocaso y la salida del sol, fuera de poblado, por vías insuficientemente iluminadas o a cualquier hora del día por túneles, pasos inferiores y tramos de vía afectados por la señal «Túnel» (S-5) insuficientemente iluminados, la llevará encendida, excepto cuando haya de utilizarse la de corto alcance o de cruce, de acuerdo con lo previsto en los artículos 101 y 102, especialmente para evitar los deslumbramientos. La luz de largo alcance o de carretera podrá utilizarse aisladamente o con la de corto alcance. 2. Se prohíbe la utilización de la luz de largo alcance o de carretera siempre que el vehículo se encuentre parado o estacionado, así como el empleo alternativo, en forma de destellos de la luz de largo alcance o de carretera y de la luz de corto alcance o de cruce, con finalidades distintas a las previstas en este reglamento. 3. Se entiende por vía insuficientemente iluminada aquella en la que, con vista normal, en algún punto de su calzada, no pueda leerse la placa de matrícula a 10 metros o no se distinga un vehículo pintado de oscuro a 50 metros de distancia. 4. Los supuestos de circulación en los que se produzca deslumbramiento al resto de los usuarios de la vía y de circulación sin alumbrado en situaciones de falta o disminución de visibilidad tendrán la consideración de infracciones graves, conforme se prevé en el artículo 65.4.e) del texto articulado. 17 \f ARTÍCULO 101. ALUMBRADO DE CORTO ALCANCE O DE CRUCE. 1. Todo vehículo de motor y ciclomotor que circule entre el ocaso y la salida del sol por vías urbanas o interurbanas suficientemente iluminadas, o a cualquier hora del día por túneles, pasos inferiores y tramos de vías afectados por la señal «Túnel» (S-5) suficientemente iluminados, llevará encendido, además del alumbrado de posición, el alumbrado de corto alcance o de cruce."
+    },
+    {
+      "titulo": "16. artículo 65",
+      "contenido": "Igualmente, llevará encendido dicho alumbrado en los poblados, cuando la vía esté insuficientemente iluminada. 2. Todo vehículo de motor y ciclomotor debe llevar encendido el alumbrado de corto alcance o de cruce al circular entre el ocaso y la salida del sol por vías interurbanas insuficientemente iluminadas o a cualquier hora del día por túneles, pasos inferiores y demás tramos afectados por la señal de «Túnel» insuficientemente iluminados, cuando concurra alguna de las siguientes circunstancias: a) No disponer de alumbrado de largo alcance. b) Circular a velocidad no superior a 40 kilómetros por hora y no estar utilizando el alumbrado de largo alcance. c) Posibilidad de producir deslumbramiento a otros usuarios de la vía pública. 3. Los supuestos de circulación en los que se produzca deslumbramiento al resto de los usuarios de la vía y de circulación sin alumbrado en situación de falta o disminución de visibilidad tendrán la consideración de infracciones graves, conforme se prevé en el artículo 65.4.e) del texto articulado. ARTÍCULO 102. DESLUMBRAMIENTO. 1. El alumbrado de largo alcance o de carretera deberá ser sustituido por el de corto alcance o de cruce tan pronto como se aprecie la posibilidad de producir deslumbramiento a otros usuarios de la misma vía o de cualquier otra vía de comunicación, y muy especialmente a los conductores de vehículos que circulen en sentido contrario y aunque éstos no cumplan esta prescripción, y no se restablecerá el alumbrado de carretera hasta rebasar, en el cruce, la posición del vehículo cruzado. 2. La misma precaución se guardará respecto a los vehículos que circulen en el mismo sentido y cuyos conductores puedan ser deslumbrados a través del espejo retrovisor. 3. En caso de deslumbramiento, el conductor que lo sufra reducirá la velocidad lo necesario, incluso hasta la detención total, para evitar el alcance de vehículos o peatones que circulen en el mismo sentido. 4. Las infracciones a las normas de este precepto tendrán la consideración de graves, conforme se prevé en el artículo 65.4.e) del texto articulado. ARTÍCULO 103. ALUMBRADO DE PLACA DE MATRICULA. Todo vehículo que se encuentre en las circunstancias aludidas en los artículos 99 ó 106 debe llevar siempre iluminada la placa posterior de matrícula y, en su caso, las otras placas o distintivos iluminados de los que reglamentariamente haya de estar dotado, teniendo en cuenta sus características o el servicio que preste. ARTÍCULO 104. USO DEL ALUMBRADO DURANTE EL DÍA. Deberán llevar encendida durante el día la luz de corto alcance o cruce: a) Las motocicletas que circulen por cualquier vía objeto de la legislación sobre tráfico, circulación de vehículos a motor y seguridad vial. b) Todos los vehículos que circulen por un carril reversible, por un carril adicional circunstancial o por un carril habilitado para circular en sentido contrario al normalmente utilizado en la calzada donde se encuentre situado, bien sea un carril que les esté exclusivamente reservado, bien esté abierto excepcionalmente a la circulación en dicho sentido, así como aquellos obligados en virtud de lo establecido en los artículos 41 y 42. 18 \f ARTÍCULO 105. INMOVILIZACIONES. 1. Todo vehículo que, por cualquier circunstancia, se encuentre inmovilizado entre la puesta y la salida del sol o bajo las condiciones a que se refiere el artículo 106, en calzada o arcén de una vía, deberá tener encendidas las luces de posición y, en su caso, las de gálibo. 2."
+    },
+    {
+      "titulo": "17. artículo 65",
+      "contenido": "Todo vehículo parado o estacionado entre la puesta y la salida del sol en calzada o arcén de una travesía insuficientemente iluminada deberá tener encendidas las luces de posición, que podrá sustituir por las de estacionamiento, o por las dos de posición del lado correspondiente a la calzada, cuando se halle estacionado en línea. 3. En vías urbanas que no sean travesías no será obligatorio que los vehículos estacionados tengan encendidas las luces de posición cuando la iluminación permita a otros usuarios distinguirlos a una distancia suficiente. 4. La inmovilización, la parada o el estacionamiento de un vehículo sin alumbrado en situaciones de falta o disminución de visibilidad tendrán la consideración de infracciones graves, conforme se prevé en el artículo 65.4.e) del texto articulado. SECCIÓN 2.ª SUPUESTOS ESPECIALES DE ALUMBRADO ARTÍCULO 106. CONDICIONES QUE DISMINUYEN LA VISIBILIDAD. 1. También será obligatorio utilizar el alumbrado cuando existan condiciones meteorológicas o ambientales que disminuyan sensiblemente la visibilidad, como en caso de niebla, lluvia intensa, nevada, nubes de humo o de polvo o cualquier otra circunstancia análoga. 2. En los casos a que se refiere el apartado anterior deberá utilizarse la luz antiniebla delantera o la luz de corto o largo alcance. La luz antiniebla delantera puede utilizarse aislada o simultáneamente con la de corto alcance o, incluso, con la de largo alcance. La luz antiniebla delantera solo podrá utilizarse en dichos casos o en tramos de vías estrechas con muchas curvas, entendiéndose por tales las que, teniendo una calzada de 6,50 metros de anchura o inferior, estén señalizadas con señales que indiquen una sucesión de curvas próximas entre sí, reguladas en el artículo 144. La luz antiniebla trasera solamente deberá llevarse encendida cuando las condiciones meteorológicas o ambientales sean especialmente desfavorables, como en caso de niebla espesa, lluvia muy intensa, fuerte nevada o nubes densas de polvo o humo. 3. El hecho de circular sin alumbrado en situaciones de falta o disminución de la visibilidad tendrá la consideración de infracción grave, conforme se prevé en el artículo 76.e) del texto refundido. ARTÍCULO 107. INUTILIZACIÓN O AVERÍA DEL ALUMBRADO. Si, por inutilización o avería irreparable en ruta del alumbrado correspondiente, se hubiera de circular con alumbrado de intensidad inferior, se deberá reducir la velocidad hasta la que permita la detención del vehículo dentro de la zona iluminada. CAPÍTULO XI ADVERTENCIAS DE LOS CONDUCTORES SECCIÓN 1.ª NORMAS GENERALES ARTÍCULO 108. OBLIGACIÓN DE ADVERTIR LAS MANIOBRAS. 1. Los conductores están obligados a advertir al resto de los usuarios de la vía acerca de las maniobras que vayan a efectuar con sus vehículos (artículo 44.1 del texto articulado). 2. Como norma general, dichas advertencias se harán utilizando la señalización luminosa del vehículo o, en su defecto, con el brazo (artículo 44.2 del texto articulado). 19 \f La validez de las realizadas con el brazo quedará subordinada a que sean perceptibles por los demás usuarios de la vía y se efectúen de conformidad con lo dispuesto en el artículo siguiente, y anularán cualquier otra indicación óptica que las contradiga. ARTÍCULO 109. ADVERTENCIAS ÓPTICAS. 1. El conductor debe advertir mediante señales ópticas toda maniobra que implique un desplazamiento lateral o hacia atrás de su vehículo, así como su propósito de inmovilizarlo o de frenar su marcha de modo considerable."
+    },
+    {
+      "titulo": "18. ARTÍCULO 110",
+      "contenido": "Tales advertencias ópticas se efectuarán con antelación suficiente a la iniciación de la maniobra, y, si son luminosas, permanecerán en funcionamiento hasta que termine aquélla. 2. A los efectos del apartado anterior, deberá tenerse en cuenta, además, lo siguiente: a) El desplazamiento lateral será advertido utilizando la luz indicadora de dirección correspondiente al lado hacia el que se va a realizar, o el brazo, en posición horizontal con la palma de la mano extendida hacia abajo, si el desplazamiento va a ser hacia el lado que la mano indica, o doblado hacia arriba, también con la palma de la mano extendida, si va a ser hacia el contrario. En las maniobras que impliquen un desplazamiento lateral, es éste el que exclusivamente se avisa, por lo que la advertencia deberá concluir tan pronto como el vehículo haya adoptado su nueva trayectoria. b) La marcha hacia atrás será advertida con la correspondiente luz de marcha atrás, si dispone de ella, o, en caso contrario, extendiendo el brazo horizontalmente con la palma de la mano hacia atrás. c) La intención de inmovilizar el vehículo o de frenar su marcha de modo considerable, aun cuando tales hechos vengan impuestos por las circunstancias del tráfico, deberá advertirse, siempre que sea posible, mediante el empleo reiterado de las luces de frenado o bien moviendo el brazo alternativamente de arriba abajo con movimientos cortos y rápidos. Cuando la inmovilización tenga lugar en una autopista o autovía, o en lugares o circunstancias que disminuyan sensiblemente la visibilidad, se deberá señalizar la presencia del vehículo mediante la utilización de la luz de emergencia, si se dispone de ella, y, en su caso, con las luces de posición. Si la inmovilización se realiza para parar o estacionar deberá utilizarse, además, el indicador luminoso de dirección correspondiente al lado hacia el que vaya a efectuarse aquélla, si el vehículo dispone de dicho dispositivo. 3. Con la misma finalidad que para las acústicas se señala en el artículo siguiente y para sustituirlas podrán efectuarse advertencias luminosas, incluso en poblado, utilizando en forma intermitente los alumbrados de corto o de largo alcance, o ambos alternativamente, a intervalos muy cortos y de modo que se evite el deslumbramiento. ARTÍCULO 110. ADVERTENCIAS ACÚSTICAS. 1. Excepcionalmente o cuando así lo prevea alguna norma de la legislación sobre tráfico, circulación de vehículos a motor y seguridad vial, podrán emplearse señales acústicas de sonido no estridente, y queda prohibido su uso inmotivado o exagerado. 2. Las advertencias acústicas sólo se podrán hacer por los conductores de vehículos no prioritarios: a) Para evitar un posible accidente y, de modo especial, en vías estrechas con muchas curvas. b) Para advertir, fuera de poblado, al conductor de otro vehículo el propósito de adelantarlo. c) Para advertir su presencia a los demás usuarios de la vía, de conformidad con lo dispuesto en el artículo 70. 20 \f SECCIÓN 2.ª ADVERTENCIAS DE LOS VEHÍCULOS DE SERVICIOS DE URGENCIA Y DE OTROS SERVICIOS ESPECIALES ARTÍCULO 111. NORMAS GENERALES. Los vehículos de servicios de urgencia, públicos o privados, vehículos especiales y transportes especiales podrán utilizar otras señales ópticas y acústicas en los casos y en las condiciones que se determinan en los artículos siguientes de esta sección. ARTÍCULO 112. ADVERTENCIAS DE LOS VEHÍCULOS DE SERVICIOS DE URGENCIA."
+    },
+    {
+      "titulo": "19. artículo 68",
+      "contenido": "Los conductores de vehículos de los servicios de policía, extinción de incendios, protección civil y salvamento, y asistencia sanitaria, pública o privada, cuando circulen en servicio urgente, advertirán su presencia de conformidad con lo dispuesto en el artículo 68.2. ARTÍCULO 113. ADVERTENCIAS DE OTROS VEHÍCULOS. De conformidad con lo dispuesto en el artículo 71, los conductores de vehículos destinados a obras o servicios y los de tractores y maquinaria agrícola y demás vehículos, transportes especiales o vehículos destinados al servicio de auxilio en vías públicas, advertirán su presencia mediante la utilización de la señal luminosa V-2 a que se refiere el anexo XI del Reglamento General de Vehículos. TÍTULO III OTRAS NORMAS DE CIRCULACIÓN CAPÍTULO I PUERTAS Y APAGADO DE MOTOR ARTÍCULO 114. PUERTAS. 1. Se prohíbe llevar abiertas las puertas del vehículo, abrirlas antes de su completa inmovilización y abrirlas o apearse de aquél sin haberse cerciorado previamente de que ello no implica peligro o entorpecimiento para otros usuarios, especialmente cuando se refiere a conductores de bicicletas (artículo 45 del texto articulado). 2. Como norma general, se entrará y saldrá del vehículo por el lado más próximo al borde de la vía y sólo cuando aquél se halle parado. 3. Toda persona no autorizada se abstendrá de abrir las puertas de los vehículos destinados al transporte colectivo de viajeros, así como cerrarlas en las paradas, entorpeciendo la entrada de viajeros. ARTÍCULO 115. APAGADO DE MOTOR. 1. Aun cuando el conductor no abandone su puesto, deberá parar el motor siempre que el vehículo se encuentre detenido en el interior de un túnel o en lugar cerrado y durante la carga de combustible (artículo 46 del texto articulado). 2. Todo conductor que se vea obligado a permanecer con su vehículo detenido en el interior de un túnel u otro lugar cerrado, por un período de tiempo superior a dos minutos, deberá interrumpir el funcionamiento del motor hasta que pueda proseguir la marcha, conservando encendido el alumbrado de posición. 3. Para cargar combustible en el depósito de un vehículo, éste debe hallarse con el motor parado. Los propietarios de aparatos distribuidores de combustibles o empleados de estos últimos no podrán facilitar los combustibles para su carga si no está parado el motor y apagadas las luces de los vehículos, los sistemas eléctricos como la radio y los dispositivos emisores de radiación electromagnética como los teléfonos móviles. 4. En ausencia de los propietarios de aparatos distribuidores de combustibles o empleados de estos últimos, el conductor del vehículo o, en su caso, la persona que vaya a cargar el combustible en el vehículo deberá cumplir los mismos requisitos establecidos en el apartado anterior. 21 \f CAPÍTULO II CINTURÓN, CASCO Y RESTANTES ELEMENTOS DE SEGURIDAD ARTÍCULO 116. OBLIGATORIEDAD DE SU USO Y EXCEPCIONES. 1. Los conductores y ocupantes de vehículos a motor y ciclomotores están obligados a utilizar el cinturón de seguridad, el casco y demás elementos de protección en los casos y condiciones que se determinan en este capítulo y en las normas reguladoras de los vehículos, con las excepciones que igualmente se fijan en dicho capítulo, de acuerdo con las recomendaciones internacionales en la materia y atendiendo a las especiales condiciones de los conductores discapacitados. 2."
+    },
+    {
+      "titulo": "20. artículo 65",
+      "contenido": "Las infracciones a las normas de utilización de los cinturones de seguridad, el casco y otros dispositivos de seguridad de uso obligatorio previstos en este capítulo tendrán la consideración de graves, conforme se establece en el artículo 65.4.h) del texto articulado de la Ley sobre tráfico, circulación de vehículos a motor y seguridad vial. ARTÍCULO 117. CINTURONES DE SEGURIDAD Y SISTEMAS DE RETENCIÓN INFANTIL HOMOLOGADOS. 1. El conductor y los ocupantes de los vehículos estarán obligados a utilizar, debidamente abrochados, los cinturones de seguridad homologados, tanto en la circulación por vías urbanas como interurbanas. Esta obligación, en lo que se refiere a los cinturones de seguridad, no será exigible en aquellos vehículos que no los tengan instalados. En todo caso, los menores de edad de estatura igual o inferior a 135 centímetros deberán utilizar sistemas de retención infantil y situarse en el vehículo de acuerdo con lo dispuesto en los apartados siguientes. 2. En los vehículos de más de nueve plazas, incluido el conductor, se informará a los pasajeros de la obligación de llevar abrochados los cinturones de seguridad u otros sistemas de retención infantil homologados, por el conductor, por el guía o por la persona encargada del grupo, a través de medios audiovisuales o mediante letreros o pictogramas, de acuerdo con el modelo que figura en el anexo IV, colocado en lugares visibles de cada asiento. En estos vehículos, los ocupantes a que se refiere el párrafo segundo del apartado 1 de tres o más años deberán utilizar sistemas de retención infantil homologados debidamente adaptados a su talla y peso. Cuando no se disponga de estos sistemas utilizarán los cinturones de seguridad, siempre que sean adecuados a su talla y peso. 3. En los vehículos de hasta nueve plazas, incluido el conductor, los ocupantes a que se refiere el párrafo segundo del apartado 1 deberán utilizar sistemas de retención infantil homologados debidamente adaptados a su talla y peso. Dichos ocupantes deberán situarse en los asientos traseros. Excepcionalmente podrán ocupar el asiento delantero, siempre que utilicen sistemas de retención infantil homologados debidamente adaptados a su talla y peso, en los siguientes casos: 1.º Cuando el vehículo no disponga de asientos traseros. 2.º Cuando todos los asientos traseros estén ya ocupados por los menores a que se refiere el párrafo segundo del apartado 1. 3.º Cuando no sea posible instalar en dichos asientos todos los sistemas de retención infantil. En caso de que ocupen los asientos delanteros y el vehículo disponga de airbag frontal, únicamente podrán utilizar sistemas de retención orientados hacia atrás si el airbag ha sido desactivado. 4. Los sistemas de retención infantil se instalarán en el vehículo siempre de acuerdo con las instrucciones que haya facilitado su fabricante a través de un manual, folleto o publicación electrónica. Las instrucciones indicarán de qué forma y en qué tipo de vehículos se pueden utilizar de forma segura. 5. La falta de instalación y la no utilización de los cinturones de seguridad y otros sistemas de retención infantil homologados tendrá la consideración de infracción grave o muy grave, conforme a lo establecido en el artículo 65, apartados 4.h) y 5.ll), respectivamente, del texto articulado. 22 \f ARTÍCULO 118. CASCOS Y OTROS ELEMENTOS DE PROTECCIÓN. 1."
+    },
+    {
+      "titulo": "21. artículo 119",
+      "contenido": "Los conductores y pasajeros de motocicletas o motocicletas con sidecar, de vehículos de tres ruedas y cuadriciclos, de ciclomotores y de vehículos especiales tipo «quad», deberán utilizar adecuadamente cascos de protección homologados o certificados según la legislación vigente, cuando circulen tanto en vías urbanas como en interurbanas. Cuando las motocicletas, los vehículos de tres ruedas o los cuadriciclos y los ciclomotores cuenten con estructuras de autoprotección y estén dotados de cinturones de seguridad y así conste en la correspondiente tarjeta de inspección técnica o en el certificado de características de ciclomotor, sus conductores y viajeros quedarán exentos de utilizar el casco de protección, viniendo obligados a usar el referido cinturón de seguridad cuando circulen tanto en vías urbanas como interurbanas. Los conductores de bicicletas y, en su caso, los ocupantes estarán obligados a utilizar cascos de protección homologados o certificados según la legislación vigente, cuando circulen en vías interurbanas, salvo en rampas ascendentes prolongadas, o por razones médicas que se acreditarán conforme establece el artículo 119.3, o en condiciones extremas de calor. Los conductores de bicicletas en competición, y los ciclistas profesionales, ya sea durante los entrenamientos o en competición, se regirán por sus propias normas. 2. La instalación, en cualquier vehículo, de apoya-cabezas u otros elementos de protección estará subordinada a que cumplan las condiciones que se determinen en las normas reguladoras de vehículos. 3. Los conductores de turismos, de autobuses, de automóviles destinados al transporte de mercancías, de vehículos mixtos, de conjuntos de vehículos no agrícolas, así como los conductores y personal auxiliar de los vehículos piloto de protección y acompañamiento deberán utilizar un chaleco reflectante de alta visibilidad, certificado según el Real Decreto 1407/1992, de 20 de noviembre, por el que se regulan las condiciones para la comercialización y libre circulación intracomunitaria de los equipos de protección individual, que figura entre la dotación obligatoria del vehículo, cuando salgan de éste y ocupen la calzada o el arcén de las vías interurbanas. ARTÍCULO 119. EXENCIONES. 1. No obstante lo dispuesto en el artículo 117, podrán circular sin los cinturones u otros sistemas de retención homologados: a) Los conductores, al efectuar la maniobra de marcha atrás o de estacionamiento. b) Las personas provistas de un certificado de exención por razones médicas graves o discapacitadas. Este certificado deberá ser presentado cuando lo requiera cualquier agente de la autoridad responsable del tráfico. Todo certificado de este tipo expedido por la autoridad competente de un Estado miembro de la Unión Europea será válido en España acompañado de su traducción oficial. 2. La exención alcanzará igualmente cuando circulen en poblado, pero en ningún caso cuando lo hagan por autopistas, autovías o carreteras convencionales, a: a) Los conductores de taxis cuando estén de servicio. Asimismo, cuando circulen en tráfico urbano o áreas urbanas de grandes ciudades, podrán transportar a personas cuya estatura no alcance los 135 centímetros sin utilizar un dispositivo de retención homologado adaptado a su talla y a su peso, siempre que ocupen un asiento trasero. b) Los distribuidores de mercancías, cuando realicen sucesivas operaciones de carga y descarga de mercancías en lugares situados a corta distancia unos de otros. c) Los conductores y pasajeros de los vehículos en servicios de urgencia."
+    },
+    {
+      "titulo": "22. artículo 118",
+      "contenido": "d) Las personas que acompañen a un alumno o aprendiz durante el aprendizaje de la conducción o las pruebas de aptitud y estén a cargo de los mandos adicionales del automóvil, responsabilizándose de la seguridad de la circulación. 3. Se eximirá de lo dispuesto en el artículo 118.1 a las personas provistas de un certificado de exención por razones médicas graves, expedido de conformidad con lo dispuesto en el apartado 1.b) anterior. Este certificado deberá expresar su período de validez y estar firmado 23 \fpor un facultativo colegiado en ejercicio. Deberá, además, llevar o incorporar el símbolo establecido por la normativa vigente. CAPÍTULO III TIEMPOS DE CONDUCCIÓN Y DESCANSO ARTÍCULO 120. NORMAS GENERALES. 1. Se considerará que afecta a la seguridad vial el exceso en más del 50 por ciento en los tiempos de conducción o la minoración en más del 50 por ciento en los tiempos de descanso establecidos en la legislación sobre transportes terrestres. 2. Las infracciones a lo dispuesto en este precepto se calificarán de muy graves, conforme se prevé en el artículo 65.5.h) del texto articulado. CAPÍTULO IV PEATONES ARTÍCULO 121. CIRCULACIÓN POR ZONAS PEATONALES. Excepciones. 1. Los peatones están obligados a transitar por la zona peatonal, salvo cuando ésta no exista o no sea practicable; en tal caso, podrán hacerlo por el arcén o, en su defecto, por la calzada, de acuerdo con las normas que se determinan en este capítulo (artículo 49.1 del texto articulado). 2. Sin embargo, aun cuando haya zona peatonal, siempre que adopte las debidas precauciones, podrá circular por el arcén o, si éste no existe o no es transitable, por la calzada: a) El que lleve algún objeto voluminoso o empuje o arrastre un vehículo de reducidas dimensiones que no sea de motor, si su circulación por la zona peatonal o por el arcén pudiera constituir un estorbo considerable para los demás peatones. b) Todo grupo de peatones dirigido por una persona o que forme cortejo. c) El impedido que transite en silla de ruedas con o sin motor, a velocidad del paso humano. 3. Todo peatón debe circular por la acera de la derecha con relación al sentido de su marcha, y cuando circule por la acera o paseo izquierdo debe ceder siempre el paso a los que lleven su mano y no debe detenerse de forma que impida el paso por la acera a los demás, a no ser que resulte inevitable para cruzar por un paso de peatones o subir a un vehículo. 4. Los que utilicen monopatines, patines o aparatos similares no podrán circular por la calzada, salvo que se trate de zonas, vías o partes de estas que les estén especialmente destinadas, y solo podrán circular a paso de persona por las aceras o por las calles debidamente señalizadas, sin que en ningún caso se permita que sean arrastrados por otros vehículos. 5. La circulación de toda clase de vehículos en ningún caso deberá efectuarse por las aceras y demás zonas peatonales. ARTÍCULO 122. CIRCULACIÓN POR LA CALZADA O EL ARCÉN. 1. Fuera de poblado, en todas las vías objeto de la ley, y en tramos de poblado incluidos en el desarrollo de una carretera que no disponga de espacio especialmente reservado para peatones, como norma general, la circulación de éstos se hará por la izquierda (artículo 49.2 del texto articulado). 2. No obstante lo dispuesto en el apartado anterior, la circulación de peatones se hará por la derecha cuando concurran circunstancias que así lo justifiquen por razones de mayor seguridad. 3."
+    },
+    {
+      "titulo": "23. ARTÍCULO 123",
+      "contenido": "En poblado, la circulación de peatones podrá hacerse por la derecha o por la izquierda, según las circunstancias concretas del tráfico, de la vía o de la visibilidad. 4. No obstante lo dispuesto en los apartados 1 y 3, deberán circular siempre por su derecha los que empujen o arrastren un ciclo o ciclomotor de dos ruedas, carros de mano o aparatos similares, todo grupo de peatones dirigido por una persona o que forme cortejo y los impedidos que se desplacen en silla de ruedas, todos los cuales habrán de obedecer las señales dirigidas a los conductores de vehículos: las de los agentes y semáforos, siempre; las demás, en cuanto les sean aplicables. 24 \f 5. La circulación por el arcén o por la calzada se hará con prudencia, sin entorpecer innecesariamente la circulación, y aproximándose cuanto sea posible al borde exterior de aquéllos. Salvo en el caso de que formen un cortejo, deberán marchar unos tras otros si la seguridad de la circulación así lo requiere, especialmente en casos de poca visibilidad o de gran densidad de circulación de vehículos. 6. Cuando exista refugio, zona peatonal u otro espacio adecuado, ningún peatón debe permanecer detenido en la calzada ni en el arcén, aunque sea en espera de un vehículo, y para subir a éste, sólo podrá invadir aquélla cuando ya esté a su altura. 7. Al apercibirse de las señales ópticas y acústicas de los vehículos prioritarios, despejarán la calzada y permanecerán en los refugios o zonas peatonales. ARTÍCULO 123. CIRCULACIÓN NOCTURNA. Fuera del poblado, entre el ocaso y la salida del sol o en condiciones meteorológicas o ambientales que disminuyan sensiblemente la visibilidad, todo peatón, cuando circule por la calzada o el arcén, deberá ir provisto de un elemento luminoso o retrorreflectante homologado y que responda a las prescripciones técnicas contenidas en el Real Decreto 1407/1992, de 20 de noviembre, por el que se regulan las condiciones para la comercialización y libre circulación intracomunitaria de los equipos de protección individual, que sea visible a una distancia mínima de 150 metros para los conductores que se le aproximen, y los grupos de peatones dirigidos por una persona o que formen cortejo llevarán, además, en el lado más próximo al centro de la calzada, las luces necesarias para precisar su situación y dimensiones, las cuales serán de color blanco o amarillo hacia adelante y rojo hacia atrás y, en su caso, podrán constituir un solo conjunto. ARTÍCULO 124. PASOS PARA PEATONES Y CRUCE DE CALZADAS. 1. En zonas donde existen pasos para peatones, los que se dispongan a atravesar la calzada deberán hacerlo precisamente por ellos, sin que puedan efectuarlo por las proximidades, y cuando tales pasos sean a nivel, se observarán, además, las reglas siguientes: a) Si el paso dispone de semáforos para peatones, obedecerán sus indicaciones. b) Si no existiera semáforo para peatones pero la circulación de vehículos estuviera regulada por agente o semáforo, no penetrarán en la calzada mientras la señal del agente o del semáforo permita la circulación de vehículos por ella. c) En los restantes pasos para peatones señalizados mediante la correspondiente marca vial, aunque tienen preferencia, sólo deben penetrar en la calzada cuando la distancia y la velocidad de los vehículos que se aproximen permitan hacerlo con seguridad. 2. Para atravesar la calzada fuera de un paso para peatones, deberán cerciorarse de que pueden hacerlo sin riesgo ni entorpecimiento indebido. 3."
+    },
+    {
+      "titulo": "24. ARTÍCULO 125",
+      "contenido": "Al atravesar la calzada, deben caminar perpendicularmente al eje de ésta, no demorarse ni detenerse en ella sin necesidad y no entorpecer el paso a los demás. 4. Los peatones no podrán atravesar las plazas y glorietas por su calzada, por lo que deberán rodearlas. ARTÍCULO 125. NORMAS RELATIVAS A AUTOPISTAS Y AUTOVÍAS. 1. Queda prohibida la circulación de peatones por autopistas y autovías, salvo en los casos y condiciones que se determinan en los apartados siguientes. Los conductores de vehículos que circulen por autopistas o autovías deberán hacer caso omiso a las peticiones de pasaje que reciban en cualquier tramo de ellas, incluidas las explanadas de estaciones de peaje. 2. Si por accidente, avería, malestar físico de sus ocupantes u otra emergencia tuviera que inmovilizarse un vehículo en una autopista o autovía y fuese necesario solicitar auxilio, se utilizará el poste de socorro más próximo, y si la vía no estuviese dotada de este servicio, podrá requerirse el auxilio de los usuarios, sin que ninguno de los ocupantes del vehículo pueda transitar por la calzada. 3. Los ocupantes o servidores de los vehículos de los servicios de urgencia o especiales podrán circular por las autopistas y autovías siempre que sea estrictamente indispensable para la 25 \fprestación del correspondiente servicio y adopten las medidas oportunas para no comprometer la seguridad de ningún usuario. CAPÍTULO V CIRCULACIÓN DE ANIMALES ARTÍCULO 126. NORMAS GENERALES. En las vías objeto de la legislación sobre tráfico, circulación de vehículos a motor y seguridad vial, sólo se permitirá el tránsito de animales de tiro, carga o silla, cabezas de ganado aisladas, en manada o rebaño, cuando no exista itinerario practicable por vía pecuaria y siempre que vayan custodiados por alguna persona. Dicho tránsito se efectuará por la vía alternativa que tenga menor intensidad de circulación de vehículos y de acuerdo con lo que se establece en este capítulo (artículo 50.1 del texto articulado). ARTÍCULO 127. NORMAS ESPECIALES. 1. Los animales a que se refiere el artículo anterior deben ir conducidos, al menos, por una persona mayor de 18 años, capaz de dominarlos en todo momento, la cual observará, además de las normas establecidas para los conductores de vehículos que puedan afectarle, las siguientes prescripciones: a) No invadirán la zona peatonal. b) Los animales de tiro, carga o silla o el ganado suelto circularán por el arcén del lado derecho, y si tuvieran que utilizar la calzada, lo harán aproximándose cuanto sea posible al borde derecho de ésta; por excepción, se permite conducir uno solo de tales animales por el borde izquierdo, si razones de mayor seguridad así lo aconsejan. c) Los animales conducidos en manada o rebaño irán al paso, lo más cerca posible del borde derecho de la vía y de forma que nunca ocupen más de la mitad derecha de la calzada, divididos en grupos de longitud moderada, cada uno de los cuales con un conductor al menos y suficientemente separados para entorpecer lo menos posible la circulación; en el caso de que se encuentren con otro ganado que transite en sentido contrario, sus conductores cuidarán de que el cruce se haga con la mayor rapidez y en zonas de visibilidad suficiente, y, si circunstancialmente esto no se hubiera podido conseguir, adoptarán las precauciones precisas para que los conductores de los vehículos que eventualmente se aproximen puedan detenerse o reducir la velocidad a tiempo. d) Sólo atravesarán las vías por pasos autorizados y señalizados al efecto o por otros lugares que reúnan las necesarias condiciones de seguridad."
+    },
+    {
+      "titulo": "25. artículo 66",
+      "contenido": "e) Si circulan de noche por vía insuficientemente iluminada o bajo condiciones meteorológicas o ambientales que disminuyan sensiblemente la visibilidad, su conductor o conductores llevarán en el lado más próximo al centro de la calzada luces en número necesario para precisar su situación y dimensiones, que serán de color blanco o amarillo hacia delante, y rojo hacia atrás, y, en su caso, podrán constituir un solo conjunto. f) En estrechamientos, intersecciones y demás casos en que las respectivas trayectorias se crucen o corten, cederán el paso a los vehículos, salvo en los supuestos contemplados en el artículo 66. 2. Se prohíbe dejar animales sin custodia en cualquier clase de vía o en sus inmediaciones, siempre que exista la posibilidad de que éstos puedan invadir la vía. ARTÍCULO 128. NORMAS RELATIVAS A AUTOPISTAS Y AUTOVÍAS. Se prohíbe la circulación de animales por autopistas o autovías (artículo 50.2 del texto articulado). Dicha prohibición incluye la circulación de vehículos de tracción animal. 26 \f CAPÍTULO VI COMPORTAMIENTO EN CASO DE EMERGENCIA ARTÍCULO 129. OBLIGACIÓN DE AUXILIO. 1. Los usuarios de las vías que se vean implicados en un accidente de tráfico, lo presencien o tengan conocimiento de él estarán obligados a auxiliar o solicitar auxilio para atender a las víctimas, si las hubiera, prestar su colaboración para evitar mayores peligros o daños, restablecer, en la medida de lo posible, la seguridad de la circulación y esclarecer los hechos (artículo 51.1 del texto articulado). 2. Todo usuario de la vía implicado en un accidente de circulación deberá, en la medida de lo posible: a) Detenerse de forma que no cree un nuevo peligro para la circulación. b) Hacerse una idea de conjunto de las circunstancias y consecuencias del accidente, que le permita establecer un orden de preferencias, según la situación, respecto a las medidas a adoptar para garantizar la seguridad de la circulación, auxiliar a las víctimas, facilitar su identidad y colaborar con la autoridad o sus agentes. c) Esforzarse por restablecer o mantener la seguridad de la circulación y si, aparentemente, hubiera resultado muerta o gravemente herida alguna persona o se hubiera avisado a la autoridad o sus agentes, evitar la modificación del estado de las cosas y de las huellas u otras pruebas que puedan ser útiles para determinar la responsabilidad, salvo que con ello se perjudique la seguridad de los heridos o de la circulación. d) Prestar a los heridos el auxilio que resulte más adecuado, según las circunstancias, y, especialmente, recabar auxilio sanitario de los servicios que pudieran existir al efecto. e) Avisar a la autoridad o a sus agentes si, aparentemente, hubiera resultado herida o muerta alguna persona, así como permanecer o volver al lugar del accidente hasta su llegada, a menos que hubiera sido autorizado por éstos a abandonar el lugar o debiera prestar auxilio a los heridos o ser él mismo atendido; no será necesario, en cambio, avisar a la autoridad o a sus agentes, ni permanecer en el lugar del hecho, si sólo se han producido heridas claramente leves, la seguridad de la circulación está restablecida y ninguna de las personas implicadas en el accidente lo solicita. f) Comunicar, en todo caso, su identidad a otras personas implicadas en el accidente, si se lo pidiesen; cuando sólo se hubieran ocasionado daños materiales y alguna parte afectada no estuviera presente, tomar las medidas adecuadas para proporcionarle, cuanto antes, su nombre y dirección, bien directamente, bien, en su defecto, por intermedio de los agentes de la autoridad."
+    },
+    {
+      "titulo": "26. ARTÍCULO 130",
+      "contenido": "g) Facilitar los datos del vehículo a otras personas implicadas en el accidente, si lo pidiesen. 3. Salvo en los casos en que, manifiestamente, no sea necesaria su colaboración, todo usuario de la vía que advierta que se ha producido un accidente de circulación, sin estar implicado en él, deberá cumplimentar, en cuanto le sea posible y le afecten, las prescripciones establecidas en el apartado anterior, a no ser que se hubieran personado en el lugar del hecho la autoridad o sus agentes. ARTÍCULO 130. INMOVILIZACIÓN DEL VEHÍCULO Y CAÍDA DE LA CARGA. 1. Si por causa de accidente o avería el vehículo o su carga obstaculizasen la calzada, los conductores, tras señalizar convenientemente el vehículo o el obstáculo creado, adoptarán las medidas necesarias para que sea retirado en el menor tiempo posible, deberán sacarlo de la calzada y situarlo cumpliendo las normas de estacionamiento siempre que sea factible (artículo 51.2 del texto refundido). 2. Los vehículos que habiendo sufrido un accidente o avería puedan continuar su marcha, lo harán de forma inmediata, asegurándose de circular con seguridad. Si precisaran de un servicio de auxilio, deberán abandonar lo antes posible los carriles de circulación y dirigirse hacia la primera salida disponible utilizando para ello el arcén derecho. Si ello no fuera posible, deberán detenerse en el arcén derecho de la vía o en el lugar donde cause menor obstáculo a la circulación. 27 \f 3. En el caso de accidente o avería, como norma general, si el vehículo está inmovilizado sin posibilidad de reemprender la marcha, los ocupantes deberán abandonar el vehículo, siempre que exista un lugar seguro fuera de la plataforma de circulación y, en todo caso, deberán salir del vehículo por el lado contrario al flujo de tráfico sin transitar o permanecer en los carriles y arcenes que conforman dicha plataforma. Si las condiciones de circulación no permitieran a los ocupantes abandonar el vehículo con seguridad, permanecerán en el habitáculo con el cinturón abrochado. 4. En los supuestos a los que se refieren los apartados anteriores, sin perjuicio de encender la luz de emergencia si el vehículo la lleva y, cuando proceda, las luces de posición y de gálibo, en tanto se deja expedita la vía, todo conductor deberá emplear el dispositivo de preseñalización de peligro reglamentario para advertir dicha circunstancia. 5. Se prohíbe a los usuarios de las vías cuyo vehículo haya sufrido un accidente cumplimentar el parte de accidente en la plataforma de circulación. Este proceso se llevará a cabo en un lugar seguro fuera de la vía. 28"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Adelantamientos. Parada y estacionamient\"]\n  A --> N1[\"Real Decreto Legislativo 6/2015, de 30 d\"]\n  A --> N2[\"ARTÍCULO 36\"]\n  A --> N3[\"ARTÍCULO 40\"]\n  A --> N4[\"ARTÍCULO 41\"]\n  A --> N5[\"ARTÍCULO 46\"]\n  A --> N6[\"ARTÍCULO 52\"]\n  A --> N7[\"artículo 65\"]\n  A --> N8[\"artículo 34\"]\n  A --> N9[\"artículo 35\"]\n  A --> N10[\"artículo 65\"]\n  A --> N11[\"artículo 65\"]\n  A --> N12[\"ARTÍCULO 93\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Adelantamientos. Parada y estacionamiento. Cruce …",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "Real Decreto Legislativo 6/2015, de 30 …",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "ARTÍCULO 36",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "ARTÍCULO 40",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "ARTÍCULO 41",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "ARTÍCULO 46",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "ARTÍCULO 52",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "artículo 65",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "artículo 34",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "artículo 35",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "artículo 65",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "artículo 65",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s12",
+        "texto": "ARTÍCULO 93",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s13",
+        "texto": "artículo 65",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s14",
+        "texto": "ARTÍCULO 97",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s15",
+        "texto": "ARTÍCULO 99",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s16",
+        "texto": "artículo 65",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s17",
+        "texto": "artículo 65",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s18",
+        "texto": "ARTÍCULO 110",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s19",
+        "texto": "artículo 68",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s20",
+        "texto": "artículo 65",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s21",
+        "texto": "artículo 119",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s22",
+        "texto": "artículo 118",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s23",
+        "texto": "ARTÍCULO 123",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s24",
+        "texto": "ARTÍCULO 125",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s25",
+        "texto": "artículo 66",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s26",
+        "texto": "ARTÍCULO 130",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p30-01",
-            "enunciado": "El adelantamiento se realiza, como regla general:",
-            "opciones": ["Por la derecha", "Por la izquierda del vehículo adelantado", "Por el carril central", "Indistintamente"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Como regla general, el adelantamiento se efectúa por la izquierda del vehículo adelantado."
-        },
-        {
-            "id": "p30-02",
-            "enunciado": "La parada se diferencia del estacionamiento en que:",
-            "opciones": ["Dura menos de dos minutos y el conductor no abandona el vehículo", "Es siempre con el motor en marcha", "Solo se realiza en aparcamientos", "Es lo mismo que el estacionamiento"],
-            "respuestaCorrecta": 0,
-            "explicacion": "La parada es la inmovilización durante menos de dos minutos sin que el conductor pueda abandonar el vehículo."
-        },
-        {
-            "id": "p30-03",
-            "enunciado": "Está prohibido adelantar:",
-            "opciones": ["En recta", "En curvas y rasantes de visibilidad reducida, pasos peatonales y pasos a nivel", "En autopista", "En carretera convencional"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El adelantamiento está prohibido en curvas y cambios de rasante de visibilidad reducida, en pasos para peatones y en pasos a nivel."
-        },
-        {
-            "id": "p30-04",
-            "enunciado": "En un túnel hay que encender:",
-            "opciones": ["Las luces de posición solamente", "Las luces de cruce o de carretera", "Las luces antiniebla siempre", "Ninguna luz"],
-            "respuestaCorrecta": 1,
-            "explicacion": "En los túneles hay que encender las luces de cruce o las de carretera, según convenga."
-        },
-        {
-            "id": "p30-05",
-            "enunciado": "Los menores con estatura igual o inferior a 135 cm deben:",
-            "opciones": ["Viajar en cualquier asiento sin retención", "Viajar en asientos traseros con sistema de retención infantil", "Llevar solo cinturón normal", "No viajar"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Los menores de hasta 135 cm deben viajar en los asientos traseros con su sistema de retención infantil."
-        },
-        {
-            "id": "p30-06",
-            "enunciado": "El tiempo máximo de conducción diaria (general) es de:",
-            "opciones": ["8 horas", "9 horas, ampliable a 10 dos veces por semana", "10 horas fijas", "12 horas"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El Reglamento CE 561/2006 establece una conducción diaria máxima de 9 horas, ampliable a 10 dos veces por semana."
-        },
-        {
-            "id": "p30-07",
-            "enunciado": "El deber de auxilio en un accidente obliga al conductor implicado a:",
-            "opciones": ["Marcharse inmediatamente", "Detenerse, evitar nuevos accidentes, auxiliar y comunicar el siniestro", "Solo llamar al seguro", "Esperar a la policía sin más"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El deber de auxilio impone detenerse, evitar nuevos accidentes, prestar o procurar auxilio y comunicar el siniestro a la autoridad."
-        },
-        {
-            "id": "p30-08",
-            "enunciado": "La publicidad en las vías está prohibida cuando:",
-            "opciones": ["Es nocturna", "Puede confundirse con la señalización o distraer al conductor", "Es de productos sanitarios", "Es luminosa"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La publicidad está prohibida cuando pueda confundirse con la señalización o distraer la atención de los conductores."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      },
+      {
+        "desde": "root",
+        "hasta": "s12"
+      },
+      {
+        "desde": "root",
+        "hasta": "s13"
+      },
+      {
+        "desde": "root",
+        "hasta": "s14"
+      },
+      {
+        "desde": "root",
+        "hasta": "s15"
+      },
+      {
+        "desde": "root",
+        "hasta": "s16"
+      },
+      {
+        "desde": "root",
+        "hasta": "s17"
+      },
+      {
+        "desde": "root",
+        "hasta": "s18"
+      },
+      {
+        "desde": "root",
+        "hasta": "s19"
+      },
+      {
+        "desde": "root",
+        "hasta": "s20"
+      },
+      {
+        "desde": "root",
+        "hasta": "s21"
+      },
+      {
+        "desde": "root",
+        "hasta": "s22"
+      },
+      {
+        "desde": "root",
+        "hasta": "s23"
+      },
+      {
+        "desde": "root",
+        "hasta": "s24"
+      },
+      {
+        "desde": "root",
+        "hasta": "s25"
+      },
+      {
+        "desde": "root",
+        "hasta": "s26"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc30-01",
+      "pregunta": "¿Qué debe hacer un conductor antes de iniciar un adelantamiento?",
+      "respuesta": "Advertir con suficiente antelación y comprobar que existe espacio libre suficiente en el carril que pretende utilizar."
+    },
+    {
+      "id": "fc30-02",
+      "pregunta": "¿Qué debe hacer un conductor si el conductor del vehículo que le precede en el mismo carril ha indicado su propósito de iniciar el adelantamiento?",
+      "respuesta": "Respetar la preferencia que le asiste y no iniciar la maniobra de adelantamiento."
+    },
+    {
+      "id": "fc30-03",
+      "pregunta": "¿Qué debe hacer un conductor durante la ejecución del adelantamiento?",
+      "respuesta": "Llevar su vehículo a una velocidad notoriamente superior a la del que pretende adelantar y dejar entre ambos una separación lateral suficiente para realizarlo con seguridad."
+    },
+    {
+      "id": "fc30-04",
+      "pregunta": "¿Qué debe hacer un conductor si después de iniciar la maniobra de adelantamiento advierte que se producen circunstancias que puedan hacer difícil la finalización del mismo sin provocar riesgos?",
+      "respuesta": "Reducir rápidamente su marcha y volver a su carril, advirtiéndolo a los que le siguen con las señales preceptivas."
+    },
+    {
+      "id": "fc30-05",
+      "pregunta": "¿Qué debe hacer el conductor del vehículo que ha efectuado el adelantamiento?",
+      "respuesta": "Volver a su carril tan pronto como le sea posible y de modo gradual, sin obligar a otros usuarios a modificar su trayectoria o velocidad y advirtiéndolo a través de las señales preceptivas."
+    },
+    {
+      "id": "fc30-06",
+      "pregunta": "¿Qué debe hacer un conductor que pretenda realizar un adelantamiento a un ciclo o ciclomotor?",
+      "respuesta": "Realizarlo ocupando parte o la totalidad del carril contiguo o contrario, en su caso, de la calzada y guardando una anchura de seguridad de, al menos, 1,5 metros."
+    },
+    {
+      "id": "fc30-07",
+      "pregunta": "¿Qué debe hacer el conductor del vehículo que va a ser adelantado?",
+      "respuesta": "Ceñirse al borde derecho de la calzada, salvo en el supuesto de cambio de dirección a la izquierda o de parada en ese mismo lado."
+    },
+    {
+      "id": "fc30-08",
+      "pregunta": "¿Qué está prohibido hacer al conductor del vehículo que va a ser adelantado?",
+      "respuesta": "Aumentar la velocidad o efectuar maniobras que impidan o dificulten el adelantamiento."
+    },
+    {
+      "id": "fc30-09",
+      "pregunta": "¿Qué lugares están prohibidos para adelantar?",
+      "respuesta": "Las curvas y cambios de rasante de visibilidad reducida, los pasos para peatones señalizados como tales y los pasos a nivel y en sus proximidades."
+    },
+    {
+      "id": "fc30-10",
+      "pregunta": "¿Qué debe hacer un conductor en una intersección?",
+      "respuesta": "Respetar la preferencia en la intersección y no adelantar en sus proximidades, salvo en casos específicos."
+    },
+    {
+      "id": "fc30-11",
+      "pregunta": "¿Qué debe hacer un conductor en una glorieta?",
+      "respuesta": "Puede adelantar en una glorieta."
+    },
+    {
+      "id": "fc30-12",
+      "pregunta": "¿Qué debe hacer un conductor en una intersección con preferencia en la calzada en que se realice el adelantamiento?",
+      "respuesta": "Puede adelantar en una intersección con preferencia en la calzada en que se realice el adelantamiento."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p30-01",
+      "enunciado": "¿Qué son las normas generales para el adelantamiento en carreteras?",
+      "opciones": [
+        "El adelantamiento debe efectuarse por la izquierda del vehículo que se pretenda adelantar.",
+        "El adelantamiento debe efectuarse por la derecha del vehículo que se pretenda adelantar.",
+        "El adelantamiento debe efectuarse por la izquierda o la derecha del vehículo que se pretenda adelantar.",
+        "El adelantamiento no tiene normas generales."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 33 del Real Decreto Legislativo 6/2015, el adelantamiento debe efectuarse por la izquierda del vehículo que se pretenda adelantar."
+    },
+    {
+      "id": "p30-02",
+      "enunciado": "¿Qué debe hacer un conductor antes de iniciar un adelantamiento?",
+      "opciones": [
+        "Advertir con suficiente antelación y comprobar que existe espacio libre suficiente en el carril que pretende utilizar.",
+        "No advertir con suficiente antelación y no comprobar que existe espacio libre suficiente en el carril que pretende utilizar.",
+        "Advertir con suficiente antelación pero no comprobar que existe espacio libre suficiente en el carril que pretende utilizar.",
+        "No advertir con suficiente antelación y comprobar que existe espacio libre suficiente en el carril que pretende utilizar."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 34 del Real Decreto Legislativo 6/2015, un conductor debe advertir con suficiente antelación y comprobar que existe espacio libre suficiente en el carril que pretende utilizar antes de iniciar un adelantamiento."
+    },
+    {
+      "id": "p30-03",
+      "enunciado": "¿Qué debe hacer un conductor durante la ejecución del adelantamiento?",
+      "opciones": [
+        "Llevar su vehículo a una velocidad notoriamente inferior a la del que pretende adelantar y dejar entre ambos una separación lateral insuficiente para realizarlo con seguridad.",
+        "Llevar su vehículo a una velocidad notoriamente superior a la del que pretende adelantar y dejar entre ambos una separación lateral suficiente para realizarlo con seguridad.",
+        "Llevar su vehículo a una velocidad igual a la del que pretende adelantar y dejar entre ambos una separación lateral insuficiente para realizarlo con seguridad.",
+        "No llevar su vehículo a una velocidad superior a la del que pretende adelantar y no dejar entre ambos una separación lateral suficiente para realizarlo con seguridad."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el artículo 35 del Real Decreto Legislativo 6/2015, un conductor debe llevar su vehículo a una velocidad notoriamente superior a la del que pretende adelantar y dejar entre ambos una separación lateral suficiente para realizarlo con seguridad durante la ejecución del adelantamiento."
+    },
+    {
+      "id": "p30-04",
+      "enunciado": "¿Qué debe hacer el conductor del vehículo que ha efectuado el adelantamiento?",
+      "opciones": [
+        "Volver a su carril tan pronto como le sea posible y de modo gradual, sin obligar a otros usuarios a modificar su trayectoria o velocidad y advirtiéndolo a través de las señales preceptivas.",
+        "No volver a su carril tan pronto como le sea posible y de modo gradual, sin obligar a otros usuarios a modificar su trayectoria o velocidad y no advertirlo a través de las señales preceptivas.",
+        "Volver a su carril tan pronto como le sea posible y de modo gradual, obligar a otros usuarios a modificar su trayectoria o velocidad y no advertirlo a través de las señales preceptivas.",
+        "No volver a su carril tan pronto como le sea posible y de modo gradual, obligar a otros usuarios a modificar su trayectoria o velocidad y advertirlo a través de las señales preceptivas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 35 del Real Decreto Legislativo 6/2015, el conductor del vehículo que ha efectuado el adelantamiento debe volver a su carril tan pronto como le sea posible y de modo gradual, sin obligar a otros usuarios a modificar su trayectoria o velocidad y advertirlo a través de las señales preceptivas."
+    },
+    {
+      "id": "p30-05",
+      "enunciado": "¿Qué debe hacer un conductor que pretenda realizar un adelantamiento a un ciclo o ciclomotor?",
+      "opciones": [
+        "Realizarlo ocupando parte o la totalidad del carril contiguo o contrario, en su caso, de la calzada y guardando una anchura de seguridad de, al menos, 1,5 metros.",
+        "No realizarlo ocupando parte o la totalidad del carril contiguo o contrario, en su caso, de la calzada y no guardando una anchura de seguridad de, al menos, 1,5 metros.",
+        "Realizarlo ocupando parte o la totalidad del carril contiguo o contrario, en su caso, de la calzada pero no guardando una anchura de seguridad de, al menos, 1,5 metros.",
+        "No realizarlo ocupando parte o la totalidad del carril contiguo o contrario, en su caso, de la calzada y guardando una anchura de seguridad de, al menos, 1,5 metros."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 35 del Real Decreto Legislativo 6/2015, un conductor que pretenda realizar un adelantamiento a un ciclo o ciclomotor debe realizarlo ocupando parte o la totalidad del carril contiguo o contrario, en su caso, de la calzada y guardando una anchura de seguridad de, al menos, 1,5 metros."
+    }
+  ]
 }

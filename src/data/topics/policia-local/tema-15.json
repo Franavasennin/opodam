@@ -1,157 +1,370 @@
 {
-    "id": 15,
-    "titulo": "Los Municipios Canarios. Sesiones de los órganos municipales. Adopción de acuerdos. Información y participación ciudadana",
-    "bloque": "general",
-    "secciones": [
-        {
-            "id": "s15-1",
-            "titulo": "Los Municipios Canarios",
-            "contenido": "Los municipios canarios se rigen por la legislación básica estatal de régimen local (Ley 7/1985) y por la Ley 7/2015, de 1 de abril, de los municipios de Canarias. Esta ley autonómica refuerza la autonomía municipal, regula las competencias propias de los municipios canarios y desarrolla la organización, el funcionamiento y la participación ciudadana. El municipio es la entidad local básica de la organización territorial de Canarias y el cauce inmediato de participación ciudadana en los asuntos públicos. Goza de autonomía para la gestión de sus intereses y ejerce sus competencias bajo su propia responsabilidad."
-        },
-        {
-            "id": "s15-2",
-            "titulo": "Las sesiones de los órganos municipales",
-            "contenido": "Las sesiones del Pleno pueden ser ordinarias, extraordinarias y extraordinarias urgentes. Las ordinarias tienen periodicidad preestablecida. Las extraordinarias se celebran cuando las convoque el Alcalde o lo solicite la cuarta parte, al menos, del número legal de miembros de la Corporación. Toda sesión debe convocarse con una antelación mínima de dos días hábiles, salvo las extraordinarias urgentes. Para la válida constitución del Pleno se requiere la asistencia de un tercio del número legal de miembros, que nunca podrá ser inferior a tres; este quórum debe mantenerse durante toda la sesión, y en todo caso deben estar presentes el Alcalde y el Secretario o quienes legalmente les sustituyan."
-        },
-        {
-            "id": "s15-3",
-            "titulo": "La adopción de acuerdos",
-            "contenido": "Los acuerdos de las Corporaciones locales se adoptan, como regla general, por mayoría simple de los miembros presentes, existiendo mayoría simple cuando los votos afirmativos son más que los negativos. Se exige el voto favorable de la mayoría absoluta del número legal de miembros para la adopción de determinados acuerdos, como la aprobación y modificación del reglamento orgánico, la creación o supresión de municipios, la alteración del término municipal, la aprobación de la delimitación del término, las operaciones de crédito de cuantía elevada o la cesión de bienes a otras Administraciones. El voto puede ser afirmativo, negativo o abstención, y el Alcalde dirime los empates con su voto de calidad."
-        },
-        {
-            "id": "s15-4",
-            "titulo": "Información y participación ciudadana",
-            "contenido": "Las Corporaciones locales deben facilitar la más amplia información sobre su actividad y la participación de los ciudadanos en la vida local. Las sesiones del Pleno son públicas, salvo en los asuntos que puedan afectar al derecho al honor, la intimidad o la propia imagen. Los ciudadanos tienen derecho a obtener copias y certificaciones de los acuerdos y a consultar los archivos y registros, a ser informados, a participar en la gestión municipal y a ejercer la iniciativa popular. Las entidades locales deben establecer reglamentos orgánicos de participación ciudadana y pueden constituir órganos territoriales de gestión desconcentrada y consejos sectoriales de participación."
-        },
-        {
-            "id": "s15-5",
-            "titulo": "Instrumentos de participación y transparencia",
-            "contenido": "Entre los instrumentos de participación ciudadana destacan la iniciativa popular para proponer al Pleno la aprobación de disposiciones o actuaciones, las consultas populares sobre asuntos de competencia municipal y de especial relevancia para los intereses de los vecinos (que requieren autorización del Gobierno del Estado), el derecho de petición, los presupuestos participativos y los órganos de participación sectorial. La normativa de transparencia obliga a las entidades locales a la publicidad activa de información institucional, organizativa, económica y presupuestaria, y a garantizar el derecho de acceso a la información pública. La participación ciudadana se complementa con los medios electrónicos y la administración digital."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e15-1",
-            "titulo": "Sesiones del Pleno",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Sesiones del Pleno] --> B[Ordinarias]\n    A --> C[Extraordinarias]\n    A --> D[Extraordinarias urgentes]\n    A --> E[Quorum: un tercio, minimo 3]"
-        },
-        {
-            "id": "e15-2",
-            "titulo": "Adopción de acuerdos",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Adopcion de acuerdos] --> B[Regla general: mayoria simple]\n    A --> C[Mayoria absoluta - casos tasados]\n    A --> D[Voto de calidad del Alcalde]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Municipios canarios y sesiones", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Los municipios canarios", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Sesiones de los órganos", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Adopción de acuerdos", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Información y participación", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Instrumentos de participación", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Ley 7/2015 de municipios de Canarias", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Ordinarias, extraordinarias y urgentes", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Quórum de un tercio", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Mayoría simple y absoluta", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Sesiones del Pleno públicas", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Iniciativa popular y consultas", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Transparencia y acceso a la información", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n3", "hasta": "n9" },
-            { "desde": "n4", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 15,
+  "titulo": "Los Municipios Canarios. Sesiones de los órganos municipales. Adopción de acuerdos. Información y participación ciudadana.",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "1. TÍTULO V",
+      "contenido": "BIBLIOGRAFÍA • Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local o Art. 47-48 • Ley 7/2015, de 1 de abril, de los municipios de Canarias. o Art. 1-4 o Art. 17-24 o Art. 44-53 o Art. 87-101 o Art. 103-104 2 \f LEY 7/1985, DE 2 DE ABRIL, REGULADORA DE LAS BASES DEL RÉGIMEN LOCAL TÍTULO V DISPOSICIONES COMUNES A LAS ENTIDADES LOCALES CAPÍTULO I RÉGIMEN DE FUNCIONAMIENTO ARTÍCULO 47. 1. Los acuerdos de las corporaciones locales se adoptan, como regla general, por mayoría simple de los miembros presentes. Existe mayoría simple cuando los votos afirmativos son más que los negativos. 2. Se requiere el voto favorable de la mayoría absoluta del número legal de miembros de las corporaciones para la adopción de acuerdos en las siguientes materias: a) Creación y supresión de municipios y alteración de términos municipales. b) Creación, modificación y supresión de las entidades a que se refiere el artículo 45 de esta ley. c) Aprobación de la delimitación del término municipal. d) Alteración del nombre y de la capitalidad del municipio. e) Adopción o modificación de su bandera, enseña o escudo. f) Aprobación y modificación del reglamento orgánico propio de la corporación. g) Creación, modificación o disolución de mancomunidades u otras organizaciones asociativas, así como la adhesión a las mismas y la aprobación y modificación de sus estatutos. h) Transferencia de funciones o actividades a otras Administraciones públicas, así como la aceptación de las delegaciones o encomiendas de gestión realizadas por otras administraciones, salvo que por ley se impongan obligatoriamente. i) Cesión por cualquier título del aprovechamiento de los bienes comunales. j) Concesión de bienes o servicios por más de cinco años, siempre que su cuantía exceda del 20 por ciento de los recursos ordinarios del presupuesto. k) Municipalización o provincialización de actividades en régimen de monopolio y aprobación de la forma concreta de gestión del servicio correspondiente. l) Aprobaciones de operaciones financieras o de crédito y concesiones de quitas o esperas, cuando su importe supere el 10 por ciento de los recursos ordinarios de su presupuesto, así como las operaciones de crédito previstas en el artículo 158.5 de la Ley 39/1988, de 28 de diciembre, reguladora de las Haciendas Locales. ll) Los acuerdos que corresponda adoptar a la corporación en la tramitación de los instrumentos de planeamiento general previstos en la legislación urbanística. m) Enajenación de bienes, cuando su cuantía exceda del 20 por ciento de los recursos ordinarios de su presupuesto. n) Alteración de la calificación jurídica de los bienes demaniales o comunales. ñ) Cesión gratuita de bienes a otras Administraciones o instituciones públicas. o) Las restantes determinadas por la ley. 3. Las normas relativas a adopción de acuerdos en los municipios señalados en el artículo 121 de esta ley, son las contenidas en el apartado 2 del artículo 123. ARTÍCULO 48. En los asuntos en que sea preceptivo el dictamen del Consejo de Estado, la correspondiente solicitud se cursará por conducto del Presidente de la Comunidad Autónoma. Cuando el dictamen deba ser solicitado conjuntamente por Entidades pertenecientes al ámbito territorial de distintas Comunidades Autónomas, la solicitud se cursará por conducto del Ministerio de Administraciones Públicas a petición de la Entidad de mayor población. 3 \f LEY 7/2015, DE 1 DE ABRIL, DE LOS MUNICIPIOS DE CANARIAS. TÍTULO PRELIMINAR DISPOSICIONES GENERALES ARTÍCULO 1. OBJETO DE LA LEY."
     },
-    "flashcards": [
-        { "id": "fc15-01", "anverso": "¿Qué ley autonómica regula los municipios de Canarias?", "reverso": "La Ley 7/2015, de 1 de abril, de los municipios de Canarias." },
-        { "id": "fc15-02", "anverso": "¿Qué es el municipio para la organización territorial de Canarias?", "reverso": "La entidad local básica y el cauce inmediato de participación ciudadana." },
-        { "id": "fc15-03", "anverso": "¿Qué clases de sesiones del Pleno existen?", "reverso": "Ordinarias, extraordinarias y extraordinarias urgentes." },
-        { "id": "fc15-04", "anverso": "¿Quién puede solicitar una sesión extraordinaria?", "reverso": "La cuarta parte, al menos, del número legal de miembros de la Corporación." },
-        { "id": "fc15-05", "anverso": "¿Con cuánta antelación se convoca una sesión ordinaria?", "reverso": "Con una antelación mínima de dos días hábiles." },
-        { "id": "fc15-06", "anverso": "¿Qué quórum se requiere para constituir válidamente el Pleno?", "reverso": "Un tercio del número legal de miembros, nunca inferior a tres." },
-        { "id": "fc15-07", "anverso": "¿Quién debe estar siempre presente en las sesiones del Pleno?", "reverso": "El Alcalde y el Secretario, o quienes legalmente les sustituyan." },
-        { "id": "fc15-08", "anverso": "¿Cómo se adoptan los acuerdos como regla general?", "reverso": "Por mayoría simple de los miembros presentes." },
-        { "id": "fc15-09", "anverso": "¿Cuándo hay mayoría simple?", "reverso": "Cuando los votos afirmativos son más que los negativos." },
-        { "id": "fc15-10", "anverso": "Cita un acuerdo que exige mayoría absoluta.", "reverso": "La aprobación o modificación del reglamento orgánico o la alteración del término municipal." },
-        { "id": "fc15-11", "anverso": "¿Quién dirime los empates en las votaciones?", "reverso": "El Alcalde, con su voto de calidad." },
-        { "id": "fc15-12", "anverso": "¿Son públicas las sesiones del Pleno?", "reverso": "Sí, salvo en asuntos que afecten al honor, la intimidad o la propia imagen." },
-        { "id": "fc15-13", "anverso": "¿Qué derecho de información tienen los ciudadanos?", "reverso": "Obtener copias y certificaciones de los acuerdos y consultar archivos y registros." },
-        { "id": "fc15-14", "anverso": "¿Qué es la iniciativa popular en el ámbito municipal?", "reverso": "El derecho de los vecinos a proponer al Pleno la aprobación de disposiciones o actuaciones." },
-        { "id": "fc15-15", "anverso": "¿Qué se requiere para celebrar una consulta popular municipal?", "reverso": "La autorización del Gobierno del Estado." },
-        { "id": "fc15-16", "anverso": "Cita instrumentos de participación ciudadana.", "reverso": "Iniciativa popular, consultas populares, derecho de petición y presupuestos participativos." },
-        { "id": "fc15-17", "anverso": "¿A qué obliga la normativa de transparencia a las entidades locales?", "reverso": "A la publicidad activa y a garantizar el derecho de acceso a la información pública." },
-        { "id": "fc15-18", "anverso": "¿Qué órganos de participación pueden constituir las entidades locales?", "reverso": "Consejos sectoriales de participación y órganos territoriales de gestión desconcentrada." },
-        { "id": "fc15-19", "anverso": "¿Qué tipos de voto pueden emitirse en el Pleno?", "reverso": "Afirmativo, negativo o abstención." },
-        { "id": "fc15-20", "anverso": "¿Durante cuánto tiempo debe mantenerse el quórum?", "reverso": "Durante toda la sesión." }
+    {
+      "titulo": "2. título c",
+      "contenido": "Es objeto de la presente ley la regulación de los municipios y del resto de entidades de Canarias previstas en el artículo siguiente, en desarrollo de la legislación básica de régimen local, bajo el título competencial que le confiere el Estatuto de Autonomía de Canarias. ARTÍCULO 2. ÁMBITO DE APLICACIÓN. 1. Esta ley será aplicable a las siguientes entidades: a) Los municipios. b) Las Áreas metropolitanas. c) Las Mancomunidades de municipios. d) La entidad de gestión desconcentrada de la isla de La Graciosa. e) Los organismos autónomos y las entidades públicas empresariales constituidas para la prestación de servicios públicos y actividades de competencia municipal por alguna de las entidades citadas en las letras anteriores. f) Los consorcios en que se integren entidades municipales canarias, cuando estén adscritos a alguna de ellas. g) Las sociedades mercantiles constituidas por entidades municipales con capital mayoritariamente público h) Las fundaciones públicas municipales. 2. A los efectos de esta ley, el conjunto de entidades a que se refiere el número anterior, constituye el sector público municipal de Canarias. ARTÍCULO 3. RÉGIMEN JURÍDICO. 1. Las entidades reseñadas en las letras a), b) y c) del artículo anterior se rigen por la legislación básica estatal, por esta ley y la normativa propia de aquellas en sus aspectos competencial, organizativo y de funcionamiento. 2. Las entidades señaladas en las letras d) y e) del artículo anterior se rigen por sus instrumentos de creación y los preceptos de esta ley que se declaren aplicables. 3. Las entidades señaladas en las letras f), g) y h) del artículo anterior se someten a los preceptos de esta ley que se declaren de aplicación y a sus normas de funcionamiento. TÍTULO I DEL MUNICIPIO CAPÍTULO I AUTONOMÍA MUNICIPAL ARTÍCULO 4. EXPRESIÓN DE LA AUTONOMÍA MUNICIPAL. Como manifestaciones de la autonomía constitucional y legalmente reconocida a los municipios, la presente ley garantiza: a) Su Pleno reconocimiento en las leyes autonómicas canarias atributivas de competencias. b) El reconocimiento de su personalidad propia y plena y la responsabilidad por sus actuaciones. c) La gestión por los municipios de los asuntos públicos de interés vecinal. d) Las competencias que permitan hacer efectiva esa participación. 4 \f e) La facultad para conformar y ejecutar una política municipal propia y diferenciada en el marco de tales competencias y participar en la configuración de las políticas sectoriales, insulares y autonómicas, que les afecten. f) La organización de sus estructuras administrativas internas para adaptarse a sus necesidades específicas y permitir una gestión eficaz y eficiente. TÍTULO II PARTICIPACIÓN CIUDADANA Y TRANSPARENCIA CAPÍTULO I PARTICIPACIÓN CIUDADANA SECCIÓN 1.ª INSTRUMENTOS DE PARTICIPACIÓN ARTÍCULO 17. INSTRUMENTOS PARTICIPATIVOS. 1. La participación ciudadana en los Ayuntamientos de Canarias podrá ejercerse, entre otros, a través de los siguientes medios: a) La participación orgánica en asociaciones vecinales inscritas en el registro municipal de entidades ciudadanas, que tendrán derecho al uso de medios públicos que la corporación ponga a su disposición. La cesión de inmuebles para ese fin se ajustará a lo que disponga la normativa o acuerdos municipales, con sujeción a lo previsto en la legislación autonómica reguladora de los bienes locales."
+    },
+    {
+      "titulo": "3. ARTÍCULO 18",
+      "contenido": "b) El ejercicio del derecho de iniciativa popular, que se ajustará a los requisitos y trámites que prevea, en su caso, la ley de iniciativa popular de la Comunidad Autónoma canaria y, en su defecto, a lo que disponga la legislación general de régimen local. c) La participación orgánica y funcional en Juntas de Distrito, Consejos de barrio y de sector, conforme a lo previsto en esta ley y en los reglamentos municipales. d) La Intervención en las sesiones plenarias en la forma prevista en los reglamentos municipales y, en todo caso, en esta ley. e) La solicitud y recepción de información. f) La solicitud y obtención de copias de documentos y de certificados de actos y acuerdos. g) La asistencia a las sesiones del Pleno, y de la Junta de Gobierno local cuando en el orden del día figuren asuntos que deba conocer y acordar por delegación de aquel. h) Consultas ciudadanas. i) Encuentros con colectivos ciudadanos. j) Encuestas sobre el funcionamiento de los servicios y las necesidades locales. k) Uso de redes sociales, herramientas web o cualquier otra nueva tecnología que permitan la interacción entre los representantes municipales y la sociedad. l) Presupuestos participativos en los términos previstos en el apartado siguiente. 2. Para garantizar la eficacia del derecho de participación de los vecinos en la actividad municipal, el reglamento que lo regula o las bases de ejecución del presupuesto habrán de disponer lo necesario para permitir que los vecinos, a través de las Juntas de Distrito, Consejos de barrio o sector, Consejos de participación ciudadana o asociaciones vecinales, puedan formular programas de necesidades vecinales valorados económicamente que, una vez aceptados por el órgano correspondiente de los citados, serán elevados al Área de Gobierno competente en materia de hacienda para su consideración y, en su caso, integración en el presupuesto general de la corporación. 5 \f 3. Los instrumentos participativos reconocidos en las letras e) y f) del apartado 1 de este artículo se utilizarán en los términos previstos en esta ley y en las demás normas en materia de acceso a la información pública. ARTÍCULO 18. PARTICIPACIÓN EN EL PLENO. 1. El reglamento de participación ciudadana, o en su defecto, el reglamento orgánico municipal dispondrá la forma en que los vecinos puedan participar en los Plenos de la corporación, procurando que con ello no se entorpezca el normal funcionamiento de las sesiones. Corresponderá al Alcalde o Presidente del Pleno ordenar y cerrar el turno de participación. 2. En todo caso, los vecinos que acrediten un interés legítimo en alguno de los asuntos incluidos en el orden del día de una sesión plenaria, podrán solicitar del Alcalde, o Presidente del Pleno en los municipios de gran población, con una antelación mínima de 48 horas, su Intervención oral en aquella. 3. La Intervención vecinal en el Pleno se hará siempre al finalizar el debate del respectivo punto del orden del día y se deberá circunscribir a expresar la opinión sobre el tema que constituya el objeto. El reglamento fijará los tiempos de Intervención y, en su defecto, lo hará el Alcalde, oída la Junta de Portavoces, en el caso de que se haya constituido. 4. Lo dispuesto en este artículo se extiende a los casos en que la Junta de Gobierno local deba adoptar acuerdos por delegación del Pleno. SECCIÓN 2.ª ÓRGANOS DE PARTICIPACIÓN CIUDADANA ARTÍCULO 19. CONSEJOS DE PARTICIPACIÓN CIUDADANA. 1."
+    },
+    {
+      "titulo": "4. ARTÍCULO 20",
+      "contenido": "Los Consejos de participación ciudadana son órganos de estudio, asesoramiento, consulta, propuesta y seguimiento de la gestión municipal, donde se desarrolla la participación directa de los vecinos en la actividad pública local. 2. En ellos se integran las entidades ciudadanas domiciliadas en el municipio a través de los representantes que ellas elijan o designen en número que determine el Pleno de la corporación, en proporción a la población que represente cada una de ellas. 3. El Alcalde o Concejal en quien delegue los presidirá. 4. De conformidad con el principio de no duplicidad de competencias, cuando en el municipio existan Juntas de Distrito y Consejos de barrio, la participación ciudadana se canalizará a través del más próximo al vecino, no siendo, entonces, preceptiva la existencia de los Consejos de participación ciudadana. ARTÍCULO 20. FUNCIONES. Son funciones de los Consejos de participación ciudadana: a) Estudiar y evaluar los problemas que afectan al municipio, especialmente en materia de servicios sociales, educación, cultura y otros de carácter personal. b) Elevar propuestas a los órganos competentes del Ayuntamiento, bien directamente, bien a través de las Juntas de Distrito, en caso de existir. Informar los asuntos propios de su competencia. c) d) Participar en las actividades del municipio organizadas por los órganos de la corporación. 6 \f ARTÍCULO 21. REGLAMENTO. Todo Ayuntamiento deberá disponer de un reglamento que regule los procedimientos y órganos competentes para garantizar la participación de los vecinos. CAPÍTULO II DERECHO A LA INFORMACIÓN PÚBLICA Y TRANSPARENCIA ARTÍCULO 22. DERECHO DE ACCESO A LA INFORMACIÓN PÚBLICA. 1. Todas las personas tienen derecho a acceder a la información pública que obre en poder de los Ayuntamientos, en los términos previstos en el artículo 105.b) de la Constitución española y en la legislación reguladora del derecho de acceso a la información pública. 2. El Alcalde será el órgano competente para la resolución de las solicitudes de acceso a la información pública, sin perjuicio de su delegación. ARTÍCULO 23. BOLETÍN INFORMATIVO MUNICIPAL. 1. Si el Pleno lo acuerda, se podrá crear el boletín informativo municipal en que se inserten cuantos acuerdos, actos y anuncios se estime pertinente para mayor difusión. 2. El boletín tendrá su propio reglamento aprobado por el Pleno donde se preverán las secciones que deba contener, entre las que habrá una reservada para los grupos políticos. 3. El boletín se editará en soporte informático y, si así fuera acordado por el Pleno, también en soporte papel. ARTÍCULO 24. TRANSPARENCIA. 1. En los términos previstos en la legislación sobre transparencia, los Ayuntamientos y demás entidades del sector público municipal están obligados a facilitar la información cuya divulgación resulte de mayor relevancia para garantizar la transparencia de su actividad relacionada con el funcionamiento y control de la actuación pública. La determinación de los extremos que deben hacerse públicos de la información relacionada se hará adaptando las previsiones de la legislación canaria sobre transparencia a la organización y funcionamiento de las entidades municipales. 2. La información sujeta a publicación de acuerdo con lo establecido en el apartado anterior se hará pública preferentemente por medios electrónicos, a través de las respectivas sedes electrónicas o páginas web. 3."
+    },
+    {
+      "titulo": "5. TÍTULO III",
+      "contenido": "El Alcalde será el órgano competente para la elaboración, actualización y publicación de la información que debe hacerse pública en la página web de la corporación, tanto de la relativa al Ayuntamiento como la referida a las demás entidades del sector público municipal. 7 \fTÍTULO III ESTATUTO DE LOS MIEMBROS ELECTOS Y ORGANIZACIÓN MUNICIPAL CAPÍTULO II ORGANIZACIÓN MUNICIPAL SECCIÓN 8.ª ÓRGANOS COMPLEMENTARIOS ARTÍCULO 44. ÓRGANOS COMPLEMENTARIOS. 1. Son órganos complementarios de los establecidos por la legislación básica de régimen local, de existencia preceptiva conforme a las previsiones de esta sección: a) En todos los municipios: - Consejos de participación ciudadana, regulados en el título segundo de esta ley. b) En los municipios de más de 50.000 habitantes que no estén sujetos al régimen de municipios de gran población: - Consejos de barrio. - Consejos de sector. 2. Asimismo, serán obligatorios los órganos complementarios que creen los municipios en ejercicio de su potestad reglamentaria. 3. Son órganos complementarios de los establecidos por la legislación básica de régimen local, de creación discrecional por cada municipio de más de 50.000 habitantes que no esté sujeto al régimen de municipios de gran población: - Juntas de distrito. SUBSECCIÓN 1.ª CONSEJOS DE BARRIO ARTÍCULO 45. CONSEJOS DE BARRIO. En los municipios de más de 50.000 habitantes en que no se creen Juntas de Distrito será obligatoria la constitución de Consejos de barrio. A estos efectos, el término municipal estará dividido en tantos barrios cuantos el Pleno juzgue necesario. ARTÍCULO 46. FUNCIONES. 1. Los Consejos de barrio son órganos de participación vecinal que proponen a la corporación soluciones a los problemas que detecten para la satisfacción de los intereses vecinales específicos en su respectivo ámbito territorial de actuación. 2. Cuando la corporación deba tomar acuerdos que afecten de forma particular o relevante a un barrio, deberá oír previamente al Consejo correspondiente. ARTÍCULO 47. ORGANIZACIÓN. Los Consejos de barrio serán presididos por el Concejal delegado del barrio respectivo y se compondrán además de los vecinos que designe el Pleno a propuesta de las asociaciones en el barrio; y una persona que ostente la condición de funcionario de la corporación, que actuará como titular de la Secretaría, por delegación del titular de la Secretaría General. 8 \f SUBSECCIÓN 2.ª CONSEJOS DE SECTOR ARTÍCULO 48. CONSEJOS DE SECTOR. 1. En los municipios cuyas especiales características agrícolas, ganaderas, industriales, turísticas u otras, así lo demanden, existirán Consejos del sector o sectores correspondientes cuya creación será potestativa en los que tenga una población de hasta 50.000 habitantes. 2. Estos Consejos estarán compuestos por representantes del correspondiente sector designados por el Pleno, a propuesta de las entidades o instituciones integrantes del mismo en el ámbito municipal. 3. Los presidirá un Concejal delegado en la específica competencia del Consejo y estarán asistidos por personal funcionario, por delegación de la persona titular de la Secretaría General, que hará las funciones de Secretaría del Consejo. ARTÍCULO 49. FUNCIONES. Son funciones de los Consejos de sector: – Informar a la corporación sobre temas específicos del sector. – Proponer a la corporación a través del Concejal delegado del Área competencial respectiva, mejoras en el sector en materia de fomento, presupuestación y gestión de los servicios relacionados con él. – Ser informado en la toma de acuerdos que afecten directamente al sector."
+    },
+    {
+      "titulo": "6. ARTÍCULO 50",
+      "contenido": "SUBSECCIÓN 3.ª JUNTAS DE DISTRITO ARTÍCULO 50. JUNTAS DE DISTRITO. En los municipios de más de 50.000 habitantes no sujetos al régimen de gran población, los reglamentos orgánicos podrán prever la creación de Juntas de Distrito. ARTÍCULO 51. CREACIÓN. 1. Las Juntas de Distrito son órganos de gestión desconcentrada y de participación ciudadana. 2. Su creación se hará por el Pleno del Ayuntamiento, previa división del término municipal en distritos, siguiendo un criterio racional de proporcionalidad de la población y de máxima desconcentración de la gestión municipal. ARTÍCULO 52. ORGANIZACIÓN. La Junta de Distrito se organiza en: – Una presidencia, que la ostentará el Concejal delegado del distrito. – Un número de vocalías designadas por el Alcalde a propuesta de las asociaciones de vecinos del distrito y proporcional a la población. – Una persona funcionaria de la corporación, que, por delegación de la persona titular de la Secretaría, ejercerá esa función en la Junta de Distrito. ARTÍCULO 53. FUNCIONES. Las Juntas de Distrito podrán desarrollar, entre otras, funciones relativas a la participación ciudadana en los términos previstos en el artículo 20 de esta ley. 9 \f TÍTULO V FUNCIONAMIENTO DE LOS AYUNTAMIENTOS CAPÍTULO I DISPOSICIONES COMUNES ARTÍCULO 87. CONVOCATORIAS. 1. Las convocatorias de las sesiones del Pleno, de la Junta de Gobierno local o de las Comisiones se notificarán, además de a los miembros natos de esos órganos, a la persona titular de la Intervención General y a los titulares de órganos directivos que deban comparecer en aquellos para informar de algún asunto incluido en el orden del día de la correspondiente sesión. 2. A la persona titular de la Secretaría General se le tendrá por notificada de todas las convocatorias de órganos colegiados de los que forma parte. ARTÍCULO 88. ÓRDENES DEL DÍA. Los órdenes del día de las sesiones de los órganos colegiados determinarán el de los asuntos a tratar, ateniéndose a la siguiente estructura: 1. Parte decisoria, que comprenderá: a) Aprobación de actas de sesiones anteriores. b) Acuerdos finalizadores de procedimientos administrativos dictaminados por las correspondientes Comisiones informativas. c) Acuerdos que ordenen la iniciación de expedientes. 2. Parte declarativa, que a su vez, incluirá todos aquellos acuerdos que no sean finalizadores de procedimiento administrativo ni tengan carácter ejecutorio y los demás que prevea el reglamento orgánico. 3. Parte de control y fiscalización que, en su caso, incluirá: a) Control sobre la actuación del Alcalde, Junta de Gobierno local o Delegados de uno u otra. b) Requerimientos de comparecencia o información de otros órganos de gobierno o directivos. c) Dación de cuentas de acuerdos y resoluciones de otros órganos y, en todo caso, de los decretos del Alcalde. 4. Ruegos y preguntas. ARTÍCULO 89. EXPOSICIÓN PÚBLICA DE CONVOCATORIAS. A efectos de lograr la máxima difusión, las convocatorias de órganos colegiados de la corporación, se expondrán en los tablones de anuncios de que esta disponga y en la sede electrónica municipal. ARTÍCULO 90. EXAMEN DE DOCUMENTACIÓN. El lugar y horario para el examen de la documentación de los asuntos incluidos en el orden del día, se señalará en la propia notificación de la convocatoria, sin perjuicio de su anuncio en la sede electrónica corporativa y tablón de anuncios. ARTÍCULO 91. USO DE PALABRA."
+    },
+    {
+      "titulo": "7. ARTÍCULO 92",
+      "contenido": "Cualquier miembro de la corporación aunque no sea portavoz de grupo podrá solicitar del Alcalde o Presidente el uso de la palabra para rectificar errores de hecho, materiales o aritméticos o aclarar conceptos o corregir datos que se le hubiesen atribuido que considere no veraces o alusiones a su persona que impliquen juicios de valor subjetivos. 10 \f ARTÍCULO 92. EXPLICACIÓN DEL VOTO. Efectuada la votación de un punto del orden del día, solo podrá otorgarse la palabra por el Alcalde o Presidente para explicación de voto, sin que, en ningún caso, pueda dar lugar a la reapertura del debate. ARTÍCULO 93. UNIDAD DE ACTO. No podrán interrumpirse los Plenos, Juntas de Gobierno local o Comisiones para la celebración en el mismo lugar, de ningún otro acto público o privado. ARTÍCULO 94. SOLICITUD DE SESIONES EXTRAORDINARIAS. Los solicitantes de una sesión extraordinaria cuyos asuntos propuestos hayan sido debatidos y votados en una sesión anterior no podrán reiterarla basándose en otros hechos que tengan identidad sustancial o íntima conexión. ARTÍCULO 95. ACTAS. A los requisitos exigidos por la legislación básica de régimen local para las actas, se añadirá, en todo caso, junto a la fecha el número de orden de la sesión dentro del año natural. ARTÍCULO 96. DIARIO DE SESIONES. La persona titular de la Secretaría General dispondrá la creación, llevanza y custodia del diario de sesiones del Pleno, que podrá consistir en cualquier soporte digital que garantice los principios dispuestos en la normativa de administración electrónica, que ella misma autorizará. En ese diario constarán también las sesiones públicas celebradas por la Junta de Gobierno local. Los asientos o grabaciones del diario de sesiones públicos no sustituirán a las certificaciones de los acuerdos a efectos probatorios. CAPÍTULO II DISPOSICIONES ESPECÍFICAS DE DETERMINADOS ÓRGANOS SECCIÓN 1.ª DEL PLENO MUNICIPAL ARTÍCULO 97. PROPUESTAS NO DECISORIAS. 1. A efectos de los acuerdos a adoptar en la parte declarativa de las sesiones del Pleno, la presentación de propuestas no decisorias se ajustará a las siguientes reglas generales: a) Cada grupo político solo podrá presentar el número de propuestas que prevea el reglamento orgánico municipal y, en su defecto y como máximo para cada sesión plenaria, un número de propuestas igual al de miembros que lo integran. b) Si no existiere Junta de Portavoces, el reglamento orgánico, o en su defecto el propio Pleno, determinará los tiempos de Intervención para cada uno de los turnos inicial, de réplica y de dúplica. c) Las propuestas no resolutivas solo podrán estar referidas a cuestiones de política municipal y de competencia de la corporación, no pudiendo ser incluidas en el orden del día las que excedan notoriamente de esos ámbitos, a juicio del Alcalde o Presidente, previa calificación por la persona titular de la Secretaría General. d) Cuando las propuestas estén dentro de la competencia municipal, será obligación del Alcalde o Presidente incluirlas en el orden del día de la sesión correspondiente. Si se presentaran después de confeccionado este, se incluirán en el de la sesión inmediata siguiente, salvo que el proponente las haya calificado de urgentes, en cuyo caso habrá de votarse por el Pleno su debate en la sesión que aquel solicite."
+    },
+    {
+      "titulo": "8. ARTÍCULO 98",
+      "contenido": "11 \f e) Cuando las propuestas tengan por objeto alcanzar acuerdos de iniciación de procedimientos de la competencia de otros órganos distintos al Pleno, esos acuerdos se considerarán propuestas razonadas a los órganos competentes que deberán aceptarlas mediante sus propios acuerdos o resoluciones de iniciación para que adquieran carácter ejecutivo. 2. En ningún caso los acuerdos generados a partir de las propuestas a que se refiere en el número anterior tendrán carácter ejecutorio por sí mismos. ARTÍCULO 98. PERIODICIDAD DE LAS SESIONES PLENARIAS ORDINARIAS. 1. La periodicidad de las sesiones ordinarias que deba celebrar el Pleno será fijada por acuerdo de este órgano en sesión extraordinaria que se celebrará dentro de los treinta días siguientes al de la sesión constitutiva de la corporación, señalándose los días y horas en que deban producirse, respetando, en todo caso, el mínimo legal exigido por la legislación básica. 2. Por decreto del Alcalde se podrá, no obstante, previo acuerdo de la Junta de Portavoces si existiera, señalarse, motivadamente, otras fechas y horas, sin que por ello la sesión pierda su carácter ordinario. 3. El acuerdo plenario a que se refiere el punto 1 se anexará al reglamento orgánico de la corporación, en el supuesto de que exista. ARTÍCULO 99. CUESTIÓN DE CONFIANZA. Tendrá el carácter de extraordinaria y urgente la sesión plenaria convocada para el debate de la cuestión de confianza planteada por el Alcalde, cuyo orden del día contendrá ese único punto. ARTÍCULO 100. DEBATES. 1. Salvo autorización del Alcalde o, en los municipios de gran población, del Presidente del Pleno, en los debates intervendrán los Portavoces de los grupos políticos representados en la corporación, comenzando por el proponente, seguido de los demás en orden inverso al número de miembros. Este orden podrá ser modificado para cada sesión por acuerdo de la Junta de Portavoces, si existiera. Cerrará el debate el Alcalde o Presidente, que además podrá intervenir en cualquier momento. 2. El reglamento orgánico municipal preverá el tiempo de intervenciones, contemplando que también podrá ser modificado por acuerdo de la Junta de Portavoces, si existiera, para casos concretos de especial complejidad. ARTÍCULO 101. COMPARECENCIAS. 1. Todo grupo político podrá solicitar la comparecencia en el Pleno de cualesquiera miembros de la corporación que tengan la condición de Tenientes de Alcalde o Concejales Delegados y del personal directivo de la propia corporación y de sus organismos dependientes para que den cuenta o informen sobre el desarrollo de sus actuaciones o proyectos de su competencia. 2. La petición deberá ser cursada con una antelación mínima de quince días hábiles anteriores a la celebración de la sesión donde la comparecencia haya de tener lugar. 3. Las comparecencias del Alcalde ante el Pleno solo podrán solicitarse cuando no se haya creado y esté en funcionamiento la Comisión de seguimiento, en la que, de existir, comparecerá quien ostente la delegación correspondiente a la materia objeto de la comparecencia. 12 \f Las comparecencias del Alcalde ante el Pleno no podrán coincidir con las de otros titulares de órganos de gobierno o directivos. 4. Tanto el Alcalde como cualquier titular de otros órganos de gobierno o directivos podrán solicitar, en cualquier momento, su comparecencia voluntaria en el Pleno para dar cuenta o informar sobre su gestión en la corporación. 5."
+    },
+    {
+      "titulo": "9. ARTÍCULO 103",
+      "contenido": "Los Portavoces de los grupos que no hayan solicitado la comparecencia podrán intervenir en el debate posterior conforme a lo que disponga el reglamento orgánico o el propio Pleno. 6. Los comparecientes no tendrán tiempo señalado para sus exposiciones. SECCIÓN 2.ª DE OTROS ÓRGANOS DE GOBIERNO MUNICIPAL ARTÍCULO 103. CARÁCTER PÚBLICO DE LAS SESIONES DE LA JUNTA DE GOBIERNO. Las sesiones de la Junta de Gobierno local en que se hubieren de debatir y tomar acuerdos en materias de competencias del Pleno, serán públicas. ARTÍCULO 104. REGLAS GENERALES DE FUNCIONAMIENTO DE LOS ÓRGANOS COMPLEMENTARIOS. 1. Los órganos complementarios previstos en esta ley funcionarán exclusivamente en Pleno sin que puedan ser creados en su seno Comisiones u otros auxiliares de carácter representativo. 2. En todo caso, se respetarán las siguientes reglas de funcionamiento: a) El Pleno de los correspondientes órganos complementarios celebrarán sesión ordinaria como mínimo una vez al semestre. b) Se entienden válidamente constituidos con la presencia de un tercio de sus miembros, que no podrá ser inferior a tres y, en todo caso, con la de las personas titulares de la presidencia y Secretaría o quienes les sustituyan. c) Los acuerdos se adoptarán por mayoría simple de votos. d) Los acuerdos se instrumentalizarán en acta para su validez. 3. Para lo no previsto en este artículo se estará a lo que dispongan los reglamentos orgánicos de cada entidad y, en su defecto, a las reglas básicas de funcionamiento de los órganos colegiados de la legislación general de procedimiento administrativo común. 13"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Los Municipios Canarios. Sesiones de los\"]\n  A --> N1[\"TÍTULO V\"]\n  A --> N2[\"título c\"]\n  A --> N3[\"ARTÍCULO 18\"]\n  A --> N4[\"ARTÍCULO 20\"]\n  A --> N5[\"TÍTULO III\"]\n  A --> N6[\"ARTÍCULO 50\"]\n  A --> N7[\"ARTÍCULO 92\"]\n  A --> N8[\"ARTÍCULO 98\"]\n  A --> N9[\"ARTÍCULO 103\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Los Municipios Canarios. Sesiones de los órganos …",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "TÍTULO V",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "título c",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "ARTÍCULO 18",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "ARTÍCULO 20",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "TÍTULO III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "ARTÍCULO 50",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "ARTÍCULO 92",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "ARTÍCULO 98",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "ARTÍCULO 103",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p15-01",
-            "enunciado": "Los municipios de Canarias se rigen, además de por la legislación estatal, por:",
-            "opciones": ["La Ley 8/2015", "La Ley 7/2015, de los municipios de Canarias", "La Ley 29/1998", "El Estatuto de Autonomía exclusivamente"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Ley 7/2015, de 1 de abril, regula los municipios de Canarias."
-        },
-        {
-            "id": "p15-02",
-            "enunciado": "Las sesiones del Pleno pueden ser:",
-            "opciones": ["Solo ordinarias", "Ordinarias, extraordinarias y extraordinarias urgentes", "Públicas y secretas", "Generales y especiales"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las sesiones del Pleno pueden ser ordinarias, extraordinarias y extraordinarias urgentes."
-        },
-        {
-            "id": "p15-03",
-            "enunciado": "Una sesión extraordinaria puede solicitarla:",
-            "opciones": ["Un solo concejal", "La cuarta parte del número legal de miembros", "El Secretario", "Cualquier vecino"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La sesión extraordinaria puede ser solicitada por la cuarta parte, al menos, del número legal de miembros de la Corporación."
-        },
-        {
-            "id": "p15-04",
-            "enunciado": "El quórum para la válida constitución del Pleno es:",
-            "opciones": ["La mitad más uno", "Un tercio del número legal, nunca inferior a tres", "Dos tercios", "Todos los miembros"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Se requiere la asistencia de un tercio del número legal de miembros, que nunca podrá ser inferior a tres."
-        },
-        {
-            "id": "p15-05",
-            "enunciado": "Como regla general, los acuerdos se adoptan por:",
-            "opciones": ["Mayoría absoluta", "Mayoría simple de los presentes", "Unanimidad", "Dos tercios"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Como regla general, los acuerdos se adoptan por mayoría simple de los miembros presentes."
-        },
-        {
-            "id": "p15-06",
-            "enunciado": "Los empates en las votaciones del Pleno los dirime:",
-            "opciones": ["El Secretario", "El Alcalde con voto de calidad", "El concejal de mayor edad", "Se repite la votación"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El Alcalde dirime los empates con su voto de calidad."
-        },
-        {
-            "id": "p15-07",
-            "enunciado": "Las sesiones del Pleno son:",
-            "opciones": ["Siempre secretas", "Públicas, salvo asuntos que afecten al honor o la intimidad", "Públicas sin excepción", "Privadas para los concejales"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las sesiones del Pleno son públicas, salvo en asuntos que puedan afectar al honor, la intimidad o la propia imagen."
-        },
-        {
-            "id": "p15-08",
-            "enunciado": "Para celebrar una consulta popular municipal se requiere:",
-            "opciones": ["Solo el acuerdo del Pleno", "La autorización del Gobierno del Estado", "La autorización del Cabildo", "Nada especial"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las consultas populares sobre asuntos municipales requieren autorización del Gobierno del Estado."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc15-01",
+      "pregunta": "¿Qué tipo de mayoría se requiere para la adopción de acuerdos en las corporaciones locales?",
+      "respuesta": "Mayoría simple"
+    },
+    {
+      "id": "fc15-02",
+      "pregunta": "¿Qué tipo de mayoría se requiere para la adopción de acuerdos en las siguientes materias?",
+      "respuesta": "Mayoría absoluta"
+    },
+    {
+      "id": "fc15-03",
+      "pregunta": "¿Qué tipo de acuerdo se requiere para la creación y supresión de municipios y alteración de términos municipales?",
+      "respuesta": "Mayoría absoluta"
+    },
+    {
+      "id": "fc15-04",
+      "pregunta": "¿Qué tipo de acuerdo se requiere para la aprobación de la delimitación del término municipal?",
+      "respuesta": "Mayoría absoluta"
+    },
+    {
+      "id": "fc15-05",
+      "pregunta": "¿Qué tipo de acuerdo se requiere para la transferencia de funciones o actividades a otras Administraciones públicas?",
+      "respuesta": "Mayoría simple"
+    },
+    {
+      "id": "fc15-06",
+      "pregunta": "¿Qué tipo de acuerdo se requiere para la cesión gratuita de bienes a otras Administraciones o instituciones públicas?",
+      "respuesta": "Mayoría absoluta"
+    },
+    {
+      "id": "fc15-07",
+      "pregunta": "¿Qué tipo de acuerdo se requiere para la enajenación de bienes cuando su cuantía exceda del 20 por ciento de los recursos ordinarios del presupuesto?",
+      "respuesta": "Mayoría absoluta"
+    },
+    {
+      "id": "fc15-08",
+      "pregunta": "¿Qué tipo de acuerdo se requiere para la alteración de la calificación jurídica de los bienes demaniales o comunales?",
+      "respuesta": "Mayoría absoluta"
+    },
+    {
+      "id": "fc15-09",
+      "pregunta": "¿Qué tipo de acuerdo se requiere para la aprobación y modificación del reglamento orgánico propio de la corporación?",
+      "respuesta": "Mayoría absoluta"
+    },
+    {
+      "id": "fc15-10",
+      "pregunta": "¿Qué tipo de acuerdo se requiere para la creación, modificación o disolución de mancomunidades u otras organizaciones asociativas?",
+      "respuesta": "Mayoría absoluta"
+    },
+    {
+      "id": "fc15-11",
+      "pregunta": "¿Qué tipo de acuerdo se requiere para la transferencia de funciones o actividades a otras Administraciones públicas?",
+      "respuesta": "Mayoría simple"
+    },
+    {
+      "id": "fc15-12",
+      "pregunta": "¿Qué tipo de acuerdo se requiere para la cesión gratuita de bienes a otras Administraciones o instituciones públicas?",
+      "respuesta": "Mayoría absoluta"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p15-01",
+      "enunciado": "¿Cuál es el objeto de la Ley 7/2015, de 1 de abril, de los municipios de Canarias?",
+      "opciones": [
+        "a) Regular la autonomía municipal",
+        "b) Regular la gestión de los asuntos públicos de interés vecinal",
+        "c) Regular la configuración de las políticas públicas",
+        "d) Regular la participación ciudadana"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Ley 7/2015, de 1 de abril, de los municipios de Canarias, tiene como objeto regular la autonomía municipal, la gestión de los asuntos públicos de interés vecinal y la configuración de las políticas públicas."
+    },
+    {
+      "id": "p15-02",
+      "enunciado": "¿Qué tipo de entidades se rigen por la legislación básica estatal y por esta ley?",
+      "opciones": [
+        "a) Los municipios",
+        "b) Las Áreas metropolitanas",
+        "c) Las Mancomunidades de municipios",
+        "d) Todos los tipos de entidades mencionadas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los municipios, las Áreas metropolitanas y las Mancomunidades de municipios se rigen por la legislación básica estatal y por esta ley."
+    },
+    {
+      "id": "p15-03",
+      "enunciado": "¿Qué tipo de acuerdo se requiere para la creación y supresión de municipios y alteración de términos municipales?",
+      "opciones": [
+        "a) Mayoría simple",
+        "b) Mayoría absoluta",
+        "c) Mayoría de dos tercios",
+        "d) Mayoría de tres quintos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Se requiere la mayoría absoluta para la creación y supresión de municipios y alteración de términos municipales."
+    },
+    {
+      "id": "p15-04",
+      "enunciado": "¿Qué tipo de acuerdo se requiere para la aprobación de la delimitación del término municipal?",
+      "opciones": [
+        "a) Mayoría simple",
+        "b) Mayoría absoluta",
+        "c) Mayoría de dos tercios",
+        "d) Mayoría de tres quintos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Se requiere la mayoría absoluta para la aprobación de la delimitación del término municipal."
+    },
+    {
+      "id": "p15-05",
+      "enunciado": "¿Qué tipo de acuerdo se requiere para la transferencia de funciones o actividades a otras Administraciones públicas?",
+      "opciones": [
+        "a) Mayoría simple",
+        "b) Mayoría absoluta",
+        "c) Mayoría de dos tercios",
+        "d) Mayoría de tres quintos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Se requiere la mayoría simple para la transferencia de funciones o actividades a otras Administraciones públicas."
+    },
+    {
+      "id": "p15-06",
+      "enunciado": "¿Qué tipo de acuerdo se requiere para la cesión gratuita de bienes a otras Administraciones o instituciones públicas?",
+      "opciones": [
+        "a) Mayoría simple",
+        "b) Mayoría absoluta",
+        "c) Mayoría de dos tercios",
+        "d) Mayoría de tres quintos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Se requiere la mayoría absoluta para la cesión gratuita de bienes a otras Administraciones o instituciones públicas."
+    },
+    {
+      "id": "p15-07",
+      "enunciado": "¿Qué tipo de acuerdo se requiere para la enajenación de bienes cuando su cuantía exceda del 20 por ciento de los recursos ordinarios del presupuesto?",
+      "opciones": [
+        "a) Mayoría simple",
+        "b) Mayoría absoluta",
+        "c) Mayoría de dos tercios",
+        "d) Mayoría de tres quintos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Se requiere la mayoría absoluta para la enajenación de bienes cuando su cuantía exceda del 20 por ciento de los recursos ordinarios del presupuesto."
+    },
+    {
+      "id": "p15-08",
+      "enunciado": "¿Qué tipo de acuerdo se requiere para la alteración de la calificación jurídica de los bienes demaniales o comunales?",
+      "opciones": [
+        "a) Mayoría simple",
+        "b) Mayoría absoluta",
+        "c) Mayoría de dos tercios",
+        "d) Mayoría de tres quintos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Se requiere la mayoría absoluta para la alteración de la calificación jurídica de los bienes demaniales o comunales."
+    },
+    {
+      "id": "p15-09",
+      "enunciado": "¿Qué tipo de acuerdo se requiere para la aprobación y modificación del reglamento orgánico propio de la corporación?",
+      "opciones": [
+        "a) Mayoría simple",
+        "b) Mayoría absoluta",
+        "c) Mayoría de dos tercios",
+        "d) Mayoría de tres quintos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Se requiere la mayoría absoluta para la aprobación y modificación del reglamento orgánico propio de la corporación."
+    },
+    {
+      "id": "p15-10",
+      "enunciado": "¿Qué tipo de acuerdo se requiere para la creación, modificación o disolución de mancomunidades u otras organizaciones asociativas?",
+      "opciones": [
+        "a) Mayoría simple",
+        "b) Mayoría absoluta",
+        "c) Mayoría de dos tercios",
+        "d) Mayoría de tres quintos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Se requiere la mayoría absoluta para la creación, modificación o disolución de mancomunidades u otras organizaciones asociativas."
+    },
+    {
+      "id": "p15-11",
+      "enunciado": "¿Qué tipo de acuerdo se requiere para la transferencia de funciones o actividades a otras Administraciones públicas?",
+      "opciones": [
+        "a) Mayoría simple",
+        "b) Mayoría absoluta",
+        "c) Mayoría de dos tercios",
+        "d) Mayoría de tres quintos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Se requiere la mayoría simple para la transferencia de funciones o actividades a otras Administraciones públicas."
+    },
+    {
+      "id": "p15-12",
+      "enunciado": "¿Qué tipo de acuerdo se requiere para la cesión gratuita de bienes a otras Administraciones o instituciones públicas?",
+      "opciones": [
+        "a) Mayoría simple",
+        "b) Mayoría absoluta",
+        "c) Mayoría de dos tercios",
+        "d) Mayoría de tres quintos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Se requiere la mayoría absoluta para la cesión gratuita de bienes a otras Administraciones o instituciones públicas."
+    }
+  ]
 }

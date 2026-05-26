@@ -1,157 +1,552 @@
 {
-    "id": 13,
-    "titulo": "El estatuto de los miembros de las Corporaciones locales. Personal al servicio de las Entidades locales. Adquisición y pérdida de la condición de funcionario. Incompatibilidades. Régimen estatutario",
-    "bloque": "general",
-    "secciones": [
-        {
-            "id": "s13-1",
-            "titulo": "El estatuto de los miembros de las Corporaciones locales",
-            "contenido": "Los miembros de las Corporaciones locales gozan, una vez que tomen posesión de su cargo, de los derechos y deberes que la legislación de régimen local y la electoral general determinan. Tienen derecho a participar con voz y voto en las sesiones de los órganos de que formen parte, a percibir retribuciones e indemnizaciones en los términos que el Pleno establezca, y a obtener información de los antecedentes necesarios para el desarrollo de su función. Entre sus deberes figuran asistir a las sesiones, abstenerse en los asuntos en que tengan interés directo y formular declaración de bienes patrimoniales y de actividades. Adquieren la condición de miembro al tomar posesión y la pierden por finalización del mandato, renuncia, fallecimiento o resolución judicial firme."
-        },
-        {
-            "id": "s13-2",
-            "titulo": "Personal al servicio de las Entidades locales",
-            "contenido": "El personal al servicio de las Entidades locales está integrado por funcionarios de carrera, personal laboral y personal eventual. Los funcionarios de carrera se clasifican en funcionarios con habilitación de carácter nacional (Secretarios, Interventores y Tesoreros) y funcionarios propios de cada Corporación. El personal laboral puede ser fijo, por tiempo indefinido o temporal. El personal eventual desempeña puestos de confianza o asesoramiento especial y su nombramiento y cese son libres. El régimen del personal local se rige por la legislación básica del Estatuto Básico del Empleado Público (Real Decreto Legislativo 5/2015), por la legislación de función pública y por la legislación de régimen local."
-        },
-        {
-            "id": "s13-3",
-            "titulo": "Adquisición y pérdida de la condición de funcionario",
-            "contenido": "La condición de funcionario de carrera se adquiere por el cumplimiento sucesivo de los siguientes requisitos: superación del proceso selectivo, nombramiento por el órgano o autoridad competente, acto de acatamiento de la Constitución y, en su caso, del Estatuto de Autonomía y del resto del ordenamiento jurídico, y toma de posesión dentro del plazo establecido. La condición de funcionario de carrera se pierde por la renuncia voluntaria, la pérdida de la nacionalidad, la jubilación total, la sanción disciplinaria de separación del servicio que tuviere carácter firme y la pena principal o accesoria de inhabilitación absoluta o especial para cargo público que tuviere carácter firme."
-        },
-        {
-            "id": "s13-4",
-            "titulo": "Incompatibilidades",
-            "contenido": "El personal al servicio de las Administraciones públicas está sujeto a un régimen de incompatibilidades regulado en la Ley 53/1984, de 26 de diciembre. El principio general es que el desempeño de un puesto de trabajo en el sector público es incompatible con el ejercicio de cualquier otro puesto, cargo, representación, profesión o actividad, sea pública o privada, por cuenta propia o ajena, que pueda impedir o menoscabar el estricto cumplimiento de los deberes o comprometer su imparcialidad o independencia. Como regla, no se puede percibir más de una remuneración con cargo a presupuestos públicos. La compatibilidad para actividades privadas requiere autorización expresa previa."
-        },
-        {
-            "id": "s13-5",
-            "titulo": "El régimen estatutario: derechos y deberes",
-            "contenido": "El régimen estatutario de los funcionarios comprende sus derechos, deberes, código de conducta, situaciones administrativas y régimen disciplinario. Entre los derechos individuales figuran la inamovilidad en la condición de funcionario de carrera, el desempeño efectivo de las funciones del cuerpo, la progresión en la carrera profesional, las retribuciones y la formación continua. Entre los deberes y el código de conducta destacan actuar con arreglo a los principios de objetividad, integridad, neutralidad, responsabilidad, imparcialidad, confidencialidad, dedicación al servicio público, transparencia, ejemplaridad, austeridad, accesibilidad, eficacia, honradez y respeto a la igualdad entre mujeres y hombres."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e13-1",
-            "titulo": "Personal de las Entidades locales",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Personal de Entidades locales] --> B[Funcionarios de carrera]\n    A --> C[Personal laboral]\n    A --> D[Personal eventual]\n    B --> E[Habilitacion nacional]\n    B --> F[Funcionarios propios]"
-        },
-        {
-            "id": "e13-2",
-            "titulo": "Adquisición y pérdida de la condición de funcionario",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Condicion de funcionario] --> B[Adquisicion]\n    A --> C[Perdida]\n    B --> D[Superar proceso + nombramiento + toma de posesion]\n    C --> E[Renuncia, jubilacion, separacion del servicio]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Estatuto del personal local", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Miembros de las Corporaciones", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Personal de las Entidades locales", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Condición de funcionario", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Incompatibilidades", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Régimen estatutario", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Derechos y deberes del cargo", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Carrera, laboral y eventual", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Adquisición y pérdida", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Superar proceso + toma de posesión", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Ley 53/1984", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Una sola remuneración pública", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Código de conducta", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n4", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n5", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 13,
+  "titulo": "El estatuto de los miembros de las Corporaciones locales. Personal al servicio de las Entidades locales. Adquisición y pérdida de la condición de funcionario. Incompatibilidades. Régimen estatutario.",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "1. Real Decreto Legislativo 5/2015, de 30 de octubre, p",
+      "contenido": "BIBLIOGRAFÍA • Ley 53/1984, de 26 de diciembre, de Incompatibilidades del personal al servicio de las Administraciones Públicas. o Art. 1-3 o Art. 9-11 o Art. 13-16 o Art. 19-20 • Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local o Art. 73-78 • Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público o Art. 8-15 o Art. 47 bis o Art. 55-68 • Real Decreto Legislativo 781/1986, de 18 de abril, por el que se aprueba el texto refundido de las disposiciones legales vigentes en materia de Régimen Local. o Art. 72 o Art. 167-168 o Art. 172-173 o Art. 176-177 2 \f LEY 53/1984, DE 26 DE DICIEMBRE, DE INCOMPATIBILIDADES DEL PERSONAL AL SERVICIO DE LAS ADMINISTRACIONES PÚBLICAS. CAPÍTULO I PRINCIPIOS GENERALES ARTÍCULO PRIMERO. 1. El personal comprendido en el ámbito de aplicación de esta Ley no podrá compatibilizar sus actividades con el desempeño, por sí o mediante sustitución, de un segundo puesto de trabajo, cargo o actividad en el sector público, salvo en los supuestos previstos en la misma. A los solos efectos de esta Ley se considerará actividad en el sector público la desarrollada por los miembros electivos de las Asambleas Legislativas de las Comunidades Autónomas y de las Corporaciones Locales, por los altos cargos y restante personal de los órganos constitucionales y de todas las Administraciones Públicas, incluida la Administración de Justicia, y de los Entes, Organismo y Empresas de ellas dependientes, entendiéndose comprendidas las Entidades colaboradoras y las concertadas de la Seguridad Social en la prestación sanitaria. 2. Además, no se podrá percibir, salvo en los supuestos previstos en esta Ley, más de una remuneración con cargo a los presupuestos de las Administraciones Públicas y de los Entes, Organismos y Empresas de ellas dependientes o con cargo a los de los órganos constitucionales, o que resulte de la aplicación de arancel ni ejercer opción por percepciones correspondiente a puestos incompatibles. A los efectos del párrafo anterior, se entenderá por remuneración cualquier derecho de contenido económico derivado, directa o indirectamente, de una prestación o servicio personal, sea su cuantía fija o variable y su devengo periódico u ocasional. 3. En cualquier caso, el desempeño de un puesto de trabajo por el personal incluido en el ámbito de aplicación de esta Ley será incompatible con el ejercicio de cualquier cargo, profesión o actividad, público o privado, que pueda impedir o menoscabar el estricto cumplimiento de sus deberes o comprometer su imparcialidad o independencia. CAPÍTULO II ÁMBITO DE APLICACIÓN ARTÍCULO SEGUNDO. 1. La presente Ley será de aplicación a: a) El personal civil y militar al servicio de la Administración del Estado y de sus Organismos Públicos. b) El personal al servicio de las Administraciones de las Comunidades Autónomas y de los Organismos de ellas dependientes, así como de sus Asambleas Legislativas y órganos institucionales. c) El personal al servicio de las Corporaciones Locales y de los Organismos de ellas dependientes. d) El personal al servicio de Entes y Organismos públicos exceptuados de la aplicación de la Ley de Entidades Estatales Autónomas. e) El personal que desempeñe funciones públicas y perciba sus retribuciones mediante arancel. f) El personal al servicio de la Seguridad Social, de sus Entidades Gestoras y de cualquier otra Entidad u Organismo de la misma."
     },
-    "flashcards": [
-        { "id": "fc13-01", "anverso": "¿Cuándo adquieren su condición los miembros de las Corporaciones locales?", "reverso": "Al tomar posesión de su cargo." },
-        { "id": "fc13-02", "anverso": "Cita un derecho de los miembros de las Corporaciones locales.", "reverso": "Participar con voz y voto en las sesiones de los órganos de que formen parte." },
-        { "id": "fc13-03", "anverso": "¿Qué deben formular los miembros de las Corporaciones locales?", "reverso": "Declaración de bienes patrimoniales y de actividades." },
-        { "id": "fc13-04", "anverso": "¿Cuándo deben abstenerse los miembros de las Corporaciones?", "reverso": "En los asuntos en que tengan interés directo." },
-        { "id": "fc13-05", "anverso": "¿Cómo se integra el personal al servicio de las Entidades locales?", "reverso": "Por funcionarios de carrera, personal laboral y personal eventual." },
-        { "id": "fc13-06", "anverso": "¿Qué funcionarios tienen habilitación de carácter nacional?", "reverso": "Los Secretarios, Interventores y Tesoreros." },
-        { "id": "fc13-07", "anverso": "¿Qué desempeña el personal eventual?", "reverso": "Puestos de confianza o asesoramiento especial." },
-        { "id": "fc13-08", "anverso": "¿Cómo son el nombramiento y cese del personal eventual?", "reverso": "Libres." },
-        { "id": "fc13-09", "anverso": "¿Qué norma básica regula el empleo público?", "reverso": "El Estatuto Básico del Empleado Público (Real Decreto Legislativo 5/2015)." },
-        { "id": "fc13-10", "anverso": "¿Qué requisitos se exigen para adquirir la condición de funcionario de carrera?", "reverso": "Superar el proceso selectivo, nombramiento, acatamiento de la Constitución y toma de posesión." },
-        { "id": "fc13-11", "anverso": "Cita una causa de pérdida de la condición de funcionario.", "reverso": "La renuncia voluntaria, la jubilación total o la separación del servicio firme." },
-        { "id": "fc13-12", "anverso": "¿Qué pena conlleva la pérdida de la condición de funcionario?", "reverso": "La inhabilitación absoluta o especial para cargo público con carácter firme." },
-        { "id": "fc13-13", "anverso": "¿Qué ley regula las incompatibilidades del personal público?", "reverso": "La Ley 53/1984, de 26 de diciembre." },
-        { "id": "fc13-14", "anverso": "¿Cuál es el principio general en materia de incompatibilidades?", "reverso": "La incompatibilidad del puesto público con otro puesto que menoscabe los deberes o la imparcialidad." },
-        { "id": "fc13-15", "anverso": "¿Puede percibirse más de una remuneración pública?", "reverso": "Como regla, no se puede percibir más de una remuneración con cargo a presupuestos públicos." },
-        { "id": "fc13-16", "anverso": "¿Qué requiere la compatibilidad para actividades privadas?", "reverso": "Autorización expresa previa." },
-        { "id": "fc13-17", "anverso": "¿Qué comprende el régimen estatutario de los funcionarios?", "reverso": "Derechos, deberes, código de conducta, situaciones administrativas y régimen disciplinario." },
-        { "id": "fc13-18", "anverso": "¿Qué derecho protege la permanencia del funcionario de carrera?", "reverso": "La inamovilidad en la condición de funcionario de carrera." },
-        { "id": "fc13-19", "anverso": "Cita principios del código de conducta de los funcionarios.", "reverso": "Objetividad, integridad, neutralidad, imparcialidad, transparencia y ejemplaridad." },
-        { "id": "fc13-20", "anverso": "¿Qué clases de personal laboral existen?", "reverso": "Personal laboral fijo, por tiempo indefinido y temporal." }
+    {
+      "titulo": "2. CAPÍTULO III",
+      "contenido": "3 \f g) El personal al servicio de entidades, corporaciones de derecho público, fundaciones y consorcios cuyos presupuestos se doten ordinariamente en más de un 50 por cien con subvenciones u otros ingresos procedentes de las Administraciones Públicas. h) El personal que preste servicios en Empresas en que la participación del capital, directa o indirectamente, de las Administraciones Públicas sea superior al 50 por 100. i) El personal al servicio del Banco de España y de las instituciones financieras públicas. j) El restante personal al que resulte de aplicación el régimen estatutario de los funcionarios públicos. 2. En el ámbito delimitado en el apartado anterior se entenderá incluido todo el personal, cualquiera que sea la naturaleza jurídica de la relación de empleo. CAPÍTULO III ACTIVIDADES PÚBLICAS ARTÍCULO TERCERO. 1. El personal comprendido en el ámbito de aplicación de esta Ley sólo podrá desempeñar un segundo puesto de trabajo o actividad en el sector público en los supuestos previstos en la misma para las funciones docente y sanitaria, en los casos a que se refieren los artículo 5.º y 6.º y en los que, por razón de interés público, se determine por el Consejo de Ministros, mediante Real decreto, u órgano de gobierno de la Comunidad Autónoma, en el ámbito de sus respectivas competencias; en este último supuesto la actividad sólo podrá prestarse en régimen laboral, a tiempo parcial y con duración determinada, en las condiciones establecidas por la legislación laboral. Para el ejercicio de la segunda actividad será indispensable la previa y expresa autorización de compatibilidad, que no supondrá modificación de la jornada de trabajo y horario de los dos puestos y que se condiciona a su estricto cumplimiento en ambos. En todo caso la autorización de compatibilidad se efectuará en razón del interés público. 2. El desempeño de un puesto de trabajo en el sector público, delimitado en el párrafo segundo del apartado 1 del artículo primero, es incompatible con la percepción de pensión de jubilación o retiro por Derechos Pasivos o por cualquier régimen de Seguridad Social público y obligatorio. La percepción de las pensiones indicadas quedará en suspenso por el tiempo que dure el desempeño de dicho puesto, sin que ello afecte a sus actualizaciones. Por excepción, en el ámbito laboral, será compatible la pensión de jubilación parcial con un puesto de trabajo a tiempo parcial. ARTÍCULO NOVENO. La autorización o denegación de compatibilidad para un segundo puesto o actividad del sector público corresponde al Ministerio de la Presidencia, a propuesta de la Subsecretaría del Departamento correspondiente, al órgano competente de la Comunidad Autónoma o al Pleno de la Corporación Local a que figure adscrito el puesto principal, previo informe, en su caso, de los Directores de los Organismos, Entes y Empresas públicas. Dicha autorización requiere además el previo informe favorable del órgano competente de la Comunidad Autónoma o Pleno de la Corporación Local, conforme a la adscripción del segundo puesto. Si los dos puestos correspondieran a la Administración del Estado, emitirá este informe la Subsecretaría del Departamento al que corresponda el segundo puesto. 4 \f ARTÍCULO DIEZ. Quienes accedan por cualquier título a un nuevo puesto del sector público que con arreglo a esta Ley resulte incompatible con el que vinieran desempeñando habrán de optar por uno de ellos dentro del plazo de toma de posesión."
+    },
+    {
+      "titulo": "3. CAPÍTULO IV",
+      "contenido": "A falta de opción en el plazo señalado se entenderá que optan por el nuevo puesto, pasando a la situación de excedencia voluntaria en los que vinieran desempeñando. Si se tratara de puestos susceptibles de compatibilidad, previa autorización, deberán instarla en los diez primeros días del aludido plazo de toma de posesión, entendiéndose éste prorrogado en tanto recae resolución. CAPÍTULO IV ACTIVIDADES PRIVADAS ARTÍCULO ONCE. 1. De acuerdo con lo dispuesto en el artículo 1º,3, de la presente Ley, el personal comprendido en su ámbito de aplicación no podrá ejercer, por sí o mediante sustitución, actividades privadas, incluidas las de carácter profesional, sean por cuenta propia o bajo la dependencia o al servicio de Entidades o particulares que se relacionen directamente con las que desarrolle el Departamento, Organismo o Entidad donde estuviera destinado. Se exceptúan de dicha prohibición las actividades particulares que, en ejercicio de un derecho legalmente reconocido, realicen para sí los directamente interesados. 2. El Gobierno, por Real Decreto, podrá determinar, con carácter general, las funciones, puestos o colectivos del sector público, incompatibles con determinadas profesiones o actividades privadas, que puedan comprometer la imparcialidad independencia del personal de que se trate, impedir o menoscabar el estricto cumplimiento de sus deberes o perjudicar los intereses generales. ARTÍCULO TRECE. No podrá reconocerse compatibilidad alguna para actividades privadas a quienes se les hubiere autorizado la compatibilidad para un segundo puesto o actividad públicos, siempre que la suma de jornadas de ambos sea igual o superior a la máxima en las Administraciones Públicas. ARTÍCULO CATORCE. El ejercicio de actividades profesionales, laborales, mercantiles o industriales fuera de las Administraciones Públicas requerirá el previo reconocimiento de compatibilidad. La resolución motivada reconociendo la compatibilidad o declarando la incompatibilidad, que se dictará en el plazo de dos meses, corresponde al Ministerio de la Presidencia, a propuesta del Subsecretario del Departamento correspondiente; al órgano competente de la Comunidad Autónoma o al Pleno de la Corporación Local, previo informe, en su caso, de los Directores de los Organismos, Entes y Empresas públicas. Los reconocimientos de compatibilidad no podrán modificar la jornada de trabajo y horario del interesado y quedarán automáticamente sin efecto en caso de cambio de puesto en el sector público. Quienes se hallen autorizados para el desempeño de un segundo puesto o actividad públicos deberán instar el reconocimiento de compatibilidad con ambos. ARTÍCULO QUINCE. El personal a que se refiere esta Ley no podrá invocar o hacer uso de su condición pública para el ejercicio de actividad mercantil, industrial o profesional. 5 \f CAPÍTULO V DISPOSICIONES COMUNES ARTÍCULO DIECISÉIS. 1. No podrá autorizarse o reconocerse compatibilidad al personal funcionario, al personal eventual y al personal laboral cuando las retribuciones complementarias que tengan derecho a percibir del apartado b) del artículo 24 del presente Estatuto incluyan el factor de incompatibilidad al retribuido por arancel y al personal directivo, incluido el sujeto a la relación laboral de carácter especial de alta dirección. 2. A efectos de lo dispuesto en el presente artículo, la dedicación del profesorado universitario a tiempo completo tiene la consideración de especial dedicación. 3."
+    },
+    {
+      "titulo": "4. artículo 4",
+      "contenido": "Se exceptúan de la prohibición enunciada en el apartado 1, las autorizaciones de compatibilidad para ejercer como Profesor universitario asociado en los términos del apartado 1 del artículo 4.º, así como para realizar las actividades de investigación o asesoramiento a que se refiere el artículo 6.º de esta Ley, salvo para el personal docente universitario a tiempo completo. 4. Asimismo, por excepción y sin perjuicio de las limitaciones establecidas en los artículos 1º.3, 11, 12 y 13 de la presente Ley, podrá reconocerse compatibilidad para el ejercicio de actividades privadas al personal que desempeñe puestos de trabajo que comporten la percepción de complementos específicos, o concepto equiparable, cuya cuantía no supere el 30 por 100 de su retribución básica, excluidos los conceptos que tengan su origen en la antigüedad. ARTÍCULO DIECINUEVE. Quedan exceptuadas del régimen de incompatibilidades de la presente Ley las actividades siguientes: a) Las derivadas de la Administración del patrimonio personal o familiar, sin perjuicio de lo dispuesto en el artículo 12 de la presente Ley. b) La dirección de seminarios o el dictado de cursos o conferencias en Centros oficiales destinados a la formación de funcionarios o profesorado, cuando no tenga carácter permanente o habitual ni supongan más de setenta y cinco horas al año, así como la preparación para el acceso a la función pública en los casos y forma que reglamentariamente se determine. c) La participación en Tribunales calificadores de pruebas selectivas para ingreso en las Administraciones Públicas. d) La participación del personal docente en exámenes, pruebas o evaluaciones distintas de las que habitualmente les correspondan, en la forma reglamentariamente establecida. e) El ejercicio del cargo de Presidente, Vocal o miembro de Juntas rectoras de Mutualidades o Patronatos de Funcionarios, siempre que no sea retribuido. f) La producción y creación literaria, artística, científica y técnica, así como las publicaciones derivadas de aquéllas, siempre que no se originen como consecuencia de una relación de empleo o de prestación de servicios. g) La participación ocasional en coloquios y programas en cualquier medio de comunicación social; y h) La colaboración y la asistencia ocasional a Congresos, seminarios, conferencias o cursos de carácter profesional. 6 \fARTÍCULO VEINTE. 1. El incumplimiento de lo dispuesto en los artículos anteriores será sancionado conforme al régimen disciplinario de aplicación, sin perjuicio de la ejecutividad de la incompatibilidad en que se haya incurrido. 2. El ejercicio de cualquier actividad compatible no servirá de excusa al deber de residencia, a la asistencia al lugar de trabajo que requiera su puesto o cargo, ni al atraso, negligencia o descuido en el desempeño de los mismos. Las correspondientes faltas serán calificadas y sancionadas conforme a las normas que se contengan en el régimen disciplinario aplicable, quedando automáticamente revocada la autorización o reconocimiento de compatibilidad si en la resolución correspondiente se califica de falta grave o muy grave. 3. Los órganos a los que competa la dirección, inspección o jefatura de los diversos servicios las cuidarán bajo su responsabilidad de prevenir o corregir, en su caso, incompatibilidades en que pueda incurrir el personal."
+    },
+    {
+      "titulo": "5. TÍTULO V",
+      "contenido": "Corresponde a la Inspección General de Servicios de la Administración Pública, además de su posible intervención directa, la coordinación e impulso de la actuación de los órganos de inspección mencionados en materia de incompatibilidades, dentro del ámbito de la Administración del Estado, sin perjuicio de una recíproca y adecuada colaboración con las inspecciones o unidades de personal correspondiente de las Comunidades Autónomas y de las Corporaciones locales. 7 \f LEY 7/1985, DE 2 DE ABRIL, REGULADORA DE LAS BASES DEL RÉGIMEN LOCAL TÍTULO V DISPOSICIONES COMUNES A LAS ENTIDADES LOCALES CAPÍTULO V ESTATUTO DE LOS MIEMBROS DE LAS CORPORACIONES LOCALES ARTÍCULO 73. 1. La determinación del número de miembros de las Corporaciones locales, el procedimiento para su elección, la duración de su mandato y los supuestos de inelegibilidad e incompatibilidad se regularán en la legislación electoral. 2. Los miembros de las Corporaciones locales gozan, una vez que tomen posesión de su cargo, de los honores, prerrogativas y distinciones propios del mismo que se establezcan por la Ley del Estado o de las Comunidades Autónomas y están obligados al cumplimiento estricto de los deberes y obligaciones inherentes a aquél. 3. A efectos de su actuación corporativa, los miembros de las corporaciones locales se constituirán en grupos políticos, en la forma y con los derechos y las obligaciones que se establezcan con excepción de aquéllos que no se integren en el grupo político que constituya la formación electoral por la que fueron elegidos o que abandonen su grupo de procedencia, que tendrán la consideración de miembros no adscritos. El Pleno de la corporación, con cargo a los Presupuestos anuales de la misma, podrá asignar a los grupos políticos una dotación económica que deberá contar con un componente fijo, idéntico para todos los grupos y otro variable, en función del número de miembros de cada uno de ellos, dentro de los límites que, en su caso, se establezcan con carácter general en las Leyes de Presupuestos Generales del Estado y sin que puedan destinarse al pago de remuneraciones de personal de cualquier tipo al servicio de la corporación o a la adquisición de bienes que puedan constituir activos fijos de carácter patrimonial. Los derechos económicos y políticos de los miembros no adscritos no podrán ser superiores a los que les hubiesen correspondido de permanecer en el grupo de procedencia, y se ejercerán en la forma que determine el reglamento orgánico de cada corporación. Esta previsión no será de aplicación en el caso de candidaturas presentadas como coalición electoral, cuando alguno de los partidos políticos que la integren decida abandonarla. Respecto a la dotación a que se refiere el párrafo segundo de este apartado 3, las aportaciones que los grupos políticos destinen a los partidos políticos, de conformidad con lo dispuesto en la normativa de financiación de estos últimos, no serán objeto de contabilidad específica excepto de aquellas cantidades que, en su caso, se pudiera reservar el grupo municipal que pondrá a disposición del pleno de la corporación siempre que este lo pida. Cuando la mayoría de los concejales de un grupo político municipal abandonen la formación política que presentó la candidatura por la que concurrieron a las elecciones o sean expulsados de la misma, serán los concejales que permanezcan en la citada formación política los legítimos integrantes de dicho grupo político a todos los efectos."
+    },
+    {
+      "titulo": "6. ARTÍCULO 74",
+      "contenido": "En cualquier caso, el secretario de la corporación podrá dirigirse al representante legal de la formación política que presentó la correspondiente candidatura a efectos de que notifique la acreditación de las circunstancias señaladas. 8 \f ARTÍCULO 74. 1. Los miembros de las Corporaciones locales quedan en situación de servicios especiales en los siguientes supuestos: a) Cuando sean funcionarios de la propia Corporación para la que han sido elegidos. b) Cuando sean funcionarios de carrera de otras Administraciones públicas y desempeñen en la Corporación para la que han sido elegidos un cargo retribuido y de dedicación exclusiva. En ambos supuestos, las Corporaciones afectadas abonarán las cotizaciones de las mutualidades obligatorias correspondientes para aquellos funcionarios que dejen de prestar el servicio que motivaba su pertenencia a ellas, extendiéndose a las cuotas de clases pasivas. 2. Para el personal laboral rigen idénticas reglas, de acuerdo con lo previsto en su legislación específica. 3. Los miembros de las Corporaciones locales que no tengan dedicación exclusiva en dicha condición tendrán garantizada, durante el período de su mandato, la permanencia en el centro o centros de trabajo públicos o privados en el que estuvieran prestando servicios en el momento de la elección, sin que puedan ser trasladados u obligados a concursar a otras plazas vacantes en distintos lugares. ARTÍCULO 75. 1. Los miembros de las Corporaciones locales percibirán retribuciones por el ejercicio de sus cargos cuando los desempeñen con dedicación exclusiva, en cuyo caso serán dados de alta en el Régimen general de la Seguridad Social, asumiendo las Corporaciones el pago de las cuotas empresariales que corresponda, salvo lo dispuesto en el artículo anterior. En el supuesto de tales retribuciones, su percepción será incompatible con la de otras retribuciones con cargo a los presupuestos de las Administraciones públicas y de los entes, organismos o empresas de ellas dependientes, así como para el desarrollo de otras actividades, todo ello en los términos de la Ley 53/1984, de 26 de diciembre, de Incompatibilidades del Personal al Servicio de las Administraciones Públicas. 2. Los miembros de las Corporaciones locales que desempeñen sus cargos con dedicación parcial por realizar funciones de presidencia, vicepresidencia u ostentar delegaciones, o desarrollar responsabilidades que así lo requieran, percibirán retribuciones por el tiempo de dedicación efectiva a las mismas, en cuyo caso serán igualmente dados de alta en el Régimen General de la Seguridad Social en tal concepto, asumiendo las Corporaciones las cuotas empresariales que corresponda, salvo lo dispuesto en el artículo anterior. Dichas retribuciones no podrán superar en ningún caso los límites que se fijen, en su caso, en las Leyes de Presupuestos Generales del Estado. En los acuerdos plenarios de determinación de los cargos que lleven aparejada esta dedicación parcial y de las retribuciones de los mismos, se deberá contener el régimen de la dedicación mínima necesaria para la percepción de dichas retribuciones. Los miembros de las Corporaciones locales que sean personal de las Administraciones públicas y de los entes, organismos y empresas de ellas dependientes solamente podrán percibir retribuciones por su dedicación parcial a sus funciones fuera de su jornada en sus respectivos centros de trabajo, en los términos señalados en el artículo 5 de la Ley 53/1984, de 26 de diciembre, sin perjuicio de lo dispuesto en el apartado sexto del presente artículo. 9 \f 3."
+    },
+    {
+      "titulo": "7. artículo 37",
+      "contenido": "Sólo los miembros de la Corporación que no tengan dedicación exclusiva ni dedicación parcial percibirán asistencias por la concurrencia efectiva a las sesiones de los órganos colegiados de la Corporación de que formen parte, en la cuantía señalada por el pleno de la misma. 4. Los miembros de las Corporaciones locales percibirán indemnizaciones por los gastos efectivos ocasionados en el ejercicio de su cargo, según las normas de aplicación general en las Administraciones públicas y las que en desarrollo de las mismas apruebe el pleno corporativo. 5. Las Corporaciones las retribuciones, locales consignarán en sus presupuestos indemnizaciones y asistencias a que se hace referencia en los cuatro números anteriores, dentro de los límites que con carácter general se establezcan, en su caso. Deberán publicarse íntegramente en el \"Boletín Oficial\" de la Provincia y fijarse en el tablón de anuncios de la Corporación los acuerdos plenarios referentes a retribuciones de los cargos con dedicación exclusiva y parcial y régimen de dedicación de estos últimos, indemnizaciones y asistencias, así como los acuerdos del Presidente de la Corporación determinando los miembros de la misma que realizarán sus funciones en régimen de dedicación exclusiva o parcial. 6. A efectos de lo dispuesto en el artículo 37.3.d) del Estatuto de los Trabajadores y en el artículo 30.2 de la Ley 30/1984, se entiende por tiempo indispensable para el desempeño del cargo electivo de una Corporación local, el necesario para la asistencia a las sesiones del pleno de la Corporación o de las Comisiones y atención a las Delegaciones de que forme parte o que desempeñe el interesado. 7. Los representantes locales, así como los miembros no electos de la Junta de Gobierno Local, formularán declaración sobre causas de posible incompatibilidad y sobre cualquier actividad que les proporcione o pueda proporcionar ingresos económicos. Formularán asimismo declaración de sus bienes patrimoniales y de la participación en sociedades de todo tipo, con información de las sociedades por ellas participadas y de las autoliquidaciones de los impuestos sobre la Renta, Patrimonio y, en su caso, Sociedades. Tales declaraciones, efectuadas en los modelos aprobados por los plenos respectivos, se llevarán a cabo antes de la toma de posesión, con ocasión del cese y al final del mandato, así como cuando se modifiquen las circunstancias de hecho. Las declaraciones anuales de bienes y actividades serán publicadas con carácter anual, y en todo caso en el momento de la finalización del mandato, en los términos que fije el Estatuto municipal. Tales declaraciones se inscribirán en los siguientes Registros de intereses, que tendrán carácter público: a) La declaración sobre causas de posible incompatibilidad y actividades que proporcionen o puedan proporcionar ingresos económicos, se inscribirá, en el Registro de Actividades constituido en cada Entidad local. b) La declaración sobre bienes y derechos patrimoniales se inscribirá en el Registro de Bienes Patrimoniales de cada Entidad local, en los términos que establezca su respectivo estatuto."
+    },
+    {
+      "titulo": "8. artículo 15",
+      "contenido": "Los representantes locales y miembros no electos de la Junta de Gobierno Local respecto a los que, en virtud de su cargo, resulte amenazada su seguridad personal o la de sus bienes o negocios, la de sus familiares, socios, empleados o personas con quienes tuvieran relación económica o profesional podrán realizar la declaración de sus bienes y derechos patrimoniales ante el Secretario o la Secretaria de la Diputación Provincial o, en su caso, ante el órgano competente de la Comunidad Autónoma correspondiente. Tales declaraciones se inscribirán en el Registro Especial de Bienes Patrimoniales, creado a estos efectos en aquellas instituciones. 10 \f En este supuesto, aportarán al Secretario o Secretaria de su respectiva entidad mera certificación simple y sucinta, acreditativa de haber cumplimentado sus declaraciones, y que éstas están inscritas en el Registro Especial de Intereses a que se refiere el párrafo anterior, que sea expedida por el funcionario encargado del mismo. 8. Durante los dos años siguientes a la finalización de su mandato, a los representantes locales a que se refiere el apartado primero de este artículo que hayan ostentado responsabilidades ejecutivas en las diferentes áreas en que se organice el gobierno local, les serán de aplicación en el ámbito territorial de su competencia las limitaciones al ejercicio de actividades privadas establecidas en el artículo 15 de la Ley 3/2015, de 30 de marzo, reguladora del ejercicio del alto cargo de la Administración General del Estado. A estos efectos, los Ayuntamientos podrán contemplar una compensación económica durante ese periodo para aquéllos que, como consecuencia del régimen de incompatibilidades, no puedan desempeñar su actividad profesional, ni perciban retribuciones económicas por otras actividades. ARTÍCULO 75 BIS. RÉGIMEN RETRIBUTIVO DE LOS MIEMBROS DE LAS CORPORACIONES LOCALES Y DEL PERSONAL AL SERVICIO DE LAS ENTIDADES LOCALES. 1. Los miembros de las Corporaciones Locales serán retribuidos por el ejercicio de su cargo en los términos establecidos en el artículo anterior. Los Presupuestos Generales del Estado determinarán, anualmente, el límite máximo total que pueden percibir los miembros de las Corporaciones Locales por todos los conceptos retributivos y asistencias, excluidos los trienios a los que en su caso tengan derecho aquellos funcionarios de carrera que se encuentren en situación de servicios especiales, atendiendo entre otros criterios a la naturaleza de la Corporación local y a su población según la siguiente tabla: HABITANTES REFERENCIA Más de 500.000 Secretario de Estado. 300.001 a 500.000 Secretario de Estado -10%. 150.001 a 300.000 Secretario de Estado -20%. 75.001 a 150.000 Secretario de Estado -25%. 50.001 a 75.000 Secretario de Estado -35%. 20.001 a 50.000 Secretario de Estado -45%. 10.001 a 20.000 Secretario de Estado -50%. 5.001 a 10.000 Secretario de Estado -55%. 1.000 a 5.000 Secretario de Estado -60%. Los miembros de Corporaciones locales de población inferior a 1.000 habitantes no tendrán dedicación exclusiva. Excepcionalmente, podrán desempeñar sus cargos con dedicación parcial, percibiendo sus retribuciones dentro de los límites máximos señalados al efecto en la Ley de Presupuestos Generales del Estado. 11 \f 2."
+    },
+    {
+      "titulo": "9. Ley Orgánica 2/2012, de 27 de abril, de Estabilidad Presupuestaria y Sos",
+      "contenido": "Sin perjuicio de la regla general establecida en el apartado anterior, en el caso de las retribuciones de los Presidentes de las Diputaciones provinciales o entidades equivalentes, tendrán un límite máximo por todos los conceptos retributivos y asistencias que será igual a la retribución del tramo correspondiente al Alcalde o Presidente de la Corporación municipal más poblada de su provincia. En el caso de los Cabildos y Consejos Insulares, sus Presidentes tendrán un límite máximo por todos los conceptos retributivos y asistencias referenciado a la retribución del tramo correspondiente al Alcalde o Presidente de la Corporación municipal más poblada de su provincia, según la siguiente tabla: HABITANTES Más de 150.000 REFERENCIA Alcalde o Presidente de la Corporación municipal más poblada de su provincia. 25.000 a 150.000 70% del Alcalde o Presidente de la Corporación municipal más poblada de su provincia. 0 a 25.000 50% del Alcalde o Presidente de la Corporación municipal más poblada de su provincia. Los concejales que sean proclamados diputados provinciales o equivalentes deberán optar por mantener el régimen de dedicación exclusiva en una u otra Entidad Local, sin que en ningún caso puedan acumularse ambos regímenes de dedicación. 3. Solo los miembros de la Corporación que no tengan dedicación exclusiva ni dedicación parcial percibirán asistencias por la concurrencia efectiva a las sesiones de los órganos colegiados de la Corporación de que formen parte, en la cuantía señalada por el Pleno de la misma. 4. En el marco de lo establecido en la Ley Orgánica 2/2012, de 27 de abril, de Estabilidad Presupuestaria y Sostenibilidad Financiera, y en el artículo 93.2 de esta Ley, las Leyes anuales de Presupuestos Generales del Estado podrán establecer un límite máximo y mínimo total que por todos los conceptos retributivos pueda percibir el personal al servicio de las Entidades Locales y entidades de ellas dependientes en función del grupo profesional de los funcionarios públicos o equivalente del personal laboral, así como de otros factores que se puedan determinar en las Leyes de Presupuestos Generales del Estado de cada año. ARTÍCULO 75 TER. LIMITACIÓN EN EL NÚMERO DE LOS CARGOS PÚBLICOS DE LAS ENTIDADES LOCALES CON DEDICACIÓN EXCLUSIVA. 1. De conformidad con lo establecido en el artículo 75 de esta Ley, la prestación de servicios en los Ayuntamientos en régimen de dedicación exclusiva por parte de sus miembros deberá ajustarse en todo caso a los siguientes límites: a) En los Ayuntamientos de Municipios con población inferior a 1.000 habitantes, ningún miembro podrá prestar sus servicios en régimen de dedicación exclusiva. b) En los Ayuntamientos de Municipios con población comprendida entre 1.001 y 2.000 habitantes, solo un miembro podrá prestar sus servicios en régimen de dedicación exclusiva. c) En los Ayuntamientos de Municipios con población comprendida entre 2.001 y 3.000 habitantes, los miembros que podrán prestar sus servicios en régimen de dedicación exclusiva no excederá de dos. d) En los Ayuntamientos de Municipios con población comprendida entre 3.001 y 10.000 habitantes, los miembros que podrán prestar sus servicios en régimen de dedicación exclusiva no excederá de tres. 12 \f e) En los Ayuntamientos de Municipios con población comprendida entre 10.001 y 15.000 habitantes, los miembros que podrán prestar sus servicios en régimen de dedicación exclusiva no excederá de cinco."
+    },
+    {
+      "titulo": "10. ARTÍCULO 76",
+      "contenido": "f) En Ayuntamientos de Municipios con población comprendida entre 15.001 y 20.000 habitantes, los miembros que podrán prestar sus servicios en régimen de dedicación exclusiva no excederá de siete. g) En los Ayuntamientos de Municipios con población comprendida entre 20.001 y 35.000 habitantes, los miembros que podrán prestar sus servicios en régimen de dedicación exclusiva no excederá de diez. h) En los Ayuntamientos de Municipios con población comprendida entre 35.001 y 50.000 habitantes, los miembros que podrán prestar sus servicios en régimen de dedicación exclusiva no excederá de once. i) En los Ayuntamientos de Municipios con población comprendida entre 50.001 y 100.000 habitantes, los miembros que podrán prestar sus servicios en régimen de dedicación exclusiva no excederá de quince. j) En los Ayuntamientos de Municipios con población comprendida entre 100.001 y 300.000 habitantes, los miembros que podrán prestar sus servicios en régimen de dedicación exclusiva no excederá de dieciocho. k) En los Ayuntamientos de Municipios con población comprendida entre 300.001 y 500.000 habitantes, los miembros que podrán prestar sus servicios en régimen de dedicación exclusiva no excederá de veinte. l) En los Ayuntamientos de Municipios con población comprendida entre 500.001 y 700.000 habitantes, los miembros que podrán prestar sus servicios en régimen de dedicación exclusiva no excederá de veintidós. m) En los Ayuntamientos de Municipios con población comprendida entre 700.001 y 1.000.000 habitantes, los miembros que podrán prestar sus servicios en régimen de dedicación exclusiva no excederá de veinticinco. n) En los Ayuntamientos de Municipios de Madrid y Barcelona, los miembros que podrán prestar sus servicios en régimen de dedicación exclusiva no excederán, respectivamente, de cuarenta y cinco y de treinta y dos. 2. El número máximo de miembros que podrán prestar sus servicios en régimen de dedicación exclusiva en las Diputaciones provinciales será el mismo que el del tramo correspondiente a la Corporación del municipio más poblado de su provincia. 3. En los Cabildos y Consejos Insulares el número máximo de miembros que podrán prestar sus servicios en régimen de dedicación exclusiva se determinará en función del siguiente criterio: en las islas con más de 800.000 habitantes se reduce en 2 respecto al número actual de miembros de cabildo, y en las de menos de 800.000 habitantes el 60% de los cargos electos en cada Cabildo Insular. ARTÍCULO 76. Sin perjuicio de las causas de incompatibilidad establecidas por la Ley, los miembros de las Corporaciones locales deberán abstenerse de participar en la deliberación, votación, decisión y ejecución de todo asunto cuando concurra alguna de las causas a que se refiere la legislación de procedimiento administrativo y contratos de las Administraciones Públicas. La actuación de los miembros en que concurran tales motivos implicará, cuando haya sido determinante, la invalidez de los actos en que hayan intervenido. 13 \f ARTÍCULO 77. Todos los miembros de las Corporaciones locales tienen derecho a obtener del Alcalde o Presidente o de la Comisión de Gobierno cuantos antecedentes, datos o informaciones obren en poder de los servicios de la Corporación y resulten precisos para el desarrollo de su función. La solicitud de ejercicio del derecho recogido en el párrafo anterior habrá de ser resuelta motivadamente en los cinco días naturales siguientes a aquél en que se hubiese presentado. ARTÍCULO 78. 1."
+    },
+    {
+      "titulo": "11. TÍTULO VII",
+      "contenido": "Los miembros de las Corporaciones locales están sujetos a responsabilidad civil y penal por los actos y omisiones realizados en el ejercicio de su cargo. Las responsabilidades se exigirán ante los Tribunales de Justicia competentes y se tramitarán por el procedimiento ordinario aplicable. 2. Son responsables de los acuerdos de las Corporaciones locales los miembros de las mismas que los hubiesen votado favorablemente. 3. Las Corporaciones locales podrán exigir la responsabilidad de sus miembros cuando por dolo o culpa grave, hayan causado daños y perjuicios a la Corporación o a terceros, si éstos hubiesen sido indemnizados por aquélla. 4. Los Presidentes de las Corporaciones locales podrán sancionar con multa a los miembros de las mismas, por falta no justificada de asistencia a las sesiones o incumplimiento reiterado de sus obligaciones, en los términos que determine la Ley de la Comunidad Autónoma y, supletoriamente, la del Estado. TÍTULO VII PERSONAL AL SERVICIO DE LAS ENTIDADES LOCALES CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO 89. El personal al servicio de las entidades locales estará integrado por funcionarios de carrera, contratados en régimen de derecho laboral y personal eventual que desempeña puestos de confianza o asesoramiento especial. ARTÍCULO 90. 1. Corresponde a cada Corporación local aprobar anualmente, a través del Presupuesto, la plantilla, que deberá comprender todos los puestos de trabajo reservados a funcionarios, personal laboral y eventual. Las plantillas deberán responder a los principios de racionalidad, economía y eficiencia y establecerse de acuerdo con la ordenación general de la economía, sin que los gastos de personal puedan rebasar los límites que se fijen con carácter general. 2. Las Corporaciones locales formarán la relación de todos los puestos de trabajo existentes en su organización, en los términos previstos en la legislación básica sobre función pública. Corresponde al Estado establecer las normas con arreglo a las cuales hayan de confeccionarse las relaciones de puestos de trabajo, la descripción de puestos de trabajo tipo y las condiciones requeridas para su creación, así como las normas básicas de la carrera administrativa, especialmente por lo que se refiere a la promoción de los funcionarios a niveles y grupos superiores. 3. Las Corporaciones locales constituirán Registros de personal, coordinados con los de las demás Administraciones públicas, según las normas aprobadas por el Gobierno. Los datos 14 \f inscritos en tal Registro determinarán las nóminas, a efectos de la debida justificación de todas las retribuciones. ARTÍCULO 91. 1. Las Corporaciones locales formarán públicamente su oferta de empleo, ajustándose a los criterios fijados en la normativa básica estatal. 2. La selección de todo el personal, sea funcionario o laboral, debe realizarse de acuerdo con la oferta de empleo público, mediante convocatoria pública y a través del sistema de concurso, oposición o concurso-oposición libre en los que se garanticen, en todo caso, los principios constitucionales de igualdad, mérito y capacidad, así como el de publicidad. CAPÍTULO II DISPOSICIONES COMUNES A LOS FUNCIONARIOS DE CARRERA ARTÍCULO 92. FUNCIONARIOS AL SERVICIO DE LA ADMINISTRACIÓN LOCAL. 1."
+    },
+    {
+      "titulo": "12. artículo 149",
+      "contenido": "Los funcionarios al servicio de la Administración local se rigen, en lo no dispuesto en esta Ley, por la Ley 7/2007, de 12 de abril, del Estatuto Básico del Empleado Público, por la restante legislación del Estado en materia de función pública, así como por la legislación de las Comunidades Autónomas, en los términos del artículo 149.1.18.ª de la Constitución. 2. Con carácter general, los puestos de trabajo en la Administración local y sus Organismos Autónomos serán desempeñados por personal funcionario. 3. Corresponde exclusivamente a los funcionarios de carrera al servicio de la Administración local el ejercicio de las funciones que impliquen la participación directa o indirecta en el ejercicio de las potestades públicas o en la salvaguardia de los intereses generales. Igualmente son funciones públicas, cuyo cumplimiento queda reservado a funcionarios de carrera, las que impliquen ejercicio de autoridad, y en general, aquellas que en desarrollo de la presente Ley, se reserven a los funcionarios para la mejor garantía de la objetividad, imparcialidad e independencia en el ejercicio de la función. ARTÍCULO 92 BIS. FUNCIONARIOS DE ADMINISTRACIÓN LOCAL CON HABILITACIÓN DE CARÁCTER NACIONAL. 1. Son funciones públicas necesarias en locales, cuya responsabilidad administrativa está reservada a funcionarios de administración local con habilitación de carácter nacional: las Corporaciones todas a) La de Secretaría, comprensiva de la fe pública y el asesoramiento legal preceptivo. b) El control y la fiscalización interna de la gestión económico-financiera y presupuestaria, y la contabilidad, tesorería y recaudación. No obstante, en los municipios de gran población se tendrá en cuenta lo dispuesto en el Título X de la presente Ley y en los municipios de Madrid y de Barcelona la regulación contenida en las Leyes 22/2006, de 4 de julio, de Capitalidad y de Régimen Especial de Madrid y 1/2006, de 13 de marzo, por la que se regula el Régimen Especial del municipio de Barcelona respectivamente. 2. La escala de funcionarios de administración local con habilitación de carácter nacional se subdivide en las siguientes subescalas: a) Secretaría, a la que corresponden las funciones contenidas en el apartado 1.a) b) anterior. Intervención-tesorería, a la que corresponden las funciones contenidas en el apartado 1.b). 15 \f c) Secretaría-intervención a la que corresponden las funciones contenidas en los apartados 1.a) y 1.b). 3. Los funcionarios de las subescalas de Secretaría e Intervención-tesorería estarán integrados en una de estas dos categorías: entrada o superior. 4. El Gobierno, mediante real decreto, regulará las especialidades de la creación, clasificación y supresión de puestos reservados a funcionarios de administración local con habilitación de carácter nacional así como las que puedan corresponder a su régimen disciplinario y de situaciones administrativas. 5. La aprobación de la oferta de empleo público, selección, formación y habilitación de los funcionarios de administración local con habilitación de carácter nacional corresponde al Estado, a través del Ministerio de Hacienda y Administraciones Públicas, conforme a las bases y programas aprobados reglamentariamente. 6. El Gobierno, mediante real decreto, regulará las especialidades correspondientes de la forma de provisión de puestos reservados a funcionarios de administración local con habilitación de carácter nacional. En todo caso, el concurso será el sistema normal de provisión de puestos de trabajo. El ámbito territorial de los concursos será de carácter estatal."
+    },
+    {
+      "titulo": "13. real decreto previsto en el apartado anterior, y efe",
+      "contenido": "Los méritos generales, de preceptiva valoración, se determinarán por la Administración del Estado, y su puntuación alcanzará un mínimo del 80% del total posible conforme al baremo correspondiente. Los méritos correspondientes a las especialidades de la Comunidad Autónoma se fijarán por cada una de ellas y su puntuación podrá alcanzar hasta un 15% del total posible. Los méritos correspondientes a las especialidades de la Corporación local se fijarán por ésta, y su puntuación alcanzará hasta un 5% del total posible. Existirán dos concursos anuales: el concurso ordinario y el concurso unitario. El concurso unitario será convocado por la Administración del Estado. Las Corporaciones locales con puestos vacantes aprobarán las bases del concurso ordinario, de acuerdo con el modelo de convocatoria y bases comunes que se aprueben en el real decreto previsto en el apartado anterior, y efectuarán las convocatorias, remitiéndolas a la correspondiente Comunidad Autónoma para su publicación simultánea en los diarios oficiales. Excepcionalmente, los puestos de trabajo reservados a funcionarios de administración local con habilitación de carácter nacional podrán cubrirse por el sistema de libre designación, en los municipios incluidos en el ámbito subjetivo definido en los artículos 111 y 135 del texto refundido de la Ley Reguladora de Haciendas Locales, aprobado por el Real Decreto Legislativo 2/2004, de 5 de marzo, así como las Diputaciones Provinciales, Áreas Metropolitanas, Cabildos y Consejos Insulares y las ciudades con estatuto de autonomía de Ceuta y Melilla, entre funcionarios de la subescala y categoría correspondiente. Cuando se trate de puestos de trabajo que tengan asignadas las funciones contenidas en el apartado 1.b) de este artículo, será precisa la autorización expresa del órgano competente de la Administración General del Estado en materia de Haciendas locales. Igualmente, será necesario informe preceptivo previo del órgano competente de la Administración General del Estado en materia de Haciendas locales para el cese de aquellos funcionarios que tengan asignadas las funciones contenidas en el apartado 1.b) de este artículo y que hubieran sido nombrados por libre designación. En caso de cese de un puesto de libre designación, la Corporación local deberá asignar al funcionario cesado un puesto de trabajo de su mismo grupo de titulación. 16 \f 7. Las Comunidades Autónomas efectuarán, de acuerdo con la normativa establecida por la Administración del Estado, los nombramientos provisionales de funcionarios con habilitación de carácter nacional, así como las comisiones de servicios, acumulaciones, nombramientos de personal interino y de personal accidental. 8. Los funcionarios deberán permanecer en cada puesto de trabajo, obtenido por concurso, un mínimo de dos años para poder participar en los concursos de provisión de puestos de trabajo o ser nombrados con carácter provisional en otro puesto de trabajo, salvo en el ámbito de una misma Entidad Local. Excepcionalmente, antes del transcurso de dicho plazo, se podrán efectuar nombramientos con carácter provisional por el Ministerio de Hacienda y Administraciones Públicas, siempre que existan razones y circunstancias que requieran la cobertura del puesto con carácter urgente por estos funcionarios, y la imposibilidad de efectuar un nombramiento provisional conforme a lo establecido en el párrafo anterior."
+    },
+    {
+      "titulo": "14. ARTÍCULO 93",
+      "contenido": "Reglamentariamente se establecerán las circunstancias excepcionales que justifiquen la solicitud de un nombramiento provisional, debiendo tenerse en cuenta, en todo caso, el posible perjuicio o menoscabo que se generaría en la Entidad Local en la que se ocupe el puesto en el momento de la solicitud. 9. En el Ministerio de Hacienda y Administraciones Públicas existirá un Registro de funcionarios de administración local con habilitación de carácter nacional integrado con las Comunidades Autónomas, donde se inscribirán y anotarán todos los actos que afecten a la vida administrativa de estos funcionarios. 10. Son órganos competentes para la incoación de expedientes disciplinarios a los funcionarios de administración local con habilitación de carácter nacional los siguientes: a) El órgano correspondiente de la Corporación donde el funcionario hubiera cometido los hechos que se le imputan, cuando pudieran ser constitutivos de falta leve. territorial, salvo cuando b) La Comunidad Autónoma respecto a funcionarios de corporaciones locales en su los hechos denunciados pudieran ser ámbito constitutivos de faltas muy graves tipificadas en la normativa básica estatal. c) El Ministerio de Hacienda y Administraciones Públicas cuando los hechos denunciados pudieran ser constitutivos de faltas muy graves, tipificadas en la normativa básica estatal. El órgano competente para acordar la incoación del expediente lo será también para nombrar instructor del mismo y decretar o alzar la suspensión provisional del expedientado, así como para instruir diligencias previas antes de decidir sobre tal incoación. La instrucción del expediente se efectuará por un funcionario de carrera de cualquiera de los Cuerpos o Escalas del Subgrupo A1 de titulación, incluida la Escala de Funcionarios con Habilitación de carácter nacional, que cuente con conocimientos en la materia a la que se refiera la infracción. 11. Son órganos competentes para la imposición de sanciones disciplinarias a los funcionarios de administración local con habilitación de carácter nacional los siguientes: a) El Ministro de Hacienda y Administraciones Públicas, cuando la sanción que recaiga sea por falta muy grave, tipificada en la normativa básica estatal. b) La Comunidad Autónoma, cuando se trate de imponer sanciones de suspensión de funciones y destitución, no comprendidas en el párrafo anterior. c) El órgano local competente, cuando se trate de imponer sanciones por faltas leves. La sanción impuesta se ejecutará en sus propios términos, aun cuando en el momento de la ejecución, el funcionario se encontrara ocupando un puesto distinto a aquel en el que se produjeron los hechos que dieron lugar a la sanción. 17 \f La sanción de destitución implicará la pérdida del puesto de trabajo, con la prohibición de obtener destino en la misma Corporación en la que tuvo lugar la sanción, en el plazo que se fije, con el máximo de seis años, para las faltas muy graves, y de tres años para las faltas graves. La sanción de suspensión de funciones tendrá una duración máxima de seis años, para las faltas muy graves, y de tres años para las faltas graves. ARTÍCULO 93. 1. Las retribuciones básicas de los funcionarios locales tendrán la misma estructura e idéntica cuantía que las establecidas con carácter general para toda la función pública. 2. Las retribuciones complementarias se atendrán, asimismo, a la estructura y criterios de valoración objetiva de las del resto de los funcionarios públicos."
+    },
+    {
+      "titulo": "15. ARTÍCULO 94",
+      "contenido": "Su cuantía global será fijada por el Pleno de la Corporación dentro de los límites máximos y mínimos que se señalen por el Estado. 3. Las Corporaciones locales reflejarán anualmente en sus presupuestos la cuantía de las retribuciones de sus funcionarios en los términos previstos en la legislación básica sobre función pública. ARTÍCULO 94. La jornada de trabajo de los funcionarios de la Administración local será en cómputo anual la misma que se fije para los funcionarios de la Administración Civil del Estado. Se les aplicarán las mismas normas sobre equivalencia y reducción de jornada. ARTÍCULO 95. La participación de los funcionarios, a través de sus organizaciones sindicales, en la determinación de sus condiciones de empleo, será la establecida con carácter general para todas las Administraciones Públicas en el Estatuto básico de la función publica. ARTÍCULO 97. Los anuncios de convocatorias de pruebas de acceso a la función pública local y de concursos para la provisión de puestos de trabajo deberán publicarse en el «Boletín Oficial del Estado». Las bases se publicarán en el «Boletín Oficial de la Provincia», salvo las relativas a las convocatorias de pruebas selectivas para la obtención de la habilitación de carácter nacional, que se publicarán en el «Boletín Oficial del Estado». CAPÍTULO IV SELECCIÓN DE LOS RESTANTES FUNCIONARIOS Y REGLAS SOBRE PROVISIÓN DE PUESTOS DE TRABAJO ARTÍCULO 100. 1. Es competencia de cada Corporación local la selección de los funcionarios con la excepción de los funcionarios con habilitación de carácter nacional. a 2. Corresponde, no obstante, la Administración del Estado, establecer reglamentariamente: a) Las reglas básicas y los programas mínimos a que debe ajustarse el procedimiento de selección y formación de tales funcionarios. b) Los títulos académicos requeridos para tomar parte en las pruebas selectivas, así como los Diplomas expedidos por el Instituto de Estudios de Administración Local o por los Institutos o Escuelas de funcionarios establecidos por las Comunidades Autónomas, complementarios de los títulos académicos, que puedan exigirse para participar en las mismas. 18 \f ARTÍCULO 101. Los puestos de trabajo vacantes que deban ser cubiertos por los funcionarios a que se refiere el artículo anterior se proveerán en convocatoria pública por los procedimientos de concurso de méritos o de libre designación, de acuerdo con las normas que regulen estos procedimientos en todas las Administraciones públicas. En dichas convocatorias de provisión de puestos de trabajo, además de la participación de los funcionarios propios de la entidad convocante, podrán participar los funcionarios que pertenezcan a cualquiera de las Administraciones públicas, quedando en este caso supeditada la participación a lo que al respecto establezcan las relaciones de puestos de trabajo. ARTÍCULO 102. 1. Las pruebas de selección y los concursos para la provisión de puestos de trabajo, a que se refiere el presente Capítulo, se regirán por las bases que apruebe el Presidente de la Corporación, a quien corresponderá su convocatoria. 2. En las pruebas selectivas, el tribunal u órgano similar elevará la correspondiente relación de aprobados al Presidente de la Corporación para hacer el nombramiento, a quien también corresponderá la resolución motivada de los concursos para la provisión de puestos de trabajo, previa propuesta de aquellos órganos de selección. CAPÍTULO V DEL PERSONAL LABORAL Y EVENTUAL ARTÍCULO 103."
+    },
+    {
+      "titulo": "16. artículo 91",
+      "contenido": "El personal laboral será seleccionado por la propia Corporación ateniéndose, en todo caso, a lo dispuesto en el artículo 91 y con el máximo respeto al principio de igualdad de oportunidades de cuantos reúnan los requisitos exigidos. ARTÍCULO 103 BIS. MASA SALARIAL DEL PERSONAL LABORAL DEL SECTOR PÚBLICO LOCAL. 1. Las Corporaciones locales aprobarán anualmente la masa salarial del personal laboral del sector público local respetando los límites y las condiciones que se establezcan con carácter básico en la correspondiente Ley de Presupuestos Generales del Estado. 2. La aprobación indicada en el apartado anterior comprenderá la referente a la propia Entidad Local, organismos, entidades públicas empresariales y demás entes públicos y sociedades mercantiles locales de ella dependientes, así como las de los consorcios adscritos a la misma en virtud de lo previsto en la legislación básica de régimen jurídico de las Administraciones Públicas y de las fundaciones en las que concurra alguna de las siguientes circunstancias: a) Que se constituyan con una aportación mayoritaria, directa o indirecta, de las entidades citadas en este apartado. b) Que su patrimonio fundacional, con un carácter de permanencia, esté formado en más de un 50 por 100 por bienes o derechos aportados o cedidos por las referidas entidades. 3. La masa salarial aprobada será publicada en la sede electrónica de la Corporación y en el Boletín Oficial de la Provincia o, en su caso, de la Comunidad Autónoma uniprovincial en el plazo de 20 días. ARTÍCULO 104. 1. El número, características y retribuciones del personal eventual será determinado por el Pleno de cada Corporación, al comienzo de su mandato. Estas determinaciones sólo podrán modificarse con motivo de la aprobación de los presupuestos anuales. 2. El nombramiento y cese de estos funcionarios es libre y corresponde al Alcalde o al Presidente de la entidad local correspondiente. Cesan automáticamente en todo caso 19 \f cuando se produzca el cese o expire el mandato de la autoridad a la que presten su función de confianza o asesoramiento. 3. Los nombramientos de funcionarios de empleo, el régimen de sus retribuciones y su dedicación se publicarán en el «Boletín Oficial» de la Provincia y, en su caso, en el propio de la Corporación. 20 \f REAL DECRETO LEGISLATIVO 5/2015, DE 30 DE OCTUBRE, POR EL QUE SE APRUEBA EL TEXTO REFUNDIDO DE LA LEY DEL ESTATUTO BÁSICO DEL EMPLEADO PÚBLICO TÍTULO II PERSONAL AL SERVICIO DE LAS ADMINISTRACIONES PÚBLICAS CAPÍTULO I CLASES DE PERSONAL ARTÍCULO 8. CONCEPTO Y CLASES DE EMPLEADOS PÚBLICOS. 1. Son empleados públicos quienes desempeñan funciones Administraciones Públicas al servicio de los intereses generales. retribuidas en las 2. Los empleados públicos se clasifican en: a) Funcionarios de carrera. b) Funcionarios interinos. c) Personal laboral, ya sea fijo, por tiempo indefinido o temporal. d) Personal eventual. ARTÍCULO 9. FUNCIONARIOS DE CARRERA. 1. Son funcionarios de carrera quienes, en virtud de nombramiento legal, están vinculados a una Administración Pública por una relación estatutaria regulada por el Derecho Administrativo para el desempeño de servicios profesionales retribuidos de carácter permanente. 2. En todo caso, el ejercicio de las funciones que impliquen la participación directa o indirecta en el ejercicio de las potestades públicas o en la salvaguardia de los intereses generales del Estado y de las Administraciones Públicas corresponden exclusivamente a los funcionarios públicos, en los términos que en la ley de desarrollo de cada Administración Pública se establezca."
+    },
+    {
+      "titulo": "17. ARTÍCULO 10",
+      "contenido": "ARTÍCULO 10. FUNCIONARIOS INTERINOS. 1. Son funcionarios interinos los que, por razones expresamente justificadas de necesidad y urgencia, son nombrados como tales con carácter temporal para el desempeño de funciones propias de funcionarios de carrera, cuando se dé alguna de las siguientes circunstancias: a) La existencia de plazas vacantes, cuando no sea posible su cobertura por funcionarios de carrera, por un máximo de tres años, en los términos previstos en el apartado 4. b) La sustitución transitoria de los titulares, durante el tiempo estrictamente necesario. c) La ejecución de programas de carácter temporal, que no podrán tener una duración superior a tres años, ampliable hasta doce meses más por las leyes de Función Pública que se dicten en desarrollo de este Estatuto. d) El exceso o acumulación de tareas por plazo máximo de nueve meses, dentro de un periodo de dieciocho meses. 2. Los procedimientos de selección del personal funcionario interino serán públicos, rigiéndose en todo caso por los principios de igualdad, mérito, capacidad, publicidad y 21 \f celeridad, y tendrán por finalidad la cobertura inmediata del puesto. El nombramiento derivado de estos procedimientos de selección en ningún caso dará lugar al reconocimiento de la condición de funcionario de carrera. 3. En todo caso, la Administración formalizará de oficio la finalización de la relación de interinidad por cualquiera de las siguientes causas, además de por las previstas en el artículo 63, sin derecho a compensación alguna: a) Por la cobertura reglada del puesto por personal funcionario de carrera a través de cualquiera de los procedimientos legalmente establecidos. b) Por razones organizativas que den lugar a la supresión o a la amortización de los puestos asignados. c) Por la finalización del plazo autorizado expresamente recogido en su nombramiento. d) Por la finalización de la causa que dio lugar a su nombramiento. 4. En el supuesto previsto en el apartado 1.a), las plazas vacantes desempeñadas por personal funcionario interino deberán ser objeto de cobertura mediante cualquiera de los mecanismos de provisión o movilidad previstos en la normativa de cada Administración Pública. No obstante, transcurridos tres años desde el nombramiento del personal funcionario interino se producirá el fin de la relación de interinidad, y la vacante solo podrá ser ocupada por personal funcionario de carrera, salvo que el correspondiente proceso selectivo quede desierto, en cuyo caso se podrá efectuar otro nombramiento de personal funcionario interino. Excepcionalmente, el personal funcionario interino podrá permanecer en la plaza que ocupe temporalmente, siempre que se haya publicado la correspondiente convocatoria dentro del plazo de los tres años, a contar desde la fecha del nombramiento del funcionario interino y sea resuelta conforme a los plazos establecidos en el artículo 70 del TREBEP. En este supuesto podrá permanecer hasta la resolución de la convocatoria, sin que su cese dé lugar a compensación económica. 5. Al personal funcionario interino le será aplicable el régimen general del personal funcionario de carrera en cuanto sea adecuado a la naturaleza de su condición temporal y al carácter extraordinario y urgente de su nombramiento, salvo aquellos derechos inherentes a la condición de funcionario de carrera. ARTÍCULO 11. PERSONAL LABORAL. 1."
+    },
+    {
+      "titulo": "18. artículo 9",
+      "contenido": "Es personal laboral el que en virtud de contrato de trabajo formalizado por escrito, en cualquiera de las modalidades de contratación de personal previstas en la legislación laboral, presta servicios retribuidos por las Administraciones Públicas. En función de la duración del contrato éste podrá ser fijo, por tiempo indefinido o temporal. 2. Las leyes de Función Pública que se dicten en desarrollo de este Estatuto establecerán los criterios para la determinación de los puestos de trabajo que pueden ser desempeñados por personal laboral, respetando en todo caso lo establecido en el artículo 9.2. 3. Los procedimientos de selección del personal laboral serán públicos, rigiéndose en todo caso por los principios de igualdad, mérito y capacidad. En el caso del personal laboral temporal se regirá igualmente por el principio de celeridad, teniendo por finalidad atender razones expresamente justificadas de necesidad y urgencia. 22 \f ARTÍCULO 12. PERSONAL EVENTUAL. 1. Es personal eventual el que, en virtud de nombramiento y con carácter no permanente, sólo realiza funciones expresamente calificadas como de confianza o asesoramiento especial, siendo retribuido con cargo a los créditos presupuestarios consignados para este fin. 2. Las leyes de Función Pública que se dicten en desarrollo de este Estatuto determinarán los órganos de gobierno de las Administraciones Públicas que podrán disponer de este tipo de personal. El número máximo se establecerá por los respectivos órganos de gobierno. Este número y las condiciones retributivas serán públicas. 3. El nombramiento y cese serán libres. El cese tendrá lugar, en todo caso, cuando se produzca el de la autoridad a la que se preste la función de confianza o asesoramiento. 4. La condición de personal eventual no podrá constituir mérito para el acceso a la Función Pública o para la promoción interna. 5. Al personal eventual le será aplicable, en lo que sea adecuado a la naturaleza de su condición, el régimen general de los funcionarios de carrera. CAPÍTULO II PERSONAL DIRECTIVO ARTÍCULO 13. PERSONAL DIRECTIVO PROFESIONAL. El Gobierno y los órganos de gobierno de las comunidades autónomas podrán establecer, en desarrollo de este Estatuto, el régimen jurídico específico del personal directivo así como los criterios para determinar su condición, de acuerdo, entre otros, con los siguientes principios: 1. Es personal directivo el que desarrolla funciones directivas profesionales en las Administraciones Públicas, definidas como tales en las normas específicas de cada Administración. 2. Su designación atenderá a principios de mérito y capacidad y a criterios de idoneidad, y se llevará a cabo mediante procedimientos que garanticen la publicidad y concurrencia. 3. El personal directivo estará sujeto a evaluación con arreglo a los criterios de eficacia y eficiencia, responsabilidad por su gestión y control de resultados en relación con los objetivos que les hayan sido fijados. 4. La determinación de las condiciones de empleo del personal directivo no tendrá la consideración de materia objeto de negociación colectiva a los efectos de esta ley. Cuando el personal directivo reúna la condición de personal laboral estará sometido a la relación laboral de carácter especial de alta dirección. TÍTULO III DERECHOS Y DEBERES. CÓDIGO DE CONDUCTA DE LOS EMPLEADOS PÚBLICOS CAPÍTULO I DERECHOS DE LOS EMPLEADOS PÚBLICOS ARTÍCULO 14. DERECHOS INDIVIDUALES."
+    },
+    {
+      "titulo": "19. disposición y",
+      "contenido": "Los empleados públicos tienen los siguientes derechos de carácter individual en correspondencia con la naturaleza jurídica de su relación de servicio: a) A la inamovilidad en la condición de funcionario de carrera. b) Al desempeño efectivo de las funciones o tareas propias de su condición profesional y de acuerdo con la progresión alcanzada en su carrera profesional. c) A la progresión en la carrera profesional y promoción interna según principios constitucionales de igualdad, mérito y capacidad mediante la implantación de sistemas objetivos y transparentes de evaluación. d) A percibir las retribuciones y las indemnizaciones por razón del servicio. 23 \f e) A participar en la consecución de los objetivos atribuidos a la unidad donde preste sus servicios y a ser informado por sus superiores de las tareas a desarrollar. f) A la defensa jurídica y protección de la Administración Pública en los procedimientos que se sigan ante cualquier orden jurisdiccional como consecuencia del ejercicio legítimo de sus funciones o cargos públicos. g) A la formación continua y a la actualización permanente de sus conocimientos y capacidades profesionales, preferentemente en horario laboral. h) Al respeto de su intimidad, orientación e identidad sexual, expresión de género, características sexuales, propia imagen y dignidad en el trabajo, especialmente frente al acoso sexual y por razón de sexo, de orientación e identidad sexual, expresión de género o características sexuales, moral y laboral. i) A la no discriminación por razón de nacimiento, origen racial o étnico, género, sexo u orientación e identidad sexual, expresión de género, características sexuales, religión o convicciones, opinión, discapacidad, edad o cualquier otra condición o circunstancia personal o social. j) A la adopción de medidas que favorezcan la conciliación de la vida personal, familiar y laboral. J bis) A la intimidad en el uso de dispositivos digitales puestos a su disposición y frente al uso de dispositivos de videovigilancia y geolocalización, así como a la desconexión digital en los términos establecidos en la legislación vigente en materia de protección de datos personales y garantía de los derechos digitales. k) A la libertad de expresión dentro de los límites del ordenamiento jurídico. l) A recibir protección eficaz en materia de seguridad y salud en el trabajo. m) A las vacaciones, descansos, permisos y licencias. n) A la jubilación según los términos y condiciones establecidas en las normas aplicables. o) A las prestaciones de la Seguridad Social correspondientes al régimen que les sea de aplicación. p) A la libre asociación profesional. q) A los demás derechos reconocidos por el ordenamiento jurídico. ARTÍCULO 15. DERECHOS INDIVIDUALES EJERCIDOS COLECTIVAMENTE. Los empleados públicos tienen los siguientes derechos individuales que se ejercen de forma colectiva: a) A la libertad sindical. b) A la negociación colectiva y a la participación en la determinación de las condiciones de trabajo. c) Al ejercicio de la huelga, con la garantía del mantenimiento de los servicios esenciales de la comunidad. d) Al planteamiento de conflictos colectivos de trabajo, de acuerdo con la legislación aplicable en cada caso. e) Al de reunión, en los términos establecidos en el artículo 46 de este Estatuto. ARTÍCULO 47 BIS. TELETRABAJO. 1."
+    },
+    {
+      "titulo": "20. CAPÍTULO VI",
+      "contenido": "Se considera teletrabajo aquella modalidad de prestación de servicios a distancia en la que el contenido competencial del puesto de trabajo puede desarrollarse, siempre que las necesidades del servicio lo permitan, fuera de las dependencias de la Administración, mediante el uso de tecnologías de la información y comunicación. 2. La prestación del servicio mediante teletrabajo habrá de ser expresamente autorizada y será compatible con la modalidad presencial. En todo caso, tendrá carácter voluntario y 24 \f reversible salvo en supuestos excepcionales debidamente justificados. Se realizará en los términos de las normas que se dicten en desarrollo de este Estatuto, que serán objeto de negociación colectiva en el ámbito correspondiente y contemplarán criterios objetivos en el acceso a esta modalidad de prestación de servicio. El teletrabajo deberá contribuir a una mejor organización del trabajo a través de la identificación de objetivos y la evaluación de su cumplimiento. 3. El personal que preste sus servicios mediante teletrabajo tendrá los mismos deberes y derechos, individuales y colectivos, recogidos en el presente Estatuto que el resto del personal que preste sus servicios en modalidad presencial, incluyendo la normativa de prevención de riesgos laborales que resulte aplicable, salvo aquellos que sean inherentes a la realización de la prestación del servicio de manera presencial. 4. La Administración proporcionará y mantendrá a las personas que trabajen en esta modalidad, los medios tecnológicos necesarios para su actividad. 5. El personal laboral al servicio de las Administraciones Públicas se regirá, en materia de teletrabajo, por lo previsto en el presente Estatuto y por sus normas de desarrollo. CAPÍTULO VI DEBERES DE LOS EMPLEADOS PÚBLICOS. CÓDIGO DE CONDUCTA ARTÍCULO 52. DEBERES DE LOS EMPLEADOS PÚBLICOS. CÓDIGO DE CONDUCTA. Los empleados públicos deberán desempeñar con diligencia las tareas que tengan asignadas y velar por los intereses generales con sujeción y observancia de la Constitución y del resto del ordenamiento jurídico, y deberán actuar con arreglo a los siguientes principios: objetividad, integridad, neutralidad, responsabilidad, imparcialidad, confidencialidad, dedicación al servicio público, transparencia, ejemplaridad, austeridad, accesibilidad, eficacia, honradez, promoción del entorno cultural y medioambiental, y respeto a la igualdad entre mujeres y hombres, que inspiran el Código de Conducta de los empleados públicos configurado por los principios éticos y de conducta regulados en los artículos siguientes. Los principios y reglas establecidos en este capítulo informarán la interpretación y aplicación del régimen disciplinario de los empleados públicos. ARTÍCULO 53. PRINCIPIOS ÉTICOS. 1. Los empleados públicos respetarán la Constitución y el resto de normas que integran el ordenamiento jurídico. 2. Su actuación perseguirá la satisfacción de los intereses generales de los ciudadanos y se fundamentará en consideraciones objetivas orientadas hacia la imparcialidad y el interés común, al margen de cualquier otro factor que exprese posiciones personales, familiares, corporativas, clientelares o cualesquiera otras que puedan colisionar con este principio. 3. Ajustarán su actuación a los principios de lealtad y buena fe con la Administración en la que presten sus servicios, y con sus superiores, compañeros, subordinados y con los ciudadanos. 4."
+    },
+    {
+      "titulo": "21. ARTÍCULO 54",
+      "contenido": "Su conducta se basará en el respeto de los derechos fundamentales y libertades públicas, evitando toda actuación que pueda producir discriminación alguna por razón de nacimiento, origen racial o étnico, género, sexo, orientación e identidad sexual, expresión de género, características sexuales, religión o convicciones, opinión, discapacidad, edad o cualquier otra condición o circunstancia personal o social. 25 \f 5. Se abstendrán en aquellos asuntos en los que tengan un interés personal, así como de toda actividad privada o interés que pueda suponer un riesgo de plantear conflictos de intereses con su puesto público. 6. No contraerán obligaciones económicas ni intervendrán en operaciones financieras, obligaciones patrimoniales o negocios jurídicos con personas o entidades cuando pueda suponer un conflicto de intereses con las obligaciones de su puesto público. 7. No aceptarán ningún trato de favor o situación que implique privilegio o ventaja injustificada, por parte de personas físicas o entidades privadas. 8. Actuarán de acuerdo con los principios de eficacia, economía y eficiencia, y vigilarán la consecución del interés general y el cumplimiento de los objetivos de la organización. 9. No influirán en la agilización o resolución de trámite o procedimiento administrativo sin justa causa y, en ningún caso, cuando ello comporte un privilegio en beneficio de los titulares de los cargos públicos o su entorno familiar y social inmediato o cuando suponga un menoscabo de los intereses de terceros. 10. Cumplirán con diligencia las tareas que les correspondan o se les encomienden y, en su caso, resolverán dentro de plazo los procedimientos o expedientes de su competencia. 11. Ejercerán sus atribuciones según el principio de dedicación al servicio público absteniéndose no solo de conductas contrarias al mismo, sino también de cualesquiera otras que comprometan la neutralidad en el ejercicio de los servicios públicos. 12. Guardarán secreto de las materias clasificadas u otras cuya difusión esté prohibida legalmente, y mantendrán la debida discreción sobre aquellos asuntos que conozcan por razón de su cargo, sin que puedan hacer uso de la información obtenida para beneficio propio o de terceros, o en perjuicio del interés público. ARTÍCULO 54. PRINCIPIOS DE CONDUCTA. 1. Tratarán con atención y respeto a los ciudadanos, a sus superiores y a los restantes empleados públicos. 2. El desempeño de las tareas correspondientes a su puesto de trabajo se realizará de forma diligente y cumpliendo la jornada y el horario establecidos. 3. Obedecerán las instrucciones y órdenes profesionales de los superiores, salvo que constituyan una infracción manifiesta del ordenamiento jurídico, en cuyo caso las pondrán inmediatamente en conocimiento de los órganos de inspección procedentes. 4. Informarán a los ciudadanos sobre aquellas materias o asuntos que tengan derecho a conocer, y facilitarán el ejercicio de sus derechos y el cumplimiento de sus obligaciones. 5. Administrarán los recursos y bienes públicos con austeridad, y no utilizarán los mismos en provecho propio o de personas allegadas. Tendrán, asimismo, el deber de velar por su conservación. 6. Se rechazará cualquier regalo, favor o servicio en condiciones ventajosas que vaya más allá de los usos habituales, sociales y de cortesía, sin perjuicio de lo establecido en el Código Penal. 7. Garantizarán la constancia y permanencia de los documentos para su transmisión y entrega a sus posteriores responsables. 8. Mantendrán actualizada su formación y cualificación. 9."
+    },
+    {
+      "titulo": "22. TÍTULO IV",
+      "contenido": "Observarán las normas sobre seguridad y salud laboral. 10. Pondrán en conocimiento de sus superiores o de los órganos competentes las propuestas que consideren adecuadas para mejorar el desarrollo de las funciones de la unidad en la que estén destinados. A estos efectos se podrá prever la creación de la instancia adecuada competente para centralizar la recepción de las propuestas de los empleados públicos o administrados que sirvan para mejorar la eficacia en el servicio. 11. Garantizarán la atención al ciudadano en la lengua que lo solicite siempre que sea oficial en el territorio. 26 \f TÍTULO IV ADQUISICIÓN Y PÉRDIDA DE LA RELACIÓN DE SERVICIO CAPÍTULO I ACCESO AL EMPLEO PÚBLICO Y ADQUISICIÓN DE LA RELACIÓN DE SERVICIO ARTÍCULO 55. PRINCIPIOS RECTORES. 1. Todos los ciudadanos tienen derecho al acceso al empleo público de acuerdo con los principios constitucionales de igualdad, mérito y capacidad, y de acuerdo con lo previsto en el presente Estatuto y en el resto del ordenamiento jurídico. 2. Las Administraciones Públicas, entidades y organismos a que se refiere el artículo 2 del presente Estatuto seleccionarán a su personal funcionario y laboral mediante procedimientos en los que se garanticen los principios constitucionales antes expresados, así como los establecidos a continuación: a) Publicidad de las convocatorias y de sus bases. b) Transparencia. c) Imparcialidad y profesionalidad de los miembros de los órganos de selección. d) Independencia y discrecionalidad técnica en la actuación de los órganos de selección. e) Adecuación entre el contenido de los procesos selectivos y las funciones o tareas a desarrollar. f) Agilidad, sin perjuicio de la objetividad, en los procesos de selección. ARTÍCULO 56. REQUISITOS GENERALES. 1. Para poder participar en los procesos selectivos será necesario reunir los siguientes requisitos: a) Tener la nacionalidad española, sin perjuicio de lo dispuesto en el artículo siguiente. b) Poseer la capacidad funcional para el desempeño de las tareas. c) Tener cumplidos dieciséis años y no exceder, en su caso, de la edad máxima de jubilación forzosa. Sólo por ley podrá establecerse otra edad máxima, distinta de la edad de jubilación forzosa, para el acceso al empleo público. d) No haber sido separado mediante expediente disciplinario del servicio de cualquiera de las Administraciones Públicas o de los órganos constitucionales o estatutarios de las Comunidades Autónomas, ni hallarse en inhabilitación absoluta o especial para empleos o cargos públicos por resolución judicial, para el acceso al cuerpo o escala de funcionario, o para ejercer funciones similares a las que desempeñaban en el caso del personal laboral, en el que hubiese sido separado o inhabilitado. En el caso de ser nacional de otro Estado, no hallarse inhabilitado o en situación equivalente ni haber sido sometido a sanción disciplinaria o equivalente que impida, en su Estado, en los mismos términos el acceso al empleo público. e) Poseer la titulación exigida. 2. Las Administraciones Públicas, en el ámbito de sus competencias, deberán prever la selección de empleados públicos debidamente capacitados para cubrir los puestos de trabajo en las Comunidades Autónomas que gocen de dos lenguas oficiales. 3. Podrá exigirse el cumplimiento de otros requisitos específicos que guarden relación objetiva y proporcionada con las funciones asumidas y las tareas a desempeñar. En todo caso, habrán de establecerse de manera abstracta y general. 27 \f ARTÍCULO 57. ACCESO AL EMPLEO PÚBLICO DE NACIONALES DE OTROS ESTADOS. 1."
+    },
+    {
+      "titulo": "23. artículo 76",
+      "contenido": "Los nacionales de los Estados miembros de la Unión Europea podrán acceder, como personal funcionario, en igualdad de condiciones que los españoles a los empleos públicos, con excepción de aquellos que directa o indirectamente impliquen una participación en el ejercicio del poder público o en las funciones que tienen por objeto la salvaguardia de los intereses del Estado o de las Administraciones Públicas. A tal efecto, los órganos de gobierno de las Administraciones Públicas determinarán las agrupaciones de funcionarios contempladas en el artículo 76 a las que no puedan acceder los nacionales de otros Estados. 2. Las previsiones del apartado anterior serán de aplicación, cualquiera que sea su nacionalidad, al cónyuge de los españoles y de los nacionales de otros Estados miembros de la Unión Europea, siempre que no estén separados de derecho y a sus descendientes y a los de su cónyuge siempre que no estén separados de derecho, sean menores de veintiún años o mayores de dicha edad dependientes. 3. El acceso al empleo público como personal funcionario, se extenderá igualmente a las personas incluidas en el ámbito de aplicación de los Tratados Internacionales celebrados por la Unión Europea y ratificados por España en los que sea de aplicación la libre circulación de trabajadores, en los términos establecidos en el apartado 1 de este artículo. 4. Los extranjeros a los que se refieren los apartados anteriores, así como los extranjeros con residencia legal en España podrán acceder a las Administraciones Públicas, como personal laboral, en igualdad de condiciones que los españoles. 5. Sólo por ley de las Cortes Generales o de las asambleas legislativas de las comunidades autónomas podrá eximirse del requisito de la nacionalidad por razones de interés general para el acceso a la condición de personal funcionario. ARTÍCULO 58. ACCESO AL EMPLEO PÚBLICO DE FUNCIONARIOS ESPAÑOLES DE ORGANISMOS INTERNACIONALES. Las Administraciones Públicas establecerán los requisitos y condiciones para el acceso a las mismas de funcionarios de nacionalidad española de Organismos Internacionales, siempre que posean la titulación requerida y superen los correspondientes procesos selectivos. Podrán quedar exentos de la realización de aquellas pruebas que tengan por objeto acreditar conocimientos ya exigidos para el desempeño de su puesto en el organismo internacional correspondiente. ARTÍCULO 59. PERSONAS CON DISCAPACIDAD. 1. En las ofertas de empleo público se reservará un cupo no inferior al siete por ciento de las vacantes para ser cubiertas entre personas con discapacidad, considerando como tales las definidas en el apartado 2 del artículo 4 del texto refundido de la Ley General de derechos de las personas con discapacidad y de su inclusión social, aprobado por el Real Decreto Legislativo 1/2013, de 29 de noviembre, siempre que superen los procesos selectivos y acrediten su discapacidad y la compatibilidad con el desempeño de las tareas, de modo que progresivamente se alcance el dos por ciento de los efectivos totales en cada Administración Pública. La reserva del mínimo del siete por ciento se realizará de manera que, al menos, el dos por ciento de las plazas ofertadas lo sea para ser cubiertas por personas que acrediten discapacidad intelectual y el resto de las plazas ofertadas lo sea para personas que acrediten cualquier otro tipo de discapacidad. 2."
+    },
+    {
+      "titulo": "24. ARTÍCULO 60",
+      "contenido": "Cada Administración Pública adoptará las medidas precisas para establecer las adaptaciones y ajustes razonables de tiempos y medios en el proceso selectivo y, una vez superado dicho proceso, las adaptaciones en el puesto de trabajo a las necesidades de las personas con discapacidad. 28 \f ARTÍCULO 60. ÓRGANOS DE SELECCIÓN. 1. Los órganos de selección serán colegiados y su composición deberá ajustarse a los principios de imparcialidad y profesionalidad de sus miembros, y se tenderá, asimismo, a la paridad entre mujer y hombre. 2. El personal de elección o de designación política, los funcionarios interinos y el personal eventual no podrán formar parte de los órganos de selección. 3. La pertenencia a los órganos de selección será siempre a título individual, no pudiendo ostentarse ésta en representación o por cuenta de nadie. ARTÍCULO 61. SISTEMAS SELECTIVOS. 1. Los procesos selectivos tendrán carácter abierto y garantizarán la libre concurrencia, sin perjuicio de lo establecido para la promoción interna y de las medidas de discriminación positiva previstas en este Estatuto. Los órganos de selección velarán por el cumplimiento del principio de igualdad de oportunidades entre sexos. 2. Los procedimientos de selección cuidarán especialmente la conexión entre el tipo de pruebas a superar y la adecuación al desempeño de las tareas de los puestos de trabajo convocados, incluyendo, en su caso, las pruebas prácticas que sean precisas. Las pruebas podrán consistir en la comprobación de los conocimientos y la capacidad analítica de los aspirantes, expresados de forma oral o escrita, en la realización de ejercicios que demuestren la posesión de habilidades y destrezas, en la comprobación del dominio de lenguas extranjeras y, en su caso, en la superación de pruebas físicas. 3. Los procesos selectivos que incluyan, además de las preceptivas pruebas de capacidad, la valoración de méritos de los aspirantes sólo podrán otorgar a dicha valoración una puntuación proporcionada que no determinará, en ningún caso, por sí misma el resultado del proceso selectivo. 4. Las Administraciones Públicas podrán crear órganos especializados y permanentes para la organización de procesos selectivos, pudiéndose encomendar estas funciones a los Institutos o Escuelas de Administración Pública. 5. Para asegurar la objetividad y la racionalidad de los procesos selectivos, las pruebas podrán completarse con la superación de cursos, de periodos de prácticas, con la exposición curricular por los candidatos, con pruebas psicotécnicas o con la realización de entrevistas. Igualmente podrán exigirse reconocimientos médicos. 6. Los sistemas selectivos de funcionarios de carrera serán los de oposición y concurso- oposición que deberán incluir, en todo caso, una o varias pruebas para determinar la capacidad de los aspirantes y establecer el orden de prelación. Sólo en virtud de ley podrá aplicarse, con carácter excepcional, el sistema de concurso que consistirá únicamente en la valoración de méritos. 7. Los sistemas selectivos de personal laboral fijo serán los de oposición, concurso- oposición, con las características establecidas en el apartado anterior, o concurso de valoración de méritos. Las Administraciones Públicas podrán negociar las formas de colaboración que en el marco de los convenios colectivos fijen la actuación de las organizaciones sindicales en el desarrollo de los procesos selectivos. 8."
+    },
+    {
+      "titulo": "25. ARTÍCULO 62",
+      "contenido": "Los órganos de selección no podrán proponer el acceso a la condición de funcionario de un número superior de aprobados al de plazas convocadas, excepto cuando así lo prevea la propia convocatoria. 29 \f No obstante lo anterior, siempre que los órganos de selección hayan propuesto el nombramiento de igual número de aspirantes que el de plazas convocadas, y con el fin de asegurar la cobertura de las mismas, cuando se produzcan renuncias de los aspirantes seleccionados, antes de su nombramiento o toma de posesión, el órgano convocante podrá requerir del órgano de selección relación complementaria de los aspirantes que sigan a los propuestos, para su posible nombramiento como funcionarios de carrera. ARTÍCULO 62. ADQUISICIÓN DE LA CONDICIÓN DE FUNCIONARIO DE CARRERA. 1. La condición de funcionario de carrera se adquiere por el cumplimiento sucesivo de los siguientes requisitos: a) Superación del proceso selectivo. b) Nombramiento por el órgano o autoridad competente, que será publicado en el Diario Oficial correspondiente. c) Acto de acatamiento de la Constitución y, en su caso, del Estatuto de Autonomía correspondiente y del resto del Ordenamiento Jurídico. d) Toma de posesión dentro del plazo que se establezca. 2. A efectos de lo dispuesto en el apartado 1.b) anterior, no podrán ser funcionarios y quedarán sin efecto las actuaciones relativas a quienes no acrediten, una vez superado el proceso selectivo, que reúnen los requisitos y condiciones exigidos en la convocatoria. CAPÍTULO II PÉRDIDA DE LA RELACIÓN DE SERVICIO ARTÍCULO 63. CAUSAS DE PÉRDIDA DE LA CONDICIÓN DE FUNCIONARIO DE CARRERA. Son causas de pérdida de la condición de funcionario de carrera: a) La renuncia a la condición de funcionario. b) La pérdida de la nacionalidad. c) La jubilación total del funcionario. d) La sanción disciplinaria de separación del servicio que tuviere carácter firme. e) La pena principal o accesoria de inhabilitación absoluta o especial para cargo público que tuviere carácter firme. ARTÍCULO 64. RENUNCIA. 1. La renuncia voluntaria a la condición de funcionario habrá de ser manifestada por escrito y será aceptada expresamente por la Administración, salvo lo dispuesto en el apartado siguiente. 2. No podrá ser aceptada la renuncia cuando el funcionario esté sujeto a expediente disciplinario o haya sido dictado en su contra auto de procesamiento o de apertura de juicio oral por la comisión de algún delito. 3. La renuncia a la condición de funcionario no inhabilita para ingresar de nuevo en la Administración Pública a través del procedimiento de selección establecido. ARTÍCULO 65. PÉRDIDA DE LA NACIONALIDAD. La pérdida de la nacionalidad española o la de cualquier otro Estado miembro de la Unión Europea o la de aquellos Estados a los que, en virtud de tratados internacionales celebrados por la Unión Europea y ratificados por España, les sea de aplicación la libre circulación de trabajadores, que haya sido tenida en cuenta para el nombramiento, determinará la pérdida de la condición de funcionario salvo que simultáneamente se adquiera la nacionalidad de alguno de dichos Estados. Artículo 66. Pena principal o accesoria de inhabilitación absoluta o especial para cargo público. La pena principal o accesoria de inhabilitación absoluta cuando hubiere adquirido firmeza la sentencia que la imponga produce la pérdida de la condición de funcionario respecto a todos los empleos o cargos que tuviere."
+    },
+    {
+      "titulo": "26. ARTÍCULO 67",
+      "contenido": "30 \f La pena principal o accesoria de inhabilitación especial cuando hubiere adquirido firmeza la sentencia que la imponga produce la pérdida de la condición de funcionario respecto de aquellos empleos o cargos especificados en la sentencia. ARTÍCULO 67. JUBILACIÓN. 1. La jubilación de los funcionarios podrá ser: a) Voluntaria, a solicitud del funcionario. b) Forzosa, al cumplir la edad legalmente establecida. c) Por la declaración de incapacidad permanente para el ejercicio de las funciones propias de su cuerpo o escala, o por el reconocimiento de una pensión de incapacidad permanente absoluta o, incapacidad permanente total en relación con el ejercicio de las funciones de su cuerpo o escala. 2. Procederá la jubilación voluntaria, a solicitud del interesado, siempre que el funcionario reúna los requisitos y condiciones establecidos en el Régimen de Seguridad Social que le sea aplicable. 3. La jubilación forzosa se declarará de oficio al cumplir el funcionario los sesenta y cinco años de edad. No obstante, en los términos de las leyes de Función Pública que se dicten en desarrollo de este Estatuto, se podrá solicitar la prolongación de la permanencia en el servicio activo como máximo hasta que se cumpla setenta años de edad. La Administración Pública competente deberá de resolver de forma motivada la aceptación o denegación de la prolongación. De lo dispuesto en los dos párrafos anteriores quedarán excluidos los funcionarios que tengan normas estatales específicas de jubilación. 4. Con independencia de la edad legal de jubilación forzosa establecida en el apartado 3, la edad de la jubilación forzosa del personal funcionario incluido en el Régimen General de la Seguridad Social será, en todo caso, la que prevean las normas reguladoras de dicho régimen para el acceso a la pensión de jubilación en su modalidad contributiva sin coeficiente reductor por razón de la edad. ARTÍCULO 68. REHABILITACIÓN DE LA CONDICIÓN DE FUNCIONARIO. 1. En caso de extinción de la relación de servicios como consecuencia de pérdida de la nacionalidad o jubilación por incapacidad permanente para el servicio, el interesado, una vez desaparecida la causa objetiva que la motivó, podrá solicitar la rehabilitación de su condición de funcionario, que le será concedida. 2. Los órganos de gobierno de las Administraciones Públicas podrán conceder, con carácter excepcional, la rehabilitación, a petición del interesado, de quien hubiera perdido la condición de funcionario por haber sido condenado a la pena principal o accesoria de inhabilitación, atendiendo a las circunstancias y entidad del delito cometido. Si transcurrido el plazo para dictar la resolución, no se hubiera producido de forma expresa, se entenderá desestimada la solicitud. 31 \f REAL DECRETO LEGISLATIVO 781/1986, DE 18 DE ABRIL, POR EL QUE SE APRUEBA EL TEXTO REFUNDIDO DE LAS DISPOSICIONES LEGALES VIGENTES EN MATERIA DE RÉGIMEN LOCAL. TITULO V DISPOSICIONES COMUNES A LAS ENTIDADES LOCALES CAPITULO III ESTATUTO DE LOS MIEMBROS DE LAS CORPORACIONES LOCALES ART. 72. 1. Los miembros de las Corporaciones locales están obligados a concurrir a todas las sesiones, salvo justa causa que se lo impida, que deberán comunicar con la antelación necesaria al Presidente de la Corporación. 2. Las ausencias fuera del término municipal que excedan de ocho días deberán ser puestas en conocimiento de los respectivos Presidentes. TITULO VII PERSONAL AL SERVICIO DE LAS ENTIDADES LOCALES CAPITULO IV DE LOS DEMÁS FUNCIONARIOS DE CARRERA ART. 167. 1."
+    },
+    {
+      "titulo": "27. Título V",
+      "contenido": "Los funcionarios de carrera de la Administración local que no tengan habilitación de carácter nacional se integrarán en las escalas de Administración General y Administración Especial de cada Corporación, que quedarán agrupadas conforme a lo dispuesto en la legislación básica del Estado sobre función pública, en los grupos que éste determine, de acuerdo con la titulación exigida para su ingreso. 2. La escala de administración general se divide en las subescalas siguientes: a) Técnica. b) De gestión. c) Administrativa. d) Auxiliar. e) Subalterna. 3. La Escala de Administración Especial se divide en las Subescalas siguientes: a) Técnica. b) De Servicios Especiales. 4. La creación de Escalas, Subescalas y clases de funcionarios y la clasificación de los mismos dentro de cada una de ellas, se hará por cada Corporación, de acuerdo con lo previsto en esta Ley. ART. 168. La provisión de puestos de trabajo que, de conformidad con la relación aprobada, estén reservados o puedan ser desempeñados por funcionarios de carrera, se regirá por las normas que, en desarrollo de la legislación básica en materia de función pública local, dicte la Administración del Estado. 32 \f ART. 172. 1. Pertenecerán a la Subescala de Servicios Especiales, los funcionarios que desarrollen tareas que requieran una aptitud específica, y para cuyo ejercicio no se exija, con carácter general, la posesión de títulos académicos o profesionales determinados. 2. Se comprenderán en esta Subescala, y sin perjuicio de las peculiaridades de cada Corporación, las siguientes clases: a) Policía Local y sus auxiliares. b) Servicio de Extinción de Incendios. c) Plazas de Cometidos Especiales. d) Personal de Oficios. e) Agentes forestales y medioambientales. 3. El ingreso en la Subescala de Servicios Especiales se hará por oposición, concurso o concurso-oposición libre, según acuerde la Corporación respectiva, sin perjuicio de lo que dispongan las normas específicas de aplicación a los funcionarios de Policía Local y del Servicio de Extinción de Incendios. ART. 173. La Policía Local ejercerá sus funciones de acuerdo con lo previsto en el Título V de la Ley Orgánica de Fuerzas y Cuerpos de Seguridad. CAPITULO V PERSONAL EVENTUAL Y LABORAL ART. 176. 1. El personal eventual se rige por lo establecido en el artículo 104 de la Ley 7/1985, de 2 de abril. 2. Los puestos de trabajo reservados a este tipo de personal deberán figurar en la plantilla de personal de la Corporación. 3. Podrán ser desempeñados por personal eventual determinados puestos de trabajo de carácter directivo, incluidos en la relación de puestos de trabajo de la Corporación, de acuerdo con lo que dispongan las normas que dicte el Estado para su confección. En estos supuestos, el personal eventual deberá reunir las condiciones específicas que se exijan a los funcionarios que puedan desempeñar dichos puestos. 4. En ningún caso el desempeño de un puesto de trabajo reservado a personal eventual constituirá mérito para el acceso a la función pública o a la promoción interna. ART. 177. 1. La selección del personal laboral se rige por lo establecido en el artículo 103 de la Ley 7/1985, de 2 de abril. 2. La contratación laboral puede ser por tiempo indefinido, de duración determinada, a tiempo parcial, y demás modalidades previstas en la legislación laboral. El régimen de tales relaciones será, en su integridad, el establecido en las normas de Derecho Laboral. 3."
+    },
+    {
+      "titulo": "28. Será nulo el contrato laboral por tiempo indefinido celebrado por una",
+      "contenido": "Será nulo el contrato laboral por tiempo indefinido celebrado por una Entidad local con persona incursa en alguna de las causas de incapacidad específica que sean de aplicación a los funcionarios y al personal interino. 33"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"El estatuto de los miembros de las Corpo\"]\n  A --> N1[\"Real Decreto Legislativo 5/2015, de 30 d\"]\n  A --> N2[\"CAPÍTULO III\"]\n  A --> N3[\"CAPÍTULO IV\"]\n  A --> N4[\"artículo 4\"]\n  A --> N5[\"TÍTULO V\"]\n  A --> N6[\"ARTÍCULO 74\"]\n  A --> N7[\"artículo 37\"]\n  A --> N8[\"artículo 15\"]\n  A --> N9[\"Ley Orgánica 2/2012, de 27 de abril, de \"]\n  A --> N10[\"ARTÍCULO 76\"]\n  A --> N11[\"TÍTULO VII\"]\n  A --> N12[\"artículo 149\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "El estatuto de los miembros de las Corporaciones …",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "Real Decreto Legislativo 5/2015, de 30 …",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "CAPÍTULO III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "CAPÍTULO IV",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "artículo 4",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "TÍTULO V",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "ARTÍCULO 74",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "artículo 37",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "artículo 15",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "Ley Orgánica 2/2012, de 27 de abril, de…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "ARTÍCULO 76",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "TÍTULO VII",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s12",
+        "texto": "artículo 149",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s13",
+        "texto": "real decreto previsto en el apartado an…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s14",
+        "texto": "ARTÍCULO 93",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s15",
+        "texto": "ARTÍCULO 94",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s16",
+        "texto": "artículo 91",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s17",
+        "texto": "ARTÍCULO 10",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s18",
+        "texto": "artículo 9",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s19",
+        "texto": "disposición y",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s20",
+        "texto": "CAPÍTULO VI",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s21",
+        "texto": "ARTÍCULO 54",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s22",
+        "texto": "TÍTULO IV",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s23",
+        "texto": "artículo 76",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s24",
+        "texto": "ARTÍCULO 60",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s25",
+        "texto": "ARTÍCULO 62",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s26",
+        "texto": "ARTÍCULO 67",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s27",
+        "texto": "Título V",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s28",
+        "texto": "Será nulo el contrato laboral por tiemp…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p13-01",
-            "enunciado": "Los miembros de las Corporaciones locales adquieren su condición:",
-            "opciones": ["Al ser proclamados electos", "Al tomar posesión de su cargo", "Al inscribirse en el censo", "Al jurar el cargo ante el Rey"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Los miembros de las Corporaciones locales adquieren su condición al tomar posesión de su cargo."
-        },
-        {
-            "id": "p13-02",
-            "enunciado": "El personal al servicio de las Entidades locales se integra por:",
-            "opciones": ["Solo funcionarios de carrera", "Funcionarios de carrera, personal laboral y personal eventual", "Solo personal laboral", "Funcionarios y autónomos"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El personal local se integra por funcionarios de carrera, personal laboral y personal eventual."
-        },
-        {
-            "id": "p13-03",
-            "enunciado": "Tienen habilitación de carácter nacional:",
-            "opciones": ["Los concejales", "Los Secretarios, Interventores y Tesoreros", "El personal eventual", "Los policías locales"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Los funcionarios con habilitación de carácter nacional son los Secretarios, Interventores y Tesoreros."
-        },
-        {
-            "id": "p13-04",
-            "enunciado": "El personal eventual desempeña:",
-            "opciones": ["Funciones de carrera", "Puestos de confianza o asesoramiento especial", "Funciones de habilitación nacional", "Puestos laborales fijos"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El personal eventual desempeña puestos de confianza o asesoramiento especial; su nombramiento y cese son libres."
-        },
-        {
-            "id": "p13-05",
-            "enunciado": "Para adquirir la condición de funcionario de carrera se exige, entre otros:",
-            "opciones": ["Solo aprobar el examen", "Superar el proceso selectivo, nombramiento y toma de posesión", "Tener un contrato laboral", "Ser propuesto por el Alcalde"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Se exige superar el proceso selectivo, el nombramiento, el acatamiento de la Constitución y la toma de posesión."
-        },
-        {
-            "id": "p13-06",
-            "enunciado": "El régimen de incompatibilidades del personal público se regula por:",
-            "opciones": ["La Ley 7/1985", "La Ley 53/1984, de 26 de diciembre", "La Ley 39/2015", "El Código Penal"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Ley 53/1984, de 26 de diciembre, regula las incompatibilidades del personal al servicio de las Administraciones públicas."
-        },
-        {
-            "id": "p13-07",
-            "enunciado": "Como regla general, con cargo a presupuestos públicos se puede percibir:",
-            "opciones": ["Dos remuneraciones", "Una sola remuneración", "Tantas como puestos se ocupen", "Ninguna remuneración"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Como regla general no se puede percibir más de una remuneración con cargo a presupuestos públicos."
-        },
-        {
-            "id": "p13-08",
-            "enunciado": "El derecho que protege la permanencia del funcionario de carrera es:",
-            "opciones": ["La libre designación", "La inamovilidad en la condición de funcionario", "La excedencia forzosa", "La promoción interna"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La inamovilidad en la condición de funcionario de carrera es un derecho individual del régimen estatutario."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      },
+      {
+        "desde": "root",
+        "hasta": "s12"
+      },
+      {
+        "desde": "root",
+        "hasta": "s13"
+      },
+      {
+        "desde": "root",
+        "hasta": "s14"
+      },
+      {
+        "desde": "root",
+        "hasta": "s15"
+      },
+      {
+        "desde": "root",
+        "hasta": "s16"
+      },
+      {
+        "desde": "root",
+        "hasta": "s17"
+      },
+      {
+        "desde": "root",
+        "hasta": "s18"
+      },
+      {
+        "desde": "root",
+        "hasta": "s19"
+      },
+      {
+        "desde": "root",
+        "hasta": "s20"
+      },
+      {
+        "desde": "root",
+        "hasta": "s21"
+      },
+      {
+        "desde": "root",
+        "hasta": "s22"
+      },
+      {
+        "desde": "root",
+        "hasta": "s23"
+      },
+      {
+        "desde": "root",
+        "hasta": "s24"
+      },
+      {
+        "desde": "root",
+        "hasta": "s25"
+      },
+      {
+        "desde": "root",
+        "hasta": "s26"
+      },
+      {
+        "desde": "root",
+        "hasta": "s27"
+      },
+      {
+        "desde": "root",
+        "hasta": "s28"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc13-01",
+      "pregunta": "¿Qué se entiende por actividad en el sector público?",
+      "respuesta": "Se considera actividad en el sector público la desarrollada por los miembros electivos de las Asambleas Legislativas de las Comunidades Autónomas y de las Corporaciones Locales, por los altos cargos y restante personal de los órganos constitucionales y de todas las Administraciones Públicas, incluida la Administración de Justicia, y de los Entes, Organismo y Empresas de ellas dependientes."
+    },
+    {
+      "id": "fc13-02",
+      "pregunta": "¿Qué se entiende por remuneración?",
+      "respuesta": "Se entiende por remuneración cualquier derecho de contenido económico derivado, directa o indirectamente, de una prestación o servicio personal, sea su cuantía fija o variable y su devengo periódico u ocasional."
+    },
+    {
+      "id": "fc13-03",
+      "pregunta": "¿Qué es incompatible con el desempeño de un puesto de trabajo en el sector público?",
+      "respuesta": "La percepción de pensión de jubilación o retiro por Derechos Pasivos o por cualquier régimen de Seguridad Social público y obligatorio."
+    },
+    {
+      "id": "fc13-04",
+      "pregunta": "¿Qué supuestos previstos en la Ley permiten compatibilizar actividades en el sector público?",
+      "respuesta": "Las funciones docente y sanitaria, en los casos a que se refieren los artículo 5.º y 6.º y en los que, por razón de interés público, se determine por el Consejo de Ministros, mediante Real decreto, u órgano de gobierno de la Comunidad Autónoma."
+    },
+    {
+      "id": "fc13-05",
+      "pregunta": "¿Qué es necesario para el ejercicio de una segunda actividad en el sector público?",
+      "respuesta": "La previa y expresa autorización de compatibilidad, que no supondrá modificación de la jornada de trabajo y horario de los dos puestos."
+    },
+    {
+      "id": "fc13-06",
+      "pregunta": "¿Qué se entiende por autorización de compatibilidad?",
+      "respuesta": "La autorización de compatibilidad se efectuará en razón del interés público y condiciona a su estricto cumplimiento en ambos puestos."
+    },
+    {
+      "id": "fc13-07",
+      "pregunta": "¿Qué es incompatible con la percepción de pensión de jubilación o retiro?",
+      "respuesta": "El desempeño de un puesto de trabajo en el sector público."
+    },
+    {
+      "id": "fc13-08",
+      "pregunta": "¿Qué es compatible con un puesto de trabajo a tiempo parcial?",
+      "respuesta": "La pensión de jubilación parcial."
+    },
+    {
+      "id": "fc13-09",
+      "pregunta": "¿Qué se entiende por ámbito de aplicación de la Ley?",
+      "respuesta": "Se entiende por ámbito de aplicación de la Ley a todo el personal, cualquiera que sea la naturaleza jurídica de la relación de empleo, al servicio de las Administraciones Públicas y de los Entes, Organismo y Empresas de ellas dependientes."
+    },
+    {
+      "id": "fc13-10",
+      "pregunta": "¿Qué se entiende por personal al servicio de las Corporaciones Locales?",
+      "respuesta": "Se entiende por personal al servicio de las Corporaciones Locales al personal que desempeña funciones en las Corporaciones Locales y en los Organismos de ellas dependientes."
+    },
+    {
+      "id": "fc13-11",
+      "pregunta": "¿Qué se entiende por personal al servicio de las Administraciones de las Comunidades Autónomas?",
+      "respuesta": "Se entiende por personal al servicio de las Administraciones de las Comunidades Autónomas al personal que desempeña funciones en las Administraciones de las Comunidades Autónomas y en los Organismos de ellas dependientes."
+    },
+    {
+      "id": "fc13-12",
+      "pregunta": "¿Qué se entiende por personal al servicio de la Administración del Estado?",
+      "respuesta": "Se entiende por personal al servicio de la Administración del Estado al personal que desempeña funciones en la Administración del Estado y en los Organismos Públicos."
+    },
+    {
+      "id": "fc13-13",
+      "pregunta": "¿Qué se entiende por personal al servicio de la Seguridad Social?",
+      "respuesta": "Se entiende por personal al servicio de la Seguridad Social al personal que desempeña funciones en la Seguridad Social y en los Entidades Gestoras y en cualquier otra Entidad u Organismo de la misma."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p13-01",
+      "enunciado": "¿Qué se entiende por actividad en el sector público?",
+      "opciones": [
+        "a) La desarrollada por los miembros electivos de las Asambleas Legislativas de las Comunidades Autónomas y de las Corporaciones Locales.",
+        "b) La desarrollada por los altos cargos y restante personal de los órganos constitucionales.",
+        "c) La desarrollada por los miembros electivos de las Asambleas Legislativas de las Comunidades Autónomas y de las Corporaciones Locales, por los altos cargos y restante personal de los órganos constitucionales y de todas las Administraciones Públicas, incluida la Administración de Justicia, y de los Entes, Organismo y Empresas de ellas dependientes.",
+        "d) La desarrollada por los miembros electivos de las Asambleas Legislativas de las Comunidades Autónomas y de las Corporaciones Locales, por los altos cargos y restante personal de los órganos constitucionales y de todas las Administraciones Públicas, incluida la Administración de Justicia, y de los Entes, Organismo y Empresas de ellas dependientes, y por los miembros electivos de las Asambleas Legislativas de las Comunidades Autónomas y de las Corporaciones Locales."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Se considera actividad en el sector público la desarrollada por los miembros electivos de las Asambleas Legislativas de las Comunidades Autónomas y de las Corporaciones Locales, por los altos cargos y restante personal de los órganos constitucionales y de todas las Administraciones Públicas, incluida la Administración de Justicia, y de los Entes, Organismo y Empresas de ellas dependientes."
+    },
+    {
+      "id": "p13-02",
+      "enunciado": "¿Qué se entiende por remuneración?",
+      "opciones": [
+        "a) Cualquier derecho de contenido económico derivado, directa o indirectamente, de una prestación o servicio personal.",
+        "b) Cualquier derecho de contenido económico derivado, directa o indirectamente, de una prestación o servicio personal, sea su cuantía fija o variable y su devengo periódico u ocasional.",
+        "c) Cualquier derecho de contenido económico derivado, directa o indirectamente, de una prestación o servicio personal, sea su cuantía fija o variable y su devengo periódico u ocasional, y por los miembros electivos de las Asambleas Legislativas de las Comunidades Autónomas y de las Corporaciones Locales.",
+        "d) Cualquier derecho de contenido económico derivado, directa o indirectamente, de una prestación o servicio personal, sea su cuantía fija o variable y su devengo periódico u ocasional, y por los miembros electivos de las Asambleas Legislativas de las Comunidades Autónomas y de las Corporaciones Locales, y por los altos cargos y restante personal de los órganos constitucionales."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Se entiende por remuneración cualquier derecho de contenido económico derivado, directa o indirectamente, de una prestación o servicio personal, sea su cuantía fija o variable y su devengo periódico u ocasional."
+    },
+    {
+      "id": "p13-03",
+      "enunciado": "¿Qué es incompatible con el desempeño de un puesto de trabajo en el sector público?",
+      "opciones": [
+        "a) La percepción de pensión de jubilación o retiro por Derechos Pasivos o por cualquier régimen de Seguridad Social público y obligatorio.",
+        "b) La percepción de pensión de jubilación o retiro por Derechos Pasivos o por cualquier régimen de Seguridad Social público y obligatorio, y por los miembros electivos de las Asambleas Legislativas de las Comunidades Autónomas y de las Corporaciones Locales.",
+        "c) La percepción de pensión de jubilación o retiro por Derechos Pasivos o por cualquier régimen de Seguridad Social público y obligatorio, y por los altos cargos y restante personal de los órganos constitucionales.",
+        "d) La percepción de pensión de jubilación o retiro por Derechos Pasivos o por cualquier régimen de Seguridad Social público y obligatorio, y por los miembros electivos de las Asambleas Legislativas de las Comunidades Autónomas y de las Corporaciones Locales, y por los altos cargos y restante personal de los órganos constitucionales."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La percepción de pensión de jubilación o retiro por Derechos Pasivos o por cualquier régimen de Seguridad Social público y obligatorio."
+    }
+  ]
 }

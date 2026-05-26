@@ -1,157 +1,462 @@
 {
-    "id": 7,
-    "titulo": "El Estatuto de la Comunidad Autónoma de Canarias. La reforma del Estatuto de la Comunidad Autónoma de Canarias. Las Instituciones de la Comunidad Autónoma. El Parlamento: composición y funciones. El Gobierno de Canarias: composición y funciones. Los Cabildos: composición y funciones",
-    "bloque": "general",
-    "secciones": [
-        {
-            "id": "s7-1",
-            "titulo": "El Estatuto de Autonomía de Canarias",
-            "contenido": "El vigente Estatuto de Autonomía de Canarias se aprobó por la Ley Orgánica 1/2018, de 5 de noviembre, que sustituyó al anterior de 1982. Canarias se constituye en Comunidad Autónoma en el marco de la Constitución como expresión de su identidad singular y en ejercicio del derecho al autogobierno. El Estatuto es la norma institucional básica de la Comunidad Autónoma. Define el archipiélago, integrado por siete islas con administración propia, como una nacionalidad, y recoge entre sus señas de identidad el hecho insular y la condición de región ultraperiférica de la Unión Europea. El Estatuto incorpora un catálogo de derechos, deberes y principios rectores."
-        },
-        {
-            "id": "s7-2",
-            "titulo": "La reforma del Estatuto de Autonomía",
-            "contenido": "La reforma del Estatuto de Autonomía de Canarias se ajusta al procedimiento previsto en el propio Estatuto y en la Constitución. La iniciativa de reforma corresponde al Gobierno de Canarias, al Parlamento de Canarias a propuesta de una quinta parte de sus miembros, o a las Cortes Generales. La aprobación de la reforma requiere el voto favorable de la mayoría de dos tercios del Parlamento de Canarias y su posterior aprobación por las Cortes Generales mediante ley orgánica. Al tratarse de una ley orgánica, su modificación corresponde en última instancia a las Cortes Generales, garantizándose así la participación del Estado."
-        },
-        {
-            "id": "s7-3",
-            "titulo": "El Parlamento de Canarias",
-            "contenido": "El Parlamento de Canarias representa al pueblo canario, ejerce la potestad legislativa, aprueba los presupuestos, impulsa y controla la acción del Gobierno de Canarias y elige de entre sus miembros al Presidente de Canarias. Es elegido por sufragio universal, libre, igual, directo y secreto, por un periodo de cuatro años, atendiendo a criterios de representación proporcional y a un sistema electoral que combina circunscripciones insulares y autonómica. Tiene su sede en Santa Cruz de Tenerife. Sus miembros gozan de inviolabilidad por las opiniones manifestadas en el ejercicio de su cargo y no pueden ser detenidos salvo en caso de flagrante delito."
-        },
-        {
-            "id": "s7-4",
-            "titulo": "El Gobierno de Canarias",
-            "contenido": "El Gobierno de Canarias es el órgano colegiado que dirige la política de la Comunidad Autónoma; le corresponden las funciones ejecutiva y reglamentaria. Está compuesto por el Presidente, el Vicepresidente o Vicepresidentes en su caso y los Consejeros. El Presidente de Canarias es elegido por el Parlamento de entre sus miembros y nombrado por el Rey; ostenta la suprema representación de la Comunidad Autónoma y la ordinaria del Estado en ella, y dirige y coordina la acción del Gobierno. El Gobierno responde políticamente de forma solidaria ante el Parlamento de Canarias, que puede exigir esa responsabilidad mediante la cuestión de confianza y la moción de censura."
-        },
-        {
-            "id": "s7-5",
-            "titulo": "Los Cabildos Insulares",
-            "contenido": "Los Cabildos Insulares son, simultáneamente, órganos de gobierno, administración y representación de cada isla e instituciones de la Comunidad Autónoma de Canarias. Asumen en cada isla la representación ordinaria del Gobierno y de la Administración autonómica y ejecutan en su nombre cualquier competencia que la Comunidad no ejerza directamente. El Cabildo Insular se compone del Presidente y de los consejeros, elegidos por sufragio universal, libre, igual, directo y secreto. Existen tantos Cabildos como islas con administración propia: Gran Canaria, Tenerife, Lanzarote, Fuerteventura, La Palma, La Gomera y El Hierro."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e7-1",
-            "titulo": "El Estatuto de Autonomía",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Estatuto de Autonomia] --> B[LO 1/2018]\n    A --> C[Canarias - nacionalidad]\n    A --> D[Hecho insular]\n    A --> E[Region ultraperiferica UE]"
-        },
-        {
-            "id": "e7-2",
-            "titulo": "Instituciones de Canarias",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Instituciones de Canarias] --> B[Parlamento - potestad legislativa]\n    A --> C[Gobierno - funcion ejecutiva]\n    A --> D[Presidente de Canarias]\n    A --> E[Cabildos Insulares]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Canarias y sus instituciones", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Estatuto de Autonomía", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Reforma del Estatuto", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "El Parlamento", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "El Gobierno de Canarias", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Los Cabildos Insulares", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "LO 1/2018", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Dos tercios + Cortes Generales", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Potestad legislativa, sede en S/C Tenerife", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Presidente, Vicepresidente y Consejeros", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Función ejecutiva y reglamentaria", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Gobierno y administración de la isla", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Siete islas con administración propia", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n5", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 7,
+  "titulo": "El Estatuto de la Comunidad Autónoma de Canarias. La reforma del Estatuto de la Comunidad Autónoma de Canarias. Las Instituciones de la Comunidad Autónoma. El Parlamento: composición y funciones. El Gobierno de Canarias: composición y funciones. Los Cabildos: composición y funciones.",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "1. Ley Orgánica 1/2018, de 5 de noviembre, de reforma del Estatuto de Auton",
+      "contenido": "BIBLIOGRAFÍA • Ley Orgánica 1/2018, de 5 de noviembre, de reforma del Estatuto de Autonomía de Canarias. o Art. 1-60 o Art. 65-74 o Art. 94-102 o Art.200-202 o Disposiciones § Adicional § Transitoria § Derogatoria § Final ACTUALIZACIONES: - Fran Marcelino López - Abián Saavedra 2 \f LEY ORGÁNICA 1/2018, DE 5 DE NOVIEMBRE, DE REFORMA DEL ESTATUTO DE AUTONOMÍA DE CANARIAS. TÍTULO PRELIMINAR DISPOSICIONES GENERALES ARTÍCULO 1. ARCHIPIÉLAGO ATLÁNTICO. 1. Canarias es un archipiélago atlántico que, como expresión de su identidad singular basada en sus circunstancias geográficas, históricas y culturales, ejerce el derecho al autogobierno como nacionalidad, constituyéndose en Comunidad Autónoma en el marco del Estado español. La Comunidad Autónoma de Canarias, a través de sus instituciones democráticas, asume como tarea suprema la defensa de los intereses canarios, y de su identidad cultural y de su patrimonio natural y biodiversidad; la solidaridad entre todos cuantos integran el pueblo canario; el desarrollo sostenible y equilibrado de las islas y su contribución a la cooperación y a la paz entre los pueblos, así como a un orden internacional justo, en el marco constitucional y estatutario. 2. El autogobierno del pueblo canario se funda en la Constitución y se asienta en la excepcionalidad de su ubicación geográfica, el valor de su territorio y de sus recursos naturales, el arraigo de sus instituciones públicas o la vocación atlántica de su economía, así como el desarrollo de una identidad política propia, aparejada a una concepción especifica de la historia, la cultura, el habla y las costumbres de las personas que habitan en el Archipiélago. ARTÍCULO 2. LOS PODERES DE CANARIAS. 1. Los poderes de la Comunidad Autónoma de Canarias emanan de la Constitución y del pueblo canario, en los términos del presente Estatuto de Autonomía, que es su norma institucional básica. 2. Los poderes de la Comunidad Autónoma de Canarias se ejercen a través del Parlamento, de la Presidencia y del Gobierno. 3. Las islas se configuran como elementos esenciales de la organización territorial de Canarias, siendo sus cabildos, simultáneamente, instituciones de la Comunidad Autónoma y órganos de gobierno, administración y representación de cada isla. ARTÍCULO 3. LEJANÍA, INSULARIDAD Y ULTRAPERIFERIA. Dada la lejanía, la insularidad y la condición ultraperiférica de Canarias, reconocidas por los Tratados constitutivos de la Unión Europea, la Constitución y el presente Estatuto, los poderes públicos, en el ámbito de sus respectivas competencias, tendrán en cuenta estas circunstancias cuando sea preciso adaptar sus políticas y actuaciones legislativas y reglamentarias, así como sus decisiones financieras y presupuestarias, cuando dichas circunstancias incidan de manera determinante en tales competencias, fijando las condiciones específicas para su aplicación en el Archipiélago. Especialmente, esta adaptación se producirá en materia de transportes y telecomunicaciones y sus infraestructuras; mercado interior; energía; medio ambiente; puertos; aeropuertos; inmigración; fiscalidad; comercio exterior; y, en especial, en el abastecimiento de materias primas y líneas de consumo esenciales y cooperación al desarrollo de países vecinos. ARTÍCULO 4. ÁMBITO ESPACIAL. 1."
     },
-    "flashcards": [
-        { "id": "fc7-01", "anverso": "¿Qué ley orgánica aprueba el vigente Estatuto de Autonomía de Canarias?", "reverso": "La Ley Orgánica 1/2018, de 5 de noviembre." },
-        { "id": "fc7-02", "anverso": "¿Qué Estatuto sustituyó la LO 1/2018?", "reverso": "El anterior Estatuto de Autonomía de Canarias de 1982." },
-        { "id": "fc7-03", "anverso": "¿Cómo define el Estatuto a Canarias?", "reverso": "Como una nacionalidad, en el marco de la Constitución." },
-        { "id": "fc7-04", "anverso": "¿Cuántas islas con administración propia integran el archipiélago?", "reverso": "Siete islas." },
-        { "id": "fc7-05", "anverso": "¿Qué condición tiene Canarias en la Unión Europea?", "reverso": "La de región ultraperiférica." },
-        { "id": "fc7-06", "anverso": "¿Qué mayoría requiere la reforma del Estatuto en el Parlamento de Canarias?", "reverso": "La mayoría de dos tercios del Parlamento de Canarias." },
-        { "id": "fc7-07", "anverso": "¿Quién aprueba finalmente la reforma del Estatuto?", "reverso": "Las Cortes Generales, mediante ley orgánica." },
-        { "id": "fc7-08", "anverso": "¿Qué potestad ejerce el Parlamento de Canarias?", "reverso": "La potestad legislativa." },
-        { "id": "fc7-09", "anverso": "¿Por cuántos años se elige el Parlamento de Canarias?", "reverso": "Por cuatro años." },
-        { "id": "fc7-10", "anverso": "¿Dónde tiene su sede el Parlamento de Canarias?", "reverso": "En Santa Cruz de Tenerife." },
-        { "id": "fc7-11", "anverso": "¿Quién elige al Presidente de Canarias?", "reverso": "El Parlamento de Canarias, de entre sus miembros." },
-        { "id": "fc7-12", "anverso": "¿Quién nombra al Presidente de Canarias?", "reverso": "El Rey, tras su elección por el Parlamento." },
-        { "id": "fc7-13", "anverso": "¿De quién se compone el Gobierno de Canarias?", "reverso": "Del Presidente, el Vicepresidente o Vicepresidentes y los Consejeros." },
-        { "id": "fc7-14", "anverso": "¿Qué funciones corresponden al Gobierno de Canarias?", "reverso": "Las funciones ejecutiva y reglamentaria." },
-        { "id": "fc7-15", "anverso": "¿Ante quién responde políticamente el Gobierno de Canarias?", "reverso": "Ante el Parlamento de Canarias, de forma solidaria." },
-        { "id": "fc7-16", "anverso": "¿Qué son los Cabildos Insulares?", "reverso": "Órganos de gobierno, administración y representación de cada isla e instituciones de la Comunidad Autónoma." },
-        { "id": "fc7-17", "anverso": "¿Qué representación asumen los Cabildos en cada isla?", "reverso": "La representación ordinaria del Gobierno y la Administración autonómica." },
-        { "id": "fc7-18", "anverso": "¿De qué se compone el Cabildo Insular?", "reverso": "Del Presidente y de los consejeros, elegidos por sufragio universal." },
-        { "id": "fc7-19", "anverso": "¿Cuántos Cabildos Insulares hay en Canarias?", "reverso": "Siete, uno por cada isla con administración propia." },
-        { "id": "fc7-20", "anverso": "¿Quién ostenta la representación ordinaria del Estado en Canarias?", "reverso": "El Presidente de Canarias." }
+    {
+      "titulo": "2. ARTÍCULO 5",
+      "contenido": "El ámbito espacial de la Comunidad Autónoma de Canarias comprende el archipiélago canario, integrado por el mar y las siete islas con administración propia de El Hierro, Fuerteventura, Gran Canaria, La Gomera, Lanzarote, La Palma y Tenerife, así como por la isla de La Graciosa y por los islotes de Alegranza, Lobos, Montaña Clara, Roque del Este y Roque del Oeste. 3 \f 2. Sin perjuicio de la delimitación de las líneas de base existentes, entre los puntos extremos más salientes de las islas e islotes que integran, según el apartado anterior el Archipiélago canario, se trazará un contorno perimetral que siga la configuración general del archipiélago, tal como se establece en el anexo de este Estatuto. Las aguas que queden integradas dentro de este contorno perimetral recibirán la denominación de aguas canarias y constituyen el especial ámbito marítimo de la Comunidad Autónoma de Canarias. 3. El ejercicio de las competencias estatales o autonómicas sobre las aguas canarias y, en su caso, sobre los restantes espacios marítimos que rodean a Canarias sobre los que el Estado español ejerza soberanía o jurisdicción se realizará teniendo en cuenta la distribución material de competencias establecidas constitucional y estatutariamente tanto para dichos espacios como para los terrestres. 4. El Estado en el ejercicio de sus competencias tendrá en cuenta las singularidades derivadas del carácter archipielágico y promoverá la participación de la Comunidad Autónoma en las actuaciones de competencia estatal en dichas aguas. 5. El trazado del contorno perimetral no alterará la delimitación de los espacios marítimos de las Islas Canarias tal y como están establecidos por el ordenamiento jurídico español en virtud del Derecho Internacional vigente. ARTÍCULO 5. CAPITALIDAD Y SEDE DE LA PRESIDENCIA. 1. La capitalidad de Canarias se fija compartidamente en las ciudades de Las Palmas de Gran Canaria y Santa Cruz de Tenerife, regulándose el estatuto de capitalidad por ley del Parlamento de Canarias. La sede de la Presidencia de Canarias alternará entre ambas ciudades capitalinas por periodos legislativos. La sede de la Vicepresidencia se ubicará en capital distinta a la de la Presidencia. 2. El Parlamento de Canarias tiene su sede en la ciudad de Santa Cruz de Tenerife. ARTÍCULO 6. CONDICIÓN POLÍTICA DE CANARIOS. 1. A los efectos del presente Estatuto, gozan de la condición política de canarios las personas con nacionalidad española que, de acuerdo con las leyes del Estado, tengan vecindad administrativa en cualquiera de los municipios de Canarias. 2. Las personas con nacionalidad española residentes en el extranjero que hayan tenido la última vecindad administrativa en la Comunidad Autónoma de Canarias y acrediten esta condición en el consulado de España correspondiente, gozarán de la condición política de canarios. 3. Los descendientes de canarios inscritos como españoles, si así lo solicitan, se considerarán integrados en la comunidad política autonómica, aunque solo podrán ejercer los derechos políticos en los términos establecidos por la Constitución y las leyes. ARTÍCULO 7. SÍMBOLOS. 1. La bandera de Canarias está formada por tres franjas iguales en sentido vertical, cuyos colores son, a partir del asta, blanco, azul y amarillo. 2. Canarias tiene escudo propio, cuya descripción es la siguiente: en campo de azur trae siete islas de plata bien ordenadas dos, dos, dos y una, esta última en punta. Como timbre una corona real cerrada, surmontada de una cinta de plata con el lema Océano de sable y como soportes dos canes en su color. 3."
+    },
+    {
+      "titulo": "3. ARTÍCULO 8",
+      "contenido": "Canarias tendrá himno propio en los términos establecidos en una ley del Parlamento de Canarias. 4. La Comunidad Autónoma de Canarias celebrará su festividad institucional el día 30 de mayo. 4 \f ARTÍCULO 8. LAS COMUNIDADES CANARIAS EN EL EXTERIOR. Las comunidades constituidas por personas de origen canario establecidas fuera del territorio de la Comunidad Autónoma de Canarias podrán solicitar el reconocimiento de su identidad de origen, entendida como el derecho a colaborar y compartir la vida social y cultural de las islas. Una ley del Parlamento de Canarias regulará el alcance y contenido del reconocimiento mencionado, así como la especial consideración a los canarios emigrados y a sus descendientes, sin perjuicio de las competencias del Estado. TÍTULO I DE LOS DERECHOS, DEBERES Y PRINCIPIOS RECTORES CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO 9. TITULARES. 1. Las personas que ostentan la condición política de canarios son titulares de los derechos, deberes y libertades reconocidos en la Constitución española y en el presente Estatuto, así como en el Derecho de la Unión Europea y en los instrumentos internacionales de protección de los derechos humanos, individuales y colectivos, en particular, en la Declaración Universal de Derechos Humanos. 2. Los derechos reconocidos en el presente Estatuto se podrán extender a otras personas, en los términos que establezcan las leyes. 3. Los poderes públicos canarios están vinculados por estos derechos y libertades y velarán por su protección y respeto, así como por el cumplimiento de los deberes. ARTÍCULO 10. APLICACIÓN E INTERPRETACIÓN. 1. Ninguna de las disposiciones de este título puede ser desarrollada, aplicada o interpretada de forma que reduzca o limite los derechos fundamentales reconocidos por la Constitución y por los tratados y convenios internacionales ratificados por el Estado español. 2. Los derechos, deberes y principios del presente título no supondrán una alteración del régimen de distribución de competencias, ni la creación de títulos competenciales nuevos o la modificación de los ya existentes. ARTÍCULO 11. DERECHO DE IGUALDAD Y COOPERACIÓN. 1. Los poderes públicos canarios garantizarán las medidas necesarias para hacer efectivos los derechos de las personas a la igualdad, la no discriminación, la participación en la vida pública, al desarrollo económico, la libertad y el respeto a los derechos humanos. 2. Los poderes públicos garantizarán el derecho a la igualdad de trato y a la no discriminación por razones de sexo, género, nacimiento, etnicidad, ideas políticas y religiosas, edad, discapacidad, orientación o identidad sexual, enfermedad, lengua o cualquier otra condición o circunstancia personal o social. La prohibición de discriminación no impedirá acciones positivas en beneficio de sectores, grupos o personas desfavorecidas. 3. Los poderes públicos canarios velarán por el fomento de la paz, la tolerancia, así como la cooperación al desarrollo, y a tal efecto se establecerán programas y acuerdos con los países vecinos y próximos, geográfica o culturalmente, así como con las organizaciones no gubernamentales y las instituciones públicas y privadas que resulten precisos para garantizar la efectividad y eficacia de dichas políticas en Canarias y en el exterior. 5 \f CAPÍTULO II DERECHOS Y DEBERES ARTÍCULO 12. FAMILIA. 1. Todas las personas tienen derecho a la protección social, jurídica y económica para atender a las situaciones familiares, en las diferentes modalidades de familias."
+    },
+    {
+      "titulo": "4. ARTÍCULO 13",
+      "contenido": "Por ley se determinarán las formas y condiciones de acceso a dichas ayudas conforme al criterio de igualdad. 2. Los poderes públicos canarios promoverán medidas y políticas activas dirigidas a obtener la conciliación de la vida personal, familiar y laboral de mujeres y hombres. ARTÍCULO 13. DERECHOS DE LAS PERSONAS MENORES DE EDAD. 1. Las personas menores de edad tienen derecho a recibir la atención integral necesaria para el desarrollo de su personalidad y su bienestar en el contexto familiar y social. 2. Primará el interés y beneficios de las personas menores, en coordinación con los de la familia, en la aplicación e interpretación de normas, políticas y todo tipo de medidas orientadas a las mismas. ARTÍCULO 14. DERECHOS DE LAS PERSONAS JÓVENES. Las Administraciones deben promover políticas públicas que favorezcan la emancipación de los jóvenes, facilitándoles el acceso a la formación, la educación, la sanidad, la cultura, al asociacionismo, al mundo laboral y a la vivienda para que puedan desarrollar su propio proyecto de vida y participar en igualdad de derechos y deberes en la vida social y cultural, en los términos que establezcan las leyes. ARTÍCULO 15. DERECHOS DE LAS PERSONAS MAYORES. Los poderes públicos canarios garantizarán a las personas mayores una vida digna e independiente, una atención integral para la promoción de su autonomía personal y del envejecimiento activo y el derecho a un atención sanitaria, social y asistencial, promoviendo y asegurando las acciones y medidas necesarias para su bienestar social, económico y personal, así como a percibir prestaciones en los términos que se establezca en las leyes. ARTÍCULO 16. DERECHOS DE LAS PERSONAS EN SITUACIÓN DE DISCAPACIDAD Y DE DEPENDENCIA. 1. Se garantiza el derecho a una vida digna e independiente de todas las personas que se encuentren en situación de discapacidad o de dependencia. 2. Los poderes públicos promoverán activamente el derecho de las personas en situación de discapacidad o de dependencia a acceder en términos de igualdad y sin discriminación alguna al ejercicio de sus derechos, garantizando su desarrollo personal y social. 3. Se garantizará por los poderes públicos un sistema de calidad de los servicios y prestaciones especializados para las personas en situación de discapacidad o de dependencia, con la supresión de barreras físicas y legales facilitando su desarrollo en todas las facetas, conforme se establezca en las leyes. 4. El uso de la lengua de signos española y las condiciones que permitan alcanzar la igualdad de trato de las personas sordas que opten por esta lengua, que será objeto de enseñanza, protección y respeto. A estos efectos, y entre otras acciones, se adoptarán las medidas necesarias que permitan la comunicación a través de la lengua de signos entre las personas sordas y las Administraciones de la Comunidad. ARTÍCULO 17. DERECHO A LA IGUALDAD ENTRE MUJERES Y HOMBRES. 1. Los poderes públicos canarios garantizarán la igualdad efectiva entre mujeres y hombres en el ámbito público y privado, y velarán por la conciliación de la vida familiar y profesional. 2. Se adoptarán medidas efectivas para educar en valores de igualdad, no sexistas, así como políticas y acciones activas que proporcionen a las mujeres protección integral a las víctimas de la violencia machista, prestando especial atención a las medidas preventivas. 6 \f ARTÍCULO 18. DERECHO A LA ORIENTACIÓN SEXUAL."
+    },
+    {
+      "titulo": "5. ARTÍCULO 19",
+      "contenido": "Los poderes públicos canarios reconocerán, de acuerdo con la ley, el derecho de las personas a su identidad de género y garantizarán la no discriminación por este motivo o por su orientación sexual. ARTÍCULO 19. DERECHOS EN EL ÁMBITO DE LA SALUD. 1. Todas las personas tienen derecho a la protección de la salud y al acceso en condiciones de igualdad y gratuidad al servicio sanitario de responsabilidad pública, en los términos establecidos por las leyes. 2. Los poderes públicos canarios deberán establecer mediante ley las condiciones que garanticen a las personas usuarias del servicio público canario de salud los siguientes derechos: a) Al acceso en condiciones de igualdad y gratuidad, con respeto, en cualquier caso, a lo dispuesto en la normativa básica estatal, a todos los servicios y prestaciones del sistema público canario de salud. b) A una información integral de los derechos que le asisten, de los centros, servicios y prestaciones del sistema canario de salud. c) A una información integral sobre sus procesos de enfermedad, de sus tratamientos y consecuencias derivadas de la aplicación de los mismos, que les permita adoptar una decisión y prestar el consentimiento informado para ser sometidas, en su caso, a un tratamiento médico. d) A la elección de profesional médico y de centro sanitario en el ámbito del sistema público de salud. e) Al consejo genético y la medicina predictiva. f) A la prestación de una atención sanitaria rápida, sin demoras indebidas, y a la garantía de un tiempo máximo razonable para el acceso a los servicios y tratamientos. g) A disponer de una segunda opinión facultativa sobre sus procesos de salud. h) Al acceso a cuidados paliativos y a vivir con dignidad el proceso de su muerte. i) A la confidencialidad en el tratamiento de los datos relativos a su salud y sus características genéticas, y el acceso a su propio historial clínico. j) A recibir asistencia geriátrica especializada. k) A recibir actuaciones y programas sanitarios específicos y especializados, en los casos de personas afectadas por enfermedades crónicas, mentales, o personas que pertenezcan a grupos específicos reconocidos sanitariamente como de riesgo. ARTÍCULO 20. DERECHO A FORMULAR INSTRUCCIONES PREVIAS. Todas las personas mayores de edad y capaces, en los términos que establezcan las leyes, tienen derecho a declarar libremente de forma anticipada y expresa su voluntad sobre los cuidados y los tratamientos y, en su caso, sobre el destino de su cuerpo y los órganos del mismo, con el objeto de que esta se cumpla si, cuando llegue el momento, la persona no se encuentra en condiciones de expresarla personalmente. ARTÍCULO 21. DERECHOS EN EL ÁMBITO DE LA EDUCACIÓN. 1. Todas las personas tienen derecho a una educación pública, gratuita, aconfesional y de calidad, prestando especial atención a la educación infantil, en los términos de la ley. 2. Los poderes públicos canarios deberán garantizar el acceso al sistema público de enseñanza de todas las personas en condiciones de igualdad, no discriminación y atendiendo a criterios de accesibilidad universal, determinando al efecto por ley los criterios y condiciones precisas. 3. Se garantiza a los alumnos y alumnas, en los términos que normativamente se establezcan, el acceso a libros de texto y material didáctico necesario en todos los niveles obligatorios de educación en los centros del sistema público canario de enseñanza. 4."
+    },
+    {
+      "titulo": "6. ARTÍCULO 22",
+      "contenido": "Se garantiza el derecho de todas las personas a acceder al sistema público de becas y ayudas en condiciones de igualdad, en las etapas formativas no gratuitas, incluida la universitaria, en los términos que se establezcan por la ley, promoviendo acciones positivas para aquellos colectivos con mayor vulnerabilidad. 7 \f 5. Todas las personas tienen derecho a la formación profesional y a la formación permanente, en los términos establecidos por las leyes. 6. Las personas con necesidades educativas especiales tienen derecho a recibir el apoyo necesario que les permita acceder al sistema educativo, garantizando su efectiva integración en el sistema educativo y su evolución formativa, de acuerdo con lo establecido por las leyes. 7. Los planes educativos deberán contener una educación integral, debiendo contemplar los valores de igualdad, entre mujer y hombre, no sexismo, educar en la no violencia, no discriminación por razón alguna, solidaridad y cooperación, diversidad e identidad cultural, participación social y política, así como incorporar el uso y desarrollo de las nuevas tecnologías. 8. Serán parte integrante de los planes educativos en la etapa obligatoria materias referentes a la historia, geografía, sociedad, política y cultura de Canarias. 9. El sistema público de enseñanza garantiza el derecho de las madres y padres a optar por una formación religiosa y moral conforme a sus propias convicciones. 10. Los miembros de la comunidad educativa tienen derecho a participar en los asuntos escolares y universitarios en los términos establecidos por las leyes. ARTÍCULO 22. DERECHO DE ACCESO A LA VIVIENDA. Los poderes públicos canarios deberán garantizar el derecho de todas las personas a una vivienda digna y regular su función social, mediante un sistema de promoción pública, en condiciones de igualdad y en los términos que establezcan las leyes, poniendo especial atención sobre aquellos colectivos sociales más vulnerables. Se regulará el uso del suelo de acuerdo con el interés general para evitar la especulación. ARTÍCULO 23. DERECHOS EN EL ÁMBITO LABORAL Y PROFESIONAL. 1. Los poderes públicos canarios promoverán cuantas políticas activas y medidas sean necesarias para garantizar el derecho de todas las personas al trabajo. 2. En el ejercicio efectivo del derecho al trabajo, los poderes públicos canarios garantizan a todas las personas: a) El derecho a la formación profesional para el empleo y promoción profesional, asegurando las condiciones de igualdad, accesibilidad universal y no discriminación. b) El derecho de acceso al empleo público en condiciones de igualdad. c) El derecho a ejercer las tareas laborales y profesionales en condiciones de garantía para su salud física y psíquica, su integridad, su seguridad y su dignidad. d) El derecho a la información, la consulta y la participación en las empresas. e) La adopción de medidas para impedir el acoso, la explotación o el maltrato en el ámbito laboral. 3. Se fomentará especialmente por los poderes públicos canarios la inserción, la formación profesional y la accesibilidad al trabajo remunerado en condiciones de igualdad a las mujeres, a las personas jóvenes y a las personas con discapacidad. 4. Las organizaciones sindicales y empresariales tienen derecho a ejercer sus funciones en los ámbitos de la concertación social, la participación y la colaboración social. ARTÍCULO 24. DERECHO A UNA RENTA DE CIUDADANÍA. 1. Las personas que se encuentren en situación de exclusión social tienen derecho a acceder a una renta de ciudadanía en los términos que establezcan las leyes. 2."
+    },
+    {
+      "titulo": "7. ARTÍCULO 25",
+      "contenido": "Los poderes públicos canarios velarán por erradicar los efectos de la pobreza y la exclusión social en las personas que viven en Canarias a través del desarrollo de los servicios públicos. ARTÍCULO 25. DERECHOS DE CONSUMIDORES Y USUARIOS. Las personas, en su condición de consumidoras y usuarias de bienes y de servicios, tienen derecho, en los términos que se establece por ley: a) A que se garantice por los poderes públicos canarios la protección de su salud, seguridad e intereses económicos, y un régimen de garantías de los productos y servicios adquiridos. 8 \f b) A una información integral de los productos, servicios y prestaciones que se ofrezcan para su consumo. c) A asociarse libremente y a participar activamente en lo referente a la Administración Pública. ARTÍCULO 26. DERECHOS EN EL ÁMBITO DEL MEDIO AMBIENTE. 1. Todas las personas tienen derecho a vivir en un medio ambiente equilibrado, sostenible, sin contaminación y respetuoso hacia la salud, y a gozar de los recursos naturales y del paisaje terrestre y marino en condiciones de igualdad, realizando un uso responsable de los mismos. Asimismo, en los términos que determinen las leyes, tienen el correlativo deber de protegerlo y mejorarlo para las generaciones presentes y futuras, así como soportar las limitaciones que tal protección puedan afectar a sus intereses. 2. Los poderes públicos canarios garantizarán la defensa y protección de la naturaleza, el medio ambiente, el paisaje y la biodiversidad sea en espacios terrestres como marinos. Se establecerán políticas de gestión, ordenación y mejora de su calidad, con arreglo al principio de desarrollo sostenible, armonizándolas con las transformaciones que se produzcan por la evolución social, económica y ambiental, evitando la especulación urbanística sobre el territorio. 3. Todas las personas tienen derecho a acceder a la información medioambiental de que disponen los poderes públicos canarios. ARTÍCULO 27. DERECHO EN EL ÁMBITO CULTURAL. 1. Todos los ciudadanos y ciudadanas de Canarias tienen derecho a acceder en condiciones de igualdad a la cultura y al desarrollo de sus capacidades creativas individuales y colectivas. 2. Todas las personas tienen el deber de respetar y preservar el patrimonio cultural de Canarias en todas sus manifestaciones. 3. Los poderes públicos canarios garantizarán la práctica de actividades culturales, artísticas y formativas en condiciones de igualdad en todo el territorio de Canarias, promoviendo las acciones y medidas necesarias y teniendo en cuenta la doble insularidad. 4. Los poderes públicos canarios velarán por la protección y la defensa de la identidad, patrimonio histórico y los valores e intereses de Canarias, del legado etnográfico y arqueológico de los aborígenes prehispánicos y de las demás culturas que han ido poblando el Archipiélago, así como de las distintas modalidades lingüísticas, en particular del silbo gomero. ARTÍCULO 28. DERECHO DE ACCESO A LAS TECNOLOGÍAS DE LA INFORMACIÓN Y DE LA COMUNICACIÓN. Los poderes públicos canarios fomentarán la formación y el acceso a las nuevas tecnologías, participando activamente en la sociedad del conocimiento, la información y la comunicación. ARTÍCULO 29. DERECHOS EN EL ÁMBITO DE LOS SERVICIOS SOCIALES. 1. Todas las personas tienen derecho a acceder en condiciones de igualdad a las prestaciones y servicios del sistema público de servicios sociales de responsabilidad pública. 2. Se garantiza por los poderes públicos canarios el deber de información integral de los servicios y prestaciones a su cargo. 3."
+    },
+    {
+      "titulo": "8. ARTÍCULO 30",
+      "contenido": "Los poderes públicos canarios establecerán, en la forma que determine la ley, planes especializados de atención para las personas que garanticen los derechos dispuestos en los artículos 16 y 24 del presente Estatuto. ARTÍCULO 30. DERECHO A LA PROTECCIÓN DE LOS DATOS PERSONALES. Se garantiza el derecho efectivo de todas las personas a la privacidad y protección de sus datos personales contenidos en los archivos y ficheros que son competencia de las administraciones públicas canarias, así como el derecho a acceder a los mismos, a su examen, corrección y cancelación. 9 \f ARTÍCULO 31. DERECHOS DE PARTICIPACIÓN. En el ámbito de la participación política, las personas que ostenten la condición política de canarios, conforme lo establecido en el presente Estatuto y en las leyes, tienen derecho: a) A participar en condiciones de igualdad en los asuntos públicos de Canarias, de forma directa o bien a través de representantes. b) A elegir libremente a sus representantes en los órganos políticos representativos y a concurrir como candidatos y candidatas en los procesos electorales. c) A promover y presentar iniciativas legislativas al Parlamento de Canarias, y a participar, directamente o a través de entidades asociativas, en el proceso de elaboración de las leyes del Parlamento, en los términos que se establezcan en el Reglamento de la Cámara. d) A dirigir peticiones y a plantear quejas a las instituciones y administraciones públicas canarias. e) A promover la convocatoria de consultas populares en el ámbito espacial de Canarias, así como participar en ellas. Todo ello sin perjuicio de las competencias del Estado en materia de referéndum. ARTÍCULO 32. DERECHO A UNA BUENA ADMINISTRACIÓN. La actuación de las administraciones públicas canarias se deberá ajustar a los principios de igualdad, no discriminación y respeto, así como de máxima calidad en la prestación de los servicios, debiendo además garantizarse, en los términos de la ley, los siguientes derechos: a) A la información integral sobre los servicios y prestaciones, y el estado de la tramitación de los asuntos que le conciernan. b) A un tratamiento imparcial y objetivo de los asuntos que les afecten. c) A la resolución de los asuntos en un plazo razonable. d) Al acceso a la información pública, archivos y registros de las instituciones, órganos y organismos públicos canarios, en los términos previstos en la Constitución y en las leyes. e) A la formulación de quejas sobre el funcionamiento de los servicios públicos, y a su resolución. ARTÍCULO 33. DERECHOS EN EL ÁMBITO DE LA JUSTICIA. 1. Los poderes públicos canarios garantizarán, en el ámbito de sus competencias, la calidad de los servicios de la Administración de Justicia, la atención a las víctimas y el acceso a la justicia gratuita. 2. En el marco de la legislación penitenciaria estatal, los poderes públicos canarios promoverán los acuerdos necesarios para que las personas privadas de libertad con residencia en Canarias cumplan sus condenas en territorio canario, facilitando a su vez las medidas de reinserción e integración social de los mismos. ARTÍCULO 34. DERECHO A LA MEMORIA HISTÓRICA. 1. Los poderes públicos canarios velarán por el conocimiento y el mantenimiento de la memoria histórica de Canarias como patrimonio colectivo que atestigua la defensa de la identidad y la cultura del pueblo canario y la resistencia y la lucha por los derechos y las libertades democráticas."
+    },
+    {
+      "titulo": "9. ARTÍCULO 35",
+      "contenido": "A tal fin, deberán adoptar las iniciativas institucionales necesarias para el reconocimiento y la rehabilitación de todos los ciudadanos que han sufrido persecución como consecuencia de la defensa de su identidad cultural, de la democracia y del autogobierno de Canarias. 2. Los poderes públicos canarios deben velar para que la memoria histórica se convierta en símbolo permanente de identidad, multiculturalidad, tolerancia, de dignidad de los valores democráticos, de rechazo de los totalitarismos y de reconocimiento de todas aquellas personas que han sufrido persecución debido a sus opciones personales, ideológicas o de conciencia. ARTÍCULO 35. DERECHOS DE LOS ANIMALES En los términos que se fijen por ley, de acuerdo con la Constitución y el Tratado de Funcionamiento de la Unión Europea, las administraciones públicas canarias velarán por el mantenimiento y la salvaguarda de los animales, además de reconocerlos como seres que sienten y con derecho a no ser utilizados en actividades que conlleven maltrato o crueldad. Asimismo, se fijará el régimen de infracciones y sanciones. 10 \f ARTÍCULO 36. GARANTÍA DE LOS DERECHOS. 1. Los derechos reconocidos en el presente capítulo se deben aplicar en su interpretación y sentido más favorable para su plena eficacia. 2. Los actos que vulneren los derechos reconocidos en el presente título podrán ser objeto de recurso ante la jurisdicción correspondiente, de acuerdo con los procedimientos que establezcan las leyes procesales del Estado. 3. Sin perjuicio de las garantías constitucionales, toda persona podrá dirigirse a la Diputación del Común en defensa de sus derechos por las posibles lesiones imputables a las administraciones públicas de Canarias. CAPÍTULO III PRINCIPIOS RECTORES ARTÍCULO 37. PRINCIPIOS RECTORES. Los poderes públicos canarios asumen como principios rectores de su política: 1. La promoción de las condiciones necesarias para el libre ejercicio de los derechos y libertades reconocidas en la Constitución y en el presente Estatuto. 2. El fomento de la cohesión económica, territorial y social del Archipiélago, garantizando la igualdad de derechos independientemente del lugar de residencia. 3. La transparencia de su actividad y el buen gobierno en la gestión pública. 4. La igualdad de las personas y los grupos en que se integran, y especialmente el respeto a la igualdad entre hombres y mujeres en todos los ámbitos, en particular, en materia de empleo, trabajo y retribución. 5. Los poderes públicos deben garantizar la transversalidad en la incorporación de la perspectiva de género en todas las políticas públicas. 6. La erradicación de la sociedad canaria de actitudes sexistas, xenófobas, racistas, homófobas, bélicas o de cualquier otra naturaleza que atenten contra la igualdad y la dignidad de las personas. 7. La defensa, promoción y estudio del español de Canarias, como variedad lingüística del español atlántico. 8. La integración en los planes de formación en todos los niveles, y en las actuaciones de las administraciones públicas de la educación en valores que fomenten la igualdad, la tolerancia, la integración, la libertad, la solidaridad y la paz. 9. La promoción de la participación de las familias en la educación de los hijos e hijas en el marco de la comunidad educativa facilitando el acceso a las actividades de educación en el tiempo libre. 10. El impulso de la investigación científica y técnica de calidad y de la creatividad artística, la incorporación de procesos innovadores, el acceso a la información y a las nuevas tecnologías. 11."
+    },
+    {
+      "titulo": "10. artículo 138",
+      "contenido": "La promoción de Canarias como plataforma de paz y solidaridad. 12. La solidaridad consagrada en el artículo 138 de la Constitución, velando por la efectividad de la atención particular a las específicas circunstancias en Canarias de la ultraperificidad y de la doble insularidad. 13. La promoción de políticas de transporte y de comunicación basadas en criterios de sostenibilidad, que fomenten la utilización del transporte público y la mejora de la movilidad y de la seguridad viaria. Las Administraciones públicas velarán mediante la acción institucional por facilitar la accesibilidad universal a las personas con discapacidad en el archipiélago en sus distintos medios de transporte, así como en las infraestructuras e instalaciones de carácter tanto público como privado, conforme a lo establecido en las leyes. 14. La protección efectiva de los recursos naturales estratégicos básicos de Canarias, especialmente el agua y los recursos energéticos, asegurando su control público por las administraciones canarias, en el marco de su competencia. 15. La preservación y mejora de la calidad medioambiental y la biodiversidad del Archipiélago como patrimonio común para mitigar los efectos del cambio climático. 11 \f 16. El ahorro energético y la promoción de las energías renovables, en especial en lo que se refiere la política de transportes y comunicaciones. 17. La garantía de que las instituciones públicas velarán por el bienestar animal, luchando contra el maltrato y protegiendo de manera particular a aquellas especies en peligro de extinción y endemismos con presencia en el Archipiélago. 18. La participación activa de todos los ciudadanos y ciudadanas de Canarias en la vida política, económica, cultural y social de Canarias. 19. La organización de una Administración de Justicia, eficaz, sin dilaciones indebidas y próxima a los ciudadanos y ciudadanas de Canarias. 20. La promoción de las condiciones para la participación de la juventud en el desarrollo político, cultural y social de las islas. 21. La protección jurídica, económica y social de la familia y de las personas menores garantizando los cuidados necesarios para su bienestar. 22. Velar por el derecho de las personas mayores a llevar una vida digna e independiente. 23. La promoción de la autonomía, la igualdad de oportunidades y la integración social y laboral de las personas con discapacidad, con especial atención a su aportación activa al conjunto de la sociedad y a la eliminación de las barreras atendiendo a criterios de accesibilidad universal. 24. La integración de colectivos desfavorecidos y, en particular, de las personas migrantes y refugiadas, a través de los principios del mutuo reconocimiento, el respeto a las diferencias y la igualdad de derechos y deberes en el marco de los principios y valores constitucionales. 25. Una política económica y fiscal destinada a un crecimiento estable y, de forma prioritaria, a la consecución del pleno empleo y la redistribución equitativa de la renta y la riqueza entre los ciudadanos y ciudadanas de Canarias conforme a los criterios de justicia social. 26. La protección efectiva de la libertad de empresa en una economía de mercado. Se ordenarán los mercados para asegurar la competencia libre y leal, la actividad empresarial, la productividad y la colaboración entre las empresas. 27."
+    },
+    {
+      "titulo": "11. TÍTULO II",
+      "contenido": "La promoción del diálogo social con sindicatos y empresarios como instrumentos necesarios en la concepción y ejecución de las políticas de cohesión y desarrollo, adoptando los poderes públicos las medidas necesarias para garantizar los derechos laborales y sindicales de las personas trabajadoras. 28. El fomento de la actividad turística y su ordenación se llevarán a cabo con el objetivo de lograr un modelo de desarrollo sostenible, especialmente respetuoso con el medio ambiente, el patrimonio cultural canario y el territorio. 29. El fomento del sector agrícola, ganadero y pesquero. 30. La promoción de la diversificación de las actividades productivas en Canarias. TÍTULO II DE LAS INSTITUCIONES DE LA COMUNIDAD AUTÓNOMA DE CANARIAS CAPÍTULO I DEL PARLAMENTO ARTÍCULO 38. NATURALEZA. 1. El Parlamento de Canarias, órgano representativo del pueblo canario, es elegido mediante sufragio universal, directo, igual, libre y secreto. 2. El Parlamento de Canarias es inviolable. 3. La duración del mandato será de cuatro años, sin perjuicio de los supuestos de disolución anticipada. ARTÍCULO 39. RÉGIMEN ELECTORAL. 1. Serán electores y elegibles las personas mayores de edad inscritas en el censo que gocen de la condición política de canarios, según el presente Estatuto, y se encuentren en pleno 12 \f disfrute de sus derechos civiles y políticos, sin perjuicio de las causas de inelegibilidad establecidas por la ley. 2. Una ley del Parlamento de Canarias aprobada por una mayoría de tres quintos, a iniciativa de sus miembros, regulará el régimen electoral con arreglo a las siguientes bases: a) El sistema electoral será el de representación proporcional. b) El número de diputados no será inferior a cincuenta ni superior a setenta y cinco. c) Las circunscripciones electorales podrán ser de ámbito autonómico, insular o de ambas. Cada una de las islas de El Hierro, Fuerteventura, Gran Canaria, La Gomera, Lanzarote, La Palma y Tenerife, constituyen una circunscripción electoral. Se establecerá el número de diputados y diputadas asignados a cada circunscripción. d) Se establecerá el porcentaje mínimo de votos que deben obtener las listas electorales para acceder al reparto de escaños. e) A ninguna circunscripción insular se le podrá asignar un número de diputados y diputadas inferior a otra que tenga menos población de derecho. ARTÍCULO 40. ESTATUTO DE LOS DIPUTADOS. 1. Los diputados no estarán sujetos a mandato imperativo. 2. Los miembros del Parlamento serán inviolables por los votos y opiniones que emitan en el ejercicio de su cargo. Durante su mandato, no podrán ser detenidos ni retenidos, sino en caso de flagrante delito. 3. Los miembros del Parlamento de Canarias percibirán las asignaciones económicas que se establezcan en los Presupuestos de la Cámara, para su posterior integración en los Presupuestos Generales de la Comunidad Autónoma de Canarias. ARTÍCULO 41. ORGANIZACIÓN Y FUNCIONAMIENTO. 1. El Parlamento, en la primera reunión de cada legislatura, elegirá una Mesa formada por una presidencia, dos vicepresidencias y dos secretarías. El Reglamento del Parlamento regulará tanto el procedimiento para su elección como sus funciones. 2. El Parlamento goza de autonomía organizativa, financiera, administrativa y disciplinaria, y fija su propio presupuesto con plena autonomía. Asimismo, elabora y aprueba el estatuto del personal de él dependiente. 3. El Parlamento funcionará en pleno y en comisiones. 4. El Parlamento elaborará su Reglamento, que deberá ser aprobado por mayoría absoluta de sus miembros."
+    },
+    {
+      "titulo": "12. ARTÍCULO 42",
+      "contenido": "En él se determinará el régimen de sesiones, la formación de grupos parlamentarios y el funcionamiento de la Diputación Permanente, así como cuantas otras cuestiones afecten a los procedimientos legislativos y de control político. 5. Los cabildos insulares participarán en el Parlamento a través de la Comisión General de Cabildos Insulares. El Reglamento de la Cámara fijará su composición. Será preceptivo el informe de dicha comisión cuando se tramiten asuntos que afecten a las islas y sus cabildos insulares. 6. Los acuerdos en el Parlamento se adoptarán por mayoría simple, a excepción de los casos en que en este Estatuto requiera otras mayorías. No obstante, cuando en el Pleno del Parlamento, al menos los dos tercios de los diputados elegidos en una misma circunscripción insular se opusieran de forma motivada a la adopción de un acuerdo por considerarlo perjudicial para la isla, el asunto se pospondrá a la sesión siguiente plenaria. 7. El Parlamento se reunirá en periodos de sesiones comprendidos dentro de las fechas que señale el Reglamento del Parlamento. Fuera de dichos periodos, la Cámara podrá celebrar sesiones extraordinarias, que habrán de ser convocadas por el presidente de ésta, con especificación del orden del día, a petición de la Diputación Permanente, de una cuarta parte de los diputados, de dos grupos parlamentarios y del Gobierno. 13 \f 8. El Parlamento fomentará la participación ciudadana, fijando el Reglamento de la Cámara las medidas e instrumentos a este respecto para los distintos ámbitos y órganos de la Cámara. ARTÍCULO 42. COMISIONES DE INVESTIGACIÓN. 1. El Parlamento podrá nombrar, en los términos establecidos en el Reglamento de la Cámara, comisiones de investigación sobre cualquier asunto de interés público. Sus conclusiones no serán vinculantes para los tribunales ni afectarán a las resoluciones judiciales, sin perjuicio de que el resultado de la investigación sea comunicado al Ministerio Fiscal para el ejercicio, cuando proceda, de las acciones oportunas. 2. Estas comisiones podrán requerir la presencia ante ellas de cualquier persona para informar, y recabar del Gobierno, de cualquiera de las administraciones públicas y de las instituciones u organismos de ellas dependientes la información y documentación que precisen. ARTÍCULO 43. FUNCIONES. Son funciones del Parlamento: a) Ejercer la potestad legislativa de la Comunidad Autónoma. b) Aprobar los presupuestos de la misma. c) Elegir a la persona titular de la Presidencia de Canarias y controlar políticamente la acción del Gobierno. d) Designar, para cada legislatura del Parlamento, a los senadores representantes de la la adecuada representación Comunidad Autónoma, asegurando, en proporcional. Los senadores designados por el Parlamento de Canarias podrán comparecer ante el mismo, en la forma que determine el Reglamento, para informar de su actividad en el Senado. todo caso, e) Solicitar del Gobierno del Estado la adopción y presentación de proyectos de ley, y presentar directamente proposiciones de ley ante las Cortes Generales, de acuerdo con el artículo 87.2 de la Constitución. Interponer recursos de inconstitucionalidad y personarse ante el Tribunal Constitucional en los supuestos y en los términos previstos en la Constitución y en su ley orgánica. f) g) Cualesquiera otras que le asigne la Constitución, el presente Estatuto o las leyes. CAPÍTULO II DE LAS LEYES Y DEMÁS NORMAS CON FUERZA DE LEY ARTÍCULO 44. INICIATIVA LEGISLATIVA. 1."
+    },
+    {
+      "titulo": "13. artículo 31",
+      "contenido": "La iniciativa legislativa corresponde al Gobierno de Canarias y a los diputados, en los términos que establezca el Reglamento del Parlamento. 2. La iniciativa legislativa corresponde, asimismo, a cada uno de los cabildos insulares, en los términos que establezca el Reglamento del Parlamento. 3. Los ayuntamientos canarios, cuando actúen agrupados especialmente con este fin y representando el porcentaje de población y el número de municipios que se determinen en el Reglamento del Parlamento, podrán ejercer la iniciativa legislativa. 4. La iniciativa legislativa popular, como expresión del derecho de participación reconocido en el artículo 31 de este Estatuto, se regulará por ley del Parlamento. 14 \f ARTÍCULO 45. DELEGACIÓN LEGISLATIVA. 1. El Parlamento de Canarias podrá delegar en el Gobierno la potestad de dictar normas con rango de ley, excepto en los siguientes supuestos: a) Las leyes del presupuesto de la Comunidad Autónoma. b) Las leyes de instituciones autonómicas o que requieran mayoría cualificada del Parlamento. 2. La delegación legislativa deberá otorgarse mediante una ley de bases, cuando su objeto sea la formación de textos articulados, o por una ley ordinaria, cuando se trate de refundir varios textos legales en uno solo. 3. La delegación legislativa habrá de otorgarse al Gobierno de forma expresa para materia concreta y con fijación del plazo para su ejercicio. No podrá hacerse uso de la delegación cuando el Gobierno se encuentre en funciones por disolución del Parlamento. La delegación se agota por el uso que de ella haga al Gobierno, mediante la publicación de la norma correspondiente, que recibirá el nombre de decreto legislativo. No podrá entenderse concedida de modo implícito o por tiempo indeterminado. Tampoco podrá permitir la subdelegación a autoridades distintas del propio Gobierno. 4. Las leyes de bases delimitarán con precisión el objeto y alcance de la delegación legislativa y los principios y criterios que han de seguirse en su ejercicio, no pudiendo en ningún caso autorizar la modificación de la propia ley de bases, ni facultar para dictar normas con carácter retroactivo. 5. La autorización para refundir textos legales determinará el ámbito normativo a que se refiere el contenido de la delegación, especificando si se circunscribe a la mera formulación de un texto único o si se incluye la de regularizar, aclarar y armonizar los textos legales que han de ser refundidos. 6. El control de la legislación delegada se llevará a cabo en los términos establecidos en el Reglamento del Parlamento de Canarias, sin perjuicio del que le corresponde, según la legislación aplicable, al Tribunal Constitucional y a la jurisdicción de lo contencioso- administrativo. Las leyes de delegación podrán establecer, además, otros mecanismos de control. ARTÍCULO 46. DECRETOS-LEYES. 1. En caso de extraordinaria y urgente necesidad, el Gobierno podrá dictar normas con rango de ley, que recibirán el nombre de decretos-leyes. 2. Dichas normas, que tendrán carácter provisional, no podrán afectar a los supuestos excluidos en el artículo anterior ni a la regulación esencial de los derechos establecidos en este Estatuto. 3. Los decretos-leyes deberán convalidarse por el Parlamento de Canarias en el plazo de treinta días naturales contados a partir de la fecha de su publicación, debiéndose convocar la Diputación Permanente si el Parlamento no estuviera constituido. El Parlamento habrá de pronunciarse expresamente dentro de dicho plazo sobre su convalidación o derogación. 4."
+    },
+    {
+      "titulo": "14. ARTÍCULO 47",
+      "contenido": "Durante el plazo establecido en el apartado anterior, se podrán tramitar como proyectos de ley por el procedimiento de urgencia. ARTÍCULO 47. PROMULGACIÓN Y PUBLICACIÓN. 1. Las leyes del Parlamento de Canarias y demás normas con fuerza de ley serán promulgadas en nombre del Rey por el Presidente o Presidenta de la Comunidad Autónoma y publicadas en el «Boletín Oficial de Canarias» en el plazo de 15 días desde 15 \f su aprobación y en el «Boletín Oficial del Estado». A efectos de su entrada en vigor, regirá la fecha de su publicación en el «Boletín Oficial de Canarias». 2. El control de la constitucionalidad de las leyes del Parlamento de Canarias y demás normas con fuerza de ley corresponderá al Tribunal Constitucional. CAPÍTULO III DE LA PRESIDENCIA DE CANARIAS ARTÍCULO 48. ELECCIÓN. 1. El Parlamento elegirá de entre sus miembros a la persona titular de la Presidencia. 2. La Presidencia del Parlamento, previa consulta con las fuerzas políticas representadas en el mismo, y oída la Mesa, propondrá una candidatura a la Presidencia de Canarias. 3. La persona propuesta presentará su programa de gobierno al Parlamento. Para ser elegida, deberá obtener en primera votación mayoría absoluta; de no obtenerla, se procederá a una nueva votación pasadas 48 horas, y la confianza se entenderá otorgada si obtuviera mayoría simple. 4. Caso de no conseguirse dicha mayoría, se tramitarán sucesivas propuestas en la forma prevista anteriormente. Si transcurrido el plazo de dos meses, a partir de la primera votación de investidura, ninguna candidatura hubiera obtenido la confianza del Parlamento, éste quedará automáticamente disuelto, procediéndose a la convocatoria de nuevas elecciones para el mismo. 5. Una vez elegida, la persona titular de la Presidencia será nombrada por el Rey. ARTÍCULO 49. ESTATUTO PERSONAL. 1. La Presidencia designa y separa libremente a la persona titular de la Vicepresidencia y a los restantes miembros del Gobierno, dirige y coordina su actuación y, como titular de la Presidencia de la Comunidad Autónoma de Canarias, ostenta la más alta representación de Canarias y la ordinaria del Estado en la Comunidad Autónoma. 2. La Presidencia podrá delegar temporalmente funciones ejecutivas propias en la persona titular de la Vicepresidencia y en los demás miembros del Gobierno. 3. La persona titular de la Presidencia es responsable políticamente ante el Parlamento. 4. La Presidencia podrá proponer por iniciativa propia o a solicitud de la ciudadanía, de conformidad con las leyes, la celebración de consultas populares en el ámbito de la Comunidad Autónoma de Canarias, sobre cuestiones de interés general en materias autonómicas o locales. 5. La persona titular de la Vicepresidencia, que habrá de ser miembro del Parlamento de Canarias, sustituye a la persona titular de la Presidencia en caso de vacancia y ausencia o enfermedad de su titular. CAPÍTULO IV DEL GOBIERNO ARTÍCULO 50. FUNCIONES. Corresponde al Gobierno de Canarias: 1. La dirección política de la Comunidad Autónoma de Canarias y de su Administración. 2. Las funciones ejecutivas y administrativas, de conformidad con lo que establecen el presente Estatuto y las leyes. 3. La potestad reglamentaria. 4. La planificación de la política económica de la Comunidad Autónoma de Canarias y su coordinación con las políticas insulares, teniendo en cuenta las necesidades de cada isla y el interés general. 16 \f 5. La interposición de recursos de inconstitucionalidad y cuantas facultades le atribuya la Ley Orgánica del Tribunal Constitucional. 6."
+    },
+    {
+      "titulo": "15. ARTÍCULO 51",
+      "contenido": "Cualquier otra potestad o facultad que le confieran este Estatuto o las leyes. ARTÍCULO 51. COMPOSICIÓN. 1. El Gobierno de Canarias está compuesto por las personas titulares de la Presidencia y de la Vicepresidencia y por los consejeros o consejeras. 2. La ley regulará las atribuciones y estatuto de sus miembros. 3. Los miembros del Gobierno solo podrán ser detenidos, durante el ejercicio del cargo, en caso de flagrante delito. ARTÍCULO 52. CESE. 1. El Gobierno cesará: a) Tras la celebración de elecciones al Parlamento de Canarias. b) Por la pérdida de la confianza parlamentaria de la persona titular de la Presidencia, según las previsiones de este Estatuto. c) Cuando quien ostente la Presidencia cese por dimisión; por notoria incapacidad permanente, física o mental, reconocida por el Parlamento por mayoría absoluta de sus miembros, que le inhabilite para el ejercicio del cargo; por condena penal firme que comporte la inhabilitación para el ejercicio de cargo público; o por pérdida de la condición de diputado del Parlamento de Canarias. d) Al producirse el fallecimiento de quien ostente la Presidencia. 2. El Gobierno cesante continuará en funciones hasta la toma de posesión del nuevo Gobierno, que tendrá lugar en el plazo máximo de quince días, a contar desde la fecha de nombramiento de la persona titular de la Presidencia. Una Ley del Parlamento de Canarias regulará las atribuciones del Gobierno cesante. DE LAS RELACIONES ENTRE EL PARLAMENTO Y EL GOBIERNO CAPÍTULO V ARTÍCULO 53. RESPONSABILIDAD POLÍTICA. El Gobierno responde solidariamente de su gestión política ante el Parlamento de Canarias. No se podrá exigir la responsabilidad política individual de los miembros del Gobierno. ARTÍCULO 54. CUESTIÓN DE CONFIANZA. La persona titular de la Presidencia del Gobierno, previa deliberación del Gobierno, puede plantear ante el Parlamento una cuestión de confianza sobre su programa o sobre una declaración de política general. La confianza se entenderá otorgada cuando el presidente obtenga la mayoría simple de los votos emitidos. La persona titular de la Presidencia, junto con su Gobierno, cesará si el Parlamento le niega la confianza, en cuyo caso se procederá a la elección de un nuevo presidente en la forma indicada por el artículo 48 del presente Estatuto. ARTÍCULO 55. MOCIÓN DE CENSURA. El Parlamento puede exigir la responsabilidad política solidaria del Gobierno mediante la adopción, por mayoría absoluta, de la moción de censura. Toda moción de censura debe incluir el nombre del candidato o candidata a la Presidencia y ser presentada, al menos, por el quince por ciento de los miembros del Parlamento. Los signatarios de una moción de censura rechazada no podrán presentar otra durante el mismo período de sesiones. 17 \f ARTÍCULO 56. DISOLUCIÓN ANTICIPADA DEL PARLAMENTO. 1. La persona titular de la Presidencia, previa deliberación del Gobierno, y bajo su exclusiva responsabilidad, podrá disolver el Parlamento. La disolución se acordará por Decreto, en el que se convocarán, a su vez, elecciones, conteniéndose en el mismo cuantos requisitos exija la legislación electoral aplicable. 2. La disolución no podrá decretarse cuando se haya presentado una moción de censura, ni durante el primer año de legislatura. CAPÍTULO VI ÓRGANOS DE RELEVANCIA ESTATUTARIA ARTÍCULO 57. DIPUTACIÓN DEL COMÚN. 1."
+    },
+    {
+      "titulo": "16. ARTÍCULO 58",
+      "contenido": "La Diputación del Común es la alta instancia comisionada del Parlamento de Canarias para la defensa de los derechos fundamentales y las libertades públicas y supervisará las actividades de las administraciones públicas canarias, de acuerdo con lo que establezca la ley. 2. En el cumplimiento de sus funciones podrá solicitar la colaboración de toda clase de autoridades, organismos, funcionarios y entidades de cualquier Administración Pública, con sede en la Comunidad Autónoma de Canarias. 3. La persona titular de la Diputación del Común será elegida por la mayoría de las tres quintas partes de los miembros del Parlamento de Canarias para un mandato de cinco años. 4. Una ley del Parlamento de Canarias garantizará la independencia de sus actuaciones y regulará su organización, funcionamiento y la cooperación con el Defensor del Pueblo. 5. En el ejercicio de su actividad podrá celebrar los acuerdos de cooperación que estime necesarios con instituciones similares. ARTÍCULO 58. CONSEJO CONSULTIVO DE CANARIAS. 1. El Consejo Consultivo de Canarias es el supremo órgano consultivo de la Comunidad Autónoma de Canarias encargado de dictaminar sobre la adecuación a la Constitución y al Estatuto de Autonomía de: a) Las iniciativas legislativas. b) Los decretos-leyes sometidos a convalidación del Parlamento. c) Los proyectos de decretos legislativos. d) La interposición de recursos de inconstitucionalidad por parte del Parlamento o del Gobierno, así como los planteamientos de conflictos de competencia. e) Las demás cuestiones que determine su ley reguladora. 2. La ley garantizará su imparcialidad e independencia, y regulará su composición, funcionamiento y el estatuto de sus miembros. ARTÍCULO 59. AUDIENCIA DE CUENTAS. 1. La Audiencia de Cuentas, dependiente del Parlamento de Canarias, realizará las funciones de fiscalización externa de la gestión económica, financiera y contable del sector público de la Comunidad Autónoma y demás entes públicos de Canarias, sin perjuicio de las competencias que corresponden al Tribunal de Cuentas, de acuerdo con la Constitución. 2. Ejercerá sus funciones por delegación del Parlamento en el examen y comprobación de la Cuenta General de la Comunidad Autónoma de Canarias. 3. Una ley del Parlamento de Canarias regulará su organización y funcionamiento. 18 \f ARTÍCULO 60. COMISIONADO DE TRANSPARENCIA Y ACCESO A LA INFORMACIÓN PÚBLICA. 1. El Comisionado de Transparencia y Acceso a la Información Pública es el órgano de fomento, análisis, control y protección de la transparencia pública y del derecho de acceso a la información pública en el ámbito de la Comunidad Autónoma de Canarias, de acuerdo con lo que establezca la ley. 2. Una ley del Parlamento de Canarias garantizará su actuación con plena capacidad, autonomía e independencia y regulará su organización, funcionamiento y las relaciones con las administraciones públicas, entidades y otros obligados por la ley. 3. El Comisionado de Transparencia y Acceso a la Información Pública será elegido por mayoría de tres quintas partes del Parlamento de Canarias, conforme al procedimiento que la ley determine TÍTULO III ORGANIZACIÓN TERRITORIAL DE CANARIAS CAPÍTULO I DE LAS ISLAS Y LOS CABILDOS INSULARES ARTÍCULO 65. ISLAS Y TERRITORIOS INSULARES. 1. La organización territorial de Canarias se integra por las islas de El Hierro, Fuerteventura, Gran Canaria, La Gomera, Lanzarote, La Palma y Tenerife."
+    },
+    {
+      "titulo": "17. ARTÍCULO 66",
+      "contenido": "La isla de La Graciosa estará agregada administrativamente a Lanzarote, así como los islotes de Alegranza, Montaña Clara, Roque del Este y Roque del Oeste y el de Lobos a Fuerteventura. 2. Los cabildos insulares son instituciones de la Comunidad Autónoma de Canarias. 3. Los cabildos insulares constituyen órganos de gobierno, representación y administración de cada isla y gozarán de autonomía en la gestión de sus intereses y el ejercicio de sus competencias propias, de acuerdo con la Constitución, este Estatuto y las leyes. 4. Los cabildos insulares asumen en la isla la representación ordinaria del Gobierno y de la Administración autonómica y desempeñan las funciones administrativas autonómicas previstas en este Estatuto de Autonomía y en las leyes, así como las que les sean transferidas o delegadas. ARTÍCULO 66. CAPITALES INSULARES. La capital de cada isla se fija donde se encuentra la sede de los cabildos insulares: la de El Hierro en Valverde, la de Fuerteventura en Puerto del Rosario, la de Gran Canaria en Las Palmas de Gran Canaria, la de La Gomera en San Sebastián de La Gomera, la de Lanzarote en Arrecife, la de La Palma en Santa Cruz de La Palma y la de Tenerife en Santa Cruz de Tenerife. ARTÍCULO 67. ORGANIZACIÓN. 1. Una ley del Parlamento de Canarias, aprobada por mayoría absoluta, regulará la organización de los cabildos insulares de acuerdo con la Constitución, con este Estatuto y las leyes. 2. Son órganos necesarios de los cabildos insulares el pleno, la presidencia, las vicepresidencias y el consejo de gobierno. 3. El pleno del cabildo insular ejerce la iniciativa legislativa ante el Parlamento de Canarias, aprueba los presupuestos del cabildo insular, exige la responsabilidad política y controla la acción del consejo de gobierno, aprobará el reglamento orgánico de funcionamiento, y ejerce todas las funciones que le otorgan este Estatuto y las leyes del Parlamento. 4. El consejo de gobierno insular estará integrado por las personas titulares de la presidencia, de las vicepresidencias, en su caso, y de los departamentos o áreas ejecutivas, correspondiéndole el ejercicio de la función ejecutiva en relación con las competencias del cabildo insular. 19 \f ARTÍCULO 68. COMPOSICIÓN Y RÉGIMEN ELECTORAL. 1. Los plenos de los cabildos insulares estarán compuestos por los miembros elegidos por sufragio universal, igual, libre, directo y secreto mediante un sistema de representación proporcional en los términos que establezca la ley. 2. La duración del mandato será de cuatro años. 3. La ley prevista en el artículo anterior regulará el número de miembros que deben integrar cada cabildo insular, así como las causas de inelegibilidad y de incompatibilidad que les afecten, de acuerdo con lo establecido en la Ley orgánica de régimen electoral. ARTÍCULO 69. FUNCIONAMIENTO Y RÉGIMEN JURÍDICO. La ley y los reglamentos orgánicos de los respectivos cabildos insulares determinarán las reglas de funcionamiento y el régimen jurídico de la actuación de los mismos y de sus órganos, así como el régimen de sus funciones y competencias respetando la legislación básica estatal. ARTÍCULO 70. COMPETENCIAS INSULARES. 1. A las islas les corresponde el ejercicio de las competencias que les son reconocidas como propias; las que se les transfieran o deleguen, y la colaboración en el desarrollo y la ejecución de los acuerdos adoptados por el Gobierno de Canarias, en los términos que establezcan las leyes del Parlamento. Las transferencias y delegaciones llevarán incorporadas los medios económicos, materiales y personales que correspondan. 2."
+    },
+    {
+      "titulo": "18. ARTÍCULO 71",
+      "contenido": "Los cabildos insulares, como instituciones de la Comunidad Autónoma, ejercerán funciones ejecutivas de carácter insular en el marco y dentro de los límites de la legislación aplicable, en las siguientes materias: a) Demarcaciones territoriales, alteración de términos y denominación oficial de los municipios. b) Ordenación del territorio. c) Carreteras, salvo las que se declaren de interés autonómico, en el marco de lo que disponga la legislación territorial canaria. d) Transporte por carretera, por cable y ferrocarril. e) Gestión de puertos de refugio y deportivos, salvo que se declaren de interés autonómico. f) Turismo. g) Ferias y mercados insulares. h) Defensa del consumidor. i) Asistencia social y servicios sociales. j) Policía de vivienda. Conservación y administración del parque público de viviendas. k) Las funciones propias de la Agencia de Extensión Agraria. Infraestructura rural de carácter insular. Granjas experimentales. l) Campañas de saneamiento zoosanitario. m) Servicios forestales, vías pecuarias y pastos. n) Protección del medio ambiente. ñ) Acuicultura y cultivos marinos. o) Artesanía. p) Cultura, deportes, ocio y esparcimiento. Patrimonio histórico-artístico insular. Museos, bibliotecas y archivos que no se reserve la Comunidad Autónoma. q) Caza. r) Residencias de estudiantes en la isla. s) Espectáculos. t) Actividades clasificadas. u) Igualdad de género. 20 \f ARTÍCULO 71. TRANSFERENCIA Y DELEGACIÓN DE FUNCIONES. Los cabildos insulares, como instituciones de la Comunidad Autónoma, podrán transferir o delegar en los ayuntamientos el ejercicio de sus funciones administrativas propias, cuando así lo justifiquen los principios de subsidiariedad, descentralización y eficiencia. ARTÍCULO 72. ACTIVIDAD DE FOMENTO Y FIJACIÓN DE POLÍTICAS PROPIAS DE LOS CABILDOS INSULARES. Corresponde a los cabildos insulares el ejercicio de la actividad de fomento, sin perjuicio de la actividad que corresponda a la Comunidad Autónoma, y la fijación de políticas propias. Asimismo, cuando así lo decidan, la fijación de políticas comunes con otras islas, comunidades o con el Estado, de acuerdo con el Gobierno de Canarias. ARTÍCULO 73. COORDINACIÓN DE LA ACTIVIDAD DE LOS CABILDOS INSULARES. El Gobierno de Canarias coordinará la actividad de los cabildos insulares en cuanto afecte directamente al interés general de la Comunidad Autónoma de Canarias. Para ello podrá requerirles información, documentación y, en los términos que disponga la ley, establecer objetivos y prioridades de la acción pública, así como utilizar otros mecanismos de coordinación previstos en la legislación básica del Estado. Si un cabildo insular incumpliera las obligaciones impuestas directamente por ley, de forma que tal incumplimiento afectara al ejercicio de competencias de la Comunidad Autónoma de Canarias, esta adoptará las medidas necesarias, de acuerdo con la legislación básica estatal de régimen local. ARTÍCULO 74. CONFERENCIA DE PRESIDENTES. 1. La Conferencia de Presidentes es un foro institucional de colaboración del Gobierno de Canarias y los cabildos insulares que tiene la función de servir de encuentro y debate de los grandes asuntos de interés común, la coordinación de las políticas de actuación de interés concurrente y la búsqueda de los acuerdos que deban incorporarse a los correspondientes ámbitos institucionales de la Comunidad Autónoma de Canarias y de las islas. 2. La conferencia, integrada por quienes ostenten la Presidencia de Canarias y de las islas, aprueba y se rige por sus propias normas de organización y funcionamiento."
+    },
+    {
+      "titulo": "19. TÍTULO V",
+      "contenido": "TÍTULO V DE LAS COMPETENCIAS CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO 94. CLASES DE COMPETENCIAS. 1. La Comunidad Autónoma de Canarias ejercerá las competencias exclusivas, las competencias de desarrollo legislativo y de ejecución y las competencias ejecutivas previstas en el presente título, respetando lo dispuesto en la Constitución española y en el presente Estatuto de Autonomía. 2. En el ámbito de las competencias que se le atribuyen en el presente Estatuto, le corresponden a la Comunidad Autónoma de Canarias las potestades, facultades y funciones expresamente contempladas en el mismo, así como todas aquellas que, por su naturaleza, resulten inherentes para su pleno ejercicio. ARTÍCULO 95. COMPETENCIAS EXCLUSIVAS. 1. En el ámbito de sus competencias exclusivas, la Comunidad Autónoma de Canarias ejerce, de forma íntegra, la potestad legislativa, la potestad reglamentaria y la función ejecutiva, sin perjuicio de la concurrencia de otros títulos competenciales del Estado. 21 \f 2. En el ejercicio de estas competencias exclusivas, la Comunidad Autónoma de Canarias puede desarrollar políticas propias en las materias afectadas, de acuerdo con los principios y derechos previstos en el presente Estatuto. ARTÍCULO 96. COMPETENCIAS DE DESARROLLO LEGISLATIVO Y DE EJECUCIÓN. 1. En las competencias de desarrollo legislativo y de ejecución, corresponde a la Comunidad Autónoma de Canarias la potestad legislativa, la potestad reglamentaria y la función ejecutiva, en el marco de las bases que fije el Estado. 2. En el ejercicio de estas competencias, la Comunidad Autónoma de Canarias puede establecer políticas propias, de acuerdo con los principios y derechos previstos en el presente Estatuto. ARTÍCULO 97. COMPETENCIAS EJECUTIVAS. En el ámbito de sus competencias ejecutivas, corresponde a la Comunidad Autónoma de Canarias: a) La función ejecutiva, que incluye, en todo caso, la potestad de organización de su propia administración, así como las potestades de inspección y de sanción y, en general, todas aquellas funciones y actividades que el ordenamiento atribuye a la Administración Pública. b) La potestad reglamentaria, que comprende la aprobación de reglamentos internos de organización de los servicios. ARTÍCULO 98. PRINCIPIO DE PREVALENCIA. El derecho propio de Canarias en materia de competencia exclusiva de la Comunidad Autónoma es aplicable en su territorio con preferencia a cualquier otro. ARTÍCULO 99. PRINCIPIO DE TERRITORIALIDAD. El ejercicio de las competencias autonómicas desplegará su eficacia en el territorio de Canarias, sin perjuicio, en su caso, de los eventuales efectos que por razón de la competencia ejercida pueda tener fuera de su territorio. ARTÍCULO 100. ATRIBUCIÓN DE MATERIAS DE COMPETENCIA ESTATAL. 1. La Comunidad Autónoma de Canarias ejercerá las competencias no contempladas expresamente en este Estatuto en las materias que le sean transferidas o delegadas por el Estado. 2. La Comunidad Autónoma de Canarias podrá ejercer actividades de inspección y sanción respecto a materias de competencia estatal, en los términos que se establezca mediante convenio o acuerdo con el Estado. ARTÍCULO 101. MODULACIÓN DE LA NORMATIVA ESTATAL POR RAZÓN DE LA CONDICIÓN ULTRAPERIFÉRICA DE CANARIAS. La normativa que dicte el Estado en el ejercicio de sus competencias, sean exclusivas o compartidas, tendrá en cuenta las singularidades derivadas del carácter ultraperiférico de Canarias reconocidas por la Unión Europea. ARTÍCULO 102. FOMENTO. 1."
+    },
+    {
+      "titulo": "20. TÍTULO VIII",
+      "contenido": "En las materias de su competencia, corresponde a la Comunidad Autónoma el ejercicio de la actividad de fomento, a cuyos efectos podrá otorgar subvenciones con cargo a fondos propios, regulando o, en su caso, desarrollando los objetivos y requisitos de otorgamiento y gestionando su tramitación y concesión. 22 \f 2. En el caso de las competencias exclusivas, la Comunidad Autónoma especificará los objetivos a los que se destinen las subvenciones territorializables de la Administración central y las de la Unión Europea, así como la regulación de las condiciones de otorgamiento y la gestión de su tramitación y concesión. En las competencias compartidas, la Comunidad Autónoma precisará los objetivos de las subvenciones territorializables de la Administración central y de la Unión Europea, completando las condiciones de otorgamiento, y asumiendo toda la gestión incluyendo la tramitación y la concesión. En las competencias ejecutivas, corresponderá a la Comunidad Autónoma la gestión de las subvenciones territorializables, que incluye su tramitación y concesión. 3. La Comunidad Autónoma participa, en los términos que fije el Estado, en la determinación del carácter no territorializable de las subvenciones estatales y comunitarias y en su gestión y tramitación. TÍTULO VIII DE LA REFORMA DEL ESTATUTO ARTÍCULO 200. PROCEDIMIENTO GENERAL DE REFORMA DEL ESTATUTO. 1. La iniciativa de la reforma corresponderá al Gobierno o al Parlamento de Canarias a propuesta al menos de una quinta parte de sus diputados. 2. La propuesta de reforma requerirá, en todo caso, la aprobación del Parlamento de Canarias por mayoría de tres quintos de sus miembros, la aprobación de las Cortes Generales mediante ley orgánica y, finalmente, ser sometido a referéndum de los electores. 3. El procedimiento de aprobación de la reforma seguirá las siguientes fases: a) Aprobada la propuesta de reforma por el Parlamento de Canarias, se remitirá al Congreso de los Diputados. Una vez sometida al Pleno del Congreso, la Comisión Constitucional del Congreso nombrará una ponencia paritaria entre el Congreso de los Diputados y el Parlamento de Canarias para intentar alcanzar un acuerdo sobre el texto. Llegado a un acuerdo común sobre el texto, se remitirá al pleno de la comisión para su votación y si esta es favorable, se someterá al Pleno del Congreso para su aprobación. b) La tramitación de la propuesta de reforma en el Senado debe seguir un procedimiento análogo al del apartado anterior en cuanto a la formulación de un acuerdo común sobre el texto por parte de una ponencia del Senado y una delegación del Parlamento de Canarias. c) Si las Cortes Generales, durante la tramitación parlamentaria, modificaran sustancialmente la reforma propuesta, se devolverá al Parlamento de Canarias para nueva deliberación, acompañando mensaje motivado sobre el punto o puntos que hubieren ocasionado su devolución y proponiendo soluciones alternativas, en cuyo caso el Parlamento de Canarias podrá acceder a las mismas, proponer otras soluciones o desistir de la reforma estatutaria. 4. La aprobación de la reforma por las Cortes Generales mediante ley orgánica incluirá la autorización del Estado para que el Gobierno de Canarias convoque, en el plazo de tres meses, el referéndum de ratificación por los electores. 5. Si la propuesta de reforma no es aprobada por el Parlamento de Canarias o por las Cortes Generales, o no es confirmada mediante referéndum por el cuerpo electoral, no podrá ser sometida nuevamente a debate y votación del Parlamento hasta que haya transcurrido un año. 23 \f ARTÍCULO 201."
+    },
+    {
+      "titulo": "21. capítulo II",
+      "contenido": "DEL PROCEDIMIENTO DE REFORMA ABREVIADO. No obstante lo dispuesto en el artículo anterior, cuando la reforma afectare solo al capítulo II del título I del Estatuto, se podrá proceder de la siguiente manera: a) Aprobación de la propuesta de reforma por el Parlamento de Canarias por mayoría de tres quintas partes de sus miembros. b) Aprobada la propuesta de reforma, se someterá a consulta de las Cortes Generales. c) Si en el plazo de treinta días, a partir de la recepción de la consulta prevista en el apartado precedente, las Cortes Generales no se declarasen afectadas por la reforma, se ratificará la misma mediante ley orgánica. d) Si en plazo señalado en la letra c) las Cortes se declarasen afectadas por la reforma, esta habrá de seguir el procedimiento previsto en el artículo anterior, dándose por cumplidos los trámites del número 1 del mencionado artículo. ARTÍCULO 202. AUDIENCIA A LOS CABILDOS INSULARES. Cuando la reforma tuviera por objeto una alteración en la organización de los poderes de Canarias que afectara directamente a las islas, se requerirá la audiencia previa de los cabildos insulares. Disposición adicional primera. Tributos cedidos. 1. Conforme al apartado 3 de esta disposición, con los límites y, en su caso, con la capacidad normativa y en los términos que se establezcan en la ley orgánica prevista en el artículo 157.3 de la Constitución, se ceden a la Comunidad Autónoma los siguientes tributos: a) Impuesto sobre la Renta de las Personas Físicas. b) Impuesto sobre el Patrimonio. c) Impuesto sobre Sucesiones y Donaciones. d) Impuesto sobre Transmisiones Patrimoniales y Actos Jurídicos Documentados. e) Los tributos sobre el juego. f) g) Impuesto Especial sobre Productos Intermedios. h) Impuesto Especial sobre el Alcohol y Bebidas Derivadas. i) j) Impuesto Especial sobre Electricidad. Impuesto sobre el depósito de residuos en vertederos, la incineración y la coincineración de residuos. Impuesto Especial sobre la Cerveza. k) Aquellos otros que acuerden las Cortes Generales. 2. El contenido de la presente disposición se podrá modificar mediante acuerdo del Estado con la Comunidad Autónoma de Canarias, que será tramitado como proyecto de ley. A estos efectos, la modificación de la presente disposición no se considerará modificación del Estatuto. La eventual supresión o modificación de alguno de dichos tributos implicará la extinción o modificación de la cesión, sin perjuicio de las compensaciones que, en su caso, se establezcan por ley. 3. El alcance y condiciones de la cesión serán fijados por la Comisión Bilateral de Cooperación Canarias-Estado. El Gobierno del Estado tramitará el acuerdo alcanzado como proyecto de ley. DISPOSICIÓN ADICIONAL QUINTA. SEDE DE LA DELEGACIÓN DEL GOBIERNO. La sede de la Delegación del Gobierno del Estado en la Comunidad Autónoma de Canarias radicará en la ciudad de Las Palmas de Gran Canaria. 24 \f DISPOSICIÓN TRANSITORIA PRIMERA. SISTEMA ELECTORAL. 1. Hasta tanto no se apruebe la Ley electoral prevista en el artículo 39 del presente Estatuto, se fija en setenta el número de diputados y diputadas del Parlamento de Canarias. Sesenta y un escaños se distribuirán entre las circunscripciones insulares de la siguiente forma: 3 por El Hierro, 8 por Fuerteventura, 15 por Gran Canaria, 4 por La Gomera, 8 por Lanzarote, 8 por La Palma y 15 por Tenerife. Los nueve escaños restantes se asignarán a la circunscripción autonómica de Canarias. 2."
+    },
+    {
+      "titulo": "22. artículo 39",
+      "contenido": "A efectos de la elección en las circunscripciones insulares, solo serán tenidas en cuenta aquellas listas de partido o coalición que hubieran obtenido, al menos, el 15 por ciento de los votos válidos de su respectiva circunscripción insular, o, sumando los de todas las circunscripciones insulares hubieran obtenido, al menos, el 4 por ciento de los votos válidos emitidos en la totalidad de la Comunidad Autónoma. 3. A efectos de la elección en la circunscripción autonómica, sólo serán tenidas en cuenta aquellas listas de partido o coalición que hubieran obtenido, al menos, el 4 por 100 de los votos válidos emitidos en la totalidad de la Comunidad Autónoma. 4. El Parlamento de Canarias elaborará, en un plazo no superior a tres años desde la entrada en vigor del presente Estatuto de Autonomía, la ley a que se refiere el artículo 39.2. DISPOSICIÓN DEROGATORIA. DEROGACIÓN DE LA LEY ORGÁNICA 10/1982, DE 10 DE AGOSTO, MODIFICADA POR LA LEY ORGÁNICA 4/1996, DE 30 DE DICIEMBRE. Queda derogada la Ley Orgánica 10/1982, de 10 de agosto, de Estatuto de Autonomía para Canarias, modificada por la Ley Orgánica 4/1996, de 30 de diciembre. DISPOSICIÓN FINAL. ENTRADA EN VIGOR. El presente Estatuto entrará en vigor el mismo día de su publicación en el «Boletín Oficial del Estado». 25"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"El Estatuto de la Comunidad Autónoma de \"]\n  A --> N1[\"Ley Orgánica 1/2018, de 5 de noviembre, \"]\n  A --> N2[\"ARTÍCULO 5\"]\n  A --> N3[\"ARTÍCULO 8\"]\n  A --> N4[\"ARTÍCULO 13\"]\n  A --> N5[\"ARTÍCULO 19\"]\n  A --> N6[\"ARTÍCULO 22\"]\n  A --> N7[\"ARTÍCULO 25\"]\n  A --> N8[\"ARTÍCULO 30\"]\n  A --> N9[\"ARTÍCULO 35\"]\n  A --> N10[\"artículo 138\"]\n  A --> N11[\"TÍTULO II\"]\n  A --> N12[\"ARTÍCULO 42\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "El Estatuto de la Comunidad Autónoma de Canarias.…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "Ley Orgánica 1/2018, de 5 de noviembre,…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "ARTÍCULO 5",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "ARTÍCULO 8",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "ARTÍCULO 13",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "ARTÍCULO 19",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "ARTÍCULO 22",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "ARTÍCULO 25",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "ARTÍCULO 30",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "ARTÍCULO 35",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "artículo 138",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "TÍTULO II",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s12",
+        "texto": "ARTÍCULO 42",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s13",
+        "texto": "artículo 31",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s14",
+        "texto": "ARTÍCULO 47",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s15",
+        "texto": "ARTÍCULO 51",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s16",
+        "texto": "ARTÍCULO 58",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s17",
+        "texto": "ARTÍCULO 66",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s18",
+        "texto": "ARTÍCULO 71",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s19",
+        "texto": "TÍTULO V",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s20",
+        "texto": "TÍTULO VIII",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s21",
+        "texto": "capítulo II",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s22",
+        "texto": "artículo 39",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p7-01",
-            "enunciado": "El vigente Estatuto de Autonomía de Canarias fue aprobado por:",
-            "opciones": ["La Ley Orgánica 10/1982", "La Ley Orgánica 1/2018, de 5 de noviembre", "La Ley 4/2023", "La Constitución de 1978"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El vigente Estatuto se aprobó por la Ley Orgánica 1/2018, de 5 de noviembre, que sustituyó al de 1982."
-        },
-        {
-            "id": "p7-02",
-            "enunciado": "El Estatuto de Autonomía define a Canarias como:",
-            "opciones": ["Una región", "Una nacionalidad", "Una provincia", "Un territorio histórico"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El Estatuto de Autonomía define a Canarias como una nacionalidad en el marco de la Constitución."
-        },
-        {
-            "id": "p7-03",
-            "enunciado": "La reforma del Estatuto requiere en el Parlamento de Canarias una mayoría de:",
-            "opciones": ["Mayoría simple", "Mayoría absoluta", "Dos tercios", "Tres quintos"],
-            "respuestaCorrecta": 2,
-            "explicacion": "La reforma del Estatuto requiere el voto favorable de la mayoría de dos tercios del Parlamento de Canarias."
-        },
-        {
-            "id": "p7-04",
-            "enunciado": "El Parlamento de Canarias tiene su sede en:",
-            "opciones": ["Las Palmas de Gran Canaria", "Santa Cruz de Tenerife", "La Laguna", "Telde"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El Parlamento de Canarias tiene su sede en Santa Cruz de Tenerife."
-        },
-        {
-            "id": "p7-05",
-            "enunciado": "El Presidente de Canarias es elegido por:",
-            "opciones": ["El Rey directamente", "El Parlamento de Canarias de entre sus miembros", "Los Cabildos Insulares", "El Gobierno de España"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El Presidente de Canarias es elegido por el Parlamento de entre sus miembros y nombrado por el Rey."
-        },
-        {
-            "id": "p7-06",
-            "enunciado": "Las funciones ejecutiva y reglamentaria en Canarias corresponden a:",
-            "opciones": ["El Parlamento", "El Gobierno de Canarias", "Los Cabildos", "El Diputado del Común"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El Gobierno de Canarias ejerce las funciones ejecutiva y reglamentaria de la Comunidad Autónoma."
-        },
-        {
-            "id": "p7-07",
-            "enunciado": "Los Cabildos Insulares son:",
-            "opciones": ["Solo órganos del Estado", "Órganos de gobierno de la isla e instituciones de la Comunidad Autónoma", "Entidades privadas", "Órganos del Parlamento"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Los Cabildos son órganos de gobierno, administración y representación de cada isla e instituciones de la Comunidad Autónoma."
-        },
-        {
-            "id": "p7-08",
-            "enunciado": "El número de Cabildos Insulares en Canarias es de:",
-            "opciones": ["Dos", "Cinco", "Siete", "Ocho"],
-            "respuestaCorrecta": 2,
-            "explicacion": "Hay siete Cabildos Insulares, uno por cada isla con administración propia."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      },
+      {
+        "desde": "root",
+        "hasta": "s12"
+      },
+      {
+        "desde": "root",
+        "hasta": "s13"
+      },
+      {
+        "desde": "root",
+        "hasta": "s14"
+      },
+      {
+        "desde": "root",
+        "hasta": "s15"
+      },
+      {
+        "desde": "root",
+        "hasta": "s16"
+      },
+      {
+        "desde": "root",
+        "hasta": "s17"
+      },
+      {
+        "desde": "root",
+        "hasta": "s18"
+      },
+      {
+        "desde": "root",
+        "hasta": "s19"
+      },
+      {
+        "desde": "root",
+        "hasta": "s20"
+      },
+      {
+        "desde": "root",
+        "hasta": "s21"
+      },
+      {
+        "desde": "root",
+        "hasta": "s22"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc7-01",
+      "pregunta": "¿Qué es el archipiélago atlántico?",
+      "respuesta": "Un archipiélago atlántico que ejerce el derecho al autogobierno como nacionalidad, constituyéndose en Comunidad Autónoma en el marco del Estado español."
+    },
+    {
+      "id": "fc7-02",
+      "pregunta": "¿Qué es el autogobierno del pueblo canario?",
+      "respuesta": "El autogobierno del pueblo canario se funda en la Constitución y se asienta en la excepcionalidad de su ubicación geográfica, el valor de su territorio y de sus recursos naturales, el arraigo de sus instituciones públicas o la vocación atlántica de su economía."
+    },
+    {
+      "id": "fc7-03",
+      "pregunta": "¿Qué es el ámbito espacial de la Comunidad Autónoma de Canarias?",
+      "respuesta": "El ámbito espacial de la Comunidad Autónoma de Canarias comprende el archipiélago canario, integrado por el mar y las siete islas con administración propia de El Hierro, Fuerteventura, Gran Canaria, La Gomera, Lanzarote, La Palma y Tenerife, así como por la isla de La Graciosa y por los islotes de Alegranza, Lobos, Montaña Clara, Roque del Este y Roque del Oeste."
+    },
+    {
+      "id": "fc7-04",
+      "pregunta": "¿Qué es la capitalidad de Canarias?",
+      "respuesta": "La capitalidad de Canarias se fija compartidamente en las ciudades de Las Palmas de Gran Canaria y Santa Cruz de Tenerife."
+    },
+    {
+      "id": "fc7-05",
+      "pregunta": "¿Qué es la condición política de canarios?",
+      "respuesta": "Las personas con nacionalidad española que, de acuerdo con las leyes del Estado, tengan vecindad administrativa en cualquiera de los municipios de Canarias."
+    },
+    {
+      "id": "fc7-06",
+      "pregunta": "¿Qué es el Parlamento de Canarias?",
+      "respuesta": "El Parlamento de Canarias es la institución democrática que asume como tarea suprema la defensa de los intereses canarios, y de su identidad cultural y de su patrimonio natural y biodiversidad."
+    },
+    {
+      "id": "fc7-07",
+      "pregunta": "¿Qué es el Gobierno de Canarias?",
+      "respuesta": "El Gobierno de Canarias es la institución que ejerce el poder ejecutivo de la Comunidad Autónoma de Canarias."
+    },
+    {
+      "id": "fc7-08",
+      "pregunta": "¿Qué es el Cabildo?",
+      "respuesta": "El Cabildo es la institución que ejerce el poder legislativo y ejecutivo de cada isla de Canarias."
+    },
+    {
+      "id": "fc7-09",
+      "pregunta": "¿Qué es la Presidencia de Canarias?",
+      "respuesta": "La Presidencia de Canarias es la institución que ejerce el poder ejecutivo de la Comunidad Autónoma de Canarias."
+    },
+    {
+      "id": "fc7-10",
+      "pregunta": "¿Qué es la Vicepresidencia de Canarias?",
+      "respuesta": "La Vicepresidencia de Canarias es la institución que ejerce el poder ejecutivo de la Comunidad Autónoma de Canarias en ausencia del Presidente."
+    },
+    {
+      "id": "fc7-11",
+      "pregunta": "¿Qué es la sede de la Presidencia de Canarias?",
+      "respuesta": "La sede de la Presidencia de Canarias se ubica en la ciudad de Las Palmas de Gran Canaria y Santa Cruz de Tenerife."
+    },
+    {
+      "id": "fc7-12",
+      "pregunta": "¿Qué es la sede del Parlamento de Canarias?",
+      "respuesta": "La sede del Parlamento de Canarias se ubica en la ciudad de Santa Cruz de Tenerife."
+    },
+    {
+      "id": "fc7-13",
+      "pregunta": "¿Qué es la condición política de canarios?",
+      "respuesta": "Las personas con nacionalidad española que, de acuerdo con las leyes del Estado, tengan vecindad administrativa en cualquiera de los municipios de Canarias."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p7-01",
+      "enunciado": "¿Qué es el autogobierno del pueblo canario?",
+      "opciones": [
+        "El autogobierno del pueblo canario se funda en la Constitución y se asienta en la excepcionalidad de su ubicación geográfica, el valor de su territorio y de sus recursos naturales, el arraigo de sus instituciones públicas o la vocación atlántica de su economía.",
+        "El autogobierno del pueblo canario se funda en la Constitución y se asienta en la excepcionalidad de su ubicación geográfica, el valor de su territorio y de sus recursos naturales, el arraigo de sus instituciones públicas o la vocación atlántica de su economía.",
+        "El autogobierno del pueblo canario se funda en la Constitución y se asienta en la excepcionalidad de su ubicación geográfica, el valor de su territorio y de sus recursos naturales, el arraigo de sus instituciones públicas o la vocación atlántica de su economía.",
+        "El autogobierno del pueblo canario se funda en la Constitución y se asienta en la excepcionalidad de su ubicación geográfica, el valor de su territorio y de sus recursos naturales, el arraigo de sus instituciones públicas o la vocación atlántica de su economía."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El autogobierno del pueblo canario se funda en la Constitución y se asienta en la excepcionalidad de su ubicación geográfica, el valor de su territorio y de sus recursos naturales, el arraigo de sus instituciones públicas o la vocación atlántica de su economía."
+    },
+    {
+      "id": "p7-02",
+      "enunciado": "¿Qué es el ámbito espacial de la Comunidad Autónoma de Canarias?",
+      "opciones": [
+        "El ámbito espacial de la Comunidad Autónoma de Canarias comprende el archipiélago canario, integrado por el mar y las siete islas con administración propia de El Hierro, Fuerteventura, Gran Canaria, La Gomera, Lanzarote, La Palma y Tenerife, así como por la isla de La Graciosa y por los islotes de Alegranza, Lobos, Montaña Clara, Roque del Este y Roque del Oeste.",
+        "El ámbito espacial de la Comunidad Autónoma de Canarias comprende el archipiélago canario, integrado por el mar y las siete islas con administración propia de El Hierro, Fuerteventura, Gran Canaria, La Gomera, Lanzarote, La Palma y Tenerife, así como por la isla de La Graciosa y por los islotes de Alegranza, Lobos, Montaña Clara, Roque del Este y Roque del Oeste.",
+        "El ámbito espacial de la Comunidad Autónoma de Canarias comprende el archipiélago canario, integrado por el mar y las siete islas con administración propia de El Hierro, Fuerteventura, Gran Canaria, La Gomera, Lanzarote, La Palma y Tenerife, así como por la isla de La Graciosa y por los islotes de Alegranza, Lobos, Montaña Clara, Roque del Este y Roque del Oeste.",
+        "El ámbito espacial de la Comunidad Autónoma de Canarias comprende el archipiélago canario, integrado por el mar y las siete islas con administración propia de El Hierro, Fuerteventura, Gran Canaria, La Gomera, Lanzarote, La Palma y Tenerife, así como por la isla de La Graciosa y por los islotes de Alegranza, Lobos, Montaña Clara, Roque del Este y Roque del Oeste."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ámbito espacial de la Comunidad Autónoma de Canarias comprende el archipiélago canario, integrado por el mar y las siete islas con administración propia de El Hierro, Fuerteventura, Gran Canaria, La Gomera, Lanzarote, La Palma y Tenerife, así como por la isla de La Graciosa y por los islotes de Alegranza, Lobos, Montaña Clara, Roque del Este y Roque del Oeste."
+    },
+    {
+      "id": "p7-03",
+      "enunciado": "¿Qué es la capitalidad de Canarias?",
+      "opciones": [
+        "La capitalidad de Canarias se fija compartidamente en las ciudades de Las Palmas de Gran Canaria y Santa Cruz de Tenerife.",
+        "La capitalidad de Canarias se fija en la ciudad de Las Palmas de Gran Canaria.",
+        "La capitalidad de Canarias se fija en la ciudad de Santa Cruz de Tenerife.",
+        "La capitalidad de Canarias se fija en la ciudad de Madrid."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La capitalidad de Canarias se fija compartidamente en las ciudades de Las Palmas de Gran Canaria y Santa Cruz de Tenerife."
+    }
+  ]
 }

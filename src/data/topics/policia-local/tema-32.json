@@ -1,157 +1,802 @@
 {
-    "id": 32,
-    "titulo": "Las autorizaciones administrativas. Permisos y licencias de conducción. Permisos de circulación y documentación de los vehículos. La matriculación. La declaración de nulidad o lesividad y pérdida de vigencia. Suspensión cautelar",
-    "bloque": "especifico",
-    "secciones": [
-        {
-            "id": "s32-1",
-            "titulo": "Las autorizaciones administrativas en tráfico",
-            "contenido": "Las autorizaciones administrativas en materia de tráfico son los actos por los que la Administración habilita a personas y vehículos para circular conforme a la normativa. El órgano competente es, con carácter general, la Dirección General de Tráfico (DGT) y sus Jefaturas Provinciales, sin perjuicio de las competencias de las Comunidades Autónomas con traspasos efectuados (Cataluña y País Vasco) y de las autoridades locales. La normativa aplicable es el Texto Refundido de la Ley de Tráfico (RDL 6/2015) y el Reglamento General de Conductores (RD 818/2009). Las autorizaciones son de carácter personal o real, con una vigencia condicionada al cumplimiento de los requisitos legales."
-        },
-        {
-            "id": "s32-2",
-            "titulo": "Permisos y licencias de conducción",
-            "contenido": "Para conducir vehículos a motor y ciclomotores es necesario disponer del correspondiente permiso o licencia. Los permisos se clasifican en clases según el vehículo: AM (ciclomotores y vehículos para personas con movilidad reducida), A1, A2 y A (motocicletas con distintas potencias y edades), B (turismos y vehículos hasta 3.500 kg de MMA), C1 y C (camiones), D1 y D (autobuses), y permisos del grupo BE, C1E, CE, D1E y DE para conjuntos. Para acceder al permiso se exige edad mínima, aptitud psicofísica, superar pruebas teórica y práctica. La vigencia del permiso B es de 10 años hasta los 65, y de 5 años a partir de esa edad; los de las categorías C y D tienen vigencia menor."
-        },
-        {
-            "id": "s32-3",
-            "titulo": "Permiso de circulación y documentación de los vehículos",
-            "contenido": "Todo vehículo a motor y remolque cuyas características exijan matriculación debe disponer de permiso de circulación, expedido por la DGT a nombre del titular. El permiso acredita la legalidad de la circulación del vehículo en el territorio nacional. La tarjeta de Inspección Técnica de Vehículos (ITV) recoge las características técnicas. El conductor debe llevar consigo durante la circulación el permiso o licencia de conducción, el permiso de circulación, la tarjeta de ITV y el justificante del seguro obligatorio. La carencia del permiso de circulación o su no exhibición ante la autoridad constituyen infracciones administrativas."
-        },
-        {
-            "id": "s32-4",
-            "titulo": "La matriculación",
-            "contenido": "La matriculación es el acto administrativo por el que la DGT asigna una matrícula a un vehículo, le otorga el permiso de circulación y permite su uso legal en las vías públicas. Es obligatoria con carácter previo a la puesta en circulación, salvo los supuestos exentos. La matrícula se compone de cuatro cifras y tres letras (sistema actual desde el año 2000) y tiene carácter permanente: acompaña al vehículo durante toda su vida útil. La transmisión del vehículo no implica cambio de matrícula, pero sí la obligación de notificar el cambio de titular en plazo. La baja del vehículo se solicita cuando se desguace o quede definitivamente fuera de uso."
-        },
-        {
-            "id": "s32-5",
-            "titulo": "Declaración de nulidad o lesividad, pérdida de vigencia y suspensión cautelar",
-            "contenido": "La declaración de nulidad de las autorizaciones procede en los supuestos del artículo 47 de la Ley 39/2015 (incompetencia manifiesta, falta total de procedimiento, contenido imposible, etc.). La declaración de lesividad permite a la Administración impugnar ante la jurisdicción contencioso-administrativa sus propios actos declarativos de derechos cuando los considere lesivos para el interés público. La pérdida de vigencia se produce, entre otras causas, por la pérdida total de los puntos asignados al permiso, por la pérdida de las condiciones psicofísicas requeridas o por sanción firme de privación del derecho a conducir. La suspensión cautelar puede acordarse durante la tramitación del expediente sancionador, como medida provisional para garantizar la seguridad."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e32-1",
-            "titulo": "Permisos de conducción",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Permisos] --> B[AM - ciclomotores]\n    A --> C[A1, A2, A - motos]\n    A --> D[B - turismos]\n    A --> E[C1, C - camiones]\n    A --> F[D1, D - autobuses]"
-        },
-        {
-            "id": "e32-2",
-            "titulo": "Vigencia y pérdida del permiso",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Vigencia y perdida] --> B[Vigencia: 10 anos hasta 65, despues 5]\n    A --> C[Perdida por puntos]\n    A --> D[Perdida por psicofisica]\n    A --> E[Sancion firme]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Autorizaciones administrativas", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Autorizaciones en tráfico", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Permisos de conducción", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Permiso de circulación y documentación", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Matriculación", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Nulidad, lesividad y suspensión", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "DGT y Jefaturas Provinciales", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "RD 818/2009 Reglamento de Conductores", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Vigencia 10 años (5 desde los 65)", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Permiso, ITV, seguro", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "4 cifras + 3 letras", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Pérdida total de puntos", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Suspensión cautelar", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n3", "hasta": "n9" },
-            { "desde": "n4", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 32,
+  "titulo": "Las autorizaciones administrativas. Permisos y licencias de conducción. Permisos de circulación y documentación de los vehículos. La matriculación. La declaración de nulidad o lesividad y pérdida de vigencia. Suspensión cautelar.",
+  "bloque": "especifico",
+  "secciones": [
+    {
+      "titulo": "1. Real Decreto Legislativo 6/2015, de 30 de octubre, p",
+      "contenido": "BIBLIOGRAFÍA • Normativas. • Real Decreto Legislativo 6/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial. o Art. 59-73 • Real Decreto 818/2009, de 8 de mayo, por el que se aprueba el Reglamento General de Conductores. o Art. 1-40 • Real Decreto 2822/1998, de 23 de diciembre, por el que se aprueba el Reglamento General de Vehículos. o Art. 1 o Art. 22 bis o Art. 25-30 o Art. 51 ACTUALIZACIONES: Fran M. López 2 \f REAL DECRETO LEGISLATIVO 6/2015, DE 30 DE OCTUBRE, POR EL QUE SE APRUEBA EL TEXTO REFUNDIDO DE LA LEY SOBRE TRÁFICO, CIRCULACIÓN DE VEHÍCULOS A MOTOR Y SEGURIDAD VIAL. TÍTULO IV AUTORIZACIONES ADMINISTRATIVAS CAPÍTULO I AUTORIZACIONES EN GENERAL ARTÍCULO 59. NORMAS GENERALES. 1. Con objeto de garantizar la aptitud de los conductores para manejar los vehículos y la idoneidad de estos para circular con el mínimo de riesgo posible, la circulación de vehículos a motor y de ciclomotores requerirá de la obtención de la correspondiente autorización administrativa previa. Reglamentariamente se fijarán los datos que han de constar en las autorizaciones de los conductores y de los vehículos. La tenencia de la autorización administrativa podrá acreditarse mediante su presentación física o digital. 2. El conductor de un vehículo a motor o ciclomotor queda obligado a estar en posesión y llevar consigo su permiso o licencia válidos para conducir, así como el permiso de circulación del vehículo y la tarjeta de inspección técnica, y deberá exhibirlos ante los agentes de la autoridad encargados de la vigilancia del tráfico en el ejercicio de las funciones que tienen encomendadas que se lo soliciten, en los términos que reglamentariamente se determine. 3. En las autorizaciones administrativas de circulación únicamente constará un titular. ARTÍCULO 60. DOMICILIO Y DIRECCIÓN ELECTRÓNICA VIAL (DEV). 1. El titular de un permiso o licencia de conducción o del permiso de circulación de un vehículo comunicará a los registros del organismo autónomo Jefatura Central de Tráfico su domicilio. Éste se utilizará para efectuar las notificaciones respecto de todas las autorizaciones de que disponga. A estos efectos, los ayuntamientos y la Agencia Estatal de Administración Tributaria podrán comunicar al organismo autónomo Jefatura Central de Tráfico los nuevos domicilios de que tengan constancia. 2. En el historial de cada vehículo podrá hacerse constar, además, un domicilio a los únicos efectos de gestión de los tributos relacionados con el mismo. 3. Sin perjuicio de lo dispuesto en el apartado 1, el organismo autónomo Jefatura Central de Tráfico asignará además a todo titular de un permiso o licencia de conducción o del permiso de circulación de un vehículo, y con carácter previo a su obtención, una Dirección Electrónica Vial (DEV). Esta dirección se asignará automáticamente a todas las autorizaciones de que disponga su titular en los Registros de Vehículos y de Conductores e Infractores del organismo autónomo Jefatura Central de Tráfico. 4. La asignación de la Dirección Electrónica Vial (DEV) se realizará también al arrendatario a largo plazo que conste en el Registro de Vehículos del organismo autónomo Jefatura Central de Tráfico, con carácter previo a su inclusión. 5. No obstante lo dispuesto en los apartados anteriores, si el titular de la autorización es una persona física sólo se le asignará una Dirección Electrónica Vial (DEV) cuando lo solicite voluntariamente."
     },
-    "flashcards": [
-        { "id": "fc32-01", "anverso": "¿Qué órgano expide las autorizaciones de tráfico con carácter general?", "reverso": "La Dirección General de Tráfico (DGT) y sus Jefaturas Provinciales." },
-        { "id": "fc32-02", "anverso": "¿Qué reglamento regula los permisos de conducción?", "reverso": "El Reglamento General de Conductores, RD 818/2009." },
-        { "id": "fc32-03", "anverso": "¿Qué permiso habilita para conducir ciclomotores?", "reverso": "El permiso AM." },
-        { "id": "fc32-04", "anverso": "¿Qué permiso habilita para conducir motocicletas hasta determinadas potencias?", "reverso": "Los permisos A1, A2 y A, según potencia y edad." },
-        { "id": "fc32-05", "anverso": "¿Qué permiso es necesario para turismos hasta 3.500 kg de MMA?", "reverso": "El permiso B." },
-        { "id": "fc32-06", "anverso": "¿Qué permisos habilitan para camiones?", "reverso": "Los permisos C1 y C." },
-        { "id": "fc32-07", "anverso": "¿Qué permisos habilitan para autobuses?", "reverso": "Los permisos D1 y D." },
-        { "id": "fc32-08", "anverso": "¿Cuál es la vigencia del permiso B hasta los 65 años?", "reverso": "10 años." },
-        { "id": "fc32-09", "anverso": "¿Cuál es la vigencia del permiso B a partir de los 65?", "reverso": "5 años." },
-        { "id": "fc32-10", "anverso": "¿Qué documento expide la DGT junto con la matrícula?", "reverso": "El permiso de circulación." },
-        { "id": "fc32-11", "anverso": "¿Qué recoge la tarjeta de la ITV?", "reverso": "Las características técnicas del vehículo." },
-        { "id": "fc32-12", "anverso": "¿Qué documentos debe llevar el conductor durante la circulación?", "reverso": "Permiso o licencia, permiso de circulación, tarjeta de ITV y justificante del seguro." },
-        { "id": "fc32-13", "anverso": "¿Qué es la matriculación?", "reverso": "El acto por el que la DGT asigna matrícula al vehículo y le otorga el permiso de circulación." },
-        { "id": "fc32-14", "anverso": "¿Cómo se compone la matrícula española actual?", "reverso": "Cuatro cifras y tres letras (sistema vigente desde el año 2000)." },
-        { "id": "fc32-15", "anverso": "¿Cambia la matrícula al transmitir el vehículo?", "reverso": "No; la matrícula es permanente, pero hay que notificar el cambio de titular." },
-        { "id": "fc32-16", "anverso": "¿Cuándo procede la declaración de nulidad?", "reverso": "En los supuestos del artículo 47 de la Ley 39/2015 (incompetencia, contenido imposible, etc.)." },
-        { "id": "fc32-17", "anverso": "¿Qué es la declaración de lesividad?", "reverso": "El medio para impugnar ante la jurisdicción contencioso-administrativa actos propios declarativos de derechos lesivos al interés público." },
-        { "id": "fc32-18", "anverso": "Cita causas de pérdida de vigencia del permiso.", "reverso": "Pérdida total de puntos, pérdida de condiciones psicofísicas y sanción firme de privación del derecho a conducir." },
-        { "id": "fc32-19", "anverso": "¿Cuándo puede acordarse la suspensión cautelar?", "reverso": "Durante la tramitación de un expediente sancionador, como medida provisional." },
-        { "id": "fc32-20", "anverso": "¿Qué Comunidades tienen competencias de tráfico transferidas?", "reverso": "Cataluña y País Vasco." }
+    {
+      "titulo": "2. artículo 90",
+      "contenido": "En este caso, todas las notificaciones se practicarán en la Dirección Electrónica Vial conforme se establece en el artículo 90, sin perjuicio de lo previsto en la normativa sobre acceso electrónico de los ciudadanos a los servicios públicos. 3 \f6. En la Dirección Electrónica Vial (DEV) además se practicarán los avisos e incidencias relacionados con las autorizaciones administrativas recogidas en esta ley. CAPÍTULO II AUTORIZACIONES PARA CONDUCIR ARTÍCULO 61. PERMISOS Y LICENCIAS DE CONDUCCIÓN. 1. La conducción de vehículos a motor y ciclomotores exigirá haber obtenido previamente el preceptivo permiso o licencia de conducción dirigido a verificar que el conductor tenga los requisitos de capacidad, conocimientos y habilidad necesarios para la conducción del vehículo, en los términos que se determine reglamentariamente. 2. El permiso y la licencia de conducción podrán tener vigencia limitada en el tiempo, cuyos plazos podrán ser revisados en los términos que reglamentariamente se determine. 3. Su vigencia estará también condicionada a que su titular no haya perdido el crédito de puntos asignado. ARTÍCULO 62. CENTROS DE FORMACIÓN Y RECONOCIMIENTO DE CONDUCTORES. 1. La enseñanza de los conocimientos y técnica necesarios para la conducción, así como el posterior perfeccionamiento y renovación de conocimientos se ejercerán por centros de formación, que podrán constituir secciones o sucursales con la misma titularidad y denominación. Los centros de formación requerirán autorización previa, que tendrá validez en todo el territorio español en el caso de que se establezcan secciones o sucursales. 2. A los fines de garantizar la seguridad vial, se regularán reglamentariamente los elementos personales y materiales mínimos para la formación y el reconocimiento de conductores siguiendo lo establecido en la normativa sobre libre acceso a las actividades de servicios y su ejercicio. En particular, reglamentariamente se regulará el régimen docente y de funcionamiento de los centros de formación. La titulación y acreditación de los profesores y directores se basará en pruebas objetivas, que valorarán los conocimientos, la aptitud pedagógica y la experiencia práctica. Las pruebas se convocarán periódicamente. 3. Se podrá autorizar la enseñanza no profesional en los términos que reglamentariamente se determine. 4. La constatación de las aptitudes psicofísicas de los conductores se ejercerá por centros, que necesitarán autorización previa de la autoridad competente para desarrollar su actividad. Se regulará reglamentariamente el funcionamiento de los centros de reconocimiento de conductores, así como sus medios personales y materiales mínimos. 5. Los cursos de sensibilización y reeducación vial se impartirán por centros que requerirán autorización administrativa previa, de acuerdo con lo que se determine sobre su funcionamiento y sus medios personales y materiales. La determinación de la duración, el contenido y los requisitos personales y materiales de los cursos de sensibilización y reeducación vial, así como de los mecanismos de certificación y control de los mismos, se determinará por orden de la persona titular del Ministerio del Interior. ARTÍCULO 63. ASIGNACIÓN DE PUNTOS. 1. Al titular de un permiso o licencia de conducción se le asignará un crédito inicial de doce puntos. 2. Excepcionalmente se asignará un crédito inicial de ocho puntos en los siguientes casos: a) Titular de un permiso o licencia de conducción con una antigüedad no superior a tres años, salvo que ya fuera titular de otro permiso de conducción con aquella antigüedad."
+    },
+    {
+      "titulo": "3. ARTÍCULO 64",
+      "contenido": "b) Titular de un permiso o licencia de conducción que, tras perder su asignación total de puntos, ha obtenido nuevamente el permiso o la licencia de conducción. 3. El crédito de puntos es único para todas las autorizaciones administrativas de las que sea titular el conductor. 4 \f 4. Quienes mantengan la totalidad de los puntos al no haber sido sancionados en firme en vía administrativa por la comisión de infracciones, recibirán como bonificación dos puntos durante los tres primeros años y un punto por los tres siguientes, pudiendo llegar a acumular hasta un máximo de quince puntos en lugar de los doce iniciales. 5. La superación de cursos de conducción segura y eficiente a los que se hace referencia en el anexo VIII, siempre que se cumplan los requisitos establecidos y se tenga saldo positivo, compensará con dos puntos adicionales hasta un máximo de quince puntos y con una frecuencia máxima de un curso de cada tipo cada dos años. ARTÍCULO 64. PÉRDIDA DE PUNTOS. 1. El número de puntos inicialmente asignado al titular de un permiso o licencia de conducción se verá reducido por cada sanción firme en vía administrativa que se le imponga por la comisión de infracciones graves o muy graves que lleven aparejada la pérdida de puntos, de acuerdo con el baremo establecido en los anexos II y IV. 2. Cuando la Administración notifique la resolución por la que se sancione una infracción que lleve aparejada la pérdida de puntos, indicará expresamente cuál es el número de puntos que se restan y la forma expresa de conocer su saldo de puntos. 3. La pérdida parcial o total, así como la recuperación de los puntos asignados, afectará al permiso o licencia de conducción cualquiera que sea su clase. 4. Los conductores no perderán más de ocho puntos por acumulación de infracciones en un solo día, salvo que concurra alguna de las infracciones muy graves a que se refieren los párrafos a), c), d), e), f), g), h) e i) del artículo 77, en cuyo caso perderán el número total de puntos que correspondan. 5. Cuando un conductor sea sancionado en firme en vía administrativa por la comisión de alguna de las infracciones graves o muy graves que se relacionan en los anexos II y IV, los puntos que corresponda descontar del crédito que posea en su permiso de conducción quedarán descontados de forma automática en el momento en que se proceda a la anotación de la citada infracción en el registro de conductores e infractores del Organismo Autónomo Jefatura Central de Tráfico quedando constancia en dicho registro del crédito total de puntos de que disponga el titular de la autorización. Transcurrido un año desde la firmeza de la sanción sin que la infracción de la que trae causa haya sido anotada, no procederá la detracción de puntos. 6. La antigüedad permanece en los posteriores permisos o licencias de conducción obtenidos a consecuencia de la total extinción de los puntos inicialmente asignados a cada titular. Artículo 65. Recuperación de puntos. 1. Transcurridos dos años sin haber sido sancionados en firme en vía administrativa por la comisión de infracciones que lleven aparejada la pérdida de puntos, el titular de un permiso o licencia de conducción afectado por la pérdida parcial de puntos recuperará la totalidad del crédito inicial de doce puntos. 2."
+    },
+    {
+      "titulo": "4. artículo 63",
+      "contenido": "Los titulares de un permiso o licencia de conducción a los que se hace referencia en los párrafos a) y b) del apartado 2 del artículo 63, transcurrido el plazo de dos años sin haber sido sancionados en firme en vía administrativa por la comisión de infracciones que impliquen la pérdida de puntos, pasarán a disponer de un total de doce puntos. 3. La pérdida de puntos únicamente se producirá cuando el hecho del que se deriva la detracción de puntos se produzca con ocasión de la conducción de un vehículo para el que se exija permiso o licencia de conducción. 4. El titular de un permiso o licencia de conducción que haya perdido una parte del crédito inicial de puntos asignado, podrá optar a su recuperación parcial, hasta un máximo de seis puntos, por una sola vez cada dos años, realizando y superando con aprovechamiento un curso de sensibilización y reeducación vial, con la excepción de los conductores profesionales que podrán realizar el citado curso con frecuencia anual. En todo caso, la duración de los citados cursos será como máximo de quince horas. 5 \f CAPÍTULO III AUTORIZACIONES RELATIVAS A LOS VEHÍCULOS ARTÍCULO 66. PERMISOS DE CIRCULACIÓN. 1. La circulación de vehículos exigirá que estos obtengan previamente el correspondiente permiso de circulación, dirigido a verificar que estén en perfecto estado de funcionamiento y se ajusten en sus características, equipos, repuestos y accesorios a las prescripciones técnicas que se fijen reglamentariamente. En el caso de vehículos dotados de sistema de conducción automatizada, sus características, tanto de grado de automatización como del entorno operacional de uso, se consignarán en el permiso de circulación conforme se desarrolle reglamentariamente. Se prohíbe la circulación de vehículos que no estén dotados del citado permiso. 2. El permiso de circulación debe renovarse cuando varíe la titularidad registral del vehículo, y queda extinguido cuando éste se dé de baja en el correspondiente registro, a instancia de parte o por comprobarse que no es apto para la circulación, en los términos que reglamentariamente se determine. 3. La circulación de un vehículo sin el permiso de circulación, bien por no haberlo obtenido o porque haya sido objeto de declaración de pérdida de vigencia, de nulidad o anulada, da lugar a la inmovilización del mismo hasta que se disponga del mismo, en los términos que reglamentariamente se determine. ARTÍCULO 67. OTRA DOCUMENTACIÓN. 1. Los vehículos, sus equipos y sus repuestos y accesorios deben estar previamente homologados o ser objeto de inspección técnica unitaria antes de ser admitidos a la circulación, en los términos que reglamentariamente se determine. Dichos vehículos han de ser identificables, ostentando grabados o troquelados, de forma legible e indeleble, las marcas y contraseñas que reglamentariamente sean exigibles con objeto de individualizarlos, autentificar su fabricación y especificar su empleo o posterior acoplamiento de elementos importantes. 2. Los vehículos a motor, los ciclomotores y los remolques de masa máxima autorizada superior a la que reglamentariamente se determine, tendrán documentadas sus características técnicas esenciales en la tarjeta de inspección técnica, en la que se harán constar las reformas que se autoricen y la verificación de su estado de servicio y mantenimiento en los términos que reglamentariamente se determine. ARTÍCULO 68. MATRÍCULAS. 1."
+    },
+    {
+      "titulo": "5. CAPÍTULO IV",
+      "contenido": "Para poner en circulación vehículos a motor, así como remolques de masa máxima autorizada superior a la que reglamentariamente se determine, es preciso matricularlos y que lleven las placas de matrícula con los caracteres que se les asigne del modo que se establezca. Esta obligación será exigida a los ciclomotores en los términos que reglamentariamente se determine. 2. Deben ser objeto de matriculación definitiva en España los vehículos a los que se refiere el apartado anterior, cuando se destinen a ser utilizados en el territorio español por personas o entidades que sean residentes en España o que sean titulares de establecimientos situados en España. Reglamentariamente se establecerán los plazos, requisitos y condiciones para el cumplimiento de esta obligación y las posibles exenciones a la misma. 3. La matriculación ordinaria será única para cada vehículo, salvo en los supuestos que se determinen reglamentariamente. Cuando concurran circunstancias que puedan afectar a la Seguridad Nacional, el Secretario de Estado de Seguridad podrá autorizar una nueva matrícula distinta de la inicialmente asignada. Este tipo de matrículas no serán públicas en el Registro General de Vehículos e, incluso en circunstancias excepcionales, podrá utilizarse una titularidad supuesta en el marco de la actuación de las Fuerzas y Cuerpos de Seguridad y del Centro Nacional de Inteligencia en el tráfico jurídico. 6 \f 4. En casos justificados, la autoridad competente para expedir el permiso de circulación podrá conceder permisos de circulación temporales y provisionales en los términos que se determine reglamentariamente. CAPÍTULO IV NULIDAD, LESIVIDAD Y PÉRDIDA DE VIGENCIA DE LA AUTORIZACIÓN. OBTENCIÓN DE UN NUEVO PERMISO O LICENCIA DE CONDUCCIÓN ARTÍCULO 69. NULIDAD Y LESIVIDAD. Las autorizaciones administrativas reguladas en este título podrán ser objeto de declaración de nulidad o lesividad cuando concurra alguno de los supuestos previstos y de acuerdo con el procedimiento regulado en la normativa sobre procedimiento administrativo común. ARTÍCULO 70. PÉRDIDA DE VIGENCIA POR DESAPARICIÓN DE LOS REQUISITOS PARA SU OTORGAMIENTO. 1. Con independencia de lo dispuesto en el artículo anterior, la vigencia de las autorizaciones administrativas reguladas en este título estará subordinada a que se mantengan los requisitos exigidos para su otorgamiento. 2. El organismo autónomo Jefatura Central de Tráfico podrá declarar la pérdida de vigencia de las autorizaciones reguladas en este título cuando se acredite la desaparición de los requisitos sobre conocimientos, habilidades o aptitudes psicofísicas exigidas para su autorización. Para acordar la pérdida de vigencia, la Administración deberá notificar la presunta carencia del requisito exigido al interesado, a quien se concederá la facultad de acreditar su existencia en los términos que reglamentariamente se determine. 3. El titular de una autorización cuya pérdida de vigencia haya sido declarada de acuerdo con lo dispuesto en el apartado anterior podrá obtenerla de nuevo siguiendo el procedimiento, superando las pruebas y acreditando los requisitos que reglamentariamente se determinen. ARTÍCULO 71. PÉRDIDA DE VIGENCIA POR PÉRDIDA DEL CRÉDITO DE PUNTOS Y OBTENCIÓN DE UN NUEVO PERMISO O LICENCIA DE CONDUCCIÓN. 1. El organismo autónomo Jefatura Central de Tráfico declarará la pérdida de vigencia del permiso o licencia de conducción cuando su titular haya perdido la totalidad de los puntos asignados, como consecuencia de la aplicación del baremo recogido en los anexos II y IV."
+    },
+    {
+      "titulo": "6. ARTÍCULO 72",
+      "contenido": "Una vez constatada la pérdida total de los puntos que tuviera asignados, la Administración, en el plazo de quince días, notificará al interesado el acuerdo por el que se declara la pérdida de vigencia de su permiso o licencia de conducción. En este caso, su titular no podrá obtener un nuevo permiso o una nueva licencia de conducción hasta transcurridos seis meses desde la notificación del acuerdo. Este plazo se reducirá a tres meses en el caso de conductores profesionales. Si durante los tres años siguientes a la obtención del nuevo permiso o licencia de conducción fuera acordada su pérdida de vigencia por haber perdido nuevamente la totalidad de los puntos asignados, no se podrá obtener un nuevo permiso o licencia de conducción hasta transcurridos doce meses desde la notificación del acuerdo. Este plazo se reducirá a seis meses en el caso de conductores profesionales. 2. El titular de un permiso o licencia de conducción cuya pérdida de vigencia haya sido declarada como consecuencia de la pérdida total de los puntos asignados podrá obtener nuevamente un permiso o licencia de conducción de la misma clase de la que era titular, transcurridos los plazos señalados en el apartado anterior, previa realización y superación con aprovechamiento de un curso de sensibilización y reeducación vial y posterior superación de las pruebas que reglamentariamente se determinen. 3. Los cursos de sensibilización y reeducación vial tendrán la duración, el contenido y los requisitos que se determinen por el Ministro del Interior. La duración de los cursos de sensibilización y reeducación vial será como máximo de 30 horas, cuando se pretenda obtener un nuevo permiso o licencia de conducción. 7 \f ARTÍCULO 72. SUSPENSIÓN CAUTELAR. En el curso de los procedimientos de declaración de nulidad, lesividad o pérdida de vigencia de las autorizaciones administrativas se acordará la suspensión cautelar de la autorización en cuestión cuando su mantenimiento entrañe un grave peligro para la seguridad del tráfico, en cuyo caso la autoridad que conozca del procedimiento ordenará, mediante resolución motivada, la intervención inmediata de la autorización y la práctica de cuantas medidas sean necesarias para impedir el efectivo ejercicio de la misma. ARTÍCULO 73. OBTENCIÓN DE UN NUEVO PERMISO O LICENCIA DE CONDUCCIÓN POSTERIOR A LA SENTENCIA PENAL DE PRIVACIÓN DEL DERECHO A CONDUCIR VEHÍCULOS A MOTOR. 1. El titular de un permiso o licencia de conducción que haya perdido su vigencia de acuerdo con lo previsto en el artículo 47 del Código Penal, al haber sido condenado por sentencia firme a la pena de privación del derecho a conducir vehículos a motor y ciclomotores por tiempo superior a dos años, podrá obtener, una vez cumplida la condena, un permiso o licencia de conducción de la misma clase y con la misma antigüedad, de acuerdo con el procedimiento establecido en el artículo 71.2 para la pérdida de vigencia de la autorización por la pérdida total de los puntos asignados. El permiso que se obtenga dispondrá de un saldo de 8 puntos. 2. Si la condena es igual o inferior a dos años, para volver a conducir únicamente deberá acreditar haber superado con aprovechamiento el curso de reeducación y sensibilización vial al que hace referencia el primer párrafo del artículo 71.2. 8 \f REAL DECRETO 818/2009, DE 8 DE MAYO, POR EL QUE SE APRUEBA EL REGLAMENTO GENERAL DE CONDUCTORES. TÍTULO I DE LAS AUTORIZACIONES ADMINISTRATIVAS PARA CONDUCIR CAPÍTULO I DEL PERMISO Y DE LA LICENCIA DE CONDUCCIÓN ARTÍCULO 1. EL PERMISO Y LA LICENCIA DE CONDUCCIÓN. 1."
+    },
+    {
+      "titulo": "7. artículo 2",
+      "contenido": "La conducción de vehículos de motor y ciclomotores por las vías y terrenos a que se refiere el artículo 2 del texto articulado de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial, aprobado por Real Decreto Legislativo 339/1990, de 2 de marzo, exigirá haber obtenido previamente el permiso o la licencia de conducción, sin perjuicio de las habilitaciones complementarias que, además, en su caso, sean necesarias. 2. Los permisos y licencias de conducción son de otorgamiento y contenido reglados y su concesión quedará condicionada a la verificación de que los conductores reúnen los requisitos de aptitud psicofísica y los conocimientos, habilidades, aptitudes y comportamientos exigidos para su obtención que se determinan en este reglamento. 3. Cuando sea necesario, los permisos y licencias de conducción se podrán sustituir provisionalmente por autorizaciones temporales, las cuales surtirán idénticos efectos a los del permiso o licencia de conducción al que sustituyan. 4. Ninguna persona podrá ser titular de más de un permiso o de una licencia de conducción expedido por un Estado miembro de la Unión Europea o por un Estado parte del Acuerdo sobre el Espacio Económico Europeo. En el supuesto de que alguna persona esté en posesión de más de un permiso de conducción, le será retirado el que proceda en función de las circunstancias concurrentes, para su anulación, si está expedido en España, o para su remisión a las autoridades del Estado que lo hubiera expedido. ARTÍCULO 2. COMPETENCIA PARA EXPEDIR LOS PERMISOS Y LAS LICENCIAS DE CONDUCCIÓN. Los permisos y licencias de conducción, así como las autorizaciones administrativas que provisionalmente los sustituyan, serán expedidos por las Jefaturas Provinciales de Tráfico, con excepción de los que autorizan a conducir vehículos de las Fuerzas Armadas o de la Dirección General de Policía y de la Guardia Civil. Asimismo, será expedido por las Jefaturas Provinciales de Tráfico el permiso internacional para conducir regulado en la sección 2.ª del capítulo III del título I. ARTÍCULO 3. DEBERES DE LOS TITULARES DE UN PERMISO O DE UNA LICENCIA DE CONDUCCIÓN. 1. El titular de un permiso o de una licencia de conducción, así como de cualquier otra autorización o documento que habilite para conducir, deberá hacerlo con sujeción a las menciones, adaptaciones, restricciones y otras limitaciones respecto de las personas, vehículos o de circulación que, en su caso, figuren en el permiso o licencia de conducción, de forma codificada según se determina en el anexo I. 2. El conductor de un vehículo queda obligado a estar en posesión y llevar consigo su permiso o licencia de conducción, así como cualquier otro documento o autorización que, de acuerdo con la normativa vigente, necesite para poder conducir. Estos documentos deberán ser válidos, estar vigentes y se deberán exhibir ante los agentes de la autoridad que lo soliciten. 9 \f ARTÍCULO 4. CLASES DE PERMISO DE CONDUCCIÓN Y EDAD REQUERIDA PARA OBTENERLO. 1. Todas las clases de permiso de conducción de las que sea titular una persona deberán constar en un único documento con expresión de las categorías de vehículos cuya conducción autorizan. 2. El permiso de conducción será de las siguientes clases: Edad: años cumplidos Vehículos que autoriza a conducir Clase de permiso 1. Ciclomotores de dos o tres ruedas y cuatriciclos ligeros. Podrá estar limitado a la conducción de ciclomotores de tres ruedas y cuatriciclos ligeros. 2. Vehículos para personas de movilidad reducida. 1."
+    },
+    {
+      "titulo": "8. artículo 5",
+      "contenido": "Motocicletas con una cilindrada máxima de 125 cm3, una potencia máxima de 11 kW y una relación potencia/peso máxima de 0,1 kW/kg y triciclos de motor cuya potencia máxima no exceda de 15 kW. 2. Vehículos para personas de movilidad reducida. Motocicletas con una potencia máxima de 35 kW y una relación potencia/peso máxima de 0,2 kW/kg y no derivadas de un vehículo con más del doble de su potencia. 15 16 18 Motocicletas y triciclos de motor. 20 AM A1 A2 A Excepciones Hasta los 21 años cumplidos no autorizará a conducir triciclos de motor cuya potencia máxima exceda de 15 kW. 10 \f al transporte impulsados exclusivamente Hasta los 21 años cumplidos no autorizará a conducir triciclos de motor cuya potencia máxima exceda de 15 kW. Se podrán conducir dentro del territorio nacional con el permiso de la clase B, con una antigüedad superior a dos años, automóviles sin por remolque alternativos combustibles destinados de mercancías con una masa máxima autorizada superior a 3.500 kg pero que no exceda los 4.250 kg, siempre que la masa que supere los 3.500 kg provenga del exceso de masa del sistema de propulsión respecto al sistema de propulsión de un vehículo de las mismas dimensiones que esté motor equipado convencional combustión de interna con encendido por chispa o por compresión, y siempre que no se incremente la capacidad de carga respecto al mismo vehículo (1). Se podrán conducir dentro del territorio nacional con el permiso de la clase B, con una antigüedad años, tres superior las a motocicletas conducción cuya autoriza el permiso de la clase A1. En el caso de que el permiso de la clase B se encuentre sometido a adaptaciones, restricciones u otras limitaciones en personas, vehículos o de circulación, se estará a lo dispuesto en el artículo 5.7, segundo párrafo. con un del 1. Automóviles cuya masa máxima autorizada no exceda de 3.500 kg que estén diseñados y construidos para el transporte de no más de ocho pasajeros además conductor. Dichos automóviles podrán llevar enganchado un remolque cuya masa máxima autorizada no exceda de 750 kg. 2. Conjuntos de vehículos acoplados compuestos por un vehículo tractor de los que autoriza a conducir el permiso de la clase B y un remolque cuya masa máxima autorizada exceda de 750 kg, siempre que la masa máxima autorizada del conjunto no exceda de 4.250 kg, sin perjuicio de las disposiciones que las normas tipo de establezcan para estos vehículos. 3. Triciclos y cuatriciclos de motor. 4. Ciclomotores. 5. Vehículos para personas de movilidad reducida. aprobación de clase B y un Conjuntos de vehículos acoplados compuestos por un vehículo tractor de los que autoriza a conducir el permiso de la remolque o semirremolque cuya masa máxima autorizada no exceda de 3.500 kg, sin perjuicio de las disposiciones que las normas tipo de establezcan para estos vehículos. aprobación de 18 18 B B + E 11 \fC1 los que Automóviles distintos de autoriza a conducir el permiso de las clases D1 o D, cuya masa máxima autorizada exceda de 3.500 kg y no sobrepase los 7.500 kg, diseñados y construidos para el transporte de no más de ocho pasajeros además del conductor. Dichos llevar automóviles podrán enganchado un remolque cuya masa máxima autorizada no exceda de 750 kg. sin perjuicio de 1."
+    },
+    {
+      "titulo": "9. Conjuntos de vehículos acoplados compuestos por un vehículo tractor de…",
+      "contenido": "Conjuntos de vehículos acoplados compuestos por un vehículo tractor de los que autoriza a conducir el permiso de la clase C1 y un remolque o semirremolque cuya masa máxima autorizada exceda de 750 kg, siempre que la masa máxima autorizada del conjunto así formado no exceda de 12.000 kg, las las normas de disposiciones que aprobación de tipo establezcan para estos vehículos. 2. Conjuntos de vehículos acoplados compuestos por un vehículo tractor de los que autoriza a conducir el permiso de la remolque o semirremolque cuya masa máxima autorizada exceda de 3.500 kg, siempre que la masa máxima autorizada del conjunto no exceda de 12.000 kg, sin perjuicio de las disposiciones que las tipo de normas establezcan para estos vehículos. clase B y un aprobación de Automóviles distintos de los que autoriza a conducir el permiso de las clases D1 o D, cuya masa máxima autorizada exceda de 3.500 kg que estén diseñados y el transporte de no más de ocho pasajeros conductor. Dichos además automóviles podrán llevar enganchado un remolque cuya masa máxima autorizada no exceda de 750 kg. construidos para del clase C y un Conjuntos de vehículos acoplados compuestos por un vehículo tractor de los que autoriza a conducir el permiso de remolque o la semirremolque cuya masa máxima autorizada exceda de 750 kg, sin perjuicio de las disposiciones que las tipo de normas establezcan para estos vehículos. aprobación de C1 + E C C + E 18 18 21 La edad mínima será de 18 años cumplidos para los titulares del certificado de aptitud profesional lo hayan obtenido (CAP) que de la modalidad realizando cualificación inicial ordinaria. 21 La edad mínima será de 18 años cumplidos para los titulares del certificado de aptitud profesional lo hayan obtenido (CAP) que realizando de la modalidad cualificación inicial ordinaria. 12 \fD1 D1 + E Automóviles diseñados y construidos para el transporte de no más de dieciséis pasajeros además del conductor y cuya longitud máxima no exceda de ocho metros. Dichos automóviles podrán llevar enganchado un remolque cuya masa máxima autorizada no exceda de 750 kg. Conjuntos de vehículos acoplados compuestos por un vehículo tractor de los que autoriza a conducir el permiso de la clase D1 y un remolque cuya masa máxima autorizada exceda de 750 kg, sin perjuicio de las disposiciones que las normas tipo de establezcan para estos vehículos. aprobación de 21 21 La edad mínima será 18 años cumplidos para los titulares del certificado de aptitud profesional lo hayan obtenido (CAP) que de la modalidad realizando cualificación inicial ordinaria, si bien sólo podrán conducir estos vehículos dentro del territorio nacional hasta que el titular del permiso tenga 21 años cumplidos. La edad mínima será 18 años cumplidos para los titulares del certificado de aptitud profesional lo hayan obtenido (CAP) que realizando de la modalidad cualificación inicial ordinaria, si bien solo podrán conducir estos vehículos dentro del territorio nacional hasta que el titular del permiso tenga 21 años cumplidos. 13 \f D Automóviles diseñados y construidos para el transporte de más de ocho pasajeros además del conductor. Dichos llevar automóviles podrán enganchado un remolque cuya masa máxima autorizada no exceda de 750 kg. 24 la modalidad La edad mínima será de 21 años cumplidos para los titulares del certificado de aptitud profesional lo hayan obtenido (CAP) que de la modalidad realizando cualificación inicial ordinaria."
+    },
+    {
+      "titulo": "10. Real Decreto 2822/1998, de 23 de diciembre",
+      "contenido": "La edad mínima será de 21 años cumplidos si lo han obtenido de realizando cualificación inicial acelerada y se trata de transporte de viajeros en servicios regulares cuyo trayecto no supere los 50 km. La edad mínima será de 23 años lo han obtenido cumplidos si realizando de la modalidad cualificación inicial acelerada. Dentro del territorio nacional y hasta que el titular del permiso tenga 21 años cumplidos, se podrá conducir a las siguientes edades: a) 18 años cumplidos en caso de que se conduzcan estos vehículos sin pasajeros o si se trata de transporte de viajeros en servicios regulares cuyo trayecto no supere los 50 km, para los titulares del certificado de aptitud profesional (CAP) que lo la hayan obtenido modalidad de cualificación inicial ordinaria. b) 20 años cumplidos para los titulares del certificado de aptitud profesional (CAP) que lo hayan obtenido realizando la modalidad de cualificación inicial ordinaria. realizando 14 \fD + E Conjuntos de vehículos acoplados compuestos por un vehículo tractor de los que autoriza a conducir el permiso de la clase D y un remolque cuya masa máxima autorizada exceda de 750 kg, sin perjuicio de las disposiciones que las tipo de normas establezcan para estos vehículos. aprobación de 24 la modalidad La edad mínima será de 21 años cumplidos para los titulares del certificado de aptitud profesional lo hayan obtenido (CAP) que de la modalidad realizando cualificación inicial ordinaria. La edad mínima será de 21 años cumplidos si lo han obtenido de realizando cualificación inicial acelerada y se trata de transporte de viajeros en servicios regulares cuyo trayecto no supere los 50 km. La edad mínima será de 23 años lo han obtenido cumplidos si realizando de la modalidad cualificación inicial acelerada. Dentro del territorio nacional y hasta que el titular del permiso tenga 21 años cumplidos, se podrá conducir a las siguientes edades: a) 18 años cumplidos en caso de que se conduzcan estos vehículos sin pasajeros o si se trata de transporte de viajeros en servicios regulares cuyo trayecto no supere los 50 km, para los titulares del certificado de aptitud profesional (CAP) que lo la hayan obtenido modalidad de cualificación inicial ordinaria. b) 20 años cumplidos para los titulares del certificado de aptitud profesional (CAP) que lo hayan obtenido realizando la modalidad de cualificación inicial ordinaria». realizando (1) Se consideran combustibles alternativos, los definidos como tales en el anexo IX, sobre «Masas y dimensiones», del Reglamento General de Vehículos, aprobado por Real Decreto 2822/1998, de 23 de diciembre. 3. Para la conducción profesional de los vehículos que autoriza a conducir el permiso de las clases C1, C1+E, C, C +E, D1, D1 +E, D o D+E, deberán cumplirse, además de los requisitos exigidos en este artículo, los establecidos en el Real Decreto 1032/2007, de 20 de julio, por el que se regula la cualificación inicial y la formación continua de los conductores de determinados vehículos destinados al transporte por carretera. 15 \f ARTÍCULO 5. CONDICIONES DE EXPEDICIÓN DE LOS PERMISOS DE CONDUCCIÓN. 1. La expedición de los permisos de conducción que a continuación se indican estará supeditada a las condiciones siguientes: a) El permiso de la clase A sólo podrá expedirse a conductores que ya sean titulares de un permiso en vigor de la clase A2 con, al menos, dos años de antigüedad. b) El permiso de las clases C1, C, D1 y D sólo podrá expedirse a conductores que ya sean titulares de un permiso en vigor de la clase B."
+    },
+    {
+      "titulo": "11. artículo 49",
+      "contenido": "c) El permiso de las clases B + E, C1 + E, C + E, D1 + E y D + E sólo podrá expedirse a conductores que ya sean titulares de un permiso en vigor de las clases B, C1, C, D1 o D, respectivamente. 2. La obtención de los permisos de conducción que a continuación se indican implicará la concesión de los siguientes: a) La del permiso de la clase A1 implica la concesión del de la clase AM. b) La del permiso de la clase A2 implica la concesión del de la clase A1. c) La del permiso de las clases C y D implica la concesión del de las clases C1 y D1, respectivamente. d) La del permiso de las clases C1 + E, C + E, D1 + E o D + E implica la concesión del de la clase B + E. e) La del permiso de la clase C + E implica la concesión del de la clase C1 + E. f) La del permiso de la clase C + E implica la concesión del de la clase D + E cuando su titular posea el de la clase D. g) (Suprimida) h) La del permiso de la clase D+E implica la concesión del de la clase D1+E. 3. Para obtener el permiso de la clase A2, el aspirante deberá superar las pruebas de control de conocimientos y de control de aptitudes y comportamientos que se indican en los artículos 47 a 49. Esta autorización podrá también obtenerse si el aspirante es titular de permiso de conducción de la clase A1 con una experiencia mínima de dos años en la conducción de las motocicletas que autoriza a conducir dicho permiso, y supera la prueba de control de aptitudes y comportamientos que se indica en el artículo 49.2. Esta prueba podrá sustituirse por la superación de una formación en los términos que se establezcan mediante Orden del Ministro del Interior. 4. Para obtener el permiso de la clase A, el aspirante, además de ser titular de un permiso de conducción de la clase A2 con una experiencia mínima de dos años en la conducción de las motocicletas que autoriza a conducir dicho permiso, deberá superar una formación en los términos que se establezcan mediante Orden del Ministro del Interior. 5. Para conducir un conjunto formado por un vehículo tractor de la categoría B y un remolque cuya masa máxima autorizada sea superior a 750 kg, en el caso de que el conjunto así formado exceda de 3.500 kg, será necesario superar la prueba de control de aptitudes y comportamientos que se indica en los artículos 48.2 y 49.2. Esta prueba podrá sustituirse por la superación de una formación en los términos que se establezcan mediante Orden del Ministro del Interior. 6. (Suprimido) 7. El permiso de las clases B, B+E, C1, C1+E, C, C+E, D1, D1+E, D y D+E no autoriza a conducir motocicletas con o sin sidecar. En el supuesto de que el permiso de la clase B en vigor, con una antigüedad superior a tres años, esté sometido a adaptaciones, restricciones u otras limitaciones en personas, vehículos o de circulación, para poder conducir dentro del territorio nacional las motocicletas cuya conducción autoriza el permiso de la clase A1, deberán hacerse constar previamente por la Jefatura Provincial de Tráfico en el permiso las adaptaciones o restricciones que correspondan. 8. Para conducir vehículos especiales no agrícolas o sus conjuntos cuya velocidad máxima autorizada no exceda de 40 km/h, y su masa máxima autorizada no exceda de 3.500 kg, se requerirá permiso de la clase B. Si excede de cualquiera de estos límites, se requerirá el permiso de conducción que corresponda a su masa máxima autorizada."
+    },
+    {
+      "titulo": "12. artículo 6",
+      "contenido": "16 \f Para conducir vehículos especiales no agrícolas o sus conjuntos que transporten personas se requerirá permiso de la clase B cuando el número de personas transportadas, incluido el conductor, no exceda de nueve, de la clase D1 cuando exceda de nueve y no exceda de diecisiete y de la clase D cuando exceda de diecisiete. 9. Los vehículos especiales agrícolas autopropulsados o sus conjuntos cuya masa o dimensiones máximas autorizadas no excedan de los límites establecidos en la reglamentación de vehículos para los vehículos ordinarios, se podrán conducir con el permiso de la clase B, o con la licencia de conducción a que se refiere el artículo 6.1.b). Para conducir vehículos especiales agrícolas autopropulsados o sus conjuntos, que tengan una masa o dimensiones máximas autorizadas superiores a las indicadas en el párrafo anterior o cuya velocidad máxima por construcción exceda de 45 km/h, se requerirá permiso de la clase B en todo caso. 10. (Suprimido) 11. (Suprimido) 12. Para conducir trolebuses se requerirá el permiso exigido para la conducción de autobuses. ARTÍCULO 6. CLASES DE LICENCIA DE CONDUCCIÓN Y EDAD REQUERIDA PARA OBTENERLA. 1. La licencia de conducción, teniendo en cuenta los vehículos cuya conducción autoriza, será de las siguientes clases: a) Para conducir vehículos para personas de movilidad reducida. La edad mínima para obtenerla será de catorce años cumplidos. No obstante, hasta los dieciséis años cumplidos no autorizará a transportar pasajeros en el vehículo. No se exigirá esta licencia a quien sea titular de un permiso de conducción de las clases A1 o B en vigor y en el caso de que su titular obtenga un permiso de alguna de estas clases, la licencia de conducción dejará de ser válida. b) Para conducir vehículos especiales agrícolas autopropulsados y sus conjuntos cuya masa o dimensiones máximas autorizadas no excedan de los límites establecidos para los vehículos ordinarios o cuya velocidad máxima por construcción no exceda de 45 km/h. La edad mínima para obtenerla será de dieciséis años cumplidos. No se exigirá esta licencia a quien sea titular de un permiso de conducción de la clase B en vigor y en el caso de que su titular obtenga un permiso de esta clase, la licencia de conducción dejará de ser válida. 2. Si una persona fuera titular de más de una clase de licencia de conducción, todas ellas deberán constar en un único documento. ARTÍCULO 7. REQUISITOS PARA OBTENER UN PERMISO O UNA LICENCIA DE CONDUCCIÓN. 1. Para obtener un permiso o una licencia de conducción se requerirá: a) En el caso de extranjeros, acreditar la situación de residencia normal o estancia por estudios en España de, al menos, seis meses y haber cumplido la edad requerida. b) No estar privado por resolución judicial del derecho a conducir vehículos de motor y ciclomotores, ni hallarse sometido a suspensión o intervención administrativa del permiso o licencia de conducción que se posea. c) Que haya transcurrido el plazo legalmente establecido, una vez declarada la pérdida de vigencia del permiso o licencia de conducción del que fuera titular como consecuencia de la pérdida total de los puntos asignados. d) Reunir las aptitudes psicofísicas requeridas en relación con la clase del permiso o licencia de conducción que se solicite. e) Ser declarado apto por la Jefatura Provincial de Tráfico en las pruebas teóricas y prácticas que, en relación con cada clase de permiso o licencia de conducción, se determinan en el título II."
+    },
+    {
+      "titulo": "13. ARTÍCULO 8",
+      "contenido": "f) No ser titular de un permiso de conducción expedido en otro Estado miembro de la Unión Europea o en otro Estado parte del Acuerdo sobre el Espacio Económico Europeo, ni haber sido restringido, suspendido o anulado en otro Estado miembro el permiso de conducción que poseyese. 2. Los que padezcan enfermedad o deficiencia orgánica o funcional que les incapacite para obtener permiso o licencia de conducción de carácter ordinario podrán obtener un permiso o 17 \f licencia de conducción extraordinarios sujetos a las condiciones restrictivas que en cada caso procedan. ARTÍCULO 8. SOLICITUD DEL PERMISO O DE LA LICENCIA DE CONDUCCIÓN. DOCUMENTACIÓN A PRESENTAR. 1. La expedición del permiso o la licencia de conducción, se solicitará de la Jefatura Provincial de Tráfico en la que se desee obtener, en el modelo oficial suscrito por el interesado, acompañando los documentos que se indican en el anexo III. 2. Si el solicitante es titular de un permiso o de una licencia de conducción, ya sea expedido en España, en otro Estado miembro de la Unión Europea o en un Estado parte del Acuerdo sobre el Espacio Económico Europeo, éste perderá su validez cuando su titular obtenga el permiso solicitado. Dicho documento deberá ser entregado en la Jefatura Provincial de Tráfico con carácter previo a la emisión del permiso y será, en su caso, remitido al Estado que lo hubiera expedido. ARTÍCULO 9. MODELO DEL PERMISO Y DE LA LICENCIA DE CONDUCCIÓN. El permiso y la licencia de conducción se expedirán conforme a los modelos que se recogen en los anexos I y II, respectivamente, y contendrán los datos que en los mismos se indican. ARTÍCULO 10. VARIACIÓN DE DATOS. Cualquier variación de los datos que figuran en el permiso o licencia de conducción, así como la del domicilio de su titular, deberá ser comunicada por éste dentro del plazo de quince días, contados desde la fecha en que se produzca, a la Jefatura Provincial de Tráfico. ARTÍCULO 11. DUPLICADOS. 1. Las Jefaturas Provinciales de Tráfico, previa solicitud de los interesados en el modelo oficial suscrito por el interesado, podrán expedir duplicados del permiso o la licencia de conducción en caso de sustracción, extravío o deterioro del original. También deberán expedir duplicados cuando los titulares comuniquen haber variado los datos a que se refiere el artículo anterior. 2. A la solicitud de duplicado se acompañarán los documentos que se indican en el anexo III. 3. El titular de un permiso o licencia de conducción al que se le hubiera expedido duplicado por sustracción o extravío deberá devolver el original de éste, cuando lo encuentre, a la Jefatura Provincial de Tráfico que lo hubiere expedido. 4. La posesión del permiso o licencia original y de un duplicado de éstos dará lugar a la recogida inmediata del original para su remisión a la Jefatura Provincial de Tráfico que, de resultar falsa la causa alegada para obtener el duplicado, dará cuenta del hecho a la autoridad judicial por si pudiera ser determinante de responsabilidad penal. ARTÍCULO 12. VIGENCIA DEL PERMISO Y DE LA LICENCIA DE CONDUCCIÓN. 1. El permiso de conducción de las clases C1, C1 + E, C, C + E, D1, D1 + E, D y D + E tendrá un período de vigencia de cinco años mientras su titular no cumpla los sesenta y cinco años y de tres años a partir de esa edad. 2. El permiso de las clases restantes y la licencia de conducción, cualquiera que sea su clase, tendrán un período de vigencia de diez años mientras su titular no cumpla los sesenta y cinco años y de cinco años a partir de esa edad. 3."
+    },
+    {
+      "titulo": "14. ARTÍCULO 13",
+      "contenido": "El período de vigencia de las diversas clases de permiso y licencia de conducción señalado en los apartados anteriores podrá reducirse si, al tiempo de su concesión o de la prórroga de su vigencia, se comprueba que su titular padece enfermedad o deficiencia que, si bien de momento no impide aquélla, es susceptible de agravarse. 4. El permiso o licencia de conducción cuya vigencia hubiese vencido no autoriza a su titular a conducir y su utilización dará lugar a su intervención inmediata por la autoridad o sus agentes, que lo remitirán a la Jefatura Provincial de Tráfico correspondiente. 5. La vigencia del permiso y de la licencia de conducción, además, estará condicionada a que su titular no haya perdido totalmente la asignación inicial de puntos. 18 \f 6. Asimismo, con independencia de lo dispuesto en los apartados anteriores, la vigencia de los permisos y las licencias de conducción estará subordinada a que su titular mantenga los requisitos exigidos para su otorgamiento. ARTÍCULO 13. SOLICITUD DE PRÓRROGA DE LA VIGENCIA. 1. La vigencia de los permisos y licencias de conducción podrá ser prorrogada, por los períodos respectivamente señalados en el artículo anterior, por las Jefaturas Provinciales de Tráfico, previa solicitud de los interesados, en el modelo oficial establecido, y una vez hayan acreditado que conservan las aptitudes psicofísicas exigidas para obtener el permiso o licencia de que se trate. La prórroga de vigencia de un permiso de conducción de las clases correspondientes al grupo 2, según la clasificación establecida en el artículo 45, implicará la de las autorizaciones del grupo 1 de las que sea titular el interesado, por los plazos que a éstas correspondan. La solicitud de prórroga de vigencia del permiso o licencia podrá presentarse con una antelación máxima de tres meses a su fecha de caducidad, computándose desde esta última fecha el nuevo período de vigencia de la autorización. En supuestos excepcionales debidamente justificados, se podrá solicitar con una antelación mayor, computándose el nuevo período de vigencia en estos casos desde la fecha en que se haya presentado la solicitud. 2. A la solicitud de modelo oficial, que deberá estar suscrita por el interesado, se acompañarán los documentos que se indican en el anexo III. 3. El titular de un permiso o licencia de conducción caducados podrá solicitar su prórroga acompañando los documentos a que se refiere el apartado anterior. 4. Los titulares de un permiso o licencia de conducción expedidos en España que en la fecha de vencimiento de su vigencia se encuentren en el extranjero, bien en otro Estado miembro de la Unión Europea o en un Estado parte del Acuerdo sobre el Espacio Económico Europeo en los que no hayan adquirido la residencia normal, o bien en un país tercero, podrán solicitar la prórroga de su vigencia de cualquier Jefatura Provincial de Tráfico, en la forma y con los requisitos que se indican en el anexo III. ARTÍCULO 14. ACTUACIÓN DE LA JEFATURA PROVINCIAL DE TRÁFICO. 1. Serán competentes para la resolución de este procedimiento las Jefaturas Provinciales de Tráfico. 2."
+    },
+    {
+      "titulo": "15. artículo 37",
+      "contenido": "En todo caso, la privación por resolución judicial del derecho a conducir vehículos de motor y ciclomotores, la declaración de pérdida de vigencia a que se refiere el artículo 37, la intervención, medida cautelar o suspensión del permiso o licencia que se posea, tanto se hayan acordado en vía judicial o administrativa, serán causa para denegar el trámite solicitado, que no procederá hasta que se haya cumplido la pena o sanción, levantado la intervención o medida cautelar, o hayan transcurrido los plazos o acreditado los requisitos legalmente establecidos, según el trámite de que se trate. CAPÍTULO II DE LOS PERMISOS DE CONDUCCIÓN EXPEDIDOS EN OTROS PAÍSES SECCIÓN 1.ª DE LOS PERMISOS EXPEDIDOS EN ESTADOS MIEMBROS DE LA UNIÓN EUROPEA O EN ESTADOS PARTE DEL ACUERDO SOBRE EL ESPACIO ECONÓMICO EUROPEO ARTÍCULO 15. VALIDEZ DEL PERMISO DE CONDUCCIÓN EN ESPAÑA. 1. Los permisos de conducción expedidos en cualquier Estado miembro de la Unión Europea o en Estados Parte del Acuerdo sobre el Espacio Económico Europeo con arreglo a la normativa comunitaria mantendrán su validez en España, en las condiciones en que hubieran sido expedidos en su lugar de origen, con la salvedad de que la edad requerida para la conducción corresponderá a la exigida para obtener el permiso español equivalente. 19 \f 2. No obstante, no serán válidos para conducir en España los permisos de conducción expedidos por alguno de dichos Estados que estén restringidos, suspendidos o retirados en cualquiera de ellos o en España. 3. Tampoco serán válidos los permisos de conducción expedidos en cualquiera de esos Estados a quien hubiera sido titular de otro permiso de conducción expedido en alguno de ellos que haya sido retirado, suspendido o declarada su nulidad, lesividad o pérdida de vigencia en España. 4. El titular de un permiso de conducción expedido en uno de estos Estados que haya adquirido su residencia normal en España quedará sometido a las disposiciones españolas relativas a su período de vigencia, de control de sus aptitudes psicofísicas y de asignación de un crédito de puntos. Cuando se trate de un permiso de conducción no sujeto a un período de vigencia determinado, su titular deberá proceder a su renovación, una vez transcurridos dos años desde que establezca su residencia normal en España, a los efectos de aplicarle los plazos de vigencia previstos en el artículo 12. ARTÍCULO 16. INSCRIPCIÓN DE LOS PERMISOS DE CONDUCCIÓN EN EL REGISTRO DE CONDUCTORES E INFRACTORES. 1. Los titulares de permisos de conducción expedidos en cualquiera de estos Estados que hubieran adquirido su residencia normal en España, sin perjuicio de lo dispuesto en el artículo anterior, podrán solicitar voluntariamente en cualquier Jefatura Provincial de Tráfico la anotación de los datos de su permiso en el Registro de conductores e infractores. 2. A la solicitud de inscripción en el modelo oficial, suscrita por el interesado, se acompañarán los documentos que se indican en el anexo III. ARTÍCULO 17. SUSTITUCIÓN DEL PERMISO EN CASO DE SUSTRACCIÓN, EXTRAVÍO O DETERIORO DEL ORIGINAL POR EL CORRESPONDIENTE ESPAÑOL. 1."
+    },
+    {
+      "titulo": "16. ARTÍCULO 18",
+      "contenido": "En caso de sustracción, extravío o deterioro del original, el titular de un permiso de conducción expedido en uno de estos Estados que tenga su residencia normal en España, podrá solicitar la expedición de un duplicado en cualquier Jefatura Provincial de Tráfico, que lo otorgará sobre la base de la información que, en su caso, conste en el Registro de conductores e infractores, completada o suplida, de ser necesario, con un certificado de las autoridades competentes del Estado que haya expedido aquél. Cuando la causa sea el deterioro del original, el permiso sustituido será retirado por la Jefatura Provincial de Tráfico y remitido a las autoridades competentes del Estado que lo hubiera expedido a través de la oficina diplomática o consular. A la solicitud de duplicado se acompañarán los documentos que se indican en el anexo III. 2. El titular de un permiso de conducción al que se le hubiera expedido duplicado por sustracción o extravío deberá devolver el original de éste, cuando lo encuentre, a la Jefatura Provincial de Tráfico que hubiere expedido el duplicado, la cual procederá a devolverlo a las autoridades competentes del Estado que lo haya expedido, a través de la oficina diplomática o consular, indicando los motivos por los que se ha sustituido. ARTÍCULO 18. CANJE DEL PERMISO POR OTRO ESPAÑOL EQUIVALENTE. 1. El titular de un permiso de conducción vigente expedido en cualquiera de estos Estados, que haya establecido su residencia normal en España, podrá solicitar en cualquier momento de la Jefatura Provincial de Tráfico en la que desee obtenerlo, el canje de su permiso de conducción por otro español equivalente. A la solicitud en el modelo oficial, suscrita por el interesado, se acompañarán los documentos que se indican en el anexo III. 2. La Jefatura Provincial de Tráfico a la que se dirija la solicitud, después de comprobar, en su caso, la autenticidad, validez y vigencia del permiso presentado, concederá o denegará, según proceda, el canje solicitado. 3. La resolución a que se refiere el apartado anterior, con indicación del Estado que haya expedido el permiso y los datos que figuren en el mismo, se harán constar en el Registro de conductores e infractores. 20 \f ARTÍCULO 19. CANJE DE OFICIO. 1. Las Jefaturas Provinciales de Tráfico procederán al canje de oficio de los permisos de conducción expedidos en cualquiera de estos Estados: a) Cuando, a consecuencia de la aplicación de la normativa española a sus titulares, sea necesario imponer adaptaciones, restricciones u otras limitaciones en personas, vehículos o de circulación durante la conducción. b) Cuando su titular haya sido sancionado en firme en vía administrativa por la comisión de infracciones que lleven aparejada la pérdida de puntos, a los efectos de poder aplicarle las disposiciones nacionales relativas a la restricción, la suspensión, la retirada o la pérdida de vigencia del permiso de conducción. c) Cuando sea necesario para poder declarar la nulidad o lesividad del permiso de conducción en cuestión. 2. Para poder efectuar el canje de oficio será necesario que el titular del permiso tenga su residencia normal en España. 3. La resolución que a tales efectos se dicte por la Jefatura Provincial de Tráfico con indicación del Estado que haya expedido el permiso de conducción y los datos que figuren en el mismo, se harán constar en el Registro de conductores e infractores. ARTÍCULO 20. REMISIÓN DEL PERMISO CANJEADO."
+    },
+    {
+      "titulo": "17. ARTÍCULO 21",
+      "contenido": "Efectuado el canje del permiso de conducción por otro español equivalente, ya sea de oficio o a solicitud de su titular, se remitirá el permiso canjeado por la Jefatura Provincial de Tráfico a las autoridades competentes del Estado que lo haya expedido, a través de la oficina diplomática o consular, indicando los motivos del canje efectuado. SECCIÓN 2.ª DE LOS PERMISOS EXPEDIDOS EN TERCEROS PAÍSES ARTÍCULO 21. PERMISOS VÁLIDOS PARA CONDUCIR EN ESPAÑA. 1. Son válidos para conducir en España los siguientes permisos de conducción: a) Los nacionales de otros países que estén expedidos de conformidad con el anexo 9 del Convenio Internacional de Ginebra, de 19 de septiembre de 1949, sobre circulación por carretera, o con el anexo 6 del Convenio Internacional de Viena, de 8 de noviembre de 1968, sobre la circulación vial, o que difieran de dichos modelos únicamente en la adición o supresión de rúbricas no esenciales. b) Los nacionales de otros países que estén redactados en castellano o vayan acompañados de una traducción oficial. Se entenderá por traducción oficial la realizada por los intérpretes jurados, por los cónsules de España en el extranjero, por los cónsules en España del país que haya expedido el permiso, o por un organismo o entidad autorizados a tal efecto. c) Los internacionales expedidos en el extranjero de conformidad con el modelo del anexo 10 del Convenio Internacional de Ginebra, de 19 de septiembre de 1949, sobre circulación por carretera, o de acuerdo con los modelos del anexo E de la Convención Internacional de París, de 24 de abril de 1926, para la circulación de automóviles, o del anexo 7 del Convenio Internacional de Viena, de 8 de noviembre de 1968, sobre circulación por carretera, si se trata de naciones adheridas a estos Convenios que no hayan suscrito o prestado adhesión al de Ginebra. d) Los reconocidos en particulares convenios internacionales multilaterales y bilaterales en los que España sea parte y en las condiciones que en ellos se indiquen. 2. La validez de los permisos a que se refiere el apartado anterior estará condicionada a que se cumplan los siguientes requisitos: a) Que el permiso de conducción se encuentre en vigor. b) Que su titular tenga la edad requerida en España para la obtención de un permiso español equivalente. c) Que no haya transcurrido el plazo de seis meses, como máximo, contado desde que su titular adquiera su residencia normal en España, debidamente acreditada de acuerdo con lo dispuesto 21 \f en la Ley Orgánica 4/2000, de 11 de enero, sobre derechos y libertades de los extranjeros en España y su integración social, salvo que, tratándose de los permisos a que se refiere el párrafo d) del apartado anterior, se haya establecido otra norma en el correspondiente convenio. Si su titular no acreditara la residencia normal en España, aquellos permisos solamente serán válidos para conducir en nuestro país si no han transcurrido más de seis meses desde su entrada en territorio español en situación regular, de acuerdo con lo establecido en la referida Ley Orgánica 4/2000, de 11 de enero. 3. Transcurrido el plazo de seis meses indicado en el párrafo c) del apartado anterior, los permisos a que se refiere el apartado 1 carecerán de validez para conducir en España y, si sus titulares desean seguir haciéndolo, deberán obtener un permiso de conducción español, previa comprobación de los requisitos y superación de las pruebas correspondientes. ARTÍCULO 22. CANJE DE LOS PERMISOS DE CONDUCCIÓN POR SU EQUIVALENTE ESPAÑOL. 1."
+    },
+    {
+      "titulo": "18. artículo 21",
+      "contenido": "Una vez transcurrido el plazo indicado en el párrafo c) del apartado 2 del artículo anterior, el titular del permiso de conducción podrá seguir conduciendo en España previo canje del permiso por su equivalente español en los siguientes supuestos: a) Cuando se trate de los permisos a que se refiere el apartado 1.párrafo d) del artículo 21 y en el convenio particular esté autorizado su canje, que se realizará de acuerdo con las condiciones que se indiquen en el citado convenio. b) Cuando se trate de los permisos a que se hace referencia en el apartado 1. párrafos a) y b) del artículo 21, siempre que su titular reúna los siguientes requisitos: 1.º Que supere la prueba de control de aptitudes y comportamientos en circulación en vías abiertas al tráfico general a que hace referencia el artículo 49.2, que tendrá una duración máxima de 30 minutos. 2.º Que acredite haber estado contratado como conductor profesional, por un tiempo no inferior a seis meses, por empresa o empresas legalmente establecidas o con sucursal en España, las cuales justificarán esta circunstancia aportando, además, los documentos de afiliación y cotización a la Seguridad Social. La consideración de conductor profesional, a los efectos señalados en el párrafo anterior, se entenderá en los términos previstos en el Real Decreto 1032/2007, de 20 de julio, por el que se regula la cualificación inicial y la formación continua de los conductores de determinados vehículos destinados al transporte por carretera. 3.º Que no esté privado por resolución judicial del derecho a conducir vehículos de motor y ciclomotores, ni se halle sometido a suspensión o intervención administrativa del permiso o licencia de conducción que posea. 2. El titular del permiso de conducción podrá canjearlo por su equivalente español en el momento en que haya adquirido su residencia normal en España, sin tener que esperar a que transcurra el plazo máximo de seis meses a que se refiere el párrafo c) del apartado 2 del artículo anterior. ARTÍCULO 23. PROCEDIMIENTO PARA SOLICITAR EL CANJE DE LOS PERMISOS DE CONDUCCIÓN POR SU PERMISO EQUIVALENTE ESPAÑOL. 1. El interesado en proceder al canje de su permiso de conducción por su equivalente español deberá dirigir a la Jefatura Provincial del Tráfico que lo desee, su solicitud en el modelo oficial suscrita por el mismo, acompañada de los documentos que se indican en el anexo III. 2. A fin de comprobar la autenticidad, validez y vigencia del permiso de conducción, la Jefatura Provincial de Tráfico podrá solicitar los informes que, en atención a las circunstancias, estime procedentes, incluido el certificado emitido por el organismo que lo hubiera expedido, visado y traducido, en su caso, por la correspondiente oficina diplomática o consular, en el que se especifiquen los vehículos cuya conducción autoriza y demás características del permiso. 3. La Jefatura Provincial de Tráfico a la que se dirija la solicitud, previos los trámites que estime oportunos, concederá o denegará, según proceda, el canje solicitado, circunstancia que, con indicación del país que haya expedido el permiso, los datos de éste y de su titular, se hará constar en el Registro de conductores e infractores. Si en el convenio que, en su caso, existiera no se dispusiera otra cosa, el permiso de conducción original será devuelto al país de expedición. 22 \f 4."
+    },
+    {
+      "titulo": "19. ARTÍCULO 24",
+      "contenido": "En el permiso de conducción español expedido como consecuencia del canje, así como en las sucesivas prórrogas de vigencia, duplicados o cualquier otro trámite que se realice con éste, se hará constar la circunstancia de que procede del canje de otro permiso de conducción expedido en un país no comunitario. SECCIÓN 3.ª PERMISO DE CONDUCCIÓN DE LOS DIPLOMÁTICOS ACREDITADOS EN ESPAÑA ARTÍCULO 24. OBTENCIÓN DE PERMISO DE CONDUCCIÓN ESPAÑOL. 1. Los miembros de las Misiones Diplomáticas, de las Oficinas Consulares y de las organizaciones internacionales con sede u oficina en España de países no comunitarios acreditados en España, así como sus ascendientes, descendientes y cónyuge, siempre que sean titulares de un permiso de conducción equivalente, podrán obtener cualquiera de los permisos enumerados en el artículo 4 sin necesidad de abonar tasas ni realizar las correspondientes pruebas de aptitud para verificar sus conocimientos teóricos y prácticos, a condición de reciprocidad. 2. A la solicitud, que se dirigirá al Ministerio de Asuntos Exteriores y de Cooperación, se acompañarán los documentos indicados en el anexo III. Este Departamento, una vez comprobado que concurren los requisitos exigidos, la remitirá a la Jefatura Provincial de Tráfico de Madrid para su tramitación, en unión de la documentación requerida. CAPÍTULO III OTRAS AUTORIZACIONES ADMINISTRATIVAS PARA CONDUCIR SECCIÓN 1.ª DE LA AUTORIZACIÓN ESPECIAL PARA CONDUCIR VEHÍCULOS QUE TRANSPORTEN MERCANCÍAS PELIGROSAS ARTÍCULO 25. AUTORIZACIÓN ESPECIAL PARA CONDUCIR VEHÍCULOS QUE TRANSPORTEN MERCANCÍAS PELIGROSAS. 1. Para conducir vehículos que transporten mercancías peligrosas, cuando así lo requieran las disposiciones del Acuerdo Europeo sobre Transporte Internacional de mercancías peligrosas por carretera (ADR), hecho en Ginebra el 30 de septiembre de 1957, se exigirá una autorización administrativa especial que habilite para ello. 2. Dicha autorización especial, que por sí sola no autoriza a conducir si no va acompañada del permiso de conducción ordinario en vigor requerido para el vehículo de que se trate, deberá llevarla consigo su titular, en unión del correspondiente permiso de conducción, y exhibirla ante la autoridad o sus agentes cuando lo soliciten. ARTÍCULO 26. REQUISITOS PARA SU OBTENCIÓN. Para obtener la autorización especial deberán cumplirse los siguientes requisitos: a) Estar en posesión, con una antigüedad mínima de un año, del permiso de conducción ordinario en vigor de la clase B, al menos. b) Haber realizado con aprovechamiento un curso de formación inicial básico como conductor para el transporte de mercancías peligrosas en un centro de formación autorizado por la Dirección General de Tráfico. c) Ser declarado apto por la Jefatura Provincial de Tráfico en las correspondientes pruebas de aptitud. d) No estar privado por resolución judicial del derecho a conducir vehículos de motor y ciclomotores, ni hallarse sometido a suspensión o intervención administrativa del permiso que se posea. e) Reunir las aptitudes psicofísicas requeridas para obtener permiso de conducción de las clases señaladas en el artículo 45.1.b). f) Tener la residencia normal en España. 23 \f ARTÍCULO 27. SOLICITUD DE LA AUTORIZACIÓN ESPECIAL Y DOCUMENTACIÓN A PRESENTAR. 1. La expedición de la autorización especial se solicitará de la Jefatura Provincial de Tráfico en la que se desee obtener, en el modelo oficial suscrito por el interesado, acompañada de los documentos que se indican en el anexo III. 2."
+    },
+    {
+      "titulo": "20. ARTÍCULO 28",
+      "contenido": "La Jefatura Provincial de Tráfico a la que se dirija la solicitud, previas las actuaciones que en cada caso procedan y superadas las pruebas y ejercicios que correspondan, concederá o denegará lo solicitado, circunstancia que se hará constar en el Registro de conductores e infractores. 3. La autorización especial se expedirá conforme al modelo que se recoge en el anexo II. ARTÍCULO 28. VIGENCIA DE LA AUTORIZACIÓN ESPECIAL Y PRÓRROGA DE LA MISMA. 1. La autorización especial para conducir vehículos que transporten mercancías peligrosas tendrá un período de vigencia de cinco años. 2. La vigencia de esta autorización especial podrá ser prorrogada por nuevos períodos de cinco años, en cualquier Jefatura Provincial de Tráfico, previa solicitud en el modelo oficial suscrito por el interesado, a la que se acompañarán los documentos que se indican en el anexo III. 3. Para prorrogar la vigencia de la autorización su titular deberá reunir los siguientes requisitos: a) No estar privado por resolución judicial del derecho a conducir vehículos de motor y ciclomotores, ni hallarse sometido a suspensión o intervención administrativa del permiso que posea. b) Haber realizado con aprovechamiento un curso de reciclaje básico o, en su lugar, a elección de su titular, un curso de formación inicial básico. Si además se quiere prorrogar la vigencia de la ampliación de la autorización se deberá realizar un curso de reciclaje de especialización o, en su lugar, a elección de su titular, un curso de formación inicial de especialización. c) Superar las pruebas correspondientes al curso realizado, de acuerdo con lo dispuesto en el capítulo IV del título II. 4. Cuando se haya realizado el curso y superado las pruebas correspondientes a que se refieren los párrafos b) y c) del apartado anterior dentro los doce meses anteriores a la fecha de caducidad de la autorización, el período de vigencia de la nueva autorización se iniciará a partir de la fecha de caducidad. En el supuesto de que se haya realizado el curso y superado las pruebas con una antelación superior a la indicada en párrafo anterior, el período de vigencia de la nueva autorización comenzará a partir de la fecha en que se hayan aprobado las correspondientes pruebas para obtener la prórroga. ARTÍCULO 29. AMPLIACIÓN DE LA AUTORIZACIÓN ESPECIAL. 1. La autorización especial para conducir vehículos que transporten mercancías peligrosas se podrá ampliar, previa solicitud dirigida a la Jefatura Provincial de Tráfico en la que se desee obtener, en el modelo oficial suscrito por el interesado, al que se acompañarán los documentos que se indican en el anexo III. 2. La ampliación tendrá un período máximo de vigencia de cinco años. Cuando un conductor, estando vigente su autorización, amplíe su alcance a nuevas especialidades, el período de vigencia de la nueva autorización seguirá siendo el de la autorización anterior. 3. Para ampliar la autorización su titular deberá reunir los siguientes requisitos: a) Tener autorización especial para conducir vehículos que transporten mercancías peligrosas en vigor. b) No estar privado por resolución judicial del derecho a conducir vehículos de motor y ciclomotores, ni hallarse sometido a suspensión o intervención administrativa del permiso que posea. c) Haber realizado con aprovechamiento un curso de formación inicial de especialización para la materia para la que solicite la ampliación en un centro de formación autorizado por la Dirección General de Tráfico, de acuerdo con lo dispuesto en el capítulo IV del título II."
+    },
+    {
+      "titulo": "21. ARTÍCULO 30",
+      "contenido": "d) Ser declarado apto por la Jefatura Provincial de Tráfico en las correspondientes pruebas de aptitud. 24 \f 4. La Jefatura Provincial de Tráfico a la que se dirija la solicitud, previas las actuaciones que en cada caso procedan y superadas las pruebas y ejercicios que correspondan, concederá o denegará la ampliación solicitada, circunstancia que se hará constar en el Registro de conductores e infractores. ARTÍCULO 30. ENTREGA DE LA AUTORIZACIÓN ORIGINAL. La autorización original deberá ser entregada por su titular en la Jefatura Provincial de Tráfico, al concederse la prórroga o la ampliación solicitada y previamente a la entrega de la nueva autorización. SECCIÓN 2.ª DEL PERMISO INTERNACIONAL PARA CONDUCIR ARTÍCULO 31. EL PERMISO INTERNACIONAL PARA CONDUCIR. 1. De acuerdo con lo dispuesto en el Convenio Internacional de Ginebra, de 19 de septiembre de 1949, sobre circulación por carretera, el permiso internacional autoriza para conducir temporalmente por el territorio de todos los Estados contratantes, con excepción del Estado que lo ha expedido. 2. El permiso internacional para conducir, que tendrá una validez de un año, se ajustará al modelo establecido en el Convenio a que se hace referencia en el apartado anterior y que se recoge en el anexo II. ARTÍCULO 32. REQUISITOS PARA OBTENER EL PERMISO INTERNACIONAL PARA CONDUCIR. Para obtener el permiso internacional para conducir se requerirá: a) Tener la residencia normal en España. b) Ser titular de un permiso de conducción nacional de igual clase que la del internacional que solicita, válido y en vigor, o de un permiso expedido en otro Estado miembro de la Unión Europea o en otro Estado parte del Acuerdo sobre el Espacio Económico Europeo que previamente ha de ser inscrito en el Registro de conductores e infractores. c) No estar privado por resolución judicial del derecho a conducir vehículos de motor y ciclomotores, ni hallarse sometido a suspensión o intervención administrativa del permiso nacional que se posea. ARTÍCULO 33. EXPEDICIÓN DEL PERMISO INTERNACIONAL PARA CONDUCIR. La expedición del permiso internacional para conducir se solicitará de la Jefatura Provincial de Tráfico en la que se desee obtener, en el modelo oficial suscrito por el interesado, acompañando a la solicitud los documentos que se indican en el anexo III. CAPÍTULO IV DE LA NULIDAD O LESIVIDAD Y PÉRDIDA DE VIGENCIA DE LAS AUTORIZACIONES ADMINISTRATIVAS PARA CONDUCIR ARTÍCULO 34. DECLARACIÓN DE NULIDAD O LESIVIDAD. 1. Las autorizaciones administrativas para conducir reguladas en este título podrán ser objeto de declaración de nulidad o lesividad cuando concurra alguno de los supuestos previstos en los artículos 62 y 63, respectivamente, de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común. 2. El procedimiento para la declaración de nulidad o lesividad se ajustará a lo establecido en el capítulo I del título VII de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común, así como a la Disposición Adicional Decimosexta de la Ley 6/1997, de 14 de abril, de Organización y Funcionamiento de la Administración General del Estado, en cuanto a la competencia para la revisión de oficio de los actos nulos. 25 \f ARTÍCULO 35. DECLARACIÓN DE PÉRDIDA DE VIGENCIA. 1. Se declarará la pérdida de vigencia de las autorizaciones administrativas cuyo titular no posea los requisitos para su otorgamiento o haya perdido totalmente su asignación de puntos."
+    },
+    {
+      "titulo": "22. ARTÍCULO 36",
+      "contenido": "La resolución que declare la pérdida de vigencia deberá ser notificada en el plazo máximo de seis meses. 2. La competencia para declarar la pérdida de vigencia corresponde al Jefe Provincial de Tráfico. ARTÍCULO 36. PROCEDIMIENTO PARA LA DECLARACIÓN DE PÉRDIDA DE VIGENCIA POR LA DESAPARICIÓN DE ALGUNO DE LOS REQUISITOS EXIGIDOS PARA SU OTORGAMIENTO. 1. La Jefatura Provincial de Tráfico que tenga conocimiento de la presunta desaparición de alguno de los requisitos que, sobre conocimientos, habilidades, aptitudes o comportamientos esenciales para la seguridad de la circulación o aptitudes psicofísicas, se exigían para el otorgamiento de la autorización, previos los informes, asesoramientos o pruebas que, en su caso y en atención a las circunstancias concurrentes, estime oportunos, iniciará el procedimiento de declaración de pérdida de vigencia de ésta. 2. El acuerdo de incoación contendrá una relación detallada de los hechos y circunstancias que induzcan a apreciar, racional y fundadamente, que carece de alguno de los requisitos que se indican en el apartado anterior y, si procediera, se adoptará la medida de suspensión cautelar e intervención inmediata de la autorización a que se refiere el artículo 39. 3. El acuerdo a que se refiere el apartado anterior se notificará por la Jefatura Provincial de Tráfico al titular de la autorización, se le dará vista del expediente en los términos previstos en la Ley 30/1992, de 26 de noviembre, y se le indicarán los plazos y formas de que dispone para acreditar la existencia del requisito o requisitos exigidos. Contra dicho acuerdo, el titular de la autorización podrá alegar lo que estime pertinente a su defensa o, en su caso, demostrar en tiempo y forma que no carece de tales requisitos. A) Los plazos para acreditar la existencia de los requisitos exigidos serán los siguientes: a) Si no se acuerda la suspensión cautelar y la intervención, el plazo será de dos meses. De no acreditarse en el mencionado plazo la existencia del requisito exigido, se acordará la suspensión cautelar e intervención inmediata de la autorización. b) Si se acuerda la suspensión cautelar y la intervención inmediata, el plazo será el indicado en el párrafo a) anterior o el que reste de vigencia a la autorización administrativa, cuando éste sea mayor. B) Las formas para acreditar la existencia del requisito o requisitos exigidos serán las siguientes: a) Si afectara a los conocimientos, habilidades, aptitudes o comportamientos para conducir, o a otros requisitos, sometiéndose a las pruebas de control de conocimientos o de control de aptitudes y comportamientos que, en virtud de los informes, asesoramientos y pruebas correspondientes, se consideren procedentes, ante la Jefatura Provincial de Tráfico que haya instruido el procedimiento, o aportando, en su caso, las pruebas que a su derecho convenga. b) Si afectara a los requisitos psicofísicos exigidos para conducir, sometiéndose a las pruebas de aptitud psicofísica que procedan ante los servicios sanitarios competentes y, en su caso, a las de control de aptitudes y comportamientos correspondientes que, si fuera necesario, se realizarán conforme se determina en el artículo 61.3. 4. El titular de la autorización podrá realizar las pruebas de control de conocimientos y de control de aptitudes y comportamientos o someterse a las de control de aptitud psicofísica, hasta un máximo de tres ocasiones, dentro de los plazos indicados en el apartado 3.A. 5."
+    },
+    {
+      "titulo": "23. ARTÍCULO 37",
+      "contenido": "Cuando el resultado de las pruebas sea favorable, el Jefe Provincial de Tráfico acordará dejar sin efecto el procedimiento de declaración de pérdida de vigencia y, en su caso, el levantamiento de la suspensión cautelar y la devolución inmediata de la autorización intervenida. Cuando el resultado de las pruebas de control de conocimientos y de control de aptitudes y comportamientos fuera desfavorable en la tercera ocasión en que se realicen, o en alguno de los reconocimientos para explorar las aptitudes psicofísicas se comprobase que el defecto psicofísico es irreversible, cuando el titular de la autorización no se sometiera a las pruebas en los plazos establecidos en el apartado 3.A), o no hubiera acreditado que reúne el requisito 26 \f correspondiente, el Jefe Provincial de Tráfico dictará resolución motivada acordando la pérdida de vigencia de la autorización administrativa de que se trate. 6. Cuando la carencia del requisito exigido permita conducir con adaptaciones, restricciones u otras limitaciones en personas, vehículos o de circulación, al titular del permiso o licencia cuya pérdida de vigencia haya sido acordada le podrá ser expedido, previos los trámites y comprobaciones que correspondan, otro permiso o licencia de carácter extraordinario sujeto a las condiciones restrictivas que, en cada caso, procedan. 7. Cuando el procedimiento para la declaración de pérdida de vigencia o la pérdida de vigencia acordada no afecte a todas las clases de permiso o licencia de conducción, la Jefatura Provincial de Tráfico facilitará al interesado, de oficio, un duplicado o una autorización temporal, según proceda, con las clases no afectadas. 8. El titular de una autorización cuya pérdida de vigencia haya sido declarada podrá obtener otra de nuevo siguiendo el procedimiento y superando las pruebas establecidas, en las que deberá acreditar la concurrencia del requisito cuya falta determinó la extinción de la autorización anterior. 9. La competencia para declarar la pérdida de vigencia de las autorizaciones corresponde al Jefe de Tráfico de la provincia en cuyo territorio se haya detectado la presunta carencia de los requisitos exigidos, sin perjuicio de que pueda delegar esa competencia en los términos previstos en la Ley 30/1992, de 26 de noviembre. ARTÍCULO 37. PROCEDIMIENTO PARA LA DECLARACIÓN DE PÉRDIDA DE VIGENCIA POR LA PÉRDIDA TOTAL DE LOS PUNTOS ASIGNADOS. 1. La Jefatura Provincial de Tráfico, una vez constatada la pérdida por el titular del permiso o de la licencia de conducción de la totalidad de los puntos asignados, iniciará el procedimiento para declarar su pérdida de vigencia mediante acuerdo que contendrá una relación detallada de las resoluciones sancionadoras firmes en vía administrativa que hubieran dado lugar a la pérdida de los puntos, con indicación del número de puntos que a cada una de ellas hubiera correspondido y se le dará vista del expediente al titular de la autorización, en los términos previstos en la Ley 30/1992, de 26 de noviembre. En dicho acuerdo se concederá al interesado un plazo máximo de diez días para formular las alegaciones que estime conveniente. 2. Transcurrido el plazo indicado en el apartado anterior, el Jefe Provincial de Tráfico dictará resolución declarando la pérdida de vigencia del permiso o de la licencia de conducción, que se notificará al interesado en el plazo de quince días, en los términos previstos en la Ley 30/1992, de 26 noviembre."
+    },
+    {
+      "titulo": "24. ARTÍCULO 38",
+      "contenido": "Declarada la pérdida de vigencia, el interesado deberá entregar el permiso o licencia de conducción en la Jefatura Provincial de Tráfico la cual, de no hacerlo, ordenará su retirada por los Agentes de la autoridad. 3. La competencia para declarar la pérdida de vigencia corresponde al Jefe de Tráfico de la provincia correspondiente al domicilio del titular de la autorización. ARTÍCULO 38. REQUISITOS PARA RECUPERAR EL PERMISO O LA LICENCIA DE CONDUCCIÓN. 1. El titular de la autorización para conducir cuya pérdida de vigencia haya sido declarada por haber perdido la totalidad de los puntos que tuviera asignados, podrá obtener nuevamente un permiso o licencia de conducción de la misma clase de la que era titular y con la misma antigüedad, previa realización y superación con aprovechamiento de un curso de sensibilización y reeducación vial de recuperación del permiso o la licencia de conducción, y posterior superación de la prueba de control de conocimientos a que se refiere el artículo 47.2. 2. La prueba podrá realizarse en cualquier Jefatura Provincial de Tráfico, a la que el interesado dirigirá una solicitud en el modelo oficial acompañada de los documentos que se indican en el anexo III. 3. El titular de la autorización no podrá obtener un nuevo permiso o una nueva licencia de conducción hasta que hayan transcurrido seis meses desde la fecha en que le fue notificado el acuerdo de declaración de la pérdida de vigencia, salvo los conductores profesionales para los que este plazo será de tres meses. 27 \f Si en los tres años siguientes a la obtención de esa nueva autorización se acordara su pérdida de vigencia por haber perdido otra vez la totalidad del crédito de puntos asignados, el titular de aquélla no podrá obtener un nuevo permiso o licencia de conducción hasta transcurridos doce meses desde la notificación del acuerdo de declaración de pérdida de vigencia, salvo los conductores profesionales para los que este plazo será de seis meses. Se entenderá por conductor profesional, a los efectos de lo previsto en los dos párrafos anteriores, aquel que tenga tal consideración de acuerdo con lo previsto en la disposición adicional tercera del texto articulado de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial. 4. El titular de una autorización para conducir que haya perdido su vigencia por haber sido condenado a la pena de privación del derecho a conducir vehículos de motor y ciclomotores por tiempo superior a dos años podrá obtener nuevamente un permiso o licencia de conducción de la misma clase de la que era titular y con la misma antigüedad, una vez cumplida la condena y previo cumplimiento de los requisitos exigidos en el texto articulado de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial. ARTÍCULO 39. SUSPENSIÓN CAUTELAR DE LA VIGENCIA DEL PERMISO O DE LA LICENCIA DE CONDUCCIÓN. 1. En el curso de los procedimientos de declaración de nulidad o lesividad o de pérdida de vigencia de las autorizaciones administrativas, se acordará la suspensión cautelar de la vigencia de la autorización de que se trate cuando su mantenimiento entrañe un grave peligro para la seguridad del tráfico o perjudique notoriamente el interés público. 2."
+    },
+    {
+      "titulo": "25. ARTÍCULO 40",
+      "contenido": "En este caso, el Jefe Provincial de Tráfico acordará, mediante resolución motivada, la intervención inmediata de la autorización, procediendo al mismo tiempo a la práctica de cuantas medidas sean necesarias para impedir el efectivo ejercicio de la conducción, siguiéndose en todo caso el procedimiento, requisitos y exigencias de la Ley 30/1992, de 26 de noviembre, y solicitando el auxilio de las Fuerzas y Cuerpos de Seguridad del Estado cuando fuera necesaria la compulsión sobre las personas. La intervención se llevará a efecto por el agente de la autoridad correspondiente que procederá a la retirada de la autorización al mismo tiempo que notifica al interesado la resolución en que se haya acordado aquélla. 3. La conducción durante el período de suspensión cautelar de la autorización administrativa será considerada como conducir con la autorización administrativa correspondiente suspendida por sanción. ARTÍCULO 40. EFECTOS DE LA DECLARACIÓN DE NULIDAD, LESIVIDAD, PÉRDIDA DE VIGENCIA O SUSPENSIÓN CAUTELAR DEL PERMISO O DE LA LICENCIA DE CONDUCCIÓN. 1. La declaración de nulidad o lesividad, de pérdida de vigencia por la desaparición de alguno de los requisitos exigidos para su otorgamiento, la suspensión cautelar y, en su caso, la intervención, podrá afectar a una o más clases del permiso o licencia de conducción que posea el titular. En todo caso, en el procedimiento que se instruya deberá indicarse claramente la clase o las clases del permiso o licencia de conducción afectados. De no afectar a todas ellas, la Jefatura Provincial de Tráfico, de oficio, entregará al interesado un nuevo documento en el que conste la clase o clases del permiso o de la licencia de conducción no afectados. 2. La declaración de nulidad o lesividad, de pérdida de vigencia por la desaparición de alguno de los requisitos exigidos para su otorgamiento, o la suspensión cautelar y, en su caso, la intervención, llevará consigo la de cualquier otro certificado, autorización administrativa o documento cuyo otorgamiento dependa de la vigencia de la clase o las clases del permiso o licencia de conducción objeto del procedimiento. 3. La declaración de pérdida de vigencia por haber perdido el titular del permiso o de la licencia de conducción la totalidad del crédito de puntos, o por haber sido condenado a la pena de privación del derecho a conducir vehículos de motor y ciclomotores por tiempo superior a dos años, afectará a todas las clases del permiso o licencia de conducción de que sea titular, así como a cualquier otro certificado, autorización administrativa o documento cuyo otorgamiento 28 \f dependa de la vigencia de la clase o de las clases del permiso o licencia de conducción objeto del procedimiento. No obstante, una vez obtenido nuevamente un permiso o licencia de conducción de la misma clase de la que era titular, siguiendo el procedimiento establecido en su caso, también se obtendrán de nuevo, siempre que no haya transcurrido el plazo de vigencia otorgado cuando le fueron expedidos, los certificados, autorizaciones administrativas o documentos cuyo otorgamiento dependan de la vigencia de la clase o de las clases del permiso o licencia de conducción recuperados. 29 \f REAL DECRETO 2822/1998, DE 23 DE DICIEMBRE, POR EL QUE SE APRUEBA EL REGLAMENTO GENERAL DE VEHÍCULOS. TÍTULO I NORMAS GENERALES CAPÍTULO ÚNICO ARTÍCULO 1. AUTORIZACIONES Y SUS EFECTOS. 1."
+    },
+    {
+      "titulo": "26. TÍTULO III",
+      "contenido": "La circulación de vehículos exigirá que éstos obtengan previamente la correspondiente autorización administrativa, dirigida a verificar que estén en perfecto estado de funcionamiento y se ajusten en sus características, equipos, repuestos y accesorios a las prescripciones técnicas que se fijan en este Reglamento. Se prohíbe la circulación de vehículos que no estén dotados de la citada autorización. El Ministerio de Industria y Energía podrá establecer excepciones al cumplimiento de alguna de las condiciones técnicas previstas en este Reglamento a determinados vehículos, equipos, repuestos y accesorios. 2. La circulación de un vehículo sin autorización, bien por no haberla obtenido o porque haya sido objeto de anulación o declarada su pérdida de vigencia, dará lugar a la inmovilización del mismo hasta que se disponga de dicha autorización, de acuerdo con lo que se establece en el presente Reglamento. Asimismo, la circulación de un vehículo durante el plazo de suspensión cautelar de la autorización de circulación que se haya acordado en el curso de los procedimientos de nulidad, anulación y pérdida de vigencia de dicha autorización dará lugar a la inmovilización del vehículo. TÍTULO III CICLOMOTORES, CICLOS, VEHÍCULOS DE TRACCIÓN ANIMAL Y TRANVÍAS CAPÍTULO II CICLOS, VEHÍCULOS DE TRACCIÓN ANIMAL Y TRANVÍAS ARTÍCULO 22 BIS. VEHÍCULOS DE MOVILIDAD PERSONAL. 1. Los vehículos de movilidad personal quedan exceptuados de obtener la autorización administrativa a la que hace referencia el apartado 1 del artículo 1. 2. Para poder circular, los vehículos de movilidad personal deberán: a) Disponer del certificado de circulación que garantice el cumplimiento de los requisitos técnicos exigibles por la normativa nacional e internacional y, específicamente, de los requisitos técnicos regulados en el anexo XXI. b) Inscribirse en el Registro Nacional de Vehículos, en su sección de Registro de Vehículos Personales Ligeros, de acuerdo con lo previsto en el anexo XX c) Disponer y exhibir reglamentariamente la etiqueta identificativa prevista en el anexo XX y la placa de marcaje de fabricante contemplada en el anexo XXI. 30 \f TÍTULO IV AUTORIZACIONES DE CIRCULACIÓN DE LOS VEHÍCULOS CAPÍTULO I MATRICULACIÓN ARTÍCULO 25. NORMAS GENERALES. 1. Para poner en circulación vehículos de motor, así como remolques y semirremolques de masa máxima autorizada superior a 750 kilogramos, será preciso matricularlos y que lleven las placas de matrícula con los caracteres que se les asigne, del modo que se establece en el anexo XVIII. Esta obligación será exigida a los ciclomotores y ciclos de motor de acuerdo con lo que se determina en el artículo 28 del presente Reglamento. 2. Previamente a su matriculación, los vehículos citados en el apartado anterior deben estar dotados del correspondiente certificado oficial que acredite sus características técnicas esenciales y su aptitud para circular por las vías públicas, que se expedirá: a) Por los órganos competentes de la Administración o entidades delegadas, si se trata de vehículos que corresponden a tipos homologados incompletos, no homologados, matriculados anteriormente en otro país, vehículos usados procedentes de subastas oficiales realizadas en España o vehículos nuevos adquiridos directamente en otro país y que posean un certificado de conformidad CE. b) Por un fabricante de la Unión Europea o por un importador o por sus representantes respectivos, si se trata de vehículo nuevo que corresponde a tipo homologado según la legislación nacional u homologación CE. 3."
+    },
+    {
+      "titulo": "27. capítulo VI",
+      "contenido": "No obstante lo dispuesto en los apartados anteriores, podrá autorizarse la puesta en circulación de determinados vehículos sin que sea preciso matricularlos, en los supuestos y condiciones contemplados en el capítulo VI de este Título. ARTÍCULO 26. DOCUMENTACIÓN DE LOS VEHÍCULOS. 1. El conductor de un vehículo queda obligado a estar en posesión y llevar consigo, así como a exhibir ante los agentes de la autoridad que se lo soliciten, los siguientes documentos: a) El permiso de circulación o licencia de circulación en el caso de ciclomotores. El permiso de circulación podrá ser sustituido por una autorización provisional expedida por la Jefatura de Tráfico, que surtirá los mismos efectos. b) La tarjeta de inspección técnica o el certificado de características técnicas en el supuesto de ciclomotores. c) En los conjuntos de vehículos formados por automóviles que arrastran remolques o semirremolques cuya masa máxima autorizada sea inferior o igual a 750 kilogramos, la tarjeta de inspección técnica del remolque o semirremolque y en el reverso de la tarjeta de inspección técnica del automóvil figurará que lleva instalado un sistema de acoplamiento compatible con el del remolque, de acuerdo con la legislación vigente. 2. Los documentos a que se refiere el apartado 1 de este artículo serán originales, pudiendo ser sustituidos por fotocopias si están debidamente cotejadas. CAPÍTULO II MATRICULACIÓN ORDINARIA ARTÍCULO 27. MATRICULACIÓN ÚNICA. EXCEPCIONES. 1. La matriculación ordinaria es única para cada vehículo. 2. No obstante lo dispuesto en el apartado anterior, y en las condiciones fijadas en este Reglamento, podrá concederse una nueva matrícula ordinaria distinta a la inicialmente asignada en los casos siguientes: a) Cuando se solicite simultáneamente una nueva matrícula y el cambio de titularidad por el adquirente de un vehículo en cuya matrícula figuren las siglas de la provincia donde se 31 \f matriculó, siempre que tenga su domicilio en provincia distinta de aquélla. A la solicitud se acompañarán los documentos que se indican en el anexo XIV. b) En el caso de que el titular de un vehículo en cuya matrícula figuren siglas provinciales cambie su domicilio a provincia distinta de aquéllas, debiendo presentar la documentación que se establece en el anexo XIII. c) Cuando se pretenda legalizar en nuestro país la situación de un vehículo matriculado en el extranjero, pero que anteriormente ha estado matriculado en España y en cuya matrícula figuren siglas provinciales. La solicitud únicamente podrá hacerla el nuevo propietario siempre que sea distinto del último titular que figure inscrito en el Registro de Vehículos y acompañe los documentos que se indican en el anexo XIII. 3. Asimismo, podrá concederse una nueva matrícula distinta de la que figure inicial o posteriormente asignada cuando así lo solicite el titular del vehículo por razones de seguridad personal debidamente acreditadas, con sujeción a las prescripciones que se indican en el anexo XIII. Este cambio de matrícula no estará sujeto al abono de la tasa de matriculación. 4. Los vehículos pertenecientes al Estado, que deberán tener una matrícula oficial, podrán ser objeto además de matriculación ordinaria. 5. Los vehículos adscritos al Cuerpo de Policía de una Comunidad Autónoma podrán utilizar, en el ámbito de la misma, placas de matrícula con una contraseña y numeración propias, sin perjuicio de su matriculación ordinaria en la Jefatura de Tráfico correspondiente. 32 \f ARTÍCULO 28. MATRICULACIÓN DE LOS VEHÍCULOS. 1."
+    },
+    {
+      "titulo": "28. Real Decreto 1013/2009, de 19 de junio, sobre caract",
+      "contenido": "La matriculación y expedición del permiso de circulación de los automóviles y de los vehículos especiales autopropulsados, cualquiera que sea su masa, así como de los remolques, semirremolques y máquinas remolcadas especiales cuya masa máxima autorizada exceda de 750 kilogramos, se solicitará por el propietario, el arrendatario con opción de compra o el arrendatario a largo plazo de la Jefatura de Tráfico de la provincia en que tenga su domicilio legal o en la que se vaya a residenciar el vehículo especial agrícola. La matriculación y expedición de la licencia de circulación de los ciclomotores y ciclos de motor se efectuará en la Jefatura de Tráfico del domicilio legal del propietario, del arrendatario con opción de compra o del arrendatario a largo plazo. 2. La solicitud se formulará en el modelo oficial que a tales efectos proporcionará la Jefatura de Tráfico correspondiente o que se podrá descargar en la siguiente página web: www.dgt.es. A la solicitud se acompañarán los documentos que se indican en el anexo XIII, los cuales acreditan los requisitos técnicos del vehículo, el cumplimiento de las obligaciones tributarias, de la importación legal, en su caso, o de que cumple con los requisitos para obtener o que cuenta con el título habilitante para obtener o realizar alguna actividad de transporte o de arrendamiento sin conductor, así como aquellos otros documentos en que el interesado funde su derecho a la matriculación del vehículo y que acrediten su personalidad y domicilio. En el caso de tratarse de un vehículo especial agrícola deberá haberse inscrito previamente en el Registro Oficial de Maquinaria Agrícola correspondiente. Dicho Registro comunicará los datos de inscripción al Registro de Vehículos de la Dirección General de Tráfico, conforme a lo dispuesto en el Real Decreto 1013/2009, de 19 de junio, sobre caracterización y registro de la maquinaria agrícola. 3. La anotación en el Registro de Vehículos de las limitaciones de disposición u otras cargas o derechos que impiden la transmisión de los vehículos deberá solicitarse aportando los documentos que se recogen en los números 12.º ó 13.º del apartado A del anexo XIII. 4. A la vista del expediente, la Jefatura de Tráfico autorizará, si procede, la matriculación del vehículo, en cuyo caso expedirá el permiso circulación, que se entregará al interesado junto con la tarjeta de inspección técnica o certificado de características y comunicará la matrícula a los órganos competentes de la Administración Tributaria, de Industria, de Agricultura si se tratara de un vehículo especial agrícola, así como al ayuntamiento del domicilio legal del titular del vehículo. En el caso de que el Registro Oficial de Maquinaria Agrícola no hubiera transmitido los datos de inscripción a que se hace referencia en el apartado 2, la Jefatura de Tráfico solicitará al citado Registro el documento acreditativo de la inscripción antes de decidir sobre la autorización. Además del permiso de circulación, la Jefatura de Tráfico podrá expedir otro documento, si así se establece en el anexo XIII, de acuerdo con las condiciones y conforme al modelo que se indiquen en el mismo. 5. Cuando se conceda una nueva matrícula en los casos previstos en el artículo 27, apartado 2, a), b) y c), de este Reglamento, se anotará en el Registro de Vehículos la baja definitiva de la matrícula anterior y en el permiso de circulación que se expida se harán constar las mismas fechas que figurasen en el permiso de circulación anterior."
+    },
+    {
+      "titulo": "29. título i",
+      "contenido": "La tarjeta de inspección técnica correspondiente a la matrícula anterior se remitirá al órgano competente en materia de Industria de la provincia donde el vehículo estuvo matriculado. 6. Los trenes turísticos, sin perjuicio de la matriculación de cada elemento del mismo como vehículo especial, para circular por las vías públicas deberán obtener una autorización complementaria del órgano competente en materia de Tráfico que, en el supuesto de vías urbanas, será el Ayuntamiento. Esta autorización se expedirá previo informe vinculante del titular de la vía y en la misma deberá figurar, en todo caso, el recorrido a realizar, horario y cuantas limitaciones se consideren necesarias para garantizar la seguridad. 7. La matriculación y expedición del permiso o autorización para circular de los vehículos a que se refiere el apartado 1 de este artículo pertenecientes al Estado se llevará a cabo por los propios Organismos encargados de su conservación y empleo, con arreglo a las prescripciones y trámites que se determinen por el Ministerio de Economía y Hacienda. Estos vehículos 33 \f podrán, además, ser matriculados en las Jefaturas de Tráfico presentando los mismos documentos exigidos en el apartado 2 del presente artículo. 8. Se admitirán para su matriculación los vehículos reconstruidos siempre que pasen una inspección técnica de sus características esenciales para su homologación a título individual. ARTÍCULO 29. MODELOS DE PERMISO DE CIRCULACIÓN Y DE LICENCIA DE CIRCULACIÓN. El permiso de circulación y la licencia de circulación se ajustarán, en cuanto a su modelo y contenido, a lo que se indica en el anexo XIII. ARTÍCULO 30. DUPLICADOS Y RENOVACIONES DEL PERMISO O LICENCIA DE CIRCULACIÓN. 1. El titular de un vehículo cuyo permiso o licencia de circulación hubiese sido objeto de sustracción, deterioro o extravío, podrá solicitar un duplicado. Su expedición determinará por sí sola la anulación del original. En consecuencia, y en caso de recuperación posterior del original, se procederá a su inmediata destrucción. 2. El titular de un vehículo que hubiera sufrido variación en cualquiera de los datos que consten en el Registro de Vehículos dispondrá de un plazo de 15 días desde que se produjera para comunicarla. En todo caso, se expedirá un nuevo permiso o licencia de circulación si la variación de datos comunicada afectase a los que deban ser consignados en dicho documento. 3. Los trámites previstos en los apartados anteriores se practicarán ante la sede electrónica de la Dirección General de Tráfico, o en su defecto, en cualquier Jefatura Provincial u Oficina Local de Tráfico en los términos establecidos en el anexo XIII. CAPÍTULO III CAMBIOS DE TITULARIDAD DE LOS VEHÍCULOS ARTÍCULO 31. RENOVACIÓN DEL PERMISO O LICENCIA. El permiso o licencia de circulación habrán de renovarse cuando varíe la titularidad registral del vehículo. CAPÍTULO IV BAJAS Y REHABILITACIÓN DE LOS VEHÍCULOS ARTÍCULO 34. PÉRDIDA DE VIGENCIA DEL PERMISO O LICENCIA. El permiso o la licencia de circulación perderá su vigencia cuando el vehículo se dé de baja en el correspondiente Registro, a instancia de parte o por comprobarse que no es apto para la circulación, en la forma que se determina en este Reglamento. ARTÍCULO 35. BAJAS DEFINITIVAS. Los vehículos matriculados causarán baja definitiva en el Registro de Vehículos en los casos siguientes: 1. Cuando sus titulares o terceras personas que acrediten suficientemente su propiedad manifiesten expresamente la voluntad de retirarlos permanentemente de la circulación."
+    },
+    {
+      "titulo": "30. ARTÍCULO 36",
+      "contenido": "La solicitud de baja se dirigirá a cualquier Jefatura Provincial de Tráfico, acompañada de los documentos que se indican en el anexo XV. 2. En el caso de que cualquier Jefatura de Tráfico acuerde de oficio mediante la oportuna resolución su retirada definitiva de la circulación, previo informe del órgano competente en materia de Industria acreditativo de que el estado del vehículo constituye, por desgaste o deterioro de sus elementos mecánicos, un evidente peligro para sus ocupantes o para la seguridad de la circulación en general. 3. Cuando cualquier Jefatura de Tráfico acuerde de oficio, mediante la oportuna resolución, la retirada definitiva de la circulación respecto de los vehículos que hayan sido retirados de las vías públicas por los agentes encargados de la vigilancia y regulación del tráfico, una vez comprobado que han sido abandonados por sus titulares, de acuerdo con la normativa prevista en el anexo I, supuesto en que podrá procederse a su desguace. 34 \f 4. A petición del titular o de tercera persona que acredite su propiedad, por traslado del vehículo a otro país donde vaya a ser matriculado, debiendo acompañarse los documentos que se establecen en el anexo XV. Una vez tramitada la baja por traslado a otro país, el traslado efectivo del vehículo deberá llevarse a cabo en los siguientes 3 meses. En caso de que, pasados 3 meses, exista constancia de que el vehículo continúa circulando en España, se procederá de oficio a la rehabilitación del vehículo. 5. En el caso de que cualquier Jefatura de Tráfico acuerde la baja definitiva de oficio, mediante la oportuna resolución, por existir la presunción de que el vehículo no existe o no circula al no haberse cumplido las exigencias en materia de inspección ITV obligatoria y de seguro de responsabilidad civil de suscripción obligatoria en los últimos diez años. Esta baja definitiva de oficio, en cualquier caso, no impide que si el vehículo cumple a posteriori las condiciones para poder volver a obtener la autorización administrativa para circular, pueda ser rehabilitado. ARTÍCULO 36. BAJAS TEMPORALES. 1. Los vehículos matriculados causarán baja temporal en el Registro de Vehículos en los casos siguientes: a) Cuando su titular manifieste expresamente la voluntad de retirarlos temporalmente de la circulación. Las bajas temporales de los vehículos cuyo titular manifieste su voluntad de retirarlos temporalmente de la circulación tendrán una duración máxima de un año desde la fecha de solicitud de baja temporal, excepto en los vehículos agrícolas cuya duración será hasta que el titular cambie su situación a baja definitiva, alta, o se produzca un cambio de titularidad. Pasado ese plazo sin que previamente la persona interesada solicite la prórroga de la situación de baja temporal, finalizará la baja temporal y el vehículo volverá a estar en situación activa. Las prórrogas del plazo de baja temporal se podrán solicitar a la Jefatura de Tráfico como máximo dos meses antes de la fecha de finalización de la baja temporal. b) Por sustracción del vehículo y a petición de su titular, el cual debe acreditar haber formulado la denuncia correspondiente. A la solicitud de baja temporal, que se dirigirá a la Jefatura de Tráfico de la provincia del domicilio legal del peticionario o a aquella en que fue matriculado el vehículo, se acompañarán los documentos que se indican en el anexo XV. 2."
+    },
+    {
+      "titulo": "31. CAPÍTULO V",
+      "contenido": "Los vehículos matriculados también causarán baja temporal en el Registro de Vehículos, en los casos siguientes: a) Cuando se entreguen, para su posterior transmisión, a un vendedor de vehículos con establecimiento abierto en España para esta actividad, a petición de su titular. A la solicitud, que se dirigirá a la Jefatura de Tráfico de la provincia del domicilio legal del peticionario o a aquella en que fue matriculado el vehículo, se acompañarán los documentos que se indican en el anexo XIV. b) Cuando lo solicite el arrendador de un vehículo una vez finalizado el contrato de arrendamiento con opción de compra o de arrendamiento a largo plazo, de mutuo acuerdo o por resolución judicial, y el vehículo pase a poder de éste, para su posterior transmisión o arrendamiento. Estos vehículos no podrán circular mientras se mantenga la situación de baja temporal. A la solicitud, que se dirigirá a la Jefatura de Tráfico de la provincia del domicilio legal del peticionario o a aquella en que fue matriculado el vehículo, en el plazo de diez días desde su recuperación por el arrendador, se acompañarán los documentos que se indican en el anexo XV. Una vez que el arrendador haya transmitido o arrendado el vehículo deberá solicitarse, en el plazo de treinta días, por el adquirente o el arrendatario, el cambio de titularidad de la Jefatura de Tráfico de la provincia de su domicilio legal o de aquella en que fue matriculado el vehículo, presentando los documentos que se establecen en el anexo XIV. 35 \f CAPÍTULO V MATRICULACIÓN ESPECIAL ARTÍCULO 39. VEHÍCULOS EN RÉGIMEN DE MATRÍCULA DIPLOMÁTICA. 1. Podrán obtener permiso de circulación y placas de matrícula especiales los vehículos propiedad de: a) Las Misiones Diplomáticas acreditadas en España y con sede permanente en la capital del Reino, y los Agentes diplomáticos. b) Las Organizaciones internacionales o supranacionales que hayan suscrito un Acuerdo de Sede con el Estado español y los funcionarios de las mismas con estatuto diplomático. c) Las Oficinas Consulares y los funcionarios consulares de carrera de nacionalidad extranjera. d) El personal técnico-administrativo de las Misiones Diplomáticas y de las Organizaciones internacionales, así como los empleados consulares de las Oficinas Consulares. 2. Estos permisos de circulación se expedirán por la Jefatura Provincial de Tráfico de Madrid, a instancia del Ministerio de Asuntos Exteriores, que cursará la petición a través de la Dirección General de Protocolo, Cancillería y Órdenes y los mismos se ajustarán en cuanto a su contenido a lo que se indica en el anexo XVI. Dichos permisos, al igual que las matrículas, serán objeto de una revisión anual que será efectuada por el Ministerio de Asuntos Exteriores. 3. Cada matrícula concedida, conforme a las disposiciones anteriores, podrá ser asignada a otra persona distinta del anterior titular si éste cesa en el cargo, tanto si se trata del mismo vehículo como de otro diferente, así como al mismo titular cuando cambie de vehículo. Para la concesión de los permisos de circulación a que se refiere este artículo no se precisará acreditar que el vehículo corresponde a un tipo aprobado ni efectuar la inspección técnica previa del mismo, siempre que exista trato de reciprocidad. No obstante, con la solicitud del permiso deberá presentarse una relación de las características que figuran en el modelo oficial de tarjeta de inspección técnica. 4."
+    },
+    {
+      "titulo": "32. ARTÍCULO 40",
+      "contenido": "Al tiempo de concederlas, la Jefatura Provincial de Tráfico de Madrid asignará a estos vehículos la matrícula ordinaria que en ese momento les corresponda, para uso exclusivo de la Administración Española, y que ostentarán si cesa el régimen de matrícula diplomática, en cuyo caso, deberá solicitarse su matriculación ordinaria presentando la tarjeta de inspección técnica y demás documentación que se indica en el apartado A) del anexo XIII, previa cumplimentación de las normas que se recogen en el anexo I. No obstante lo dispuesto en el párrafo anterior, la Jefatura Provincial de Tráfico de Madrid también podrá conceder matrícula diplomática a vehículos ya matriculados en España, en cuyo caso no se le asignará una nueva matrícula ordinaria, siendo preciso que previamente se entregue la tarjeta de inspección técnica y el permiso de circulación en dicha Jefatura, que los devolverá cuando cese el régimen de matrícula diplomática. 5. Cuando por causas legalmente establecidas se produzca alguna variación en la titularidad de estos vehículos, la Misión Diplomática, la Organización internacional interesada o, en su caso, la Oficina Consular que no dependa de una Misión Diplomática, lo notificará por escrito al Ministerio de Asuntos Exteriores, devolviendo las placas y el permiso de circulación correspondientes, y dicho Departamento ministerial remitirá a la Jefatura Provincial de Tráfico de Madrid un acta con la relación de esas matrículas, si subsiste el régimen de matrícula diplomática. En caso de que no subsista dicho régimen se comunicará su terminación a la Jefatura de Tráfico del domicilio del titular o del adquirente. 6. Además de lo dispuesto en los apartados anteriores, se aplicará la reglamentación que se recoge en el anexo I. ARTÍCULO 40. VEHÍCULOS EN RÉGIMEN DE MATRÍCULA TURÍSTICA. 1. Podrán obtener de cualquier Jefatura de Tráfico una matrícula especial denominada turística para amparar la circulación de los automóviles de turismo, caravanas y remolques, motocicletas y otros que puedan declararse equiparables: a) Las personas físicas con residencia en el extranjero. 36 \f b) Las personas físicas establecidas en el territorio aduanero de la Unión Europea que vayan a trasladar su residencia habitual fuera del mismo. c) Con sometimiento al principio de reciprocidad, los corresponsales de prensa de Estados no miembros de la Unión Europea acreditados en España y los profesores de liceos o institutos establecidos por Gobiernos de Estados no miembros de la Unión Europea, siempre que no sean nacionales de los Estados miembros ni tengan residencia habitual en la Unión Europea. d) Con sometimiento al principio de reciprocidad, los corresponsales de prensa extranjera de Estados miembros de la Unión Europea acreditados en España y los profesores de liceos o institutos establecidos en España por Gobiernos de otros Estados miembros de la Unión Europea, siempre que no sean españoles ni tengan residencia habitual en España. 2. Las personas físicas con derecho a la matrícula turística solicitarán el permiso de circulación mediante impreso oficial al que se acompañará la tarjeta de inspección técnica del vehículo, documento acreditativo de que el interesado tiene derecho al régimen de matrícula turística expedido por el órgano competente de la Administración tributaria, en el que conste como mínimo la marca y el número de bastidor del vehículo, así como el resto de la documentación que se indica en el anexo XVI."
+    },
+    {
+      "titulo": "33. ARTÍCULO 41",
+      "contenido": "La Jefatura de Tráfico, una vez comprobada la documentación presentada con la solicitud, devolverá aquélla al interesado haciéndole a la vez entrega, si procede, del permiso especial de circulación, cuyo modelo y contenido está especificado en el anexo XVI, y comunicará la matrícula turística que haya concedido al Ayuntamiento del domicilio del titular del vehículo. 3. El período de tiempo de validez de la matrícula turística concedida será el que determine el órgano competente de la Administración tributaria, la cual podrá prorrogar ese plazo. Las prórrogas del plazo se solicitarán de la Jefatura de Tráfico que expidió el permiso antes de la fecha de caducidad del mismo, acompañando a la solicitud los documentos que se señalan en el anexo XVI. La prórroga llevará implícita la sustitución del permiso de circulación y de las placas de matrícula por las correspondientes al nuevo período de matriculación. 4. Los permisos especiales propios de la matrícula turística caducarán por haber expirado el plazo de validez sin haber obtenido prórroga del mismo. La caducidad del permiso llevará inherente el precintado del vehículo y su depósito, dándose cuenta a la Administración tributaria correspondiente, si no lo hubiera ordenado ésta. 5. La utilización de un vehículo con infracción de las normas que rigen la circulación de los vehículos en régimen de matrícula turística dará lugar a la comunicación al órgano competente de la Administración tributaria. 6. Las Jefaturas de Tráfico procederán a anular los referidos permisos en los casos previstos en la reglamentación que se recoge en el anexo I y, en particular: a) Cuando sus titulares transfieran los vehículos a otras personas con derecho a utilizar la matrícula turística, en cuyo caso estos adquirentes podrán solicitar a su favor un nuevo permiso y otro juego de placas. b) Cuando se proceda a su matriculación ordinaria en España, previo pago de los impuestos que correspondan y con sujeción a los trámites normales, de acuerdo con lo dispuesto en el anexo XVI. ARTÍCULO 41. VEHÍCULOS HISTÓRICOS. Las normas que regulan los requisitos y el procedimiento para que un vehículo sea declarado histórico, así como para su matriculación y circulación por las vías públicas, están contenidas en la reglamentación que se recoge en el anexo I. 37 \f CAPÍTULO VI AUTORIZACIONES TEMPORALES DE CIRCULACIÓN ARTÍCULO 42. NORMAS GENERALES. 1. En casos justificados, la autoridad competente para expedir el permiso de circulación podrá conceder, en los términos que se fijan en este Reglamento, permisos temporales que autoricen la circulación provisional del vehículo, antes de su matriculación definitiva o mientras se tramita la misma. 2. Los permisos temporales que autoricen la circulación de vehículos para la realización de pruebas, ensayos de investigación, exhibiciones o para su transporte, se ajustarán a las prescripciones que se establecen en el presente capítulo. SECCIÓN 1.ª PERMISOS TEMPORALES PARA PARTICULARES ARTÍCULO 43. SUPUESTOS Y REQUISITOS PARA SU CONCESIÓN. 1. Las personas naturales o jurídicas que hubieran adquirido un vehículo de motor, ciclomotor, remolque o semirremolque, podrán obtener un permiso de circulación temporal en los casos siguientes: 1.1 De diez días de duración cuando lo hayan adquirido en provincia distinta a aquella donde pretendan matricularlo, que deberá solicitarse de la Jefatura de Tráfico de la provincia en que se encuentre el vehículo."
+    },
+    {
+      "titulo": "34. ARTÍCULO 44",
+      "contenido": "1.2 De sesenta días de duración: 1.2.1 Para circular mientras se tramita la matrícula definitiva, en los casos siguientes: a) Cuando lo hayan adquirido sin matricular en el extranjero. b) Cuando se haya adjudicado sin matricular, en subasta o por sentencia judicial, si el vehículo debe someterse previamente a la inspección técnica unitaria. c) Cuando se haya adquirido sin carrozar. d) Cuando se haya adquirido con matrícula no española en España o en el extranjero. La solicitud deberá dirigirse a la Jefatura de Tráfico de la provincia en que el peticionario tenga su domicilio legal y, si se trata de vehículos especiales agrícolas, también podrá interesarse de la Jefatura de Tráfico de la provincia donde se vaya a residenciar el vehículo. Excepcionalmente y con la misma matrícula, podrán solicitarse y concederse sucesivas prórrogas de la validez de estos permisos por plazos de sesenta días, cuando se pidan antes de expirar su período de vigencia y se justifique que el vehículo no se ha matriculado por causas no imputables al titular del permiso temporal. 1.2.2 Para su traslado al extranjero a efectos de su matriculación definitiva, cuando el vehículo se haya adquirido en España, que deberá solicitarse de la Jefatura de Tráfico de la provincia donde el peticionario tenga su domicilio legal o en la que fue matriculado el vehículo. 2. Los titulares de los permisos de diez o de sesenta días de validez deberán entregarlos junto con las placas a las Jefaturas de Tráfico al recibir el permiso de circulación definitivo del vehículo, salvo en el supuesto contemplado en el apartado 1.2.2 anterior. 3. Las solicitudes del permiso temporal se formularán en los impresos oficiales que facilitarán las Jefaturas de Tráfico, acompañadas de los documentos que se señalan en el anexo XVII. Las Jefaturas de Tráfico, una vez comprobada la documentación, la devolverán a los interesados haciéndoles entrega, si procede, del permiso temporal, cuyo modelo y contenido se detalla en el anexo XVII. 4. Los titulares de estos permisos temporales cuidarán, bajo su responsabilidad, de que los vehículos cuya circulación amparen reúnan todas las condiciones técnicas prescritas en el presente Reglamento. 38 \f SECCIÓN 2.ª PERMISOS TEMPORALES PARA USO DE EMPRESAS O ENTIDADES RELACIONADAS CON EL VEHÍCULO SUBSECCIÓN 1.ª PERMISOS TEMPORALES PARA VEHÍCULOS NO MATRICULADOS EN ESPAÑA ARTÍCULO 44. SUPUESTOS Y REQUISITOS PARA SU CONCESIÓN. 1. Las personas naturales o jurídicas que sean fabricantes, sus representantes legales, carroceros, importadores, vendedores o distribuidores de vehículos de motor, ciclomotores, remolques o semirremolques, con establecimiento abierto en España para cualquiera de estas actividades, así como los laboratorios oficiales, podrán obtener de la Jefatura de Tráfico de la provincia en que tengan su domicilio legal, permisos temporales que habilitarán a sus vehículos no matriculados en España para transitar por el territorio nacional, siempre que se trate de realizar transportes, pruebas o ensayos de investigación o exhibiciones con personal técnico o con terceras personas interesadas en su adquisición. 2. Estos permisos se concederán por un plazo improrrogable de un año, contado desde el día primero del mes siguiente a la fecha de su expedición. Sus titulares están obligados a entregar los permisos y las placas correspondientes en la Jefatura de Tráfico que los hubiera expedido, dentro de los cinco días siguientes contados a partir de la fecha en que haya terminado el plazo de validez. 3."
+    },
+    {
+      "titulo": "35. ARTÍCULO 45",
+      "contenido": "Cada permiso, que ampara la circulación no simultánea de vehículos cualquiera que sea su marca y categoría, se solicitará en impreso oficial que facilitará la Jefatura de Tráfico, a la que se acompañarán los documentos que se establecen en el anexo XVII. La Jefatura de Tráfico, a la vista de los documentos presentados, concederá, si procede, un permiso temporal cuyo modelo y contenido se ajustarán a lo dispuesto en el anexo XVII. 4. Cuando las personas indicadas en el apartado 1 de este artículo pretendan el traslado de un vehículo fuera del territorio nacional, deberán obtener un permiso temporal de circulación de los previstos en la presente subsección. 5. Se considerarán laboratorios oficiales los designados por el Ministerio de Industria y Energía, y para los vehículos especiales agrícolas también se considerará laboratorio oficial la Estación de Mecánica Agrícola del Ministerio de Agricultura, Pesca y Alimentación. ARTÍCULO 45. BOLETINES DE CIRCULACIÓN. 1. Los conductores de los vehículos amparados por el permiso temporal a que se refiere el artículo 44 de este Reglamento deberán llevar, en unión de dicho documento, el correspondiente «Boletín de Circulación», sin el cual aquél carecerá de validez. 2. Dicho boletín se integrará en libros-talonarios foliados y reconocidos por la Jefatura de Tráfico que expidió el permiso al que correspondan, y su modelo y contenido se ajustarán a lo dispuesto en el anexo XVII. 3. Los titulares del permiso temporal extenderán por duplicado el boletín correspondiente a cada viaje, datado y con su firma o la del apoderado o encargado autorizado; el original deberá llevarlo el conductor y la copia quedará encuadernada como matriz en su libro-talonario. 4. Independientemente del control que corresponde efectuar a los agentes de la autoridad en materia de tráfico y circulación de vehículos a motor, las Jefaturas de Tráfico podrán solicitar en cualquier momento del titular del permiso la presentación del libro- talonario que posea en unión de los boletines originales utilizados y sus copias, hasta seis meses después de haber caducado el permiso de que dimanen. ARTÍCULO 46. CONDICIONES PARA CIRCULAR CON ESTOS PERMISOS. 1. Los vehículos amparados por un permiso temporal de empresa pueden circular por las vías incluidas dentro del ámbito de aplicación de este Reglamento siempre que cumplan las condiciones técnicas prescritas en el mismo. Los titulares de dicho permiso cuidarán, bajo su responsabilidad, de que los vehículos cumplan aquellas condiciones. 39 \f Los vehículos amparados en un permiso temporal de empresa podrán circular en chasis y sin cabina cuando se trasladen para su carrozado o distribución, siempre que se cumplan las condiciones de seguridad que señala el presente Reglamento. Los camiones, tanto si están carrozados como en chasis, que circulen con permiso y placas temporales de empresa, podrán transportar sobre sí a otro automóvil que también esté sin matricular y vaya provisto de su correspondiente permiso, boletín y placas temporales de empresa. Un remolque o semirremolque en chasis puede transportar dos remolques o semirremolques, cada uno sobre otro, siempre que se cumplan las prescripciones de este Reglamento sobre masas y dimensiones y del Reglamento General de Circulación sobre colocación de la carga, así como que los tres vehículos tengan su permiso, boletín y placas temporales de empresa. 2."
+    },
+    {
+      "titulo": "36. artículo 44",
+      "contenido": "Todo vehículo de motor no matriculado que circule por las vías públicas con permiso y placas temporales de empresa deberá ser conducido por el titular del permiso o persona a su servicio, lo que deberá ser acreditado documentalmente, no siendo imprescindible que la prestación de este servicio implique una relación laboral de carácter exclusivo. Tan sólo podrán ser ocupados los vehículos por la persona o personas compradoras o que pertenezcan a la entidad que pretenda adquirirlos o por los técnicos o mecánicos del constructor o vendedor, siempre que documentalmente se acrediten dichas circunstancias o se haga constar así en el correspondiente boletín y no rebasen el número de tres. El vehículo podrá ser conducido por el posible comprador o por su representante, siempre que vaya a su lado el titular del correspondiente permiso temporal de empresa o un conductor a su servicio. 3. Los vehículos entregados a las personas naturales o jurídicas que los hubieran adquirido para su uso no deberán circular al amparo de permisos, boletines y placas temporales de empresa. Tampoco deberán circular ni utilizarse dichos vehículos para fines distintos de los mencionados en el artículo 44 que motivaron su concesión, quedando prohibido llevar en ellos carga útil. Cuando se efectúen ensayos, los vehículos podrán cargarse con aparatos de medida, bloques de hormigón, sacos de arena o de perdigones o maniquíes; podrán llevar carga distinta en las condiciones que se determinan en el artículo 47. 4. Los conjuntos de vehículos en los que uno de los elementos tenga permiso temporal de empresa y otro esté ya matriculado, deberán circular respetando las condiciones que se establecen en este artículo y llevar el boletín de circulación a que se refiere el artículo 45. ARTÍCULO 47. PRUEBAS O ENSAYOS DE INVESTIGACIÓN EXTRAORDINARIOS REALIZADOS POR FABRICANTES, CARROCEROS Y LABORATORIOS OFICIALES. 1. Con sujeción a las normas establecidas en la presente subsección podrán otorgarse a los fabricantes de vehículos o a sus representantes legales, a los carroceros y a los laboratorios oficiales, que sean titulares de permisos temporales de empresa, autorizaciones para realizar con un determinado vehículo pruebas o ensayos de investigación extraordinarios, que les permitirá: a) Realizar excepcionalmente ensayos en autopistas, autovías y demás vías públicas del territorio nacional, para los que sea necesario sobrepasar las limitaciones genéricas de velocidad establecidas para este tipo de vías. En tales casos, el órgano competente para otorgar el permiso fijará en el mismo la velocidad máxima a desarrollar, que, salvo que la vía se haya cerrado al tráfico general, no podrá ser superior a 30 kilómetros por hora sobre la normalmente autorizada para la vía y vehículo de que se trate. Dichas pruebas no podrán efectuarse por vías urbanas, travesías ni por tramos en los que exista señalización específica que limite la velocidad y, en todo caso, deberán cumplirse las limitaciones concretas impuestas por razones de peligro u otras circunstancias que estén reflejadas en las señales correspondientes, y cuantas disposiciones sobre reducción y adecuación de velocidad se prevén en el Reglamento General de Circulación. b) Circular por el territorio nacional llevando en el vehículo carga de cualquier tipo y los demás dispositivos o personas necesarios para la realización de ensayos. 40 \f 2."
+    },
+    {
+      "titulo": "37. artículo 44",
+      "contenido": "Los interesados deberán dirigir una solicitud por cada vehículo a la Dirección General de Tráfico acompañando, además de la documentación prevista en el anexo XVII, justificación de la necesidad de la petición. La Dirección General de Tráfico, a la vista de la documentación presentada concederá, si procede, previo informe de la Comunidad Autónoma que tenga transferidas competencias de ejecución en materia de regulación del tráfico, una autorización en la que deberá constar el tipo de ensayo a realizar, su itinerario, duración y demás condiciones en que deba desarrollarse. 3. Los vehículos que circulen al amparo del permiso a que se refiere este artículo deberán ser conducidos, como norma general, por el titular del permiso o persona a su servicio, que deberá portar el oportuno boletín de circulación. En caso de que sea precisa su conducción por otras personas, deberán estar autorizadas expresamente por la Dirección General de Tráfico. 4. Cuando por la naturaleza de las pruebas se estime conveniente, en orden a la seguridad de la circulación, se podrá ordenar que el tramo designado para la realización de las pruebas se señalice, por cuenta del peticionario, en la forma que se indique, para que sirva de advertencia al resto de los usuarios. 5. Los fabricantes de vehículos, cuando realicen pruebas especiales o ensayos que impliquen exceso de velocidad, solicitarán la realización de aquéllos con un plazo mínimo de antelación de setenta y dos horas, a fin de que se dispongan los servicios especiales que se estimen oportunos. 6. Los vehículos que circulen con las autorizaciones a que se refiere el presente artículo llevarán, además de las placas de matrícula y permisos previstos en el artículo 44, dos placas con las letras F.V., de acuerdo con lo establecido en el anexo XI de este Reglamento. SUBSECCIÓN 2.ª PERMISOS TEMPORALES PARA VEHÍCULOS MATRICULADOS EN ESPAÑA ARTÍCULO 48. SUPUESTOS Y REQUISITOS PARA SU CONCESIÓN. 1. Las personas naturales o jurídicas que sean vendedores de vehículos de motor, ciclomotores, remolques o semirremolques con establecimiento abierto en España para esta actividad, podrán obtener de la Jefatura de Tráfico de la provincia en que tengan su domicilio legal permisos temporales que habilitarán a sus vehículos matriculados en nuestro país y dados de baja temporal por transmisión para circular por el territorio nacional, siempre que se trate de realizar pruebas con terceras personas interesadas en su adquisición. 2. Estos permisos se concederán por el plazo improrrogable de un año, contado desde el día primero del mes siguiente a la fecha de su expedición. Sus titulares están obligados a entregar los permisos y las placas correspondientes en la Jefatura de Tráfico que los hubiera expedido, dentro de los cinco días siguientes contados a partir de la fecha en que haya terminado el plazo de validez. 3. Cada permiso, que ampara la circulación no simultánea de vehículos cualquiera que sea su marca y categoría, se solicitará en impreso oficial que facilitará la Jefatura de Tráfico, a la que se acompañarán los documentos que se establecen en el anexo XVII. La Jefatura de Tráfico, a la vista de los documentos presentados, concederá, si procede, un permiso temporal cuyo modelo y contenido se ajustarán a lo dispuesto en el anexo XVII. 4."
+    },
+    {
+      "titulo": "38. artículo 45",
+      "contenido": "Los conductores de los vehículos amparados por este permiso temporal deberán llevar, en unión de dicho documento, el boletín de circulación a que se refiere el artículo 45 del presente Reglamento en el que se hará constar, además de los datos que en el mismo se indican, la matrícula ordinaria del vehículo. Asimismo, deberán llevar la tarjeta de inspección técnica con el reconocimiento en vigor o el certificado de características. Los conductores de los vehículos amparados por este tipo de permisos deberán respetar las condiciones de circulación que se establecen en los apartados 2 y 3 del artículo 46 del presente Reglamento. 41 \f SUBSECCIÓN 3.ª PERMISOS TEMPORALES PARA VEHÍCULOS DE MUSEOS Y DE COLECCIONES MUSEOGRÁFICAS ARTÍCULO 48 BIS. SUPUESTOS Y REQUISITOS PARA SU CONCESIÓN. 1. Las personas naturales o jurídicas titulares de museos o de colecciones museográficas de vehículos históricos, podrán obtener de la Jefatura de Tráfico, permisos temporales que habilitarán a sus vehículos para transitar por el territorio nacional a los efectos de traslado entre instalaciones, mantenimiento, exhibición en acontecimientos o pruebas autorizadas o análogas circunstancias justificadas, cuya finalidad será la protección y exhibición de dicho patrimonio automovilístico. 2. Estos permisos se concederán por el plazo improrrogable de un año, contado desde el día primero del mes siguiente a la fecha de su expedición, y los vehículos deberán llevar las placas previstas para los permisos temporales de empresas para vehículos no matriculados en España. Sus titulares están obligados a entregar los permisos y las placas correspondientes en una Jefatura de Tráfico, dentro de los cinco días siguientes contados a partir de la fecha en que haya terminado el plazo de validez. 3. Cada permiso, que ampara la circulación no simultánea de vehículos, cualquiera que sea su marca y categoría, se solicitará en modelo oficial, al que se acompañarán los documentos que se establecen en el anexo XVII. La Jefatura de Tráfico, a la vista de los documentos presentados, concederá, si procede, un permiso temporal cuyo modelo y contenido se ajustarán a lo dispuesto en el anexo XVII. 4. Los vehículos que circulen al amparo del permiso a que se refiere este artículo deberán ser conducidos, como norma general, por el titular del permiso o persona autorizada por el mismo, que deberá portar la correspondiente autorización temporal de circulación. 5. Las personas conductoras de los vehículos amparados por el permiso temporal a que se refiere este artículo deberán llevar, en unión de dicho documento, el correspondiente ''Boletín de Circulación'' en las condiciones establecidas en el artículo 45. CAPÍTULO VII PLACAS DE MATRÍCULA ARTÍCULO 49. CARACTERES, DIMENSIONES Y OTROS REQUISITOS. 1. Las placas de matrícula deben cumplir con lo establecido en el anexo XVIII del presente real decreto. Asimismo, deberán ser conformes con los requisitos técnicos establecidos en el Real Decreto 885/2020, de 6 de octubre, por el que se establecen los requisitos para la comercialización y puesta en servicio de placas de matrícula para vehículos de motor y remolques, y por el que se modifica el Reglamento General de Vehículos, aprobado por el Real Decreto 2822/1998, de 23 de diciembre. El número de placas de matrícula que debe llevar cada vehículo, así como su ubicación en el mismo, se ajustarán a lo dispuesto en el citado anexo. 2."
+    },
+    {
+      "titulo": "39. CAPÍTULO VIII",
+      "contenido": "El número de manipulador, asignado por el fabricante y dado de alta en el Registro de Vehículos de la Dirección General de Tráfico constará en el anverso de todas las placas, en el centro del borde izquierdo, en posición vertical, de acuerdo con lo especificado en el referido anexo. 3. El nombre del fabricante o marca registrada aparecerá en el anverso de las placas de serie junto al centro del borde superior y dentro de un rectángulo horizontal de 5 milímetros de altura y 35 milímetros de ancho, en el mismo color que los caracteres impresos en la matrícula o en el bordón de la misma en el caso de placas embutidas. 4. Queda prohibido que en las placas de matrícula se coloquen, inscriban o pinten adornos, signos u otros caracteres distintos de los señalados en el anexo XVIII, incluida la publicidad en el interior de las mismas. Se autoriza la utilización de un apéndice distinto de la propia placa y situado en la parte inferior a la misma o de un marco ajeno a la propia placa, el cual podrá ir grabado en la parte inferior con publicidad, siempre y cuando su contorno no exceda de 26 milímetros al borde del exterior de la placa. Asimismo, se prohíbe que en las partes 42 \f anterior y posterior de los vehículos se coloquen placas complementarias no autorizadas o se fijen o pinten marcas o distintivos que por su forma, color y caracteres dificulten la legibilidad o puedan inducir a confusión con los caracteres reglamentarios de las placas de matrícula. CAPÍTULO VIII CIRCULACIÓN INTERNACIONAL DE LOS VEHÍCULOS ARTÍCULO 50. PLACAS DE MATRÍCULA, DISTINTIVOS Y DOCUMENTACIÓN. 1. Vehículos a motor matriculados en España y sus remolques: a) Todo vehículo a motor matriculado en España que haya de circular por las vías públicas del extranjero deberá llevar, en su parte posterior, además de la placa de matrícula nacional, el signo distintivo de su nacionalidad española. En el caso de que el vehículo a motor vaya seguido de uno o más remolques, tanto la matrícula como el signo distintivo deberán figurar, además, en la parte posterior del remolque único o último. El signo distintivo de la nacionalidad española del vehículo se ajustará en cuanto a sus caracteres, dimensiones y colocación a lo dispuesto en el anexo XI. b) Los conductores de los vehículos mencionados deberán llevar el permiso de circulación expedido por las Jefaturas de Tráfico con arreglo al artículo 28 de este Reglamento. 2. Vehículos a motor extranjeros matriculados en Estados parte en el Convenio Internacional de Ginebra y sus remolques: a) De conformidad con lo acordado en el Convenio Internacional de Ginebra, de 19 de septiembre de 1949, sobre circulación por carretera, los vehículos a motor matriculados en cualquiera de los Estados parte en el mismo podrán circular por las vías públicas españolas cuando llevaren en su parte posterior, al menos, e inscrito en una placa o en el propio vehículo, el número de matrícula atribuido a éste por la autoridad competente de su país. Cuando vaya seguido de uno o de varios remolques, el remolque único o último habrá de llevar a su vez, en su parte posterior, el número de matrícula del vehículo tractor o un número de matrícula propio. La composición del número de matrícula y la forma en que ésta haya de exhibirse son las determinadas en el anejo 3 del referido Convenio Internacional."
+    },
+    {
+      "titulo": "40. CAPÍTULO IX",
+      "contenido": "Salvo en aquellos casos en que figuren inscritos en sus placas de matrícula la sigla distintiva del Estado de la Unión Europea al que pertenecen y el símbolo representativo de la bandera de aquélla de acuerdo con la reglamentación que se recoge en el anexo I, los vehículos a motor aludidos deberán llevar, además, en su parte posterior el signo distintivo de la nacionalidad de su matrícula. Cuando vaya seguido de uno o de varios remolques, el signo distintivo deberá repetirse detrás del remolque único o último. El signo distintivo de la nacionalidad extranjera del vehículo se ajustará en cuanto a sus caracteres, dimensiones y colocación a lo dispuesto en el anexo XI. b) Los conductores de los vehículos a motor a que se refiere este apartado deberán ser portadores del certificado de matrícula, expedido por las autoridades competentes de su país o por una asociación legalmente habilitada al efecto. En estos certificados deberá figurar, por lo menos, el número de matrícula del vehículo, el nombre o marca del constructor de éste, el número de fabricación y el número de serie del constructor y la fecha en que el vehículo fue primeramente matriculado, así como el nombre, apellidos y domicilio permanente del titular del certificado. Los certificados de matrícula expedidos en las condiciones precedentes serán aceptados en España como presunción legal de la exactitud de los datos correspondientes. c) Los vehículos a motor que procedentes de Estados parte en el Convenio hayan de circular por España deberán llevar las siguientes marcas de identificación: 1. El nombre o marca del fabricante. 2. En el chasis o, a falta de chasis, en la carrocería, el número de identificación o de serie del fabricante. 3. En el motor, el número de fabricación del motor, si el fabricante lo estampa en él. 43 \f Para los remolques, las indicaciones mencionadas en los números 1 y 2, o bien una marca de identificación asignada al remolque por la autoridad competente del país de procedencia. Las marcas mencionadas deberán estar en lugares accesibles y ser fácilmente legibles y de difícil modificación o supresión. 3. Vehículos a motor extranjeros matriculados en Estados que no sean parte del Convenio Internacional de Ginebra y sus remolques: Los vehículos a motor matriculados en cualquiera de los Estados que no sean parte del de Ginebra, de 19 de septiembre de 1949, podrán circular en España bien en las condiciones previstas en el apartado anterior, bien en las establecidas en el Convenio Internacional de Viena de 8 de noviembre de 1968 si se trata de Estados parte en este Convenio, o en las que se indiquen en particulares Convenios Internacionales. El signo distintivo de la nacionalidad extranjera de los vehículos pertenecientes al Convenio Internacional de Viena se ajustará en cuanto a sus caracteres, dimensiones y colocación a lo dispuesto en el anexo XI y, en su caso, a la reglamentación que se recoge en el anexo I. CAPÍTULO IX NULIDAD, ANULACIÓN, PÉRDIDA DE VIGENCIA Y SUSPENSIÓN CAUTELAR DE LAS AUTORIZACIONES DE CIRCULACIÓN ARTÍCULO 51. PROCEDIMIENTOS Y RECURSOS. 1. Las normas específicas contenidas en este Título IV sobre tramitación de las autorizaciones de circulación de los vehículos, se aplicarán sin perjuicio de lo dispuesto en el Título VI de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común. 2."
+    },
+    {
+      "titulo": "41. Título VII",
+      "contenido": "Las autorizaciones administrativas de circulación reguladas en el presente Título podrán ser objeto de nulidad o anulación de acuerdo con lo dispuesto en los artículos 62 a 67 de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común, debiendo ajustarse el procedimiento a lo establecido en el Título VII de la citada Ley. 3. Las mencionadas autorizaciones podrán ser declaradas caducadas o perdida su vigencia cuando, después de otorgarlas, se acredite que han desaparecido los requisitos que se exigían para ello. Antes de dictar resolución acordando su pérdida de vigencia o caducidad, el órgano competente de la Administración notificará al interesado la presunta carencia del requisito exigido, concediéndole un plazo máximo de dos meses para acreditar su existencia. Transcurrido el plazo concedido sin que se haya acreditado que se reúnen los requisitos que se exigen para obtener la autorización, se dictará resolución acordando dicha pérdida de vigencia o caducidad. Sin perjuicio de los recursos que contra la misma puedan interponerse, el titular de una autorización caducada o que haya perdido su vigencia podrá obtenerla de nuevo si acredita la concurrencia de los requisitos exigidos para su otorgamiento, a través del procedimiento correspondiente. 4. En el curso de los procedimientos de declaración de nulidad, anulación y pérdida de vigencia o caducidad de las autorizaciones administrativas de circulación de los vehículos, podrá acordarse la suspensión cautelar de la autorización en cuestión, cuando su mantenimiento entrañe un grave peligro para la seguridad del tráfico o perjudique notoriamente el interés público. 5. Contra las resoluciones de los Jefes de Tráfico en materia de autorizaciones administrativas relativas a vehículos, podrá interponerse por los interesados recurso ordinario en el plazo de un mes que resolverá la Dirección General de Tráfico, y se sustanciará de acuerdo con lo dispuesto en el capítulo II, del Título VII de la Ley 30/1992, de 26 de noviembre. Las resoluciones que pongan fin a la vía administrativa serán recurribles ante el órgano jurisdiccional contencioso-administrativo. 44"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Las autorizaciones administrativas. Perm\"]\n  A --> N1[\"Real Decreto Legislativo 6/2015, de 30 d\"]\n  A --> N2[\"artículo 90\"]\n  A --> N3[\"ARTÍCULO 64\"]\n  A --> N4[\"artículo 63\"]\n  A --> N5[\"CAPÍTULO IV\"]\n  A --> N6[\"ARTÍCULO 72\"]\n  A --> N7[\"artículo 2\"]\n  A --> N8[\"artículo 5\"]\n  A --> N9[\"Conjuntos de vehículos acoplados compues\"]\n  A --> N10[\"Real Decreto 2822/1998, de 23 de diciemb\"]\n  A --> N11[\"artículo 49\"]\n  A --> N12[\"artículo 6\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Las autorizaciones administrativas. Permisos y li…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "Real Decreto Legislativo 6/2015, de 30 …",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "artículo 90",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "ARTÍCULO 64",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "artículo 63",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "CAPÍTULO IV",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "ARTÍCULO 72",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "artículo 2",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "artículo 5",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "Conjuntos de vehículos acoplados compue…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "Real Decreto 2822/1998, de 23 de diciem…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "artículo 49",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s12",
+        "texto": "artículo 6",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s13",
+        "texto": "ARTÍCULO 8",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s14",
+        "texto": "ARTÍCULO 13",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s15",
+        "texto": "artículo 37",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s16",
+        "texto": "ARTÍCULO 18",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s17",
+        "texto": "ARTÍCULO 21",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s18",
+        "texto": "artículo 21",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s19",
+        "texto": "ARTÍCULO 24",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s20",
+        "texto": "ARTÍCULO 28",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s21",
+        "texto": "ARTÍCULO 30",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s22",
+        "texto": "ARTÍCULO 36",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s23",
+        "texto": "ARTÍCULO 37",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s24",
+        "texto": "ARTÍCULO 38",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s25",
+        "texto": "ARTÍCULO 40",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s26",
+        "texto": "TÍTULO III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s27",
+        "texto": "capítulo VI",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s28",
+        "texto": "Real Decreto 1013/2009, de 19 de junio,…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s29",
+        "texto": "título i",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s30",
+        "texto": "ARTÍCULO 36",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s31",
+        "texto": "CAPÍTULO V",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s32",
+        "texto": "ARTÍCULO 40",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s33",
+        "texto": "ARTÍCULO 41",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s34",
+        "texto": "ARTÍCULO 44",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s35",
+        "texto": "ARTÍCULO 45",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s36",
+        "texto": "artículo 44",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s37",
+        "texto": "artículo 44",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s38",
+        "texto": "artículo 45",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s39",
+        "texto": "CAPÍTULO VIII",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s40",
+        "texto": "CAPÍTULO IX",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s41",
+        "texto": "Título VII",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p32-01",
-            "enunciado": "El permiso necesario para conducir ciclomotores es:",
-            "opciones": ["A1", "AM", "B", "A2"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El permiso AM habilita para conducir ciclomotores."
-        },
-        {
-            "id": "p32-02",
-            "enunciado": "Para turismos hasta 3.500 kg de MMA se necesita el permiso:",
-            "opciones": ["A", "B", "C1", "D"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El permiso B habilita para turismos hasta 3.500 kg de MMA."
-        },
-        {
-            "id": "p32-03",
-            "enunciado": "La vigencia del permiso B hasta los 65 años es de:",
-            "opciones": ["5 años", "10 años", "15 años", "Indefinida"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Hasta los 65 años la vigencia del permiso B es de 10 años; a partir de esa edad, 5 años."
-        },
-        {
-            "id": "p32-04",
-            "enunciado": "El permiso de circulación de un vehículo lo expide:",
-            "opciones": ["El Ayuntamiento", "La DGT", "El Ministerio del Interior", "La Policía Local"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Dirección General de Tráfico expide el permiso de circulación a nombre del titular."
-        },
-        {
-            "id": "p32-05",
-            "enunciado": "El conductor debe llevar durante la circulación:",
-            "opciones": ["Solo el DNI", "Permiso o licencia, permiso de circulación, ITV y seguro", "Solo el permiso de conducir", "Solo el seguro"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El conductor debe llevar permiso o licencia de conducción, permiso de circulación, tarjeta de ITV y justificante del seguro obligatorio."
-        },
-        {
-            "id": "p32-06",
-            "enunciado": "Las matrículas actuales en España (desde 2000) tienen:",
-            "opciones": ["3 cifras y 3 letras", "4 cifras y 3 letras", "5 cifras y 2 letras", "2 cifras y 4 letras"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El sistema vigente desde el año 2000 emplea cuatro cifras y tres letras."
-        },
-        {
-            "id": "p32-07",
-            "enunciado": "La declaración de lesividad permite a la Administración:",
-            "opciones": ["Anular sus actos automáticamente", "Impugnar sus actos declarativos de derechos ante la jurisdicción", "Sancionar al particular", "Revisar el permiso del conductor"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La declaración de lesividad permite impugnar ante la jurisdicción contencioso-administrativa los propios actos declarativos de derechos lesivos al interés público."
-        },
-        {
-            "id": "p32-08",
-            "enunciado": "El permiso de conducir pierde vigencia, entre otras causas, por:",
-            "opciones": ["Cambio de domicilio", "Pérdida total de los puntos asignados", "Cambio de vehículo", "Vencimiento del seguro"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La pérdida total de los puntos asignados al permiso conlleva la pérdida de su vigencia."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      },
+      {
+        "desde": "root",
+        "hasta": "s12"
+      },
+      {
+        "desde": "root",
+        "hasta": "s13"
+      },
+      {
+        "desde": "root",
+        "hasta": "s14"
+      },
+      {
+        "desde": "root",
+        "hasta": "s15"
+      },
+      {
+        "desde": "root",
+        "hasta": "s16"
+      },
+      {
+        "desde": "root",
+        "hasta": "s17"
+      },
+      {
+        "desde": "root",
+        "hasta": "s18"
+      },
+      {
+        "desde": "root",
+        "hasta": "s19"
+      },
+      {
+        "desde": "root",
+        "hasta": "s20"
+      },
+      {
+        "desde": "root",
+        "hasta": "s21"
+      },
+      {
+        "desde": "root",
+        "hasta": "s22"
+      },
+      {
+        "desde": "root",
+        "hasta": "s23"
+      },
+      {
+        "desde": "root",
+        "hasta": "s24"
+      },
+      {
+        "desde": "root",
+        "hasta": "s25"
+      },
+      {
+        "desde": "root",
+        "hasta": "s26"
+      },
+      {
+        "desde": "root",
+        "hasta": "s27"
+      },
+      {
+        "desde": "root",
+        "hasta": "s28"
+      },
+      {
+        "desde": "root",
+        "hasta": "s29"
+      },
+      {
+        "desde": "root",
+        "hasta": "s30"
+      },
+      {
+        "desde": "root",
+        "hasta": "s31"
+      },
+      {
+        "desde": "root",
+        "hasta": "s32"
+      },
+      {
+        "desde": "root",
+        "hasta": "s33"
+      },
+      {
+        "desde": "root",
+        "hasta": "s34"
+      },
+      {
+        "desde": "root",
+        "hasta": "s35"
+      },
+      {
+        "desde": "root",
+        "hasta": "s36"
+      },
+      {
+        "desde": "root",
+        "hasta": "s37"
+      },
+      {
+        "desde": "root",
+        "hasta": "s38"
+      },
+      {
+        "desde": "root",
+        "hasta": "s39"
+      },
+      {
+        "desde": "root",
+        "hasta": "s40"
+      },
+      {
+        "desde": "root",
+        "hasta": "s41"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc32-01",
+      "pregunta": "¿Qué se requiere para circular con vehículos a motor y ciclomotores?",
+      "respuesta": "Obtener la correspondiente autorización administrativa previa"
+    },
+    {
+      "id": "fc32-02",
+      "pregunta": "¿Qué debe llevar consigo el conductor de un vehículo a motor o ciclomotor?",
+      "respuesta": "Su permiso o licencia válidos para conducir, el permiso de circulación del vehículo y la tarjeta de inspección técnica"
+    },
+    {
+      "id": "fc32-03",
+      "pregunta": "¿Qué se utiliza para efectuar las notificaciones respecto de todas las autorizaciones de que disponga el titular?",
+      "respuesta": "Su domicilio comunicado a los registros del organismo autónomo Jefatura Central de Tráfico"
+    },
+    {
+      "id": "fc32-04",
+      "pregunta": "¿Qué se asigna automáticamente a todo titular de un permiso o licencia de conducción o del permiso de circulación de un vehículo?",
+      "respuesta": "Una Dirección Electrónica Vial (DEV)"
+    },
+    {
+      "id": "fc32-05",
+      "pregunta": "¿Qué se requiere para la conducción de vehículos a motor y ciclomotores?",
+      "respuesta": "Haber obtenido previamente el preceptivo permiso o licencia de conducción"
+    },
+    {
+      "id": "fc32-06",
+      "pregunta": "¿Qué condiciona la vigencia del permiso y la licencia de conducción?",
+      "respuesta": "Que su titular no haya perdido el crédito de puntos asignado"
+    },
+    {
+      "id": "fc32-07",
+      "pregunta": "¿Qué se ejercerán por centros de formación?",
+      "respuesta": "La enseñanza de los conocimientos y técnica necesarios para la conducción, así como el posterior perfeccionamiento y renovación de conocimientos"
+    },
+    {
+      "id": "fc32-08",
+      "pregunta": "¿Qué se regularán reglamentariamente para garantizar la seguridad vial?",
+      "respuesta": "Los elementos personales y materiales mínimos para la formación y el reconocimiento de conductores"
+    },
+    {
+      "id": "fc32-09",
+      "pregunta": "¿Qué se basará en pruebas objetivas para la titulación y acreditación de los profesores y directores?",
+      "respuesta": "Los conocimientos, la aptitud pedagógica y la experiencia práctica"
+    },
+    {
+      "id": "fc32-10",
+      "pregunta": "¿Qué se podrá autorizar en los términos que reglamentariamente se determine?",
+      "respuesta": "La enseñanza no profesional"
+    },
+    {
+      "id": "fc32-11",
+      "pregunta": "¿Qué se ejercerá por centros que necesitarán autorización previa de la autoridad competente?",
+      "respuesta": "La constatación de las aptitudes psicofísicas de los conductores"
+    },
+    {
+      "id": "fc32-12",
+      "pregunta": "¿Qué se convocarán periódicamente?",
+      "respuesta": "Las pruebas para la titulación y acreditación de los profesores y directores"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p32-01",
+      "enunciado": "¿Qué se requiere para circular con vehículos a motor y ciclomotores?",
+      "opciones": [
+        "Obtener la correspondiente autorización administrativa previa",
+        "No necesitar ninguna autorización",
+        "Obtener un permiso de circulación",
+        "Obtener una licencia de conducción"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 59 de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial, la circulación de vehículos a motor y ciclomotores requiere la obtención de la correspondiente autorización administrativa previa."
+    },
+    {
+      "id": "p32-02",
+      "enunciado": "¿Qué debe llevar consigo el conductor de un vehículo a motor o ciclomotor?",
+      "opciones": [
+        "Su permiso o licencia válidos para conducir, el permiso de circulación del vehículo y la tarjeta de inspección técnica",
+        "Su permiso o licencia válidos para conducir",
+        "El permiso de circulación del vehículo y la tarjeta de inspección técnica",
+        "No necesita llevar nada"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 59 de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial, el conductor de un vehículo a motor o ciclomotor debe llevar consigo su permiso o licencia válidos para conducir, el permiso de circulación del vehículo y la tarjeta de inspección técnica."
+    },
+    {
+      "id": "p32-03",
+      "enunciado": "¿Qué se utiliza para efectuar las notificaciones respecto de todas las autorizaciones de que disponga el titular?",
+      "opciones": [
+        "Su domicilio comunicado a los registros del organismo autónomo Jefatura Central de Tráfico",
+        "Su dirección electrónica",
+        "Su teléfono móvil",
+        "No se utiliza nada"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 60 de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial, el domicilio comunicado a los registros del organismo autónomo Jefatura Central de Tráfico se utiliza para efectuar las notificaciones respecto de todas las autorizaciones de que disponga el titular."
+    },
+    {
+      "id": "p32-04",
+      "enunciado": "¿Qué se asigna automáticamente a todo titular de un permiso o licencia de conducción o del permiso de circulación de un vehículo?",
+      "opciones": [
+        "Una Dirección Electrónica Vial (DEV)",
+        "Un permiso de circulación",
+        "Una licencia de conducción",
+        "Un número de matrícula"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 60 de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial, se asigna automáticamente a todo titular de un permiso o licencia de conducción o del permiso de circulación de un vehículo una Dirección Electrónica Vial (DEV)."
+    },
+    {
+      "id": "p32-05",
+      "enunciado": "¿Qué se requiere para la conducción de vehículos a motor y ciclomotores?",
+      "opciones": [
+        "Haber obtenido previamente el preceptivo permiso o licencia de conducción",
+        "No necesitar ningún permiso o licencia",
+        "Haber obtenido un permiso de circulación",
+        "Haber obtenido una licencia de conducción"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 61 de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial, la conducción de vehículos a motor y ciclomotores requiere haber obtenido previamente el preceptivo permiso o licencia de conducción."
+    },
+    {
+      "id": "p32-06",
+      "enunciado": "¿Qué condiciona la vigencia del permiso y la licencia de conducción?",
+      "opciones": [
+        "Que su titular no haya perdido el crédito de puntos asignado",
+        "Que su titular no haya cometido ninguna infracción",
+        "Que su titular no haya tenido ningún accidente",
+        "No hay ninguna condición"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 61 de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial, la vigencia del permiso y la licencia de conducción está condicionada a que su titular no haya perdido el crédito de puntos asignado."
+    },
+    {
+      "id": "p32-07",
+      "enunciado": "¿Qué se ejercerán por centros de formación?",
+      "opciones": [
+        "La enseñanza de los conocimientos y técnica necesarios para la conducción, así como el posterior perfeccionamiento y renovación de conocimientos",
+        "La enseñanza de los conocimientos y técnica necesarios para la conducción",
+        "El posterior perfeccionamiento y renovación de conocimientos",
+        "Ninguna de las anteriores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 62 de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial, los centros de formación ejercerán la enseñanza de los conocimientos y técnica necesarios para la conducción, así como el posterior perfeccionamiento y renovación de conocimientos."
+    },
+    {
+      "id": "p32-08",
+      "enunciado": "¿Qué se regularán reglamentariamente para garantizar la seguridad vial?",
+      "opciones": [
+        "Los elementos personales y materiales mínimos para la formación y el reconocimiento de conductores",
+        "Los elementos personales y materiales mínimos para la formación de conductores",
+        "Los elementos personales y materiales mínimos para el reconocimiento de conductores",
+        "Ninguna de las anteriores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 62 de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial, se regularán reglamentariamente los elementos personales y materiales mínimos para la formación y el reconocimiento de conductores para garantizar la seguridad vial."
+    }
+  ]
 }

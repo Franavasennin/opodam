@@ -1,157 +1,373 @@
 {
-    "id": 16,
-    "titulo": "Normativa sobre los Cuerpos y Fuerzas de Seguridad. Disposiciones generales. Principios básicos de actuación. Disposiciones estatutarias comunes. Los Cuerpos y Fuerzas de Seguridad del Estado. Funciones. Escalas. Sistema de acceso. Derechos de representación colectiva. El Régimen disciplinario",
-    "bloque": "especifico",
-    "secciones": [
-        {
-            "id": "s16-1",
-            "titulo": "Normativa y disposiciones generales",
-            "contenido": "La seguridad pública es competencia exclusiva del Estado, y su mantenimiento corresponde al Gobierno de la Nación. La Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad, es la norma básica. Las Fuerzas y Cuerpos de Seguridad están integradas por las Fuerzas y Cuerpos de Seguridad del Estado, dependientes del Gobierno de la Nación; los Cuerpos de Policía dependientes de las Comunidades Autónomas; y los Cuerpos de Policía dependientes de las Corporaciones Locales. Todas ejercen sus funciones con el fin de proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana, ajustando su actuación a los principios de cooperación recíproca y coordinación."
-        },
-        {
-            "id": "s16-2",
-            "titulo": "Principios básicos de actuación",
-            "contenido": "La LO 2/1986 establece los principios básicos de actuación, comunes a todos los miembros de las Fuerzas y Cuerpos de Seguridad. Deben adecuar su actuación al ordenamiento jurídico (legalidad); actuar con absoluta neutralidad política e imparcialidad y sin discriminación; con integridad y dignidad, oponiéndose a todo acto de corrupción; con la formación necesaria y la debida obediencia jerárquica, salvo que las órdenes constituyan delito o sean contrarias a la Constitución. En sus relaciones con la comunidad deben impedir prácticas abusivas o discriminatorias; observar un trato correcto y esmerado; y actuar con la decisión necesaria, rigiéndose por los principios de congruencia, oportunidad y proporcionalidad en el uso de los medios, utilizando las armas solo en situaciones de grave riesgo para la vida."
-        },
-        {
-            "id": "s16-3",
-            "titulo": "Disposiciones estatutarias comunes",
-            "contenido": "Las disposiciones estatutarias comunes establecen que los miembros de las Fuerzas y Cuerpos de Seguridad deben jurar o prometer acatamiento a la Constitución; el documento de acreditación profesional y, en su caso, el arma reglamentaria que se les entregue no podrán ser retirados sino en los casos previstos. La pertenencia a estos Cuerpos es causa de incompatibilidad con el desempeño de cualquier otra actividad pública o privada, salvo las exceptuadas por la ley de incompatibilidades. Su régimen estatutario, formación, promoción y movilidad se rigen por su normativa específica."
-        },
-        {
-            "id": "s16-4",
-            "titulo": "Las Fuerzas y Cuerpos de Seguridad del Estado: funciones, escalas y acceso",
-            "contenido": "Las Fuerzas y Cuerpos de Seguridad del Estado son el Cuerpo Nacional de Policía (instituto armado de naturaleza civil) y la Guardia Civil (instituto armado de naturaleza militar). Entre sus funciones figuran velar por el cumplimiento de las leyes, auxiliar y proteger a las personas, vigilar y proteger edificios e instalaciones, mantener y restablecer el orden y la seguridad ciudadana, prevenir actos delictivos, investigar los delitos, captar y analizar la información de interés para el orden y la seguridad pública, y colaborar con los servicios de protección civil. La Policía Nacional se organiza en escalas (Superior, Ejecutiva, Subinspección y Básica). El acceso se realiza por procedimientos selectivos basados en los principios de igualdad, mérito y capacidad."
-        },
-        {
-            "id": "s16-5",
-            "titulo": "Representación colectiva y régimen disciplinario",
-            "contenido": "Los miembros del Cuerpo Nacional de Policía tienen derecho a constituir organizaciones sindicales de ámbito policial y a afiliarse a las mismas, así como a participar mediante representantes en el Consejo de Policía. La Guardia Civil, por su naturaleza militar, se rige por su régimen específico, con asociaciones profesionales y el Consejo de la Guardia Civil. El régimen disciplinario tipifica las faltas en muy graves, graves y leves, con sanciones que van desde la separación del servicio o la suspensión de funciones hasta la pérdida de remuneración o el apercibimiento, garantizando siempre el procedimiento sancionador y los derechos de defensa."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e16-1",
-            "titulo": "Las Fuerzas y Cuerpos de Seguridad",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Fuerzas y Cuerpos de Seguridad] --> B[Del Estado]\n    A --> C[De las Comunidades Autonomas]\n    A --> D[De las Corporaciones Locales]\n    B --> E[Policia Nacional y Guardia Civil]"
-        },
-        {
-            "id": "e16-2",
-            "titulo": "Principios básicos de actuación",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Principios basicos] --> B[Legalidad]\n    A --> C[Neutralidad e imparcialidad]\n    A --> D[Integridad y dignidad]\n    A --> E[Congruencia, oportunidad y proporcionalidad]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Fuerzas y Cuerpos de Seguridad", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Normativa y disposiciones generales", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Principios básicos de actuación", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Disposiciones estatutarias", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Cuerpos del Estado", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Representación y régimen disciplinario", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "LO 2/1986", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Legalidad, neutralidad, proporcionalidad", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Juramento y acreditación profesional", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Policía Nacional y Guardia Civil", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Escalas y acceso por mérito", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Consejo de Policía", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Faltas muy graves, graves y leves", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n5", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 16,
+  "titulo": "Normativa sobre los Cuerpos y fuerzas de seguridad. Disposiciones generales. Principios básicos de actuación. Disposiciones estatutarias comunes. Los Cuerpos y fuerzas de seguridad del Estado. Las funciones. Escalas. Sistema de acceso. Los derechos de representación colectiva. El Régimen disciplinario.",
+  "bloque": "especifico",
+  "secciones": [
+    {
+      "titulo": "1. LEY ORGÁNICA 2/1986, DE 13 DE MARZO, DE FUERZAS Y CUERPOS DE SEGURIDAD",
+      "contenido": "BIBLIOGRAFÍA • CONSTITUCIÓN ESPAÑOLA o Art. 104 o Art. 149 • LEY ORGÁNICA 2/1986, DE 13 DE MARZO, DE FUERZAS Y CUERPOS DE SEGURIDAD. o Art. 1-15 o Art.17-18 o Art. 23-28 • LEY ORGÁNICA 4/2010, DE 20 DE MAYO, DEL RÉGIMEN DISCIPLINARIO DEL CUERPO NACIONAL DE POLICÍA. o Art. 2-5 o Art. 7-9 o Art. 15-16 • LEY ORGÁNICA 9/2015, DE 28 DE JULIO, DE RÉGIMEN DE PERSONAL DE LA POLICÍA NACIONAL. o Art. 8 o Art. 89-90 o Art. 93 ACTUALIZACIONES: – Adrián Martín Miranda 2 \f CONSTITUCIÓN ESPAÑOLA TÍTULO IV DEL GOBIERNO Y DE LA ADMINISTRACIÓN ARTÍCULO 104 1. Las Fuerzas y Cuerpos de seguridad, bajo la dependencia del Gobierno, tendrán como misión proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana. 2. Una ley orgánica determinará las funciones, principios básicos de actuación y estatutos de las Fuerzas y Cuerpos de seguridad. TÍTULO VIII DE LA ORGANIZACIÓN TERRITORIAL DEL ESTADO CAPÍTULO TERCERO DE LAS COMUNIDADES AUTÓNOMAS ARTÍCULO 149 1. El Estado tiene competencia exclusiva sobre las siguientes materias: 29.ª Seguridad pública, sin perjuicio de la posibilidad de creación de policías por las Comunidades Autónomas en la forma que se establezca en los respectivos Estatutos en el marco de lo que disponga una ley orgánica. 3 \f LEY ORGÁNICA 2/1986, DE 13 DE MARZO, DE FUERZAS Y CUERPOS DE SEGURIDAD. TÍTULO I DE LOS CUERPOS Y FUERZAS DE SEGURIDAD CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO PRIMERO. 1. La Seguridad Pública es competencia exclusiva del Estado. Su mantenimiento corresponde al Gobierno de la Nación. 2. Las Comunidades Autónomas participarán en el mantenimiento de la Seguridad Pública en los términos que establezcan los respectivos Estatutos y en el marco de esta Ley. 3. Las Corporaciones Locales participarán en el mantenimiento de la seguridad pública en los términos establecidos en la Ley Reguladora de las Bases de Régimen Local y en el marco de esta Ley. 4. El mantenimiento de la Seguridad Pública se ejercerá por las distintas Administraciones Públicas a través de las Fuerzas y Cuerpos de Seguridad. ARTÍCULO SEGUNDO. Son Fuerzas y Cuerpos de Seguridad: a) Las Fuerzas y Cuerpos de Seguridad del Estado dependientes del Gobierno de la Nación. b) Los Cuerpos de Policía dependientes de las Comunidades Autónomas. c) Los Cuerpos de Policía dependientes de las Corporaciones Locales. ARTÍCULO TERCERO. Los miembros de las Fuerzas y Cuerpos de Seguridad ajustarán su actuación al principio de cooperación recíproca y su coordinación se efectuará a través de los órganos que a tal efecto establece esta Ley. ARTÍCULO CUARTO. 1. Todos tienen el deber de prestar a las Fuerzas y Cuerpos de Seguridad el auxilio necesario en la investigación y persecución de los delitos en los términos previstos legalmente. 2. Las personas y entidades que ejerzan funciones de vigilancia, seguridad o custodia referidas a personal y bienes o servicios de titularidad pública o privada tienen especial obligación de auxiliar o colaborar en todo momento con las Fuerzas y Cuerpos de Seguridad. 4 \f CAPÍTULO II PRINCIPIOS BÁSICOS DE ACTUACIÓN ARTÍCULO QUINTO. Son principios básicos de actuación de los miembros de las Fuerzas y Cuerpos de Seguridad los siguientes: 1. Adecuación al ordenamiento jurídico, especialmente: a) Ejercer su función con absoluto respeto a la Constitución y al resto del ordenamiento jurídico. b) Actuar, en el cumplimiento de sus funciones, con absoluta neutralidad política e imparcialidad y, en consecuencia, sin discriminación alguna por razón de raza, religión u opinión. c) Actuar con integridad y dignidad."
     },
-    "flashcards": [
-        { "id": "fc16-01", "anverso": "¿De quién es competencia exclusiva la seguridad pública?", "reverso": "Del Estado; su mantenimiento corresponde al Gobierno de la Nación." },
-        { "id": "fc16-02", "anverso": "¿Qué ley orgánica regula las Fuerzas y Cuerpos de Seguridad?", "reverso": "La Ley Orgánica 2/1986, de 13 de marzo." },
-        { "id": "fc16-03", "anverso": "¿Qué tres tipos de Fuerzas y Cuerpos de Seguridad existen?", "reverso": "Las del Estado, las de las Comunidades Autónomas y las de las Corporaciones Locales." },
-        { "id": "fc16-04", "anverso": "¿Cuál es el fin de las Fuerzas y Cuerpos de Seguridad?", "reverso": "Proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana." },
-        { "id": "fc16-05", "anverso": "¿Qué principio obliga a adecuar la actuación al ordenamiento jurídico?", "reverso": "El principio de legalidad." },
-        { "id": "fc16-06", "anverso": "¿Cómo deben actuar respecto a la política?", "reverso": "Con absoluta neutralidad política e imparcialidad." },
-        { "id": "fc16-07", "anverso": "¿Deben obedecer una orden que constituya delito?", "reverso": "No; la obediencia debida no ampara órdenes que constituyan delito o sean contrarias a la Constitución." },
-        { "id": "fc16-08", "anverso": "¿Qué principios rigen el uso de los medios?", "reverso": "Congruencia, oportunidad y proporcionalidad." },
-        { "id": "fc16-09", "anverso": "¿Cuándo deben utilizarse las armas?", "reverso": "Solo en situaciones de grave riesgo para la vida o la integridad física." },
-        { "id": "fc16-10", "anverso": "¿Qué deben jurar o prometer los miembros de las FCS?", "reverso": "Acatamiento a la Constitución." },
-        { "id": "fc16-11", "anverso": "¿Cuáles son las Fuerzas y Cuerpos de Seguridad del Estado?", "reverso": "El Cuerpo Nacional de Policía y la Guardia Civil." },
-        { "id": "fc16-12", "anverso": "¿Qué naturaleza tiene el Cuerpo Nacional de Policía?", "reverso": "Instituto armado de naturaleza civil." },
-        { "id": "fc16-13", "anverso": "¿Qué naturaleza tiene la Guardia Civil?", "reverso": "Instituto armado de naturaleza militar." },
-        { "id": "fc16-14", "anverso": "Cita funciones de las FCS del Estado.", "reverso": "Velar por el cumplimiento de las leyes, mantener el orden, prevenir e investigar delitos." },
-        { "id": "fc16-15", "anverso": "¿En qué escalas se organiza la Policía Nacional?", "reverso": "Superior, Ejecutiva, Subinspección y Básica." },
-        { "id": "fc16-16", "anverso": "¿Qué principios rigen el acceso a las FCS del Estado?", "reverso": "Igualdad, mérito y capacidad." },
-        { "id": "fc16-17", "anverso": "¿Pueden sindicarse los miembros del Cuerpo Nacional de Policía?", "reverso": "Sí; tienen derecho a constituir organizaciones sindicales y afiliarse a ellas." },
-        { "id": "fc16-18", "anverso": "¿Qué órgano de participación existe en la Policía Nacional?", "reverso": "El Consejo de Policía." },
-        { "id": "fc16-19", "anverso": "¿Cómo se clasifican las faltas en el régimen disciplinario?", "reverso": "En muy graves, graves y leves." },
-        { "id": "fc16-20", "anverso": "¿Cuál es la sanción más grave del régimen disciplinario?", "reverso": "La separación del servicio." }
+    {
+      "titulo": "2. CAPÍTULO III",
+      "contenido": "En particular, deberán abstenerse de todo acto de corrupción y oponerse a él resueltamente. d) Sujetarse en su actuación profesional, a los principios de jerarquía y subordinación. En ningún caso, la obediencia debida podrá amparar órdenes que entrañen la ejecución de actos que manifiestamente constituyan delito o sean contrarios a la Constitución o a las Leyes. e) Colaborar con la Administración de Justicia y auxiliarla en los términos establecidos en la Ley. 2. Relaciones con la comunidad. Singularmente: a) Impedir, en el ejercicio de su actuación profesional, cualquier práctica abusiva, arbitraria o discriminatoria que entrañe violencia física o moral. b) Observar en todo momento un trato correcto y esmerado en sus relaciones con los ciudadanos, a quienes procurarán auxiliar y proteger, siempre que las circunstancias lo aconsejen o fueren requeridos para ello. En todas sus intervenciones, proporcionarán información cumplida, y tan amplia como sea posible, sobre las causas y finalidad de las mismas. c) En el ejercicio de sus funciones deberán actuar con la decisión necesaria, y sin demora cuando de ello dependa evitar un daño grave, inmediato e irreparable; rigiéndose al hacerlo por los principios de congruencia, oportunidad y proporcionalidad en la utilización de los medios a su alcance. d) Solamente deberán utilizar las armas en las situaciones en que exista un riesgo racionalmente grave para su vida, su integridad física o las de terceras personas, o en aquellas circunstancias que puedan suponer un grave riesgo para la seguridad ciudadana y de conformidad con los principios a que se refiere el apartado anterior. 3. Tratamiento de detenidos, especialmente: a) Los miembros de las Fuerzas y Cuerpos de Seguridad deberán identificarse debidamente como tales en el momento de efectuar una detención. b) Velarán por la vida e integridad física de las personas a quienes detuvieren o que se encuentren bajo su custodia y respetarán el honor y la dignidad de las personas. c) Darán cumplimiento y observarán con la debida diligencia los trámites, plazos y requisitos exigidos por el ordenamiento jurídico, cuando se proceda a la detención de una persona. 4. Dedicación profesional. Deberán llevar a cabo sus funciones con total dedicación, debiendo intervenir siempre, en cualquier tiempo y lugar, se hallaren o no de servicio, en defensa de la Ley y de la seguridad ciudadana. 5. Secreto profesional. Deberán guardar riguroso secreto respecto a todas las informaciones que conozcan por razón o con ocasión del desempeño de sus funciones. No estarán obligados a revelar las fuentes de información salvo que el ejercicio de sus funciones o las disposiciones de la Ley les impongan actuar de otra manera. 5 \f6. Responsabilidad. Son responsables personal y directamente por los actos que en su actuación profesional llevaren a cabo, infringiendo o vulnerando las normas legales, así como las reglamentarias que rijan su profesión y los principios enunciados anteriormente, sin las perjuicio de Administraciones Públicas por las mismas. responsabilidad patrimonial que pueda corresponder a la CAPÍTULO III DISPOSICIONES ESTATUTARIAS COMUNES ARTÍCULO SEXTO. 1. Los Poderes Públicos promoverán las condiciones más favorables para una adecuada promoción profesional, social y humana de los miembros de las Fuerzas y Cuerpos de Seguridad, de acuerdo con los principios de objetividad, igualdad de oportunidades, mérito y capacidad. 2."
+    },
+    {
+      "titulo": "3. artículo 5",
+      "contenido": "La formación y perfeccionamiento de los miembros de las Fuerzas y Cuerpos de Seguridad se adecuará a los principios señalados en el artículo 5.º y se ajustarán a los siguientes criterios: a) Tendrá carácter profesional y permanente. b) Los estudios que se cursen en los centros de enseñanza dependientes de las diferentes Administraciones públicas podrán ser objeto de convalidación por el Ministerio de Educación y Ciencia, que a tal fin tendrá en cuenta las titulaciones exigidas para el acceso a cada uno de ellos y la naturaleza y duración de dichos estudios. c) Para impartir las enseñanzas y cursos referidos se promoverá la colaboración institucional de la Universidad, el Poder Judicial, el Ministerio Fiscal, las Fuerzas Armadas y de otras Instituciones, Centros o establecimientos que específicamente interesen a los referidos fines docentes. 3. Los miembros de las Fuerzas y Cuerpos de Seguridad deberán jurar o prometer acatamiento a la Constitución como norma fundamental del Estado. 4. Tendrán derecho a una remuneración justa que contemple su nivel de formación, régimen de incompatibilidades, movilidad por razones de servicio, dedicación y el riesgo que comporta su misión, así como la especificidad de los horarios de trabajo y su peculiar estructura. 5. Reglamentariamente se determinará su régimen de horario de servicio que se adaptará a las peculiares características de la función policial. 6. Los puestos de servicio en las respectivas categorías se proveerán conforme a los principios de mérito, capacidad y antigüedad, a tenor de lo dispuesto en la correspondiente reglamentación. 7. La pertenencia a las fuerzas y Cuerpos de Seguridad es causa de incompatibilidad para el desempeño de cualquier otra actividad pública o privada, salvo aquellas actividades exceptuadas de la legislación sobre incompatibilidades. 8. Los miembros de las Fuerzas y Cuerpos de Seguridad no podrán ejercer en ningún caso el derecho de huelga, ni acciones sustitutivas del mismo o concertadas con el fin de alterar el normal funcionamiento de los servicios. 9. El régimen disciplinario, sin perjuicio de la observancia de las debidas garantías, estará inspirado en unos principios acordes con la misión fundamental que la Constitución les atribuye y con la estructura y organización jerarquizada y disciplinada propias de los mismos. 6 \f ARTÍCULO SÉPTIMO. 1. En el ejercicio de sus funciones, los miembros de las Fuerzas y Cuerpos de Seguridad tendrán a todos los efectos legales el carácter de agentes de la autoridad. 2. Cuando se cometa delito de atentado, empleando en su ejecución armas de fuego, explosivos u otros medios de agresión de análoga peligrosidad, que puedan poner en peligro grave la integridad física de los miembros de las Fuerzas y Cuerpos de Seguridad, tendrán al efecto de su protección penal la consideración de autoridad. 3. La Guardia Civil sólo tendrá consideración de fuerza armada en el cumplimiento de las misiones de carácter militar que se le encomienden, de acuerdo con el ordenamiento jurídico. ARTÍCULO OCTAVO. 1. La jurisdicción ordinaria será la competente para conocer de los delitos que se cometan contra miembros de las Fuerzas y Cuerpos de Seguridad, así como de los cometidos por éstos en el ejercicio de sus funciones."
+    },
+    {
+      "titulo": "4. TÍTULO II",
+      "contenido": "Iniciadas unas actuaciones por los Jueces de Instrucción, cuando éstos entiendan que existen indicios racionales de criminalidad por la conducta de miembros de las Fuerzas y Cuerpos de Seguridad, suspenderán sus actuaciones y las remitirán a la Audiencia Provincial correspondiente, que será la competente para seguir la instrucción, ordenar, en su caso, el procesamiento y dictar el fallo que corresponda. Cuando el hecho fuese constitutivo de falta, los jueces de instrucción serán competentes para la instrucción y el fallo, de conformidad con las normas de la Ley de Enjuiciamiento Criminal. Se exceptúa de lo dispuesto en los párrafos anteriores los supuestos en que sea competente la jurisdicción militar. 2. El cumplimiento de la prisión preventiva y de las penas privativas de libertad por los miembros de las Fuerzas y Cuerpos de Seguridad, se realizarán en establecimientos penitenciarios ordinarios, con separación del resto de detenidos o presos. 3. La iniciación de procedimiento penal contra miembros de las Fuerzas y Cuerpos de Seguridad, no impedirá la incoación y tramitación de expedientes gubernativos o disciplinarios por los mismos hechos. No obstante, la resolución definitiva del expediente sólo podrá producirse cuando la sentencia recaída en el ámbito penal sea firme, y la declaración de hechos probados vinculará a la administración. Las medidas cautelares que puedan adoptarse en estos supuestos podrán prolongarse hasta que recaiga resolución definitiva en el procedimiento judicial, salvo en cuanto a la suspensión de sueldo en que se estará a lo dispuesto en la legislación general de funcionarios. TÍTULO II DE LAS FUERZAS Y CUERPOS DE SEGURIDAD DEL ESTADO CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO NOVENO. Las Fuerzas y Cuerpos de Seguridad del Estado ejercen sus funciones en todo el territorio nacional y están integradas por: a) El Cuerpo Nacional de Policía, que es un Instituto Armado de naturaleza civil, dependiente del Ministro del Interior. 7 \f b) La Guardia Civil, que es un Instituto Armado de naturaleza militar, dependiente del Ministro del Interior, en el desempeño de las funciones que esta Ley le atribuye, y del Ministro de Defensa en el cumplimiento de las misiones de carácter militar que éste o el Gobierno le encomienden. En tiempo de guerra y durante el estado de sitio, dependerá exclusivamente del Ministro de Defensa. ARTÍCULO DIEZ. 1. Corresponde al Ministro del Interior la administración general de la seguridad ciudadana y el mando superior de las Fuerzas y Cuerpos de Seguridad del Estado, así como la responsabilidad de las relaciones de colaboración y auxilio con las Autoridades policiales de otros países, conforme a lo establecido en Tratados y Acuerdos Internacionales. 2. Bajo la inmediata autoridad del Ministro del Interior, dicho mando será ejercido en los términos establecidos en esta Ley por el Director de la Seguridad del Estado, del que dependen directamente las Direcciones Generales de la Guardia Civil y de la Policía, a través de las cuales coordinará la actuación de los Cuerpos y Fuerzas de Seguridad del Estado. 3. En cada provincia, el Gobernador Civil ejercerá el mando directo de las Fuerzas y Cuerpos de Seguridad del Estado, con sujeción a las directrices de los órganos mencionados en los apartados anteriores, sin perjuicio de la dependencia funcional de las unidades de Policía Judicial, respecto de los Jueces, de los Tribunales y del Ministerio Fiscal, en sus funciones de averiguación del delito y descubrimiento y aseguramiento del delincuente. CAPÍTULO II DE LAS FUNCIONES ARTÍCULO ONCE. 1."
+    },
+    {
+      "titulo": "5. disposición del",
+      "contenido": "Las Fuerzas y Cuerpos de Seguridad del Estado tienen como misión proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana mediante el desempeño de las siguientes funciones: a) Velar por el cumplimiento de las Leyes y disposiciones generales, ejecutando las órdenes que reciban de las Autoridades, en el ámbito de sus respectivas competencias. b) Auxiliar y proteger a las personas y asegurar la conservación y custodia de los bienes que se encuentren en situación de peligro por cualquier causa. c) Vigilar y proteger los edificios e instalaciones públicos que lo requieran. d) Velar por la protección y seguridad de altas personalidades. e) Mantener y restablecer, en su caso, el orden y la seguridad ciudadana. f) Prevenir la comisión de actos delictivos. g) Investigar los delitos para descubrir y detener a los presuntos culpables, asegurar los instrumentos, efectos y pruebas del delito, poniéndolos a disposición del Juez o Tribunal competente y elaborar los informes técnicos y periciales procedentes. h) Captar, recibir y analizar cuantos datos tengan interés para el orden y la seguridad pública, y estudiar, planificar y ejecutar los métodos y técnicas de prevención de la delincuencia. i) Colaborar con los servicios de protección civil en los casos de grave riesgo, catástrofe, o calamidad pública, en los términos que se establezcan en la legislación de protección civil. 8 \f 2. Las funciones señaladas en el párrafo anterior serán ejercidas con arreglo a la siguiente distribución territorial de competencias: a) Corresponde al Cuerpo Nacional de Policía ejercitar dichas funciones en las capitales de provincia y en los términos municipales y núcleos urbanos que el Gobierno determine. b) La Guardia Civil las ejercerá en el resto del territorio nacional y su mar territorial. 3. No obstante lo dispuesto en el apartado anterior, los miembros del Cuerpo Nacional de Policía podrán ejercer las funciones de investigación y las de coordinación de los datos a que se refieren los apartados g) y h) del número 1 de este artículo, en todo el territorio nacional. La Guardia Civil, para el desempeño de sus competencias propias, podrá asimismo realizar las investigaciones procedentes en todo el territorio nacional, cuando ello fuere preciso. En todo caso de actuación fuera de su ámbito territorial, los miembros de cada Cuerpo deberán dar cuenta al otro de las mismas. 4. Sin perjuicio de la distribución de competencias del apartado 2 de este artículo, ambos Cuerpos deberán actuar fuera de su ámbito competencial por mandato judicial o del Ministerio Fiscal o, en casos excepcionales, cuando lo requiera la debida eficacia en su actuación; en ambos supuestos deberán comunicarlo de inmediato al Gobernador civil y a los mandos con competencia territorial o material; el Gobernador civil podrá ordenar la continuación de las actuaciones o, por el contrario, el pase de las mismas al Cuerpo competente, salvo cuando estuvieren actuando por mandato judicial o del Ministerio Fiscal. 5. En caso de conflicto de competencias, ya sea positivo o negativo, se hará cargo del servicio el Cuerpo que haya realizado las primeras actuaciones, hasta que se resuelva lo procedente por el Gobernador civil o las instancias superiores del Ministerio del Interior, sin perjuicio de lo dispuesto para la Policía Judicial. 6."
+    },
+    {
+      "titulo": "6. CAPÍTULO III",
+      "contenido": "Al objeto de conseguir la óptima utilización de los medios disponibles y la racional distribución de efectivos, el Ministerio del Interior podrá ordenar que cualesquiera de los Cuerpos asuma, en zonas o núcleos determinados, todas o algunas de las funciones exclusivas asignadas al otro Cuerpo. ARTÍCULO DOCE. 1. Además de las funciones comunes establecidas en el artículo anterior, se establece la siguiente distribución material de competencias: A) Serán ejercidas por el Cuerpo Nacional de Policía: a) La expedición del documento nacional de identidad y de los pasaportes. b) El control de entrada y salida del territorio nacional de españoles y extranjeros. c) Las previstas en la legislación sobre extranjería, refugio y asilo, extradición, expulsión, emigración e inmigración. d) La vigilancia e inspección del cumplimiento de la normativa en materia de juego. e) La investigación y persecución de los delitos relacionados con la droga. f) Colaborar y prestar auxilio a las policías de otros países, conforme a lo establecido en los Tratados o Acuerdos Internacionales sobre las Leyes, bajo la superior dirección del Ministro del Interior. g) El control de las entidades y servicios privados de seguridad, vigilancia e investigación, de su personal, medios y actuaciones. h) Aquellas otras que le atribuya la legislación vigente. 9 \f B) Serán ejercidas por la Guardia Civil: a) Las derivadas de la legislación vigente sobre armas y explosivos. b) El resguardo fiscal del Estado y las actuaciones encaminadas a evitar y perseguir el contrabando. c) La vigilancia del tráfico, tránsito y transporte en las vías públicas interurbanas. d) La custodia de vías de comunicación terrestre, costas, fronteras, puertos, aeropuertos y centros e instalaciones que por su interés lo requieran. e) Velar por el cumplimiento de las disposiciones que tiendan a la conservación de la naturaleza y medio ambiente, de los recursos hidráulicos, así como de la riqueza cinegética, piscícola, forestal y de cualquier otra índole relacionada con la naturaleza. f) La conducción interurbana de presos y detenidos. g) Aquellas otras que le atribuye la legislación vigente. 2. Las Fuerzas y Cuerpos de Seguridad del Estado están obligadas a la cooperación recíproca en el desempeño de sus competencias respectivas. 3. Las dependencias del Cuerpo Nacional de Policía y de la Guardia Civil actuarán recíprocamente como oficinas para la recepción y tramitación de los documentos dirigidos a las autoridades de cualquiera de los dos Institutos. CAPÍTULO III DE LA GUARDIA CIVIL ARTÍCULO TRECE. 1. El Cuerpo de la Guardia Civil se estructura jerárquicamente según los diferentes empleos, de conformidad con su naturaleza militar. 2. El régimen estatutario de la Guardia Civil será el establecido en la presente Ley, en las normas que la desarrollan y en el ordenamiento militar. ARTÍCULO CATORCE. 1. El Ministerio del Interior dispondrá todo lo concerniente a servicios de la Guardia Civil relacionados con la seguridad ciudadana y demás competencias atribuidas por esta Ley, así como a sus retribuciones, destinos, acuartelamientos y material. 2. Conjuntamente, los Ministros de Defensa e Interior dispondrán todo lo referente a la selección, formación, perfeccionamiento, armamento y despliegue territorial, y propondrán al Gobierno el nombramiento del titular de la Dirección General de la Guardia Civil, así como la normativa reguladora del voluntariado especial para la prestación del servicio militar en la misma. 3."
+    },
+    {
+      "titulo": "7. LEY ORGÁNICA 4/2010, DE 20 DE MAYO, DEL RÉGIMEN DISCIPLINARIO DEL CUERPO",
+      "contenido": "El Ministro de Defensa dispondrá lo concerniente al régimen de ascensos y situaciones del personal, así como a las misiones de carácter militar que se encomienden a la Guardia Civil, ejerciendo, respecto al voluntariado especial para la prestación del servicio militar en la misma las competencias que normativamente le correspondan. 10 \f ARTÍCULO QUINCE. 1. La Guardia Civil, por su condición de instituto armado de naturaleza militar, a efectos disciplinarios, se regirá por su normativa específica. Cuando la Guardia Civil actúe en el cumplimiento de misiones de carácter militar o cuando el personal de dicho Cuerpo se integre en unidades militares, resultará de aplicación el régimen disciplinario de las Fuerzas Armadas. En todo caso, será competente para la imposición de la sanción de separación del servicio el Ministro de Defensa, a propuesta del de Interior. 2. Los miembros de la Guardia Civil no podrán pertenecer a partidos políticos o sindicatos ni hacer peticiones colectivas: individualmente podrán ejercer el derecho de petición en los términos establecidos en su legislación específica. 11 \f LEY ORGÁNICA 4/2010, DE 20 DE MAYO, DEL RÉGIMEN DISCIPLINARIO DEL CUERPO NACIONAL DE POLICÍA. TÍTULO PRELIMINAR DISPOSICIONES GENERALES ARTÍCULO 2. ÁMBITO DE APLICACIÓN. 1. Esta Ley Orgánica es de aplicación a los funcionarios del Cuerpo Nacional de Policía que se encuentren en las situaciones de servicio activo y de segunda actividad ocupando destino. Los funcionarios del Cuerpo Nacional de Policía en situación de segunda actividad sin ocupar destino estarán sometidos al régimen general disciplinario de la función pública. Los funcionarios del Cuerpo Nacional de Policía que se encuentren en situación distinta de las anteriores incurrirán en responsabilidad disciplinaria por las faltas previstas en esta Ley Orgánica que puedan cometer dentro de sus peculiares situaciones administrativas, en razón de su pertenencia al Cuerpo Nacional de Policía, siempre que no les sea de aplicación otro régimen disciplinario o, que de serlo, no esté prevista en el mismo aquella conducta. 2. Los funcionarios en prácticas quedan sometidos a las normas de régimen disciplinario establecidas en el reglamento del centro docente policial y, con carácter supletorio para aquellos supuestos en que el hecho no constituya falta de disciplina docente, a las normas de esta Ley Orgánica que les sean de aplicación, sin perjuicio de las normas específicas que regulen su procedimiento de selección. 3. En todo lo que no esté previsto en esta Ley Orgánica y en la Ley Orgánica 2/1986, de 13 de marzo, serán de aplicación las normas de régimen disciplinario de los funcionarios de la Administración General del Estado. ARTÍCULO 3. RESPONSABILIDAD CIVIL Y PENAL. El régimen disciplinario establecido en esta Ley Orgánica se entiende sin perjuicio de la responsabilidad civil o penal en que puedan incurrir los funcionarios, la cual se hará efectiva en la forma que determina la Ley. ARTÍCULO 4. COMUNICACIÓN DE INFRACCIONES. Los miembros del Cuerpo Nacional de Policía tendrán la obligación de comunicar por escrito a su superior jerárquico los hechos de los que tengan conocimiento que consideren constitutivos de faltas graves y muy graves, salvo cuando dicho superior sea el presunto infractor; en tal caso, la comunicación se efectuará al superior inmediato de este último. ARTÍCULO 5. EXTENSIÓN DE LA RESPONSABILIDAD. Incurrirán en la misma responsabilidad que los autores de una falta los que induzcan a su comisión."
+    },
+    {
+      "titulo": "8. TÍTULO I",
+      "contenido": "Asimismo, incurrirán en falta de inferior grado los que encubrieran la comisión de una falta muy grave o grave, y los superiores que la toleren. Se entenderá por encubrimiento no dar cuenta al superior jerárquico competente, de forma inmediata, de los hechos constitutivos de falta muy grave o grave de los que se tenga conocimiento. 12 \f TÍTULO I INFRACCIONES, SANCIONES Y POTESTAD SANCIONADORA CAPÍTULO I INFRACCIONES DISCIPLINARIAS ARTÍCULO 7. FALTAS MUY GRAVES. Son faltas muy graves: a) El incumplimiento del deber de fidelidad a la Constitución en el ejercicio de las funciones. b) Haber sido condenado en virtud de sentencia firme por un delito doloso relacionado con el servicio o que cause grave daño a la Administración o a las personas. c) El abuso de atribuciones que cause grave daño a los ciudadanos, a los subordinados, a la Administración o a las entidades con personalidad jurídica. d) La práctica de tratos inhumanos, degradantes, discriminatorios o vejatorios a los ciudadanos que se encuentren bajo custodia policial. e) La insubordinación individual o colectiva, respecto a las Autoridades o mandos de que dependan. f) El abandono de servicio, salvo que exista causa de fuerza mayor que impida comunicar a un superior dicho abandono. g) La publicación o la utilización indebida de secretos oficiales, declarados así con arreglo a la legislación específica en la materia. h) La violación del secreto profesional cuando perjudique el desarrollo de la labor policial, a cualquier ciudadano o a las entidades con personalidad jurídica. i) El incumplimiento de las normas sobre incompatibilidades cuando ello dé lugar a una situación de incompatibilidad. j) La participación en huelgas, en acciones sustitutivas de estas o en actuaciones concertadas con el fin de alterar el normal funcionamiento de los servicios. k) La falta de colaboración manifiesta con otros miembros de las Fuerzas y Cuerpos de Seguridad, cuando resulte perjudicado gravemente el servicio o se deriven consecuencias graves para la seguridad ciudadana. l) Embriagarse o consumir drogas tóxicas, estupefacientes o sustancias psicotrópicas durante el servicio o realizarlo en estado de embriaguez o bajo los efectos manifiestos de los productos citados. m) La negativa injustificada a someterse a reconocimiento médico, prueba de alcoholemia o de detección de drogas tóxicas, estupefacientes o sustancias psicotrópicas, legítimamente ordenadas, a fin de constatar la capacidad psicofísica para prestar servicio. n) Toda actuación que suponga discriminación por razón de origen racial o étnico, religión o convicciones, discapacidad, edad u orientación sexual, sexo, lengua, opinión, lugar de nacimiento o vecindad, o cualquier otra condición o circunstancia personal o social. ñ) El acoso sexual y el acoso laboral, consistente este último en la realización reiterada, en el marco de una relación de servicio, de actos de acoso psicológico u hostilidad. o) La obstaculización grave al ejercicio de las libertades públicas y derechos sindicales. p) Las infracciones tipificadas como muy graves en la legislación sobre utilización de videocámaras por las Fuerzas y Cuerpos de Seguridad en lugares públicos. 13 \fARTÍCULO 8. FALTAS GRAVES. Son faltas graves: a) La grave desconsideración con los superiores, compañeros, subordinados o ciudadanos, en el ejercicio de sus funciones o cuando cause descrédito notorio a la Institución Policial."
+    },
+    {
+      "titulo": "9. disposición inmediata",
+      "contenido": "b) La desobediencia a los superiores jerárquicos o los responsables del servicio con motivo de las órdenes o instrucciones legítimas dadas por aquéllos, salvo que constituyan infracción manifiesta del ordenamiento jurídico. c) La omisión de la obligación de dar cuenta a la superioridad con la debida diligencia de todo asunto que por su entidad requiera su conocimiento o decisión urgente. d) La falta de presentación o puesta a disposición inmediata de la dependencia donde estuviera destinado, o en la más próxima, en los casos de declaración de los estados de excepción o sitio o, cuando así se disponga, en caso de alteración grave de la seguridad ciudadana; o, en los casos de declaración del estado de alarma, la no presentación cuando sean emplazados para ello, de acuerdo con lo dispuesto por la autoridad competente. e) La tercera falta injustificada de asistencia al servicio en un período de tres meses cuando las dos anteriores hubieran sido objeto de sanción firme por falta leve. f) No prestar servicio, alegando supuesta enfermedad. g) La falta de rendimiento reiterada que ocasione un perjuicio a los ciudadanos, a las entidades con personalidad jurídica o a la eficacia de los servicios. h) El abuso de atribuciones cuando no constituya infracción muy grave. i) La emisión de informes sobre asuntos de servicio que, sin faltar abiertamente a la verdad, la desnaturalicen, valiéndose de términos ambiguos, confusos o tendenciosos, o la alteren mediante inexactitudes, cuando se cause perjuicio a la Administración o a los ciudadanos, siempre que el hecho no constituya delito o falta muy grave. j) La intervención en un procedimiento administrativo cuando concurra alguna de las causas legales de abstención. k) No ir provisto en los actos de servicio del uniforme reglamentario, cuando su uso sea preceptivo, de los distintivos de la categoría o cargo, del arma reglamentaria o de los medios de protección o acción que se determinen, siempre que no medie autorización en contrario. l) Exhibir armas sin causa justificada, así como utilizarlas en acto de servicio o fuera de él infringiendo las normas que regulan su empleo. m) Dar lugar al extravío, pérdida o sustracción por negligencia inexcusable de los distintivos de identificación o del arma reglamentaria. n) Asistir de uniforme a cualquier manifestación o reunión pública, salvo que se trate de actos de servicio, o actos oficiales en los que la asistencia de uniforme esté indicada o haya sido autorizada. ñ) Causar, por negligencia inexcusable, daños graves en la conservación de los locales, del material o de los demás elementos relacionados con el servicio o dar lugar al extravío, la pérdida o la sustracción de estos. o) Impedir, limitar u obstaculizar a los subordinados el ejercicio de los derechos que tengan reconocidos, siempre que no constituya falta muy grave. p) Embriagarse o consumir drogas tóxicas, estupefacientes o sustancias psicotrópicas fuera del servicio, cuando tales circunstancias tengan carácter habitual o afecten a la imagen del Cuerpo Nacional de Policía. Se entenderá que existe habitualidad cuando estuvieren acreditados tres o más episodios de embriaguez o consumo de las sustancias referidas en un periodo de un año. q) La tenencia de drogas tóxicas, estupefacientes o sustancias psicotrópicas, excepto que esa tenencia se derive de actuaciones propias del servicio. 14 \f r) Solicitar y obtener cambios de destino mediando cualquier recompensa, ánimo de lucro o falseando las condiciones que los regulan."
+    },
+    {
+      "titulo": "10. artículo 12",
+      "contenido": "s) Emplear, o autorizar la utilización para usos no relacionados con el servicio o con ocasión de este, o sin que medie causa justificada, de medios o recursos inherentes a la función policial. t) Las infracciones a lo dispuesto en la legislación sobre utilización de videocámaras por las Fuerzas y Cuerpos de Seguridad en lugares públicos, no constitutivas de falta muy grave. u) El incumplimiento de los plazos u otras disposiciones de procedimiento en materia de incompatibilidades, cuando no supongan mantenimiento de una situación de incompatibilidad. v) La violación del secreto profesional cuando no perjudique el desarrollo de la labor policial, a las entidades con personalidad jurídica o a cualquier ciudadano. w) La falta de colaboración manifiesta con otros miembros de los Cuerpos y Fuerzas de Seguridad, siempre que no merezca la calificación de falta muy grave. x) La infracción de deberes u obligaciones legales inherentes al cargo o a la función policial, cuando se produzcan de forma grave y manifiesta. y) Haber sido condenado en virtud de sentencia firme por un delito doloso, siempre que no constituya infracción muy grave, o por una falta dolosa cuando la infracción penal cometida esté relacionada con el servicio. z) La no prestación de auxilio con urgencia en aquellos hechos o circunstancias graves en que sea obligada su actuación, salvo que constituya delito. z) bis La infracción de las normas de prevención de riesgos laborales que pongan en grave riesgo la vida, salud, o integridad física, propia o de sus compañeros o subordinados. z) ter La negativa reiterada a tramitar cualquier solicitud, reclamación o queja relacionada con el servicio, siempre que no constituya falta leve. z) quáter. Aquellas acciones u omisiones tipificadas como faltas muy graves que, de acuerdo con los criterios que se establecen en el artículo 12, merezcan la calificación de graves, y sin que estas a su vez puedan ser calificadas como faltas leves. 15 \fARTÍCULO 9. FALTAS LEVES. Son faltas leves: a) El retraso o la negligencia en el cumplimiento de las funciones y órdenes recibidas. b) La incorrección con los ciudadanos, o con otros miembros de los Cuerpos y Fuerzas de Seguridad, siempre que no merezcan una calificación más grave. c) La inasistencia al servicio que no constituya falta de mayor gravedad y el incumplimiento de la jornada de trabajo, así como las faltas repetidas de puntualidad, en los 30 días precedentes. d) El mal uso o el descuido en la conservación de los locales, del material o de los demás elementos de los servicios, así como el incumplimiento de las normas dadas en esta materia, cuando no constituya falta más grave. e) Dar lugar al extravío, pérdida o sustracción por simple negligencia, de los distintivos de identificación, del arma reglamentaria u otros medios o recursos destinados a la función policial. f) La exhibición de los distintivos de identificación sin causa justificada. g) Prescindir del conducto reglamentario para formular cualquier solicitud, reclamación o queja relacionada con el servicio, así como no tramitar las mismas. 1. Quedan exceptuadas del conducto reglamentario aquellas que se formulen por los representantes de las organizaciones sindicales en el ejercicio de la actividad sindical. h) El descuido en el aseo personal y el incumplimiento de las normas sobre la uniformidad, siempre que no constituya falta grave. i) La ausencia injustificada de cualquier servicio, cuando no merezca calificación más grave."
+    },
+    {
+      "titulo": "11. artículo 12",
+      "contenido": "j) La omisión intencionada de saludo a un superior, que éste no lo devuelva o infringir de otro modo las normas que lo regulan. k) Cualquier clase de juego que se lleve a cabo en las dependencias policiales, siempre que perjudique la prestación del servicio o menoscabe la imagen policial. l) Ostentar insignias, condecoraciones u otros distintivos, sin estar autorizado para ello, siempre que no merezca una calificación más grave. m) Haber sido condenado en virtud de sentencia firme por una falta dolosa cuando la infracción penal cometida cause daño a la Administración o a los Administrados. n) Aquellas acciones u omisiones tipificadas como faltas graves que, de acuerdo con los criterios que se establecen en el artículo 12, merezcan la calificación de leves. CAPÍTULO IV EXTINCIÓN DE LA RESPONSABILIDAD DISCIPLINARIA ARTÍCULO 15. PRESCRIPCIÓN DE LAS FALTAS. 1. Las faltas muy graves prescribirán a los tres años; las graves, a los dos años, y las leves, al mes. 2. El plazo de prescripción comenzará a contarse desde que la falta se hubiera cometido, salvo que ésta derive de hechos que hayan sido objeto de condena por delito doloso; en tal caso, el plazo comenzará a contar desde la fecha de la firmeza de la sentencia condenatoria. 3. La prescripción se interrumpirá por la iniciación del procedimiento; a estos efectos, la resolución por la que se acuerde su incoación deberá ser debidamente registrada y notificada al funcionario expedientado o publicada, siempre que éste no fuere hallado. El plazo de prescripción se reanudará si el procedimiento permaneciese paralizado durante más de seis meses por causa no imputable al funcionario sometido a expediente. 4. Cuando se inicie un procedimiento penal contra un funcionario del Cuerpo Nacional de Policía, la prescripción de las infracciones disciplinarias que de los hechos pudieran derivarse quedará suspendida por la incoación de aquel procedimiento, aun cuando no se hubiera procedido disciplinariamente. En estos supuestos, el plazo volverá a correr desde la fecha de la firmeza de la resolución judicial. 16 \f ARTÍCULO 16. PRESCRIPCIÓN DE LAS SANCIONES. 1. Las sanciones muy graves prescribirán a los tres años; las graves a los dos años, y las leves al mes. El plazo de prescripción de las sanciones comenzará a contarse desde el día siguiente a aquel en el que adquieran firmeza. 2. En el supuesto de suspensión de sanciones previsto en el artículo 49, si estas fueran firmes, el plazo de prescripción se computará desde el día siguiente a aquel en el que se llevó a efecto la suspensión. 3. En el caso de concurrencia de varias sanciones, previsto en el apartado tercero del artículo 47, el plazo de prescripción de las sanciones que sean firmes y estén pendientes de cumplimiento comenzará a contarse desde el día siguiente a aquel en el que quede extinguida la sanción que le preceda en el orden de cumplimiento determinado en dicho precepto, o, en su caso, desde la fecha en que haya surtido eficacia la inejecución de la sanción. 4. El cumplimiento de los plazos de prescripción de la sanción conlleva la cancelación de oficio de las correspondientes anotaciones en el expediente personal conforme a lo previsto en el artículo 50 y su notificación a los interesados. 17 \f LEY ORGÁNICA 9/2015, DE 28 DE JULIO, DE RÉGIMEN DE PERSONAL DE LA POLICÍA NACIONAL. TÍTULO II DERECHOS CAPÍTULO II DERECHOS DE EJERCICIO COLECTIVO ARTÍCULO 8. DERECHOS DE EJERCICIO COLECTIVO. 1. Los Policías Nacionales tienen derecho a constituir organizaciones sindicales de ámbito nacional para la defensa de sus intereses profesionales. 2."
+    },
+    {
+      "titulo": "12. TÍTULO XIII",
+      "contenido": "No obstante lo dispuesto en el apartado anterior, sólo podrán afiliarse a organizaciones sindicales formadas exclusivamente por Policías Nacionales. Dichas organizaciones no podrán federarse o confederarse con otras que, a su vez, no estén integradas exclusivamente por miembros de la Policía Nacional, aunque sí podrán formar parte de organizaciones internacionales de su mismo carácter. 3. Asimismo, tienen los siguientes derechos que se ejercen de forma colectiva: a) A la sindicación y a la acción sindical, en la forma y con los límites normativamente previstos. No podrán ejercer, en ningún caso, el derecho de huelga ni acciones sustitutivas del mismo, o actuaciones concertadas con el fin de alterar el normal funcionamiento de los servicios. b) A la negociación colectiva, entendida, a los efectos de esta Ley, como la participación a través de las organizaciones sindicales representativas, en el seno del Consejo de Policía o en las mesas que se constituyan en el marco de dicho órgano, en la determinación de las condiciones de prestación del servicio mediante los procedimientos normativamente establecidos. c) A ser informados, a través de las organizaciones sindicales, de los datos que facilite la Dirección General de la Policía respecto de las materias que sean objeto de estudio, participación e informe por el Consejo de Policía o por otros órganos de consulta y participación de los funcionarios. d) Al planteamiento de conflictos colectivos en el Consejo de Policía. TÍTULO XIII RÉGIMEN DE REPRESENTACIÓN Y PARTICIPACIÓN DE LOS FUNCIONARIOS CAPÍTULO I ORGANIZACIONES SINDICALES EN LA POLICÍA NACIONAL ARTÍCULO 89. ORGANIZACIONES SINDICALES REPRESENTATIVAS. 1. Aquellas organizaciones sindicales de la Policía Nacional que en las últimas elecciones al Consejo de Policía hubieran obtenido, al menos, un representante en dicho Consejo, o en dos de las escalas al menos el 10 % de los votos emitidos en cada una de ellas, serán consideradas organizaciones sindicales representativas, y en tal condición tendrán, además de las facultades reconocidas en el artículo 90, capacidad para: a) Participar como interlocutores en la determinación de las condiciones de prestación del servicio de los funcionarios, a través de los procedimientos establecidos al efecto. b) Integrarse en las mesas de trabajo o comisiones de estudio que a tal efecto se establezcan. 18 \f 2. Las organizaciones sindicales representativas en el ámbito de la Policía Nacional estarán legitimadas para la interposición de recursos en vía administrativa y jurisdiccional contra las resoluciones de los órganos de selección. 3. Los representantes de dichas organizaciones sindicales representativas tendrán derecho: a) A la asistencia y al acceso a los centros de trabajo para participar en actividades propias de su organización sindical, previa comunicación al jefe de la dependencia y sin que el ejercicio de ese derecho pueda interrumpir el desarrollo normal del servicio policial. b) Al número de jornadas mensuales que reglamentariamente se establezcan para el desarrollo de las funciones sindicales propias de su representación. c) Al disfrute de los permisos no retribuidos necesarios para el desarrollo de las límites que funciones sindicales propias de su cargo, dentro de reglamentariamente se establezcan. los 4. El número de representantes que la Administración tendrá que reconocer, a los efectos determinados en el apartado 3, estará en relación con el número de representantes que cada organización sindical hubiere obtenido en las elecciones al Consejo de Policía. 5."
+    },
+    {
+      "titulo": "13. ARTÍCULO 90",
+      "contenido": "En todo caso, se reconocerá, a los solos efectos de lo previsto en este artículo, el derecho a un representante a aquella organización sindical que no hubiera obtenido la condición de representativa con arreglo al apartado 1 pero sí, al menos, el 10 % de votos en una escala. 6. Tendrán la condición de representantes de las organizaciones sindicales representativas de la Policía Nacional aquellos funcionarios que, perteneciendo a las mismas, hayan sido formalmente designados como tales por el órgano de gobierno de aquéllas, de acuerdo con sus respectivos estatutos. ARTÍCULO 90. ORGANIZACIONES SINDICALES NO REPRESENTATIVAS. Las organizaciones sindicales legalmente constituidas que no hayan obtenido la condición de representativas, conforme a lo establecido en el artículo anterior, tendrán derecho a formular propuestas y elevar informes o dirigir peticiones a las autoridades competentes, así como a ostentar la representación de sus afiliados. ARTÍCULO 93. EJERCICIO DE ACTIVIDADES SINDICALES. 1. En las dependencias con más de doscientos cincuenta funcionarios, las organizaciones sindicales representativas tendrán derecho a que se les facilite un local adecuado para el ejercicio de sus actividades. En todo caso, dichas organizaciones tendrán derecho a la instalación en cada dependencia policial de un tablón de anuncios, en lugar donde se garantice un fácil acceso al mismo de los funcionarios. 2. Los funcionarios podrán celebrar reuniones sindicales en locales oficiales, fuera de las horas de trabajo y sin perturbar la marcha del servicio, previa autorización del jefe de la dependencia, que sólo podrá denegarla cuando considere que el servicio puede verse afectado. 3. La autorización deberá solicitarse con una antelación mínima de setenta y dos horas, y en la misma se hará constar la fecha, hora y lugar de la reunión. 4. La resolución correspondiente deberá notificarse, al menos, veinticuatro horas antes de la prevista para la reunión, sin perjuicio de lo dispuesto en el apartado 2. 19 \f LEY ORGÁNICA 9/2015, DE 28 DE JULIO, DE RÉGIMEN DE PERSONAL DE LA POLICÍA NACIONAL. TÍTULO PRELIMINAR ARTÍCULO 8 1. Las Fuerzas Armadas, constituidas por el Ejército de Tierra, la Armada y el Ejército del Aire, tienen como misión garantizar la soberanía e independencia de España, defender su integridad territorial y el ordenamiento constitucional. 2. Una ley orgánica regulará las bases de la organización militar conforme a los principios de la presente Constitución. TÍTULO I DE LOS DERECHOS Y DEBERES FUNDAMENTALES CAPÍTULO SEGUNDO DERECHOS Y LIBERTADES SECCIÓN 1.ª DE LOS DERECHOS FUNDAMENTALES Y DE LAS LIBERTADES PÚBLICAS ARTÍCULO 17 1. Toda persona tiene derecho a la libertad y a la seguridad. Nadie puede ser privado de su libertad, sino con la observancia de lo establecido en este artículo y en los casos y en la forma previstos en la ley. 2. La detención preventiva no podrá durar más del tiempo estrictamente necesario para la realización de las averiguaciones tendentes al esclarecimiento de los hechos, y, en todo caso, en el plazo máximo de setenta y dos horas, el detenido deberá ser puesto en libertad o a disposición de la autoridad judicial. 3. Toda persona detenida debe ser informada de forma inmediata, y de modo que le sea comprensible, de sus derechos y de las razones de su detención, no pudiendo ser obligada a declarar. Se garantiza la asistencia de abogado al detenido en las diligencias policiales y judiciales, en los términos que la ley establezca. 4."
+    },
+    {
+      "titulo": "14. disposición judicial",
+      "contenido": "La ley regulará un procedimiento de «habeas corpus» para producir la inmediata puesta a disposición judicial de toda persona detenida ilegalmente. Asimismo, por ley se determinará el plazo máximo de duración de la prisión provisional. 20 \f ARTÍCULO 25 1. Nadie puede ser condenado o sancionado por acciones u omisiones que en el momento de producirse no constituyan delito, falta o infracción administrativa, según la legislación vigente en aquel momento. 2. Las penas privativas de libertad y las medidas de seguridad estarán orientadas hacia la reeducación y reinserción social y no podrán consistir en trabajos forzados. El condenado a pena de prisión que estuviere cumpliendo la misma gozará de los derechos fundamentales de este Capítulo, a excepción de los que se vean expresamente limitados por el contenido del fallo condenatorio, el sentido de la pena y la ley penitenciaria. En todo caso, tendrá derecho a un trabajo remunerado y a los beneficios correspondientes de la Seguridad Social, así como al acceso a la cultura y al desarrollo integral de su personalidad. 3. La Administración civil no podrá imponer sanciones que, directa o subsidiariamente, impliquen privación de libertad. ARTÍCULO 26 Se prohíben los Tribunales de Honor en el ámbito de la Administración civil y de las organizaciones profesionales. 21"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Normativa sobre los Cuerpos y fuerzas de\"]\n  A --> N1[\"LEY ORGÁNICA 2/1986, DE 13 DE MARZO, DE \"]\n  A --> N2[\"CAPÍTULO III\"]\n  A --> N3[\"artículo 5\"]\n  A --> N4[\"TÍTULO II\"]\n  A --> N5[\"disposición del\"]\n  A --> N6[\"CAPÍTULO III\"]\n  A --> N7[\"LEY ORGÁNICA 4/2010, DE 20 DE MAYO, DEL \"]\n  A --> N8[\"TÍTULO I\"]\n  A --> N9[\"disposición inmediata\"]\n  A --> N10[\"artículo 12\"]\n  A --> N11[\"artículo 12\"]\n  A --> N12[\"TÍTULO XIII\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Normativa sobre los Cuerpos y fuerzas de segurida…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "LEY ORGÁNICA 2/1986, DE 13 DE MARZO, DE…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "CAPÍTULO III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "artículo 5",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "TÍTULO II",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "disposición del",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "CAPÍTULO III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "LEY ORGÁNICA 4/2010, DE 20 DE MAYO, DEL…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "TÍTULO I",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "disposición inmediata",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "artículo 12",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "artículo 12",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s12",
+        "texto": "TÍTULO XIII",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s13",
+        "texto": "ARTÍCULO 90",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s14",
+        "texto": "disposición judicial",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p16-01",
-            "enunciado": "Las Fuerzas y Cuerpos de Seguridad se regulan por:",
-            "opciones": ["La Ley 7/1985", "La Ley Orgánica 2/1986, de 13 de marzo", "La Ley 39/2015", "La Ley 2/2008"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad, es la norma básica."
-        },
-        {
-            "id": "p16-02",
-            "enunciado": "La seguridad pública es competencia exclusiva de:",
-            "opciones": ["Las Comunidades Autónomas", "El Estado", "Los Ayuntamientos", "Los Cabildos"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La seguridad pública es competencia exclusiva del Estado; su mantenimiento corresponde al Gobierno de la Nación."
-        },
-        {
-            "id": "p16-03",
-            "enunciado": "Los miembros de las FCS deben actuar respecto de la política con:",
-            "opciones": ["Afinidad al Gobierno", "Absoluta neutralidad e imparcialidad", "Militancia activa", "Discreción opcional"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Deben actuar con absoluta neutralidad política e imparcialidad y sin discriminación."
-        },
-        {
-            "id": "p16-04",
-            "enunciado": "Una orden que constituya delito:",
-            "opciones": ["Debe obedecerse siempre", "No queda amparada por la obediencia debida", "Se obedece si la da un superior", "Se consulta al juez"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La obediencia debida no ampara las órdenes que constituyan delito o sean contrarias a la Constitución."
-        },
-        {
-            "id": "p16-05",
-            "enunciado": "El uso de los medios por las FCS se rige por los principios de:",
-            "opciones": ["Rapidez y dureza", "Congruencia, oportunidad y proporcionalidad", "Discrecionalidad", "Jerarquía únicamente"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El uso de los medios se rige por los principios de congruencia, oportunidad y proporcionalidad."
-        },
-        {
-            "id": "p16-06",
-            "enunciado": "El Cuerpo Nacional de Policía es un instituto armado de naturaleza:",
-            "opciones": ["Militar", "Civil", "Mixta", "Autonómica"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El Cuerpo Nacional de Policía es un instituto armado de naturaleza civil."
-        },
-        {
-            "id": "p16-07",
-            "enunciado": "La Policía Nacional se organiza en las escalas:",
-            "opciones": ["Alta y baja", "Superior, Ejecutiva, Subinspección y Básica", "General y especial", "Mando y tropa"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Policía Nacional se organiza en las escalas Superior, Ejecutiva, Subinspección y Básica."
-        },
-        {
-            "id": "p16-08",
-            "enunciado": "Las faltas en el régimen disciplinario de las FCS se clasifican en:",
-            "opciones": ["Graves y leves", "Muy graves, graves y leves", "Penales y administrativas", "Mayores y menores"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El régimen disciplinario tipifica las faltas en muy graves, graves y leves."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      },
+      {
+        "desde": "root",
+        "hasta": "s12"
+      },
+      {
+        "desde": "root",
+        "hasta": "s13"
+      },
+      {
+        "desde": "root",
+        "hasta": "s14"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc16-01",
+      "pregunta": "¿Cuál es la misión de las Fuerzas y Cuerpos de Seguridad?",
+      "respuesta": "Proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana."
+    },
+    {
+      "id": "fc16-02",
+      "pregunta": "¿Qué tipo de competencia tiene el Estado sobre la seguridad pública?",
+      "respuesta": "Competencia exclusiva."
+    },
+    {
+      "id": "fc16-03",
+      "pregunta": "¿Qué principios básicos de actuación deben seguir los miembros de las Fuerzas y Cuerpos de Seguridad?",
+      "respuesta": "Adecuación al ordenamiento jurídico, relaciones con la comunidad y tratamiento de detenidos."
+    },
+    {
+      "id": "fc16-04",
+      "pregunta": "¿Qué deben hacer los miembros de las Fuerzas y Cuerpos de Seguridad en caso de que reciban órdenes que entrañen la ejecución de actos que manifiestamente constituyan delito o sean contrarios a la Constitución o a las Leyes?",
+      "respuesta": "Abstenerse de ejecutarlas y oponerse a ellas resueltamente."
+    },
+    {
+      "id": "fc16-05",
+      "pregunta": "¿Qué deben hacer los miembros de las Fuerzas y Cuerpos de Seguridad en el ejercicio de sus funciones?",
+      "respuesta": "Actuar con la decisión necesaria, sin demora, cuando de ello dependa evitar un daño grave, inmediato e irreparable."
+    },
+    {
+      "id": "fc16-06",
+      "pregunta": "¿Qué deben utilizar los miembros de las Fuerzas y Cuerpos de Seguridad en las situaciones en que exista un riesgo racionalmente grave para su vida, su integridad física o las de terceras personas?",
+      "respuesta": "Las armas."
+    },
+    {
+      "id": "fc16-07",
+      "pregunta": "¿Qué deben hacer los miembros de las Fuerzas y Cuerpos de Seguridad en el momento de efectuar una detención?",
+      "respuesta": "Identificarse debidamente como tales."
+    },
+    {
+      "id": "fc16-08",
+      "pregunta": "¿Qué deben hacer los miembros de las Fuerzas y Cuerpos de Seguridad para velar por la vida e integridad física de las personas a quienes detuvieren o que se encuentren bajo su custodia?",
+      "respuesta": "Respetar el honor y la dignidad de las personas."
+    },
+    {
+      "id": "fc16-09",
+      "pregunta": "¿Qué deben hacer los miembros de las Fuerzas y Cuerpos de Seguridad en defensa de la Ley y de la seguridad ciudadana?",
+      "respuesta": "Intervenir siempre, en cualquier tiempo y lugar, se hallaren o no de servicio."
+    },
+    {
+      "id": "fc16-10",
+      "pregunta": "¿Qué tipo de secreto deben mantener los miembros de las Fuerzas y Cuerpos de Seguridad?",
+      "respuesta": "Secreto profesional."
+    },
+    {
+      "id": "fc16-11",
+      "pregunta": "¿Qué deben hacer los miembros de las Fuerzas y Cuerpos de Seguridad en caso de que se les requiera auxiliar o colaborar con las Fuerzas y Cuerpos de Seguridad?",
+      "respuesta": "Auxiliar o colaborar en todo momento."
+    },
+    {
+      "id": "fc16-12",
+      "pregunta": "¿Qué tipo de obligación tienen las personas y entidades que ejerzan funciones de vigilancia, seguridad o custodia referidas a personal y bienes o servicios de titularidad pública o privada?",
+      "respuesta": "Especial obligación de auxiliar o colaborar en todo momento con las Fuerzas y Cuerpos de Seguridad."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p16-01",
+      "enunciado": "¿Cuál es la misión de las Fuerzas y Cuerpos de Seguridad?",
+      "opciones": [
+        "Proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana.",
+        "Mantener el orden público y prevenir la delincuencia.",
+        "Proteger a los ciudadanos de la violencia y la inseguridad.",
+        "Garantizar la libertad y la seguridad de los ciudadanos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 104 de la Constitución Española, la misión de las Fuerzas y Cuerpos de Seguridad es proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana."
+    },
+    {
+      "id": "p16-02",
+      "enunciado": "¿Qué tipo de competencia tiene el Estado sobre la seguridad pública?",
+      "opciones": [
+        "Competencia compartida con las Comunidades Autónomas.",
+        "Competencia exclusiva.",
+        "Competencia delegada a las Corporaciones Locales.",
+        "Competencia transferida a las Comunidades Autónomas."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el artículo 149 de la Constitución Española, el Estado tiene competencia exclusiva sobre la seguridad pública."
+    },
+    {
+      "id": "p16-03",
+      "enunciado": "¿Qué principios básicos de actuación deben seguir los miembros de las Fuerzas y Cuerpos de Seguridad?",
+      "opciones": [
+        "Adecuación al ordenamiento jurídico, relaciones con la comunidad y tratamiento de detenidos.",
+        "Mantener el orden público y prevenir la delincuencia, proteger a los ciudadanos de la violencia y la inseguridad.",
+        "Garantizar la libertad y la seguridad de los ciudadanos, proteger el libre ejercicio de los derechos y libertades.",
+        "Proteger a los ciudadanos de la violencia y la inseguridad, garantizar la libertad y la seguridad de los ciudadanos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 5 de la Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad, los principios básicos de actuación de los miembros de las Fuerzas y Cuerpos de Seguridad son la adecuación al ordenamiento jurídico, las relaciones con la comunidad y el tratamiento de detenidos."
+    },
+    {
+      "id": "p16-04",
+      "enunciado": "¿Qué deben hacer los miembros de las Fuerzas y Cuerpos de Seguridad en caso de que reciban órdenes que entrañen la ejecución de actos que manifiestamente constituyan delito o sean contrarios a la Constitución o a las Leyes?",
+      "opciones": [
+        "Ejecutarlas y cumplirlas sin demora.",
+        "Abstenerse de ejecutarlas y oponerse a ellas resueltamente.",
+        "Ignorarlas y no hacer nada.",
+        "Comunicarlas a sus superiores y esperar instrucciones."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el artículo 5 de la Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad, los miembros de las Fuerzas y Cuerpos de Seguridad deben abstenerse de ejecutar órdenes que entrañen la ejecución de actos que manifiestamente constituyan delito o sean contrarios a la Constitución o a las Leyes."
+    },
+    {
+      "id": "p16-05",
+      "enunciado": "¿Qué deben hacer los miembros de las Fuerzas y Cuerpos de Seguridad en el ejercicio de sus funciones?",
+      "opciones": [
+        "Actuar con la decisión necesaria, sin demora, cuando de ello dependa evitar un daño grave, inmediato e irreparable.",
+        "Actuar con la decisión necesaria, sin demora, cuando de ello dependa evitar un daño leve, inmediato e irreparable.",
+        "Actuar con la decisión necesaria, sin demora, cuando de ello dependa evitar un daño grave, inmediato e irreparable, pero siempre y cuando no se ponga en peligro la vida de los ciudadanos.",
+        "Actuar con la decisión necesaria, sin demora, cuando de ello dependa evitar un daño grave, inmediato e irreparable, pero siempre y cuando no se ponga en peligro la seguridad ciudadana."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 5 de la Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad, los miembros de las Fuerzas y Cuerpos de Seguridad deben actuar con la decisión necesaria, sin demora, cuando de ello dependa evitar un daño grave, inmediato e irreparable."
+    },
+    {
+      "id": "p16-06",
+      "enunciado": "¿Qué deben utilizar los miembros de las Fuerzas y Cuerpos de Seguridad en las situaciones en que exista un riesgo racionalmente grave para su vida, su integridad física o las de terceras personas?",
+      "opciones": [
+        "Las armas.",
+        "Los gases lacrimógenos.",
+        "Los perros policiales.",
+        "Los helicópteros."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 5 de la Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad, los miembros de las Fuerzas y Cuerpos de Seguridad deben utilizar las armas en las situaciones en que exista un riesgo racionalmente grave para su vida, su integridad física o las de terceras personas."
+    }
+  ]
 }

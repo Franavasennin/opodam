@@ -1,157 +1,317 @@
 {
-    "id": 31,
-    "titulo": "La señalización. Normas generales sobre señales. Prioridad entre señales. Formato e idioma de las señales. Mantenimiento de señales y señales circunstanciales. Retirada, sustitución y alteración de señales",
-    "bloque": "especifico",
-    "secciones": [
-        {
-            "id": "s31-1",
-            "titulo": "La señalización: concepto y clases",
-            "contenido": "La señalización es el conjunto de signos colocados en la vía que indican a sus usuarios la forma correcta y segura de circular y les informan, advierten o regulan la circulación. Se regula por el Reglamento General de Circulación y por la Instrucción 8.1-IC de Señalización Vertical y la 8.2-IC de Marcas Viales. Las señales se clasifican en: verticales (de advertencia de peligro, de reglamentación, de indicación y de orientación), marcas viales horizontales, semáforos, señales y órdenes de los agentes de circulación, balizamientos, paneles direccionales y señales de los conductores. Todas tienen carácter obligatorio para los usuarios de la vía."
-        },
-        {
-            "id": "s31-2",
-            "titulo": "Normas generales y prioridad entre señales",
-            "contenido": "Las señales informan o ordenan; su contenido se aplica al lugar concreto en que se sitúan o a tramos delimitados por otras. La obediencia a las señales es obligatoria para todos los usuarios de la vía. El orden de prevalencia, de mayor a menor, es: 1º) las señales y órdenes de los agentes de circulación; 2º) las señales circunstanciales que modifiquen el régimen normal y las señales de balizamiento fijas; 3º) los semáforos; 4º) las señales verticales de circulación; 5º) las marcas viales. En caso de discrepancia entre dos señales del mismo tipo, prevalece la más restrictiva."
-        },
-        {
-            "id": "s31-3",
-            "titulo": "Formato e idioma de las señales",
-            "contenido": "Las señales deben ajustarse al formato, dimensiones, colores, símbolos y leyendas establecidos en las normas técnicas, asegurando su visibilidad, comprensión y uniformidad. Las inscripciones en las señales fijas se expresarán en castellano y, en su caso, en la lengua oficial de la Comunidad Autónoma; en la lengua oficial autonómica figurarán primero, salvo lo que dispongan las leyes. En las señales de información se incluyen los símbolos internacionales reconocidos. La señalización debe ser perceptible bajo condiciones normales de visibilidad y de noche, con materiales reflectantes y, en su caso, retroiluminación."
-        },
-        {
-            "id": "s31-4",
-            "titulo": "Mantenimiento y señales circunstanciales",
-            "contenido": "La responsabilidad del mantenimiento de las señales corresponde al titular de la vía: el Ministerio o las Administraciones autonómicas y locales según sea la titularidad de la carretera. Las señales deben conservarse en estado óptimo (limpieza, visibilidad, retrorreflectancia). Las señales circunstanciales son aquellas que se colocan con motivo de obras, accidentes, situaciones meteorológicas adversas, controles o regulaciones temporales; su finalidad es advertir y ordenar la circulación temporalmente. Tienen carácter preferente sobre las señales fijas mientras estén vigentes y deben retirarse en cuanto cese la circunstancia que las motivó."
-        },
-        {
-            "id": "s31-5",
-            "titulo": "Retirada, sustitución y alteración de señales",
-            "contenido": "La retirada, sustitución, traslado o cualquier modificación de una señal corresponde a la autoridad titular de la vía o a sus servicios competentes. Está prohibido alterar, ocultar o deteriorar las señales, así como colocar carteles, anuncios o instalaciones que puedan confundir o distraer a los usuarios. La realización de obras, instalaciones o actividades que afecten a las señales requiere autorización previa, y la persona o entidad que las realice debe restablecer la señalización al estado anterior. La infracción de estas normas constituye sanción administrativa y, en su caso, delito de daños o contra la seguridad vial."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e31-1",
-            "titulo": "Clases de señales",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Senalizacion] --> B[Verticales: peligro, reglamentacion, indicacion]\n    A --> C[Marcas viales]\n    A --> D[Semaforos]\n    A --> E[Agentes de circulacion]\n    A --> F[Balizamientos]"
-        },
-        {
-            "id": "e31-2",
-            "titulo": "Orden de prioridad entre señales",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Agentes de circulacion] --> B[Senales circunstanciales]\n    B --> C[Semaforos]\n    C --> D[Senales verticales]\n    D --> E[Marcas viales]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "La señalización", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Concepto y clases", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Normas generales", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Formato e idioma", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Mantenimiento y circunstanciales", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Retirada y alteración", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Verticales, marcas y semáforos", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Obligatorias para todos los usuarios", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Castellano + lengua autonómica", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Materiales reflectantes", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Prefieren señales circunstanciales", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Titular de la vía", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Sanción administrativa o penal", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n4", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 31,
+  "titulo": "La señalización. Normas generales sobre señales. Prioridad entre señales. Formato de las señales. Idioma de las señales. Mantenimiento de señales y señales circunstanciales. Retirada, sustitución y alteración de señales.",
+  "bloque": "especifico",
+  "secciones": [
+    {
+      "titulo": "1. Real Decreto Legislativo 6/2015, de 30 de octubre, p",
+      "contenido": "BIBLIOGRAFÍA • Normativas. • Real Decreto Legislativo 6/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial. o Art. 53-58 • Real Decreto 1428/2003, de 21 de noviembre, por el que se aprueba el Reglamento General de Circulación para la aplicación y desarrollo del texto articulado de la Ley sobre tráfico, circulación de vehículos a motor y seguridad vial, aprobado por el Real De • Art. 131-149 2 \f REAL DECRETO LEGISLATIVO 6/2015, DE 30 DE OCTUBRE, POR EL QUE SE APRUEBA EL TEXTO REFUNDIDO DE LA LEY SOBRE TRÁFICO, CIRCULACIÓN DE VEHÍCULOS A MOTOR Y SEGURIDAD VIAL. TÍTULO III SEÑALIZACIÓN ARTÍCULO 53. NORMAS GENERALES. 1. El usuario de las vías está obligado a obedecer las señales de la circulación que establezcan una obligación o una prohibición y a adaptar su comportamiento al mensaje del resto de las señales reglamentarias que se encuentren en las vías por las que circula. A estos efectos, cuando la señal imponga una obligación de detención, el conductor del vehículo no puede reanudar su marcha hasta haber cumplido lo prescrito por la señal. En los peajes dinámicos o telepeajes, los vehículos que los utilicen deberán estar provistos del medio técnico que posibilite su uso en condiciones operativas. 2. Salvo circunstancias especiales que lo justifiquen, el usuario debe obedecer las prescripciones indicadas por las señales, aun cuando parezcan estar en contradicción con las normas de comportamiento en la circulación. ARTÍCULO 54. PREFERENCIA. 1. El orden de preferencia entre los distintos tipos de señales de circulación es el siguiente: a) Señales y órdenes de los agentes de la autoridad encargados de la vigilancia del tráfico en el ejercicio de las funciones que tengan encomendadas. b) Señalización circunstancial que modifique el régimen normal de utilización de la vía. c) Semáforos. d) Señales verticales de circulación. e) Marcas viales. 2. En el caso de que las prescripciones indicadas por diferentes señales parezcan estar en contradicción entre sí, prevalecerá la preferente, según el orden a que se refiere el apartado anterior, o la más restrictiva si se trata de señales del mismo tipo. ARTÍCULO 55. FORMATO. 1. Reglamentariamente se establecerá el Catálogo Oficial de Señales de la Circulación y Marcas Viales, de acuerdo con las reglamentaciones y recomendaciones internacionales en la materia. 2. Dicho Catálogo especificará necesariamente la forma, color, diseño y significado de las señales, así como las dimensiones de las mismas en función de cada tipo de vía y sus sistemas de colocación. 3. Las señales y marcas viales deberán cumplir las especificaciones que reglamentariamente se establezca. ARTÍCULO 56. LENGUA. Las indicaciones escritas que se incluyan o acompañen a los paneles de señalización de las vías públicas, e inscripciones, figurarán en idioma castellano y, además, en la lengua oficial de la Comunidad autónoma reconocida en el respectivo estatuto de autonomía, cuando la señal esté ubicada en el ámbito territorial de dicha comunidad. ARTÍCULO 57. MANTENIMIENTO. 1. Corresponde al titular de la vía la responsabilidad del mantenimiento de la misma en las mejores condiciones posibles de seguridad para la circulación, y de la instalación y conservación en ella de las adecuadas señales y marcas viales. También corresponde al titular de la vía la autorización previa para la instalación en ella de otras señales de circulación."
     },
-    "flashcards": [
-        { "id": "fc31-01", "anverso": "¿Qué es la señalización?", "reverso": "El conjunto de signos colocados en la vía que indican a sus usuarios la forma correcta y segura de circular." },
-        { "id": "fc31-02", "anverso": "¿Qué reglamento regula la señalización en circulación?", "reverso": "El Reglamento General de Circulación (RD 1428/2003) y las instrucciones técnicas 8.1-IC y 8.2-IC." },
-        { "id": "fc31-03", "anverso": "Cita clases de señales verticales.", "reverso": "De advertencia de peligro, de reglamentación, de indicación y de orientación." },
-        { "id": "fc31-04", "anverso": "¿Tienen carácter obligatorio las señales?", "reverso": "Sí; son obligatorias para todos los usuarios de la vía." },
-        { "id": "fc31-05", "anverso": "¿Cuál es el primer puesto en el orden de prevalencia entre señales?", "reverso": "Las señales y órdenes de los agentes de circulación." },
-        { "id": "fc31-06", "anverso": "¿Qué prevalece sobre los semáforos?", "reverso": "Las señales y órdenes de los agentes y las señales circunstanciales." },
-        { "id": "fc31-07", "anverso": "¿Qué prevalecen sobre las marcas viales?", "reverso": "Las señales verticales." },
-        { "id": "fc31-08", "anverso": "¿Qué señal prevalece cuando hay discrepancia entre dos del mismo tipo?", "reverso": "La más restrictiva." },
-        { "id": "fc31-09", "anverso": "¿En qué idiomas figuran las inscripciones de señales fijas?", "reverso": "En castellano y, en su caso, en la lengua oficial de la Comunidad Autónoma." },
-        { "id": "fc31-10", "anverso": "¿Por qué llevan las señales materiales reflectantes?", "reverso": "Para asegurar la perceptibilidad de noche y en condiciones de poca visibilidad." },
-        { "id": "fc31-11", "anverso": "¿A quién corresponde el mantenimiento de las señales?", "reverso": "Al titular de la vía (Estado, Comunidad Autónoma o Administración Local)." },
-        { "id": "fc31-12", "anverso": "¿Qué son las señales circunstanciales?", "reverso": "Las colocadas por obras, accidentes, meteorología adversa, controles o regulaciones temporales." },
-        { "id": "fc31-13", "anverso": "¿Qué prevalecen sobre las señales fijas mientras estén vigentes?", "reverso": "Las señales circunstanciales." },
-        { "id": "fc31-14", "anverso": "¿Cuándo deben retirarse las señales circunstanciales?", "reverso": "En cuanto cese la circunstancia que las motivó." },
-        { "id": "fc31-15", "anverso": "¿A quién corresponde retirar o sustituir una señal?", "reverso": "A la autoridad titular de la vía o a sus servicios competentes." },
-        { "id": "fc31-16", "anverso": "¿Está permitido alterar u ocultar señales?", "reverso": "No; está prohibido alterar, ocultar o deteriorar las señales." },
-        { "id": "fc31-17", "anverso": "¿Qué requieren las obras que afectan a la señalización?", "reverso": "Autorización previa, con obligación de restablecer la señalización al estado anterior." },
-        { "id": "fc31-18", "anverso": "¿Puede ser delito alterar señales de tráfico?", "reverso": "Sí, puede constituir delito de daños o contra la seguridad vial, además de sanción administrativa." },
-        { "id": "fc31-19", "anverso": "¿Pueden colocarse anuncios cerca de la vía?", "reverso": "Solo si no pueden confundirse con la señalización ni distraer a los usuarios." },
-        { "id": "fc31-20", "anverso": "¿Por qué deben mantenerse limpias las señales?", "reverso": "Para conservar su visibilidad y retrorreflectancia." }
+    {
+      "titulo": "2. ARTÍCULO 58",
+      "contenido": "En caso de emergencia, los agentes de la autoridad encargados de la vigilancia del tráfico, en el ejercicio 3 \f de las funciones que tengan encomendadas, podrán instalar señales circunstanciales sin autorización previa. 2. La autoridad encargada de la regulación, ordenación y gestión del tráfico será responsable de la señalización de carácter circunstancial en razón de las contingencias del mismo y de la señalización variable necesaria para su control, de acuerdo con la normativa de carreteras. 3. La responsabilidad de la señalización de las obras que se realicen en las vías corresponderá a los organismos que las realicen o a las empresas adjudicatarias de las mismas, en los términos que reglamentariamente se determine. Los usuarios de la vía están obligados a seguir las indicaciones del personal destinado a la regulación del tráfico en dichas obras. ARTÍCULO 58. RETIRADA, SUSTITUCIÓN Y ALTERACIÓN. 1. El titular de la vía o, en su caso, la autoridad encargada de la ordenación y gestión del tráfico, ordenará la inmediata retirada y, cuando proceda, la sustitución por las que sean adecuadas a la normativa vigente, de las que hayan perdido su objeto y de las que no lo cumplan por causa de su deterioro. 2. Salvo por causa justificada, nadie debe instalar, retirar, trasladar, ocultar o modificar la señalización de una vía sin permiso del titular de la misma o, en su caso, de la autoridad encargada de la regulación, ordenación y gestión del tráfico o de la responsable de las instalaciones. 3. Se prohíbe modificar el contenido de las señales o colocar sobre ellas o en sus inmediaciones placas, carteles, marcas u otros objetos que puedan inducir a confusión, reducir su visibilidad o su eficacia, deslumbrar a los usuarios de la vía o distraer su atención. 4 \f REAL DECRETO 1428/2003, DE 21 DE NOVIEMBRE, POR EL QUE SE APRUEBA EL REGLAMENTO GENERAL DE CIRCULACIÓN PARA LA APLICACIÓN Y DESARROLLO DEL TEXTO ARTICULADO DE LA LEY SOBRE TRÁFICO, CIRCULACIÓN DE VEHÍCULOS A MOTOR Y SEGURIDAD VIAL, APROBADO POR EL REAL DECRETO LEGISLATIVO 339/1990, DE 2 DE MARZO. TÍTULO IV SEÑALIZACIÓN CAPÍTULO I NORMAS GENERALES ARTÍCULO 131. CONCEPTO. La señalización es el conjunto de señales y órdenes de los agentes de la autoridad encargados de la vigilancia del tráfico, señales circunstanciales que modifican el régimen normal de utilización de la vía y elementos de balizamiento, semáforos, señales verticales de circulación y marcas viales, destinadas a los usuarios de la vía y que tienen por misión advertir e informar a estos u ordenar o reglamentar su comportamiento con la necesaria antelación de determinadas circunstancias de la vía o de la circulación. ARTÍCULO 132. OBEDIENCIA DE LAS SEÑALES. 1. Todos los usuarios de las vías objeto de la ley están obligados a obedecer las señales de la circulación que establezcan una obligación o una prohibición y a adaptar su comportamiento al mensaje del resto de las señales reglamentarias que se encuentran en las vías por las que circulan. A estos efectos, cuando la señal imponga una obligación de detención, no podrá reanudar su marcha el conductor del vehículo así detenido hasta haber cumplido la prescripción que la señal establece. En los peajes dinámicos o telepeajes, los vehículos que los utilicen deberán estar provistos del medio técnico que posibilite su uso en condiciones operativas. 2. Salvo circunstancias especiales que lo justifiquen, los usuarios deben obedecer las prescripciones indicadas por las señales, aun cuando parezcan estar en contradicción con las normas de comportamiento en la circulación. 3."
+    },
+    {
+      "titulo": "3. CAPÍTULO II",
+      "contenido": "Los usuarios deben obedecer las indicaciones de los semáforos y de las señales verticales de circulación situadas inmediatamente a su derecha, encima de la calzada o encima de su carril, y si no existen en los citados emplazamientos y pretendan girar a la izquierda o seguir de frente, las de los situados inmediatamente a su izquierda. Si existen semáforos o señales verticales de circulación con indicaciones distintas a la derecha y a la izquierda, quienes pretendan girar a la izquierda o seguir de frente solo deben obedecer las de los situados inmediatamente a su izquierda. 5 \f CAPÍTULO II PREFERENCIA ENTRE SEÑALES ARTÍCULO 133. ORDEN DE PREFERENCIA. 1. El orden de preferencia entre los distintos tipos de señales de circulación es el siguiente: a) Señales y órdenes de los agentes de la autoridad encargados de la vigilancia del tráfico en el ejercicio de las funciones que tengan encomendadas. b) Señalización y balizamiento circunstancial que modifique el régimen normal de utilización de la vía, dispositivos delimitadores y señales de balizamiento. c) Semáforos. d) Señales verticales de circulación. e) Marcas viales. 2. En el caso de que las prescripciones indicadas por diferentes señales parezcan estar en contradicción entre sí, prevalecerá la preferente, según el orden a que se refiere el apartado anterior, o la más restrictiva, si se trata de señales del mismo tipo. CAPÍTULO III FORMATO DE LAS SEÑALES ARTÍCULO 134. CATÁLOGO OFICIAL DE SEÑALES DE LA CIRCULACIÓN Y MARCAS VIALES. 1. El Catálogo oficial de señales de la circulación y marcas viales debe ajustarse a lo establecido en las reglamentaciones y recomendaciones internacionales en la materia. 2. En dicho Catálogo se especificará necesariamente la forma, color, diseño y significado de las señales, así como las dimensiones de las mismas en función de cada tipo de vía y sistemas de colocación de las siguientes señales de circulación: a) Señalización de tramos con obras o tareas de conservación. b) Señales de advertencia de peligro. c) Señales de reglamentación. d) Señales de indicación. e) Marcas viales. 3. Las señales que pueden ser utilizadas en las vías objeto de la legislación sobre tráfico, circulación de vehículos a motor y seguridad vial deberán cumplir las normas y especificaciones que se establecen en este reglamento y en Catálogo oficial de señales de la circulación y marcas viales. 4. El Catálogo oficial de señales de la circulación y marcas viales se incluye en el anexo I. CAPÍTULO IV APLICACIÓN DE LAS SEÑALES SECCIÓN 1.ª GENERALIDADES ARTÍCULO 135. APLICACIÓN. Toda señal se aplicará a toda la anchura de la calzada que estén autorizados a utilizar los conductores a quienes se dirija esa señal. No obstante, su aplicación podrá limitarse a uno o más carriles, mediante marcas en la calzada. ARTÍCULO 136. VISIBILIDAD. Con el fin de que sean más visibles y legibles por la noche, las señales viales deben estar provistas de materiales o dispositivos retrorreflectantes, según lo dispuesto en la normativa técnica básica de interés general establecida a estos fines por el Ministerio de Transportes y Movilidad Sostenible. 6 \f ARTÍCULO 137. INSCRIPCIONES. 1. Para facilitar la interpretación de las señales, se podrá añadir una inscripción en un panel complementario rectangular colocado debajo de aquellas o en el interior de un panel rectangular que contenga la señal. 2."
+    },
+    {
+      "titulo": "4. ARTÍCULO 138",
+      "contenido": "Excepcionalmente, cuando las autoridades competentes estimen conveniente concretar el significado de una señal o de un símbolo o, respecto de las señales de reglamentación, limitar su alcance a ciertas categorías de usuarios de la vía o a determinados períodos, y no se pudieran dar las indicaciones necesarias por medio de un símbolo adicional o de cifras en las condiciones definidas en el Catálogo oficial de señales de la circulación y marcas viales, se colocará una inscripción debajo de la señal, en un panel complementario rectangular, sin perjuicio de la posibilidad de sustituir o completar esas inscripciones mediante uno o varios símbolos expresivos colocados en la misma placa. En el caso de que la señal esté colocada en un cartel fijo o de mensaje variable, la inscripción a la que se hace referencia podrá ir situada junto a ella. ARTÍCULO 138. IDIOMA DE LAS SEÑALES. Las indicaciones escritas que se incluyan o acompañen a los paneles de señalización de las vías públicas, e inscripciones, figurarán en idioma castellano y, además, en la lengua oficial de la comunidad autónoma reconocida en el respectivo estatuto de autonomía, cuando la señal esté ubicada en el ámbito territorial de dicha comunidad. Los núcleos de población y demás topónimos serán designados en su denominación oficial y, cuando fuese necesario a efectos de identificación, en castellano. SECCIÓN 2.ª RESPONSABILIDAD DE LA SEÑALIZACIÓN EN LAS VÍAS ARTÍCULO 139. RESPONSABILIDAD. 1. Corresponde al titular de la vía la responsabilidad de su mantenimiento en las mejores condiciones posibles de seguridad para la circulación, y de la instalación y conservación en ella de las adecuadas señales y marcas viales. También corresponde al titular de la vía la autorización previa para la instalación en ella de otras señales de circulación. En caso de emergencia, los agentes de la autoridad encargados de la vigilancia del tráfico, en el ejercicio de las funciones que tengan encomendadas, podrán instalar señales circunstanciales sin autorización previa. 2. La autoridad encargada de la regulación, ordenación y gestión del tráfico será responsable de la señalización de carácter circunstancial en razón de las contingencias de aquel y de la señalización variable necesaria para su control, de acuerdo con la normativa de carreteras. En tal sentido, corresponde al organismo autónomo Jefatura Central de Tráfico o, en su caso, a la autoridad autonómica o local responsable de la regulación del tráfico la determinación de las clases o tramos de carreteras que deban contar con señalización circunstancial o variable o con otros medios de regulación, ordenación, gestión y vigilancia telemática del tráfico; la determinación de las características de los elementos físicos y tecnológicos que tengan como finalidad auxiliar a la autoridad de tráfico; la instalación y mantenimiento de dicha señalización y elementos físicos o tecnológicos, así como la determinación en cada momento de los usos y mensajes de los paneles de mensaje variable, sin perjuicio de las competencias que, en cada caso, puedan corresponder a los órganos titulares de la vía. Corresponde asimismo a la autoridad encargada de la regulación, ordenación y gestión del tráfico la instalación de las señales que indican la ubicación de los elementos de control y vigilancia del tráfico cuando lo considere, previa autorización del titular la vía. 3."
+    },
+    {
+      "titulo": "5. artículo 60",
+      "contenido": "La responsabilidad de la señalización de las obras que se realicen en las vías objeto de la legislación sobre tráfico, circulación de vehículos a motor y seguridad vial corresponderá a los organismos que las realicen o a las empresas adjudicatarias de aquellas. Los usuarios de la vía están obligados a seguir las indicaciones del personal destinado a la regulación del paso de vehículos en dichas obras, según lo dispuesto en el artículo 60.5. 7 \f Cuando las obras sean realizadas por empresas adjudicatarias o por entidades distintas del titular, estas, con anterioridad a su inicio, lo comunicarán al organismo autónomo Jefatura Central de Tráfico o, en su caso, a la autoridad autonómica o local responsable del tráfico, que dictará las instrucciones que resulten procedentes en relación a la regulación, gestión y control del tráfico. 4. La realización de las obras sin autorización previa del titular de la vía se regirá por lo dispuesto en la normativa de carreteras o, en su caso, en las normas municipales. La realización y señalización de las obras que incumpla las instrucciones dictadas tendrá la consideración de infracción grave, de conformidad con lo establecido en el artículo 76.b) del texto refundido. CAPÍTULO V RETIRADA, SUSTITUCIÓN Y ALTERACIÓN DE SEÑALES ARTÍCULO 140. OBLIGACIONES RELATIVAS A LA SEÑALIZACIÓN. 1. El titular de la vía o, en su caso, la autoridad encargada de la ordenación y gestión del tráfico ordenará la inmediata retirada y, cuando proceda, la sustitución por las que sean adecuadas a la normativa vigente de las señales que hayan perdido su objeto y de las que no lo cumplan por causa de su deterioro. 2. Salvo por causa justificada, nadie debe instalar, retirar, trasladar, ocultar o modificar la señalización de una vía sin permiso del titular de la misma o, en su caso, de la autoridad encargada de la regulación, ordenación y gestión del tráfico o de la responsable de las instalaciones. 3. Se prohíbe modificar el contenido de las señales o colocar sobre ellas o en sus inmediaciones placas, carteles, marcas u otros objetos que puedan inducir a confusión, reducir su visibilidad o su eficacia, deslumbrar a los usuarios de la vía o distraer su atención, sin perjuicio de las competencias de los titulares de las vías. El organismo autónomo Jefatura Central de Tráfico o, en su caso, la autoridad autonómica o local responsable de la regulación del tráfico podrá alterar, en todo momento, el contenido de las señales contempladas en el artículo 142.1 para adaptarlas a las circunstancias cambiantes del tráfico, sin perjuicio de las competencias de los titulares de las vías. 4. La realización en la vía de obras sin autorización correspondiente, así como los supuestos de retirada, ocultación, alteración o deterioro de la señalización permanente u ocasional tendrán la consideración de infracciones muy graves, conforme se prevé en el artículo 77.n) del texto refundido. CAPÍTULO VI TIPOS Y SIGNIFICADOS DE LAS SEÑALES DE CIRCULACIÓN SECCIÓN 1.ª SEÑALES Y ÓRDENES DE LOS AGENTES DE CIRCULACIÓN ARTÍCULO 141. SEÑALES CON EL BRAZO Y OTRAS. 1. Los agentes de la autoridad encargados de la vigilancia del tráfico que estén regulando la circulación lo harán de forma que sean fácilmente reconocibles como tales a distancia, tanto de día como de noche, y sus señales, que han de ser visibles, y sus órdenes deben ser inmediatamente obedecidas por los usuarios de la vía."
+    },
+    {
+      "titulo": "6. ARTÍCULO 142",
+      "contenido": "Tanto los agentes de la autoridad que regulen la circulación como la Policía Militar, el personal de obras y el de acompañamiento de los vehículos en régimen de transporte especial, que regulen el paso de vehículos y, en su caso, las patrullas escolares, el personal de protección civil y el de organizaciones de actividades deportivas o de cualquier otro acto, habilitado a los efectos contemplados en el apartado 4 de este artículo, deberán utilizar prendas de colores llamativos y dispositivos o elementos retrorreflectantes que permitan a los conductores y demás usuarios de la vía que se aproximen distinguirlos a una distancia mínima de 150 metros. 8 \f 2. Como norma general, los agentes de la autoridad encargados de la vigilancia del tráfico utilizarán las señales establecidas en el apartado 1 del anexo I. 3. Los agentes de la autoridad encargados de la vigilancia del tráfico y los usuarios de vehículos de policía, podrán dar órdenes o indicaciones a los usuarios mientras hacen uso de la señal V- 1 que establece el Reglamento General de Vehículos, a través de la megafonía o por cualquier otro medio que pueda ser percibido claramente por aquellos con los medios establecidos en el anexo I. 4. En ausencia de agentes o para auxiliar a estos, y en las circunstancias y condiciones establecidas en este reglamento, la Policía Militar podrá regular la circulación, y el personal de obras en la vía y el de acompañamiento de los vehículos en régimen de transporte especial podrá regular el paso de vehículos mediante el empleo de las señales incluidas en el Catálogo oficial de señales de la circulación y marcas viales incorporadas a una paleta, y, por este mismo medio, las patrullas escolares invitar a los usuarios de la vía a que detengan su marcha. Cuando la autoridad competente autorice la celebración de actividades deportivas o actos que aconsejen establecer limitaciones a la circulación en vías urbanas o interurbanas, la autoridad responsable del tráfico podrá habilitar al personal de protección civil o de la organización responsable para impedir el acceso de vehículos o peatones a la zona o itinerario afectados, en los términos del anexo II. Cuando las Fuerzas y Cuerpos de Seguridad competentes, en el ámbito de sus funciones, establezcan controles policiales de seguridad ciudadana en la vía pública, podrán regular el tráfico exclusivamente en el caso de ausencia de los agentes de la autoridad encargados de la vigilancia del tráfico. El significado y expresión de las señales y órdenes de los agentes de la autoridad encargados de la vigilancia del tráfico se regulan en el apartado 1 del anexo I. SECCIÓN 2.ª SEÑALIZACIÓN CIRCUNSTANCIAL QUE MODIFICA EL RÉGIMEN NORMAL DE UTILIZACIÓN DE LA VÍA, ELEMENTOS DE BALIZAMIENTO Y SISTEMAS DE CONTENCIÓN DE VEHÍCULOS ARTÍCULO 142. SEÑALIZACIÓN CIRCUNSTANCIAL, ELEMENTOS DE BALIZAMIENTO Y SISTEMAS DE CONTENCIÓN DE VEHÍCULOS. 1. La señalización circunstancial tiene por objeto regular la circulación adaptándola a las circunstancias cambiantes del tráfico. Se utilizarán para dar información a los conductores, advertirles de posibles peligros y dar recomendaciones o instrucciones de obligado cumplimiento. Las modificaciones que la señalización circunstancial introduce respecto de la habitual señalización vertical y horizontal terminan cuando lo establezca la propia señalización, o las causas que motivaron su imposición, momento a partir del cual aquellas vuelven a regir. 2. Los símbolos utilizados en la señalización circunstancial se ajustarán al Catálogo oficial de señales de la circulación y marcas viales."
+    },
+    {
+      "titulo": "7. ARTÍCULO 143",
+      "contenido": "Justificadamente y siempre que no exista equivalente en el Catálogo se podrán usar otros símbolos. 3. El anexo I, apartado 2, recoge el listado de vialidades consecuencia de incidentes e información y medidas que generará la señalización circunstancial, sin perjuicio de la señalización de otras circunstancias de tráfico, circulación de vehículos y seguridad vial. 4. Entre los elementos de balizamiento se distinguen: a) Dispositivos delimitadores: prohíben el paso a la parte de la vía que delimitan. b) Dispositivos de guía: tienen por finalidad indicar el borde de la calzada, la presencia de una curva y el sentido de circulación; indicar los límites de obras de fábrica u otros obstáculos; delimitar carriles y advertir de riesgos. c) Otros elementos de balizamiento: tienen por finalidad advertir de riesgos. d) Señales de balizamiento: orientar la circulación, delimitar las zonas de incorporación a carriles, restringir los cambios de carril y advertir riesgos. 5. Sistemas de contención de vehículos. Son elementos de las carreteras cuya función es mitigar las consecuencias de un accidente de circulación por salida de la vía, haciéndolas más 9 \f predecibles y menos graves, pero no evitan que el mismo se produzca, ni están exentas de algún tipo de riesgo para los ocupantes del vehículo. 6. Los tipos y significado de los elementos de balizamiento y de los sistemas de contención de vehículos se regulan en el apartado 3 del anexo I. SECCIÓN 3.ª SEMÁFOROS ARTÍCULO 143. TIPOS DE SEMÁFOROS. 1. Los tipos de semáforos son: a) Semáforos reservados para peatones. b) Semáforos circulares para vehículos. c) Semáforos cuadrados para vehículos, o de carril. d) Semáforos reservados a determinados vehículos. 2. El significado de las luces de los distintos semáforos se regula en el apartado 4 del anexo I. SECCIÓN 4.ª SEÑALES VERTICALES DE CIRCULACIÓN ARTÍCULO 144. SEÑALES DE ADVERTENCIA DE PELIGRO. OBJETO Y TIPOS. 1. Las señales de advertencia de peligro tienen por objeto indicar a los usuarios de la vía la proximidad y naturaleza de un peligro difícil de ser percibido a tiempo con objeto de que se cumplan las normas de comportamiento que, en cada caso, sean procedentes. 2. La distancia entre la señal y el principio del tramo peligroso podrá indicarse en un panel complementario. 3. Asimismo mediante un panel complementario podrá indicarse la longitud a lo largo de la cual existe el peligro indicado por la señal. 4. Cuando se trate de señales luminosas, podrá admitirse que los símbolos aparezcan iluminados en blanco sobre fondo oscuro no luminoso. 5. La forma, color, diseño y significado de las señales, así como las dimensiones de las mismas en función de cada tipo de vía y sistemas de colocación se regulan en el apartado 5 del anexo I. ARTÍCULO 145. SEÑALES DE REGLAMENTACIÓN. OBJETO, CLASES Y NORMAS COMUNES. 1. Las señales de reglamentación tienen por objeto indicar a los usuarios de la vía las obligaciones, limitaciones o prohibiciones especiales que deben observar. 2. Las señales de reglamentación se subdividen en: a) Señales de prioridad: están destinadas a poner en conocimiento de los usuarios de la vía reglas especiales de prioridad en las intersecciones o en los pasos estrechos. b) Señales de prohibición de entrada: para quienes se las encuentren de frente en el sentido de su marcha y a partir del lugar en que están situadas, prohíben el acceso a los vehículos o usuarios según el significado de cada una de las señales."
+    },
+    {
+      "titulo": "8. ARTÍCULO 146",
+      "contenido": "c) Señales de restricción de paso: para quienes se las encuentren de frente en el sentido de su marcha y a partir del lugar en que están situadas, prohíben o limitan el acceso de los vehículos según el significado de cada una de las señales. d) Otras señales de prohibición o restricción. e) Señales de obligación: señalan una norma de circulación obligatoria. f) Señales de fin de prohibición o restricción. 3. Las señales de reglamentación colocadas al lado o en la vertical de una señal que indique el nombre del poblado significan que la reglamentación se aplica a todo el poblado, excepto si en este se indicara otra reglamentación distinta mediante otras señales en ciertos tramos de la vía. 4. Las obligaciones, limitaciones o prohibiciones especiales establecidas por las señales de reglamentación regirán a partir de la sección transversal donde estén colocadas dichas señales, 10 \f salvo que mediante un panel complementario colocado debajo de ellas se indique la distancia a la sección donde empiecen a regir las citadas señales. 5. Cuando las señales sean luminosas, podrá admitirse que los símbolos aparezcan iluminados en blanco sobre fondo oscuro no luminoso. 6. La forma, color, diseño y significado de las señales, así como las dimensiones de las mismas en función de cada tipo de vía y sistemas de colocación se regulan en el apartado 5 del anexo I. ARTÍCULO 146. SEÑALES DE INDICACIÓN. OBJETO Y TIPOS. 1. Las señales de indicación tienen por objeto facilitar al usuario de las vías ciertas indicaciones que pueden serle de utilidad. 2. Las señales de indicación pueden ser: a) Señales de indicaciones generales. b) Señales de carriles: indican una reglamentación especial para uno o más carriles de la calzada. c) Señales de servicio: informan de un servicio de posible utilidad para los usuarios de la vía. d) Señales de orientación: 1.ª Señales de preseñalización: se colocarán a una distancia adecuada de la intersección para que su eficacia sea máxima, tanto de día como de noche, teniendo en cuenta las condiciones viales y de circulación, especialmente la velocidad habitual de los vehículos y la distancia a la que sea visible dicha señal. Esta distancia podrá reducirse a unos 50 metros en los poblados mientras que en autopistas y autovías será, como norma general de 500 metros, salvo excepciones provocadas por la configuración de la vía o el entorno. Estas señales podrán repetirse. La distancia entre la señal y la intersección podrá indicarse por medio de un panel complementario colocado encima de la señal; esa distancia se podrá indicar también en la parte superior de la propia señal. 2.ª Señales de dirección: son las señales destinadas a ayudar al usuario en el seguimiento de itinerarios proporcionando indicaciones sobre destinos y carreteras. 3.ª Señales de identificación de carreteras: son las señales destinadas a identificar las vías, sea por su número, compuesto en cifras, letras o una combinación de ambas, sea por su nombre, estarán constituidas por este número o este nombre encuadrados en un rectángulo o en un escudo. 4.ª Señales de localización: podrán utilizarse para indicar la frontera entre dos Estados o el límite entre dos divisiones administrativas del mismo Estado o el nombre de un poblado, un río, un puerto, un lugar u otra circunstancia de naturaleza análoga. 5.ª Señales de confirmación: tienen por objeto recordar los destinos de referencia de la vía, figurando además la distancia a cada uno de ellos."
+    },
+    {
+      "titulo": "9. ARTÍCULO 147",
+      "contenido": "6.ª Señales de uso específico en poblado: están constituidas por módulos, utilizados conjunta o separadamente, cuya finalidad común es comunicar que los lugares a que se refieren se alcanzan siguiendo el sentido marcado por la flecha. e) Paneles complementarios. Los paneles complementarios precisan el significado de la señal que complementan. f) Otras señales. 3. Los paneles complementarios colocados debajo de una señal de indicación podrán expresar la distancia entre dicha señal y el lugar así señalado. La indicación de esta distancia podrá figurar también, en su caso, en la parte inferior de la propia señal. 4. La forma, color, diseño y significado de las señales, así como las dimensiones de las mismas en función de cada tipo de vía y sistemas de colocación se regulan en el apartado 5 del anexo I. 11 \f SECCIÓN 5.ª MARCAS VIALES ARTÍCULO 147. MARCAS VIALES. OBJETO Y CLASES. 1. Las marcas viales, tienen por objeto regular la circulación y advertir o guiar a los usuarios de la vía, y pueden emplearse solas o con otros medios de señalización, a fin de reforzar o precisar sus indicaciones. 2. Las marcas viales se clasifican del siguiente modo: a) Marcas viales longitudinales: delimitan los carriles por los que circulan los usuarios de la vía y ordenan sus movimientos tanto en sentido longitudinal como transversal. b) Marcas viales transversales: se trata bien de líneas o conjunto de ellas dispuestas a lo ancho de uno o varios carriles que tienen como objeto indicar a los usuarios de la vía ciertas obligaciones, limitaciones o prohibiciones previas a franquearlas. c) Flechas: indican el movimiento o los movimientos permitidos u obligados a los conductores que circulan por el carril en el que están dispuestas, o si la señalización lo permite, cambiarse a otro carril. También pueden estar colocadas aproximadamente en el eje de una calzada de doble sentido de circulación. d) Líneas paralelas oblicuas (cebreado): se trata de una zona marcada por franjas oblicuas paralelas enmarcadas por una línea continua. Significa que ningún conductor debe entrar con su vehículo o animal en la citada zona, excepto los obligados a circular por el arcén. e) Señales horizontales de circulación: las señales horizontales son señales pintadas sobre la calzada con el mismo significado que sus homólogas verticales. La obligación de las señales horizontales situadas en un carril delimitado por líneas longitudinales se aplica exclusivamente a los vehículos que circulen por dicho carril. f) Inscripciones y otras marcas viales: tienen como objeto proporcionar una información complementaria al conductor, imponer una determinada prescripción o advertir que se encuentran en un tramo con características especiales. 3. La forma, color, diseño y significado de las señales, así como las dimensiones de las mismas en función de cada tipo de vía se regulan en el apartado 5 del anexo I. SECCIÓN 6.ª TRAMOS CON OBRAS O TAREAS DE CONSERVACIÓN ARTÍCULO 148. SEÑALIZACIÓN DE TRAMOS CON OBRAS O TAREAS DE CONSERVACIÓN. Las obras y tareas de conservación que alteren de cualquier modo la circulación vial deberán hallarse señalizadas, tanto de día como de noche, y balizadas luminosamente durante las horas nocturnas, o cuando las condiciones meteorológicas o ambientales lo exijan, a cargo del realizador de la obra. ARTÍCULO 149. USO DE SEÑALES EN OBRA Y OTRAS ACTUACIONES. En cualquier tipo de obra, actividad en la vía o tramos en servicio dispuestos como tramos de ensayo se usará la señalización recogida en el anexo I."
+    },
+    {
+      "titulo": "10. Únicamente de forma justificada se podrán utilizar señales distintas a…",
+      "contenido": "Únicamente de forma justificada se podrán utilizar señales distintas a las recogidas en el anexo I. 12"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"La señalización. Normas generales sobre \"]\n  A --> N1[\"Real Decreto Legislativo 6/2015, de 30 d\"]\n  A --> N2[\"ARTÍCULO 58\"]\n  A --> N3[\"CAPÍTULO II\"]\n  A --> N4[\"ARTÍCULO 138\"]\n  A --> N5[\"artículo 60\"]\n  A --> N6[\"ARTÍCULO 142\"]\n  A --> N7[\"ARTÍCULO 143\"]\n  A --> N8[\"ARTÍCULO 146\"]\n  A --> N9[\"ARTÍCULO 147\"]\n  A --> N10[\"Únicamente de forma justificada se podrá\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "La señalización. Normas generales sobre señales. …",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "Real Decreto Legislativo 6/2015, de 30 …",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "ARTÍCULO 58",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "CAPÍTULO II",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "ARTÍCULO 138",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "artículo 60",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "ARTÍCULO 142",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "ARTÍCULO 143",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "ARTÍCULO 146",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "ARTÍCULO 147",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "Únicamente de forma justificada se podr…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p31-01",
-            "enunciado": "Las señales son:",
-            "opciones": ["Recomendaciones para los conductores", "Obligatorias para todos los usuarios de la vía", "Solo obligatorias para vehículos a motor", "Vinculantes solo si lo decide la policía"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La obediencia a las señales es obligatoria para todos los usuarios de la vía."
-        },
-        {
-            "id": "p31-02",
-            "enunciado": "El primer lugar en el orden de prevalencia entre señales lo ocupan:",
-            "opciones": ["Los semáforos", "Las señales y órdenes de los agentes de circulación", "Las marcas viales", "Las señales verticales"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las señales y órdenes de los agentes de circulación prevalecen sobre todas las demás."
-        },
-        {
-            "id": "p31-03",
-            "enunciado": "En caso de discrepancia entre dos señales del mismo tipo:",
-            "opciones": ["Prevalece la más antigua", "Prevalece la más restrictiva", "Prevalece la más nueva", "Se ignoran ambas"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Cuando dos señales del mismo tipo entran en contradicción, prevalece la más restrictiva."
-        },
-        {
-            "id": "p31-04",
-            "enunciado": "Las inscripciones de las señales fijas en una Comunidad Autónoma con lengua propia figuran:",
-            "opciones": ["Solo en castellano", "En castellano y en la lengua autonómica", "Solo en la lengua autonómica", "Solo en inglés"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las inscripciones figuran en castellano y, en su caso, en la lengua oficial autonómica."
-        },
-        {
-            "id": "p31-05",
-            "enunciado": "El mantenimiento de las señales corresponde a:",
-            "opciones": ["Los conductores", "El titular de la vía", "Los Ayuntamientos en todo caso", "Los seguros"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La responsabilidad del mantenimiento corresponde al titular de la vía."
-        },
-        {
-            "id": "p31-06",
-            "enunciado": "Las señales circunstanciales:",
-            "opciones": ["No prevalecen sobre las fijas", "Prevalecen sobre las señales fijas mientras estén vigentes", "Son meras recomendaciones", "Solo se utilizan de noche"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las señales circunstanciales prevalecen sobre las fijas mientras dure la situación que las motiva."
-        },
-        {
-            "id": "p31-07",
-            "enunciado": "La alteración u ocultación de señales:",
-            "opciones": ["No tiene consecuencias", "Está prohibida y puede ser sanción o delito", "Es una infracción civil", "Es una falta solo si se hace de noche"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Está prohibido alterar, ocultar o deteriorar las señales; puede constituir sanción administrativa y, en su caso, delito."
-        },
-        {
-            "id": "p31-08",
-            "enunciado": "Las obras que afectan a la señalización requieren:",
-            "opciones": ["Solo aviso a la prensa", "Autorización previa y restablecimiento posterior de la señalización", "Permiso del seguro", "Ninguna formalidad"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las obras que afectan a la señalización requieren autorización previa y restablecimiento posterior al estado anterior."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc31-01",
+      "pregunta": "¿Qué debe hacer el conductor de un vehículo en caso de que una señal imponga una obligación de detención?",
+      "respuesta": "No puede reanudar su marcha hasta haber cumplido lo prescrito por la señal."
+    },
+    {
+      "id": "fc31-02",
+      "pregunta": "¿Cuál es el orden de preferencia entre los distintos tipos de señales de circulación?",
+      "respuesta": "Señales y órdenes de los agentes de la autoridad, señalización circunstancial, semáforos, señales verticales de circulación y marcas viales."
+    },
+    {
+      "id": "fc31-03",
+      "pregunta": "¿Qué idioma se utiliza en las indicaciones escritas de las señales de circulación?",
+      "respuesta": "Idioma castellano y, además, en la lengua oficial de la Comunidad autónoma reconocida en el respectivo estatuto de autonomía."
+    },
+    {
+      "id": "fc31-04",
+      "pregunta": "¿Quién es responsable del mantenimiento de la vía y de la instalación y conservación de las señales y marcas viales?",
+      "respuesta": "El titular de la vía."
+    },
+    {
+      "id": "fc31-05",
+      "pregunta": "¿Qué debe hacer el titular de la vía en caso de que una señal haya perdido su objeto o no cumpla con la normativa vigente?",
+      "respuesta": "Retirarla y, cuando proceda, sustituirla por una adecuada a la normativa vigente."
+    },
+    {
+      "id": "fc31-06",
+      "pregunta": "¿Quién puede instalar señales circunstanciales sin autorización previa?",
+      "respuesta": "Los agentes de la autoridad encargados de la vigilancia del tráfico en caso de emergencia."
+    },
+    {
+      "id": "fc31-07",
+      "pregunta": "¿Qué debe hacer el usuario de la vía en caso de que se realicen obras en la vía?",
+      "respuesta": "Seguir las indicaciones del personal destinado a la regulación del tráfico en dichas obras."
+    },
+    {
+      "id": "fc31-08",
+      "pregunta": "¿Qué se prohíbe modificar en las señales de circulación?",
+      "respuesta": "El contenido de las señales o colocar sobre ellas o en sus inmediaciones placas, carteles, marcas u otros objetos que puedan inducir a confusión, reducir su visibilidad o su eficacia."
+    },
+    {
+      "id": "fc31-09",
+      "pregunta": "¿Quién es responsable de la señalización de carácter circunstancial en razón de las contingencias del tráfico?",
+      "respuesta": "La autoridad encargada de la regulación, ordenación y gestión del tráfico."
+    },
+    {
+      "id": "fc31-10",
+      "pregunta": "¿Qué debe hacer el titular de la vía o la autoridad encargada de la ordenación y gestión del tráfico en caso de que una señal haya perdido su objeto o no cumpla con la normativa vigente?",
+      "respuesta": "Retirarla y, cuando proceda, sustituirla por una adecuada a la normativa vigente."
+    },
+    {
+      "id": "fc31-11",
+      "pregunta": "¿Qué es el Catálogo Oficial de Señales de la Circulación y Marcas Viales?",
+      "respuesta": "Un reglamento que establece la forma, color, diseño y significado de las señales, así como las dimensiones de las mismas en función de cada tipo de vía y sus sistemas de colocación."
+    },
+    {
+      "id": "fc31-12",
+      "pregunta": "¿Quién es responsable de la instalación y conservación de las señales y marcas viales en las obras que se realicen en las vías?",
+      "respuesta": "Los organismos que realicen las obras o las empresas adjudicatarias de las mismas."
+    },
+    {
+      "id": "fc31-13",
+      "pregunta": "¿Qué debe hacer el usuario de la vía en caso de que se realicen obras en la vía y no se haya instalado señalización adecuada?",
+      "respuesta": "Seguir las indicaciones del personal destinado a la regulación del tráfico en dichas obras."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p31-01",
+      "enunciado": "¿Qué debe hacer el conductor de un vehículo en caso de que una señal imponga una obligación de detención?",
+      "opciones": [
+        "Reanudar su marcha inmediatamente",
+        "No puede reanudar su marcha hasta haber cumplido lo prescrito por la señal",
+        "Puede seguir adelante sin cumplir la señal",
+        "No está obligado a cumplir la señal"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el artículo 53 del Real Decreto Legislativo 6/2015, el conductor de un vehículo no puede reanudar su marcha hasta haber cumplido lo prescrito por la señal."
+    },
+    {
+      "id": "p31-02",
+      "enunciado": "¿Cuál es el orden de preferencia entre los distintos tipos de señales de circulación?",
+      "opciones": [
+        "Señales verticales de circulación, semáforos, señalización circunstancial, marcas viales",
+        "Señales y órdenes de los agentes de la autoridad, señalización circunstancial, semáforos, señales verticales de circulación y marcas viales",
+        "Marcas viales, semáforos, señales verticales de circulación, señalización circunstancial y señales y órdenes de los agentes de la autoridad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el artículo 54 del Real Decreto Legislativo 6/2015, el orden de preferencia entre los distintos tipos de señales de circulación es el siguiente: señales y órdenes de los agentes de la autoridad, señalización circunstancial, semáforos, señales verticales de circulación y marcas viales."
+    },
+    {
+      "id": "p31-03",
+      "enunciado": "¿Qué idioma se utiliza en las indicaciones escritas de las señales de circulación?",
+      "opciones": [
+        "Idioma castellano",
+        "Idioma castellano y, además, en la lengua oficial de la Comunidad autónoma reconocida en el respectivo estatuto de autonomía",
+        "Idioma inglés",
+        "Idioma francés"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el artículo 56 del Real Decreto Legislativo 6/2015, las indicaciones escritas que se incluyan o acompañen a los paneles de señalización de las vías públicas, e inscripciones, figurarán en idioma castellano y, además, en la lengua oficial de la Comunidad autónoma reconocida en el respectivo estatuto de autonomía."
+    },
+    {
+      "id": "p31-04",
+      "enunciado": "¿Quién es responsable del mantenimiento de la vía y de la instalación y conservación de las señales y marcas viales?",
+      "opciones": [
+        "El titular de la vía",
+        "La autoridad encargada de la regulación, ordenación y gestión del tráfico",
+        "Los organismos que realicen las obras o las empresas adjudicatarias de las mismas",
+        "Los usuarios de la vía"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 57 del Real Decreto Legislativo 6/2015, corresponde al titular de la vía la responsabilidad del mantenimiento de la misma en las mejores condiciones posibles de seguridad para la circulación, y de la instalación y conservación en ella de las adecuadas señales y marcas viales."
+    },
+    {
+      "id": "p31-05",
+      "enunciado": "¿Qué debe hacer el titular de la vía en caso de que una señal haya perdido su objeto o no cumpla con la normativa vigente?",
+      "opciones": [
+        "Retirarla y, cuando proceda, sustituirla por una adecuada a la normativa vigente",
+        "No hacer nada",
+        "Instalar una señal nueva",
+        "Modificar la señal para que cumpla con la normativa vigente"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 58 del Real Decreto Legislativo 6/2015, el titular de la vía o, en su caso, la autoridad encargada de la ordenación y gestión del tráfico, ordenará la inmediata retirada y, cuando proceda, la sustitución por las que sean adecuadas a la normativa vigente, de las que hayan perdido su objeto y de las que no lo cumplan por causa de su deterioro."
+    },
+    {
+      "id": "p31-06",
+      "enunciado": "¿Quién puede instalar señales circunstanciales sin autorización previa?",
+      "opciones": [
+        "Los agentes de la autoridad encargados de la vigilancia del tráfico en caso de emergencia",
+        "Los usuarios de la vía",
+        "La autoridad encargada de la regulación, ordenación y gestión del tráfico",
+        "Los organismos que realicen las obras o las empresas adjudicatarias de las mismas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 57 del Real Decreto Legislativo 6/2015, en caso de emergencia, los agentes de la autoridad encargados de la vigilancia del tráfico, en el ejercicio de las funciones que tengan encomendadas, podrán instalar señales circunstanciales sin autorización previa."
+    }
+  ]
 }

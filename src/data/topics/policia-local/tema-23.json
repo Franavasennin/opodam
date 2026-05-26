@@ -1,157 +1,565 @@
 {
-    "id": 23,
-    "titulo": "Los delitos y sus penas. Circunstancias modificativas de la responsabilidad criminal: atenuantes, agravantes y eximentes. Delitos contra la vida y la integridad física: homicidio y lesiones. Delitos contra la libertad. Delitos contra la libertad e indemnidad sexuales. La omisión del deber de socorro",
-    "bloque": "especifico",
-    "secciones": [
-        {
-            "id": "s23-1",
-            "titulo": "Los delitos y sus penas",
-            "contenido": "El delito se define en el artículo 10 del Código Penal (Ley Orgánica 10/1995) como las acciones y omisiones dolosas o imprudentes penadas por la ley. Las infracciones penales se dividen en delitos graves, menos graves y leves, atendiendo a la naturaleza de la pena que llevan aparejada (artículo 13). Las penas se clasifican en privativas de libertad (prisión, localización permanente y responsabilidad personal subsidiaria por impago de multa), privativas de derechos (inhabilitación, suspensión de empleo o cargo público, privación del permiso de conducir, etc.) y la multa. Pueden ser graves, menos graves o leves según su duración o cuantía."
-        },
-        {
-            "id": "s23-2",
-            "titulo": "Circunstancias modificativas de la responsabilidad criminal",
-            "contenido": "Las circunstancias modificativas de la responsabilidad criminal son atenuantes, agravantes y eximentes. Las eximentes (artículo 20 CP) excluyen la responsabilidad; entre ellas figuran la anomalía o alteración psíquica, la intoxicación plena, la legítima defensa, el estado de necesidad, el miedo insuperable y el cumplimiento de un deber. Las atenuantes (artículo 21 CP) reducen la pena: cuasi-eximentes, actuar por causas o estímulos, confesar la infracción a las autoridades, reparar el daño, dilaciones indebidas y la atenuante analógica. Las agravantes (artículo 22 CP) la aumentan: alevosía, precio, recompensa o promesa, motivos discriminatorios, ensañamiento, abuso de confianza, prevalimiento del carácter público y reincidencia. La circunstancia mixta de parentesco (artículo 23) puede operar como agravante o atenuante."
-        },
-        {
-            "id": "s23-3",
-            "titulo": "Delitos contra la vida y la integridad física",
-            "contenido": "El homicidio (artículo 138 CP) consiste en causar la muerte a otro y se castiga con prisión de 10 a 15 años. El asesinato (artículos 139-140) es el homicidio cualificado por alevosía, precio o recompensa, ensañamiento, o por facilitar otro delito o no ser descubierto, con prisión de 15 a 25 años (o pena de prisión permanente revisable en supuestos cualificados). El homicidio imprudente y el cooperación al suicidio o eutanasia tienen tipos propios. Las lesiones (artículos 147 y siguientes) requieren un menoscabo de la integridad corporal o salud física o mental que precise objetivamente para su sanidad, además de una primera asistencia facultativa, tratamiento médico o quirúrgico, con tipos básicos, agravados y atenuados."
-        },
-        {
-            "id": "s23-4",
-            "titulo": "Delitos contra la libertad y contra la libertad e indemnidad sexuales",
-            "contenido": "Los delitos contra la libertad (artículos 163-172) incluyen las detenciones ilegales y secuestros, las amenazas y las coacciones. Las detenciones ilegales se castigan con prisión de cuatro a seis años, agravada si concurren circunstancias como exigir condiciones para liberar al detenido (secuestro). Los delitos contra la libertad e indemnidad sexuales (artículos 178 y siguientes), reformados por la Ley Orgánica 10/2022 (solo sí es sí), incluyen las agresiones sexuales (tipo único que abarca cualquier acto contra la libertad sexual sin consentimiento), agravadas si concurren violencia, intimidación, abuso o circunstancias específicas, los abusos y agresiones a menores de 16 años, el acoso sexual, el exhibicionismo y provocación sexual y los delitos de prostitución y explotación sexual."
-        },
-        {
-            "id": "s23-5",
-            "titulo": "La omisión del deber de socorro",
-            "contenido": "El artículo 195 del Código Penal castiga al que no socorre a una persona desamparada y en peligro manifiesto y grave, cuando pudiera hacerlo sin riesgo propio ni de terceros, con la pena de multa de tres a doce meses. La misma pena se impone al que, impedido para prestar socorro personalmente, no demande con urgencia auxilio ajeno. Si la víctima lo es por accidente ocasionado fortuitamente por quien omitió el auxilio, la pena es de prisión de seis meses a 18 meses; si el accidente fue debido a imprudencia, la pena es de prisión de seis meses a 4 años. El artículo 196 castiga al profesional que, estando obligado, denegare asistencia sanitaria con prisión y multa, e inhabilitación especial."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e23-1",
-            "titulo": "Clases de infracciones penales",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Infracciones penales] --> B[Delitos graves]\n    A --> C[Delitos menos graves]\n    A --> D[Delitos leves]\n    A --> E[Penas: privativas de libertad, de derechos y multa]"
-        },
-        {
-            "id": "e23-2",
-            "titulo": "Circunstancias modificativas",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Circunstancias] --> B[Eximentes - art. 20]\n    A --> C[Atenuantes - art. 21]\n    A --> D[Agravantes - art. 22]\n    A --> E[Mixta de parentesco - art. 23]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Delitos y penas", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Delitos y sus penas", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Circunstancias modificativas", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Vida e integridad física", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Libertad y libertad sexual", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Omisión del deber de socorro", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "LO 10/1995 Código Penal", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Eximentes, atenuantes, agravantes", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Homicidio y asesinato", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Lesiones (art. 147 y ss.)", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "LO 10/2022 solo sí es sí", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Art. 195 CP", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Denegación de asistencia sanitaria", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n4", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 23,
+  "titulo": "Los delitos y sus penas. Circunstancias modificativas de la responsabilidad criminal: atenuantes, Agravantes y Eximentes. Delitos contra la vida y la integridad física: homicidio y lesiones. Delitos contra la libertad. Delitos contra la libertad e indemnidad sexuales. La omisión del deber de socorro.",
+  "bloque": "especifico",
+  "secciones": [
+    {
+      "titulo": "1. LEY ORGÁNICA 10/1995, DE 23 DE NOVIEMBRE, DEL CÓDIGO PENAL",
+      "contenido": "BIBLIOGRAFÍA • LEY ORGÁNICA 10/1995, DE 23 DE NOVIEMBRE, DEL CÓDIGO PENAL. o Art. 1-26 o Art. 138-143 o Art. 147-156 o Art. 163 - 172 2 \f LEY ORGÁNICA 10/1995, DE 23 DE NOVIEMBRE, DEL CÓDIGO PENAL. TÍTULO PRELIMINAR DE LAS GARANTÍAS PENALES Y DE LA APLICACIÓN DE LA LEY PENAL ARTÍCULO 1. 1. No será castigada ninguna acción ni omisión que no esté prevista como delito por ley anterior a su perpetración. 2. Las medidas de seguridad sólo podrán aplicarse cuando concurran los presupuestos establecidos previamente por la Ley. ARTÍCULO 2. 1. No será castigado ningún delito con pena que no se halle prevista por ley anterior a su perpetración. Carecerán, igualmente, de efecto retroactivo las leyes que establezcan medidas de seguridad. 2. No obstante, tendrán efecto retroactivo aquellas leyes penales que favorezcan al reo, aunque al entrar en vigor hubiera recaído sentencia firme y el sujeto estuviese cumpliendo condena. En caso de duda sobre la determinación de la Ley más favorable, será oído el reo. Los hechos cometidos bajo la vigencia de una Ley temporal serán juzgados, sin embargo, conforme a ella, salvo que se disponga expresamente lo contrario. ARTÍCULO 3. 1. No podrá ejecutarse pena ni medida de seguridad sino en virtud de sentencia firme dictada por el Juez o Tribunal competente, de acuerdo con las leyes procesales. 2. Tampoco podrá ejecutarse pena ni medida de seguridad en otra forma que la prescrita por la Ley y reglamentos que la desarrollan, ni con otras circunstancias o accidentes que los expresados en su texto. La ejecución de la pena o de la medida de seguridad se realizará bajo el control de los Jueces y Tribunales competentes. ARTÍCULO 4. 1. Las leyes penales no se aplicarán a casos distintos de los comprendidos expresamente en ellas. 2. En el caso de que un Juez o Tribunal, en el ejercicio de su jurisdicción, tenga conocimiento de alguna acción u omisión que, sin estar penada por la Ley, estime digna de represión, se abstendrá de todo procedimiento sobre ella y expondrá al Gobierno las razones que le asistan para creer que debiera ser objeto de sanción penal. 3. Del mismo modo acudirá al Gobierno exponiendo lo conveniente sobre la derogación o modificación del precepto o la concesión de indulto, sin perjuicio de ejecutar desde luego la sentencia, cuando de la rigurosa aplicación de las disposiciones de la Ley resulte penada una acción u omisión que, a juicio del Juez o Tribunal, no debiera serlo, o cuando la pena sea notablemente excesiva, atendidos el mal causado por la infracción y las circunstancias personales del reo. 4. Si mediara petición de indulto, y el Juez o Tribunal hubiere apreciado en resolución fundada que por el cumplimiento de la pena puede resultar vulnerado el derecho a un proceso sin dilaciones indebidas, suspenderá la ejecución de la misma en tanto no se resuelva sobre la petición formulada. 3 \f También podrá el Juez o Tribunal suspender la ejecución de la pena, mientras no se resuelva sobre el indulto cuando, de ser ejecutada la sentencia, la finalidad de éste pudiera resultar ilusoria. ARTÍCULO 5. No hay pena sin dolo o imprudencia. ARTÍCULO 6. 1. Las medidas de seguridad se fundamentan en la peligrosidad criminal del sujeto al que se impongan, exteriorizada en la comisión de un hecho previsto como delito. 2. Las medidas de seguridad no pueden resultar ni más gravosas ni de mayor duración que la pena abstractamente aplicable al hecho cometido, ni exceder el límite de lo necesario para prevenir la peligrosidad del autor. ARTÍCULO 7."
     },
-    "flashcards": [
-        { "id": "fc23-01", "anverso": "¿Cómo define el Código Penal el delito?", "reverso": "Como las acciones u omisiones dolosas o imprudentes penadas por la ley (art. 10)." },
-        { "id": "fc23-02", "anverso": "¿Cómo se clasifican las infracciones penales?", "reverso": "En delitos graves, menos graves y leves (art. 13 CP)." },
-        { "id": "fc23-03", "anverso": "¿Cómo se clasifican las penas según su naturaleza?", "reverso": "En privativas de libertad, privativas de derechos y multa." },
-        { "id": "fc23-04", "anverso": "Cita penas privativas de libertad.", "reverso": "La prisión, la localización permanente y la responsabilidad personal subsidiaria por impago de multa." },
-        { "id": "fc23-05", "anverso": "¿Qué artículo regula las eximentes?", "reverso": "El artículo 20 del Código Penal." },
-        { "id": "fc23-06", "anverso": "Cita causas eximentes.", "reverso": "Anomalía psíquica, intoxicación plena, legítima defensa, estado de necesidad y miedo insuperable." },
-        { "id": "fc23-07", "anverso": "¿Qué artículo regula las atenuantes?", "reverso": "El artículo 21 del Código Penal." },
-        { "id": "fc23-08", "anverso": "Cita atenuantes.", "reverso": "Confesar la infracción, reparar el daño, dilaciones indebidas y la atenuante analógica." },
-        { "id": "fc23-09", "anverso": "Cita agravantes (art. 22 CP).", "reverso": "Alevosía, precio o recompensa, motivos discriminatorios, ensañamiento y reincidencia." },
-        { "id": "fc23-10", "anverso": "¿Qué es la circunstancia mixta de parentesco?", "reverso": "Una circunstancia que puede operar como agravante o atenuante según la naturaleza del delito." },
-        { "id": "fc23-11", "anverso": "¿Qué pena tiene el homicidio?", "reverso": "Prisión de 10 a 15 años (art. 138 CP)." },
-        { "id": "fc23-12", "anverso": "¿Qué es el asesinato?", "reverso": "Homicidio cualificado por alevosía, precio o recompensa, ensañamiento o para facilitar otro delito o no ser descubierto." },
-        { "id": "fc23-13", "anverso": "¿Qué pena tiene el asesinato?", "reverso": "Prisión de 15 a 25 años, o prisión permanente revisable en supuestos cualificados." },
-        { "id": "fc23-14", "anverso": "¿Cuándo hay delito de lesiones?", "reverso": "Cuando se causa un menoscabo de la integridad o salud que precise tratamiento médico o quirúrgico, además de la primera asistencia." },
-        { "id": "fc23-15", "anverso": "¿Qué incluyen los delitos contra la libertad?", "reverso": "Las detenciones ilegales y secuestros, las amenazas y las coacciones." },
-        { "id": "fc23-16", "anverso": "¿Qué ley reformó los delitos sexuales con el llamado solo sí es sí?", "reverso": "La Ley Orgánica 10/2022." },
-        { "id": "fc23-17", "anverso": "¿En qué consiste la actual agresión sexual del CP?", "reverso": "En cualquier acto contra la libertad sexual de otra persona sin consentimiento." },
-        { "id": "fc23-18", "anverso": "¿Qué artículo castiga la omisión del deber de socorro?", "reverso": "El artículo 195 del Código Penal." },
-        { "id": "fc23-19", "anverso": "¿Cuál es la pena básica por omisión del deber de socorro?", "reverso": "Multa de tres a doce meses." },
-        { "id": "fc23-20", "anverso": "¿Qué castiga el artículo 196 del Código Penal?", "reverso": "La denegación de asistencia sanitaria por el profesional obligado a prestarla." }
+    {
+      "titulo": "2. ARTÍCULO 8",
+      "contenido": "A los efectos de determinar la ley penal aplicable en el tiempo, los delitos se consideran cometidos en el momento en que el sujeto ejecuta la acción u omite el acto que estaba obligado a realizar. ARTÍCULO 8. Los hechos susceptibles de ser calificados con arreglo a dos o más preceptos de este Código, y no comprendidos en los artículos 73 a 77, se castigarán observando las siguientes reglas: 1º. El precepto especial se aplicará con preferencia al general. 2º. El precepto subsidiario se aplicará sólo en defecto del principal, ya se declare expresamente dicha subsidiariedad, ya sea ésta tácitamente deducible. 3º. El precepto penal más amplio o complejo absorberá a los que castiguen las infracciones consumidas en aquél. 4º. En defecto de los criterios anteriores, el precepto penal más grave excluirá los que castiguen el hecho con pena menor. ARTÍCULO 9. Las disposiciones de este Título se aplicarán a los delitos que se hallen penados por leyes especiales. Las restantes disposiciones de este Código se aplicarán como supletorias en lo no previsto expresamente por aquéllas. LIBRO I DISPOSICIONES GENERALES SOBRE LOS DELITOS, LAS PERSONAS RESPONSABLES, LAS PENAS, MEDIDAS DE SEGURIDAD Y DEMÁS CONSECUENCIAS DE LA INFRACCIÓN PENAL. TÍTULO I DE LA INFRACCIÓN PENAL CAPÍTULO I DE LOS DELITOS ARTÍCULO 10. Son delitos las acciones y omisiones dolosas o imprudentes penadas por la ley. 4 \f ARTÍCULO 11. Los delitos que consistan en la producción de un resultado sólo se entenderán cometidos por omisión cuando la no evitación del mismo, al infringir un especial deber jurídico del autor, equivalga, según el sentido del texto de la ley, a su causación. A tal efecto se equiparará la omisión a la acción: a) Cuando exista una específica obligación legal o contractual de actuar. b) Cuando el omitente haya creado una ocasión de riesgo para el bien jurídicamente protegido mediante una acción u omisión precedente. ARTÍCULO 12. Las acciones u omisiones imprudentes sólo se castigarán cuando expresamente lo disponga la Ley. ARTÍCULO 13. 1. Son delitos graves las infracciones que la Ley castiga con pena grave. 2. Son delitos menos graves las infracciones que la Ley castiga con pena menos grave. 3. Son delitos leves las infracciones que la ley castiga con pena leve. 4. Cuando la pena, por su extensión, pueda incluirse a la vez entre las mencionadas en los dos primeros números de este artículo, el delito se considerará, en todo caso, como grave. Cuando la pena, por su extensión, pueda considerarse como leve y como menos grave, el delito se considerará, en todo caso, como leve. ARTÍCULO 14. 1. El error invencible sobre un hecho constitutivo de la infracción penal excluye la responsabilidad criminal. Si el error, atendidas las circunstancias del hecho y las personales del autor, fuera vencible, la infracción será castigada, en su caso, como imprudente. 2. El error sobre un hecho que cualifique la infracción o sobre una circunstancia agravante, impedirá su apreciación. 3. El error invencible sobre la ilicitud del hecho constitutivo de la infracción penal excluye la responsabilidad criminal. Si el error fuera vencible, se aplicará la pena inferior en uno o dos grados. ARTÍCULO 15. Son punibles el delito consumado y la tentativa de delito. ARTÍCULO 16. 1. Hay tentativa cuando el sujeto da principio a la ejecución del delito directamente por hechos exteriores, practicando todos o parte de los actos que objetivamente deberían producir el resultado, y sin embargo éste no se produce por causas independientes de la voluntad del autor. 2."
+    },
+    {
+      "titulo": "3. ARTÍCULO 17",
+      "contenido": "Quedará exento de responsabilidad penal por el delito intentado quien evite voluntariamente la consumación del delito, bien desistiendo de la ejecución ya iniciada, bien impidiendo la producción del resultado, sin perjuicio de la responsabilidad en que pudiera haber incurrido por los actos ejecutados, si éstos fueren ya constitutivos de otro delito. 3. Cuando en un hecho intervengan varios sujetos, quedarán exentos de responsabilidad penal aquél o aquéllos que desistan de la ejecución ya iniciada, e impidan o intenten impedir, seria, firme y decididamente, la consumación, sin perjuicio de la responsabilidad en que pudieran haber incurrido por los actos ejecutados, si éstos fueren ya constitutivos de otro delito. 5 \f ARTÍCULO 17. 1. La conspiración existe cuando dos o más personas se conciertan para la ejecución de un delito y resuelven ejecutarlo. 2. La proposición existe cuando el que ha resuelto cometer un delito invita a otra u otras personas a participar en él. 3. La conspiración y la proposición para delinquir sólo se castigarán en los casos especialmente previstos en la ley. ARTÍCULO 18. 1. La provocación existe cuando directamente se incita por medio de la imprenta, la radiodifusión o cualquier otro medio de eficacia semejante, que facilite la publicidad, o ante una concurrencia de personas, a la perpetración de un delito. Es apología, a los efectos de este Código, la exposición, ante una concurrencia de personas o por cualquier medio de difusión, de ideas o doctrinas que ensalcen el crimen o enaltezcan a su autor. La apología sólo será delictiva como forma de provocación y si por su naturaleza y circunstancias constituye una incitación directa a cometer un delito. 3. La provocación se castigará exclusivamente en los casos en que la Ley así lo prevea. Si a la provocación hubiese seguido la perpetración del delito, se castigará como inducción. CAPÍTULO II DE LAS CAUSAS QUE EXIMEN DE LA RESPONSABILIDAD CRIMINAL ARTÍCULO 19. Los menores de dieciocho años no serán responsables criminalmente con arreglo a este Código. Cuando un menor de dicha edad cometa un hecho delictivo podrá ser responsable con arreglo a lo dispuesto en la ley que regule la responsabilidad penal del menor. ARTÍCULO 20. Están exentos de responsabilidad criminal: 1º. El que al tiempo de cometer la infracción penal, a causa de cualquier anomalía o alteración psíquica, no pueda comprender la ilicitud del hecho o actuar conforme a esa comprensión. El trastorno mental transitorio no eximirá de pena cuando hubiese sido provocado por el sujeto con el propósito de cometer el delito o hubiera previsto o debido prever su comisión. 2º. El que al tiempo de cometer la infracción penal se halle en estado de intoxicación plena por el consumo de bebidas alcohólicas, drogas tóxicas, estupefacientes, sustancias psicotrópicas u otras que produzcan efectos análogos, siempre que no haya sido buscado con el propósito de cometerla o no se hubiese previsto o debido prever su comisión, o se halle bajo la influencia de un síndrome de abstinencia, a causa de su dependencia de tales sustancias, que le impida comprender la ilicitud del hecho o actuar conforme a esa comprensión. 3º. El que, por sufrir alteraciones en la percepción desde el nacimiento o desde la infancia, tenga alterada gravemente la conciencia de la realidad. 4º. El que obre en defensa de la persona o derechos propios o ajenos, siempre que concurran los requisitos siguientes: Primero. Agresión ilegítima."
+    },
+    {
+      "titulo": "4. CAPÍTULO III",
+      "contenido": "En caso de defensa de los bienes se reputará agresión ilegítima el ataque a los mismos que constituya delito y los ponga en grave peligro de deterioro o pérdida inminentes. En caso de defensa de la morada o sus dependencias, se reputará agresión ilegítima la entrada indebida en aquélla o éstas. Segundo. Necesidad racional del medio empleado para impedirla o repelerla. Tercero. Falta de provocación suficiente por parte del defensor. 6 \f 5º. El que, en estado de necesidad, para evitar un mal propio o ajeno lesione un bien jurídico de otra persona o infrinja un deber, siempre que concurran los siguientes requisitos: Primero. Que el mal causado no sea mayor que el que se trate de evitar. Segundo. Que la situación de necesidad no haya sido provocada intencionadamente por el sujeto. Tercero. Que el necesitado no tenga, por su oficio o cargo, obligación de sacrificarse. 6º. El que obre impulsado por miedo insuperable. 7º. El que obre en cumplimiento de un deber o en el ejercicio legítimo de un derecho, oficio o cargo. En los supuestos de los tres primeros números se aplicarán, en su caso, las medidas de seguridad previstas en este Código. CAPÍTULO III DE LAS CIRCUNSTANCIAS QUE ATENÚAN LA RESPONSABILIDAD CRIMINAL ARTÍCULO 21. Son circunstancias atenuantes: 1º. Las causas expresadas en el capítulo anterior, cuando no concurrieren todos los requisitos necesarios para eximir de responsabilidad en sus respectivos casos. 2º. La de actuar el culpable a causa de su grave adicción a las sustancias mencionadas en el número 2.º del artículo anterior. 3º. La de obrar por causas o estímulos tan poderosos que hayan producido arrebato, obcecación u otro estado pasional de entidad semejante. 4º. La de haber procedido el culpable, antes de conocer que el procedimiento judicial se dirige contra él, a confesar la infracción a las autoridades. 5º. La de haber procedido el culpable a reparar el daño ocasionado a la víctima, o disminuir sus efectos, en cualquier momento del procedimiento y con anterioridad a la celebración del acto del juicio oral. 6º. La dilación extraordinaria e indebida en la tramitación del procedimiento, siempre que no sea atribuible al propio inculpado y que no guarde proporción con la complejidad de la causa. 7º. Cualquier otra circunstancia de análoga significación que las anteriores. CAPÍTULO IV DE LAS CIRCUNSTANCIAS QUE AGRAVAN LA RESPONSABILIDAD CRIMINAL ARTÍCULO 22. Son circunstancias agravantes: 1º. Ejecutar el hecho con alevosía. Hay alevosía cuando el culpable comete cualquiera de los delitos contra las personas empleando en la ejecución medios, modos o formas que tiendan directa o especialmente a asegurarla, sin el riesgo que para su persona pudiera proceder de la defensa por parte del ofendido. 2º. Ejecutar el hecho mediante disfraz, con abuso de superioridad o aprovechando las circunstancias de lugar, tiempo o auxilio de otras personas que debiliten la defensa del ofendido o faciliten la impunidad del delincuente. 3º. Ejecutar el hecho mediante precio, recompensa o promesa. 4º. Cometer el delito por motivos racistas, antisemitas, antigitanos u otra clase de discriminación referente a la ideología, religión o creencias de la víctima, la etnia, raza o nación a la que pertenezca, su sexo, edad, orientación o identidad sexual o de género, razones de género, de aporofobia o de exclusión social, la enfermedad que padezca o su discapacidad, con independencia de que tales condiciones o circunstancias concurran efectivamente en la persona sobre la que recaiga la conducta. 7 \f 5º."
+    },
+    {
+      "titulo": "5. título d",
+      "contenido": "Aumentar deliberada e inhumanamente el sufrimiento de la víctima, causando a ésta padecimientos innecesarios para la ejecución del delito. 6º. Obrar con abuso de confianza. 7º. Prevalerse del carácter público que tenga el culpable. 8º. Ser reincidente. Hay reincidencia cuando, al delinquir, el culpable haya sido condenado ejecutoriamente por un delito comprendido en el mismo título de este Código, siempre que sea de la misma naturaleza. A los efectos de este número no se computarán los antecedentes penales cancelados o que debieran serlo, ni los que correspondan a delitos leves. Las condenas firmes de jueces o tribunales impuestas en otros Estados de la Unión Europea producirán los efectos de reincidencia salvo que el antecedente penal haya sido cancelado o pudiera serlo con arreglo al Derecho español. CAPÍTULO V DE LA CIRCUNSTANCIA MIXTA DE PARENTESCO ARTÍCULO 23. Es circunstancia que puede atenuar o agravar la responsabilidad, según la naturaleza, los motivos y los efectos del delito, ser o haber sido el agraviado cónyuge o persona que esté o haya estado ligada de forma estable por análoga relación de afectividad, o ser ascendiente, descendiente o hermano por naturaleza o adopción del ofensor o de su cónyuge o conviviente. CAPÍTULO VI DISPOSICIONES GENERALES ARTÍCULO 24. 1. A los efectos penales se reputará autoridad al que por sí solo o como miembro de alguna corporación, tribunal u órgano colegiado tenga mando o ejerza jurisdicción propia. En todo caso, tendrán la consideración de autoridad los miembros del Congreso de los Diputados, del Senado, de las Asambleas Legislativas de las Comunidades Autónomas y del Parlamento Europeo. Tendrán también la consideración de autoridad los funcionarios del Ministerio Fiscal y los Fiscales de la Fiscalía Europea. 2. Se considerará funcionario público todo el que por disposición inmediata de la Ley o por elección o por nombramiento de autoridad competente participe en el ejercicio de funciones públicas. ARTÍCULO 25. A los efectos de este Código se entiende por discapacidad aquella situación en que se encuentra una persona con deficiencias físicas, mentales, intelectuales o sensoriales de carácter permanente que, al interactuar con diversas barreras, puedan limitar o impedir su participación plena y efectiva en la sociedad, en igualdad de condiciones con las demás. Asimismo a los efectos de este Código, se entenderá por persona con discapacidad necesitada de especial protección a aquella persona con discapacidad que, tenga o no judicialmente modificada su capacidad de obrar, requiera de asistencia o apoyo para el ejercicio de su capacidad jurídica y para la toma de decisiones respecto de su persona, de sus derechos o intereses a causa de sus deficiencias intelectuales o mentales de carácter permanente. 8 \f ARTÍCULO 26. A los efectos de este Código se considera documento todo soporte material que exprese o incorpore datos, hechos o narraciones con eficacia probatoria o cualquier otro tipo de relevancia jurídica. LIBRO II DELITOS Y SUS PENAS TÍTULO I DEL HOMICIDIO Y SUS FORMAS ARTÍCULO 138. 1. El que matare a otro será castigado, como reo de homicidio, con la pena de prisión de diez a quince años. 2. Los hechos serán castigados con la pena superior en grado en los siguientes casos: a) cuando concurra en su comisión alguna de las circunstancias del apartado 1 del artículo 140, o b) cuando los hechos sean además constitutivos de un delito de atentado del artículo 550. ARTÍCULO 139. 1."
+    },
+    {
+      "titulo": "6. ARTÍCULO 140",
+      "contenido": "Será castigado con la pena de prisión de quince a veinticinco años, como reo de asesinato, el que matare a otro concurriendo alguna de las circunstancias siguientes: 1º. Con alevosía. 2º. Por precio, recompensa o promesa. 3º. Con ensañamiento, aumentando deliberada e inhumanamente el dolor del ofendido. 4º. Para facilitar la comisión de otro delito o para evitar que se descubra. 2. Cuando en un asesinato concurran más de una de las circunstancias previstas en el apartado anterior, se impondrá la pena en su mitad superior. ARTÍCULO 140. 1. El asesinato será castigado con pena de prisión permanente revisable cuando concurra alguna de las siguientes circunstancias: 1º. Que la víctima sea menor de dieciséis años de edad, o se trate de una persona especialmente vulnerable por razón de su edad, enfermedad o discapacidad. 2º. Que el hecho fuera subsiguiente a un delito contra la libertad sexual que el autor hubiera cometido sobre la víctima. 3º. Que el delito se hubiera cometido por quien perteneciere a un grupo u organización criminal. 2. Al reo de asesinato que hubiera sido condenado por la muerte de más de dos personas se le impondrá una pena de prisión permanente revisable. En este caso, será de aplicación lo dispuesto en la letra b) del apartado 1 del artículo 78 bis y en la letra b) del apartado 2 del mismo artículo. ARTÍCULO 140 BIS. 1. A las personas condenadas por la comisión de uno o más delitos comprendidos en este título se les podrá imponer además una medida de libertad vigilada. 2. Si la víctima y quien sea autor de los delitos previstos en los tres artículos precedentes tuvieran un hijo o hija en común, la autoridad judicial impondrá, respecto de este, la pena de privación de la patria potestad. 9 \f La misma pena se impondrá cuando la víctima fuere hijo o hija del autor, respecto de otros hijos e hijas, si existieren. ARTÍCULO 141. La provocación, la conspiración y la proposición para cometer los delitos previstos en los tres artículos precedentes, será castigada con la pena inferior en uno o dos grados a la señalada en su caso en los artículos anteriores. ARTÍCULO 142. 1. El que por imprudencia grave causare la muerte de otro, será castigado, como reo de homicidio imprudente, con la pena de prisión de uno a cuatro años. – Si el homicidio imprudente se hubiera cometido utilizando un vehículo a motor o un ciclomotor, se impondrá asimismo la pena de privación del derecho a conducir vehículos a motor y ciclomotores de uno a seis años. A los efectos de este apartado, se reputará en todo caso como imprudencia grave la conducción en la que la concurrencia de alguna de las circunstancias previstas en el artículo 379 determinara la producción del hecho. – Si el homicidio imprudente se hubiera cometido utilizando un arma de fuego, se impondrá también la pena de privación del derecho al porte o tenencia de armas por tiempo de uno a seis años. – Si el homicidio se hubiera cometido por imprudencia profesional, se impondrá además la pena de inhabilitación especial para el ejercicio de la profesión, oficio o cargo por un periodo de tres a seis años. 2. El que por imprudencia menos grave causare la muerte de otro, será castigado con la pena de multa de tres meses a dieciocho meses. – Si el homicidio se hubiera cometido utilizando un vehículo a motor o un ciclomotor, se impondrá también la pena de privación del derecho a conducir vehículos a motor y ciclomotores de tres a dieciocho meses."
+    },
+    {
+      "titulo": "7. ARTÍCULO 142 BIS",
+      "contenido": "Se reputará en todo caso como imprudencia menos grave aquella no calificada como grave en la que para la producción del hecho haya sido determinante la comisión de alguna de las infracciones graves de las normas de tráfico, circulación de vehículos a motor y seguridad vial. La valoración sobre la existencia o no de la determinación deberá apreciarse en resolución motivada. – Si el homicidio se hubiera cometido utilizando un arma de fuego, se podrá imponer también la pena de privación del derecho al porte o tenencia de armas por tiempo de tres a dieciocho meses. – Salvo en los casos en que se produzca utilizando un vehículo a motor o un ciclomotor, el delito previsto en este apartado solo será perseguible mediante denuncia de la persona agraviada o de su representante legal. ARTÍCULO 142 BIS. En los casos previstos en el número 1 del artículo anterior, el Juez o Tribunal podrá imponer motivadamente la pena superior en un grado, en la extensión que estime conveniente, si el hecho revistiere notoria gravedad, en atención a la singular entidad y relevancia del riesgo creado y del deber normativo de cuidado infringido, y hubiere provocado la muerte de dos o más personas o la muerte de una y lesiones constitutivas de delito del artículo 152.1.2.º o 3.º en las demás, y en dos grados si el número de fallecidos fuere muy elevado. ARTÍCULO 143. 1. El que induzca al suicidio de otro será castigado con la pena de prisión de cuatro a ocho años. 2. Se impondrá la pena de prisión de dos a cinco años al que coopere con actos necesarios al suicidio de una persona. 10 \f 3. Será castigado con la pena de prisión de seis a diez años si la cooperación llegara hasta el punto de ejecutar la muerte. 4. El que causare o cooperare activamente con actos necesarios y directos a la muerte de una persona que sufriera un padecimiento grave, crónico e imposibilitante o una enfermedad grave e incurable, con sufrimientos físicos o psíquicos constantes e insoportables, por la petición expresa, seria e inequívoca de esta, será castigado con la pena inferior en uno o dos grados a las señaladas en los apartados 2 y 3. 5. No obstante lo dispuesto en el apartado anterior, no incurrirá en responsabilidad penal quien causare o cooperare activamente a la muerte de otra persona cumpliendo lo establecido en la ley orgánica reguladora de la eutanasia. TÍTULO III DE LAS LESIONES ARTÍCULO 147. 1. El que, por cualquier medio o procedimiento, causare a otro una lesión que menoscabe su integridad corporal o su salud física o mental, será castigado, como reo del delito de lesiones con la pena de prisión de tres meses a tres años o multa de seis a doce meses, siempre que la lesión requiera objetivamente para su sanidad, además de una primera asistencia facultativa, tratamiento médico o quirúrgico. La simple vigilancia o seguimiento facultativo del curso de la lesión no se considerará tratamiento médico. 2. El que, por cualquier medio o procedimiento, causare a otro una lesión no incluida en el apartado anterior, será castigado con la pena de multa de uno a tres meses. 3. El que golpeare o maltratare de obra a otro sin causarle lesión, será castigado con la pena de multa de uno a dos meses. 4. Los delitos previstos en los dos apartados anteriores sólo serán perseguibles mediante denuncia de la persona agraviada o de su representante legal. ARTÍCULO 148. Las lesiones previstas en el apartado 1 del artículo anterior podrán ser castigadas con la pena de prisión de dos a cinco años, atendiendo al resultado causado o riesgo producido: 1º."
+    },
+    {
+      "titulo": "8. ARTÍCULO 149",
+      "contenido": "Si en la agresión se hubieren utilizado armas, instrumentos, objetos, medios, métodos o formas concretamente peligrosas para la vida o salud, física o psíquica, del lesionado. 2º. Si hubiere mediado ensañamiento o alevosía. 3º. Si la víctima fuere menor de catorce años o persona con discapacidad necesitada de especial protección. 4º. Si la víctima fuere o hubiere sido esposa, o mujer que estuviere o hubiere estado ligada al autor por una análoga relación de afectividad, aun sin convivencia. 5º. Si la víctima fuera una persona especialmente vulnerable que conviva con el autor. ARTÍCULO 149. 1. El que causara a otro, por cualquier medio o procedimiento, la pérdida o la inutilidad de un órgano o miembro principal, o de un sentido, la impotencia, la esterilidad, una grave deformidad, o una grave enfermedad somática o psíquica, será castigado con la pena de prisión de seis a 12 años. 2. El que causara a otro una mutilación genital en cualquiera de sus manifestaciones será castigado con la pena de prisión de seis a 12 años. Si la víctima fuera menor o persona con discapacidad necesitada de especial protección, será aplicable la pena de inhabilitación especial para el ejercicio de la patria potestad, tutela, curatela, guarda o 11 \facogimiento por tiempo de cuatro a 10 años, si el juez lo estima adecuado al interés del menor o persona con discapacidad necesitada de especial protección. ARTÍCULO 150. El que causare a otro la pérdida o la inutilidad de un órgano o miembro no principal, o la deformidad, será castigado con la pena de prisión de tres a seis años. ARTÍCULO 151 La provocación, la conspiración y la proposición para cometer los delitos previstos en los artículos precedentes de este Título, será castigada con la pena inferior en uno o dos grados a la del delito correspondiente. ARTÍCULO 152. 1. El que por imprudencia grave causare alguna de las lesiones previstas en los artículos anteriores será castigado, en atención al riesgo creado y el resultado producido: 1º. Con la pena de prisión de tres a seis meses o multa de seis a dieciocho meses, si se tratare de las lesiones del apartado 1 del artículo 147. 2º. Con la pena de prisión de uno a tres años, si se tratare de las lesiones del artículo 149. 3º. Con la pena de prisión de seis meses a dos años, si se tratare de las lesiones del artículo 150. – Si los hechos se hubieran cometido utilizando un vehículo a motor o un ciclomotor, se impondrá asimismo la pena de privación del derecho a conducir vehículos a motor y ciclomotores de uno a cuatro años. A los efectos de este apartado, se reputará en todo caso como imprudencia grave la conducción en la que la concurrencia de alguna de las circunstancias previstas en el artículo 379 determinara la producción del hecho. – Si las lesiones se hubieran causado utilizando un arma de fuego, se impondrá también la pena de privación del derecho al porte o tenencia de armas por tiempo de uno a cuatro años. – Si las lesiones hubieran sido cometidas por imprudencia profesional, se impondrá además la pena de inhabilitación especial para el ejercicio de la profesión, oficio o cargo por un período de seis meses a cuatro años. 2. El que por imprudencia menos grave causare alguna de las lesiones a que se refiere el artículo 147.1, será castigado con la pena de multa de uno a dos meses, y si se causaren las lesiones a que se refieren los artículos 149 y 150, será castigado con la pena de multa de tres meses a doce meses."
+    },
+    {
+      "titulo": "9. ARTÍCULO 152 BIS",
+      "contenido": "– Si los hechos se hubieran cometido utilizando un vehículo a motor o un ciclomotor, se impondrá también la pena de privación del derecho a conducir vehículos a motor y ciclomotores de tres a dieciocho meses. A los efectos de este apartado, se reputará en todo caso como imprudencia menos grave aquella no calificada como grave en la que para la producción del hecho haya sido determinante la comisión de alguna de las infracciones graves de las normas de tráfico, circulación de vehículos y seguridad vial. La valoración sobre la existencia o no de la determinación deberá apreciarse en resolución motivada. – Si las lesiones se hubieran causado utilizando un arma de fuego, se podrá imponer también la pena de privación del derecho al porte o tenencia de armas por tiempo de tres meses a un año. – El delito previsto en este apartado solo será perseguible mediante denuncia de la persona agraviada o de su representante legal. 12 \f ARTÍCULO 152 BIS. En los casos previstos en el número 1 del artículo anterior, el Juez o Tribunal podrá imponer motivadamente la pena superior en un grado, en la extensión que estime conveniente, si el hecho revistiere notoria gravedad, en atención a la singular entidad y relevancia del riesgo creado y del deber normativo de cuidado infringido, y hubiere provocado lesiones constitutivas de delito del artículo 152.1.2.º o 3.º a una pluralidad de personas, y en dos grados si el número de lesionados fuere muy elevado. ARTÍCULO 153. 1. El que por cualquier medio o procedimiento causare a otro menoscabo psíquico o una lesión de menor gravedad de las previstas en el apartado 2 del artículo 147, o golpeare o maltratare de obra a otro sin causarle lesión, cuando la ofendida sea o haya sido esposa, o mujer que esté o haya estado ligada a él por una análoga relación de afectividad aun sin convivencia, o persona especialmente vulnerable que conviva con el autor, será castigado con la pena de prisión de seis meses a un año o de trabajos en beneficios de la comunidad de treinta y uno a ochenta días y, en todo caso, privación del derecho a la tenencia y porte de armas de un año y un día a tres años, así como, cuando el juez o tribunal lo estime adecuado al interés del menor o persona con discapacidad necesitada de especial protección, inhabilitación para el ejercicio de la patria potestad, tutela, curatela, guarda o acogimiento hasta cinco años. 2. Si la víctima del delito previsto en el apartado anterior fuere alguna de las personas a que se refiere el artículo 173.2, exceptuadas las personas contempladas en el apartado anterior de este artículo, el autor será castigado con la pena de prisión de tres meses a un año o de trabajos en beneficio de la comunidad de treinta y uno a ochenta días y, en todo caso, privación del derecho a la tenencia y porte de armas de un año y un día a tres años, así como, cuando el Juez o Tribunal lo estime adecuado al interés del menor o persona con discapacidad necesitada de especial protección, inhabilitación para el ejercicio de la patria potestad, tutela, curatela, guarda o acogimiento de seis meses a tres años. 3. Las penas previstas en los apartados 1 y 2 se impondrán en su mitad superior cuando el delito se perpetre en presencia de menores, o utilizando armas, o tenga lugar en el domicilio común o en el domicilio de la víctima, o se realice quebrantando una pena de las contempladas en el artículo 48 de este Código o una medida cautelar o de seguridad de la misma naturaleza. 4."
+    },
+    {
+      "titulo": "10. ARTÍCULO 154",
+      "contenido": "No obstante lo previsto en los apartados anteriores, el Juez o Tribunal, razonándolo en sentencia, en atención a las circunstancias personales del autor y las concurrentes en la realización del hecho, podrá imponer la pena inferior en grado. ARTÍCULO 154. Quienes riñeren entre sí, acometiéndose tumultuariamente, y utilizando medios o instrumentos que pongan en peligro la vida o integridad de las personas, serán castigados por su participación en la riña con la pena de prisión de tres meses a un año o multa de seis a 24 meses. ARTÍCULO 155. En los delitos de lesiones, si ha mediado el consentimiento válida, libre, espontánea y expresamente emitido del ofendido, se impondrá la pena inferior en uno o dos grados. No será válido el consentimiento otorgado por un menor de edad o una persona con discapacidad necesitada de especial protección. 13 \f ARTÍCULO 156. No obstante lo dispuesto en el artículo anterior, el consentimiento válida, libre, consciente y expresamente emitido exime de responsabilidad penal en los supuestos de trasplante de órganos efectuado con arreglo a lo dispuesto en la ley, esterilizaciones y cirugía transexual realizadas por facultativo, salvo que el consentimiento se haya obtenido viciadamente, o mediante precio o recompensa, o el otorgante sea menor de edad o carezca absolutamente de aptitud para prestarlo, en cuyo caso no será válido el prestado por éstos ni por sus representantes legales. TÍTULO VI DELITOS CONTRA LA LIBERTAD CAPÍTULO I DE LAS DETENCIONES ILEGALES Y SECUESTROS ARTÍCULO 163. 1. El particular que encerrare o detuviere a otro, privándole de su libertad, será castigado con la pena de prisión de cuatro a seis años. 2. Si el culpable diera libertad al encerrado o detenido dentro de los tres primeros días de su detención, sin haber logrado el objeto que se había propuesto, se impondrá la pena inferior en grado. 3. Se impondrá la pena de prisión de cinco a ocho años si el encierro o detención ha durado más de quince días. 4. El particular que, fuera de los casos permitidos por las leyes, aprehendiere a una persona para presentarla inmediatamente a la autoridad, será castigado con la pena de multa de tres a seis meses. ARTÍCULO 164. El secuestro de una persona exigiendo alguna condición para ponerla en libertad, será castigado con la pena de prisión de seis a diez años. Si en el secuestro se hubiera dado la circunstancia del artículo 163.3, se impondrá la pena superior en grado, y la inferior en grado si se dieren las condiciones del artículo 163.2. ARTÍCULO 165. Las penas de los artículos anteriores se impondrán en su mitad superior, en los respectivos casos, si la detención ilegal o secuestro se ha ejecutado con simulación de autoridad o función pública, o la víctima fuere menor de edad o persona con discapacidad necesitada de especial protección o funcionario público en el ejercicio de sus funciones. ARTÍCULO 166. 1. El reo de detención ilegal o secuestro que no dé razón del paradero de la persona detenida será castigado con una pena de prisión de diez a quince años, en el caso de la detención ilegal, y de quince a veinte años en el de secuestro. 2. El hecho será castigado con una pena de quince a veinte años de prisión, en el caso de detención ilegal, y de veinte a veinticinco años de prisión, en el de secuestro, cuando concurra alguna de las siguientes circunstancias: a) Que la víctima fuera menor de edad o persona con discapacidad necesitada de especial protección."
+    },
+    {
+      "titulo": "11. ARTÍCULO 167",
+      "contenido": "b) Que el autor hubiera llevado a cabo la detención ilegal o secuestro con la intención de atentar contra la libertad o la indemnidad sexual de la víctima, o hubiera actuado posteriormente con esa finalidad. 14 \f ARTÍCULO 167. 1. La autoridad o funcionario público que, fuera de los casos permitidos por la ley, y sin mediar causa por delito, cometiere alguno de los hechos descritos en este Capítulo será castigado con las penas respectivamente previstas en éstos, en su mitad superior, pudiéndose llegar hasta la superior en grado. 2. Con las mismas penas serán castigados: a) El funcionario público o autoridad que, mediando o no causa por delito, acordare, practicare o prolongare la privación de libertad de cualquiera y que no reconociese dicha privación de libertad o, de cualquier otro modo, ocultase la situación o paradero de esa persona privándola de sus derechos constitucionales o legales. b) El particular que hubiera llevado a cabo los hechos con la autorización, el apoyo o la aquiescencia del Estado o de sus autoridades. 3. En todos los casos en los que los hechos a que se refiere este artículo hubieran sido cometidos por autoridad o funcionario público, se les impondrá, además, la pena de inhabilitación absoluta por tiempo de ocho a doce años. ARTÍCULO 168. La provocación, la conspiración y la proposición para cometer los delitos previstos en este Capítulo se castigarán con la pena inferior en uno o dos grados a la señalada al delito de que se trate. CAPÍTULO II DE LAS AMENAZAS ARTÍCULO 169. El que amenazare a otro con causarle a él, a su familia o a otras personas con las que esté íntimamente vinculado un mal que constituya delitos de homicidio, lesiones, aborto, contra la libertad, torturas y contra la integridad moral, la libertad sexual, la intimidad, el honor, el patrimonio y el orden socioeconómico, será castigado: 1º. Con la pena de prisión de uno a cinco años, si se hubiere hecho la amenaza exigiendo una cantidad o imponiendo cualquier otra condición, aunque no sea ilícita, y el culpable hubiere conseguido su propósito. De no conseguirlo, se impondrá la pena de prisión de seis meses a tres años. Las penas señaladas en el párrafo anterior se impondrán en su mitad superior si las amenazas se hicieren por escrito, por teléfono o por cualquier medio de comunicación o de reproducción, o en nombre de entidades o grupos reales o supuestos. 2º. Con la pena de prisión de seis meses a dos años, cuando la amenaza no haya sido condicional. ARTÍCULO 170. 1. Si las amenazas de un mal que constituyere delito fuesen dirigidas a atemorizar a los habitantes de una población, grupo étnico, cultural o religioso, o colectivo social o profesional, o a cualquier otro grupo de personas, y tuvieran la gravedad necesaria para conseguirlo, se impondrán respectivamente las penas superiores en grado a las previstas en el artículo anterior. 2. Serán castigados con la pena de prisión de seis meses a dos años, los que, con la misma finalidad y gravedad, reclamen públicamente la comisión de acciones violentas por parte de organizaciones o grupos terroristas. 15 \fARTÍCULO 171. 1. Las amenazas de un mal que no constituya delito serán castigadas con pena de prisión de tres meses a un año o multa de seis a 24 meses, atendidas la gravedad y circunstancia del hecho, cuando la amenaza fuere condicional y la condición no consistiere en una conducta debida. Si el culpable hubiere conseguido su propósito se le impondrá la pena en su mitad superior. 2."
+    },
+    {
+      "titulo": "12. artículo 173",
+      "contenido": "Si alguien exigiere de otro una cantidad o recompensa bajo la amenaza de revelar o difundir hechos referentes a su vida privada o relaciones familiares que no sean públicamente conocidos y puedan afectar a su fama, crédito o interés, será castigado con la pena de prisión de dos a cuatro años, si ha conseguido la entrega de todo o parte de lo exigido, y con la de cuatro meses a dos años, si no lo consiguiere. 3. Si el hecho descrito en el apartado anterior consistiere en la amenaza de revelar o denunciar la comisión de algún delito el ministerio fiscal podrá, para facilitar el castigo de la amenaza, abstenerse de acusar por el delito cuya revelación se hubiere amenazado, salvo que éste estuviere castigado con pena de prisión superior a dos años. En este último caso, el juez o tribunal podrá rebajar la sanción en uno o dos grados. 4. El que de modo leve amenace a quien sea o haya sido su esposa, o mujer que esté o haya estado ligada a él por una análoga relación de afectividad aun sin convivencia, será castigado con la pena de prisión de seis meses a un año o de trabajos en beneficio de la comunidad de treinta y uno a ochenta días y, en todo caso, privación del derecho a la tenencia y porte de armas de un año y un día a tres años, así como, cuando el Juez o Tribunal lo estime adecuado al interés del menor o persona con discapacidad necesitada de especial protección, inhabilitación especial para el ejercicio de la patria potestad, tutela, curatela, guarda o acogimiento hasta cinco años. Igual pena se impondrá al que de modo leve amenace a una persona especialmente vulnerable que conviva con el autor. 5. El que de modo leve amenace con armas u otros instrumentos peligrosos a alguna de las personas a las que se refiere el artículo 173.2, exceptuadas las contempladas en el apartado anterior de este artículo, será castigado con la pena de prisión de tres meses a un año o trabajos en beneficio de la comunidad de treinta y uno a ochenta días y, en todo caso, privación del derecho a la tenencia y porte de armas de uno a tres años, así como, cuando el Juez o Tribunal lo estime adecuado al interés del menor o persona con discapacidad necesitada de especial protección, inhabilitación especial para el ejercicio de la patria potestad, tutela, curatela, guarda o acogimiento por tiempo de seis meses a tres años. Se impondrán las penas previstas en los apartados 4 y 5, en su mitad superior cuando el delito se perpetre en presencia de menores, o tenga lugar en el domicilio común o en el domicilio de la víctima, o se realice quebrantando una pena de las contempladas en el artículo 48 de este Código o una medida cautelar o de seguridad de la misma naturaleza. 6. No obstante lo previsto en los apartados 4 y 5, el Juez o Tribunal, razonándolo en sentencia, en atención a las circunstancias personales del autor y a las concurrentes en la realización del hecho, podrá imponer la pena inferior en grado. 7. Fuera de los casos anteriores, el que de modo leve amenace a otro será castigado con la pena de multa de uno a tres meses. Este hecho sólo será perseguible mediante denuncia de la persona agraviada o de su representante legal."
+    },
+    {
+      "titulo": "13. artículo 173",
+      "contenido": "Cuando el ofendido fuere alguna de las personas a las que se refiere el apartado 2 del artículo 173, la pena será la de localización permanente de cinco a treinta días, siempre en domicilio diferente y alejado del de la víctima, o trabajos en beneficio de la comunidad de cinco a treinta días, o multa de uno a cuatro meses, ésta última únicamente en los supuestos en los que concurran las circunstancias expresadas en el apartado 2 del artículo 84. En estos casos no será exigible la denuncia a que se refiere el párrafo anterior. 16 \f CAPÍTULO III DE LAS COACCIONES ARTÍCULO 172. 1. El que, sin estar legítimamente autorizado, impidiere a otro con violencia hacer lo que la ley no prohíbe, o le compeliere a efectuar lo que no quiere, sea justo o injusto, será castigado con la pena de prisión de seis meses a tres años o con multa de 12 a 24 meses, según la gravedad de la coacción o de los medios empleados. Cuando la coacción ejercida tuviera como objeto impedir el ejercicio de un derecho fundamental se le impondrán las penas en su mitad superior, salvo que el hecho tuviera señalada mayor pena en otro precepto de este Código. También se impondrán las penas en su mitad superior cuando la coacción ejercida tuviera por objeto impedir el legítimo disfrute de la vivienda. 2. El que de modo leve coaccione a quien sea o haya sido su esposa, o mujer que esté o haya estado ligada a él por una análoga relación de afectividad, aun sin convivencia, será castigado con la pena de prisión de seis meses a un año o de trabajos en beneficio de la comunidad de treinta y uno a ochenta días y, en todo caso, privación del derecho a la tenencia y porte de armas de un año y un día a tres años, así como, cuando el Juez o Tribunal lo estime adecuado al interés del menor o persona con discapacidad necesitada de especial protección, inhabilitación especial para el ejercicio de la patria potestad, tutela, curatela, guarda o acogimiento hasta cinco años. Igual pena se impondrá al que de modo leve coaccione a una persona especialmente vulnerable que conviva con el autor. Se impondrá la pena en su mitad superior cuando el delito se perpetre en presencia de menores, o tenga lugar en el domicilio común o en el domicilio de la víctima, o se realice quebrantando una pena de las contempladas en el artículo 48 de este Código o una medida cautelar o de seguridad de la misma naturaleza. No obstante lo previsto en los párrafos anteriores, el Juez o Tribunal, razonándolo en sentencia, en atención a las circunstancias personales del autor y a las concurrentes en la realización del hecho, podrá imponer la pena inferior en grado. 3. Fuera de los casos anteriores, el que cause a otro una coacción de carácter leve, será castigado con la pena de multa de uno a tres meses. Este hecho sólo será perseguible mediante denuncia de la persona agraviada o de su representante legal. Cuando el ofendido fuere alguna de las personas a las que se refiere el apartado 2 del artículo 173, la pena será la de localización permanente de cinco a treinta días, siempre en domicilio diferente y alejado del de la víctima, o trabajos en beneficio de la comunidad de cinco a treinta días, o multa de uno a cuatro meses, ésta última únicamente en los supuestos en los que concurran las circunstancias expresadas en el apartado 2 del artículo 84. En estos casos no será exigible la denuncia a que se refiere el párrafo anterior. 17 \f TÍTULO VIII DELITOS CONTRA LA LIBERTAD SEXUAL CAPÍTULO I DE LAS AGRESIONES SEXUALES ARTÍCULO 178. 1."
+    },
+    {
+      "titulo": "14. artículo 180",
+      "contenido": "Será castigado con la pena de prisión de uno a cuatro años, como responsable de agresión sexual, el que realice cualquier acto que atente contra la libertad sexual de otra persona sin su consentimiento. Sólo se entenderá que hay consentimiento cuando se haya manifestado libremente mediante actos que, en atención a las circunstancias del caso, expresen de manera clara la voluntad de la persona. 2. Se consideran en todo caso agresión sexual los actos de contenido sexual que se realicen empleando violencia, intimidación o abuso de una situación de superioridad o de vulnerabilidad de la víctima, así como los que se ejecuten sobre personas que se hallen privadas de sentido o de cuya situación mental se abusare y los que se realicen cuando la víctima tenga anulada por cualquier causa su voluntad. 3. Si la agresión se hubiera cometido empleando violencia o intimidación o sobre una víctima que tenga anulada por cualquier causa su voluntad, su responsable será castigado con la pena de uno a cinco años de prisión. 4. El órgano sentenciador, razonándolo en la sentencia, y siempre que no medie violencia o intimidación o que la víctima tuviera anulada por cualquier causa su voluntad o no concurran las circunstancias del artículo 180, podrá imponer la pena de prisión en su mitad inferior o multa de dieciocho a veinticuatro meses, en atención a la menor entidad del hecho y a las circunstancias personales del culpable. ARTÍCULO 179. 1. Cuando la agresión sexual consista en acceso carnal por vía vaginal, anal o bucal, o introducción de miembros corporales u objetos por alguna de las dos primeras vías, el responsable será castigado como reo de violación con la pena de prisión de cuatro a doce años. 2. Si la agresión a la que se refiere el apartado anterior se cometiere empleando violencia o intimidación o cuando la víctima tuviera anulada por cualquier causa su voluntad, se impondrá la pena de prisión de seis a doce años. ARTÍCULO 180. 2. Las anteriores conductas serán castigadas, respectivamente, con las penas – de prisión de dos a ocho años para las agresiones del artículo 178.1, – de prisión de cinco a diez años para las agresiones del artículo 178.3, – de prisión de siete a quince años para las agresiones del artículo 179.1 – y de prisión de doce a quince años para las del artículo 179.2, cuando concurra alguna de las siguientes circunstancias: 1º. Cuando los hechos se cometan por la actuación conjunta de dos o más personas. 2º. Cuando la agresión sexual vaya precedida o acompañada de una violencia de extrema gravedad o de actos que revistan un carácter particularmente degradante o vejatorio. 3º. Cuando los hechos se cometan contra una persona que se halle en una situación de especial vulnerabilidad por razón de su edad, enfermedad, discapacidad o por cualquier otra circunstancia, salvo lo dispuesto en el artículo 181. 18 \f 4º. Cuando la víctima sea o haya sido esposa o mujer que esté o haya estado ligada por análoga relación de afectividad, aun sin convivencia. 5º. 5Cuando, para la ejecución del delito, la persona responsable se hubiera prevalido de una situación o relación de convivencia o de parentesco o de una relación de superioridad con respecto a la víctima. 6º. Cuando el responsable haga uso de armas u otros medios igualmente peligrosos, susceptibles de producir la muerte o alguna de las lesiones previstas en los artículos 149 y 150 de este Código, sin perjuicio de lo dispuesto en el artículo 194 bis. 7º."
+    },
+    {
+      "titulo": "15. artículo 8",
+      "contenido": "Cuando para la comisión de estos hechos la persona responsable haya anulado la voluntad de la víctima suministrándole fármacos, drogas o cualquier otra sustancia natural o química idónea a tal efecto. Cuando en la descripción de las modalidades típicas previstas en los artículos 178 o 179 se hubiera tenido en consideración alguna de las anteriores circunstancias el conflicto se resolverá conforme a la regla del artículo 8.4 de este Código. 3. Si concurrieren dos o más de las anteriores circunstancias, las penas respectivamente previstas en el apartado 1 de este artículo se impondrán en su mitad superior. 4. En todos los casos previstos en este capítulo, cuando el culpable se hubiera prevalido de su condición de autoridad, agente de ésta o funcionario público, se impondrá, además, la pena de inhabilitación absoluta de seis a doce años. DE LAS AGRESIONES SEXUALES A MENORES DE DIECISÉIS AÑOS CAPÍTULO II ARTÍCULO 181. 1. El que realizare actos de carácter sexual con un menor de dieciséis años, será castigado con la pena de prisión de dos a seis años. A estos efectos se consideran incluidos en los actos de carácter sexual los que realice el menor con un tercero o sobre sí mismo a instancia del autor. 2. Si en las conductas del apartado anterior concurre alguna de las modalidades descritas en el artículo 178.2 y 3, se impondrá una pena de prisión de cinco a diez años. 3. El órgano sentenciador, razonándolo en sentencia, en atención a la menor entidad del hecho y valorando todas las circunstancias concurrentes, incluyendo las circunstancias personales del culpable, podrá imponer la pena de prisión inferior en grado, excepto cuando medie violencia o intimidación o se realice sobre una víctima que tenga anulada por cualquier causa su voluntad, o concurran las circunstancias mencionadas en el apartado 5 de este artículo. 4. Cuando el acto sexual consista en acceso carnal por vía vaginal, anal o bucal, o en introducción de miembros corporales u objetos por alguna de las dos primeras vías, el responsable será castigado con la pena de prisión de ocho a doce años en los casos del apartado 1, y con la pena de prisión de doce a quince años en los casos del apartado 2. 5. Las conductas previstas en los apartados anteriores serán castigadas con la pena de prisión correspondiente en su mitad superior cuando concurra alguna de las siguientes circunstancias: a) Cuando los hechos se cometan por la actuación conjunta de dos o más personas. b) Cuando la agresión sexual vaya precedida o acompañada de una violencia de extrema gravedad o de actos que revistan un carácter particularmente degradante o vejatorio. c) Cuando los hechos se cometan contra una persona que se halle en una situación de especial vulnerabilidad por razón de su edad, enfermedad, discapacidad o por cualquier otra circunstancia, y, en todo caso, cuando sea menor de cuatro años. d) Cuando la víctima sea o haya sido pareja del autor, aun sin convivencia. 19 \f e) Cuando, para la ejecución del delito, la persona responsable se hubiera prevalido de una situación o relación de convivencia o de parentesco o de una relación de superioridad con respecto a la víctima. f) Cuando el responsable haga uso de armas u otros medios igualmente peligrosos, susceptibles de producir la muerte o alguna de las lesiones previstas en los artículos 149 y 150 de este Código, sin perjuicio de lo dispuesto en el artículo 194 bis."
+    },
+    {
+      "titulo": "16. artículo 8",
+      "contenido": "g) Cuando para la comisión de estos hechos la persona responsable haya anulado la voluntad de la víctima suministrándole fármacos, drogas o cualquier otra sustancia natural o química idónea a tal efecto. h) Cuando la infracción se haya cometido en el seno de una organización o de un grupo criminal que se dedicare a la realización de tales actividades. En caso de que en la descripción de las modalidades típicas previstas en los apartados 1 a 3 de este artículo se hubiera tenido en consideración alguna de las anteriores circunstancias el conflicto se resolverá conforme a la regla del artículo 8.4 de este Código. 6. Si concurrieren dos o más de las anteriores circunstancias, las penas del apartado anterior se impondrán en su mitad superior. 7. En todos los casos previstos en este artículo, cuando el culpable se hubiera prevalido de su condición de autoridad, agente de esta o funcionario público, se impondrá, además, la pena de inhabilitación absoluta de seis a doce años. ARTÍCULO 182. 1. El que, con fines sexuales, haga presenciar a un menor de dieciséis años actos de carácter sexual, aunque el autor no participe en ellos, será castigado con una pena de prisión de seis meses a dos años. 2. Si los actos de carácter sexual que se hacen presenciar al menor de dieciséis años constituyeran un delito contra la libertad sexual, la pena será de prisión de uno a tres años. ARTÍCULO 183. 1. El que a través de internet, del teléfono o de cualquier otra tecnología de la información y la comunicación contacte con un menor de dieciséis años y proponga concertar un encuentro con el mismo a fin de cometer cualquiera de los delitos descritos en los artículos 181 y 189, siempre que tal propuesta se acompañe de actos materiales encaminados al acercamiento, será castigado con la pena de uno a tres años de prisión o multa de doce a veinticuatro meses, sin perjuicio de las penas correspondientes a los delitos en su caso cometidos. Las penas se impondrán en su mitad superior cuando el acercamiento se obtenga mediante coacción, intimidación o engaño. 2. El que, a través de internet, del teléfono o de cualquier otra tecnología de la información y la comunicación contacte con un menor de dieciséis años y realice actos dirigidos a embaucarle para que le facilite material pornográfico o le muestre imágenes pornográficas en las que se represente o aparezca un menor, será castigado con una pena de prisión de seis meses a dos años. ARTÍCULO 183 BIS. Salvo en los casos en que concurra alguna de las circunstancias previstas en el apartado segundo del artículo 178, el libre consentimiento del menor de dieciséis años excluirá la responsabilidad penal por los delitos previstos en este capítulo cuando el autor sea una persona próxima al menor por edad y grado de desarrollo o madurez física y psicológica. 20 \f CAPÍTULO III DEL ACOSO SEXUAL ARTÍCULO 184. 1. El que solicitare favores de naturaleza sexual, para sí o para un tercero, en el ámbito de una relación laboral, docente, de prestación de servicios o análoga, continuada o habitual, y con tal comportamiento provocare a la víctima una situación objetiva y gravemente intimidatoria, hostil o humillante, será castigado, como autor de acoso sexual, con la pena de prisión de seis a doce meses o multa de diez a quince meses e inhabilitación especial para el ejercicio de la profesión, oficio o actividad de doce a quince meses. 2."
+    },
+    {
+      "titulo": "17. artículo 443",
+      "contenido": "Si el culpable de acoso sexual hubiera cometido el hecho prevaliéndose de una situación de superioridad laboral, docente o jerárquica, o sobre persona sujeta a su guarda o custodia, o con el anuncio expreso o tácito de causar a la víctima un mal relacionado con las legítimas expectativas que aquella pueda tener en el ámbito de la indicada relación, la pena será de prisión de uno a dos años e inhabilitación especial para el ejercicio de la profesión, oficio o actividad de dieciocho a veinticuatro meses. 3. Asimismo, si el culpable de acoso sexual lo hubiera cometido en centros de protección o reforma de menores, centro de internamiento de personas extranjeras, o cualquier otro centro de detención, custodia o acogida, incluso de estancia temporal, la pena será de prisión de uno a dos años e inhabilitación especial para el ejercicio de la profesión, oficio o actividad de dieciocho a veinticuatro meses, sin perjuicio de lo establecido en el artículo 443.2. 4. Cuando la víctima se halle en una situación de especial vulnerabilidad por razón de su edad, enfermedad o discapacidad, la pena se impondrá en su mitad superior. 5. Cuando de acuerdo con lo establecido en el artículo 31 bis, una persona jurídica sea responsable de este delito, se le impondrá la pena de multa de seis meses a dos años. Atenidas las reglas establecidas en el artículo 66 bis, los jueces y tribunales podrán asimismo imponer las penas recogidas en las letras b) a g) del apartado 7 del artículo 33. CAPÍTULO IV DE LOS DELITOS DE EXHIBICIONISMO Y PROVOCACIÓN SEXUAL ARTÍCULO 185. El que ejecutare o hiciere ejecutar a otra persona actos de exhibición obscena ante menores de edad o personas con discapacidad necesitadas de especial protección, será castigado con la pena de prisión de seis meses a un año o multa de 12 a 24 meses. ARTÍCULO 186. El que, por cualquier medio directo, vendiere, difundiere o exhibiere material pornográfico entre menores de edad o personas con discapacidad necesitadas de especial protección, será castigado con la pena de prisión de seis meses a un año o multa de 12 a 24 meses. CAPÍTULO V DE LOS DELITOS RELATIVOS A LA PROSTITUCIÓN Y A LA EXPLOTACIÓN SEXUAL Y CORRUPCIÓN DE MENORES. ARTÍCULO 187. 1. El que, empleando violencia, intimidación o engaño, o abusando de una situación de superioridad o de necesidad o vulnerabilidad de la víctima, determine a una persona mayor de edad a ejercer o a mantenerse en la prostitución, será castigado con las penas de prisión de dos a cinco años y multa de doce a veinticuatro meses. 21 \f Se impondrá la pena de prisión de dos a cuatro años y multa de doce a veinticuatro meses a quien se lucre explotando la prostitución de otra persona, aun con el consentimiento de la misma. En todo caso, se entenderá que hay explotación cuando concurra alguna de las siguientes circunstancias: a) Que la víctima se encuentre en una situación de vulnerabilidad personal o económica. b) Que se le impongan para su ejercicio condiciones gravosas, desproporcionadas o abusivas. 2. Se impondrán las penas previstas en los apartados anteriores en su mitad superior, en sus respectivos casos, cuando concurra alguna de las siguientes circunstancias: a) Cuando el culpable se hubiera prevalido de su condición de autoridad, agente de ésta o funcionario público. En este caso se aplicará, además, la pena de inhabilitación absoluta de seis a doce años. b) Cuando el culpable perteneciere a una organización o grupo criminal que se dedicare a la realización de tales actividades."
+    },
+    {
+      "titulo": "18. ARTÍCULO 188",
+      "contenido": "c) Cuando el culpable hubiere puesto en peligro, de forma dolosa o por imprudencia grave, la vida o salud de la víctima. 3. Las penas señaladas se impondrán en sus respectivos casos sin perjuicio de las que correspondan por las agresiones o abusos sexuales cometidos sobre la persona prostituida. ARTÍCULO 188. 1. El que induzca, promueva, favorezca o facilite la prostitución de un menor de edad o una persona con discapacidad necesitada de especial protección, o se lucre con ello, o explote de algún otro modo a un menor o a una persona con discapacidad para estos fines, será castigado con las penas de prisión de dos a cinco años y multa de doce a veinticuatro meses. Si la víctima fuera menor de dieciséis años, se impondrá la pena de prisión de cuatro a ocho años y multa de doce a veinticuatro meses. 2. Si los hechos descritos en el apartado anterior se cometieran con violencia o intimidación, además de las penas de multa previstas, se impondrá la pena de prisión de cinco a diez años si la víctima es menor de dieciséis años, y la pena de prisión de cuatro a seis años en los demás casos. 3. Se impondrán las penas superiores en grado a las previstas en los apartados anteriores, en sus respectivos casos, cuando concurra alguna de las siguientes circunstancias: a) Cuando la víctima se halle en una situación de especial vulnerabilidad por razón de su edad, enfermedad, discapacidad o por cualquier otra circunstancia. b) Cuando, para la ejecución del delito, el responsable se hubiera prevalido de una situación de convivencia o de una relación de superioridad o parentesco, por ser ascendiente, o hermano, por naturaleza o adopción, o afines, con la víctima. c) Cuando, para la ejecución del delito, el responsable se hubiera prevalido de su condición de autoridad, agente de ésta o funcionario público. En este caso se impondrá, además, una pena de inhabilitación absoluta de seis a doce años. d) Cuando el culpable hubiere puesto en peligro, de forma dolosa o por imprudencia grave, la vida o salud de la víctima. e) Cuando los hechos se hubieren cometido por la actuación conjunta de dos o más personas. f) Cuando el culpable perteneciere a una organización o asociación, incluso de carácter transitorio, que se dedicare a la realización de tales actividades. 22 \f 4. El que solicite, acepte u obtenga, a cambio de una remuneración o promesa, una relación sexual con una persona menor de edad o una persona con discapacidad necesitada de especial protección, será castigado con una pena de uno a cuatro años de prisión. Si el menor no hubiera cumplido dieciséis años de edad, se impondrá una pena de dos a seis años de prisión. 5. Las penas señaladas se impondrán en sus respectivos casos sin perjuicio de las que correspondan por las infracciones contra la libertad o indemnidad sexual cometidas sobre los menores y personas con discapacidad necesitadas de especial protección. ARTÍCULO 189. 1. Será castigado con la pena de prisión de uno a cinco años: a) El que captare o utilizare a menores de edad o a personas con discapacidad necesitadas de especial protección con fines o en espectáculos exhibicionistas o pornográficos, tanto públicos como privados, o para elaborar cualquier clase de material pornográfico, cualquiera que sea su soporte, o financiare cualquiera de estas actividades o se lucrare con ellas."
+    },
+    {
+      "titulo": "19. b) El que produjere, vendiere, distribuyere, exhibiere, ofreciere o fa…",
+      "contenido": "b) El que produjere, vendiere, distribuyere, exhibiere, ofreciere o facilitare la producción, venta, difusión o exhibición por cualquier medio de pornografía infantil o en cuya elaboración hayan sido utilizadas personas con discapacidad necesitadas de especial protección, o lo poseyere para estos fines, aunque el material tuviere su origen en el extranjero o fuere desconocido. A los efectos de este Título se considera pornografía infantil o en cuya elaboración hayan sido utilizadas personas con discapacidad necesitadas de especial protección: a) Todo material que represente de manera visual a un menor o una persona con discapacidad necesitada de especial protección participando en una conducta sexualmente explícita, real o simulada. b) Toda representación de los órganos sexuales de un menor o persona con discapacidad necesitada de especial protección con fines principalmente sexuales. c) Todo material que represente de forma visual a una persona que parezca ser un menor participando en una conducta sexualmente explícita, real o simulada, o cualquier representación de los órganos sexuales de una persona que parezca ser un menor, con fines principalmente sexuales, salvo que la persona que parezca ser un menor resulte tener en realidad dieciocho años o más en el momento de obtenerse las imágenes. d) Imágenes realistas de un menor participando en una conducta sexualmente explícita o imágenes realistas de los órganos sexuales de un menor, con fines principalmente sexuales. 2. Serán castigados con la pena de prisión de cinco a nueve años los que realicen los actos previstos en el apartado 1 de este artículo cuando concurra alguna de las circunstancias siguientes: a) Cuando se utilice a menores de dieciséis años. b) Cuando los hechos revistan un carácter particularmente degradante o vejatorio, se emplee violencia física o sexual para la obtención del material pornográfico o se representen escenas de violencia física o sexual. c) Cuando se utilice a personas menores de edad que se hallen en una situación de especial vulnerabilidad por razón de enfermedad, discapacidad o por cualquier otra circunstancia. d) Cuando el culpable hubiere puesto en peligro, de forma dolosa o por imprudencia grave, la vida o salud de la víctima. e) Cuando el material pornográfico fuera de notoria importancia. 23 \f f) Cuando el culpable perteneciere a una organización o asociación, incluso de carácter transitorio, que se dedicare a la realización de tales actividades. g) Cuando el responsable sea ascendiente, tutor, curador, guardador, maestro o cualquier otra persona encargada, de hecho, aunque fuera provisionalmente, o de derecho, de la persona menor de edad o persona con discapacidad necesitada de especial protección, o se trate de cualquier persona que conviva con él o de otra persona que haya actuado abusando de su posición reconocida de confianza o autoridad. h) Cuando concurra la agravante de reincidencia. 3. Si los hechos a que se refiere la letra a) del párrafo primero del apartado 1 se hubieran cometido con violencia o intimidación se impondrá la pena superior en grado a las previstas en los apartados anteriores. 4. El que asistiere a sabiendas a espectáculos exhibicionistas o pornográficos en los que participen menores de edad o personas con discapacidad necesitadas de especial protección, será castigado con la pena de seis meses a dos años de prisión. 5."
+    },
+    {
+      "titulo": "20. ARTÍCULO 189 BIS",
+      "contenido": "El que para su propio uso adquiera o posea pornografía infantil o en cuya elaboración se hubieran utilizado personas con discapacidad necesitadas de especial protección, será castigado con la pena de tres meses a un año de prisión o con multa de seis meses a dos años. La misma pena se impondrá a quien acceda a sabiendas a pornografía infantil o en cuya elaboración se hubieran utilizado personas con discapacidad necesitadas de especial protección, por medio de las tecnologías de la información y la comunicación. 6. El que tuviere bajo su potestad, tutela, guarda o acogimiento a un menor de edad o una persona con discapacidad necesitada de especial protección y que, con conocimiento de su estado de prostitución o corrupción, no haga lo posible para impedir su continuación en tal estado, o no acuda a la autoridad competente para el mismo fin si carece de medios para la custodia del menor o persona con discapacidad necesitada de especial protección, será castigado con la pena de prisión de tres a seis meses o multa de seis a doce meses. 7. El Ministerio Fiscal promoverá las acciones pertinentes con objeto de privar de la patria potestad, tutela, guarda o acogimiento familiar, en su caso, a la persona que incurra en alguna de las conductas descritas en el apartado anterior. 8. Los jueces y tribunales ordenarán la adopción de las medidas necesarias para la retirada de las páginas web o aplicaciones de internet que contengan o difundan pornografía infantil o en cuya elaboración se hubieran utilizado personas con discapacidad necesitadas de especial protección o, en su caso, para bloquear el acceso a las mismas a los usuarios de Internet que se encuentren en territorio español. Estas medidas podrán ser acordadas con carácter cautelar a petición del Ministerio Fiscal. ARTÍCULO 189 BIS. La distribución o difusión pública a través de Internet, del teléfono o de cualquier otra tecnología de la información o de la comunicación de contenidos específicamente destinados a promover, fomentar o incitar a la comisión de los delitos previstos en este capítulo y en los capítulos II y IV del presente título será castigada con la pena de multa de seis a doce meses o pena de prisión de uno a tres años. Las autoridades judiciales ordenarán la adopción de las medidas necesarias para la retirada de los contenidos a los que se refiere el párrafo anterior, para la interrupción de los servicios que ofrezcan predominantemente dichos contenidos o para el bloqueo de unos y otros cuando radiquen en el extranjero. 24 \f ARTÍCULO 189 TER. Cuando de acuerdo con lo establecido en el artículo 31 bis una persona jurídica sea responsable de los delitos comprendidos en este Capítulo, se le impondrán las siguientes penas: a) Multa del triple al quíntuple del beneficio obtenido, si el delito cometido por la persona física tiene prevista una pena de prisión de más de cinco años. b) Multa del doble al cuádruple del beneficio obtenido, si el delito cometido por la persona física tiene prevista una pena de prisión de más de dos años no incluida en el anterior inciso. c) Multa del doble al triple del beneficio obtenido, en el resto de los casos. d) Disolución de la persona jurídica, conforme a lo dispuesto en el artículo 33.7 b) de este Código, pudiendo decretarse, atendidas las reglas recogidas en el artículo 66 bis, las demás penas previstas en el mismo que sean compatibles con la disolución. CAPÍTULO VI DISPOSICIONES COMUNES A LOS CAPÍTULOS ANTERIORES ARTÍCULO 190."
+    },
+    {
+      "titulo": "21. ARTÍCULO 191",
+      "contenido": "La condena de un Juez o Tribunal extranjero, impuesta por delitos comprendidos en este Título, será equiparada a las sentencias de los Jueces o Tribunales españoles a los efectos de la aplicación de la circunstancia agravante de reincidencia. ARTÍCULO 191. 1. Para proceder por los delitos de agresiones sexuales y acoso sexual será precisa denuncia de la persona agraviada, de su representante legal o querella del Ministerio Fiscal, que actuará ponderando los legítimos intereses en presencia. Cuando la víctima sea menor de edad, persona con discapacidad necesitada de especial protección o una persona desvalida, bastará la denuncia del Ministerio Fiscal. 2. En estos delitos el perdón del ofendido o del representante legal no extingue la acción penal ni la responsabilidad de esa clase. ARTÍCULO 192. 1. A los condenados a pena de prisión por uno o más delitos comprendidos en este Título se les impondrá además la medida de libertad vigilada, que se ejecutará con posterioridad a la pena privativa de libertad. La duración de dicha medida será de cinco a diez años, si alguno de los delitos fuera grave, y de uno a cinco años si se trata de uno o más delitos menos graves. En este último caso, cuando se trate de un solo delito cometido por un delincuente primario, el tribunal podrá imponer o no la medida de libertad vigilada en atención a la menor peligrosidad del autor. 2. Los ascendientes, tutores, curadores, guardadores, maestros o cualquier otra persona encargada de hecho o de derecho del menor o persona con discapacidad necesitada de especial protección, que intervengan como autores o cómplices en la perpetración de los delitos comprendidos en este Título, serán castigados con la pena que les corresponda, en su mitad superior. No se aplicará esta regla cuando la circunstancia en ella contenida esté específicamente contemplada en el tipo penal de que se trate. 25 \f 3. La autoridad judicial impondrá a las personas responsables de la comisión de alguno de los delitos de los Capítulos I o V cuando la víctima sea menor de edad y en todo caso de alguno de los delitos del Capítulo II, además de las penas previstas en tales Capítulos, la pena de privación de la patria potestad o de inhabilitación especial para el ejercicio de los derechos de la patria potestad, tutela, curatela, guarda o acogimiento, por tiempo de cuatro a diez años. A las personas responsables del resto de delitos del presente Título se les podrá imponer razonadamente, además de las penas señaladas para tales delitos, la pena de privación de la patria potestad o la pena de inhabilitación especial para el ejercicio de los derechos de la patria potestad, tutela, curatela, guarda o acogimiento, por el tiempo de seis meses a seis años, así como la pena de inhabilitación para empleo o cargo público o ejercicio de la profesión u oficio, retribuido o no, por el tiempo de seis meses a seis años. Asimismo, la autoridad judicial impondrá a las personas responsables de los delitos comprendidos en el presente Título, sin perjuicio de las penas que correspondan con arreglo a los artículos precedentes, una pena de inhabilitación especial para cualquier profesión, oficio o actividades, sean o no retribuidos, que conlleve contacto regular y directo con personas menores de edad, por un tiempo superior entre cinco y veinte años al de la duración de la pena de privación de libertad impuesta en la sentencia si el delito fuera grave, y entre dos y veinte años si fuera menos grave."
+    },
+    {
+      "titulo": "22. ARTÍCULO 193",
+      "contenido": "En ambos casos se atenderá proporcionalmente a la gravedad del delito, el número de los delitos cometidos y a las circunstancias que concurran en la persona condenada. ARTÍCULO 193. En las sentencias condenatorias por delitos contra la libertad sexual, además del pronunciamiento correspondiente a la responsabilidad civil, se harán, en su caso, los que procedan en orden a la filiación y fijación de alimentos. ARTÍCULO 194. En los supuestos tipificados en los capítulos IV y V de este título, cuando en la realización de los actos se utilizaren establecimientos o locales, abiertos o no al público, se decretará en la sentencia condenatoria su clausura definitiva. La clausura podrá adoptarse también con carácter cautelar. ARTÍCULO 194 BIS. Las penas previstas en los delitos de este título se impondrán sin perjuicio de la que pudiera corresponder por los actos de violencia física o psíquica que se realizasen. TÍTULO IX DE LA OMISIÓN DEL DEBER DE SOCORRO ARTÍCULO 195. 1. El que no socorriere a una persona que se halle desamparada y en peligro manifiesto y grave, cuando pudiere hacerlo sin riesgo propio ni de terceros, será castigado con la pena de multa de tres a doce meses. 2. En las mismas penas incurrirá el que, impedido de prestar socorro, no demande con urgencia auxilio ajeno. 3. Si la víctima lo fuere por accidente ocasionado fortuitamente por el que omitió el auxilio, la pena será de prisión de seis meses a 18 meses, y si el accidente se debiere a imprudencia, la de prisión de seis meses a cuatro años. 26 \f ARTÍCULO 196. El profesional que, estando obligado a ello, denegare asistencia sanitaria o abandonare los servicios sanitarios, cuando de la denegación o abandono se derive riesgo grave para la salud de las personas, será castigado con las penas del artículo precedente en su mitad superior y con la de inhabilitación especial para empleo o cargo público, profesión u oficio, por tiempo de seis meses a tres años. 27"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Los delitos y sus penas. Circunstancias \"]\n  A --> N1[\"LEY ORGÁNICA 10/1995, DE 23 DE NOVIEMBRE\"]\n  A --> N2[\"ARTÍCULO 8\"]\n  A --> N3[\"ARTÍCULO 17\"]\n  A --> N4[\"CAPÍTULO III\"]\n  A --> N5[\"título d\"]\n  A --> N6[\"ARTÍCULO 140\"]\n  A --> N7[\"ARTÍCULO 142 BIS\"]\n  A --> N8[\"ARTÍCULO 149\"]\n  A --> N9[\"ARTÍCULO 152 BIS\"]\n  A --> N10[\"ARTÍCULO 154\"]\n  A --> N11[\"ARTÍCULO 167\"]\n  A --> N12[\"artículo 173\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Los delitos y sus penas. Circunstancias modificat…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "LEY ORGÁNICA 10/1995, DE 23 DE NOVIEMBR…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "ARTÍCULO 8",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "ARTÍCULO 17",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "CAPÍTULO III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "título d",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "ARTÍCULO 140",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "ARTÍCULO 142 BIS",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "ARTÍCULO 149",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "ARTÍCULO 152 BIS",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "ARTÍCULO 154",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "ARTÍCULO 167",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s12",
+        "texto": "artículo 173",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s13",
+        "texto": "artículo 173",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s14",
+        "texto": "artículo 180",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s15",
+        "texto": "artículo 8",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s16",
+        "texto": "artículo 8",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s17",
+        "texto": "artículo 443",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s18",
+        "texto": "ARTÍCULO 188",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s19",
+        "texto": "b) El que produjere, vendiere, distribu…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s20",
+        "texto": "ARTÍCULO 189 BIS",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s21",
+        "texto": "ARTÍCULO 191",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s22",
+        "texto": "ARTÍCULO 193",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p23-01",
-            "enunciado": "Las infracciones penales se clasifican en:",
-            "opciones": ["Delitos y faltas", "Delitos graves, menos graves y leves", "Faltas y faltas leves", "Penales y administrativas"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 13 CP clasifica las infracciones penales en delitos graves, menos graves y leves."
-        },
-        {
-            "id": "p23-02",
-            "enunciado": "La legítima defensa se regula como circunstancia:",
-            "opciones": ["Atenuante", "Agravante", "Eximente (art. 20 CP)", "Mixta"],
-            "respuestaCorrecta": 2,
-            "explicacion": "La legítima defensa es una circunstancia eximente, regulada en el artículo 20 del Código Penal."
-        },
-        {
-            "id": "p23-03",
-            "enunciado": "La alevosía es una circunstancia:",
-            "opciones": ["Eximente", "Atenuante", "Agravante (art. 22 CP)", "Mixta de parentesco"],
-            "respuestaCorrecta": 2,
-            "explicacion": "La alevosía está recogida como agravante en el artículo 22 del Código Penal."
-        },
-        {
-            "id": "p23-04",
-            "enunciado": "El homicidio se castiga con prisión de:",
-            "opciones": ["5 a 10 años", "10 a 15 años", "15 a 25 años", "20 a 30 años"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 138 CP castiga el homicidio con prisión de 10 a 15 años."
-        },
-        {
-            "id": "p23-05",
-            "enunciado": "Para que exista delito de lesiones se requiere:",
-            "opciones": ["Solo una agresión", "Tratamiento médico o quirúrgico, además de la primera asistencia", "Que haya hospitalización", "Una incapacidad de un año"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las lesiones requieren un menoscabo de la integridad o salud que precise tratamiento médico o quirúrgico además de la primera asistencia."
-        },
-        {
-            "id": "p23-06",
-            "enunciado": "La reforma de los delitos sexuales llamada solo sí es sí se introdujo por:",
-            "opciones": ["La LO 1/2004", "La Ley Orgánica 10/2022", "La LO 5/2000", "La LO 4/2015"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Ley Orgánica 10/2022 reformó los delitos contra la libertad sexual con el principio del consentimiento expreso."
-        },
-        {
-            "id": "p23-07",
-            "enunciado": "La omisión del deber de socorro se castiga en:",
-            "opciones": ["El artículo 138 CP", "El artículo 195 CP", "El artículo 234 CP", "El artículo 173 CP"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 195 del Código Penal castiga la omisión del deber de socorro."
-        },
-        {
-            "id": "p23-08",
-            "enunciado": "Si el accidente que origina la situación de peligro fue debido a imprudencia del omitente, la pena por omisión del deber de socorro es:",
-            "opciones": ["Multa", "Prisión de 6 meses a 18 meses", "Prisión de 6 meses a 4 años", "Inhabilitación de 10 años"],
-            "respuestaCorrecta": 2,
-            "explicacion": "Si el accidente fue debido a imprudencia del omitente, la pena es de prisión de 6 meses a 4 años (art. 195.3 CP)."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      },
+      {
+        "desde": "root",
+        "hasta": "s12"
+      },
+      {
+        "desde": "root",
+        "hasta": "s13"
+      },
+      {
+        "desde": "root",
+        "hasta": "s14"
+      },
+      {
+        "desde": "root",
+        "hasta": "s15"
+      },
+      {
+        "desde": "root",
+        "hasta": "s16"
+      },
+      {
+        "desde": "root",
+        "hasta": "s17"
+      },
+      {
+        "desde": "root",
+        "hasta": "s18"
+      },
+      {
+        "desde": "root",
+        "hasta": "s19"
+      },
+      {
+        "desde": "root",
+        "hasta": "s20"
+      },
+      {
+        "desde": "root",
+        "hasta": "s21"
+      },
+      {
+        "desde": "root",
+        "hasta": "s22"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc23-01",
+      "pregunta": "¿Qué es un delito?",
+      "respuesta": "Acción o omisión dolosa o imprudente penada por la ley"
+    },
+    {
+      "id": "fc23-02",
+      "pregunta": "¿Cuándo se considera cometido un delito?",
+      "respuesta": "En el momento en que el sujeto ejecuta la acción u omite el acto que estaba obligado a realizar"
+    },
+    {
+      "id": "fc23-03",
+      "pregunta": "¿Qué es una medida de seguridad?",
+      "respuesta": "Medida impuesta al sujeto que no es una pena, sino una medida para prevenir su peligrosidad criminal"
+    },
+    {
+      "id": "fc23-04",
+      "pregunta": "¿Qué es un delito grave?",
+      "respuesta": "Infracción que la ley castiga con pena grave"
+    },
+    {
+      "id": "fc23-05",
+      "pregunta": "¿Qué es un delito menos grave?",
+      "respuesta": "Infracción que la ley castiga con pena menos grave"
+    },
+    {
+      "id": "fc23-06",
+      "pregunta": "¿Qué es un delito leve?",
+      "respuesta": "Infracción que la ley castiga con pena leve"
+    },
+    {
+      "id": "fc23-07",
+      "pregunta": "¿Qué es la imprudencia?",
+      "respuesta": "Falta de cuidado o atención que puede provocar un resultado negativo"
+    },
+    {
+      "id": "fc23-08",
+      "pregunta": "¿Qué es la omisión?",
+      "respuesta": "Falta de acción o inacción que puede provocar un resultado negativo"
+    },
+    {
+      "id": "fc23-09",
+      "pregunta": "¿Qué es la ley penal aplicable?",
+      "respuesta": "La ley que se aplica en el momento en que se comete el delito"
+    },
+    {
+      "id": "fc23-10",
+      "pregunta": "¿Qué es la pena?",
+      "respuesta": "Sanción impuesta al sujeto que ha cometido un delito"
+    },
+    {
+      "id": "fc23-11",
+      "pregunta": "¿Qué es la medida de seguridad?",
+      "respuesta": "Medida impuesta al sujeto que no es una pena, sino una medida para prevenir su peligrosidad criminal"
+    },
+    {
+      "id": "fc23-12",
+      "pregunta": "¿Qué es el dolo?",
+      "respuesta": "Intención de cometer un delito"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p23-01",
+      "enunciado": "¿Qué es un delito?",
+      "opciones": [
+        "Acción o omisión dolosa o imprudente penada por la ley",
+        "Acción o omisión que no es penada por la ley",
+        "Acción o omisión que es castigada con una multa",
+        "Acción o omisión que es castigada con una pena de prisión"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un delito es una acción o omisión dolosa o imprudente penada por la ley."
+    },
+    {
+      "id": "p23-02",
+      "enunciado": "¿Cuándo se considera cometido un delito?",
+      "opciones": [
+        "En el momento en que el sujeto ejecuta la acción u omite el acto que estaba obligado a realizar",
+        "En el momento en que el sujeto es detenido",
+        "En el momento en que el sujeto es condenado",
+        "En el momento en que el sujeto es liberado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un delito se considera cometido en el momento en que el sujeto ejecuta la acción u omite el acto que estaba obligado a realizar."
+    },
+    {
+      "id": "p23-03",
+      "enunciado": "¿Qué es una medida de seguridad?",
+      "opciones": [
+        "Medida impuesta al sujeto que no es una pena, sino una medida para prevenir su peligrosidad criminal",
+        "Medida impuesta al sujeto que es una pena, sino una medida para prevenir su peligrosidad criminal",
+        "Medida impuesta al sujeto que no es una pena, sino una medida para castigar su peligrosidad criminal",
+        "Medida impuesta al sujeto que es una pena, sino una medida para castigar su peligrosidad criminal"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Una medida de seguridad es una medida impuesta al sujeto que no es una pena, sino una medida para prevenir su peligrosidad criminal."
+    },
+    {
+      "id": "p23-04",
+      "enunciado": "¿Qué es un delito grave?",
+      "opciones": [
+        "Infracción que la ley castiga con pena leve",
+        "Infracción que la ley castiga con pena menos grave",
+        "Infracción que la ley castiga con pena grave",
+        "Infracción que la ley castiga con pena leve o menos grave"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un delito grave es una infracción que la ley castiga con pena grave."
+    },
+    {
+      "id": "p23-05",
+      "enunciado": "¿Qué es un delito menos grave?",
+      "opciones": [
+        "Infracción que la ley castiga con pena leve",
+        "Infracción que la ley castiga con pena menos grave",
+        "Infracción que la ley castiga con pena grave",
+        "Infracción que la ley castiga con pena leve o menos grave"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un delito menos grave es una infracción que la ley castiga con pena menos grave."
+    },
+    {
+      "id": "p23-06",
+      "enunciado": "¿Qué es un delito leve?",
+      "opciones": [
+        "Infracción que la ley castiga con pena leve",
+        "Infracción que la ley castiga con pena menos grave",
+        "Infracción que la ley castiga con pena grave",
+        "Infracción que la ley castiga con pena leve o menos grave"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un delito leve es una infracción que la ley castiga con pena leve."
+    },
+    {
+      "id": "p23-07",
+      "enunciado": "¿Qué es la imprudencia?",
+      "opciones": [
+        "Falta de cuidado o atención que puede provocar un resultado negativo",
+        "Falta de cuidado o atención que puede provocar un resultado positivo",
+        "Falta de cuidado o atención que no puede provocar un resultado negativo",
+        "Falta de cuidado o atención que no puede provocar un resultado positivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La imprudencia es una falta de cuidado o atención que puede provocar un resultado negativo."
+    },
+    {
+      "id": "p23-08",
+      "enunciado": "¿Qué es la omisión?",
+      "opciones": [
+        "Falta de acción o inacción que puede provocar un resultado negativo",
+        "Falta de acción o inacción que puede provocar un resultado positivo",
+        "Falta de acción o inacción que no puede provocar un resultado negativo",
+        "Falta de acción o inacción que no puede provocar un resultado positivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La omisión es una falta de acción o inacción que puede provocar un resultado negativo."
+    },
+    {
+      "id": "p23-09",
+      "enunciado": "¿Qué es la ley penal aplicable?",
+      "opciones": [
+        "La ley que se aplica en el momento en que se comete el delito",
+        "La ley que se aplica en el momento en que se juzga el delito",
+        "La ley que se aplica en el momento en que se condena al delito",
+        "La ley que se aplica en el momento en que se libera al delito"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La ley penal aplicable es la ley que se aplica en el momento en que se comete el delito."
+    },
+    {
+      "id": "p23-10",
+      "enunciado": "¿Qué es la pena?",
+      "opciones": [
+        "Sanción impuesta al sujeto que ha cometido un delito",
+        "Sanción impuesta al sujeto que no ha cometido un delito",
+        "Sanción impuesta al sujeto que ha cometido un delito y una medida de seguridad",
+        "Sanción impuesta al sujeto que no ha cometido un delito y una medida de seguridad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La pena es una sanción impuesta al sujeto que ha cometido un delito."
+    },
+    {
+      "id": "p23-11",
+      "enunciado": "¿Qué es la medida de seguridad?",
+      "opciones": [
+        "Medida impuesta al sujeto que no es una pena, sino una medida para prevenir su peligrosidad criminal",
+        "Medida impuesta al sujeto que es una pena, sino una medida para prevenir su peligrosidad criminal",
+        "Medida impuesta al sujeto que no es una pena, sino una medida para castigar su peligrosidad criminal",
+        "Medida impuesta al sujeto que es una pena, sino una medida para castigar su peligrosidad criminal"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La medida de seguridad es una medida impuesta al sujeto que no es una pena, sino una medida para prevenir su peligrosidad criminal."
+    },
+    {
+      "id": "p23-12",
+      "enunciado": "¿Qué es el dolo?",
+      "opciones": [
+        "Intención de cometer un delito",
+        "Intención de no cometer un delito",
+        "Intención de cometer un delito y una medida de seguridad",
+        "Intención de no cometer un delito y una medida de seguridad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El dolo es la intención de cometer un delito."
+    }
+  ]
 }

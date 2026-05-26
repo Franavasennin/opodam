@@ -1,157 +1,243 @@
 {
-    "id": 24,
-    "titulo": "Los delitos contra el patrimonio y contra el orden socioeconómico. Hurtos, robos, robo y hurto de uso de vehículos, usurpación, defraudaciones: estafas y apropiación indebida",
-    "bloque": "especifico",
-    "secciones": [
-        {
-            "id": "s24-1",
-            "titulo": "Los delitos contra el patrimonio: hurtos",
-            "contenido": "Los delitos contra el patrimonio y contra el orden socioeconómico se regulan en los artículos 234 a 304 ter del Código Penal. El hurto (artículos 234-236) consiste en tomar con ánimo de lucro las cosas muebles ajenas sin la voluntad de su dueño y sin emplear fuerza en las cosas ni violencia o intimidación en las personas. Se castiga con prisión de 6 a 18 meses si la cuantía supera los 400 euros; cuando la cuantía no excede de 400 euros se trata como delito leve sancionable con multa. Existen tipos agravados (objetos de valor histórico-artístico, electricidad o agua, instrumentos para la prestación de un servicio público, etc.)."
-        },
-        {
-            "id": "s24-2",
-            "titulo": "El robo: con fuerza en las cosas y con violencia o intimidación",
-            "contenido": "El robo (artículos 237-242) es la sustracción de cosa mueble ajena empleando fuerza en las cosas para acceder o abandonar el lugar donde estas se encuentran, o violencia o intimidación en las personas. El robo con fuerza en las cosas (artículos 237-241) se castiga con prisión de 1 a 3 años; constituye fuerza el escalamiento, rompimiento de pared, techo o suelo, fractura de puertas o ventanas, uso de llaves falsas, inutilización de sistemas específicos de alarma o guarda y descubrimiento de claves. El robo con violencia o intimidación (artículo 242) se castiga con prisión de 2 a 5 años, agravado si se utilizan armas u otros medios peligrosos o si hay especial vulnerabilidad de la víctima."
-        },
-        {
-            "id": "s24-3",
-            "titulo": "Robo y hurto de uso de vehículos. Usurpación",
-            "contenido": "El robo y hurto de uso de vehículos (artículo 244) castiga a quien sustrajere o utilizare sin la debida autorización un vehículo a motor o ciclomotor ajeno, cuya cuantía exceda de 400 euros, sin ánimo de apropiárselo, con la pena de trabajos en beneficio de la comunidad o multa, agravada si concurre fuerza en las cosas o violencia o intimidación. La usurpación (artículos 245-247) protege el patrimonio inmobiliario; comprende la ocupación con violencia o intimidación de inmuebles ajenos y la ocupación, sin autorización debida, de un inmueble que no constituya morada o el mantenimiento en él, así como la alteración de términos o lindes y el desvío de aguas."
-        },
-        {
-            "id": "s24-4",
-            "titulo": "Las estafas",
-            "contenido": "Las estafas (artículos 248-251 bis) se cometen por quienes, con ánimo de lucro, utilizaren engaño bastante para producir error en otro, induciéndolo a realizar un acto de disposición en perjuicio propio o ajeno. Se castiga con prisión de 6 meses a 3 años si la cuantía excede de 400 euros (delito leve si no excede). Son agravados los supuestos como la afectación a bienes de primera necesidad o utilidad social, abuso de firma, simulación de pleito o empleo de medios fraudulentos. Las estafas informáticas, las defraudaciones de fluido eléctrico y análogas, la administración fraudulenta y las estafas procesales también tienen regulación específica."
-        },
-        {
-            "id": "s24-5",
-            "titulo": "La apropiación indebida",
-            "contenido": "La apropiación indebida (artículos 252-254) se comete por quien, en perjuicio de otro, se apropiare, para sí o para un tercero, de dinero, efectos, valores o cualquier otra cosa mueble que hubiera recibido en depósito, comisión o custodia, o le hubiera sido confiada en virtud de cualquier otro título que produzca la obligación de entregarla o devolverla, o negare haberlas recibido. Se castiga con prisión de 6 meses a 3 años si la cuantía excede de 400 euros. El artículo 253 castiga la administración desleal en perjuicio del patrimonio administrado. El artículo 254 sanciona la apropiación de cosa mueble ajena perdida o de dueño desconocido cuando se conozca al titular y no se restituya."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e24-1",
-            "titulo": "Delitos contra el patrimonio",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Patrimonio] --> B[Hurto]\n    A --> C[Robo con fuerza]\n    A --> D[Robo con violencia o intimidacion]\n    A --> E[Hurto y robo de uso de vehiculos]\n    A --> F[Usurpacion]\n    A --> G[Estafa y apropiacion indebida]"
-        },
-        {
-            "id": "e24-2",
-            "titulo": "Tipos de robo",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Robo] --> B[Con fuerza en las cosas]\n    B --> C[Escalamiento, fractura, llaves falsas]\n    A --> D[Con violencia o intimidacion]\n    D --> E[Agravado con armas o vulnerabilidad]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Delitos contra el patrimonio", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Hurtos", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Robos", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Vehículos y usurpación", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Estafas", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Apropiación indebida", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Cuantía 400 euros (delito vs. leve)", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Fuerza en cosas o violencia/intimidación", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Artículo 242 - violencia/intimidación", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Artículo 244 - vehículos", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Engaño bastante y error", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Depósito, comisión, custodia", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Administración desleal", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n3", "hasta": "n9" },
-            { "desde": "n4", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 24,
+  "titulo": "Los delitos contra el patrimonio y contra el orden socioeconómico. Delitos contra el patrimonio: de los hurtos (artículos 234 al 236); de los robos (artículos 237 al 242); del robo y hurto de uso de vehículos (artº. 244); de la usurpación. (artículos 245 al 247); de las defraudaciones: de las estafas (artículos 248 al 251) y de la apropiación indebida (artículos 252 al 254).",
+  "bloque": "especifico",
+  "secciones": [
+    {
+      "titulo": "1. LEY ORGÁNICA 10/1995, DE 23 DE NOVIEMBRE, DEL CÓDIGO PENAL",
+      "contenido": "BIBLIOGRAFÍA • LEY ORGÁNICA 10/1995, DE 23 DE NOVIEMBRE, DEL CÓDIGO PENAL. o Art. 234-242 o Art. 244-254 2 \f LEY ORGÁNICA 10/1995, DE 23 DE NOVIEMBRE, DEL CÓDIGO PENAL. TÍTULO XIII DELITOS CONTRA EL PATRIMONIO Y CONTRA EL ORDEN SOCIOECONÓMICO CAPÍTULO I DE LOS HURTOS ARTÍCULO 234. 1. El que, con ánimo de lucro, tomare las cosas muebles ajenas sin la voluntad de su dueño será castigado, como reo de hurto, con la pena de prisión de seis a dieciocho meses si la cuantía de lo sustraído excediese de 400 euros. 2. Se impondrá una pena de multa de uno a tres meses si la cuantía de lo sustraído no excediese de 400 euros, salvo si concurriese alguna de las circunstancias del artículo 235. No obstante, en el caso de que el culpable hubiera sido condenado ejecutoriamente al menos por tres delitos comprendidos en este Título, aunque sean de carácter leve, siempre que sean de la misma naturaleza y que el montante acumulado de las infracciones sea superior a 400 €, se impondrá la pena del apartado 1 de este artículo. No se tendrán en cuenta antecedentes cancelados o que debieran serlo. 3. Las penas establecidas en los apartados anteriores se impondrán en su mitad superior cuando en la comisión del hecho se hubieran neutralizado, eliminado o inutilizado, por cualquier medio, los dispositivos de alarma o seguridad instalados en las cosas sustraídas. ARTÍCULO 235. 1. El hurto será castigado con la pena de prisión de uno a tres años: 1º. Cuando se sustraigan cosas de valor artístico, histórico, cultural o científico. 2º. Cuando se trate de cosas de primera necesidad y se cause una situación de desabastecimiento. 3º. Cuando se trate de conducciones, cableado, equipos o componentes de infraestructuras de suministro eléctrico, de hidrocarburos o de los servicios de telecomunicaciones, o de otras cosas destinadas a la prestación de servicios de interés general, y se cause un quebranto grave a los mismos. 4º. Cuando se trate de productos agrarios o ganaderos, o de los instrumentos o medios que se utilizan para su obtención, siempre que el delito se cometa en explotaciones agrícolas o ganaderas y se cause un perjuicio grave a las mismas. 5º. Cuando revista especial gravedad, atendiendo al valor de los efectos sustraídos, o se produjeren perjuicios de especial consideración. 6º. Cuando ponga a la víctima o a su familia en grave situación económica o se haya realizado abusando de sus circunstancias personales o de su situación de desamparo, o aprovechando la producción de un accidente o la existencia de un riesgo o peligro general para la comunidad que haya debilitado la defensa del ofendido o facilitado la comisión impune del delito. 7º. Cuando al delinquir el culpable hubiera sido condenado ejecutoriamente al menos por tres delitos comprendidos en este Título, siempre que sean de la misma naturaleza. No se tendrán en cuenta antecedentes cancelados o que debieran serlo. 8º. Cuando se utilice a menores de dieciséis años para la comisión del delito. 9º. Cuando el culpable o culpables participen en los hechos como miembros de una organización o grupo criminal que se dedicare a la comisión de delitos comprendidos en este Título, siempre que sean de la misma naturaleza. 3 \f 2. La pena señalada en el apartado anterior se impondrá en su mitad superior cuando concurrieran dos o más de las circunstancias previstas en el mismo. ARTÍCULO 236. 1. Será castigado con multa de tres a doce meses el que, siendo dueño de una cosa mueble o actuando con el consentimiento de éste, la sustrajere de quien la tenga legítimamente en su poder, con perjuicio del mismo o de un tercero."
     },
-    "flashcards": [
-        { "id": "fc24-01", "anverso": "¿En qué artículos del Código Penal se regulan los delitos contra el patrimonio?", "reverso": "En los artículos 234 a 304 ter del Código Penal." },
-        { "id": "fc24-02", "anverso": "¿En qué consiste el hurto?", "reverso": "Tomar con ánimo de lucro cosas muebles ajenas sin la voluntad del dueño y sin fuerza ni violencia o intimidación." },
-        { "id": "fc24-03", "anverso": "¿A partir de qué cuantía el hurto es delito (no leve)?", "reverso": "Cuando la cuantía supera los 400 euros." },
-        { "id": "fc24-04", "anverso": "¿Qué pena tiene el hurto?", "reverso": "Prisión de 6 a 18 meses, si la cuantía es superior a 400 euros." },
-        { "id": "fc24-05", "anverso": "¿Qué diferencia el robo del hurto?", "reverso": "El robo requiere fuerza en las cosas o violencia o intimidación en las personas." },
-        { "id": "fc24-06", "anverso": "Cita supuestos de fuerza en las cosas.", "reverso": "El escalamiento, la fractura de puertas o ventanas, el uso de llaves falsas o la inutilización de sistemas de alarma." },
-        { "id": "fc24-07", "anverso": "¿Qué pena tiene el robo con fuerza en las cosas?", "reverso": "Prisión de 1 a 3 años." },
-        { "id": "fc24-08", "anverso": "¿Qué pena tiene el robo con violencia o intimidación?", "reverso": "Prisión de 2 a 5 años (agravado si se usan armas o hay vulnerabilidad de la víctima)." },
-        { "id": "fc24-09", "anverso": "¿Qué artículo castiga el robo y hurto de uso de vehículos?", "reverso": "El artículo 244 del Código Penal." },
-        { "id": "fc24-10", "anverso": "¿Qué pena básica tiene el hurto de uso de vehículos?", "reverso": "Trabajos en beneficio de la comunidad o multa." },
-        { "id": "fc24-11", "anverso": "¿Qué protege el delito de usurpación?", "reverso": "El patrimonio inmobiliario." },
-        { "id": "fc24-12", "anverso": "Cita conductas de usurpación.", "reverso": "Ocupación con violencia o intimidación, ocupación de inmueble que no constituye morada y alteración de lindes." },
-        { "id": "fc24-13", "anverso": "¿Cuáles son los elementos típicos de la estafa?", "reverso": "Ánimo de lucro, engaño bastante, error y acto de disposición perjudicial." },
-        { "id": "fc24-14", "anverso": "¿Qué pena tiene la estafa básica?", "reverso": "Prisión de 6 meses a 3 años si la cuantía excede de 400 euros." },
-        { "id": "fc24-15", "anverso": "Cita tipos especiales de estafa.", "reverso": "Estafa informática, defraudación de fluido eléctrico, administración fraudulenta y estafa procesal." },
-        { "id": "fc24-16", "anverso": "¿Qué es la apropiación indebida?", "reverso": "Apropiarse de dinero, efectos o cosas muebles recibidos en depósito, comisión o custodia, en perjuicio de otro." },
-        { "id": "fc24-17", "anverso": "¿Qué pena tiene la apropiación indebida?", "reverso": "Prisión de 6 meses a 3 años si la cuantía excede de 400 euros." },
-        { "id": "fc24-18", "anverso": "¿Qué castiga el artículo 253 CP?", "reverso": "La administración desleal en perjuicio del patrimonio administrado." },
-        { "id": "fc24-19", "anverso": "¿Qué tipifica el artículo 254 CP?", "reverso": "La apropiación de cosa mueble ajena perdida o de dueño desconocido cuando se conozca al titular y no se restituya." },
-        { "id": "fc24-20", "anverso": "¿Cuándo se considera robo con uso de armas?", "reverso": "Cuando se utilizan armas u otros medios peligrosos en la violencia o intimidación." }
+    {
+      "titulo": "2. CAPÍTULO II",
+      "contenido": "2. Si el valor de la cosa sustraída no excediera de 400 euros, se impondrá la pena de multa de uno a tres meses. CAPÍTULO II DE LOS ROBOS ARTÍCULO 237. Son reos del delito de robo los que, con ánimo de lucro, se apoderaren de las cosas muebles ajenas empleando fuerza en las cosas para acceder o abandonar el lugar donde éstas se encuentran o violencia o intimidación en las personas, sea al cometer el delito, para proteger la huida, o sobre los que acudiesen en auxilio de la víctima o que le persiguieren. ARTÍCULO 238. Son reos del delito de robo con fuerza en las cosas los que ejecuten el hecho cuando concurra alguna de las circunstancias siguientes: 1º. Escalamiento. 2º. Rompimiento de pared, techo o suelo, o fractura de puerta o ventana. 3º. Fractura de armarios, arcas u otra clase de muebles u objetos cerrados o sellados, o forzamiento de sus cerraduras o descubrimiento de sus claves para sustraer su contenido, sea en el lugar del robo o fuera del mismo. 4º. Uso de llaves falsas. 5º. Inutilización de sistemas específicos de alarma o guarda. ARTÍCULO 239. Se considerarán llaves falsas: 1. Las ganzúas u otros instrumentos análogos. 2. Las llaves legítimas perdidas por el propietario u obtenidas por un medio que constituya infracción penal. 3. Cualesquiera otras que no sean las destinadas por el propietario para abrir la cerradura violentada por el reo. A los efectos del presente artículo, se consideran llaves las tarjetas, magnéticas o perforadas, los mandos o instrumentos de apertura a distancia y cualquier otro instrumento tecnológico de eficacia similar. ARTÍCULO 240. 1. El culpable de robo con fuerza en las cosas será castigado con la pena de prisión de uno a tres años. 2. Se impondrá la pena de prisión de dos a cinco años cuando concurra alguna de las circunstancias previstas en el artículo 235. ARTÍCULO 241. 1. El robo cometido en casa habitada, edificio o local abiertos al público, o en cualquiera de sus dependencias, se castigará con una pena de prisión de dos a cinco años. Si los hechos se hubieran cometido en un establecimiento abierto al público, o en cualquiera de sus dependencias, fuera de las horas de apertura, se impondrá una pena de prisión de uno a cinco años. 4 \f 3. Se considera casa habitada todo albergue que constituya morada de una o más personas, aunque accidentalmente se encuentren ausentes de ella cuando el robo tenga lugar. 4. Se consideran dependencias de casa habitada o de edificio o local abiertos al público, sus patios, garajes y demás departamentos o sitios cercados y contiguos al edificio y en comunicación interior con él, y con el cual formen una unidad física. 5. Se impondrá una pena de dos a seis años de prisión cuando los hechos a que se refieren los apartados anteriores revistan especial gravedad, atendiendo a la forma de comisión del delito o a los perjuicios ocasionados y, en todo caso, cuando concurra alguna de las circunstancias expresadas en el artículo 235. ARTÍCULO 242. 1. El culpable de robo con violencia o intimidación en las personas será castigado con la pena de prisión de dos a cinco años, sin perjuicio de la que pudiera corresponder a los actos de violencia física que realizase. 2. Cuando el robo se cometa en casa habitada, edificio o local abiertos al público o en cualquiera de sus dependencias, se impondrá la pena de prisión de tres años y seis meses a cinco años. 3."
+    },
+    {
+      "titulo": "3. CAPÍTULO IV",
+      "contenido": "Las penas señaladas en los apartados anteriores se impondrán en su mitad superior cuando el delincuente hiciere uso de armas u otros medios igualmente peligrosos, sea al cometer el delito o para proteger la huida, y cuando atacare a los que acudiesen en auxilio de la víctima o a los que le persiguieren. 4. En atención a la menor entidad de la violencia o intimidación ejercidas y valorando además las restantes circunstancias del hecho, podrá imponerse la pena inferior en grado a la prevista en los apartados anteriores. CAPÍTULO IV DEL ROBO Y HURTO DE USO DE VEHÍCULOS ARTÍCULO 244. 1. El que sustrajere o utilizare sin la debida autorización un vehículo a motor o ciclomotor ajenos, sin ánimo de apropiárselo, será castigado con la pena de trabajos en beneficio de la comunidad de treinta y uno a noventa días o multa de dos a doce meses, si lo restituyera, directa o indirectamente, en un plazo no superior a cuarenta y ocho horas, sin que, en ningún caso, la pena impuesta pueda ser igual o superior a la que correspondería si se apropiare definitivamente del vehículo. 2. Si el hecho se ejecutare empleando fuerza en las cosas, la pena se aplicará en su mitad superior. 3. De no efectuarse la restitución en el plazo señalado, se castigará el hecho como hurto o robo en sus respectivos casos. 4. Si el hecho se cometiere con violencia o intimidación en las personas, se impondrán, en todo caso, las penas del artículo 242. CAPÍTULO V DE LA USURPACIÓN ARTÍCULO 245. 1. Al que con violencia o intimidación en las personas ocupare una cosa inmueble o usurpare un derecho real inmobiliario de pertenencia ajena, se le impondrá, además de las penas en que incurriere por las violencias ejercidas, la pena de prisión de uno a dos años, que se fijará teniendo en cuenta la utilidad obtenida y el daño causado. 2. El que ocupare, sin autorización debida, un inmueble, vivienda o edificio ajenos que no constituyan morada, o se mantuviere en ellos contra la voluntad de su titular, será castigado con la pena de multa de tres a seis meses. 5 \f ARTÍCULO 246. 1. El que alterare términos o lindes de pueblos o heredades o cualquier clase de señales o mojones destinados a fijar los límites de propiedades o demarcaciones de predios contiguos, tanto de dominio público como privado, será castigado con la pena de multa de tres a dieciocho meses. 2. Si la utilidad reportada no excediere de 400 euros, se impondrá la pena de multa de uno a tres meses. ARTÍCULO 247. 1. El que, sin hallarse autorizado, distrajere las aguas de uso público o privativo de su curso, o de su embalse natural o artificial, será castigado con la pena de multa de tres a seis meses. 2. Si la utilidad reportada no excediere de 400 euros, se impondrá la pena de multa de uno a tres meses. CAPÍTULO VI DE LAS DEFRAUDACIONES SECCIÓN 1.ª DE LAS ESTAFAS ARTÍCULO 248. Cometen estafa los que, con ánimo de lucro, utilizaren engaño bastante para producir error en otro, induciéndolo a realizar un acto de disposición en perjuicio propio o ajeno. Los reos de estafa serán castigados con la pena de prisión de seis meses a tres años. Para la fijación de la pena se tendrá en cuenta el importe de lo defraudado, el quebranto económico causado al perjudicado, las relaciones entre este y el defraudador, los medios empleados por este y cuantas otras circunstancias sirvan para valorar la gravedad de la infracción. Si la cuantía de lo defraudado no excediere de 400 euros, se impondrá la pena de multa de uno a tres meses. ARTÍCULO 249. 1."
+    },
+    {
+      "titulo": "4. disposición de",
+      "contenido": "También se consideran reos de estafa y serán castigados con la pena de prisión de seis meses a tres años: a) Los que, con ánimo de lucro, obstaculizando o interfiriendo indebidamente en el funcionamiento de un sistema de información o introduciendo, alterando, borrando, transmitiendo o suprimiendo indebidamente datos informáticos o valiéndose de cualquier otra manipulación informática o artificio semejante, consigan una transferencia no consentida de cualquier activo patrimonial en perjuicio de otro. b) Los que, utilizando de forma fraudulenta tarjetas de crédito o débito, cheques de viaje o cualquier otro instrumento de pago material o inmaterial distinto del efectivo o los datos obrantes en cualquiera de ellos, realicen operaciones de cualquier clase en perjuicio de su titular o de un tercero. 2. Con la misma pena prevista en el apartado anterior serán castigados: a) Los que fabricaren, importaren, obtuvieren, poseyeren, transportaren, comerciaren o de otro modo facilitaren a terceros dispositivos, instrumentos o datos o programas informáticos, o cualquier otro medio diseñado o adaptado específicamente para la comisión de las estafas previstas en este artículo. 6 \f b) Los que, para su utilización fraudulenta, sustraigan, se apropiaren o adquieran de forma ilícita tarjetas de crédito o débito, cheques de viaje o cualquier otro instrumento de pago material o inmaterial distinto del efectivo. 3. Se impondrá la pena en su mitad inferior a los que, para su utilización fraudulenta y sabiendo que fueron obtenidos ilícitamente, posean, adquieran, transfieran, distribuyan o pongan a disposición de terceros tarjetas de crédito o débito, cheques de viaje o cualesquiera otros instrumentos de pago materiales o inmateriales distintos del efectivo. ARTÍCULO 250. 1. El delito de estafa será castigado con las penas de prisión de uno a seis años y multa de seis a doce meses, cuando: 1º. Recaiga sobre cosas de primera necesidad, viviendas u otros bienes de reconocida utilidad social. 2º. Se perpetre abusando de firma de otro, o sustrayendo, ocultando o inutilizando, en todo o en parte, algún proceso, expediente, protocolo o documento público u oficial de cualquier clase. 3º. Recaiga sobre bienes que integren el patrimonio artístico, histórico, cultural o científico. 4º. Revista especial gravedad, atendiendo a la entidad del perjuicio y a la situación económica en que deje a la víctima o a su familia. 5º. El valor de la defraudación supere los 50.000 euros, o afecte a un elevado número de personas. 6º. Se cometa con abuso de las relaciones personales existentes entre víctima y defraudador, o aproveche éste su credibilidad empresarial o profesional. 7º. Se cometa estafa procesal. Incurren en la misma los que, en un procedimiento judicial de cualquier clase, manipularen las pruebas en que pretendieran fundar sus alegaciones o emplearen otro fraude procesal análogo, provocando error en el juez o tribunal y llevándole a dictar una resolución que perjudique los intereses económicos de la otra parte o de un tercero. 8º. Al delinquir el culpable hubiera sido condenado ejecutoriamente al menos por tres delitos comprendidos en este Capítulo. No se tendrán en cuenta antecedentes cancelados o que debieran serlo. 2. Si concurrieran las circunstancias incluidas en los numerales 4.º, 5.º, 6.º o 7.º con la del numeral 1.º del apartado anterior, se impondrán las penas de prisión de cuatro a ocho años y multa de doce a veinticuatro meses. La misma pena se impondrá cuando el valor de la defraudación supere los 250.000 euros. ARTÍCULO 251."
+    },
+    {
+      "titulo": "5. disposición de",
+      "contenido": "Será castigado con la pena de prisión de uno a cuatro años: 1º. Quien, atribuyéndose falsamente sobre una cosa mueble o inmueble facultad de disposición de la que carece, bien por no haberla tenido nunca, bien por haberla ya ejercitado, la enajenare, gravare o arrendare a otro, en perjuicio de éste o de tercero. 2º. El que dispusiere de una cosa mueble o inmueble ocultando la existencia de cualquier carga sobre la misma, o el que, habiéndola enajenado como libre, la gravare o enajenare nuevamente antes de la definitiva transmisión al adquirente, en perjuicio de éste, o de un tercero. 3º. El que otorgare en perjuicio de otro un contrato simulado. ARTÍCULO 251 BIS. Cuando de acuerdo con lo establecido en el artículo 31 bis una persona jurídica sea responsable de los delitos comprendidos en esta Sección, se le impondrán las siguientes penas: a) Multa del triple al quíntuple de la cantidad defraudada, si el delito cometido por la persona física tiene prevista una pena de prisión de más de cinco años. 7 \fb) Multa del doble al cuádruple de la cantidad defraudada, en el resto de los casos. Atendidas las reglas establecidas en el artículo 66 bis, los jueces y tribunales podrán asimismo imponer las penas recogidas en las letras b) a g) del apartado 7 del artículo 33. SECCIÓN 2.ª DE LA ADMINISTRACIÓN DESLEAL ARTÍCULO 252. 1. Serán castigados con las penas del artículo 248 o, en su caso, con las del artículo 250, los que teniendo facultades para administrar un patrimonio ajeno, emanadas de la ley, encomendadas por la autoridad o asumidas mediante un negocio jurídico, las infrinjan excediéndose en el ejercicio de las mismas y, de esa manera, causen un perjuicio al patrimonio administrado. 2. Si la cuantía del perjuicio patrimonial no excediere de 400 euros, se impondrá una pena de multa de uno a tres meses. SECCIÓN 2.ª BIS DE LA APROPIACIÓN INDEBIDA ARTÍCULO 253. 1. Serán castigados con las penas del artículo 248 o, en su caso, del artículo 250, salvo que ya estuvieran castigados con una pena más grave en otro precepto de este Código, los que, en perjuicio de otro, se apropiaren para sí o para un tercero, de dinero, efectos, valores o cualquier otra cosa mueble, que hubieran recibido en depósito, comisión, o custodia, o que les hubieran sido confiados en virtud de cualquier otro título que produzca la obligación de entregarlos o devolverlos, o negaren haberlos recibido. 2. Si la cuantía de lo apropiado no excediere de 400 euros, se impondrá una pena de multa de uno a tres meses. ARTÍCULO 254. 1. Quien, fuera de los supuestos del artículo anterior, se apropiare de una cosa mueble ajena, será castigado con una pena de multa de tres a seis meses. Si se tratara de cosas de valor artístico, histórico, cultural o científico, la pena será de prisión de seis meses a dos años. 2. Si la cuantía de lo apropiado no excediere de 400 euros, se impondrá una pena de multa de uno a dos meses. 8"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Los delitos contra el patrimonio y contr\"]\n  A --> N1[\"LEY ORGÁNICA 10/1995, DE 23 DE NOVIEMBRE\"]\n  A --> N2[\"CAPÍTULO II\"]\n  A --> N3[\"CAPÍTULO IV\"]\n  A --> N4[\"disposición de\"]\n  A --> N5[\"disposición de\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Los delitos contra el patrimonio y contra el orde…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "LEY ORGÁNICA 10/1995, DE 23 DE NOVIEMBR…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "CAPÍTULO II",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "CAPÍTULO IV",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "disposición de",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "disposición de",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p24-01",
-            "enunciado": "El hurto pasa a ser delito (no leve) cuando la cuantía supera:",
-            "opciones": ["100 euros", "400 euros", "600 euros", "1.000 euros"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El hurto se castiga como delito si la cuantía supera los 400 euros; si no, como delito leve."
-        },
-        {
-            "id": "p24-02",
-            "enunciado": "La fuerza en las cosas en el robo incluye:",
-            "opciones": ["Solo la rotura de puertas", "Escalamiento, fractura, llaves falsas e inutilización de alarmas", "Solo la violencia física", "Solo el uso de armas"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 238 CP incluye escalamiento, fractura, uso de llaves falsas e inutilización de sistemas de alarma."
-        },
-        {
-            "id": "p24-03",
-            "enunciado": "El robo con violencia o intimidación se castiga con:",
-            "opciones": ["Multa", "Prisión de 2 a 5 años", "Prisión de 6 a 18 meses", "Trabajos en beneficio de la comunidad"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 242 CP castiga el robo con violencia o intimidación con prisión de 2 a 5 años."
-        },
-        {
-            "id": "p24-04",
-            "enunciado": "El robo y hurto de uso de vehículos se regula en:",
-            "opciones": ["El artículo 234 CP", "El artículo 244 CP", "El artículo 248 CP", "El artículo 252 CP"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 244 del Código Penal regula el robo y hurto de uso de vehículos."
-        },
-        {
-            "id": "p24-05",
-            "enunciado": "El delito de usurpación protege:",
-            "opciones": ["El honor", "El patrimonio inmobiliario", "La libertad", "La intimidad"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La usurpación (arts. 245-247 CP) protege el patrimonio inmobiliario."
-        },
-        {
-            "id": "p24-06",
-            "enunciado": "Para la estafa se requiere:",
-            "opciones": ["Solo ánimo de lucro", "Engaño bastante, error y acto de disposición perjudicial", "Violencia", "Solo el resultado dañoso"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La estafa requiere ánimo de lucro, engaño bastante, error y un acto de disposición perjudicial."
-        },
-        {
-            "id": "p24-07",
-            "enunciado": "La apropiación indebida se castiga con:",
-            "opciones": ["Solo multa", "Prisión de 6 meses a 3 años si la cuantía supera 400 euros", "Prisión de 5 años siempre", "Inhabilitación"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Se castiga con prisión de 6 meses a 3 años si la cuantía excede de 400 euros."
-        },
-        {
-            "id": "p24-08",
-            "enunciado": "La administración desleal se regula en:",
-            "opciones": ["El artículo 248 CP", "El artículo 253 CP", "El artículo 234 CP", "El artículo 244 CP"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 253 del Código Penal regula la administración desleal."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc24-01",
+      "pregunta": "¿Qué pena se impone a quien sustrae cosas muebles ajenas sin la voluntad de su dueño, si la cuantía de lo sustraído excede de 400 euros?",
+      "respuesta": "Pena de prisión de seis a dieciocho meses"
+    },
+    {
+      "id": "fc24-02",
+      "pregunta": "¿Qué circunstancia agravante se considera en el caso de hurto, si el culpable ha sido condenado ejecutoriamente al menos por tres delitos comprendidos en este Título?",
+      "respuesta": "Siempre que sean de la misma naturaleza y que el montante acumulado de las infracciones sea superior a 400 €"
+    },
+    {
+      "id": "fc24-03",
+      "pregunta": "¿Qué pena se impone a quien sustrae cosas de valor artístico, histórico, cultural o científico?",
+      "respuesta": "Pena de prisión de uno a tres años"
+    },
+    {
+      "id": "fc24-04",
+      "pregunta": "¿Qué circunstancia agravante se considera en el caso de hurto, si se causa un perjuicio grave a las explotaciones agrícolas o ganaderas?",
+      "respuesta": "Siempre que el delito se cometa en explotaciones agrícolas o ganaderas y se cause un perjuicio grave a las mismas"
+    },
+    {
+      "id": "fc24-05",
+      "pregunta": "¿Qué pena se impone a quien sustrae cosas muebles ajenas sin la voluntad de su dueño, si el valor de la cosa sustraída no excede de 400 euros?",
+      "respuesta": "Pena de multa de uno a tres meses"
+    },
+    {
+      "id": "fc24-06",
+      "pregunta": "¿Qué circunstancia agravante se considera en el caso de robo con fuerza en las cosas, si se utiliza a menores de dieciséis años para la comisión del delito?",
+      "respuesta": "Si se utiliza a menores de dieciséis años para la comisión del delito"
+    },
+    {
+      "id": "fc24-07",
+      "pregunta": "¿Qué pena se impone a quien se apodera de las cosas muebles ajenas empleando fuerza en las cosas para acceder o abandonar el lugar donde éstas se encuentran?",
+      "respuesta": "Pena de prisión de uno a tres años"
+    },
+    {
+      "id": "fc24-08",
+      "pregunta": "¿Qué circunstancia agravante se considera en el caso de robo con fuerza en las cosas, si se utiliza escalamiento?",
+      "respuesta": "Si se utiliza escalamiento"
+    },
+    {
+      "id": "fc24-09",
+      "pregunta": "¿Qué pena se impone a quien sustrae cosas muebles ajenas sin la voluntad de su dueño, si el culpable ha sido condenado ejecutoriamente al menos por tres delitos comprendidos en este Título?",
+      "respuesta": "Pena de prisión de uno a tres años"
+    },
+    {
+      "id": "fc24-10",
+      "pregunta": "¿Qué circunstancia agravante se considera en el caso de robo con fuerza en las cosas, si se utiliza llaves falsas?",
+      "respuesta": "Si se utiliza llaves falsas"
+    },
+    {
+      "id": "fc24-11",
+      "pregunta": "¿Qué pena se impone a quien se apodera de las cosas muebles ajenas empleando fuerza en las cosas para acceder o abandonar el lugar donde éstas se encuentran, si concurre alguna de las circunstancias previstas en el artículo 235?",
+      "respuesta": "Pena de prisión de dos a cinco años"
+    },
+    {
+      "id": "fc24-12",
+      "pregunta": "¿Qué circunstancia agravante se considera en el caso de robo cometido en casa habitada, edificio o local abiertos al público?",
+      "respuesta": "Si se comete en un establecimiento abierto al público, o en cualquiera de sus dependencias, fuera de las horas de apertura"
+    },
+    {
+      "id": "fc24-13",
+      "pregunta": "¿Qué pena se impone a quien se apodera de las cosas muebles ajenas empleando fuerza en las cosas para acceder o abandonar el lugar donde éstas se encuentran, si se comete en casa habitada, edificio o local abiertos al público?",
+      "respuesta": "Pena de prisión de dos a cinco años"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p24-01",
+      "enunciado": "¿Qué circunstancias agravantes se consideran en el caso de hurto?",
+      "opciones": [
+        "Si el culpable ha sido condenado ejecutoriamente al menos por tres delitos comprendidos en este Título",
+        "Si se causa un perjuicio grave a las explotaciones agrícolas o ganaderas",
+        "Si el valor de la cosa sustraída no excede de 400 euros",
+        "Si el culpable ha sido condenado ejecutoriamente al menos por tres delitos comprendidos en este Título y el montante acumulado de las infracciones es superior a 400 €"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las circunstancias agravantes en el caso de hurto son: si el culpable ha sido condenado ejecutoriamente al menos por tres delitos comprendidos en este Título, si se causa un perjuicio grave a las explotaciones agrícolas o ganaderas, si el valor de la cosa sustraída no excede de 400 euros y si el culpable ha sido condenado ejecutoriamente al menos por tres delitos comprendidos en este Título y el montante acumulado de las infracciones es superior a 400 €."
+    },
+    {
+      "id": "p24-02",
+      "enunciado": "¿Qué circunstancia agravante se considera en el caso de robo con fuerza en las cosas?",
+      "opciones": [
+        "Si se utiliza escalamiento",
+        "Si se utiliza llaves falsas",
+        "Si se causa un perjuicio grave a las explotaciones agrícolas o ganaderas",
+        "Si el valor de la cosa sustraída no excede de 400 euros"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La circunstancia agravante en el caso de robo con fuerza en las cosas es si se utiliza escalamiento."
+    },
+    {
+      "id": "p24-03",
+      "enunciado": "¿Qué circunstancia agravante se considera en el caso de robo cometido en casa habitada, edificio o local abiertos al público?",
+      "opciones": [
+        "Si se comete en un establecimiento abierto al público, o en cualquiera de sus dependencias, fuera de las horas de apertura",
+        "Si se utiliza llaves falsas",
+        "Si se causa un perjuicio grave a las explotaciones agrícolas o ganaderas",
+        "Si el valor de la cosa sustraída no excede de 400 euros"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La circunstancia agravante en el caso de robo cometido en casa habitada, edificio o local abiertos al público es si se comete en un establecimiento abierto al público, o en cualquiera de sus dependencias, fuera de las horas de apertura."
+    },
+    {
+      "id": "p24-04",
+      "enunciado": "¿Qué pena se impone a quien se apodera de las cosas muebles ajenas empleando fuerza en las cosas para acceder o abandonar el lugar donde éstas se encuentran?",
+      "opciones": [
+        "Pena de prisión de uno a tres años",
+        "Pena de prisión de dos a cinco años",
+        "Pena de prisión de seis a dieciocho meses",
+        "Pena de multa de uno a tres meses"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La pena que se impone a quien se apodera de las cosas muebles ajenas empleando fuerza en las cosas para acceder o abandonar el lugar donde éstas se encuentran es pena de prisión de uno a tres años."
+    },
+    {
+      "id": "p24-05",
+      "enunciado": "¿Qué circunstancia agravante se considera en el caso de robo con fuerza en las cosas?",
+      "opciones": [
+        "Si se utiliza escalamiento",
+        "Si se utiliza llaves falsas",
+        "Si se causa un perjuicio grave a las explotaciones agrícolas o ganaderas",
+        "Si el valor de la cosa sustraída no excede de 400 euros"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La circunstancia agravante en el caso de robo con fuerza en las cosas es si se utiliza llaves falsas."
+    },
+    {
+      "id": "p24-06",
+      "enunciado": "¿Qué circunstancia agravante se considera en el caso de robo cometido en casa habitada, edificio o local abiertos al público?",
+      "opciones": [
+        "Si se comete en un establecimiento abierto al público, o en cualquiera de sus dependencias, fuera de las horas de apertura",
+        "Si se utiliza llaves falsas",
+        "Si se causa un perjuicio grave a las explotaciones agrícolas o ganaderas",
+        "Si el valor de la cosa sustraída no excede de 400 euros"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La circunstancia agravante en el caso de robo cometido en casa habitada, edificio o local abiertos al público es si se comete en un establecimiento abierto al público, o en cualquiera de sus dependencias, fuera de las horas de apertura."
+    }
+  ]
 }

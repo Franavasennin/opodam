@@ -1,157 +1,286 @@
 {
-    "id": 2,
-    "titulo": "El derecho a la vida y a la integridad física y moral. La libertad ideológica y religiosa. Los derechos de libertad personal. Los derechos al honor, a la intimidad y a la propia imagen. El derecho de libre residencia y circulación. Las libertades de expresión e información. El derecho de reunión y manifestación. El derecho de asociación",
-    "bloque": "general",
-    "secciones": [
-        {
-            "id": "s2-1",
-            "titulo": "El derecho a la vida y la libertad ideológica y religiosa",
-            "contenido": "El artículo 15 de la Constitución reconoce el derecho de todos a la vida y a la integridad física y moral, prohibiendo la tortura y las penas o tratos inhumanos o degradantes; queda abolida la pena de muerte, salvo lo que dispongan las leyes penales militares para tiempos de guerra. El artículo 16 garantiza la libertad ideológica, religiosa y de culto de los individuos y las comunidades, sin más limitación, en sus manifestaciones, que la necesaria para el mantenimiento del orden público protegido por la ley. Nadie podrá ser obligado a declarar sobre su ideología, religión o creencias, y ninguna confesión tendrá carácter estatal."
-        },
-        {
-            "id": "s2-2",
-            "titulo": "Los derechos de libertad personal",
-            "contenido": "El artículo 17 reconoce el derecho a la libertad y a la seguridad: nadie puede ser privado de su libertad sino con la observancia de lo establecido en la ley. La detención preventiva no podrá durar más del tiempo estrictamente necesario para las averiguaciones, y en todo caso, en el plazo máximo de setenta y dos horas, el detenido deberá ser puesto en libertad o a disposición de la autoridad judicial. Toda persona detenida debe ser informada de sus derechos y de las razones de su detención, y no puede ser obligada a declarar. Se garantiza la asistencia de abogado al detenido y el procedimiento de habeas corpus."
-        },
-        {
-            "id": "s2-3",
-            "titulo": "Honor, intimidad, propia imagen y libre circulación",
-            "contenido": "El artículo 18 garantiza el derecho al honor, a la intimidad personal y familiar y a la propia imagen; el domicilio es inviolable y ninguna entrada o registro podrá hacerse sin consentimiento del titular o resolución judicial, salvo en caso de flagrante delito. Se garantiza el secreto de las comunicaciones, salvo resolución judicial, y la ley limitará el uso de la informática para proteger los datos personales. El artículo 19 reconoce a los españoles el derecho a elegir libremente su residencia y a circular por el territorio nacional, así como a entrar y salir libremente de España en los términos que la ley establezca, sin que ese derecho pueda limitarse por motivos políticos o ideológicos."
-        },
-        {
-            "id": "s2-4",
-            "titulo": "Las libertades de expresión e información",
-            "contenido": "El artículo 20 reconoce y protege el derecho a expresar y difundir libremente pensamientos, ideas y opiniones; a la producción y creación literaria, artística, científica y técnica; a la libertad de cátedra; y a comunicar o recibir libremente información veraz por cualquier medio de difusión. Estas libertades tienen su límite en el respeto a los derechos del Título I, especialmente el derecho al honor, a la intimidad, a la propia imagen y a la protección de la juventud y de la infancia. No puede restringirse mediante ningún tipo de censura previa, y el secuestro de publicaciones solo podrá acordarse en virtud de resolución judicial."
-        },
-        {
-            "id": "s2-5",
-            "titulo": "Los derechos de reunión, manifestación y asociación",
-            "contenido": "El artículo 21 reconoce el derecho de reunión pacífica y sin armas, cuyo ejercicio no necesita autorización previa. Para las reuniones en lugares de tránsito público y las manifestaciones se dará comunicación previa a la autoridad, que solo podrá prohibirlas cuando existan razones fundadas de alteración del orden público con peligro para personas o bienes. El artículo 22 reconoce el derecho de asociación; las asociaciones que persigan fines o utilicen medios tipificados como delito son ilegales; deben inscribirse en un registro a los solos efectos de publicidad; solo pueden ser disueltas o suspendidas en sus actividades en virtud de resolución judicial motivada; y se prohíben las asociaciones secretas y las de carácter paramilitar."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e2-1",
-            "titulo": "Derechos fundamentales (art. 15-22)",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Derechos fundamentales] --> B[Art. 15 - Vida e integridad]\n    A --> C[Art. 16 - Libertad ideologica y religiosa]\n    A --> D[Art. 17 - Libertad y seguridad]\n    A --> E[Art. 18 - Honor, intimidad, domicilio]\n    A --> F[Art. 20-22 - Expresion, reunion, asociacion]"
-        },
-        {
-            "id": "e2-2",
-            "titulo": "La detención preventiva",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Detencion preventiva] --> B[Tiempo estrictamente necesario]\n    A --> C[Maximo 72 horas]\n    C --> D[Libertad o a disposicion judicial]\n    A --> E[Informacion de derechos]\n    A --> F[Asistencia de abogado y habeas corpus]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Derechos fundamentales (art. 15-22)", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Vida e integridad", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Libertad ideológica y religiosa", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Libertad personal", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Honor, intimidad e imagen", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Expresión, reunión y asociación", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Abolición de la pena de muerte", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Ninguna confesión es estatal", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Detención máx. 72 horas", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Inviolabilidad del domicilio", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Secreto de las comunicaciones", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Reunión sin autorización previa", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Prohibición de asociaciones secretas", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n5", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 2,
+  "titulo": "El derecho a la vida y a la integridad física y moral. La libertad ideológica y religiosa. Los derechos de libertad personal. Los derechos al honor, a la intimidad y a la propia imagen. El derecho de libre residencia y circulación. Las libertades de expresión e información. El derecho de reunión y manifestación. El derecho de asociación.",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "1. Ley Orgánica 6/1984, de 24 de mayo, reguladora del procedimiento de <<Ha",
+      "contenido": "BIBLIOGRAFÍA • CONSTITUCIÓN ESPAÑOLA o Art. 14-22 o Art. 55 • Ley Orgánica 6/1984, de 24 de mayo, reguladora del procedimiento de <<Habeas Corpus>> o Art. 1-8 • Real Decreto de 14 de septiembre de 1882 por el que se aprueba la Ley de Enjuiciamiento Criminal o Art. 520 2 \f CONSTITUCIÓN ESPAÑOLA TÍTULO I DE LOS DERECHOS Y DEBERES FUNDAMENTALES CAPÍTULO SEGUNDO DERECHOS Y LIBERTADES ARTÍCULO 14 Los españoles son iguales ante la ley, sin que pueda prevalecer discriminación alguna por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social. SECCIÓN 1.ª DE LOS DERECHOS FUNDAMENTALES Y DE LAS LIBERTADES PÚBLICAS ARTÍCULO 15 Todos tienen derecho a la vida y a la integridad física y moral, sin que, en ningún caso, puedan ser sometidos a tortura ni a penas o tratos inhumanos o degradantes. Queda abolida la pena de muerte, salvo lo que puedan disponer las leyes penales militares para tiempos de guerra. ARTÍCULO 16 1. Se garantiza la libertad ideológica, religiosa y de culto de los individuos y las comunidades sin más limitación, en sus manifestaciones, que la necesaria para el mantenimiento del orden público protegido por la ley. 2. Nadie podrá ser obligado a declarar sobre su ideología, religión o creencias. 3. Ninguna confesión tendrá carácter estatal. Los poderes públicos tendrán en cuenta las creencias religiosas de la sociedad española y mantendrán las consiguientes relaciones de cooperación con la Iglesia Católica y las demás confesiones. ARTÍCULO 17 1. Toda persona tiene derecho a la libertad y a la seguridad. Nadie puede ser privado de su libertad, sino con la observancia de lo establecido en este artículo y en los casos y en la forma previstos en la ley. 2. La detención preventiva no podrá durar más del tiempo estrictamente necesario para la realización de las averiguaciones tendentes al esclarecimiento de los hechos, y, en todo caso, en el plazo máximo de setenta y dos horas, el detenido deberá ser puesto en libertad o a disposición de la autoridad judicial. 3. Toda persona detenida debe ser informada de forma inmediata, y de modo que le sea comprensible, de sus derechos y de las razones de su detención, no pudiendo ser obligada a declarar. Se garantiza la asistencia de abogado al detenido en las diligencias policiales y judiciales, en los términos que la ley establezca. 4. La ley regulará un procedimiento de «habeas corpus» para producir la inmediata puesta a disposición judicial de toda persona detenida ilegalmente. Asimismo, por ley se determinará el plazo máximo de duración de la prisión provisional. 3 \f ARTÍCULO 18 1. Se garantiza el derecho al honor, a la intimidad personal y familiar y a la propia imagen. 2. El domicilio es inviolable. Ninguna entrada o registro podrá hacerse en él sin consentimiento del titular o resolución judicial, salvo en caso de flagrante delito. 3. Se garantiza el secreto de las comunicaciones y, en especial, de las postales, telegráficas y telefónicas, salvo resolución judicial. 4. La ley limitará el uso de la informática para garantizar el honor y la intimidad personal y familiar de los ciudadanos y el pleno ejercicio de sus derechos. ARTÍCULO 19 Los españoles tienen derecho a elegir libremente su residencia y a circular por el territorio nacional. Asimismo, tienen derecho a entrar y salir libremente de España en los términos que la ley establezca. Este derecho no podrá ser limitado por motivos políticos o ideológicos. ARTÍCULO 20 1."
     },
-    "flashcards": [
-        { "id": "fc2-01", "anverso": "¿Qué reconoce el artículo 15 de la Constitución?", "reverso": "El derecho a la vida y a la integridad física y moral, y prohíbe la tortura y los tratos inhumanos o degradantes." },
-        { "id": "fc2-02", "anverso": "¿Está abolida la pena de muerte en España?", "reverso": "Sí, salvo lo que dispongan las leyes penales militares para tiempos de guerra." },
-        { "id": "fc2-03", "anverso": "¿Qué garantiza el artículo 16?", "reverso": "La libertad ideológica, religiosa y de culto de individuos y comunidades." },
-        { "id": "fc2-04", "anverso": "¿Puede obligarse a alguien a declarar sobre su religión?", "reverso": "No; nadie puede ser obligado a declarar sobre su ideología, religión o creencias." },
-        { "id": "fc2-05", "anverso": "¿Tiene alguna confesión carácter estatal?", "reverso": "No; ninguna confesión tendrá carácter estatal." },
-        { "id": "fc2-06", "anverso": "¿Cuál es la duración máxima de la detención preventiva?", "reverso": "El tiempo estrictamente necesario y, en todo caso, un máximo de 72 horas." },
-        { "id": "fc2-07", "anverso": "¿Qué ocurre transcurridas las 72 horas de detención?", "reverso": "El detenido debe ser puesto en libertad o a disposición de la autoridad judicial." },
-        { "id": "fc2-08", "anverso": "¿Qué procedimiento protege al detenido ilegalmente?", "reverso": "El procedimiento de habeas corpus." },
-        { "id": "fc2-09", "anverso": "¿Qué derechos garantiza el artículo 18?", "reverso": "El honor, la intimidad personal y familiar, la propia imagen y la inviolabilidad del domicilio." },
-        { "id": "fc2-10", "anverso": "¿Cuándo puede entrarse en un domicilio sin resolución judicial?", "reverso": "Con consentimiento del titular o en caso de flagrante delito." },
-        { "id": "fc2-11", "anverso": "¿Qué garantiza el artículo 18.3?", "reverso": "El secreto de las comunicaciones, salvo resolución judicial." },
-        { "id": "fc2-12", "anverso": "¿Qué reconoce el artículo 19?", "reverso": "El derecho a elegir libremente la residencia y a circular por el territorio nacional, y a entrar y salir de España." },
-        { "id": "fc2-13", "anverso": "¿Puede limitarse la libre circulación por motivos ideológicos?", "reverso": "No; ese derecho no puede limitarse por motivos políticos o ideológicos." },
-        { "id": "fc2-14", "anverso": "¿Qué libertades reconoce el artículo 20?", "reverso": "Las libertades de expresión, de creación, de cátedra y de información veraz." },
-        { "id": "fc2-15", "anverso": "¿Puede aplicarse censura previa a la libertad de expresión?", "reverso": "No; no puede restringirse mediante ningún tipo de censura previa." },
-        { "id": "fc2-16", "anverso": "¿Cómo puede acordarse el secuestro de una publicación?", "reverso": "Solo en virtud de resolución judicial." },
-        { "id": "fc2-17", "anverso": "¿Necesita autorización previa el derecho de reunión?", "reverso": "No; la reunión pacífica y sin armas no necesita autorización previa." },
-        { "id": "fc2-18", "anverso": "¿Cuándo puede prohibirse una manifestación?", "reverso": "Cuando existan razones fundadas de alteración del orden público con peligro para personas o bienes." },
-        { "id": "fc2-19", "anverso": "¿Qué asociaciones son ilegales según el artículo 22?", "reverso": "Las que persigan fines o utilicen medios tipificados como delito." },
-        { "id": "fc2-20", "anverso": "¿Qué asociaciones prohíbe expresamente la Constitución?", "reverso": "Las asociaciones secretas y las de carácter paramilitar." }
+    {
+      "titulo": "2. ARTÍCULO 21",
+      "contenido": "Se reconocen y protegen los derechos: a) A expresar y difundir libremente los pensamientos, ideas y opiniones mediante la palabra, el escrito o cualquier otro medio de reproducción. b) A la producción y creación literaria, artística, científica y técnica. c) A la libertad de cátedra. d) A comunicar o recibir libremente información veraz por cualquier medio de difusión. La ley regulará el derecho a la cláusula de conciencia y al secreto profesional en el ejercicio de estas libertades. 2. El ejercicio de estos derechos no puede restringirse mediante ningún tipo de censura previa. 3. La ley regulará la organización y el control parlamentario de los medios de comunicación social dependientes del Estado o de cualquier ente público y garantizará el acceso a dichos medios de los grupos sociales y políticos significativos, respetando el pluralismo de la sociedad y de las diversas lenguas de España. 4. Estas libertades tienen su límite en el respeto a los derechos reconocidos en este Título, en los preceptos de las leyes que lo desarrollen y, especialmente, en el derecho al honor, a la intimidad, a la propia imagen y a la protección de la juventud y de la infancia. 5. Sólo podrá acordarse el secuestro de publicaciones, grabaciones y otros medios de información en virtud de resolución judicial. ARTÍCULO 21 1. Se reconoce el derecho de reunión pacífica y sin armas. El ejercicio de este derecho no necesitará autorización previa. 2. En los casos de reuniones en lugares de tránsito público y manifestaciones se dará comunicación previa a la autoridad, que sólo podrá prohibirlas cuando existan razones fundadas de alteración del orden público, con peligro para personas o bienes. 4 \f ARTÍCULO 22 1. Se reconoce el derecho de asociación. 2. Las asociaciones que persigan fines o utilicen medios tipificados como delito son ilegales. 3. Las asociaciones constituidas al amparo de este artículo deberán inscribirse en un registro a los solos efectos de publicidad. 4. Las asociaciones sólo podrán ser disueltas o suspendidas en sus actividades en virtud de resolución judicial motivada. 5. Se prohíben las asociaciones secretas y las de carácter paramilitar. CAPÍTULO QUINTO DE LA SUSPENSIÓN DE LOS DERECHOS Y LIBERTADES ARTÍCULO 55 1. Los derechos reconocidos en los artículos 17, 18, apartados 2 y 3, artículos 19, 20, apartados 1, a) y d), y 5, artículos 21, 28, apartado 2, y artículo 37, apartado 2, podrán ser suspendidos cuando se acuerde la declaración del estado de excepción o de sitio en los términos previstos en la Constitución. Se exceptúa de lo establecido anteriormente el apartado 3 del artículo 17 para el supuesto de declaración de estado de excepción. 2. Una ley orgánica podrá determinar la forma y los casos en los que, de forma individual y con la necesaria intervención judicial y el adecuado control parlamentario, los derechos reconocidos en los artículos 17, apartado 2, y 18, apartados 2 y 3, pueden ser suspendidos para personas determinadas, en relación con las investigaciones correspondientes a la actuación de bandas armadas o elementos terroristas. La utilización injustificada o abusiva de las facultades reconocidas en dicha ley orgánica producirá responsabilidad penal, como violación de los derechos y libertades reconocidos por las leyes. 5 \f LEY ORGÁNICA 6/1984, DE 24 DE MAYO, REGULADORA DEL PROCEDIMIENTO DE «HABEAS CORPUS». ARTÍCULO PRIMERO. Mediante el procedimiento del «Habeas Corpus», regulado en la presente ley, se podrá obtener la inmediata puesta a disposición de la Autoridad judicial competente, de cualquier persona detenida ilegalmente."
+    },
+    {
+      "titulo": "3. ley orgánica que desarrolla los supuestos previstos en el art",
+      "contenido": "A los efectos de esta ley se consideran personas ilegalmente detenidas: a) Las que lo fueren por una autoridad, agente de la misma, funcionario público o particular, sin que concurran los supuestos legales, o sin haberse cumplido las formalidades prevenidas y requisitos exigidos por las leyes. b) Las que estén ilícitamente internadas en cualquier establecimiento o lugar. c) Las que lo estuvieran por plazo superior al señalado en las leyes, si transcurrido el mismo, no fuesen puestas en libertad o entregadas al Juez más próximo al lugar de la detención. d) Las privadas de libertad a quienes no les sean respetados los derechos que la Constitución y las leyes procesales garantizan a toda persona detenida. ARTÍCULO SEGUNDO. Es competente para conocer la solicitud de «Habeas Corpus» el Juez de Instrucción del lugar en que se encuentre la persona privada de libertad; si no constare, el del lugar en que se produzca la detención, y, en defecto de los anteriores, el del lugar donde se hayan tenido las últimas noticias sobre el paradero del detenido. Si la detención obedece a la aplicación de la ley orgánica que desarrolla los supuestos previstos en el art. 55.2 de la Constitución, el procedimiento deberá seguirse ante el Juez Central de Instrucción correspondiente. En el ámbito de la Jurisdicción Militar será competente para conocer de la solicitud de «Habeas Corpus» el Juez Togado Militar de Instrucción constituido en la cabecera de la circunscripción jurisdiccional en la que se efectuó la detención. ARTÍCULO TERCERO. Podrán instar el procedimiento de “Habeas Corpus” que esta ley establece: a) El privado de libertad, su cónyuge o persona unida por análoga relación de afectividad, descendientes, ascendientes, hermanos y, en su caso, respecto a los menores, sus representantes legales, y respecto a las personas con discapacidad con medidas de apoyo judiciales, la persona que preste su apoyo con facultad de representación específica para este acto concreto. b) El Ministerio Fiscal. c) El Defensor del Pueblo. d) El abogado defensor del privado de libertad. Asimismo, lo podrá iniciar, de oficio, el Juez competente a que se refiere el artículo anterior. ARTÍCULO CUARTO. El procedimiento se iniciará, salvo cuando se incoe de oficio, por medio de escrito o comparecencia, no siendo preceptiva la intervención de Abogado ni de Procurador. En dicho escrito o comparecencia deberán constar: a) El nombre y circunstancias personales del solicitante y de la persona para la que se solicita el amparo judicial regulado en esta ley. b) El lugar en que se halle el privado de libertad, autoridad o persona, bajo cuya custodia se encuentre, si fueren conocidos, y todas aquellas otras circunstancias que pudieran resultar relevantes. c) El motivo concreto por el que se solicita el «Habeas Corpus». 6 \f ARTÍCULO QUINTO. La autoridad gubernativa, agente de la misma o funcionario público, estarán obligados a poner inmediatamente en conocimiento del Juez competente la solicitud de «Habeas Corpus», formulada por la persona privada de libertad que se encuentre bajo su custodia. Si incumplieren esta obligación, serán apercibidos por el Juez, sin perjuicio de las responsabilidades penales y disciplinarias en que pudieran incurrir. ARTÍCULO SEXTO. Promovida la solicitud de «Habeas Corpus» el Juez examinará la concurrencia de los requisitos para su tramitación y dará traslado de la misma al Ministerio Fiscal. Seguidamente, mediante auto, acordará la incoación del procedimiento, o, en su caso, denegará la solicitud por ser ésta improcedente."
+    },
+    {
+      "titulo": "4. disposición se",
+      "contenido": "Dicho auto se notificará, en todo caso, al Ministerio Fiscal. Contra la resolución que en uno u otro caso se adopte, no cabrá recurso alguno. ARTÍCULO SÉPTIMO. En el auto de incoación, el Juez ordenará a la autoridad a cuya disposición se halle la persona privada de libertad o a aquél en cuyo poder se encuentre, que la ponga de manifiesto ante él, sin pretexto ni demora alguna o se constituirá en el lugar donde aquélla se encuentre. Antes de dictar resolución, oirá el Juez a la persona privada de libertad o, en su caso, a su representante legal y Abogado, si lo hubiera designado, así como al Ministerio Fiscal; acto seguido oirá en justificación de su proceder a la autoridad, agentes, funcionario público o representante de la institución o persona que hubiere ordenado o practicado la detención o internamiento y, en todo caso, a aquélla bajo cuya custodia se encontrase la persona privada de libertad; a todos ellos dará a conocer el Juez las declaraciones del privado de libertad. El Juez admitirá, si las estima pertinentes, las pruebas que aporten las personas a que se refiere el párrafo anterior y las que propongan que puedan practicarse en el acto. En el plazo de veinticuatro horas, contadas desde que sea dictado el auto de incoación, los Jueces practicarán todas las actuaciones a que se refiere este artículo y dictarán la resolución que proceda. ARTÍCULO OCTAVO. Practicadas las actuaciones a que se refiere el artículo anterior, el Juez, mediante auto motivado, adoptará seguidamente alguna de estas resoluciones: 1. Si estima que no se da ninguna de las circunstancias a que se refiere el artículo primero de esta ley, acordará el archivo de las actuaciones, declarando ser conforme a Derecho la privación de libertad y las circunstancias en que se está realizando. 2. Si estima que concurren alguna de las circunstancias del artículo primero de esta ley, se acordará en el acto alguna de las siguientes medidas: a) La puesta en libertad del privado de ésta, si lo fue ilegalmente. b) Que continúe la situación de privación de libertad de acuerdo con las disposiciones legales aplicables al caso, pero, si lo considerase necesario, en establecimiento distinto, o bajo la custodia de personas distintas a las que hasta entonces la detentaban. c) Que la persona privada de libertad sea puesta inmediatamente a disposición judicial, si ya hubiese transcurrido el plazo legalmente establecido para su detención. 7 \f REAL DECRETO DE 14 DE SEPTIEMBRE DE 1882 POR EL QUE SE APRUEBA LA LEY DE ENJUICIAMIENTO CRIMINAL TÍTULO VI DE LA CITACIÓN, DE LA DETENCIÓN Y DE LA PRISIÓN PROVISIONAL CAPÍTULO IV DEL EJERCICIO DEL DERECHO DE DEFENSA, DE LA ASISTENCIA DE ABOGADO Y DEL TRATAMIENTO DE LOS DETENIDOS Y PRESOS ARTÍCULO 520. 2.Toda persona detenida o presa será informada por escrito, en un lenguaje sencillo y accesible, en una lengua que comprenda y de forma inmediata, de los hechos que se le atribuyan y las razones motivadoras de su privación de libertad, así como de los derechos que le asisten y especialmente de los siguientes: j) Derecho a solicitar asistencia jurídica gratuita, procedimiento para hacerlo y condiciones para obtenerla."
+    },
+    {
+      "titulo": "5. 8",
+      "contenido": "8"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"El derecho a la vida y a la integridad f\"]\n  A --> N1[\"Ley Orgánica 6/1984, de 24 de mayo, regu\"]\n  A --> N2[\"ARTÍCULO 21\"]\n  A --> N3[\"ley orgánica que desarrolla los supuesto\"]\n  A --> N4[\"disposición se\"]\n  A --> N5[\"8\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "El derecho a la vida y a la integridad física y m…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "Ley Orgánica 6/1984, de 24 de mayo, reg…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "ARTÍCULO 21",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "ley orgánica que desarrolla los supuest…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "disposición se",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "8",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p2-01",
-            "enunciado": "El artículo 15 de la Constitución reconoce el derecho a:",
-            "opciones": ["La libertad de expresión", "La vida y la integridad física y moral", "La intimidad personal", "La libre circulación"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 15 reconoce el derecho de todos a la vida y a la integridad física y moral."
-        },
-        {
-            "id": "p2-02",
-            "enunciado": "La pena de muerte en España está:",
-            "opciones": ["Vigente para delitos graves", "Abolida, salvo leyes penales militares en tiempo de guerra", "Abolida sin excepciones", "Decidida por cada Comunidad Autónoma"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 15 abole la pena de muerte salvo lo que dispongan las leyes penales militares para tiempos de guerra."
-        },
-        {
-            "id": "p2-03",
-            "enunciado": "La detención preventiva tendrá una duración máxima de:",
-            "opciones": ["24 horas", "48 horas", "72 horas", "96 horas"],
-            "respuestaCorrecta": 2,
-            "explicacion": "El artículo 17.2 fija un máximo de 72 horas, tras las cuales el detenido debe ser liberado o puesto a disposición judicial."
-        },
-        {
-            "id": "p2-04",
-            "enunciado": "Según el artículo 16, ninguna confesión religiosa:",
-            "opciones": ["Puede tener templos", "Tendrá carácter estatal", "Puede manifestarse en público", "Está permitida"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 16.3 establece que ninguna confesión tendrá carácter estatal."
-        },
-        {
-            "id": "p2-05",
-            "enunciado": "La entrada en un domicilio sin resolución judicial solo es posible:",
-            "opciones": ["Por orden de un superior policial", "Con consentimiento del titular o en flagrante delito", "Durante el día", "Si lo autoriza el alcalde"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 18.2 permite la entrada con consentimiento del titular o en caso de flagrante delito, además de con resolución judicial."
-        },
-        {
-            "id": "p2-06",
-            "enunciado": "La libertad de expresión del artículo 20:",
-            "opciones": ["Admite censura previa en casos graves", "No puede restringirse mediante censura previa", "Requiere autorización administrativa", "Solo protege a los periodistas"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 20.2 prohíbe que estas libertades se restrinjan mediante ningún tipo de censura previa."
-        },
-        {
-            "id": "p2-07",
-            "enunciado": "El derecho de reunión pacífica y sin armas:",
-            "opciones": ["Necesita autorización previa", "No necesita autorización previa", "Está prohibido en lugares públicos", "Solo lo autoriza el delegado del Gobierno"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 21.1 establece que el ejercicio del derecho de reunión no necesita autorización previa."
-        },
-        {
-            "id": "p2-08",
-            "enunciado": "Las asociaciones solo pueden ser disueltas o suspendidas en sus actividades:",
-            "opciones": ["Por decisión gubernativa", "En virtud de resolución judicial motivada", "Por acuerdo del Pleno municipal", "Automáticamente tras un año"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 22.4 dispone que las asociaciones solo pueden ser disueltas o suspendidas en virtud de resolución judicial motivada."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc2-01",
+      "pregunta": "¿Qué derecho se garantiza en el artículo 15 de la Constitución Española?",
+      "respuesta": "Derecho a la vida y a la integridad física y moral"
+    },
+    {
+      "id": "fc2-02",
+      "pregunta": "¿Qué libertad se reconoce en el artículo 16 de la Constitución Española?",
+      "respuesta": "Libertad ideológica, religiosa y de culto"
+    },
+    {
+      "id": "fc2-03",
+      "pregunta": "¿Qué derecho se garantiza en el artículo 17 de la Constitución Española?",
+      "respuesta": "Derecho a la libertad y a la seguridad"
+    },
+    {
+      "id": "fc2-04",
+      "pregunta": "¿Qué derecho se reconoce en el artículo 18 de la Constitución Española?",
+      "respuesta": "Derecho al honor, a la intimidad personal y familiar y a la propia imagen"
+    },
+    {
+      "id": "fc2-05",
+      "pregunta": "¿Qué derecho se garantiza en el artículo 19 de la Constitución Española?",
+      "respuesta": "Derecho a elegir libremente su residencia y a circular por el territorio nacional"
+    },
+    {
+      "id": "fc2-06",
+      "pregunta": "¿Qué derechos se reconocen en el artículo 20 de la Constitución Española?",
+      "respuesta": "Derecho a expresar y difundir libremente los pensamientos, ideas y opiniones, y derecho a la libertad de cátedra"
+    },
+    {
+      "id": "fc2-07",
+      "pregunta": "¿Qué derecho se reconoce en el artículo 21 de la Constitución Española?",
+      "respuesta": "Derecho de reunión pacífica y sin armas"
+    },
+    {
+      "id": "fc2-08",
+      "pregunta": "¿Qué derecho se garantiza en el artículo 22 de la Constitución Española?",
+      "respuesta": "Derecho de asociación"
+    },
+    {
+      "id": "fc2-09",
+      "pregunta": "¿Qué tipo de asociaciones son ilegales según el artículo 22 de la Constitución Española?",
+      "respuesta": "Las asociaciones que persigan fines o utilicen medios tipificados como delito"
+    },
+    {
+      "id": "fc2-10",
+      "pregunta": "¿Qué derecho se suspende en caso de declaración del estado de excepción o de sitio según el artículo 55 de la Constitución Española?",
+      "respuesta": "Derechos reconocidos en los artículos 17, 18, apartados 2 y 3, artículos 19, 20, apartados 1, a) y d), y 5, artículos 21, 28, apartado 2, y artículo 37, apartado 2"
+    },
+    {
+      "id": "fc2-11",
+      "pregunta": "¿Qué tipo de censura previa no puede restringir el ejercicio de los derechos reconocidos en el artículo 20 de la Constitución Española?",
+      "respuesta": "Cualquier tipo de censura previa"
+    },
+    {
+      "id": "fc2-12",
+      "pregunta": "¿Qué derecho se garantiza en el artículo 18 de la Constitución Española?",
+      "respuesta": "Derecho al secreto de las comunicaciones"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p2-01",
+      "enunciado": "¿Qué artículo de la Constitución Española garantiza el derecho a la vida y a la integridad física y moral?",
+      "opciones": [
+        "Artículo 14",
+        "Artículo 15",
+        "Artículo 16",
+        "Artículo 17"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El artículo 15 de la Constitución Española garantiza el derecho a la vida y a la integridad física y moral."
+    },
+    {
+      "id": "p2-02",
+      "enunciado": "¿Qué libertad se reconoce en el artículo 16 de la Constitución Española?",
+      "opciones": [
+        "Libertad ideológica",
+        "Libertad religiosa",
+        "Libertad de culto",
+        "Todas las anteriores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 16 de la Constitución Española reconoce la libertad ideológica, religiosa y de culto."
+    },
+    {
+      "id": "p2-03",
+      "enunciado": "¿Qué derecho se garantiza en el artículo 17 de la Constitución Española?",
+      "opciones": [
+        "Derecho a la libertad",
+        "Derecho a la seguridad",
+        "Derecho a la vida",
+        "Derecho a la integridad física y moral"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 17 de la Constitución Española garantiza el derecho a la libertad y a la seguridad."
+    },
+    {
+      "id": "p2-04",
+      "enunciado": "¿Qué derecho se reconoce en el artículo 18 de la Constitución Española?",
+      "opciones": [
+        "Derecho al honor",
+        "Derecho a la intimidad personal y familiar",
+        "Derecho a la propia imagen",
+        "Todas las anteriores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 18 de la Constitución Española reconoce el derecho al honor, a la intimidad personal y familiar y a la propia imagen."
+    },
+    {
+      "id": "p2-05",
+      "enunciado": "¿Qué derecho se garantiza en el artículo 19 de la Constitución Española?",
+      "opciones": [
+        "Derecho a elegir libremente su residencia",
+        "Derecho a circular por el territorio nacional",
+        "Derecho a entrar y salir libremente de España",
+        "Todas las anteriores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 19 de la Constitución Española garantiza el derecho a elegir libremente su residencia y a circular por el territorio nacional."
+    },
+    {
+      "id": "p2-06",
+      "enunciado": "¿Qué derechos se reconocen en el artículo 20 de la Constitución Española?",
+      "opciones": [
+        "Derecho a expresar y difundir libremente los pensamientos, ideas y opiniones",
+        "Derecho a la libertad de cátedra",
+        "Derecho a comunicar o recibir libremente información veraz",
+        "Todas las anteriores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 20 de la Constitución Española reconoce el derecho a expresar y difundir libremente los pensamientos, ideas y opiniones, y el derecho a la libertad de cátedra."
+    },
+    {
+      "id": "p2-07",
+      "enunciado": "¿Qué derecho se reconoce en el artículo 21 de la Constitución Española?",
+      "opciones": [
+        "Derecho de reunión pacífica y sin armas",
+        "Derecho de manifestación",
+        "Derecho de asociación",
+        "Derecho de expresión"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 21 de la Constitución Española reconoce el derecho de reunión pacífica y sin armas."
+    },
+    {
+      "id": "p2-08",
+      "enunciado": "¿Qué derecho se garantiza en el artículo 22 de la Constitución Española?",
+      "opciones": [
+        "Derecho de asociación",
+        "Derecho de reunión",
+        "Derecho de manifestación",
+        "Derecho de expresión"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 22 de la Constitución Española garantiza el derecho de asociación."
+    },
+    {
+      "id": "p2-09",
+      "enunciado": "¿Qué tipo de asociaciones son ilegales según el artículo 22 de la Constitución Española?",
+      "opciones": [
+        "Las asociaciones que persigan fines o utilicen medios tipificados como delito",
+        "Las asociaciones que no se inscriban en un registro",
+        "Las asociaciones que no tengan fines legítimos",
+        "Todas las anteriores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 22 de la Constitución Española establece que las asociaciones que persigan fines o utilicen medios tipificados como delito son ilegales."
+    },
+    {
+      "id": "p2-10",
+      "enunciado": "¿Qué derecho se suspende en caso de declaración del estado de excepción o de sitio según el artículo 55 de la Constitución Española?",
+      "opciones": [
+        "Derechos reconocidos en los artículos 17, 18, apartados 2 y 3, artículos 19, 20, apartados 1, a) y d), y 5, artículos 21, 28, apartado 2, y artículo 37, apartado 2",
+        "Derechos reconocidos en los artículos 17, 18, apartados 2 y 3, artículos 19, 20, apartados 1, a) y d), y 5, artículos 21, 28, apartado 2, y artículo 37, apartado 1",
+        "Derechos reconocidos en los artículos 17, 18, apartados 2 y 3, artículos 19, 20, apartados 1, a) y d), y 5, artículos 21, 28, apartado 1, y artículo 37, apartado 2",
+        "Todas las anteriores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 55 de la Constitución Española establece que en caso de declaración del estado de excepción o de sitio, se suspenden los derechos reconocidos en los artículos 17, 18, apartados 2 y 3, artículos 19, 20, apartados 1, a) y d), y 5, artículos 21, 28, apartado 2, y artículo 37, apartado 2."
+    }
+  ]
 }

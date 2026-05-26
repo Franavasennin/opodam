@@ -1,157 +1,417 @@
 {
-    "id": 20,
-    "titulo": "La policía judicial. Integrantes de la policía judicial y funciones. El atestado policial: contenido y partes. Conocimiento de la Autoridad judicial o del Ministerio Fiscal: plazos y sanciones por incumplimiento",
-    "bloque": "especifico",
-    "secciones": [
-        {
-            "id": "s20-1",
-            "titulo": "La policía judicial: concepto",
-            "contenido": "La policía judicial es la función consistente en la averiguación de los delitos públicos que se cometieren en el territorio, la práctica de las diligencias necesarias para comprobarlos y descubrir a los delincuentes, y la recogida de todos los efectos, instrumentos o pruebas del delito a disposición de la autoridad judicial. La Constitución, en su artículo 126, establece que la policía judicial depende de los Jueces, de los Tribunales y del Ministerio Fiscal en sus funciones de averiguación del delito y descubrimiento y aseguramiento del delincuente. Se regula por la LO 2/1986, la Ley de Enjuiciamiento Criminal y el Real Decreto 769/1987 sobre regulación de la Policía Judicial."
-        },
-        {
-            "id": "s20-2",
-            "titulo": "Integrantes y funciones de la policía judicial",
-            "contenido": "En sentido amplio, la función de policía judicial corresponde a todos los miembros de las Fuerzas y Cuerpos de Seguridad, cualquiera que sea su dependencia, cuando sean requeridos para prestar auxilio a la autoridad judicial o al Ministerio Fiscal. En sentido estricto, existen unidades orgánicas de policía judicial, integradas por funcionarios del Cuerpo Nacional de Policía y de la Guardia Civil con formación especializada. Sus funciones incluyen la investigación de los delitos, la averiguación y detención de los presuntos responsables, el auxilio a la autoridad judicial y fiscal, la realización de los actos de investigación que le encomienden y la prevención de la delincuencia. Las Policías Locales participan en la función de policía judicial en colaboración con las Fuerzas y Cuerpos de Seguridad del Estado."
-        },
-        {
-            "id": "s20-3",
-            "titulo": "El atestado policial: contenido y partes",
-            "contenido": "El atestado es el documento en el que la policía judicial hace constar las diligencias que practica con motivo de la investigación de un hecho presuntamente delictivo. Según la Ley de Enjuiciamiento Criminal, los funcionarios de policía judicial extenderán el atestado especificando con la mayor exactitud los hechos averiguados, las declaraciones e informes recibidos y cuantas circunstancias hubiesen observado. Sus partes habituales son: encabezamiento o diligencia de inicio, cuerpo del atestado (diligencias de inspección ocular, declaraciones, recogida de efectos, informes), diligencias de detención y de información de derechos en su caso, y la diligencia de remisión. El atestado tiene, en principio, valor de denuncia, salvo las partes que constituyan prueba pericial o documental."
-        },
-        {
-            "id": "s20-4",
-            "titulo": "Conocimiento de la Autoridad judicial o del Ministerio Fiscal",
-            "contenido": "Quienes por razón de sus cargos tuvieren noticia de algún delito público están obligados a denunciarlo. Los funcionarios de policía judicial deben comunicar de inmediato a la autoridad judicial o al Ministerio Fiscal la iniciación de sus actuaciones y poner en su conocimiento los hechos. Cuando exista persona detenida, esta debe ser puesta a disposición de la autoridad judicial en el plazo máximo de setenta y dos horas desde la detención. El atestado y las diligencias practicadas se remiten a la autoridad judicial competente. La policía judicial actúa bajo la dependencia funcional de Jueces, Tribunales y Ministerio Fiscal."
-        },
-        {
-            "id": "s20-5",
-            "titulo": "Plazos y consecuencias del incumplimiento",
-            "contenido": "El incumplimiento de los deberes de la policía judicial puede dar lugar a responsabilidad disciplinaria y, en su caso, penal. La Ley de Enjuiciamiento Criminal y el Real Decreto 769/1987 prevén que los funcionarios integrantes de las unidades de policía judicial que incumplan sus obligaciones o las órdenes recibidas de la autoridad judicial o fiscal incurran en responsabilidad disciplinaria, que se exige a través del régimen disciplinario de su cuerpo de procedencia, sin perjuicio de la posible responsabilidad penal por delitos como la omisión del deber de perseguir delitos o la denegación de auxilio. La autoridad judicial o el Ministerio Fiscal pueden instar la incoación del expediente disciplinario correspondiente."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e20-1",
-            "titulo": "La policía judicial",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Policia judicial] --> B[Depende de Jueces, Tribunales y Fiscal]\n    A --> C[Sentido amplio: todas las FCS]\n    A --> D[Sentido estricto: unidades organicas]\n    D --> E[Policia Nacional y Guardia Civil]"
-        },
-        {
-            "id": "e20-2",
-            "titulo": "El atestado policial",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Atestado] --> B[Encabezamiento o diligencia de inicio]\n    A --> C[Cuerpo: diligencias e informes]\n    A --> D[Detencion e informacion de derechos]\n    A --> E[Diligencia de remision]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "La policía judicial", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Concepto", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Integrantes y funciones", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "El atestado policial", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Conocimiento de la autoridad judicial", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Plazos e incumplimiento", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Artículo 126 de la Constitución", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Unidades orgánicas especializadas", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Valor de denuncia", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Partes del atestado", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Detenido a disposición judicial en 72 h", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Responsabilidad disciplinaria y penal", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "RD 769/1987", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n4", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 20,
+  "titulo": "La policía judicial. Integrantes de la policía judicial y funciones. El atestado policial: contenido y partes. Conocimiento de la Autoridad judicial o del Ministerio Fiscal: plazos y sanciones por incumplimiento.",
+  "bloque": "especifico",
+  "secciones": [
+    {
+      "titulo": "1. REAL DECRETO DE 14 DE SEPTIEMBRE DE 1882 POR EL QUE",
+      "contenido": "BIBLIOGRAFÍA • CONSTITUCIÓN ESPAÑOLA o Art. 104 o Art. 126 • LECRIM - REAL DECRETO DE 14 DE SEPTIEMBRE DE 1882 POR EL QUE SE APRUEBA LA LEY DE ENJUICIAMIENTO CRIMINAL. o Art. 282-287 o Art. 292-298 o Art. 769-772 • LEY ORGÁNICA 2/1986, DE 13 DE MARZO, DE FUERZAS Y CUERPOS DE SEGURIDAD. o Art. 1-2 o Art. 29-30 o Art. 33 o Art. 53 • LOPJ - LEY ORGÁNICA 6/1985, DE 1 DE JULIO, DEL PODER JUDICIAL. o Art. 547-549 • REAL DECRETO 769/1987, DE 19 DE JUNIO, SOBRE REGULACIÓN DE LA POLICÍA JUDICIAL. o Art. 1–9 o Art. 18-23 o Art. 28 o Art. 31-32 o Art. 34-35 2 \f CONSTITUCIÓN ESPAÑOLA TÍTULO IV DEL GOBIERNO Y DE LA ADMINISTRACIÓN ARTÍCULO 104 1. Las Fuerzas y Cuerpos de seguridad, bajo la dependencia del Gobierno, tendrán como misión proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana. 2. Una ley orgánica determinará las funciones, principios básicos de actuación y estatutos de las Fuerzas y Cuerpos de seguridad. TÍTULO VI DEL PODER JUDICIAL ARTÍCULO 126 La policía judicial depende de los Jueces, de los Tribunales y del Ministerio Fiscal en sus funciones de averiguación del delito y descubrimiento y aseguramiento del delincuente, en los términos que la ley establezca. TÍTULO VIII DE LA ORGANIZACIÓN TERRITORIAL DEL ESTADO CAPÍTULO TERCERO DE LAS COMUNIDADES AUTÓNOMAS ARTÍCULO 149 1. El Estado tiene competencia exclusiva sobre las siguientes materias: 29.ª Seguridad pública, sin perjuicio de la posibilidad de creación de policías por las Comunidades Autónomas en la forma que se establezca en los respectivos Estatutos en el marco de lo que disponga una ley orgánica 3 \f LECRIM - REAL DECRETO DE 14 DE SEPTIEMBRE DE 1882 POR EL QUE SE APRUEBA LA LEY DE ENJUICIAMIENTO CRIMINAL. LIBRO II DEL SUMARIO TÍTULO III DE LA POLICÍA JUDICIAL ARTÍCULO 282. La Policía Judicial tiene por objeto y será obligación de todos los que la componen, averiguar los delitos públicos que se cometieren en su territorio o demarcación; practicar, según sus atribuciones, las diligencias necesarias para comprobarlos y descubrir a los delincuentes, y recoger todos los efectos, instrumentos o pruebas del delito de cuya desaparición hubiere peligro, poniéndolos a disposición de la autoridad judicial. Cuando las víctimas entren en contacto con la Policía Judicial, cumplirá con los deberes de información que prevé la legislación vigente. Asimismo, llevarán a cabo una valoración de las circunstancias particulares de las víctimas para determinar provisionalmente qué medidas de protección deben ser adoptadas para garantizarles una protección adecuada, sin perjuicio de la decisión final que corresponderá adoptar al Juez o Tribunal. Si el delito fuera de los que sólo pueden perseguirse a instancia de parte legítima, tendrán la misma obligación expresada en el párrafo anterior, si se les requiere al efecto. La ausencia de denuncia no impedirá la práctica de las primeras diligencias de prevención y aseguramiento de los delitos relativos a la propiedad intelectual e industrial. ARTÍCULO 282 BIS. 1. A los fines previstos en el artículo anterior y cuando se trate de investigaciones que afecten a actividades propias de la delincuencia organizada, el Juez de Instrucción competente o el Ministerio Fiscal dando cuenta inmediata al Juez, podrán autorizar a funcionarios de la Policía Judicial, mediante resolución fundada y teniendo en cuenta su necesidad a los fines de la investigación, a actuar bajo identidad supuesta y a adquirir y transportar los objetos, efectos e instrumentos del delito y diferir la incautación de los mismos."
     },
-    "flashcards": [
-        { "id": "fc20-01", "anverso": "¿En qué consiste la función de policía judicial?", "reverso": "En la averiguación de los delitos, la práctica de diligencias para comprobarlos y el descubrimiento de los delincuentes." },
-        { "id": "fc20-02", "anverso": "¿Qué artículo de la Constitución regula la policía judicial?", "reverso": "El artículo 126 de la Constitución." },
-        { "id": "fc20-03", "anverso": "¿De quién depende la policía judicial en sus funciones de averiguación del delito?", "reverso": "De los Jueces, los Tribunales y el Ministerio Fiscal." },
-        { "id": "fc20-04", "anverso": "¿Qué real decreto regula la Policía Judicial?", "reverso": "El Real Decreto 769/1987, sobre regulación de la Policía Judicial." },
-        { "id": "fc20-05", "anverso": "¿Quién ejerce la función de policía judicial en sentido amplio?", "reverso": "Todos los miembros de las Fuerzas y Cuerpos de Seguridad cuando son requeridos." },
-        { "id": "fc20-06", "anverso": "¿Quién integra las unidades orgánicas de policía judicial?", "reverso": "Funcionarios del Cuerpo Nacional de Policía y de la Guardia Civil con formación especializada." },
-        { "id": "fc20-07", "anverso": "¿Participan las Policías Locales en la policía judicial?", "reverso": "Sí, en colaboración con las Fuerzas y Cuerpos de Seguridad del Estado." },
-        { "id": "fc20-08", "anverso": "¿Qué es el atestado policial?", "reverso": "El documento en el que la policía judicial hace constar las diligencias practicadas en la investigación de un hecho delictivo." },
-        { "id": "fc20-09", "anverso": "¿Qué debe especificar el atestado?", "reverso": "Los hechos averiguados, las declaraciones e informes recibidos y las circunstancias observadas." },
-        { "id": "fc20-10", "anverso": "Cita partes del atestado policial.", "reverso": "Encabezamiento o diligencia de inicio, cuerpo del atestado y diligencia de remisión." },
-        { "id": "fc20-11", "anverso": "¿Qué valor procesal tiene el atestado?", "reverso": "Tiene, en principio, valor de denuncia." },
-        { "id": "fc20-12", "anverso": "¿Quién tiene noticia de un delito público está obligado a hacer qué?", "reverso": "A denunciarlo." },
-        { "id": "fc20-13", "anverso": "¿A quién comunica la policía judicial el inicio de sus actuaciones?", "reverso": "A la autoridad judicial o al Ministerio Fiscal, de inmediato." },
-        { "id": "fc20-14", "anverso": "¿En qué plazo se pone al detenido a disposición judicial?", "reverso": "En el plazo máximo de 72 horas desde la detención." },
-        { "id": "fc20-15", "anverso": "¿Bajo qué dependencia actúa la policía judicial?", "reverso": "Bajo la dependencia funcional de Jueces, Tribunales y Ministerio Fiscal." },
-        { "id": "fc20-16", "anverso": "¿Qué responsabilidad genera el incumplimiento de los deberes de la policía judicial?", "reverso": "Responsabilidad disciplinaria y, en su caso, penal." },
-        { "id": "fc20-17", "anverso": "¿A través de qué régimen se exige la responsabilidad disciplinaria?", "reverso": "Del régimen disciplinario del cuerpo de procedencia del funcionario." },
-        { "id": "fc20-18", "anverso": "¿Quién puede instar el expediente disciplinario contra un policía judicial?", "reverso": "La autoridad judicial o el Ministerio Fiscal." },
-        { "id": "fc20-19", "anverso": "Cita un delito por incumplimiento de deberes policiales.", "reverso": "La omisión del deber de perseguir delitos o la denegación de auxilio." },
-        { "id": "fc20-20", "anverso": "¿Qué se remite a la autoridad judicial competente?", "reverso": "El atestado y las diligencias practicadas." }
+    {
+      "titulo": "2. Ley Orgánica 19/1994, de 23 de diciembre",
+      "contenido": "La identidad supuesta será otorgada por el Ministerio del Interior por el plazo de seis meses prorrogables por períodos de igual duración, quedando legítimamente habilitados para actuar en todo lo relacionado con la investigación concreta y a participar en el tráfico jurídico y social bajo tal identidad. La resolución por la que se acuerde deberá consignar el nombre verdadero del agente y la identidad supuesta con la que actuará en el caso concreto. La resolución será reservada y deberá conservarse fuera de las actuaciones con la debida seguridad. La información que vaya obteniendo el agente encubierto deberá ser puesta a la mayor brevedad posible en conocimiento de quien autorizó la investigación. Asimismo, dicha información deberá aportarse al proceso en su integridad y se valorará en conciencia por el órgano judicial competente. 4 \f 2. Los funcionarios de la Policía Judicial que hubieran actuado en una investigación con identidad falsa de conformidad a lo previsto en el apartado 1, podrán mantener dicha identidad cuando testifiquen en el proceso que pudiera derivarse de los hechos en que hubieran intervenido y siempre que así se acuerde mediante resolución judicial motivada, siéndole también de aplicación lo previsto en la Ley Orgánica 19/1994, de 23 de diciembre. Ningún funcionario de la Policía Judicial podrá ser obligado a actuar como agente encubierto. 3. Cuando las actuaciones de investigación puedan afectar a los derechos fundamentales, el agente encubierto deberá solicitar del órgano judicial competente las autorizaciones que, al respecto, establezca la Constitución y la Ley, así como cumplir las demás previsiones legales aplicables. 4. A los efectos señalados en el apartado 1 de este artículo, se considerará como delincuencia organizada la asociación de tres o más personas para realizar, de forma permanente o reiterada, conductas que tengan como fin cometer alguno o algunos de los delitos siguientes: a) Delitos de obtención, tráfico ilícito de órganos humanos y trasplante de los mismos, previstos en el artículo 156 bis del Código Penal. b) Delito de secuestro de personas previsto en los artículos 164 a 166 del Código Penal. c) Delito de trata de seres humanos previsto en el artículo 177 bis del Código Penal. d) Delitos relativos a la prostitución previstos en los artículos 187 a 189 del Código Penal. e) Delitos contra el patrimonio y contra el orden socioeconómico previstos en los artículos 237, 243, 244, 248 y 301 del Código Penal. f) Delitos relativos a la propiedad intelectual e industrial previstos en los artículos 270 a 277 del Código Penal. g) Delitos contra los derechos de los trabajadores previstos en los artículos 312 y 313 del Código Penal. h) Delitos contra los derechos de los ciudadanos extranjeros previstos en el artículo 318 bis del Código Penal. i) Delitos de tráfico de especies de flora o fauna amenazada previstos en los artículos 332 y 334 del Código Penal. j) Delito de tráfico de material nuclear y radiactivo previsto en el artículo 345 del Código Penal. k) Delitos contra la salud pública previstos en los artículos 368 a 373 del Código Penal. l) Delitos de falsificación de moneda, previsto en el artículo 386 del Código Penal, y de falsificación de tarjetas de crédito o débito o cheques de viaje, previsto en el artículo 399 bis del Código Penal. m) Delito de tráfico y depósito de armas, municiones o explosivos previsto en los artículos 566 a 568 del Código Penal. n) Delitos de terrorismo previstos en los artículos 572 a 578 del Código Penal."
+    },
+    {
+      "titulo": "3. artículo 2",
+      "contenido": "o) Delitos contra el patrimonio histórico previstos en el artículo 2.1.e de la Ley Orgánica 12/1995, de 12 de diciembre, de represión del contrabando. 5 \f 5. El agente encubierto estará exento de responsabilidad criminal por aquellas actuaciones que sean consecuencia necesaria del desarrollo de la investigación, siempre que guarden la debida proporcionalidad con la finalidad de la misma y no constituyan una provocación al delito. Para poder proceder penalmente contra el mismo por las actuaciones realizadas a los fines de la investigación, el Juez competente para conocer la causa deberá, tan pronto tenga conocimiento de la actuación de algún agente encubierto en la misma, requerir informe relativo a tal circunstancia de quien hubiere autorizado la identidad supuesta, en atención al cual resolverá lo que a su criterio proceda. 6. El juez de instrucción podrá autorizar a funcionarios de la Policía Judicial para actuar bajo identidad supuesta en comunicaciones mantenidas en canales cerrados de comunicación con el fin de esclarecer alguno de los delitos a los que se refiere el apartado 4 de este artículo o cualquier delito de los previstos en el artículo 588 ter a. El agente encubierto informático, con autorización específica para ello, podrá intercambiar o enviar por sí mismo archivos ilícitos por razón de su contenido y analizar los resultados de los algoritmos aplicados para la identificación de dichos archivos ilícitos. 7. En el curso de una investigación llevada a cabo mediante agente encubierto, el juez competente podrá autorizar la obtención de imágenes y la grabación de las conversaciones que puedan mantenerse en los encuentros previstos entre el agente y el investigado, aun cuando se desarrollen en el interior de un domicilio. ARTÍCULO 283. Constituirán la Policía judicial y serán auxiliares de los Jueces y Tribunales competentes en materia penal y del Ministerio fiscal, quedando obligados a seguir las instrucciones que de aquellas autoridades reciban a efectos de la investigación de los delitos y persecución de los delincuentes: Primero. Las Autoridades administrativas encargadas de la seguridad pública y de la persecución de todos los delitos o de algunos especiales. Segundo. Los empleados o subalternos de la policía de seguridad, cualquiera que sea su denominación. Tercero. Los Alcaldes, Tenientes de Alcalde y Alcaldes de barrio. Cuarto. Los Jefes, Oficiales e individuos de la Guardia Civil o de cualquier otra fuerza destinada a la persecución de malhechores. Quinto. Los Serenos, Celadores y cualesquiera otros Agentes municipales de policía urbana o rural. Sexto. Los Guardas de montes, campos y sembrados, jurados o confirmados por la Administración. Séptimo. Los funcionarios del Cuerpo especial de Prisiones. Octavo. Los Agentes judiciales y los subalternos de los Tribunales y Juzgados. Noveno. El personal dependiente de la Jefatura Central de Tráfico, encargado de la investigación técnica de los accidentes. ARTÍCULO 284. 1. Inmediatamente que los funcionarios de la Policía judicial tuvieren conocimiento de un delito público o fueren requeridos para prevenir la instrucción de diligencias por razón de algún delito privado, lo participarán a la autoridad judicial o al representante del Ministerio Fiscal, si pudieren hacerlo sin cesar en la práctica de las diligencias de prevención. En otro caso, lo harán así que las hubieren terminado. 6 \f 2."
+    },
+    {
+      "titulo": "4. disposición del",
+      "contenido": "No obstante, cuando no exista autor conocido del delito la Policía Judicial conservará el atestado a disposición del Ministerio Fiscal y de la autoridad judicial, sin enviárselo, salvo que concurra alguna de las siguientes circunstancias: a) Que se trate de delitos contra la vida, contra la integridad física, contra la libertad e indemnidad sexuales o de delitos relacionados con la corrupción; b) Que se practique cualquier diligencia después de transcurridas setenta y dos horas desde la apertura del atestado y éstas hayan tenido algún resultado; o c) Que el Ministerio Fiscal o la autoridad judicial soliciten la remisión. De conformidad con el derecho reconocido en el artículo 6 de la Ley 4/2015, de 27 de abril, del Estatuto de la Víctima del delito, la Policía Judicial comunicará al denunciante que en caso de no ser identificado el autor en el plazo de setenta y dos horas, las actuaciones no se remitirán a la autoridad judicial, sin perjuicio de su derecho a reiterar la denuncia ante la fiscalía o el juzgado de instrucción. 3. Si hubieran recogido armas, instrumentos o efectos de cualquier clase que pudieran tener relación con el delito y se hallen en el lugar en que éste se cometió o en sus inmediaciones, o en poder del reo o en otra parte conocida, extenderán diligencia expresiva del lugar, tiempo y ocasión en que se encontraren, que incluirá una descripción minuciosa para que se pueda formar idea cabal de los mismos y de las circunstancias de su hallazgo, que podrá ser sustituida por un reportaje gráfico. La diligencia será firmada por la persona en cuyo poder fueren hallados. 4. La incautación de efectos que pudieran pertenecer a una víctima del delito será comunicada a la misma. La persona afectada por la incautación podrá recurrir en cualquier momento la medida ante el juez de instrucción de conformidad con lo dispuesto en el párrafo tercero del artículo 334. ARTÍCULO 285. Si concurriere algún funcionario de Policía judicial de categoría superior a la del que estuviese actuando, deberá éste darle conocimiento de cuanto hubiese practicado, poniéndose desde luego a su disposición. ARTÍCULO 286. Cuando el Juez de instrucción o el municipal se presentaren a formar el sumario, cesarán las diligencias de prevención que estuviere practicando cualquier Autoridad o agente de policía; debiendo éstos entregarlas en el acto a dicho Juez, así como los efectos relativos al delito que se hubiesen recogido, y poniendo a su disposición a los detenidos, si los hubiese. ARTÍCULO 287. Los funcionarios que constituyen la Policía judicial practicarán sin dilación, según sus atribuciones respectivas, las diligencias que los funcionarios del Ministerio fiscal les encomienden para la comprobación del delito y averiguación de los delincuentes y todas las demás que durante el curso de la causa les encargaren los Jueces de instrucción y municipales. ARTÍCULO 292. Los funcionarios de Policía judicial extenderán, bien en papel sellado, bien en papel común, un atestado de las diligencias que practiquen, en el cual especificarán con la mayor exactitud los hechos por ellos averiguados, insertando las declaraciones e informes recibidos y anotando todas las circunstancias que hubiesen observado y pudiesen ser prueba o indicio del delito. La Policía Judicial remitirá con el atestado un informe dando cuenta de las detenciones anteriores y de la existencia de requisitorias para su llamamiento y busca cuando así conste en sus bases de datos. 7 \f ARTÍCULO 293."
+    },
+    {
+      "titulo": "5. ARTÍCULO 294",
+      "contenido": "El atestado será firmado por el que lo haya extendido, y si usare sello lo estampará con su rúbrica en todas las hojas. Las personas presentes, peritos y testigos que hubieren intervenido en las diligencias relacionadas en el atestado serán invitadas a firmarlo en la parte a ellos referente. Si no lo hicieren, se expresará la razón. ARTÍCULO 294. Si no pudiere redactar el atestado el funcionario a quien correspondiese hacerlo, se sustituirá por una relación verbal circunstanciada, que reducirá a escrito de un modo fehaciente el funcionario del Ministerio fiscal, el Juez de instrucción o el municipal a quien deba presentarse el atestado, manifestándose el motivo de no haberse redactado en la forma ordinaria. ARTÍCULO 295. En ningún caso los funcionarios de Policía Judicial podrán dejar transcurrir más de veinticuatro horas sin dar conocimiento a la autoridad judicial o al Ministerio Fiscal de las diligencias que hubieran practicado, salvo en los supuestos de fuerza mayor y en el previsto en el apartado 2 del artículo 284. Los que infrinjan esta disposición serán corregidos disciplinariamente con multa de 250 a 1.000 pesetas, si la omisión no mereciere la calificación de delito, y al propio tiempo será considerada dicha infracción como falta grave la primera vez y como falta muy grave las siguientes. Los que, sin exceder el tiempo de las veinticuatro horas, demorasen más de lo necesario el dar conocimiento, serán corregidos disciplinariamente con una multa de 100 a 350 pesetas, y además esta infracción constituirá a efectos del expediente personal del interesado, falta leve la primera vez, grave las dos siguientes y muy grave las restantes. ARTÍCULO 296. Cuando hubieren practicado diligencias por orden o requerimiento de la Autoridad judicial o del Ministerio fiscal, comunicarán el resultado obtenido en los plazos que en la orden o en el requerimiento se hubiesen fijado. ARTÍCULO 297. Los atestados que redactaren y las manifestaciones que hicieren los funcionarios de Policía judicial, a consecuencia de las averiguaciones que hubiesen practicado, se considerarán denuncias para los efectos legales. Las demás declaraciones que prestaren deberán ser firmadas, y tendrán el valor de declaraciones testificales en cuanto se refieran a hechos de conocimiento propio. En todo caso, los funcionarios de Policía judicial están obligados a observar estrictamente las formalidades legales en cuantas diligencias practiquen, y se abstendrán bajo su responsabilidad de usar medios de averiguación que la Ley no autorice. ARTÍCULO 298. Los Jueces de instrucción y los Fiscales calificarán en un registro reservado el comportamiento de los funcionarios que bajo su inspección prestan servicios de Policía judicial; y cada semestre, con referencia a dicho registro, comunicarán a los superiores de cada uno de aquéllos, para los efectos a que hubiere lugar, la calificación razonada de su comportamiento. Cuando los funcionarios de Policía judicial que hubieren de ser corregidos disciplinariamente con arreglo a esta Ley fuesen de categoría superior a la de la Autoridad judicial o fiscal que entendiesen en las diligencias en que se hubiere cometido la falta, se abstendrán éstos de imponer por sí mismos la corrección, limitándose a poner lo ocurrido en conocimiento del jefe inmediato del que debiere ser corregido. 8 \f LIBRO IV DE LOS PROCEDIMIENTOS ESPECIALES TÍTULO II DEL PROCEDIMIENTO ABREVIADO CAPÍTULO II DE LAS ACTUACIONES DE LA POLICÍA JUDICIAL Y DEL MINISTERIO FISCAL ARTÍCULO 769."
+    },
+    {
+      "titulo": "6. Título III",
+      "contenido": "Sin perjuicio de lo establecido en el Título III del Libro II de esta Ley, tan pronto como tenga conocimiento de un hecho que revista caracteres de delito, la Policía judicial observará las reglas establecidas en este capítulo. ARTÍCULO 770. La Policía Judicial acudirá de inmediato al lugar de los hechos y realizará las siguientes diligencias: 1º. Requerirá la presencia de cualquier facultativo o personal sanitario que fuere habido para prestar, si fuere necesario, los oportunos auxilios al ofendido. El requerido, aunque sólo lo fuera verbalmente, que no atienda sin justa causa el requerimiento será sancionado con una multa de 500 a 5.000 euros, sin perjuicio de la responsabilidad criminal en que hubiera podido incurrir. 2º. Acompañará al acta de constancia fotografías o cualquier otro soporte magnético o de reproducción de la imagen, cuando sea pertinente para el esclarecimiento del hecho punible y exista riesgo de desaparición de sus fuentes de prueba. 3º. Recogerá y custodiará en todo caso los efectos, instrumentos o pruebas del delito de cuya desaparición hubiere peligro, para ponerlos a disposición de la autoridad judicial. 4º. Si se hubiere producido la muerte de alguna persona y el cadáver se hallare en la vía pública, en la vía férrea o en otro lugar de tránsito, lo trasladará al lugar próximo que resulte más idóneo dentro de las circunstancias, restableciendo el servicio interrumpido y dando cuenta de inmediato a la autoridad judicial. En las situaciones excepcionales en que haya de adoptarse tal medida de urgencia, se reseñará previamente la posición del interfecto, obteniéndose fotografías y señalando sobre el lugar la situación exacta que ocupaba. 5º. Tomará los datos personales y dirección de las personas que se encuentren en el lugar en que se cometió el hecho, así como cualquier otro dato que ayude a su identificación y localización, tales como lugar habitual de trabajo, números de teléfono fijo o móvil, número de fax o dirección de correo electrónico. 6º. Intervendrá, de resultar procedente, el vehículo y retendrá el permiso de circulación del mismo y el permiso de conducir de la persona a la que se impute el hecho. ARTÍCULO 771. En el tiempo imprescindible y, en todo caso, durante el tiempo de la detención, si la hubiere, la Policía Judicial practicará las siguientes diligencias: 1º. Cumplirá con los deberes de información a las víctimas que prevé la legislación vigente. En particular, informará al ofendido y al perjudicado por el delito de forma escrita de los derechos que les asisten de acuerdo con lo establecido en los artículos 109 y 110. Se instruirá al ofendido de su derecho a mostrarse parte en la causa sin necesidad de formular querella y, tanto al ofendido como al perjudicado, de su derecho a nombrar Abogado o instar el nombramiento de Abogado de oficio en caso de ser titulares del derecho a la asistencia jurídica gratuita, de su derecho a, una vez personados en la causa, tomar conocimiento de lo actuado, sin perjuicio de lo dispuesto en los artículos 301 y 302, e instar lo que a su derecho convenga. Asimismo, se les informará de que, de no personarse en la causa y no hacer renuncia ni reserva de acciones civiles, el Ministerio Fiscal las ejercitará si correspondiere. 9 \f Informará asimismo a la persona ofendida o perjudicada de que puede optar por relacionarse con la Administración de Justicia por los medios del artículo 162 de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil, recabando y consignando sucintamente su respuesta."
+    },
+    {
+      "titulo": "7. artículo 520",
+      "contenido": "La información de derechos al ofendido o perjudicado regulada en este artículo, cuando se refiera a los delitos contra la propiedad intelectual o industrial, y, en su caso, su citación o emplazamiento en los distintos trámites del proceso, se realizará a aquellas personas, entidades u organizaciones que ostenten la representación legal de los titulares de dichos derechos. 2º. Informará en la forma más comprensible al investigado no detenido de cuáles son los hechos que se le atribuyen y de los derechos que le asisten. En particular, le instruirá de los derechos reconocidos en los apartados a), b), c) y e) del artículo 520.2. ARTÍCULO 772. 1. Los miembros de la Policía Judicial requerirán el auxilio de otros miembros de las Fuerzas y Cuerpos de Seguridad cuando fuera necesario para el desempeño de las funciones que por esta Ley se les encomiendan. 2. La Policía extenderá el atestado de acuerdo con las normas generales de esta Ley y lo entregará al Juzgado competente, pondrá a su disposición a los detenidos, si los hubiere, y remitirá copia al Ministerio Fiscal. 10 \f LEY ORGÁNICA 2/1986, DE 13 DE MARZO, DE FUERZAS Y CUERPOS DE SEGURIDAD. TÍTULO I DE LOS CUERPOS Y FUERZAS DE SEGURIDAD CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO PRIMERO. 1. La Seguridad Pública es competencia exclusiva del Estado. Su mantenimiento corresponde al Gobierno de la Nación. 2. Las Comunidades Autónomas participarán en el mantenimiento de la Seguridad Pública en los términos que establezcan los respectivos Estatutos y en el marco de esta Ley. 3. Las Corporaciones Locales participarán en el mantenimiento de la seguridad pública en los términos establecidos en la Ley Reguladora de las Bases de Régimen Local y en el marco de esta Ley. 4. El mantenimiento de la Seguridad Pública se ejercerá por las distintas Administraciones Públicas a través de las Fuerzas y Cuerpos de Seguridad. ARTÍCULO SEGUNDO. Son Fuerzas y Cuerpos de Seguridad: a) Las Fuerzas y Cuerpos de Seguridad del Estado dependientes del Gobierno de la Nación. b) Los Cuerpos de Policía dependientes de las Comunidades Autónomas. c) Los Cuerpos de Policía dependientes de las Corporaciones Locales. CAPÍTULO V DE LA ORGANIZACIÓN DE UNIDADES DE POLICÍA JUDICIAL ARTÍCULO VEINTINUEVE. 1. Las funciones de Policía Judicial que se mencionan en el artículo 126 de la Constitución serán ejercidas por las Fuerzas y Cuerpos de Seguridad del Estado, a través de las Unidades que se regulan en el presente capítulo. 2. Para el cumplimiento de dicha función tendrán carácter colaborador de las Fuerzas y Cuerpos de Seguridad del Estado el personal de Policía de las Comunidades Autónomas y de las Corporaciones Locales. ARTÍCULO TREINTA. 1. El Ministerio del Interior organizará con funcionarios de las Fuerzas y Cuerpos de Seguridad del Estado que cuenten con la adecuada formación especializada, Unidades de Policía Judicial, atendiendo a criterios territoriales y de especialización delictual, a las que corresponderá esta función con carácter permanente y especial. 2. Las referidas Unidades orgánicas de Policía Judicial podrán adscribirse, en todo o en parte, por el Ministerio del Interior, oído el Consejo General del Poder Judicial, a determinados Juzgados y Tribunales. De igual manera podrán adscribirse al Ministerio Fiscal, oído el Fiscal General del Estado. 11 \f ARTÍCULO TREINTA Y TRES."
+    },
+    {
+      "titulo": "8. TÍTULO V",
+      "contenido": "Los funcionarios adscritos a las Unidades de Policía Judicial desempeñarán esa función con carácter exclusivo, sin perjuicio de que puedan desarrollar también las misiones de prevención de la delincuencia y demás que se les encomienden, cuando las circunstancias lo requieran, de entre las correspondientes a las Fuerzas y Cuerpos de Seguridad del Estado. TÍTULO V DE LAS POLICÍAS LOCALES ARTÍCULO CINCUENTA Y TRES. 1. Los Cuerpos de Policía Local deberán ejercer las siguientes funciones: a) Proteger a las Autoridades de las Corporaciones Locales, y vigilancia o custodia de sus edificios e instalaciones. b) Ordenar, señalizar y dirigir el tráfico en el casco urbano, de acuerdo con lo establecido en las normas de circulación. c) Instruir atestados por accidentes de circulación dentro del casco urbano. d) Policía Administrativa, en lo relativo a las Ordenanzas, Bandos y demás disposiciones municipales dentro del ámbito de su competencia. e) Participar en las funciones de Policía Judicial, en la forma establecida en el artículo 29.2 de esta Ley. f) La prestación de auxilio, en los casos de accidente, catástrofe o calamidad pública, participando, en la forma prevista en las Leyes, en la ejecución de los planes de Protección Civil. g) Efectuar diligencias de prevención y cuantas actuaciones tiendan a evitar la comisión de actos delictivos en el marco de colaboración establecido en las Juntas de Seguridad. h) Vigilar los espacios públicos y colaborar con las Fuerzas y Cuerpos de Seguridad del Estado y con la Policía de las Comunidades Autónomas en la protección de las manifestaciones y el mantenimiento del orden en grandes concentraciones humanas, cuando sean requeridos para ello. i) Cooperar en la resolución de los conflictos privados cuando sean requeridos para ello. 2. Las actuaciones que practiquen los Cuerpos de Policía Local en el ejercicio de las funciones previstas en los apartados c) y g) precedentes deberán ser comunicadas a las Fuerzas y Cuerpos de Seguridad del Estado competentes. 3. En los municipios de gran población y en las Ciudades con Estatuto de Autonomía podrá asignarse, por el Pleno de la Corporación o por sus respectivas Asambleas, al ejercicio exclusivo de las funciones previstas en el párrafo b) del apartado 1 a parte de los funcionarios pertenecientes a las mismas, que tendrán la consideración de agentes de la autoridad, subordinados a los miembros de los respectivos Cuerpos de Policía Local, sin integrarse en las Fuerzas y Cuerpos de Seguridad y de manera que ello no comporte un incremento en el número de efectivos ni en los costes de personal. Los funcionarios integrantes de los Cuerpos referidos en el párrafo anterior se regirán por las normas contenidas en la Ley 30/1984, de 2 de agosto, de Medidas para la Reforma de la Función Pública, y las demás normas que se dicten en desarrollo y aplicación de la misma. 12 \f LOPJ - LEY ORGÁNICA 6/1985, DE 1 DE JULIO, DEL PODER JUDICIAL. LIBRO VII DEL MINISTERIO FISCAL, LA FISCALÍA EUROPEA Y DEMÁS PERSONAS E INSTITUCIONES QUE COOPERAN CON LA ADMINISTRACIÓN DE JUSTICIA TÍTULO III DE LA POLICÍA JUDICIAL ARTÍCULO 547. La función de la Policía Judicial comprende el auxilio a los juzgados y tribunales y al Ministerio Fiscal en la averiguación de los delitos y en el descubrimiento y aseguramiento de los delincuentes."
+    },
+    {
+      "titulo": "9. ARTÍCULO 548",
+      "contenido": "Esta función competerá, cuando fueren requeridos para prestarla, a todos los miembros de las Fuerzas y Cuerpos de Seguridad, tanto si dependen del Gobierno central como de las comunidades autónomas o de los entes locales, dentro del ámbito de sus respectivas competencias. ARTÍCULO 548. 1. Se establecerán unidades de Policía Judicial que dependerán funcionalmente de las autoridades judiciales y del Ministerio Fiscal en el desempeño de todas las actuaciones que aquéllas les encomienden. 2. Por ley se fijará la organización de estas unidades y los medios de selección y régimen jurídico de sus miembros. ARTÍCULO 549. 1. Corresponden específicamente a las unidades de Policía Judicial las siguientes funciones: a) La averiguación acerca de los responsables y circunstancias de los hechos delictivos y la detención de los primeros, dando cuenta seguidamente a la autoridad judicial y fiscal, conforme a lo dispuesto en las leyes. b) El auxilio a la autoridad judicial y fiscal en cuantas actuaciones deba realizar fuera de su sede y requieran la presencia policial. c) La realización material de las actuaciones que exijan el ejercicio de la coerción y ordenare la autoridad judicial o fiscal. d) La garantía del cumplimiento de las órdenes y resoluciones de la autoridad judicial o fiscal. e) Cualesquiera otras de la misma naturaleza en que sea necesaria su cooperación o auxilio y lo ordenare la autoridad judicial o fiscal. 2. En ningún caso podrán encomendarse a los miembros de dichas unidades la práctica de actuaciones que no sean las propias de la Policía Judicial o las derivadas de las mismas. 13 \f REAL DECRETO 769/1987, DE 19 DE JUNIO, SOBRE REGULACIÓN DE LA POLICÍA JUDICIAL. CAPÍTULO I DE LA FUNCIÓN DE POLICÍA JUDICIAL ART. 1.º Las funciones generales de policía judicial corresponden a todos los miembros de las Fuerzas y Cuerpos de Seguridad cualquiera que sea su naturaleza y dependencia, en la medida en que deben prestar la colaboración requerida por la Autoridad Judicial o el Ministerio Fiscal en actuaciones encaminadas a la averiguación de delitos o descubrimiento y aseguramiento de delincuentes, con estricta sujeción al ámbito de sus respectivas competencias, y sin perjuicio de lo dispuesto en el artículo 283 de la Ley de Enjuiciamiento Criminal. ART. 2.º Los miembros de las Fuerzas y Cuerpos de Seguridad, en sus funciones de policía judicial, desarrollarán los cometidos expresados en el artículo 1.º, a requerimiento de la Autoridad Judicial, del Ministerio Fiscal o de sus superiores policiales o por propia iniciativa a través de estos últimos, en los términos previstos en los artículos siguientes. ART. 3.º Los Jueces, Tribunales y miembros del Ministerio Fiscal podrán, en defecto de Unidades de Policía Judicial, con carácter transitorio o en supuestos de urgencia y siempre con sujeción a su respectivo ámbito legal y territorial de atribuciones, encomendar a los miembros de las Fuerzas y Cuerpos de Seguridad la práctica de concretas diligencias de investigación en los términos previstos en el artículo 288 de la Ley de Enjuiciamiento Criminal. ART."
+    },
+    {
+      "titulo": "10. CAPÍTULO II",
+      "contenido": "4.º Todos los componentes de las Fuerzas y Cuerpos de Seguridad, cualquiera que sean su naturaleza y dependencia, practicarán por su propia iniciativa y según sus respectivas atribuciones, las primeras diligencias de prevención y aseguramiento así que tengan noticia de la perpetración del hecho presuntamente delictivo, y la ocupación y custodia de los objetos que provinieren del delito o estuvieren relacionados con su ejecución, dando cuenta de todo ello en los términos legales a la Autoridad Judicial o Fiscal, directamente o a través de las Unidades Orgánicas de Policía Judicial. ART. 5.º Cualquiera que sea el funcionario policial que haya iniciado la investigación, habrá de cesar en la misma al comparecer para hacerse cargo de ella la Autoridad Judicial o el Fiscal encargado de las actuaciones, directamente o a través de la correspondiente Unidad Orgánica de Policía Judicial, a quienes hará entrega de las diligencias practicadas y de los efectos intervenidos, así como de las personas cuya detención se hubiese acordado. CAPÍTULO II DE LAS UNIDADES DE POLICÍA JUDICIAL ART. 6.º La Policía Judicial, con la composición y estructuración que en esta norma se determinan, desarrollará, bajo la dependencia funcional directa de los Jueces y Tribunales y del Ministerio Fiscal, funciones de averiguación del delito y descubrimiento y aseguramiento del delincuente, con arreglo a lo dispuesto en la Ley. 14 \f ART. 7.º Constituyen la Policía Judicial en sentido estricto las Unidades Orgánicas previstas en el artículo 30.1 de la Ley Orgánica de Fuerzas y Cuerpos de Seguridad integradas por miembros del Cuerpo Nacional de Policía y de la Guardia Civil. ART. 8.º Dichas Unidades actuarán conforme a lo dispuesto en el artículo 5.° de la Ley de Fuerzas y Cuerpos de Seguridad y con sujeción a los principios y normas contenidos en el capítulo siguiente de este Real Decreto. ART. 9.º Las Unidades Orgánicas de la Policía Judicial se estructurarán con arreglo a criterios de distribución territorial sobre una base provincial. También podrán constituirse secciones de las mismas en aquellas poblaciones cuyo índice de criminalidad así lo aconseje. Asimismo, se constituirán Unidades con ámbito de actuación que exceda el provincial, por razones de especialización delictual o de técnicas de investigación. CAPÍTULO III DE LOS CRITERIOS Y NORMAS DE ACTUACIÓN DE LAS UNIDADES ORGÁNICAS DE LA POLICÍA JUDICIAL SECCIÓN 2.ª PRINCIPIOS QUE CARACTERIZAN SU ACTUACIÓN Y FORMAS EN QUE LA MISMA SE EXTERIORIZA ART. 18. A las Unidades Orgánicas de la Policía Judicial corresponderá la función de investigación criminal con carácter permanente y especial. A tal fin, contarán con los efectivos y medios necesarios para el eficaz desenvolvimiento de sus cometidos, estableciéndose, en aquellas Unidades en cuyo ámbito de actuación el nivel de delincuencia lo hiciere preciso, los correspondientes equipos de especialización delictual. ART. 19. Los Jueces, Tribunales o Fiscales competentes no podrán encargar a la Unidades de la Policía Judicial otras funciones que las previstas en el artículo 445.1 de la Ley Orgánica del Poder Judicial, sin perjuicio de las que con carácter excepcional puedan encomendárseles con arreglo al artículo 33 de la Ley Orgánica de Fuerzas y Cuerpos de Seguridad. De estas últimas, se dará cuenta a la Comisión Provincial Coordinación de la Policía Judicial. ART. 20."
+    },
+    {
+      "titulo": "11. CAPÍTULO IV",
+      "contenido": "Cuando los funcionarios integrantes de las Unidades Orgánicas de la Policía Judicial realicen diligencias de investigación criminal formalmente concretadas a un supuesto presuntamente delictivo, pero con carácter previo a la apertura de la correspondiente actuación judicial, actuarán bajo la dependencia del Ministerio Fiscal. A tal efecto, darán cuenta de sus investigaciones a la Fiscalía correspondiente que, en cualquier momento, podrá hacerse cargo de la dirección de aquéllas, en cuyo caso los miembros de la Policía Judicial actuarán bajo su dependencia directa y practicarán sin demora las diligencias que el Fiscal les encomiende para la averiguación del delito y el descubrimiento y aseguramiento del delincuente. 15 \f ART. 21. El Juez o Tribunal competente, una vez iniciado el procedimiento penal, y el Fiscal encargado de las actuaciones, en los casos a que ese refiere el artículo anterior, se entenderán directamente, y sin necesidad de acudir a instancias administrativas superiores, con el Jefe de la Unidad correspondiente, sea del Cuerpo Nacional de Policía o de la Guardia Civil, para encomendarle la práctica de cualquier investigación o la realización de otras misiones propias de la Policía Judicial. El responsable policial requerido habrá de disponer lo que sea preciso para el eficaz cumplimiento del servicio, participando a la Autoridad Judicial o Fiscal los funcionarios que habrán de llevar a efecto la investigación ordenada. Igualmente, podrá la Autoridad Judicial o Fiscal ordenar que comparezcan ante su presencia, cuantas veces lo considere conveniente el o los concretos funcionarios policiales a quienes dicha Jefatura haya encargado la ejecución, con el fin de impartir las instrucciones que estime pertinentes, indicar las líneas de actuación y controlar el cumplimiento de sus cometidos o la evolución de sus investigaciones. ART. 22. Excepcionalmente, para realizar actuaciones o pesquisas que, por su trascendencia o complejidad, requieran la permanente adscripción de funcionarios o de medios pertenecientes a grupos policiales especializados, no integrados en la correspondiente Unidad Orgánica, o cuya investigación haya de extenderse a varias provincias con ámbito territorial superior al de la Autoridad Judicial o Fiscal que ordene la investigación, el encargo habrá de cursarse por conducto del Presidente del Tribunal Supremo o del Fiscal General del Estado, del Presidente o Fiscal de la Audiencia Nacional o de los del Tribunal Superior de Justicia respectivo. Cuando se trate de la adscripción permanente a una concreta investigación de funcionarios integrados en la correspondiente Unidad Orgánica, en caso de discrepancia, resolverá el Jefe de la correspondiente Unidad Orgánica, previo informe de la Comisión Provincial de Coordinación de la Policía Judicial. CAPÍTULO IV DE LAS UNIDADES DE LA POLICÍA JUDICIAL ADSCRITAS A DETERMINADOS JUZGADOS, TRIBUNALES O FISCALÍAS SECCIÓN 1.ª DE LA COMPOSICIÓN Y RÉGIMEN DE LAS UNIDADES ADSCRITAS ART. 23. El Ministerio del Interior, previo informe favorable del Consejo General del Poder Judicial o a su propuesta, podrá asignar con carácter permanente y estable a los Juzgados y Tribunales que por su ritmo de actividades lo requieran Unidades de Policía Judicial especialmente adscritas a los mismos. De igual manera se adscribirán a aquellas Fiscalías que se estimen precisas, oído el Fiscal General del Estado y atendiendo preferentemente a aquellas con respecto a las cuales exista propuesta o informe favorable de éste."
+    },
+    {
+      "titulo": "12. CAPÍTULO V",
+      "contenido": "16 \f SECCIÓN 2.ª DE LAS ATRIBUCIONES Y COMETIDOS DE LAS UNIDADES ADSCRITAS ART. 28. Las unidades especialmente adscritas, en su labor de asistencia directa a los órganos del orden jurisdiccional penal y muy en especial al Juzgado y Fiscal de Guardia, desempeñarán cometidos de investigación criminal especializada propios de una Policía científica. Dentro de este ámbito de funciones podrá encomendárseles la práctica de las siguientes: a) Inspecciones oculares. b) Aportación de primeros datos, averiguación de domicilios y paraderos y emisión de informes de solvencia o de conducta. c) Emisión, incluso verbal, de informes periciales provisionales, pero de urgente necesidad para adoptar decisiones judiciales que no admiten dilación. d) Intervención técnica en levantamiento de cadáveres. e) Recogida de pruebas. f) Actuaciones de inmediata intervención. g) Cualesquiera otras de similar naturaleza a las anteriores. h) Ejecución de órdenes inmediatas de Presidentes, Jueces y Fiscales. CAPÍTULO V DE LAS COMISIONES DE COORDINACIÓN DE LA POLICÍA JUDICIAL SECCIÓN 1.ª DE SU COMPOSICIÓN ART. 31. Se crean las Comisiones Nacional y Provinciales de Coordinación de la Policía Judicial con el fin de armonizar y lograr la unidad de dirección en las fuerzas policiales adscritas a la investigación criminal. ART. 32. La Comisión Nacional de Coordinación de la Policía Judicial, estará integrada por: a) El Presidente del Tribunal Supremo y del Consejo General del Poder Judicial, que la presidirá cuando asista personalmente. b) El Ministro de Justicia. c) El Ministro del Interior. d) El Fiscal General del Estado. e) El Secretario de Estado para la Seguridad. f) Un Vocal del Consejo General del Poder Judicial, nombrado y separado libremente por el Pleno de dicho órgano. g) Un miembro de la Carrera Judicial nombrado y separado por el Consejo General del Poder Judicial, que tenga, al menos, la categoría de Magistrado. h) Un representante de cada una de las Comunidades Autónomas con competencia estatutaria para la protección de las personas y bienes y para el mantenimiento del orden público, que ejerzan efectivamente funciones de policía judicial. En caso de ausencia personal del Presidente del Tribunal Supremo y del Consejo General del Poder Judicial, ostentará la presidencia el miembro de la Comisión a quien corresponda por razón de precedencia. 17 \f ART. 34. Las Comisiones Provinciales de Coordinación de la Policía Judicial estarán compuestas por: a) El Presidente de la Audiencia Provincial, que la presidirá. b) El Fiscal Jefe de la Audiencia. c) El Magistrado Juez Decano de los Juzgados de Primera Instancia e Instrucción de la capital de la provincia. d) El Secretario Coordinador o la Secretaria Coordinadora Provincial. e) El Jefe de la Unidad Orgánica de la Policía Judicial del Cuerpo Nacional de Policía. f) El Jefe de la Unidad Orgánica de Policía Judicial de la Guardia Civil. g) En el caso de Comunidades Autónomas con competencia estatutaria para la protección de las personas y bienes y para el mantenimiento del orden público, y que ejerzan efectivamente funciones de policía judicial, el responsable de la misma a nivel provincial. ART. 35. Eventualmente podrán incorporarse a las Comisiones Nacionales y Provinciales, para el tratamiento de materias concretas o para realizar tareas de auxilio técnico y documentación, otras Autoridades o funcionarios, cuyo criterio o asesoramiento se estime necesario. Igualmente, podrán constituirse Comités técnicos para el estudio de temas específicos."
+    },
+    {
+      "titulo": "13. artículo 13",
+      "contenido": "El nombramiento de Secretario de la Comisión se regirá por lo dispuesto en el artículo 13 de la Ley de Procedimiento Administrativo. 18"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"La policía judicial. Integrantes de la p\"]\n  A --> N1[\"REAL DECRETO DE 14 DE SEPTIEMBRE DE 1882\"]\n  A --> N2[\"Ley Orgánica 19/1994, de 23 de diciembre\"]\n  A --> N3[\"artículo 2\"]\n  A --> N4[\"disposición del\"]\n  A --> N5[\"ARTÍCULO 294\"]\n  A --> N6[\"Título III\"]\n  A --> N7[\"artículo 520\"]\n  A --> N8[\"TÍTULO V\"]\n  A --> N9[\"ARTÍCULO 548\"]\n  A --> N10[\"CAPÍTULO II\"]\n  A --> N11[\"CAPÍTULO IV\"]\n  A --> N12[\"CAPÍTULO V\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "La policía judicial. Integrantes de la policía ju…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "REAL DECRETO DE 14 DE SEPTIEMBRE DE 188…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "Ley Orgánica 19/1994, de 23 de diciembre",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "artículo 2",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "disposición del",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "ARTÍCULO 294",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "Título III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "artículo 520",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "TÍTULO V",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "ARTÍCULO 548",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "CAPÍTULO II",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "CAPÍTULO IV",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s12",
+        "texto": "CAPÍTULO V",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s13",
+        "texto": "artículo 13",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p20-01",
-            "enunciado": "La policía judicial depende, en sus funciones de averiguación del delito, de:",
-            "opciones": ["El Gobierno", "Los Jueces, Tribunales y Ministerio Fiscal", "El Ministro del Interior", "Los Alcaldes"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 126 de la Constitución establece que la policía judicial depende de los Jueces, los Tribunales y el Ministerio Fiscal."
-        },
-        {
-            "id": "p20-02",
-            "enunciado": "El artículo de la Constitución que regula la policía judicial es el:",
-            "opciones": ["104", "117", "126", "149"],
-            "respuestaCorrecta": 2,
-            "explicacion": "El artículo 126 de la Constitución regula la policía judicial."
-        },
-        {
-            "id": "p20-03",
-            "enunciado": "Las unidades orgánicas de policía judicial las integran funcionarios de:",
-            "opciones": ["Solo las Policías Locales", "El Cuerpo Nacional de Policía y la Guardia Civil", "El Ejército", "Las Comunidades Autónomas únicamente"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las unidades orgánicas de policía judicial las integran funcionarios del Cuerpo Nacional de Policía y de la Guardia Civil."
-        },
-        {
-            "id": "p20-04",
-            "enunciado": "El atestado policial es:",
-            "opciones": ["Una sentencia", "El documento donde la policía judicial hace constar las diligencias practicadas", "Una orden judicial", "Un informe pericial"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El atestado es el documento en el que la policía judicial hace constar las diligencias practicadas en la investigación."
-        },
-        {
-            "id": "p20-05",
-            "enunciado": "El atestado policial tiene, en principio, valor de:",
-            "opciones": ["Prueba plena", "Denuncia", "Sentencia", "Resolución administrativa"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El atestado tiene, en principio, valor de denuncia, salvo las partes que constituyan prueba pericial o documental."
-        },
-        {
-            "id": "p20-06",
-            "enunciado": "El detenido debe ser puesto a disposición judicial en un plazo máximo de:",
-            "opciones": ["24 horas", "48 horas", "72 horas", "96 horas"],
-            "respuestaCorrecta": 2,
-            "explicacion": "Cuando exista detenido, debe ser puesto a disposición de la autoridad judicial en el plazo máximo de 72 horas."
-        },
-        {
-            "id": "p20-07",
-            "enunciado": "El incumplimiento de los deberes de la policía judicial puede generar responsabilidad:",
-            "opciones": ["Solo civil", "Disciplinaria y, en su caso, penal", "Únicamente política", "Ninguna"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El incumplimiento de los deberes de la policía judicial puede dar lugar a responsabilidad disciplinaria y, en su caso, penal."
-        },
-        {
-            "id": "p20-08",
-            "enunciado": "Las Policías Locales, respecto de la policía judicial:",
-            "opciones": ["No tienen ninguna función", "Participan en colaboración con las FCS del Estado", "La dirigen en exclusiva", "Solo instruyen sentencias"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las Policías Locales participan en la función de policía judicial en colaboración con las Fuerzas y Cuerpos de Seguridad del Estado."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      },
+      {
+        "desde": "root",
+        "hasta": "s12"
+      },
+      {
+        "desde": "root",
+        "hasta": "s13"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc20-01",
+      "pregunta": "¿A quién depende la policía judicial?",
+      "respuesta": "Depende de los Jueces, de los Tribunales y del Ministerio Fiscal"
+    },
+    {
+      "id": "fc20-02",
+      "pregunta": "¿Cuál es el objeto de la policía judicial?",
+      "respuesta": "Averiguar los delitos públicos y descubrir a los delincuentes"
+    },
+    {
+      "id": "fc20-03",
+      "pregunta": "¿Qué debe hacer la policía judicial cuando las víctimas entran en contacto con ella?",
+      "respuesta": "Cumplir con los deberes de información y valorar las circunstancias particulares de las víctimas"
+    },
+    {
+      "id": "fc20-04",
+      "pregunta": "¿Qué autorización es necesaria para que la policía judicial actúe con identidad supuesta?",
+      "respuesta": "Resolución fundada del Juez de Instrucción competente o del Ministerio Fiscal"
+    },
+    {
+      "id": "fc20-05",
+      "pregunta": "¿Cuál es el plazo de validez de la identidad supuesta?",
+      "respuesta": "Seis meses prorrogables por períodos de igual duración"
+    },
+    {
+      "id": "fc20-06",
+      "pregunta": "¿Qué debe hacer el agente encubierto con la información obtenida?",
+      "respuesta": "Ponerla a la mayor brevedad posible en conocimiento de quien autorizó la investigación"
+    },
+    {
+      "id": "fc20-07",
+      "pregunta": "¿Qué derechos fundamentales deben ser respetados por el agente encubierto?",
+      "respuesta": "Los establecidos en la Constitución y la Ley"
+    },
+    {
+      "id": "fc20-08",
+      "pregunta": "¿Qué delitos se consideran como delincuencia organizada?",
+      "respuesta": "Delitos de obtención, tráfico ilícito de órganos humanos, secuestro de personas, trata de seres humanos y delitos contra el patrimonio y contra el orden socioeconómico"
+    },
+    {
+      "id": "fc20-09",
+      "pregunta": "¿Qué debe hacer la policía judicial cuando se trate de investigaciones que afecten a actividades propias de la delincuencia organizada?",
+      "respuesta": "Actuar bajo identidad supuesta y adquirir y transportar los objetos, efectos e instrumentos del delito"
+    },
+    {
+      "id": "fc20-10",
+      "pregunta": "¿Qué es lo que se debe conservar fuera de las actuaciones con la debida seguridad?",
+      "respuesta": "La resolución por la que se acuerde la identidad supuesta"
+    },
+    {
+      "id": "fc20-11",
+      "pregunta": "¿Qué debe hacer el agente encubierto cuando testifique en el proceso?",
+      "respuesta": "Poder mantener la identidad supuesta si así se acuerda mediante resolución judicial motivada"
+    },
+    {
+      "id": "fc20-12",
+      "pregunta": "¿Qué es lo que no puede hacer ningún funcionario de la Policía Judicial?",
+      "respuesta": "Ser obligado a actuar como agente encubierto"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p20-01",
+      "enunciado": "¿A quién depende la policía judicial?",
+      "opciones": [
+        "A los Jueces",
+        "A los Tribunales",
+        "A los funcionarios del Ministerio del Interior",
+        "A los funcionarios del Ministerio Fiscal"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La policía judicial depende de los Jueces, de los Tribunales y del Ministerio Fiscal en sus funciones de averiguación del delito y descubrimiento y aseguramiento del delincuente, en los términos que la ley establezca."
+    },
+    {
+      "id": "p20-02",
+      "enunciado": "¿Cuál es el objeto de la policía judicial?",
+      "opciones": [
+        "Averiguar los delitos públicos",
+        "Descubrir a los delincuentes",
+        "Proteger la seguridad ciudadana",
+        "Cumplir con los deberes de información"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La policía judicial tiene por objeto y será obligación de todos los que la componen, averiguar los delitos públicos que se cometieren en su territorio o demarcación."
+    },
+    {
+      "id": "p20-03",
+      "enunciado": "¿Qué debe hacer la policía judicial cuando las víctimas entran en contacto con ella?",
+      "opciones": [
+        "Cumplir con los deberes de información",
+        "Valorar las circunstancias particulares de las víctimas",
+        "Proteger la seguridad ciudadana",
+        "Cumplir con los deberes de información y valorar las circunstancias particulares de las víctimas"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La policía judicial debe cumplir con los deberes de información y valorar las circunstancias particulares de las víctimas cuando éstas entran en contacto con ella."
+    },
+    {
+      "id": "p20-04",
+      "enunciado": "¿Qué autorización es necesaria para que la policía judicial actúe con identidad supuesta?",
+      "opciones": [
+        "Resolución fundada del Juez de Instrucción competente",
+        "Resolución fundada del Ministerio Fiscal",
+        "Resolución fundada del Juez de Instrucción competente o del Ministerio Fiscal",
+        "No es necesaria ninguna autorización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La policía judicial necesita la autorización de la resolución fundada del Juez de Instrucción competente o del Ministerio Fiscal para actuar con identidad supuesta."
+    },
+    {
+      "id": "p20-05",
+      "enunciado": "¿Cuál es el plazo de validez de la identidad supuesta?",
+      "opciones": [
+        "Seis meses",
+        "Un año",
+        "Dos años",
+        "Seis meses prorrogables por períodos de igual duración"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La identidad supuesta tiene un plazo de validez de seis meses prorrogables por períodos de igual duración."
+    },
+    {
+      "id": "p20-06",
+      "enunciado": "¿Qué debe hacer el agente encubierto con la información obtenida?",
+      "opciones": [
+        "Ponerla a la mayor brevedad posible en conocimiento de quien autorizó la investigación",
+        "No hacer nada con la información obtenida",
+        "Ponerla a la mayor brevedad posible en conocimiento de quien autorizó la investigación y aportarla al proceso en su integridad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El agente encubierto debe poner la información obtenida a la mayor brevedad posible en conocimiento de quien autorizó la investigación."
+    },
+    {
+      "id": "p20-07",
+      "enunciado": "¿Qué derechos fundamentales deben ser respetados por el agente encubierto?",
+      "opciones": [
+        "Los establecidos en la Constitución y la Ley",
+        "Los derechos de la víctima",
+        "Los derechos del delincuente",
+        "No respetar ningún derecho fundamental"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El agente encubierto debe respetar los derechos fundamentales establecidos en la Constitución y la Ley."
+    },
+    {
+      "id": "p20-08",
+      "enunciado": "¿Qué delitos se consideran como delincuencia organizada?",
+      "opciones": [
+        "Delitos de obtención, tráfico ilícito de órganos humanos, secuestro de personas, trata de seres humanos y delitos contra el patrimonio y contra el orden socioeconómico",
+        "Delitos de robo, hurto y estafa",
+        "Delitos de violencia de género y acoso",
+        "No se consideran como delincuencia organizada"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Se consideran como delincuencia organizada los delitos de obtención, tráfico ilícito de órganos humanos, secuestro de personas, trata de seres humanos y delitos contra el patrimonio y contra el orden socioeconómico."
+    },
+    {
+      "id": "p20-09",
+      "enunciado": "¿Qué debe hacer la policía judicial cuando se trate de investigaciones que afecten a actividades propias de la delincuencia organizada?",
+      "opciones": [
+        "Actuar bajo identidad supuesta y adquirir y transportar los objetos, efectos e instrumentos del delito",
+        "No hacer nada",
+        "Proteger la seguridad ciudadana",
+        "Cumplir con los deberes de información"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La policía judicial debe actuar bajo identidad supuesta y adquirir y transportar los objetos, efectos e instrumentos del delito cuando se trate de investigaciones que afecten a actividades propias de la delincuencia organizada."
+    },
+    {
+      "id": "p20-10",
+      "enunciado": "¿Qué es lo que se debe conservar fuera de las actuaciones con la debida seguridad?",
+      "opciones": [
+        "La resolución por la que se acuerde la identidad supuesta",
+        "La información obtenida por el agente encubierto",
+        "La documentación de la investigación",
+        "No se debe conservar nada"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Se debe conservar fuera de las actuaciones con la debida seguridad la resolución por la que se acuerde la identidad supuesta."
+    },
+    {
+      "id": "p20-11",
+      "enunciado": "¿Qué debe hacer el agente encubierto cuando testifique en el proceso?",
+      "opciones": [
+        "Poder mantener la identidad supuesta si así se acuerda mediante resolución judicial motivada",
+        "No poder mantener la identidad supuesta",
+        "Poder testificar sin identidad supuesta",
+        "No testificar"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El agente encubierto puede mantener la identidad supuesta si así se acuerda mediante resolución judicial motivada cuando testifique en el proceso."
+    }
+  ]
 }

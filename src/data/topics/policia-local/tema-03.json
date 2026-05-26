@@ -1,157 +1,244 @@
 {
-    "id": 3,
-    "titulo": "Garantías de las libertades y Derechos fundamentales. El Defensor del Pueblo. La suspensión de los derechos y libertades. Estado de sitio, estado de excepción y estado de alarma",
-    "bloque": "general",
-    "secciones": [
-        {
-            "id": "s3-1",
-            "titulo": "Garantías de los derechos fundamentales",
-            "contenido": "El artículo 53 de la Constitución establece el sistema de garantías de los derechos. Los derechos del Capítulo II vinculan a todos los poderes públicos, y solo por ley, que deberá respetar su contenido esencial, podrá regularse su ejercicio. Cualquier ciudadano puede recabar la tutela de las libertades y derechos reconocidos en el artículo 14 y en la Sección 1ª del Capítulo II ante los tribunales ordinarios por un procedimiento basado en los principios de preferencia y sumariedad y, en su caso, a través del recurso de amparo ante el Tribunal Constitucional. Los principios reconocidos en el Capítulo III informan la legislación positiva, la práctica judicial y la actuación de los poderes públicos."
-        },
-        {
-            "id": "s3-2",
-            "titulo": "El Defensor del Pueblo",
-            "contenido": "El artículo 54 de la Constitución regula el Defensor del Pueblo como alto comisionado de las Cortes Generales, designado por estas para la defensa de los derechos comprendidos en el Título I. A tal fin, puede supervisar la actividad de la Administración, dando cuenta a las Cortes Generales. El Defensor del Pueblo está legitimado para interponer el recurso de inconstitucionalidad y el recurso de amparo. Es elegido por las Cortes Generales por un periodo de cinco años, goza de inviolabilidad e inmunidad en el ejercicio de su cargo y no está sujeto a mandato imperativo alguno."
-        },
-        {
-            "id": "s3-3",
-            "titulo": "La suspensión de los derechos y libertades",
-            "contenido": "El artículo 55 de la Constitución regula la suspensión de derechos. Determinados derechos (entre ellos los de los artículos 17, 18.2 y 3, 19, 20.1.a) y d) y 5, 21, 28.2 y 37.2) pueden ser suspendidos cuando se acuerde la declaración del estado de excepción o de sitio, en los términos previstos en la Constitución. Existe además una suspensión individual: una ley orgánica puede determinar la forma y los casos en que, de forma individual y con la necesaria intervención judicial y el adecuado control parlamentario, determinados derechos pueden ser suspendidos para personas concretas en relación con las investigaciones correspondientes a la actuación de bandas armadas o elementos terroristas."
-        },
-        {
-            "id": "s3-4",
-            "titulo": "Los estados de alarma, excepción y sitio: regulación general",
-            "contenido": "El artículo 116 de la Constitución y la Ley Orgánica 4/1981 regulan los estados de alarma, excepción y sitio. El estado de alarma lo declara el Gobierno mediante decreto acordado en Consejo de Ministros por un plazo máximo de quince días, dando cuenta al Congreso de los Diputados; su prórroga requiere autorización del Congreso. El estado de excepción lo declara el Gobierno mediante decreto acordado en Consejo de Ministros, previa autorización del Congreso, por un plazo máximo de treinta días, prorrogable por otros treinta. El estado de sitio lo declara el Congreso de los Diputados por mayoría absoluta, a propuesta exclusiva del Gobierno, que determinará su ámbito, duración y condiciones."
-        },
-        {
-            "id": "s3-5",
-            "titulo": "Supuestos de aplicación de cada estado",
-            "contenido": "El estado de alarma se declara ante catástrofes, calamidades o desgracias públicas, crisis sanitarias, paralización de servicios públicos esenciales o situaciones de desabastecimiento de productos de primera necesidad. El estado de excepción procede cuando el libre ejercicio de los derechos y libertades de los ciudadanos, el normal funcionamiento de las instituciones democráticas o el de los servicios públicos esenciales resulte tan gravemente alterado que el ejercicio ordinario de las potestades no baste para restablecerlo. El estado de sitio se declara cuando se produzca o amenace producirse una insurrección o acto de fuerza contra la soberanía o independencia de España, su integridad territorial o el ordenamiento constitucional. Durante la vigencia de estos estados no puede disolverse el Congreso y el funcionamiento de los poderes constitucionales no se interrumpe."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e3-1",
-            "titulo": "Garantías de los derechos",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Garantias de los derechos] --> B[Reserva de ley - art. 53]\n    A --> C[Recurso de amparo ante el TC]\n    A --> D[Procedimiento preferente y sumario]\n    A --> E[Defensor del Pueblo - art. 54]"
-        },
-        {
-            "id": "e3-2",
-            "titulo": "Los estados excepcionales",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Estados excepcionales] --> B[Alarma - Gobierno, 15 dias]\n    A --> C[Excepcion - Gobierno + Congreso, 30 dias]\n    A --> D[Sitio - Congreso por mayoria absoluta]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Garantías y estados excepcionales", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Garantías de los derechos", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "El Defensor del Pueblo", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Suspensión de derechos", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Estado de alarma", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Excepción y sitio", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Recurso de amparo (art. 53)", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Comisionado de las Cortes (5 años)", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Suspensión individual - terrorismo", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Gobierno, 15 días, da cuenta al Congreso", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Excepción: 30 días prorrogables", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Sitio: Congreso por mayoría absoluta", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Ley Orgánica 4/1981", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n5", "hasta": "n10" },
-            { "desde": "n6", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 3,
+  "titulo": "Garantías de las libertades y Derechos fundamentales. El Defensor del Pueblo. La suspensión de los derechos y libertades . Estado de sitio, estado de excepción y estado de alarma.",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "1. TÍTULO I",
+      "contenido": "BIBLIOGRAFÍA • CONSTITUCIÓN ESPAÑOLA o Art.17-21 o Art. 28 o Art. 37 o Art. 53-55 o Art. 116 2 \f CONSTITUCIÓN ESPAÑOLA TÍTULO I DE LOS DERECHOS Y DEBERES FUNDAMENTALES CAPÍTULO SEGUNDO DERECHOS Y LIBERTADES SECCIÓN 1.ª DE LOS DERECHOS FUNDAMENTALES Y DE LAS LIBERTADES PÚBLICAS ARTÍCULO 17 1. Toda persona tiene derecho a la libertad y a la seguridad. Nadie puede ser privado de su libertad, sino con la observancia de lo establecido en este artículo y en los casos y en la forma previstos en la ley. 2. La detención preventiva no podrá durar más del tiempo estrictamente necesario para la realización de las averiguaciones tendentes al esclarecimiento de los hechos, y, en todo caso, en el plazo máximo de setenta y dos horas, el detenido deberá ser puesto en libertad o a disposición de la autoridad judicial. 3. Toda persona detenida debe ser informada de forma inmediata, y de modo que le sea comprensible, de sus derechos y de las razones de su detención, no pudiendo ser obligada a declarar. Se garantiza la asistencia de abogado al detenido en las diligencias policiales y judiciales, en los términos que la ley establezca. 4. La ley regulará un procedimiento de «habeas corpus» para producir la inmediata puesta a disposición judicial de toda persona detenida ilegalmente. Asimismo, por ley se determinará el plazo máximo de duración de la prisión provisional. ARTÍCULO 18 2. El domicilio es inviolable. Ninguna entrada o registro podrá hacerse en él sin consentimiento del titular o resolución judicial, salvo en caso de flagrante delito. ARTÍCULO 19 Los españoles tienen derecho a elegir libremente su residencia y a circular por el territorio nacional. Asimismo, tienen derecho a entrar y salir libremente de España en los términos que la ley establezca. Este derecho no podrá ser limitado por motivos políticos o ideológicos. ARTÍCULO 20 1. Se reconocen y protegen los derechos: a) A expresar y difundir libremente los pensamientos, ideas y opiniones mediante la palabra, el escrito o cualquier otro medio de reproducción. d) A comunicar o recibir libremente información veraz por cualquier medio de difusión. La ley regulará el derecho a la cláusula de conciencia y al secreto profesional en el ejercicio de estas libertades. 3 \f ARTÍCULO 21 1. Se reconoce el derecho de reunión pacífica y sin armas. El ejercicio de este derecho no necesitará autorización previa. 2. En los casos de reuniones en lugares de tránsito público y manifestaciones se dará comunicación previa a la autoridad, que sólo podrá prohibirlas cuando existan razones fundadas de alteración del orden público, con peligro para personas o bienes. ARTÍCULO 28 2. Se reconoce el derecho a la huelga de los trabajadores para la defensa de sus intereses. La ley que regule el ejercicio de este derecho establecerá las garantías precisas para asegurar el mantenimiento de los servicios esenciales de la comunidad. ARTÍCULO 37 2. Se reconoce el derecho de los trabajadores y empresarios a adoptar medidas de conflicto colectivo. La ley que regule el ejercicio de este derecho, sin perjuicio de las limitaciones que puedan establecer, incluirá las garantías precisas para asegurar el funcionamiento de los servicios esenciales de la comunidad. CAPÍTULO CUARTO DE LAS GARANTÍAS DE LAS LIBERTADES Y DERECHOS FUNDAMENTALES ARTÍCULO 53 1. Los derechos y libertades reconocidos en el Capítulo segundo del presente Título vinculan a todos los poderes públicos."
     },
-    "flashcards": [
-        { "id": "fc3-01", "anverso": "¿Qué artículo regula las garantías de los derechos?", "reverso": "El artículo 53 de la Constitución." },
-        { "id": "fc3-02", "anverso": "¿Qué debe respetar la ley que regule un derecho fundamental?", "reverso": "Su contenido esencial." },
-        { "id": "fc3-03", "anverso": "¿En qué principios se basa el procedimiento de tutela ante los tribunales ordinarios?", "reverso": "En los principios de preferencia y sumariedad." },
-        { "id": "fc3-04", "anverso": "¿Ante qué órgano se interpone el recurso de amparo?", "reverso": "Ante el Tribunal Constitucional." },
-        { "id": "fc3-05", "anverso": "¿Qué es el Defensor del Pueblo?", "reverso": "El alto comisionado de las Cortes Generales para la defensa de los derechos del Título I." },
-        { "id": "fc3-06", "anverso": "¿Por cuánto tiempo se elige al Defensor del Pueblo?", "reverso": "Por un periodo de cinco años." },
-        { "id": "fc3-07", "anverso": "¿Qué recursos puede interponer el Defensor del Pueblo?", "reverso": "El recurso de inconstitucionalidad y el recurso de amparo." },
-        { "id": "fc3-08", "anverso": "¿Qué artículo regula la suspensión de derechos?", "reverso": "El artículo 55 de la Constitución." },
-        { "id": "fc3-09", "anverso": "¿En qué estados pueden suspenderse derechos colectivamente?", "reverso": "En el estado de excepción y en el estado de sitio." },
-        { "id": "fc3-10", "anverso": "¿Para qué investigaciones cabe la suspensión individual de derechos?", "reverso": "Para las relacionadas con bandas armadas o elementos terroristas." },
-        { "id": "fc3-11", "anverso": "¿Qué ley orgánica regula los estados de alarma, excepción y sitio?", "reverso": "La Ley Orgánica 4/1981." },
-        { "id": "fc3-12", "anverso": "¿Quién declara el estado de alarma?", "reverso": "El Gobierno, mediante decreto acordado en Consejo de Ministros." },
-        { "id": "fc3-13", "anverso": "¿Cuál es el plazo máximo del estado de alarma?", "reverso": "Quince días; la prórroga requiere autorización del Congreso." },
-        { "id": "fc3-14", "anverso": "¿Quién declara el estado de excepción?", "reverso": "El Gobierno, previa autorización del Congreso de los Diputados." },
-        { "id": "fc3-15", "anverso": "¿Cuál es el plazo máximo del estado de excepción?", "reverso": "Treinta días, prorrogable por otros treinta." },
-        { "id": "fc3-16", "anverso": "¿Quién declara el estado de sitio?", "reverso": "El Congreso de los Diputados, por mayoría absoluta, a propuesta del Gobierno." },
-        { "id": "fc3-17", "anverso": "¿Cuándo se declara el estado de alarma?", "reverso": "Ante catástrofes, crisis sanitarias, paralización de servicios esenciales o desabastecimiento." },
-        { "id": "fc3-18", "anverso": "¿Cuándo procede el estado de sitio?", "reverso": "Ante una insurrección o acto de fuerza contra la soberanía, integridad territorial u ordenamiento constitucional." },
-        { "id": "fc3-19", "anverso": "¿Puede disolverse el Congreso durante estos estados?", "reverso": "No; durante su vigencia no puede disolverse el Congreso." },
-        { "id": "fc3-20", "anverso": "¿Está sujeto el Defensor del Pueblo a mandato imperativo?", "reverso": "No; no está sujeto a mandato imperativo alguno y goza de inviolabilidad e inmunidad." }
+    {
+      "titulo": "2. artículo 161",
+      "contenido": "Sólo por ley, que en todo caso deberá respetar su contenido esencial, podrá regularse el ejercicio de tales derechos y libertades, que se tutelarán de acuerdo con lo previsto en el artículo 161, 1, a). 2. Cualquier ciudadano podrá recabar la tutela de las libertades y derechos reconocidos en el artículo 14 y la Sección primera del Capítulo segundo ante los Tribunales ordinarios por un procedimiento basado en los principios de preferencia y sumariedad y, en su caso, a través del recurso de amparo ante el Tribunal Constitucional. Este último recurso será aplicable a la objeción de conciencia reconocida en el artículo 30. 3. El reconocimiento, el respeto y la protección de los principios reconocidos en el Capítulo tercero informarán la legislación positiva, la práctica judicial y la actuación de los poderes públicos. Sólo podrán ser alegados ante la Jurisdicción ordinaria de acuerdo con lo que dispongan las leyes que los desarrollen. ARTÍCULO 54 Una ley orgánica regulará la institución del Defensor del Pueblo, como alto comisionado de las Cortes Generales, designado por éstas para la defensa de los derechos comprendidos en este Título, a cuyo efecto podrá supervisar la actividad de la Administración, dando cuenta a las Cortes Generales. 4 \f CAPÍTULO QUINTO DE LA SUSPENSIÓN DE LOS DERECHOS Y LIBERTADES ARTÍCULO 55 1. Los derechos reconocidos en los artículos 17, 18, apartados 2 y 3, artículos 19, 20, apartados 1, a) y d), y 5, artículos 21, 28, apartado 2, y artículo 37, apartado 2, podrán ser suspendidos cuando se acuerde la declaración del estado de excepción o de sitio en los términos previstos en la Constitución. Se exceptúa de lo establecido anteriormente el apartado 3 del artículo 17 para el supuesto de declaración de estado de excepción. 2. Una ley orgánica podrá determinar la forma y los casos en los que, de forma individual y con la necesaria intervención judicial y el adecuado control parlamentario, los derechos reconocidos en los artículos 17, apartado 2, y 18, apartados 2 y 3, pueden ser suspendidos para personas determinadas, en relación con las investigaciones correspondientes a la actuación de bandas armadas o elementos terroristas. La utilización injustificada o abusiva de las facultades reconocidas en dicha ley orgánica producirá responsabilidad penal, como violación de los derechos y libertades reconocidos por las leyes. TÍTULO V DE LAS RELACIONES ENTRE EL GOBIERNO Y LAS CORTES GENERALES ARTÍCULO 116 1. Una ley orgánica regulará los estados de alarma, de excepción y de sitio, y las competencias y limitaciones correspondientes. 2. El estado de alarma será declarado por el Gobierno mediante decreto acordado en Consejo de Ministros por un plazo máximo de quince días, dando cuenta al Congreso de los Diputados, reunido inmediatamente al efecto y sin cuya autorización no podrá ser prorrogado dicho plazo. El decreto determinará el ámbito territorial a que se extienden los efectos de la declaración. 3. El estado de excepción será declarado por el Gobierno mediante decreto acordado en Consejo de Ministros, previa autorización del Congreso de los Diputados. La autorización y proclamación del estado de excepción deberá determinar expresamente los efectos del mismo, el ámbito territorial a que se extiende y su duración, que no podrá exceder de treinta días, prorrogables por otro plazo igual, con los mismos requisitos. 4. El estado de sitio será declarado por la mayoría absoluta del Congreso de los Diputados, a propuesta exclusiva del Gobierno. El Congreso determinará su ámbito territorial, duración y condiciones. 5."
+    },
+    {
+      "titulo": "3. No podrá procederse a la disolución del Congreso mientras estén declar…",
+      "contenido": "No podrá procederse a la disolución del Congreso mientras estén declarados algunos de los estados comprendidos en el presente artículo, quedando automáticamente convocadas las Cámaras si no estuvieren en período de sesiones. Su funcionamiento, así como el de los demás poderes constitucionales del Estado, no podrán interrumpirse durante la vigencia de estos estados. Disuelto el Congreso o expirado su mandato, si se produjere alguna de las situaciones que dan lugar a cualquiera de dichos estados, las competencias del Congreso serán asumidas por su Diputación Permanente. 6. La declaración de los estados de alarma, de excepción y de sitio no modificarán el principio de responsabilidad del Gobierno y de sus agentes reconocidos en la Constitución y en las leyes. 5"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Garantías de las libertades y Derechos f\"]\n  A --> N1[\"TÍTULO I\"]\n  A --> N2[\"artículo 161\"]\n  A --> N3[\"No podrá procederse a la disolución del \"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Garantías de las libertades y Derechos fundamenta…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "TÍTULO I",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "artículo 161",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "No podrá procederse a la disolución del…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p3-01",
-            "enunciado": "El recurso de amparo se interpone ante:",
-            "opciones": ["El Tribunal Supremo", "El Tribunal Constitucional", "El Defensor del Pueblo", "La Audiencia Nacional"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 53.2 prevé el recurso de amparo ante el Tribunal Constitucional."
-        },
-        {
-            "id": "p3-02",
-            "enunciado": "El Defensor del Pueblo es:",
-            "opciones": ["Un órgano del Gobierno", "El alto comisionado de las Cortes Generales", "Un magistrado del Tribunal Supremo", "Un cargo autonómico"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 54 define al Defensor del Pueblo como alto comisionado de las Cortes Generales para la defensa de los derechos del Título I."
-        },
-        {
-            "id": "p3-03",
-            "enunciado": "El Defensor del Pueblo es elegido por un periodo de:",
-            "opciones": ["Cuatro años", "Cinco años", "Seis años", "Nueve años"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El Defensor del Pueblo es elegido por las Cortes Generales por un periodo de cinco años."
-        },
-        {
-            "id": "p3-04",
-            "enunciado": "El estado de alarma lo declara:",
-            "opciones": ["El Congreso de los Diputados", "El Gobierno mediante decreto en Consejo de Ministros", "El Rey", "El Tribunal Constitucional"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El estado de alarma lo declara el Gobierno mediante decreto acordado en Consejo de Ministros, dando cuenta al Congreso."
-        },
-        {
-            "id": "p3-05",
-            "enunciado": "El plazo máximo del estado de alarma sin prórroga es de:",
-            "opciones": ["Diez días", "Quince días", "Treinta días", "Sesenta días"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El estado de alarma tiene un plazo máximo de quince días; su prórroga requiere autorización del Congreso."
-        },
-        {
-            "id": "p3-06",
-            "enunciado": "El estado de excepción requiere para su declaración:",
-            "opciones": ["Solo decisión del Gobierno", "Autorización previa del Congreso de los Diputados", "Acuerdo del Tribunal Constitucional", "Decisión del Rey"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El estado de excepción lo declara el Gobierno previa autorización del Congreso de los Diputados."
-        },
-        {
-            "id": "p3-07",
-            "enunciado": "El estado de sitio es declarado por:",
-            "opciones": ["El Gobierno", "El Congreso por mayoría absoluta", "El Senado", "El Consejo de Estado"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El estado de sitio lo declara el Congreso de los Diputados por mayoría absoluta, a propuesta del Gobierno."
-        },
-        {
-            "id": "p3-08",
-            "enunciado": "Durante la vigencia de los estados de alarma, excepción y sitio:",
-            "opciones": ["Se disuelve el Congreso", "No puede disolverse el Congreso", "Cesa el Gobierno", "Se suspende el Tribunal Constitucional"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 116.5 establece que no podrá procederse a la disolución del Congreso mientras estén declarados estos estados."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc3-01",
+      "pregunta": "¿Qué derecho tiene toda persona según el artículo 17 de la Constitución Española?",
+      "respuesta": "Derecho a la libertad y a la seguridad"
+    },
+    {
+      "id": "fc3-02",
+      "pregunta": "¿Cuánto tiempo puede durar la detención preventiva según el artículo 17 de la Constitución Española?",
+      "respuesta": "Setenta y dos horas"
+    },
+    {
+      "id": "fc3-03",
+      "pregunta": "¿Qué derecho tienen los españoles según el artículo 19 de la Constitución Española?",
+      "respuesta": "Derecho a elegir libremente su residencia y a circular por el territorio nacional"
+    },
+    {
+      "id": "fc3-04",
+      "pregunta": "¿Qué derecho reconocen los artículos 20 y 21 de la Constitución Española?",
+      "respuesta": "Derecho a expresar y difundir libremente los pensamientos, ideas y opiniones, y derecho de reunión pacífica y sin armas"
+    },
+    {
+      "id": "fc3-05",
+      "pregunta": "¿Qué institución se regulará mediante una ley orgánica según el artículo 54 de la Constitución Española?",
+      "respuesta": "Defensor del Pueblo"
+    },
+    {
+      "id": "fc3-06",
+      "pregunta": "¿Qué derechos pueden ser suspendidos según el artículo 55 de la Constitución Española?",
+      "respuesta": "Derechos reconocidos en los artículos 17, 18, 19, 20, 21, 28 y 37"
+    },
+    {
+      "id": "fc3-07",
+      "pregunta": "¿Qué tipo de ley puede regular la forma y los casos en los que los derechos reconocidos en los artículos 17 y 18 pueden ser suspendidos?",
+      "respuesta": "Ley orgánica"
+    },
+    {
+      "id": "fc3-08",
+      "pregunta": "¿Qué competencias y limitaciones se regularán mediante una ley orgánica según el artículo 116 de la Constitución Española?",
+      "respuesta": "Estados de alarma, de excepción y de sitio"
+    },
+    {
+      "id": "fc3-09",
+      "pregunta": "¿Qué derecho tiene el Defensor del Pueblo según el artículo 54 de la Constitución Española?",
+      "respuesta": "Defensa de los derechos comprendidos en el Título I de la Constitución Española"
+    },
+    {
+      "id": "fc3-10",
+      "pregunta": "¿Qué tipo de recurso es aplicable a la objeción de conciencia según el artículo 53 de la Constitución Española?",
+      "respuesta": "Recurso de amparo ante el Tribunal Constitucional"
+    },
+    {
+      "id": "fc3-11",
+      "pregunta": "¿Qué principios informarán la legislación positiva, la práctica judicial y la actuación de los poderes públicos según el artículo 53 de la Constitución Española?",
+      "respuesta": "Reconocimiento, respeto y protección de los principios reconocidos en el Capítulo tercero"
+    },
+    {
+      "id": "fc3-12",
+      "pregunta": "¿Qué tipo de ley puede regular el ejercicio del derecho de huelga según el artículo 28 de la Constitución Española?",
+      "respuesta": "Ley que establezca las garantías precisas para asegurar el mantenimiento de los servicios esenciales de la comunidad"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p3-01",
+      "enunciado": "¿Qué derechos reconocen los artículos 20 y 21 de la Constitución Española?",
+      "opciones": [
+        "a) Derecho a expresar y difundir libremente los pensamientos, ideas y opiniones",
+        "b) Derecho de reunión pacífica y sin armas",
+        "c) Derecho a la libertad y a la seguridad",
+        "d) Derecho a elegir libremente su residencia y a circular por el territorio nacional"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los artículos 20 y 21 reconocen el derecho a expresar y difundir libremente los pensamientos, ideas y opiniones, y el derecho de reunión pacífica y sin armas, respectivamente."
+    },
+    {
+      "id": "p3-02",
+      "enunciado": "¿Qué institución se regulará mediante una ley orgánica según el artículo 54 de la Constitución Española?",
+      "opciones": [
+        "a) Defensor del Pueblo",
+        "b) Tribunal Constitucional",
+        "c) Cortes Generales",
+        "d) Gobierno"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 54 establece que la institución del Defensor del Pueblo se regulará mediante una ley orgánica."
+    },
+    {
+      "id": "p3-03",
+      "enunciado": "¿Qué tipo de recurso es aplicable a la objeción de conciencia según el artículo 53 de la Constitución Española?",
+      "opciones": [
+        "a) Recurso de amparo ante el Tribunal Constitucional",
+        "b) Recurso de apelación ante la Audiencia Nacional",
+        "c) Recurso de revisión ante el Tribunal Supremo",
+        "d) Recurso de queja ante la Comisión Europea de Derechos Humanos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 53 establece que el recurso de amparo ante el Tribunal Constitucional es aplicable a la objeción de conciencia."
+    },
+    {
+      "id": "p3-04",
+      "enunciado": "¿Qué principios informarán la legislación positiva, la práctica judicial y la actuación de los poderes públicos según el artículo 53 de la Constitución Española?",
+      "opciones": [
+        "a) Reconocimiento, respeto y protección de los principios reconocidos en el Capítulo tercero",
+        "b) Garantía de los derechos y libertades fundamentales",
+        "c) Promoción del bienestar social y económico",
+        "d) Defensa de la soberanía nacional"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 53 establece que los principios reconocidos en el Capítulo tercero informarán la legislación positiva, la práctica judicial y la actuación de los poderes públicos."
+    },
+    {
+      "id": "p3-05",
+      "enunciado": "¿Qué tipo de ley puede regular el ejercicio del derecho de huelga según el artículo 28 de la Constitución Española?",
+      "opciones": [
+        "a) Ley que establezca las garantías precisas para asegurar el mantenimiento de los servicios esenciales de la comunidad",
+        "b) Ley que regule el derecho a la libertad sindical",
+        "c) Ley que promueva la conciliación laboral",
+        "d) Ley que proteja los intereses de los trabajadores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 28 establece que la ley que regule el ejercicio del derecho de huelga debe establecer las garantías precisas para asegurar el mantenimiento de los servicios esenciales de la comunidad."
+    },
+    {
+      "id": "p3-06",
+      "enunciado": "¿Qué derechos pueden ser suspendidos según el artículo 55 de la Constitución Española?",
+      "opciones": [
+        "a) Derechos reconocidos en los artículos 17, 18, 19, 20, 21, 28 y 37",
+        "b) Derechos reconocidos en los artículos 17, 18, 19 y 20",
+        "c) Derechos reconocidos en los artículos 17, 18 y 19",
+        "d) Derechos reconocidos en los artículos 17, 18 y 20"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 55 establece que los derechos reconocidos en los artículos 17, 18, 19, 20, 21, 28 y 37 pueden ser suspendidos."
+    },
+    {
+      "id": "p3-07",
+      "enunciado": "¿Qué tipo de ley puede regular la forma y los casos en los que los derechos reconocidos en los artículos 17 y 18 pueden ser suspendidos?",
+      "opciones": [
+        "a) Ley orgánica",
+        "b) Ley ordinaria",
+        "c) Decreto-ley",
+        "d) Real decreto-ley"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 55 establece que una ley orgánica puede regular la forma y los casos en los que los derechos reconocidos en los artículos 17 y 18 pueden ser suspendidos."
+    },
+    {
+      "id": "p3-08",
+      "enunciado": "¿Qué competencias y limitaciones se regularán mediante una ley orgánica según el artículo 116 de la Constitución Española?",
+      "opciones": [
+        "a) Estados de alarma, de excepción y de sitio",
+        "b) Competencias y limitaciones del Gobierno",
+        "c) Competencias y limitaciones de las Cortes Generales",
+        "d) Competencias y limitaciones de los poderes públicos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 116 establece que una ley orgánica regulará los estados de alarma, de excepción y de sitio, y las competencias y limitaciones correspondientes."
+    },
+    {
+      "id": "p3-09",
+      "enunciado": "¿Qué derecho tiene el Defensor del Pueblo según el artículo 54 de la Constitución Española?",
+      "opciones": [
+        "a) Defensa de los derechos comprendidos en el Título I de la Constitución Española",
+        "b) Promoción de los intereses de los ciudadanos",
+        "c) Protección de los derechos y libertades fundamentales",
+        "d) Supervisión de la actividad de la Administración"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 54 establece que el Defensor del Pueblo tiene la función de defender los derechos comprendidos en el Título I de la Constitución Española."
+    }
+  ]
 }

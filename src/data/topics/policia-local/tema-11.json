@@ -1,157 +1,610 @@
 {
-    "id": 11,
-    "titulo": "Las Administraciones Públicas Canarias: Comunidad Autónoma, Cabildos Insulares y Ayuntamientos. La Administración Pública de la Comunidad Autónoma de Canarias: organización y competencias",
-    "bloque": "general",
-    "secciones": [
-        {
-            "id": "s11-1",
-            "titulo": "Las Administraciones Públicas Canarias",
-            "contenido": "El sistema de Administraciones públicas en Canarias está integrado por tres niveles territoriales: la Administración Pública de la Comunidad Autónoma de Canarias, las Administraciones insulares (Cabildos Insulares) y las Administraciones municipales (Ayuntamientos). Las tres gozan de autonomía para la gestión de sus respectivos intereses y se relacionan entre sí conforme a los principios de lealtad institucional, coordinación, cooperación y colaboración. El Estatuto de Autonomía de Canarias (LO 1/2018) configura una organización territorial propia en la que la isla, a través del Cabildo, tiene una posición singular como institución de la Comunidad Autónoma."
-        },
-        {
-            "id": "s11-2",
-            "titulo": "La Administración Pública de la Comunidad Autónoma de Canarias",
-            "contenido": "La Administración Pública de la Comunidad Autónoma de Canarias es la organización servicial dependiente del Gobierno de Canarias, dotada de personalidad jurídica única, que actúa con sometimiento pleno al ordenamiento jurídico y sirve con objetividad a los intereses generales. Se rige por los principios de eficacia, jerarquía, descentralización, desconcentración, coordinación, transparencia y participación. Comprende la Administración general (consejerías y sus órganos) y la Administración institucional o instrumental (organismos autónomos, entidades públicas empresariales y demás entes del sector público autonómico)."
-        },
-        {
-            "id": "s11-3",
-            "titulo": "Organización de la Administración autonómica",
-            "contenido": "La Administración general de la Comunidad Autónoma de Canarias se estructura en consejerías, que son los departamentos en que se organiza el Gobierno y la Administración. Al frente de cada consejería está un Consejero. Los órganos de la Administración autonómica se clasifican en órganos superiores (Presidente, Vicepresidente y Consejeros), órganos directivos (Viceconsejeros, Secretarios Generales Técnicos, Directores Generales) y el resto de unidades administrativas. Existen también órganos territoriales y servicios desconcentrados. La creación, modificación y supresión de consejerías corresponde al Presidente de Canarias mediante decreto."
-        },
-        {
-            "id": "s11-4",
-            "titulo": "Competencias de la Comunidad Autónoma de Canarias",
-            "contenido": "La Comunidad Autónoma de Canarias asume, en el marco de la Constitución y del Estatuto de Autonomía, competencias exclusivas, de desarrollo legislativo y ejecución, y de ejecución. Entre las materias de competencia autonómica figuran la organización de sus instituciones de autogobierno, la ordenación del territorio y el urbanismo, la vivienda, el turismo, la agricultura y la ganadería, la pesca en aguas interiores, el patrimonio histórico-cultural, la sanidad, la educación, los servicios sociales, la protección civil y la seguridad pública mediante la creación de una policía propia. La Comunidad Autónoma cuenta además con el Régimen Económico y Fiscal de Canarias."
-        },
-        {
-            "id": "s11-5",
-            "titulo": "Cabildos Insulares y Ayuntamientos",
-            "contenido": "Los Cabildos Insulares son órganos de gobierno, administración y representación de cada isla e instituciones de la Comunidad Autónoma; asumen competencias propias y las que les transfiera o delegue la Comunidad Autónoma. Su régimen jurídico se completa con la Ley 8/2015, de cabildos insulares. Los Ayuntamientos son las Administraciones de los municipios canarios; se rigen por la legislación básica estatal (Ley 7/1985) y por la Ley 7/2015, de los municipios de Canarias. El Ayuntamiento se compone del Alcalde y de los concejales; sus competencias se ejercen en régimen de autonomía y bajo la propia responsabilidad, atendiendo siempre a la debida coordinación con las demás Administraciones públicas."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e11-1",
-            "titulo": "Administraciones públicas canarias",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Administraciones canarias] --> B[Comunidad Autonoma]\n    A --> C[Cabildos Insulares]\n    A --> D[Ayuntamientos]\n    B --> E[Consejerias]"
-        },
-        {
-            "id": "e11-2",
-            "titulo": "Órganos de la Administración autonómica",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Administracion autonomica] --> B[Organos superiores]\n    A --> C[Organos directivos]\n    A --> D[Unidades administrativas]\n    B --> E[Presidente, Vicepresidente, Consejeros]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Administraciones públicas canarias", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Tres niveles territoriales", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Administración autonómica", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Organización en consejerías", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Competencias de Canarias", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Cabildos y Ayuntamientos", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Comunidad, Cabildos, Ayuntamientos", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Personalidad jurídica única", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Órganos superiores y directivos", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Exclusivas, de desarrollo y de ejecución", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Régimen Económico y Fiscal", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Ley 8/2015 y Ley 7/2015", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Autonomía local", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n5", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 11,
+  "titulo": "Las Administraciones Públicas Canarias: Comunidad Autónoma, Cabildos Insulares y Ayuntamientos. La Administración Pública de la Comunidad Autónoma de Canarias: organización y competencias.",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "1. Ley Orgánica 1/2018, de 5 de noviembre, de reforma del Estatuto de Auton",
+      "contenido": "BIBLIOGRAFÍA • CONSTITUCIÓN ESPAÑOLA o Art. 103 o Art. 137 • Ley 14/1990, de 26 de julio, de Régimen Jurídico de las Administraciones Públicas de Canarias o Art. 1-7 o Art. 26-34 • Ley 7/2015, de 1 de abril, de los municipios de Canarias. o Art. 1-11 • Ley 8/2015, de 1 de abril, de Cabildos Insulares. o Art. 1-36 o Art. 43-44 o Art. 49-69 • Ley Orgánica 1/2018, de 5 de noviembre, de reforma del Estatuto de Autonomía de Canarias. o Art. 61-63 o Art. 65-74 o Art. 75-76 ACTUALIZACIONES: Fran M. López 2 \f CONSTITUCIÓN ESPAÑOLA TÍTULO IV DEL GOBIERNO Y DE LA ADMINISTRACIÓN ARTÍCULO 103 1. La Administración Pública sirve con objetividad los intereses generales y actúa de acuerdo con los principios de eficacia, jerarquía, descentralización, desconcentración y coordinación, con sometimiento pleno a la ley y al Derecho. 2. Los órganos de la Administración del Estado son creados, regidos y coordinados de acuerdo con la ley. 3. La ley regulará el estatuto de los funcionarios públicos, el acceso a la función pública de acuerdo con los principios de mérito y capacidad, las peculiaridades del ejercicio de su derecho a sindicación, el sistema de incompatibilidades y las garantías para la imparcialidad en el ejercicio de sus funciones. ARTÍCULO 106 1. Los particulares, en los términos establecidos por la ley, tendrán derecho a ser indemnizados por toda lesión que sufran en cualquiera de sus bienes y derechos, salvo en los casos de fuerza mayor, siempre que la lesión sea consecuencia del funcionamiento de los servicios públicos. TÍTULO VIII DE LA ORGANIZACIÓN TERRITORIAL DEL ESTADO CAPÍTULO PRIMERO PRINCIPIOS GENERALES ARTÍCULO 137 El Estado se organiza territorialmente en municipios, en provincias y en las Comunidades Autónomas que se constituyan. Todas estas entidades gozan de autonomía para la gestión de sus respectivos intereses. 3 \f LEY 14/1990, DE 26 DE JULIO, DE RÉGIMEN JURÍDICO DE LAS ADMINISTRACIONES PÚBLICAS DE CANARIAS TÍTULO I DISPOSICIONES GENERALES CAPÍTULO I LAS ADMINISTRACIONES PÚBLICAS CANARIAS ARTÍCULO 1. Para la representación y gestión de sus intereses, Canarias, sus islas y sus municipios se institucionalizan, respectivamente, en la Comunidad Autónoma, con su Administración Pública, los Cabildos Insulares y los Ayuntamientos. ARTÍCULO 2. Las Administraciones Públicas de Canarias se regirán por la Constitución, Estatuto de Autonomía, la legislación básica del Estado, la presente Ley y por las normas dictadas en desarrollo de éstas, respondiendo su organización, funcionamiento y régimen competencial a los principios de eficacia, economía, descentralización y máxima proximidad a los ciudadanos. ARTÍCULO 3. El Gobierno de Canarias, conforme a las normas del Estatuto de Autonomía, en los términos de la presente Ley y bajo el control político del Parlamento, ejerce las funciones ejecutivas y administrativas que le corresponden y coordina el funcionamiento de las Administraciones Públicas canarias. ARTÍCULO 4. 1. La Administración Pública de la Comunidad Autónoma constituye el instrumento para el ejercicio de las funciones administrativas y la prestación de los servicios que dicha Comunidad deba realizar directamente. 2. Corresponde al Gobierno de Canarias la organización y dirección de la Administración Pública de la Comunidad a fin de adecuarla al cumplimiento de los fines que la justifican. ARTÍCULO 5. 1. Las islas tienen su organización gubernativa y administrativa propia en forma de Cabildos. 2."
     },
-    "flashcards": [
-        { "id": "fc11-01", "anverso": "¿Qué tres niveles integran las Administraciones públicas canarias?", "reverso": "La Comunidad Autónoma, los Cabildos Insulares y los Ayuntamientos." },
-        { "id": "fc11-02", "anverso": "¿Qué principios rigen las relaciones entre las Administraciones canarias?", "reverso": "Lealtad institucional, coordinación, cooperación y colaboración." },
-        { "id": "fc11-03", "anverso": "¿De qué órgano depende la Administración autonómica?", "reverso": "Del Gobierno de Canarias." },
-        { "id": "fc11-04", "anverso": "¿Qué personalidad jurídica tiene la Administración autonómica?", "reverso": "Personalidad jurídica única." },
-        { "id": "fc11-05", "anverso": "¿Qué principios rigen la actuación de la Administración autonómica?", "reverso": "Eficacia, jerarquía, descentralización, desconcentración, coordinación, transparencia y participación." },
-        { "id": "fc11-06", "anverso": "¿En qué se estructura la Administración general de Canarias?", "reverso": "En consejerías." },
-        { "id": "fc11-07", "anverso": "¿Quién está al frente de cada consejería?", "reverso": "Un Consejero." },
-        { "id": "fc11-08", "anverso": "¿Cuáles son los órganos superiores de la Administración autonómica?", "reverso": "El Presidente, el Vicepresidente y los Consejeros." },
-        { "id": "fc11-09", "anverso": "Cita órganos directivos de la Administración autonómica.", "reverso": "Los Viceconsejeros, Secretarios Generales Técnicos y Directores Generales." },
-        { "id": "fc11-10", "anverso": "¿Quién crea o suprime consejerías?", "reverso": "El Presidente de Canarias, mediante decreto." },
-        { "id": "fc11-11", "anverso": "¿Qué tipos de competencias asume la Comunidad Autónoma?", "reverso": "Exclusivas, de desarrollo legislativo y ejecución, y de ejecución." },
-        { "id": "fc11-12", "anverso": "Cita materias de competencia autonómica.", "reverso": "Ordenación del territorio, turismo, sanidad, educación, servicios sociales y seguridad pública." },
-        { "id": "fc11-13", "anverso": "¿Qué régimen económico singular tiene Canarias?", "reverso": "El Régimen Económico y Fiscal de Canarias (REF)." },
-        { "id": "fc11-14", "anverso": "¿Qué son los Cabildos Insulares?", "reverso": "Órganos de gobierno de cada isla e instituciones de la Comunidad Autónoma." },
-        { "id": "fc11-15", "anverso": "¿Qué ley regula los Cabildos Insulares?", "reverso": "La Ley 8/2015, de cabildos insulares." },
-        { "id": "fc11-16", "anverso": "¿Qué ley regula los municipios de Canarias?", "reverso": "La Ley 7/2015, de los municipios de Canarias." },
-        { "id": "fc11-17", "anverso": "¿Qué administración gobierna los municipios canarios?", "reverso": "El Ayuntamiento." },
-        { "id": "fc11-18", "anverso": "¿De quién se compone el Ayuntamiento?", "reverso": "Del Alcalde y de los concejales." },
-        { "id": "fc11-19", "anverso": "¿Cómo ejercen los Ayuntamientos sus competencias?", "reverso": "En régimen de autonomía y bajo su propia responsabilidad." },
-        { "id": "fc11-20", "anverso": "¿Qué incluye la Administración institucional autonómica?", "reverso": "Organismos autónomos, entidades públicas empresariales y demás entes del sector público." }
+    {
+      "titulo": "2. ARTÍCULO 6",
+      "contenido": "Los Cabildos Insulares son, simultáneamente, órganos de gobierno y administración de cada isla e Instituciones de la Comunidad Autónoma, de conformidad con lo dispuesto en los artículos 7.º y 22 del Estatuto de Autonomía. 3. La posición jurídica de los Cabildos, en cuanto órganos de Gobierno de la entidad local isla, queda determinada por la legislación básica del Estado, por la que dicte la Comunidad Autónoma en desarrollo de aquélla y por la presente Ley y sus competencias atribuidas o transferidas se sujetarán a las disposiciones sectoriales, ejerciéndolas en el régimen de autonomía garantizado por la Constitución. 4. En cuanto Instituciones de la Comunidad Autónoma, los Cabildos ejercen competencias y prestan servicio de aquélla de forma descentralizada, en los términos de la presente Ley. 4 \f ARTÍCULO 6. Los Ayuntamientos son los órganos de gobierno y administración de los municipios en que se organizan territorialmente las islas. Gozan de autonomía plena para la gestión de los intereses que representan. ARTÍCULO 7. 1. También tendrán la consideración de Administraciones Públicas Canarias las entidades locales que puedan constituirse en el Archipiélago con arreglo a la legislación básica de régimen local: a) Las de ámbito territorial inferior al municipio. b) Las áreas metropolitanas. c) Las Mancomunidades de municipios. 2. Tendrán igual consideración las administraciones institucionales creadas de acuerdo con la Ley. 3. El instrumento por el que se constituyan las Administraciones Públicas a que hace referencia el apartado 1 de este artículo, podrá atribuir a las mismas todas o alguna de las potestades contenidas en los apartados e), f), g) y h) del número 1 del artículo 4 de la Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local. TÍTULO II DE LA ADMINISTRACIÓN PÚBLICA DE LA COMUNIDAD AUTÓNOMA DE CANARIAS ARTÍCULO 26. La Administración de la Comunidad Autónoma sirve con objetividad los intereses generales, actúa de acuerdo con los principios constitucionales y estatutarios y con sometimiento pleno a la Ley y al Derecho. ARTÍCULO 27. 1. Bajo la superior dirección del presidente o presidenta del Gobierno de Canarias, la Administración pública de la comunidad autónoma se organiza en consejerías. 2. Cada una de las consejerías tendrá atribuida la gestión de áreas determinadas de la acción pública competencia de la comunidad autónoma. 3. La estructura orgánica y las sedes de las consejerías serán aprobadas por decreto del Gobierno de Canarias, a propuesta de la Presidencia del Gobierno. Del establecimiento de dicha estructura y sedes, así como de su modificación se dará cuenta al Parlamento en forma de comunicación para su debate ante en el Pleno de conformidad con el Reglamento del Parlamento de Canarias. 4. Corresponde al Gobierno la creación, organización y funcionamiento de órganos colegiados de la Administración pública autonómica a los que se atribuyan competencias decisorias, de propuesta o informes preceptivos, así como de seguimiento o control de órganos administrativos. Asimismo, corresponde al Gobierno la creación de órganos colegiados que estén integrados únicamente por personas dependientes de distintas consejerías o departamentos. Del ejercicio de dichas competencias se dará cuenta al Parlamento en forma de comunicación para su debate ante en el Pleno de conformidad con el Reglamento del Parlamento de Canarias. 5."
+    },
+    {
+      "titulo": "3. disposición del",
+      "contenido": "La creación, organización y funcionamiento de órganos colegiados distintos de los establecidos en el apartado anterior se llevarán a cabo por disposición del departamento al que queden adscritos, atendiendo al sector material de las funciones que se le atribuyan. Del ejercicio de dichas competencias se dará cuenta al Parlamento en forma de comunicación para su debate ante en el Pleno de conformidad con el Reglamento del Parlamento de Canarias. 5 \f ARTÍCULO 28. (SUPRIMIDO). ARTÍCULO 29. 1. Los Consejeros dirigen sus respectivos Departamentos y en tal condición les corresponde: a) Ejercer la iniciativa, dirección e inspección de todos los servicios de la Consejería y las facultades que le correspondan respecto de los Organismos autónomos adscritos a la misma. b) Desempeñar la Jefatura Superior de Personal. c) Nombrar y cesar a los titulares de puestos de trabajo de libre designación. d) Otorgar o proponer, en su caso, las recompensas que procedan. e) Resolver, en última instancia, dentro de la vía administrativa, cuando no corresponda a una autoridad inferior, los recursos promovidos contra las resoluciones de los organismos y autoridades de la Consejería. f) Resolver los recursos de alzada interpuestos contra los actos dictados por los Cabildos Insulares en ejercicio de competencias delegadas. g) Incoar y resolver los expedientes de revisión de oficio de los actos del propio Departamento y de los Cabildos Insulares dictados en ejercicio de competencias delegadas. h) Resolver los conflictos de atribuciones que surjan entre autoridades administrativas dependientes del Departamento y suscitarlos con otras Consejerías. i) Suscitar cuestiones de competencia. j) Disponer los gastos propios de los Servicios de su Consejería no reservados al Gobierno de Canarias, dentro del importe de los créditos autorizados e interesar del órgano competente la ordenación de los pagos. k) Firmar en nombre de la Comunidad Autónoma los contratos y convenios de colaboración relativos a asuntos de su Consejería. l) Ejecutar los acuerdos del Gobierno de Canarias referidos al ámbito de competencias de su Consejería. m) Y cualesquiera otras facultades que les atribuyan las leyes. 2. Los restantes órganos de la Administración propia de la Comunidad Autónoma ejercen las competencias que les correspondan conforme a las normas que los regulen. ARTÍCULO 30. 1. La Administración Pública de la Comunidad Autónoma adecua sus estructuras y ordena su funcionamiento a la consecución de las mejores prestaciones públicas, con la mayor economía de medios que permita el cumplimiento de los fines que tiene encomendados conforme a lo dispuesto en el título I de la presente Ley. 2. La creación de todo órgano administrativo que suponga un incremento del gasto público irá precedida por un estudio económico de los costes de instalación y funcionamiento y del rendimiento de utilidad de sus servicios, así como de la justificación razonada de su procedencia conforme a los criterios previstos en el artículo 9 de esta Ley. ARTÍCULO 31. 1. La Administración Pública de la Comunidad se establece funciona y actúa bajo el principio de ordenación jerárquica de sus órganos: 2. La competencia se ejerce por los órganos que expresamente la tengan atribuida sin perjuicio de lo establecido en los números siguientes: 6 \f 3. El ejercicio de las competencias propias podrá ser delegado en el órgano que, por la aplicación del principio de eficacia, sea más idóneo para ello. 4. Las delegaciones podrán ser avocadas por el órgano delegante, con carácter general o para la resolución de un determinado expediente."
+    },
+    {
+      "titulo": "4. ARTÍCULO 32",
+      "contenido": "5. Las delegaciones y las avocaciones de carácter general que se efectúen de acuerdo con los números anteriores deberán ser publicadas, para surtir efectos, en el «Boletín Oficial de la Comunidad de Canarias». ARTÍCULO 32. Las actuaciones ejecutadas por los órganos regionales o territoriales de la Administración de la Comunidad Autónoma, así como los actos administrativos emanados de los órganos de los Cabildos Insulares o Ayuntamientos canarios en el ejercicio de competencias delegadas por la Comunidad Autónoma, se imputarán a aquélla a los efectos de la responsabilidad patrimonial y de la representación y defensa en juicio, que se llevará a cabo por los Servicios Jurídicos del Gobierno de Canarias. ARTÍCULO 33. 1. La responsabilidad patrimonial de la Administración de la Comunidad Autónoma será exigible en los términos establecidos por la legislación básica del Estado, de acuerdo con lo dispuesto en el artículo 106.2 de la Constitución Española. 2. Los actos de la Administración Pública de la Comunidad sujetos al Derecho Administrativo se adoptarán conforme a las normas de procedimiento establecido por la legislación estatal, salvo en el caso de procedimientos especiales regulados por Ley de la Comunidad Autónoma en el marco de las competencias legislativas conferidas por el Estatuto de Autonomía. ARTÍCULO 33 BIS. 1. Los actos administrativos de los órganos de la Administración pública adoptarán la forma siguiente: a) Decreto: los dictados por el presidente o presidenta. b) Orden: los dictados por el vicepresidente o vicepresidenta y los consejeros o consejeras. c) Resolución: los dictados por los demás órganos administrativos. 2. En cada órgano superior de la Administración pública autonómica deberá existir un registro de actos en el que se inscribirán todos los dictados por el mismo. ARTÍCULO 34. En el ejercicio de sus competencias, la Administración de la Comunidad gozará de las potestades y privilegios reconocidos a la Administración del Estado y, en todo caso, los siguientes: a) La presunción de legitimidad y la ejecutoriedad de sus actos, así como los poderes de ejecución forzosa y de revisión en vía administrativa. b) La potestad expropiatoria, incluida la declaración de urgente ocupación de los bienes afectados y el ejercicio de las restantes competencias de la legislación expropiatoria atribuidas a la Administración del Estado cuando se trate de materia de competencia de la Comunidad Autónoma. c) Los poderes de investigación, deslinde y recuperación de oficio en materia de bienes. d) La potestad de sanción, dentro de los límites que establezca el ordenamiento jurídico. e) La facultad de utilización del procedimiento de apremio. 7 \f f) La inembargabilidad de sus bienes y derechos, así como los privilegios de prelación, preferencia y demás reconocidos a la Hacienda Pública para el cobro de sus créditos, sin perjuicio de los que correspondan en esta materia a la Hacienda Pública del Estado y en igualdad de derechos con las demás Comunidades Autónomas. g) La exención de toda obligación de garantía o caución ante cualquier organismo administrativo o Tribunal Jurisdiccional. 8 \f LEY 7/2015, DE 1 DE ABRIL, DE LOS MUNICIPIOS DE CANARIAS. TÍTULO PRELIMINAR DISPOSICIONES GENERALES ARTÍCULO 1. OBJETO DE LA LEY. Es objeto de la presente ley la regulación de los municipios y del resto de entidades de Canarias previstas en el artículo siguiente, en desarrollo de la legislación básica de régimen local, bajo el título competencial que le confiere el Estatuto de Autonomía de Canarias. ARTÍCULO 2. ÁMBITO DE APLICACIÓN. 1."
+    },
+    {
+      "titulo": "5. ARTÍCULO 3",
+      "contenido": "Esta ley será aplicable a las siguientes entidades: a) Los municipios. b) Las Áreas metropolitanas. c) Las Mancomunidades de municipios. d) La entidad de gestión desconcentrada de la isla de La Graciosa. e) Los organismos autónomos y las entidades públicas empresariales constituidas para la prestación de servicios públicos y actividades de competencia municipal por alguna de las entidades citadas en las letras anteriores. f) Los consorcios en que se integren entidades municipales canarias, cuando estén adscritos a alguna de ellas. g) Las sociedades mercantiles constituidas por entidades municipales con capital mayoritariamente público h) Las fundaciones públicas municipales. 2. A los efectos de esta ley, el conjunto de entidades a que se refiere el número anterior, constituye el sector público municipal de Canarias. ARTÍCULO 3. RÉGIMEN JURÍDICO. 1. Las entidades reseñadas en las letras a), b) y c) del artículo anterior se rigen por la legislación básica estatal, por esta ley y la normativa propia de aquellas en sus aspectos competencial, organizativo y de funcionamiento. 2. Las entidades señaladas en las letras d) y e) del artículo anterior se rigen por sus instrumentos de creación y los preceptos de esta ley que se declaren aplicables. 3. Las entidades señaladas en las letras f), g) y h) del artículo anterior se someten a los preceptos de esta ley que se declaren de aplicación y a sus normas de funcionamiento. TÍTULO I DEL MUNICIPIO CAPÍTULO I AUTONOMÍA MUNICIPAL ARTÍCULO 4. EXPRESIÓN DE LA AUTONOMÍA MUNICIPAL. Como manifestaciones de la autonomía constitucional y legalmente reconocida a los municipios, la presente ley garantiza: a) Su Pleno reconocimiento en las leyes autonómicas canarias atributivas de competencias. b) El reconocimiento de su personalidad propia y plena y la responsabilidad por sus actuaciones. 9 \f c) La gestión por los municipios de los asuntos públicos de interés vecinal. d) Las competencias que permitan hacer efectiva esa participación. e) La facultad para conformar y ejecutar una política municipal propia y diferenciada en el marco de tales competencias y participar en la configuración de las políticas sectoriales, insulares y autonómicas, que les afecten. f) La organización de sus estructuras administrativas internas para adaptarse a sus necesidades específicas y permitir una gestión eficaz y eficiente. CAPÍTULO II COMPETENCIAS MUNICIPALES SECCIÓN 1.ª PRINCIPIOS ARTÍCULO 5. PRINCIPIOS. 1. La atribución de competencias a los municipios que hagan las leyes sectoriales, se ajustará a los siguientes principios, además de los previstos en la legislación básica de régimen local: a) Garantía de la autonomía municipal. b) Máxima proximidad. c) Igualdad de la ciudadanía en el acceso a los servicios públicos. d) Suficiencia financiera y estabilidad presupuestaria. Asimismo, la atribución de competencias que hagan estas leyes se realizará conforme a los principios de descentralización, ausencia de duplicidad administrativa y eficiencia, acompañándose de las memorias e informes exigidos en la legislación básica de régimen local. 2. En el marco de lo que dispongan las leyes, por la Administración autonómica se llevará a cabo la debida coordinación de las entidades del sector público municipal de Canarias, mediante medidas que garanticen la efectiva aplicación de los anteriores principios y de la legislación sobre estabilidad presupuestaria y sostenibilidad financiera. ARTÍCULO 6. GARANTÍA DE LA AUTONOMÍA MUNICIPAL. 1."
+    },
+    {
+      "titulo": "6. ARTÍCULO 7",
+      "contenido": "En virtud del principio de garantía de la autonomía municipal se atribuirá a los municipios toda competencia que se aprecie que afecta preponderantemente al círculo de intereses vecinales de los municipios, aunque las funciones que de tal competencia se deriven no sean exclusivamente municipales, debiendo especificarse en cada caso las que corresponden ejercer a los Ayuntamientos bien de forma exclusiva, bien compartida o conjuntamente en régimen de cooperación, colaboración o coordinación con otras Administraciones canarias. 2. En todo caso, las leyes garantizarán la autonomía de los municipios para la gestión de los intereses públicos en su ámbito, la organización de los órganos de gobierno y administración municipales, la organización y planificación de su propio territorio, la regulación y prestación de los servicios locales, la iniciativa económica, la gestión del personal a su servicio y de su patrimonio y la recaudación, administración y destino de los recursos de sus haciendas. ARTÍCULO 7. MÁXIMA PROXIMIDAD. Como principio complementario al de garantía de la autonomía municipal, la legislación que atribuya competencias a los Ayuntamientos canarios deberá tener en cuenta la máxima proximidad a la ciudadanía que permita que sean aquellos, con preferencia a otras Administraciones Públicas canarias, los que desarrollen servicios y funciones prestacionales, particularmente las que tiendan a satisfacer intereses vecinales de primer grado o esenciales para la comunidad vecinal. 10 \f ARTÍCULO 8. IGUALDAD DE LA CIUDADANÍA EN EL ACCESO A LOS SERVICIOS PÚBLICOS. Las leyes que atribuyan competencias a los municipios introducirán fórmulas para asegurar a todos los ciudadanos canarios su derecho a acceder en condiciones de igualdad a los servicios públicos municipales teniendo en cuenta las diferentes características demográficas, geográficas, funcionales, organizativas, de dimensión y de capacidad de gestión que tienen los distintos municipios de Canarias. ARTÍCULO 9. SUFICIENCIA FINANCIERA Y ESTABILIDAD PRESUPUESTARIA. En aplicación del principio de suficiencia financiera, las nuevas competencias que las leyes canarias atribuyan como propias a los municipios y que supongan cargas económicas adicionales para estos, llevarán aparejadas los correspondientes traspasos de recursos y medios de la comunidad autónoma. Asimismo, con igual finalidad, se tendrá en cuenta el principio constitucional de equilibrio presupuestario estructural. SECCIÓN 2.ª COMPETENCIAS ARTÍCULO 10. COMPETENCIAS MUNICIPALES. 1. Son competencias propias del municipio aquellas cuya titularidad le atribuyen las leyes del Estado y las de la Comunidad Autónoma de Canarias. Estas últimas asignarán a los municipios toda competencia que se aprecie que afecta preponderantemente al círculo de intereses municipales. 2. Son competencias delegadas aquellas sobre las que el Estado, la Comunidad Autónoma, los Cabildos insulares u otras Administraciones Públicas hayan atribuido su ejercicio al municipio, conservando la titularidad la administración delegante. La Administración autonómica canaria delegará en los municipios el ejercicio de aquellas competencias autonómicas que por los principios de la sección 1.ª de este capítulo sea conveniente que se lleven a cabo en el ámbito municipal. La delegación se ajustará a la legislación básica de régimen local persiguiéndose la mejora en los servicios públicos además de una eficiente gestión pública tendente a la eliminación de duplicidades administrativas."
+    },
+    {
+      "titulo": "7. ARTÍCULO 11",
+      "contenido": "La delegación respetará los principios de estabilidad presupuestaria y sostenibilidad financiera y no podrá tener una duración inferior a la prevista en la legislación básica. 3. Además de las competencias señaladas en los apartados anteriores, los municipios canarios podrán ejercer otras que, cumpliendo con los requisitos legales, promuevan actividades y servicios que contribuyan a satisfacer necesidades y aspiraciones de la comunidad vecinal, con respeto a los principios de estabilidad presupuestaria y sostenibilidad financiera, descartándose que un servicio público pueda ser ofrecido simultáneamente por varias Administraciones. ARTÍCULO 11. ATRIBUCIÓN DE COMPETENCIAS PROPIAS. Sin perjuicio de lo previsto en la legislación básica, los municipios canarios asumirán, en todo caso, las competencias que les asignen como propias las leyes sectoriales de la Comunidad Autónoma de Canarias sobre las siguientes materias: a) Actividades clasificadas y espectáculos públicos. b) Consumo. c) Cultura. d) Deportes. e) Educación. f) Empleo. 11 \fg) Fomento y promoción del desarrollo económico y social municipal en el marco de la planificación autonómica. h) Igualdad de género. i) Juventud. j) Medio ambiente. k) Patrimonio histórico. l) Protección civil y seguridad ciudadana. m) Sanidad. n) Servicios sociales. ñ) Transportes. o) Turismo. p) Urbanismo. q) Vivienda. 12 \fLEY 8/2015, DE 1 DE ABRIL, DE CABILDOS INSULARES. TÍTULO PRELIMINAR DISPOSICIONES GENERALES ARTÍCULO 1. OBJETO DE LA LEY. 1. Es objeto de la presente ley la regulación de los cabildos insulares, de acuerdo con la Constitución y el Estatuto de Autonomía de Canarias, en el marco de la legislación básica estatal sobre régimen jurídico de las administraciones públicas, estableciendo: a) Las competencias. b) La organización de gobierno y administrativa. c) El funcionamiento, información y transparencia. d) Las relaciones de la Comunidad Autónoma y los cabildos insulares. 2. Asimismo, se regula la Conferencia de Presidentes como foro institucional de colaboración de la Comunidad Autónoma de Canarias y los cabildos insulares. ARTÍCULO 2. NATURALEZA DE LOS CABILDOS INSULARES. Los cabildos insulares son instituciones de la Comunidad Autónoma de Canarias, así como órganos de gobierno, administración y representación de cada una de las siete islas en que se articula territorialmente la Comunidad Autónoma de Canarias. ARTÍCULO 3. MANCOMUNIDADES, FEDERACIONES Y ASOCIACIONES DE CABILDOS INSULARES. 1. Los cabildos insulares no podrán mancomunarse o federarse para la prestación conjunta de servicios propios o las transferidos, sin perjuicio de mancomunidades provinciales interinsulares como órganos de representación y expresión de los intereses provinciales. la subsistencia de 2. Los actos que contravengan lo establecido en el apartado anterior serán nulos de pleno derecho. 3. Los cabildos insulares podrán constituir una asociación, de ámbito autonómico, para la protección y promoción de sus intereses comunes, sometida a la legislación sobre asociaciones. En ningún caso podrá servir para la prestación conjunta de servicios o funciones administrativas de conformidad con la prohibición establecida en el apartado 1. Esta asociación se regirá por sus estatutos, aprobados por los representantes de los cabildos insulares que la constituyan, los cuales deberán garantizar la participación de sus miembros en las tareas asociativas y la representatividad de sus órganos de gobierno."
+    },
+    {
+      "titulo": "8. ARTÍCULO 4",
+      "contenido": "Dicha asociación, en el ámbito propio de sus funciones, podrán celebrar convenios con las distintas administraciones públicas radicadas en Canarias. Asimismo, podrá actuar como entidad colaboradora de la Administración pública de la Comunidad Autónoma en la gestión de las subvenciones de las que puedan ser beneficiarios los cabildos insulares y sus organismos y entidades dependientes, así como crear centrales de contratación a las que puedan adherirse las corporaciones asociadas. ARTÍCULO 4. AUDIENCIA DE LOS CABILDOS INSULARES. Cuando un anteproyecto de ley o proyecto de decreto afecte a las materias reguladas en esta ley, se dará por el Gobierno audiencia a los cabildos insulares por un plazo de quince días, previamente a su aprobación. 13 \f TÍTULO I COMPETENCIAS DE LOS CABILDOS INSULARES CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO 5. COMPETENCIAS DE LOS CABILDOS INSULARES. 1. Los cabildos insulares, como órganos de gobierno, administración y representación de las islas, ejercen las competencias propias que corresponden a las islas y las que le sean delegadas por otras administraciones públicas de acuerdo con lo establecido en la legislación de régimen local y en su legislación específica. 2. Como instituciones de la Comunidad Autónoma de Canarias, corresponde a los cabildos insulares el ejercicio de las funciones, competencias y facultades que se determinan en el Estatuto de Autonomía de Canarias, así como las competencias autonómicas que le sean atribuidas, transferidas o delegadas conforme a lo establecido en la presente ley de entre las asumidas por la Comunidad Autónoma de Canarias de acuerdo con lo establecido en el Estatuto de Autonomía de Canarias y en el resto del ordenamiento jurídico. ARTÍCULO 6. ÁMBITOS MATERIALES DE COMPETENCIAS DE LOS CABILDOS INSULARES. 1. En el marco de las competencias asumidas por la Comunidad Autónoma de Canarias, los cabildos insulares ejercerán competencias en los ámbitos materiales que se determinen por ley del Parlamento de Canarias. 2. En todo caso, en los términos de la presente ley y de la legislación reguladora de los distintos sectores de actuación pública, se atribuirán a los cabildos insulares competencias en las materias siguientes: a) Demarcaciones territoriales, alteración de términos y denominación oficial de los municipios. b) Ordenación del territorio y urbanismo. c) Carreteras, salvo las que se declaren de interés autonómico, en el marco de lo que disponga la legislación territorial canaria. d) Transporte por carretera, por cable y ferrocarril. e) Gestión de puertos de refugio y deportivos, salvo que se declaren de interés autonómico. f) Turismo. g) Ferias y mercados insulares. h) Defensa del consumidor. i) Asistencia social y servicios sociales. Gestión de la dependencia en los términos que la ley prevea. j) Las funciones propias de la Agencia de Extensión Agraria. Infraestructura rural de carácter insular. Granjas experimentales. k) Campañas de saneamiento zoosanitario. l) Servicios forestales, vías pecuarias y pastos. m) Protección del medioambiente y espacios naturales protegidos. n) Acuicultura y cultivos marinos. ñ) Artesanía. o) Cultura, deportes, ocio y esparcimiento. Patrimonio histórico-artístico insular. Museos, bibliotecas y archivos que no se reserve la Comunidad Autónoma. p) Caza. q) Espectáculos. r) Actividades clasificadas. s) Igualdad de género. t) Aguas. 14 \f CAPÍTULO II COMPETENCIAS DE LOS CABILDOS INSULARES COMO ÓRGANOS DE GOBIERNO, ADMINISTRACIÓN Y REPRESENTACIÓN DE LAS ISLAS SECCIÓN 1.ª DISPOSICIONES GENERALES ARTÍCULO 7. COMPETENCIAS PROPIAS Y DELEGADAS. 1."
+    },
+    {
+      "titulo": "9. artículo 6",
+      "contenido": "Los cabildos insulares, en cuanto órganos de gobierno, administración y representación de las islas como entidades locales, ejercen las competencias propias que les atribuyen la legislación de régimen local, las leyes reguladoras de los sectores materiales de la acción pública enumerados en el artículo 6 de la presente ley, y, además, las que determina el artículo 5 de la Ley 11 de julio de 1912, de Régimen del Archipiélago Canario. Dichas competencias se ejercerán bajo su propia responsabilidad, en el marco de las leyes y sin sujeción a directrices o instrucciones, generales o concretas, con cargo a recursos propios y conforme a los principios de sostenibilidad económica, social y ambiental de las infraestructuras, las dotaciones, los equipamientos y los servicios públicos, así como de transparencia de toda la actividad insular. 2. La atribución de competencias propias por las leyes autonómicas atenderá a los siguientes principios: a) Garantía de la autonomía insular. b) Eficacia. c) Eficiencia. d) Máxima proximidad al ciudadano. e) No duplicidad de competencias. f) Estabilidad presupuestaria. g) Suficiencia financiera. 3. Los cabildos insulares, en su condición de órganos de gobierno, administración y representación de las islas como entidades locales y de acuerdo con el régimen establecido en la legislación de régimen local, ejercerán las competencias que le sean delegadas por el Estado, por la Comunidad Autónoma de Canarias y por los municipios de su isla. 4. Los cabildos insulares podrán delegar sus competencias propias en las entidades locales municipales de su territorio, de acuerdo con el régimen previsto en la legislación de régimen local. 5. Los cabildos insulares, en su condición de órganos de gobierno, administración y representación de las islas como entidades locales, podrán ejercer competencias distintas de las propias y de las atribuidas por delegación, debiendo obtener previamente los informes preceptivos y vinculantes de inexistencia de duplicidades y de sostenibilidad financiera previstos en el artículo 7.4 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local. Dichos informes se solicitarán a los órganos autonómicos competentes en materia de régimen local y de tutela financiera de las entidades locales, respectivamente, de acuerdo con el procedimiento regulado reglamentariamente. ARTÍCULO 8. DELIMITACIÓN DE LAS COMPETENCIAS PROPIAS. 1. Como órganos de gobierno, administración y representación de las islas, son competencias propias de los cabildos insulares: a) La coordinación de los servicios municipales entre sí para la garantía de la prestación integral y adecuada en la totalidad del territorio insular. 15 \f b) La asistencia y la cooperación jurídica, económica y técnica a los municipios, especialmente los de menor capacidad económica y de gestión. En todo caso garantizará en los municipios de menos de 1.000 habitantes la prestación de los servicios de secretaría e intervención. c) La prestación de servicios públicos de carácter supramunicipal y, en su caso, supracomarcal y el fomento o, en su caso, coordinación de la prestación unificada de servicios de los municipios de su respectivo ámbito territorial. En particular, asumirá la prestación de los servicios de tratamiento de residuos en los municipios de menos de 5.000 habitantes, y de prevención y extinción de incendios en los de menos de 20.000 habitantes, cuando estos no procedan a su prestación."
+    },
+    {
+      "titulo": "10. ARTÍCULO 9",
+      "contenido": "d) La cooperación en el fomento del desarrollo económico y social y en la planificación en el territorio insular, de acuerdo con las competencias de las demás administraciones públicas en este ámbito. e) El ejercicio de funciones de coordinación de medidas contenidas en los planes económico-financieros en los casos y de acuerdo con lo previsto en la legislación básica de régimen local. f) Asistencia en la prestación de los servicios de gestión de la recaudación tributaria, en periodo voluntario y ejecutivo, y de servicios de apoyo a la gestión financiera de los municipios con población inferior a 20.000 habitantes. g) La prestación de los servicios de la administración electrónica y la contratación centralizada en los municipios con población inferior a 20.000 habitantes. h) El seguimiento de los costes efectivos de los servicios prestados por los municipios de su isla. Cuando el cabildo insular detecte que estos costes son superiores a los de los servicios coordinados o prestados por ella, ofrecerá a los municipios su colaboración para una gestión coordinada más eficiente de los servicios que permita reducir estos costes. i) La coordinación mediante convenio, con la comunidad autónoma respectiva, de la prestación del servicio de mantenimiento y limpieza de los consultorios médicos en los municipios con población inferior a 5.000 habitantes. 2. Asimismo, los cabildos insulares, en los municipios con población inferior a 20.000 habitantes coordinarán la prestación de los servicios municipales previstos en la legislación básica de régimen local, en los términos establecidos en la misma y, en su caso, en la legislación de desarrollo que se dicte por la comunidad autónoma. ARTÍCULO 9. ATRIBUCIÓN DE COMPETENCIAS PROPIAS A LOS CABILDOS INSULARES. 1. La Comunidad Autónoma de Canarias, al regular los diversos sectores de la acción pública sobre los que el Estatuto de Autonomía le atribuye potestad legislativa, y especialmente en las materias recogidas en el artículo 6 de la presente ley, atribuirá a los cabildos insulares la titularidad y el ejercicio de las competencias que de forma predominante satisfagan un interés insular. 2. La ley determinará con precisión las competencias propias que se atribuyen a los cabildos insulares, de forma que impida las duplicidades administrativas con las competencias de la Administración pública de la Comunidad Autónoma y con las atribuidas a otras administraciones públicas. 3. En aplicación del principio de suficiencia financiera, la atribución de nuevas competencias propias a los cabildos insulares, de acuerdo con lo previsto en este artículo, que supongan cargas económicas adicionales para los mismos, llevarán aparejados los correspondientes traspasos de medios en la forma prevista en esta ley para la transferencia de competencias. 16 \f SECCIÓN 2.ª ASISTENCIA A LOS MUNICIPIOS ARTÍCULO 10. COMPETENCIAS DE ASISTENCIA A LOS MUNICIPIOS. 1. Los cabildos insulares, para garantizar el ejercicio de las competencias municipales, prestarán asistencia a los municipios de su respectiva isla, especialmente a los de menos de 20.000 habitantes, y con atención preferente a los municipios con insuficiente capacidad económica y de gestión, así como al establecimiento y adecuada prestación de los servicios mínimos. 2. En el ejercicio de sus competencias de asistencia a los municipios, los cabildos insulares se ajustarán a los siguientes principios: a) Solidaridad territorial y social. b) Planificación y programación de la actividad insular. c) Concertación con los municipios de las acciones que les afecten o interesen."
+    },
+    {
+      "titulo": "11. ARTÍCULO 11",
+      "contenido": "d) Promoción y, en su caso, creación, mantenimiento y gestión de redes de servicios públicos municipales en las que puedan integrarse o a las que puedan adherirse voluntariamente los municipios. 3. La asistencia de los cabildos insulares a los municipios podrá consistir en: a) La asistencia técnica, de información, asesoramiento, realización de estudios, elaboración de planes y disposiciones, formación y apoyo tecnológico. b) La cooperación económica para la financiación de inversiones, actividades y servicios de competencia municipal. c) La asistencia material en la prestación de servicios municipales. d) La realización de actividades materiales y de gestión que le encomienden los municipios. 4. La asistencia a los municipios será voluntaria, previa solicitud del ayuntamiento y de acuerdo con los términos que se pacten. No obstante, la asistencia será obligatoria en los supuestos en que así esté establecido legalmente o cuando el cabildo insular deba prestarla a solicitud de los municipios, de acuerdo con los requisitos y sistema de financiación que se establezca en el reglamento aprobado por el pleno de la corporación insular. ARTÍCULO 11. ASISTENCIA JURÍDICA, TÉCNICA Y ADMINISTRATIVA. 1. Los cabildos insulares, sin perjuicio de la que corresponda o pueda realizarse por otras técnica y la siguiente asistencia jurídica, administraciones públicas, prestarán administrativa: a) Elaboración del planeamiento urbanístico y de instrumentos de gestión urbanística. b) Elaboración de los pliegos de condiciones y demás documentación integrante de la contratación pública, así como la colaboración en la organización y gestión de los procedimientos de contratación. c) Redacción de disposiciones generales, en especial de ordenanzas y normas orgánicas municipales. d) Implantación de tecnología de la información y de las comunicaciones, así como de administración electrónica. e) La colaboración en el cumplimiento de las obligaciones de transparencia. f) Elaboración de estudios, planes y proyectos en cualquier materia de competencia municipal. g) Asesoramiento jurídico, técnico y económico, incluida la representación y defensa jurídica tanto en vía administrativa como jurisdiccional. h) Elaboración de instrumentos de gestión de personal, planes de carrera profesional y evaluación del desempeño, así como el apoyo en la selección y formación de su personal. i) Elaboración y ejecución de programas de formación y desarrollo de competencias para representantes locales. j) Integración de la igualdad de género en la planificación, seguimiento y evaluación de las políticas municipales. k) Cualquier otra que pueda establecerse por iniciativa propia del cabildo insular o a petición de los ayuntamientos. 17 \f 2. Los cabildos insulares aprobarán los reglamentos que sean precisos en los que se establezcan las condiciones y requisitos exigidos para los distintos tipos de asistencia, así como la forma de financiación que en cada caso corresponda. ARTÍCULO 12. ASISTENCIA EN LA GESTIÓN DE SERVICIOS MUNICIPALES. 1. Para asegurar la prestación integral y adecuada en la totalidad del territorio insular de los servicios de competencia municipal, los cabildos insulares facilitarán asistencia material en la prestación de los servicios municipales, especialmente de los servicios mínimos. 2."
+    },
+    {
+      "titulo": "12. ARTÍCULO 13",
+      "contenido": "A los efectos previstos en el apartado anterior, se podrá utilizar cualquier fórmula de asistencia y cooperación, así como otorgar subvenciones y ayudas con cargo a los recursos propios del cabildo insular para la realización y el mantenimiento de obras y servicios municipales, que podrán instrumentarse a través del plan insular de obras y servicios, de planes sectoriales o especiales, o de cualquier otro instrumento específico. ARTÍCULO 13. PRESTACIÓN DE SERVICIOS MUNICIPALES POR LOS CABILDOS INSULARES. 1. Los cabildos insulares podrán asumir la prestación de servicios municipales de los municipios con población inferior a los 20.000 habitantes previstos en la legislación básica de régimen local, conforme a lo establecido en dicha legislación. 2. Para la prestación por los cabildos insulares de los servicios de tratamiento de residuos en los municipios de menos de 5.000 habitantes, y de prevención y extinción de incendios en los de menos de 20.000 habitantes, será preciso que el cabildo insular respectivo conceda a los municipios un plazo de dos meses para que manifiesten su voluntad de prestarlos. En caso de que manifiesten que no van a prestarlos o transcurrido el plazo sin que hayan dado una respuesta expresa, se asumirá la prestación por el cabildo insular. 3. Sin perjuicio de la asistencia prevista en el artículo 11 de la presente ley, los cabildos insulares prestarán los servicios de administración electrónica y la contratación centralizada en los municipios con población inferior a 20.000 habitantes. ARTÍCULO 14. PLAN INSULAR DE COOPERACIÓN EN OBRAS Y SERVICIOS MUNICIPALES. 1. Los cabildos insulares deberán aprobar anualmente el plan insular de cooperación en obras y servicios de competencia municipal, con el objeto de cooperar económicamente en las obras y servicios de competencia municipal. 2. En la elaboración, tramitación y aprobación de los planes insulares de cooperación en obras y servicios de competencia municipal se tendrán en cuenta las siguientes reglas: a) En la elaboración del plan se garantizará la participación de todos los municipios de la isla, mediante la apertura de una fase previa de consulta a los ayuntamientos para que formulen sus propuestas y puedan ofrecer información detallada sobre sus necesidades e intereses peculiares. b) En el plan deberán incluirse fórmulas de prestación unificada o supramunicipal de servicios municipales para reducir sus costes efectivos, cuando el cabildo insular detecte que los costes efectivos de los servicios prestados por los municipios son superiores a los de los servicios coordinados o prestados por la corporación insular. c) El plan debe contener una memoria justificativa de sus objetivos y los criterios de distribución de los fondos, que deben ser objetivos y equitativos y entre los que estará el análisis de los costes efectivos de los servicios de los municipios, así como el correspondiente baremo para su aplicación. d) Elaborado el plan, deberá someterse a audiencia de los ayuntamientos de la isla e información pública, por plazo común, a fin de que puedan realizarse alegaciones y observaciones. e) La aprobación definitiva del plan corresponderá al cabildo insular, que viene obligado a motivar cualquier rechazo de las prioridades municipales, con especificación expresa del objetivo o criterio insatisfecho, y se propondrá derivar la asistencia para otra obra, actividad o servicio incluido en la relación de prioridades elaborada por el ayuntamiento, el cual podrá realizar una nueva concreción de la propuesta."
+    },
+    {
+      "titulo": "13. ARTÍCULO 15",
+      "contenido": "18 \f f) La financiación del plan podrá hacerse con fondos propios del cabildo insular, con aportaciones municipales y con las aportaciones y subvenciones procedentes de otras administraciones públicas. ARTÍCULO 15. ASISTENCIA EN EL EJERCICIO DE LAS FUNCIONES PÚBLICAS NECESARIAS. 1. Los cabildos insulares garantizarán el desempeño de las funciones públicas necesarias establecidas en la legislación básica de régimen local en los ayuntamientos de su isla respectiva, con sujeción a lo establecido en las normas reguladoras del ejercicio de dichas funciones públicas. 2. A los efectos establecidos en el apartado anterior, deberán establecer en su relación de puestos de trabajo los puestos reservados a los funcionarios de administración local con habilitación de carácter nacional que sean necesarios. CAPÍTULO III COMPETENCIAS DE LOS CABILDOS INSULARES COMO INSTITUCIONES DE LA COMUNIDAD AUTÓNOMA DE CANARIAS SECCIÓN 1.ª DISPOSICIONES GENERALES ARTÍCULO 16. COMPETENCIAS COMO INSTITUCIONES AUTONÓMICAS. Los cabildos insulares como instituciones de la Comunidad Autónoma de Canarias ejercen las funciones, competencias y facultades que se recogen en el Estatuto de Autonomía de Canarias, así como las competencias autonómicas que se determinan en esta ley o les sean atribuidas legalmente. ARTÍCULO 17. RÉGIMEN GENERAL. Las competencias autonómicas atribuidas a los cabildos insulares como instituciones autonómicas se ejercerán de conformidad con lo previsto en la presente ley, en el marco establecido en la legislación básica de régimen jurídico de las administraciones públicas. Sección 2.ª Iniciativa legislativa ARTÍCULO 18. LA INICIATIVA LEGISLATIVA. 1. En tanto que instituciones de la comunidad autónoma, cada cabildo insular puede ejercer la iniciativa legislativa ante el Parlamento de Canarias de acuerdo con lo establecido en el Estatuto de Autonomía de Canarias. 2. Esta iniciativa se ejercerá en cualquier materia sobre la que pueda pronunciarse legislativamente la Comunidad Autónoma de Canarias, con excepción de las de naturaleza presupuestaria. 3. Asimismo, los cabildos insulares podrán proponer al Parlamento de Canarias que solicite al Gobierno del Estado la adopción y presentación de proyectos de ley, o la presentación de proposiciones de ley ante las Cortes Generales, de acuerdo con el artículo 87.2 de la Constitución. ARTÍCULO 19. EJERCICIO DE LA INICIATIVA LEGISLATIVA. 1. La iniciativa legislativa de los cabildos insulares se ejerce, de acuerdo con lo establecido en el Reglamento del Parlamento de Canarias, mediante la presentación ante la Mesa del Parlamento de proposiciones de ley articuladas aprobadas con la mayoría absoluta del número legal de los miembros de la corporación. 2. El escrito de presentación de la proposición de ley deberá acompañarse de los siguientes documentos: a) El texto articulado de la proposición de ley, acompañado de una exposición de motivos y de los antecedentes que se consideren necesarios para pronunciarse sobre el mismo. b) Certificación expedida por el secretario de la corporación acreditativa del cumplimiento de los requisitos previstos en este artículo. 19 \f SECCIÓN 3.ª REPRESENTACIÓN Y COLABORACIÓN CON EL GOBIERNO DE CANARIAS ARTÍCULO 20. FUNCIONES DE REPRESENTACIÓN DEL GOBIERNO DE CANARIAS. 1. Los cabildos insulares, en el ejercicio de la representación ordinaria del Gobierno de Canarias en cada isla, deberán: a) Aplicar estrictamente y velar por el cumplimiento de las leyes y reglamentos de la comunidad autónoma. b) Ejecutar los acuerdos del Gobierno de Canarias que les afecten."
+    },
+    {
+      "titulo": "14. ARTÍCULO 21",
+      "contenido": "c) Recibir, fechar, registrar y cursar toda instancia, reclamación, recurso o documento que les fueran presentados dirigidos al Gobierno de Canarias o a su administración pública. d) Establecer en sus respectivas sedes una oficina de información general al público sobre la organización y actividades de las administraciones públicas de Canarias. 2. Los cabildos insulares, asimismo, representan protocolariamente, a través de su presidencia, al Gobierno de Canarias, en cualesquiera de los actos oficiales que se celebren en la isla, salvo que asistan a los mismos su presidente o vicepresidente o alguno de los consejeros del Gobierno. ARTÍCULO 21. EJECUCIÓN DE COMPETENCIAS AUTONÓMICAS. 1. Los cabildos insulares podrán ejecutar, en nombre de la Administración pública de la Comunidad Autónoma, cualquier competencia que esta no ejerza directamente, de conformidad con lo prevenido en el Estatuto de Autonomía. 2. A los efectos previstos en el apartado anterior, el cabildo insular advertirá a la administración pública canaria, mediante requerimiento motivado en el que se indique expresamente la competencia de que se trate, que procederá a sustituirla por inactividad, si en un plazo de tres meses no ejercita dicha competencia. No obstante, la consejería responsable en materia de administración territorial podrá discrepar motivadamente del requerimiento insular y, en tal caso, ambas administraciones acordarán una solución transitoria o definitiva para el ejercicio de la competencia. 3. Si se diera la sustitución, esta se mantendrá hasta que la Administración pública de la Comunidad Autónoma comunique formalmente al cabildo insular la asunción de la competencia, subrogándose en cuantas relaciones jurídicas se hubieran producido a partir de la firma de un acta de entrega de los expedientes tramitados o en curso de tramitación. La administración pública canaria queda obligada al abono de los gastos en que haya incurrido el cabildo insular con ocasión del ejercicio de esta competencia. SECCIÓN 4.ª ATRIBUCIÓN DE COMPETENCIAS AUTONÓMICAS SUBSECCIÓN 1.ª DISPOSICIONES GENERALES ARTÍCULO 22. MODOS DE ATRIBUCIÓN. 1. La comunidad autónoma podrá atribuir a los cabildos insulares las competencias autonómicas que le correspondan en virtud de lo establecido en el Estatuto de Autonomía de Canarias y en el resto del ordenamiento jurídico mediante transferencia o delegación. 2. Asimismo, los cabildos insulares pueden llevar a cabo la gestión ordinaria de los servicios de la comunidad autónoma, en los términos previstos en esta ley y de acuerdo con la encomienda correspondiente. 20 \f ARTÍCULO 23. PRINCIPIOS QUE RIGEN LA ATRIBUCIÓN DE COMPETENCIAS AUTONÓMICAS. 1. Podrá atribuirse a los cabildos insulares el ejercicio de competencias autonómicas en las materias que sean de la competencia de la Comunidad Autónoma de Canarias, con excepción de las que se reserven a su administración pública y de aquellas otras que se asignen a los municipios. 2. Se reservarán a la Administración pública de la Comunidad Autónoma las competencias en las que concurra cualquiera de las siguientes circunstancias: a) Que la adecuada satisfacción del interés público afectado haga preciso el desempeño autonómico de las funciones que abarque la competencia."
+    },
+    {
+      "titulo": "15. ARTÍCULO 24",
+      "contenido": "b) Que la naturaleza de la actividad o servicio impongan su prestación autonómica por afectar a dos o más islas, por afectar al equilibrio interterritorial, por razones de igualdad y equidad entre los ciudadanos o entre las islas, por su representatividad del archipiélago, por razones sociales o económicas, así como por cualquier otra causa establecida en el ordenamiento jurídico. 3. La transferencia y la delegación de competencias autonómicas exigirán su aceptación expresa por los cabildos insulares, en los términos previstos en esta ley. SUBSECCIÓN 2.ª TRANSFERENCIA DE COMPETENCIAS AUTONÓMICAS ARTÍCULO 24. DELIMITACIÓN. A los efectos de esta ley, se entiende por transferencia de competencias la atribución del ejercicio de una o varias de las funciones administrativas que comprende la competencia asumida por la comunidad autónoma respecto del sector material de la acción pública a la que se refieran, conservando la comunidad autónoma su titularidad, y, en todo caso, la ordenación básica externa, legislativa y reglamentaria, así como el control de su ejercicio en los términos previstos en la presente ley. ARTÍCULO 25. DETERMINACIÓN DE LAS COMPETENCIAS TRANSFERIDAS. 1. El Gobierno de Canarias, de entre las asumidas por la comunidad autónoma, previo acuerdo del Consejo de Colaboración Insular, determinará mediante decreto las competencias autonómicas que se transfieren a los cabildos insulares en los ámbitos materiales previstos en el Estatuto de Autonomía y en la presente ley, por ser la isla el ámbito más adecuado para su organización y para la prestación de los servicios que comprenda, siempre que las mismas no estén reservadas a la Administración pública de la Comunidad Autónoma o estén atribuidas a otra administración pública. 2. La transferencia a los cabildos insulares de competencias administrativas hasta entonces desarrolladas directamente por la Administración de la comunidad autónoma, requerirá el traspaso de los recursos y medios materiales y personales adscritos por la Administración de la comunidad autónoma a la ejecución de las competencias que se transfieren. ARTÍCULO 26. PROCEDIMIENTO DE TRAMITACIÓN DE LOS DECRETOS DE TRANSFERENCIA. La transferencia de competencias autonómicas a los cabildos insulares se ajustará al siguiente procedimiento: 1. Establecidos por ley del Parlamento de Canarias los sectores materiales de la acción pública en la que deben transferirse competencias administrativas autonómicas a los cabildos insulares, mediante acuerdo adoptado por el Consejo de Colaboración Insular, para cada una o varias de las materias, se fijará: a) Las competencias que se transfieren a los cabildos insulares. b) Las competencias que siguen correspondiendo a la Administración pública de la Comunidad Autónoma. c) Las competencias que deben compartir la Administración pública de la Comunidad Autónoma y los cabildos insulares. 21 \f d) El método para el cálculo y determinación de los servicios, medios personales y materiales y recursos que deban ser traspasados a los cabildos insulares para el ejercicio de las competencias transferidas. 2."
+    },
+    {
+      "titulo": "16. disposición para",
+      "contenido": "Adoptado el acuerdo por el Consejo de Colaboración Insular, el Gobierno de Canarias aprobará el correspondiente decreto de transferencias en el que se describan las competencias cuyo ejercicio se transfiere a los cabildos insulares, las compartidas por la Administración pública de la Comunidad Autónoma y los cabildos insulares, las que quedan reservadas a la Administración pública de la Comunidad Autónoma y la metodología precisa para llevar a cabo los traspasos de servicios, medios y recursos. 3. En el plazo de dos meses desde la publicación del decreto de transferencias, se constituirán las comisiones mixtas entre el Gobierno de Canarias y cada uno de los cabildos insulares para acordar los traspasos en que se precisen los servicios, medios personales y materiales y los recursos traspasados a cada corporación insular, publicándose mediante decreto por el Gobierno de Canarias. 4. Cada decreto de traspaso contendrá las siguientes determinaciones: a) Los servicios transferidos. b) Las unidades administrativas que queden afectas funcionalmente a los cabildos insulares para el ejercicio de las competencias transferidas. c) La relación de bienes muebles e inmuebles puestos a disposición para el ejercicio de las competencias transferidas. d) La relación de los expedientes en curso que son remitidos al cabildo insular. 5. Publicado cada decreto, se procederá a la suscripción de la oportuna acta de recepción y entrega de servicios, expedientes, bienes, personal y recursos traspasados por la Administración pública de la Comunidad Autónoma y el correspondiente cabildo insular. Desde la fecha del acta de recepción, el cabildo insular ejercerá efectivamente las competencias transferidas. ARTÍCULO 27. RÉGIMEN JURÍDICO. Las competencias autonómicas transferidas a los cabildos insulares se ejercerán en régimen de autonomía y bajo su propia responsabilidad, de acuerdo con lo establecido en la presente ley y sin perjuicio del control de su ejercicio previsto en el artículo 30 de esta ley. ARTÍCULO 28. RÉGIMEN ECONÓMICO-FINANCIERO Y PATRIMONIAL. 1. La financiación de las competencias transferidas a los cabildos insulares se regirá por lo establecido en la legislación de financiación de las haciendas territoriales de Canarias. Los créditos precisos para el ejercicio por los cabildos insulares de las competencias transferidas se consignarán en la correspondiente sección de la Ley de Presupuestos Generales de la Comunidad Autónoma. 2. Las competencias autonómicas que se transfieran por la comunidad autónoma a los cabildos insulares se someterán al régimen financiero regulador del ejercicio de las competencias propias de estas, con las singularidades que se establecen en esta ley y en la legislación autonómica. 3. El control de la gestión económico-financiera de los cabildos insulares en el ejercicio de las competencias transferidas se ejercerá por la intervención propia de los cabildos insulares, sin perjuicio de las funciones atribuidas a la Audiencia de Cuentas de Canarias y al Tribunal de Cuentas. 4. Los cabildos insulares se subrogarán en la titularidad de los bienes, derechos y obligaciones adscritos al ejercicio y ejecución de las competencias o a la prestación de los correspondientes servicios, integrándolos en su patrimonio desde la fecha de efectividad de la asunción del ejercicio de la competencia. La concreción de los bienes, derechos y obligaciones se realizará en el correspondiente decreto de traspasos. 22 \f ARTÍCULO 29. RÉGIMEN DEL PERSONAL TRASPASADO. 1."
+    },
+    {
+      "titulo": "17. ARTÍCULO 30",
+      "contenido": "El personal funcionario y laboral de la comunidad autónoma que pase a prestar servicios en los cabildos insulares en virtud de los traspasos derivados de las transferencias se integrarán plenamente en la organización de la función pública de los mismos como personal propio, conservando su condición de personal al servicio de la comunidad autónoma en la situación administrativa que corresponda de acuerdo con lo establecido en la legislación de la función pública aplicable en la misma. 2. Los cabildos insulares, al proceder a la integración del personal traspasado, deberán respetar los derechos consolidados en la Administración pública de la Comunidad Autónoma. 3. El personal de la comunidad autónoma que quede incorporado a los cabildos insulares conservará el derecho a participar en los procedimientos de provisión de puestos de trabajo que convoque la Administración pública de la Comunidad Autónoma. ARTÍCULO 30. CONTROL DEL EJERCICIO DE LAS COMPETENCIAS TRANSFERIDAS. 1. La Comunidad Autónoma de Canarias garantizará la legalidad y la eficacia administrativa de los cabildos insulares en el ejercicio de las competencias transferidas y la prestación de los servicios transferidos. A este fin: a) La Administración pública de la Comunidad Autónoma podrá impugnar ante la jurisdicción contencioso-administrativa los actos y acuerdos de los cabildos insulares conforme a lo previsto en el artículo 136 de esta ley, e instar su revisión de oficio. b) El Gobierno de Canarias ejercerá la alta inspección de los cabildos insulares en el ejercicio por sus servicios de las competencias transferidas, pudiendo solicitar de aquellos la información que estime oportuna y proponer, en su caso, al Parlamento de Canarias la adopción de las medidas que se consideren necesarias. c) Los cabildos insulares están obligados a mantener, respecto a los servicios correspondientes a las competencias transferidas, el nivel de eficacia que tenían antes de la transferencia. d) Los cabildos insulares, antes del día 30 de junio de cada año, deberán remitir al Parlamento y al Gobierno de Canarias una memoria justificativa del costo de funcionamiento y del rendimiento y eficacia de los servicios transferidos, así como la liquidación de sus presupuestos. e) Los cabildos insulares deberán comparecer en la Comisión General de Cabildos Insulares del Parlamento de Canarias para la presentación y debate de la memoria a que se refiere la letra anterior, de acuerdo con lo previsto en el Reglamento del Parlamento de Canarias. f) Excepcionalmente, el Gobierno de Canarias podrá acordar la suspensión de una o varias de las competencias transferidas, a uno o varios cabildos insulares, así como modificarlas o revocarlas, en los términos recogidos en la presente ley. 2. En el caso de que el cabildo insular no remita al Parlamento la documentación prevista en la letra d) del apartado anterior, la consejería competente en materia de hacienda procederá a retener a partir del 30 de junio del ejercicio correspondiente y hasta que se produzca la regularización de la citada remisión, las entregas a cuenta correspondientes a la financiación de las competencias transferidas que le correspondan. ARTÍCULO 31. SUSPENSIÓN DE LAS TRANSFERENCIAS. 1."
+    },
+    {
+      "titulo": "18. ARTÍCULO 32",
+      "contenido": "En el caso de grave incumplimiento de las obligaciones que los cabildos insulares asumen en virtud de las transferencias de competencias autonómicas o cuando se detectara notoria negligencia, ineficacia o gestión deficiente de las competencias transferidas, el Gobierno de Canarias advertirá expresamente al cabildo insular para que sean corregidas en un plazo no superior a un mes. 2. Si la advertencia no fuera atendida en el plazo fijado en el apartado anterior, el Gobierno de Canarias, previo acuerdo del Parlamento de Canarias, mediante decreto podrá suspender por tiempo determinado el ejercicio de la competencia por el cabildo insular correspondiente, con audiencia del mismo y previo informe del Consejo de Colaboración Insular, así como previo dictamen del Consejo Consultivo de Canarias. 23 \f 3. En el decreto de suspensión se establecerán las medidas que sean necesarias para el normal desarrollo de las competencias afectadas por parte de la Administración pública de la Comunidad Autónoma. ARTÍCULO 32. MODIFICACIÓN Y REVOCACIÓN DE LAS TRANSFERENCIAS. Cuando concurran circunstancias objetivas sobrevenidas que justifiquen que las competencias transferidas se vuelvan a asumir por la Administración pública de la Comunidad Autónoma, el Gobierno podrá acordar la modificación de las transferencias efectuadas o, en su caso, proponer al Parlamento de Canarias la revocación de la transferencia, mediante la aprobación de la correspondiente ley en la que se regularán los mecanismos de ajuste o liquidación de los recursos y cargas provocados por la transferencia, así como, en su caso, la devolución de los medios materiales y personales que correspondan. SUBSECCIÓN 3.ª DELEGACIÓN DE COMPETENCIAS AUTONÓMICAS ARTÍCULO 33. DELEGACIÓN DE COMPETENCIAS AUTONÓMICAS. 1. Los cabildos insulares podrán asumir las competencias administrativas que les sean delegadas por el Gobierno de Canarias. 2. La delegación de competencias autonómicas responderá al principio de máxima proximidad a los ciudadanos, procediendo cuando con la misma se eviten duplicidades administrativas, se obtenga una mayor eficacia administrativa o una mayor economía de recursos o se reduzcan las cargas administrativas como consecuencia de la configuración insular de la comunidad autónoma. ARTÍCULO 34. DISPOSICIÓN DE LA DELEGACIÓN DE COMPETENCIAS AUTONÓMICAS. 1. La delegación de competencias autonómicas se dispondrá, cualquiera que sea el sector de la acción pública, mediante decreto del Gobierno publicado en el Boletín Oficial de Canarias. 2. La delegación de competencias administrativas habrá de efectuarse con carácter general a todos los cabildos insulares. No obstante, podrá efectuarse a favor de uno o varios cabildos insulares con carácter singular, previo acuerdo del Parlamento de Canarias, cuando concurra alguna de las circunstancias objetivas siguientes: a) Lo exija la naturaleza o las características del servicio. b) El cabildo insular carezca de capacidad de gestión o económica. c) La gestión sea ineficiente en atención a las características territoriales y poblacionales de la isla respectiva. No será preciso acuerdo del Parlamento de Canarias cuando las delegaciones a favor de uno o varios cabildos insulares singulares se refieran a la ejecución de actuaciones públicas con un ámbito territorial que alcance a la totalidad o una parte de una o varias islas. 3. La delegación no modifica la titularidad autonómica de la competencia administrativa que tenga por objeto. ARTÍCULO 35. RÉGIMEN GENERAL DE LAS COMPETENCIAS DELEGADAS."
+    },
+    {
+      "titulo": "19. ARTÍCULO 36",
+      "contenido": "Las competencias que se asuman por los cabildos insulares mediante delegación se someten al régimen jurídico regulador del ejercicio de las competencias autonómicas, con las singularidades previstas en esta ley y en la legislación autonómica, así como las que se prevean en los decretos de delegación. 24 \f ARTÍCULO 36. PROCEDIMIENTO DE TRAMITACIÓN DE LOS DECRETOS DE DELEGACIÓN. La delegación de competencias administrativas a los cabildos insulares se ajustará a la tramitación siguiente: 1. Aprobada por el Gobierno la delegación, en la que se concretarán las competencias que se incluyan en la misma, así como el alcance, contenido, condiciones y duración, mediante acuerdo adoptado por el Consejo de Colaboración Insular se determinará el método para el cálculo y determinación de los servicios, medios personales y materiales y recursos que deban ser traspasados a los cabildos insulares para el ejercicio de las competencias delegadas. 2. En el plazo de dos meses desde la adopción del acuerdo del Consejo de Colaboración Insular, se constituirán las comisiones mixtas entre el Gobierno de Canarias y cada uno de los cabildos insulares para acordar los traspasos en que se precisen los servicios, medios personales y materiales y los recursos delegados a cada corporación insular, publicándose mediante decreto por el Gobierno de Canarias. Cada decreto de delegación contendrá las siguientes determinaciones: a) Los servicios delegados. b) Las unidades administrativas que queden afectas funcionalmente a los cabildos insulares para el ejercicio de las competencias delegadas. Respecto de dichas unidades, los cabildos insulares podrán ejercer, por delegación, las facultades de dirección, impulso, control e inspección ordinaria, así como cualesquiera otras que por razón de una eficaz gestión deban ser atribuidas a los mismos. c) La relación de bienes muebles e inmuebles puestos a disposición para el ejercicio de las competencias delegadas. d) La relación de los expedientes en curso que son remitidos al cabildo insular. e) La situación de ejecución presupuestaria en el ejercicio corriente de los créditos a que se refiere el apartado 3 siguiente. 3. Una vez publicado el decreto de delegación, esta surtirá efectos para cada cabildo insular desde que se suscriba el acta de entrega y recepción de los medios y expedientes relacionados con la competencia delegada entre la Administración pública de la Comunidad Autónoma y el correspondiente cabildo insular. ARTÍCULO 43. RENUNCIA A LA DELEGACIÓN. 1. En caso de incumplimiento por parte de la comunidad autónoma de los compromisos asumidos en la delegación, el cabildo insular requerirá expresamente al Gobierno de Canarias su cumplimiento. 2. En el caso de que el requerimiento no fuese atendido en un plazo no superior a dos meses, el cabildo insular podrá renunciar a las delegaciones afectadas por el incumplimiento, mediante acuerdo adoptado por el pleno. 3. Notificado el acuerdo de renuncia, el Gobierno de Canarias, en el plazo máximo de tres meses, deberá aprobar el correspondiente decreto de revocación de la delegación. 4. La delegación quedará sin efecto desde el día siguiente a la publicación del decreto en el «Boletín Oficial de Canarias». La publicación del decreto llevará consigo automáticamente la reintegración a la Administración pública de la Comunidad Autónoma de los medios y recursos entregados al cabildo insular con ocasión de la delegación. 25 \f SUBSECCIÓN 4.ª GESTIÓN ORDINARIA DE SERVICIOS DE LA COMUNIDAD AUTÓNOMA ARTÍCULO 44. ENCOMIENDAS DE GESTIÓN ORDINARIA DE SERVICIOS. 1."
+    },
+    {
+      "titulo": "20. TÍTULO II",
+      "contenido": "El Gobierno de Canarias, con la finalidad de prestar un mejor servicio a la ciudadanía y siempre que esté justificado por razones de eficacia, eficiencia y economía, podrá acordar con uno o varios cabildos insulares, la gestión ordinaria de los servicios de la comunidad autónoma, mediante encomienda. 2. La encomienda podrá consistir en la realización de actividades de carácter material, técnico o de servicios de competencia autonómica. La encomienda no podrá comprender facultades de resolución en las materias objeto de la misma, pero sí para dictar los actos de trámite necesarios para ejecutar las resoluciones derivadas de la encomienda, siempre que se trate de actos de trámite no susceptibles de recurso. TÍTULO II ORGANIZACIÓN DE LOS CABILDOS INSULARES CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO 48. NORMAS Y PRINCIPIOS DE ORGANIZACIÓN DE LOS CABILDOS INSULARES. 1. Los cabildos insulares ajustarán su organización a las normas que se contienen en el Estatuto de Autonomía de Canarias y en esta ley, en el marco de lo previsto en la legislación básica de régimen jurídico de las administraciones públicas, así como a lo que se establezca en sus reglamentos de organización respectivos. 2. La organización de los cabildos insulares responderá a los principios recogidos en la Constitución y en el Estatuto de Autonomía de Canarias, así como a los establecidos en la legislación básica de régimen jurídico de las administraciones públicas, en la legislación de régimen local y en la presente ley. ARTÍCULO 49. CLASES DE ÓRGANOS DE LOS CABILDOS INSULARES. La organización de los cabildos insulares se estructura en órganos de gobierno y administrativos, de acuerdo con lo establecido en esta ley. CAPÍTULO II ÓRGANOS DE GOBIERNO SECCIÓN 1.ª DISPOSICIONES GENERALES ARTÍCULO 50. ÓRGANOS DE GOBIERNO DE LOS CABILDOS INSULARES. Son órganos de gobierno necesarios de los cabildos insulares: a) El pleno. b) El presidente. c) El o los vicepresidentes. d) El consejo de gobierno insular. 26 \f ARTÍCULO 51. RÉGIMEN DE LOS ÓRGANOS DE GOBIERNO. La organización y competencias de los órganos de gobierno de los cabildos insulares se ajustarán, en el marco de la legislación básica de régimen local, a lo establecido en esta ley y a lo que se establezca en el reglamento orgánico del cabildo insular en desarrollo de dichas normas. SECCIÓN 2.ª PLENO DEL CABILDO INSULAR ARTÍCULO 52. COMPOSICIÓN, NATURALEZA Y ORGANIZACIÓN. 1. El pleno, integrado por todos los consejeros insulares electos, es el órgano de máxima representación política de los ciudadanos en el gobierno insular y de control y fiscalización de los órganos del cabildo insular. 2. El órgano de dirección del pleno es su presidente, que en el desarrollo de sus funciones cuenta con la asistencia de la junta de portavoces, sin perjuicio de las funciones que la legislación de régimen local atribuya a otros órganos. 3. El pleno dispondrá de las comisiones que se determinen, en cuya composición se integrarán los miembros que designen los grupos políticos, en proporción al número de consejeros insulares que tengan en el pleno. 4. La organización del pleno se regirá por lo establecido en el reglamento que apruebe con sujeción a lo previsto en esta ley. ARTÍCULO 53. ATRIBUCIONES DEL PLENO. El pleno de cabildo insular, en el marco de la legislación de régimen local, tiene las siguientes atribuciones: a) El control y fiscalización de los órganos de gobierno del cabildo insular."
+    },
+    {
+      "titulo": "21. artículo 30",
+      "contenido": "b) La votación de la moción de censura al presidente y la cuestión de confianza planteada por este, que será pública y se realizará mediante llamamiento nominal, en todo caso, y se regirá en todos sus aspectos por lo dispuesto en la legislación electoral general. c) La aprobación y modificación de los reglamentos orgánicos. d) La aprobación y modificación de las ordenanzas y reglamentos insulares. e) La determinación del número y denominación de las comisiones permanentes del pleno, y la constitución de comisiones especiales. f) La creación y supresión de municipios y alteración de términos municipales. g) La adopción o modificación de la bandera, enseña o escudo de la isla. h) La aprobación de la participación en consorcios u otras entidades públicas asociativas. i) La determinación de los recursos de carácter tributario propios. j) La aprobación y modificación de los presupuestos del cabildo insular, de la plantilla de personal, así como la autorización de gastos en las materias de su competencia. Asimismo, aprobará la cuenta general del ejercicio correspondiente. k) La aprobación, modificación y revisión, inicial y provisional, el plan insular de ordenación, así como la aprobación, modificación y revisión, que ponga fin a la tramitación insular, de los planes y demás instrumentos de ordenación previstos en la legislación urbanística. l) La aprobación de las transferencias, delegaciones o encomiendas de gestión de competencias, funciones, servicios o actividades a otras administraciones públicas, así como la aceptación de las que se realicen a favor del cabildo insular, salvo que se impongan obligatoriamente por ley. m) La aprobación de la memoria justificativa del costo de funcionamiento y del rendimiento y eficacia de los servicios transferidos, así como la liquidación de sus presupuestos, a que se refiere el artículo 30.1 de esta ley. 27 \f n) La creación, modificación y supresión de los servicios públicos de competencia del cabildo insular, la determinación de las formas de gestión de los mismos y la aprobación de los expedientes de insularización de servicios y/o actividades económicas. ñ) La creación de organismos autónomos, entidades públicas empresariales, fundaciones y sociedades mercantiles para la gestión de los servicios de competencia insular. o) La aprobación del plan insular de obras y servicios. p) La aprobación de las proposiciones de ley que, en el ejercicio de la iniciativa legislativa otorgada a los cabildos insulares por el Estatuto de Autonomía, hayan de remitirse al Parlamento de Canarias. q) Las facultades de revisión de oficio de sus propios actos y disposiciones de carácter general. r) El ejercicio de acciones judiciales y administrativas y la defensa jurídica del pleno en las materias de su competencia, sin perjuicio de las atribuciones del presidente del cabildo insular en caso de urgencia. s) El establecimiento del régimen retributivo de los miembros del pleno, de su secretario general, del presidente, de los miembros del consejo de gobierno insular y de los órganos directivos insulares. t) La alteración de la calificación jurídica de los bienes del patrimonio insular y la cesión gratuita de bienes inmuebles a otras administraciones o instituciones públicas. u) El planteamiento de conflictos de competencia a otras entidades locales y otras administraciones públicas. v) Las demás que tenga conferidas por ley. ARTÍCULO 54. COMISIONES DEL PLENO. 1. El pleno se organiza en las comisiones que determine el reglamento orgánico, pudiendo ser permanentes o especiales. 2."
+    },
+    {
+      "titulo": "22. ARTÍCULO 55",
+      "contenido": "El pleno del cabildo insular, a propuesta del presidente del cabildo insular, determinará el número, denominación y ámbito de actuación de las comisiones permanentes, en función de las áreas de gobierno del cabildo insular, así como la creación de comisiones especiales. En todo caso, es preceptiva la comisión especial de cuentas. 3. Las comisiones del pleno están formadas por consejeros insulares de todos los grupos políticos, en proporción al número de miembros que tengan en el pleno. Los consejeros insulares no adscritos se integrarán con voz y voto en las comisiones del pleno, en los términos que determine el reglamento de organización del cabildo insular. 4. Corresponde la presidencia de las comisiones del pleno al presidente del cabildo insular, que podrá delegarla en otros miembros de la corporación. La secretaría de las comisiones corresponde a quien desempeñe la secretaría del pleno. 5. Corresponde a las comisiones permanentes del pleno, en el ámbito funcional de gobierno que le corresponda: a) El estudio, el informe y la propuesta de resolución en los asuntos que deban ser sometidos al pleno. b) El seguimiento de la gestión del presidente del cabildo insular, del consejo de gobierno insular y de los órganos superiores y directivos de la administración insular, sin perjuicio del superior control y fiscalización que, con carácter general, le corresponde al pleno. c) Las que le sean delegadas por el pleno. ARTÍCULO 55. JUNTA DE PORTAVOCES. 1. Como órgano complementario de los cabildos insulares se constituirá la junta de portavoces, integrada por la presidencia del pleno o miembro electo en quien delegue y por los portavoces de los grupos políticos constituidos en el cabildo. 2. La constitución, funcionamiento y atribuciones de la junta de portavoces se regirá por las normas de carácter orgánico aprobadas por el pleno del cabildo insular. 28 \f SECCIÓN 3.ª PRESIDENTE DEL CABILDO INSULAR ARTÍCULO 56. NATURALEZA, RESPONSABILIDAD POLÍTICA Y CESE DEL PRESIDENTE DEL CABILDO INSULAR. 1. El presidente del cabildo insular es el órgano de representación máxima de la corporación insular. 2. El presidente del cabildo insular es responsable de su gestión política ante el pleno de la corporación insular. 3. El presidente del cabildo insular cesa por la aprobación de una moción de censura, por pérdida de la cuestión de confianza, por dimisión o renuncia aceptada por el pleno, por incapacitación o inhabilitación para cargo público declarada por sentencia judicial firme y por fallecimiento. ARTÍCULO 57. ATRIBUCIONES DEL PRESIDENTE. Corresponden al presidente del cabildo insular las atribuciones siguientes: a) La dirección de la política, el gobierno y la administración de la isla, sin perjuicio de la acción colegiada de colaboración en la dirección política que, mediante el ejercicio de las funciones que le corresponden, realice el consejo de gobierno insular. b) La representación del cabildo insular. c) La convocatoria y presidencia de las sesiones del pleno y del consejo de gobierno insular, así como decidir los empates con voto de calidad. d) El establecimiento de las directrices generales de la acción de gobierno insular y asegurar su continuidad. e) La determinación del número, denominación y competencias de las áreas de gobierno, así como de la organización y estructura de la administración insular, sin perjuicio de las competencias atribuidas al pleno en materia de organización. f) La propuesta al pleno del número, denominación y ámbito de actuación de las comisiones permanentes del pleno."
+    },
+    {
+      "titulo": "23. disposición de",
+      "contenido": "g) La superior dirección del personal al servicio de la administración insular. h) La designación y cese de los vicepresidentes, de los consejeros insulares de área, de los miembros del consejo de gobierno insular, así como del consejero-secretario del mismo. Asimismo, la propuesta al consejo de gobierno insular del nombramiento y cese de los titulares de los órganos directivos de la administración insular. i) El nombramiento y cese del personal eventual. j) La autorización y disposición de gastos, el reconocimiento y liquidación de obligaciones en las materias de su competencia. k) El ejercicio de las acciones judiciales y administrativas en materia de su competencia y, en caso de urgencia, en materias de la competencia del pleno y del consejo de gobierno insular, dando cuenta a los mismos para su ratificación. l) Las facultades de revisión de oficio de sus propios actos. m) La autorización y disposición de gastos en las materias de su competencia. n) Las demás que le atribuyan expresamente las leyes, así como aquellas que la legislación estatal o autonómica asigne a los cabildos insulares y no se atribuyan a otro órgano insular. SECCIÓN 4.ª VICEPRESIDENTES ARTÍCULO 58. NÚMERO Y DESIGNACIÓN. 1. En cada cabildo insular existirá uno o varios vicepresidentes, de acuerdo con lo que se establezca en su reglamento orgánico. 2. Los vicepresidentes son nombrados y separados libremente por el presidente del cabildo insular de entre los consejeros insulares que formen parte del consejo de gobierno insular, dando cuenta al pleno de la corporación. 29 \f ARTÍCULO 59. ATRIBUCIONES DE LOS VICEPRESIDENTES. 1. Los vicepresidentes sustituyen al presidente, siguiendo en su caso el orden que les atribuya su nombramiento, en los casos de vacante, ausencia o enfermedad. 2. Corresponden a los vicepresidentes las funciones que les asigne el reglamento orgánico o las que les delegue el presidente. SECCIÓN 5.ª CONSEJO DE GOBIERNO INSULAR ARTÍCULO 60. CARÁCTER Y COMPOSICIÓN. 1. El consejo de gobierno insular es el órgano de gobierno que colabora de forma colegiada en la función de dirección política que corresponde al presidente del cabildo insular, mediante el ejercicio de las funciones ejecutivas y administrativas que tiene atribuidas. 2. El consejo de gobierno insular está integrado por el presidente del cabildo insular y los consejeros insulares electos, nombrados y separados libremente por el presidente del cabildo insular. El reglamento orgánico del cabildo insular podrá prever la designación como miembros del consejo de gobierno insular de personas que carezcan de la condición de consejeros insulares electos, hasta el límite no superior a un tercio de los integrantes del mismo. ARTÍCULO 61. RESPONSABILIDAD POLÍTICA E INCOMPATIBILIDADES. 1. El consejo de gobierno insular responde políticamente ante el pleno de su gestión de forma solidaria, sin perjuicio de la responsabilidad directa de cada uno de sus miembros por su gestión. 2. Los miembros del consejo de gobierno insular están sujetos al régimen de incompatibilidades establecido en la Ley Orgánica de Régimen Electoral General y en la legislación básica de régimen local. ARTÍCULO 62. ATRIBUCIONES DEL CONSEJO DE GOBIERNO INSULAR. Corresponden al consejo de gobierno insular las siguientes atribuciones: a) La aprobación de los proyectos de ordenanzas y de los reglamentos, incluidos los orgánicos, con excepción de las normas reguladoras del pleno y sus comisiones. b) La aprobación del proyecto de presupuesto."
+    },
+    {
+      "titulo": "24. CAPÍTULO III",
+      "contenido": "c) La aprobación de los proyectos de instrumentos de ordenación urbanística cuya aprobación definitiva o provisional corresponda al pleno. d) La concesión de cualquier tipo de licencia, salvo que la legislación sectorial la atribuya expresamente a otro órgano. e) El desarrollo de la gestión económica, autorizar y disponer gastos en materia de su competencia, disponer gastos previamente autorizados por el pleno, y la gestión del personal. f) La aprobación de la relación de puestos de trabajo, de las retribuciones del personal de acuerdo con el presupuesto aprobado por el pleno, de la oferta de empleo público, de las bases de las convocatorias de selección y provisión de puestos de trabajo, del número y régimen del personal eventual, la separación del servicio de los funcionarios del cabildo insular y el despido del personal laboral del mismo, el régimen disciplinario y las demás decisiones en materia de personal que no estén expresamente atribuidas a otro órgano. g) El nombramiento y el cese de los titulares de los órganos directivos de la administración insular, sin perjuicio de lo dispuesto para los funcionarios de administración local con habilitación de carácter nacional. h) El ejercicio de las acciones judiciales y administrativas en materia de su competencia. i) La revisión de oficio de sus propios actos. j) El ejercicio de la potestad sancionadora, salvo que por ley esté atribuida a otro órgano. k) Las demás que le correspondan, de acuerdo con las disposiciones legales vigentes. 30 \f CAPÍTULO III ORGANIZACIÓN ADMINISTRATIVA SECCIÓN 1.ª DISPOSICIONES GENERALES ARTÍCULO 63. ORGANIZACIÓN ADMINISTRATIVA DE LOS CABILDOS INSULARES. La organización administrativa de los cabildos insulares se estructurará en órganos superiores y directivos, de acuerdo con lo que se establezca en sus reglamentos de organización en desarrollo de lo previsto en esta ley. ARTÍCULO 64. ÓRGANOS SUPERIORES Y DIRECTIVOS. 1. Son órganos superiores de la administración de los cabildos insulares: el presidente del cabildo insular y los consejeros insulares titulares de áreas o departamentos insulares. 2. Son órganos directivos de la administración de los cabildos insulares los que se establezcan con tal carácter en sus reglamentos orgánicos en desarrollo de lo establecido en esta ley y en el marco de la legislación básica de régimen jurídico de las administraciones públicas. Asimismo, son órganos directivos los órganos de dirección de los organismos autónomos y de las entidades públicas empresariales insulares. ARTÍCULO 65. CONTROL DE LOS ÓRGANOS SUPERIORES Y DIRECTIVOS. 1. Los órganos superiores y directivos de la administración de los cabildos insulares están sujetos al control del pleno, de acuerdo con lo establecido en la legislación de régimen local y en la presente ley, así como a lo que se prevea en el reglamento de organización y funcionamiento aprobado por el pleno de la corporación insular respectiva. 2. Asimismo, sin perjuicio del superior control y fiscalización del pleno, corresponde a las comisiones del pleno el seguimiento de la gestión del presidente del cabildo insular, del consejo de gobierno insular y de los órganos superiores y directivos de la administración insular. ARTÍCULO 66. OTROS ÓRGANOS Y UNIDADES ADMINISTRATIVAS. Los cabildos insulares, a través de sus reglamentos de organización, con sujeción a lo establecido en la legislación de régimen jurídico de las administraciones públicas y en esta ley, podrán crear órganos complementarios."
+    },
+    {
+      "titulo": "25. ARTÍCULO 67",
+      "contenido": "Asimismo, mediante la relación de puestos de trabajo establecerán las unidades administrativas necesarias para el ejercicio de sus competencias. SECCIÓN 2.ª ÓRGANOS SUPERIORES ARTÍCULO 67. PRESIDENTE DEL CABILDO INSULAR. 1. El presidente del cabildo insular es el órgano superior responsable de la dirección, coordinación e impulso de la administración del cabildo insular, correspondiéndole la unidad de dirección política y administrativa de su actividad, estableciendo las directrices e impartiendo las instrucciones que sean precisas a los consejeros insulares responsables de las áreas o departamentos insulares y a los demás órganos directivos de la administración insular. 2. En todo caso, corresponden al presidente del cabildo insular las funciones y competencias que le atribuye el ordenamiento jurídico, de acuerdo con lo que establezca el reglamento de organización que se apruebe por el pleno de la corporación insular, en desarrollo de lo establecido en la legislación básica de régimen jurídico, en la legislación de régimen local y en la presente ley. 31 \f ARTÍCULO 68. ÁREAS O DEPARTAMENTOS INSULARES. 1. Para el desarrollo de la actividad administrativa correspondiente a sus funciones y competencias, y específicamente a las asignadas, transferidas y delegadas por la comunidad autónoma, los cabildos insulares se organizarán en áreas o departamentos insulares, a los que se atribuirán sectores funcionales homogéneos de la acción pública insular. 2. Por decreto del presidente se determinará el número, denominación y ámbito funcional de las áreas o departamentos insulares en las que se organiza la administración del cabildo insular, en el marco de los criterios generales establecidos en el reglamento orgánico aprobado por el pleno de la corporación insular. 3. La dirección de las áreas o departamentos insulares, corresponderá al miembro del consejo de gobierno insular que se designe por el presidente. ARTÍCULO 69. COMPETENCIAS DE LOS TITULARES DE LAS ÁREAS O DEPARTAMENTOS INSULARES. 1. Bajo la superior dirección del presidente, los consejeros insulares titulares de las áreas o departamentos insulares ejercerán las funciones de dirección, planificación y coordinación política de las mismas, correspondiéndole en régimen de desconcentración las competencias que se determinen en el decreto del presidente del cabildo insular en el marco del reglamento aprobado por el pleno de la corporación insular. Asimismo, les corresponde el ejercicio de las competencias que les sean delegadas. 2. En todo caso, respecto de los servicios del área o departamento insular que dirigen y con sujeción a las normas y directrices aprobadas por los órganos de gobierno, corresponde a los consejeros titulares del área o departamento insular: a) La determinación de los objetivos a alcanzar y las líneas de actuación del área o departamento insular. b) El impulso y coordinación de las actividades del área o departamento insular, la supervisión del cumplimiento de las líneas de actuación y la corrección de las desviaciones que se produzcan. c) La ordenación, inspección y evaluación de los servicios del área o departamento insular. d) La jefatura del personal del área o departamento insular, sin perjuicio de las funciones del presidente y de las que se atribuyan a los órganos directivos del área o departamento insular."
+    },
+    {
+      "titulo": "26. disposición de",
+      "contenido": "e) La autorización y disposición de los gastos propios de los servicios de su área o departamento, así como el reconocimiento de las obligaciones, de acuerdo con lo previsto en los presupuestos del cabildo insular y sin perjuicio de las competencias de los órganos de gobierno del cabildo insular. f) La resolución de los conflictos que se planteen entre los órganos de su área o departamento insular. 32 \f LEY ORGÁNICA 1/2018, DE 5 DE NOVIEMBRE, DE REFORMA DEL ESTATUTO DE AUTONOMÍA DE CANARIAS. TÍTULO II DE LAS INSTITUCIONES DE LA COMUNIDAD AUTÓNOMA DE CANARIAS CAPÍTULO VII DE LA ADMINISTRACIÓN DE LA COMUNIDAD AUTÓNOMA DE CANARIAS ARTÍCULO 61. ORGANIZACIÓN DE LA ADMINISTRACIÓN. 1. Corresponde a la Comunidad Autónoma de Canarias la organización de su propia Administración Pública, de conformidad con el presente Estatuto y las leyes, que responderá a los principios de eficacia, economía, máxima proximidad a los ciudadanos y atención al hecho insular. 2. La Comunidad Autónoma de Canarias ejercerá sus funciones administrativas, bien por su propia Administración, bien, cuando lo justifiquen los principios de subsidiariedad, descentralización y eficiencia, a través de los cabildos insulares y ayuntamientos con la adecuada suficiencia financiera, de conformidad con el Estatuto y las leyes. ARTÍCULO 62. RÉGIMEN JURÍDICO. 1. En el ejercicio de sus competencias, la Administración Pública de la Comunidad Autónoma de Canarias gozará de las siguientes potestades y privilegios: a) La presunción de legitimidad y la ejecutoriedad de sus actos, así como los poderes de ejecución forzosa. b) La revisión en vía administrativa, tanto de oficio como en vía de recurso. c) La potestad expropiatoria, incluida la declaración de urgente ocupación de los bienes afectados y el ejercicio de las restantes atribuciones de la legislación expropiatoria. d) Los poderes de investigación, deslinde y recuperación de oficio en materia de bienes. e) La potestad sancionadora, dentro de los límites que establezca el ordenamiento jurídico. f) La facultad de utilización del procedimiento de apremio. g) La inembargabilidad de sus bienes y derechos, así como las prerrogativas de prelación, preferencia y demás reconocidos a la Hacienda Pública para el cobro de sus créditos, conforme a las leyes. h) La exención de toda obligación de garantía o caución ante cualquier organismo administrativo o tribunal jurisdiccional. 2. No se admitirán acciones posesorias de tutela sumarias contra las actuaciones de la Comunidad Autónoma de Canarias en materias de su competencia realizadas de acuerdo con el procedimiento legalmente establecido. ARTÍCULO 63. CONTROL DE NORMAS, ACTOS Y ACUERDOS. 1. Las normas sin rango de ley, los actos y acuerdos emanados de los órganos ejecutivos y administrativos de la Comunidad Autónoma de Canarias serán recurribles en la vía contencioso-administrativa, sin perjuicio de los recursos administrativos y económico- administrativos que procedan y de lo establecido en el artículo 153.b) de la Constitución. 2. Las normas sin rango de ley de los órganos de la Comunidad Autónoma de Canarias se publicarán, para su plena validez, en el «Boletín Oficial de Canarias». 33 \f TÍTULO III ORGANIZACIÓN TERRITORIAL DE CANARIAS CAPÍTULO I DE LAS ISLAS Y LOS CABILDOS INSULARES ARTÍCULO 65. ISLAS Y TERRITORIOS INSULARES. 1. La organización territorial de Canarias se integra por las islas de El Hierro, Fuerteventura, Gran Canaria, La Gomera, Lanzarote, La Palma y Tenerife."
+    },
+    {
+      "titulo": "27. ARTÍCULO 66",
+      "contenido": "La isla de La Graciosa estará agregada administrativamente a Lanzarote, así como los islotes de Alegranza, Montaña Clara, Roque del Este y Roque del Oeste y el de Lobos a Fuerteventura. 2. Los cabildos insulares son instituciones de la Comunidad Autónoma de Canarias. 3. Los cabildos insulares constituyen órganos de gobierno, representación y administración de cada isla y gozarán de autonomía en la gestión de sus intereses y el ejercicio de sus competencias propias, de acuerdo con la Constitución, este Estatuto y las leyes. 4. Los cabildos insulares asumen en la isla la representación ordinaria del Gobierno y de la Administración autonómica y desempeñan las funciones administrativas autonómicas previstas en este Estatuto de Autonomía y en las leyes, así como las que les sean transferidas o delegadas. ARTÍCULO 66. CAPITALES INSULARES. La capital de cada isla se fija donde se encuentra la sede de los cabildos insulares: la de El Hierro en Valverde, la de Fuerteventura en Puerto del Rosario, la de Gran Canaria en Las Palmas de Gran Canaria, la de La Gomera en San Sebastián de La Gomera, la de Lanzarote en Arrecife, la de La Palma en Santa Cruz de La Palma y la de Tenerife en Santa Cruz de Tenerife. ARTÍCULO 67. ORGANIZACIÓN. 1. Una ley del Parlamento de Canarias, aprobada por mayoría absoluta, regulará la organización de los cabildos insulares de acuerdo con la Constitución, con este Estatuto y las leyes. 2. Son órganos necesarios de los cabildos insulares el pleno, la presidencia, las vicepresidencias y el consejo de gobierno. 3. El pleno del cabildo insular ejerce la iniciativa legislativa ante el Parlamento de Canarias, aprueba los presupuestos del cabildo insular, exige la responsabilidad política y controla la acción del consejo de gobierno, aprobará el reglamento orgánico de funcionamiento, y ejerce todas las funciones que le otorgan este Estatuto y las leyes del Parlamento. 4. El consejo de gobierno insular estará integrado por las personas titulares de la presidencia, de las vicepresidencias, en su caso, y de los departamentos o áreas ejecutivas, correspondiéndole el ejercicio de la función ejecutiva en relación con las competencias del cabildo insular. ARTÍCULO 68. COMPOSICIÓN Y RÉGIMEN ELECTORAL. 1. Los plenos de los cabildos insulares estarán compuestos por los miembros elegidos por sufragio universal, igual, libre, directo y secreto mediante un sistema de representación proporcional en los términos que establezca la ley. 2. La duración del mandato será de cuatro años. 3. La ley prevista en el artículo anterior regulará el número de miembros que deben integrar cada cabildo insular, así como las causas de inelegibilidad y de incompatibilidad que les afecten, de acuerdo con lo establecido en la Ley orgánica de régimen electoral. 34 \f ARTÍCULO 69. FUNCIONAMIENTO Y RÉGIMEN JURÍDICO. La ley y los reglamentos orgánicos de los respectivos cabildos insulares determinarán las reglas de funcionamiento y el régimen jurídico de la actuación de los mismos y de sus órganos, así como el régimen de sus funciones y competencias respetando la legislación básica estatal. ARTÍCULO 70. COMPETENCIAS INSULARES. 1. A las islas les corresponde el ejercicio de las competencias que les son reconocidas como propias; las que se les transfieran o deleguen, y la colaboración en el desarrollo y la ejecución de los acuerdos adoptados por el Gobierno de Canarias, en los términos que establezcan las leyes del Parlamento. Las transferencias y delegaciones llevarán incorporadas los medios económicos, materiales y personales que correspondan. 2."
+    },
+    {
+      "titulo": "28. ARTÍCULO 71",
+      "contenido": "Los cabildos insulares, como instituciones de la Comunidad Autónoma, ejercerán funciones ejecutivas de carácter insular en el marco y dentro de los límites de la legislación aplicable, en las siguientes materias: a) Demarcaciones territoriales, alteración de términos y denominación oficial de los municipios. b) Ordenación del territorio. c) Carreteras, salvo las que se declaren de interés autonómico, en el marco de lo que disponga la legislación territorial canaria. d) Transporte por carretera, por cable y ferrocarril. e) Gestión de puertos de refugio y deportivos, salvo que se declaren de interés autonómico. f) Turismo. g) Ferias y mercados insulares. h) Defensa del consumidor. i) Asistencia social y servicios sociales. j) Policía de vivienda. Conservación y administración del parque público de viviendas. k) Las funciones propias de la Agencia de Extensión Agraria. Infraestructura rural de carácter insular. Granjas experimentales. l) Campañas de saneamiento zoosanitario. m) Servicios forestales, vías pecuarias y pastos. n) Protección del medio ambiente. ñ) Acuicultura y cultivos marinos. o) Artesanía. p) Cultura, deportes, ocio y esparcimiento. Patrimonio histórico-artístico insular. Museos, bibliotecas y archivos que no se reserve la Comunidad Autónoma. q) Caza. r) Residencias de estudiantes en la isla. s) Espectáculos. t) Actividades clasificadas. u) Igualdad de género. ARTÍCULO 71. TRANSFERENCIA Y DELEGACIÓN DE FUNCIONES. Los cabildos insulares, como instituciones de la Comunidad Autónoma, podrán transferir o delegar en los ayuntamientos el ejercicio de sus funciones administrativas propias, cuando así lo justifiquen los principios de subsidiariedad, descentralización y eficiencia. 35 \f ARTÍCULO 72. ACTIVIDAD DE FOMENTO Y FIJACIÓN DE POLÍTICAS PROPIAS DE LOS CABILDOS INSULARES. Corresponde a los cabildos insulares el ejercicio de la actividad de fomento, sin perjuicio de la actividad que corresponda a la Comunidad Autónoma, y la fijación de políticas propias. Asimismo, cuando así lo decidan, la fijación de políticas comunes con otras islas, comunidades o con el Estado, de acuerdo con el Gobierno de Canarias. ARTÍCULO 73. COORDINACIÓN DE LA ACTIVIDAD DE LOS CABILDOS INSULARES. El Gobierno de Canarias coordinará la actividad de los cabildos insulares en cuanto afecte directamente al interés general de la Comunidad Autónoma de Canarias. Para ello podrá requerirles información, documentación y, en los términos que disponga la ley, establecer objetivos y prioridades de la acción pública, así como utilizar otros mecanismos de coordinación previstos en la legislación básica del Estado. Si un cabildo insular incumpliera las obligaciones impuestas directamente por ley, de forma que tal incumplimiento afectara al ejercicio de competencias de la Comunidad Autónoma de Canarias, esta adoptará las medidas necesarias, de acuerdo con la legislación básica estatal de régimen local. ARTÍCULO 74. CONFERENCIA DE PRESIDENTES. 1. La Conferencia de Presidentes es un foro institucional de colaboración del Gobierno de Canarias y los cabildos insulares que tiene la función de servir de encuentro y debate de los grandes asuntos de interés común, la coordinación de las políticas de actuación de interés concurrente y la búsqueda de los acuerdos que deban incorporarse a los correspondientes ámbitos institucionales de la Comunidad Autónoma de Canarias y de las islas. 2. La conferencia, integrada por quienes ostenten la Presidencia de Canarias y de las islas, aprueba y se rige por sus propias normas de organización y funcionamiento."
+    },
+    {
+      "titulo": "29. CAPÍTULO II",
+      "contenido": "CAPÍTULO II DE LOS MUNICIPIOS CANARIOS ARTÍCULO 75. LOS MUNICIPIOS. 1. Los municipios, como entidades locales básicas de Canarias, gozan de personalidad jurídica propia y de autonomía plena para el ejercicio de sus competencias. Su gobierno, representación y administración corresponde a los ayuntamientos. 2. Los municipios canarios se rigen por lo dispuesto en las legislaciones del Estado y de la Comunidad Autónoma de Canarias, dictadas en el ámbito de sus respectivas competencias. 3. Los municipios podrán agruparse, en los términos establecidos en la ley, para la gestión de sus competencias y la mejor prestación de servicios a sus ciudadanos. 4. Además de sus competencias propias, les corresponderá el ejercicio de las que les sean transferidas por leyes del Parlamento de Canarias o delegadas por el Gobierno, por los cabildos insulares u otras administraciones públicas. Las transferencias y delegaciones llevarán incorporadas los medios económicos, materiales y personales que correspondan. 5. En todo caso, los municipios, de acuerdo con el apartado anterior, podrán ejercer competencias, entre otras, en las siguientes materias: a) Consumo. b) Cultura. c) Deportes. d) Educación. e) Empleo. f) Juventud. g) Medio ambiente. 36 \f Igualdad de género. h) Urbanismo. i) Patrimonio histórico. j) k) Protección civil y seguridad ciudadana. l) Sanidad y servicios sociales. m) Transporte. n) Turismo. ñ) Vivienda. o) Actividades clasificadas y espectáculos públicos. ARTÍCULO 76. CONSEJO MUNICIPAL DE CANARIAS. El Consejo Municipal de Canarias es el órgano de participación y colaboración de la Administración de la Comunidad Autónoma de Canarias y los ayuntamientos canarios, y particularmente el encargado de canalizar el parecer de los ayuntamientos en las iniciativas legislativas que afecten de forma específica a su organización y competencias. Su composición, organización y funciones serán determinadas por ley del Parlamento de Canarias. 37"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Las Administraciones Públicas Canarias: \"]\n  A --> N1[\"Ley Orgánica 1/2018, de 5 de noviembre, \"]\n  A --> N2[\"ARTÍCULO 6\"]\n  A --> N3[\"disposición del\"]\n  A --> N4[\"ARTÍCULO 32\"]\n  A --> N5[\"ARTÍCULO 3\"]\n  A --> N6[\"ARTÍCULO 7\"]\n  A --> N7[\"ARTÍCULO 11\"]\n  A --> N8[\"ARTÍCULO 4\"]\n  A --> N9[\"artículo 6\"]\n  A --> N10[\"ARTÍCULO 9\"]\n  A --> N11[\"ARTÍCULO 11\"]\n  A --> N12[\"ARTÍCULO 13\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Las Administraciones Públicas Canarias: Comunidad…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "Ley Orgánica 1/2018, de 5 de noviembre,…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "ARTÍCULO 6",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "disposición del",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "ARTÍCULO 32",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "ARTÍCULO 3",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "ARTÍCULO 7",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "ARTÍCULO 11",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "ARTÍCULO 4",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "artículo 6",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "ARTÍCULO 9",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "ARTÍCULO 11",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s12",
+        "texto": "ARTÍCULO 13",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s13",
+        "texto": "ARTÍCULO 15",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s14",
+        "texto": "ARTÍCULO 21",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s15",
+        "texto": "ARTÍCULO 24",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s16",
+        "texto": "disposición para",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s17",
+        "texto": "ARTÍCULO 30",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s18",
+        "texto": "ARTÍCULO 32",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s19",
+        "texto": "ARTÍCULO 36",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s20",
+        "texto": "TÍTULO II",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s21",
+        "texto": "artículo 30",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s22",
+        "texto": "ARTÍCULO 55",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s23",
+        "texto": "disposición de",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s24",
+        "texto": "CAPÍTULO III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s25",
+        "texto": "ARTÍCULO 67",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s26",
+        "texto": "disposición de",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s27",
+        "texto": "ARTÍCULO 66",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s28",
+        "texto": "ARTÍCULO 71",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s29",
+        "texto": "CAPÍTULO II",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p11-01",
-            "enunciado": "Las Administraciones públicas canarias se integran por:",
-            "opciones": ["Solo la Comunidad Autónoma", "Comunidad Autónoma, Cabildos Insulares y Ayuntamientos", "Solo los Ayuntamientos", "El Estado y la Comunidad"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El sistema canario de Administraciones se integra por la Comunidad Autónoma, los Cabildos Insulares y los Ayuntamientos."
-        },
-        {
-            "id": "p11-02",
-            "enunciado": "La Administración Pública de la Comunidad Autónoma de Canarias depende de:",
-            "opciones": ["El Parlamento de Canarias", "El Gobierno de Canarias", "El Estado", "Los Cabildos"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Administración autonómica es la organización servicial dependiente del Gobierno de Canarias."
-        },
-        {
-            "id": "p11-03",
-            "enunciado": "La Administración general de Canarias se estructura en:",
-            "opciones": ["Ministerios", "Consejerías", "Direcciones insulares", "Diputaciones"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Administración general de la Comunidad Autónoma de Canarias se estructura en consejerías."
-        },
-        {
-            "id": "p11-04",
-            "enunciado": "Los órganos superiores de la Administración autonómica son:",
-            "opciones": ["Los Directores Generales", "El Presidente, el Vicepresidente y los Consejeros", "Los Viceconsejeros", "Los Secretarios Generales Técnicos"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Los órganos superiores son el Presidente, el Vicepresidente y los Consejeros."
-        },
-        {
-            "id": "p11-05",
-            "enunciado": "La creación o supresión de consejerías corresponde a:",
-            "opciones": ["El Parlamento", "El Presidente de Canarias mediante decreto", "El Gobierno de España", "Los Cabildos"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La creación, modificación y supresión de consejerías corresponde al Presidente de Canarias mediante decreto."
-        },
-        {
-            "id": "p11-06",
-            "enunciado": "El régimen jurídico de los Cabildos Insulares se completa con:",
-            "opciones": ["La Ley 7/2015", "La Ley 8/2015, de cabildos insulares", "La Ley 29/1998", "La Ley 39/2015"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Ley 8/2015 regula el régimen jurídico de los cabildos insulares."
-        },
-        {
-            "id": "p11-07",
-            "enunciado": "Los municipios de Canarias se rigen, además de por la legislación básica estatal, por:",
-            "opciones": ["La Ley 8/2015", "La Ley 7/2015, de los municipios de Canarias", "El REF", "La Ley 29/1998"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Los municipios canarios se rigen por la Ley 7/1985 estatal y por la Ley 7/2015, de los municipios de Canarias."
-        },
-        {
-            "id": "p11-08",
-            "enunciado": "El Ayuntamiento se compone de:",
-            "opciones": ["El Alcalde y los concejales", "El Presidente y los consejeros", "El Pleno únicamente", "Los Cabildos"],
-            "respuestaCorrecta": 0,
-            "explicacion": "El Ayuntamiento se compone del Alcalde y de los concejales."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      },
+      {
+        "desde": "root",
+        "hasta": "s12"
+      },
+      {
+        "desde": "root",
+        "hasta": "s13"
+      },
+      {
+        "desde": "root",
+        "hasta": "s14"
+      },
+      {
+        "desde": "root",
+        "hasta": "s15"
+      },
+      {
+        "desde": "root",
+        "hasta": "s16"
+      },
+      {
+        "desde": "root",
+        "hasta": "s17"
+      },
+      {
+        "desde": "root",
+        "hasta": "s18"
+      },
+      {
+        "desde": "root",
+        "hasta": "s19"
+      },
+      {
+        "desde": "root",
+        "hasta": "s20"
+      },
+      {
+        "desde": "root",
+        "hasta": "s21"
+      },
+      {
+        "desde": "root",
+        "hasta": "s22"
+      },
+      {
+        "desde": "root",
+        "hasta": "s23"
+      },
+      {
+        "desde": "root",
+        "hasta": "s24"
+      },
+      {
+        "desde": "root",
+        "hasta": "s25"
+      },
+      {
+        "desde": "root",
+        "hasta": "s26"
+      },
+      {
+        "desde": "root",
+        "hasta": "s27"
+      },
+      {
+        "desde": "root",
+        "hasta": "s28"
+      },
+      {
+        "desde": "root",
+        "hasta": "s29"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc11-01",
+      "pregunta": "¿Qué principio guía la organización y funcionamiento de las Administraciones Públicas de Canarias?",
+      "respuesta": "Eficacia, economía, descentralización y máxima proximidad a los ciudadanos"
+    },
+    {
+      "id": "fc11-02",
+      "pregunta": "¿Qué entidades institucionalizan la representación y gestión de los intereses de Canarias, sus islas y sus municipios?",
+      "respuesta": "La Comunidad Autónoma, los Cabildos Insulares y los Ayuntamientos"
+    },
+    {
+      "id": "fc11-03",
+      "pregunta": "¿Qué es el Gobierno de Canarias?",
+      "respuesta": "El órgano que ejerce las funciones ejecutivas y administrativas que le corresponden y coordina el funcionamiento de las Administraciones Públicas canarias"
+    },
+    {
+      "id": "fc11-04",
+      "pregunta": "¿Qué es la Administración Pública de la Comunidad Autónoma?",
+      "respuesta": "El instrumento para el ejercicio de las funciones administrativas y la prestación de los servicios que la Comunidad Autónoma deba realizar directamente"
+    },
+    {
+      "id": "fc11-05",
+      "pregunta": "¿Qué es un Cabildo Insular?",
+      "respuesta": "Un órgano de gobierno y administración de cada isla, que también es una Institución de la Comunidad Autónoma"
+    },
+    {
+      "id": "fc11-06",
+      "pregunta": "¿Qué es un Ayuntamiento?",
+      "respuesta": "El órgano de gobierno y administración de los municipios en que se organizan territorialmente las islas"
+    },
+    {
+      "id": "fc11-07",
+      "pregunta": "¿Qué entidades locales tienen la consideración de Administraciones Públicas Canarias?",
+      "respuesta": "Las entidades locales que puedan constituirse en el Archipiélago con arreglo a la legislación básica de régimen local"
+    },
+    {
+      "id": "fc11-08",
+      "pregunta": "¿Qué es la Administración de la Comunidad Autónoma?",
+      "respuesta": "La Administración que sirve con objetividad los intereses generales, actúa de acuerdo con los principios constitucionales y estatutarios y con sometimiento pleno a la Ley y al Derecho"
+    },
+    {
+      "id": "fc11-09",
+      "pregunta": "¿Cómo se organiza la Administración pública de la comunidad autónoma?",
+      "respuesta": "En consejerías, bajo la superior dirección del presidente o presidenta del Gobierno de Canarias"
+    },
+    {
+      "id": "fc11-10",
+      "pregunta": "¿Qué es una consejería?",
+      "respuesta": "Un órgano que tiene atribuida la gestión de áreas determinadas de la acción pública competencia de la comunidad autónoma"
+    },
+    {
+      "id": "fc11-11",
+      "pregunta": "¿Qué es el decreto del Gobierno de Canarias?",
+      "respuesta": "Un instrumento por el que se aprueban la estructura orgánica y las sedes de las consejerías"
+    },
+    {
+      "id": "fc11-12",
+      "pregunta": "¿Qué es la legislación básica del Estado?",
+      "respuesta": "La norma que regula el estatuto de los funcionarios públicos, el acceso a la función pública, las peculiaridades del ejercicio de su derecho a sindicación, el sistema de incompatibilidades y las garantías para la imparcialidad en el ejercicio de sus funciones"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p11-01",
+      "enunciado": "¿Qué principio guía la organización y funcionamiento de las Administraciones Públicas de Canarias?",
+      "opciones": [
+        "Eficacia, economía, descentralización y máxima proximidad a los ciudadanos",
+        "Eficacia, economía y descentralización",
+        "Eficacia, economía y máxima proximidad a los ciudadanos",
+        "Eficacia, descentralización y máxima proximidad a los ciudadanos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La respuesta correcta es la primera opción, ya que se indica en la Ley 14/1990 que la organización y funcionamiento de las Administraciones Públicas de Canarias se rigen por los principios de eficacia, economía, descentralización y máxima proximidad a los ciudadanos."
+    },
+    {
+      "id": "p11-02",
+      "enunciado": "¿Qué entidades institucionalizan la representación y gestión de los intereses de Canarias, sus islas y sus municipios?",
+      "opciones": [
+        "La Comunidad Autónoma, los Cabildos Insulares y los Ayuntamientos",
+        "La Comunidad Autónoma y los Ayuntamientos",
+        "Los Cabildos Insulares y los Ayuntamientos",
+        "La Comunidad Autónoma y los Cabildos Insulares"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La respuesta correcta es la primera opción, ya que se indica en la Ley 14/1990 que la Comunidad Autónoma, los Cabildos Insulares y los Ayuntamientos institucionalizan la representación y gestión de los intereses de Canarias, sus islas y sus municipios."
+    },
+    {
+      "id": "p11-03",
+      "enunciado": "¿Qué es el Gobierno de Canarias?",
+      "opciones": [
+        "El órgano que ejerce las funciones ejecutivas y administrativas que le corresponden y coordina el funcionamiento de las Administraciones Públicas canarias",
+        "El órgano que ejerce las funciones ejecutivas y administrativas que le corresponden",
+        "El órgano que coordina el funcionamiento de las Administraciones Públicas canarias",
+        "El órgano que ejerce las funciones ejecutivas y administrativas que le corresponden y es responsable de la gestión de los intereses de Canarias"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La respuesta correcta es la primera opción, ya que se indica en la Ley 14/1990 que el Gobierno de Canarias es el órgano que ejerce las funciones ejecutivas y administrativas que le corresponden y coordina el funcionamiento de las Administraciones Públicas canarias."
+    },
+    {
+      "id": "p11-04",
+      "enunciado": "¿Qué es la Administración Pública de la Comunidad Autónoma?",
+      "opciones": [
+        "El instrumento para el ejercicio de las funciones administrativas y la prestación de los servicios que la Comunidad Autónoma deba realizar directamente",
+        "El órgano que ejerce las funciones ejecutivas y administrativas que le corresponden al Gobierno de Canarias",
+        "El órgano que coordina el funcionamiento de las Administraciones Públicas canarias",
+        "El órgano que gestiona los intereses de Canarias"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La respuesta correcta es la primera opción, ya que se indica en la Ley 14/1990 que la Administración Pública de la Comunidad Autónoma es el instrumento para el ejercicio de las funciones administrativas y la prestación de los servicios que la Comunidad Autónoma deba realizar directamente."
+    },
+    {
+      "id": "p11-05",
+      "enunciado": "¿Qué es un Cabildo Insular?",
+      "opciones": [
+        "Un órgano de gobierno y administración de cada isla, que también es una Institución de la Comunidad Autónoma",
+        "Un órgano de gobierno y administración de cada isla",
+        "Un órgano de gobierno y administración de la Comunidad Autónoma",
+        "Un órgano de gobierno y administración de los municipios"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La respuesta correcta es la primera opción, ya que se indica en la Ley 14/1990 que un Cabildo Insular es un órgano de gobierno y administración de cada isla, que también es una Institución de la Comunidad Autónoma."
+    },
+    {
+      "id": "p11-06",
+      "enunciado": "¿Qué es un Ayuntamiento?",
+      "opciones": [
+        "El órgano de gobierno y administración de los municipios en que se organizan territorialmente las islas",
+        "El órgano de gobierno y administración de cada isla",
+        "El órgano de gobierno y administración de la Comunidad Autónoma",
+        "El órgano de gobierno y administración de los Cabildos Insulares"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La respuesta correcta es la primera opción, ya que se indica en la Ley 14/1990 que un Ayuntamiento es el órgano de gobierno y administración de los municipios en que se organizan territorialmente las islas."
+    },
+    {
+      "id": "p11-07",
+      "enunciado": "¿Qué entidades locales tienen la consideración de Administraciones Públicas Canarias?",
+      "opciones": [
+        "Las entidades locales que puedan constituirse en el Archipiélago con arreglo a la legislación básica de régimen local",
+        "Las entidades locales que puedan constituirse en el Archipiélago con arreglo a la legislación básica del Estado",
+        "Las entidades locales que puedan constituirse en el Archipiélago con arreglo a la legislación básica de la Comunidad Autónoma",
+        "Las entidades locales que puedan constituirse en el Archipiélago con arreglo a la legislación básica de los Cabildos Insulares"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La respuesta correcta es la primera opción, ya que se indica en la Ley 14/1990 que las entidades locales que puedan constituirse en el Archipiélago con arreglo a la legislación básica de régimen local tienen la consideración de Administraciones Públicas Canarias."
+    }
+  ]
 }

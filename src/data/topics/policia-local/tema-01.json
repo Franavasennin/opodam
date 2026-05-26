@@ -1,157 +1,268 @@
 {
-    "id": 1,
-    "titulo": "La Constitución Española. El Título Preliminar. Los derechos y deberes fundamentales. La dignidad de la persona. La nacionalidad y la mayoría de edad. Derechos y libertades de los extranjeros en España",
-    "bloque": "general",
-    "secciones": [
-        {
-            "id": "s1-1",
-            "titulo": "La Constitución Española de 1978",
-            "contenido": "La Constitución Española fue aprobada por las Cortes el 31 de octubre de 1978, ratificada en referéndum el 6 de diciembre de 1978 y sancionada por el Rey el 27 de diciembre de 1978. Es la norma suprema del ordenamiento jurídico español. Consta de un Título Preliminar y diez Títulos numerados, con un total de 169 artículos, además de disposiciones adicionales, transitorias, derogatoria y final. Su estructura se divide en una parte dogmática (principios, valores y derechos) y una parte orgánica (organización de los poderes del Estado)."
-        },
-        {
-            "id": "s1-2",
-            "titulo": "El Título Preliminar",
-            "contenido": "El Título Preliminar (artículos 1 a 9) recoge los fundamentos del Estado. El artículo 1 define España como un Estado social y democrático de Derecho, propugna como valores superiores la libertad, la justicia, la igualdad y el pluralismo político, proclama que la soberanía nacional reside en el pueblo español y establece la Monarquía parlamentaria como forma política. El artículo 2 se fundamenta en la indisoluble unidad de la Nación española y reconoce el derecho a la autonomía de las nacionalidades y regiones. El artículo 3 fija el castellano como lengua oficial del Estado. El artículo 9.3 garantiza principios como la legalidad, la jerarquía normativa y la irretroactividad de las disposiciones sancionadoras no favorables."
-        },
-        {
-            "id": "s1-3",
-            "titulo": "Los derechos y deberes fundamentales. La dignidad de la persona",
-            "contenido": "El Título I (artículos 10 a 55) regula los derechos y deberes fundamentales. El artículo 10 proclama que la dignidad de la persona, los derechos inviolables que le son inherentes y el libre desarrollo de la personalidad son fundamento del orden político y de la paz social. Las normas relativas a los derechos fundamentales se interpretan conforme a la Declaración Universal de Derechos Humanos y los tratados internacionales ratificados por España. La Sección 1ª del Capítulo II (artículos 15 a 29) recoge los derechos fundamentales y libertades públicas, dotados de las máximas garantías."
-        },
-        {
-            "id": "s1-4",
-            "titulo": "La nacionalidad y la mayoría de edad",
-            "contenido": "El artículo 11 de la Constitución establece que la nacionalidad española se adquiere, se conserva y se pierde de acuerdo con lo establecido por la ley, y que ningún español de origen podrá ser privado de su nacionalidad. Permite además la doble nacionalidad con los países iberoamericanos y aquellos que hayan tenido o tengan particular vinculación con España. El artículo 12 fija la mayoría de edad de los españoles en los dieciocho años, momento a partir del cual se adquiere la plena capacidad de obrar y el ejercicio de los derechos políticos."
-        },
-        {
-            "id": "s1-5",
-            "titulo": "Derechos y libertades de los extranjeros en España",
-            "contenido": "El artículo 13 de la Constitución dispone que los extranjeros gozarán en España de las libertades públicas que garantiza el Título I en los términos que establezcan los tratados y la ley. El derecho de sufragio activo y pasivo en las elecciones municipales puede reconocerse a los extranjeros por tratado o ley, atendiendo a criterios de reciprocidad. La extradición solo se concede en cumplimiento de un tratado o de la ley, atendiendo al principio de reciprocidad, y quedan excluidos de ella los delitos políticos, no considerándose como tales los actos de terrorismo. La ley establecerá los términos en que los ciudadanos de otros países y los apátridas podrán gozar del derecho de asilo."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e1-1",
-            "titulo": "Estructura de la Constitución",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Constitucion 1978] --> B[Titulo Preliminar - art. 1-9]\n    A --> C[Parte dogmatica - Titulo I]\n    A --> D[Parte organica - Titulos II-X]\n    C --> E[Derechos fundamentales art. 15-29]\n    C --> F[Deberes de los ciudadanos]"
-        },
-        {
-            "id": "e1-2",
-            "titulo": "El Título Preliminar",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Titulo Preliminar] --> B[Art. 1 - Estado social y democratico]\n    A --> C[Art. 2 - Unidad y autonomia]\n    A --> D[Art. 3 - Lengua castellana]\n    A --> E[Art. 9 - Legalidad y garantias]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "La Constitución de 1978", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Título Preliminar", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Derechos fundamentales", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Dignidad de la persona", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Nacionalidad y mayoría de edad", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Extranjeros en España", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Estado social y democrático de Derecho", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Libertades públicas (art. 15-29)", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Interpretación conforme a la DUDH", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Artículo 10 CE", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Mayoría de edad: 18 años", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Artículo 13 CE", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Derecho de asilo y extradición", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n3", "hasta": "n9" },
-            { "desde": "n4", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 1,
+  "titulo": "La Constitución Española. El Título Preliminar. Los derechos y deberes fundamentales. La dignidad de la persona. La nacionalidad y la mayoría de edad. Derechos y libertades de los extranjeros en España.",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "1. ARTÍCULO 1",
+      "contenido": "BIBLIOGRAFÍA • CONSTITUCIÓN ESPAÑOLA o Art. 1-14 o Art. 23 o Art. 30-38 2 \f CONSTITUCIÓN ESPAÑOLA TÍTULO PRELIMINAR ARTÍCULO 1 1. España se constituye en un Estado social y democrático de Derecho, que propugna como valores superiores de su ordenamiento jurídico la libertad, la justicia, la igualdad y el pluralismo político. 2. La soberanía nacional reside en el pueblo español, del que emanan los poderes del Estado. 3. La forma política del Estado español es la Monarquía parlamentaria. ARTÍCULO 2 La Constitución se fundamenta en la indisoluble unidad de la Nación española, patria común e indivisible de todos los españoles, y reconoce y garantiza el derecho a la autonomía de las nacionalidades y regiones que la integran y la solidaridad entre todas ellas. ARTÍCULO 3 1. El castellano es la lengua española oficial del Estado. Todos los españoles tienen el deber de conocerla y el derecho a usarla. 2. Las demás lenguas españolas serán también oficiales en las respectivas Comunidades Autónomas de acuerdo con sus Estatutos. 3. La riqueza de las distintas modalidades lingüísticas de España es un patrimonio cultural que será objeto de especial respeto y protección. ARTÍCULO 4 1. La bandera de España está formada por tres franjas horizontales, roja, amarilla y roja, siendo la amarilla de doble anchura que cada una de las rojas. 2. Los Estatutos podrán reconocer banderas y enseñas propias de las Comunidades Autónomas. Estas se utilizarán junto a la bandera de España en sus edificios públicos y en sus actos oficiales. ARTÍCULO 5 La capital del Estado es la villa de Madrid. ARTÍCULO 6 Los partidos políticos expresan el pluralismo político, concurren a la formación y manifestación de la voluntad popular y son instrumento fundamental para la participación política. Su creación y el ejercicio de su actividad son libres dentro del respeto a la Constitución y a la ley. Su estructura interna y funcionamiento deberán ser democráticos. ARTÍCULO 7 Los sindicatos de trabajadores y las asociaciones empresariales contribuyen a la defensa y promoción de los intereses económicos y sociales que les son propios. Su creación y el ejercicio de su actividad son libres dentro del respeto a la Constitución y a la ley. Su estructura interna y funcionamiento deberán ser democráticos. ARTÍCULO 8 1. Las Fuerzas Armadas, constituidas por el Ejército de Tierra, la Armada y el Ejército del Aire, tienen como misión garantizar la soberanía e independencia de España, defender su integridad territorial y el ordenamiento constitucional. 2. Una ley orgánica regulará las bases de la organización militar conforme a los principios de la presente Constitución. 3 \f ARTÍCULO 9 1. Los ciudadanos y los poderes públicos están sujetos a la Constitución y al resto del ordenamiento jurídico. 2. Corresponde a los poderes públicos promover las condiciones para que la libertad y la igualdad del individuo y de los grupos en que se integra sean reales y efectivas; remover los obstáculos que impidan o dificulten su plenitud y facilitar la participación de todos los ciudadanos en la vida política, económica, cultural y social. 3. La Constitución garantiza el principio de legalidad, la jerarquía normativa, la publicidad de las normas, la irretroactividad de las disposiciones sancionadoras no favorables o restrictivas de derechos individuales, la seguridad jurídica, la responsabilidad y la interdicción de la arbitrariedad de los poderes públicos. TÍTULO I DE LOS DERECHOS Y DEBERES FUNDAMENTALES ARTÍCULO 10 1."
     },
-    "flashcards": [
-        { "id": "fc1-01", "anverso": "¿Cuándo se ratificó en referéndum la Constitución Española?", "reverso": "El 6 de diciembre de 1978." },
-        { "id": "fc1-02", "anverso": "¿Cuántos artículos tiene la Constitución Española?", "reverso": "169 artículos." },
-        { "id": "fc1-03", "anverso": "¿Qué artículos comprende el Título Preliminar?", "reverso": "Los artículos 1 a 9." },
-        { "id": "fc1-04", "anverso": "¿Cómo define el artículo 1 a España?", "reverso": "Como un Estado social y democrático de Derecho." },
-        { "id": "fc1-05", "anverso": "¿Cuáles son los valores superiores del ordenamiento jurídico?", "reverso": "La libertad, la justicia, la igualdad y el pluralismo político." },
-        { "id": "fc1-06", "anverso": "¿Dónde reside la soberanía nacional?", "reverso": "En el pueblo español, del que emanan los poderes del Estado." },
-        { "id": "fc1-07", "anverso": "¿Cuál es la forma política del Estado español?", "reverso": "La Monarquía parlamentaria." },
-        { "id": "fc1-08", "anverso": "¿Qué establece el artículo 2 de la Constitución?", "reverso": "La indisoluble unidad de la Nación española y el derecho a la autonomía de nacionalidades y regiones." },
-        { "id": "fc1-09", "anverso": "¿Cuál es la lengua oficial del Estado?", "reverso": "El castellano; todos los españoles tienen el deber de conocerla y el derecho a usarla." },
-        { "id": "fc1-10", "anverso": "¿Qué proclama el artículo 10 de la Constitución?", "reverso": "La dignidad de la persona, los derechos inviolables y el libre desarrollo de la personalidad como fundamento del orden político." },
-        { "id": "fc1-11", "anverso": "¿Conforme a qué se interpretan los derechos fundamentales?", "reverso": "Conforme a la Declaración Universal de Derechos Humanos y los tratados internacionales ratificados por España." },
-        { "id": "fc1-12", "anverso": "¿Qué artículos recogen los derechos fundamentales y libertades públicas?", "reverso": "Los artículos 15 a 29 (Sección 1ª del Capítulo II)." },
-        { "id": "fc1-13", "anverso": "¿Qué artículo regula la nacionalidad española?", "reverso": "El artículo 11 de la Constitución." },
-        { "id": "fc1-14", "anverso": "¿Puede privarse a un español de origen de su nacionalidad?", "reverso": "No; ningún español de origen podrá ser privado de su nacionalidad." },
-        { "id": "fc1-15", "anverso": "¿En qué edad fija la Constitución la mayoría de edad?", "reverso": "En los dieciocho años (artículo 12)." },
-        { "id": "fc1-16", "anverso": "¿Qué artículo regula los derechos de los extranjeros?", "reverso": "El artículo 13 de la Constitución." },
-        { "id": "fc1-17", "anverso": "¿En qué elecciones pueden votar los extranjeros?", "reverso": "En las elecciones municipales, por tratado o ley y atendiendo a criterios de reciprocidad." },
-        { "id": "fc1-18", "anverso": "¿Se concede la extradición por delitos políticos?", "reverso": "No; quedan excluidos los delitos políticos, sin que se consideren tales los actos de terrorismo." },
-        { "id": "fc1-19", "anverso": "¿Con qué países permite la Constitución la doble nacionalidad?", "reverso": "Con los países iberoamericanos y aquellos con particular vinculación con España." },
-        { "id": "fc1-20", "anverso": "¿Qué garantiza el artículo 9.3 de la Constitución?", "reverso": "La legalidad, la jerarquía normativa y la irretroactividad de las disposiciones sancionadoras no favorables, entre otros principios." }
+    {
+      "titulo": "2. ARTÍCULO 11",
+      "contenido": "La dignidad de la persona, los derechos inviolables que le son inherentes, el libre desarrollo de la personalidad, el respeto a la ley y a los derechos de los demás son fundamento del orden político y de la paz social. 2. Las normas relativas a los derechos fundamentales y a las libertades que la Constitución reconoce se interpretarán de conformidad con la Declaración Universal de Derechos Humanos y los tratados y acuerdos internacionales sobre las mismas materias ratificados por España. CAPÍTULO PRIMERO DE LOS ESPAÑOLES Y LOS EXTRANJEROS ARTÍCULO 11 1. La nacionalidad española se adquiere, se conserva y se pierde de acuerdo con lo establecido por la ley. 2. Ningún español de origen podrá ser privado de su nacionalidad. 3. El Estado podrá concertar tratados de doble nacionalidad con los países iberoamericanos o con aquellos que hayan tenido o tengan una particular vinculación con España. En estos mismos países, aun cuando no reconozcan a sus ciudadanos un derecho recíproco, podrán naturalizarse los españoles sin perder su nacionalidad de origen. ARTÍCULO 12 Los españoles son mayores de edad a los dieciocho años. ARTÍCULO 13 1. Los extranjeros gozarán en España de las libertades públicas que garantiza el presente Título en los términos que establezcan los tratados y la ley. 2. Solamente los españoles serán titulares de los derechos reconocidos en el artículo 23, salvo lo que, atendiendo a criterios de reciprocidad, pueda establecerse por tratado o ley para el derecho de sufragio activo y pasivo en las elecciones municipales. 3. La extradición sólo se concederá en cumplimiento de un tratado o de la ley, atendiendo al principio de reciprocidad. Quedan excluidos de la extradición los delitos políticos, no considerándose como tales los actos de terrorismo. 4. La ley establecerá los términos en que los ciudadanos de otros países y los apátridas podrán gozar del derecho de asilo en España. 4 \f CAPÍTULO SEGUNDO DERECHOS Y LIBERTADES ARTÍCULO 14 Los españoles son iguales ante la ley, sin que pueda prevalecer discriminación alguna por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social. ARTÍCULO 23 1. Los ciudadanos tienen el derecho a participar en los asuntos públicos, directamente o por medio de representantes, libremente elegidos en elecciones periódicas por sufragio universal. 2. Asimismo, tienen derecho a acceder en condiciones de igualdad a las funciones y cargos públicos, con los requisitos que señalen las leyes. SECCIÓN 2.ª DE LOS DERECHOS Y DEBERES DE LOS CIUDADANOS ARTÍCULO 30 1. Los españoles tienen el derecho y el deber de defender a España. 2. La ley fijará las obligaciones militares de los españoles y regulará, con las debidas garantías, la objeción de conciencia, así como las demás causas de exención del servicio militar obligatorio, pudiendo imponer, en su caso, una prestación social sustitutoria. 3. Podrá establecerse un servicio civil para el cumplimiento de fines de interés general. 4. Mediante ley podrán regularse los deberes de los ciudadanos en los casos de grave riesgo, catástrofe o calamidad pública. ARTÍCULO 31 1. Todos contribuirán al sostenimiento de los gastos públicos de acuerdo con su capacidad económica mediante un sistema tributario justo inspirado en los principios de igualdad y progresividad que, en ningún caso, tendrá alcance confiscatorio. 2. El gasto público realizará una asignación equitativa de los recursos públicos, y su programación y ejecución responderán a los criterios de eficiencia y economía. 3."
+    },
+    {
+      "titulo": "3. ARTÍCULO 32",
+      "contenido": "Sólo podrán establecerse prestaciones personales o patrimoniales de carácter público con arreglo a la ley. ARTÍCULO 32 1. El hombre y la mujer tienen derecho a contraer matrimonio con plena igualdad jurídica. 2. La ley regulará las formas de matrimonio, la edad y capacidad para contraerlo, los derechos y deberes de los cónyuges, las causas de separación y disolución y sus efectos. 5 \fARTÍCULO 33 1. Se reconoce el derecho a la propiedad privada y a la herencia. 2. La función social de estos derechos delimitará su contenido, de acuerdo con las leyes. 3. Nadie podrá ser privado de sus bienes y derechos sino por causa justificada de utilidad pública o interés social, mediante la correspondiente indemnización y de conformidad con lo dispuesto por las leyes. ARTÍCULO 34 1. Se reconoce el derecho de fundación para fines de interés general, con arreglo a la ley. 2. Regirá también para las fundaciones lo dispuesto en los apartados 2 y 4 del artículo 22. ARTÍCULO 35 1. Todos los españoles tienen el deber de trabajar y el derecho al trabajo, a la libre elección de profesión u oficio, a la promoción a través del trabajo y a una remuneración suficiente para satisfacer sus necesidades y las de su familia, sin que en ningún caso pueda hacerse discriminación por razón de sexo. 2. La ley regulará un estatuto de los trabajadores. ARTÍCULO 36 La ley regulará las peculiaridades propias del régimen jurídico de los Colegios Profesionales y el ejercicio de las profesiones tituladas. La estructura interna y el funcionamiento de los Colegios deberán ser democráticos. ARTÍCULO 37 1. La ley garantizará el derecho a la negociación colectiva laboral entre los representantes de los trabajadores y empresarios, así como la fuerza vinculante de los convenios. 2. Se reconoce el derecho de los trabajadores y empresarios a adoptar medidas de conflicto colectivo. La ley que regule el ejercicio de este derecho, sin perjuicio de las limitaciones que puedan establecer, incluirá las garantías precisas para asegurar el funcionamiento de los servicios esenciales de la comunidad. ARTÍCULO 38 Se reconoce la libertad de empresa en el marco de la economía de mercado. Los poderes públicos garantizan y protegen su ejercicio y la defensa de la productividad, de acuerdo con las exigencias de la economía general y, en su caso, de la planificación. 6"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"La Constitución Española. El Título Prel\"]\n  A --> N1[\"ARTÍCULO 1\"]\n  A --> N2[\"ARTÍCULO 11\"]\n  A --> N3[\"ARTÍCULO 32\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "La Constitución Española. El Título Preliminar. L…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "ARTÍCULO 1",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "ARTÍCULO 11",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "ARTÍCULO 32",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p1-01",
-            "enunciado": "¿En qué fecha se ratificó en referéndum la Constitución Española?",
-            "opciones": ["27 de diciembre de 1978", "6 de diciembre de 1978", "31 de octubre de 1978", "6 de diciembre de 1977"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Constitución fue ratificada en referéndum el 6 de diciembre de 1978 y sancionada por el Rey el 27 de diciembre."
-        },
-        {
-            "id": "p1-02",
-            "enunciado": "¿Cómo define el artículo 1 de la Constitución al Estado español?",
-            "opciones": ["Estado liberal de Derecho", "Estado social y democrático de Derecho", "Estado autonómico", "Estado federal"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 1.1 define España como un Estado social y democrático de Derecho."
-        },
-        {
-            "id": "p1-03",
-            "enunciado": "Los valores superiores del ordenamiento jurídico español son:",
-            "opciones": ["Libertad, justicia, igualdad y pluralismo político", "Libertad, igualdad y fraternidad", "Justicia, seguridad y orden", "Soberanía, unidad y autonomía"],
-            "respuestaCorrecta": 0,
-            "explicacion": "El artículo 1.1 propugna como valores superiores la libertad, la justicia, la igualdad y el pluralismo político."
-        },
-        {
-            "id": "p1-04",
-            "enunciado": "¿Cuál es la forma política del Estado español según la Constitución?",
-            "opciones": ["República parlamentaria", "Monarquía absoluta", "Monarquía parlamentaria", "República federal"],
-            "respuestaCorrecta": 2,
-            "explicacion": "El artículo 1.3 establece que la forma política del Estado español es la Monarquía parlamentaria."
-        },
-        {
-            "id": "p1-05",
-            "enunciado": "¿Qué proclama el artículo 10 de la Constitución como fundamento del orden político?",
-            "opciones": ["La soberanía nacional", "La dignidad de la persona y los derechos inviolables", "La unidad de la Nación", "La separación de poderes"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 10 proclama la dignidad de la persona, los derechos inviolables y el libre desarrollo de la personalidad como fundamento del orden político y la paz social."
-        },
-        {
-            "id": "p1-06",
-            "enunciado": "Según el artículo 12 de la Constitución, los españoles son mayores de edad a los:",
-            "opciones": ["16 años", "21 años", "18 años", "25 años"],
-            "respuestaCorrecta": 2,
-            "explicacion": "El artículo 12 fija la mayoría de edad de los españoles en los dieciocho años."
-        },
-        {
-            "id": "p1-07",
-            "enunciado": "¿Qué artículo de la Constitución regula los derechos de los extranjeros en España?",
-            "opciones": ["Artículo 10", "Artículo 11", "Artículo 12", "Artículo 13"],
-            "respuestaCorrecta": 3,
-            "explicacion": "El artículo 13 dispone que los extranjeros gozarán en España de las libertades públicas en los términos de los tratados y la ley."
-        },
-        {
-            "id": "p1-08",
-            "enunciado": "Respecto a la extradición, la Constitución establece que:",
-            "opciones": ["Se concede siempre por cualquier delito", "Quedan excluidos los delitos políticos, salvo el terrorismo", "Nunca se concede a extranjeros", "Solo la decide el Rey"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 13.3 excluye de la extradición los delitos políticos, sin que se consideren como tales los actos de terrorismo."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc1-01",
+      "pregunta": "¿Cuál es la forma política del Estado español?",
+      "respuesta": "La Monarquía parlamentaria"
+    },
+    {
+      "id": "fc1-02",
+      "pregunta": "¿Cuál es la lengua oficial del Estado?",
+      "respuesta": "El castellano"
+    },
+    {
+      "id": "fc1-03",
+      "pregunta": "¿Qué es la bandera de España?",
+      "respuesta": "Está formada por tres franjas horizontales, roja, amarilla y roja"
+    },
+    {
+      "id": "fc1-04",
+      "pregunta": "¿Cuál es la capital del Estado?",
+      "respuesta": "La villa de Madrid"
+    },
+    {
+      "id": "fc1-05",
+      "pregunta": "¿Qué es el pluralismo político?",
+      "respuesta": "Expresión del pluralismo político, concurren a la formación y manifestación de la voluntad popular"
+    },
+    {
+      "id": "fc1-06",
+      "pregunta": "¿Qué es la soberanía nacional?",
+      "respuesta": "Reside en el pueblo español"
+    },
+    {
+      "id": "fc1-07",
+      "pregunta": "¿Cuál es la edad para ser mayor de edad?",
+      "respuesta": "Dieciocho años"
+    },
+    {
+      "id": "fc1-08",
+      "pregunta": "¿Qué derechos tienen los extranjeros en España?",
+      "respuesta": "Gozarán en España de las libertades públicas que garantiza el presente Título"
+    },
+    {
+      "id": "fc1-09",
+      "pregunta": "¿Qué es la dignidad de la persona?",
+      "respuesta": "Fundamento del orden político y de la paz social"
+    },
+    {
+      "id": "fc1-10",
+      "pregunta": "¿Qué es la nacionalidad española?",
+      "respuesta": "Se adquiere, se conserva y se pierde de acuerdo con lo establecido por la ley"
+    },
+    {
+      "id": "fc1-11",
+      "pregunta": "¿Qué es la igualdad ante la ley?",
+      "respuesta": "Sin que pueda prevalecer discriminación alguna por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social"
+    },
+    {
+      "id": "fc1-12",
+      "pregunta": "¿Qué es el derecho a participar en los asuntos públicos?",
+      "respuesta": "Directamente o por medio de representantes, libremente elegidos en elecciones periódicas por sufragio universal"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p1-01",
+      "enunciado": "¿Cuál es la forma política del Estado español?",
+      "opciones": [
+        "La República",
+        "La Monarquía parlamentaria",
+        "La Dictadura",
+        "La República federal"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Constitución española establece que la forma política del Estado español es la Monarquía parlamentaria."
+    },
+    {
+      "id": "p1-02",
+      "enunciado": "¿Cuál es la lengua oficial del Estado?",
+      "opciones": [
+        "El catalán",
+        "El castellano",
+        "El euskera",
+        "El gallego"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Constitución española establece que el castellano es la lengua oficial del Estado."
+    },
+    {
+      "id": "p1-03",
+      "enunciado": "¿Qué es la bandera de España?",
+      "opciones": [
+        "Está formada por tres franjas horizontales, azul, blanco y rojo",
+        "Está formada por tres franjas horizontales, roja, amarilla y roja",
+        "Está formada por tres franjas horizontales, verde, amarillo y azul",
+        "Está formada por tres franjas horizontales, rojo, blanco y azul"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Constitución española establece que la bandera de España está formada por tres franjas horizontales, roja, amarilla y roja."
+    },
+    {
+      "id": "p1-04",
+      "enunciado": "¿Cuál es la capital del Estado?",
+      "opciones": [
+        "La ciudad de Barcelona",
+        "La villa de Madrid",
+        "La ciudad de Valencia",
+        "La ciudad de Sevilla"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Constitución española establece que la capital del Estado es la villa de Madrid."
+    },
+    {
+      "id": "p1-05",
+      "enunciado": "¿Qué es el pluralismo político?",
+      "opciones": [
+        "Es la expresión del pluralismo político, concurren a la formación y manifestación de la voluntad popular",
+        "Es la expresión del monismo político, concurren a la formación y manifestación de la voluntad única",
+        "Es la expresión del autoritarismo político, concurren a la formación y manifestación de la voluntad del Estado",
+        "Es la expresión del anarquismo político, concurren a la formación y manifestación de la voluntad de los individuos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Constitución española establece que los partidos políticos expresan el pluralismo político, concurren a la formación y manifestación de la voluntad popular."
+    },
+    {
+      "id": "p1-06",
+      "enunciado": "¿Qué es la soberanía nacional?",
+      "opciones": [
+        "Reside en el Rey",
+        "Reside en el pueblo español",
+        "Reside en el Parlamento",
+        "Reside en el Gobierno"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Constitución española establece que la soberanía nacional reside en el pueblo español."
+    },
+    {
+      "id": "p1-07",
+      "enunciado": "¿Cuál es la edad para ser mayor de edad?",
+      "opciones": [
+        "Diecisiete años",
+        "Dieciocho años",
+        "Veinte años",
+        "Veinticinco años"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Constitución española establece que los españoles son mayores de edad a los dieciocho años."
+    },
+    {
+      "id": "p1-08",
+      "enunciado": "¿Qué derechos tienen los extranjeros en España?",
+      "opciones": [
+        "No tienen derechos",
+        "Gozarán en España de las libertades públicas que garantiza el presente Título",
+        "Tienen los mismos derechos que los españoles",
+        "No pueden residir en España"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Constitución española establece que los extranjeros gozarán en España de las libertades públicas que garantiza el presente Título."
+    },
+    {
+      "id": "p1-09",
+      "enunciado": "¿Qué es la dignidad de la persona?",
+      "opciones": [
+        "Es el fundamento del orden político y de la paz social",
+        "Es el fundamento del orden económico y de la paz social",
+        "Es el fundamento del orden social y de la paz política",
+        "Es el fundamento del orden político y de la paz económica"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Constitución española establece que la dignidad de la persona es el fundamento del orden político y de la paz social."
+    },
+    {
+      "id": "p1-10",
+      "enunciado": "¿Qué es la nacionalidad española?",
+      "opciones": [
+        "Se adquiere, se conserva y se pierde de acuerdo con lo establecido por la ley",
+        "No se adquiere, se conserva y se pierde de acuerdo con lo establecido por la ley",
+        "Se adquiere, se conserva y se pierde de acuerdo con lo establecido por el Rey",
+        "Se adquiere, se conserva y se pierde de acuerdo con lo establecido por el Parlamento"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Constitución española establece que la nacionalidad española se adquiere, se conserva y se pierde de acuerdo con lo establecido por la ley."
+    },
+    {
+      "id": "p1-11",
+      "enunciado": "¿Qué es la igualdad ante la ley?",
+      "opciones": [
+        "Es la discriminación por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social",
+        "Es la igualdad ante la ley, sin que pueda prevalecer discriminación alguna por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social",
+        "Es la desigualdad ante la ley, con discriminación por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social",
+        "Es la igualdad ante la ley, con discriminación por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Constitución española establece que los españoles son iguales ante la ley, sin que pueda prevalecer discriminación alguna por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social."
+    }
+  ]
 }

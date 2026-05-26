@@ -1,157 +1,345 @@
 {
-    "id": 36,
-    "titulo": "Ordenación del Turismo en Canarias. Normativa básica. Sujetos, actividades y establecimientos regulados. Competencias de la Administración municipal en materia de turismo. Servicios públicos turísticos municipales. Infracciones turísticas",
-    "bloque": "especifico",
-    "secciones": [
-        {
-            "id": "s36-1",
-            "titulo": "Ordenación del Turismo en Canarias: normativa básica",
-            "contenido": "La ordenación del turismo en Canarias se rige por la Ley 7/1995, de 6 de abril, de Ordenación del Turismo de Canarias, modificada en varias ocasiones, junto con la Ley 2/2013, de renovación y modernización turística, y los reglamentos sectoriales (de alojamiento turístico, viviendas vacacionales, intermediación, profesiones turísticas). La competencia exclusiva de Canarias en materia de turismo deriva del Estatuto de Autonomía. La ordenación pretende garantizar la calidad del producto turístico, la sostenibilidad del territorio y de los recursos, la protección de las personas usuarias, la competitividad del sector y la imagen exterior de las islas como destino turístico singular."
-        },
-        {
-            "id": "s36-2",
-            "titulo": "Sujetos, actividades y establecimientos regulados",
-            "contenido": "La ley regula a los sujetos de la actividad turística: las empresas turísticas (de alojamiento, restauración, intermediación, transporte turístico, de actividades complementarias) y los profesionales del turismo (guías de turismo, informadores). También define a las personas usuarias turísticas y reconoce sus derechos a la información, la calidad de los servicios y la reclamación. Las actividades turísticas se clasifican según su naturaleza: alojamiento, restauración, intermediación, transporte y servicios complementarios. Los establecimientos turísticos comprenden los hoteles, apartamentos, casas rurales, viviendas vacacionales, restaurantes, cafeterías y otros, sujetos a clasificación, autorización o declaración responsable, y a inspección administrativa."
-        },
-        {
-            "id": "s36-3",
-            "titulo": "Competencias de la Administración municipal en turismo",
-            "contenido": "Aunque la competencia exclusiva en turismo corresponde a la Comunidad Autónoma, los municipios canarios ejercen competencias propias en cuestiones relacionadas: ordenación urbanística del suelo turístico, licencias urbanísticas y de actividad de los establecimientos, control del cumplimiento de las ordenanzas municipales en zonas turísticas, promoción turística local, gestión de servicios públicos en el municipio (limpieza, transporte, seguridad), policía administrativa sobre las actividades turísticas en su término, y colaboración con la Administración autonómica en la inspección. La Policía Local interviene en la vigilancia del cumplimiento de las normas municipales en zonas turísticas."
-        },
-        {
-            "id": "s36-4",
-            "titulo": "Servicios públicos turísticos municipales",
-            "contenido": "Los Ayuntamientos turísticos prestan servicios públicos esenciales para el turismo: oficinas municipales de información turística, conservación y mantenimiento de playas (con servicios de salvamento, limpieza, accesibilidad), promoción y gestión de fiestas y eventos, transporte público en zonas turísticas, regulación del comercio y mercados, y servicios de seguridad ciudadana en zonas de alta afluencia. Los municipios con elevada presencia turística pueden ser declarados municipios turísticos por la Comunidad Autónoma, lo que conlleva un régimen financiero especial y mayor capacidad de actuación. La cooperación interadministrativa es esencial para una gestión eficaz del destino."
-        },
-        {
-            "id": "s36-5",
-            "titulo": "Infracciones y sanciones en materia turística",
-            "contenido": "La Ley 7/1995 tipifica las infracciones turísticas, clasificándolas en muy graves, graves y leves. Son infracciones muy graves, entre otras, ejercer la actividad turística sin la autorización exigible, ofrecer servicios no inscritos o clasificados, los fraudes en publicidad o información a la persona usuaria, los incumplimientos graves de las condiciones de seguridad o sanidad y la reincidencia. Las sanciones comprenden multas que pueden alcanzar cuantías elevadas, suspensión o cierre del establecimiento, e inhabilitación. El procedimiento sancionador respeta los principios del Derecho administrativo sancionador y se tramita por el órgano competente, generalmente de la Consejería con competencias turísticas, sin perjuicio de las funciones de inspección y colaboración municipal."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e36-1",
-            "titulo": "Ordenación turística de Canarias",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Turismo Canarias] --> B[Ley 7/1995]\n    A --> C[Ley 2/2013 renovacion]\n    A --> D[Reglamentos sectoriales]\n    A --> E[Competencia exclusiva autonomica]"
-        },
-        {
-            "id": "e36-2",
-            "titulo": "Sujetos y establecimientos",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Turismo] --> B[Empresas turisticas]\n    A --> C[Profesionales]\n    A --> D[Personas usuarias]\n    B --> E[Alojamiento, restauracion, intermediacion]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Ordenación del Turismo en Canarias", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Normativa básica", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Sujetos y establecimientos", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Competencias municipales", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Servicios turísticos municipales", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Infracciones turísticas", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Ley 7/1995", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Empresas y profesionales", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Urbanismo y licencias", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Oficinas de información", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Municipios turísticos", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Muy graves, graves, leves", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Sanciones: multa y cierre", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n5", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 36,
+  "titulo": "Ordenación del Turismo en Canarias. Normativa básica. Sujetos, actividades y establecimientos regulados. Competencias de la Administración municipal en materia de turismo. Servicios públicos turísticos municipales. Infracciones turísticas",
+  "bloque": "especifico",
+  "secciones": [
+    {
+      "titulo": "1. LEY ORGÁNICA 1/2018, DE 5 DE NOVIEMBRE, DE REFORMA DEL ESTATUTO DE AUTON",
+      "contenido": "BIBLIOGRAFÍA • CONSTITUCIÓN ESPAÑOLA o Art. 148 • DECRETO 10/2001, DE 22 DE ENERO, POR EL QUE SE REGULAN LOS ESTÁNDARES TURÍSTICOS. o Art. 1 • DECRETO 84/2010, DE 15 DE JULIO, POR EL QUE SE REGULA EL SISTEMA DE INFORMACIÓN TURÍSTICA, EL REGISTRO GENERAL TURÍSTICO Y EL SISTEMA INFORMÁTICO QUE LES DA SOPORTE. o Art. 4-5 • LEY 14/2019, DE 25 DE ABRIL, DE ORDENACIÓN TERRITORIAL DE LA ACTIVIDAD TURÍSTICA EN LAS ISLAS DE EL HIERRO, LA GOMERA Y LA PALMA. o Art. 1 • LEY 7/1995, DE 6 DE ABRIL, DE ORDENACIÓN DEL TURISMO DE CANARIAS. o Art. 1-4 o Art. 7 o Art. 13-14 o Art. 65-67 o Art. 72-82 • LEY ORGÁNICA 1/2018, DE 5 DE NOVIEMBRE, DE REFORMA DEL ESTATUTO DE AUTONOMÍA DE CANARIAS. o Art. 70 o Art. 75 o Art. 129 o Art. 146 2 \f CONSTITUCIÓN ESPAÑOLA TÍTULO VIII DE LA ORGANIZACIÓN TERRITORIAL DEL ESTADO CAPÍTULO TERCERO DE LAS COMUNIDADES AUTÓNOMAS ARTÍCULO 148 1. Las Comunidades Autónomas podrán asumir competencias en las siguientes materias: 2. 18.ª Promoción y ordenación del turismo en su ámbito territorial. 3 \f DECRETO 10/2001, DE 22 DE ENERO, POR EL QUE SE REGULAN LOS ESTÁNDARES TURÍSTICOS. TÍTULO PRELIMINAR DE LAS DISPOSICIONES GENERALES ARTÍCULO 1.- OBJETO Y ÁMBITO. 1. El presente Decreto tiene por objeto la regulación de: a) Los estándares aplicables a la urbanización turística y en general, al suelo en que el planeamiento permita el uso turístico. b) Los criterios y objetivos generales que deben atender los instrumentos de planeamiento urbanístico al objeto de asegurar el diseño, ejecución y mantenimiento de la urbanización turística. 2. Tendrán la consideración de urbanizaciones turísticas las que el planeamiento califique como tales y aquellas en que se permita un uso de esta naturaleza igual o superior al 30% de la edificabilidad total y/o de la superficie de las parcelas. 3. Los estándares previstos en el presente Decreto se aplicarán a la totalidad del suelo en que el planeamiento permita el uso turístico cualesquiera que sean su clasificación u otros usos compatibles. 4 \f DECRETO 84/2010, DE 15 DE JULIO, POR EL QUE SE REGULA EL SISTEMA DE INFORMACIÓN TURÍSTICA, EL REGISTRO GENERAL TURÍSTICO Y EL SISTEMA INFORMÁTICO QUE LES DA SOPORTE. CAPÍTULO I DEL SISTEMA DE INFORMACIÓN TURÍSTICA ARTÍCULO 4.- CONTENIDOS. En el Sistema de Información Turística confluirán los datos de los siguientes subsistemas interrelacionados: 1) Registro General Turístico. 2) Inspección y sanciones en materia turística. 3) Subvenciones otorgadas al sector turístico. 4) Infraestructuras turísticas. 5) Formación turística. 6) Estudios, análisis, encuestas y estadísticas relativas al sector turístico. 7) Cualquier otro que, en desarrollo de este Reglamento, se determine por Orden de la Consejería competente en materia de turismo. ARTÍCULO 5.- COMPETENCIA. El impulso, coordinación y seguimiento del Sistema de Información Turística, corresponde a la Viceconsejería de Turismo de la Administración Pública Canaria y la gestión del mismo corresponderá al Observatorio del Turismo de Canarias. 5 \f LEY 14/2019, DE 25 DE ABRIL, DE ORDENACIÓN TERRITORIAL DE LA ACTIVIDAD TURÍSTICA EN LAS ISLAS DE EL HIERRO, LA GOMERA Y LA PALMA. CAPÍTULO I DISPOSICIONES GENERALES SECCIÓN 1.ª ÁMBITO DE APLICACIÓN Y FINES DE LA ORDENACIÓN TERRITORIAL ARTÍCULO 1. OBJETO, ÁMBITO Y RÉGIMEN JURÍDICO. La presente ley tiene por objeto regular la ordenación territorial de la actividad turística en las islas de El Hierro, La Gomera y La Palma."
     },
-    "flashcards": [
-        { "id": "fc36-01", "anverso": "¿Qué ley regula la ordenación del turismo en Canarias?", "reverso": "La Ley 7/1995, de 6 de abril, de Ordenación del Turismo de Canarias." },
-        { "id": "fc36-02", "anverso": "¿Qué ley canaria regula la renovación y modernización turística?", "reverso": "La Ley 2/2013, de renovación y modernización turística." },
-        { "id": "fc36-03", "anverso": "¿De quién es la competencia en turismo según el Estatuto?", "reverso": "Es competencia exclusiva de la Comunidad Autónoma de Canarias." },
-        { "id": "fc36-04", "anverso": "¿Qué fines persigue la ordenación turística?", "reverso": "Calidad del producto, sostenibilidad, protección de los usuarios y competitividad del sector." },
-        { "id": "fc36-05", "anverso": "Cita sujetos de la actividad turística.", "reverso": "Las empresas turísticas, los profesionales del turismo y las personas usuarias." },
-        { "id": "fc36-06", "anverso": "Cita tipos de empresas turísticas.", "reverso": "Alojamiento, restauración, intermediación, transporte turístico y actividades complementarias." },
-        { "id": "fc36-07", "anverso": "Cita tipos de establecimientos de alojamiento.", "reverso": "Hoteles, apartamentos, casas rurales y viviendas vacacionales." },
-        { "id": "fc36-08", "anverso": "¿Qué control administrativo requieren los establecimientos turísticos?", "reverso": "Clasificación, autorización o declaración responsable, e inspección administrativa." },
-        { "id": "fc36-09", "anverso": "¿Qué derechos tienen las personas usuarias turísticas?", "reverso": "Derecho a la información, calidad de los servicios y reclamación." },
-        { "id": "fc36-10", "anverso": "Cita competencias municipales relacionadas con el turismo.", "reverso": "Ordenación urbanística, licencias, ordenanzas, promoción local y servicios públicos." },
-        { "id": "fc36-11", "anverso": "¿Qué hace la Policía Local en zonas turísticas?", "reverso": "Vigila el cumplimiento de las normas municipales y colabora con la Administración autonómica." },
-        { "id": "fc36-12", "anverso": "Cita servicios municipales esenciales para el turismo.", "reverso": "Oficinas de información, mantenimiento de playas, transporte público y seguridad ciudadana." },
-        { "id": "fc36-13", "anverso": "¿Qué son los municipios turísticos?", "reverso": "Los declarados como tales por la Comunidad Autónoma por su elevada presencia turística." },
-        { "id": "fc36-14", "anverso": "¿Qué conlleva la declaración de municipio turístico?", "reverso": "Un régimen financiero especial y mayor capacidad de actuación." },
-        { "id": "fc36-15", "anverso": "¿Cómo se clasifican las infracciones turísticas?", "reverso": "En muy graves, graves y leves." },
-        { "id": "fc36-16", "anverso": "Cita una infracción muy grave.", "reverso": "Ejercer actividad turística sin autorización u ofrecer servicios no inscritos o clasificados." },
-        { "id": "fc36-17", "anverso": "Cita sanciones turísticas.", "reverso": "Multas elevadas, suspensión o cierre del establecimiento e inhabilitación." },
-        { "id": "fc36-18", "anverso": "¿Qué consejería tramita normalmente el procedimiento?", "reverso": "La Consejería con competencias turísticas del Gobierno de Canarias." },
-        { "id": "fc36-19", "anverso": "¿Es necesaria la cooperación entre Administraciones?", "reverso": "Sí, es esencial para la gestión eficaz del destino turístico." },
-        { "id": "fc36-20", "anverso": "¿Por qué es Canarias un destino singular?", "reverso": "Por su imagen exterior como destino turístico y su régimen económico y territorial específico." }
+    {
+      "titulo": "2. ARTÍCULO 1",
+      "contenido": "En todo lo no previsto en la presente ley y en sus disposiciones de desarrollo, será de aplicación supletoria la legislación del suelo y de los espacios naturales protegidos y la legislación sectorial general de ordenación de la actividad turística de Canarias. 6 \f LEY 7/1995, DE 6 DE ABRIL, DE ORDENACIÓN DEL TURISMO DE CANARIAS. TÍTULO PRELIMINAR DISPOSICIONES GENERALES ARTÍCULO 1. OBJETO DE LA LEY. 1. La presente Ley tiene por objeto regular, en el ejercicio de la competencia exclusiva que sobre la materia tiene la Comunidad Autónoma de Canarias, la ordenación y promoción del turismo en el Archipiélago Canario. 2. Se entienden comprendidas dentro de ese objetivo las siguientes materias: a) La delimitación de competencias de las Administraciones públicas de Canarias, en relación con el turismo. b) La ordenación del sector turístico empresarial y de las actividades turísticas en Canarias, así como la regulación, clasificación y control de los establecimientos turísticos. c) La creación, conservación, mejora, aprovechamiento, protección de los recursos y de la oferta turística en Canarias. d) Las acciones de promoción y fomento del turismo y de la actividad turística empresarial. e) La garantía y protección de los derechos del turista, en su condición de usuario, de los servicios turísticos. f) La protección del medio ambiente y conservación de la naturaleza, el paisaje y la cultura de Canarias, en cuanto objetos de atracción y recursos turísticos. g) Las directrices para la ordenación de las infraestructuras territoriales y urbanísticas, como instrumentos de protección del turismo. h) La formación técnico-profesional en materia turística. i) El régimen sancionador en materia turística. ARTÍCULO 2. ÁMBITO DE APLICACIÓN. 1. La presente ley resulta de aplicación a las empresas turísticas entendiendo por tales aquellas que, mediante contraprestación, prestan servicios en el ámbito de la actividad turística. Se comprende también en el ámbito de aplicación de esta ley a todas las administraciones, organismos y empresas públicas, que desarrollen su actividad relacionada con el turismo en la Comunidad Autónoma de Canarias. 2. Esta ley se aplica asimismo a las siguientes actividades: a. Las actividades o la oferta de servicios de alojamiento turístico de cualquier tipo, así como los establecimientos donde los realicen. b. Las actividades y servicios de restauración que se desarrollen en restaurantes, bares- cafeterías. c. Las actividades de turismo activo, en las que el sujeto responsable de la actividad turística es el propio usuario turístico, sin perjuicio de las intermediaciones que procedan de acuerdo con esta ley y sus normas de desarrollo, y que comprenden las actividades de recreo, deportivas o de aventura que se desarrollen normalmente sirviéndose de los recursos que ofrece la propia naturaleza en cualquier medio, sea aéreo, terrestre, subterráneo, acuático o urbano; así como las actividades formativas, informativas o divulgativas en el ámbito cultural, medioambiental u otros análogos. 7 \f d. Las actividades de intermediación turística que tengan lugar en la Comunidad Autónoma, así como los establecimientos donde desarrollen su actividad. e. Los balnearios, piscinas, parques acuáticos, instalaciones deportivo-turísticas, parques zoo-lógicos y botánicos y similares, cuando su acceso sea libre, independientemente de que se exija o no contraprestación por el mismo. f."
+    },
+    {
+      "titulo": "3. ARTÍCULO 3",
+      "contenido": "Las excursiones aéreas o marítimas con fines turísticos de pesca deportivo-turística, u otras análogas, como observación de cetáceos o turismo marinero, en el ámbito de la Comunidad Autónoma. g. Las personas físicas o jurídicas que se dediquen de forma habitual y retribuida a actividades de formación, información o acompañamiento a usuarios turísticos. h. Las actividades turísticas complementarias, tales como las atracciones y espectáculos, incluidas las que se desarrollen en salas de fiesta, discotecas y de baile; actividades de animación y demás de esparcimiento y ocio en instalaciones especialmente habilitadas para ello, así como las actividades relacionadas con la organización y asistencia a congresos y traducción simultánea, en cuanto desarrollen actividades sujetas a esta ley. i. Cualquier otra actividad cuyo giro o tráfico comprenda servicios relacionados directa o indirectamente con el turismo y que sea calificada como turística por el Gobierno de Canarias. 3. La consejería con competencias en materia turística, previo expediente instruido al efecto, podrá declarar la no sujeción a esta ley de empresas, actividades o establecimientos, que pudieran considerarse turísticos, cuando se acredite que carecen de tal carácter o naturaleza. ARTÍCULO 3. CANARIAS, UNIDAD DE DESTINO TURÍSTICO. A los efectos de esta Ley, Canarias, en su conjunto, se considera como una unidad de destino turístico, con tratamiento unitario en su promoción fuera del archipiélago. TÍTULO I LAS ADMINISTRACIONES PÚBLICAS EN MATERIA TURÍSTICA CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO 4. ADMINISTRACIONES PÚBLICAS CON COMPETENCIAS EN MATERIA TURÍSTICA. 1. Las Administraciones públicas de Canarias con competencia en materia turística son: a) La Administración pública de la Comunidad Autónoma de Canarias. b) Los Cabildos Insulares. c) Los Ayuntamientos canarios. d) Los organismos autónomos y entidades de derecho público que sean creados por cualesquiera de las anteriores administraciones para la gestión del sector público turístico. 2. Las competencias de las diferentes Administraciones públicas previstas en el número anterior, podrán ser ejercidas, cuando supongan la prestación de servicios, a través de las empresas públicas con forma societaria que al efecto puedan crearse. CAPÍTULO II COMPETENCIAS TURÍSTICAS DE LAS DIFERENTES ADMINISTRACIONES PÚBLICAS ARTÍCULO 7. COMPETENCIAS DE LA ADMINISTRACIÓN MUNICIPAL. 8 \f 1. Corresponde a los municipios, en materia turística, las competencias que la legislación de régimen local les atribuye, así como el ejercicio de las funciones delegadas por los Cabildos Insulares. 2. En todo caso corresponde a los municipios en materia turística: a) La prestación de los servicios turísticos obligatorios que les impone la presente Ley. b) El otorgamiento de las licencias que la legislación les atribuye en lo que atañe a las empresas y establecimientos turísticos. c) La aprobación de los instrumentos de planeamiento que les compete, conforme al ordenamiento vigente, de acuerdo con las previsiones de esta Ley en cuanto al planeamiento directivo insular. 3. Los municipios desarrollarán sus funciones en coordinación con la política regional e insular, tanto en la prestación de servicios como en las actuaciones en infraestructuras. TÍTULO II LA ACTIVIDAD TURÍSTICA CAPÍTULO I DEBERES Y DERECHOS EN MATERIA TURÍSTICA SECCIÓN 2.ª DEBERES Y DERECHOS DE LAS EMPRESAS TURÍSTICAS ARTÍCULO 13. DEBERES. 1."
+    },
+    {
+      "titulo": "4. artículo 2",
+      "contenido": "El establecimiento y ejercicio de la actividad turística es libre sin más limitaciones que las establecidas en la presente ley y en las demás de aplicación o en su reglamentación específica. 2. No obstante, para el establecimiento y desarrollo de tal actividad en el ámbito de la Comunidad Autónoma de Canarias, las empresas estarán sometidas al cumplimiento de los siguientes deberes específicos: a) Comunicar previamente a la Administración competente el inicio de la actividad turística, así como la construcción, ampliación, rehabilitación o reforma de las instalaciones y establecimientos turísticos de alojamiento y, en su caso, emitir declaración responsable. b) Excepcionalmente, obtener de la Administración competente las autorizaciones con carácter previo a la construcción, ampliación, rehabilitación, reforma y apertura de instalaciones y establecimientos, en los casos previstos en la presente ley; sin perjuicio de las autorizaciones sectoriales. c) Cumplir los requisitos de ordenación y estándares previstos en la reglamentación específica, para el acceso y ejercicio de las actividades calificadas como turísticas. d) Cumplir el principio de unidad de explotación en los casos y términos previstos en esta ley, así como el resto de normas y medidas destinadas a potenciar la calidad de los servicios. e) Cumplir el deber de renovación edificatoria y de atenerse al uso establecido por el planeamiento, en los supuestos que les corresponda. f) Presentar en el plazo que corresponda los informes derivados de la inspección técnica de establecimientos turísticos. g) Cumplir los demás deberes establecidos en las leyes, y en especial, obtener las autorizaciones sectoriales pertinentes. 3. Son obligaciones de las empresas que oferten y/o realicen las actividades previstas en el artículo 2 de esta ley: a) El mantenimiento de la calidad de sus servicios. 9 \f b) La cualificación de su personal. c) La limpieza de la zona donde actúen y no proyectar a los espacios públicos residuos, olores, ruidos y otras causas de molestia. d) Las empresas que oferten actividades deportivas, de aventura o similares que puedan comportar riesgo, deberán disponer de un seguro de responsabilidad civil que cubra los daños de los que deban responder, en la cuantía que reglamentariamente se determine. e) Las que reglamentariamente se establezcan. ARTÍCULO 14. DERECHOS. Las empresas que cumplan con los deberes señalados en el artículo anterior gozarán de los siguientes derechos: 1. A ser incluidas sus instalaciones, características y oferta específica en los catálogos, directorios, guías y sistemas informáticos de la administración turística de Canarias. 2. A ser incorporadas a la promoción turística realizada por la administración turística de Canarias. 3. A poder participar en subvenciones, ayudas y programas de fomento turístico. 4. A tener participación en las decisiones públicas, en los términos previstos en la legislación vigente, a través de sus asociaciones representativas, a través del Consejo Regional de Turismo o de los Consejos del sector turístico. TÍTULO IV INFRAESTRUCTURAS TERRITORIALES Y SERVICIOS PÚBLICOS CAPÍTULO II SERVICIOS PÚBLICOS TURÍSTICOS MUNICIPALES ARTÍCULO 65. SERVICIO DE VIGILANCIA AMBIENTAL. Los municipios deberán prestar, en los núcleos turísticos, el servicio de vigilancia ambiental, que incluya: a) La aprobación de ordenanzas específicas sobre calidad del medio ambiente. b) El reforzamiento del servicio de limpieza y de salubridad, particularmente en las zonas de uso público como paseos, calles, plazas y playas."
+    },
+    {
+      "titulo": "5. ARTÍCULO 66",
+      "contenido": "c) El control de ruidos, con especial atención a los producidos en horas nocturnas. d) El control de olores, con atención prioritaria a las industrias y actividades que los produzcan. e) La colaboración en el reforzamiento de la seguridad ciudadana. ARTÍCULO 66. SERVICIO DE VIGILANCIA EN LAS PLAYAS. Los municipios, en las playas que reglamentariamente se determine, establecerán un servicio de vigilancia y socorrismo. ARTÍCULO 67. CENTROS DE INFORMACIÓN TURÍSTICA. En convenientemente señalizados y de fácil acceso, en los que se presten los siguientes servicios: los Ayuntamientos crearán centros de información las zonas turísticas turística, a) Información general sobre la zona y las actividades que en ella se pueden desarrollar, así como específica sobre los espacios naturales protegidos y sobre actividades de senderismo u otras de disfrute de la naturaleza. b) Orientación topográfica, facilitando mapas y planos. c) Asesoramiento general sobre precios y calidades de artículos y servicios turísticos. 10 \fd) Asesoramiento sobre los derechos del usuario turístico. e) Recepción de quejas y reclamaciones. TÍTULO VI RÉGIMEN SANCIONADOR CAPÍTULO I PRINCIPIOS GENERALES DE LA POTESTAD SANCIONADORA EN MATERIA TURÍSTICA ARTÍCULO 72. PRINCIPIOS. El ejercicio de la potestad sancionadora en materia turística se sujetará a los principios previstos en los artículos 127 y siguientes de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común. ARTÍCULO 73. PERSONAS RESPONSABLES. Son responsables de las infracciones turísticas las personas físicas y jurídicas, públicas o privadas, que realicen las acciones u omisiones tipificadas por esta Ley. ARTÍCULO 74. PRESCRIPCIÓN. 1. Las infracciones turísticas prescriben: a) Las muy graves, a los tres años. b) Las graves, a los dos años. c) Las leves, al año. 2. Las sanciones prescribirán: a) Las impuestas por faltas muy graves, a los tres años. b) Las impuestas por faltas graves, a los dos años. c) Las impuestas por faltas leves, al año. 3. El cómputo del plazo de prescripción será: a) El de las infracciones, desde el día de la comisión de la misma. b) El de las sanciones, desde el día siguiente a aquel en que adquiera firmeza la resolución por la que se impone la sanción. 4. La prescripción se interrumpe: a) La de las infracciones, con la iniciación, con conocimiento del interesado, del procedimiento sancionador, reanudándose el plazo de prescripción si el expediente estuviese paralizado durante más de un mes por causa no imputable al presunto responsable. b) La de las sanciones, por la iniciación, con conocimiento del sancionado, del procedimiento de ejecución, reanudándose el plazo de prescripción si aquél estuviese paralizado durante más de un mes. 11 \f CAPÍTULO II INFRACCIONES TURÍSTICAS ARTÍCULO 75. INFRACCIONES MUY GRAVES. Se consideran infracciones muy graves a la disciplina turística: 1. La construcción, ampliación, rehabilitación, reforma o apertura de establecimientos turísticos de alojamiento, incumpliendo los deberes previstos en el artículo 13.2 a). 2."
+    },
+    {
+      "titulo": "6. artículo 24",
+      "contenido": "La construcción, ampliación, rehabilitación, reforma o apertura de establecimientos turísticos de alojamiento, careciendo de autorización, cuando por ley o por vía reglamentaria, se establezca, por razones medioambientales o de ordenación del territorio, límites o restricciones a la creación de nueva oferta de alojamiento turístico y, especialmente, siempre que dichas limitaciones vengan justificadas en la ordenación territorial atendiendo a la capacidad de carga de las islas, conforme establece el artículo 24.2 de la presente ley. 3. El acceso o ejercicio de actividades turísticas reguladas reglamentariamente, incumpliendo el deber de comunicación previsto en el artículo 13.2 a); así como no obtener las autorizaciones previstas en el artículo 13.2 b) y g). 4. No contratar o no mantener en vigor la póliza de los seguros de responsabilidad civil en los términos previstos en la normativa que resulte de aplicación. 5. El incumplimiento en los establecimientos turísticos de alojamiento de los estándares turísticos de densidad, infraestructura o servicio. 6. No prestar un servicio según lo convenido entre las partes, cuando de ello se deriven perjuicios graves para el usuario. Se considerará que los perjuicios son graves cuando afecten a la salud o seguridad de los usuarios turísticos o representen una pérdida importante e irreversible de dinero o de valor de sus bienes. 7. La negativa u obstaculización a la actuación de la inspección turística que llegue a impedir el ejercicio de las funciones que legal o reglamentariamente tenga atribuidas o la aportación a aquella de información o documentos falsos. 8. La negativa u obstaculización a la labor de comprobación prevista en los artículos 24.1 y 32.4, cuando se impida el acceso a los establecimientos o se imposibilite la constatación de la totalidad de los requisitos que exige la normativa vigente para el ejercicio de la actividad o el funcionamiento de los establecimientos turísticos o su clasificación y, particularmente, los que afecten a la salud y seguridad de los usuarios turísticos. 9. Los atentados y acciones perjudiciales para la imagen turística de Canarias o de cualquiera de sus destinos turísticos, que constituyan infracción de la normativa turística o de las leyes sectoriales. Se considerarán atentados o acciones perjudiciales para la imagen turística de Canarias o de sus destinos turísticos las conductas que falseen, dañen, menoscaben o deterioren dicha imagen. 10. El incumplimiento de las normas legales relativas al principio de unidad de explotación de establecimientos de alojamiento. 11. La falsedad en las declaraciones responsables, cuando se refiera a datos que afecten gravemente a la salud y seguridad de los usuarios turísticos. Se entiende que la falsedad afecta a la seguridad de los usuarios turísticos cuando verse o se refiera al cumplimiento de la normativa sobre protección contra incendios, seguridad de las edificaciones y locales y condiciones de salubridad y seguridad de las instalaciones industriales, deportivas o de ocio, determinando dicha falsedad la ocultación del estado de riesgo que la normativa incumplida pretende evitar. 12 \f 12. El no cumplimiento en plazo del deber de renovación edificatoria, cuando así se establezca en las determinaciones contenidas en los instrumentos de ordenación y planificación. 13. El incumplimiento o alteración de las condiciones necesarias y determinantes para el ejercicio de la actividad turística que hayan servido de presupuesto para la correspondiente autorización o comunicación previa. 14."
+    },
+    {
+      "titulo": "7. ARTÍCULO 76",
+      "contenido": "El incumplimiento del deber de atenerse al uso establecido por el planeamiento, destinando un establecimiento turístico de alojamiento a otros usos 15. El ejercicio profesional realizado con incumplimiento de las normas turísticas. 16. La publicidad en plataformas digitales o cualquier otro medio de difusión referida a la oferta de estancia turística en viviendas careciendo o sin indicar el preceptivo número de registro establecido en la normativa de aplicación 17. La publicidad en plataformas digitales o cualquier otro medio de difusión referida a la oferta de estancia turística en infraviviendas. 18. La prestación de servicios turísticos de alojamiento en infraviviendas o en cualquier otro lugar no autorizado como establecimientos turísticos de alojamiento regulados reglamentariamente. 13 \fARTÍCULO 76. INFRACCIONES GRAVES. Constituyen infracciones graves a la normativa turística: 1. No disponer de las instalaciones, sistemas o servicios obligatorios, según la normativa turística, o tenerlos en mal estado de conservación o funcionamiento. 2. Las deficiencias manifiestas y generalizadas en la prestación de los servicios, decoro de los establecimientos y funcionamiento o limpieza de sus locales, instalaciones y enseres, así como el incumplimiento de las obligaciones previstas en el artículo 17.2 de esta ley. 3. El mal trato de palabra, obra u omisión al usuario turístico. 4. Carecer de las hojas de reclamación obligatorias, no facilitarlas a los clientes o no tramitarlas en tiempo y forma. 5. No expedir o no hacer entrega al usuario turístico de las facturas por los servicios prestados. 6. La contratación de personal que carezca de la titulación o cualificación preceptiva para prestar los servicios que la requieran. 7. La obstaculización o resistencia a la actuación de la inspección de turismo, que no llegue a impedirla. 8. La falta de comparecencia del empresariado o sus representantes a las citaciones efectuadas por la inspección de turismo en la forma determinada en esta ley, así como el incumplimiento de los requerimientos por los que la inspección de turismo solicite a las personas titulares de la explotación o personas propietarias de establecimientos turísticos la presentación o remisión de documentos o la ejecución de determinadas actuaciones 9. Carecer o no facilitar el libro de inspección cuando una norma prevea el deber de disponer del mismo. 10. La obstaculización o resistencia a la actuación de comprobación, que no llegue a impedirla, llevada a cabo por la Administración turística de conformidad con lo establecido en los artículos 24.1 y 32.4, siempre que no se encuentre comprendida en el número 6 del artículo anterior. 11. La publicidad turística engañosa, las ofertas equívocas, la omisión de la información relativa a los requisitos que limiten, condicionen o impidan el acceso a los establecimientos turísticos o su permanencia en los mismos, o cualquier forma de sugestión que haga inferir una mayor calidad en las instalaciones o servicios de la que es real. 12. El uso de sistemas de promoción de ventas agresivos que perturben la tranquilidad de los usuarios turísticos, en los términos contemplados en el artículo 19.1 de esta ley. 13. La sobrecontratación de plazas que origine exceso de reservas que no pueda ser atendido, salvo que se acredite el cumplimiento de los requisitos previstos en los números 2 y 3 del artículo 37 de esta ley y que la estancia se ha desarrollado a satisfacción del usuario turístico. 14."
+    },
+    {
+      "titulo": "8. artículo 77",
+      "contenido": "El incumplimiento de las normas sobre reservas y cancelaciones de plazas y la falta de prestación de un servicio convenido, cuando suponga un perjuicio manifiesto para el cliente. 15. El ejercicio profesional realizado con incumplimiento de las normas sobre prestación de servicios turísticos. 16. La falsedad en las comunicaciones previas y declaraciones responsables en los supuestos no contemplados en el apartado 9 del artículo anterior. 17. El incumplimiento de los deberes de conservación de la calidad de los establecimientos prevista en esta ley. 18. Las infracciones tipificadas como muy graves que por razón de su intencionalidad, naturaleza, ocasión o circunstancias no deban considerarse como tales. 14 \f 19. No presentar el informe de la inspección técnica de establecimientos turísticos, habiendo sido sancionado previamente por haber cometido la infracción contemplada en el artículo 77.9 de la presente ley. 20. El incumplimiento de las disposiciones que se adopten sobre limitaciones de acceso al establecimiento turístico de alojamiento por razones de salud pública. 21. La inexactitud, falsedad u omisión de los datos o información mínima que se deba incluir en la declaración responsable o en la comunicación o la no presentación de la documentación que sea en su caso requerida para acreditar el cumplimiento de lo declarado o lo comunicado. 22. Presentar una nueva declaración o comunicación de inicio o continuar ejerciendo la actividad con el mismo objeto, durante el periodo de tiempo que haya determinado la resolución de declaración de imposibilidad para instar un nuevo procedimiento. 15 \fARTÍCULO 77. INFRACCIONES LEVES. Se consideran infracciones turísticas leves: 1. El acceso o ejercicio de actividades turísticas que no se encuentren reguladas reglamentariamente, incumpliendo el deber de comunicación previsto en el artículo 13.2 a). 2. La carencia de anuncios, distintivos, señales o información de exposición pública obligatoria, la negativa a facilitarla o cualquier forma de ocultación de los mismos. 3. El trato descortés con la clientela. 4. Las conductas disuasorias de la solicitud de información. 5. Las deficiencias leves en la prestación de los servicios, decoro de los establecimientos y funcionamiento o limpieza de sus locales, instalaciones y enseres, o en la higiene y decoro del personal que cause molestias a los usuarios. 6. No confeccionar las facturas con arreglo a las prescripciones reglamentarias, o no conservar duplicados de las que se hayan expedido. 7. Las acciones u omisiones que, en orden a la labor inspectora o de comprobación técnica, impliquen un mero retraso en el cumplimiento de las obligaciones de información y comunicación. 8. Cualquier otra infracción que, estando tipificada como grave, no mereciera esta consideración por razón de su falta de intencionalidad, naturaleza, ocasión o circunstancia y, en particular, las infracciones graves cuando se constate que el restablecimiento de la legalidad ha sido inmediato, sin que resulten afectados los derechos de los usuarios o cuando, constatada por la inspección actuante la comisión de la infracción tipificada en el número 2 del artículo 76, se restablezca la legalidad dentro del plazo que determine aquélla en función de la entidad y naturaleza de los incumplimientos y del plazo de prescripción de las infracciones. 9. No presentar en los plazos establecidos el informe resultante de la inspección técnica de establecimientos turísticos. 10. No comunicar al registro de la propiedad el uso efectivo del establecimiento turístico en los plazos establecidos."
+    },
+    {
+      "titulo": "9. CAPÍTULO III",
+      "contenido": "CAPÍTULO III SANCIONES ARTÍCULO 78. TIPOLOGÍA DE SANCIONES. Por la comisión de infracciones a la disciplina turística podrán imponerse las siguientes sanciones: 1. Apercibimiento. 2. Multa. 3. Suspensión temporal de actividades o del ejercicio profesional. 4. Revocación de la autorización turística. 5. Clausura definitiva del establecimiento. ARTÍCULO 79. SUPUESTOS EN QUE PROCEDEN Y FORMA DE IMPOSICIÓN. 1. El apercibimiento procederá en los supuestos de infracciones leves, cuando no exista reincidencia y no se estime conveniente la imposición de multa. 2. Las multas se impondrán según la siguiente escala: a) En las infracciones leves, hasta 1.500 euros. b) En las graves: Entre 1.501 y 30.000 euros. c) En las muy graves: Entre 30.001 y 300.000 euros. Para su graduación se atenderá a los perjuicios causados, la trascendencia social, la reincidencia, la intencionalidad especulativa, el lucro ilícito obtenido, la posición del 16 \f infractor en el mercado y la repercusión sobre la imagen turística, la modalidad y categoría del establecimiento o características de la actividad de que se trate y las repercusiones para el resto del sector, así como la inmediatez en el restablecimiento de la legalidad siempre que no resulten afectados los derechos de los usuarios turísticos. En la la resolución sancionadora deberá constar, particular y pormenorizadamente, consideración efectuada de dichos criterios en la determinación de la cuantía de la sanción que se imponga. Las cuantías de las multas podrán ser revisadas por el Gobierno de Canarias, cuando por el transcurso del tiempo, las mismas se consideren desfasadas. 3. La suspensión temporal de actividades o del ejercicio profesional, se impondrá en los supuestos de infracciones muy graves, como sanción principal o accesoria a la multa, en la siguiente forma: a) Entre un día y seis meses de suspensión, cuando exista reincidencia en la comisión de faltas graves. b) Entre seis meses y un año de suspensión, cuando exista reincidencia en las faltas muy graves. 4. La clausura definitiva del establecimiento procederá en el caso de infracciones muy graves cuando el responsable haya sido sancionado dos o más veces por ese tipo de infracciones en el transcurso de tres años consecutivos y medien graves perjuicios para los intereses turísticos de Canarias derivados de la conducta del infractor. ARTÍCULO 80. COMPETENCIAS. 1. La imposición de sanciones por infracciones muy graves corresponde: a) Al Gobierno de Canarias: Multas de más de 25.000.000 de pesetas. Clausura definitiva del establecimiento. b) Al titular del departamento competente en materia turística: Multas comprendidas entre 5.000.001 pesetas y 25.000.000 de pesetas. Suspensión temporal de actividades o del ejercicio profesional. 2. La imposición de sanciones por infracciones graves y leves se hará por el órgano que determine el Reglamento Orgánico de la Consejería con competencias turísticas. ARTÍCULO 81. PROCEDIMIENTO. 1. La imposición de sanciones se hará previo expediente, que se sujetará a los principios previstos en los artículos 134 y siguientes de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común. 2. En el procedimiento se tendrán en cuenta, además, las siguientes reglas: a) Las actas de inspección turística que se levanten deberán contener los requisitos formales previstos en la normativa vigente sobre el ejercicio de la potestad sancionadora. b) La instrucción del procedimiento se llevará a cabo de conformidad con dicha normativa."
+    },
+    {
+      "titulo": "10. artículo 136",
+      "contenido": "En el supuesto de infracciones que pudieran ser calificadas como leves, la instrucción se podrá llevar a cabo por el procedimiento simplificado. 3. Se podrán adoptar medidas provisionales o cautelares, de conformidad con lo previsto en el artículo 136 de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico y de las Administraciones Públicas y del Procedimiento Administrativo Común y demás normativa de aplicación para el ejercicio de la potestad sancionadora. 17 \f Entre tales medidas se podrá adoptar la de suspensión temporal de la actividad hasta la resolución del procedimiento, si la infracción pudiera dar lugar a la clausura definitiva del establecimiento. 4. El órgano que resuelva el procedimiento sancionador publicará las sanciones firmes de carácter muy grave y excepcionalmente las graves. Asimismo procederá a su anotación en el Registro General Turístico. ARTÍCULO 82. INDEMNIZACIÓN DE DAÑOS Y PERJUICIOS. 1. Si como consecuencia de la tramitación de un expediente sancionador, se dedujera la existencia de responsabilidades patrimoniales que diesen lugar a la devolución de cantidades, indemnización de daños o reparación de perjuicios causados, de conformidad con lo previsto en esta Ley, a favor de la Administración pública, en la resolución que se dicte se determinará el importe correspondiente, cuya ejecución forzosa, si fuera necesaria, podrá obtenerse por alguno de los medios previstos en la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común. 2. Si en la resolución que se dicte se determinara la reparación de daños y perjuicios que no suponga abono de cantidad líquida, se podrán imponer multas coercitivas en los términos previstos en el artículo 99 de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común. 18 \f LEY ORGÁNICA 1/2018, DE 5 DE NOVIEMBRE, DE REFORMA DEL ESTATUTO DE AUTONOMÍA DE CANARIAS. TÍTULO III ORGANIZACIÓN TERRITORIAL DE CANARIAS CAPÍTULO I DE LAS ISLAS Y LOS CABILDOS INSULARES ARTÍCULO 70. COMPETENCIAS INSULARES. 4. A las islas les corresponde el ejercicio de las competencias que les son reconocidas como propias; las que se les transfieran o deleguen, y la colaboración en el desarrollo y la ejecución de los acuerdos adoptados por el Gobierno de Canarias, en los términos que establezcan las leyes del Parlamento. Las transferencias y delegaciones llevarán incorporadas los medios económicos, materiales y personales que correspondan. 5. Los cabildos insulares, como instituciones de la Comunidad Autónoma, ejercerán funciones ejecutivas de carácter insular en el marco y dentro de los límites de la legislación aplicable, en las siguientes materias: F) Turismo. CAPÍTULO II DE LOS MUNICIPIOS CANARIOS ARTÍCULO 75. LOS MUNICIPIOS. 4. Además de sus competencias propias, les corresponderá el ejercicio de las que les sean transferidas por leyes del Parlamento de Canarias o delegadas por el Gobierno, por los cabildos insulares u otras administraciones públicas. Las transferencias y delegaciones llevarán incorporadas los medios económicos, materiales y personales que correspondan. 5. En todo caso, los municipios, de acuerdo con el apartado anterior, podrán ejercer competencias, entre otras, en las siguientes materias: N) Turismo. TÍTULO V DE LAS COMPETENCIAS CAPÍTULO IV ACTIVIDADES INDUSTRIALES, COMERCIALES Y TURÍSTICAS ARTÍCULO 129. TURISMO."
+    },
+    {
+      "titulo": "11. CAPÍTULO VII",
+      "contenido": "Corresponde a la Comunidad Autónoma de Canarias la competencia exclusiva en materia de turismo, que incluye, en todo caso: a) La planificación del turismo, que comprende la fijación de los criterios y condiciones de crecimiento y desarrollo de la oferta turística, la programación de infraestructuras de interés general, así como la creación, ejecución y control de las ayudas públicas autonómicas dirigidas al sector turístico, prestando especial atención a la rehabilitación de las zonas turísticas. b) La ordenación del sector turístico, que abarca la regulación de las empresas, actividades y establecimientos turísticos, la regulación de los derechos y deberes específicos de los usuarios y de los prestadores de servicios turísticos, la implantación, coordinación y 19 \f seguimiento del sistema de información turística y la regulación del régimen de inspección y sanción, así como de los medios alternativos de resolución de conflictos. c) La protección del espacio y de los recursos turísticos. d) La promoción interior y exterior del turismo, en particular, la información turística, la apertura de oficinas en el extranjero, la suscripción de acuerdos con entidades promocionales no españolas y la protección y fomento de la imagen turística de Canarias, sin perjuicio de las competencias del Estado en la materia. e) La gestión de la red de establecimientos turísticos de titularidad autonómica. Para facilitar la coordinación entre estos y los establecimientos de la red de Paradores del Estado que se ubican en Canarias, el Gobierno de Canarias podrá participar, en los términos que establezca la legislación estatal, en los órganos de administración de Paradores de Turismo de España. f) La enseñanza y la formación turísticas que no den derecho a la obtención de un título oficial, sin perjuicio de la competencia en materia de formación profesional. CAPÍTULO VII EMPLEO, SANIDAD Y POLÍTICAS SOCIALES ARTÍCULO 146. POLÍTICA DE JUVENTUD. Corresponde a la Comunidad Autónoma de Canarias la competencia exclusiva en materia de juventud, que incluye en todo caso: a) La promoción del desarrollo personal y social de los jóvenes, así como la aprobación de normas y la realización de actividades dirigidas a conseguir el acceso de éstos al trabajo, la vivienda y la formación profesional. b) El diseño, la aplicación y la evaluación de políticas, planes y programas destinados a la juventud. c) La promoción del asociacionismo juvenil, de las iniciativas de participación de la gente joven, de la movilidad internacional y del turismo juvenil. d) La regulación y la gestión de actividades e instalaciones destinadas a la juventud. 20"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Ordenación del Turismo en Canarias. Norm\"]\n  A --> N1[\"LEY ORGÁNICA 1/2018, DE 5 DE NOVIEMBRE, \"]\n  A --> N2[\"ARTÍCULO 1\"]\n  A --> N3[\"ARTÍCULO 3\"]\n  A --> N4[\"artículo 2\"]\n  A --> N5[\"ARTÍCULO 66\"]\n  A --> N6[\"artículo 24\"]\n  A --> N7[\"ARTÍCULO 76\"]\n  A --> N8[\"artículo 77\"]\n  A --> N9[\"CAPÍTULO III\"]\n  A --> N10[\"artículo 136\"]\n  A --> N11[\"CAPÍTULO VII\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Ordenación del Turismo en Canarias. Normativa bás…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "LEY ORGÁNICA 1/2018, DE 5 DE NOVIEMBRE,…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "ARTÍCULO 1",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "ARTÍCULO 3",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "artículo 2",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "ARTÍCULO 66",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "artículo 24",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "ARTÍCULO 76",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "artículo 77",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "CAPÍTULO III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "artículo 136",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "CAPÍTULO VII",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p36-01",
-            "enunciado": "La ordenación del turismo en Canarias se regula por:",
-            "opciones": ["La Ley 7/1985", "La Ley 7/1995, de Ordenación del Turismo", "La Ley 11/2019", "La Ley 2/2008"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Ley 7/1995, de 6 de abril, regula la ordenación del turismo en Canarias."
-        },
-        {
-            "id": "p36-02",
-            "enunciado": "La competencia exclusiva en turismo corresponde, en Canarias, a:",
-            "opciones": ["El Estado", "La Comunidad Autónoma de Canarias", "Los Cabildos", "Los Ayuntamientos"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El Estatuto de Autonomía atribuye a la Comunidad Autónoma de Canarias la competencia exclusiva en turismo."
-        },
-        {
-            "id": "p36-03",
-            "enunciado": "Son sujetos de la actividad turística:",
-            "opciones": ["Solo las empresas", "Las empresas, los profesionales y las personas usuarias", "Solo las personas usuarias", "Solo los hoteleros"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Son sujetos de la actividad turística las empresas turísticas, los profesionales del turismo y las personas usuarias."
-        },
-        {
-            "id": "p36-04",
-            "enunciado": "Los establecimientos de alojamiento turístico incluyen:",
-            "opciones": ["Solo hoteles", "Hoteles, apartamentos, casas rurales y viviendas vacacionales", "Solo apartamentos", "Solo viviendas vacacionales"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Los establecimientos de alojamiento incluyen hoteles, apartamentos, casas rurales y viviendas vacacionales, entre otros."
-        },
-        {
-            "id": "p36-05",
-            "enunciado": "Los municipios ejercen competencias relacionadas con el turismo en:",
-            "opciones": ["Solo la promoción", "Urbanismo, licencias, ordenanzas, servicios y vigilancia", "Solo la inspección", "Ninguna competencia"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Los municipios ejercen competencias en ordenación urbanística, licencias, ordenanzas, servicios públicos y vigilancia."
-        },
-        {
-            "id": "p36-06",
-            "enunciado": "Los municipios turísticos:",
-            "opciones": ["Son una designación informal", "Son declarados por la Comunidad Autónoma y tienen régimen financiero especial", "No existen", "Los declara el Estado"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Son declarados como tales por la Comunidad Autónoma y conllevan un régimen financiero especial."
-        },
-        {
-            "id": "p36-07",
-            "enunciado": "Las infracciones turísticas se clasifican en:",
-            "opciones": ["Graves y leves", "Muy graves, graves y leves", "Penales y administrativas", "Mayores y menores"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Ley 7/1995 clasifica las infracciones turísticas en muy graves, graves y leves."
-        },
-        {
-            "id": "p36-08",
-            "enunciado": "Una infracción muy grave en materia turística puede ser:",
-            "opciones": ["Olvidarse de saludar", "Ejercer la actividad turística sin autorización exigible", "Cerrar un día festivo", "Cobrar con tarjeta"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Ejercer la actividad turística sin la autorización exigible es una infracción muy grave."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc36-01",
+      "pregunta": "¿Cuál es el objeto del Decreto 10/2001?",
+      "respuesta": "Regulación de estándares aplicables a la urbanización turística"
+    },
+    {
+      "id": "fc36-02",
+      "pregunta": "¿Qué tipo de suelo se considera urbanización turística?",
+      "respuesta": "Suelo en que el planeamiento permita un uso turístico igual o superior al 30% de la edificabilidad total y/o de la superficie de las parcelas"
+    },
+    {
+      "id": "fc36-03",
+      "pregunta": "¿Quién es responsable del impulso, coordinación y seguimiento del Sistema de Información Turística?",
+      "respuesta": "Viceconsejería de Turismo de la Administración Pública Canaria"
+    },
+    {
+      "id": "fc36-04",
+      "pregunta": "¿Cuál es el objeto de la Ley 14/2019?",
+      "respuesta": "Regular la ordenación territorial de la actividad turística en las islas de El Hierro, La Gomera y La Palma"
+    },
+    {
+      "id": "fc36-05",
+      "pregunta": "¿Qué tipo de actividades se comprenden dentro del ámbito de aplicación de la Ley 7/1995?",
+      "respuesta": "La delimitación de competencias de las Administraciones públicas de Canarias, la ordenación del sector turístico empresarial, la regulación de establecimientos turísticos, etc."
+    },
+    {
+      "id": "fc36-06",
+      "pregunta": "¿Quién se considera turista en el ámbito de aplicación de la Ley 7/1995?",
+      "respuesta": "Persona que, mediante contraprestación, recibe servicios en el ámbito de la actividad turística"
+    },
+    {
+      "id": "fc36-07",
+      "pregunta": "¿Qué tipo de sujeto responsable es el propietario de un establecimiento de alojamiento turístico?",
+      "respuesta": "Sujeto responsable de la actividad turística"
+    },
+    {
+      "id": "fc36-08",
+      "pregunta": "¿Qué tipo de actividades se consideran turismo activo?",
+      "respuesta": "Actividades en las que el sujeto responsable de la actividad turística es el propietario del establecimiento"
+    },
+    {
+      "id": "fc36-09",
+      "pregunta": "¿Qué tipo de suelo se considera suelo en que el planeamiento permita el uso turístico?",
+      "respuesta": "Suelo en que el planeamiento permita un uso turístico cualquiera que sea su clasificación u otros usos compatibles"
+    },
+    {
+      "id": "fc36-10",
+      "pregunta": "¿Qué tipo de competencias asume la Comunidad Autónoma en materia de turismo?",
+      "respuesta": "Promoción y ordenación del turismo en su ámbito territorial"
+    },
+    {
+      "id": "fc36-11",
+      "pregunta": "¿Qué tipo de régimen jurídico se aplica a la ordenación territorial de la actividad turística en las islas de El Hierro, La Gomera y La Palma?",
+      "respuesta": "La legislación del suelo y de los espacios naturales protegidos y la legislación sectorial general de ordenación de la actividad turística de Canarias"
+    },
+    {
+      "id": "fc36-12",
+      "pregunta": "¿Qué tipo de acciones de promoción y fomento del turismo se comprenden dentro del ámbito de aplicación de la Ley 7/1995?",
+      "respuesta": "Acciones de promoción y fomento del turismo y de la actividad turística empresarial"
+    },
+    {
+      "id": "fc36-13",
+      "pregunta": "¿Qué tipo de protección se garantiza a los derechos del turista en su condición de usuario de los servicios turísticos?",
+      "respuesta": "Garantía y protección de los derechos del turista"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p36-01",
+      "enunciado": "¿Cuál es el objeto del Decreto 10/2001?",
+      "opciones": [
+        "a) Regulación de estándares aplicables a la urbanización turística",
+        "b) Regulación de estándares aplicables a la restauración turística",
+        "c) Regulación de estándares aplicables a la formación turística",
+        "d) Regulación de estándares aplicables a la promoción turística"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El Decreto 10/2001 tiene por objeto la regulación de estándares aplicables a la urbanización turística y en general, al suelo en que el planeamiento permita el uso turístico."
+    },
+    {
+      "id": "p36-02",
+      "enunciado": "¿Qué tipo de suelo se considera urbanización turística?",
+      "opciones": [
+        "a) Suelo en que el planeamiento permita un uso turístico cualquiera que sea su clasificación u otros usos compatibles",
+        "b) Suelo en que el planeamiento permita un uso turístico igual o superior al 30% de la edificabilidad total y/o de la superficie de las parcelas",
+        "c) Suelo en que el planeamiento permita un uso turístico inferior al 30% de la edificabilidad total y/o de la superficie de las parcelas",
+        "d) Suelo en que el planeamiento permita un uso no turístico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El suelo en que el planeamiento permita un uso turístico igual o superior al 30% de la edificabilidad total y/o de la superficie de las parcelas se considera urbanización turística."
+    },
+    {
+      "id": "p36-03",
+      "enunciado": "¿Quién es responsable del impulso, coordinación y seguimiento del Sistema de Información Turística?",
+      "opciones": [
+        "a) Viceconsejería de Turismo de la Administración Pública Canaria",
+        "b) Observatorio del Turismo de Canarias",
+        "c) Consejería de Turismo de la Administración Pública Canaria",
+        "d) Gobierno de Canarias"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Viceconsejería de Turismo de la Administración Pública Canaria es responsable del impulso, coordinación y seguimiento del Sistema de Información Turística."
+    },
+    {
+      "id": "p36-04",
+      "enunciado": "¿Cuál es el objeto de la Ley 14/2019?",
+      "opciones": [
+        "a) Regular la ordenación territorial de la actividad turística en las islas de El Hierro, La Gomera y La Palma",
+        "b) Regular la ordenación territorial de la actividad turística en las islas de Gran Canaria, Tenerife y Lanzarote",
+        "c) Regular la ordenación territorial de la actividad turística en la isla de Fuerteventura",
+        "d) Regular la ordenación territorial de la actividad turística en la isla de La Palma"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Ley 14/2019 tiene por objeto regular la ordenación territorial de la actividad turística en las islas de El Hierro, La Gomera y La Palma."
+    },
+    {
+      "id": "p36-05",
+      "enunciado": "¿Qué tipo de actividades se comprenden dentro del ámbito de aplicación de la Ley 7/1995?",
+      "opciones": [
+        "a) La delimitación de competencias de las Administraciones públicas de Canarias, la ordenación del sector turístico empresarial, la regulación de establecimientos turísticos, etc.",
+        "b) La delimitación de competencias de las Administraciones públicas de Canarias, la ordenación del sector turístico empresarial, la regulación de establecimientos turísticos, la formación técnico-profesional en materia turística, etc.",
+        "c) La delimitación de competencias de las Administraciones públicas de Canarias, la ordenación del sector turístico empresarial, la regulación de establecimientos turísticos, la protección del medio ambiente y conservación de la naturaleza, etc.",
+        "d) La delimitación de competencias de las Administraciones públicas de Canarias, la ordenación del sector turístico empresarial, la regulación de establecimientos turísticos, la garantía y protección de los derechos del turista, etc."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Ley 7/1995 comprende dentro de su ámbito de aplicación la delimitación de competencias de las Administraciones públicas de Canarias, la ordenación del sector turístico empresarial, la regulación de establecimientos turísticos, etc."
+    },
+    {
+      "id": "p36-06",
+      "enunciado": "¿Qué tipo de sujeto responsable es el propietario de un establecimiento de alojamiento turístico?",
+      "opciones": [
+        "a) Sujeto responsable de la actividad turística",
+        "b) Sujeto responsable de la actividad no turística",
+        "c) Sujeto responsable de la actividad empresarial",
+        "d) Sujeto responsable de la actividad administrativa"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El propietario de un establecimiento de alojamiento turístico es sujeto responsable de la actividad turística."
+    },
+    {
+      "id": "p36-07",
+      "enunciado": "¿Qué tipo de actividades se consideran turismo activo?",
+      "opciones": [
+        "a) Actividades en las que el sujeto responsable de la actividad turística es el propietario del establecimiento",
+        "b) Actividades en las que el sujeto responsable de la actividad turística es el administrador del establecimiento",
+        "c) Actividades en las que el sujeto responsable de la actividad turística es el cliente del establecimiento",
+        "d) Actividades en las que el sujeto responsable de la actividad turística es el proveedor del establecimiento"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las actividades en las que el sujeto responsable de la actividad turística es el propietario del establecimiento se consideran turismo activo."
+    }
+  ]
 }

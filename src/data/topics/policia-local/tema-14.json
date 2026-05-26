@@ -1,157 +1,323 @@
 {
-    "id": 14,
-    "titulo": "Las Ordenanzas municipales. Reglamentos y Bandos. Procedimiento de elaboración y aprobación. Régimen sancionador. Clasificación de las infracciones. Sanciones. Licencias o autorizaciones municipales: tipos y actividades sujetas",
-    "bloque": "general",
-    "secciones": [
-        {
-            "id": "s14-1",
-            "titulo": "Ordenanzas, reglamentos y bandos",
-            "contenido": "Las entidades locales, en el ámbito de sus competencias, tienen potestad reglamentaria, que se manifiesta en la aprobación de ordenanzas y reglamentos y, por parte de los Alcaldes, de bandos. El reglamento orgánico regula la propia organización y funcionamiento del Ayuntamiento. Las ordenanzas son normas de carácter general que regulan materias de competencia municipal y obligan a los ciudadanos en el término municipal. Los bandos son disposiciones que dicta el Alcalde sobre asuntos de su competencia, generalmente de carácter recordatorio de normas vigentes o ante situaciones de necesidad; no pueden contradecir lo dispuesto en las ordenanzas ni en normas de rango superior."
-        },
-        {
-            "id": "s14-2",
-            "titulo": "Procedimiento de elaboración y aprobación",
-            "contenido": "La aprobación de las ordenanzas y reglamentos locales sigue un procedimiento regulado en la Ley 7/1985: aprobación inicial por el Pleno, información pública y audiencia a los interesados por un plazo mínimo de treinta días para la presentación de reclamaciones y sugerencias, resolución de todas las reclamaciones presentadas y aprobación definitiva por el Pleno. En caso de que no se presente ninguna reclamación o sugerencia, se entiende definitivamente adoptado el acuerdo hasta entonces provisional. Las ordenanzas se publican íntegramente en el Boletín Oficial de la Provincia y no entran en vigor hasta que se haya publicado su texto completo y haya transcurrido el plazo de quince días hábiles."
-        },
-        {
-            "id": "s14-3",
-            "titulo": "El régimen sancionador municipal",
-            "contenido": "Las entidades locales pueden, en defecto de normativa sectorial específica, establecer en sus ordenanzas tipos de infracciones y sanciones para la adecuada ordenación de las relaciones de convivencia y del uso de los servicios, equipamientos, infraestructuras, instalaciones y espacios públicos. La potestad sancionadora se ejerce respetando los principios de legalidad, tipicidad, irretroactividad, proporcionalidad, culpabilidad y presunción de inocencia. El procedimiento sancionador, regulado en la Ley 39/2015, garantiza al presunto responsable la separación entre la fase instructora y la sancionadora, así como el derecho a ser informado de los hechos imputados y a formular alegaciones."
-        },
-        {
-            "id": "s14-4",
-            "titulo": "Clasificación de las infracciones y sanciones",
-            "contenido": "Las infracciones a las ordenanzas locales se clasifican en muy graves, graves y leves. Para los supuestos en que no exista normativa sectorial, la Ley 7/1985 establece límites máximos de las multas: las infracciones muy graves hasta 3.000 euros, las graves hasta 1.500 euros y las leves hasta 750 euros. La clasificación se realiza atendiendo a criterios como la intensidad de la perturbación del orden, la convivencia o el servicio público, los daños causados a las instalaciones o equipamientos, y la reincidencia. Las sanciones se gradúan en función de la existencia de intencionalidad, la naturaleza de los perjuicios causados y la reincidencia."
-        },
-        {
-            "id": "s14-5",
-            "titulo": "Licencias y autorizaciones municipales",
-            "contenido": "La licencia o autorización municipal es un acto administrativo por el que la Administración local permite a un particular el ejercicio de una actividad o la realización de una obra, comprobando previamente su adecuación a la legalidad. Existen, entre otras, licencias de obras (mayor y menor), licencias de actividad o de apertura de establecimientos, licencias de ocupación de la vía pública y autorizaciones para espectáculos públicos. La tendencia normativa actual sustituye buena parte de las licencias previas por la declaración responsable y la comunicación previa, instrumentos que permiten iniciar la actividad sin esperar a una resolución expresa, sin perjuicio de las facultades de comprobación, control e inspección de la Administración."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e14-1",
-            "titulo": "Normas locales",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Potestad normativa local] --> B[Reglamento organico]\n    A --> C[Ordenanzas]\n    A --> D[Bandos del Alcalde]\n    C --> E[Aprobacion inicial y definitiva por el Pleno]"
-        },
-        {
-            "id": "e14-2",
-            "titulo": "Infracciones y sanciones",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Infracciones a ordenanzas] --> B[Muy graves - hasta 3000 euros]\n    A --> C[Graves - hasta 1500 euros]\n    A --> D[Leves - hasta 750 euros]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Ordenanzas y régimen sancionador", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Ordenanzas, reglamentos y bandos", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Elaboración y aprobación", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Régimen sancionador", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Infracciones y sanciones", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Licencias y autorizaciones", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Potestad reglamentaria local", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Información pública 30 días", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Principios de legalidad y tipicidad", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Muy graves, graves y leves", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Multas: 3000 / 1500 / 750 euros", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Licencias de obras y de actividad", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Declaración responsable", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n5", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 14,
+  "titulo": "Las Ordenanzas municipales. Reglamentos y Bandos. Procedimiento de elaboración y aprobación. Régimen sancionador. Clasificación de las infracciones. Sanciones. Licencias o autorizaciones municipales: tipos y actividades sujetas.",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "1. Real Decreto Legislativo 781/1986, de 18 de abril, p",
+      "contenido": "BIBLIOGRAFÍA • Decreto de 17 de junio de 1955 por el que se aprueba el Reglamento de Servicios de las Corporaciones locales. o Art. 1 o Art. 8-9 o Art. 12-16 • Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas. o Art. 69 o Art. 133 • Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público. o Art. 25-30 • Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local o Art. 4 o Art. 21-22 o Art. 25 o Art.49 o Art. 51 o Art. 56 o Art. 65 o Art. 70 o Art. 84 o Art. 107 o Art. 127 o Art. 139-141 • Real Decreto Legislativo 781/1986, de 18 de abril, por el que se aprueba el texto refundido de las disposiciones legales vigentes en materia de Régimen Local. o Art. 58 o Art. 60 2 \f DECRETO DE 17 DE JUNIO DE 1955 POR EL QUE SE APRUEBA EL REGLAMENTO DE SERVICIOS DE LAS CORPORACIONES LOCALES. TÍTULO PRIMERO INTERVENCIÓN ADMINISTRATIVA EN LA ACTIVIDAD PRIVADA CAPÍTULO PRIMERO DISPOSICIONES GENERALES ARTÍCULO 1. Los Ayuntamientos podrán intervenir la actividad de sus administrados en los siguientes casos: 1.º En el ejercicio de la función de policía, cuando existiere perturbación o peligro de perturbación grave de la tranquilidad, seguridad, salubridad o moralidad ciudadanas, con el fin de restablecerlas o conservarlas. 2.º En materia de subsistencias, además, para asegurar el abasto de los artículos de consumo de primera necesidad, la calidad de los ofrecidos en venta, la fidelidad en el despacho de los que se expendan a peso o medida, la normalidad de los precios y la libre competencia entre los suministradores y vendedores. 3.º En el orden del urbanismo, también para velar por el cumplimiento de los planes de ordenación aprobados. 4.º En los servicios de particulares destinados al público mediante la utilización especial o privativa de bienes de dominio público, para imponer la prestación de aquéllos debidamente y bajo tarifa. 5.º En los demás casos autorizados legalmente y por los motivos y para los fines previstos. ARTÍCULO 8. (Suprimido) ARTÍCULO 9. 1. Las solicitudes de licencias se resolverán con arreglo al siguiente procedimiento, cuando no exista otro especialmente ordenado por disposición de superior o igual jerarquía: 1.º Se presentarán en el Registro general de la Corporación, y si se refieren a ejecución de obras o instalaciones, deberá acompañarse proyecto técnico con ejemplares para cada uno de los organismos que hubieren de informar la petición. 2.º En el plazo de los cinco días siguientes a la fecha del Registro se remitirán los duplicados a cada uno de los aludidos organismos. 3.º Los informes de éstos deberán remitirse a la Corporación diez días antes, al menos, de la fecha en que terminen los plazos indicados en el número 5.º, transcurridos los cuales se entenderán informadas favorablemente las solicitudes. 4.º Si resultaren deficiencias subsanables, se notificarán al peticionario antes de expirar el plazo a que se refiere el número 5.º para que dentro de los quince días pueda subsanarlas. 5.º Las licencias para el ejercicio de actividades personales, parcelaciones en sectores para los que exista aprobado plan de urbanismo, obras e instalaciones industriales menores y apertura de pequeños establecimientos habrán de otorgarse o denegarse en el plazo de un mes, y las de nueva construcción o reforma de edificios e industrias, apertura de mataderos, mercados particulares y, en general, grandes establecimientos, en el de dos, a contar de la fecha en que la solicitud hubiere ingresado en el Registro general."
     },
-    "flashcards": [
-        { "id": "fc14-01", "anverso": "¿Qué potestad permite a las entidades locales aprobar ordenanzas?", "reverso": "La potestad reglamentaria." },
-        { "id": "fc14-02", "anverso": "¿Qué regula el reglamento orgánico?", "reverso": "La propia organización y funcionamiento del Ayuntamiento." },
-        { "id": "fc14-03", "anverso": "¿Qué son las ordenanzas municipales?", "reverso": "Normas de carácter general que regulan materias de competencia municipal y obligan en el término municipal." },
-        { "id": "fc14-04", "anverso": "¿Qué son los bandos?", "reverso": "Disposiciones que dicta el Alcalde sobre asuntos de su competencia." },
-        { "id": "fc14-05", "anverso": "¿Pueden los bandos contradecir las ordenanzas?", "reverso": "No; los bandos no pueden contradecir las ordenanzas ni normas de rango superior." },
-        { "id": "fc14-06", "anverso": "¿Quién aprueba inicialmente una ordenanza?", "reverso": "El Pleno del Ayuntamiento." },
-        { "id": "fc14-07", "anverso": "¿Cuál es el plazo mínimo de información pública de una ordenanza?", "reverso": "Treinta días para presentar reclamaciones y sugerencias." },
-        { "id": "fc14-08", "anverso": "¿Qué ocurre si no se presentan reclamaciones a una ordenanza?", "reverso": "Se entiende definitivamente adoptado el acuerdo provisional." },
-        { "id": "fc14-09", "anverso": "¿Dónde se publican íntegramente las ordenanzas?", "reverso": "En el Boletín Oficial de la Provincia." },
-        { "id": "fc14-10", "anverso": "¿Cuándo entra en vigor una ordenanza?", "reverso": "Tras la publicación íntegra de su texto y el transcurso de quince días hábiles." },
-        { "id": "fc14-11", "anverso": "¿Qué principios rigen la potestad sancionadora?", "reverso": "Legalidad, tipicidad, irretroactividad, proporcionalidad, culpabilidad y presunción de inocencia." },
-        { "id": "fc14-12", "anverso": "¿Qué garantiza el procedimiento sancionador?", "reverso": "La separación entre la fase instructora y la sancionadora." },
-        { "id": "fc14-13", "anverso": "¿Cómo se clasifican las infracciones a las ordenanzas?", "reverso": "En muy graves, graves y leves." },
-        { "id": "fc14-14", "anverso": "¿Cuál es el límite máximo de multa por infracción muy grave (sin normativa sectorial)?", "reverso": "Hasta 3.000 euros." },
-        { "id": "fc14-15", "anverso": "¿Cuál es el límite máximo de multa por infracción grave?", "reverso": "Hasta 1.500 euros." },
-        { "id": "fc14-16", "anverso": "¿Cuál es el límite máximo de multa por infracción leve?", "reverso": "Hasta 750 euros." },
-        { "id": "fc14-17", "anverso": "¿Qué es una licencia municipal?", "reverso": "Un acto administrativo que permite a un particular ejercer una actividad o realizar una obra." },
-        { "id": "fc14-18", "anverso": "Cita tipos de licencias municipales.", "reverso": "Licencias de obras, de actividad o apertura, de ocupación de la vía pública." },
-        { "id": "fc14-19", "anverso": "¿Qué instrumentos sustituyen a muchas licencias previas?", "reverso": "La declaración responsable y la comunicación previa." },
-        { "id": "fc14-20", "anverso": "¿Pierde la Administración el control con la declaración responsable?", "reverso": "No; conserva sus facultades de comprobación, control e inspección." }
+    {
+      "titulo": "2. ARTÍCULO 12",
+      "contenido": "6.º El cómputo de estos plazos quedará suspendido durante los quince días que señala el número 4.º, contados a partir de la notificación de la deficiencia. 3 \f 7.º Si transcurrieran los plazos señalados en el número 5.º, con la prórroga del periodo de subsanación de deficiencias, en su caso, sin que se hubiere notificado resolución expresa: a) el peticionario de licencia de parcelación, en el supuesto expresado, construcción de inmuebles o modificación de la estructura de los mismos, implantación de nuevas industrias o reformas mayores de las existentes, podrá acudir a la Comisión provincial de Urbanismo, donde existiere constituida, o, en su defecto, a la Comisión provincial de Servicios técnicos, y si en el plazo de un mes no se notificare al interesado acuerdo expreso, quedará otorgada la licencia por silencio administrativo; si la licencia solicitada se refiere a actividades en la vía pública o en bienes de dominio público o patrimoniales, se entenderá denegada por silencio administrativo; y si la licencia instada se refiere a obras o instalaciones menores, apertura de toda clase de establecimientos y, en general, a cualquier otro objeto no comprendido en los dos apartados precedentes, se entenderá otorgada por silencio administrativo. b) c) 2. Las Corporaciones locales podrán reducir en cuanto a ellas afecte los plazos señalados en el párrafo anterior. 3. Los documentos en que se formalicen las licencias y sus posibles transmisiones serán expedidos por el Secretario de la Corporación. ARTÍCULO 12. 1. Las autorizaciones y licencias se entenderán otorgadas salvo el derecho de propiedad y sin perjuicio del de tercero. 2. No podrán ser invocadas para excluir o disminuir la responsabilidad civil o penal en la que hubieren incurrido los beneficiarios en el ejercicio de sus actividades. ARTÍCULO 13. 1. Las licencias relativas a las condiciones de una obra, instalación o servicio serán transmisibles, pero el antiguo y nuevo constructor o empresario deberán comunicarlo por escrito a la Corporación, sin lo cual quedarán ambos sujetos a todas las responsabilidades que se derivaren para el titular. 2. Las licencias concernientes a las cualidades de un sujeto o al ejercicio de actividades sobre bienes de dominio público serán o no transmisibles, según se prevea reglamentariamente o, en su defecto, al otorgarlas. 3. No serán transmisibles las licencias cuando el número de las otorgables fuere limitado. ARTÍCULO 14. 1. Las actividades autorizadas por las licencias a que alude el supuesto primero del párrafo 2 del artículo anterior habrán de ser desarrolladas personalmente por los titulares de aquéllas y no mediante representación por un tercero, salvo disposición reglamentaria o acuerdo en contrario. 2. Cuando se permitiere la representación, el que la ejerciere deberá reunir las cualidades necesarias para conseguir por sí mismo una licencia y obtener la aprobación del Organismo que la hubiere otorgado. 4 \fARTÍCULO 15. 1. Las licencias relativas a las condiciones de una obra o instalación tendrán vigencia mientras subsistan aquéllas. 2. (Suprimido) ARTÍCULO 16. 1. Las licencias quedarán sin efecto si se incumplieren las condiciones a que estuvieren subordinadas, y deberán ser revocadas cuando desaparecieran las circunstancias que motivaron su otorgamiento o sobrevinieran otras que, de haber existido a la sazón, habrían justificado la denegación y podrán serlo cuando se adoptaren nuevos criterios de apreciación. 2. Podrán ser anuladas las licencias y restituidas las cosas al ser y estado primitivo cuando resultaren otorgadas erróneamente. 3."
+    },
+    {
+      "titulo": "3. TÍTULO IV",
+      "contenido": "La revocación fundada en la adopción de nuevos criterios de apreciación y anulación por la causa señalada en el párrafo anterior, comportarán el resarcimiento de los daños y perjuicios que se causaren. 5 \f LEY 39/2015, DE 1 DE OCTUBRE, DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES PÚBLICAS. TÍTULO IV DE LAS DISPOSICIONES SOBRE EL PROCEDIMIENTO ADMINISTRATIVO COMÚN CAPÍTULO II INICIACIÓN DEL PROCEDIMIENTO ARTÍCULO 69. DECLARACIÓN RESPONSABLE Y COMUNICACIÓN. 1. A los efectos de esta Ley, se entenderá por declaración responsable el documento suscrito por un interesado en el que éste manifiesta, bajo su responsabilidad, que cumple con los requisitos establecidos en la normativa vigente para obtener el reconocimiento de un derecho o facultad o para su ejercicio, que dispone de la documentación que así lo acredita, que la pondrá a disposición de la Administración cuando le sea requerida, y que se compromete a mantener el cumplimiento de las anteriores obligaciones durante el período de tiempo inherente a dicho reconocimiento o ejercicio. Los requisitos a los que se refiere el párrafo anterior deberán estar recogidos de manera la correspondiente declaración responsable. Las expresa, clara y precisa en Administraciones podrán requerir en cualquier momento que se aporte la documentación que acredite el cumplimiento de los mencionados requisitos y el interesado deberá aportarla. 2. A los efectos de esta Ley, se entenderá por comunicación aquel documento mediante el que los interesados ponen en conocimiento de la Administración Pública competente sus datos identificativos o cualquier otro dato relevante para el inicio de una actividad o el ejercicio de un derecho. 3. Las declaraciones responsables y las comunicaciones permitirán, el reconocimiento o ejercicio de un derecho o bien el inicio de una actividad, desde el día de su presentación, sin perjuicio de las facultades de comprobación, control e inspección que tengan atribuidas las Administraciones Públicas. 4. No obstante lo dispuesto en el párrafo anterior, la comunicación podrá presentarse dentro de un plazo posterior al inicio de la actividad cuando la legislación correspondiente lo prevea expresamente. 5. La inexactitud, falsedad u omisión, de carácter esencial, de cualquier dato o información que se incorpore a una declaración responsable o a una comunicación, o la no presentación ante la Administración competente de la declaración responsable, la documentación que sea en su caso requerida para acreditar el cumplimiento de lo declarado, o la comunicación, determinará la imposibilidad de continuar con el ejercicio del derecho o actividad afectada desde el momento en que se tenga constancia de tales hechos, sin perjuicio de las responsabilidades penales, civiles o administrativas a que hubiera lugar. Asimismo, la resolución de la Administración Pública que declare tales circunstancias podrá determinar la obligación del interesado de restituir la situación jurídica al momento previo al reconocimiento o al ejercicio del derecho o al inicio de la actividad correspondiente, así como la imposibilidad de instar un nuevo procedimiento con el 6 \f mismo objeto durante un período de tiempo determinado por la ley, todo ello conforme a los términos establecidos en las normas sectoriales de aplicación. 6. Las Administraciones Públicas tendrán permanentemente publicados y actualizados modelos de declaración responsable y de comunicación, fácilmente accesibles a los interesados. 7."
+    },
+    {
+      "titulo": "4. TÍTULO VI",
+      "contenido": "Únicamente será exigible, bien una declaración responsable, bien una comunicación para iniciar una misma actividad u obtener el reconocimiento de un mismo derecho o facultad para su ejercicio, sin que sea posible la exigencia de ambas acumulativamente. TÍTULO VI DE LA INICIATIVA LEGISLATIVA Y DE LA POTESTAD PARA DICTAR REGLAMENTOS Y OTRAS DISPOSICIONES ARTÍCULO 133. PARTICIPACIÓN DE LOS CIUDADANOS EN EL PROCEDIMIENTO DE ELABORACIÓN DE NORMAS CON RANGO DE LEY Y REGLAMENTOS. 1. Con carácter previo a la elaboración del proyecto o anteproyecto de ley o de reglamento, se sustanciará una consulta pública, a través del portal web de la Administración competente en la que se recabará la opinión de los sujetos y de las organizaciones más representativas potencialmente afectados por la futura norma acerca de: a) Los problemas que se pretenden solucionar con la iniciativa. b) La necesidad y oportunidad de su aprobación. c) Los objetivos de la norma. d) Las posibles soluciones alternativas regulatorias y no regulatorias. 2. Sin perjuicio de la consulta previa a la redacción del texto de la iniciativa, cuando la norma afecte a los derechos e intereses legítimos de las personas, el centro directivo competente publicará el texto en el portal web correspondiente, con el objeto de dar audiencia a los ciudadanos afectados y recabar cuantas aportaciones adicionales puedan hacerse por otras personas o entidades. Asimismo, podrá también recabarse directamente la opinión de las organizaciones o asociaciones reconocidas por ley que agrupen o representen a las personas cuyos derechos o intereses legítimos se vieren afectados por la norma y cuyos fines guarden relación directa con su objeto. 3. La consulta, audiencia e información públicas reguladas en este artículo deberán realizarse de forma tal que los potenciales destinatarios de la norma y quienes realicen aportaciones sobre ella tengan la posibilidad de emitir su opinión, para lo cual deberán ponerse a su disposición los documentos necesarios, que serán claros, concisos y reunir toda la información precisa para poder pronunciarse sobre la materia. 4. Podrá prescindirse de los trámites de consulta, audiencia e información públicas previstos en este artículo en el caso de normas presupuestarias u organizativas de la Administración General del Estado, la Administración autonómica, la Administración local o de las organizaciones dependientes o vinculadas a éstas, o cuando concurran razones graves de interés público que lo justifiquen. Cuando la propuesta normativa no tenga un impacto significativo en la actividad económica, no imponga obligaciones relevantes a los destinatarios o regule aspectos parciales de una materia, podrá omitirse la consulta pública regulada en el apartado primero. Si la normativa reguladora del ejercicio de la iniciativa legislativa o de la potestad reglamentaria por una Administración prevé la tramitación urgente de estos procedimientos, la eventual excepción del trámite por esta circunstancia se ajustará a lo previsto en aquella. Téngase en cuenta que este artículo se declara contrario al orden constitucional de competencias en los términos del fundamento jurídico 7 b) y, salvo el inciso de su apartado 7 \f primero «Con carácter previo a la elaboración del proyecto o anteproyecto de ley o de reglamento, se sustanciará una consulta pública» y el primer párrafo de su apartado 4, en los términos del fundamento jurídico 7 c), por Sentencia del TC 55/2018, de 24 de mayo. Ref. BOE- A-2018-8574 8 \f LEY 40/2015, DE 1 DE OCTUBRE, DE RÉGIMEN JURÍDICO DEL SECTOR PÚBLICO."
+    },
+    {
+      "titulo": "5. CAPÍTULO III",
+      "contenido": "TÍTULO PRELIMINAR DISPOSICIONES GENERALES, PRINCIPIOS DE ACTUACIÓN Y FUNCIONAMIENTO DEL SECTOR PÚBLICO CAPÍTULO III PRINCIPIOS DE LA POTESTAD SANCIONADORA ARTÍCULO 25. PRINCIPIO DE LEGALIDAD. 1. La potestad sancionadora de las Administraciones Públicas se ejercerá cuando haya sido expresamente reconocida por una norma con rango de Ley, con aplicación del procedimiento previsto para su ejercicio y de acuerdo con lo establecido en esta Ley y en la Ley de Procedimiento Administrativo Común de las Administraciones Públicas y, cuando se trate de Entidades Locales, de conformidad con lo dispuesto en el Título XI de la Ley 7/1985, de 2 de abril. 2. El ejercicio de la potestad sancionadora corresponde a los órganos administrativos que la tengan expresamente atribuida, por disposición de rango legal o reglamentario. 3. Las disposiciones de este Capítulo serán extensivas al ejercicio por las Administraciones Públicas de su potestad disciplinaria respecto del personal a su servicio, cualquiera que sea la naturaleza jurídica de la relación de empleo. 4. Las disposiciones de este capítulo no serán de aplicación al ejercicio por las Administraciones Públicas de la potestad sancionadora respecto de quienes estén vinculados a ellas por relaciones reguladas por la legislación de contratos del sector público o por la legislación patrimonial de las Administraciones Públicas. ARTÍCULO 26. IRRETROACTIVIDAD. 1. Serán de aplicación las disposiciones sancionadoras vigentes en el momento de producirse los hechos que constituyan infracción administrativa. 2. Las disposiciones sancionadoras producirán efecto retroactivo en cuanto favorezcan al presunto infractor o al infractor, tanto en lo referido a la tipificación de la infracción como a la sanción y a sus plazos de prescripción, incluso respecto de las sanciones pendientes de cumplimiento al entrar en vigor la nueva disposición. ARTÍCULO 27. PRINCIPIO DE TIPICIDAD. 1. Sólo constituyen infracciones administrativas las vulneraciones del ordenamiento jurídico previstas como tales infracciones por una Ley, sin perjuicio de lo dispuesto para la Administración Local en el Título XI de la Ley 7/1985, de 2 de abril. Las infracciones administrativas se clasificarán por la Ley en leves, graves y muy graves. 2. Únicamente por la comisión de infracciones administrativas podrán imponerse sanciones que, en todo caso, estarán delimitadas por la Ley. 3. Las disposiciones reglamentarias de desarrollo podrán introducir especificaciones o graduaciones al cuadro de las infracciones o sanciones establecidas legalmente que, sin constituir nuevas infracciones o sanciones, ni alterar la naturaleza o límites de las que la Ley contempla, contribuyan a la más correcta identificación de las conductas o a la más precisa determinación de las sanciones correspondientes. 4. Las normas definidoras de infracciones y sanciones no serán susceptibles de aplicación analógica. 9 \fARTÍCULO 28. RESPONSABILIDAD. 1. Sólo podrán ser sancionadas por hechos constitutivos de infracción administrativa las personas físicas y jurídicas, así como, cuando una Ley les reconozca capacidad de obrar, los grupos de afectados, las uniones y entidades sin personalidad jurídica y los patrimonios independientes o autónomos, que resulten responsables de los mismos a título de dolo o culpa. 2."
+    },
+    {
+      "titulo": "6. artículo 101",
+      "contenido": "Las responsabilidades administrativas que se deriven de la comisión de una infracción serán compatibles con la exigencia al infractor de la reposición de la situación alterada por el mismo a su estado originario, así como con la indemnización por los daños y perjuicios causados, que será determinada y exigida por el órgano al que corresponda el ejercicio de la potestad sancionadora. De no satisfacerse la indemnización en el plazo que al efecto se determine en función de su cuantía, se procederá en la forma prevista en el artículo 101 de la Ley del Procedimiento Administrativo Común de las Administraciones Públicas. 3. Cuando el cumplimiento de una obligación establecida por una norma con rango de Ley corresponda a varias personas conjuntamente, responderán de forma solidaria de las infracciones que, en su caso, se cometan y de las sanciones que se impongan. No obstante, cuando la sanción sea pecuniaria y sea posible se individualizará en la resolución en función del grado de participación de cada responsable. 4. Las leyes reguladoras de los distintos regímenes sancionadores podrán tipificar como infracción el incumplimiento de la obligación de prevenir la comisión de infracciones administrativas por quienes se hallen sujetos a una relación de dependencia o vinculación. Asimismo, podrán prever los supuestos en que determinadas personas responderán del pago de las sanciones pecuniarias impuestas a quienes de ellas dependan o estén vinculadas. ARTÍCULO 29. PRINCIPIO DE PROPORCIONALIDAD. 1. Las sanciones administrativas, sean o no de naturaleza pecuniaria, en ningún caso podrán implicar, directa o subsidiariamente, privación de libertad. 2. El establecimiento de sanciones pecuniarias deberá prever que la comisión de las infracciones tipificadas no resulte más beneficioso para el infractor que el cumplimiento de las normas infringidas. 3. En la determinación normativa del régimen sancionador, así como en la imposición de sanciones por las Administraciones Públicas se deberá observar la debida idoneidad y necesidad de la sanción a imponer y su adecuación a la gravedad del hecho constitutivo de la infracción. La graduación de la sanción considerará especialmente los siguientes criterios: a) El grado de culpabilidad o la existencia de intencionalidad. b) La continuidad o persistencia en la conducta infractora. c) La naturaleza de los perjuicios causados. d) La reincidencia, por comisión en el término de un año de más de una infracción de la misma naturaleza cuando así haya sido declarado por resolución firme en vía administrativa. 4. Cuando lo justifique la debida adecuación entre la sanción que deba aplicarse con la gravedad del hecho constitutivo de la infracción y las circunstancias concurrentes, el órgano competente para resolver podrá imponer la sanción en el grado inferior. 5. Cuando de la comisión de una infracción derive necesariamente la comisión de otra u otras, se deberá imponer únicamente la sanción correspondiente a la infracción más grave cometida. 10 \f 6. Será sancionable, como infracción continuada, la realización de una pluralidad de acciones u omisiones que infrinjan el mismo o semejantes preceptos administrativos, en ejecución de un plan preconcebido o aprovechando idéntica ocasión. ARTÍCULO 30. PRESCRIPCIÓN. 1. Las infracciones y sanciones prescribirán según lo dispuesto en las leyes que las establezcan."
+    },
+    {
+      "titulo": "7. TÍTULO I",
+      "contenido": "Si éstas no fijan plazos de prescripción, las infracciones muy graves prescribirán a los tres años, las graves a los dos años y las leves a los seis meses; las sanciones impuestas por faltas muy graves prescribirán a los tres años, las impuestas por faltas graves a los dos años y las impuestas por faltas leves al año. 2. El plazo de prescripción de las infracciones comenzará a contarse desde el día en que la infracción se hubiera cometido. En el caso de infracciones continuadas o permanentes, el plazo comenzará a correr desde que finalizó la conducta infractora. Interrumpirá la prescripción la iniciación, con conocimiento del interesado, de un procedimiento administrativo de naturaleza sancionadora, reiniciándose el plazo de prescripción si el expediente sancionador estuviera paralizado durante más de un mes por causa no imputable al presunto responsable. 3. El plazo de prescripción de las sanciones comenzará a contarse desde el día siguiente a aquel en que sea ejecutable la resolución por la que se impone la sanción o haya transcurrido el plazo para recurrirla. Interrumpirá la prescripción la iniciación, con conocimiento del interesado, del procedimiento de ejecución, volviendo a transcurrir el plazo si aquél está paralizado durante más de un mes por causa no imputable al infractor. En el caso de desestimación presunta del recurso de alzada interpuesto contra la resolución por la que se impone la sanción, el plazo de prescripción de la sanción comenzará a contarse desde el día siguiente a aquel en que finalice el plazo legalmente previsto para la resolución de dicho recurso. 11 \fLEY 7/1985, DE 2 DE ABRIL, REGULADORA DE LAS BASES DEL RÉGIMEN LOCAL TÍTULO I DISPOSICIONES GENERALES ARTÍCULO 4. 1. En su calidad de Administraciones públicas de carácter territorial, y dentro de la esfera de sus competencias, corresponden en todo caso a los municipios, las provincias y las islas: a) Las potestades reglamentaria y de autoorganización. b) Las potestades tributaria y financiera. c) La potestad de programación o planificación. d) Las potestades expropiatoria y de investigación, deslinde y recuperación de oficio de sus bienes. e) La presunción de legitimidad y la ejecutividad de sus actos. f) Las potestades de ejecución forzosa y sancionadora. g) La potestad de revisión de oficio de sus actos y acuerdos. h) Las prelaciones y preferencias y demás prerrogativas reconocidas a la Hacienda Pública para los créditos de la misma, sin perjuicio de las que correspondan a las Haciendas del Estado y de las comunidades autónomas ; así como la inembargabilidad de sus bienes y derechos en los términos previstos en las leyes. 2. Lo dispuesto en el número precedente podrá ser de aplicación a las entidades territoriales de ámbito inferior al municipal y, asimismo, a las comarcas, áreas metropolitanas y demás entidades locales, debiendo las leyes de las comunidades autónomas concretar cuáles de aquellas potestades serán de aplicación, excepto en el supuesto de las mancomunidades, que se rigen por lo dispuesto en el apartado siguiente. 3. Corresponden a las mancomunidades de municipios, para la prestación de los servicios o la ejecución de las obras de su competencia, las potestades señaladas en el apartado 1 de este artículo que determinen sus Estatutos. En defecto de previsión estatutaria, les corresponderán todas las potestades enumeradas en dicho apartado, siempre que sean precisas para el cumplimiento de su finalidad, y de acuerdo con la legislación aplicable a cada una de dichas potestades, en ambos casos. CAPÍTULO II ORGANIZACIÓN ARTÍCULO 21. 1."
+    },
+    {
+      "titulo": "8. ARTÍCULO 22",
+      "contenido": "El Alcalde es el Presidente de la Corporación y ostenta las siguientes atribuciones: e) Dictar bandos. ARTÍCULO 22. 2. Corresponden, en todo caso, al Pleno municipal en los Ayuntamientos, y a la Asamblea vecinal en el régimen de Concejo Abierto, las siguientes atribuciones: a) El control y la fiscalización de los órganos de gobierno. b) Los acuerdos relativos a la participación en organizaciones supramunicipales; alteración del término municipal; creación o supresión de municipios y de las entidades a que se refiere el artículo 45; creación de órganos desconcentrados; alteración de la capitalidad 12 \f del municipio y el cambio de nombre de éste o de aquellas entidades y la adopción o modificación de su bandera, enseña o escudo. c) La aprobación inicial del planeamiento general y la aprobación que ponga fin a la tramitación municipal de los planes y demás instrumentos de ordenación previstos en la legislación urbanística, así como los convenios que tengan por objeto la alteración de cualesquiera de dichos instrumentos. d) La aprobación del reglamento orgánico y de las ordenanzas. e) La determinación de los recursos propios de carácter tributario; la aprobación y modificación de los presupuestos, y la disposición de gastos en materia de su competencia y la aprobación de las cuentas; todo ello de acuerdo con lo dispuesto en la Ley Reguladora de las Haciendas Locales. f) La aprobación de las formas de gestión de los servicios y de los expedientes de municipalización. g) La aceptación de la delegación de competencias hecha por otras Administraciones públicas. h) El planteamiento de conflictos de competencias a otras entidades locales y demás Administraciones públicas. i) La aprobación de la plantilla de personal y de la relación de puestos de trabajo, la fijación de la cuantía de las retribuciones complementarias fijas y periódicas de los funcionarios y el número y régimen del personal eventual. j) El ejercicio de acciones judiciales y administrativas y la defensa de la corporación en materias de competencia plenaria. k) La declaración de lesividad de los actos del Ayuntamiento. l) La alteración de la calificación jurídica de los bienes de dominio público. m) La concertación de las operaciones de crédito cuya cuantía acumulada, dentro de cada ejercicio económico, exceda del 10 por ciento de los recursos ordinarios del Presupuesto -salvo las de tesorería, que le corresponderán cuando el importe acumulado de las operaciones vivas en cada momento supere el 15 por ciento de los ingresos corrientes liquidados en el ejercicio anterior- todo ello de conformidad con lo dispuesto en la Ley Reguladora de las Haciendas Locales. n) (Derogada) ñ) La aprobación de los proyectos de obras y servicios cuando sea competente para su contratación o concesión, y cuando aún no estén previstos en los presupuestos. o) (Derogada) p) Aquellas otras que deban corresponder al Pleno por exigir su aprobación una mayoría especial. q) Las demás que expresamente le confieran las leyes. CAPÍTULO III COMPETENCIAS ARTÍCULO 25. 2. El Municipio ejercerá en todo caso como competencias propias, en los términos de la legislación del Estado y de las Comunidades Autónomas, en las siguientes materias: a) Urbanismo: planeamiento, gestión, ejecución y disciplina urbanística. Protección y gestión del Patrimonio histórico. Promoción y gestión de la vivienda de protección pública con criterios de sostenibilidad financiera. Conservación y rehabilitación de la edificación."
+    },
+    {
+      "titulo": "9. TÍTULO V",
+      "contenido": "b) Medio ambiente urbano: en particular, parques y jardines públicos, gestión de los residuos sólidos urbanos y protección contra la contaminación acústica, lumínica y atmosférica en las zonas urbanas. 13 \f c) Abastecimiento de agua potable a domicilio y evacuación y tratamiento de aguas residuales. d) Infraestructura viaria y otros equipamientos de su titularidad. e) Evaluación e información de situaciones de necesidad social y la atención inmediata a personas en situación o riesgo de exclusión social. f) Policía local, protección civil, prevención y extinción de incendios. g) Tráfico, estacionamiento de vehículos y movilidad. Transporte colectivo urbano. h) Información y promoción de la actividad turística de interés y ámbito local. i) Ferias, abastos, mercados, lonjas y comercio ambulante. j) Protección de la salubridad pública. k) Cementerios y actividades funerarias. l) Promoción del deporte e instalaciones deportivas y de ocupación del tiempo libre. m) Promoción de la cultura y equipamientos culturales. n) Participar en la vigilancia del cumplimiento de la escolaridad obligatoria y cooperar con las Administraciones educativas correspondientes en la obtención de los solares necesarios para la construcción de nuevos centros docentes. La conservación, mantenimiento y vigilancia de los edificios de titularidad local destinados a centros públicos de educación infantil, de educación primaria o de educación especial. ñ) Promoción en su término municipal de la participación de los ciudadanos en el uso eficiente y sostenible de las tecnologías de la información y las comunicaciones. o) Actuaciones en la promoción de la igualdad entre hombres y mujeres así como contra la violencia de género. TÍTULO V DISPOSICIONES COMUNES A LAS ENTIDADES LOCALES CAPÍTULO I RÉGIMEN DE FUNCIONAMIENTO ARTÍCULO 49. La aprobación de las Ordenanzas locales se ajustará al siguiente procedimiento: a) Aprobación inicial por el Pleno. b) Información pública y audiencia a los interesados por el plazo mínimo de treinta días para la presentación de reclamaciones y sugerencias. c) Resolución de todas las reclamaciones y sugerencias presentadas dentro del plazo y aprobación definitiva por el Pleno. En el caso de que no se hubiera presentado ninguna reclamación o sugerencia, se entenderá definitivamente adoptado el acuerdo hasta entonces provisional. ARTÍCULO 51. Los actos de las entidades locales son inmediatamente ejecutivos, salvo en aquellos casos en que una disposición legal establezca lo contrario o cuando se suspenda su eficacia de acuerdo con la Ley. 14 \f CAPÍTULO II RELACIONES INTERADMINISTRATIVAS ARTÍCULO 56. 1. Las entidades locales tienen el deber de remitir a las Administraciones del Estado y de las Comunidades Autónomas, en los plazos y forma que reglamentariamente se determinen, copia o, en su caso, extracto comprensivo de los actos y acuerdos de las mismas. Los Presidentes y, de forma inmediata, los Secretarios de las Corporaciones serán responsables del cumplimiento de este deber. 2. En todo caso, las Administraciones del Estado y de las Comunidades Autónomas estarán facultadas, con el fin de comprobar la efectividad, en su aplicación y, respectivamente, de la legislación estatal y la autonómica, para recabar y obtener información concreta sobre la actividad municipal, pudiendo solicitar incluso la exhibición de expedientes y la emisión de informes. 3."
+    },
+    {
+      "titulo": "10. CAPÍTULO III",
+      "contenido": "La Administración del Estado y la de las Comunidades Autónomas deberán facilitar el acceso de los representantes legales de las entidades locales a los instrumentos de planificación, programación y gestión de obras y servicios que les afecten directamente. CAPÍTULO III IMPUGNACIÓN DE ACTOS Y ACUERDOS Y EJERCICIO DE ACCIONES ARTÍCULO 65. 2.El requerimiento deberá ser motivado y expresar la normativa que se estime vulnerada. Se formulará en el plazo de quince días hábiles a partir de la recepción de la comunicación del acuerdo. CAPÍTULO IV INFORMACIÓN Y PARTICIPACIÓN CIUDADANAS ARTÍCULO 70. 2. Los acuerdos que adopten las corporaciones locales se publican o notifican en la forma prevista por la Ley. Las ordenanzas, incluidos el articulado de las normas de los planes urbanísticos, así como los acuerdos correspondientes a éstos cuya aprobación definitiva sea competencia de los entes locales, se publicarán en el \"Boletín Oficial\" de la Provincia y no entrarán en vigor hasta que se haya publicado completamente su texto y haya transcurrido el plazo previsto en el artículo 65.2 salvo los presupuestos y las ordenanzas fiscales que se publican y entran en vigor en los términos establecidos en la Ley 39/1988, de 28 de diciembre, reguladora de las Haciendas Locales. Las Administraciones públicas con competencias urbanísticas deberán tener, a disposición de los ciudadanos que lo soliciten, copias completas del planeamiento vigente en su ámbito territorial. 15 \f TÍTULO VI BIENES, ACTIVIDADES Y SERVICIOS, Y CONTRATACIÓN CAPÍTULO II ACTIVIDADES Y SERVICIOS ARTÍCULO 84. 1. Las Entidades locales podrán intervenir la actividad de los ciudadanos a través de los siguientes medios: a) Ordenanzas y bandos. b) Sometimiento a previa licencia y otros actos de control preventivo. No obstante, cuando se trate del acceso y ejercicio de actividades de servicios incluidas en el ámbito de aplicación de la Ley 17/2009, de 23 de noviembre, sobre el libre acceso a las actividades de servicios y su ejercicio, se estará a lo dispuesto en la misma. c) Sometimiento a comunicación previa o a declaración responsable, de conformidad con lo establecido en el artículo 71 bis de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común. d) Sometimiento a control posterior al inicio de la actividad, a efectos de verificar el cumplimiento de la normativa reguladora de la misma. e) Órdenes individuales constitutivas de mandato para la ejecución de un acto o la prohibición del mismo. 2. La actividad de intervención de las Entidades locales se ajustará, en todo caso, a los principios de igualdad de trato, necesidad y proporcionalidad con el objetivo que se persigue. 3. Las licencias o autorizaciones otorgadas por otras Administraciones Públicas no eximen a sus titulares de obtener las correspondientes licencias de las Entidades locales, respetándose en todo caso lo dispuesto en las correspondientes leyes sectoriales. TÍTULO VIII HACIENDAS LOCALES ARTÍCULO 107. 1. Las Ordenanzas fiscales reguladoras de los tributos locales comenzarán a aplicarse en el momento de su publicación definitiva en el \"Boletín Oficial\" de la provincia o, en su caso, de la Comunidad Autónoma uniprovincial, salvo que en las mismas se señale otra fecha. TÍTULO X RÉGIMEN DE ORGANIZACIÓN DE LOS MUNICIPIOS DE GRAN POBLACIÓN CAPÍTULO II ORGANIZACIÓN Y FUNCIONAMIENTO DE LOS ÓRGANOS MUNICIPALES NECESARIOS ARTÍCULO 127. ATRIBUCIONES DE LA JUNTA DE GOBIERNO LOCAL. 1."
+    },
+    {
+      "titulo": "11. artículo 99",
+      "contenido": "Corresponde a la Junta de Gobierno Local: a) La aprobación de los proyectos de ordenanzas y de los reglamentos, incluidos los orgánicos, con excepción de las normas reguladoras del Pleno y sus comisiones. b) La aprobación del proyecto de presupuesto. 16 \f c) La aprobación de los proyectos de instrumentos de ordenación urbanística cuya aprobación definitiva o provisional corresponda al Pleno. d) Las aprobaciones de los instrumentos de planeamiento de desarrollo del planeamiento general no atribuidas expresamente al Pleno, así como de los instrumentos de gestión urbanística y de los proyectos de urbanización. e) La concesión de cualquier tipo de licencia, salvo que la legislación sectorial la atribuya expresamente a otro órgano. (Derogada) f) g) El desarrollo de la gestión económica, autorizar y disponer gastos en materia de su competencia, disponer gastos previamente autorizados por el Pleno, y la gestión del personal. h) Aprobar la relación de puestos de trabajo, las retribuciones del personal de acuerdo con el presupuesto aprobado por el Pleno, la oferta de empleo público, las bases de las convocatorias de selección y provisión de puestos de trabajo, el número y régimen del personal eventual, la separación del servicio de los funcionarios del Ayuntamiento, sin perjuicio de lo dispuesto en el artículo 99 de esta ley, el despido del personal laboral, el régimen disciplinario y las demás decisiones en materia de personal que no estén expresamente atribuidas a otro órgano. La composición de los tribunales de oposiciones será predominantemente técnica, debiendo poseer todos sus miembros un nivel de titulación igual o superior al exigido para el ingreso en las plazas convocadas. Su presidente podrá ser nombrado entre los miembros de la Corporación o entre el personal al servicio de las Administraciones públicas. i) El nombramiento y el cese de los titulares de los órganos directivos de la Administración municipal, sin perjuicio de lo dispuesto en la disposición adicional octava para los funcionarios de Administración local con habilitación de carácter nacional. j) El ejercicio de las acciones judiciales y administrativas en materia de su competencia. k) Las facultades de revisión de oficio de sus propios actos. l) Ejercer la potestad sancionadora salvo que por ley esté atribuida a otro órgano. m) Designar a los representantes municipales en los órganos colegiados de gobierno o administración de los entes, fundaciones o sociedades, sea cual sea su naturaleza, en los que el Ayuntamiento sea partícipe. n) Las demás que le correspondan, de acuerdo con las disposiciones legales vigentes. 2. La Junta de Gobierno Local podrá delegar en los Tenientes de Alcalde, en los demás miembros de la Junta de Gobierno Local, en su caso, en los demás concejales, en los coordinadores generales, directores generales u órganos similares, las funciones enumeradas en los párrafos e), f), g), h) con excepción de la aprobación de la relación de puestos de trabajo, de las retribuciones del personal, de la oferta de empleo público, de la determinación del número y del régimen del personal eventual y de la separación del servicio de los funcionarios, y l) del apartado anterior. 17 \f TÍTULO XI TIPIFICACIÓN DE LAS INFRACCIONES Y SANCIONES POR LAS ENTIDADES LOCALES EN DETERMINADAS MATERIAS ARTÍCULO 139. TIPIFICACIÓN DE INFRACCIONES Y SANCIONES EN DETERMINADAS MATERIAS."
+    },
+    {
+      "titulo": "12. ARTÍCULO 140",
+      "contenido": "Para la adecuada ordenación de las relaciones de convivencia de interés local y del uso de sus servicios, equipamientos, infraestructuras, instalaciones y espacios públicos, los entes locales podrán, en defecto de normativa sectorial específica, establecer los tipos de las infracciones e imponer sanciones por el incumplimiento de deberes, prohibiciones o limitaciones contenidos en las correspondientes ordenanzas, de acuerdo con los criterios establecidos en los artículos siguientes. ARTÍCULO 140. CLASIFICACIÓN DE LAS INFRACCIONES. 1. Las infracciones a las ordenanzas locales a que se refiere el artículo anterior se clasificarán en muy graves, graves y leves. Serán muy graves las infracciones que supongan: a) Una perturbación relevante de la convivencia que afecte de manera grave, inmediata y directa a la tranquilidad o al ejercicio de derechos legítimos de otras personas, al normal desarrollo de actividades de toda clase conformes con la normativa aplicable o a la salubridad u ornato públicos, siempre que se trate de conductas no subsumibles en los tipos previstos en el capítulo IV de la Ley 1/1992, de 21 de febrero, de Protección de la Seguridad Ciudadana. b) El impedimento del uso de un servicio público por otra u otras personas con derecho a su utilización. c) El impedimento o la grave y relevante obstrucción al normal funcionamiento de un servicio público. d) Los actos de deterioro grave y relevante de equipamientos, infraestructuras, instalaciones o elementos de un servicio público. e) El impedimento del uso de un espacio público por otra u otras personas con derecho a su utilización. f) Los actos de deterioro grave y relevante de espacios públicos o de cualquiera de sus instalaciones y elementos, sean muebles o inmuebles, no derivados de alteraciones de la seguridad ciudadana. 2. Las demás infracciones se clasificarán en graves y leves, de acuerdo con los siguientes criterios: a) La intensidad de la perturbación ocasionada en la tranquilidad o en el pacífico ejercicio de los derechos de otras personas o actividades. b) La intensidad de la perturbación causada a la salubridad u ornato públicos. c) La intensidad de la perturbación ocasionada en el uso de un servicio o de un espacio público por parte de las personas con derecho a utilizarlos. d) La intensidad de la perturbación ocasionada en el normal funcionamiento de un servicio público. e) La intensidad de los daños ocasionados a los equipamientos, infraestructuras, instalaciones o elementos de un servicio o de un espacio público. ARTÍCULO 141. LÍMITES DE LAS SANCIONES ECONÓMICAS. Salvo previsión legal distinta, las multas por infracción de Ordenanzas locales deberán respetar las siguientes cuantías: Infracciones muy graves: hasta 3.000 euros. Infracciones graves: hasta 1.500 euros. Infracciones leves: hasta 750 euros. 18 \f REAL DECRETO LEGISLATIVO 781/1986, DE 18 DE ABRIL, POR EL QUE SE APRUEBA EL TEXTO REFUNDIDO DE LAS DISPOSICIONES LEGALES VIGENTES EN MATERIA DE RÉGIMEN LOCAL. TITULO V DISPOSICIONES COMUNES A LAS ENTIDADES LOCALES CAPITULO I RÉGIMEN DE FUNCIONAMIENTO ART. 58. Para la exacción de multas por infracción de Ordenanzas, en defecto de pago voluntario, se seguirá el procedimiento administrativo de apremio. ART. 60."
+    },
+    {
+      "titulo": "13. Las autoridades y funcionarios de cualquier orden que, por dolo o culp…",
+      "contenido": "Las autoridades y funcionarios de cualquier orden que, por dolo o culpa o negligencia, adopten resoluciones o realicen actos con infracción de las disposiciones legales, estarán obligados a indemnizar a la Corporación Local los daños y perjuicios que sean consecuencia de aquéllos, con independencia de la responsabilidad penal o disciplinaria que les pueda corresponder. 19"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Las Ordenanzas municipales. Reglamentos \"]\n  A --> N1[\"Real Decreto Legislativo 781/1986, de 18\"]\n  A --> N2[\"ARTÍCULO 12\"]\n  A --> N3[\"TÍTULO IV\"]\n  A --> N4[\"TÍTULO VI\"]\n  A --> N5[\"CAPÍTULO III\"]\n  A --> N6[\"artículo 101\"]\n  A --> N7[\"TÍTULO I\"]\n  A --> N8[\"ARTÍCULO 22\"]\n  A --> N9[\"TÍTULO V\"]\n  A --> N10[\"CAPÍTULO III\"]\n  A --> N11[\"artículo 99\"]\n  A --> N12[\"ARTÍCULO 140\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Las Ordenanzas municipales. Reglamentos y Bandos.…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "Real Decreto Legislativo 781/1986, de 1…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "ARTÍCULO 12",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "TÍTULO IV",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "TÍTULO VI",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "CAPÍTULO III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "artículo 101",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "TÍTULO I",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "ARTÍCULO 22",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "TÍTULO V",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "CAPÍTULO III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "artículo 99",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s12",
+        "texto": "ARTÍCULO 140",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s13",
+        "texto": "Las autoridades y funcionarios de cualq…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p14-01",
-            "enunciado": "Las ordenanzas municipales son aprobadas por:",
-            "opciones": ["El Alcalde", "El Pleno del Ayuntamiento", "La Junta de Gobierno Local", "El Secretario"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La aprobación inicial y definitiva de las ordenanzas corresponde al Pleno del Ayuntamiento."
-        },
-        {
-            "id": "p14-02",
-            "enunciado": "Los bandos son dictados por:",
-            "opciones": ["El Pleno", "El Alcalde", "La Junta de Gobierno", "El Cabildo"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Los bandos son disposiciones que dicta el Alcalde sobre asuntos de su competencia."
-        },
-        {
-            "id": "p14-03",
-            "enunciado": "El plazo mínimo de información pública en la elaboración de una ordenanza es de:",
-            "opciones": ["Diez días", "Quince días", "Treinta días", "Dos meses"],
-            "respuestaCorrecta": 2,
-            "explicacion": "El plazo mínimo de información pública y audiencia a los interesados es de treinta días."
-        },
-        {
-            "id": "p14-04",
-            "enunciado": "Las ordenanzas municipales se publican íntegramente en:",
-            "opciones": ["El BOE", "El Boletín Oficial de la Provincia", "El tablón del Ayuntamiento solo", "El BOC"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las ordenanzas se publican íntegramente en el Boletín Oficial de la Provincia."
-        },
-        {
-            "id": "p14-05",
-            "enunciado": "Las infracciones a las ordenanzas locales se clasifican en:",
-            "opciones": ["Graves y leves", "Muy graves, graves y leves", "Mayores y menores", "Penales y administrativas"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las infracciones a las ordenanzas se clasifican en muy graves, graves y leves."
-        },
-        {
-            "id": "p14-06",
-            "enunciado": "El límite máximo de multa por una infracción muy grave, en defecto de normativa sectorial, es de:",
-            "opciones": ["750 euros", "1.500 euros", "3.000 euros", "6.000 euros"],
-            "respuestaCorrecta": 2,
-            "explicacion": "La Ley 7/1985 fija un límite máximo de 3.000 euros para las infracciones muy graves."
-        },
-        {
-            "id": "p14-07",
-            "enunciado": "El procedimiento sancionador garantiza:",
-            "opciones": ["La unión de instrucción y sanción", "La separación entre la fase instructora y la sancionadora", "La ausencia de alegaciones", "La sanción automática"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El procedimiento sancionador garantiza la separación entre la fase instructora y la sancionadora."
-        },
-        {
-            "id": "p14-08",
-            "enunciado": "El instrumento que permite iniciar una actividad sin esperar resolución expresa es:",
-            "opciones": ["La licencia de obras", "La declaración responsable o comunicación previa", "El bando", "La ordenanza"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La declaración responsable y la comunicación previa permiten iniciar la actividad sin esperar a una resolución expresa."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      },
+      {
+        "desde": "root",
+        "hasta": "s12"
+      },
+      {
+        "desde": "root",
+        "hasta": "s13"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc14-01",
+      "pregunta": "¿Qué casos autoriza el artículo 1 del Decreto de 17 de junio de 1955?",
+      "respuesta": "1.º En el ejercicio de la función de policía, cuando existiere perturbación o peligro de perturbación grave de la tranquilidad, seguridad, salubridad o moralidad ciudadanas, con el fin de restablecerlas o conservarlas. 2.º En materia de subsistencias, además, para asegurar el abasto de los artículos de consumo de primera necesidad, la calidad de los ofrecidos en venta, la fidelidad en el despacho de los que se expendan a peso o medida, la normalidad de los precios y la libre competencia entre los suministradores y vendedores. 3.º En el orden del urbanismo, también para velar por el cumplimiento de los planes de ordenación aprobados. 4.º En los servicios de particulares destinados al público mediante la utilización especial o privativa de bienes de dominio público, para imponer la prestación de aquéllos debidamente y bajo tarifa. 5.º En los demás casos autorizados legalmente y por los motivos y para los fines previstos."
+    },
+    {
+      "id": "fc14-02",
+      "pregunta": "¿Cuál es el procedimiento para resolver las solicitudes de licencia según el artículo 9 del Decreto de 17 de junio de 1955?",
+      "respuesta": "Se presentarán en el Registro general de la Corporación, y si se refieren a ejecución de obras o instalaciones, deberá acompañarse proyecto técnico con ejemplares para cada uno de los organismos que hubieren de informar la petición. En el plazo de los cinco días siguientes a la fecha del Registro se remitirán los duplicados a cada uno de los aludidos organismos. Los informes de éstos deberán remitirse a la Corporación diez días antes, al menos, de la fecha en que terminen los plazos indicados en el número 5.º, transcurridos los cuales se entenderán informadas favorablemente las solicitudes."
+    },
+    {
+      "id": "fc14-03",
+      "pregunta": "¿Qué sucede si transcurrieron los plazos señalados en el número 5.º sin que se hubiera notificado resolución expresa?",
+      "respuesta": "El peticionario de licencia de parcelación, en el supuesto expresado, construcción de inmuebles o modificación de la estructura de los mismos, implantación de nuevas industrias o reformas mayores de las existentes, podrá acudir a la Comisión provincial de Urbanismo, donde existiere constituida, o, en su defecto, a la Comisión provincial de Servicios técnicos, y si en el plazo de un mes no se notificare al interesado acuerdo expreso, quedará otorgada la licencia por silencio administrativo."
+    },
+    {
+      "id": "fc14-04",
+      "pregunta": "¿Qué sucede con las autorizaciones y licencias según el artículo 12 del Decreto de 17 de junio de 1955?",
+      "respuesta": "Se entenderán otorgadas salvo el derecho de propiedad y sin perjuicio del de tercero."
+    },
+    {
+      "id": "fc14-05",
+      "pregunta": "¿Qué sucede con las licencias relativas a las condiciones de una obra, instalación o servicio según el artículo 13 del Decreto de 17 de junio de 1955?",
+      "respuesta": "Serán transmisibles, pero el antiguo y nuevo constructor o empresario deberán comunicarlo por escrito a la Corporación, sin lo cual quedarán ambos sujetos a todas las responsabilidades que se derivaren para el titular."
+    },
+    {
+      "id": "fc14-06",
+      "pregunta": "¿Qué sucede con las licencias concernientes a las cualidades de un sujeto o al ejercicio de actividades sobre bienes de dominio público según el artículo 13 del Decreto de 17 de junio de 1955?",
+      "respuesta": "Serán o no transmisibles, según se prevea reglamentariamente o, en su defecto, al otorgarlas."
+    },
+    {
+      "id": "fc14-07",
+      "pregunta": "¿Qué sucede con las licencias cuando el número de las otorgables fuere limitado según el artículo 13 del Decreto de 17 de junio de 1955?",
+      "respuesta": "No serán transmisibles."
+    },
+    {
+      "id": "fc14-08",
+      "pregunta": "¿Qué sucede con las solicitudes de licencia según el artículo 9 del Decreto de 17 de junio de 1955?",
+      "respuesta": "Se resolverán con arreglo al procedimiento indicado en el artículo 9 del Decreto de 17 de junio de 1955."
+    },
+    {
+      "id": "fc14-09",
+      "pregunta": "¿Qué sucede con las autorizaciones y licencias según el artículo 12 del Decreto de 17 de junio de 1955?",
+      "respuesta": "Se entenderán otorgadas salvo el derecho de propiedad y sin perjuicio del de tercero."
+    },
+    {
+      "id": "fc14-10",
+      "pregunta": "¿Qué sucede con las licencias relativas a las condiciones de una obra, instalación o servicio según el artículo 13 del Decreto de 17 de junio de 1955?",
+      "respuesta": "Serán transmisibles, pero el antiguo y nuevo constructor o empresario deberán comunicarlo por escrito a la Corporación, sin lo cual quedarán ambos sujetos a todas las responsabilidades que se derivaren para el titular."
+    },
+    {
+      "id": "fc14-11",
+      "pregunta": "¿Qué sucede con las licencias concernientes a las cualidades de un sujeto o al ejercicio de actividades sobre bienes de dominio público según el artículo 13 del Decreto de 17 de junio de 1955?",
+      "respuesta": "Serán o no transmisibles, según se prevea reglamentariamente o, en su defecto, al otorgarlas."
+    },
+    {
+      "id": "fc14-12",
+      "pregunta": "¿Qué sucede con las licencias cuando el número de las otorgables fuere limitado según el artículo 13 del Decreto de 17 de junio de 1955?",
+      "respuesta": "No serán transmisibles."
+    },
+    {
+      "id": "fc14-13",
+      "pregunta": "¿Qué sucede con las solicitudes de licencia según el artículo 9 del Decreto de 17 de junio de 1955?",
+      "respuesta": "Se resolverán con arreglo al procedimiento indicado en el artículo 9 del Decreto de 17 de junio de 1955."
+    },
+    {
+      "id": "fc14-14",
+      "pregunta": "¿Qué sucede con las autorizaciones y licencias según el artículo 12 del Decreto de 17 de junio de 1955?",
+      "respuesta": "Se entenderán otorgadas salvo el derecho de propiedad y sin perjuicio del de tercero."
+    },
+    {
+      "id": "fc14-15",
+      "pregunta": "¿Qué sucede con las licencias relativas a las condiciones de una obra, instalación o servicio según el artículo 13 del Decreto de 17 de junio de 1955?",
+      "respuesta": "Serán transmisibles, pero el antiguo y nuevo constructor o empresario deberán comunicarlo por escrito a la Corporación, sin lo cual quedarán ambos sujetos a todas las responsabilidades que se derivaren para el titular."
+    },
+    {
+      "id": "fc14-16",
+      "pregunta": "¿Qué sucede con las licencias concernientes a las cualidades de un sujeto o al ejercicio de actividades sobre bienes de dominio público según el artículo 13 del Decreto de 17 de junio de 1955?",
+      "respuesta": "Serán o no transmisibles, según se prevea reglamentariamente o, en su defecto, al otorgarlas."
+    },
+    {
+      "id": "fc14-17",
+      "pregunta": "¿Qué sucede con las licencias cuando el número de las otorgables fuere limitado según el artículo 13 del Decreto de 17 de junio de 1955?",
+      "respuesta": "No serán transmisibles."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p14-01",
+      "enunciado": "¿Qué sucede con las autorizaciones y licencias según el artículo 12 del Decreto de 17 de junio de 1955?",
+      "opciones": [
+        "a) Se entenderán otorgadas salvo el derecho de propiedad y sin perjuicio del de tercero.",
+        "b) Se entenderán denegadas salvo el derecho de propiedad y sin perjuicio del de tercero.",
+        "c) Se entenderán otorgadas sin perjuicio del derecho de propiedad y sin perjuicio del de tercero.",
+        "d) Se entenderán denegadas sin perjuicio del derecho de propiedad y sin perjuicio del de tercero."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el artículo 12 del Decreto de 17 de junio de 1955, las autorizaciones y licencias se entenderán otorgadas salvo el derecho de propiedad y sin perjuicio del de tercero."
+    }
+  ]
 }

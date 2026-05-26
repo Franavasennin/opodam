@@ -1,157 +1,457 @@
 {
-    "id": 35,
-    "titulo": "Protección del medio ambiente. Normativa sobre emisiones y vertidos contaminantes. Humos, ruidos y vibraciones. Régimen sancionador en las infracciones administrativas",
-    "bloque": "especifico",
-    "secciones": [
-        {
-            "id": "s35-1",
-            "titulo": "Protección del medio ambiente: marco general",
-            "contenido": "La protección del medio ambiente se reconoce en el artículo 45 de la Constitución como derecho de todos a disfrutar de un medio ambiente adecuado y deber de conservarlo. Los poderes públicos velan por la utilización racional de los recursos naturales y deben establecer las sanciones penales o, en su caso, administrativas y la obligación de reparar el daño causado. La distribución de competencias se rige por el artículo 149.1.23ª CE: el Estado dicta la legislación básica sobre protección del medio ambiente; las Comunidades Autónomas establecen normas adicionales de protección y la ejecución; los municipios ejercen competencias en medio ambiente urbano (parques y jardines, gestión de residuos, contaminación atmosférica, acústica, etc.)."
-        },
-        {
-            "id": "s35-2",
-            "titulo": "Emisiones a la atmósfera y vertidos contaminantes",
-            "contenido": "La protección frente a las emisiones contaminantes a la atmósfera se rige por la Ley 34/2007, de calidad del aire y protección de la atmósfera, y por la normativa estatal y europea de prevención y control integrados de la contaminación (Ley 16/2002). Los focos emisores requieren autorización ambiental integrada o autorización específica según su impacto. Las aguas se protegen frente a vertidos contaminantes mediante la legislación de aguas (Texto Refundido aprobado por RDL 1/2001) y la normativa autonómica; los vertidos requieren autorización del organismo de cuenca o de la Administración hidráulica autonómica, y deben respetar los límites de las sustancias contaminantes."
-        },
-        {
-            "id": "s35-3",
-            "titulo": "Humos, ruidos y vibraciones",
-            "contenido": "La normativa de calidad del aire establece valores límite y de alerta para contaminantes (NOx, PM10, ozono, etc.). Las emisiones de humos de las actividades industriales y de los vehículos se controlan mediante inspecciones técnicas (ITV en vehículos) y revisiones periódicas. La contaminación acústica se regula por la Ley 37/2003, del Ruido, y por las normativas autonómicas y ordenanzas municipales. Se fijan objetivos de calidad acústica para distintos tipos de zonas (residencial, sanitaria, industrial, etc.) y se exigen medidas correctoras a las actividades emisoras. Los Ayuntamientos elaboran mapas de ruido en las grandes ciudades y planes de acción para reducirlo."
-        },
-        {
-            "id": "s35-4",
-            "titulo": "Régimen sancionador ambiental",
-            "contenido": "Las infracciones administrativas en materia ambiental se clasifican generalmente en muy graves, graves y leves, atendiendo al daño causado al medio, a la salud o a los recursos naturales, y a la reincidencia. Las sanciones comprenden multas (que pueden ser muy elevadas, hasta varios millones de euros para las infracciones muy graves), suspensión o revocación de autorizaciones, clausura del establecimiento, inhabilitación para contratar con el sector público y, además, la obligación de reparar el daño ambiental causado (responsabilidad medioambiental, Ley 26/2007). Las sanciones se imponen por el órgano competente según la materia y la cuantía, previo procedimiento sancionador con todas las garantías."
-        },
-        {
-            "id": "s35-5",
-            "titulo": "Actuación policial y municipal en materia ambiental",
-            "contenido": "La Policía Local desempeña funciones esenciales en la vigilancia y control del cumplimiento de la normativa ambiental urbana: ruidos, emisiones de humos, vertidos a la red municipal, limpieza viaria, residuos sólidos urbanos, animales, contaminación lumínica y abandono de vehículos. Levanta actas de denuncia, recoge muestras y solicita la intervención de los servicios técnicos. Asimismo colabora con el SEPRONA de la Guardia Civil, los agentes de medio ambiente autonómicos y otros cuerpos especializados en infracciones que afecten al medio natural o protegido. En caso de delito ambiental, da cuenta a la autoridad judicial conforme a la Ley de Enjuiciamiento Criminal."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e35-1",
-            "titulo": "Medio ambiente: marco competencial",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Medio ambiente] --> B[Articulo 45 CE]\n    A --> C[Estado: legislacion basica]\n    A --> D[CCAA: normas adicionales y ejecucion]\n    A --> E[Municipios: medio ambiente urbano]"
-        },
-        {
-            "id": "e35-2",
-            "titulo": "Sectores de protección",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Sectores] --> B[Atmosfera y emisiones]\n    A --> C[Aguas y vertidos]\n    A --> D[Ruido y vibraciones]\n    A --> E[Residuos y suelos]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Protección del medio ambiente", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Marco general", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Emisiones y vertidos", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Humos, ruidos y vibraciones", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Régimen sancionador", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Actuación policial y municipal", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Artículo 45 CE", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Ley 34/2007 y Ley 16/2002", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Vertidos: RDL 1/2001 aguas", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Ley 37/2003 del Ruido", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Multas elevadas y reparación", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Policía Local: actas y muestras", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "SEPRONA y agentes de medio ambiente", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n3", "hasta": "n9" },
-            { "desde": "n4", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 35,
+  "titulo": "Protección del medio ambiente. Normativa sobre emisiones y vertidos contaminantes. Humos, ruidos y vibraciones. Régimen sancionador en las infracciones administrativas",
+  "bloque": "especifico",
+  "secciones": [
+    {
+      "titulo": "1. LEY ORGÁNICA 1/2018, DE 5 DE NOVIEMBRE, DE REFORMA DEL ESTATUTO DE AUTON",
+      "contenido": "BIBLIOGRAFÍA • CONSTITUCIÓN ESPAÑOLA o Art. 45 • DIRECTIVA 2008/98/CE DEL PARLAMENTO EUROPEO Y DEL CONSEJO, DE 19 DE NOVIEMBRE DE 2008, SOBRE LOS RESIDUOS Y POR LA QUE SE DEROGAN DETERMINADAS DIRECTIVAS. o Art. 1 • LEY 1/1999, DE 29 DE ENERO, DE RESIDUOS DE CANARIAS. o Art. 1 • LEY 22/2011, DE 28 DE JULIO, DE RESIDUOS Y SUELOS CONTAMINADOS. o Art. 1 • LEY 28/2005, DE 26 DE DICIEMBRE, DE MEDIDAS SANITARIAS FRENTE AL TABAQUISMO Y REGULADORA DE LA VENTA, EL SUMINISTRO, EL CONSUMO Y LA PUBLICIDAD DE LOS PRODUCTOS DEL TABACO. o Art. 1 • LEY 34/2007, DE 15 DE NOVIEMBRE, DE CALIDAD DEL AIRE Y PROTECCIÓN DE LA ATMÓSFERA. o Art. 1 • LEY 37/2003, DE 17 DE NOVIEMBRE, DEL RUIDO. o Art. 1-2 o Art. 6-7 o Art. 11-13 o Art. 27-31 • LEY 39/2015, DE 1 DE OCTUBRE, DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES PÚBLICAS. o Art. 25 o Art. 35 o Art. 47 o Art. 53 o Art. 55 o Art. 60-64 o Art. 77 o Art. 85 o Art. 89-90 o Art. 96 o Art. 98 o Art. 114 • LEY 4/2017, DE 13 DE JULIO, DEL SUELO Y DE LOS ESPACIOS NATURALES PROTEGIDOS DE CANARIAS. o Art. 1 • LEY 40/2015, DE 1 DE OCTUBRE, DE RÉGIMEN JURÍDICO DEL SECTOR PÚBLICO. o Art. 25-31 2 \f • LEY 42/2010, DE 30 DE DICIEMBRE, POR LA QUE SE MODIFICA LA LEY 28/2005, DE 26 DE DICIEMBRE, DE MEDIDAS SANITARIAS FRENTE AL TABAQUISMO Y REGULADORA DE LA VENTA, EL SUMINISTRO, EL CONSUMO Y LA PUBLICIDAD DE LOS PRODUCTOS DEL TABACO. o • LEY 7/1985, DE 2 DE ABRIL, REGULADORA DE LAS BASES DEL RÉGIMEN LOCAL o Art. 25-27 • LEY ORGÁNICA 1/2018, DE 5 DE NOVIEMBRE, DE REFORMA DEL ESTATUTO DE AUTONOMÍA DE CANARIAS. o Art. 37 o Art. 70 o Art. 75 o Art. 153-154 • REAL DECRETO 1367/2007, DE 19 DE OCTUBRE, POR EL QUE SE DESARROLLA LA LEY 37/2003, DE 17 DE NOVIEMBRE, DEL RUIDO, EN LO REFERENTE A ZONIFICACIÓN ACÚSTICA, OBJETIVOS DE CALIDAD Y EMISIONES ACÚSTICAS. o Anexo 1 • REAL DECRETO 258/1989, DE 10 DE MARZO, POR EL QUE SE ESTABLECE LA NORMATIVA GENERAL SOBRE VERTIDOS DE SUSTANCIAS PELIGROSAS DESDE TIERRA AL MAR. o Art. 1 3 \f CONSTITUCIÓN ESPAÑOLA TÍTULO I DE LOS DERECHOS Y DEBERES FUNDAMENTALES CAPÍTULO TERCERO DE LOS PRINCIPIOS RECTORES DE LA POLÍTICA SOCIAL Y ECONÓMICA ARTÍCULO 45 1. Todos tienen el derecho a disfrutar de un medio ambiente adecuado para el desarrollo de la persona, así como el deber de conservarlo. 2. Los poderes públicos velarán por la utilización racional de todos los recursos naturales, con el fin de proteger y mejorar la calidad de la vida y defender y restaurar el medio ambiente, apoyándose en la indispensable solidaridad colectiva. 3. Para quienes violen lo dispuesto en el apartado anterior, en los términos que la ley fije se establecerán sanciones penales o, en su caso, administrativas, así como la obligación de reparar el daño causado. 4 \f DIRECTIVA 2008/98/CE DEL PARLAMENTO EUROPEO Y DEL CONSEJO, DE 19 DE NOVIEMBRE DE 2008, SOBRE LOS RESIDUOS Y POR LA QUE SE DEROGAN DETERMINADAS DIRECTIVAS. CAPÍTULO I OBJETO, ÁMBITO DE APLICACIÓN Y DEFINICIONES ARTÍCULO 1. OBJETO Y ÁMBITO DE APLICACIÓN La presente Directiva establece medidas destinadas a proteger el medio ambiente y la salud humana mediante la prevención o la reducción de los impactos adversos de la generación y gestión de los residuos, la reducción de los impactos globales del uso de los recursos y la mejora de la eficacia de dicho uso. 5 \f LEY 1/1999, DE 29 DE ENERO, DE RESIDUOS DE CANARIAS. TÍTULO I DISPOSICIONES GENERALES CAPÍTULO I OBJETO Y ÁMBITO ARTÍCULO 1. OBJETO Y ÁMBITO DE LA LEY."
     },
-    "flashcards": [
-        { "id": "fc35-01", "anverso": "¿Qué artículo de la CE reconoce el derecho al medio ambiente?", "reverso": "El artículo 45 de la Constitución." },
-        { "id": "fc35-02", "anverso": "¿Qué deber impone el artículo 45?", "reverso": "El deber de conservar el medio ambiente y el de los poderes públicos de velar por la utilización racional de los recursos." },
-        { "id": "fc35-03", "anverso": "¿En qué artículo se distribuye la competencia ambiental?", "reverso": "El artículo 149.1.23ª CE." },
-        { "id": "fc35-04", "anverso": "¿Qué competencia tiene el Estado en medio ambiente?", "reverso": "Dicta la legislación básica de protección." },
-        { "id": "fc35-05", "anverso": "¿Y las Comunidades Autónomas?", "reverso": "Pueden establecer normas adicionales de protección y la ejecución." },
-        { "id": "fc35-06", "anverso": "¿Y los municipios?", "reverso": "Competencias en medio ambiente urbano: parques, residuos, contaminación atmosférica y acústica." },
-        { "id": "fc35-07", "anverso": "¿Qué ley regula la calidad del aire y la atmósfera?", "reverso": "La Ley 34/2007, de calidad del aire y protección de la atmósfera." },
-        { "id": "fc35-08", "anverso": "¿Qué ley regula la prevención y control integrados de la contaminación?", "reverso": "La Ley 16/2002." },
-        { "id": "fc35-09", "anverso": "¿Qué requieren los vertidos a las aguas?", "reverso": "Autorización del organismo de cuenca o de la Administración hidráulica autonómica." },
-        { "id": "fc35-10", "anverso": "¿Qué ley regula la contaminación acústica?", "reverso": "La Ley 37/2003, del Ruido." },
-        { "id": "fc35-11", "anverso": "¿Qué fijan los objetivos de calidad acústica?", "reverso": "Niveles máximos según el tipo de zona (residencial, sanitaria, industrial, etc.)." },
-        { "id": "fc35-12", "anverso": "¿Qué deben elaborar los Ayuntamientos en grandes ciudades?", "reverso": "Mapas de ruido y planes de acción para reducirlo." },
-        { "id": "fc35-13", "anverso": "¿Cómo se clasifican las infracciones ambientales?", "reverso": "En muy graves, graves y leves." },
-        { "id": "fc35-14", "anverso": "Cita sanciones en materia ambiental.", "reverso": "Multas, suspensión o revocación de autorizaciones, clausura del establecimiento e inhabilitación." },
-        { "id": "fc35-15", "anverso": "¿Qué obligación adicional acompaña a la sanción ambiental?", "reverso": "La obligación de reparar el daño ambiental causado." },
-        { "id": "fc35-16", "anverso": "¿Qué ley regula la responsabilidad medioambiental?", "reverso": "La Ley 26/2007." },
-        { "id": "fc35-17", "anverso": "Cita funciones de la Policía Local en medio ambiente urbano.", "reverso": "Vigilancia de ruidos, humos, vertidos, residuos, limpieza y abandono de vehículos." },
-        { "id": "fc35-18", "anverso": "¿Con qué unidad estatal colabora la Policía Local en materia ambiental?", "reverso": "Con el SEPRONA de la Guardia Civil." },
-        { "id": "fc35-19", "anverso": "¿Qué hace la Policía Local ante un delito ambiental?", "reverso": "Da cuenta a la autoridad judicial conforme a la Ley de Enjuiciamiento Criminal." },
-        { "id": "fc35-20", "anverso": "¿Cómo se controlan las emisiones de humos de los vehículos?", "reverso": "Mediante la ITV y revisiones periódicas." }
+    {
+      "titulo": "2. TÍTULO I",
+      "contenido": "La presente Ley tiene por objeto la ordenación de los residuos que se generen o gestionen en el ámbito territorial de la Comunidad Autónoma de Canarias, para garantizar la protección del medio ambiente y la salud de las personas. 6 \f LEY 22/2011, DE 28 DE JULIO, DE RESIDUOS Y SUELOS CONTAMINADOS. TÍTULO I DISPOSICIONES Y PRINCIPIOS GENERALES CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO 1. OBJETO. Esta Ley tiene por objeto regular la gestión de los residuos impulsando medidas que prevengan su generación y mitiguen los impactos adversos sobre la salud humana y el medio ambiente asociados a su generación y gestión, mejorando la eficiencia en el uso de los recursos. Tiene asimismo como objeto regular el régimen jurídico de los suelos contaminados. 7 \f LEY 28/2005, DE 26 DE DICIEMBRE, DE MEDIDAS SANITARIAS FRENTE AL TABAQUISMO Y REGULADORA DE LA VENTA, EL SUMINISTRO, EL CONSUMO Y LA PUBLICIDAD DE LOS PRODUCTOS DEL TABACO. CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO 1. OBJETO. Esta Ley tiene por objeto: a) Establecer, con carácter básico, las limitaciones, siempre que se trate de operaciones al por menor, en la venta, suministro y consumo de los productos del tabaco, así como regular la publicidad, la promoción y el patrocinio de dichos productos, para proteger la salud de la población. b) Promover los mecanismos necesarios para la prevención y control del tabaquismo. 8 \f LEY 34/2007, DE 15 DE NOVIEMBRE, DE CALIDAD DEL AIRE Y PROTECCIÓN DE LA ATMÓSFERA. CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO 1. OBJETO. Esta ley tiene por objeto establecer las bases en materia de prevención, vigilancia y reducción de la contaminación atmosférica con el fin de evitar y cuando esto no sea posible, aminorar los daños que de ésta puedan derivarse para las personas, el medio ambiente y demás bienes de cualquier naturaleza. 9 \f LEY 37/2003, DE 17 DE NOVIEMBRE, DEL RUIDO. CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO 1. OBJETO Y FINALIDAD. Esta ley tiene por objeto prevenir, vigilar y reducir la contaminación acústica, para evitar y reducir los daños que de ésta pueden derivarse para la salud humana, los bienes o el medio ambiente. ARTÍCULO 2. ÁMBITO DE APLICACIÓN. 1. Están sujetos a las prescripciones de esta ley todos los emisores acústicos, ya sean de titularidad pública o privada, así como las edificaciones en su calidad de receptores acústicos. 2. No obstante lo dispuesto en el apartado anterior, quedan excluidos del ámbito de aplicación de esta ley los siguientes emisores acústicos: a) Las actividades domésticas o los comportamientos de los vecinos, cuando la contaminación acústica producida por aquéllos se mantenga dentro de límites tolerables de conformidad con las ordenanzas municipales y los usos locales. b) Las actividades militares, que se regirán por su legislación específica. c) La actividad laboral, respecto de la contaminación acústica producida por ésta en el correspondiente lugar de trabajo, que se regirá por lo dispuesto en la legislación laboral. ARTÍCULO 6. ORDENANZAS MUNICIPALES Y PLANEAMIENTO URBANÍSTICO. Corresponde a los ayuntamientos aprobar ordenanzas en relación con las materias objeto de esta ley. Asimismo, los ayuntamientos deberán adaptar las ordenanzas existentes y el planeamiento urbanístico a las disposiciones de esta ley y de sus normas de desarrollo. CAPÍTULO II CALIDAD ACÚSTICA SECCIÓN 1.ª ÁREAS ACÚSTICAS ARTÍCULO 7. TIPOS DE ÁREAS ACÚSTICAS. 1."
+    },
+    {
+      "titulo": "3. CAPÍTULO II",
+      "contenido": "Las áreas acústicas se clasificarán, en atención al uso predominante del suelo, en los tipos que determinen las comunidades autónomas, las cuales habrán de prever, al menos, los siguientes: a) Sectores del territorio con predominio de suelo de uso residencial. b) Sectores del territorio con predominio de suelo de uso industrial. c) Sectores del territorio con predominio de suelo de uso recreativo y de espectáculos. d) Sectores del territorio con predominio de suelo de uso terciario distinto del contemplado en el párrafo anterior. e) Sectores del territorio con predominio de suelo de uso sanitario, docente y cultural que requiera de especial protección contra la contaminación acústica. f) Sectores del territorio afectados a sistemas generales de infraestructuras de transporte, u otros equipamientos públicos que los reclamen. g) Espacios naturales que requieran una especial protección contra la contaminación acústica. 2. El Gobierno aprobará reglamentariamente los criterios para la delimitación de los distintos tipos de áreas acústicas. 10 \f CAPÍTULO II CALIDAD ACÚSTICA SECCIÓN 2.ª ÍNDICES ACÚSTICOS ARTÍCULO 11. DETERMINACIÓN DE LOS ÍNDICES ACÚSTICOS. 1. A los efectos de esta ley, se emplearán índices acústicos homogéneos correspondientes a las 24 horas del día, al período diurno, al período vespertino y al período nocturno. 2. Las disposiciones reglamentarias de desarrollo de esta ley podrán prever otros índices aplicables a los supuestos específicos que al efecto se determinen. ARTÍCULO 12. VALORES LÍMITE DE INMISIÓN Y EMISIÓN. 1. Los valores límite de emisión de los diferentes emisores acústicos, así como los valores límite de inmisión, serán determinados por el Gobierno. Cuando, como consecuencia de importantes cambios en las mejoras técnicas disponibles, resulte posible reducir los valores límite sin que ello entrañe costes excesivos, el Gobierno procederá a tal reducción. 2. A los efectos de esta ley, los emisores acústicos se clasifican en: Infraestructuras aeroportuarias. a) Vehículos automóviles. b) Ferrocarriles. c) Aeronaves. d) Infraestructuras viarias. e) Infraestructuras ferroviarias. f) g) Maquinaria y equipos. h) Obras de construcción de edificios y de ingeniería civil. i) Actividades industriales. j) Actividades comerciales. k) Actividades deportivo-recreativas y de ocio. l) Infraestructuras portuarias. 3. El Gobierno podrá establecer valores límite aplicables a otras actividades, comportamientos y productos no contemplados en el apartado anterior. 4. El Gobierno fijará con carácter único para todo el territorio del Estado los valores límite de inmisión en el interior de los medios de transporte de competencia estatal. 5. Los titulares de emisores acústicos, cualquiera que sea su naturaleza, están obligados a respetar los correspondientes valores límite. ARTÍCULO 13. EVALUACIÓN ACÚSTICA. El Gobierno regulará: a) Los métodos de evaluación para la determinación de los valores de los índices acústicos aludidos en el artículo 12 y de los correspondientes efectos de la contaminación acústica. b) El régimen de homologación de los instrumentos y procedimientos que se empleen en la evaluación y de las entidades a las que, en su caso, se encomiende ésta. 11 \f CAPÍTULO IV INSPECCIÓN Y RÉGIMEN SANCIONADOR ARTÍCULO 27. INSPECCIÓN. 1."
+    },
+    {
+      "titulo": "4. ARTÍCULO 28",
+      "contenido": "Los funcionarios que realicen labores de inspección en materia de contaminación acústica tendrán el carácter de agentes de la autoridad, a los efectos previstos en la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común y podrán acceder a cualquier lugar, instalación o dependencia, de titularidad pública o privada. En el supuesto de entradas domiciliarias se requerirá el previo consentimiento del titular o resolución judicial. 2. Los titulares de los emisores acústicos regulados por esta ley están obligados a prestar a las autoridades competentes toda la colaboración que sea necesaria, a fin de permitirles realizar los exámenes, controles, mediciones y labores de recogida de información que sean pertinentes para el desempeño de sus funciones. ARTÍCULO 28. INFRACCIONES. 1. Sin perjuicio de las infracciones que puedan establecer las comunidades autónomas y los ayuntamientos, las infracciones administrativas relacionadas con la contaminación acústica se clasifican en muy graves, graves y leves. 2. Son infracciones muy graves las siguientes: a) La producción de contaminación acústica por encima de los valores límite establecidos en zonas de protección acústica especial y en zonas de situación acústica especial. b) La superación de los valores límite que sean aplicables, cuando se haya producido un daño o deterioro grave para el medio ambiente o se haya puesto en peligro grave la seguridad o la salud de las personas. c) El incumplimiento de las condiciones establecidas, en materia de contaminación acústica, en la autorización ambiental integrada, en la autorización o aprobación del proyecto sometido a evaluación de impacto ambiental, en la licencia de actividades clasificadas o en otras figuras de intervención administrativa, cuando se haya producido un daño o deterioro grave para el medio ambiente o se haya puesto en peligro grave la seguridad o la salud de las personas. d) El incumplimiento de las normas que establezcan requisitos relativos a la protección de las edificaciones contra el ruido, cuando se haya puesto en peligro grave la seguridad o la salud de las personas. e) El incumplimiento de las obligaciones derivadas de la adopción de medidas provisionales conforme al artículo 31. 3. Son infracciones graves las siguientes: a) La superación de los valores límite que sean aplicables, cuando no se haya producido un daño o deterioro grave para el medio ambiente ni se haya puesto en peligro grave la seguridad o la salud de las personas. b) El incumplimiento de las condiciones establecidas en materia de contaminación acústica, en la autorización ambiental integrada, en la autorización o aprobación del proyecto sometido a evaluación de impacto ambiental, en la licencia de actividades clasificadas o en otras figuras de intervención administrativa, cuando no se haya producido un daño o deterioro grave para el medio ambiente ni se haya puesto en peligro grave la seguridad o la salud de las personas. 12 \f c) La ocultación o alteración maliciosas de datos relativos a la contaminación acústica aportados a los expedientes administrativos encaminados a la obtención de autorizaciones o licencias relacionadas con el ejercicio de las actividades reguladas en esta ley. d) El impedimento, el retraso o la obstrucción a la actividad inspectora o de control de las Administraciones públicas. e) La no adopción de las medidas correctoras requeridas por la Administración competente en caso de incumplimiento de los objetivos de calidad acústica. 4."
+    },
+    {
+      "titulo": "5. ARTÍCULO 29",
+      "contenido": "Son infracciones leves las siguientes: a) La no comunicación a la Administración competente de los datos requeridos por ésta dentro de los plazos establecidos al efecto. b) La instalación o comercialización de emisores acústicos sin acompañar la información sobre sus índices de emisión, cuando tal información sea exigible conforme a la normativa aplicable. c) El incumplimiento de las prescripciones establecidas en esta ley, cuando no esté tipificado como infracción muy grave o grave. 5. Las ordenanzas locales podrán tipificar infracciones en relación con: a) El ruido procedente de usuarios de la vía pública en determinadas circunstancias. b) El ruido producido por las actividades domésticas o los vecinos, cuando exceda de los límites tolerables de conformidad con los usos locales. ARTÍCULO 29. SANCIONES. 1. Las infracciones a las que se refieren los apartados 2 a 4 del artículo anterior podrán dar lugar a la imposición de todas o algunas de las siguientes sanciones: a) En el caso de infracciones muy graves: 1º. Multas desde 12.001 euros hasta 300.000 euros. 2º. Revocación de la autorización ambiental integrada, la autorización o aprobación del proyecto sometido a evaluación de impacto ambiental, la licencia de actividades clasificadas u otras figuras de intervención administrativa en las que se hayan establecido condiciones relativas a la contaminación acústica, o la suspensión de la vigencia de su vigencia por un período de tiempo comprendido entre un año y un día y cinco años. 3º. Clausura definitiva, total o parcial, de las instalaciones. 4º. Clausura temporal, total o parcial, de las instalaciones por un período no inferior a dos años ni superior a cinco. 5º. Publicación, a través de los medios que se consideren oportunos, de las sanciones impuestas, una vez que éstas hayan adquirido firmeza en vía administrativa o, en su caso, jurisdiccional, así como los nombres, apellidos o denominación o razón social de las personas físicas o jurídicas responsables y la índole y naturaleza de las infracciones. 6º. El precintado temporal o definitivo de equipos y máquinas. 7º. La prohibición temporal o definitiva del desarrollo de actividades. b) En el caso de infracciones graves: 1º. Multas desde 601 euros hasta 12.000 euros. 2º. Suspensión de la vigencia de la autorización ambiental integrada, la autorización o aprobación del proyecto sometido a evaluación de impacto ambiental, la licencia de actividades clasificadas u otras figuras de intervención administrativa en las que se hayan establecido condiciones relativas a la contaminación acústica, por un período de tiempo comprendido entre un mes y un día y un año. 3º. Clausura temporal, total o parcial, de las instalaciones por un período máximo de dos años. c) En el caso de infracciones leves, multas de hasta 600 euros. 13 \f 2. Las ordenanzas locales podrán establecer como sanciones por la comisión de infracciones previstas por aquéllas las siguientes: a) Multas. b) Suspensión de la vigencia de las autorizaciones o licencias municipales en las que se hayan establecido condiciones relativas a la contaminación acústica, por un período de tiempo inferior a un mes. 3. Las sanciones se impondrán atendiendo a: a) Las circunstancias del responsable. b) La importancia del daño o deterioro causado. c) El grado del daño o molestia causado a las personas, a los bienes o al medio ambiente. d) La intencionalidad o negligencia. e) La reincidencia y la participación. ARTÍCULO 30. POTESTAD SANCIONADORA. 1. La imposición de las sanciones corresponderá: a) Con carácter general, a los ayuntamientos."
+    },
+    {
+      "titulo": "6. Artículo 28",
+      "contenido": "b) A las comunidades autónomas, en los supuestos de las infracciones siguientes: 1º. Artículo 28.2.c), cuando las condiciones incumplidas hayan sido establecidas por la comunidad autónoma. 2º. Artículo 28.2.e), cuando la medida provisional se haya adoptado por la comunidad autónoma. 3º. Artículo 28.3.b), cuando las condiciones incumplidas hayan sido establecidas por la comunidad autónoma. 4º. Artículo 28.3.c), cuando la competencia para otorgar la autorización o licencia corresponda a la comunidad autónoma. 5º. Artículo 28.3.d), cuando la Administración en cuestión sea la autonómica. 6º. Artículo 28.3.e), cuando la Administración requirente sea la autonómica. 7º. Artículo 28.4.a), cuando la Administración requirente sea la autonómica. c) A la Administración General del Estado, en el ejercicio de sus competencias exclusivas. ARTÍCULO 31. MEDIDAS PROVISIONALES. Una vez iniciado el procedimiento sancionador, el órgano competente para imponer la sanción podrá adoptar alguna o algunas de las siguientes medidas provisionales: a) Precintado de aparatos, equipos o vehículos. b) Clausura temporal, parcial o total, de las instalaciones o del establecimiento. c) Suspensión temporal de la autorización ambiental integrada, la autorización o aprobación del proyecto sometido a evaluación de impacto ambiental, la licencia de actividades clasificadas u otras figuras de intervención administrativa en las que se hayan establecido condiciones relativas a la contaminación acústica. d) Medidas de corrección, seguridad o control que impidan la continuidad en la producción del riesgo o del daño. 14 \f LEY 39/2015, DE 1 DE OCTUBRE, DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN DE LAS ADMINISTRACIONES PÚBLICAS. TÍTULO II DE LA ACTIVIDAD DE LAS ADMINISTRACIONES PÚBLICAS CAPÍTULO I NORMAS GENERALES DE ACTUACIÓN ARTÍCULO 25. FALTA DE RESOLUCIÓN EXPRESA EN PROCEDIMIENTOS INICIADOS DE OFICIO. 1. En los procedimientos iniciados de oficio, el vencimiento del plazo máximo establecido sin que se haya dictado y notificado resolución expresa no exime a la Administración del cumplimiento de la obligación legal de resolver, produciendo los siguientes efectos: a) En el caso de procedimientos de los que pudiera derivarse el reconocimiento o, en su caso, la constitución de derechos u otras situaciones jurídicas favorables, los interesados que hubieren comparecido podrán entender desestimadas sus pretensiones por silencio administrativo. b) En los procedimientos en que la Administración ejercite potestades sancionadoras o, en general, de intervención, susceptibles de producir efectos desfavorables o de gravamen, se producirá la caducidad. En estos casos, la resolución que declare la caducidad ordenará el archivo de las actuaciones, con los efectos previstos en el artículo 95. 2. En los supuestos en los que el procedimiento se hubiera paralizado por causa imputable al interesado, se interrumpirá el cómputo del plazo para resolver y notificar la resolución. TÍTULO III DE LOS ACTOS ADMINISTRATIVOS CAPÍTULO I REQUISITOS DE LOS ACTOS ADMINISTRATIVOS ARTÍCULO 35. MOTIVACIÓN. 1. Serán motivados, con sucinta referencia de hechos y fundamentos de derecho: a) Los actos que limiten derechos subjetivos o intereses legítimos. b) Los actos que resuelvan procedimientos de revisión de oficio de disposiciones o actos administrativos, recursos administrativos y procedimientos de arbitraje y los que declaren su inadmisión. c) Los actos que se separen del criterio seguido en actuaciones precedentes o del dictamen de órganos consultivos."
+    },
+    {
+      "titulo": "7. artículo 56",
+      "contenido": "d) Los acuerdos de suspensión de actos, cualquiera que sea el motivo de ésta, así como la adopción de medidas provisionales previstas en el artículo 56. e) Los acuerdos de aplicación de la tramitación de urgencia, de ampliación de plazos y de realización de actuaciones complementarias. f) Los actos que rechacen pruebas propuestas por los interesados. g) Los actos que acuerden la terminación del procedimiento por la imposibilidad material de continuarlo por causas sobrevenidas, así como los que acuerden el desistimiento por la Administración en procedimientos iniciados de oficio. 15 \f h) Las propuestas de resolución en los procedimientos de carácter sancionador, así como los actos que resuelvan procedimientos de carácter sancionador o de responsabilidad patrimonial. i) Los actos que se dicten en el ejercicio de potestades discrecionales, así como los que deban serlo en virtud de disposición legal o reglamentaria expresa. 2. La motivación de los actos que pongan fin a los procedimientos selectivos y de concurrencia competitiva se realizará de conformidad con lo que dispongan las normas que regulen sus convocatorias, debiendo, en todo caso, quedar acreditados en el procedimiento los fundamentos de la resolución que se adopte. CAPÍTULO III NULIDAD Y ANULABILIDAD ARTÍCULO 47. NULIDAD DE PLENO DERECHO. 1. Los actos de las Administraciones Públicas son nulos de pleno derecho en los casos siguientes: a) Los que lesionen los derechos y libertades susceptibles de amparo constitucional. b) Los dictados por órgano manifiestamente incompetente por razón de la materia o del territorio. c) Los que tengan un contenido imposible. d) Los que sean constitutivos de infracción penal o se dicten como consecuencia de ésta. e) Los dictados prescindiendo total y absolutamente del procedimiento legalmente establecido o de las normas que contienen las reglas esenciales para la formación de la voluntad de los órganos colegiados. f) Los actos expresos o presuntos contrarios al ordenamiento jurídico por los que se adquieren facultades o derechos cuando se carezca de los requisitos esenciales para su adquisición. g) Cualquier otro que se establezca expresamente en una disposición con rango de Ley. 2. También serán nulas de pleno derecho las disposiciones administrativas que vulneren la Constitución, las leyes u otras disposiciones administrativas de rango superior, las que regulen materias reservadas a la Ley, y las que establezcan la retroactividad de disposiciones sancionadoras no favorables o restrictivas de derechos individuales. TÍTULO IV DE LAS DISPOSICIONES SOBRE EL PROCEDIMIENTO ADMINISTRATIVO COMÚN CAPÍTULO I GARANTÍAS DEL PROCEDIMIENTO ARTÍCULO 53. DERECHOS DEL INTERESADO EN EL PROCEDIMIENTO ADMINISTRATIVO. 1. Además del resto de derechos previstos en esta Ley, los interesados en un procedimiento administrativo, tienen los siguientes derechos: a) A conocer, en cualquier momento, el estado de la tramitación de los procedimientos en los que tengan la condición de interesados; el sentido del silencio administrativo que corresponda, en caso de que la Administración no dicte ni notifique resolución expresa en plazo; el órgano competente para su instrucción, en su caso, y resolución; 16 \f y los actos de trámite dictados. Asimismo, también tendrán derecho a acceder y a obtener copia de los documentos contenidos en los citados procedimientos."
+    },
+    {
+      "titulo": "8. disposición de",
+      "contenido": "Quienes se relacionen con las Administraciones Públicas a través de medios electrónicos, tendrán derecho a consultar la información a la que se refiere el párrafo anterior, en el Punto de Acceso General electrónico de la Administración que funcionará como un portal de acceso. Se entenderá cumplida la obligación de la Administración de facilitar copias de los documentos contenidos en los procedimientos mediante la puesta a disposición de las mismas en el Punto de Acceso General electrónico de la Administración competente o en las sedes electrónicas que correspondan. b) A identificar a las autoridades y al personal al servicio de las Administraciones Públicas bajo cuya responsabilidad se tramiten los procedimientos. c) A no presentar documentos originales salvo que, de manera excepcional, la normativa reguladora aplicable establezca lo contrario. En caso de que, excepcionalmente, deban presentar un documento original, tendrán derecho a obtener una copia autenticada de éste. d) A no presentar datos y documentos no exigidos por las normas aplicables al procedimiento de que se trate, que ya se encuentren en poder de las Administraciones Públicas o que hayan sido elaborados por éstas. e) A formular alegaciones, utilizar los medios de defensa admitidos por el Ordenamiento Jurídico, y a aportar documentos en cualquier fase del procedimiento anterior al trámite de audiencia, que deberán ser tenidos en cuenta por el órgano competente al redactar la propuesta de resolución. f) A obtener información y orientación acerca de los requisitos jurídicos o técnicos que las disposiciones vigentes impongan a los proyectos, actuaciones o solicitudes que se propongan realizar. g) A actuar asistidos de asesor cuando lo consideren conveniente en defensa de sus intereses. h) A cumplir las obligaciones de pago a través de los medios electrónicos previstos en el artículo 98.2. i) Cualesquiera otros que les reconozcan la Constitución y las leyes. 2. Además de los derechos previstos en el apartado anterior, en el caso de procedimientos administrativos de naturaleza sancionadora, los presuntos responsables tendrán los siguientes derechos: a) A ser notificado de los hechos que se le imputen, de las infracciones que tales hechos puedan constituir y de las sanciones que, en su caso, se les pudieran imponer, así como de la identidad del instructor, de la autoridad competente para imponer la sanción y de la norma que atribuya tal competencia. b) A la presunción de no existencia de responsabilidad administrativa mientras no se demuestre lo contrario. 17 \f CAPÍTULO II INICIACIÓN DEL PROCEDIMIENTO SECCIÓN 1.ª DISPOSICIONES GENERALES ARTÍCULO 55. INFORMACIÓN Y ACTUACIONES PREVIAS. 1. Con anterioridad al inicio del procedimiento, el órgano competente podrá abrir un período de información o actuaciones previas con el fin de conocer las circunstancias del caso concreto y la conveniencia o no de iniciar el procedimiento. 2. En el caso de procedimientos de naturaleza sancionadora las actuaciones previas se orientarán a determinar, con la mayor precisión posible, los hechos susceptibles de motivar la incoación del procedimiento, la identificación de la persona o personas que pudieran resultar responsables y las circunstancias relevantes que concurran en unos y otros. Las actuaciones previas serán realizadas por los órganos que tengan atribuidas funciones de investigación, averiguación e inspección en la materia y, en defecto de éstos, por la persona u órgano administrativo que se determine por el órgano competente para la iniciación o resolución del procedimiento."
+    },
+    {
+      "titulo": "9. ARTÍCULO 60",
+      "contenido": "SECCIÓN 2.ª INICIACIÓN DEL PROCEDIMIENTO DE OFICIO POR LA ADMINISTRACIÓN ARTÍCULO 60. INICIO DEL PROCEDIMIENTO COMO CONSECUENCIA DE ORDEN SUPERIOR. 1. Se entiende por orden superior, la emitida por un órgano administrativo superior jerárquico del competente para la iniciación del procedimiento. 2. En los procedimientos de naturaleza sancionadora, la orden expresará, en la medida de lo posible, la persona o personas presuntamente responsables; las conductas o hechos que pudieran constituir infracción administrativa y su tipificación; así como el lugar, la fecha, fechas o período de tiempo continuado en que los hechos se produjeron. ARTÍCULO 61. INICIO DEL PROCEDIMIENTO POR PETICIÓN RAZONADA DE OTROS ÓRGANOS. 1. Se entiende por petición razonada, la propuesta de iniciación del procedimiento formulada por cualquier órgano administrativo que no tiene competencia para iniciar el mismo y que ha tenido conocimiento de las circunstancias, conductas o hechos objeto del procedimiento, bien ocasionalmente o bien por tener atribuidas funciones de inspección, averiguación o investigación. 2. La petición no vincula al órgano competente para iniciar el procedimiento, si bien deberá comunicar al órgano que la hubiera formulado los motivos por los que, en su caso, no procede la iniciación. 3. En los procedimientos de naturaleza sancionadora, las peticiones deberán especificar, en la medida de lo posible, la persona o personas presuntamente responsables; las conductas o hechos que pudieran constituir infracción administrativa y su tipificación; así como el lugar, la fecha, fechas o período de tiempo continuado en que los hechos se produjeron. 4. En los procedimientos de responsabilidad patrimonial, la petición deberá individualizar la lesión producida en una persona o grupo de personas, su relación de causalidad con el funcionamiento del servicio público, su evaluación económica si fuera posible, y el momento en que la lesión efectivamente se produjo. 18 \fARTÍCULO 62. INICIO DEL PROCEDIMIENTO POR DENUNCIA. 1. Se entiende por denuncia, el acto por el que cualquier persona, en cumplimiento o no de una obligación legal, pone en conocimiento de un órgano administrativo la existencia de un determinado hecho que pudiera justificar la iniciación de oficio de un procedimiento administrativo. 2. Las denuncias deberán expresar la identidad de la persona o personas que las presentan y el relato de los hechos que se ponen en conocimiento de la Administración. Cuando dichos hechos pudieran constituir una infracción administrativa, recogerán la fecha de su comisión y, cuando sea posible, la identificación de los presuntos responsables. 3. Cuando la denuncia invocara un perjuicio en el patrimonio de las Administraciones Públicas la no iniciación del procedimiento deberá ser motivada y se notificará a los denunciantes la decisión de si se ha iniciado o no el procedimiento. 4. Cuando el denunciante haya participado en la comisión de una infracción de esta naturaleza y existan otros infractores, el órgano competente para resolver el procedimiento deberá eximir al denunciante del pago de la multa que le correspondería u otro tipo de sanción de carácter no pecuniario, cuando sea el primero en aportar elementos de prueba que permitan iniciar el procedimiento o comprobar la infracción, siempre y cuando en el momento de aportarse aquellos no se disponga de elementos suficientes para ordenar la misma y se repare el perjuicio causado."
+    },
+    {
+      "titulo": "10. ARTÍCULO 63",
+      "contenido": "Asimismo, el órgano competente para resolver deberá reducir el importe del pago de la multa que le correspondería o, en su caso, la sanción de carácter no pecuniario, cuando no cumpliéndose alguna de las condiciones anteriores, el denunciante facilite elementos de prueba que aporten un valor añadido significativo respecto de aquellos de los que se disponga. En ambos casos será necesario que el denunciante cese en la participación de la infracción y no haya destruido elementos de prueba relacionados con el objeto de la denuncia. 5. La presentación de una denuncia no confiere, por sí sola, la condición de interesado en el procedimiento. ARTÍCULO 63. ESPECIALIDADES EN EL INICIO DE LOS PROCEDIMIENTOS DE NATURALEZA SANCIONADORA. 1. Los procedimientos de naturaleza sancionadora se iniciarán siempre de oficio por acuerdo del órgano competente y establecerán la debida separación entre la fase instructora y la sancionadora, que se encomendará a órganos distintos. Se considerará que un órgano es competente para iniciar el procedimiento cuando así lo determinen las normas reguladoras del mismo. 3. En ningún caso se podrá imponer una sanción sin que se haya tramitado el oportuno procedimiento. 4. No se podrán iniciar nuevos procedimientos de carácter sancionador por hechos o conductas tipificadas como infracciones en cuya comisión el infractor persista de forma continuada, en tanto no haya recaído una primera resolución sancionadora, con carácter ejecutivo. 19 \f ARTÍCULO 64. ACUERDO DE INICIACIÓN EN LOS PROCEDIMIENTOS DE NATURALEZA SANCIONADORA. 1. El acuerdo de iniciación se comunicará al instructor del procedimiento, con traslado de cuantas actuaciones existan al respecto, y se notificará a los interesados, entendiendo en todo caso por tal al inculpado. Asimismo, la incoación se comunicará al denunciante cuando las normas reguladoras del procedimiento así lo prevean. 2. El acuerdo de iniciación deberá contener al menos: a. Identificación de la persona o personas presuntamente responsables. b. Los hechos que motivan la incoación del procedimiento, su posible calificación y las sanciones que pudieran corresponder, sin perjuicio de lo que resulte de la instrucción. c. Identificación del instructor y, en su caso, Secretario del procedimiento, con expresa indicación del régimen de recusación de los mismos. d. Órgano competente para la resolución del procedimiento y norma que le atribuya tal competencia, indicando la posibilidad de que el presunto responsable pueda reconocer voluntariamente su responsabilidad, con los efectos previstos en el artículo 85. f. e. Medidas de carácter provisional que se hayan acordado por el órgano competente para iniciar el procedimiento sancionador, sin perjuicio de las que se puedan adoptar durante el mismo de conformidad con el artículo 56. Indicación del derecho a formular alegaciones y a la audiencia en el procedimiento y de los plazos para su ejercicio, así como indicación de que, en caso de no efectuar alegaciones en el plazo previsto sobre el contenido del acuerdo de iniciación, éste podrá ser considerado propuesta de resolución cuando contenga un pronunciamiento preciso acerca de la responsabilidad imputada. 3. Excepcionalmente, cuando en el momento de dictar el acuerdo de iniciación no existan elementos suficientes para la calificación inicial de los hechos que motivan la incoación del procedimiento, la citada calificación podrá realizarse en una fase posterior mediante la elaboración de un Pliego de cargos, que deberá ser notificado a los interesados."
+    },
+    {
+      "titulo": "11. CAPÍTULO IV",
+      "contenido": "CAPÍTULO IV INSTRUCCIÓN DEL PROCEDIMIENTO SECCIÓN 2.ª PRUEBA ARTÍCULO 77. MEDIOS Y PERÍODO DE PRUEBA. 1. Los hechos relevantes para la decisión de un procedimiento podrán acreditarse por cualquier medio de prueba admisible en Derecho, cuya valoración se realizará de acuerdo con los criterios establecidos en la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil. 2. Cuando la Administración no tenga por ciertos los hechos alegados por los interesados o la naturaleza del procedimiento lo exija, el instructor del mismo acordará la apertura de un período de prueba por un plazo no superior a treinta días ni inferior a diez, a fin de que puedan practicarse cuantas juzgue pertinentes. Asimismo, cuando lo considere necesario, el instructor, a petición de los interesados, podrá decidir la apertura de un período extraordinario de prueba por un plazo no superior a diez días. 3. El instructor del procedimiento sólo podrá rechazar las pruebas propuestas por los interesados cuando sean manifiestamente improcedentes o innecesarias, mediante resolución motivada. 20 \f 3 bis. Cuando el interesado alegue discriminación y aporte indicios fundados sobre su existencia, corresponderá a la persona a quien se impute la situación discriminatoria la aportación de una justificación objetiva y razonable, suficientemente probada, de las medidas adoptadas y de su proporcionalidad. A los efectos de lo dispuesto en el párrafo anterior, el órgano administrativo podrá recabar informe de los organismos públicos competentes en materia de igualdad. 4. En los procedimientos de carácter sancionador, los hechos declarados probados por resoluciones judiciales penales firmes vincularán a las Administraciones Públicas respecto de los procedimientos sancionadores que substancien. 5. Los documentos formalizados por los funcionarios a los que se reconoce la condición de autoridad y en los que, observándose los requisitos legales correspondientes se recojan los hechos constatados por aquéllos harán prueba de éstos salvo que se acredite lo contrario. 6. Cuando la prueba consista en la emisión de un informe de un órgano administrativo, organismo público o Entidad de derecho público, se entenderá que éste tiene carácter preceptivo. 7. Cuando la valoración de las pruebas practicadas pueda constituir el fundamento básico de la decisión que se adopte en el procedimiento, por ser pieza imprescindible para la correcta evaluación de los hechos, deberá incluirse en la propuesta de resolución. CAPÍTULO V FINALIZACIÓN DEL PROCEDIMIENTO SECCIÓN 1.ª DISPOSICIONES GENERALES ARTÍCULO 85. TERMINACIÓN EN LOS PROCEDIMIENTOS SANCIONADORES. 1. Iniciado un procedimiento sancionador, si el infractor reconoce su responsabilidad, se podrá resolver el procedimiento con la imposición de la sanción que proceda. 2. Cuando la sanción tenga únicamente carácter pecuniario o bien quepa imponer una sanción pecuniaria y otra de carácter no pecuniario pero se ha justificado la improcedencia de la segunda, el pago voluntario por el presunto responsable, en cualquier momento anterior a la resolución, implicará la terminación del procedimiento, salvo en lo relativo a la reposición de la situación alterada o a la determinación de la indemnización por los daños y perjuicios causados por la comisión de la infracción. 3. En ambos casos, cuando la sanción tenga únicamente carácter pecuniario, el órgano competente para resolver el procedimiento aplicará reducciones de, al menos, el 20 % sobre el importe de la sanción propuesta, siendo éstos acumulables entre sí."
+    },
+    {
+      "titulo": "12. ARTÍCULO 89",
+      "contenido": "Las citadas reducciones, deberán estar determinadas en iniciación del procedimiento y su efectividad estará condicionada al desistimiento o renuncia de cualquier acción o recurso en vía administrativa contra la sanción. la notificación de El porcentaje de reducción previsto en este apartado podrá ser incrementado reglamentariamente. 21 \f SECCIÓN 2.ª RESOLUCIÓN ARTÍCULO 89. PROPUESTA DE RESOLUCIÓN EN LOS PROCEDIMIENTOS DE CARÁCTER SANCIONADOR. 1. El órgano instructor resolverá la finalización del procedimiento, con archivo de las actuaciones, sin que sea necesaria la formulación de la propuesta de resolución, cuando en la instrucción procedimiento se ponga de manifiesto que concurre alguna de las siguientes circunstancias: a) La inexistencia de los hechos que pudieran constituir la infracción. b) Cuando los hechos no resulten acreditados. c) Cuando los hechos probados no constituyan, de modo manifiesto, infracción administrativa. d) Cuando no exista o no se haya podido identificar a la persona o personas responsables o bien aparezcan exentos de responsabilidad. e) Cuando se concluyera, en cualquier momento, que ha prescrito la infracción. 2. En el caso de procedimientos de carácter sancionador, una vez concluida la instrucción del procedimiento, el órgano instructor formulará una propuesta de resolución que deberá ser notificada a los interesados. La propuesta de resolución deberá indicar la puesta de manifiesto del procedimiento y el plazo para formular alegaciones y presentar los documentos e informaciones que se estimen pertinentes. 3. En la propuesta de resolución se fijarán de forma motivada los hechos que se consideren probados y su exacta calificación jurídica, se determinará la infracción que, en su caso, aquéllos constituyan, la persona o personas responsables y la sanción que se proponga, la valoración de las pruebas practicadas, en especial aquellas que constituyan los fundamentos básicos de la decisión, así como las medidas provisionales que, en su caso, se hubieran adoptado. Cuando la instrucción concluya la inexistencia de infracción o responsabilidad y no se haga uso de la facultad prevista en el apartado primero, la propuesta declarará esa circunstancia. ARTÍCULO 90. ESPECIALIDADES DE LA RESOLUCIÓN EN LOS PROCEDIMIENTOS SANCIONADORES. 1. En el caso de procedimientos de carácter sancionador, además del contenido previsto en los dos artículos anteriores, la resolución incluirá la valoración de las pruebas practicadas, en especial aquellas que constituyan los fundamentos básicos de la decisión, fijarán los hechos y, en su caso, la persona o personas responsables, la infracción o infracciones cometidas y la sanción o sanciones que se imponen, o bien la declaración de no existencia de infracción o responsabilidad. 2. En la resolución no se podrán aceptar hechos distintos de los determinados en el curso del procedimiento, con independencia de su diferente valoración jurídica. No obstante, cuando el órgano competente para resolver considere que la infracción o la sanción revisten mayor gravedad que la determinada en la propuesta de resolución, se notificará al inculpado para que aporte cuantas alegaciones estime convenientes en el plazo de quince días. 3. La resolución que ponga fin al procedimiento será ejecutiva cuando no quepa contra ella ningún recurso ordinario en vía administrativa, pudiendo adoptarse en la misma las disposiciones cautelares precisas para garantizar su eficacia en tanto no sea ejecutiva y que podrán consistir en el mantenimiento de las medidas provisionales que en su caso se hubieran adoptado."
+    },
+    {
+      "titulo": "13. CAPÍTULO VI",
+      "contenido": "22 \f Cuando la resolución sea ejecutiva, se podrá suspender cautelarmente, si el interesado manifiesta a la Administración su intención de interponer recurso contencioso- administrativo contra la resolución firme en vía administrativa. Dicha suspensión cautelar finalizará cuando: a) Haya transcurrido el plazo legalmente previsto sin que el interesado haya interpuesto recurso contencioso-administrativo. b) Habiendo el interesado interpuesto recurso contencioso-administrativo: 1º. No se haya solicitado en el mismo trámite la suspensión cautelar de la resolución impugnada. 2º. El órgano judicial se pronuncie sobre la suspensión cautelar solicitada, en los términos previstos en ella. 4. Cuando las conductas sancionadas hubieran causado daños o perjuicios a las Administraciones y la cuantía destinada a indemnizar estos daños no hubiera quedado determinada en el expediente, se fijará mediante un procedimiento complementario, cuya resolución será inmediatamente ejecutiva. Este procedimiento será susceptible de terminación convencional, pero ni ésta ni la aceptación por el infractor de la resolución que pudiera recaer implicarán el reconocimiento voluntario de su responsabilidad. La resolución del procedimiento pondrá fin a la vía administrativa. CAPÍTULO VI DE LA TRAMITACIÓN SIMPLIFICADA DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN ARTÍCULO 96. TRAMITACIÓN SIMPLIFICADA DEL PROCEDIMIENTO ADMINISTRATIVO COMÚN. 5. En el caso de procedimientos de naturaleza sancionadora, se podrá adoptar la tramitación simplificada del procedimiento cuando el órgano competente para iniciar el procedimiento considere que, de acuerdo con lo previsto en su normativa reguladora, existen elementos de juicio suficientes para calificar la infracción como leve, sin que quepa la oposición expresa por parte del interesado prevista en el apartado 2. CAPÍTULO VII EJECUCIÓN ARTÍCULO 98. EJECUTORIEDAD. 1. Los actos de las Administraciones Públicas sujetos al Derecho Administrativo serán inmediatamente ejecutivos, salvo que: a) Se produzca la suspensión de la ejecución del acto. b) Se trate de una resolución de un procedimiento de naturaleza sancionadora contra la que quepa algún recurso en vía administrativa, incluido el potestativo de reposición. c) Una disposición establezca lo contrario. d) Se necesite aprobación o autorización superior. 2. Cuando de una resolución administrativa, o de cualquier otra forma de finalización del procedimiento administrativo prevista en esta ley, nazca una obligación de pago derivada de una sanción pecuniaria, multa o cualquier otro derecho que haya de abonarse a la Hacienda pública, éste se efectuará preferentemente, salvo que se justifique la imposibilidad de hacerlo, utilizando alguno de los medios electrónicos siguientes: a) Tarjeta de crédito y débito. b) Transferencia bancaria. c) Domiciliación bancaria. d) Cualesquiera otros que se autoricen por el órgano competente en materia de Hacienda Pública. 23 \f TÍTULO V DE LA REVISIÓN DE LOS ACTOS EN VÍA ADMINISTRATIVA CAPÍTULO II RECURSOS ADMINISTRATIVOS PRINCIPIOS GENERALES ARTÍCULO 114. FIN DE LA VÍA ADMINISTRATIVA. 1. Ponen fin a la vía administrativa: F) La resolución de los procedimientos complementarios en materia sancionadora a los que se refiere el artículo 90.4. 24 \f LEY 4/2017, DE 13 DE JULIO, DEL SUELO Y DE LOS ESPACIOS NATURALES PROTEGIDOS DE CANARIAS. TÍTULO PRELIMINAR CAPÍTULO I OBJETO Y DEFINICIONES ARTÍCULO 1. OBJETO."
+    },
+    {
+      "titulo": "14. CAPÍTULO III",
+      "contenido": "La presente ley tiene por objeto regular en el ámbito de la Comunidad Autónoma de Canarias: a) El régimen jurídico general de los recursos naturales, en particular del suelo, la ordenación del territorio y la ordenación urbanística. b) La coordinación de las políticas públicas relativas a la planificación y gestión del territorio y a la protección del medioambiente. c) La intervención en las actividades públicas y privadas con incidencia relevante sobre el territorio y los recursos naturales. d) La protección de la legalidad urbanística mediante el ejercicio, en su caso, de la potestad sancionadora. 25 \f LEY 40/2015, DE 1 DE OCTUBRE, DE RÉGIMEN JURÍDICO DEL SECTOR PÚBLICO. TITULO PRELIMINAR CAPÍTULO III PRINCIPIOS DE LA POTESTAD SANCIONADORA ARTÍCULO 25. PRINCIPIO DE LEGALIDAD. 1. La potestad sancionadora de las Administraciones Públicas se ejercerá cuando haya sido expresamente reconocida por una norma con rango de Ley, con aplicación del procedimiento previsto para su ejercicio y de acuerdo con lo establecido en esta Ley y en la Ley de Procedimiento Administrativo Común de las Administraciones Públicas y, cuando se trate de Entidades Locales, de conformidad con lo dispuesto en el Título XI de la Ley 7/1985, de 2 de abril. 2. El ejercicio de la potestad sancionadora corresponde a los órganos administrativos que la tengan expresamente atribuida, por disposición de rango legal o reglamentario. 3. Las disposiciones de este Capítulo serán extensivas al ejercicio por las Administraciones Públicas de su potestad disciplinaria respecto del personal a su servicio, cualquiera que sea la naturaleza jurídica de la relación de empleo. 4. Las disposiciones de este capítulo no serán de aplicación al ejercicio por las Administraciones Públicas de la potestad sancionadora respecto de quienes estén vinculados a ellas por relaciones reguladas por la legislación de contratos del sector público o por la legislación patrimonial de las Administraciones Públicas. ARTÍCULO 26. IRRETROACTIVIDAD. 1. Serán de aplicación las disposiciones sancionadoras vigentes en el momento de producirse los hechos que constituyan infracción administrativa. 2. Las disposiciones sancionadoras producirán efecto retroactivo en cuanto favorezcan al presunto infractor o al infractor, tanto en lo referido a la tipificación de la infracción como a la sanción y a sus plazos de prescripción, incluso respecto de las sanciones pendientes de cumplimiento al entrar en vigor la nueva disposición. ARTÍCULO 27. PRINCIPIO DE TIPICIDAD. 1. Sólo constituyen infracciones administrativas las vulneraciones del ordenamiento jurídico previstas como tales infracciones por una Ley, sin perjuicio de lo dispuesto para la Administración Local en el Título XI de la Ley 7/1985, de 2 de abril. Las infracciones administrativas se clasificarán por la Ley en leves, graves y muy graves. 3. Únicamente por la comisión de infracciones administrativas podrán imponerse sanciones que, en todo caso, estarán delimitadas por la Ley. 4. Las disposiciones reglamentarias de desarrollo podrán introducir especificaciones o graduaciones al cuadro de las infracciones o sanciones establecidas legalmente que, sin constituir nuevas infracciones o sanciones, ni alterar la naturaleza o límites de las que la Ley contempla, contribuyan a la más correcta identificación de las conductas o a la más precisa determinación de las sanciones correspondientes. 5. Las normas definidoras de infracciones y sanciones no serán susceptibles de aplicación analógica. 26 \fARTÍCULO 28. RESPONSABILIDAD. 1."
+    },
+    {
+      "titulo": "15. título d",
+      "contenido": "Sólo podrán ser sancionadas por hechos constitutivos de infracción administrativa las personas físicas y jurídicas, así como, cuando una Ley les reconozca capacidad de obrar, los grupos de afectados, las uniones y entidades sin personalidad jurídica y los patrimonios independientes o autónomos, que resulten responsables de los mismos a título de dolo o culpa. 2. Las responsabilidades administrativas que se deriven de la comisión de una infracción serán compatibles con la exigencia al infractor de la reposición de la situación alterada por el mismo a su estado originario, así como con la indemnización por los daños y perjuicios causados, que será determinada y exigida por el órgano al que corresponda el ejercicio de la potestad sancionadora. De no satisfacerse la indemnización en el plazo que al efecto se determine en función de su cuantía, se procederá en la forma prevista en el artículo 101 de la Ley del Procedimiento Administrativo Común de las Administraciones Públicas. 3. Cuando el cumplimiento de una obligación establecida por una norma con rango de Ley corresponda a varias personas conjuntamente, responderán de forma solidaria de las infracciones que, en su caso, se cometan y de las sanciones que se impongan. No obstante, cuando la sanción sea pecuniaria y sea posible se individualizará en la resolución en función del grado de participación de cada responsable. 4. Las leyes reguladoras de los distintos regímenes sancionadores podrán tipificar como infracción el incumplimiento de la obligación de prevenir la comisión de infracciones administrativas por quienes se hallen sujetos a una relación de dependencia o vinculación. Asimismo, podrán prever los supuestos en que determinadas personas responderán del pago de las sanciones pecuniarias impuestas a quienes de ellas dependan o estén vinculadas. ARTÍCULO 29. PRINCIPIO DE PROPORCIONALIDAD. 1. Las sanciones administrativas, sean o no de naturaleza pecuniaria, en ningún caso podrán implicar, directa o subsidiariamente, privación de libertad. 2. El establecimiento de sanciones pecuniarias deberá prever que la comisión de las infracciones tipificadas no resulte más beneficioso para el infractor que el cumplimiento de las normas infringidas. 3. En la determinación normativa del régimen sancionador, así como en la imposición de sanciones por las Administraciones Públicas se deberá observar la debida idoneidad y necesidad de la sanción a imponer y su adecuación a la gravedad del hecho constitutivo de la infracción. La graduación de la sanción considerará especialmente los siguientes criterios: a) El grado de culpabilidad o la existencia de intencionalidad. b) La continuidad o persistencia en la conducta infractora. c) La naturaleza de los perjuicios causados. d) La reincidencia, por comisión en el término de un año de más de una infracción de la misma naturaleza cuando así haya sido declarado por resolución firme en vía administrativa. 4. Cuando lo justifique la debida adecuación entre la sanción que deba aplicarse con la gravedad del hecho constitutivo de la infracción y las circunstancias concurrentes, el órgano competente para resolver podrá imponer la sanción en el grado inferior. 5. Cuando de la comisión de una infracción derive necesariamente la comisión de otra u otras, se deberá imponer únicamente la sanción correspondiente a la infracción más grave cometida. 27 \f 6."
+    },
+    {
+      "titulo": "16. ARTÍCULO 30",
+      "contenido": "Será sancionable, como infracción continuada, la realización de una pluralidad de acciones u omisiones que infrinjan el mismo o semejantes preceptos administrativos, en ejecución de un plan preconcebido o aprovechando idéntica ocasión. ARTÍCULO 30. PRESCRIPCIÓN. 1. Las infracciones y sanciones prescribirán según lo dispuesto en las leyes que las establezcan. Si éstas no fijan plazos de prescripción, las infracciones muy graves prescribirán a los tres años, las graves a los dos años y las leves a los seis meses; las sanciones impuestas por faltas muy graves prescribirán a los tres años, las impuestas por faltas graves a los dos años y las impuestas por faltas leves al año. 2. El plazo de prescripción de las infracciones comenzará a contarse desde el día en que la infracción se hubiera cometido. En el caso de infracciones continuadas o permanentes, el plazo comenzará a correr desde que finalizó la conducta infractora. Interrumpirá la prescripción la iniciación, con conocimiento del interesado, de un procedimiento administrativo de naturaleza sancionadora, reiniciándose el plazo de prescripción si el expediente sancionador estuviera paralizado durante más de un mes por causa no imputable al presunto responsable. 3. El plazo de prescripción de las sanciones comenzará a contarse desde el día siguiente a aquel en que sea ejecutable la resolución por la que se impone la sanción o haya transcurrido el plazo para recurrirla. Interrumpirá la prescripción la iniciación, con conocimiento del interesado, del procedimiento de ejecución, volviendo a transcurrir el plazo si aquél está paralizado durante más de un mes por causa no imputable al infractor. En el caso de desestimación presunta del recurso de alzada interpuesto contra la resolución por la que se impone la sanción, el plazo de prescripción de la sanción comenzará a contarse desde el día siguiente a aquel en que finalice el plazo legalmente previsto para la resolución de dicho recurso. ARTÍCULO 31. CONCURRENCIA DE SANCIONES. 1. No podrán sancionarse los hechos que lo hayan sido penal o administrativamente, en los casos en que se aprecie identidad del sujeto, hecho y fundamento. 2. Cuando un órgano de la Unión Europea hubiera impuesto una sanción por los mismos hechos, y siempre que no concurra la identidad de sujeto y fundamento, el órgano competente para resolver deberá tenerla en cuenta a efectos de graduar la que, en su caso, deba imponer, pudiendo minorarla, sin perjuicio de declarar la comisión de la infracción. 28 \f LEY 42/2010, DE 30 DE DICIEMBRE, POR LA QUE SE MODIFICA LA LEY 28/2005, DE 26 DE DICIEMBRE, DE MEDIDAS SANITARIAS FRENTE AL TABAQUISMO Y REGULADORA DE LA VENTA, EL SUMINISTRO, EL CONSUMO Y LA PUBLICIDAD DE LOS PRODUCTOS DEL TABACO. ARTÍCULO ÚNICO. MODIFICACIÓN DE LA LEY 28/2005, DE 26 DE DICIEMBRE, DE MEDIDAS SANITARIAS FRENTE AL TABAQUISMO Y REGULADORA DE LA VENTA, EL SUMINISTRO, EL CONSUMO Y LA PUBLICIDAD DE LOS PRODUCTOS DEL TABACO. 29 \f LEY 7/1985, DE 2 DE ABRIL, REGULADORA DE LAS BASES DEL RÉGIMEN LOCAL TÍTULO II EL MUNICIPIO CAPÍTULO III COMPETENCIAS ARTÍCULO 25. 1. El Municipio ejercerá en todo caso como competencias propias, en los términos de la legislación del Estado y de las Comunidades Autónomas, en las siguientes materias: B) Medio ambiente urbano: en particular, parques y jardines públicos, gestión de los residuos sólidos urbanos y protección contra la contaminación acústica, lumínica y atmosférica en las zonas urbanas. ARTÍCULO 26. 1."
+    },
+    {
+      "titulo": "17. ARTÍCULO 27",
+      "contenido": "Los Municipios deberán prestar, en todo caso, los servicios siguientes: D) En los Municipios con población superior a 50.000 habitantes, además: transporte colectivo urbano de viajeros y medio ambiente urbano. ARTÍCULO 27. 2. Con el objeto de evitar duplicidades administrativas, mejorar la transparencia de los servicios públicos y el servicio a la ciudadanía y, en general, contribuir a los procesos de racionalización administrativa, generando un ahorro neto de recursos, la Administración del Estado y las de las Comunidades Autónomas podrán delegar, siguiendo criterios homogéneos, entre otras, las siguientes competencias: B) Protección del medio natural. 30 \f LEY ORGÁNICA 1/2018, DE 5 DE NOVIEMBRE, DE REFORMA DEL ESTATUTO DE AUTONOMÍA DE CANARIAS. TÍTULO I DE LOS DERECHOS, DEBERES Y PRINCIPIOS RECTORES CAPÍTULO III PRINCIPIOS RECTORES ARTÍCULO 37. PRINCIPIOS RECTORES. Los poderes públicos canarios asumen como principios rectores de su política: 15. La preservación y mejora de la calidad medioambiental y la biodiversidad del Archipiélago como patrimonio común para mitigar los efectos del cambio climático. 28. El fomento de la actividad turística y su ordenación se llevarán a cabo con el objetivo de lograr un modelo de desarrollo sostenible, especialmente respetuoso con el medio ambiente, el patrimonio cultural canario y el territorio. TÍTULO III ORGANIZACIÓN TERRITORIAL DE CANARIAS CAPÍTULO I DE LAS ISLAS Y LOS CABILDOS INSULARES ARTÍCULO 70. COMPETENCIAS INSULARES. 1. A las islas les corresponde el ejercicio de las competencias que les son reconocidas como propias; las que se les transfieran o deleguen, y la colaboración en el desarrollo y la ejecución de los acuerdos adoptados por el Gobierno de Canarias, en los términos que establezcan las leyes del Parlamento. Las transferencias y delegaciones llevarán incorporadas los medios económicos, materiales y personales que correspondan. 2. Los cabildos insulares, como instituciones de la Comunidad Autónoma, ejercerán funciones ejecutivas de carácter insular en el marco y dentro de los límites de la legislación aplicable, en las siguientes materias: N) Protección del medio ambiente. CAPÍTULO II DE LOS MUNICIPIOS CANARIOS ARTÍCULO 75. LOS MUNICIPIOS. 3. En todo caso, los municipios, de acuerdo con el apartado anterior, podrán ejercer competencias, entre otras, en las siguientes materias: 3.1 G) Medio ambiente. 31 \f TÍTULO V DE LAS COMPETENCIAS CAPÍTULO IX ORDENACIÓN DE LOS RECURSOS NATURALES ARTÍCULO 153. MEDIO AMBIENTE. 1. Corresponde a la Comunidad Autónoma de Canarias la competencia de desarrollo legislativo y de ejecución de la legislación estatal en materia de medio ambiente, lo que incluye en todo caso: a) El establecimiento y la regulación de los instrumentos de planificación ambiental y del procedimiento de tramitación y aprobación de estos instrumentos. 2. Corresponde a la Comunidad Autónoma de Canarias la competencia para el establecimiento de normas adicionales de protección sobre las materias consideradas como básicas por la legislación estatal. 3. La Comunidad Autónoma de Canarias contará con un servicio de inspección de instalaciones y actividades para la tutela y protección de la Naturaleza en el marco de sus competencias. ARTÍCULO 154. ESPACIOS NATURALES PROTEGIDOS. 1. Corresponde a la Comunidad Autónoma de Canarias la competencia exclusiva en materia de espacios naturales protegidos en el ámbito espacial de Canarias. 2."
+    },
+    {
+      "titulo": "18. REAL DECRETO 1367/2007, DE 19 DE OCTUBRE, POR EL QUE",
+      "contenido": "La iniciativa para la declaración de un Parque Nacional corresponderá al Estado o a la Comunidad Autónoma, de acuerdo con lo establecido en la legislación estatal. La declaración y delimitación de los Parques Nacionales en Canarias requiere informe preceptivo de la Comisión Bilateral Canarias-Estado. La gestión de los Parques Nacionales corresponde a la Comunidad Autónoma, sin perjuicio de las competencias del Estado con relación a la red de Parques Nacionales. 32 \f REAL DECRETO 1367/2007, DE 19 DE OCTUBRE, POR EL QUE SE DESARROLLA LA LEY 37/2003, DE 17 DE NOVIEMBRE, DEL RUIDO, EN LO REFERENTE A ZONIFICACIÓN ACÚSTICA, OBJETIVOS DE CALIDAD Y EMISIONES ACÚSTICAS. ANEXO I A. ÍNDICES DE RUIDO 1. Periodos temporales de evaluación. Se establecen los tres periodos temporales de evaluación diarios siguientes: 1º) Periodo día (d): al periodo día le corresponden 12 horas; 2º) Periodo tarde (e): al periodo tarde le corresponden 4 horas; 3º) Periodo noche (n): al periodo noche le corresponden 8 horas. La administración competente puede optar por reducir el período tarde en una o dos horas y alargar los períodos día y/o noche en consecuencia, siempre que dicha decisión se aplique a todas las fuentes, y que facilite al Ministerio de Medio Ambiente información sobre la diferencia sistemática con respecto a la opción por defecto. En el caso de la modificación de los periodos temporales de evaluación, esta modificación debe reflejarse en la expresión que determina los índices de ruido. b) Los valores horarios de comienzo y fin de los distintos periodos temporales de evaluación son: periodo día de 7.00 a 19.00; periodo tarde de19.00 a 23.00 y periodo noche de 23.00 a 7.00, hora local. La administración competente podrá modificar la hora de comienzo del periodo día y, por consiguiente, cuándo empiezan los periodos tarde y noche. La decisión de modificación deberá aplicarse a todas las fuentes de ruido. c) A efectos de calcular los promedios a largo plazo, un año corresponde al año considerado para la emisión de sonido y a un año medio por lo que se refiere a las circunstancias meteorológicas. 33 \f REAL DECRETO 258/1989, DE 10 DE MARZO, POR EL QUE SE ESTABLECE LA NORMATIVA GENERAL SOBRE VERTIDOS DE SUSTANCIAS PELIGROSAS DESDE TIERRA AL MAR. ARTÍCULO 1.º AMBITO DE APLICACIÓN. 1. El presente Real Decreto será de aplicación a todo vertido, efectuado desde tierra en las aguas interiores y en el mar territorial español, que pueda contener una o varias de las sustancias peligrosas indicadas en el anexo II. Todo vertido de estas características requerirá una autorización previa expedida por el órgano correspondiente de la Comunidad Autónoma competente, en su caso, sin perjuicio del otorgamiento por la Administración del Estado de la concesión del dominio público que resulte afectado. 34"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Protección del medio ambiente. Normativa\"]\n  A --> N1[\"LEY ORGÁNICA 1/2018, DE 5 DE NOVIEMBRE, \"]\n  A --> N2[\"TÍTULO I\"]\n  A --> N3[\"CAPÍTULO II\"]\n  A --> N4[\"ARTÍCULO 28\"]\n  A --> N5[\"ARTÍCULO 29\"]\n  A --> N6[\"Artículo 28\"]\n  A --> N7[\"artículo 56\"]\n  A --> N8[\"disposición de\"]\n  A --> N9[\"ARTÍCULO 60\"]\n  A --> N10[\"ARTÍCULO 63\"]\n  A --> N11[\"CAPÍTULO IV\"]\n  A --> N12[\"ARTÍCULO 89\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Protección del medio ambiente. Normativa sobre em…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "LEY ORGÁNICA 1/2018, DE 5 DE NOVIEMBRE,…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "TÍTULO I",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "CAPÍTULO II",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "ARTÍCULO 28",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "ARTÍCULO 29",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "Artículo 28",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "artículo 56",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "disposición de",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "ARTÍCULO 60",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "ARTÍCULO 63",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "CAPÍTULO IV",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s12",
+        "texto": "ARTÍCULO 89",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s13",
+        "texto": "CAPÍTULO VI",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s14",
+        "texto": "CAPÍTULO III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s15",
+        "texto": "título d",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s16",
+        "texto": "ARTÍCULO 30",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s17",
+        "texto": "ARTÍCULO 27",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s18",
+        "texto": "REAL DECRETO 1367/2007, DE 19 DE OCTUBR…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p35-01",
-            "enunciado": "El derecho al medio ambiente se reconoce en el artículo:",
-            "opciones": ["35 CE", "45 CE", "53 CE", "139 CE"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 45 de la Constitución reconoce el derecho a un medio ambiente adecuado y el deber de conservarlo."
-        },
-        {
-            "id": "p35-02",
-            "enunciado": "La legislación básica de medio ambiente corresponde a:",
-            "opciones": ["Las Comunidades Autónomas", "El Estado (art. 149.1.23ª CE)", "Los municipios", "La Unión Europea exclusivamente"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 149.1.23ª CE atribuye al Estado la legislación básica sobre protección del medio ambiente."
-        },
-        {
-            "id": "p35-03",
-            "enunciado": "La calidad del aire y la protección de la atmósfera se regulan por:",
-            "opciones": ["La Ley 37/2003", "La Ley 34/2007", "La Ley 26/2007", "El RDL 1/2001"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Ley 34/2007 regula la calidad del aire y la protección de la atmósfera."
-        },
-        {
-            "id": "p35-04",
-            "enunciado": "La contaminación acústica se regula por:",
-            "opciones": ["La Ley 26/2007", "La Ley 37/2003, del Ruido", "La Ley 34/2007", "El RDL 6/2015"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Ley 37/2003, del Ruido, regula la contaminación acústica."
-        },
-        {
-            "id": "p35-05",
-            "enunciado": "Los grandes municipios deben elaborar:",
-            "opciones": ["Solo ordenanzas", "Mapas de ruido y planes de acción", "Solo informes anuales", "Solo censos"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Los Ayuntamientos de las grandes ciudades elaboran mapas de ruido y planes de acción para reducirlo."
-        },
-        {
-            "id": "p35-06",
-            "enunciado": "Las infracciones ambientales se clasifican en:",
-            "opciones": ["Graves y leves", "Muy graves, graves y leves", "Penales y administrativas", "Mayores y menores"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Las infracciones ambientales se clasifican en muy graves, graves y leves según el daño causado."
-        },
-        {
-            "id": "p35-07",
-            "enunciado": "Además de la sanción, una infracción ambiental conlleva:",
-            "opciones": ["Solo amonestación", "La obligación de reparar el daño ambiental causado", "Una felicitación", "Multa diferida"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Junto a la sanción se impone la obligación de reparar el daño ambiental causado (Ley 26/2007)."
-        },
-        {
-            "id": "p35-08",
-            "enunciado": "La unidad de la Guardia Civil especializada en medio ambiente es:",
-            "opciones": ["EMUME", "SEPRONA", "GAR", "UPR"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El SEPRONA es el Servicio de Protección de la Naturaleza de la Guardia Civil."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      },
+      {
+        "desde": "root",
+        "hasta": "s12"
+      },
+      {
+        "desde": "root",
+        "hasta": "s13"
+      },
+      {
+        "desde": "root",
+        "hasta": "s14"
+      },
+      {
+        "desde": "root",
+        "hasta": "s15"
+      },
+      {
+        "desde": "root",
+        "hasta": "s16"
+      },
+      {
+        "desde": "root",
+        "hasta": "s17"
+      },
+      {
+        "desde": "root",
+        "hasta": "s18"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc35-01",
+      "pregunta": "¿Cuál es el objetivo de la Ley 1/1999 de Residuos de Canarias?",
+      "respuesta": "Garantizar la protección del medio ambiente y la salud de las personas"
+    },
+    {
+      "id": "fc35-02",
+      "pregunta": "¿Qué establece la Directiva 2008/98/CE del Parlamento Europeo y del Consejo?",
+      "respuesta": "Medidas para proteger el medio ambiente y la salud humana mediante la prevención o reducción de los impactos adversos de la generación y gestión de los residuos"
+    },
+    {
+      "id": "fc35-03",
+      "pregunta": "¿Cuál es el objeto de la Ley 22/2011 de Residuos y Suelos Contaminados?",
+      "respuesta": "Regular la gestión de los residuos y regular el régimen jurídico de los suelos contaminados"
+    },
+    {
+      "id": "fc35-04",
+      "pregunta": "¿Qué establece la Ley 28/2005 de Medidas Sanitarias frente al Tabaquismo?",
+      "respuesta": "Limitaciones en la venta, suministro y consumo de productos del tabaco, así como regular la publicidad y promoción de dichos productos"
+    },
+    {
+      "id": "fc35-05",
+      "pregunta": "¿Cuál es el objeto de la Ley 34/2007 de Calidad del Aire y Protección de la Atmósfera?",
+      "respuesta": "Prevenir, vigilar y reducir la contaminación atmosférica"
+    },
+    {
+      "id": "fc35-06",
+      "pregunta": "¿Qué establece la Ley 37/2003 del Ruido?",
+      "respuesta": "Prevenir, vigilar y reducir la contaminación acústica"
+    },
+    {
+      "id": "fc35-07",
+      "pregunta": "¿Cuál es el objetivo de la Ley 4/2017 del Suelo y de los Espacios Naturales Protegidos de Canarias?",
+      "respuesta": "Regular el régimen jurídico del suelo y de los espacios naturales protegidos de Canarias"
+    },
+    {
+      "id": "fc35-08",
+      "pregunta": "¿Qué establece la Ley 40/2015 de Régimen Jurídico del Sector Público?",
+      "respuesta": "Regular el régimen jurídico del sector público"
+    },
+    {
+      "id": "fc35-09",
+      "pregunta": "¿Cuál es el objeto de la Ley 42/2010 que modifica la Ley 28/2005 de Medidas Sanitarias frente al Tabaquismo?",
+      "respuesta": "Modificar la Ley 28/2005 de Medidas Sanitarias frente al Tabaquismo"
+    },
+    {
+      "id": "fc35-10",
+      "pregunta": "¿Qué establece la Ley 7/1985 Reguladora de las Bases del Régimen Local?",
+      "respuesta": "Regular las bases del régimen local"
+    },
+    {
+      "id": "fc35-11",
+      "pregunta": "¿Cuál es el objetivo de la Ley Orgánica 1/2018 de Reforma del Estatuto de Autonomía de Canarias?",
+      "respuesta": "Reformar el Estatuto de Autonomía de Canarias"
+    },
+    {
+      "id": "fc35-12",
+      "pregunta": "¿Qué establece el Real Decreto 1367/2007 que desarrolla la Ley 37/2003 del Ruido?",
+      "respuesta": "Desarrollar la Ley 37/2003 del Ruido en lo referente a zonificación acústica, objetivos de calidad y emisiones acústicas"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p35-01",
+      "enunciado": "¿Cuál es el objetivo de la Ley 1/1999 de Residuos de Canarias?",
+      "opciones": [
+        "a) Garantizar la protección del medio ambiente y la salud de las personas",
+        "b) Regular la gestión de los residuos",
+        "c) Establecer limitaciones en la venta de productos del tabaco",
+        "d) Prevenir la contaminación atmosférica"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Ley 1/1999 de Residuos de Canarias tiene por objeto garantizar la protección del medio ambiente y la salud de las personas."
+    },
+    {
+      "id": "p35-02",
+      "enunciado": "¿Qué establece la Directiva 2008/98/CE del Parlamento Europeo y del Consejo?",
+      "opciones": [
+        "a) Medidas para proteger el medio ambiente y la salud humana mediante la prevención o reducción de los impactos adversos de la generación y gestión de los residuos",
+        "b) Regulación de la gestión de los residuos",
+        "c) Establecimiento de limitaciones en la venta de productos del tabaco",
+        "d) Previsión de la contaminación atmosférica"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Directiva 2008/98/CE del Parlamento Europeo y del Consejo establece medidas para proteger el medio ambiente y la salud humana mediante la prevención o reducción de los impactos adversos de la generación y gestión de los residuos."
+    },
+    {
+      "id": "p35-03",
+      "enunciado": "¿Cuál es el objeto de la Ley 22/2011 de Residuos y Suelos Contaminados?",
+      "opciones": [
+        "a) Regular la gestión de los residuos y regular el régimen jurídico de los suelos contaminados",
+        "b) Establecer limitaciones en la venta de productos del tabaco",
+        "c) Prevenir la contaminación atmosférica",
+        "d) Garantizar la protección del medio ambiente y la salud de las personas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Ley 22/2011 de Residuos y Suelos Contaminados tiene por objeto regular la gestión de los residuos y regular el régimen jurídico de los suelos contaminados."
+    },
+    {
+      "id": "p35-04",
+      "enunciado": "¿Qué establece la Ley 28/2005 de Medidas Sanitarias frente al Tabaquismo?",
+      "opciones": [
+        "a) Limitaciones en la venta, suministro y consumo de productos del tabaco, así como regular la publicidad y promoción de dichos productos",
+        "b) Regulación de la gestión de los residuos",
+        "c) Previsión de la contaminación atmosférica",
+        "d) Garantizar la protección del medio ambiente y la salud de las personas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Ley 28/2005 de Medidas Sanitarias frente al Tabaquismo establece limitaciones en la venta, suministro y consumo de productos del tabaco, así como regular la publicidad y promoción de dichos productos."
+    },
+    {
+      "id": "p35-05",
+      "enunciado": "¿Cuál es el objeto de la Ley 34/2007 de Calidad del Aire y Protección de la Atmósfera?",
+      "opciones": [
+        "a) Prevenir, vigilar y reducir la contaminación atmosférica",
+        "b) Regular la gestión de los residuos",
+        "c) Establecer limitaciones en la venta de productos del tabaco",
+        "d) Garantizar la protección del medio ambiente y la salud de las personas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Ley 34/2007 de Calidad del Aire y Protección de la Atmósfera tiene por objeto prevenir, vigilar y reducir la contaminación atmosférica."
+    },
+    {
+      "id": "p35-06",
+      "enunciado": "¿Qué establece la Ley 37/2003 del Ruido?",
+      "opciones": [
+        "a) Prevenir, vigilar y reducir la contaminación acústica",
+        "b) Regular la gestión de los residuos",
+        "c) Establecer limitaciones en la venta de productos del tabaco",
+        "d) Garantizar la protección del medio ambiente y la salud de las personas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Ley 37/2003 del Ruido establece la prevención, vigilancia y reducción de la contaminación acústica."
+    },
+    {
+      "id": "p35-07",
+      "enunciado": "¿Cuál es el objetivo de la Ley 4/2017 del Suelo y de los Espacios Naturales Protegidos de Canarias?",
+      "opciones": [
+        "a) Regular el régimen jurídico del suelo y de los espacios naturales protegidos de Canarias",
+        "b) Establecer limitaciones en la venta de productos del tabaco",
+        "c) Prevenir la contaminación atmosférica",
+        "d) Garantizar la protección del medio ambiente y la salud de las personas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Ley 4/2017 del Suelo y de los Espacios Naturales Protegidos de Canarias tiene por objeto regular el régimen jurídico del suelo y de los espacios naturales protegidos de Canarias."
+    },
+    {
+      "id": "p35-08",
+      "enunciado": "¿Qué establece la Ley 40/2015 de Régimen Jurídico del Sector Público?",
+      "opciones": [
+        "a) Regular el régimen jurídico del sector público",
+        "b) Establecer limitaciones en la venta de productos del tabaco",
+        "c) Prevenir la contaminación atmosférica",
+        "d) Garantizar la protección del medio ambiente y la salud de las personas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Ley 40/2015 de Régimen Jurídico del Sector Público establece el régimen jurídico del sector público."
+    }
+  ]
 }

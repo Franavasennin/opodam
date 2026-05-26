@@ -1,157 +1,502 @@
 {
-    "id": 22,
-    "titulo": "Las relaciones entre policía y sociedad. Policía comunitaria o de proximidad. Sistemas de patrullaje. Recogida y tratamiento de datos. Creación y gestión de archivos. Protección de datos de carácter personal",
-    "bloque": "especifico",
-    "secciones": [
-        {
-            "id": "s22-1",
-            "titulo": "Las relaciones entre policía y sociedad",
-            "contenido": "Las relaciones entre la policía y la sociedad parten de la idea de que la policía es una institución al servicio de la comunidad y depositaria de la confianza ciudadana. La policía debe observar un trato correcto y esmerado con los ciudadanos, atender requerimientos y prestar protección, evitando prácticas abusivas o discriminatorias. La interacción se basa en la legitimidad, la transparencia y la rendición de cuentas. Una sociedad democrática exige una policía cercana, profesional y respetuosa con los derechos y libertades, que actúe con criterios de servicio público y que mantenga canales abiertos de comunicación con la ciudadanía."
-        },
-        {
-            "id": "s22-2",
-            "titulo": "Policía comunitaria o de proximidad",
-            "contenido": "La policía comunitaria o de proximidad es un modelo de actuación policial orientado a integrar a la policía en la vida de los barrios y municipios, con presencia constante, conocimiento del entorno y trabajo cooperativo con vecinos, asociaciones, comercios y otros servicios públicos. Sus rasgos son: asignación territorial estable, prevención y resolución de problemas concretos, participación ciudadana, anticipación al delito y reducción del sentimiento de inseguridad. El policía de proximidad actúa como referente del barrio, promueve la mediación en pequeños conflictos, identifica necesidades de seguridad y canaliza la información hacia el resto del cuerpo y otras Administraciones."
-        },
-        {
-            "id": "s22-3",
-            "titulo": "Sistemas de patrullaje",
-            "contenido": "El patrullaje es la actividad operativa básica de la policía. Se distinguen varios sistemas: el patrullaje a pie, propio del modelo de proximidad, que favorece el contacto con la ciudadanía; el patrullaje motorizado (vehículo o moto), que permite mayor cobertura territorial y rapidez de respuesta; el patrullaje en bicicleta, frecuente en zonas peatonales y turísticas; el patrullaje a caballo o canino, en zonas concretas; y el patrullaje mixto, que combina varios sistemas. El patrullaje puede ser preventivo (presencia disuasoria), reactivo (respuesta a incidentes) o focalizado (orientado a un problema o lugar concreto), y se planifica en función del análisis de la actividad delictiva."
-        },
-        {
-            "id": "s22-4",
-            "titulo": "Recogida y tratamiento de datos. Creación y gestión de archivos",
-            "contenido": "La policía recoge y trata datos en el ejercicio de sus funciones: datos identificativos, biométricos, sobre antecedentes, denuncias, atestados, accidentes, fotografías o grabaciones. La recogida se realiza con sujeción al principio de finalidad, recogiéndose solo los datos necesarios para el ejercicio de las funciones policiales y respetando los derechos del interesado. La creación y gestión de los archivos policiales requiere disposición legal o reglamentaria que la habilite, definir el responsable del tratamiento, las finalidades, los datos tratados y las medidas de seguridad. Los archivos policiales tienen niveles de seguridad altos debido a la naturaleza sensible de la información."
-        },
-        {
-            "id": "s22-5",
-            "titulo": "Protección de datos de carácter personal",
-            "contenido": "La protección de datos personales se rige por el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD). Para los tratamientos con fines policiales se aplica la Ley Orgánica 7/2021, de 26 de mayo, que traspone la Directiva (UE) 2016/680. Los principios son: licitud, lealtad y transparencia; limitación de la finalidad; minimización; exactitud; limitación del plazo de conservación; integridad y confidencialidad; y responsabilidad proactiva. Los interesados disponen de los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad, con las modulaciones propias del tratamiento policial. La autoridad de control es la Agencia Española de Protección de Datos (AEPD)."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e22-1",
-            "titulo": "Sistemas de patrullaje",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Patrullaje] --> B[A pie - proximidad]\n    A --> C[Motorizado]\n    A --> D[Bicicleta]\n    A --> E[Mixto]\n    A --> F[Preventivo, reactivo, focalizado]"
-        },
-        {
-            "id": "e22-2",
-            "titulo": "Protección de datos",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Proteccion de datos] --> B[RGPD]\n    A --> C[LOPDGDD - LO 3/2018]\n    A --> D[LO 7/2021 - fines policiales]\n    A --> E[AEPD]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "Policía, sociedad y datos", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Policía y sociedad", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Policía de proximidad", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Sistemas de patrullaje", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Recogida y archivos", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Protección de datos", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Servicio público y confianza ciudadana", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Asignación territorial estable", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "A pie, motorizado, mixto", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Principio de finalidad", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Niveles de seguridad altos", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "RGPD y LO 3/2018", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "LO 7/2021 y AEPD", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n5", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 22,
+  "titulo": "Las relaciones entre policía y sociedad. Policía comunitaria o de proximidad. Sistemas de patrullaje. Recogida y tratamiento de datos. Creación y gestión de archivos. Protección de datos de carácter personal.",
+  "bloque": "especifico",
+  "secciones": [
+    {
+      "titulo": "1. LEY ORGÁNICA 3/2018, DE 5 DE DICIEMBRE, DE PROTECCIÓN DE DATOS PERSONALE",
+      "contenido": "BIBLIOGRAFÍA • CONSTITUCIÓN ESPAÑOLA o Art. 18 • LEY ORGÁNICA 3/2018, DE 5 DE DICIEMBRE, DE PROTECCIÓN DE DATOS PERSONALES Y GARANTÍA DE LOS DERECHOS DIGITALES. o Art. 1-22 • REGLAMENTO EUROPEO Y DEL CONSEJO (UE) 2016/679 DEL PARLAMENTO o Art. 1-11 o Art. 13-14 2 \f CONSTITUCIÓN ESPAÑOLA TÍTULO I DE LOS DERECHOS Y DEBERES FUNDAMENTALES CAPÍTULO SEGUNDO DERECHOS Y LIBERTADES SECCIÓN 1.ª DE LOS DERECHOS FUNDAMENTALES Y DE LAS LIBERTADES PÚBLICAS ARTÍCULO 18 1. Se garantiza el derecho al honor, a la intimidad personal y familiar y a la propia imagen. 2. El domicilio es inviolable. Ninguna entrada o registro podrá hacerse en él sin consentimiento del titular o resolución judicial, salvo en caso de flagrante delito. 3. Se garantiza el secreto de las comunicaciones y, en especial, de las postales, telegráficas y telefónicas, salvo resolución judicial. 4. La ley limitará el uso de la informática para garantizar el honor y la intimidad personal y familiar de los ciudadanos y el pleno ejercicio de sus derechos. 3 \f LEY ORGÁNICA 3/2018, DE 5 DE DICIEMBRE, DE PROTECCIÓN DE DATOS PERSONALES Y GARANTÍA DE LOS DERECHOS DIGITALES. TÍTULO I DISPOSICIONES GENERALES ARTÍCULO 1. OBJETO DE LA LEY. La presente ley orgánica tiene por objeto: a) Adaptar el ordenamiento jurídico español al Reglamento (UE) 2016/679 del Parlamento Europeo y el Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de sus datos personales y a la libre circulación de estos datos, y completar sus disposiciones. El derecho fundamental de las personas físicas a la protección de datos personales, amparado por el artículo 18.4 de la Constitución, se ejercerá con arreglo a lo establecido en el Reglamento (UE) 2016/679 y en esta ley orgánica. b) Garantizar los derechos digitales de la ciudadanía conforme al mandato establecido en el artículo 18.4 de la Constitución. ARTÍCULO 2. ÁMBITO DE APLICACIÓN DE LOS TÍTULOS I A IX Y DE LOS ARTÍCULOS 89 A 94. 1. Lo dispuesto en los Títulos I a IX y en los artículos 89 a 94 de la presente ley orgánica se aplica a cualquier tratamiento total o parcialmente automatizado de datos personales, así como al tratamiento no automatizado de datos personales contenidos o destinados a ser incluidos en un fichero. 2. Esta ley orgánica no será de aplicación: a) A los tratamientos excluidos del ámbito de aplicación del Reglamento general de protección de datos por su artículo 2.2, sin perjuicio de lo dispuesto en los apartados 3 y 4 de este artículo. b) A los tratamientos de datos de personas fallecidas, sin perjuicio de lo establecido en el artículo 3. c) A los tratamientos sometidos a la normativa sobre protección de materias clasificadas. 3. Los tratamientos a los que no sea directamente aplicable el Reglamento (UE) 2016/679 por afectar a actividades no comprendidas en el ámbito de aplicación del Derecho de la Unión Europea, se regirán por lo dispuesto en su legislación específica si la hubiere y supletoriamente por lo establecido en el citado reglamento y en la presente ley orgánica. Se encuentran en esta situación, entre otros, los tratamientos realizados al amparo de la legislación orgánica del régimen electoral general, los tratamientos realizados en el ámbito de instituciones penitenciarias y los tratamientos derivados del Registro Civil, los Registros de la Propiedad y Mercantiles. 4."
     },
-    "flashcards": [
-        { "id": "fc22-01", "anverso": "¿Qué es la policía para la sociedad?", "reverso": "Una institución al servicio de la comunidad y depositaria de la confianza ciudadana." },
-        { "id": "fc22-02", "anverso": "¿Qué trato debe observar la policía con los ciudadanos?", "reverso": "Un trato correcto y esmerado, sin prácticas abusivas ni discriminatorias." },
-        { "id": "fc22-03", "anverso": "¿Qué es la policía de proximidad?", "reverso": "Un modelo orientado a integrar a la policía en la vida de los barrios con presencia constante y trabajo cooperativo." },
-        { "id": "fc22-04", "anverso": "Cita rasgos de la policía de proximidad.", "reverso": "Asignación territorial estable, prevención, participación ciudadana y anticipación al delito." },
-        { "id": "fc22-05", "anverso": "¿Qué papel asume el policía de proximidad?", "reverso": "Referente del barrio, mediador y canal de información hacia el resto del cuerpo." },
-        { "id": "fc22-06", "anverso": "¿Qué es el patrullaje?", "reverso": "La actividad operativa básica de la policía." },
-        { "id": "fc22-07", "anverso": "¿Qué sistema de patrullaje favorece el contacto con la ciudadanía?", "reverso": "El patrullaje a pie, propio del modelo de proximidad." },
-        { "id": "fc22-08", "anverso": "¿Qué tipos de patrullaje según su finalidad existen?", "reverso": "Preventivo, reactivo y focalizado." },
-        { "id": "fc22-09", "anverso": "¿En función de qué se planifica el patrullaje?", "reverso": "Del análisis de la actividad delictiva." },
-        { "id": "fc22-10", "anverso": "¿Qué principio rige la recogida de datos por la policía?", "reverso": "El principio de finalidad: solo los datos necesarios para el ejercicio de las funciones policiales." },
-        { "id": "fc22-11", "anverso": "¿Qué se requiere para crear un archivo policial?", "reverso": "Disposición legal o reglamentaria que lo habilite y la definición de finalidades, datos y medidas de seguridad." },
-        { "id": "fc22-12", "anverso": "¿Qué niveles de seguridad tienen los archivos policiales?", "reverso": "Niveles de seguridad altos por la naturaleza sensible de la información." },
-        { "id": "fc22-13", "anverso": "¿Qué reglamento europeo regula la protección de datos?", "reverso": "El Reglamento (UE) 2016/679 (RGPD)." },
-        { "id": "fc22-14", "anverso": "¿Qué ley orgánica española regula la protección de datos?", "reverso": "La Ley Orgánica 3/2018, de 5 de diciembre (LOPDGDD)." },
-        { "id": "fc22-15", "anverso": "¿Qué ley orgánica regula el tratamiento con fines policiales?", "reverso": "La Ley Orgánica 7/2021, de 26 de mayo." },
-        { "id": "fc22-16", "anverso": "Cita principios de la protección de datos.", "reverso": "Licitud, limitación de la finalidad, minimización, exactitud, integridad y responsabilidad proactiva." },
-        { "id": "fc22-17", "anverso": "Cita derechos del interesado en materia de datos.", "reverso": "Acceso, rectificación, supresión, oposición, limitación y portabilidad." },
-        { "id": "fc22-18", "anverso": "¿Cuál es la autoridad de control en España?", "reverso": "La Agencia Española de Protección de Datos (AEPD)." },
-        { "id": "fc22-19", "anverso": "¿Qué directiva traspone la LO 7/2021?", "reverso": "La Directiva (UE) 2016/680." },
-        { "id": "fc22-20", "anverso": "¿Cómo deben ejercerse los derechos en el tratamiento policial?", "reverso": "Con las modulaciones propias del tratamiento policial previstas en la LO 7/2021." }
+    {
+      "titulo": "2. ley orgánica, sin perjuicio de las disposiciones de la Ley Orgánica 6/19",
+      "contenido": "El tratamiento de datos llevado a cabo con ocasión de la tramitación por los órganos judiciales de los procesos de los que sean competentes, así como el realizado dentro de la gestión de la Oficina Judicial, se regirán por lo dispuesto en el Reglamento (UE) 2016/679 y la presente ley orgánica, sin perjuicio de las disposiciones de la Ley Orgánica 6/1985, de 1 julio, del Poder Judicial, que le sean aplicables. 5. El tratamiento de datos llevado a cabo con ocasión de la tramitación por el Ministerio Fiscal de los procesos de los que sea competente, así como el realizado con esos fines dentro de la gestión de la Oficina Fiscal, se regirán por lo dispuesto en el Reglamento (UE) 2016/679 y la presente Ley Orgánica, sin perjuicio de las disposiciones de la Ley 50/1981, de 30 de diciembre, reguladora del Estatuto Orgánico del Ministerio Fiscal, la Ley Orgánica 6/1985, de 1 de julio, del Poder Judicial y de las normas procesales que le sean aplicables. 4 \f ARTÍCULO 3. DATOS DE LAS PERSONAS FALLECIDAS. 1. Las personas vinculadas al fallecido por razones familiares o de hecho así como sus herederos podrán dirigirse al responsable o encargado del tratamiento al objeto de solicitar el acceso a los datos personales de aquella y, en su caso, su rectificación o supresión. Como excepción, las personas a las que se refiere el párrafo anterior no podrán acceder a los datos del causante, ni solicitar su rectificación o supresión, cuando la persona fallecida lo hubiese prohibido expresamente o así lo establezca una ley. Dicha prohibición no afectará al derecho de los herederos a acceder a los datos de carácter patrimonial del causante. 2. Las personas o instituciones a las que el fallecido hubiese designado expresamente para ello podrán también solicitar, con arreglo a las instrucciones recibidas, el acceso a los datos personales de este y, en su caso su rectificación o supresión. Mediante real decreto se establecerán los requisitos y condiciones para acreditar la validez y vigencia de estos mandatos e instrucciones y, en su caso, el registro de los mismos. 3. En caso de fallecimiento de menores, estas facultades podrán ejercerse también por sus representantes legales o, en el marco de sus competencias, por el Ministerio Fiscal, que podrá actuar de oficio o a instancia de cualquier persona física o jurídica interesada. En caso de fallecimiento de personas con discapacidad, estas facultades también podrán ejercerse, además de por quienes señala el párrafo anterior, por quienes hubiesen sido designados para el ejercicio de funciones de apoyo, si tales facultades se entendieran comprendidas en las medidas de apoyo prestadas por el designado. TÍTULO II PRINCIPIOS DE PROTECCIÓN DE DATOS ARTÍCULO 4. EXACTITUD DE LOS DATOS. 1. Conforme al artículo 5.1.d) del Reglamento (UE) 2016/679 los datos serán exactos y, si fuere necesario, actualizados. 2. A los efectos previstos en el artículo 5.1.d) del Reglamento (UE) 2016/679, no será imputable al responsable del tratamiento, siempre que este haya adoptado todas las medidas razonables para que se supriman o rectifiquen sin dilación, la inexactitud de los datos personales, con respecto a los fines para los que se tratan, cuando los datos inexactos: a) Hubiesen sido obtenidos por el responsable directamente del afectado."
+    },
+    {
+      "titulo": "3. artículo 20",
+      "contenido": "b) Hubiesen sido obtenidos por el responsable de un mediador o intermediario en caso de que las normas aplicables al sector de actividad al que pertenezca el responsable del tratamiento establecieran la posibilidad de intervención de un intermediario o mediador que recoja en nombre propio los datos de los afectados para su transmisión al responsable. El mediador o intermediario asumirá las responsabilidades que pudieran derivarse en el supuesto de comunicación al responsable de datos que no se correspondan con los facilitados por el afectado. c) Fuesen sometidos a tratamiento por el responsable por haberlos recibido de otro responsable en virtud del ejercicio por el afectado del derecho a la portabilidad conforme al artículo 20 del Reglamento (UE) 2016/679 y lo previsto en esta ley orgánica. d) Fuesen obtenidos de un registro público por el responsable. 5 \f ARTÍCULO 5. DEBER DE CONFIDENCIALIDAD. 1. Los responsables y encargados del tratamiento de datos así como todas las personas que intervengan en cualquier fase de este estarán sujetas al deber de confidencialidad al que se refiere el artículo 5.1.f) del Reglamento (UE) 2016/679. 2. La obligación general señalada en el apartado anterior será complementaria de los deberes de secreto profesional de conformidad con su normativa aplicable. 3. Las obligaciones establecidas en los apartados anteriores se mantendrán aun cuando hubiese finalizado la relación del obligado con el responsable o encargado del tratamiento. ARTÍCULO 6. TRATAMIENTO BASADO EN EL CONSENTIMIENTO DEL AFECTADO. 1. De conformidad con lo dispuesto en el artículo 4.11 del Reglamento (UE) 2016/679, se entiende por consentimiento del afectado toda manifestación de voluntad libre, específica, informada e inequívoca por la que este acepta, ya sea mediante una declaración o una clara acción afirmativa, el tratamiento de datos personales que le conciernen. 2. Cuando se pretenda fundar el tratamiento de los datos en el consentimiento del afectado para una pluralidad de finalidades será preciso que conste de manera específica e inequívoca que dicho consentimiento se otorga para todas ellas. 3. No podrá supeditarse la ejecución del contrato a que el afectado consienta el tratamiento de los datos personales para finalidades que no guarden relación con el mantenimiento, desarrollo o control de la relación contractual. ARTÍCULO 7. CONSENTIMIENTO DE LOS MENORES DE EDAD. 1. El tratamiento de los datos personales de un menor de edad únicamente podrá fundarse en su consentimiento cuando sea mayor de catorce años. Se exceptúan los supuestos en que la ley exija la asistencia de los titulares de la patria potestad o tutela para la celebración del acto o negocio jurídico en cuyo contexto se recaba el consentimiento para el tratamiento. 2. El tratamiento de los datos de los menores de catorce años, fundado en el consentimiento, solo será lícito si consta el del titular de la patria potestad o tutela, con el alcance que determinen los titulares de la patria potestad o tutela. ARTÍCULO 8. TRATAMIENTO DE DATOS POR OBLIGACIÓN LEGAL, INTERÉS PÚBLICO O EJERCICIO DE PODERES PÚBLICOS. 1."
+    },
+    {
+      "titulo": "4. artículo 6",
+      "contenido": "El tratamiento de datos personales solo podrá considerarse fundado en el cumplimiento de una obligación legal exigible al responsable, en los términos previstos en el artículo 6.1.c) del Reglamento (UE) 2016/679, cuando así lo prevea una norma de Derecho de la Unión Europea o una norma con rango de ley, que podrá determinar las condiciones generales del tratamiento y los tipos de datos objeto del mismo así como las cesiones que procedan como consecuencia del cumplimiento de la obligación legal. Dicha norma podrá igualmente imponer condiciones especiales al tratamiento, tales como la adopción de medidas adicionales de seguridad u otras establecidas en el capítulo IV del Reglamento (UE) 2016/679. 2. El tratamiento de datos personales solo podrá considerarse fundado en el cumplimiento de una misión realizada en interés público o en el ejercicio de poderes públicos conferidos al responsable, en los términos previstos en el artículo 6.1 e) del Reglamento (UE) 2016/679, cuando derive de una competencia atribuida por una norma con rango de ley. 6 \f ARTÍCULO 9. CATEGORÍAS ESPECIALES DE DATOS. 1. A los efectos del artículo 9.2.a) del Reglamento (UE) 2016/679, a fin de evitar situaciones discriminatorias, el solo consentimiento del afectado no bastará para levantar la prohibición del tratamiento de datos cuya finalidad principal sea identificar su ideología, afiliación sindical, religión, orientación sexual, creencias u origen racial o étnico. Lo dispuesto en el párrafo anterior no impedirá el tratamiento de dichos datos al amparo de los restantes supuestos contemplados en el artículo 9.2 del Reglamento (UE) 2016/679, cuando así proceda. 2. Los tratamientos de datos contemplados en las letras g), h) e i) del artículo 9.2 del Reglamento (UE) 2016/679 fundados en el Derecho español deberán estar amparados en una norma con rango de ley, que podrá establecer requisitos adicionales relativos a su seguridad y confidencialidad. En particular, dicha norma podrá amparar el tratamiento de datos en el ámbito de la salud cuando así lo exija la gestión de los sistemas y servicios de asistencia sanitaria y social, pública y privada, o la ejecución de un contrato de seguro del que el afectado sea parte. ARTÍCULO 10. TRATAMIENTO DE DATOS DE NATURALEZA PENAL. 1. El tratamiento de datos personales relativos a condenas e infracciones penales, así como a procedimientos y medidas cautelares y de seguridad conexas, para fines distintos de los de prevención, investigación, detección o enjuiciamiento de infracciones penales o de ejecución de sanciones penales, solo podrá llevarse a cabo cuando se encuentre amparado en una norma de Derecho de la Unión, en esta ley orgánica o en otras normas de rango legal. 2. El registro completo de los datos referidos a condenas e infracciones penales, así como a procedimientos y medidas cautelares y de seguridad conexas a que se refiere el artículo 10 del Reglamento (UE) 2016/679, podrá realizarse conforme con lo establecido en la regulación del Sistema de registros administrativos de apoyo a la Administración de Justicia. 3. Fuera de los supuestos señalados en los apartados anteriores, los tratamientos de datos referidos a condenas e infracciones penales, así como a procedimientos y medidas cautelares y de seguridad conexas solo serán posibles cuando sean llevados a cabo por abogados y procuradores y tengan por objeto recoger la información facilitada por sus clientes para el ejercicio de sus funciones. TÍTULO III DERECHOS DE LAS PERSONAS CAPÍTULO I TRANSPARENCIA E INFORMACIÓN ARTÍCULO 11. TRANSPARENCIA E INFORMACIÓN AL AFECTADO."
+    },
+    {
+      "titulo": "5. artículo 13",
+      "contenido": "1. Cuando los datos personales sean obtenidos del afectado el responsable del tratamiento podrá dar cumplimiento al deber de información establecido en el artículo 13 del Reglamento (UE) 2016/679 facilitando al afectado la información básica a la que se refiere el apartado siguiente e indicándole una dirección electrónica u otro medio que permita acceder de forma sencilla e inmediata a la restante información. 2. La información básica a la que se refiere el apartado anterior deberá contener, al menos: a) La identidad del responsable del tratamiento y de su representante, en su caso. b) La finalidad del tratamiento. c) La posibilidad de ejercer los derechos establecidos en los artículos 15 a 22 del Reglamento (UE) 2016/679. 7 \f Si los datos obtenidos del afectado fueran a ser tratados para la elaboración de perfiles, la información básica comprenderá asimismo esta circunstancia. En este caso, el afectado deberá ser informado de su derecho a oponerse a la adopción de decisiones individuales automatizadas que produzcan efectos jurídicos sobre él o le afecten significativamente de modo similar, cuando concurra este derecho de acuerdo con lo previsto en el artículo 22 del Reglamento (UE) 2016/679. 3. Cuando los datos personales no hubieran sido obtenidos del afectado, el responsable podrá dar cumplimiento al deber de información establecido en el artículo 14 del Reglamento (UE) 2016/679 facilitando a aquel la información básica señalada en el apartado anterior, indicándole una dirección electrónica u otro medio que permita acceder de forma sencilla e inmediata a la restante información. En estos supuestos, la información básica incluirá también: a) Las categorías de datos objeto de tratamiento. b) Las fuentes de las que procedieran los datos. CAPÍTULO II EJERCICIO DE LOS DERECHOS ARTÍCULO 12. DISPOSICIONES GENERALES SOBRE EJERCICIO DE LOS DERECHOS. 1. Los derechos reconocidos en los artículos 15 a 22 del Reglamento (UE) 2016/679, podrán ejercerse directamente o por medio de representante legal o voluntario. 2. El responsable del tratamiento estará obligado a informar al afectado sobre los medios a su disposición para ejercer los derechos que le corresponden. Los medios deberán ser fácilmente accesibles para el afectado. El ejercicio del derecho no podrá ser denegado por el solo motivo de optar el afectado por otro medio. 3. El encargado podrá tramitar, por cuenta del responsable, las solicitudes de ejercicio formuladas por los afectados de sus derechos si así se estableciere en el contrato o acto jurídico que les vincule. 4. La prueba del cumplimiento del deber de responder a la solicitud de ejercicio de sus derechos formulado por el afectado recaerá sobre el responsable. 5. Cuando las leyes aplicables a determinados tratamientos establezcan un régimen especial que afecte al ejercicio de los derechos previstos en el Capítulo III del Reglamento (UE) 2016/679, se estará a lo dispuesto en aquellas. 6. En cualquier caso, los titulares de la patria potestad podrán ejercitar en nombre y representación de los menores de catorce años los derechos de acceso, rectificación, cancelación, oposición o cualesquiera otros que pudieran corresponderles en el contexto de la presente ley orgánica. 7. Serán gratuitas las actuaciones llevadas a cabo por el responsable del tratamiento para atender las solicitudes de ejercicio de estos derechos, sin perjuicio de lo dispuesto en los artículos 12.5 y 15.3 del Reglamento (UE) 2016/679 y en los apartados 3 y 4 del artículo 13 de esta ley orgánica. ARTÍCULO 13. DERECHO DE ACCESO. 1."
+    },
+    {
+      "titulo": "6. artículo 15",
+      "contenido": "El derecho de acceso del afectado se ejercitará de acuerdo con lo establecido en el artículo 15 del Reglamento (UE) 2016/679. Cuando el responsable trate una gran cantidad de datos relativos al afectado y este ejercite su derecho de acceso sin especificar si se refiere a todos o a una parte de los datos, el responsable podrá solicitarle, antes de facilitar la información, que el afectado especifique los datos o actividades de tratamiento a los que se refiere la solicitud. 2. El derecho de acceso se entenderá otorgado si el responsable del tratamiento facilitara al afectado un sistema de acceso remoto, directo y seguro a los datos personales que garantice, de modo permanente, el acceso a su totalidad. A tales efectos, la comunicación por el responsable al afectado del modo en que este podrá acceder a dicho sistema bastará para tener por atendida la solicitud de ejercicio del derecho. 8 \f No obstante, el interesado podrá solicitar del responsable la información referida a los extremos previstos en el artículo 15.1 del Reglamento (UE) 2016/679 que no se incluyese en el sistema de acceso remoto. 3. A los efectos establecidos en el artículo 12.5 del Reglamento (UE) 2016/679 se podrá considerar repetitivo el ejercicio del derecho de acceso en más de una ocasión durante el plazo de seis meses, a menos que exista causa legítima para ello. 4. Cuando el afectado elija un medio distinto al que se le ofrece que suponga un coste desproporcionado, la solicitud será considerada excesiva, por lo que dicho afectado asumirá el exceso de costes que su elección comporte. En este caso, solo será exigible al responsable del tratamiento la satisfacción del derecho de acceso sin dilaciones indebidas. ARTÍCULO 14. DERECHO DE RECTIFICACIÓN. Al ejercer el derecho de rectificación reconocido en el artículo 16 del Reglamento (UE) 2016/679, el afectado deberá indicar en su solicitud a qué datos se refiere y la corrección que haya de realizarse. Deberá acompañar, cuando sea preciso, la documentación justificativa de la inexactitud o carácter incompleto de los datos objeto de tratamiento. ARTÍCULO 15. DERECHO DE SUPRESIÓN. 1. El derecho de supresión se ejercerá de acuerdo con lo establecido en el artículo 17 del Reglamento (UE) 2016/679. 2. Cuando la supresión derive del ejercicio del derecho de oposición con arreglo al artículo 21.2 del Reglamento (UE) 2016/679, el responsable podrá conservar los datos identificativos del afectado necesarios con el fin de impedir tratamientos futuros para fines de mercadotecnia directa. ARTÍCULO 16. DERECHO A LA LIMITACIÓN DEL TRATAMIENTO. 1. El derecho a la limitación del tratamiento se ejercerá de acuerdo con lo establecido en el artículo 18 del Reglamento (UE) 2016/679. 2. El hecho de que el tratamiento de los datos personales esté limitado debe constar claramente en los sistemas de información del responsable. ARTÍCULO 17. DERECHO A LA PORTABILIDAD. El derecho a la portabilidad se ejercerá de acuerdo con lo establecido en el artículo 20 del Reglamento (UE) 2016/679. ARTÍCULO 18. DERECHO DE OPOSICIÓN. El derecho de oposición, así como los derechos relacionados con las decisiones individuales automatizadas, incluida la realización de perfiles, se ejercerán de acuerdo con lo establecido, respectivamente, en los artículos 21 y 22 del Reglamento (UE) 2016/679. TÍTULO IV DISPOSICIONES APLICABLES A TRATAMIENTOS CONCRETOS ARTÍCULO 19. TRATAMIENTO DE DATOS DE CONTACTO, DE EMPRESARIOS INDIVIDUALES Y DE PROFESIONALES LIBERALES. 1."
+    },
+    {
+      "titulo": "7. artículo 6",
+      "contenido": "Salvo prueba en contrario, se presumirá amparado en lo dispuesto en el artículo 6.1.f) del Reglamento (UE) 2016/679 el tratamiento de los datos de contacto y en su caso los relativos a la función o puesto desempeñado de las personas físicas que presten servicios en una persona jurídica siempre que se cumplan los siguientes requisitos: a) Que el tratamiento se refiera únicamente a los datos necesarios para su localización profesional. 9 \f b) Que la finalidad del tratamiento sea únicamente mantener relaciones de cualquier índole con la persona jurídica en la que el afectado preste sus servicios. 2. La misma presunción operará para el tratamiento de los datos relativos a los empresarios individuales y a los profesionales liberales, cuando se refieran a ellos únicamente en dicha condición y no se traten para entablar una relación con los mismos como personas físicas. 3. Los responsables o encargados del tratamiento a los que se refiere el artículo 77.1 de esta ley orgánica podrán también tratar los datos mencionados en los dos apartados anteriores cuando ello se derive de una obligación legal o sea necesario para el ejercicio de sus competencias. ARTÍCULO 20. SISTEMAS DE INFORMACIÓN CREDITICIA. 1. Salvo prueba en contrario, se presumirá lícito el tratamiento de datos personales relativos al incumplimiento de obligaciones dinerarias, financieras o de crédito por sistemas comunes de información crediticia cuando se cumplan los siguientes requisitos: a) Que los datos hayan sido facilitados por el acreedor o por quien actúe por su cuenta o interés. b) Que los datos se refieran a deudas ciertas, vencidas y exigibles, cuya existencia o cuantía no hubiese sido objeto de reclamación administrativa o judicial por el deudor o mediante un procedimiento alternativo de resolución de disputas vinculante entre las partes. c) Que el acreedor haya informado al afectado en el contrato o en el momento de requerir el pago acerca de la posibilidad de inclusión en dichos sistemas, con indicación de aquéllos en los que participe. La entidad que mantenga el sistema de información crediticia con datos relativos al incumplimiento de obligaciones dinerarias, financieras o de crédito deberá notificar al afectado la inclusión de tales datos y le informará sobre la posibilidad de ejercitar los derechos establecidos en los artículos 15 a 22 del Reglamento (UE) 2016/679 dentro de los treinta días siguientes a la notificación de la deuda al sistema, permaneciendo bloqueados los datos durante ese plazo. d) Que los datos únicamente se mantengan en el sistema mientras persista el incumplimiento, con el límite máximo de cinco años desde la fecha de vencimiento de la obligación dineraria, financiera o de crédito. e) Que los datos referidos a un deudor determinado solamente puedan ser consultados cuando quien consulte el sistema mantuviese una relación contractual con el afectado que implique el abono de una cuantía pecuniaria o este le hubiera solicitado la celebración de un contrato que suponga financiación, pago aplazado o facturación periódica, como sucede, entre otros supuestos, en los previstos en la legislación de contratos de crédito al consumo y de contratos de crédito inmobiliario."
+    },
+    {
+      "titulo": "8. artículo 18",
+      "contenido": "Cuando se hubiera ejercitado ante el sistema el derecho a la limitación del tratamiento de los datos impugnando su exactitud conforme a lo previsto en el artículo 18.1.a) del Reglamento (UE) 2016/679, el sistema informará a quienes pudieran consultarlo con arreglo al párrafo anterior acerca de la mera existencia de dicha circunstancia, sin facilitar los datos concretos respecto de los que se hubiera ejercitado el derecho, en tanto se resuelve sobre la solicitud del afectado. f) Que, en el caso de que se denegase la solicitud de celebración del contrato, o éste no llegara a celebrarse, como consecuencia de la consulta efectuada, quien haya consultado el sistema informe al afectado del resultado de dicha consulta. 2. Las entidades que mantengan el sistema y las acreedoras, respecto del tratamiento de los datos referidos a sus deudores, tendrán la condición de corresponsables del tratamiento de los datos, siendo de aplicación lo establecido por el artículo 26 del Reglamento (UE) 2016/679. Corresponderá al acreedor garantizar que concurren los requisitos exigidos para la inclusión en el sistema de la deuda, respondiendo de su inexistencia o inexactitud. 3. La presunción a la que se refiere el apartado 1 de este artículo no ampara los supuestos en que la información crediticia fuese asociada por la entidad que mantuviera el sistema a informaciones adicionales a las contempladas en dicho apartado, relacionadas con el deudor y obtenidas de otras fuentes, a fin de llevar a cabo un perfilado del mismo, en particular mediante la aplicación de técnicas de calificación crediticia. 10 \f ARTÍCULO 21. TRATAMIENTOS RELACIONADOS CON LA REALIZACIÓN DE DETERMINADAS OPERACIONES MERCANTILES. 1. Salvo prueba en contrario, se presumirán lícitos los tratamientos de datos, incluida su comunicación con carácter previo, que pudieran derivarse del desarrollo de cualquier operación de modificación estructural de sociedades o la aportación o transmisión de negocio o de rama de actividad empresarial, siempre que los tratamientos fueran necesarios para el buen fin de la operación y garanticen, cuando proceda, la continuidad en la prestación de los servicios. 2. En el caso de que la operación no llegara a concluirse, la entidad cesionaria deberá proceder con carácter inmediato a la supresión de los datos, sin que sea de aplicación la obligación de bloqueo prevista en esta ley orgánica. ARTÍCULO 22. TRATAMIENTOS CON FINES DE VIDEOVIGILANCIA. 1. Las personas físicas o jurídicas, públicas o privadas, podrán llevar a cabo el tratamiento de imágenes a través de sistemas de cámaras o videocámaras con la finalidad de preservar la seguridad de las personas y bienes, así como de sus instalaciones. 2. Solo podrán captarse imágenes de la vía pública en la medida en que resulte imprescindible para la finalidad mencionada en el apartado anterior. No obstante, será posible la captación de la vía pública en una extensión superior cuando fuese necesario para garantizar la seguridad de bienes o instalaciones estratégicos o de infraestructuras vinculadas al transporte, sin que en ningún caso pueda suponer la captación de imágenes del interior de un domicilio privado. 3. Los datos serán suprimidos en el plazo máximo de un mes desde su captación, salvo cuando hubieran de ser conservados para acreditar la comisión de actos que atenten contra la integridad de personas, bienes o instalaciones. En tal caso, las imágenes deberán ser puestas a disposición de la autoridad competente en un plazo máximo de setenta y dos horas desde que se tuviera conocimiento de la existencia de la grabación."
+    },
+    {
+      "titulo": "9. artículo 32",
+      "contenido": "No será de aplicación a estos tratamientos la obligación de bloqueo prevista en el artículo 32 de esta ley orgánica. 4. El deber de información previsto en el artículo 12 del Reglamento (UE) 2016/679 se entenderá cumplido mediante la colocación de un dispositivo informativo en lugar suficientemente visible identificando, al menos, la existencia del tratamiento, la identidad del responsable y la posibilidad de ejercitar los derechos previstos en los artículos 15 a 22 del Reglamento (UE) 2016/679. También podrá incluirse en el dispositivo informativo un código de conexión o dirección de internet a esta información. En todo caso, el responsable del tratamiento deberá mantener a disposición de los afectados la información a la que se refiere el citado reglamento. 5. Al amparo del artículo 2.2.c) del Reglamento (UE) 2016/679, se considera excluido de su ámbito de aplicación el tratamiento por una persona física de imágenes que solamente capten el interior de su propio domicilio. Esta exclusión no abarca el tratamiento realizado por una entidad de seguridad privada que hubiera sido contratada para la vigilancia de un domicilio y tuviese acceso a las imágenes. 6. El tratamiento de los datos personales procedentes de las imágenes y sonidos obtenidos mediante la utilización de cámaras y videocámaras por las Fuerzas y Cuerpos de Seguridad y por los órganos competentes para la vigilancia y control en los centros penitenciarios y para el control, regulación, vigilancia y disciplina del tráfico, se regirá por la legislación de transposición de la Directiva (UE) 2016/680, cuando el tratamiento tenga fines de prevención, investigación, detección o enjuiciamiento de infracciones penales o de ejecución de sanciones penales, incluidas la protección y la prevención frente a las amenazas contra la seguridad pública. Fuera de estos supuestos, dicho tratamiento se regirá por su legislación específica y supletoriamente por el Reglamento (UE) 2016/679 y la presente ley orgánica. 7. Lo regulado en el presente artículo se entiende sin perjuicio de lo previsto en la Ley 5/2014, de 4 de abril, de Seguridad Privada y sus disposiciones de desarrollo. 8. El tratamiento por el empleador de datos obtenidos a través de sistemas de cámaras o videocámaras se somete a lo dispuesto en el artículo 89 de esta ley orgánica. 11 \f REGLAMENTO (UE) 2016/679 DEL PARLAMENTO EUROPEO Y DEL CONSEJO CAPÍTULO I DISPOSICIONES GENERALES ARTÍCULO 1. OBJETO. 1. El presente Reglamento establece las normas relativas a la protección de las personas físicas en lo que respecta al tratamiento de los datos personales y las normas relativas a la libre circulación de tales datos. 2. El presente Reglamento protege los derechos y libertades fundamentales de las personas físicas y, en particular, su derecho a la protección de los datos personales. 3. La libre circulación de los datos personales en la Unión no podrá ser restringida ni prohibida por motivos relacionados con la protección de las personas físicas en lo que respecta al tratamiento de datos personales. ARTÍCULO 2. ÁMBITO DE APLICACIÓN MATERIAL. 1. El presente Reglamento se aplica al tratamiento total o parcialmente automatizado de datos personales, así como al tratamiento no automatizado de datos personales contenidos o destinados a ser incluidos en un fichero. 2."
+    },
+    {
+      "titulo": "10. título V",
+      "contenido": "El presente Reglamento no se aplica al tratamiento de datos personales: a) en el ejercicio de una actividad no comprendida en el ámbito de aplicación del Derecho de la Unión; b) por parte de los Estados miembros cuando lleven a cabo actividades comprendidas en el ámbito de aplicación del capítulo 2 del título V del TUE; c) efectuado por una persona física en el ejercicio de actividades exclusivamente personales o domésticas; d) por parte de las autoridades competentes con fines de prevención, investigación, detección o enjuiciamiento de infracciones penales, o de ejecución de sanciones penales, incluida la de protección frente a amenazas a la seguridad pública y su prevención. 3. El Reglamento (CE) n.º 45/2001 es de aplicación al tratamiento de datos de carácter personal por parte de las instituciones, órganos y organismos de la Unión. El Reglamento (CE) n.º 45/2001 y otros actos jurídicos de la Unión aplicables a dicho tratamiento de datos de carácter personal se adaptarán a los principios y normas del presente Reglamento de conformidad con su artículo 98. 4. El presente Reglamento se entenderá sin perjuicio de la Directiva 2000/31/CE, en particular sus normas relativas a la responsabilidad de los prestadores de servicios intermediarios establecidas en sus artículos 12 a 15. la aplicación de ARTÍCULO 3. ÁMBITO TERRITORIAL. 1. El presente Reglamento se aplica al tratamiento de datos personales en el contexto de las actividades de un establecimiento del responsable o del encargado en la Unión, independientemente de que el tratamiento tenga lugar en la Unión o no. 2. El presente Reglamento se aplica al tratamiento de datos personales de interesados que residan en la Unión por parte de un responsable o encargado no establecido en la Unión, cuando las actividades de tratamiento estén relacionadas con: a) la oferta de bienes o servicios a dichos independientemente de si a estos se les requiere su pago, o interesados en la Unión, 12 \f b) el control de su comportamiento, en la medida en que este tenga lugar en la Unión. 3. El presente Reglamento se aplica al tratamiento de datos personales por parte de un responsable que no esté establecido en la Unión sino en un lugar en que el Derecho de los Estados miembros sea de aplicación en virtud del Derecho internacional público. ARTÍCULO 4. DEFINICIONES."
+    },
+    {
+      "titulo": "11. A efectos del presente Reglamento se entenderá por: 1) «datos personal…",
+      "contenido": "A efectos del presente Reglamento se entenderá por: 1) «datos personales»: toda información sobre una persona física identificada o identificable («el interesado»); se considerará persona física identificable toda persona cuya identidad pueda determinarse, directa o indirectamente, en particular mediante un identificador, como por ejemplo un nombre, un número de identificación, datos de localización, un identificador en línea o uno o varios elementos propios de la identidad física, fisiológica, genética, psíquica, económica, cultural o social de dicha persona; 2) «tratamiento»: cualquier operación o conjunto de operaciones realizadas sobre datos personales o conjuntos de datos personales, ya sea por procedimientos automatizados o no, como la recogida, registro, organización, estructuración, conservación, adaptación o modificación, extracción, consulta, utilización, comunicación por transmisión, difusión o cualquier otra forma de habilitación de acceso, cotejo o interconexión, limitación, supresión o destrucción; 3) «limitación del tratamiento»: el marcado de los datos de carácter personal conservados con el fin de limitar su tratamiento en el futuro; 4) «elaboración de perfiles»: toda forma de tratamiento automatizado de datos personales consistente en utilizar datos personales para evaluar determinados aspectos personales de una persona física, en particular para analizar o predecir aspectos relativos al rendimiento profesional, situación económica, salud, preferencias personales, intereses, fiabilidad, comportamiento, ubicación o movimientos de dicha persona física; 5) «seudonimización»: el tratamiento de datos personales de manera tal que ya no puedan atribuirse a un interesado sin utilizar información adicional, siempre que dicha información adicional figure por separado y esté sujeta a medidas técnicas y organizativas destinadas a garantizar que los datos personales no se atribuyan a una persona física identificada o identificable; 6) «fichero»: todo conjunto estructurado de datos personales, accesibles con arreglo a criterios determinados, ya sea centralizado, descentralizado o repartido de forma funcional o geográfica; 7) «responsable del tratamiento» o «responsable»: la persona física o jurídica, autoridad pública, servicio u otro organismo que, solo o junto con otros, determine los fines y medios del tratamiento; si el Derecho de la Unión o de los Estados miembros determina los fines y medios del tratamiento, el responsable del tratamiento o los criterios específicos para su nombramiento podrá establecerlos el Derecho de la Unión o de los Estados miembros; 8) «encargado del tratamiento» o «encargado»: la persona física o jurídica, autoridad pública, servicio u otro organismo que trate datos personales por cuenta del responsable del tratamiento; 9) «destinatario»: la persona física o jurídica, autoridad pública, servicio u otro organismo al que se comuniquen datos personales, se trate o no de un tercero."
+    },
+    {
+      "titulo": "12. No obstante, no se considerarán destinatarios las autoridades públicas…",
+      "contenido": "No obstante, no se considerarán destinatarios las autoridades públicas que puedan recibir datos personales en el marco de una investigación concreta de conformidad con el Derecho de la Unión o de los Estados miembros; el tratamiento de tales datos por dichas autoridades públicas será conforme con las normas en materia de protección de datos aplicables a los fines del tratamiento; 13 \f 10) «tercero»: persona física o jurídica, autoridad pública, servicio u organismo distinto del interesado, del responsable del tratamiento, del encargado del tratamiento y de las personas autorizadas para tratar los datos personales bajo la autoridad directa del responsable o del encargado; 11) «consentimiento del interesado»: toda manifestación de voluntad libre, específica, informada e inequívoca por la que el interesado acepta, ya sea mediante una declaración o una clara acción afirmativa, el tratamiento de datos personales que le conciernen; 12) «violación de la seguridad de los datos personales»: toda violación de la seguridad que ocasione la destrucción, pérdida o alteración accidental o ilícita de datos personales transmitidos, conservados o tratados de otra forma, o la comunicación o acceso no autorizados a dichos datos; 13) «datos genéticos»: datos personales relativos a las características genéticas heredadas o adquiridas de una persona física que proporcionen una información única sobre la fisiología o la salud de esa persona, obtenidos en particular del análisis de una muestra biológica de tal persona; 14) «datos biométricos»: datos personales obtenidos a partir de un tratamiento técnico específico, relativos a las características físicas, fisiológicas o conductuales de una persona física que permitan o confirmen la identificación única de dicha persona, como imágenes faciales o datos dactiloscópicos; 15) «datos relativos a la salud»: datos personales relativos a la salud física o mental de una persona física, incluida la prestación de servicios de atención sanitaria, que revelen información sobre su estado de salud; 16) «establecimiento principal»: a) en lo que se refiere a un responsable del tratamiento con establecimientos en más de un Estado miembro, el lugar de su administración central en la Unión, salvo que las decisiones sobre los fines y los medios del tratamiento se tomen en otro establecimiento del responsable en la Unión y este último establecimiento tenga el poder de hacer aplicar tales decisiones, en cuyo caso el establecimiento que haya adoptado tales decisiones se considerará establecimiento principal; b) en lo que se refiere a un encargado del tratamiento con establecimientos en más de un Estado miembro, el lugar de su administración central en la Unión o, si careciera de esta, el establecimiento del encargado en la Unión en el que se realicen las principales actividades de tratamiento en el contexto de las actividades de un establecimiento del encargado en la medida en que el encargado esté sujeto a obligaciones específicas con arreglo"
+    },
+    {
+      "titulo": "13. artículo 27",
+      "contenido": "al presente Reglamento; 17) «representante»: persona física o jurídica establecida en la Unión que, habiendo sido designada por escrito por el responsable o el encargado del tratamiento con arreglo al artículo 27, represente al responsable o al encargado en lo que respecta a sus respectivas obligaciones en virtud del presente Reglamento; 18) «empresa»: persona física o jurídica dedicada a una actividad económica, independientemente de su forma jurídica, incluidas las sociedades o asociaciones que desempeñen regularmente una actividad económica; 19) «grupo empresarial»: grupo constituido por una empresa que ejerce el control y sus empresas controladas; 20) «normas corporativas vinculantes»: las políticas de protección de datos personales asumidas por un responsable o encargado del tratamiento establecido en el territorio de un Estado miembro para transferencias o un conjunto de transferencias de datos personales a un responsable o encargado en uno o más países terceros, dentro de un grupo empresarial o una unión de empresas dedicadas a una actividad económica conjunta; 21) «autoridad de control»: la autoridad pública independiente establecida por un Estado miembro con arreglo a lo dispuesto en el artículo 51; 14 \f 22) «autoridad de control interesada»: la autoridad de control a la que afecta el tratamiento de datos personales debido a que: a) el responsable o el encargado del tratamiento está establecido en el territorio del Estado miembro de esa autoridad de control; b) los interesados que residen en el Estado miembro de esa autoridad de control se ven sustancialmente afectados o es probable que se vean sustancialmente afectados por el tratamiento, o c) se ha presentado una reclamación ante esa autoridad de control; 23) «tratamiento transfronterizo»: a) el tratamiento de datos personales realizado en el contexto de las actividades de establecimientos en más de un Estado miembro de un responsable o un encargado del tratamiento en la Unión, si el responsable o el encargado está establecido en más de un Estado miembro, o b) el tratamiento de datos personales realizado en el contexto de las actividades de un único establecimiento de un responsable o un encargado del tratamiento en la Unión, pero que afecta sustancialmente o es probable que afecte sustancialmente a interesados en más de un Estado miembro; 24) «objeción pertinente y motivada»: la objeción a una propuesta de decisión sobre la existencia o no de infracción del presente Reglamento, o sobre la conformidad con el presente Reglamento de acciones previstas en relación con el responsable o el encargado del tratamiento, que demuestre claramente la importancia de los riesgos que entraña el proyecto de decisión para los derechos y libertades fundamentales de los interesados y, en su caso, para la libre circulación de datos personales dentro de la Unión; 25) «servicio de la sociedad de la información»: todo servicio conforme a la definición del artículo 1, apartado 1, letra b), de la Directiva (UE) 2015/1535 del Parlamento Europeo y del Consejo (19); (19) Directiva (UE) 2015/1535 del Parlamento Europeo y del Consejo, de 9 de septiembre de 2015, por la que se establece un procedimiento de información en materia de reglamentaciones técnicas y de reglas relativas a los servicios de la sociedad de la información (DO L 241 de 17.9.2015, p. 1). 26) «organización internacional»: una organización internacional y sus entes subordinados de Derecho internacional público o cualquier otro organismo creado mediante un acuerdo entre dos o más países o en virtud de tal acuerdo."
+    },
+    {
+      "titulo": "14. CAPÍTULO II",
+      "contenido": "CAPÍTULO II PRINCIPIOS ARTÍCULO 5. PRINCIPIOS RELATIVOS AL TRATAMIENTO. 1. Los datos personales serán: a) tratados de manera lícita, leal y transparente en relación con el interesado («licitud, lealtad y transparencia»); b) recogidos con fines determinados, explícitos y legítimos, y no serán tratados ulteriormente de manera incompatible con dichos fines; de acuerdo con el artículo 89, apartado 1, el tratamiento ulterior de los datos personales con fines de archivo en interés público, fines de investigación científica e histórica o fines estadísticos no se considerará incompatible con los fines iniciales («limitación de la finalidad»); c) adecuados, pertinentes y limitados a lo necesario en relación con los fines para los que son tratados («minimización de datos»); d) exactos y, si fuera necesario, actualizados; se adoptarán todas las medidas razonables para que se supriman o rectifiquen sin dilación los datos personales que sean inexactos con respecto a los fines para los que se tratan («exactitud»); e) mantenidos de forma que se permita la identificación de los interesados durante no más tiempo del necesario para los fines del tratamiento de los datos personales; los datos personales podrán conservarse durante períodos más largos siempre que se traten exclusivamente con fines de archivo en interés público, fines de investigación científica o histórica o fines estadísticos, de conformidad con el artículo 89, 15 \f f) apartado 1, sin perjuicio de la aplicación de las medidas técnicas y organizativas apropiadas que impone el presente Reglamento a fin de proteger los derechos y libertades del interesado («limitación del plazo de conservación»); tratados de tal manera que se garantice una seguridad adecuada de los datos personales, incluida la protección contra el tratamiento no autorizado o ilícito y contra su pérdida, destrucción o daño accidental, mediante la aplicación de medidas técnicas u organizativas apropiadas («integridad y confidencialidad»). 2. El responsable del tratamiento será responsable del cumplimiento de lo dispuesto en el apartado 1 y capaz de demostrarlo («responsabilidad proactiva»). ARTÍCULO 6. LICITUD DEL TRATAMIENTO. 1. El tratamiento solo será lícito si se cumple al menos una de las siguientes condiciones: a) el interesado dio su consentimiento para el tratamiento de sus datos personales para uno o varios fines específicos; b) el tratamiento es necesario para la ejecución de un contrato en el que el interesado es parte o para la aplicación a petición de este de medidas precontractuales; c) el tratamiento es necesario para el cumplimiento de una obligación legal aplicable al responsable del tratamiento; d) el tratamiento es necesario para proteger intereses vitales del interesado o de otra persona física; e) el tratamiento es necesario para el cumplimiento de una misión realizada en interés público o en el ejercicio de poderes públicos conferidos al responsable del tratamiento; f) el tratamiento es necesario para la satisfacción de intereses legítimos perseguidos por el responsable del tratamiento o por un tercero, siempre que sobre dichos intereses no prevalezcan los intereses o los derechos y libertades fundamentales del interesado que requieran la protección de datos personales, en particular cuando el interesado sea un niño. Lo dispuesto en la letra f) del párrafo primero no será de aplicación al tratamiento realizado por las autoridades públicas en el ejercicio de sus funciones. 2."
+    },
+    {
+      "titulo": "15. capítulo IX",
+      "contenido": "Los Estados miembros podrán mantener o introducir disposiciones más específicas a fin de adaptar la aplicación de las normas del presente Reglamento con respecto al tratamiento en cumplimiento del apartado 1, letras c) y e), fijando de manera más precisa requisitos específicos de tratamiento y otras medidas que garanticen un tratamiento lícito y equitativo, con inclusión de otras situaciones específicas de tratamiento a tenor del capítulo IX. 3. La base del tratamiento indicado en el apartado 1, letras c) y e), deberá ser establecida por: a) el Derecho de la Unión, o b) el Derecho de los Estados miembros que se aplique al responsable del tratamiento. La finalidad del tratamiento deberá quedar determinada en dicha base jurídica o, en lo relativo al tratamiento a que se refiere el apartado 1, letra e), será necesaria para el cumplimiento de una misión realizada en interés público o en el ejercicio de poderes públicos conferidos al responsable del tratamiento. Dicha base jurídica podrá contener disposiciones específicas para adaptar la aplicación de normas del presente Reglamento, entre otras: las condiciones generales que rigen la licitud del tratamiento por parte del responsable; los tipos de datos objeto de tratamiento; los interesados afectados; las entidades a las que se pueden comunicar datos personales y los fines de tal comunicación; la limitación de la finalidad; los plazos de conservación de los datos, así como las operaciones y los procedimientos del tratamiento, incluidas las medidas para garantizar un tratamiento lícito y equitativo, como las relativas a otras situaciones específicas de tratamiento a tenor del capítulo IX. El Derecho de la Unión o de los Estados 16 \f miembros cumplirá un objetivo de interés público y será proporcional al fin legítimo perseguido. 4. Cuando el tratamiento para otro fin distinto de aquel para el que se recogieron los datos personales no esté basado en el consentimiento del interesado o en el Derecho de la Unión o de los Estados miembros que constituya una medida necesaria y proporcional en una sociedad democrática para salvaguardar los objetivos indicados en el artículo 23, apartado 1, el responsable del tratamiento, con objeto de determinar si el tratamiento con otro fin es compatible con el fin para el cual se recogieron inicialmente los datos personales, tendrá en cuenta, entre otras cosas: a) cualquier relación entre los fines para los cuales se hayan recogido los datos personales y los fines del tratamiento ulterior previsto; b) el contexto en que se hayan recogido los datos personales, en particular por lo que c) respecta a la relación entre los interesados y el responsable del tratamiento; la naturaleza de los datos personales, en concreto cuando se traten categorías especiales de datos personales, de conformidad con el artículo 9, o datos personales relativos a condenas e infracciones penales, de conformidad con el artículo 10; d) las posibles consecuencias para los interesados del tratamiento ulterior previsto; e) la existencia de garantías adecuadas, que podrán incluir el cifrado o la seudonimización. ARTÍCULO 7. CONDICIONES PARA EL CONSENTIMIENTO. 1. Cuando el tratamiento se base en el consentimiento del interesado, el responsable deberá ser capaz de demostrar que aquel consintió el tratamiento de sus datos personales. 2."
+    },
+    {
+      "titulo": "16. ARTÍCULO 8",
+      "contenido": "Si el consentimiento del interesado se da en el contexto de una declaración escrita que también se refiera a otros asuntos, la solicitud de consentimiento se presentará de tal forma que se distinga claramente de los demás asuntos, de forma inteligible y de fácil acceso y utilizando un lenguaje claro y sencillo. No será vinculante ninguna parte de la declaración que constituya infracción del presente Reglamento. 3. El interesado tendrá derecho a retirar su consentimiento en cualquier momento. La retirada del consentimiento no afectará a la licitud del tratamiento basada en el consentimiento previo a su retirada. Antes de dar su consentimiento, el interesado será informado de ello. Será tan fácil retirar el consentimiento como darlo. 4. Al evaluar si el consentimiento se ha dado libremente, se tendrá en cuenta en la mayor medida posible el hecho de si, entre otras cosas, la ejecución de un contrato, incluida la prestación de un servicio, se supedita al consentimiento al tratamiento de datos personales que no son necesarios para la ejecución de dicho contrato. ARTÍCULO 8. CONDICIONES APLICABLES AL CONSENTIMIENTO DEL NIÑO EN RELACIÓN CON LOS SERVICIOS DE LA SOCIEDAD DE LA INFORMACIÓN. 1. Cuando se aplique el artículo 6, apartado 1, letra a), en relación con la oferta directa a niños de servicios de la sociedad de la información, el tratamiento de los datos personales de un niño se considerará lícito cuando tenga como mínimo 16 años. Si el niño es menor de 16 años, tal tratamiento únicamente se considerará lícito si el consentimiento lo dio o autorizó el titular de la patria potestad o tutela sobre el niño, y solo en la medida en que se dio o autorizó. Los Estados miembros podrán establecer por ley una edad inferior a tales fines, siempre que esta no sea inferior a 13 años. 2. El responsable del tratamiento hará esfuerzos razonables para verificar en tales casos que el consentimiento fue dado o autorizado por el titular de la patria potestad o tutela sobre el niño, teniendo en cuenta la tecnología disponible. 3. El apartado 1 no afectará a las disposiciones generales del Derecho contractual de los Estados miembros, como las normas relativas a la validez, formación o efectos de los contratos en relación con un niño. 17 \f ARTÍCULO 9. TRATAMIENTO DE CATEGORÍAS ESPECIALES DE DATOS PERSONALES. 1. Quedan prohibidos el tratamiento de datos personales que revelen el origen étnico o racial, las opiniones políticas, las convicciones religiosas o filosóficas, o la afiliación sindical, y el tratamiento de datos genéticos, datos biométricos dirigidos a identificar de manera unívoca a una persona física, datos relativos a la salud o datos relativos a la vida sexual o las orient ación sexuales de una persona física. 2."
+    },
+    {
+      "titulo": "17. El apartado 1 no será de aplicación cuando concurra una de las circuns…",
+      "contenido": "El apartado 1 no será de aplicación cuando concurra una de las circunstancias siguientes: a) el interesado dio su consentimiento explícito para el tratamiento de dichos datos personales con uno o más de los fines especificados, excepto cuando el Derecho de la Unión o de los Estados miembros establezca que la prohibición mencionada en el apartado 1 no puede ser levantada por el interesado; b) el tratamiento es necesario para el cumplimiento de obligaciones y el ejercicio de derechos específicos del responsable del tratamiento o del interesado en el ámbito del Derecho laboral y de la seguridad y protección social, en la medida en que así lo autorice el Derecho de la Unión de los Estados miembros o un convenio colectivo con arreglo al Derecho de los Estados miembros que establezca garantías adecuadas del respeto de los derechos fundamentales y de los intereses del interesado; c) el tratamiento es necesario para proteger intereses vitales del interesado o de otra persona física, en el supuesto de que el interesado no esté capacitado, física o jurídicamente, para dar su consentimiento; d) el tratamiento es efectuado, en el ámbito de sus actividades legítimas y con las debidas garantías, por una fundación, una asociación o cualquier otro organismo sin ánimo de lucro, cuya finalidad sea política, filosófica, religiosa o sindical, siempre que el tratamiento se refiera exclusivamente a los miembros actuales o antiguos de tales organismos o a personas que mantengan contactos regulares con ellos en relación con sus fines y siempre que los datos personales no se comuniquen fuera de ellos sin el consentimiento de los interesados; e) el tratamiento se refiere a datos personales que el interesado ha hecho manifiestamente públicos; f) el tratamiento es necesario para la formulación, el ejercicio o la defensa de reclamaciones o cuando los tribunales actúen en ejercicio de su función judicial; g) el tratamiento es necesario por razones de un interés público esencial, sobre la base del Derecho de la Unión o de los Estados miembros, que debe ser proporcional al objetivo perseguido, respetar en lo esencial el derecho a la protección de datos y establecer medidas adecuadas y específicas para proteger los intereses y derechos fundamentales del interesado; h) el tratamiento es necesario para fines de medicina preventiva o laboral, evaluación de la capacidad laboral del trabajador, diagnóstico médico, prestación de asistencia o tratamiento de tipo sanitario o social, o gestión de los sistemas y servicios de asistencia sanitaria y social, sobre la base del Derecho de la Unión o de los Estados miembros o en virtud de un contrato con un profesional sanitario y sin perjuicio de las condiciones y garantías contempladas en el apartado 3; i) el tratamiento es necesario por razones de interés público en el ámbito de la salud pública, como la protección frente a amenazas transfronterizas graves para la salud, o para garantizar elevados niveles de calidad y de seguridad de la asis"
+    },
+    {
+      "titulo": "18. artículo 89",
+      "contenido": "tencia sanitaria y de los medicamentos o productos sanitarios, sobre la base del Derecho de la Unión o de los Estados miembros que establezca medidas adecuadas y específicas para proteger los derechos y libertades del interesado, en particular el secreto profesional, j) el tratamiento es necesario con fines de archivo en interés público, fines de investigación científica o histórica o fines estadísticos, de conformidad con el artículo 89, apartado 1, sobre la base del Derecho de la Unión o de los Estados miembros, que debe ser proporcional al objetivo perseguido, respetar en lo esencial el derecho a la protección de datos y establecer medidas adecuadas y específicas para proteger los intereses y derechos fundamentales del interesado. 18 \f 3. Los datos personales a que se refiere el apartado 1 podrán tratarse a los fines citados en el apartado 2, letra h), cuando su tratamiento sea realizado por un profesional sujeto a la obligación de secreto profesional, o bajo su responsabilidad, de acuerdo con el Derecho de la Unión o de los Estados miembros o con las normas establecidas por los organismos nacionales competentes, o por cualquier otra persona sujeta también a la obligación de secreto de acuerdo con el Derecho de la Unión o de los Estados miembros o de las normas establecidas por los organismos nacionales competentes. 4. Los Estados miembros podrán mantener o introducir condiciones adicionales, inclusive limitaciones, con respecto al tratamiento de datos genéticos, datos biométricos o datos relativos a la salud. ARTÍCULO 10. TRATAMIENTO DE DATOS PERSONALES RELATIVOS A CONDENAS E INFRACCIONES PENALES. El tratamiento de datos personales relativos a condenas e infracciones penales o medidas de seguridad conexas sobre la base del artículo 6, apartado 1, sólo podrá llevarse a cabo bajo la supervisión de las autoridades públicas o cuando lo autorice el Derecho de la Unión o de los Estados miembros que establezca garantías adecuadas para los derechos y libertades de los interesados. Solo podrá llevarse un registro completo de condenas penales bajo el control de las autoridades públicas. ARTÍCULO 11. TRATAMIENTO QUE NO REQUIERE IDENTIFICACIÓN. 1. Si los fines para los cuales un responsable trata datos personales no requieren o ya no requieren la identificación de un interesado por el responsable, este no estará obligado a mantener, obtener o tratar información adicional con vistas a identificar al interesado con la única finalidad de cumplir el presente Reglamento. 2. Cuando, en los casos a que se refiere el apartado 1 del presente artículo, el responsable sea capaz de demostrar que no está en condiciones de identificar al interesado, le informará en consecuencia, de ser posible. En tales casos no se aplicarán los artículos 15 a 20, excepto cuando el interesado, a efectos del ejercicio de sus derechos en virtud de dichos artículos, facilite información adicional que permita su identificación. CAPÍTULO III DERECHOS DEL INTERESADO SECCIÓN 2.ª INFORMACIÓN Y ACCESO A LOS DATOS PERSONALES ARTÍCULO 13. INFORMACIÓN QUE DEBERÁ FACILITARSE CUANDO LOS DATOS PERSONALES SE OBTENGAN DEL INTERESADO. 1."
+    },
+    {
+      "titulo": "19. artículo 6",
+      "contenido": "Cuando se obtengan de un interesado datos personales relativos a él, el responsable del tratamiento, en el momento en que estos se obtengan, le facilitará toda la información indicada a continuación: a) b) los datos de contacto del delegado de protección de datos, en su caso; c) la identidad y los datos de contacto del responsable y, en su caso, de su representante; los fines del tratamiento a que se destinan los datos personales y la base jurídica del tratamiento; d) cuando el tratamiento se base en el artículo 6, apartado 1, letra f), los intereses legítimos del responsable o de un tercero; los destinatarios o las categorías de destinatarios de los datos personales, en su caso; e) 19 \f f) en su caso, la intención del responsable de transferir datos personales a un tercer país u organización internacional y la existencia o ausencia de una decisión de adecuación de la Comisión, o, en el caso de las transferencias indicadas en los artículos 46 o 47 o el artículo 49, apartado 1, párrafo segundo, referencia a las garantías adecuadas o apropiadas y a los medios para obtener una copia de estas o al hecho de que se hayan prestado. 2. Además de la información mencionada en el apartado 1, el responsable del tratamiento facilitará al interesado, en el momento en que se obtengan los datos personales, la siguiente información necesaria para garantizar un tratamiento de datos leal y transparente: a) el plazo durante el cual se conservarán los datos personales o, cuando no sea posible, los criterios utilizados para determinar este plazo; b) la existencia del derecho a solicitar al responsable del tratamiento el acceso a los datos personales relativos al interesado, y su rectificación o supresión, o la limitación de su tratamiento, o a oponerse al tratamiento, así como el derecho a la portabilidad de los datos; c) cuando el tratamiento esté basado en el artículo 6, apartado 1, letra a), o el artículo 9, apartado 2, letra a), la existencia del derecho a retirar el consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento basado en el consentimiento previo a su retirada; d) el derecho a presentar una reclamación ante una autoridad de control; e) si la comunicación de datos personales es un requisito legal o contractual, o un requisito necesario para suscribir un contrato, y si el interesado está obligado a facilitar los datos personales y está informado de las posibles consecuencias de que no facilitar tales datos; la existencia de decisiones automatizas, incluida la elaboración de perfiles, a que se refiere el artículo 22, apartados 1 y 4, y, al menos en tales casos, información significativa sobre la lógica aplicada, así como la importancia y las consecuencias previstas de dicho tratamiento para el interesado. f) 3. Cuando el responsable del tratamiento proyecte el tratamiento ulterior de datos personales para un fin que no sea aquel para el que se recogieron, proporcionará al interesado, con anterioridad a dicho tratamiento ulterior, información sobre ese otro fin y cualquier información adicional pertinente a tenor del apartado 2. 4. Las disposiciones de los apartados 1, 2 y 3 no serán aplicables cuando y en la medida en que el interesado ya disponga de la información. ARTÍCULO 14. INFORMACIÓN QUE DEBERÁ FACILITARSE CUANDO LOS DATOS PERSONALES NO SE HAYAN OBTENIDO DEL INTERESADO. 1."
+    },
+    {
+      "titulo": "20. artículo 49",
+      "contenido": "Cuando los datos personales no se hayan obtenidos del interesado, el responsable del tratamiento le facilitará la siguiente información: a) la identidad y los datos de contacto del responsable y, en su caso, de su representante; b) los datos de contacto del delegado de protección de datos, en su caso; c) los fines del tratamiento a que se destinan los datos personales, así como la base jurídica del tratamiento; d) las categorías de datos personales de que se trate; e) los destinatarios o las categorías de destinatarios de los datos personales, en su caso; f) en su caso, la intención del responsable de transferir datos personales a un destinatario en un tercer país u organización internacional y la existencia o ausencia de una decisión de adecuación de la Comisión, o, en el caso de las transferencias indicadas en los artículos 46 o 47 o el artículo 49, apartado 1, 20 \f párrafo segundo, referencia a las garantías adecuadas o apropiadas y a los medios para obtener una copia de ellas o al hecho de que se hayan prestado. 2. Además de la información mencionada en el apartado 1, el responsable del tratamiento facilitará al interesado la siguiente información necesaria para garantizar un tratamiento de datos leal y transparente respecto del interesado: a) el plazo durante el cual se conservarán los datos personales o, cuando eso no sea posible, los criterios utilizados para determinar este plazo; b) cuando el tratamiento se base en el artículo 6, apartado 1, letra f), los intereses c) legítimos del responsable del tratamiento o de un tercero; la existencia del derecho a solicitar al responsable del tratamiento el acceso a los datos personales relativos al interesado, y su rectificación o supresión, o la limitación de su tratamiento, y a oponerse al tratamiento, así como el derecho a la portabilidad de los datos; d) cuando el tratamiento esté basado en el artículo 6, apartado 1, letra a), o el artículo 9, apartado 2, letra a), la existencia del derecho a retirar el consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento basada en el consentimiento antes de su retirada; e) el derecho a presentar una reclamación ante una autoridad de control; f) la fuente de la que proceden los datos personales y, en su caso, si proceden de fuentes de acceso público; g) la existencia de decisiones automatizadas, incluida la elaboración de perfiles, a que se refiere el artículo 22, apartados 1 y 4, y, al menos en tales casos, información significativa sobre la lógica aplicada, así como la importancia y las consecuencias previstas de dicho tratamiento para el interesado. 3. El responsable del tratamiento facilitará la información indicada en los apartados 1 y 2: a) dentro de un plazo razonable, una vez obtenidos los datos personales, y a más tardar dentro de un mes, habida cuenta de las circunstancias específicas en las que se traten dichos datos; b) si los datos personales han de utilizarse para comunicación con el interesado, a más tardar en el momento de la primera comunicación a dicho interesado, o c) si está previsto comunicarlos a otro destinatario, a más tardar en el momento en que los datos personales sean comunicados por primera vez. 4. Cuando el responsable del tratamiento proyecte el tratamiento ulterior de los datos personales para un fin que no sea aquel para el que se obtuvieron, proporcionará al interesado, antes de dicho tratamiento ulterior, información sobre ese otro fin y cualquier otra información pertinente indicada en el apartado 2. 5."
+    },
+    {
+      "titulo": "21. artículo 89",
+      "contenido": "Las disposiciones de los apartados 1 a 4 no serán aplicables cuando y en la medida en que: a) el interesado ya disponga de la información; b) la comunicación de dicha información resulte imposible o suponga un esfuerzo desproporcionado, en particular para el tratamiento con fines de archivo en interés público, fines de investigación científica o histórica o fines estadísticos, a reserva de las condiciones y garantías indicadas en el artículo 89, apartado 1, o en la medida en que la obligación mencionada en el apartado 1 del presente artículo pueda imposibilitar u obstaculizar gravemente el logro de los objetivos de tal tratamiento. En tales casos, el responsable adoptará medidas adecuadas para proteger los derechos, libertades e intereses legítimos del interesado, inclusive haciendo pública la información; 21 \f c) la obtención o la comunicación esté expresamente establecida por el Derecho de la Unión o de los Estados miembros que se aplique al responsable del tratamiento y que establezca medidas adecuadas para proteger los intereses legítimos del interesado, o d) cuando los datos personales deban seguir teniendo carácter confidencial sobre la base de una obligación de secreto profesional regulada por el Derecho de la Unión o de los Estados miembros, incluida una obligación de secreto de naturaleza estatutaria. 22"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Las relaciones entre policía y sociedad.\"]\n  A --> N1[\"LEY ORGÁNICA 3/2018, DE 5 DE DICIEMBRE, \"]\n  A --> N2[\"ley orgánica, sin perjuicio de las dispo\"]\n  A --> N3[\"artículo 20\"]\n  A --> N4[\"artículo 6\"]\n  A --> N5[\"artículo 13\"]\n  A --> N6[\"artículo 15\"]\n  A --> N7[\"artículo 6\"]\n  A --> N8[\"artículo 18\"]\n  A --> N9[\"artículo 32\"]\n  A --> N10[\"título V\"]\n  A --> N11[\"A efectos del presente Reglamento se ent\"]\n  A --> N12[\"No obstante, no se considerarán destinat\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Las relaciones entre policía y sociedad. Policía …",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "LEY ORGÁNICA 3/2018, DE 5 DE DICIEMBRE,…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "ley orgánica, sin perjuicio de las disp…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "artículo 20",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "artículo 6",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "artículo 13",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "artículo 15",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "artículo 6",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "artículo 18",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "artículo 32",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "título V",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "A efectos del presente Reglamento se en…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s12",
+        "texto": "No obstante, no se considerarán destina…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s13",
+        "texto": "artículo 27",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s14",
+        "texto": "CAPÍTULO II",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s15",
+        "texto": "capítulo IX",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s16",
+        "texto": "ARTÍCULO 8",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s17",
+        "texto": "El apartado 1 no será de aplicación cua…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s18",
+        "texto": "artículo 89",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s19",
+        "texto": "artículo 6",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s20",
+        "texto": "artículo 49",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s21",
+        "texto": "artículo 89",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p22-01",
-            "enunciado": "La policía debe observar con los ciudadanos:",
-            "opciones": ["Un trato impersonal", "Un trato correcto y esmerado, sin prácticas discriminatorias", "Indiferencia profesional", "Uso siempre de la fuerza"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La policía debe observar un trato correcto y esmerado, evitando prácticas abusivas o discriminatorias."
-        },
-        {
-            "id": "p22-02",
-            "enunciado": "La policía de proximidad se caracteriza por:",
-            "opciones": ["Movilidad y rotación permanente", "Asignación territorial estable y trabajo cooperativo con la comunidad", "Patrullaje únicamente nocturno", "Actuación reactiva exclusivamente"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La policía de proximidad tiene asignación territorial estable, trabajo cooperativo y prevención de problemas."
-        },
-        {
-            "id": "p22-03",
-            "enunciado": "El patrullaje a pie es propio del modelo de:",
-            "opciones": ["Patrullaje motorizado", "Policía de proximidad", "Patrullaje aéreo", "Policía judicial"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El patrullaje a pie es propio del modelo de proximidad y favorece el contacto con la ciudadanía."
-        },
-        {
-            "id": "p22-04",
-            "enunciado": "Los tipos de patrullaje según su finalidad son:",
-            "opciones": ["Diurno y nocturno", "Preventivo, reactivo y focalizado", "Urbano y rural", "Civil y militar"],
-            "respuestaCorrecta": 1,
-            "explicacion": "Según su finalidad, el patrullaje puede ser preventivo, reactivo o focalizado."
-        },
-        {
-            "id": "p22-05",
-            "enunciado": "El principio que rige la recogida policial de datos es el de:",
-            "opciones": ["Finalidad", "Discrecionalidad", "Confianza", "Oportunidad"],
-            "respuestaCorrecta": 0,
-            "explicacion": "El principio de finalidad impone recoger solo los datos necesarios para el ejercicio de las funciones policiales."
-        },
-        {
-            "id": "p22-06",
-            "enunciado": "El RGPD se identifica con:",
-            "opciones": ["La LO 3/2018", "El Reglamento (UE) 2016/679", "La LO 7/2021", "La Directiva 2016/680"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El RGPD es el Reglamento (UE) 2016/679 de protección de datos personales."
-        },
-        {
-            "id": "p22-07",
-            "enunciado": "El tratamiento de datos con fines policiales se rige por:",
-            "opciones": ["La Ley 39/2015", "La Ley Orgánica 7/2021, de 26 de mayo", "El Reglamento de Armas", "La Ley 2/2008"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Ley Orgánica 7/2021, de 26 de mayo, regula el tratamiento de datos con fines policiales."
-        },
-        {
-            "id": "p22-08",
-            "enunciado": "La autoridad de control en materia de protección de datos en España es:",
-            "opciones": ["El Defensor del Pueblo", "La Agencia Española de Protección de Datos (AEPD)", "El Tribunal Constitucional", "El Consejo de Transparencia"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La Agencia Española de Protección de Datos (AEPD) es la autoridad de control en materia de protección de datos en España."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      },
+      {
+        "desde": "root",
+        "hasta": "s12"
+      },
+      {
+        "desde": "root",
+        "hasta": "s13"
+      },
+      {
+        "desde": "root",
+        "hasta": "s14"
+      },
+      {
+        "desde": "root",
+        "hasta": "s15"
+      },
+      {
+        "desde": "root",
+        "hasta": "s16"
+      },
+      {
+        "desde": "root",
+        "hasta": "s17"
+      },
+      {
+        "desde": "root",
+        "hasta": "s18"
+      },
+      {
+        "desde": "root",
+        "hasta": "s19"
+      },
+      {
+        "desde": "root",
+        "hasta": "s20"
+      },
+      {
+        "desde": "root",
+        "hasta": "s21"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc22-01",
+      "pregunta": "¿Qué garantiza el artículo 18 de la Constitución Española?",
+      "respuesta": "El derecho al honor, a la intimidad personal y familiar y a la propia imagen"
+    },
+    {
+      "id": "fc22-02",
+      "pregunta": "¿Qué se garantiza en el artículo 18.2 de la Constitución Española?",
+      "respuesta": "El domicilio es inviolable"
+    },
+    {
+      "id": "fc22-03",
+      "pregunta": "¿Qué se garantiza en el artículo 18.3 de la Constitución Española?",
+      "respuesta": "El secreto de las comunicaciones"
+    },
+    {
+      "id": "fc22-04",
+      "pregunta": "¿Qué se garantiza en el artículo 18.4 de la Constitución Española?",
+      "respuesta": "El derecho fundamental de las personas físicas a la protección de datos personales"
+    },
+    {
+      "id": "fc22-05",
+      "pregunta": "¿Qué es el objeto de la Ley Orgánica 3/2018?",
+      "respuesta": "Adaptar el ordenamiento jurídico español al Reglamento (UE) 2016/679 y garantizar los derechos digitales de la ciudadanía"
+    },
+    {
+      "id": "fc22-06",
+      "pregunta": "¿A qué se aplica el artículo 2 de la Ley Orgánica 3/2018?",
+      "respuesta": "A cualquier tratamiento total o parcialmente automatizado de datos personales"
+    },
+    {
+      "id": "fc22-07",
+      "pregunta": "¿Qué se excluye del ámbito de aplicación del Reglamento (UE) 2016/679?",
+      "respuesta": "Los tratamientos de datos de personas fallecidas"
+    },
+    {
+      "id": "fc22-08",
+      "pregunta": "¿Qué se regirá por lo dispuesto en la legislación específica si la hubiere y supletoriamente por lo establecido en el Reglamento (UE) 2016/679 y en la presente ley orgánica?",
+      "respuesta": "Los tratamientos realizados al amparo de la legislación orgánica del régimen electoral general, los tratamientos realizados en el ámbito de instituciones penitenciarias y los tratamientos derivados del Registro Civil, los Registros de la Propiedad y Mercantiles"
+    },
+    {
+      "id": "fc22-09",
+      "pregunta": "¿Qué se regirá por lo dispuesto en el Reglamento (UE) 2016/679 y la presente ley orgánica?",
+      "respuesta": "El tratamiento de datos llevado a cabo con ocasión de la tramitación por los órganos judiciales de los procesos de los que sean competentes"
+    },
+    {
+      "id": "fc22-10",
+      "pregunta": "¿Qué se regirá por lo dispuesto en el Reglamento (UE) 2016/679 y la presente ley orgánica?",
+      "respuesta": "El tratamiento de datos llevado a cabo con ocasión de la tramitación por el Ministerio Fiscal de los procesos de los que sea competente"
+    },
+    {
+      "id": "fc22-11",
+      "pregunta": "¿Quién puede acceder a los datos personales de una persona fallecida?",
+      "respuesta": "Las personas vinculadas al fallecido por razones familiares o de hecho así como sus herederos"
+    },
+    {
+      "id": "fc22-12",
+      "pregunta": "¿Qué se establecerán mediante real decreto?",
+      "respuesta": "Los requisitos y condiciones para acreditar la validez y vigencia de los mandatos e instrucciones"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p22-01",
+      "enunciado": "¿Qué garantiza el artículo 18 de la Constitución Española?",
+      "opciones": [
+        "a) El derecho al honor",
+        "b) El derecho a la intimidad personal y familiar",
+        "c) El derecho a la propia imagen",
+        "d) Todos los anteriores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 18 de la Constitución Española garantiza el derecho al honor, a la intimidad personal y familiar y a la propia imagen."
+    },
+    {
+      "id": "p22-02",
+      "enunciado": "¿Qué se garantiza en el artículo 18.2 de la Constitución Española?",
+      "opciones": [
+        "a) El secreto de las comunicaciones",
+        "b) El derecho a la intimidad personal y familiar",
+        "c) El derecho a la propia imagen",
+        "d) El domicilio es inviolable"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El artículo 18.2 de la Constitución Española garantiza que el domicilio es inviolable."
+    },
+    {
+      "id": "p22-03",
+      "enunciado": "¿Qué se garantiza en el artículo 18.3 de la Constitución Española?",
+      "opciones": [
+        "a) El derecho al honor",
+        "b) El derecho a la intimidad personal y familiar",
+        "c) El derecho a la propia imagen",
+        "d) El secreto de las comunicaciones"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El artículo 18.3 de la Constitución Española garantiza el secreto de las comunicaciones."
+    },
+    {
+      "id": "p22-04",
+      "enunciado": "¿Qué se garantiza en el artículo 18.4 de la Constitución Española?",
+      "opciones": [
+        "a) El derecho al honor",
+        "b) El derecho a la intimidad personal y familiar",
+        "c) El derecho a la propia imagen",
+        "d) El derecho fundamental de las personas físicas a la protección de datos personales"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El artículo 18.4 de la Constitución Española garantiza el derecho fundamental de las personas físicas a la protección de datos personales."
+    },
+    {
+      "id": "p22-05",
+      "enunciado": "¿Qué es el objeto de la Ley Orgánica 3/2018?",
+      "opciones": [
+        "a) Adaptar el ordenamiento jurídico español al Reglamento (UE) 2016/679",
+        "b) Garantizar los derechos digitales de la ciudadanía",
+        "c) Ambas anteriores",
+        "d) Ninguna de las anteriores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El objeto de la Ley Orgánica 3/2018 es adaptar el ordenamiento jurídico español al Reglamento (UE) 2016/679 y garantizar los derechos digitales de la ciudadanía."
+    },
+    {
+      "id": "p22-06",
+      "enunciado": "¿A qué se aplica el artículo 2 de la Ley Orgánica 3/2018?",
+      "opciones": [
+        "a) A cualquier tratamiento total o parcialmente automatizado de datos personales",
+        "b) A los tratamientos de datos de personas fallecidas",
+        "c) A los tratamientos sometidos a la normativa sobre protección de materias clasificadas",
+        "d) A los tratamientos realizados en el ámbito de instituciones penitenciarias"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El artículo 2 de la Ley Orgánica 3/2018 se aplica a cualquier tratamiento total o parcialmente automatizado de datos personales."
+    },
+    {
+      "id": "p22-07",
+      "enunciado": "¿Qué se excluye del ámbito de aplicación del Reglamento (UE) 2016/679?",
+      "opciones": [
+        "a) Los tratamientos de datos de personas fallecidas",
+        "b) Los tratamientos sometidos a la normativa sobre protección de materias clasificadas",
+        "c) Los tratamientos realizados en el ámbito de instituciones penitenciarias",
+        "d) Todos los anteriores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los tratamientos de datos de personas fallecidas se excluyen del ámbito de aplicación del Reglamento (UE) 2016/679."
+    },
+    {
+      "id": "p22-08",
+      "enunciado": "¿Qué se regirá por lo dispuesto en la legislación específica si la hubiere y supletoriamente por lo establecido en el Reglamento (UE) 2016/679 y en la presente ley orgánica?",
+      "opciones": [
+        "a) Los tratamientos realizados al amparo de la legislación orgánica del régimen electoral general",
+        "b) Los tratamientos realizados en el ámbito de instituciones penitenciarias",
+        "c) Los tratamientos derivados del Registro Civil, los Registros de la Propiedad y Mercantiles",
+        "d) Todos los anteriores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los tratamientos realizados al amparo de la legislación orgánica del régimen electoral general, los tratamientos realizados en el ámbito de instituciones penitenciarias y los tratamientos derivados del Registro Civil, los Registros de la Propiedad y Mercantiles se regirán por lo dispuesto en la legislación específica si la hubiere y supletoriamente por lo establecido en el Reglamento (UE) 2016/679 y en la presente ley orgánica."
+    }
+  ]
 }

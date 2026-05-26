@@ -1,157 +1,430 @@
 {
-    "id": 5,
-    "titulo": "El Gobierno de España. Composición y Funciones. Control jurisdiccional. Audiencia de los ciudadanos. La organización territorial del Estado",
-    "bloque": "general",
-    "secciones": [
-        {
-            "id": "s5-1",
-            "titulo": "El Gobierno: composición",
-            "contenido": "El Título IV de la Constitución (artículos 97 a 107) regula el Gobierno y la Administración. El Gobierno se compone del Presidente, de los Vicepresidentes en su caso, de los Ministros y de los demás miembros que establezca la ley. El Presidente dirige la acción del Gobierno y coordina las funciones de los demás miembros, sin perjuicio de la competencia y responsabilidad directa de estos en su gestión. Los miembros del Gobierno no podrán ejercer otras funciones representativas que las propias del mandato parlamentario, ni cualquier otra función pública que no derive de su cargo, ni actividad profesional o mercantil alguna."
-        },
-        {
-            "id": "s5-2",
-            "titulo": "Funciones del Gobierno",
-            "contenido": "El artículo 97 establece que el Gobierno dirige la política interior y exterior, la Administración civil y militar y la defensa del Estado, y ejerce la función ejecutiva y la potestad reglamentaria de acuerdo con la Constitución y las leyes. El Gobierno responde solidariamente de su gestión política ante el Congreso de los Diputados. El Presidente del Gobierno es investido por el Congreso conforme al procedimiento del artículo 99; el control político del Gobierno se ejerce mediante la cuestión de confianza, que plantea el Presidente, y la moción de censura, que es de carácter constructivo (debe incluir un candidato alternativo a la Presidencia)."
-        },
-        {
-            "id": "s5-3",
-            "titulo": "Control jurisdiccional y audiencia de los ciudadanos",
-            "contenido": "El artículo 106 de la Constitución dispone que los Tribunales controlan la potestad reglamentaria y la legalidad de la actuación administrativa, así como el sometimiento de esta a los fines que la justifican. Los particulares tienen derecho a ser indemnizados por toda lesión que sufran en sus bienes y derechos, salvo en los casos de fuerza mayor, siempre que la lesión sea consecuencia del funcionamiento de los servicios públicos. El artículo 105 prevé la audiencia de los ciudadanos, directamente o a través de organizaciones reconocidas por la ley, en el procedimiento de elaboración de las disposiciones que les afecten, el acceso a los archivos y registros administrativos, y la audiencia del interesado en el procedimiento de producción de los actos administrativos."
-        },
-        {
-            "id": "s5-4",
-            "titulo": "La organización territorial del Estado",
-            "contenido": "El artículo 137 de la Constitución establece que el Estado se organiza territorialmente en municipios, provincias y las Comunidades Autónomas que se constituyan; todas estas entidades gozan de autonomía para la gestión de sus respectivos intereses. La Constitución garantiza la autonomía de los municipios y de las provincias, así como el principio de solidaridad entre las distintas partes del territorio. Ninguna autoridad podrá adoptar medidas que directa o indirectamente obstaculicen la libertad de circulación y establecimiento de las personas y la libre circulación de bienes en todo el territorio español."
-        },
-        {
-            "id": "s5-5",
-            "titulo": "Las Comunidades Autónomas",
-            "contenido": "El Título VIII regula la organización territorial. Las provincias limítrofes con características históricas, culturales y económicas comunes, los territorios insulares y las provincias con entidad regional histórica pueden acceder a su autogobierno y constituirse en Comunidades Autónomas. Cada Comunidad Autónoma se rige por su Estatuto de Autonomía, norma institucional básica reconocida y amparada por el Estado como parte integrante de su ordenamiento jurídico. El artículo 149 enumera las competencias exclusivas del Estado, y el artículo 148 las que pueden asumir las Comunidades Autónomas; las materias no atribuidas expresamente al Estado pueden corresponder a las Comunidades en virtud de sus Estatutos."
-        }
-    ],
-    "esquemas": [
-        {
-            "id": "e5-1",
-            "titulo": "El Gobierno",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[El Gobierno] --> B[Presidente]\n    A --> C[Vicepresidentes]\n    A --> D[Ministros]\n    A --> E[Funciones: ejecutiva y reglamentaria]\n    A --> F[Responsabilidad ante el Congreso]"
-        },
-        {
-            "id": "e5-2",
-            "titulo": "Organización territorial del Estado",
-            "tipo": "mermaid",
-            "contenido": "graph TD\n    A[Organizacion territorial] --> B[Municipios]\n    A --> C[Provincias]\n    A --> D[Comunidades Autonomas]\n    D --> E[Estatuto de Autonomia]"
-        }
-    ],
-    "mapaMental": {
-        "nodos": [
-            { "id": "n1", "texto": "El Gobierno y el Estado", "nivel": 0, "x": 0, "y": 0 },
-            { "id": "n2", "texto": "Composición del Gobierno", "nivel": 1, "x": 0, "y": -200 },
-            { "id": "n3", "texto": "Funciones del Gobierno", "nivel": 1, "x": 190, "y": -62 },
-            { "id": "n4", "texto": "Control jurisdiccional", "nivel": 1, "x": 118, "y": 162 },
-            { "id": "n5", "texto": "Audiencia de los ciudadanos", "nivel": 1, "x": -118, "y": 162 },
-            { "id": "n6", "texto": "Organización territorial", "nivel": 1, "x": -190, "y": -62 },
-            { "id": "n7", "texto": "Presidente, Vicepresidentes, Ministros", "nivel": 2, "x": 0, "y": -360 },
-            { "id": "n8", "texto": "Función ejecutiva y reglamentaria", "nivel": 2, "x": 340, "y": -110 },
-            { "id": "n9", "texto": "Los Tribunales controlan la Administración", "nivel": 2, "x": 340, "y": 30 },
-            { "id": "n10", "texto": "Acceso a archivos y registros", "nivel": 2, "x": 210, "y": 300 },
-            { "id": "n11", "texto": "Audiencia del interesado", "nivel": 2, "x": -210, "y": 300 },
-            { "id": "n12", "texto": "Municipios, provincias y CC.AA.", "nivel": 2, "x": -340, "y": 30 },
-            { "id": "n13", "texto": "Autonomía y solidaridad", "nivel": 2, "x": -340, "y": -110 }
-        ],
-        "aristas": [
-            { "desde": "n1", "hasta": "n2" },
-            { "desde": "n1", "hasta": "n3" },
-            { "desde": "n1", "hasta": "n4" },
-            { "desde": "n1", "hasta": "n5" },
-            { "desde": "n1", "hasta": "n6" },
-            { "desde": "n2", "hasta": "n7" },
-            { "desde": "n3", "hasta": "n8" },
-            { "desde": "n4", "hasta": "n9" },
-            { "desde": "n5", "hasta": "n10" },
-            { "desde": "n5", "hasta": "n11" },
-            { "desde": "n6", "hasta": "n12" },
-            { "desde": "n6", "hasta": "n13" }
-        ]
+  "id": 5,
+  "titulo": "El Gobierno de España. Composición y Funciones. Control jurisdiccional. Audiencia de los ciudadanos. La organización territorial del Estado.",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "1. Real Decreto 399/2020, de 25 de febrero, por el que",
+      "contenido": "BIBLIOGRAFÍA • CONSTITUCIÓN ESPAÑOLA o Art. 66-80 o Art. 97-100 o Art. 105 o Art. 107-114 o Art. 137-139 o Art. 143-158 • Ley 50/1997, de 27 de noviembre, del Gobierno. o Art. 2-10 o Art. 21 • Real Decreto 399/2020, de 25 de febrero, por el que se establecen las Comisiones Delegadas del Gobierno. o Art. 1 2 \f CONSTITUCIÓN ESPAÑOLA TÍTULO IV DEL GOBIERNO Y DE LA ADMINISTRACIÓN ARTÍCULO 97 El Gobierno dirige la política interior y exterior, la Administración civil y militar y la defensa del Estado. Ejerce la función ejecutiva y la potestad reglamentaria de acuerdo con la Constitución y las leyes. ARTÍCULO 98 1. El Gobierno se compone del Presidente, de los Vicepresidentes, en su caso, de los Ministros y de los demás miembros que establezca la ley. 2. El Presidente dirige la acción del Gobierno y coordina las funciones de los demás miembros del mismo, sin perjuicio de la competencia y responsabilidad directa de éstos en su gestión. 3. Los miembros del Gobierno no podrán ejercer otras funciones representativas que las propias del mandato parlamentario, ni cualquier otra función pública que no derive de su cargo, ni actividad profesional o mercantil alguna. 4. La ley regulará el estatuto e incompatibilidades de los miembros del Gobierno. ARTÍCULO 99 1. Después de cada renovación del Congreso de los Diputados, y en los demás supuestos constitucionales en que así proceda, el Rey, previa consulta con los representantes designados por los Grupos políticos con representación parlamentaria, y a través del Presidente del Congreso, propondrá un candidato a la Presidencia del Gobierno. 2. El candidato propuesto conforme a lo previsto en el apartado anterior expondrá ante el Congreso de los Diputados el programa político del Gobierno que pretenda formar y solicitará la confianza de la Cámara. 3. Si el Congreso de los Diputados, por el voto de la mayoría absoluta de sus miembros, otorgare su confianza a dicho candidato, el Rey le nombrará Presidente. De no alcanzarse dicha mayoría, se someterá la misma propuesta a nueva votación cuarenta y ocho horas después de la anterior, y la confianza se entenderá otorgada si obtuviere la mayoría simple. 4. Si efectuadas las citadas votaciones no se otorgase la confianza para la investidura, se tramitarán sucesivas propuestas en la forma prevista en los apartados anteriores. 5. Si transcurrido el plazo de dos meses, a partir de la primera votación de investidura, ningún candidato hubiere obtenido la confianza del Congreso, el Rey disolverá ambas Cámaras y convocará nuevas elecciones con el refrendo del Presidente del Congreso. ARTÍCULO 100 Los demás miembros del Gobierno serán nombrados y separados por el Rey, a propuesta de su Presidente. 3 \f TÍTULO IV DEL GOBIERNO Y DE LA ADMINISTRACIÓN ARTÍCULO 105 La ley regulará: a) La audiencia de los ciudadanos, directamente o a través de las organizaciones y asociaciones reconocidas por la ley, en el procedimiento de elaboración de las disposiciones administrativas que les afecten. b) El acceso de los ciudadanos a los archivos y registros administrativos, salvo en lo que afecte a la seguridad y defensa del Estado, la averiguación de los delitos y la intimidad de las personas. c) El procedimiento a través del cual deben producirse los actos administrativos, garantizando, cuando proceda, la audiencia del interesado. ARTÍCULO 107 El Consejo de Estado es el supremo órgano consultivo del Gobierno. Una ley orgánica regulará su composición y competencia."
     },
-    "flashcards": [
-        { "id": "fc5-01", "anverso": "¿Qué artículos de la Constitución regulan el Gobierno?", "reverso": "Los artículos 97 a 107 (Título IV)." },
-        { "id": "fc5-02", "anverso": "¿De quién se compone el Gobierno?", "reverso": "Del Presidente, los Vicepresidentes en su caso, los Ministros y los demás miembros que establezca la ley." },
-        { "id": "fc5-03", "anverso": "¿Quién dirige la acción del Gobierno?", "reverso": "El Presidente del Gobierno." },
-        { "id": "fc5-04", "anverso": "¿Qué dirige el Gobierno según el artículo 97?", "reverso": "La política interior y exterior, la Administración civil y militar y la defensa del Estado." },
-        { "id": "fc5-05", "anverso": "¿Qué potestades ejerce el Gobierno?", "reverso": "La función ejecutiva y la potestad reglamentaria." },
-        { "id": "fc5-06", "anverso": "¿Ante quién responde políticamente el Gobierno?", "reverso": "Ante el Congreso de los Diputados, de forma solidaria." },
-        { "id": "fc5-07", "anverso": "¿Qué instrumentos de control político existen sobre el Gobierno?", "reverso": "La cuestión de confianza y la moción de censura." },
-        { "id": "fc5-08", "anverso": "¿Qué característica tiene la moción de censura en España?", "reverso": "Es constructiva: debe incluir un candidato alternativo a la Presidencia." },
-        { "id": "fc5-09", "anverso": "¿Qué controlan los Tribunales según el artículo 106?", "reverso": "La potestad reglamentaria y la legalidad de la actuación administrativa." },
-        { "id": "fc5-10", "anverso": "¿Cuándo tienen derecho los particulares a ser indemnizados?", "reverso": "Por toda lesión consecuencia del funcionamiento de los servicios públicos, salvo fuerza mayor." },
-        { "id": "fc5-11", "anverso": "¿Qué prevé el artículo 105 de la Constitución?", "reverso": "La audiencia de los ciudadanos, el acceso a archivos y registros y la audiencia del interesado." },
-        { "id": "fc5-12", "anverso": "¿Cómo se organiza territorialmente el Estado?", "reverso": "En municipios, provincias y Comunidades Autónomas." },
-        { "id": "fc5-13", "anverso": "¿Qué garantiza el artículo 137?", "reverso": "La autonomía de municipios, provincias y CC.AA. para la gestión de sus intereses." },
-        { "id": "fc5-14", "anverso": "¿Qué norma rige cada Comunidad Autónoma?", "reverso": "Su Estatuto de Autonomía, norma institucional básica." },
-        { "id": "fc5-15", "anverso": "¿Qué artículo enumera las competencias exclusivas del Estado?", "reverso": "El artículo 149 de la Constitución." },
-        { "id": "fc5-16", "anverso": "¿Qué artículo recoge las competencias que pueden asumir las CC.AA.?", "reverso": "El artículo 148 de la Constitución." },
-        { "id": "fc5-17", "anverso": "¿Pueden los miembros del Gobierno ejercer actividad mercantil?", "reverso": "No; no pueden ejercer actividad profesional o mercantil alguna." },
-        { "id": "fc5-18", "anverso": "¿Qué principio rige las relaciones entre las partes del territorio?", "reverso": "El principio de solidaridad." },
-        { "id": "fc5-19", "anverso": "¿Cómo se inviste al Presidente del Gobierno?", "reverso": "Por el Congreso de los Diputados conforme al procedimiento del artículo 99." },
-        { "id": "fc5-20", "anverso": "¿Puede obstaculizarse la libre circulación de bienes en el territorio?", "reverso": "No; ninguna autoridad puede adoptar medidas que la obstaculicen." }
+    {
+      "titulo": "2. TÍTULO V",
+      "contenido": "TÍTULO V DE LAS RELACIONES ENTRE EL GOBIERNO Y LAS CORTES GENERALES ARTÍCULO 108 El Gobierno responde solidariamente en su gestión política ante el Congreso de los Diputados. ARTÍCULO 109 Las Cámaras y sus Comisiones podrán recabar, a través de los Presidentes de aquéllas, la información y ayuda que precisen del Gobierno y de sus Departamentos y de cualesquiera autoridades del Estado y de las Comunidades Autónomas. ARTÍCULO 110 1. Las Cámaras y sus Comisiones pueden reclamar la presencia de los miembros del Gobierno. 2. Los miembros del Gobierno tienen acceso a las sesiones de las Cámaras y a sus Comisiones y la facultad de hacerse oír en ellas, y podrán solicitar que informen ante las mismas funcionarios de sus Departamentos. ARTÍCULO 111 1. El Gobierno y cada uno de sus miembros están sometidos a las interpelaciones y preguntas que se le formulen en las Cámaras. Para esta clase de debate los Reglamentos establecerán un tiempo mínimo semanal. 2. Toda interpelación podrá dar lugar a una moción en la que la Cámara manifieste su posición. ARTÍCULO 112 El Presidente del Gobierno, previa deliberación del Consejo de Ministros, puede plantear ante el Congreso de los Diputados la cuestión de confianza sobre su programa o sobre una declaración de política general. La confianza se entenderá otorgada cuando vote a favor de la misma la mayoría simple de los Diputados. 4 \f ARTÍCULO 113 1. El Congreso de los Diputados puede exigir la responsabilidad política del Gobierno mediante la adopción por mayoría absoluta de la moción de censura. 2. La moción de censura deberá ser propuesta al menos por la décima parte de los Diputados, y habrá de incluir un candidato a la Presidencia del Gobierno. 3. La moción de censura no podrá ser votada hasta que transcurran cinco días desde su presentación. En los dos primeros días de dicho plazo podrán presentarse mociones alternativas. 4. Si la moción de censura no fuere aprobada por el Congreso, sus signatarios no podrán presentar otra durante el mismo período de sesiones. ARTÍCULO 114 1. Si el Congreso niega su confianza al Gobierno, éste presentará su dimisión al Rey, procediéndose a continuación a la designación de Presidente del Gobierno, según lo dispuesto en el artículo 99. 2. Si el Congreso adopta una moción de censura, el Gobierno presentará su dimisión al Rey y el candidato incluido en aquélla se entenderá investido de la confianza de la Cámara a los efectos previstos en el artículo 99. El Rey le nombrará Presidente del Gobierno. TÍTULO VIII DE LA ORGANIZACIÓN TERRITORIAL DEL ESTADO CAPÍTULO PRIMERO PRINCIPIOS GENERALES ARTÍCULO 137 El Estado se organiza territorialmente en municipios, en provincias y en las Comunidades Autónomas que se constituyan. Todas estas entidades gozan de autonomía para la gestión de sus respectivos intereses. ARTÍCULO 138 1. El Estado garantiza la realización efectiva del principio de solidaridad consagrado en el artículo 2 de la Constitución, velando por el establecimiento de un equilibrio económico, adecuado y justo entre las diversas partes del territorio español, y atendiendo en particular a las circunstancias del hecho insular. 2. Las diferencias entre los Estatutos de las distintas Comunidades Autónomas no podrán implicar, en ningún caso, privilegios económicos o sociales. ARTÍCULO 139 1. Todos los españoles tienen los mismos derechos y obligaciones en cualquier parte del territorio del Estado. 2."
+    },
+    {
+      "titulo": "3. ARTÍCULO 143",
+      "contenido": "Ninguna autoridad podrá adoptar medidas que directa o indirectamente obstaculicen la libertad de circulación y establecimiento de las personas y la libre circulación de bienes en todo el territorio español. 5 \f CAPÍTULO TERCERO DE LAS COMUNIDADES AUTÓNOMAS ARTÍCULO 143 1. En el ejercicio del derecho a la autonomía reconocido en el artículo 2 de la Constitución, las provincias limítrofes con características históricas, culturales y económicas comunes, los territorios insulares y las provincias con entidad regional histórica podrán acceder a su autogobierno y constituirse en Comunidades Autónomas con arreglo a lo previsto en este Título y en los respectivos Estatutos. 2. La iniciativa del proceso autonómico corresponde a todas las Diputaciones interesadas o al órgano interinsular correspondiente y a las dos terceras partes de los municipios cuya población represente, al menos, la mayoría del censo electoral de cada provincia o isla. Estos requisitos deberán ser cumplidos en el plazo de seis meses desde el primer acuerdo adoptado al respecto por alguna de las Corporaciones locales interesadas. 3. La iniciativa, en caso de no prosperar, solamente podrá reiterarse pasados cinco años. ARTÍCULO 144 Las Cortes Generales, mediante ley orgánica, podrán, por motivos de interés nacional: a) Autorizar la constitución de una comunidad autónoma cuando su ámbito territorial no supere el de una provincia y no reúna las condiciones del apartado 1 del artículo 143. b) Autorizar o acordar, en su caso, un Estatuto de autonomía para territorios que no estén integrados en la organización provincial. c) Sustituir la iniciativa de las Corporaciones locales a que se refiere el apartado 2 del artículo 143. ARTÍCULO 145 1. En ningún caso se admitirá la federación de Comunidades Autónomas. 2. Los Estatutos podrán prever los supuestos, requisitos y términos en que las Comunidades Autónomas podrán celebrar convenios entre sí para la gestión y prestación de servicios propios de las mismas, así como el carácter y efectos de la correspondiente comunicación a las Cortes Generales. En los demás supuestos, los acuerdos de cooperación entre las Comunidades Autónomas necesitarán la autorización de las Cortes Generales. ARTÍCULO 146 El proyecto de Estatuto será elaborado por una asamblea compuesta por los miembros de la Diputación u órgano interinsular de las provincias afectadas y por los Diputados y Senadores elegidos en ellas y será elevado a las Cortes Generales para su tramitación como ley. ARTÍCULO 147 1. Dentro de los términos de la presente Constitución, los Estatutos serán la norma institucional básica de cada Comunidad Autónoma y el Estado los reconocerá y amparará como parte integrante de su ordenamiento jurídico. 2. Los Estatutos de autonomía deberán contener: a) La denominación de la Comunidad que mejor corresponda a su identidad histórica. b) La delimitación de su territorio. c) La denominación, organización y sede de las instituciones autónomas propias. d) Las competencias asumidas dentro del marco establecido en la Constitución y las bases para el traspaso de los servicios correspondientes a las mismas. 3. La reforma de los Estatutos se ajustará al procedimiento establecido en los mismos y requerirá, en todo caso, la aprobación por las Cortes Generales, mediante ley orgánica. 6 \f ARTÍCULO 148 1. Las Comunidades Autónomas podrán asumir competencias en las siguientes materias: 1.ª Organización de sus instituciones de autogobierno."
+    },
+    {
+      "titulo": "4. ley orgánica",
+      "contenido": "2.ª Las alteraciones de los términos municipales comprendidos en su territorio y, en general, las funciones que correspondan a la Administración del Estado sobre las Corporaciones locales y cuya transferencia autorice la legislación sobre Régimen Local. 3.ª Ordenación del territorio, urbanismo y vivienda. 4.ª Las obras públicas de interés de la Comunidad Autónoma en su propio territorio. 5.ª Los ferrocarriles y carreteras cuyo itinerario se desarrolle íntegramente en el territorio de la Comunidad Autónoma y, en los mismos términos, el transporte desarrollado por estos medios o por cable. 6.ª Los puertos de refugio, los puertos y aeropuertos deportivos y, en general, los que no desarrollen actividades comerciales. 7.ª La agricultura y ganadería, de acuerdo con la ordenación general de la economía. 8.ª Los montes y aprovechamientos forestales. 9.ª La gestión en materia de protección del medio ambiente. 10.ª Los proyectos, construcción y explotación de los aprovechamientos hidráulicos, canales y regadíos de interés de la Comunidad Autónoma; las aguas minerales y termales. 11.ª La pesca en aguas interiores, el marisqueo y la acuicultura, la caza y la pesca fluvial. 12.ª Ferias interiores. 13.ª El fomento del desarrollo económico de la Comunidad Autónoma dentro de los objetivos marcados por la política económica nacional. 14.ª La artesanía. 15.ª Museos, bibliotecas y conservatorios de música de interés para la Comunidad Autónoma. 16.ª Patrimonio monumental de interés de la Comunidad Autónoma. 17.ª El fomento de la cultura, de la investigación y, en su caso, de la enseñanza de la lengua de la Comunidad Autónoma. 18.ª Promoción y ordenación del turismo en su ámbito territorial. 19.ª Promoción del deporte y de la adecuada utilización del ocio. 20.ª Asistencia social. 21.ª Sanidad e higiene. 22.ª La vigilancia y protección de sus edificios e instalaciones. La coordinación y demás facultades en relación con las policías locales en los términos que establezca una ley orgánica. 2. Transcurridos cinco años, y mediante la reforma de sus Estatutos, las Comunidades Autónomas podrán ampliar sucesivamente sus competencias dentro del marco establecido en el artículo 149. ARTÍCULO 149 1. El Estado tiene competencia exclusiva sobre las siguientes materias: 1.ª La regulación de las condiciones básicas que garanticen la igualdad de todos los españoles en el ejercicio de los derechos y en el cumplimiento de los deberes constitucionales. 2.ª Nacionalidad, inmigración, emigración, extranjería y derecho de asilo. 3.ª Relaciones internacionales. 4.ª Defensa y Fuerzas Armadas. 5.ª Administración de Justicia. 6.ª Legislación mercantil, penal y penitenciaria; legislación procesal, sin perjuicio de las necesarias especialidades que en este orden se deriven de las particularidades del derecho sustantivo de las Comunidades Autónomas. 7.ª Legislación laboral; sin perjuicio de su ejecución por los órganos de las Comunidades Autónomas. 7 \f 8.ª Legislación civil, sin perjuicio de la conservación, modificación y desarrollo por las Comunidades Autónomas de los derechos civiles, forales o especiales, allí donde existan. En todo caso, las reglas relativas a la aplicación y eficacia de las normas jurídicas, relaciones jurídico-civiles relativas a las formas de matrimonio, ordenación de los registros e instrumentos públicos, bases de las obligaciones contractuales, normas para resolver los conflictos de leyes y determinación de las fuentes del Derecho, con respeto, en este último caso, a las normas de derecho foral o especial."
+    },
+    {
+      "titulo": "5. ley orgánica",
+      "contenido": "9.ª Legislación sobre propiedad intelectual e industrial. 10.ª Régimen aduanero y arancelario; comercio exterior. 11.ª Sistema monetario: divisas, cambio y convertibilidad; bases de la ordenación de crédito, banca y seguros. 12.ª Legislación sobre pesas y medidas, determinación de la hora oficial. 13.ª Bases y coordinación de la planificación general de la actividad económica. 14.ª Hacienda general y Deuda del Estado. 15.ª Fomento y coordinación general de la investigación científica y técnica. 16.ª Sanidad exterior. Bases y coordinación general de la sanidad. Legislación sobre productos farmacéuticos. 17.ª Legislación básica y régimen económico de la Seguridad Social, sin perjuicio de la ejecución de sus servicios por las Comunidades Autónomas. 18.ª Las bases del régimen jurídico de las Administraciones públicas y del régimen estatutario de sus funcionarios que, en todo caso, garantizarán a los administrados un tratamiento común ante ellas; el procedimiento administrativo común, sin perjuicio de las especialidades derivadas de la organización propia de las Comunidades Autónomas; legislación sobre expropiación forzosa; legislación básica sobre contratos y concesiones administrativas y el sistema de responsabilidad de todas las Administraciones públicas. 19.ª Pesca marítima, sin perjuicio de las competencias que en la ordenación del sector se atribuyan a las Comunidades Autónomas. 20.ª Marina mercante y abanderamiento de buques; iluminación de costas y señales marítimas; puertos de interés general; aeropuertos de interés general; control del espacio aéreo, tránsito y transporte aéreo, servicio meteorológico y matriculación de aeronaves. 21.ª Ferrocarriles y transportes terrestres que transcurran por el territorio de más de una Comunidad Autónoma; régimen general de comunicaciones; tráfico y circulación de vehículos a motor; correos y telecomunicaciones; cables aéreos, submarinos y radiocomunicación. 22.ª La legislación, ordenación y concesión de recursos y aprovechamientos hidráulicos cuando las aguas discurran por más de una Comunidad Autónoma, y la autorización de las instalaciones eléctricas cuando su aprovechamiento afecte a otra Comunidad o el transporte de energía salga de su ámbito territorial. 23.ª Legislación básica sobre protección del medio ambiente, sin perjuicio de las facultades de las Comunidades Autónomas de establecer normas adicionales de protección. La legislación básica sobre montes, aprovechamientos forestales y vías pecuarias. 24.ª Obras públicas de interés general o cuya realización afecte a más de una Comunidad Autónoma. 25.ª Bases de régimen minero y energético. 26.ª Régimen de producción, comercio, tenencia y uso de armas y explosivos. 27.ª Normas básicas del régimen de prensa, radio y televisión y, en general, de todos los medios de comunicación social, sin perjuicio de las facultades que en su desarrollo y ejecución correspondan a las Comunidades Autónomas. 28.ª Defensa del patrimonio cultural, artístico y monumental español contra la exportación y la expoliación; museos, bibliotecas y archivos de titularidad estatal, sin perjuicio de su gestión por parte de las Comunidades Autónomas. 29.ª Seguridad pública, sin perjuicio de la posibilidad de creación de policías por las Comunidades Autónomas en la forma que se establezca en los respectivos Estatutos en el marco de lo que disponga una ley orgánica."
+    },
+    {
+      "titulo": "6. artículo 27",
+      "contenido": "8 \f 30.ª Regulación de las condiciones de obtención, expedición y homologación de títulos académicos y profesionales y normas básicas para el desarrollo del artículo 27 de la Constitución, a fin de garantizar el cumplimiento de las obligaciones de los poderes públicos en esta materia. 31.ª Estadística para fines estatales. 32.ª Autorización para la convocatoria de consultas populares por vía de referéndum. 2. Sin perjuicio de las competencias que podrán asumir las Comunidades Autónomas, el Estado considerará el servicio de la cultura como deber y atribución esencial y facilitará la comunicación cultural entre las Comunidades Autónomas, de acuerdo con ellas. 3. Las materias no atribuidas expresamente al Estado por esta Constitución podrán corresponder a las Comunidades Autónomas, en virtud de sus respectivos Estatutos. La competencia sobre las materias que no se hayan asumido por los Estatutos de Autonomía corresponderá al Estado, cuyas normas prevalecerán, en caso de conflicto, sobre las de las Comunidades Autónomas en todo lo que no esté atribuido a la exclusiva competencia de éstas. El derecho estatal será, en todo caso, supletorio del derecho de las Comunidades Autónomas. ARTÍCULO 150 1. Las Cortes Generales, en materias de competencia estatal, podrán atribuir a todas o a alguna de las Comunidades Autónomas la facultad de dictar, para sí mismas, normas legislativas en el marco de los principios, bases y directrices fijados por una ley estatal. Sin perjuicio de la competencia de los Tribunales, en cada ley marco se establecerá la modalidad del control de las Cortes Generales sobre estas normas legislativas de las Comunidades Autónomas. 2. El Estado podrá transferir o delegar en las Comunidades Autónomas, mediante ley orgánica, facultades correspondientes a materia de titularidad estatal que por su propia naturaleza sean susceptibles de transferencia o delegación. La ley preverá en cada caso la correspondiente transferencia de medios financieros, así como las formas de control que se reserve el Estado. 3. El Estado podrá dictar leyes que establezcan los principios necesarios para armonizar las disposiciones normativas de las Comunidades Autónomas, aun en el caso de materias atribuidas a la competencia de éstas, cuando así lo exija el interés general. Corresponde a las Cortes Generales, por mayoría absoluta de cada Cámara, la apreciación de esta necesidad. ARTÍCULO 151 1. No será preciso dejar transcurrir el plazo de cinco años, a que se refiere el apartado 2 del artículo 148, cuando la iniciativa del proceso autonómico sea acordada dentro del plazo del artículo 143.2, además de por las Diputaciones o los órganos interinsulares correspondientes, por las tres cuartas partes de los municipios de cada una de las provincias afectadas que representen, al menos, la mayoría del censo electoral de cada una de ellas y dicha iniciativa sea ratificada mediante referéndum por el voto afirmativo de la mayoría absoluta de los electores de cada provincia en los términos que establezca una ley orgánica. 2. En el supuesto previsto en el apartado anterior, el procedimiento para la elaboración del Estatuto será el siguiente: 1.º El Gobierno convocará a todos los Diputados y Senadores elegidos en las circunscripciones comprendidas en el ámbito territorial que pretenda acceder al autogobierno, para que se constituyan en Asamblea, a los solos efectos de elaborar el correspondiente proyecto de Estatuto de autonomía, mediante el acuerdo de la mayoría absoluta de sus miembros."
+    },
+    {
+      "titulo": "7. ley orgánica prevista en el apartado 1 de este artículo",
+      "contenido": "2.º Aprobado el proyecto de Estatuto por la Asamblea de Parlamentarios, se remitirá a la Comisión Constitucional del Congreso, la cual, dentro del plazo de dos meses, lo 9 \f examinará con el concurso y asistencia de una delegación de la Asamblea proponente para determinar de común acuerdo su formulación definitiva. 3.º Si se alcanzare dicho acuerdo, el texto resultante será sometido a referéndum del cuerpo electoral de las provincias comprendidas en el ámbito territorial del proyectado Estatuto. 4.º Si el proyecto de Estatuto es aprobado en cada provincia por la mayoría de los votos válidamente emitidos, será elevado a las Cortes Generales. Los plenos de ambas Cámaras decidirán sobre el texto mediante un voto de ratificación. Aprobado el Estatuto, el Rey lo sancionará y lo promulgará como ley. 5.º De no alcanzarse el acuerdo a que se refiere el apartado 2 de este número, el proyecto de Estatuto será tramitado como proyecto de ley ante las Cortes Generales. El texto aprobado por éstas será sometido a referéndum del cuerpo electoral de las provincias comprendidas en el ámbito territorial del proyectado Estatuto. En caso de ser aprobado por la mayoría de los votos válidamente emitidos en cada provincia, procederá su promulgación en los términos del párrafo anterior. 3. En los casos de los párrafos 4.º y 5.º del apartado anterior, la no aprobación del proyecto de Estatuto por una o varias provincias no impedirá la constitución entre las restantes de la Comunidad Autónoma proyectada, en la forma que establezca la ley orgánica prevista en el apartado 1 de este artículo. ARTÍCULO 152 1. En los Estatutos aprobados por el procedimiento a que se refiere el artículo anterior, la organización institucional autonómica se basará en una Asamblea Legislativa, elegida por sufragio universal, con arreglo a un sistema de representación proporcional que asegure, además, la representación de las diversas zonas del territorio; un Consejo de Gobierno con funciones ejecutivas y administrativas y un Presidente, elegido por la Asamblea, de entre sus miembros, y nombrado por el Rey, al que corresponde la dirección del Consejo de Gobierno, la suprema representación de la respectiva Comunidad y la ordinaria del Estado en aquélla. El Presidente y los miembros del Consejo de Gobierno serán políticamente responsables ante la Asamblea. Un Tribunal Superior de Justicia, sin perjuicio de la jurisdicción que corresponde al Tribunal Supremo, culminará la organización judicial en el ámbito territorial de la Comunidad Autónoma. En los Estatutos de las Comunidades Autónomas podrán establecerse los supuestos y las formas de participación de aquéllas en la organización de las demarcaciones judiciales del territorio. Todo ello de conformidad con lo previsto en la ley orgánica del poder judicial y dentro de la unidad e independencia de éste. Sin perjuicio de lo dispuesto en el artículo 123, las sucesivas instancias procesales, en su caso, se agotarán ante órganos judiciales radicados en el mismo territorio de la Comunidad Autónoma en que esté el órgano competente en primera instancia. 2. Una vez sancionados y promulgados los respectivos Estatutos, solamente podrán ser modificados mediante los procedimientos en ellos establecidos y con referéndum entre los electores inscritos en los censos correspondientes. 3. Mediante la agrupación de municipios limítrofes, los Estatutos podrán establecer circunscripciones territoriales propias, que gozarán de plena personalidad jurídica."
+    },
+    {
+      "titulo": "8. ARTÍCULO 153",
+      "contenido": "ARTÍCULO 153 El control de la actividad de los órganos de las Comunidades Autónomas se ejercerá: a) Por el Tribunal Constitucional, el relativo a la constitucionalidad de sus disposiciones normativas con fuerza de ley. b) Por el Gobierno, previo dictamen del Consejo de Estado, el del ejercicio de funciones delegadas a que se refiere el apartado 2 del artículo 150. 10 \f c) Por la jurisdicción contencioso-administrativa, el de la administración autónoma y sus normas reglamentarias. d) Por el Tribunal de Cuentas, el económico y presupuestario. ARTÍCULO 154 Un Delegado nombrado por el Gobierno dirigirá la Administración del Estado en el territorio de la Comunidad Autónoma y la coordinará, cuando proceda, con la administración propia de la Comunidad. ARTÍCULO 155 1. Si una Comunidad Autónoma no cumpliere las obligaciones que la Constitución u otras leyes le impongan, o actuare de forma que atente gravemente al interés general de España, el Gobierno, previo requerimiento al Presidente de la Comunidad Autónoma y, en el caso de no ser atendido, con la aprobación por mayoría absoluta del Senado, podrá adoptar las medidas necesarias para obligar a aquélla al cumplimiento forzoso de dichas obligaciones o para la protección del mencionado interés general. 2. Para la ejecución de las medidas previstas en el apartado anterior, el Gobierno podrá dar instrucciones a todas las autoridades de las Comunidades Autónomas. ARTÍCULO 156 1. Las Comunidades Autónomas gozarán de autonomía financiera para el desarrollo y ejecución de sus competencias con arreglo a los principios de coordinación con la Hacienda estatal y de solidaridad entre todos los españoles. 2. Las Comunidades Autónomas podrán actuar como delegados o colaboradores del Estado para la recaudación, la gestión y la liquidación de los recursos tributarios de aquél, de acuerdo con las leyes y los Estatutos. ARTÍCULO 157 1. Los recursos de las Comunidades Autónomas estarán constituidos por: a) Impuestos cedidos total o parcialmente por el Estado; recargos sobre impuestos estatales y otras participaciones en los ingresos del Estado. b) Sus propios impuestos, tasas y contribuciones especiales. c) Transferencias de un Fondo de Compensación interterritorial y otras asignaciones con cargo a los Presupuestos Generales del Estado. d) Rendimientos procedentes de su patrimonio e ingresos de derecho privado. e) El producto de las operaciones de crédito. 2. Las Comunidades Autónomas no podrán en ningún caso adoptar medidas tributarias sobre bienes situados fuera de su territorio o que supongan obstáculo para la libre circulación de mercancías o servicios. 3. Mediante ley orgánica podrá regularse el ejercicio de las competencias financieras enumeradas en el precedente apartado 1, las normas para resolver los conflictos que pudieran surgir y las posibles formas de colaboración financiera entre las Comunidades Autónomas y el Estado. ARTÍCULO 158 1. En los Presupuestos Generales del Estado podrá establecerse una asignación a las Comunidades Autónomas en función del volumen de los servicios y actividades estatales que hayan asumido y de la garantía de un nivel mínimo en la prestación de los servicios públicos fundamentales en todo el territorio español. 11 \f 2. Con el fin de corregir desequilibrios económicos interterritoriales y hacer efectivo el principio de solidaridad, se constituirá un Fondo de Compensación con destino a gastos de inversión, cuyos recursos serán distribuidos por las Cortes Generales entre las Comunidades Autónomas y provincias, en su caso. 12 \fLEY 50/1997, DE 27 DE NOVIEMBRE, DEL GOBIERNO."
+    },
+    {
+      "titulo": "9. TÍTULO I",
+      "contenido": "TÍTULO I DEL GOBIERNO: COMPOSICIÓN, ORGANIZACIÓN Y ÓRGANOS DE COLABORACIÓN Y APOYO CAPÍTULO I DEL GOBIERNO, SU COMPOSICIÓN, ORGANIZACIÓN Y FUNCIONES ARTÍCULO 2. DEL PRESIDENTE DEL GOBIERNO. 1. El Presidente dirige la acción del Gobierno y coordina las funciones de los demás miembros del mismo, sin perjuicio de la competencia y responsabilidad directa de los Ministros en su gestión. 2. En todo caso, corresponde al Presidente del Gobierno: a) Representar al Gobierno. b) Establecer el programa político del Gobierno y determinar las directrices de la política interior y exterior y velar por su cumplimiento. c) Proponer al Rey, previa deliberación del Consejo de Ministros, la disolución del Congreso, del Senado o de las Cortes Generales. d) Plantear ante el Congreso de los Diputados, previa deliberación del Consejo de Ministros, la cuestión de confianza. e) Proponer al Rey la convocatoria de un referéndum consultivo, previa autorización del Congreso de los Diputados. f) Dirigir la política de defensa y ejercer respecto de las Fuerzas Armadas las funciones previstas en la legislación reguladora de la defensa nacional y de la organización militar. g) Convocar, presidir y fijar el orden del día de las reuniones del Consejo de Ministros, sin perjuicio de lo previsto en el artículo 62.g) de la Constitución. h) Refrendar, en su caso, los actos del Rey y someterle, para su sanción, las leyes y demás normas con rango de ley, de acuerdo con lo establecido en los artículos 64 y 91 de la Constitución. Interponer el recurso de inconstitucionalidad. i) j) Crear, modificar y suprimir, por Real Decreto, los Departamentos Ministeriales, así como las Secretarías de Estado, Asimismo, le corresponde la aprobación de la estructura orgánica de la Presidencia del Gobierno. k) Proponer al Rey el nombramiento y separación de los Vicepresidentes y de los Ministros. l) Resolver los conflictos de atribuciones que puedan surgir entre los diferentes Ministerios. m) Impartir instrucciones a los demás miembros del Gobierno. n) Ejercer cuantas otras atribuciones le confieran la Constitución y las leyes. ARTÍCULO 3. DEL VICEPRESIDENTE O VICEPRESIDENTES DEL GOBIERNO. 1. Al Vicepresidente o Vicepresidentes, cuando existan, les corresponderá el ejercicio de las funciones que les encomiende el Presidente. 2. El Vicepresidente que asuma la titularidad de un Departamento Ministerial, ostentará, además, la condición de Ministro. 13 \f ARTÍCULO 4. DE LOS MINISTROS. 1. Los Ministros, como tienen competencia y titulares de sus Departamentos, responsabilidad en la esfera específica de su actuación, y les corresponde el ejercicio de las siguientes funciones: a) Desarrollar la acción del Gobierno en el ámbito de su Departamento, de conformidad con los acuerdos adoptados en Consejo de Ministros o con las directrices del Presidente del Gobierno. b) Ejercer la potestad reglamentaria en las materias propias de su Departamento. c) Ejercer cuantas otras competencias les atribuyan las leyes, las normas de organización y funcionamiento del Gobierno y cualesquiera otras disposiciones. d) Refrendar, en su caso, los actos del Rey en materia de su competencia. 2. Además de los Ministros titulares de un Departamento, podrán existir Ministros sin cartera, a los que se les atribuirá la responsabilidad de determinadas funciones gubernamentales. En caso de que existan Ministros sin cartera, por Real Decreto se determinará el ámbito de sus competencias, la estructura administrativa, así como los medios materiales y personales que queden adscritos al mismo. ARTÍCULO 5. DEL CONSEJO DE MINISTROS. 1."
+    },
+    {
+      "titulo": "10. ARTÍCULO 6",
+      "contenido": "Al Consejo de Ministros, como órgano colegiado del Gobierno, le corresponde el ejercicio de las siguientes funciones: a) Aprobar los proyectos de ley y su remisión al Congreso de los Diputados o, en su caso, al Senado. b) Aprobar el Proyecto de Ley de Presupuestos Generales del Estado. c) Aprobar los Reales Decretos-leyes y los Reales Decretos Legislativos. d) Acordar la negociación y firma de Tratados internacionales, así como su aplicación provisional. e) Remitir los Tratados internacionales a las Cortes Generales en los términos previstos en los artículos 94 y 96.2 de la Constitución. f) Declarar los estados de alarma y de excepción y proponer al Congreso de los Diputados la declaración del estado de sitio. g) Disponer la emisión de Deuda Pública o contraer crédito, cuando haya sido autorizado por una Ley. h) Aprobar los reglamentos para el desarrollo y la ejecución de las leyes, previo las demás disposiciones dictamen del Consejo de Estado, así como reglamentarias que procedan. i) Crear, modificar y suprimir los órganos directivos de los Departamentos Ministeriales. j) Adoptar programas, planes y directrices vinculantes para todos los órganos de la Administración General del Estado. k) Ejercer cuantas otras atribuciones le confieran la Constitución, las leyes y cualquier otra disposición. 3. A las reuniones del Consejo de Ministros podrán asistir los Secretarios de Estado y excepcionalmente otros altos cargos, cuando sean convocados para ello, sin perjuicio de lo dispuesto en los tratados internacionales válidamente celebrados por España. 4. Las deliberaciones del Consejo de Ministros serán secretas. 14 \f ARTÍCULO 6. DE LAS COMISIONES DELEGADAS DEL GOBIERNO. 1. La creación, modificación y supresión de las Comisiones Delegadas del Gobierno será acordada por el Consejo de Ministros mediante Real Decreto, a propuesta del Presidente del Gobierno. 2. El Real Decreto de creación de una Comisión Delegada deberá especificar, en todo caso: a) El miembro del Gobierno que asume la presidencia de la Comisión. b) Los miembros del Gobierno y, en su caso, Secretarios de Estado que la integran. c) Las funciones que se atribuyen a la Comisión. d) El miembro de la Comisión al que corresponde la Secretaría de la misma. e) El régimen interno de funcionamiento y en particular el de convocatorias y suplencias. 3. No obstante lo dispuesto en el apartado anterior, podrán ser convocados a las reuniones de las Comisiones Delegadas los titulares de aquellos otros órganos superiores y directivos de la Administración General del Estado que se estime conveniente. 4. Corresponde a las Comisiones Delegadas, como órganos colegiados del Gobierno: a) Examinar las cuestiones de carácter general que tengan relación con varios de los Departamentos Ministeriales que integren la Comisión. b) Estudiar aquellos asuntos que, afectando a varios Ministerios, requieran la elaboración de una propuesta conjunta previa a su resolución por el Consejo de Ministros. c) Resolver los asuntos que, afectando a más de un Ministerio, no requieran ser elevados al Consejo de Ministros. d) Ejercer cualquier otra atribución que les confiera el ordenamiento jurídico o que les delegue el Consejo de Ministros. 5. Las deliberaciones de las Comisiones Delegadas del Gobierno serán secretas. CAPÍTULO II DE LOS ÓRGANOS DE COLABORACIÓN Y APOYO DEL GOBIERNO ARTÍCULO 7. DE LOS SECRETARIOS DE ESTADO. 1."
+    },
+    {
+      "titulo": "11. ARTÍCULO 8",
+      "contenido": "Los Secretarios de Estado son órganos superiores de la Administración General del Estado, directamente responsables de la ejecución de la acción del Gobierno en un sector de actividad específica de un Departamento o de la Presidencia del Gobierno. 2. Actúan bajo la dirección del titular del Departamento al que pertenezcan. Cuando estén adscritos a la Presidencia del Gobierno, actúan bajo la dirección del Presidente. 3. Las competencias de los Secretarios de Estado son las que se determinan en la Ley de Organización y Funcionamiento de la Administración General del Estado. ARTÍCULO 8. DE LA COMISIÓN GENERAL DE SECRETARIOS DE ESTADO Y SUBSECRETARIOS. 1. La Comisión General de Secretarios de Estado y Subsecretarios estará integrada por los titulares de las Secretarías de Estado y por los Subsecretarios de los distintos Departamentos Ministeriales. 1. Asistirá igualmente el Abogado General del Estado y aquellos altos cargos con rango de Secretario de Estado o Subsecretario que sean convocados por el Presidente por razón de la materia de que se trate. 2. La Presidencia de la Comisión General de Secretarios de Estado y Subsecretarios corresponde a un Vicepresidente del Gobierno o, en su defecto, al Ministro de la Presidencia. En caso de ausencia del Presidente de la Comisión, la presidencia recaerá en el Ministro que corresponda según el orden de precedencia de los Departamentos ministeriales. No se entenderá por ausencia la interrupción transitoria en la asistencia a la reunión de la Comisión. En ese caso, las funciones que pudieran corresponder al 15 \f Presidente serán ejercidas por la siguiente autoridad en rango presente, de conformidad con el orden de precedencia de los distintos Departamentos ministeriales. 3. La Secretaría de la Comisión General de Secretarios de Estado y Subsecretarios será ejercida por el Subsecretario de la Presidencia. En caso de ausencia, vacante o enfermedad, actuará como Secretario el Director del Secretariado del Gobierno. 4. Las deliberaciones de la Comisión General de Secretarios de Estado y Subsecretarios serán reservadas. En ningún caso la Comisión podrá adoptar decisiones o acuerdos por delegación del Gobierno. 5. Corresponde a la Comisión General de Secretarios de Estado y Subsecretarios: a) El examen de todos los asuntos que vayan a someterse a aprobación del Consejo de Ministros, excepto los nombramientos, ceses, ascensos a cualquiera de los empleos de la categoría de oficiales generales y aquéllos que, excepcionalmente y por razones de urgencia, deban ser sometidos directamente al Consejo de Ministros. b) El análisis o discusión de aquellos asuntos que, sin ser competencia del Consejo de Ministros o sus Comisiones Delegadas, afecten a varios Ministerios y sean sometidos a la Comisión por su presidente. 6. La Comisión General de Secretarios de Estado y Subsecretarios podrá celebrar sesiones, deliberar y aprobar actas a distancia por medios electrónicos, siempre que los miembros participantes se encuentren en territorio español y quede acreditada su identidad. Asimismo, se deberá asegurar la comunicación entre ellos en tiempo real durante la sesión, disponiéndose los medios necesarios para garantizar el carácter secreto o reservado de sus deliberaciones. ARTÍCULO 9. DEL SECRETARIADO DEL GOBIERNO. 1. El Secretariado del Gobierno, como órgano de apoyo del Consejo de Ministros, de las Comisiones Delegadas del Gobierno y de la Comisión General de Secretarios de Estado y Subsecretarios, ejercerá las siguientes funciones: a) La asistencia al Ministro-Secretario del Consejo de Ministros."
+    },
+    {
+      "titulo": "12. Real Decreto de estructura de ese Ministerio",
+      "contenido": "b) La remisión de las convocatorias a los diferentes miembros de los órganos colegiados anteriormente enumerados. c) La colaboración con las Secretarías Técnicas de las Comisiones Delegadas del Gobierno. d) El archivo y custodia de las convocatorias, órdenes del día y actas de las reuniones. e) Velar por el cumplimiento de los principios de buena regulación aplicables a las iniciativas normativas y contribuir a la mejora de la calidad técnica de las disposiciones aprobadas por el Gobierno. f) Velar por la correcta y fiel publicación de las disposiciones y normas emanadas del Gobierno que deban insertarse en el \"Boletín Oficial del Estado\". 2. Asimismo, el Secretariado del Gobierno, como órgano de asistencia al Ministro de la Presidencia, ejercerá las siguientes funciones: a) Los trámites relativos a la sanción y promulgación real de las leyes aprobadas por las Cortes Generales y la expedición de los Reales Decretos. b) La tramitación de los actos y disposiciones del Rey cuyo refrendo corresponde al Presidente del Gobierno. c) La tramitación de los actos y disposiciones que el ordenamiento jurídico atribuye a la competencia del Presidente del Gobierno. 3. El Secretariado del Gobierno se integra en la estructura orgánica del Ministerio de la Presidencia, tal como se prevea en el Real Decreto de estructura de ese Ministerio. El 16 \f Director del Secretariado del Gobierno ejercerá la secretaría adjunta de la Comisión General de Secretarios de Estado y Subsecretarios. 4. De conformidad con las funciones que tiene atribuidas y de acuerdo con las normas que rigen la elaboración de las disposiciones de carácter general, el Secretariado del Gobierno propondrá al Ministro de la Presidencia la aprobación de las instrucciones que han de seguirse para la tramitación de asuntos ante los órganos colegiados del Gobierno y los demás previstos en el apartado segundo de este artículo. Las instrucciones preverán expresamente la forma de documentar las propuestas y acuerdos adoptados por medios electrónicos, que deberán asegurar la identidad de los órganos intervinientes y la fehaciencia del contenido. ARTÍCULO 10. DE LOS GABINETES. 1. Los Gabinetes son órganos de apoyo político y técnico del Presidente del Gobierno, de los Vicepresidentes, de los Ministros y de los Secretarios de Estado. Los miembros de los Gabinetes realizan tareas de confianza y asesoramiento especial sin que en ningún caso puedan adoptar actos o resoluciones que correspondan legalmente a los órganos de la Administración General del Estado o de las organizaciones adscritas a ella, sin perjuicio de su asistencia o pertenencia a órganos colegiados que adopten decisiones administrativas. Asimismo, los directores de los gabinetes podrán dictar los actos administrativos propios de la jefatura de la unidad que dirigen. Particularmente, los Gabinetes prestan su apoyo a los miembros del Gobierno y Secretarios de Estado en el desarrollo de su labor política, en el cumplimiento de las tareas de carácter parlamentario y en sus relaciones con las instituciones y la organización administrativa. El Gabinete de la Presidencia del Gobierno se regulará por Real Decreto del Presidente en el que se determinará, entre otros aspectos, su estructura y funciones. El resto de Gabinetes se regulará por lo dispuesto en esta Ley. 2. Los Directores de Gabinete tendrán el nivel orgánico que se determine reglamentariamente. El resto de miembros del Gabinete tendrán la situación y grado administrativo que les corresponda en virtud de la legislación correspondiente. 3."
+    },
+    {
+      "titulo": "13. TÍTULO IV",
+      "contenido": "Las retribuciones de los miembros de los Gabinetes se determinan por el Consejo de Ministros dentro de las consignaciones presupuestarias establecidas al efecto adecuándose, en todo caso, a las retribuciones de la Administración General del Estado. TÍTULO IV DEL GOBIERNO EN FUNCIONES ARTÍCULO 21. DEL GOBIERNO EN FUNCIONES. 1. El Gobierno cesa tras la celebración de elecciones generales, en los casos de pérdida de confianza parlamentaria previstos en la Constitución, o por dimisión o fallecimiento de su Presidente. 2. El Gobierno cesante continúa en funciones hasta la toma de posesión del nuevo Gobierno, con las limitaciones establecidas en esta Ley. 3. El Gobierno en funciones facilitará el normal desarrollo del proceso de formación del nuevo Gobierno y el traspaso de poderes al mismo y limitará su gestión al despacho ordinario de los asuntos públicos, absteniéndose de adoptar, salvo casos de urgencia debidamente acreditados o por razones de interés general cuya acreditación expresa así lo justifique, cualesquiera otras medidas. 4. El Presidente del Gobierno en funciones no podrá ejercer las siguientes facultades: a) Proponer al Rey la disolución de alguna de las Cámaras, o de las Cortes Generales. b) Plantear la cuestión de confianza. 17 \f c) Proponer al Rey la convocatoria de un referéndum consultivo. 5. El Gobierno en funciones no podrá ejercer las siguientes facultades: a) Aprobar el Proyecto de Ley de Presupuestos Generales del Estado. b) Presentar proyectos de ley al Congreso de los Diputados o, en su caso, al Senado. 6. Las delegaciones legislativas otorgadas por las Cortes Generales quedarán en suspenso durante todo el tiempo que el Gobierno esté en funciones como consecuencia de la celebración de elecciones generales. 18 \f REAL DECRETO 399/2020, DE 25 DE FEBRERO, POR EL QUE SE ESTABLECEN LAS COMISIONES DELEGADAS DEL GOBIERNO. ARTÍCULO 1. COMISIONES DELEGADAS DEL GOBIERNO Y FUNCIONES. 1. De conformidad con lo previsto en el artículo 6.1 de la Ley 50/1997, de 27 de noviembre, del Gobierno, los órganos colegiados del Gobierno con categoría de Comisión Delegada del Gobierno serán los siguientes: o) Comisión Delegada del Gobierno para Asuntos Económicos. p) Consejo de Seguridad Nacional, en su condición de Comisión Delegada del Gobierno para la Seguridad Nacional. q) Comisión Delegada del Gobierno para Asuntos de Inteligencia. r) Comisión Delegada del Gobierno para el Reto Demográfico. s) Comisión Delegada del Gobierno para la Agenda 2030. 2. Corresponde a las Comisiones Delegadas del Gobierno el ejercicio de las funciones previstas en el artículo 6.4 de la Ley 50/1997, de 27 de noviembre, del Gobierno, en relación con los asuntos atribuidos a cada una de ellas. 19"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"El Gobierno de España. Composición y Fun\"]\n  A --> N1[\"Real Decreto 399/2020, de 25 de febrero,\"]\n  A --> N2[\"TÍTULO V\"]\n  A --> N3[\"ARTÍCULO 143\"]\n  A --> N4[\"ley orgánica\"]\n  A --> N5[\"ley orgánica\"]\n  A --> N6[\"artículo 27\"]\n  A --> N7[\"ley orgánica prevista en el apartado 1 d\"]\n  A --> N8[\"ARTÍCULO 153\"]\n  A --> N9[\"TÍTULO I\"]\n  A --> N10[\"ARTÍCULO 6\"]\n  A --> N11[\"ARTÍCULO 8\"]\n  A --> N12[\"Real Decreto de estructura de ese Minist\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "El Gobierno de España. Composición y Funciones. C…",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "Real Decreto 399/2020, de 25 de febrero…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "TÍTULO V",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "ARTÍCULO 143",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "ley orgánica",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "ley orgánica",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "artículo 27",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "ley orgánica prevista en el apartado 1 …",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "ARTÍCULO 153",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "TÍTULO I",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s10",
+        "texto": "ARTÍCULO 6",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s11",
+        "texto": "ARTÍCULO 8",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s12",
+        "texto": "Real Decreto de estructura de ese Minis…",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s13",
+        "texto": "TÍTULO IV",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
     ],
-    "preguntas": [
-        {
-            "id": "p5-01",
-            "enunciado": "El Gobierno se compone del Presidente, los Vicepresidentes en su caso, los Ministros y:",
-            "opciones": ["Los Senadores", "Los demás miembros que establezca la ley", "Los Secretarios de Estado obligatoriamente", "Los Delegados del Gobierno"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 98.1 define la composición del Gobierno incluyendo los demás miembros que establezca la ley."
-        },
-        {
-            "id": "p5-02",
-            "enunciado": "Según el artículo 97, el Gobierno ejerce:",
-            "opciones": ["La función legislativa", "La función ejecutiva y la potestad reglamentaria", "La función jurisdiccional", "El control constitucional"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 97 atribuye al Gobierno la función ejecutiva y la potestad reglamentaria."
-        },
-        {
-            "id": "p5-03",
-            "enunciado": "El Gobierno responde políticamente ante:",
-            "opciones": ["El Senado", "El Congreso de los Diputados", "El Tribunal Constitucional", "El Rey"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 108 establece que el Gobierno responde solidariamente de su gestión ante el Congreso de los Diputados."
-        },
-        {
-            "id": "p5-04",
-            "enunciado": "La moción de censura en España se caracteriza por ser:",
-            "opciones": ["Destructiva", "Constructiva, con candidato alternativo", "Automática", "Decidida por el Senado"],
-            "respuestaCorrecta": 1,
-            "explicacion": "La moción de censura es constructiva: debe incluir un candidato alternativo a la Presidencia del Gobierno."
-        },
-        {
-            "id": "p5-05",
-            "enunciado": "Según el artículo 106, los Tribunales controlan:",
-            "opciones": ["Las leyes del Parlamento", "La potestad reglamentaria y la legalidad de la actuación administrativa", "Las sentencias del Tribunal Constitucional", "Los tratados internacionales"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 106.1 atribuye a los Tribunales el control de la potestad reglamentaria y la legalidad de la actuación administrativa."
-        },
-        {
-            "id": "p5-06",
-            "enunciado": "El Estado se organiza territorialmente en:",
-            "opciones": ["Provincias y regiones", "Municipios, provincias y Comunidades Autónomas", "Comarcas y municipios", "Distritos y provincias"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 137 establece la organización en municipios, provincias y Comunidades Autónomas."
-        },
-        {
-            "id": "p5-07",
-            "enunciado": "La norma institucional básica de una Comunidad Autónoma es:",
-            "opciones": ["La Constitución", "El Estatuto de Autonomía", "El Reglamento del Parlamento autonómico", "La ley de presupuestos"],
-            "respuestaCorrecta": 1,
-            "explicacion": "El artículo 147 define el Estatuto de Autonomía como la norma institucional básica de cada Comunidad Autónoma."
-        },
-        {
-            "id": "p5-08",
-            "enunciado": "Las competencias exclusivas del Estado se enumeran en el artículo:",
-            "opciones": ["137", "148", "149", "150"],
-            "respuestaCorrecta": 2,
-            "explicacion": "El artículo 149 de la Constitución enumera las competencias exclusivas del Estado."
-        }
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
+      },
+      {
+        "desde": "root",
+        "hasta": "s10"
+      },
+      {
+        "desde": "root",
+        "hasta": "s11"
+      },
+      {
+        "desde": "root",
+        "hasta": "s12"
+      },
+      {
+        "desde": "root",
+        "hasta": "s13"
+      }
     ]
+  },
+  "flashcards": [
+    {
+      "id": "fc5-01",
+      "pregunta": "¿Quién propone un candidato a la Presidencia del Gobierno?",
+      "respuesta": "El Rey, previa consulta con los representantes designados por los Grupos políticos con representación parlamentaria"
+    },
+    {
+      "id": "fc5-02",
+      "pregunta": "¿Cómo se otorga la confianza al candidato a la Presidencia del Gobierno?",
+      "respuesta": "Por mayoría absoluta de los miembros del Congreso de los Diputados"
+    },
+    {
+      "id": "fc5-03",
+      "pregunta": "¿Qué hace el Presidente del Gobierno si no se otorga la confianza al candidato?",
+      "respuesta": "Presenta su dimisión al Rey"
+    },
+    {
+      "id": "fc5-04",
+      "pregunta": "¿Qué es el Consejo de Estado?",
+      "respuesta": "El supremo órgano consultivo del Gobierno"
+    },
+    {
+      "id": "fc5-05",
+      "pregunta": "¿Qué hace el Gobierno si el Congreso niega su confianza?",
+      "respuesta": "Presenta su dimisión al Rey"
+    },
+    {
+      "id": "fc5-06",
+      "pregunta": "¿Qué es la moción de censura?",
+      "respuesta": "Una moción que exige la responsabilidad política del Gobierno"
+    },
+    {
+      "id": "fc5-07",
+      "pregunta": "¿Cómo se vota la moción de censura?",
+      "respuesta": "Por mayoría absoluta de los Diputados"
+    },
+    {
+      "id": "fc5-08",
+      "pregunta": "¿Qué hace el Presidente del Gobierno si se plantea una moción de censura?",
+      "respuesta": "Presenta su dimisión al Rey"
+    },
+    {
+      "id": "fc5-09",
+      "pregunta": "¿Qué es el acceso de los ciudadanos a los archivos y registros administrativos?",
+      "respuesta": "El derecho de los ciudadanos a acceder a los archivos y registros administrativos, salvo en lo que afecte a la seguridad y defensa del Estado"
+    },
+    {
+      "id": "fc5-10",
+      "pregunta": "¿Qué es la audiencia de los ciudadanos?",
+      "respuesta": "El derecho de los ciudadanos a ser oídos en el procedimiento de elaboración de las disposiciones administrativas que les afecten"
+    },
+    {
+      "id": "fc5-11",
+      "pregunta": "¿Qué es el procedimiento a través del cual deben producirse los actos administrativos?",
+      "respuesta": "Un procedimiento que garantice la audiencia del interesado"
+    },
+    {
+      "id": "fc5-12",
+      "pregunta": "¿Qué es el Rey?",
+      "respuesta": "El jefe del Estado"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p5-01",
+      "enunciado": "¿Quién propone un candidato a la Presidencia del Gobierno?",
+      "opciones": [
+        "El Rey",
+        "El Presidente del Congreso",
+        "El Presidente del Gobierno",
+        "El Congreso de los Diputados"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El Rey, previa consulta con los representantes designados por los Grupos políticos con representación parlamentaria"
+    },
+    {
+      "id": "p5-02",
+      "enunciado": "¿Cómo se otorga la confianza al candidato a la Presidencia del Gobierno?",
+      "opciones": [
+        "Por mayoría simple de los miembros del Congreso de los Diputados",
+        "Por mayoría absoluta de los miembros del Congreso de los Diputados",
+        "Por mayoría de los miembros del Congreso de los Diputados",
+        "Por unanimidad de los miembros del Congreso de los Diputados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Por mayoría absoluta de los miembros del Congreso de los Diputados"
+    },
+    {
+      "id": "p5-03",
+      "enunciado": "¿Qué hace el Presidente del Gobierno si no se otorga la confianza al candidato?",
+      "opciones": [
+        "Presenta su dimisión al Rey",
+        "No hace nada",
+        "Renuncia a su cargo",
+        "Presenta su candidatura a la Presidencia del Gobierno"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Presenta su dimisión al Rey"
+    },
+    {
+      "id": "p5-04",
+      "enunciado": "¿Qué es el Consejo de Estado?",
+      "opciones": [
+        "El supremo órgano consultivo del Gobierno",
+        "El órgano ejecutivo del Gobierno",
+        "El órgano legislativo del Gobierno",
+        "El órgano judicial del Gobierno"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El supremo órgano consultivo del Gobierno"
+    },
+    {
+      "id": "p5-05",
+      "enunciado": "¿Qué hace el Gobierno si el Congreso niega su confianza?",
+      "opciones": [
+        "Presenta su dimisión al Rey",
+        "No hace nada",
+        "Renuncia a su cargo",
+        "Presenta su candidatura a la Presidencia del Gobierno"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Presenta su dimisión al Rey"
+    },
+    {
+      "id": "p5-06",
+      "enunciado": "¿Qué es la moción de censura?",
+      "opciones": [
+        "Una moción que exige la responsabilidad política del Gobierno",
+        "Una moción que exige la confianza del Gobierno",
+        "Una moción que exige la renuncia del Gobierno",
+        "Una moción que exige la disolución del Congreso"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Una moción que exige la responsabilidad política del Gobierno"
+    },
+    {
+      "id": "p5-07",
+      "enunciado": "¿Cómo se vota la moción de censura?",
+      "opciones": [
+        "Por mayoría simple de los Diputados",
+        "Por mayoría absoluta de los Diputados",
+        "Por unanimidad de los Diputados",
+        "Por mayoría de los Diputados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Por mayoría absoluta de los Diputados"
+    },
+    {
+      "id": "p5-08",
+      "enunciado": "¿Qué hace el Presidente del Gobierno si se plantea una moción de censura?",
+      "opciones": [
+        "Presenta su dimisión al Rey",
+        "No hace nada",
+        "Renuncia a su cargo",
+        "Presenta su candidatura a la Presidencia del Gobierno"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Presenta su dimisión al Rey"
+    },
+    {
+      "id": "p5-09",
+      "enunciado": "¿Qué es el acceso de los ciudadanos a los archivos y registros administrativos?",
+      "opciones": [
+        "El derecho de los ciudadanos a acceder a los archivos y registros administrativos, salvo en lo que afecte a la seguridad y defensa del Estado",
+        "El derecho de los ciudadanos a no acceder a los archivos y registros administrativos",
+        "El derecho de los ciudadanos a acceder a los archivos y registros administrativos sin restricciones",
+        "El derecho de los ciudadanos a no tener acceso a los archivos y registros administrativos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El derecho de los ciudadanos a acceder a los archivos y registros administrativos, salvo en lo que afecte a la seguridad y defensa del Estado"
+    },
+    {
+      "id": "p5-10",
+      "enunciado": "¿Qué es la audiencia de los ciudadanos?",
+      "opciones": [
+        "El derecho de los ciudadanos a ser oídos en el procedimiento de elaboración de las disposiciones administrativas que les afecten",
+        "El derecho de los ciudadanos a no ser oídos en el procedimiento de elaboración de las disposiciones administrativas que les afecten",
+        "El derecho de los ciudadanos a ser oídos en el procedimiento de elaboración de las disposiciones administrativas que les afecten, salvo en lo que afecte a la seguridad y defensa del Estado",
+        "El derecho de los ciudadanos a no tener audiencia en el procedimiento de elaboración de las disposiciones administrativas que les afecten"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El derecho de los ciudadanos a ser oídos en el procedimiento de elaboración de las disposiciones administrativas que les afecten"
+    },
+    {
+      "id": "p5-11",
+      "enunciado": "¿Qué es el procedimiento a través del cual deben producirse los actos administrativos?",
+      "opciones": [
+        "Un procedimiento que garantice la audiencia del interesado",
+        "Un procedimiento que no garantice la audiencia del interesado",
+        "Un procedimiento que garantice la audiencia del interesado, salvo en lo que afecte a la seguridad y defensa del Estado",
+        "Un procedimiento que no tenga en cuenta la audiencia del interesado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un procedimiento que garantice la audiencia del interesado"
+    },
+    {
+      "id": "p5-12",
+      "enunciado": "¿Qué es el Rey?",
+      "opciones": [
+        "El jefe del Estado",
+        "El jefe del Gobierno",
+        "El jefe de la Administración",
+        "El jefe de la Justicia"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El jefe del Estado"
+    }
+  ]
 }
