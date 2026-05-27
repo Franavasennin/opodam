@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
-import { Card } from '../components/ui/Card'
 import { obtenerTopics } from '../data/topics'
 import { responderFlashcard } from '../services/spaced-repetition'
 import { obtenerSesionHoy, completarSesionDiaria, calcularDebilidades } from '../services/adaptativo'
@@ -10,6 +9,13 @@ import type { Flashcard, PreguntaExt } from '../types'
 import { getPreguntaCorrecta, getFlashcardFront, getFlashcardBack } from '../types'
 
 type Fase = 'cargando' | 'flashcards' | 'minitest' | 'completada'
+
+const LETRAS = ['A', 'B', 'C', 'D', 'E', 'F']
+
+const topbar: React.CSSProperties = {
+  height: 52, borderBottom: '1px solid var(--border-soft)',
+  background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
+}
 
 export function SesionDiaria() {
   const navigate = useNavigate()
@@ -102,104 +108,113 @@ export function SesionDiaria() {
   }
 
   if (fase === 'cargando') {
-    return <div className="flex justify-center py-16 text-gray-400">Preparando sesión...</div>
+    return <div className="min-h-screen flex justify-center py-16" style={{ background: 'var(--bg)', color: 'var(--mute)' }}>Preparando sesión…</div>
   }
 
+  // ── Completada ──
   if (fase === 'completada') {
     const aciertos = preguntas.filter((p, i) => respuestas[i] === getPreguntaCorrecta(p)).length
     return (
-      <div className="p-4 max-w-2xl mx-auto text-center py-12 space-y-4">
-        <div className="text-6xl">🎉</div>
-        <h1 className="text-2xl font-bold">¡Sesión completada!</h1>
+      <div className="min-h-screen fade-up flex flex-col items-center justify-center text-center px-4" style={{ background: 'var(--bg)' }}>
+        <div style={{ fontSize: 60 }}>🎉</div>
+        <h1 className="display" style={{ margin: '12px 0 8px', fontSize: 30 }}>¡Sesión <span className="display-italic" style={{ color: 'var(--accent)' }}>completada!</span></h1>
         {preguntas.length > 0 && (
-          <p className="text-gray-600">
-            Mini-test: <span className="font-bold text-brand-600">{aciertos}/{preguntas.length}</span> correctas
+          <p style={{ fontSize: 14, color: 'var(--ink-soft)', margin: '0 0 4px' }}>
+            Mini-test: <span className="num-display" style={{ fontWeight: 600, color: 'var(--accent)' }}>{aciertos}/{preguntas.length}</span> correctas
           </p>
         )}
-        <p className="text-gray-500 text-sm">
-          Racha: <span className="font-semibold text-brand-600">{progreso.racha.dias} días 🔥</span>
+        <p style={{ fontSize: 13.5, color: 'var(--mute)', margin: 0 }}>
+          Racha: <span className="num-display" style={{ fontWeight: 600, color: 'var(--accent)' }}>{progreso.racha.dias} días 🔥</span>
         </p>
-        <p className="text-xs text-gray-400">Vuelve mañana para la siguiente sesión</p>
-        <button onClick={() => navigate('/')}
-          className="w-full bg-brand-600 text-white rounded-xl py-3 text-sm font-semibold">
-          Volver al inicio
-        </button>
+        <p style={{ fontSize: 11.5, color: 'var(--mute)', margin: '8px 0 20px' }}>Vuelve mañana para la siguiente sesión</p>
+        <button onClick={() => navigate(`/oposicion/${slug}`)} className="btn-editorial btn-acc" style={{ maxWidth: 320, width: '100%' }}>Volver al inicio</button>
       </div>
     )
   }
 
+  // ── Flashcards ──
   if (fase === 'flashcards') {
     const card = flashcards[fcIndice]
     return (
-      <div className="p-4 max-w-2xl mx-auto space-y-4">
-        <h1 className="text-lg font-bold pt-4">⚡ Sesión de hoy</h1>
-        <p className="text-xs text-gray-400">Flashcards {fcIndice + 1}/{flashcards.length}</p>
-        <div onClick={() => setFcVerRespuesta(true)}
-          className="min-h-48 bg-white border border-gray-100 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer hover:shadow-md transition-shadow text-center">
-          <p className="text-sm font-medium text-gray-800">{getFlashcardFront(card)}</p>
-          {!fcVerRespuesta
-            ? <p className="text-xs text-gray-400 mt-4">Toca para ver la respuesta</p>
-            : <p className="text-sm text-brand-700 font-semibold mt-4 border-t pt-4 w-full">{getFlashcardBack(card)}</p>
-          }
-        </div>
-        {fcVerRespuesta && (
-          <div className="grid grid-cols-3 gap-2">
-            {(['dificil', 'dudoso', 'facil'] as const).map(cal => (
-              <button key={cal} onClick={() => responderFC(cal)}
-                className={`py-2 rounded-xl text-sm font-semibold ${
-                  cal === 'dificil' ? 'bg-red-100 text-red-700' :
-                  cal === 'dudoso'  ? 'bg-orange-100 text-orange-700' : 'bg-green-100 text-green-700'
-                }`}>
-                {cal === 'dificil' ? '😓 Difícil' : cal === 'dudoso' ? '🤔 Dudoso' : '😊 Fácil'}
-              </button>
-            ))}
+      <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+        <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+          <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>⚡ Sesión de hoy</span>
+          <span className="num-display" style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--mute)' }}>FC {fcIndice + 1}/{flashcards.length}</span>
+        </header>
+        <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+          <div onClick={() => setFcVerRespuesta(true)} className="card"
+            style={{ minHeight: 200, background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', textAlign: 'center' }}>
+            <p style={{ margin: 0, fontSize: 15, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.4 }}>{getFlashcardFront(card)}</p>
+            {!fcVerRespuesta
+              ? <p style={{ fontSize: 12, color: 'var(--mute)', marginTop: 16 }}>Toca para ver la respuesta</p>
+              : <p style={{ fontSize: 14, color: 'var(--accent)', fontWeight: 600, marginTop: 16, borderTop: '1px solid var(--border-soft)', paddingTop: 16, width: '100%' }}>{getFlashcardBack(card)}</p>
+            }
           </div>
-        )}
-        {preguntas.length > 0 && (
-          <button onClick={() => setFase('minitest')} className="w-full text-xs text-gray-400 underline">
-            Saltar a mini-test →
-          </button>
-        )}
+          {fcVerRespuesta && (
+            <div className="grid grid-cols-3 gap-2">
+              {(['dificil', 'dudoso', 'facil'] as const).map(cal => {
+                const color = cal === 'dificil' ? 'var(--warn)' : cal === 'dudoso' ? '#a07a2c' : 'var(--accent)'
+                return (
+                  <button key={cal} onClick={() => responderFC(cal)}
+                    style={{ padding: '10px 0', borderRadius: 12, fontSize: 13, fontWeight: 600, cursor: 'pointer', border: `1px solid ${color}`, color, background: 'transparent' }}>
+                    {cal === 'dificil' ? '😓 Difícil' : cal === 'dudoso' ? '🤔 Dudoso' : '😊 Fácil'}
+                  </button>
+                )
+              })}
+            </div>
+          )}
+          {preguntas.length > 0 && (
+            <button onClick={() => setFase('minitest')} style={{ width: '100%', background: 'none', border: 0, cursor: 'pointer', fontSize: 12, color: 'var(--mute)', textDecoration: 'underline' }}>
+              Saltar a mini-test →
+            </button>
+          )}
+        </main>
       </div>
     )
   }
 
-  // fase === 'minitest'
+  // ── Mini-test ──
   const p = preguntas[pIndice]
   const respActual = respuestas[pIndice]
   return (
-    <div className="p-4 max-w-2xl mx-auto space-y-4">
-      <h1 className="text-lg font-bold pt-4">⚡ Sesión de hoy — Mini-test</h1>
-      <p className="text-xs text-gray-400">{pIndice + 1}/{preguntas.length} preguntas</p>
-      <p className="text-sm font-medium leading-relaxed">{p.enunciado}</p>
-      {p.opciones.map((op, j) => {
-        let cls = 'border-gray-100 hover:bg-gray-50'
-        if (mostrandoExplicacion) {
-          if (j === getPreguntaCorrecta(p)) cls = 'border-green-400 bg-green-50'
-          else if (j === respActual) cls = 'border-red-400 bg-red-50'
-        } else if (respActual === j) {
-          cls = 'border-brand-500 bg-brand-50'
-        }
-        return (
-          <label key={j}
-            className={`flex items-center gap-2 p-3 rounded-xl border cursor-pointer transition-colors ${cls}`}>
-            <input type="radio" checked={respActual === j} disabled={mostrandoExplicacion}
-              onChange={() => responderPregunta(j)} />
-            <span className="text-sm">{op}</span>
-          </label>
-        )
-      })}
-      {mostrandoExplicacion && (
-        <>
-          <Card className="bg-blue-50 border-blue-200">
-            <p className="text-xs text-blue-800">{p.explicacion}</p>
-          </Card>
-          <button onClick={siguientePregunta}
-            className="w-full bg-brand-600 text-white rounded-xl py-3 text-sm font-semibold">
-            {pIndice + 1 < preguntas.length ? 'Siguiente →' : '✅ Finalizar sesión'}
-          </button>
-        </>
-      )}
+    <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>⚡ Mini-test</span>
+        <span className="num-display" style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--mute)' }}>{pIndice + 1}/{preguntas.length}</span>
+      </header>
+      <main className="max-w-2xl mx-auto px-4 pt-4 pb-12">
+        <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
+          <p style={{ margin: '0 0 12px', fontSize: 14.5, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.4 }}>{p.enunciado}</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {p.opciones.map((op, j) => {
+              let extra: React.CSSProperties = {}
+              if (mostrandoExplicacion) {
+                if (j === getPreguntaCorrecta(p)) extra = { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent)' }
+                else if (j === respActual) extra = { borderColor: 'var(--warn)', background: 'var(--warn-soft)', color: 'var(--warn)' }
+              } else if (respActual === j) {
+                extra = { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent)' }
+              }
+              const activo = extra.color != null
+              return (
+                <button key={j} type="button" className="opt" disabled={mostrandoExplicacion} onClick={() => responderPregunta(j)} style={extra}>
+                  <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: activo ? 'var(--accent-ink)' : 'var(--mute)', background: activo ? (extra.borderColor as string) : 'var(--surface)', border: `1px solid ${activo ? (extra.borderColor as string) : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
+                  <span>{op}</span>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+        {mostrandoExplicacion && (
+          <>
+            <div className="card" style={{ marginTop: 14, background: 'var(--accent-soft)', border: '1px solid var(--border-soft)', borderRadius: 14, padding: 14 }}>
+              <p style={{ margin: 0, fontSize: 12.5, color: 'var(--ink-soft)', lineHeight: 1.5 }}>{p.explicacion}</p>
+            </div>
+            <button onClick={siguientePregunta} className="btn-editorial btn-acc" style={{ width: '100%', marginTop: 14 }}>
+              {pIndice + 1 < preguntas.length ? 'Siguiente →' : 'Finalizar sesión'}
+            </button>
+          </>
+        )}
+      </main>
     </div>
   )
 }
