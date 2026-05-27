@@ -23,7 +23,31 @@
   --warn: #8a3922;
   --warn-soft: #f3e2d9;
   --gold: #a07a2c;
+  color-scheme: light;
 }
+
+/* Tema "forest" (noche) — moss profundo + acento verde claro */
+html.dark {
+  --bg: #0f1310;
+  --surface: #151b17;
+  --surface-2: #1c2420;
+  --ink: #ecede6;
+  --ink-soft: #cfd2c8;
+  --mute: #818879;
+  --mute-soft: #535851;
+  --border: #232b25;
+  --border-soft: #1b2220;
+  --accent: #6fb091;
+  --accent-ink: #0d1310;
+  --accent-soft: #1c3128;
+  --warn: #d77a5e;
+  --warn-soft: #2e2017;
+  --gold: #c4a25a;
+  color-scheme: dark;
+}
+/* En noche, el hero "tinta" se eleva a superficie en vez de bloque claro */
+html.dark .hero { background: var(--surface-2); color: var(--ink); border: 1px solid var(--border); }
+html.dark .hero .hero-grain { background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px); }
 
 @layer base {
   html { @apply h-full; }

@@ -31,6 +31,7 @@ function RootOrCallback() {
 import MisOposiciones from './pages/MisOposiciones'
 import OposicionDashboard from './pages/OposicionDashboard'
 import { BotonMusica } from './components/audio/BotonMusica'
+import { BotonTema } from './components/ui/BotonTema'
 
 // Páginas existentes (lazy)
 const Temario = lazy(() => import('./pages/Temario').then(m => ({ default: m.Temario })))
@@ -113,6 +114,7 @@ export default function App() {
         </Routes>
       </Suspense>
       <BotonMusica />
+      <BotonTema />
     </>
   )
 }
