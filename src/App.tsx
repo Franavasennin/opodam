@@ -45,6 +45,9 @@ const Perfil = lazy(() => import('./pages/Perfil').then(m => ({ default: m.Perfi
 const ProCoachAI = lazy(() => import('./pages/ProCoachAI'))
 const ProCoachChat = lazy(() => import('./pages/ProCoachChat'))
 const Equivalencias = lazy(() => import('./pages/Equivalencias'))
+const Psicotecnicos = lazy(() => import('./pages/Psicotecnicos'))
+const Supuestos = lazy(() => import('./pages/Supuestos'))
+const SupuestoDetalle = lazy(() => import('./pages/SupuestoDetalle'))
 
 const Loading = () => (
   <div className="min-h-screen flex items-center justify-center bg-slate-50">
@@ -92,6 +95,9 @@ export default function App() {
         <Route path="/oposicion/:slug/examen" element={<RutaProtegida><Examen /></RutaProtegida>} />
         <Route path="/oposicion/:slug/sesion-diaria" element={<RutaProtegida><SesionDiaria /></RutaProtegida>} />
         <Route path="/oposicion/:slug/perfil" element={<RutaProtegida><Perfil /></RutaProtegida>} />
+        <Route path="/oposicion/:slug/psicotecnicos" element={<RutaProtegida><Psicotecnicos /></RutaProtegida>} />
+        <Route path="/oposicion/:slug/supuestos" element={<RutaProtegida><Supuestos /></RutaProtegida>} />
+        <Route path="/oposicion/:slug/supuestos/:id" element={<RutaProtegida><SupuestoDetalle /></RutaProtegida>} />
 
         <Route path="/procoach" element={<ProCoachAI />} />
         <Route path="/procoach/chat" element={<ProCoachChat />} />
