@@ -32,6 +32,7 @@ import MisOposiciones from './pages/MisOposiciones'
 import OposicionDashboard from './pages/OposicionDashboard'
 import { BotonMusica } from './components/audio/BotonMusica'
 import { BotonTema } from './components/ui/BotonTema'
+import { DesktopShell } from './components/layout/DesktopShell'
 
 // Páginas existentes (lazy)
 const Temario = lazy(() => import('./pages/Temario').then(m => ({ default: m.Temario })))
@@ -79,6 +80,7 @@ export default function App() {
   return (
     <>
       <Suspense fallback={<Loading />}>
+        <DesktopShell>
         <Routes>
         {/* Auth callback — destino del magic link */}
         <Route path="/auth/callback" element={<AuthCallback />} />
@@ -112,6 +114,7 @@ export default function App() {
         <Route path="/" element={<RootOrCallback />} />
         <Route path="*" element={<Navigate to="/mis-oposiciones" replace />} />
         </Routes>
+        </DesktopShell>
       </Suspense>
       <BotonMusica />
       <BotonTema />
