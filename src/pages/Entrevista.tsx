@@ -2,6 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { enviarTurnoEntrevista, type MensajeEntrevista, type ModoEntrevista } from '../services/entrevista'
 
+const topbar: React.CSSProperties = {
+  height: 52, borderBottom: '1px solid var(--border-soft)',
+  background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
+}
+
 export default function Entrevista() {
   const navigate = useNavigate()
   const { slug } = useParams<{ slug: string }>()
@@ -47,66 +52,72 @@ export default function Entrevista() {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); enviar() }
   }
 
+  // ── Selección de modo ──
   if (!modo) {
     return (
-      <div className="min-h-screen bg-slate-50">
-        <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-3 sticky top-0 z-10">
-          <button onClick={() => navigate(`/oposicion/${slug}`)} className="text-marca-600 text-sm font-medium">←</button>
-          <h1 className="text-lg font-bold text-slate-900">Entrevista</h1>
+      <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+        <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+          <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+          <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Entrevista</span>
         </header>
-        <main className="p-4 max-w-2xl mx-auto space-y-3">
-          <p className="text-sm text-slate-600">Elige un modo de entrenamiento:</p>
-          <button onClick={() => elegirModo('practica')}
-            className="w-full bg-white border border-slate-200 rounded-2xl shadow-sm px-4 py-4 text-left hover:shadow-md transition-shadow">
-            <div className="text-sm font-bold text-slate-900">🎯 Práctica</div>
-            <div className="text-xs text-slate-500 mt-0.5">Feedback didáctico tras cada respuesta (método STAR, versión modelo).</div>
-          </button>
-          <button onClick={() => elegirModo('examen')}
-            className="w-full bg-white border border-slate-200 rounded-2xl shadow-sm px-4 py-4 text-left hover:shadow-md transition-shadow">
-            <div className="text-sm font-bold text-slate-900">⏱️ Examen real</div>
-            <div className="text-xs text-slate-500 mt-0.5">Preguntas encadenadas con presión; el análisis va al informe final.</div>
-          </button>
+        <main className="max-w-2xl mx-auto px-4 pt-4 pb-12">
+          <div className="eyebrow" style={{ marginBottom: 10 }}>Entrenamiento personal</div>
+          <h1 className="display" style={{ margin: '0 0 18px', fontSize: 30, letterSpacing: '-0.015em' }}>
+            Habla con tu <span className="display-italic" style={{ color: 'var(--accent)' }}>tribunal.</span>
+          </h1>
+          <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <button onClick={() => elegirModo('practica')} className="card"
+              style={{ width: '100%', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '16px 18px' }}>
+              <div style={{ fontSize: 14.5, fontWeight: 600, color: 'var(--ink)' }}>🎯 Práctica</div>
+              <div style={{ fontSize: 12.5, color: 'var(--mute)', marginTop: 3, lineHeight: 1.45 }}>Feedback didáctico tras cada respuesta (método STAR, versión modelo).</div>
+            </button>
+            <button onClick={() => elegirModo('examen')} className="card"
+              style={{ width: '100%', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '16px 18px' }}>
+              <div style={{ fontSize: 14.5, fontWeight: 600, color: 'var(--ink)' }}>⏱️ Examen real</div>
+              <div style={{ fontSize: 12.5, color: 'var(--mute)', marginTop: 3, lineHeight: 1.45 }}>Preguntas encadenadas con presión; el análisis va al informe final.</div>
+            </button>
+          </div>
         </main>
       </div>
     )
   }
 
+  // ── Conversación ──
   return (
-    <div className="min-h-screen bg-slate-100 flex flex-col">
-      <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-3">
-        <button onClick={() => navigate(`/oposicion/${slug}`)} className="text-marca-600 text-sm font-medium">←</button>
-        <span className="font-bold text-slate-900">Entrevista</span>
-        <span className="text-xs text-slate-400">· {modo === 'examen' ? 'Examen real' : 'Práctica'}</span>
-        <button onClick={() => { setModo(null); setMensajes([]); setError(null) }} className="ml-auto text-xs text-marca-600 font-medium">Reiniciar</button>
+    <div className="min-h-screen flex flex-col" style={{ background: 'var(--bg)' }}>
+      <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Entrevista</span>
+        <span className="num-display" style={{ fontSize: 11.5, color: 'var(--mute)' }}>· {modo === 'examen' ? 'Examen real' : 'Práctica'}</span>
+        <button onClick={() => { setModo(null); setMensajes([]); setError(null) }} style={{ marginLeft: 'auto', background: 'none', border: 0, cursor: 'pointer', color: 'var(--accent)', fontSize: 12.5, fontWeight: 600 }}>Reiniciar</button>
       </header>
 
       <main className="flex-1 overflow-y-auto px-4 py-4">
-        <div className="max-w-2xl mx-auto space-y-3">
+        <div className="max-w-2xl mx-auto" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {mensajes.map((m, i) => (
-            <div key={i} className={m.role === 'user'
-              ? 'ml-auto max-w-[85%] rounded-2xl bg-marca-600 text-white px-4 py-2.5 text-sm whitespace-pre-wrap'
-              : 'mr-auto max-w-[85%] rounded-2xl bg-white border border-slate-200 px-4 py-2.5 text-sm text-slate-800 whitespace-pre-wrap'}>
+            <div key={i} style={m.role === 'user'
+              ? { marginLeft: 'auto', maxWidth: '85%', borderRadius: 16, background: 'var(--accent)', color: 'var(--accent-ink)', padding: '10px 14px', fontSize: 13.5, whiteSpace: 'pre-wrap', lineHeight: 1.45 }
+              : { marginRight: 'auto', maxWidth: '85%', borderRadius: 16, background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--ink-soft)', padding: '10px 14px', fontSize: 13.5, whiteSpace: 'pre-wrap', lineHeight: 1.45 }}>
               {m.content}
             </div>
           ))}
-          {cargando && <div className="mr-auto rounded-2xl bg-white border border-slate-200 px-4 py-2.5 text-sm text-slate-400">El entrevistador está pensando…</div>}
-          {error && <div className="rounded-xl bg-red-50 border border-red-200 px-3 py-2 text-xs text-red-700">{error}</div>}
+          {cargando && <div style={{ marginRight: 'auto', borderRadius: 16, background: 'var(--surface)', border: '1px solid var(--border)', padding: '10px 14px', fontSize: 13.5, color: 'var(--mute)' }}>El entrevistador está pensando…</div>}
+          {error && <div className="rounded-xl px-3 py-2 text-xs" style={{ background: 'var(--warn-soft)', color: 'var(--warn)' }}>{error}</div>}
           <div ref={finRef} />
         </div>
       </main>
 
-      <footer className="bg-white border-t border-slate-200 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
-        <div className="max-w-2xl mx-auto space-y-2">
+      <footer className="px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
+        <div className="max-w-2xl mx-auto" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           <div className="flex items-end gap-2">
             <textarea value={input} onChange={e => setInput(e.target.value)} onKeyDown={handleKeyDown}
               placeholder="Tu respuesta… (Enter para enviar)" rows={2}
-              className="flex-1 resize-none rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-marca-600" />
-            <button onClick={enviar} disabled={cargando || !input.trim()}
-              className="bg-marca-600 hover:bg-marca-700 disabled:opacity-40 text-white text-sm font-semibold rounded-xl px-4 py-2 transition-colors">Enviar</button>
+              style={{ flex: 1, resize: 'none', borderRadius: 12, border: '1px solid var(--border)', background: 'var(--bg)', color: 'var(--ink)', padding: '8px 12px', fontSize: 13.5 }} />
+            <button onClick={enviar} disabled={cargando || !input.trim()} className="btn-editorial btn-acc"
+              style={{ paddingLeft: 18, paddingRight: 18, opacity: cargando || !input.trim() ? 0.4 : 1 }}>Enviar</button>
           </div>
           {mensajes.length > 1 && (
-            <button onClick={verInforme} disabled={cargando}
-              className="w-full border border-marca-200 text-marca-700 rounded-xl py-2 text-sm font-semibold disabled:opacity-40">
+            <button onClick={verInforme} disabled={cargando} className="btn-editorial btn-sec" style={{ width: '100%', opacity: cargando ? 0.4 : 1 }}>
               Terminar y ver informe
             </button>
           )}
