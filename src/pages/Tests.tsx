@@ -29,8 +29,9 @@ export function Tests() {
   if (temaId === null) return (
     <div className="min-h-screen bg-slate-50">
       <header className="bg-white border-b border-slate-200 px-4 py-3">
-        <div className="max-w-2xl mx-auto">
-          <h1 className="text-lg font-bold text-slate-900">Tests</h1>
+        <div className="max-w-2xl mx-auto flex items-center gap-3">
+          <button onClick={() => navigate(`/oposicion/${slug}`)} className="text-marca-600 hover:text-marca-700 text-sm font-medium transition-colors">←</button>
+          <h1 className="text-lg font-bold text-slate-900">Tests y simulacros</h1>
         </div>
       </header>
       <div className="p-4 max-w-2xl mx-auto">
