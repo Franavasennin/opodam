@@ -15,13 +15,15 @@ interface Props {
   onTerminar?: (resultado: { aciertos: number; errores: number; total: number }) => void
 }
 
+const LETRAS = ['A', 'B', 'C', 'D', 'E', 'F']
+
 export function MotorTest({ preguntas, titulo, onTerminar }: Props) {
   const [indice, setIndice] = useState(0)
   const [respuestas, setRespuestas] = useState<(number | null)[]>(() => preguntas.map(() => null))
   const [terminado, setTerminado] = useState(false)
 
   if (!preguntas.length) {
-    return <p className="text-slate-400 text-sm text-center py-8">Aún no hay preguntas aquí.</p>
+    return <p style={{ color: 'var(--mute)', fontSize: 14, textAlign: 'center', padding: '32px 0' }}>Aún no hay preguntas aquí.</p>
   }
 
   const aciertos = respuestas.filter((r, i) => r === preguntas[i].respuestaCorrecta).length
@@ -39,19 +41,22 @@ export function MotorTest({ preguntas, titulo, onTerminar }: Props) {
   if (terminado) {
     const nota = calcularPuntuacionTest(aciertos, errores, preguntas.length)
     return (
-      <div className="space-y-4">
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
-          <p className="text-5xl font-bold text-marca-600">{nota.toFixed(2)}</p>
-          <p className="text-slate-500 text-sm mt-1">sobre 10</p>
-          <p className="text-sm text-slate-700 mt-3">✅ {aciertos} aciertos · ❌ {errores} errores</p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, textAlign: 'center' }}>
+          <div className="num-display" style={{ fontSize: 52, color: 'var(--accent)', lineHeight: 1 }}>{nota.toFixed(2)}</div>
+          <div className="eyebrow" style={{ marginTop: 6 }}>sobre 10</div>
+          <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {aciertos} aciertos · ❌ {errores} errores</div>
         </div>
-        {preguntas.map((p, i) => (
-          <div key={p.id} className={`bg-white border border-slate-200 rounded-2xl shadow-sm p-4 border-l-4 ${respuestas[i] === p.respuestaCorrecta ? 'border-l-emerald-500' : 'border-l-red-500'}`}>
-            <p className="text-sm font-semibold text-slate-900">{p.enunciado}</p>
-            <p className="text-xs text-slate-500 mt-1">Correcta: {p.opciones[p.respuestaCorrecta]}</p>
-            <p className="text-xs text-slate-400 mt-1 italic">{p.explicacion}</p>
-          </div>
-        ))}
+        {preguntas.map((p, i) => {
+          const ok = respuestas[i] === p.respuestaCorrecta
+          return (
+            <div key={p.id} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16, borderLeft: `3px solid ${ok ? 'var(--accent)' : 'var(--warn)'}` }}>
+              <p style={{ margin: 0, fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>{p.enunciado}</p>
+              <p style={{ margin: '6px 0 0', fontSize: 12, color: 'var(--accent)' }}>Correcta: {p.opciones[p.respuestaCorrecta]}</p>
+              <p style={{ margin: '4px 0 0', fontSize: 12, color: 'var(--mute)', fontStyle: 'italic' }}>{p.explicacion}</p>
+            </div>
+          )
+        })}
       </div>
     )
   }
@@ -61,25 +66,34 @@ export function MotorTest({ preguntas, titulo, onTerminar }: Props) {
   const esUltima = indice + 1 >= preguntas.length
 
   return (
-    <div className="space-y-4">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
       <div className="flex items-center justify-between">
-        <h2 className="text-sm font-bold text-slate-900">{titulo}</h2>
-        <span className="text-xs text-slate-400">{indice + 1}/{preguntas.length}</span>
+        <h2 style={{ margin: 0, fontSize: 13, fontWeight: 600, color: 'var(--ink)' }}>{titulo}</h2>
+        <span className="num-display" style={{ fontSize: 15, color: 'var(--mute)' }}>{indice + 1}/{preguntas.length}</span>
       </div>
-      <p className="text-sm font-medium leading-relaxed">{p.enunciado}</p>
-      {p.opciones.map((op, j) => (
-        <label key={j} className={`flex items-center gap-2 p-3 rounded-xl border cursor-pointer transition-colors ${sel === j ? 'border-marca-500 bg-marca-50' : 'border-slate-200 hover:bg-slate-50'}`}>
-          <input type="radio" checked={sel === j} onChange={() => elegir(j)} />
-          <span className="text-sm">{op}</span>
-        </label>
-      ))}
+      <p style={{ margin: 0, fontSize: 15, fontWeight: 500, lineHeight: 1.45, color: 'var(--ink)' }}>{p.enunciado}</p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        {p.opciones.map((op, j) => (
+          <button key={j} type="button" className="opt" onClick={() => elegir(j)}
+            style={sel === j ? { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent)' } : undefined}>
+            <span style={{
+              width: 22, height: 22, flexShrink: 0, borderRadius: 6,
+              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+              fontFamily: "'JetBrains Mono', monospace", fontSize: 11,
+              color: sel === j ? 'var(--accent-ink)' : 'var(--mute)',
+              background: sel === j ? 'var(--accent)' : 'var(--surface)',
+              border: `1px solid ${sel === j ? 'var(--accent)' : 'var(--border)'}`,
+            }}>{LETRAS[j] ?? j + 1}</span>
+            <span>{op}</span>
+          </button>
+        ))}
+      </div>
       <div className="flex justify-between pt-2">
         <button onClick={() => setIndice(i => Math.max(0, i - 1))} disabled={indice === 0}
-          className="text-sm text-slate-500 disabled:opacity-30">← Anterior</button>
+          style={{ background: 'none', border: 0, cursor: 'pointer', fontSize: 13.5, color: 'var(--mute)', opacity: indice === 0 ? 0.3 : 1 }}>← Anterior</button>
         {esUltima
-          ? <button onClick={finalizar} className="bg-marca-600 hover:bg-marca-700 text-white text-sm font-semibold rounded-xl px-4 py-2">Finalizar</button>
-          : <button onClick={() => setIndice(i => Math.min(preguntas.length - 1, i + 1))}
-              className="bg-marca-600 hover:bg-marca-700 text-white text-sm font-semibold rounded-xl px-4 py-2">Siguiente →</button>}
+          ? <button onClick={finalizar} className="btn-editorial btn-acc" style={{ height: 40 }}>Finalizar</button>
+          : <button onClick={() => setIndice(i => Math.min(preguntas.length - 1, i + 1))} className="btn-editorial btn-acc" style={{ height: 40 }}>Siguiente →</button>}
       </div>
     </div>
   )
