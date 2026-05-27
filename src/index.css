@@ -177,3 +177,22 @@ html.dark .hero .hero-grain { background-image: radial-gradient(rgba(255,255,255
 @media (prefers-reduced-motion: reduce) {
   .fade-up, .stagger > * { animation: none; opacity: 1; transform: none; }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   Capa de compatibilidad de tema.
+   Remapea los neutros de Tailwind (white/slate/gray) a las variables,
+   para que TODAS las pantallas funcionen en día (clay) y noche (forest)
+   sin reescribir cada componente. Los acentos (marca/brand) NO se tocan
+   para conservar el contraste de los botones.
+   ───────────────────────────────────────────────────────────── */
+.bg-white { background-color: var(--surface) !important; }
+.bg-slate-50, .bg-gray-50 { background-color: var(--bg) !important; }
+.bg-slate-100, .bg-gray-100, .bg-slate-200, .bg-slate-300 { background-color: var(--surface-2) !important; }
+
+.text-slate-900, .text-gray-900 { color: var(--ink) !important; }
+.text-slate-800, .text-slate-700, .text-gray-800, .text-gray-700 { color: var(--ink-soft) !important; }
+.text-slate-600, .text-slate-500, .text-gray-600, .text-gray-500 { color: var(--mute) !important; }
+.text-slate-400, .text-slate-300, .text-gray-400, .text-gray-300 { color: var(--mute-soft) !important; }
+
+.border-slate-100, .border-slate-200, .border-slate-300,
+.border-gray-100, .border-gray-200 { border-color: var(--border) !important; }
