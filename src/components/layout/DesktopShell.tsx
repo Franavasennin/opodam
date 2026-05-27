@@ -1,6 +1,7 @@
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../../data/oposiciones'
+import { setActiveSlug } from '../../services/storage'
 
 const NAV = [
   { label: 'Resumen', icon: '◎', seg: '' },
@@ -19,12 +20,20 @@ const NAV = [
 export function DesktopShell({ children }: { children: ReactNode }) {
   const location = useLocation()
   const navigate = useNavigate()
+  const [abierto, setAbierto] = useState(false)
 
   const m = location.pathname.match(/^\/oposicion\/([^/]+)(\/([^/]+))?/)
   const slug = m?.[1]
   const seg = m?.[3] ?? ''
   const enOposicion = Boolean(slug)
   const oposicion = OPOSICIONES.find(op => op.slug === slug)
+  const disponibles = OPOSICIONES.filter(op => op.disponible)
+
+  function cambiarOposicion(nuevo: string) {
+    setActiveSlug(nuevo)
+    setAbierto(false)
+    navigate(`/oposicion/${nuevo}`)
+  }
 
   return (
     <>
@@ -42,16 +51,36 @@ export function DesktopShell({ children }: { children: ReactNode }) {
             <span style={{ fontWeight: 600, fontSize: 16, letterSpacing: '-0.01em', color: 'var(--ink)' }}>OpoDAM</span>
           </button>
 
-          {/* Oposición activa */}
+          {/* Selector de oposición (cambiar entre disponibles) */}
           {oposicion && (
-            <button onClick={() => navigate(`/oposicion/${slug}`)} className="card" style={{ margin: '0 14px 16px', display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 12, cursor: 'pointer', textAlign: 'left' }}>
-              <span style={{ fontSize: 18 }}>🛡️</span>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div className="eyebrow" style={{ fontSize: 9.5 }}>Oposición</div>
-                <div style={{ fontSize: 12.5, fontWeight: 600, color: 'var(--ink)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{oposicion.slug.toUpperCase()}</div>
-              </div>
-              <span style={{ color: 'var(--mute)' }}>›</span>
-            </button>
+            <div style={{ position: 'relative', margin: '0 14px 16px' }}>
+              <button onClick={() => setAbierto(v => !v)} className="card" style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 12, cursor: 'pointer', textAlign: 'left' }}>
+                <span style={{ fontSize: 18 }}>🛡️</span>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div className="eyebrow" style={{ fontSize: 9.5 }}>Oposición</div>
+                  <div style={{ fontSize: 12.5, fontWeight: 600, color: 'var(--ink)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{oposicion.slug.toUpperCase()}</div>
+                </div>
+                <span style={{ color: 'var(--mute)', transform: abierto ? 'rotate(90deg)' : 'none', transition: 'transform 120ms' }}>›</span>
+              </button>
+              {abierto && (
+                <div className="card" style={{ position: 'absolute', top: '100%', left: 0, right: 0, marginTop: 6, zIndex: 30, background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 12, overflow: 'hidden', boxShadow: '0 12px 30px -12px rgba(0,0,0,0.25)' }}>
+                  {disponibles.map(op => (
+                    <button key={op.slug} onClick={() => cambiarOposicion(op.slug)}
+                      style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: op.slug === slug ? 'var(--accent-soft)' : 'transparent', border: 0, cursor: 'pointer', textAlign: 'left' }}>
+                      <span style={{ fontSize: 16 }}>{op.slug === 'cgpc' ? '🛡️' : '👮'}</span>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontSize: 12.5, fontWeight: 600, color: op.slug === slug ? 'var(--accent)' : 'var(--ink)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{op.nombre}</div>
+                      </div>
+                      {op.slug === slug && <span style={{ color: 'var(--accent)', fontSize: 12 }}>✓</span>}
+                    </button>
+                  ))}
+                  <button onClick={() => { setAbierto(false); navigate('/mis-oposiciones') }}
+                    style={{ width: '100%', padding: '10px 12px', background: 'transparent', border: 0, borderTop: '1px solid var(--border-soft)', cursor: 'pointer', textAlign: 'left', fontSize: 12, color: 'var(--mute)' }}>
+                    Ver todas las oposiciones
+                  </button>
+                </div>
+              )}
+            </div>
           )}
 
           <div className="eyebrow" style={{ padding: '0 22px 8px' }}>Navegar</div>
