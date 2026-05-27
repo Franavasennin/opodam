@@ -14,20 +14,36 @@ export default function Supuestos() {
   const metas = modulo ? modulo.SUPUESTOS_META : []
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-3 sticky top-0 z-10">
-        <button onClick={() => navigate(`/oposicion/${slug}`)} className="text-marca-600 text-sm font-medium">←</button>
-        <h1 className="text-lg font-bold text-slate-900">Supuestos prácticos</h1>
+    <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      <header className="sticky top-0 z-10 flex items-center gap-3 px-4"
+        style={{ height: 52, borderBottom: '1px solid var(--border-soft)', background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)' }}>
+        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Supuestos prácticos</span>
       </header>
-      <main className="p-4 max-w-2xl mx-auto space-y-3">
-        {metas.length === 0 && <p className="text-slate-400 text-sm text-center py-8">Aún no hay supuestos para esta oposición.</p>}
-        {metas.map(m => (
-          <button key={m.id} onClick={() => navigate(`/oposicion/${slug}/supuestos/${m.id}`)}
-            className="w-full flex items-center gap-3 bg-white border border-slate-200 rounded-2xl shadow-sm px-4 py-4 text-left hover:shadow-md transition-shadow">
-            <span className="flex-1 text-sm font-bold text-slate-900">{m.titulo}</span>
-            <span className="text-slate-300 text-lg">›</span>
-          </button>
-        ))}
+
+      <main className="max-w-2xl mx-auto px-4 pt-4 pb-12">
+        <div className="eyebrow" style={{ marginBottom: 10 }}>Casos tipo examen</div>
+        <h1 className="display" style={{ margin: '0 0 18px', fontSize: 30, letterSpacing: '-0.015em' }}>
+          Resuelve <span className="display-italic" style={{ color: 'var(--accent)' }}>supuestos reales.</span>
+        </h1>
+
+        {metas.length === 0 && (
+          <p style={{ color: 'var(--mute)', fontSize: 14, textAlign: 'center', padding: '32px 0' }}>Aún no hay supuestos para esta oposición.</p>
+        )}
+
+        <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {metas.map((m, i) => (
+            <button key={m.id} onClick={() => navigate(`/oposicion/${slug}/supuestos/${m.id}`)} className="card"
+              style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '16px', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16 }}>
+              <span className="num-display" style={{ fontSize: 26, color: 'var(--accent)', flexShrink: 0, width: 34, textAlign: 'center' }}>{String(i + 1).padStart(2, '0')}</span>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div className="eyebrow" style={{ marginBottom: 3 }}>Supuesto</div>
+                <div style={{ fontSize: 14.5, fontWeight: 600, color: 'var(--ink)', letterSpacing: '-0.01em' }}>{m.titulo}</div>
+              </div>
+              <span style={{ color: 'var(--mute)', fontSize: 18 }}>›</span>
+            </button>
+          ))}
+        </div>
       </main>
     </div>
   )

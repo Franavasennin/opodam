@@ -25,20 +25,32 @@ export default function SupuestoDetalle() {
     if (cargado && !supuesto) navigate(`/oposicion/${slug}/supuestos`)
   }, [cargado, supuesto, navigate, slug])
 
-  if (!supuesto) return <div className="min-h-screen flex items-center justify-center text-slate-400">Cargando…</div>
+  if (!supuesto) return <div className="min-h-screen flex items-center justify-center" style={{ color: 'var(--mute)' }}>Cargando…</div>
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-3 sticky top-0 z-10">
-        <button onClick={() => navigate(`/oposicion/${slug}/supuestos`)} className="text-marca-600 text-sm font-medium">←</button>
-        <h1 className="text-base font-bold text-slate-900 truncate">{supuesto.titulo}</h1>
+    <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      <header className="sticky top-0 z-10 flex items-center gap-3 px-4"
+        style={{ height: 52, borderBottom: '1px solid var(--border-soft)', background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)' }}>
+        <button onClick={() => navigate(`/oposicion/${slug}/supuestos`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Supuesto práctico</span>
       </header>
-      <main className="p-4 max-w-2xl mx-auto space-y-4">
-        <details open className="bg-white border border-slate-200 rounded-2xl p-4">
-          <summary className="text-sm font-semibold text-slate-900 cursor-pointer">Enunciado del supuesto</summary>
-          <p className="text-sm text-slate-700 mt-2 whitespace-pre-wrap">{supuesto.caso}</p>
-        </details>
-        <MotorTest preguntas={supuesto.preguntas} titulo="Preguntas del supuesto" />
+
+      <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+        <div>
+          <div className="eyebrow" style={{ marginBottom: 6 }}>Escenario</div>
+          <h1 className="display" style={{ margin: 0, fontSize: 26, lineHeight: 1.12, letterSpacing: '-0.01em' }}>{supuesto.titulo}</h1>
+        </div>
+
+        <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
+          <p style={{ margin: 0, fontFamily: "'Instrument Serif', serif", fontSize: 18, lineHeight: 1.5, color: 'var(--ink-soft)', whiteSpace: 'pre-wrap' }}>
+            {supuesto.caso}
+          </p>
+        </div>
+
+        <div>
+          <div className="eyebrow" style={{ marginBottom: 12 }}>Cuestiones · {supuesto.preguntas.length} preguntas</div>
+          <MotorTest preguntas={supuesto.preguntas} titulo="Preguntas del supuesto" />
+        </div>
       </main>
     </div>
   )
