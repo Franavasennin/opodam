@@ -30,30 +30,41 @@ export function TemaDetalle() {
 
   const handleTeoriaLeida = useCallback(() => marcarTeoriaLeida(temaId), [temaId, marcarTeoriaLeida])
 
-  if (!tema) return <div className="flex items-center justify-center h-64 text-gray-400">Cargando...</div>
+  if (!tema) return <div className="flex items-center justify-center h-64" style={{ color: 'var(--mute)' }}>Cargando…</div>
 
   const vueltas = progreso.temas[String(temaId)]?.vueltas ?? 0
 
   return (
-    <div className="flex flex-col h-full">
-      <header className="bg-white border-b border-gray-100 px-4 py-3 sticky top-0 z-10">
-        <button onClick={() => navigate(`/oposicion/${slug}/temario`)} className="text-brand-600 text-sm mb-1">← Temario</button>
-        <div className="flex items-center justify-between">
-          <h1 className="text-base font-bold text-gray-900 leading-tight">{tema.titulo}</h1>
-          <span className="text-sm text-gray-400 ml-2">🔄 ×{vueltas}</span>
+    <div className="flex flex-col h-full" style={{ background: 'var(--bg)' }}>
+      <header className="sticky top-0 z-10 px-4 pt-3 pb-2" style={{ background: 'color-mix(in srgb, var(--bg) 90%, transparent)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border-soft)' }}>
+        <div className="max-w-2xl mx-auto">
+          <div className="flex items-center justify-between">
+            <button onClick={() => navigate(`/oposicion/${slug}/temario`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 13.5, display: 'flex', alignItems: 'center', gap: 5 }}>
+              ← <span style={{ fontWeight: 500 }}>Temario</span>
+            </button>
+            {vueltas > 0 && <span className="pill">🔄 ×{vueltas}</span>}
+          </div>
+          <div className="eyebrow" style={{ marginTop: 8 }}>Tema {temaId}</div>
+          <h1 className="display" style={{ margin: '2px 0 0', fontSize: 21, lineHeight: 1.12, letterSpacing: '-0.01em' }}>{tema.titulo}</h1>
         </div>
       </header>
 
-      <div className="flex overflow-x-auto border-b border-gray-100 bg-white px-4 shrink-0">
-        {TABS.map(t => (
-          <button key={t} onClick={() => setTab(t)}
-            className={`py-3 px-3 text-sm font-medium shrink-0 border-b-2 transition-colors ${tab === t ? 'border-brand-600 text-brand-600' : 'border-transparent text-gray-500'}`}>
-            {t}
-          </button>
-        ))}
+      <div className="px-4 shrink-0" style={{ borderBottom: '1px solid var(--border-soft)', background: 'var(--bg)' }}>
+        <div className="max-w-2xl mx-auto flex overflow-x-auto" style={{ gap: 4 }}>
+          {TABS.map(t => (
+            <button key={t} onClick={() => setTab(t)}
+              style={{
+                padding: '11px 10px', fontSize: 13, fontWeight: 600, flexShrink: 0, background: 'none', border: 0,
+                borderBottom: `2px solid ${tab === t ? 'var(--accent)' : 'transparent'}`,
+                color: tab === t ? 'var(--accent)' : 'var(--mute)', cursor: 'pointer', letterSpacing: '-0.005em',
+              }}>
+              {t}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-4 max-w-2xl mx-auto w-full">
         {tab === "Teoria"      && <TeoriaTab tema={tema} onTeoriaLeida={handleTeoriaLeida} />}
         {tab === "Esquemas"    && <EsquemasTab tema={tema} />}
         {tab === "Mapa Mental" && <MapaMentalTab tema={tema} />}
