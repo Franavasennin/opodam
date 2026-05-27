@@ -1,7 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
-import { Card } from '../components/ui/Card'
-import { Badge } from '../components/ui/Badge'
 import { obtenerTopics } from '../data/topics'
 import type { Bloque } from '../types'
 
@@ -12,7 +10,7 @@ export function Temario() {
   const { TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
 
   const grupos: Record<Bloque, Array<typeof TEMAS_META[number]>> = {
-    general:    TEMAS_META.filter(t => t.bloque === 'general'),
+    general: TEMAS_META.filter(t => t.bloque === 'general'),
     especifico: TEMAS_META.filter(t => t.bloque === 'especifico'),
   }
 
@@ -22,49 +20,65 @@ export function Temario() {
     const aciertos = p?.porcentajeAciertos ?? 0
     const dominado = aciertos >= 80 && vueltas >= 3
     return (
-      <Card key={meta.id} onClick={() => navigate(`/oposicion/${slug}/temario/${meta.id}`)} className="flex items-center gap-3">
-        <span className="w-9 h-9 rounded-xl bg-marca-50 text-marca-700 text-sm font-bold flex items-center justify-center shrink-0">
-          {meta.id}
-        </span>
-        <div className="flex-1 min-w-0">
-          <p className="text-sm font-semibold text-slate-900 truncate">{meta.titulo}</p>
-          <p className="text-xs text-slate-500 mt-0.5">
+      <button
+        key={meta.id}
+        onClick={() => navigate(`/oposicion/${slug}/temario/${meta.id}`)}
+        className="card"
+        style={{
+          width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '13px 14px',
+          textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14,
+        }}
+      >
+        <span className="num-display" style={{
+          width: 38, height: 38, borderRadius: 10, background: 'var(--surface-2)',
+          border: '1px solid var(--border-soft)', color: 'var(--ink-soft)', fontSize: 18,
+          display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+        }}>{meta.id}</span>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <p style={{ margin: 0, fontSize: 13.5, fontWeight: 600, color: 'var(--ink)', letterSpacing: '-0.01em', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{meta.titulo}</p>
+          <p style={{ margin: '2px 0 0', fontSize: 11.5, color: 'var(--mute)' }}>
             {p?.ultimaRevision ? `Última: ${p.ultimaRevision}` : 'Sin estudiar'}
           </p>
         </div>
-        <div className="flex flex-col items-end gap-1 shrink-0">
-          <span className="text-xs text-slate-500">🔄 ×{vueltas}</span>
-          {aciertos > 0 && <span className="text-xs text-emerald-600 font-medium">🎯 {aciertos}%</span>}
-          {dominado && <Badge variant="green">Dominado</Badge>}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4, flexShrink: 0 }}>
+          {dominado
+            ? <span className="pill pill-accent">Dominado</span>
+            : aciertos > 0
+              ? <span className="num-display" style={{ fontSize: 15, color: 'var(--accent)' }}>{aciertos}<span style={{ fontSize: 10 }}>%</span></span>
+              : <span style={{ color: 'var(--mute)', fontSize: 16 }}>›</span>}
+          {vueltas > 0 && <span className="eyebrow" style={{ letterSpacing: '0.04em' }}>×{vueltas}</span>}
         </div>
-      </Card>
+      </button>
     )
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-200 px-4 py-3 sticky top-0 z-10">
-        <div className="max-w-2xl mx-auto flex items-center gap-3">
-          <button
-            onClick={() => navigate(`/oposicion/${slug}`)}
-            className="text-marca-600 hover:text-marca-700 text-sm font-medium transition-colors"
-          >
-            ←
-          </button>
-          <h1 className="text-lg font-bold text-slate-900">Temario</h1>
-        </div>
+    <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      <header
+        className="sticky top-0 z-10 flex items-center gap-3 px-4"
+        style={{ height: 52, borderBottom: '1px solid var(--border-soft)', background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)' }}
+      >
+        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Temario</span>
       </header>
-      <div className="p-4 max-w-2xl mx-auto space-y-6">
+
+      <div className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
         <section>
-          <h2 className="text-slate-900 font-bold text-sm">Bloque General</h2>
-          <p className="text-slate-500 text-sm mb-3">Temas 1–23</p>
-          <div className="space-y-2">{grupos.general.map(renderTema)}</div>
+          <div className="flex items-baseline justify-between px-1 mb-3">
+            <h2 className="display" style={{ margin: 0, fontSize: 22, letterSpacing: '-0.01em' }}>Bloque general</h2>
+            <span className="eyebrow">{grupos.general.length} temas</span>
+          </div>
+          <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>{grupos.general.map(renderTema)}</div>
         </section>
-        <section>
-          <h2 className="text-slate-900 font-bold text-sm">Bloque Específico</h2>
-          <p className="text-slate-500 text-sm mb-3">Temas 24–45</p>
-          <div className="space-y-2">{grupos.especifico.map(renderTema)}</div>
-        </section>
+        {grupos.especifico.length > 0 && (
+          <section>
+            <div className="flex items-baseline justify-between px-1 mb-3">
+              <h2 className="display" style={{ margin: 0, fontSize: 22, letterSpacing: '-0.01em' }}>Bloque específico</h2>
+              <span className="eyebrow">{grupos.especifico.length} temas</span>
+            </div>
+            <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>{grupos.especifico.map(renderTema)}</div>
+          </section>
+        )}
       </div>
     </div>
   )
