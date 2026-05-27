@@ -23,7 +23,7 @@ function buildLayout(rawNodos: any[], rawAristas: any[]): { nodes: Node[]; edges
       id: a.id ?? `e${i}`,
       source: a.source,
       target: a.target,
-      style: { stroke: '#4361ee', strokeWidth: 1.5 },
+      style: { stroke: 'var(--accent)', strokeWidth: 1.5 },
     }))
     return { nodes, edges }
   }
@@ -66,7 +66,7 @@ function buildLayout(rawNodos: any[], rawAristas: any[]): { nodes: Node[]; edges
         id: a.id ?? `e${i}`,
         source: a.desde ?? a.source ?? a.origen,
         target: a.hasta ?? a.target ?? a.destino,
-        style: { stroke: '#4361ee', strokeWidth: 1.5 },
+        style: { stroke: 'var(--accent)', strokeWidth: 1.5 },
       }))
       .filter((e: Edge) => e.source && e.target)
     return { nodes, edges }
@@ -140,7 +140,7 @@ function buildLayout(rawNodos: any[], rawAristas: any[]): { nodes: Node[]; edges
       id: `e${i}`,
       source: a.origen ?? a.source,
       target: a.destino ?? a.target,
-      style: { stroke: '#4361ee', strokeWidth: 1.5 },
+      style: { stroke: 'var(--accent)', strokeWidth: 1.5 },
     }))
     .filter((e: Edge) => e.source && e.target)
 
@@ -149,9 +149,9 @@ function buildLayout(rawNodos: any[], rawAristas: any[]): { nodes: Node[]; edges
 
 function nodeStyle(isRoot: boolean): React.CSSProperties {
   return {
-    background: isRoot ? '#4361ee' : '#f0f4ff',
-    color: isRoot ? '#fff' : '#1a2980',
-    border: '1px solid #dbe4ff',
+    background: isRoot ? 'var(--accent)' : 'var(--accent-soft)',
+    color: isRoot ? 'var(--accent-ink)' : 'var(--accent)',
+    border: '1px solid var(--border-soft)',
     borderRadius: '12px',
     padding: '8px 12px',
     fontSize: '13px',
@@ -165,13 +165,13 @@ export function MapaMentalTab({ tema }: Props) {
   const rawAristas = tema.mapaMental?.aristas ?? []
 
   if (!rawNodos.length) {
-    return <p className="text-gray-400 text-sm text-center py-8">Mapa mental no disponible.</p>
+    return <p className="text-sm text-center py-8" style={{ color: 'var(--mute)' }}>Mapa mental no disponible.</p>
   }
 
   const { nodes, edges } = buildLayout(rawNodos, rawAristas)
 
   return (
-    <div style={{ height: 500 }} className="rounded-xl overflow-hidden border border-gray-100">
+    <div style={{ height: 500, border: '1px solid var(--border)' }} className="rounded-xl overflow-hidden">
       <ReactFlow
         nodes={nodes}
         edges={edges}

@@ -19,38 +19,37 @@ export function FlashcardsTab({ tema, onVueltaCompleta }: Props) {
   }
 
   if (terminado) return (
-    <div className="text-center py-12 space-y-3">
-      <div className="text-5xl">🎉</div>
-      <p className="font-bold text-lg">¡Flashcards completadas!</p>
-      <p className="text-gray-500 text-sm">Vuelta sumada al tema.</p>
-      <button onClick={() => { setIndice(0); setTerminado(false); setVerRespuesta(false) }}
-        className="bg-brand-600 text-white px-6 py-2 rounded-xl text-sm font-semibold">Repetir</button>
+    <div className="text-center py-12" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
+      <div style={{ fontSize: 48 }}>🎉</div>
+      <p className="display" style={{ margin: 0, fontSize: 24 }}>¡Flashcards completadas!</p>
+      <p style={{ color: 'var(--mute)', fontSize: 13.5 }}>Vuelta sumada al tema.</p>
+      <button onClick={() => { setIndice(0); setTerminado(false); setVerRespuesta(false) }} className="btn-editorial btn-acc">Repetir</button>
     </div>
   )
 
   const card = cards[indice]
   return (
-    <div className="space-y-4">
-      <p className="text-xs text-gray-400 text-right">{indice + 1}/{cards.length}</p>
-      <div onClick={() => setVerRespuesta(true)}
-        className="min-h-48 bg-white border border-gray-100 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer hover:shadow-md transition-shadow text-center">
-        <p className="text-sm font-medium text-gray-800">{getFlashcardFront(card)}</p>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <p className="num-display" style={{ margin: 0, fontSize: 12, color: 'var(--mute)', textAlign: 'right' }}>{indice + 1}/{cards.length}</p>
+      <div onClick={() => setVerRespuesta(true)} className="card"
+        style={{ minHeight: 200, background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', textAlign: 'center' }}>
+        <p style={{ margin: 0, fontSize: 15, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.4 }}>{getFlashcardFront(card)}</p>
         {!verRespuesta
-          ? <p className="text-xs text-gray-400 mt-4">Toca para ver la respuesta</p>
-          : <p className="text-sm text-brand-700 font-semibold mt-4 border-t border-gray-100 pt-4 w-full">{getFlashcardBack(card)}</p>
+          ? <p style={{ fontSize: 12, color: 'var(--mute)', marginTop: 16 }}>Toca para ver la respuesta</p>
+          : <p style={{ fontSize: 14, color: 'var(--accent)', fontWeight: 600, marginTop: 16, borderTop: '1px solid var(--border-soft)', paddingTop: 16, width: '100%' }}>{getFlashcardBack(card)}</p>
         }
       </div>
       {verRespuesta && (
         <div className="grid grid-cols-3 gap-2">
-          {(['dificil', 'dudoso', 'facil'] as const).map(cal => (
-            <button key={cal} onClick={() => responder(cal)}
-              className={`py-2 rounded-xl text-sm font-semibold ${
-                cal === 'dificil' ? 'bg-red-100 text-red-700' :
-                cal === 'dudoso'  ? 'bg-orange-100 text-orange-700' : 'bg-green-100 text-green-700'
-              }`}>
-              {cal === 'dificil' ? '😓 Difícil' : cal === 'dudoso' ? '🤔 Dudoso' : '😊 Fácil'}
-            </button>
-          ))}
+          {(['dificil', 'dudoso', 'facil'] as const).map(cal => {
+            const color = cal === 'dificil' ? 'var(--warn)' : cal === 'dudoso' ? '#a07a2c' : 'var(--accent)'
+            return (
+              <button key={cal} onClick={() => responder(cal)}
+                style={{ padding: '10px 0', borderRadius: 12, fontSize: 13, fontWeight: 600, cursor: 'pointer', border: `1px solid ${color}`, color, background: 'transparent' }}>
+                {cal === 'dificil' ? '😓 Difícil' : cal === 'dudoso' ? '🤔 Dudoso' : '😊 Fácil'}
+              </button>
+            )
+          })}
         </div>
       )}
     </div>
