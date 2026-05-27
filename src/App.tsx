@@ -48,6 +48,8 @@ const Equivalencias = lazy(() => import('./pages/Equivalencias'))
 const Psicotecnicos = lazy(() => import('./pages/Psicotecnicos'))
 const Supuestos = lazy(() => import('./pages/Supuestos'))
 const SupuestoDetalle = lazy(() => import('./pages/SupuestoDetalle'))
+const Entrevista = lazy(() => import('./pages/Entrevista'))
+const Personalidad = lazy(() => import('./pages/Personalidad'))
 
 const Loading = () => (
   <div className="min-h-screen flex items-center justify-center bg-slate-50">
@@ -98,6 +100,8 @@ export default function App() {
         <Route path="/oposicion/:slug/psicotecnicos" element={<RutaProtegida><Psicotecnicos /></RutaProtegida>} />
         <Route path="/oposicion/:slug/supuestos" element={<RutaProtegida><Supuestos /></RutaProtegida>} />
         <Route path="/oposicion/:slug/supuestos/:id" element={<RutaProtegida><SupuestoDetalle /></RutaProtegida>} />
+        <Route path="/oposicion/:slug/entrevista" element={<RutaProtegida><Entrevista /></RutaProtegida>} />
+        <Route path="/oposicion/:slug/personalidad" element={<RutaProtegida><Personalidad /></RutaProtegida>} />
 
         <Route path="/procoach" element={<ProCoachAI />} />
         <Route path="/procoach/chat" element={<ProCoachChat />} />
