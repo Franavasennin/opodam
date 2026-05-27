@@ -6,6 +6,13 @@ import { obtenerTopics } from '../data/topics'
 import type { Tema } from '../types'
 import { getPreguntaCorrecta } from '../types'
 
+const LETRAS = ['A', 'B', 'C', 'D', 'E', 'F']
+
+const topbar: React.CSSProperties = {
+  height: 52, borderBottom: '1px solid var(--border-soft)',
+  background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
+}
+
 export function Tests() {
   const navigate = useNavigate()
   const { slug } = useParams<{ slug: string }>()
@@ -26,36 +33,44 @@ export function Tests() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [temaId])
 
+  // ── Selección de tema ──
   if (temaId === null) return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-200 px-4 py-3">
-        <div className="max-w-2xl mx-auto flex items-center gap-3">
-          <button onClick={() => navigate(`/oposicion/${slug}`)} className="text-marca-600 hover:text-marca-700 text-sm font-medium transition-colors">←</button>
-          <h1 className="text-lg font-bold text-slate-900">Tests y simulacros</h1>
-        </div>
+    <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Tests y simulacros</span>
       </header>
-      <div className="p-4 max-w-2xl mx-auto">
-        <p className="text-slate-500 text-sm mb-4">Elige un tema para practicar preguntas</p>
-        <div className="space-y-2">
+      <main className="max-w-2xl mx-auto px-4 pt-4 pb-12">
+        <div className="eyebrow" style={{ marginBottom: 10 }}>Practica preguntas</div>
+        <h1 className="display" style={{ margin: '0 0 18px', fontSize: 30, letterSpacing: '-0.015em' }}>
+          Elige un tema o haz un <span className="display-italic" style={{ color: 'var(--accent)' }}>simulacro.</span>
+        </h1>
+        <button onClick={() => navigate(`/oposicion/${slug}/tests/simulacro`)} className="hero" style={{ width: '100%', textAlign: 'left', border: 0, cursor: 'pointer', marginBottom: 18 }}>
+          <div className="hero-grain" />
+          <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 14 }}>
+            <span style={{ fontSize: 26 }}>🎯</span>
+            <div style={{ flex: 1 }}>
+              <div className="display" style={{ fontSize: 20 }}>Simulacro completo</div>
+              <div style={{ fontSize: 12.5, color: 'rgba(255,255,255,0.7)', marginTop: 2 }}>Examen cronometrado con preguntas de todos los temas</div>
+            </div>
+            <span style={{ opacity: 0.7 }}>›</span>
+          </div>
+        </button>
+        <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {TEMAS_META.map(m => (
-            <button key={m.id} onClick={() => setTemaId(m.id)}
-              className="w-full flex items-center gap-3 text-left bg-white border border-slate-200 rounded-2xl shadow-sm px-4 py-3 hover:shadow-md transition-shadow">
-              <span className="w-9 h-9 rounded-xl bg-marca-50 text-marca-700 text-sm font-bold flex items-center justify-center shrink-0">
-                {m.id}
-              </span>
-              <span className="text-sm font-semibold text-slate-900 truncate">{m.titulo}</span>
+            <button key={m.id} onClick={() => setTemaId(m.id)} className="card"
+              style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '13px 14px', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14 }}>
+              <span className="num-display" style={{ width: 36, height: 36, borderRadius: 10, background: 'var(--surface-2)', border: '1px solid var(--border-soft)', color: 'var(--ink-soft)', fontSize: 17, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{m.id}</span>
+              <span style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: 600, color: 'var(--ink)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.titulo}</span>
+              <span style={{ color: 'var(--mute)', fontSize: 16 }}>›</span>
             </button>
           ))}
-          <button onClick={() => navigate('/tests/simulacro')}
-            className="w-full bg-marca-600 hover:bg-marca-700 transition-colors text-white rounded-2xl px-4 py-3 text-sm font-semibold mt-4">
-            🎯 Simulacro completo
-          </button>
         </div>
-      </div>
+      </main>
     </div>
   )
 
-  if (!tema) return <div className="min-h-screen bg-slate-50 flex justify-center py-16 text-slate-400">Cargando...</div>
+  if (!tema) return <div className="min-h-screen flex justify-center py-16" style={{ background: 'var(--bg)', color: 'var(--mute)' }}>Cargando…</div>
 
   const aciertos = respuestas.filter((r, i) => r === getPreguntaCorrecta(tema.preguntas[i])).length
   const errores  = respuestas.filter((r, i) => r !== null && r !== getPreguntaCorrecta(tema.preguntas[i])).length
@@ -65,61 +80,68 @@ export function Tests() {
     setEnviado(true)
   }
 
+  // ── Resultado ──
   if (enviado) return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-200 px-4 py-3">
-        <div className="max-w-2xl mx-auto">
-          <h1 className="text-lg font-bold text-slate-900">Resultado</h1>
-        </div>
+    <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+        <button onClick={() => setTemaId(null)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Resultado</span>
       </header>
-      <div className="p-4 max-w-2xl mx-auto space-y-4">
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
-          <p className="text-5xl font-bold text-marca-600">
+      <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, textAlign: 'center' }}>
+          <div className="eyebrow" style={{ marginBottom: 6 }}>Nota equivalente</div>
+          <div className="num-display" style={{ fontSize: 56, color: 'var(--accent)', lineHeight: 1 }}>
             {calcularPuntuacionTest(aciertos, errores, tema.preguntas.length).toFixed(2)}
-          </p>
-          <p className="text-slate-500 text-sm mt-1">sobre 10</p>
-          <p className="text-sm text-slate-700 mt-3">✅ {aciertos} aciertos · ❌ {errores} errores</p>
-        </div>
-        {tema.preguntas.map((p, i) => (
-          <div key={i} className={`bg-white border border-slate-200 rounded-2xl shadow-sm p-4 border-l-4 ${respuestas[i] === getPreguntaCorrecta(p) ? 'border-l-emerald-500' : 'border-l-red-500'}`}>
-            <p className="text-sm font-semibold text-slate-900">{p.enunciado}</p>
-            <p className="text-xs text-slate-500 mt-1">Correcta: {p.opciones[getPreguntaCorrecta(p)]}</p>
-            <p className="text-xs text-slate-400 mt-1 italic">{p.explicacion}</p>
           </div>
-        ))}
-        <button onClick={() => setTemaId(null)}
-          className="w-full bg-marca-600 hover:bg-marca-700 transition-colors text-white rounded-2xl py-3 text-sm font-semibold">Volver</button>
-      </div>
+          <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>sobre 10</div>
+          <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {aciertos} aciertos · ❌ {errores} errores</div>
+        </div>
+        {tema.preguntas.map((p, i) => {
+          const ok = respuestas[i] === getPreguntaCorrecta(p)
+          return (
+            <div key={i} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16, borderLeft: `3px solid ${ok ? 'var(--accent)' : 'var(--warn)'}` }}>
+              <p style={{ margin: 0, fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>{p.enunciado}</p>
+              <p style={{ margin: '6px 0 0', fontSize: 12, color: 'var(--accent)' }}>Correcta: {p.opciones[getPreguntaCorrecta(p)]}</p>
+              <p style={{ margin: '4px 0 0', fontSize: 12, color: 'var(--mute)', fontStyle: 'italic' }}>{p.explicacion}</p>
+            </div>
+          )
+        })}
+        <button onClick={() => setTemaId(null)} className="btn-editorial btn-acc" style={{ width: '100%' }}>Volver</button>
+      </main>
     </div>
   )
 
+  // ── Preguntas ──
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-200 px-4 py-3">
-        <div className="max-w-2xl mx-auto flex items-center gap-3">
-          <button onClick={() => setTemaId(null)} className="text-marca-600 hover:text-marca-700 text-sm font-medium transition-colors">←</button>
-          <h1 className="text-lg font-bold text-slate-900 truncate">{tema.titulo}</h1>
-        </div>
+    <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+        <button onClick={() => setTemaId(null)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <span style={{ fontWeight: 600, fontSize: 13.5, letterSpacing: '-0.01em', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{tema.titulo}</span>
       </header>
-      <div className="p-4 max-w-2xl mx-auto space-y-4">
+      <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
         {tema.preguntas.map((p, i) => (
-          <div key={i} className="bg-white border border-slate-200 rounded-2xl shadow-sm p-4 space-y-2">
-            <p className="text-sm font-semibold text-slate-900">{i + 1}. {p.enunciado}</p>
-            {p.opciones.map((op, j) => (
-              <label key={j} className={`flex items-center gap-2 p-2.5 rounded-xl cursor-pointer transition-colors border ${respuestas[i] === j ? 'bg-marca-50 border-marca-600' : 'border-transparent hover:bg-slate-50'}`}>
-                <input type="radio" name={`q-${i}`} checked={respuestas[i] === j}
-                  onChange={() => setRespuestas(r => { const n = [...r]; n[i] = j; return n })}
-                  className="text-marca-600" />
-                <span className="text-sm text-slate-700">{op}</span>
-              </label>
-            ))}
+          <div key={i} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
+            <p style={{ margin: '0 0 10px', fontSize: 14.5, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.4 }}>
+              <span className="num-display" style={{ color: 'var(--mute)', marginRight: 6 }}>{i + 1}.</span>{p.enunciado}
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {p.opciones.map((op, j) => {
+                const sel = respuestas[i] === j
+                return (
+                  <button key={j} type="button" className="opt" onClick={() => setRespuestas(r => { const n = [...r]; n[i] = j; return n })}
+                    style={sel ? { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent)' } : undefined}>
+                    <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: sel ? 'var(--accent-ink)' : 'var(--mute)', background: sel ? 'var(--accent)' : 'var(--surface)', border: `1px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
+                    <span>{op}</span>
+                  </button>
+                )
+              })}
+            </div>
           </div>
         ))}
-        <button onClick={enviar} disabled={respuestas.some(r => r === null)}
-          className="w-full bg-marca-600 hover:bg-marca-700 disabled:bg-slate-300 disabled:hover:bg-slate-300 transition-colors text-white rounded-2xl py-3 text-sm font-semibold">
+        <button onClick={enviar} disabled={respuestas.some(r => r === null)} className="btn-editorial btn-acc" style={{ width: '100%', opacity: respuestas.some(r => r === null) ? 0.4 : 1 }}>
           Enviar respuestas
         </button>
-      </div>
+      </main>
     </div>
   )
 }
