@@ -10,16 +10,24 @@ export function TeoriaTab({ tema, onTeoriaLeida }: Props) {
   }, [onTeoriaLeida])
 
   return (
-    <div className="space-y-6">
+    <div className="editorial">
       {tema.secciones.map((s, i) => (
         <section key={i}>
-          <h3 className="text-base font-bold text-gray-800 mb-2 border-l-4 border-brand-500 pl-3">{s.titulo}</h3>
-          <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">{s.contenido}</p>
+          <span style={{ display: 'block', fontFamily: "'JetBrains Mono', monospace", fontSize: 10.5, letterSpacing: '0.06em', color: 'var(--mute)', textTransform: 'uppercase', marginBottom: 4 }}>
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <h3 style={{ marginTop: i === 0 ? 4 : 28 }}>{s.titulo}</h3>
+          <p style={{ fontSize: 15, color: 'var(--ink-soft)', lineHeight: 1.6, whiteSpace: 'pre-line', margin: 0 }}>
+            {s.contenido}
+          </p>
         </section>
       ))}
-      <button onClick={onTeoriaLeida}
-        className="w-full bg-brand-600 text-white py-3 rounded-xl font-semibold text-sm hover:bg-brand-700 transition-colors">
-        ✅ Marcar teoría como leída
+      <button
+        onClick={onTeoriaLeida}
+        className="btn-editorial btn-acc"
+        style={{ width: '100%', marginTop: 28 }}
+      >
+        Marcar teoría como leída
       </button>
     </div>
   )
