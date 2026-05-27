@@ -2,7 +2,153 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─────────────────────────────────────────────────────────────
+   OpoDAM — Sistema editorial (Claude Design redesign)
+   Tema "forest": papel cálido + acento verde bosque + oro.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  --bg: #fafaf8;
+  --surface: #ffffff;
+  --surface-2: #f3f1ea;
+  --ink: #0e0f0d;
+  --ink-soft: #2a2c27;
+  --mute: #7a7e75;
+  --mute-soft: #b0b3a9;
+  --border: #e6e3d8;
+  --border-soft: #efece4;
+  --accent: #1e4d3b;
+  --accent-ink: #ffffff;
+  --accent-soft: #e7eee9;
+  --warn: #b8492f;
+  --warn-soft: #f6e9e3;
+  --gold: #a07a2c;
+}
+
 @layer base {
   html { @apply h-full; }
-  body { @apply h-full bg-gray-50 text-gray-900 font-sans; }
+  body {
+    @apply h-full;
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* ── Tipografía display ─────────────────────────────────────── */
+.display {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-style: normal;
+}
+.display-italic { font-style: italic; }
+.num-display {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* ── Eyebrow / etiquetas ────────────────────────────────────── */
+.eyebrow {
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+  font-weight: 600;
+}
+
+/* ── Hairline ───────────────────────────────────────────────── */
+.hr { height: 1px; background: var(--border); border: 0; margin: 0; }
+
+/* ── Pills ──────────────────────────────────────────────────── */
+.pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  height: 22px; padding: 0 9px; border-radius: 999px;
+  background: var(--surface-2); color: var(--ink-soft);
+  font-size: 11.5px; font-weight: 500; letter-spacing: -0.005em;
+  border: 1px solid var(--border); white-space: nowrap;
+}
+.pill-accent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+.pill-warn   { background: var(--warn-soft); color: var(--warn); border-color: transparent; }
+.pill-gold   { background: #f1e7cf; color: var(--gold); border-color: transparent; }
+
+/* ── Botón píldora ──────────────────────────────────────────── */
+.btn-editorial {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 48px; padding: 0 18px; border-radius: 999px;
+  font-weight: 500; font-size: 14.5px; letter-spacing: -0.005em;
+  border: 1px solid transparent; cursor: pointer;
+  transition: transform 80ms ease, background 120ms ease, border-color 120ms ease;
+}
+.btn-editorial:active { transform: scale(0.97); }
+.btn-acc { background: var(--accent); color: var(--accent-ink); }
+.btn-sec { background: var(--surface); color: var(--ink); border-color: var(--border); }
+
+/* ── Hero panel (tinta) ─────────────────────────────────────── */
+.hero {
+  background: var(--ink); color: var(--bg);
+  border-radius: 22px; padding: 22px; position: relative; overflow: hidden;
+}
+.hero-grain {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+/* ── Textura papel ──────────────────────────────────────────── */
+.paper-grain {
+  background-image: radial-gradient(rgba(0,0,0,0.025) 1px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+/* ── Barra de progreso ──────────────────────────────────────── */
+.bar { position: relative; height: 3px; background: var(--border-soft); border-radius: 999px; overflow: hidden; }
+.bar-fill { position: absolute; inset: 0; background: var(--accent); transform-origin: left center; transition: transform 500ms cubic-bezier(.2,.7,.2,1); }
+
+/* ── Opciones de test ───────────────────────────────────────── */
+.opt {
+  width: 100%; display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 16px; border-radius: 14px;
+  background: var(--surface); border: 1px solid var(--border);
+  text-align: left; cursor: pointer; font-size: 14.5px; line-height: 1.4; color: var(--ink);
+  transition: border-color 120ms ease, background 120ms ease, transform 80ms ease;
+}
+.opt:hover { border-color: var(--ink-soft); }
+.opt[data-state="correct"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.opt[data-state="wrong"]   { background: var(--warn-soft); border-color: var(--warn); color: var(--warn); }
+
+/* ── Lectura editorial (temas) ──────────────────────────────── */
+.editorial p { margin: 0 0 14px; }
+.editorial h3 {
+  font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 22px;
+  line-height: 1.15; letter-spacing: -0.01em; margin: 28px 0 10px; color: var(--ink);
+}
+.editorial blockquote {
+  margin: 18px 0; padding: 6px 0 6px 14px; border-left: 2px solid var(--accent);
+  color: var(--ink-soft); font-family: 'Instrument Serif', serif; font-size: 19px;
+  line-height: 1.35; font-style: italic;
+}
+
+/* ── Animaciones de entrada ─────────────────────────────────── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.fade-up { animation: fadeUp 280ms ease both; }
+.stagger > * { opacity: 0; transform: translateY(8px); animation: fadeUp 360ms cubic-bezier(.2,.7,.2,1) forwards; }
+.stagger > *:nth-child(1) { animation-delay: 40ms; }
+.stagger > *:nth-child(2) { animation-delay: 80ms; }
+.stagger > *:nth-child(3) { animation-delay: 120ms; }
+.stagger > *:nth-child(4) { animation-delay: 160ms; }
+.stagger > *:nth-child(5) { animation-delay: 200ms; }
+.stagger > *:nth-child(6) { animation-delay: 240ms; }
+.stagger > *:nth-child(n+7) { animation-delay: 280ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .stagger > * { animation: none; opacity: 1; transform: none; }
 }

@@ -4,7 +4,7 @@ import { OPOSICIONES } from '../data/oposiciones'
 import { setActiveSlug } from '../services/storage'
 import { BannerNutriplan } from '../components/promo/BannerNutriplan'
 
-const ICONOS: Record<string, string> = {
+const GLYPH: Record<string, string> = {
   'cgpc': '🛡️',
   'policia-local': '👮',
   'aux-enfermeria': '🏥',
@@ -23,100 +23,132 @@ export default function MisOposiciones() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-100">
-      {/* Cabecera de marca */}
-      <header className="bg-marca-900 text-white">
-        <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
-          <span className="font-extrabold text-lg tracking-tight">OpoDAM</span>
-          <span className="text-xs text-marca-100">Tu academia de oposiciones</span>
+    <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      <div className="max-w-2xl mx-auto">
+        {/* Cabecera con marca */}
+        <div className="px-6 pt-6 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span
+              className="display-italic"
+              style={{
+                width: 28, height: 28, borderRadius: 8, background: 'var(--ink)', color: 'var(--bg)',
+                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                fontFamily: "'Instrument Serif', serif", fontSize: 18, lineHeight: 1,
+              }}
+            >O</span>
+            <span style={{ fontWeight: 600, fontSize: 15, letterSpacing: '-0.01em' }}>OpoDAM</span>
+          </div>
+          <span className="eyebrow">Tu academia</span>
         </div>
-      </header>
 
-      {/* Hero */}
-      <div className="bg-gradient-to-br from-marca-900 to-marca-600 text-white">
-        <div className="max-w-2xl mx-auto px-4 pb-10 pt-4">
-          <h1 className="text-2xl font-extrabold leading-tight">Prepara tu oposición</h1>
-          <p className="text-sm text-marca-100 mt-1.5">
-            Temario, esquemas, mapas mentales, flashcards y tests. Elige tu oposición y empieza hoy.
+        {/* Hero editorial */}
+        <div className="px-6 pt-5 pb-5">
+          <div className="eyebrow" style={{ marginBottom: 10 }}>Academia de oposiciones</div>
+          <h1 className="display" style={{ margin: 0, fontSize: 40, lineHeight: 1.02, letterSpacing: '-0.015em' }}>
+            Prepara tu plaza,<br />
+            <span className="display-italic" style={{ color: 'var(--accent)' }}>paso a paso.</span>
+          </h1>
+          <p style={{ marginTop: 14, marginBottom: 0, fontSize: 14.5, color: 'var(--mute)', maxWidth: 360, lineHeight: 1.45 }}>
+            Temario, esquemas, mapas mentales, flashcards, tests, psicotécnicos, supuestos y un tutor que estudia contigo. Elige tu oposición y empieza hoy.
           </p>
         </div>
-      </div>
 
-      <main className="max-w-2xl mx-auto px-4 -mt-5 pb-12">
-        {/* Oposiciones disponibles */}
-        <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-4">
-          <h2 className="text-sm font-bold text-slate-900">Oposiciones disponibles</h2>
-          <p className="text-xs text-slate-500 mb-4">Acceso completo al temario y a las prácticas</p>
-          <div className="space-y-3">
-            {disponibles.map(op => (
-              <button
-                key={op.slug}
-                onClick={() => handleEntrar(op.slug)}
-                className="w-full text-left rounded-xl border border-slate-200 hover:border-marca-600 hover:shadow-md transition-all overflow-hidden flex"
-              >
-                <span className="w-1.5 shrink-0" style={{ background: op.color }} />
-                <div className="flex items-center gap-3 p-4 flex-1 min-w-0">
-                  <span className="text-2xl shrink-0">{ICONOS[op.slug] ?? '📚'}</span>
-                  <div className="flex-1 min-w-0">
-                    <div className="font-bold text-sm text-slate-900">{op.nombre}</div>
-                    <div className="text-xs text-slate-500 mt-0.5">{op.descripcion}</div>
-                    {op.numTemas != null && (
-                      <span className="inline-block mt-2 text-xs font-semibold text-marca-700 bg-marca-100 rounded-full px-2 py-0.5">
-                        {op.numTemas} temas
-                      </span>
-                    )}
-                  </div>
-                  <span className="text-marca-600 text-xl shrink-0">›</span>
+        {/* Lista de oposiciones */}
+        <div className="px-6 pt-2 pb-2 flex items-baseline justify-between">
+          <h2 className="display" style={{ margin: 0, fontSize: 22, letterSpacing: '-0.01em' }}>Oposiciones</h2>
+          <span className="eyebrow">{disponibles.length} disponibles</span>
+        </div>
+
+        <div className="stagger" style={{ padding: '6px 16px 8px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {disponibles.map((op, i) => (
+            <button
+              key={op.slug}
+              onClick={() => handleEntrar(op.slug)}
+              className="card"
+              style={{
+                padding: 0, textAlign: 'left', cursor: 'pointer', overflow: 'hidden',
+                background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18,
+                boxShadow: '0 1px 2px rgba(14,15,13,0.04), 0 10px 26px -14px rgba(14,15,13,0.18)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'stretch' }}>
+                <div style={{
+                  width: 76, flexShrink: 0, background: 'var(--surface-2)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 26,
+                  borderRight: '1px solid var(--border-soft)', position: 'relative',
+                }}>
+                  {GLYPH[op.slug] ?? '📚'}
+                  <div style={{
+                    position: 'absolute', bottom: 8, left: 0, right: 0, textAlign: 'center',
+                    fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: 'var(--mute)', letterSpacing: '0.06em',
+                  }}>{op.slug.toUpperCase()}</div>
                 </div>
-              </button>
-            ))}
-          </div>
-        </section>
+                <div style={{ flex: 1, padding: '14px 14px 12px', minWidth: 0 }}>
+                  <div className="eyebrow" style={{ marginBottom: 4 }}>Nº {String(i + 1).padStart(2, '0')}</div>
+                  <div style={{ fontSize: 15, fontWeight: 600, letterSpacing: '-0.01em', color: 'var(--ink)' }}>{op.nombre}</div>
+                  <div style={{ fontSize: 12.5, color: 'var(--mute)', marginTop: 2, lineHeight: 1.35 }}>{op.descripcion}</div>
+                  {op.numTemas != null && (
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, marginTop: 10 }}>
+                      <div style={{ display: 'flex', alignItems: 'baseline', gap: 5 }}>
+                        <span className="num-display" style={{ fontSize: 18 }}>{op.numTemas}</span>
+                        <span style={{ fontSize: 11, color: 'var(--mute)' }}>temas</span>
+                      </div>
+                      <span style={{ marginLeft: 'auto', color: 'var(--mute)', fontSize: 18 }}>›</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
 
         {/* Próximamente */}
         {proximamente.length > 0 && (
-          <section className="mt-5">
-            <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2 px-1">Próximamente</h2>
+          <section className="px-6 mt-4">
+            <div className="eyebrow mb-2">Próximamente</div>
             <div className="grid grid-cols-2 gap-3">
               {proximamente.map(op => (
-                <div key={op.slug} className="bg-white rounded-xl border border-slate-200 p-3 opacity-70">
-                  <span className="text-xl">{ICONOS[op.slug] ?? '📚'}</span>
-                  <div className="font-semibold text-xs text-slate-700 mt-1">{op.nombre}</div>
-                  <div className="text-[11px] text-slate-400">{op.descripcion}</div>
+                <div key={op.slug} className="card" style={{ padding: 14, background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, opacity: 0.7 }}>
+                  <span style={{ fontSize: 20 }}>{GLYPH[op.slug] ?? '📚'}</span>
+                  <div style={{ fontWeight: 600, fontSize: 12.5, color: 'var(--ink-soft)', marginTop: 6 }}>{op.nombre}</div>
+                  <div style={{ fontSize: 11, color: 'var(--mute)' }}>{op.descripcion}</div>
                 </div>
               ))}
             </div>
           </section>
         )}
 
-        {/* Equivalencias entre temarios */}
-        <button
-          onClick={() => navigate('/equivalencias')}
-          className="mt-5 w-full text-left rounded-2xl border border-slate-200 bg-white shadow-sm p-4 hover:border-marca-600 transition-colors flex items-center gap-3"
-        >
-          <span className="text-2xl shrink-0">🔀</span>
-          <div className="flex-1 min-w-0">
-            <div className="text-sm font-bold text-slate-900">Equivalencias entre temarios</div>
-            <div className="text-xs text-slate-500">Cruce CGPC ↔ Policía Local para estudiar lo común una sola vez</div>
-          </div>
-          <span className="text-marca-600 text-xl shrink-0">›</span>
-        </button>
+        {/* Accesos */}
+        <div className="px-4 mt-4 flex flex-col gap-3">
+          <button
+            onClick={() => navigate('/equivalencias')}
+            className="card" style={{ display: 'flex', alignItems: 'center', gap: 12, padding: 16, textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16 }}
+          >
+            <span style={{ fontSize: 22 }}>🔀</span>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)' }}>Equivalencias entre temarios</div>
+              <div style={{ fontSize: 12.5, color: 'var(--mute)' }}>Cruce CGPC ↔ Policía Local para estudiar lo común una sola vez</div>
+            </div>
+            <span style={{ color: 'var(--mute)', fontSize: 18 }}>›</span>
+          </button>
 
-        {/* ProCoach AI */}
-        <button
-          onClick={() => navigate('/procoach')}
-          className="mt-3 w-full text-left rounded-2xl border border-slate-200 bg-white shadow-sm p-4 hover:border-marca-600 transition-colors flex items-center gap-3"
-        >
-          <span className="text-2xl shrink-0">💪</span>
-          <div className="flex-1 min-w-0">
-            <div className="text-sm font-bold text-slate-900">ProCoach AI</div>
-            <div className="text-xs text-slate-500">Entrenador IA para oposiciones físicas</div>
-          </div>
-          <span className="text-marca-600 text-xl shrink-0">›</span>
-        </button>
+          <button
+            onClick={() => navigate('/procoach')}
+            style={{ display: 'flex', alignItems: 'center', gap: 12, padding: 16, textAlign: 'left', cursor: 'pointer', background: 'var(--accent-soft)', color: 'var(--accent)', border: 0, borderRadius: 16 }}
+          >
+            <div style={{ width: 30, height: 30, borderRadius: 8, background: 'var(--accent)', color: 'var(--accent-ink)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 16 }}>💪</div>
+            <div style={{ flex: 1, fontSize: 13 }}>
+              <div style={{ fontWeight: 600 }}>ProCoach AI</div>
+              <div style={{ opacity: 0.85 }}>Entrenador IA para oposiciones físicas</div>
+            </div>
+            <span style={{ fontSize: 15 }}>›</span>
+          </button>
+        </div>
 
-        <BannerNutriplan />
-      </main>
+        <div className="px-4 pb-10">
+          <BannerNutriplan />
+        </div>
+      </div>
     </div>
   )
 }
