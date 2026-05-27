@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { obtenerTopics } from '../data/topics'
 import { useProgress } from '../hooks/useProgress'
-import { Card } from '../components/ui/Card'
 import type { PreguntaExt, ExamenResultado } from '../types'
 import { getPreguntaCorrecta } from '../types'
 import {
@@ -19,6 +18,13 @@ const CONFIG = {
   completo: { preguntas: 50, minutos: 60 },
   mini:     { preguntas: 25, minutos: 30 },
 } as const
+
+const LETRAS = ['A', 'B', 'C', 'D', 'E', 'F']
+
+const topbar: React.CSSProperties = {
+  height: 52, borderBottom: '1px solid var(--border-soft)',
+  background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
+}
 
 export function Examen() {
   const { slug } = useParams<{ slug: string }>()
@@ -102,44 +108,52 @@ export function Examen() {
   // ── Inicio ───────────────────────────────────────────────
   if (fase === 'inicio') {
     return (
-      <div className="p-4 max-w-2xl mx-auto space-y-4">
-        <h1 className="text-2xl font-bold pt-4">🎯 Examen Oficial CGPC</h1>
-        <Card>
-          <h2 className="text-sm font-semibold text-gray-700 mb-3">Selecciona el modo</h2>
-          <div className="grid grid-cols-2 gap-3">
-            {(['completo', 'mini'] as const).map(m => (
-              <button key={m} onClick={() => setModo(m)}
-                className={`p-3 rounded-xl border-2 text-left transition-colors ${
-                  modo === m ? 'border-brand-500 bg-brand-50' : 'border-gray-100 hover:bg-gray-50'
-                }`}>
-                <p className="font-semibold text-sm">{m === 'completo' ? 'Examen completo' : 'Mini-examen'}</p>
-                <p className="text-xs text-gray-500 mt-1">{CONFIG[m].preguntas} preguntas · {CONFIG[m].minutos} min</p>
-              </button>
-            ))}
+      <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+        <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+          <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Examen oficial</span>
+        </header>
+        <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div>
+            <div className="eyebrow" style={{ marginBottom: 10 }}>Examen evaluado</div>
+            <h1 className="display" style={{ margin: 0, fontSize: 30, letterSpacing: '-0.015em' }}>
+              Ponte a <span className="display-italic" style={{ color: 'var(--accent)' }}>prueba.</span>
+            </h1>
           </div>
-          <p className="text-xs text-gray-400 mt-3">
-            Fórmula CGPC: acierto +0,20 pts · cada 3 errores −0,20 pts · en blanco 0 pts · mínimo 5,00
-          </p>
-          <button onClick={iniciarExamen} disabled={cargando}
-            className="w-full mt-4 bg-brand-600 text-white rounded-xl py-3 text-sm font-semibold disabled:opacity-50">
-            {cargando ? 'Preparando...' : 'Comenzar examen'}
-          </button>
-        </Card>
-        {progreso.historialExamenes.length > 0 && (
-          <Card>
-            <h2 className="text-sm font-semibold text-gray-700 mb-3">Historial reciente</h2>
-            <div className="space-y-2">
-              {progreso.historialExamenes.map(h => (
-                <div key={h.id} className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600">{h.fecha} · {h.modo}</span>
-                  <span className={`font-bold ${h.aprobado ? 'text-green-600' : 'text-red-600'}`}>
-                    {h.nota.toFixed(2)} {h.aprobado ? '✅' : '❌'}
-                  </span>
-                </div>
-              ))}
+          <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
+            <div className="eyebrow" style={{ marginBottom: 12 }}>Selecciona el modo</div>
+            <div className="grid grid-cols-2 gap-3">
+              {(['completo', 'mini'] as const).map(m => {
+                const sel = modo === m
+                return (
+                  <button key={m} onClick={() => setModo(m)}
+                    style={{ padding: 14, borderRadius: 12, textAlign: 'left', cursor: 'pointer', background: sel ? 'var(--accent-soft)' : 'var(--surface-2)', border: `1.5px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>
+                    <p style={{ margin: 0, fontWeight: 600, fontSize: 13.5, color: sel ? 'var(--accent)' : 'var(--ink)' }}>{m === 'completo' ? 'Examen completo' : 'Mini-examen'}</p>
+                    <p className="num-display" style={{ margin: '4px 0 0', fontSize: 12, color: 'var(--mute)' }}>{CONFIG[m].preguntas} preguntas · {CONFIG[m].minutos} min</p>
+                  </button>
+                )
+              })}
             </div>
-          </Card>
-        )}
+            <p style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 12, lineHeight: 1.5 }}>
+              Fórmula CGPC: acierto +0,20 pts · cada 3 errores −0,20 pts · en blanco 0 pts · mínimo 5,00
+            </p>
+            <button onClick={iniciarExamen} disabled={cargando} className="btn-editorial btn-acc" style={{ width: '100%', marginTop: 14, opacity: cargando ? 0.5 : 1 }}>
+              {cargando ? 'Preparando…' : 'Comenzar examen'}
+            </button>
+          </div>
+          {progreso.historialExamenes.length > 0 && (
+            <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
+              <div className="eyebrow" style={{ marginBottom: 12 }}>Historial reciente</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {progreso.historialExamenes.map(h => (
+                  <div key={h.id} className="flex items-center justify-between" style={{ fontSize: 13 }}>
+                    <span className="num-display" style={{ color: 'var(--mute)' }}>{h.fecha} · {h.modo}</span>
+                    <span className="num-display" style={{ fontWeight: 600, color: h.aprobado ? 'var(--accent)' : 'var(--warn)' }}>{h.nota.toFixed(2)} {h.aprobado ? '✅' : '❌'}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </main>
       </div>
     )
   }
@@ -151,76 +165,68 @@ export function Examen() {
     const p    = preguntas[indice]
     const enBlanco = preguntas.filter(q => respuestas[q.id] === null).length
     return (
-      <div className="flex flex-col h-full">
-        <header className="bg-white border-b px-4 py-3 sticky top-0 z-10 flex justify-between items-center">
-          <span className="text-sm font-medium text-gray-600">{indice + 1}/{preguntas.length}</span>
-          <span className={`font-mono font-bold ${tiempo < 300 ? 'text-red-600' : 'text-brand-600'}`}>
-            ⏱ {mins}:{segs}
-          </span>
-          <button onClick={() => setFase('confirmacion')} className="text-xs text-gray-400 underline">
-            Entregar
-          </button>
+      <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+        <header className="sticky top-0 z-10 flex items-center justify-between px-4" style={topbar}>
+          <span className="num-display" style={{ fontSize: 13.5, color: 'var(--ink-soft)' }}>{indice + 1}/{preguntas.length}</span>
+          <span className="num-display" style={{ fontWeight: 600, fontSize: 15, color: tiempo < 300 ? 'var(--warn)' : 'var(--accent)' }}>⏱ {mins}:{segs}</span>
+          <button onClick={() => setFase('confirmacion')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--mute)', fontSize: 12, textDecoration: 'underline' }}>Entregar</button>
         </header>
         {fase === 'confirmacion' && (
-          <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl p-6 max-w-sm w-full space-y-3 text-center">
-              <p className="font-bold text-lg">¿Entregar examen?</p>
-              {enBlanco > 0 && (
-                <p className="text-sm text-orange-600">Tienes {enBlanco} preguntas sin responder.</p>
-              )}
-              <p className="text-xs text-gray-500">Las preguntas en blanco no penalizan.</p>
-              <button onClick={() => finalizarExamen()}
-                className="w-full bg-brand-600 text-white rounded-xl py-2 font-semibold">
-                Sí, entregar
-              </button>
-              <button onClick={() => setFase('en-curso')}
-                className="w-full border border-gray-200 rounded-xl py-2 text-sm">
-                Seguir revisando
-              </button>
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(0,0,0,0.45)' }}>
+            <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, maxWidth: 340, width: '100%', textAlign: 'center', display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <p className="display" style={{ margin: 0, fontSize: 22 }}>¿Entregar examen?</p>
+              {enBlanco > 0 && <p style={{ margin: 0, fontSize: 13, color: 'var(--warn)' }}>Tienes {enBlanco} preguntas sin responder.</p>}
+              <p style={{ margin: 0, fontSize: 12, color: 'var(--mute)' }}>Las preguntas en blanco no penalizan.</p>
+              <button onClick={() => finalizarExamen()} className="btn-editorial btn-acc" style={{ width: '100%', marginTop: 4 }}>Sí, entregar</button>
+              <button onClick={() => setFase('en-curso')} className="btn-editorial btn-sec" style={{ width: '100%' }}>Seguir revisando</button>
             </div>
           </div>
         )}
-        <div className="flex-1 overflow-y-auto p-4 space-y-3 max-w-2xl mx-auto w-full">
-          {marcadas.has(p.id) && <p className="text-xs text-orange-500 font-medium">📌 Marcada para revisar</p>}
-          <p className="text-sm font-medium leading-relaxed">{p.enunciado}</p>
-          {p.opciones.map((op, j) => (
-            <label key={j}
-              className={`flex items-center gap-2 p-3 rounded-xl border cursor-pointer transition-colors ${
-                respuestas[p.id] === j ? 'border-brand-500 bg-brand-50' : 'border-gray-100 hover:bg-gray-50'
-              }`}>
-              <input type="radio" checked={respuestas[p.id] === j}
-                onChange={() => setRespuestas(r => ({ ...r, [p.id]: j }))} />
-              <span className="text-sm">{op}</span>
-            </label>
-          ))}
-          <div className="flex gap-2 pt-2">
+        <main className="max-w-2xl mx-auto px-4 pt-4 pb-12 w-full">
+          <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
+            {marcadas.has(p.id) && <p style={{ margin: '0 0 8px', fontSize: 11.5, fontWeight: 600, color: 'var(--warn)' }}>📌 Marcada para revisar</p>}
+            <p style={{ margin: '0 0 12px', fontSize: 14.5, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.4 }}>{p.enunciado}</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {p.opciones.map((op, j) => {
+                const sel = respuestas[p.id] === j
+                return (
+                  <button key={j} type="button" className="opt" onClick={() => setRespuestas(r => ({ ...r, [p.id]: j }))}
+                    style={sel ? { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent)' } : undefined}>
+                    <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: sel ? 'var(--accent-ink)' : 'var(--mute)', background: sel ? 'var(--accent)' : 'var(--surface)', border: `1px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
+                    <span>{op}</span>
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+          <div style={{ display: 'flex', gap: 8, marginTop: 14 }}>
             <button onClick={() => setMarcadas(m => {
               const next = new Set(m); if (next.has(p.id)) { next.delete(p.id) } else { next.add(p.id) }; return next
-            })} className="border border-orange-200 text-orange-600 rounded-xl px-3 py-2 text-xs">
+            })} className="btn-editorial btn-sec" style={{ paddingLeft: 14, paddingRight: 14, color: 'var(--warn)' }}>
               {marcadas.has(p.id) ? '📌 Marcada' : '📌 Marcar'}
             </button>
-            {indice > 0 && (
-              <button onClick={() => setIndice(i => i - 1)}
-                className="flex-1 border border-gray-200 rounded-xl py-2 text-sm">← Anterior</button>
-            )}
+            {indice > 0 && <button onClick={() => setIndice(i => i - 1)} className="btn-editorial btn-sec" style={{ flex: 1 }}>← Anterior</button>}
             {indice < preguntas.length - 1
-              ? <button onClick={() => setIndice(i => i + 1)}
-                  className="flex-1 bg-brand-600 text-white rounded-xl py-2 text-sm font-semibold">Siguiente →</button>
-              : <button onClick={() => setFase('confirmacion')}
-                  className="flex-1 bg-green-600 text-white rounded-xl py-2 text-sm font-semibold">✅ Entregar</button>
+              ? <button onClick={() => setIndice(i => i + 1)} className="btn-editorial btn-acc" style={{ flex: 1 }}>Siguiente →</button>
+              : <button onClick={() => setFase('confirmacion')} className="btn-editorial btn-acc" style={{ flex: 1 }}>Entregar</button>
             }
           </div>
-          <div className="flex flex-wrap gap-1 pt-2">
-            {preguntas.map((q, i) => (
-              <button key={q.id} onClick={() => setIndice(i)}
-                className={`w-7 h-7 text-xs rounded font-medium ${
-                  i === indice ? 'bg-brand-600 text-white' :
-                  marcadas.has(q.id) ? 'bg-orange-100 text-orange-700' :
-                  respuestas[q.id] !== null ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'
-                }`}>{i + 1}</button>
-            ))}
+          <div className="flex flex-wrap" style={{ gap: 5, marginTop: 14 }}>
+            {preguntas.map((q, i) => {
+              const actual = i === indice
+              const marc = marcadas.has(q.id)
+              const resp = respuestas[q.id] !== null
+              return (
+                <button key={q.id} onClick={() => setIndice(i)} className="num-display"
+                  style={{
+                    width: 28, height: 28, fontSize: 12, borderRadius: 7, border: '1px solid var(--border-soft)', cursor: 'pointer',
+                    background: actual ? 'var(--accent)' : marc ? 'var(--warn-soft)' : resp ? 'var(--accent-soft)' : 'var(--surface-2)',
+                    color: actual ? 'var(--accent-ink)' : marc ? 'var(--warn)' : resp ? 'var(--accent)' : 'var(--mute)',
+                  }}>{i + 1}</button>
+              )
+            })}
           </div>
-        </div>
+        </main>
       </div>
     )
   }
@@ -234,44 +240,35 @@ export function Examen() {
       .sort(([, a], [, b]) => b.errores - a.errores)
       .slice(0, 3)
     return (
-      <div className="p-4 max-w-2xl mx-auto space-y-4">
-        <h2 className="text-xl font-bold pt-4">Resultado del examen</h2>
-        <Card className="text-center">
-          <p className={`text-5xl font-bold ${resultado.aprobado ? 'text-green-600' : 'text-red-600'}`}>
-            {resultado.nota.toFixed(2)}
-          </p>
-          <p className="text-gray-500 text-sm mt-1">
-            {resultado.aprobado ? '✅ APROBADO' : '❌ SUSPENSO'} · mínimo 5,00
-          </p>
-          <div className="flex justify-center gap-6 mt-4 text-sm">
-            <span>✅ {resultado.aciertos}</span>
-            <span>❌ {resultado.errores}</span>
-            <span>⬜ {resultado.enBlanco}</span>
+      <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+        <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+          <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Resultado del examen</span>
+        </header>
+        <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+          <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, textAlign: 'center' }}>
+            <div className="eyebrow" style={{ marginBottom: 6 }}>Nota</div>
+            <div className="num-display" style={{ fontSize: 56, lineHeight: 1, color: resultado.aprobado ? 'var(--accent)' : 'var(--warn)' }}>{resultado.nota.toFixed(2)}</div>
+            <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>{resultado.aprobado ? '✅ APROBADO' : '❌ SUSPENSO'} · mínimo 5,00</div>
+            <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {resultado.aciertos} · ❌ {resultado.errores} · ⬜ {resultado.enBlanco}</div>
+            <div className="num-display" style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>⏱ {mins}:{segs} empleados</div>
           </div>
-          <p className="text-xs text-gray-400 mt-2">⏱ {mins}:{segs} empleados</p>
-        </Card>
-        {topErrores.length > 0 && (
-          <Card>
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">Temas con más fallos</h3>
-            {topErrores.map(([temaId, r]) => {
-              const meta = TEMAS_META.find(m => m.id === Number(temaId))
-              return (
-                <div key={temaId} className="flex justify-between text-sm py-1">
-                  <span className="text-gray-700 truncate">T{temaId} {meta?.titulo.slice(0, 30)}</span>
-                  <span className="text-red-500 font-medium ml-2">{r.errores} errores</span>
-                </div>
-              )
-            })}
-          </Card>
-        )}
-        <button onClick={() => setFase('revision')}
-          className="w-full bg-brand-600 text-white rounded-xl py-3 text-sm font-semibold">
-          Ver todas las respuestas
-        </button>
-        <button onClick={() => setFase('inicio')}
-          className="w-full border border-gray-200 rounded-xl py-3 text-sm">
-          Volver al inicio
-        </button>
+          {topErrores.length > 0 && (
+            <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
+              <div className="eyebrow" style={{ marginBottom: 10 }}>Temas con más fallos</div>
+              {topErrores.map(([temaId, r]) => {
+                const meta = TEMAS_META.find(m => m.id === Number(temaId))
+                return (
+                  <div key={temaId} className="flex justify-between" style={{ fontSize: 13, padding: '4px 0' }}>
+                    <span style={{ color: 'var(--ink-soft)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>T{temaId} {meta?.titulo.slice(0, 30)}</span>
+                    <span style={{ color: 'var(--warn)', fontWeight: 600, marginLeft: 8, flexShrink: 0 }}>{r.errores} errores</span>
+                  </div>
+                )
+              })}
+            </div>
+          )}
+          <button onClick={() => setFase('revision')} className="btn-editorial btn-acc" style={{ width: '100%' }}>Ver todas las respuestas</button>
+          <button onClick={() => setFase('inicio')} className="btn-editorial btn-sec" style={{ width: '100%' }}>Volver al inicio</button>
+        </main>
       </div>
     )
   }
@@ -279,36 +276,38 @@ export function Examen() {
   // ── Revisión ─────────────────────────────────────────────
   if (fase === 'revision' && resultado) {
     return (
-      <div className="p-4 max-w-2xl mx-auto space-y-4">
-        <div className="flex items-center gap-3 pt-4">
-          <button onClick={() => setFase('resultados')} className="text-gray-400 text-sm underline">← Resultado</button>
-          <h2 className="text-xl font-bold">Revisión</h2>
-        </div>
-        {preguntas.map((p, i) => {
-          const elegida  = resultado.respuestasUsuario[p.id]
-          const correcta = getPreguntaCorrecta(p)
-          const color = elegida === null ? 'border-gray-200'
-            : elegida === correcta ? 'border-green-400 bg-green-50' : 'border-red-400 bg-red-50'
-          return (
-            <div key={p.id} className={`rounded-2xl border p-4 space-y-2 ${color}`}>
-              <p className="text-xs text-gray-400 font-medium">Pregunta {i + 1}</p>
-              <p className="text-sm font-medium">{p.enunciado}</p>
-              {p.opciones.map((op, j) => (
-                <p key={j} className={`text-sm px-3 py-1 rounded-lg ${
-                  j === correcta ? 'bg-green-100 text-green-800 font-semibold' :
-                  j === elegida  ? 'bg-red-100 text-red-800' : 'text-gray-600'
-                }`}>
-                  {j === correcta ? '✅' : j === elegida ? '❌' : '○'} {op}
-                </p>
-              ))}
-              <p className="text-xs text-gray-500 italic">{p.explicacion}</p>
-            </div>
-          )
-        })}
-        <button onClick={() => setFase('inicio')}
-          className="w-full border border-gray-200 rounded-xl py-3 text-sm">
-          Volver al inicio
-        </button>
+      <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+        <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+          <button onClick={() => setFase('resultados')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+          <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Revisión</span>
+        </header>
+        <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          {preguntas.map((p, i) => {
+            const elegida  = resultado.respuestasUsuario[p.id]
+            const correcta = getPreguntaCorrecta(p)
+            const borde = elegida === null ? 'var(--border)' : elegida === correcta ? 'var(--accent)' : 'var(--warn)'
+            return (
+              <div key={p.id} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderLeft: `3px solid ${borde}`, borderRadius: 16, padding: 16 }}>
+                <p className="num-display" style={{ margin: 0, fontSize: 11.5, color: 'var(--mute)' }}>Pregunta {i + 1}</p>
+                <p style={{ margin: '6px 0 10px', fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>{p.enunciado}</p>
+                {p.opciones.map((op, j) => {
+                  const esCorr = j === correcta
+                  const esEleg = j === elegida
+                  return (
+                    <p key={j} style={{
+                      margin: '0 0 4px', fontSize: 12.5, padding: '5px 10px', borderRadius: 8,
+                      background: esCorr ? 'var(--accent-soft)' : esEleg ? 'var(--warn-soft)' : 'transparent',
+                      color: esCorr ? 'var(--accent)' : esEleg ? 'var(--warn)' : 'var(--ink-soft)',
+                      fontWeight: esCorr ? 600 : 400,
+                    }}>{esCorr ? '✅' : esEleg ? '❌' : '○'} {op}</p>
+                  )
+                })}
+                <p style={{ margin: '6px 0 0', fontSize: 12, color: 'var(--mute)', fontStyle: 'italic' }}>{p.explicacion}</p>
+              </div>
+            )
+          })}
+          <button onClick={() => setFase('inicio')} className="btn-editorial btn-sec" style={{ width: '100%' }}>Volver al inicio</button>
+        </main>
       </div>
     )
   }
