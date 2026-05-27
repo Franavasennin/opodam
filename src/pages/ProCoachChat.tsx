@@ -7,6 +7,15 @@ import { enviarMensajeDelta, type MensajeChat, type PerfilDelta, type Cuerpo, ty
 const CLAVE_PERFIL = 'opodam.delta.perfil'
 const CLAVE_MENSAJES = 'opodam.delta.mensajes'
 
+const topbar: React.CSSProperties = {
+  height: 52, borderBottom: '1px solid var(--border-soft)',
+  background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
+}
+
+const inputStyle: React.CSSProperties = {
+  width: '100%', borderRadius: 10, border: '1px solid var(--border)', background: 'var(--bg)', color: 'var(--ink)', padding: '7px 10px', fontSize: 13,
+}
+
 const CUERPOS: { value: Cuerpo; label: string }[] = [
   { value: 'cgpc', label: 'CGPC — Policía Canaria' },
   { value: 'policia_local', label: 'Policía Local' },
@@ -94,75 +103,45 @@ export default function ProCoachChat() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-100 flex flex-col">
-      <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-3">
-        <button onClick={() => navigate('/procoach')} className="text-marca-600 text-sm font-medium">
-          ← ProCoach AI
-        </button>
-        <span className="font-bold text-slate-900">DELTA</span>
-        <span className="text-xs text-slate-400">· Preparador de oposiciones</span>
-        <button
-          onClick={() => setMostrarPerfil(v => !v)}
-          className="ml-auto text-xs text-marca-600 font-medium"
-        >
+    <div className="min-h-screen flex flex-col" style={{ background: 'var(--bg)' }}>
+      <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+        <button onClick={() => navigate('/procoach')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>DELTA</span>
+        <span className="num-display" style={{ fontSize: 11.5, color: 'var(--mute)' }}>· Preparador físico</span>
+        <button onClick={() => setMostrarPerfil(v => !v)} style={{ marginLeft: 'auto', background: 'none', border: 0, cursor: 'pointer', color: 'var(--accent)', fontSize: 12.5, fontWeight: 600 }}>
           {mostrarPerfil ? 'Ocultar perfil' : 'Editar perfil'}
         </button>
       </header>
 
       {/* Perfil */}
       {mostrarPerfil && (
-        <section className="bg-white border-b border-slate-200 px-4 py-3">
+        <section className="px-4 py-3" style={{ background: 'var(--surface)', borderBottom: '1px solid var(--border)' }}>
           <div className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <label className="text-xs">
-              <span className="block font-semibold text-slate-600 mb-1">Cuerpo / oposición</span>
-              <select
-                value={perfil.cuerpo ?? ''}
-                onChange={e => setPerfil(p => ({ ...p, cuerpo: (e.target.value || undefined) as Cuerpo }))}
-                className="w-full rounded-lg border border-slate-200 px-2 py-1.5"
-              >
+            <label style={{ fontSize: 12 }}>
+              <span style={{ display: 'block', fontWeight: 600, color: 'var(--ink-soft)', marginBottom: 4 }}>Cuerpo / oposición</span>
+              <select value={perfil.cuerpo ?? ''} onChange={e => setPerfil(p => ({ ...p, cuerpo: (e.target.value || undefined) as Cuerpo }))} style={inputStyle}>
                 <option value="">(elige)</option>
                 {CUERPOS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
               </select>
             </label>
-            <label className="text-xs">
-              <span className="block font-semibold text-slate-600 mb-1">Nivel físico</span>
-              <select
-                value={perfil.level ?? ''}
-                onChange={e => setPerfil(p => ({ ...p, level: (e.target.value || undefined) as Nivel }))}
-                className="w-full rounded-lg border border-slate-200 px-2 py-1.5"
-              >
+            <label style={{ fontSize: 12 }}>
+              <span style={{ display: 'block', fontWeight: 600, color: 'var(--ink-soft)', marginBottom: 4 }}>Nivel físico</span>
+              <select value={perfil.level ?? ''} onChange={e => setPerfil(p => ({ ...p, level: (e.target.value || undefined) as Nivel }))} style={inputStyle}>
                 <option value="">(elige)</option>
                 {NIVELES.map(n => <option key={n.value} value={n.value}>{n.label}</option>)}
               </select>
             </label>
-            <label className="text-xs">
-              <span className="block font-semibold text-slate-600 mb-1">Días/semana</span>
-              <input
-                type="text"
-                value={perfil.weekly_days ?? ''}
-                onChange={e => setPerfil(p => ({ ...p, weekly_days: e.target.value }))}
-                placeholder="3-4"
-                className="w-full rounded-lg border border-slate-200 px-2 py-1.5"
-              />
+            <label style={{ fontSize: 12 }}>
+              <span style={{ display: 'block', fontWeight: 600, color: 'var(--ink-soft)', marginBottom: 4 }}>Días/semana</span>
+              <input type="text" value={perfil.weekly_days ?? ''} onChange={e => setPerfil(p => ({ ...p, weekly_days: e.target.value }))} placeholder="3-4" style={inputStyle} />
             </label>
-            <label className="text-xs">
-              <span className="block font-semibold text-slate-600 mb-1">Fecha del examen físico</span>
-              <input
-                type="date"
-                value={perfil.target_date ?? ''}
-                onChange={e => setPerfil(p => ({ ...p, target_date: e.target.value }))}
-                className="w-full rounded-lg border border-slate-200 px-2 py-1.5"
-              />
+            <label style={{ fontSize: 12 }}>
+              <span style={{ display: 'block', fontWeight: 600, color: 'var(--ink-soft)', marginBottom: 4 }}>Fecha del examen físico</span>
+              <input type="date" value={perfil.target_date ?? ''} onChange={e => setPerfil(p => ({ ...p, target_date: e.target.value }))} style={inputStyle} />
             </label>
-            <label className="text-xs sm:col-span-2">
-              <span className="block font-semibold text-slate-600 mb-1">Lesiones / limitaciones (opcional)</span>
-              <input
-                type="text"
-                value={perfil.injuries ?? ''}
-                onChange={e => setPerfil(p => ({ ...p, injuries: e.target.value }))}
-                placeholder="Ej.: tendinitis de hombro derecho"
-                className="w-full rounded-lg border border-slate-200 px-2 py-1.5"
-              />
+            <label className="sm:col-span-2" style={{ fontSize: 12 }}>
+              <span style={{ display: 'block', fontWeight: 600, color: 'var(--ink-soft)', marginBottom: 4 }}>Lesiones / limitaciones (opcional)</span>
+              <input type="text" value={perfil.injuries ?? ''} onChange={e => setPerfil(p => ({ ...p, injuries: e.target.value }))} placeholder="Ej.: tendinitis de hombro derecho" style={inputStyle} />
             </label>
           </div>
         </section>
@@ -170,11 +149,11 @@ export default function ProCoachChat() {
 
       {/* Mensajes */}
       <main className="flex-1 overflow-y-auto px-4 py-4">
-        <div className="max-w-2xl mx-auto space-y-3">
+        <div className="max-w-2xl mx-auto" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {mensajes.length === 0 && !cargando && (
-            <div className="rounded-2xl bg-white border border-slate-200 p-4">
-              <p className="text-sm font-semibold text-slate-900 mb-1">Hola, soy DELTA 🛡️</p>
-              <p className="text-xs text-slate-600">
+            <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
+              <p style={{ margin: '0 0 4px', fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>Hola, soy DELTA 🛡️</p>
+              <p style={{ margin: 0, fontSize: 12.5, color: 'var(--mute)', lineHeight: 1.5 }}>
                 Tu preparador físico para oposiciones. Rellena tu perfil arriba y cuéntame qué necesitas:
                 un plan, una sesión, dudas de protocolo o tus marcas actuales.
               </p>
@@ -182,58 +161,30 @@ export default function ProCoachChat() {
           )}
 
           {mensajes.map((m, i) => (
-            <div
-              key={i}
-              className={m.role === 'user'
-                ? 'ml-auto max-w-[85%] rounded-2xl bg-marca-600 text-white px-4 py-2.5 text-sm whitespace-pre-wrap'
-                : 'mr-auto max-w-[85%] rounded-2xl bg-white border border-slate-200 px-4 py-2.5 text-sm text-slate-800 whitespace-pre-wrap'}
-            >
+            <div key={i} style={m.role === 'user'
+              ? { marginLeft: 'auto', maxWidth: '85%', borderRadius: 16, background: 'var(--accent)', color: 'var(--accent-ink)', padding: '10px 14px', fontSize: 13.5, whiteSpace: 'pre-wrap', lineHeight: 1.45 }
+              : { marginRight: 'auto', maxWidth: '85%', borderRadius: 16, background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--ink-soft)', padding: '10px 14px', fontSize: 13.5, whiteSpace: 'pre-wrap', lineHeight: 1.45 }}>
               {m.content}
             </div>
           ))}
 
-          {cargando && (
-            <div className="mr-auto rounded-2xl bg-white border border-slate-200 px-4 py-2.5 text-sm text-slate-400">
-              DELTA está escribiendo…
-            </div>
-          )}
-
-          {error && (
-            <div className="rounded-xl bg-red-50 border border-red-200 px-3 py-2 text-xs text-red-700">
-              {error}
-            </div>
-          )}
-
+          {cargando && <div style={{ marginRight: 'auto', borderRadius: 16, background: 'var(--surface)', border: '1px solid var(--border)', padding: '10px 14px', fontSize: 13.5, color: 'var(--mute)' }}>DELTA está escribiendo…</div>}
+          {error && <div className="rounded-xl px-3 py-2 text-xs" style={{ background: 'var(--warn-soft)', color: 'var(--warn)' }}>{error}</div>}
           <div ref={finRef} />
         </div>
       </main>
 
       {/* Input */}
-      <footer className="bg-white border-t border-slate-200 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+      <footer className="px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
         <div className="max-w-2xl mx-auto flex items-end gap-2">
-          <textarea
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder="Escribe a DELTA… (Enter para enviar, Shift+Enter para salto de línea)"
-            rows={2}
-            className="flex-1 resize-none rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-marca-600"
-          />
+          <textarea value={input} onChange={e => setInput(e.target.value)} onKeyDown={handleKeyDown}
+            placeholder="Escribe a DELTA… (Enter para enviar)" rows={2}
+            style={{ flex: 1, resize: 'none', borderRadius: 12, border: '1px solid var(--border)', background: 'var(--bg)', color: 'var(--ink)', padding: '8px 12px', fontSize: 13.5 }} />
           <div className="flex flex-col gap-1">
-            <button
-              onClick={enviar}
-              disabled={cargando || !input.trim()}
-              className="bg-marca-600 hover:bg-marca-700 disabled:opacity-40 text-white text-sm font-semibold rounded-xl px-4 py-2 transition-colors"
-            >
-              Enviar
-            </button>
+            <button onClick={enviar} disabled={cargando || !input.trim()} className="btn-editorial btn-acc"
+              style={{ paddingLeft: 18, paddingRight: 18, opacity: cargando || !input.trim() ? 0.4 : 1 }}>Enviar</button>
             {mensajes.length > 0 && (
-              <button
-                onClick={limpiarConversacion}
-                className="text-[10px] text-slate-400 hover:text-slate-600"
-              >
-                limpiar
-              </button>
+              <button onClick={limpiarConversacion} style={{ background: 'none', border: 0, cursor: 'pointer', fontSize: 10, color: 'var(--mute)' }}>limpiar</button>
             )}
           </div>
         </div>

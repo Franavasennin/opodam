@@ -1,57 +1,52 @@
 import { useNavigate } from 'react-router-dom'
 
+const topbar: React.CSSProperties = {
+  height: 52, borderBottom: '1px solid var(--border-soft)',
+  background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
+}
+
 export default function ProCoachAI() {
   const navigate = useNavigate()
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-3">
-        <button onClick={() => navigate('/mis-oposiciones')} className="text-marca-600 text-sm">
-          &larr; Inicio
-        </button>
-        <span className="font-bold text-slate-900">ProCoach AI</span>
+    <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+        <button onClick={() => navigate('/mis-oposiciones')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>ProCoach AI</span>
       </header>
-      <main className="max-w-md mx-auto p-4 space-y-4">
-        <div className="rounded-2xl p-5 text-white bg-gradient-to-br from-marca-900 to-marca-600">
-          <h1 className="font-extrabold text-xl">ProCoach AI</h1>
-          <p className="text-sm opacity-90 mt-1">
-            App movil con 1 agente IA especializado de disciplina deportiva: chat en
-            tiempo real, gym mode, analisis de fotos, voz y planes personalizados.
-            Backend Express + SQLite.
-          </p>
+      <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div className="hero" style={{ padding: 24 }}>
+          <div className="hero-grain" />
+          <div style={{ position: 'relative' }}>
+            <div className="eyebrow" style={{ color: 'rgba(255,255,255,0.6)' }}>Preparación física</div>
+            <h1 className="display" style={{ margin: '8px 0 6px', fontSize: 28 }}>ProCoach <span className="display-italic" style={{ color: 'var(--accent)' }}>AI</span></h1>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.78)', margin: 0, lineHeight: 1.5 }}>
+              Un agente IA especializado en disciplina deportiva: chat en tiempo real, modo gym, análisis y planes personalizados para tu oposición.
+            </p>
+          </div>
         </div>
 
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4">
-          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Agente</p>
+        <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
+          <div className="eyebrow" style={{ marginBottom: 12 }}>Agente</div>
           <div className="flex items-center gap-3">
-            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-marca-100 text-marca-700">DELTA</span>
+            <span className="pill pill-accent num-display" style={{ fontSize: 11 }}>DELTA</span>
             <div>
-              <div className="text-sm font-semibold text-slate-900">Oposiciones fisicas</div>
-              <div className="text-xs text-slate-500">Especialista GC, Policia, FF.AA. Espana</div>
+              <div style={{ fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>Oposiciones físicas</div>
+              <div style={{ fontSize: 12, color: 'var(--mute)' }}>Especialista GC, Policía, FF.AA. España</div>
             </div>
           </div>
-          <button
-            onClick={() => navigate('/procoach/chat')}
-            className="mt-3 w-full bg-marca-600 hover:bg-marca-700 transition-colors text-white text-sm font-semibold rounded-xl py-2.5"
-          >
+          <button onClick={() => navigate('/procoach/chat')} className="btn-editorial btn-acc" style={{ width: '100%', marginTop: 14 }}>
             Hablar con DELTA
           </button>
         </div>
 
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4">
-          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Capacidades</p>
-          <ul className="text-sm text-slate-700 space-y-1 list-disc pl-5">
-            <li>Memoria activa (ultimos 20 mensajes)</li>
-            <li>Modo gym (respuestas de 150 tokens o menos)</li>
-            <li>Deteccion de problemas</li>
-            <li>Limites profesionales</li>
+        <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
+          <div className="eyebrow" style={{ marginBottom: 10 }}>Capacidades</div>
+          <ul style={{ fontSize: 13.5, color: 'var(--ink-soft)', margin: 0, paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <li>Memoria activa (últimos 20 mensajes)</li>
+            <li>Modo gym (respuestas concisas)</li>
+            <li>Detección de problemas</li>
+            <li>Límites profesionales</li>
           </ul>
-        </div>
-
-        <div className="bg-acento-100 rounded-2xl p-4">
-          <p className="text-sm text-slate-700">
-            <span className="font-semibold">Nicho de entrada:</span> oposiciones fisicas.
-            Sin competencia directa en Espana y demanda constante.
-          </p>
         </div>
       </main>
     </div>
