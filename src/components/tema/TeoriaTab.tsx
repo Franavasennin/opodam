@@ -28,9 +28,25 @@ export function TeoriaTab({ tema, onTeoriaLeida }: Props) {
             {bloques.map((b, j) => {
               if (b.tipo === 'estructura') {
                 return (
-                  <p key={j} style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--accent)', margin: '20px 0 8px' }}>
+                  <p key={j} style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--accent)', margin: '22px 0 8px' }}>
                     {b.texto}
                   </p>
+                )
+              }
+              if (b.tipo === 'subtitulo') {
+                return (
+                  <p key={j} style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)', margin: '16px 0 6px' }}>
+                    {b.texto}
+                  </p>
+                )
+              }
+              if (b.tipo === 'lista') {
+                return (
+                  <ul key={j} style={{ margin: '0 0 14px', paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 4 }}>
+                    {b.items!.map((it, k) => (
+                      <li key={k} style={{ fontSize: 14.5, color: 'var(--ink-soft)', lineHeight: 1.55 }}>{it}</li>
+                    ))}
+                  </ul>
                 )
               }
               if (b.tipo === 'biblio') {
