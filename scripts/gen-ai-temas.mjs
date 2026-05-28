@@ -36,7 +36,8 @@ function extraerJSON(t) {
   if (i < 0 || j < 0) return null
   try { return JSON.parse(t.slice(i, j + 1)) } catch { return null }
 }
-const validP = it => Array.isArray(it) && it.length > 0 && it.every(q => q && typeof q.enunciado === 'string' && Array.isArray(q.opciones) && q.opciones.length === 4 && typeof q.respuestaCorrecta === 'number' && q.respuestaCorrecta >= 0 && q.respuestaCorrecta <= 3)
+const sinDup = o => new Set(o.map(x => (x || '').toString().trim().toLowerCase())).size === o.length
+const validP = it => Array.isArray(it) && it.length > 0 && it.every(q => q && typeof q.enunciado === 'string' && Array.isArray(q.opciones) && q.opciones.length === 4 && q.opciones.every(x => (x || '').toString().trim()) && sinDup(q.opciones) && typeof q.respuestaCorrecta === 'number' && q.respuestaCorrecta >= 0 && q.respuestaCorrecta <= 3)
 const validF = it => Array.isArray(it) && it.length > 0 && it.every(f => f && typeof f.pregunta === 'string' && typeof f.respuesta === 'string')
 
 function prompt(titulo, teoria) {
