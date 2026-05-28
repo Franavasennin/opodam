@@ -29,8 +29,9 @@ export const OPOSICIONES: Oposicion[] = [
     slug: 'aux-enfermeria',
     nombre: 'Auxiliar de Enfermería',
     descripcion: 'Servicio Canario de Salud',
-    disponible: false,
+    disponible: true,
     color: '#0891b2',
+    numTemas: 24,
   },
   {
     slug: 'aux-judicial',

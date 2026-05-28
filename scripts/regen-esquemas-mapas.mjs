@@ -55,13 +55,24 @@ function ramasDe(contenido) {
   ramas = titulosUnicos([...ramas, ...arts], 8)
   if (ramas.length >= 3) return ramas
 
-  // 4) Epígrafes numerados estilo apuntes: "1. INTRODUCCIÓN", "2. EL CLIMA"…
+  // 4) Epígrafes numerados estilo apuntes: "1. INTRODUCCIÓN", "2.EL CLIMA", "3- SONDAJES"
   const epi = []
   for (const l of lineas) {
-    const me = l.match(/^(\d{1,2})\.\s+([A-ZÁÉÍÓÚÑ][^\n]{3,58})$/)
-    if (me && !/[.;]\s/.test(me[2])) epi.push(recortar(me[2], 50))
+    const me = l.match(/^(\d{1,2})\s*[.\-)]\s*([A-ZÁÉÍÓÚÑ][^\n]{3,58})$/)
+    if (me && !/[.;]\s/.test(me[2])) epi.push(recortar(me[2].replace(/[.:]+$/, ''), 50))
   }
   ramas = titulosUnicos([...ramas, ...epi], 9)
+  if (ramas.length >= 3) return ramas
+
+  // 5) Epígrafes en MAYÚSCULAS (resúmenes médicos): "RESIDUOS SANITARIOS", "ANATOMÍA"
+  const caps = []
+  for (const l of lineas) {
+    const t = l.replace(/^\d+\s*[.\-)]\s*/, '').replace(/[.:]+$/, '').trim()
+    if (t.length >= 6 && t.length <= 56 && t === t.toUpperCase() && /[A-ZÁÉÍÓÚÑ]/.test(t) && /[AEIOUÁÉÍÓÚ]/i.test(t) && !/^\d+$/.test(t)) {
+      caps.push(t.charAt(0) + t.slice(1).toLowerCase())
+    }
+  }
+  ramas = titulosUnicos([...ramas, ...caps], 9)
   return ramas
 }
 

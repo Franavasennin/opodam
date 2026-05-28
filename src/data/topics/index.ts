@@ -1,6 +1,7 @@
 import type { Tema } from '../../types'
 import * as cgpc from './cgpc/index'
 import * as policiaLocal from './policia-local/index'
+import * as auxEnfermeria from './aux-enfermeria/index'
 
 export interface ModuloTopics {
   TEMAS_META: ReadonlyArray<{ id: number; titulo: string; bloque: string }>
@@ -11,6 +12,7 @@ export interface ModuloTopics {
 const MODULOS: Record<string, ModuloTopics> = {
   'cgpc': cgpc,
   'policia-local': policiaLocal,
+  'aux-enfermeria': auxEnfermeria,
 }
 
 export function obtenerTopics(slug: string): ModuloTopics {
