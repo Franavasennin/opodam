@@ -24,10 +24,12 @@ export const TEMAS_META = [
   { id: 21, titulo: "Ley Orgánica 1/2004 de Protección Integral contra la Violencia de Género", bloque: 'general' },
   { id: 22, titulo: "Real Decreto 137/1993: Reglamento de Armas", bloque: 'general' },
   { id: 23, titulo: "Ley Orgánica 12/1995 de represión del contrabando", bloque: 'general' },
+  { id: 24, titulo: 'Inglés', bloque: 'general' },
+  { id: 25, titulo: 'Lengua española (ortografía y gramática)', bloque: 'general' },
 ] as const
 
 export type TemaMeta = typeof TEMAS_META[number]
-export const TOTAL_TEMAS = TEMAS_META.length // 23
+export const TOTAL_TEMAS = TEMAS_META.length // 25
 
 export async function cargarTema(id: number): Promise<Tema> {
   if (id < 1 || id > TOTAL_TEMAS) throw new Error(`Tema con id ${id} no encontrado`)

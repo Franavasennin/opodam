@@ -1,0 +1,259 @@
+{
+  "id": 25,
+  "titulo": "Lengua española (ortografía y gramática)",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LENGUA ESPAÑOLA: ORTOGRAFÍA Y GRAMÁTICA\nResumen de las reglas esenciales de ortografía y gramática para la prueba de lengua.\n\n1. REGLAS GENERALES DE ACENTUACIÓN\nSegún la sílaba tónica, las palabras se clasifican en:\n- Agudas: tónica en la última sílaba. Llevan tilde si terminan en vocal, -n o -s (camión, café, además).\n- Llanas o graves: tónica en la penúltima. Llevan tilde si NO terminan en vocal, -n o -s (árbol, lápiz, fácil).\n- Esdrújulas: tónica en la antepenúltima. Llevan tilde siempre (música, rápido, teléfono).\n- Sobreesdrújulas: tónica antes de la antepenúltima. Llevan tilde siempre (dígamelo, cuéntamelo).\n\n2. LA TILDE DIACRÍTICA\nDistingue palabras de igual forma pero distinta función:\n- el (artículo) / él (pronombre).\n- tu (posesivo) / tú (pronombre).\n- mi (posesivo) / mí (pronombre).\n- si (condicional) / sí (afirmación o pronombre).\n- mas (pero) / más (cantidad).\n- de (preposición) / dé (verbo dar).\n- se (pronombre) / sé (verbo saber o ser).\n- te (pronombre) / té (infusión).\n\n3. USO DE B Y V\nSe escribe B:\n- Antes de consonante (brazo, obvio) y en -bir (escribir), salvo hervir, servir, vivir.\n- En las terminaciones -aba del pretérito imperfecto (cantaba).\nSe escribe V:\n- Tras las sílabas ad-, sub-, ob- (adversario, subvención).\n- En adjetivos terminados en -ava, -ave, -avo, -eve, -ivo (suave, activo).\n\n4. USO DE G Y J\nSe escribe G con sonido fuerte ante e, i en palabras como gente, gigante, y en -gen, -gente.\nSe escribe J ante e, i en palabras como jefe, mujer, y en las terminaciones -aje, -jero, -jería (garaje, extranjero).\n\n5. USO DE LA H\nLa H es muda. Se escribe en palabras que empiezan por hia-, hie-, hue-, hui- (hielo, huevo), y en los verbos haber, hacer, hablar, habitar.\n\n6. LOS SIGNOS DE PUNTUACIÓN\n- La coma separa elementos y marca pausas breves.\n- El punto y coma separa oraciones relacionadas.\n- Los dos puntos anuncian una enumeración o explicación.\n- El punto cierra el enunciado.\nEn español los signos de interrogación y exclamación se escriben de apertura y cierre (¿...?, ¡...!).\n\n7. CATEGORÍAS GRAMATICALES\n- Sustantivo: nombra seres, objetos o ideas.\n- Adjetivo: expresa cualidades del sustantivo.\n- Verbo: expresa acción, estado o proceso.\n- Adverbio: modifica al verbo, adjetivo u otro adverbio.\n- Determinante: presenta al sustantivo (artículos, demostrativos, posesivos).\n- Pronombre: sustituye al sustantivo.\n- Preposición y conjunción: nexos de enlace.\n\n8. LA ORACIÓN Y SUS ELEMENTOS\nLa oración consta de sujeto (de quién se habla) y predicado (lo que se dice del sujeto).\nEl predicado puede ser nominal (con verbo copulativo ser, estar, parecer) o verbal.\nComplementos del verbo: directo, indirecto, circunstancial, de régimen y atributo."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema general del tema",
+      "codigo": "graph TD\n  A[\"Lengua española (ortografía y gramática)\"]\n  A --> N1[\"REGLAS GENERALES DE ACENTUACIÓN\"]\n  A --> N2[\"LA TILDE DIACRÍTICA\"]\n  A --> N3[\"USO DE B Y V\"]\n  A --> N4[\"USO DE G Y J\"]\n  A --> N5[\"USO DE LA H\"]\n  A --> N6[\"LOS SIGNOS DE PUNTUACIÓN\"]\n  A --> N7[\"CATEGORÍAS GRAMATICALES\"]\n  A --> N8[\"LA ORACIÓN Y SUS ELEMENTOS\"]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      {
+        "id": "root",
+        "texto": "Lengua española (ortografía y gramática)",
+        "nivel": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s1",
+        "texto": "REGLAS GENERALES DE ACENTUACIÓN",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s2",
+        "texto": "LA TILDE DIACRÍTICA",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "USO DE B Y V",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "USO DE G Y J",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "USO DE LA H",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "LOS SIGNOS DE PUNTUACIÓN",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "CATEGORÍAS GRAMATICALES",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "LA ORACIÓN Y SUS ELEMENTOS",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      }
+    ],
+    "aristas": [
+      {
+        "desde": "root",
+        "hasta": "s1"
+      },
+      {
+        "desde": "root",
+        "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      }
+    ]
+  },
+  "flashcards": [
+    {
+      "id": "fc25-01",
+      "pregunta": "¿Cómo se escribe la B?",
+      "respuesta": "Antes de consonante y en -bir"
+    },
+    {
+      "id": "fc25-02",
+      "pregunta": "¿Cuál es la función de la H en palabras que empiezan por hia-, hie-, hue-, hui-?",
+      "respuesta": "La H es muda"
+    },
+    {
+      "id": "fc25-03",
+      "pregunta": "¿Cuál es la función de la coma en la puntuación?",
+      "respuesta": "Separar elementos y marca pausas breves"
+    },
+    {
+      "id": "fc25-04",
+      "pregunta": "¿Cuál es la categoría gramatical del sustantivo?",
+      "respuesta": "Nombra seres, objetos o ideas"
+    },
+    {
+      "id": "fc25-05",
+      "pregunta": "¿Cuál es el predicado de una oración?",
+      "respuesta": "Lo que se dice del sujeto"
+    },
+    {
+      "id": "fc25-06",
+      "pregunta": "¿Cuál es la función de la preposición en la oración?",
+      "respuesta": "Nexos de enlace"
+    },
+    {
+      "id": "fc25-07",
+      "pregunta": "¿Cuál es la regla para acentuar palabras esdrújulas?",
+      "respuesta": "Llevan tilde siempre"
+    },
+    {
+      "id": "fc25-08",
+      "pregunta": "¿Cuál es la diferencia entre el y él?",
+      "respuesta": "El es un artículo, él es un pronombre"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p25-01",
+      "enunciado": "¿Cuál es la regla para acentuar palabras agudas?",
+      "opciones": [
+        "Llevan tilde si terminan en vocal, -n o -s",
+        "Llevan tilde si NO terminan en vocal, -n o -s",
+        "Llevan tilde siempre",
+        "Llevan tilde si terminan en consonante"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Llevan tilde si terminan en vocal, -n o -s"
+    },
+    {
+      "id": "p25-02",
+      "enunciado": "¿Cuál es la diferencia entre el y él?",
+      "opciones": [
+        "El es un artículo, él es un pronombre",
+        "El es un pronombre, él es un artículo",
+        "El es un verbo, él es un sustantivo",
+        "El es un sustantivo, él es un verbo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El es un artículo, él es un pronombre"
+    },
+    {
+      "id": "p25-03",
+      "enunciado": "¿Cómo se escribe la B?",
+      "opciones": [
+        "Antes de vocal y en -bir",
+        "Antes de consonante y en -bir",
+        "Tras las sílabas ad-, sub-, ob-",
+        "En las terminaciones -aba del pretérito imperfecto"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Antes de consonante y en -bir"
+    },
+    {
+      "id": "p25-04",
+      "enunciado": "¿Cuál es la función de la H en palabras que empiezan por hia-, hie-, hue-, hui-?",
+      "opciones": [
+        "La H es muda",
+        "La H es sonora",
+        "La H es silenciosa",
+        "La H es audible"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La H es muda"
+    },
+    {
+      "id": "p25-05",
+      "enunciado": "¿Cuál es la función de la coma en la puntuación?",
+      "opciones": [
+        "Separar oraciones relacionadas",
+        "Separar elementos y marca pausas breves",
+        "Anunciar una enumeración o explicación",
+        "Cerrar el enunciado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Separar elementos y marca pausas breves"
+    },
+    {
+      "id": "p25-06",
+      "enunciado": "¿Cuál es la categoría gramatical del sustantivo?",
+      "opciones": [
+        "Nombra seres, objetos o ideas",
+        "Expresa cualidades del sustantivo",
+        "Expresa acción, estado o proceso",
+        "Modifica al verbo, adjetivo u otro adverbio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Nombra seres, objetos o ideas"
+    },
+    {
+      "id": "p25-07",
+      "enunciado": "¿Cuál es el predicado de una oración?",
+      "opciones": [
+        "El sujeto de la oración",
+        "Lo que se dice del sujeto",
+        "La oración completa",
+        "El verbo de la oración"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Lo que se dice del sujeto"
+    },
+    {
+      "id": "p25-08",
+      "enunciado": "¿Cuál es la función de la preposición en la oración?",
+      "opciones": [
+        "Nexos de enlace",
+        "Presenta al sustantivo",
+        "Sustituye al sustantivo",
+        "Modifica al verbo, adjetivo u otro adverbio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Nexos de enlace"
+    }
+  ]
+}
