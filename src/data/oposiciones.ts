@@ -6,6 +6,8 @@ export interface Oposicion {
   disponible: boolean
   color: string
   numTemas?: number
+  /** Segmentos de sección a ocultar para esta oposición (p. ej. 'psicotecnicos'). */
+  ocultar?: string[]
 }
 
 export const OPOSICIONES: Oposicion[] = [
@@ -32,6 +34,7 @@ export const OPOSICIONES: Oposicion[] = [
     disponible: true,
     color: '#0891b2',
     numTemas: 24,
+    ocultar: ['psicotecnicos', 'supuestos', 'entrevista', 'personalidad'],
   },
   {
     slug: 'guardia-civil',
@@ -39,7 +42,7 @@ export const OPOSICIONES: Oposicion[] = [
     descripcion: 'Ingreso en el Cuerpo de la Guardia Civil',
     disponible: true,
     color: '#15803d',
-    numTemas: 23,
+    numTemas: 25,
   },
   {
     slug: 'aux-judicial',

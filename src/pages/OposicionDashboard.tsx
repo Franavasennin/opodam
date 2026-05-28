@@ -87,7 +87,7 @@ export default function OposicionDashboard() {
 
           <div className="eyebrow" style={{ margin: '22px 4px 10px' }}>Tu preparación</div>
           <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingBottom: 32 }}>
-            {MENU.map(item => (
+            {MENU.filter(item => !(oposicion.ocultar ?? []).includes(item.path)).map(item => (
               <button key={item.path} onClick={() => ir(item.path)} className="card"
                 style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16 }}>
                 <span style={{ width: 44, height: 44, borderRadius: 12, background: 'var(--surface-2)', border: '1px solid var(--border-soft)', fontSize: 20, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.icon}</span>

@@ -85,7 +85,7 @@ export function DesktopShell({ children }: { children: ReactNode }) {
 
           <div className="eyebrow" style={{ padding: '0 22px 8px' }}>Navegar</div>
           <nav style={{ display: 'flex', flexDirection: 'column', gap: 2, padding: '0 12px', overflowY: 'auto', flex: 1 }}>
-            {NAV.map(item => {
+            {NAV.filter(item => !(oposicion?.ocultar ?? []).includes(item.seg)).map(item => {
               const activo = seg === item.seg
               return (
                 <button
