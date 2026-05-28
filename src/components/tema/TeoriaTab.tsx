@@ -16,10 +16,14 @@ export function TeoriaTab({ tema, onTeoriaLeida }: Props) {
         const bloques = parsearTeoria(s.contenido)
         return (
           <section key={i}>
-            <span style={{ display: 'block', fontFamily: "'JetBrains Mono', monospace", fontSize: 10.5, letterSpacing: '0.06em', color: 'var(--mute)', textTransform: 'uppercase', marginBottom: 4 }}>
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <h3 style={{ marginTop: i === 0 ? 4 : 28, marginBottom: 12 }}>{s.titulo}</h3>
+            {s.titulo && (
+              <>
+                <span style={{ display: 'block', fontFamily: "'JetBrains Mono', monospace", fontSize: 10.5, letterSpacing: '0.06em', color: 'var(--mute)', textTransform: 'uppercase', marginBottom: 4 }}>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3 style={{ marginTop: i === 0 ? 4 : 28, marginBottom: 12 }}>{s.titulo}</h3>
+              </>
+            )}
 
             {bloques.map((b, j) => {
               if (b.tipo === 'estructura') {
