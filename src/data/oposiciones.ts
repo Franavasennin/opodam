@@ -34,6 +34,14 @@ export const OPOSICIONES: Oposicion[] = [
     numTemas: 24,
   },
   {
+    slug: 'guardia-civil',
+    nombre: 'Guardia Civil',
+    descripcion: 'Ingreso en el Cuerpo de la Guardia Civil',
+    disponible: true,
+    color: '#15803d',
+    numTemas: 23,
+  },
+  {
     slug: 'aux-judicial',
     nombre: 'Auxiliar Judicial',
     descripcion: 'Administración de Justicia',
