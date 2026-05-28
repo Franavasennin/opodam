@@ -12,35 +12,77 @@
     {
       "tipo": "mermaid",
       "titulo": "Esquema general del tema",
-      "codigo": "graph TD\n  A[\"Ortografía de la lengua española. Reglas\"]\n  A --> N1[\"bibliografías o índices, la raya se util\"]\n  A --> N2[\"Real Decreto 125/1983, Constitución\"]\n  A --> N3[\"Si se cita dentro de un texto, se recomi\"]"
+      "codigo": "graph TD\n  A[\"Ortografía de la lengua española. Reglas ortográficas. Uso…\"]\n  A --> N1[\"INTRODUCCIÓN: LA ORTOGRAFÍA\"]\n  A --> N2[\"LAS REGLAS ORTOGRÁFICAS\"]\n  A --> N3[\"FONEMAS Y GRAFEMAS\"]\n  A --> N4[\"VOCALES Y CONSONANTES\"]\n  A --> N5[\"VARIEDADES DE LA LENGUA: SESEO, CECEO Y YEÍSMO\"]\n  A --> N6[\"EL ABECEDARIO\"]\n  A --> N7[\"LA TILDE\"]\n  A --> N8[\"LOS SIGNOS ORTOGRÁFICOS\"]\n  A --> N9[\"No escribir punto tras las cabeceras de cuadros y…\"]"
     }
   ],
   "mapaMental": {
     "nodos": [
       {
         "id": "root",
-        "texto": "Ortografía de la lengua española. Reglas ortográf…",
+        "texto": "Ortografía de la lengua española. Reglas ortográficas. Uso…",
         "nivel": 0,
         "x": 0,
         "y": 0
       },
       {
         "id": "s1",
-        "texto": "bibliografías o índices, la raya se uti…",
+        "texto": "INTRODUCCIÓN: LA ORTOGRAFÍA",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s2",
-        "texto": "Real Decreto 125/1983, Constitución)",
+        "texto": "LAS REGLAS ORTOGRÁFICAS",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s3",
-        "texto": "Si se cita dentro de un texto, se recom…",
+        "texto": "FONEMAS Y GRAFEMAS",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "VOCALES Y CONSONANTES",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "VARIEDADES DE LA LENGUA: SESEO, CECEO Y YEÍSMO",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "EL ABECEDARIO",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "LA TILDE",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "LOS SIGNOS ORTOGRÁFICOS",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "No escribir punto tras las cabeceras de cuadros y…",
         "nivel": 1,
         "x": 0,
         "y": 0
@@ -58,6 +100,30 @@
       {
         "desde": "root",
         "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
       }
     ]
   },

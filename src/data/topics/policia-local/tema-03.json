@@ -12,14 +12,14 @@
     {
       "tipo": "mermaid",
       "titulo": "Esquema general del tema",
-      "codigo": "graph TD\n  A[\"Garantías de las libertades y Derechos f\"]\n  A --> N1[\"TÍTULO I\"]\n  A --> N2[\"artículo 161\"]\n  A --> N3[\"No podrá procederse a la disolución del \"]"
+      "codigo": "graph TD\n  A[\"Garantías de las libertades y Derechos fundamentales. El…\"]\n  A --> N1[\"TÍTULO I\"]\n  A --> N2[\"CAPÍTULO SEGUNDO\"]\n  A --> N3[\"SECCIÓN 1.ª\"]\n  A --> N4[\"CAPÍTULO CUARTO\"]\n  A --> N5[\"CAPÍTULO QUINTO\"]\n  A --> N6[\"TÍTULO V\"]"
     }
   ],
   "mapaMental": {
     "nodos": [
       {
         "id": "root",
-        "texto": "Garantías de las libertades y Derechos fundamenta…",
+        "texto": "Garantías de las libertades y Derechos fundamentales. El…",
         "nivel": 0,
         "x": 0,
         "y": 0
@@ -33,14 +33,35 @@
       },
       {
         "id": "s2",
-        "texto": "artículo 161",
+        "texto": "CAPÍTULO SEGUNDO",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s3",
-        "texto": "No podrá procederse a la disolución del…",
+        "texto": "SECCIÓN 1.ª",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "CAPÍTULO CUARTO",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "CAPÍTULO QUINTO",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "TÍTULO V",
         "nivel": 1,
         "x": 0,
         "y": 0
@@ -58,6 +79,18 @@
       {
         "desde": "root",
         "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
       }
     ]
   },

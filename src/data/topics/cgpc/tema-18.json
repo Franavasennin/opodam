@@ -12,14 +12,14 @@
     {
       "tipo": "mermaid",
       "titulo": "Esquema general del tema",
-      "codigo": "graph TD\n  A[\"Las Instituciones de la Unión Europea: e\"]\n  A --> N1[\"TÍTULO I\"]\n  A --> N2[\"ARTÍCULO 5\"]\n  A --> N3[\"ARTÍCULO 290\"]\n  A --> N4[\"Si el Consejo aprueba la posición del Pa\"]\n  A --> N5[\"ARTÍCULO 295\"]"
+      "codigo": "graph TD\n  A[\"Las Instituciones de la Unión Europea: el Consejo, el…\"]\n  A --> N1[\"TÍTULO I\"]\n  A --> N2[\"CAPÍTULO 2\"]\n  A --> N3[\"Artículo 2\"]\n  A --> N4[\"Artículo 3\"]\n  A --> N5[\"Artículo 4\"]\n  A --> N6[\"Artículo 5\"]\n  A --> N7[\"Artículo 6\"]\n  A --> N8[\"Artículo 288\"]"
     }
   ],
   "mapaMental": {
     "nodos": [
       {
         "id": "root",
-        "texto": "Las Instituciones de la Unión Europea: el Consejo…",
+        "texto": "Las Instituciones de la Unión Europea: el Consejo, el…",
         "nivel": 0,
         "x": 0,
         "y": 0
@@ -33,28 +33,49 @@
       },
       {
         "id": "s2",
-        "texto": "ARTÍCULO 5",
+        "texto": "CAPÍTULO 2",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s3",
-        "texto": "ARTÍCULO 290",
+        "texto": "Artículo 2",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s4",
-        "texto": "Si el Consejo aprueba la posición del P…",
+        "texto": "Artículo 3",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s5",
-        "texto": "ARTÍCULO 295",
+        "texto": "Artículo 4",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "Artículo 5",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "Artículo 6",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "Artículo 288",
         "nivel": 1,
         "x": 0,
         "y": 0
@@ -80,6 +101,18 @@
       {
         "desde": "root",
         "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
       }
     ]
   },

@@ -12,14 +12,14 @@
     {
       "tipo": "mermaid",
       "titulo": "Esquema general del tema",
-      "codigo": "graph TD\n  A[\"Las Cortes Generales: funciones del Cong\"]\n  A --> N1[\"TÍTULO III\"]\n  A --> N2[\"ARTÍCULO 70\"]\n  A --> N3[\"ARTÍCULO 76\"]\n  A --> N4[\"ARTÍCULO 83\"]\n  A --> N5[\"ARTÍCULO 89\"]\n  A --> N6[\"artículo 94\"]"
+      "codigo": "graph TD\n  A[\"Las Cortes Generales: funciones del Congreso y del Senado.\"]\n  A --> N1[\"TÍTULO III\"]\n  A --> N2[\"CAPÍTULO PRIMERO\"]\n  A --> N3[\"CAPÍTULO SEGUNDO\"]\n  A --> N4[\"CAPÍTULO TERCERO\"]\n  A --> N5[\"TÍTULO V\"]"
     }
   ],
   "mapaMental": {
     "nodos": [
       {
         "id": "root",
-        "texto": "Las Cortes Generales: funciones del Congreso y de…",
+        "texto": "Las Cortes Generales: funciones del Congreso y del Senado.",
         "nivel": 0,
         "x": 0,
         "y": 0
@@ -33,35 +33,28 @@
       },
       {
         "id": "s2",
-        "texto": "ARTÍCULO 70",
+        "texto": "CAPÍTULO PRIMERO",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s3",
-        "texto": "ARTÍCULO 76",
+        "texto": "CAPÍTULO SEGUNDO",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s4",
-        "texto": "ARTÍCULO 83",
+        "texto": "CAPÍTULO TERCERO",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s5",
-        "texto": "ARTÍCULO 89",
-        "nivel": 1,
-        "x": 0,
-        "y": 0
-      },
-      {
-        "id": "s6",
-        "texto": "artículo 94",
+        "texto": "TÍTULO V",
         "nivel": 1,
         "x": 0,
         "y": 0
@@ -87,10 +80,6 @@
       {
         "desde": "root",
         "hasta": "s5"
-      },
-      {
-        "desde": "root",
-        "hasta": "s6"
       }
     ]
   },

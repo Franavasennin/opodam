@@ -12,14 +12,14 @@
     {
       "tipo": "mermaid",
       "titulo": "Esquema general del tema",
-      "codigo": "graph TD\n  A[\"La Corona: posición constitucional y fun\"]\n  A --> N1[\"TÍTULO II\"]\n  A --> N2[\"ARTÍCULO 61\"]"
+      "codigo": "graph TD\n  A[\"La Corona: posición constitucional y funciones del Rey. El…\"]\n  A --> N1[\"TÍTULO II\"]\n  A --> N2[\"CONSTITUCIÓN ESPAÑOLA\"]\n  A --> N3[\"ley orgánica\"]"
     }
   ],
   "mapaMental": {
     "nodos": [
       {
         "id": "root",
-        "texto": "La Corona: posición constitucional y funciones de…",
+        "texto": "La Corona: posición constitucional y funciones del Rey. El…",
         "nivel": 0,
         "x": 0,
         "y": 0
@@ -33,7 +33,14 @@
       },
       {
         "id": "s2",
-        "texto": "ARTÍCULO 61",
+        "texto": "CONSTITUCIÓN ESPAÑOLA",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "ley orgánica",
         "nivel": 1,
         "x": 0,
         "y": 0
@@ -47,6 +54,10 @@
       {
         "desde": "root",
         "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
       }
     ]
   },

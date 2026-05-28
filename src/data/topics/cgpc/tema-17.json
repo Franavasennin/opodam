@@ -12,35 +12,63 @@
     {
       "tipo": "mermaid",
       "titulo": "Esquema general del tema",
-      "codigo": "graph TD\n  A[\"La Ley 7/2015, de 1 de abril, de municip\"]\n  A --> N1[\"ARTÍCULO 1\"]\n  A --> N2[\"ARTÍCULO 6\"]\n  A --> N3[\"ARTÍCULO 11\"]"
+      "codigo": "graph TD\n  A[\"La Ley 7/2015, de 1 de abril, de municipios de Canarias…\"]\n  A --> N1[\"TÍTULO PRELIMINAR\"]\n  A --> N2[\"título competencial que le confiere el Estatuto de…\"]\n  A --> N3[\"TÍTULO I\"]\n  A --> N4[\"CAPÍTULO I\"]\n  A --> N5[\"CAPÍTULO II\"]\n  A --> N6[\"SECCIÓN 1.ª\"]\n  A --> N7[\"SECCIÓN 2.ª\"]"
     }
   ],
   "mapaMental": {
     "nodos": [
       {
         "id": "root",
-        "texto": "La Ley 7/2015, de 1 de abril, de municipios de Ca…",
+        "texto": "La Ley 7/2015, de 1 de abril, de municipios de Canarias…",
         "nivel": 0,
         "x": 0,
         "y": 0
       },
       {
         "id": "s1",
-        "texto": "ARTÍCULO 1",
+        "texto": "TÍTULO PRELIMINAR",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s2",
-        "texto": "ARTÍCULO 6",
+        "texto": "título competencial que le confiere el Estatuto de…",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s3",
-        "texto": "ARTÍCULO 11",
+        "texto": "TÍTULO I",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "CAPÍTULO I",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "CAPÍTULO II",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "SECCIÓN 1.ª",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "SECCIÓN 2.ª",
         "nivel": 1,
         "x": 0,
         "y": 0
@@ -58,6 +86,22 @@
       {
         "desde": "root",
         "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
       }
     ]
   },

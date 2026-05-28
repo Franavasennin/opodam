@@ -12,28 +12,49 @@
     {
       "tipo": "mermaid",
       "titulo": "Esquema general del tema",
-      "codigo": "graph TD\n  A[\"Las faltas y sus penas. Faltas contra la\"]\n  A --> N1[\"REAL DECRETO DE 14 DE SEPTIEMBRE DE 1882\"]\n  A --> N2[\"artículo 110\"]"
+      "codigo": "graph TD\n  A[\"Las faltas y sus penas. Faltas contra las personas. Faltas…\"]\n  A --> N1[\"TÍTULO VI\"]\n  A --> N2[\"CAPÍTULO II\"]\n  A --> N3[\"REAL DECRETO DE 14 DE SEPTIEMBRE DE 1882\"]\n  A --> N4[\"CÓDIGO PENAL\"]\n  A --> N5[\"REAL DECRETO DE 14 DE\"]"
     }
   ],
   "mapaMental": {
     "nodos": [
       {
         "id": "root",
-        "texto": "Las faltas y sus penas. Faltas contra las persona…",
+        "texto": "Las faltas y sus penas. Faltas contra las personas. Faltas…",
         "nivel": 0,
         "x": 0,
         "y": 0
       },
       {
         "id": "s1",
-        "texto": "REAL DECRETO DE 14 DE SEPTIEMBRE DE 188…",
+        "texto": "TÍTULO VI",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s2",
-        "texto": "artículo 110",
+        "texto": "CAPÍTULO II",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s3",
+        "texto": "REAL DECRETO DE 14 DE SEPTIEMBRE DE 1882",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s4",
+        "texto": "CÓDIGO PENAL",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "REAL DECRETO DE 14 DE",
         "nivel": 1,
         "x": 0,
         "y": 0
@@ -47,6 +68,18 @@
       {
         "desde": "root",
         "hasta": "s2"
+      },
+      {
+        "desde": "root",
+        "hasta": "s3"
+      },
+      {
+        "desde": "root",
+        "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
       }
     ]
   },

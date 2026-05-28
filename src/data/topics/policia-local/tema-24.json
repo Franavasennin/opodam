@@ -12,49 +12,77 @@
     {
       "tipo": "mermaid",
       "titulo": "Esquema general del tema",
-      "codigo": "graph TD\n  A[\"Los delitos contra el patrimonio y contr\"]\n  A --> N1[\"LEY ORGÁNICA 10/1995, DE 23 DE NOVIEMBRE\"]\n  A --> N2[\"CAPÍTULO II\"]\n  A --> N3[\"CAPÍTULO IV\"]\n  A --> N4[\"disposición de\"]\n  A --> N5[\"disposición de\"]"
+      "codigo": "graph TD\n  A[\"Los delitos contra el patrimonio y contra el orden…\"]\n  A --> N1[\"TÍTULO XIII\"]\n  A --> N2[\"CAPÍTULO I\"]\n  A --> N3[\"CAPÍTULO II\"]\n  A --> N4[\"CAPÍTULO IV\"]\n  A --> N5[\"CAPÍTULO V\"]\n  A --> N6[\"CAPÍTULO VI\"]\n  A --> N7[\"SECCIÓN 1.ª\"]\n  A --> N8[\"SECCIÓN 2.ª\"]\n  A --> N9[\"SECCIÓN 2.ª BIS\"]"
     }
   ],
   "mapaMental": {
     "nodos": [
       {
         "id": "root",
-        "texto": "Los delitos contra el patrimonio y contra el orde…",
+        "texto": "Los delitos contra el patrimonio y contra el orden…",
         "nivel": 0,
         "x": 0,
         "y": 0
       },
       {
         "id": "s1",
-        "texto": "LEY ORGÁNICA 10/1995, DE 23 DE NOVIEMBR…",
+        "texto": "TÍTULO XIII",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s2",
-        "texto": "CAPÍTULO II",
+        "texto": "CAPÍTULO I",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s3",
-        "texto": "CAPÍTULO IV",
+        "texto": "CAPÍTULO II",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s4",
-        "texto": "disposición de",
+        "texto": "CAPÍTULO IV",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s5",
-        "texto": "disposición de",
+        "texto": "CAPÍTULO V",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "CAPÍTULO VI",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s7",
+        "texto": "SECCIÓN 1.ª",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s8",
+        "texto": "SECCIÓN 2.ª",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s9",
+        "texto": "SECCIÓN 2.ª BIS",
         "nivel": 1,
         "x": 0,
         "y": 0
@@ -80,6 +108,22 @@
       {
         "desde": "root",
         "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
+      },
+      {
+        "desde": "root",
+        "hasta": "s7"
+      },
+      {
+        "desde": "root",
+        "hasta": "s8"
+      },
+      {
+        "desde": "root",
+        "hasta": "s9"
       }
     ]
   },

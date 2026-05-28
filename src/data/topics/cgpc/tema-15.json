@@ -12,14 +12,14 @@
     {
       "tipo": "mermaid",
       "titulo": "Esquema general del tema",
-      "codigo": "graph TD\n  A[\"Organización administrativa de Canarias \"]\n  A --> N1[\"CAPÍTULO I\"]\n  A --> N2[\"ARTÍCULO 8\"]\n  A --> N3[\"artículo 67\"]\n  A --> N4[\"artículo 30\"]"
+      "codigo": "graph TD\n  A[\"Organización administrativa de Canarias II: Órganos…\"]\n  A --> N1[\"CAPÍTULO I\"]\n  A --> N2[\"CAPÍTULO II\"]\n  A --> N3[\"SECCIÓN 4ª\"]\n  A --> N4[\"SECCIÓN 5ª\"]\n  A --> N5[\"CAPÍTULO III\"]\n  A --> N6[\"CAPÍTULO IV\"]"
     }
   ],
   "mapaMental": {
     "nodos": [
       {
         "id": "root",
-        "texto": "Organización administrativa de Canarias II: Órgan…",
+        "texto": "Organización administrativa de Canarias II: Órganos…",
         "nivel": 0,
         "x": 0,
         "y": 0
@@ -33,21 +33,35 @@
       },
       {
         "id": "s2",
-        "texto": "ARTÍCULO 8",
+        "texto": "CAPÍTULO II",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s3",
-        "texto": "artículo 67",
+        "texto": "SECCIÓN 4ª",
         "nivel": 1,
         "x": 0,
         "y": 0
       },
       {
         "id": "s4",
-        "texto": "artículo 30",
+        "texto": "SECCIÓN 5ª",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s5",
+        "texto": "CAPÍTULO III",
+        "nivel": 1,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": "s6",
+        "texto": "CAPÍTULO IV",
         "nivel": 1,
         "x": 0,
         "y": 0
@@ -69,6 +83,14 @@
       {
         "desde": "root",
         "hasta": "s4"
+      },
+      {
+        "desde": "root",
+        "hasta": "s5"
+      },
+      {
+        "desde": "root",
+        "hasta": "s6"
       }
     ]
   },
