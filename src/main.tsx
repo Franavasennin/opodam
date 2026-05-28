@@ -4,16 +4,10 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './index.css'
 
-// Escucha el mensaje del SW de limpieza y recarga la página
+// Registra el service worker (PWA instalable + estudio sin conexión)
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.addEventListener('message', event => {
-    if (event.data === 'sw-unregistered') {
-      window.location.reload()
-    }
-  })
-  // También recarga si el controlador cambia (SW se desregistra)
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    window.location.reload()
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => { /* no crítico */ })
   })
 }
 
