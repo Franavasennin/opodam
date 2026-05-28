@@ -94,18 +94,57 @@ function parsearApuntes(limpio: string): BloqueTeoria[] {
   return bloques.filter(b => (b.texto && b.texto.length) || (b.items && b.items.length))
 }
 
+// Divide un texto largo en fragmentos por frases (para que ningún párrafo sea un muro).
+function trocearTexto(texto: string, max = 480): string[] {
+  const t = texto.replace(/\s+/g, ' ').trim()
+  if (t.length <= max) return [t]
+  const frases = t.match(/[^.!?]+[.!?]+|\S[^.!?]*$/g) ?? [t]
+  const out: string[] = []
+  let buf = ''
+  const empuja = (s: string) => {
+    // Si un fragmento es demasiado largo (sin puntos), parte por palabras.
+    if (s.length <= max * 1.4) { out.push(s.trim()); return }
+    const palabras = s.split(' ')
+    let chunk = ''
+    for (const w of palabras) {
+      if (chunk && (chunk + ' ' + w).length > max) { out.push(chunk.trim()); chunk = w }
+      else chunk += (chunk ? ' ' : '') + w
+    }
+    if (chunk.trim()) out.push(chunk.trim())
+  }
+  for (const f of frases) {
+    if (buf && (buf + f).length > max) { empuja(buf); buf = f }
+    else buf += f
+  }
+  if (buf.trim()) empuja(buf)
+  return out
+}
+
+// Expande los párrafos demasiado largos en varios más cortos.
+function expandirParrafos(bloques: BloqueTeoria[]): BloqueTeoria[] {
+  const out: BloqueTeoria[] = []
+  for (const b of bloques) {
+    if (b.tipo === 'parrafo' && b.texto && b.texto.length > 480) {
+      for (const chunk of trocearTexto(b.texto)) out.push({ tipo: 'parrafo', texto: chunk })
+    } else {
+      out.push(b)
+    }
+  }
+  return out
+}
+
 export function parsearTeoria(raw: string): BloqueTeoria[] {
   const limpio = normalizar(raw)
   if (!limpio) return []
 
-  const legalMarkers = contar(/\bART[IÍ]CULO\s+\d+/g, limpio) + contar(/\bT[IÍ]TULO\s+(?:PRELIMINAR|[IVXLCDM]+|\d+)/g, limpio)
-  if (legalMarkers >= 4) return parsearLegal(limpio)
+  const legalMarkers = contar(/\bart[ií]culo\s+\d+/gi, limpio) + contar(/\bt[ií]tulo\s+(?:preliminar|[ivxlcdm]+|\d+)/gi, limpio)
+  if (legalMarkers >= 4) return expandirParrafos(parsearLegal(limpio))
 
   const bloques = parsearApuntes(limpio)
   const conEstructura = bloques.some(b => b.tipo === 'estructura' || b.tipo === 'subtitulo' || b.tipo === 'lista')
   if (!conEstructura) {
-    if (legalMarkers >= 1) return parsearLegal(limpio)
-    return bloques.length ? bloques : [{ tipo: 'parrafo', texto: limpio }]
+    if (legalMarkers >= 1) return expandirParrafos(parsearLegal(limpio))
+    return expandirParrafos(bloques.length ? bloques : [{ tipo: 'parrafo', texto: limpio }])
   }
-  return bloques
+  return expandirParrafos(bloques)
 }
