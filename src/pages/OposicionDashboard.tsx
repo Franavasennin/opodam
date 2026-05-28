@@ -2,6 +2,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../data/oposiciones'
 import { useProgress } from '../hooks/useProgress'
+import { CuentaAtras } from '../components/ui/CuentaAtras'
 
 const MENU = [
   { icon: '📚', label: 'Temario', sub: 'Estudia los temas', path: 'temario' },
@@ -85,6 +86,8 @@ export default function OposicionDashboard() {
             </div>
           </div>
 
+          <div style={{ marginTop: 16 }}><CuentaAtras slug={slug!} /></div>
+
           <div className="eyebrow" style={{ margin: '22px 4px 10px' }}>Tu preparación</div>
           <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingBottom: 32 }}>
             {MENU.filter(item => !(oposicion.ocultar ?? []).includes(item.path)).map(item => (
@@ -137,6 +140,9 @@ export default function OposicionDashboard() {
               </div>
             ))}
           </div>
+
+          {/* Cuenta atrás examen */}
+          <div style={{ marginTop: 20 }}><CuentaAtras slug={slug!} /></div>
 
           {/* Plan diario + ProCoach */}
           <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 16, marginTop: 24 }}>

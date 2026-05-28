@@ -4,6 +4,17 @@ export const PROGRESO_KEY = 'opodam:progreso'
 
 const ACTIVE_SLUG_KEY  = 'opodam:active-slug'
 const OPOSICIONES_KEY  = 'opodam:oposiciones'
+const EXAMEN_KEY_PREFIX = 'opodam:examen:'
+
+/** Fecha del examen (ISO 'YYYY-MM-DD') configurada por el usuario para una oposición. */
+export function getFechaExamen(slug: string): string | null {
+  try { return localStorage.getItem(EXAMEN_KEY_PREFIX + slug) } catch { return null }
+}
+
+export function setFechaExamen(slug: string, iso: string): void {
+  if (iso) localStorage.setItem(EXAMEN_KEY_PREFIX + slug, iso)
+  else localStorage.removeItem(EXAMEN_KEY_PREFIX + slug)
+}
 
 export function getOposicionesLocales(): string[] {
   try {
