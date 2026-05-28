@@ -3,6 +3,29 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { enviarMagicLink } from '../../services/supabase'
 
+function Marca() {
+  return (
+    <div className="hero" style={{ borderRadius: '18px 18px 0 0', padding: 24, textAlign: 'center' }}>
+      <div className="hero-grain" />
+      <div style={{ position: 'relative' }}>
+        <div style={{ fontSize: 34 }}>📘</div>
+        <div className="display" style={{ fontSize: 24, marginTop: 4 }}>OpoDAM</div>
+        <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.72)' }}>Prepara tu oposición</div>
+      </div>
+    </div>
+  )
+}
+
+function Puntos({ activo }: { activo: 0 | 1 | 2 }) {
+  return (
+    <div className="flex gap-1 justify-center" style={{ marginBottom: 16 }}>
+      {[0, 1, 2].map(i => (
+        <div key={i} style={{ height: 6, width: i === activo ? 24 : 6, borderRadius: 999, background: i === activo ? 'var(--accent)' : 'var(--border)' }} />
+      ))}
+    </div>
+  )
+}
+
 export default function OnboardingEmail() {
   const [email, setEmail] = useState('')
   const [cargando, setCargando] = useState(false)
@@ -25,44 +48,22 @@ export default function OnboardingEmail() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+    <div className="min-h-screen fade-up flex items-center justify-center p-4" style={{ background: 'var(--bg)' }}>
       <div className="w-full max-w-sm">
-        <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-t-2xl p-6 text-center text-white">
-          <div className="text-4xl mb-1">📘</div>
-          <div className="font-bold text-lg">OpoDAM</div>
-          <div className="text-sm opacity-80">Prepara tu oposición</div>
-        </div>
-
-        <div className="bg-white rounded-b-2xl shadow-lg p-6">
-          <div className="flex gap-1 justify-center mb-4">
-            <div className="h-1.5 w-6 bg-blue-600 rounded-full" />
-            <div className="h-1.5 w-1.5 bg-slate-200 rounded-full" />
-            <div className="h-1.5 w-1.5 bg-slate-200 rounded-full" />
-          </div>
-
-          <p className="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-2">Paso 1 — Acceso</p>
-          <p className="text-sm text-slate-700 font-medium mb-4">Introduce tu email para entrar</p>
-
-          <form onSubmit={handleSubmit} className="space-y-3">
-            <input
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              placeholder="tu@email.com"
-              required
-              className="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            {error && <p className="text-xs text-red-600">{error}</p>}
-            <button
-              type="submit"
-              disabled={cargando || !email.trim()}
-              className="w-full bg-blue-600 text-white rounded-xl py-2.5 text-sm font-semibold disabled:opacity-50"
-            >
-              {cargando ? 'Enviando...' : 'Enviar enlace de acceso'}
+        <Marca />
+        <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderTop: 0, borderRadius: '0 0 18px 18px', padding: 24 }}>
+          <Puntos activo={0} />
+          <div className="eyebrow" style={{ marginBottom: 6 }}>Paso 1 — Acceso</div>
+          <p style={{ fontSize: 13.5, color: 'var(--ink)', fontWeight: 600, margin: '0 0 14px' }}>Introduce tu email para entrar</p>
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="tu@email.com" required
+              style={{ width: '100%', border: '1px solid var(--border)', borderRadius: 12, background: 'var(--bg)', color: 'var(--ink)', padding: '10px 12px', fontSize: 13.5 }} />
+            {error && <p style={{ fontSize: 12, color: 'var(--warn)', margin: 0 }}>{error}</p>}
+            <button type="submit" disabled={cargando || !email.trim()} className="btn-editorial btn-acc" style={{ width: '100%', opacity: cargando || !email.trim() ? 0.5 : 1 }}>
+              {cargando ? 'Enviando…' : 'Enviar enlace de acceso'}
             </button>
           </form>
-
-          <p className="text-xs text-slate-400 text-center mt-3">Sin contraseña. Te enviamos un enlace mágico gratuito.</p>
+          <p style={{ fontSize: 11.5, color: 'var(--mute)', textAlign: 'center', marginTop: 12 }}>Sin contraseña. Te enviamos un enlace mágico gratuito.</p>
         </div>
       </div>
     </div>
