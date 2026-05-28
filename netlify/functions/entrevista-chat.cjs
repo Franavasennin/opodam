@@ -55,10 +55,14 @@ A lo largo de la sesión cubre: motivación, autoconocimiento, valores del servi
 Si el último mensaje del usuario es exactamente "[GENERAR_INFORME]", NO hagas más preguntas: redacta un INFORME DE ENTRENAMIENTO con tres secciones: "Fortalezas", "Áreas a mejorar (priorizadas)" y "Consejos para la entrevista real" (3-4 consejos concretos).`
 }
 
+const { comprobarLimite } = require('./_ratelimit.cjs')
+
 exports.handler = async function (event) {
   if (event.httpMethod === 'OPTIONS') return { statusCode: 204, headers: corsHeaders(event), body: '' }
   if (event.httpMethod !== 'POST') return { statusCode: 405, headers: corsHeaders(event), body: JSON.stringify({ error: 'Method Not Allowed' }) }
   if (!process.env.GROQ_API_KEY) return { statusCode: 500, headers: corsHeaders(event), body: JSON.stringify({ error: 'GROQ_API_KEY no configurada en el servidor' }) }
+  const limite = await comprobarLimite(event, { clave: 'entrevista', max: 20, ventanaSeg: 60 })
+  if (!limite.permitido) return { statusCode: 429, headers: { ...corsHeaders(event), 'Retry-After': String(limite.resetSeg) }, body: JSON.stringify({ error: 'Demasiadas peticiones, espera un momento.' }) }
   if (typeof fetch !== 'function') return { statusCode: 500, headers: corsHeaders(event), body: JSON.stringify({ error: 'Runtime sin fetch global (Node < 18)' }) }
 
   let payload
