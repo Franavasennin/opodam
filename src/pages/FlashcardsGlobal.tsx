@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
 import { flashcardsPendientesHoy, responderFlashcard } from '../services/spaced-repetition'
 import { obtenerTopics } from '../data/topics'
@@ -11,6 +11,7 @@ const topbar: React.CSSProperties = {
 }
 
 export function FlashcardsGlobal() {
+  const navigate = useNavigate()
   const { slug } = useParams<{ slug: string }>()
   const { progreso } = useProgress()
   const { cargarTema, TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
@@ -48,6 +49,7 @@ export function FlashcardsGlobal() {
       <div style={{ fontSize: 52, marginBottom: 12 }}>✅</div>
       <p className="display" style={{ margin: 0, fontSize: 26 }}>¡Todo al día!</p>
       <p style={{ color: 'var(--mute)', fontSize: 13.5, marginTop: 6 }}>Sin flashcards pendientes hoy.</p>
+      <button onClick={() => navigate(`/oposicion/${slug}`)} className="btn-editorial btn-sec" style={{ marginTop: 20 }}>← Volver</button>
     </div>
   )
 
@@ -56,6 +58,7 @@ export function FlashcardsGlobal() {
       <div style={{ fontSize: 52, marginBottom: 12 }}>🎉</div>
       <p className="display" style={{ margin: 0, fontSize: 26 }}>¡Sesión completada!</p>
       <p style={{ color: 'var(--mute)', fontSize: 13.5, marginTop: 6 }}>{pendientes.length} flashcards repasadas hoy.</p>
+      <button onClick={() => navigate(`/oposicion/${slug}`)} className="btn-editorial btn-acc" style={{ marginTop: 20 }}>← Volver</button>
     </div>
   )
 
@@ -70,6 +73,7 @@ export function FlashcardsGlobal() {
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
+        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>🃏 Flashcards</span>
         <span className="num-display" style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--mute)' }}>{indice + 1}/{pendientes.length}</span>
       </header>
