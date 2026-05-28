@@ -5,6 +5,29 @@ import { OPOSICIONES } from '../../data/oposiciones'
 import { crearPerfil } from '../../services/supabase'
 import { setActiveSlug, setOposicionesLocales } from '../../services/storage'
 
+function Marca() {
+  return (
+    <div className="hero" style={{ borderRadius: '18px 18px 0 0', padding: 24, textAlign: 'center' }}>
+      <div className="hero-grain" />
+      <div style={{ position: 'relative' }}>
+        <div style={{ fontSize: 34 }}>📘</div>
+        <div className="display" style={{ fontSize: 24, marginTop: 4 }}>OpoDAM</div>
+        <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.72)' }}>Prepara tu oposición</div>
+      </div>
+    </div>
+  )
+}
+
+function Puntos({ activo }: { activo: 0 | 1 | 2 }) {
+  return (
+    <div className="flex gap-1 justify-center" style={{ marginBottom: 16 }}>
+      {[0, 1, 2].map(i => (
+        <div key={i} style={{ height: 6, width: i === activo ? 24 : 6, borderRadius: 999, background: i === activo ? 'var(--accent)' : 'var(--border)' }} />
+      ))}
+    </div>
+  )
+}
+
 export default function OnboardingOposicion() {
   const [seleccionadas, setSeleccionadas] = useState<string[]>([])
   const [cargando, setCargando] = useState(false)
@@ -36,70 +59,54 @@ export default function OnboardingOposicion() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+    <div className="min-h-screen fade-up flex items-center justify-center p-4" style={{ background: 'var(--bg)' }}>
       <div className="w-full max-w-sm">
-        <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-t-2xl p-6 text-center text-white">
-          <div className="text-4xl mb-1">📘</div>
-          <div className="font-bold text-lg">OpoDAM</div>
-          <div className="text-sm opacity-80">Prepara tu oposición</div>
-        </div>
+        <Marca />
+        <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderTop: 0, borderRadius: '0 0 18px 18px', padding: 24 }}>
+          <Puntos activo={2} />
+          <div className="eyebrow" style={{ marginBottom: 6 }}>Paso 3 — Tu oposición</div>
+          <p style={{ fontSize: 13.5, color: 'var(--ink)', fontWeight: 600, margin: '0 0 14px' }}>Selecciona a qué te presentas (puedes elegir varias)</p>
 
-        <div className="bg-white rounded-b-2xl shadow-lg p-6">
-          <div className="flex gap-1 justify-center mb-4">
-            <div className="h-1.5 w-1.5 bg-slate-200 rounded-full" />
-            <div className="h-1.5 w-1.5 bg-slate-200 rounded-full" />
-            <div className="h-1.5 w-6 bg-blue-600 rounded-full" />
-          </div>
-
-          <p className="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-1">Paso 3 — Tu oposición</p>
-          <p className="text-sm text-slate-700 font-medium mb-4">Selecciona a qué te presentas (puedes elegir varias)</p>
-
-          <div className="space-y-2 mb-4">
-            {OPOSICIONES.map(op => (
-              <button
-                key={op.slug}
-                type="button"
-                disabled={!op.disponible}
-                onClick={() => op.disponible && toggleOposicion(op.slug)}
-                className={[
-                  'w-full flex items-center gap-3 border rounded-xl px-3 py-2.5 text-left transition-colors',
-                  op.disponible
-                    ? seleccionadas.includes(op.slug)
-                      ? 'border-blue-500 bg-blue-50'
-                      : 'border-slate-200 hover:border-slate-300'
-                    : 'border-slate-100 bg-slate-50 opacity-60 cursor-not-allowed',
-                ].join(' ')}
-              >
-                <span
-                  className={[
-                    'w-4 h-4 rounded flex-shrink-0 border-2 flex items-center justify-center text-xs',
-                    seleccionadas.includes(op.slug)
-                      ? 'bg-blue-600 border-blue-600 text-white'
-                      : 'border-slate-300',
-                  ].join(' ')}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
+            {OPOSICIONES.map(op => {
+              const sel = seleccionadas.includes(op.slug)
+              return (
+                <button
+                  key={op.slug}
+                  type="button"
+                  disabled={!op.disponible}
+                  onClick={() => op.disponible && toggleOposicion(op.slug)}
+                  style={{
+                    width: '100%', display: 'flex', alignItems: 'center', gap: 12, borderRadius: 12, padding: '10px 12px', textAlign: 'left',
+                    cursor: op.disponible ? 'pointer' : 'not-allowed',
+                    opacity: op.disponible ? 1 : 0.55,
+                    background: sel ? 'var(--accent-soft)' : 'var(--surface-2)',
+                    border: `1.5px solid ${sel ? 'var(--accent)' : 'var(--border)'}`,
+                  }}
                 >
-                  {seleccionadas.includes(op.slug) && '✓'}
-                </span>
-                <div>
-                  <div className="text-sm font-semibold text-slate-800">{op.nombre}</div>
-                  <div className="text-xs text-slate-400">
-                    {op.disponible
-                      ? op.numTemas ? `${op.numTemas} temas disponibles` : 'Disponible'
-                      : 'Próximamente'}
+                  <span style={{
+                    width: 18, height: 18, flexShrink: 0, borderRadius: 5, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 11,
+                    background: sel ? 'var(--accent)' : 'transparent',
+                    color: sel ? 'var(--accent-ink)' : 'transparent',
+                    border: `2px solid ${sel ? 'var(--accent)' : 'var(--border)'}`,
+                  }}>{sel && '✓'}</span>
+                  <div>
+                    <div style={{ fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>{op.nombre}</div>
+                    <div style={{ fontSize: 11.5, color: 'var(--mute)' }}>
+                      {op.disponible
+                        ? op.numTemas ? `${op.numTemas} temas disponibles` : 'Disponible'
+                        : 'Próximamente'}
+                    </div>
                   </div>
-                </div>
-              </button>
-            ))}
+                </button>
+              )
+            })}
           </div>
 
-          {error && <p className="text-xs text-red-600 mb-2">{error}</p>}
+          {error && <p style={{ fontSize: 12, color: 'var(--warn)', margin: '0 0 8px' }}>{error}</p>}
 
-          <button
-            onClick={handleEmpezar}
-            disabled={seleccionadas.length === 0 || cargando}
-            className="w-full bg-blue-600 text-white rounded-xl py-2.5 text-sm font-semibold disabled:opacity-50"
-          >
-            {cargando ? 'Guardando...' : 'Empezar a estudiar'}
+          <button onClick={handleEmpezar} disabled={seleccionadas.length === 0 || cargando} className="btn-editorial btn-acc" style={{ width: '100%', opacity: seleccionadas.length === 0 || cargando ? 0.5 : 1 }}>
+            {cargando ? 'Guardando…' : 'Empezar a estudiar'}
           </button>
         </div>
       </div>

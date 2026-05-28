@@ -63,8 +63,8 @@ export default function AuthCallback() {
   }, [navigate])
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50">
-      <p className="text-slate-500 text-sm">Verificando sesión…</p>
+    <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg)' }}>
+      <p style={{ color: 'var(--mute)', fontSize: 14 }}>Verificando sesión…</p>
     </div>
   )
 }

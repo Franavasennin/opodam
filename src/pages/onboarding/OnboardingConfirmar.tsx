@@ -3,6 +3,29 @@ import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { enviarMagicLink } from '../../services/supabase'
 
+function Marca() {
+  return (
+    <div className="hero" style={{ borderRadius: '18px 18px 0 0', padding: 24, textAlign: 'center' }}>
+      <div className="hero-grain" />
+      <div style={{ position: 'relative' }}>
+        <div style={{ fontSize: 34 }}>📘</div>
+        <div className="display" style={{ fontSize: 24, marginTop: 4 }}>OpoDAM</div>
+        <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.72)' }}>Prepara tu oposición</div>
+      </div>
+    </div>
+  )
+}
+
+function Puntos({ activo }: { activo: 0 | 1 | 2 }) {
+  return (
+    <div className="flex gap-1 justify-center" style={{ marginBottom: 16 }}>
+      {[0, 1, 2].map(i => (
+        <div key={i} style={{ height: 6, width: i === activo ? 24 : 6, borderRadius: 999, background: i === activo ? 'var(--accent)' : 'var(--border)' }} />
+      ))}
+    </div>
+  )
+}
+
 export default function OnboardingConfirmar() {
   const location = useLocation()
   const email: string = (location.state as { email?: string })?.email ?? ''
@@ -19,36 +42,18 @@ export default function OnboardingConfirmar() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+    <div className="min-h-screen fade-up flex items-center justify-center p-4" style={{ background: 'var(--bg)' }}>
       <div className="w-full max-w-sm">
-        <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-t-2xl p-6 text-center text-white">
-          <div className="text-4xl mb-1">📘</div>
-          <div className="font-bold text-lg">OpoDAM</div>
-          <div className="text-sm opacity-80">Prepara tu oposición</div>
-        </div>
-
-        <div className="bg-white rounded-b-2xl shadow-lg p-6 text-center">
-          <div className="flex gap-1 justify-center mb-4">
-            <div className="h-1.5 w-1.5 bg-slate-200 rounded-full" />
-            <div className="h-1.5 w-6 bg-blue-600 rounded-full" />
-            <div className="h-1.5 w-1.5 bg-slate-200 rounded-full" />
-          </div>
-
-          <div className="text-5xl mb-3">✉️</div>
-          <p className="text-sm text-slate-700">Enlace enviado a</p>
-          <p className="font-bold text-blue-600 text-sm mb-1">{email || 'tu email'}</p>
-          <p className="text-xs text-slate-400 mt-2 mb-5">Abre el email y pulsa el enlace para continuar.</p>
-
-          {reenviado && (
-            <p className="text-xs text-green-600 mb-2">Enlace reenviado ✓</p>
-          )}
-
-          <button
-            onClick={handleReenviar}
-            disabled={cargando}
-            className="w-full bg-slate-100 text-slate-700 rounded-xl py-2.5 text-sm font-semibold disabled:opacity-50"
-          >
-            {cargando ? 'Enviando...' : 'Reenviar enlace'}
+        <Marca />
+        <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderTop: 0, borderRadius: '0 0 18px 18px', padding: 24, textAlign: 'center' }}>
+          <Puntos activo={1} />
+          <div style={{ fontSize: 44, marginBottom: 10 }}>✉️</div>
+          <p style={{ fontSize: 13.5, color: 'var(--ink-soft)', margin: 0 }}>Enlace enviado a</p>
+          <p className="num-display" style={{ fontWeight: 600, color: 'var(--accent)', fontSize: 13.5, margin: '2px 0 0' }}>{email || 'tu email'}</p>
+          <p style={{ fontSize: 12, color: 'var(--mute)', margin: '10px 0 18px' }}>Abre el email y pulsa el enlace para continuar.</p>
+          {reenviado && <p style={{ fontSize: 12, color: 'var(--accent)', margin: '0 0 10px' }}>Enlace reenviado ✓</p>}
+          <button onClick={handleReenviar} disabled={cargando} className="btn-editorial btn-sec" style={{ width: '100%', opacity: cargando ? 0.5 : 1 }}>
+            {cargando ? 'Enviando…' : 'Reenviar enlace'}
           </button>
         </div>
       </div>
