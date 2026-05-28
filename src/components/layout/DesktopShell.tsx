@@ -8,6 +8,7 @@ const NAV = [
   { label: 'Temario', icon: '📚', seg: 'temario' },
   { label: 'Flashcards', icon: '🃏', seg: 'flashcards' },
   { label: 'Tests y simulacros', icon: '📝', seg: 'tests' },
+  { label: 'Tutor', icon: '👨‍🏫', seg: 'tutor' },
   { label: 'Psicotécnicos', icon: '🧠', seg: 'psicotecnicos' },
   { label: 'Supuestos', icon: '📋', seg: 'supuestos' },
   { label: 'Entrevista', icon: '🎤', seg: 'entrevista' },

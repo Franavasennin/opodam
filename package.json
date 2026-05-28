@@ -4,7 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/gen-search-index.mjs",
     "dev": "vite",
+    "gen:search": "node scripts/gen-search-index.mjs",
+    "prebuild": "node scripts/gen-search-index.mjs",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",

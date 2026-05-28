@@ -8,6 +8,7 @@ const MENU = [
   { icon: '📚', label: 'Temario', sub: 'Estudia los temas', path: 'temario' },
   { icon: '🃏', label: 'Flashcards', sub: 'Repaso rápido', path: 'flashcards' },
   { icon: '📝', label: 'Tests y simulacros', sub: 'Practica preguntas', path: 'tests' },
+  { icon: '👨‍🏫', label: 'Tutor', sub: 'Pregunta sobre todo el temario', path: 'tutor' },
   { icon: '🧠', label: 'Psicotécnicos', sub: 'Aptitudes y razonamiento', path: 'psicotecnicos' },
   { icon: '📋', label: 'Supuestos prácticos', sub: 'Casos tipo examen', path: 'supuestos' },
   { icon: '🎤', label: 'Entrevista', sub: 'Entrena la entrevista personal', path: 'entrevista' },
