@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { getFechaExamen, setFechaExamen } from '../../services/storage'
+import { useEffect, useState } from 'react'
+import { obtenerConvocatoria, type Convocatoria } from '../../services/convocatorias'
 
 function diasRestantes(iso: string): number {
   const hoy = new Date(); hoy.setHours(0, 0, 0, 0)
@@ -13,59 +13,85 @@ function formatear(iso: string): string {
   } catch { return iso }
 }
 
+const card: React.CSSProperties = {
+  background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '12px 16px',
+  display: 'flex', alignItems: 'center', gap: 14,
+}
+
 interface Props { slug: string }
 
 export function CuentaAtras({ slug }: Props) {
-  const [fecha, setFecha] = useState<string>(() => getFechaExamen(slug) ?? '')
-  const [editando, setEditando] = useState(false)
+  const [conv, setConv] = useState<Convocatoria | null>(null)
+  const [cargando, setCargando] = useState(true)
 
-  function guardar(v: string) {
-    setFecha(v)
-    setFechaExamen(slug, v)
-    if (v) setEditando(false)
+  useEffect(() => {
+    let vivo = true
+    setCargando(true)
+    obtenerConvocatoria(slug).then(c => { if (vivo) { setConv(c); setCargando(false) } })
+    return () => { vivo = false }
+  }, [slug])
+
+  if (cargando) {
+    return <div style={card}><span style={{ fontSize: 18 }}>⏳</span><span style={{ fontSize: 13, color: 'var(--mute)' }}>Comprobando convocatoria…</span></div>
   }
+  if (!conv) return null
 
-  const dias = fecha ? diasRestantes(fecha) : null
+  const fuenteLabel = conv.fuente === 'BOE' ? 'BOE' : 'BOC'
+  const Enlace = (
+    <a href={conv.boletinUrl} target="_blank" rel="noopener noreferrer"
+      style={{ fontSize: 12, fontWeight: 600, color: 'var(--accent)', textDecoration: 'underline', whiteSpace: 'nowrap' }}
+      onClick={e => e.stopPropagation()}>
+      Ver en el {fuenteLabel} ↗
+    </a>
+  )
 
-  // ── Sin fecha o editando ──
-  if (!fecha || editando) {
+  // 1) Hay fecha de examen → cuenta atrás real
+  if (conv.estado === 'activa' && conv.fechaExamen) {
+    const dias = diasRestantes(conv.fechaExamen)
+    const hoy = dias === 0, vencido = dias < 0
+    const titulo = hoy ? '¡Hoy es el examen!' : vencido ? 'Examen finalizado' : `Faltan ${dias} días`
     return (
-      <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '12px 14px', display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
-        <span style={{ fontSize: 18 }}>📅</span>
-        <span style={{ fontSize: 13, color: 'var(--ink-soft)', fontWeight: 500 }}>Fecha del examen:</span>
-        <input
-          type="date"
-          value={fecha}
-          onChange={e => guardar(e.target.value)}
-          style={{ flex: 1, minWidth: 150, border: '1px solid var(--border)', borderRadius: 10, background: 'var(--bg)', color: 'var(--ink)', padding: '6px 10px', fontSize: 13 }}
-        />
-        {fecha && <button onClick={() => setEditando(false)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--mute)', fontSize: 12 }}>Cancelar</button>}
+      <div style={card}>
+        <span style={{ fontSize: 22 }}>{hoy ? '🎯' : '⏳'}</span>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
+            {!hoy && !vencido && <span className="num-display" style={{ fontSize: 24, color: 'var(--accent)', lineHeight: 1 }}>{dias}</span>}
+            <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)' }}>{titulo}</span>
+          </div>
+          <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 2 }}>Examen el {formatear(conv.fechaExamen)}</div>
+        </div>
+        {Enlace}
       </div>
     )
   }
 
-  // ── Con fecha ──
-  const vencido = (dias ?? 0) < 0
-  const hoy = dias === 0
-  const color = vencido ? 'var(--mute)' : 'var(--accent)'
-  const titulo = hoy ? '¡Hoy es el examen!' : vencido ? 'Examen pasado' : `Faltan ${dias} días`
-
-  return (
-    <button
-      onClick={() => setEditando(true)}
-      className="card"
-      title="Cambiar fecha"
-      style={{ width: '100%', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 14 }}
-    >
-      <span style={{ fontSize: 22 }}>{hoy ? '🎯' : '⏳'}</span>
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-          {!hoy && !vencido && <span className="num-display" style={{ fontSize: 24, color, lineHeight: 1 }}>{dias}</span>}
-          <span style={{ fontSize: 14, fontWeight: 600, color: vencido ? 'var(--ink-soft)' : 'var(--ink)' }}>{titulo}</span>
+  // 2) Convocatoria activa pero sin fecha de examen confirmada
+  if (conv.estado === 'activa') {
+    return (
+      <div style={card}>
+        <span style={{ fontSize: 22 }}>📣</span>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)' }}>Convocatoria activa</div>
+          <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {conv.fechaPublicacion ? `Publicada el ${conv.fechaPublicacion} · ` : ''}consulta la fecha del examen en el {fuenteLabel}
+          </div>
         </div>
-        <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 2 }}>Examen el {formatear(fecha)} · toca para cambiar</div>
+        {Enlace}
       </div>
-      <span style={{ color: 'var(--mute)', fontSize: 14 }}>✎</span>
-    </button>
+    )
+  }
+
+  // 3) Sin convocatoria / parada
+  return (
+    <div style={card}>
+      <span style={{ fontSize: 22 }}>🗓️</span>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink-soft)' }}>
+          {conv.estado === 'parada' ? 'Oposición parada' : 'Sin convocatoria activa'}
+        </div>
+        <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 2 }}>Por el momento no hay oposición activa o está parada.</div>
+      </div>
+      {Enlace}
+    </div>
   )
 }

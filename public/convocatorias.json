@@ -1,0 +1,27 @@
+{
+  "_nota": "Estado de convocatoria por oposición. 'estado': activa | parada | sin-convocatoria. 'fechaExamen' en ISO YYYY-MM-DD o null. Guardia Civil se comprueba además en vivo contra el BOE.",
+  "guardia-civil": {
+    "fuente": "BOE",
+    "estado": "sin-convocatoria",
+    "fechaExamen": null,
+    "boletinUrl": "https://www.boe.es/buscar/boe.php?campo%5B0%5D=TIT&dato%5B0%5D=Guardia+Civil"
+  },
+  "cgpc": {
+    "fuente": "BOC",
+    "estado": "sin-convocatoria",
+    "fechaExamen": null,
+    "boletinUrl": "https://www.gobiernodecanarias.org/boc/"
+  },
+  "policia-local": {
+    "fuente": "BOC",
+    "estado": "sin-convocatoria",
+    "fechaExamen": null,
+    "boletinUrl": "https://www.gobiernodecanarias.org/boc/"
+  },
+  "aux-enfermeria": {
+    "fuente": "BOC",
+    "estado": "sin-convocatoria",
+    "fechaExamen": null,
+    "boletinUrl": "https://www.gobiernodecanarias.org/boc/"
+  }
+}
