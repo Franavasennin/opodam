@@ -1,4 +1,7 @@
 {
   "framework": "vite",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/.netlify/functions/:fn", "destination": "/api/:fn" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
