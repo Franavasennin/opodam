@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
 import { obtenerTopics } from '../data/topics'
 import { PanelDebilidades } from '../components/ui/PanelDebilidades'
+import { flashcardsPendientesHoy } from '../services/spaced-repetition'
 
 const topbar: React.CSSProperties = {
   height: 52, borderBottom: '1px solid var(--border-soft)',
@@ -38,7 +39,7 @@ export function Estadisticas() {
 
         <PanelDebilidades rendimiento={progreso.rendimientoPorTema} />
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-3 gap-3">
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18, textAlign: 'center' }}>
             <div className="num-display" style={{ fontSize: 34, color: 'var(--accent)', lineHeight: 1 }}>{progreso.racha.dias}</div>
             <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>Días de racha</div>
@@ -46,6 +47,10 @@ export function Estadisticas() {
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18, textAlign: 'center' }}>
             <div className="num-display" style={{ fontSize: 34, color: 'var(--accent)', lineHeight: 1 }}>{horas}h {mins}m</div>
             <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>Tiempo total</div>
+          </div>
+          <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18, textAlign: 'center' }}>
+            <div className="num-display" style={{ fontSize: 34, color: 'var(--accent)', lineHeight: 1 }}>{flashcardsPendientesHoy(progreso.flashcards).length}</div>
+            <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>Flashcards hoy</div>
           </div>
         </div>
 
