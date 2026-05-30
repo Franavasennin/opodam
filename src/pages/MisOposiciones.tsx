@@ -2,6 +2,7 @@
 import { useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../data/oposiciones'
 import { setActiveSlug } from '../services/storage'
+import { activarTrial } from '../services/supabase'
 import { BannerNutriplan } from '../components/promo/BannerNutriplan'
 
 const GLYPH: Record<string, string> = {
@@ -17,8 +18,9 @@ export default function MisOposiciones() {
   const disponibles = OPOSICIONES.filter(op => op.disponible)
   const proximamente = OPOSICIONES.filter(op => !op.disponible)
 
-  function handleEntrar(slug: string) {
+  async function handleEntrar(slug: string) {
     setActiveSlug(slug)
+    activarTrial().catch(() => { /* fail-open: no bloquea la navegación */ })
     navigate(`/oposicion/${slug}`)
   }
 
