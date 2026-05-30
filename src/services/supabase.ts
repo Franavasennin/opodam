@@ -20,6 +20,15 @@ export async function enviarMagicLink(email: string): Promise<{ error: string | 
   return { error: error?.message ?? null }
 }
 
+export async function iniciarSesionGoogle(): Promise<{ error: string | null }> {
+  if (!supabase) return { error: 'Supabase no configurado' }
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin },
+  })
+  return { error: error?.message ?? null }
+}
+
 export async function iniciarSesionAnonima(): Promise<{ error: string | null }> {
   if (!supabase) return { error: 'Supabase no configurado' }
   // Reutilizar la sesión existente (anónima o con email) si la hay
