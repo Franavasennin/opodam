@@ -43,3 +43,25 @@ export function RutaProtegida({ children }: { children: React.ReactNode }) {
   if (fase === 'externo')    { window.location.href = URL_EXPIRACION; return null }
   return <>{children}</>
 }
+
+export function RutaConSesion({ children }: { children: React.ReactNode }) {
+  const [fase, setFase] = useState<'cargando' | 'onboarding' | 'render'>('cargando')
+  useEffect(() => {
+    let activo = true
+    ;(async () => {
+      const user = await obtenerUsuario()
+      if (!activo) return
+      setFase(!user || user.is_anonymous || !user.email ? 'onboarding' : 'render')
+    })()
+    return () => { activo = false }
+  }, [])
+  if (fase === 'cargando') {
+    return (
+      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg)' }}>
+        <span style={{ color: 'var(--mute)', fontSize: 14 }}>Cargando…</span>
+      </div>
+    )
+  }
+  if (fase === 'onboarding') return <Navigate to="/onboarding/email" replace />
+  return <>{children}</>
+}
