@@ -20,7 +20,9 @@ export default function MisOposiciones() {
 
   async function handleEntrar(slug: string) {
     setActiveSlug(slug)
-    activarTrial().catch(() => { /* fail-open: no bloquea la navegación */ })
+    // Esperamos a marcar trial_start antes de navegar: si no, RutaProtegida
+    // podría leer 'sin-oposicion' y rebotar al usuario de vuelta aquí.
+    await activarTrial().catch(() => { /* fail-open: no bloquea la navegación */ })
     navigate(`/oposicion/${slug}`)
   }
 

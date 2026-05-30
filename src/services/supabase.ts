@@ -110,12 +110,17 @@ export async function crearPerfil(oposiciones: string[]): Promise<{ error: strin
   return { error: error ? error.message : null }
 }
 
-/** Estado de acceso calculado en el servidor (RPC). Fail-open: ante error → 'activo'. */
+/**
+ * Estado de acceso calculado en el servidor (RPC).
+ * - error de red/RPC → fail-open 'activo' (no expulsamos por fallo transitorio).
+ * - data null (sin fila en profiles) → 'sin-oposicion' (aún no completó onboarding).
+ */
 export async function estadoAcceso(): Promise<EstadoAcceso> {
   if (!supabase) return 'activo'
   try {
     const { data, error } = await supabase.rpc('estado_acceso')
-    if (error || data == null) return 'activo'
+    if (error) return 'activo'
+    if (data == null) return 'sin-oposicion'
     return data as EstadoAcceso
   } catch {
     return 'activo'

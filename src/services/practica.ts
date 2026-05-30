@@ -11,6 +11,8 @@ export interface SupuestoGenerado {
   preguntas: PreguntaTest[]
 }
 
+// La respuesta del endpoint es dinámica (preguntas o supuesto); se castea en cada uso.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function post(body: unknown): Promise<{ data: any; error: string | null }> {
   try {
     const res = await fetch(ENDPOINT, {
