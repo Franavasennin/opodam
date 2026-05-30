@@ -1,10 +1,38 @@
--- OpoDAM Fase 2 — columnas de trial + RPC de gating
--- Ejecutar en Supabase → SQL Editor
+-- OpoDAM Fase 2 — tabla profiles + columnas de trial + RPC de gating
+-- Ejecutar en Supabase → SQL Editor (idempotente: se puede re-ejecutar)
 
-alter table profiles add column if not exists rol text default 'trial';
+-- 1) Tabla profiles (incluye las columnas que ya usa el código: email, oposiciones)
+create table if not exists profiles (
+  id          uuid primary key references auth.users(id) on delete cascade,
+  email       text not null default '',
+  oposiciones text[] not null default '{}',
+  created_at  timestamptz not null default now(),
+  rol         text default 'trial',
+  trial_start timestamptz
+);
+
+-- Por si la tabla ya existía sin estas columnas:
+alter table profiles add column if not exists email       text not null default '';
+alter table profiles add column if not exists oposiciones text[] not null default '{}';
+alter table profiles add column if not exists rol         text default 'trial';
 alter table profiles add column if not exists trial_start timestamptz;
 
--- Función de estado de acceso (verdad en el servidor)
+-- 2) RLS: el usuario solo ve/edita su propia fila
+alter table profiles enable row level security;
+
+drop policy if exists "Usuario puede ver su perfil" on profiles;
+create policy "Usuario puede ver su perfil"
+  on profiles for select using (auth.uid() = id);
+
+drop policy if exists "Usuario puede crear su perfil" on profiles;
+create policy "Usuario puede crear su perfil"
+  on profiles for insert with check (auth.uid() = id);
+
+drop policy if exists "Usuario puede actualizar su perfil" on profiles;
+create policy "Usuario puede actualizar su perfil"
+  on profiles for update using (auth.uid() = id);
+
+-- 3) Función de estado de acceso (verdad en el servidor)
 create or replace function estado_acceso()
 returns text language sql security definer as $$
   select case
@@ -16,11 +44,9 @@ returns text language sql security definer as $$
   from profiles p where p.id = auth.uid();
 $$;
 
--- Permitir que el rol authenticated ejecute la función
 grant execute on function estado_acceso() to authenticated;
 
--- Evitar que el usuario se autoascienda: la policy de UPDATE existente permite
--- actualizar la fila propia; añadimos un trigger que conserva el rol salvo service_role.
+-- 4) Evitar que el usuario se autoascienda: el trigger conserva el rol salvo service_role
 create or replace function proteger_rol()
 returns trigger language plpgsql as $$
 begin
