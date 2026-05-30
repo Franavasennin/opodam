@@ -135,9 +135,13 @@ export interface Progreso {
   rendimientoPorTema: Record<string, RendimientoTema>
 }
 
+export type EstadoAcceso = 'activo' | 'sin-oposicion' | 'expirado'
+
 export interface Perfil {
   id: string
   email: string
   oposiciones: string[]
   created_at: string
+  rol?: 'owner' | 'beta' | 'trial'
+  trial_start?: string | null
 }
