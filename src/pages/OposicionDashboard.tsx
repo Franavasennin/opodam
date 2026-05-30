@@ -1,8 +1,12 @@
 // src/pages/OposicionDashboard.tsx
+import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../data/oposiciones'
 import { useProgress } from '../hooks/useProgress'
 import { CuentaAtras } from '../components/ui/CuentaAtras'
+import { obtenerPerfil } from '../services/supabase'
+import { BannerTrial } from '../components/ui/BannerTrial'
+import type { Perfil } from '../types'
 
 const MENU = [
   { icon: '📚', label: 'Temario', sub: 'Estudia los temas', path: 'temario' },
@@ -28,6 +32,9 @@ export default function OposicionDashboard() {
   const navigate = useNavigate()
   const { progreso } = useProgress()
   const oposicion = OPOSICIONES.find(op => op.slug === slug)
+
+  const [perfil, setPerfil] = useState<Perfil | null>(null)
+  useEffect(() => { obtenerPerfil().then(setPerfil) }, [])
 
   if (!oposicion) {
     return (
@@ -59,6 +66,7 @@ export default function OposicionDashboard() {
 
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      {perfil && <BannerTrial trialStart={perfil.trial_start ?? null} rol={perfil.rol} />}
       {/* ════════ MÓVIL ════════ */}
       <div className="lg:hidden">
         <header
