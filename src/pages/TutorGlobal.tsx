@@ -3,6 +3,9 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { OPOSICIONES } from '../data/oposiciones'
 import { buscar } from '../services/retrieval'
 import { preguntarTutor, type MensajeTutor, type ContextoTema } from '../services/tutor'
+import { cargarHistorialGlobal, guardarHistorialGlobal } from '../services/tutorHistorial'
+import { generarTestDuda, generarFlashcardsDuda, type FlashcardGenerada } from '../services/practica'
+import { MotorTest, type PreguntaTest } from '../components/test/MotorTest'
 
 const topbar: React.CSSProperties = {
   height: 52, borderBottom: '1px solid var(--border-soft)',
@@ -24,7 +27,20 @@ export default function TutorGlobal() {
   const [error, setError] = useState<string | null>(null)
   const finRef = useRef<HTMLDivElement | null>(null)
 
+  const [ultimaDuda, setUltimaDuda] = useState('')
+  const [ultimoContexto, setUltimoContexto] = useState('')
+  const [accionCargando, setAccionCargando] = useState<null | 'test' | 'flashcards' | 'resumen'>(null)
+  const [testPreguntas, setTestPreguntas] = useState<PreguntaTest[] | null>(null)
+  const [flashcards, setFlashcards] = useState<FlashcardGenerada[] | null>(null)
+
   useEffect(() => { finRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [mensajes, cargando])
+
+  useEffect(() => {
+    if (!slug) return
+    cargarHistorialGlobal(slug).then(hist => {
+      if (hist.length) setMensajes(hist.map(m => ({ role: m.role, content: m.content })))
+    })
+  }, [slug])
 
   async function enviar() {
     const texto = input.trim()
@@ -42,6 +58,10 @@ export default function TutorGlobal() {
       if (!fuentes.some(f => f.temaId === h.temaId)) fuentes.push({ temaId: h.temaId, titulo: h.titulo })
     }
 
+    const contextoTexto = hits.map(h => `Tema ${h.temaId} · ${h.titulo}\n${h.texto}`).join('\n\n')
+    setUltimaDuda(texto)
+    setUltimoContexto(contextoTexto)
+
     // 2) Construir contexto con los fragmentos y llamar al tutor existente
     const contexto: ContextoTema = {
       oposicion: slug,
@@ -55,7 +75,46 @@ export default function TutorGlobal() {
     const { content, error: err } = await preguntarTutor(historial, contexto)
     setCargando(false)
     if (err || !content) { setError('No se pudo contactar con el tutor, inténtalo de nuevo.'); return }
-    setMensajes([...previos, { role: 'assistant', content, fuentes }])
+    const nuevos: Msg[] = [...previos, { role: 'assistant', content, fuentes }]
+    setMensajes(nuevos)
+    if (slug) guardarHistorialGlobal(slug, nuevos.map(m => ({ role: m.role, content: m.content })))
+  }
+
+  async function accionTest() {
+    if (!ultimaDuda || accionCargando) return
+    setAccionCargando('test'); setError(null)
+    const { preguntas, error: err } = await generarTestDuda(ultimaDuda, ultimoContexto)
+    setAccionCargando(null)
+    if (err || !preguntas.length) { setError('No se pudo generar, inténtalo de nuevo.'); return }
+    setTestPreguntas(preguntas)
+  }
+  async function accionFlashcards() {
+    if (!ultimaDuda || accionCargando) return
+    setAccionCargando('flashcards'); setError(null)
+    const { flashcards: fc, error: err } = await generarFlashcardsDuda(ultimaDuda, ultimoContexto)
+    setAccionCargando(null)
+    if (err || !fc.length) { setError('No se pudo generar, inténtalo de nuevo.'); return }
+    setFlashcards(fc)
+  }
+  async function accionResumen() {
+    if (accionCargando || cargando) return
+    setAccionCargando('resumen'); setError(null)
+    const historial: MensajeTutor[] = [
+      ...mensajes.map(m => ({ role: m.role, content: m.content })),
+      { role: 'user', content: 'Resume tu última respuesta en 3-4 puntos clave, en formato lista.' },
+    ]
+    const contexto: ContextoTema = {
+      oposicion: slug!,
+      temaId: 0,
+      titulo: `Tutor de ${nombre}`,
+      secciones: [],
+      flashcards: [],
+      preguntas: [],
+    }
+    const { content, error: err } = await preguntarTutor(historial, contexto)
+    setAccionCargando(null)
+    if (err || !content) { setError('No se pudo generar el resumen.'); return }
+    setMensajes(prev => [...prev, { role: 'assistant', content }])
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
@@ -97,6 +156,22 @@ export default function TutorGlobal() {
                   ))}
                 </div>
               )}
+              {m.role === 'assistant' && i === mensajes.length - 1 && !cargando && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 8 }}>
+                  <button onClick={accionTest} disabled={accionCargando !== null}
+                    style={{ fontSize: 11.5, padding: '5px 11px', borderRadius: 999, cursor: 'pointer', background: 'var(--surface)', color: 'var(--ink)', border: '1px solid var(--border)' }}>
+                    {accionCargando === 'test' ? 'Generando…' : '📝 Ponérmelo a prueba'}
+                  </button>
+                  <button onClick={accionFlashcards} disabled={accionCargando !== null}
+                    style={{ fontSize: 11.5, padding: '5px 11px', borderRadius: 999, cursor: 'pointer', background: 'var(--surface)', color: 'var(--ink)', border: '1px solid var(--border)' }}>
+                    {accionCargando === 'flashcards' ? 'Generando…' : '🃏 Crear flashcards'}
+                  </button>
+                  <button onClick={accionResumen} disabled={accionCargando !== null}
+                    style={{ fontSize: 11.5, padding: '5px 11px', borderRadius: 999, cursor: 'pointer', background: 'var(--surface)', color: 'var(--ink)', border: '1px solid var(--border)' }}>
+                    {accionCargando === 'resumen' ? 'Generando…' : '✨ Resúmemelo'}
+                  </button>
+                </div>
+              )}
             </div>
           ))}
           {cargando && <div style={{ marginRight: 'auto', borderRadius: 16, background: 'var(--surface)', border: '1px solid var(--border)', padding: '10px 14px', fontSize: 13.5, color: 'var(--mute)' }}>El tutor está buscando en el temario…</div>}
@@ -114,6 +189,35 @@ export default function TutorGlobal() {
             style={{ paddingLeft: 18, paddingRight: 18, opacity: cargando || !input.trim() ? 0.4 : 1 }}>Enviar</button>
         </div>
       </footer>
+      {testPreguntas && (
+        <div onClick={() => setTestPreguntas(null)} style={{ position: 'fixed', inset: 0, zIndex: 50, background: 'rgba(0,0,0,0.45)', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflowY: 'auto', padding: 16 }}>
+          <div onClick={e => e.stopPropagation()} className="card" style={{ maxWidth: 640, width: '100%', marginTop: 24, background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+              <strong style={{ fontSize: 14 }}>Ponte a prueba</strong>
+              <button onClick={() => setTestPreguntas(null)} style={{ background: 'none', border: 0, cursor: 'pointer', fontSize: 18, color: 'var(--mute)' }}>✕</button>
+            </div>
+            <MotorTest preguntas={testPreguntas} titulo="Mini-test del tutor" />
+          </div>
+        </div>
+      )}
+      {flashcards && (
+        <div onClick={() => setFlashcards(null)} style={{ position: 'fixed', inset: 0, zIndex: 50, background: 'rgba(0,0,0,0.45)', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', overflowY: 'auto', padding: 16 }}>
+          <div onClick={e => e.stopPropagation()} className="card" style={{ maxWidth: 520, width: '100%', marginTop: 24, background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+              <strong style={{ fontSize: 14 }}>Flashcards de la duda</strong>
+              <button onClick={() => setFlashcards(null)} style={{ background: 'none', border: 0, cursor: 'pointer', fontSize: 18, color: 'var(--mute)' }}>✕</button>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {flashcards.map((f, i) => (
+                <details key={i} style={{ border: '1px solid var(--border)', borderRadius: 12, padding: '10px 12px', background: 'var(--bg)' }}>
+                  <summary style={{ cursor: 'pointer', fontSize: 13, fontWeight: 600, color: 'var(--ink)' }}>{f.pregunta}</summary>
+                  <p style={{ margin: '8px 0 0', fontSize: 12.5, color: 'var(--ink-soft)', lineHeight: 1.5 }}>{f.respuesta}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
