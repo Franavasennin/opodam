@@ -42,3 +42,36 @@ export async function guardarHistorial(
     /* degradación elegante: el chat sigue en memoria */
   }
 }
+
+const TABLA_GLOBAL = 'tutor_global_conversaciones'
+
+export async function cargarHistorialGlobal(oposicion: string): Promise<MensajeTutor[]> {
+  try {
+    if (!supabase) return []
+    const user = await obtenerUsuario()
+    if (!user) return []
+    const { data } = await supabase
+      .from(TABLA_GLOBAL)
+      .select('mensajes')
+      .eq('oposicion', oposicion)
+      .single()
+    const mensajes = data?.mensajes
+    return Array.isArray(mensajes) ? (mensajes as MensajeTutor[]) : []
+  } catch {
+    return []
+  }
+}
+
+export async function guardarHistorialGlobal(oposicion: string, mensajes: MensajeTutor[]): Promise<void> {
+  try {
+    if (!supabase) return
+    const user = await obtenerUsuario()
+    if (!user) return
+    await supabase.from(TABLA_GLOBAL).upsert(
+      { user_id: user.id, oposicion, mensajes, updated_at: new Date().toISOString() },
+      { onConflict: 'user_id,oposicion' },
+    )
+  } catch {
+    /* degradación elegante: el chat sigue en memoria */
+  }
+}
