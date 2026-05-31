@@ -3,8 +3,8 @@ import { fusionar, decodificarVector, type Puntuado } from './retrieval'
 
 describe('decodificarVector', () => {
   it('base64 int8 → Float32 dividido por 127', () => {
-    const bytes = Buffer.from([127, (-64) & 0xff, 0])
-    const v = decodificarVector(bytes.toString('base64'))
+    const bytes = new Uint8Array([127, (-64) & 0xff, 0])
+    const v = decodificarVector(btoa(String.fromCharCode(...bytes)))
     expect(v[0]).toBeCloseTo(1, 5)
     expect(v[1]).toBeCloseTo(-64 / 127, 5)
     expect(v[2]).toBe(0)
