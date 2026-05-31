@@ -1,5 +1,7 @@
-// Genera un índice de búsqueda por oposición para el tutor global (RAG híbrido).
-// Salida: public/search/<slug>.json = { slug, chunks:[{t,ti,c}], vectors:[base64 int8 (384)] }
+// Genera índices de búsqueda por oposición para el tutor global (RAG híbrido).
+// Salida:
+//   public/search/<slug>.json          = { slug, chunks:[{t,ti,c}] }      (texto, BM25)
+//   public/search/<slug>.vectors.json  = { vectors:[base64 int8 (384)] }  (semántico, mismo orden)
 // Uso: node scripts/gen-search-index.mjs
 import fs from 'node:fs'
 import path from 'node:path'
@@ -37,7 +39,6 @@ function esUtil(c) {
   return letras / c.length > 0.55
 }
 
-// Float32 L2-normalizado -> base64 de 384 bytes int8
 function cuantizar(vec) {
   const bytes = Buffer.alloc(vec.length)
   for (let i = 0; i < vec.length; i++) {
@@ -69,10 +70,14 @@ for (const slug of SLUGS) {
   }
   const vectors = []
   for (const ch of chunks) vectors.push(cuantizar(await embed(ch.c)))
-  const outPath = path.join(OUT, `${slug}.json`)
-  fs.writeFileSync(outPath, JSON.stringify({ slug, chunks, vectors }), 'utf8')
-  const kb = (fs.statSync(outPath).size / 1024).toFixed(0)
-  console.log(`OK ${slug}: ${chunks.length} fragmentos (+vectores), ${kb} KB`)
+
+  const idxPath = path.join(OUT, `${slug}.json`)
+  const vecPath = path.join(OUT, `${slug}.vectors.json`)
+  fs.writeFileSync(idxPath, JSON.stringify({ slug, chunks }), 'utf8')
+  fs.writeFileSync(vecPath, JSON.stringify({ vectors }), 'utf8')
+  const kbIdx = (fs.statSync(idxPath).size / 1024).toFixed(0)
+  const kbVec = (fs.statSync(vecPath).size / 1024).toFixed(0)
+  console.log(`OK ${slug}: ${chunks.length} fragmentos | índice ${kbIdx} KB | vectores ${kbVec} KB`)
   total += chunks.length
 }
 console.log('\ntotal fragmentos:', total)
