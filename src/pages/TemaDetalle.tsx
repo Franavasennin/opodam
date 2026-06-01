@@ -5,6 +5,7 @@ import { obtenerTopics } from '../data/topics'
 import { TeoriaTab } from '../components/tema/TeoriaTab'
 import { EsquemasTab } from '../components/tema/EsquemasTab'
 import { MapaMentalTab } from '../components/tema/MapaMentalTab'
+import { emparejarSeccion } from '../components/tema/emparejarSeccion'
 import { FlashcardsTab } from '../components/tema/FlashcardsTab'
 import { BotonTutor } from '../components/tutor/BotonTutor'
 import { TutorPanel } from '../components/tutor/TutorPanel'
@@ -20,6 +21,9 @@ export function TemaDetalle() {
   const [tema, setTema] = useState<Tema | null>(null)
   const [tab, setTab] = useState<Tab>("Teoria")
   const [tutorAbierto, setTutorAbierto] = useState(false)
+  // Sección de teoría a la que saltar tras pulsar un nodo del mapa mental.
+  // Es un objeto (no un número) para re-disparar el scroll aunque se repita índice.
+  const [seccionObjetivo, setSeccionObjetivo] = useState<{ i: number } | null>(null)
   const { progreso, marcarTeoriaLeida, marcarVueltaCompleta } = useProgress()
   const { cargarTema } = obtenerTopics(slug ?? 'cgpc')
 
@@ -65,9 +69,17 @@ export function TemaDetalle() {
       </div>
 
       <div className="flex-1 overflow-y-auto p-4 max-w-2xl mx-auto w-full">
-        {tab === "Teoria"      && <TeoriaTab tema={tema} onTeoriaLeida={handleTeoriaLeida} />}
+        {tab === "Teoria"      && <TeoriaTab tema={tema} onTeoriaLeida={handleTeoriaLeida} irASeccion={seccionObjetivo} />}
         {tab === "Esquemas"    && <EsquemasTab tema={tema} />}
-        {tab === "Mapa Mental" && <MapaMentalTab tema={tema} />}
+        {tab === "Mapa Mental" && (
+          <MapaMentalTab
+            tema={tema}
+            onSeleccion={(label) => {
+              setSeccionObjetivo({ i: emparejarSeccion(label, tema.secciones) })
+              setTab("Teoria")
+            }}
+          />
+        )}
         {tab === "Flashcards"  && <FlashcardsTab tema={tema} onVueltaCompleta={() => marcarVueltaCompleta(temaId)} />}
       </div>
 
