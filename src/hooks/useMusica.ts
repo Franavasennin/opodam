@@ -15,7 +15,7 @@ const NOTAS = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25]
 // (siempre consonante) + un colchón de aire muy suave. Sin drones graves de "motor".
 function crearAmbient(): AudioState | null {
   try {
-    const w = window as Window & { webkitAudioContext?: typeof AudioContext }
+    const w = window as unknown as { AudioContext?: typeof AudioContext; webkitAudioContext?: typeof AudioContext }
     const AC: typeof AudioContext | undefined = w.AudioContext || w.webkitAudioContext
     if (!AC) return null
     const ctx = new AC()
