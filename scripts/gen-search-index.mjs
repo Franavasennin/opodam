@@ -1,14 +1,18 @@
-// Genera un índice de búsqueda (fragmentos de teoría) por oposición para el tutor global (RAG).
-// Salida: public/search/<slug>.json = { slug, chunks: [{ t: temaId, ti: titulo, c: texto }] }
+// Genera índices de búsqueda por oposición para el tutor global (RAG híbrido).
+// Salida:
+//   public/search/<slug>.json          = { slug, chunks:[{t,ti,c}] }      (texto, BM25)
+//   public/search/<slug>.vectors.json  = { vectors:[base64 int8 (384)] }  (semántico, mismo orden)
 // Uso: node scripts/gen-search-index.mjs
 import fs from 'node:fs'
 import path from 'node:path'
+import { pipeline } from '@xenova/transformers'
 
 const SLUGS = ['cgpc', 'policia-local', 'aux-enfermeria', 'guardia-civil']
 const TOPICS = 'src/data/topics'
 const OUT = 'public/search'
-const CHUNK = 600           // tamaño objetivo de fragmento (caracteres)
-const MAX_CHUNKS_TEMA = 45  // tope por tema para acotar el tamaño del índice
+const CHUNK = 600
+const MAX_CHUNKS_TEMA = 45
+const MODELO = 'Xenova/multilingual-e5-small'
 
 fs.mkdirSync(OUT, { recursive: true })
 
@@ -27,13 +31,29 @@ function trocear(texto) {
   return chunks.filter(esUtil)
 }
 
-// Descarta fragmentos basura (tablas de bibliografía de MarkItDown, índices con muchas barras).
 function esUtil(c) {
   if (c.length < 40) return false
   const barras = (c.match(/\|/g) || []).length
   if (barras >= 6) return false
   const letras = (c.match(/[a-záéíóúñ]/gi) || []).length
   return letras / c.length > 0.55
+}
+
+function cuantizar(vec) {
+  const bytes = Buffer.alloc(vec.length)
+  for (let i = 0; i < vec.length; i++) {
+    let q = Math.round(vec[i] * 127)
+    if (q > 127) q = 127
+    if (q < -127) q = -127
+    bytes[i] = q & 0xff
+  }
+  return bytes.toString('base64')
+}
+
+const extractor = await pipeline('feature-extraction', MODELO)
+async function embed(texto) {
+  const out = await extractor('passage: ' + texto, { pooling: 'mean', normalize: true })
+  return Array.from(out.data)
 }
 
 let total = 0
@@ -48,10 +68,16 @@ for (const slug of SLUGS) {
     const trozos = trocear(texto).slice(0, MAX_CHUNKS_TEMA)
     for (const c of trozos) chunks.push({ t: tema.id, ti: tema.titulo, c })
   }
-  const outPath = path.join(OUT, `${slug}.json`)
-  fs.writeFileSync(outPath, JSON.stringify({ slug, chunks }), 'utf8')
-  const kb = (fs.statSync(outPath).size / 1024).toFixed(0)
-  console.log(`OK ${slug}: ${chunks.length} fragmentos, ${kb} KB`)
+  const vectors = []
+  for (const ch of chunks) vectors.push(cuantizar(await embed(ch.c)))
+
+  const idxPath = path.join(OUT, `${slug}.json`)
+  const vecPath = path.join(OUT, `${slug}.vectors.json`)
+  fs.writeFileSync(idxPath, JSON.stringify({ slug, chunks }), 'utf8')
+  fs.writeFileSync(vecPath, JSON.stringify({ vectors }), 'utf8')
+  const kbIdx = (fs.statSync(idxPath).size / 1024).toFixed(0)
+  const kbVec = (fs.statSync(vecPath).size / 1024).toFixed(0)
+  console.log(`OK ${slug}: ${chunks.length} fragmentos | índice ${kbIdx} KB | vectores ${kbVec} KB`)
   total += chunks.length
 }
 console.log('\ntotal fragmentos:', total)
