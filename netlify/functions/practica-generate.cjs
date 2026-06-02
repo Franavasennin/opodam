@@ -6,8 +6,9 @@ const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions'
 const MODEL = 'llama-3.1-8b-instant'
 
 function resolverOrigen(event) {
-  const permitidas = (process.env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean)
-  if (permitidas.length === 0) return '*'
+  const env = (process.env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean)
+  // Fail-closed: sin ALLOWED_ORIGINS, caer a una lista conocida (dev + prod Netlify), nunca '*'.
+  const permitidas = env.length ? env : ['http://localhost:3000', 'http://localhost:8888', 'https://opodam.netlify.app']
   const origin = (event && event.headers && (event.headers.origin || event.headers.Origin)) || ''
   return permitidas.includes(origin) ? origin : permitidas[0]
 }
