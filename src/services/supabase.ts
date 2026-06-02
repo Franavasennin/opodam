@@ -53,7 +53,7 @@ export async function obtenerUsuario() {
   return data?.session?.user ?? null
 }
 
-export async function cargarProgresoRemoto(): Promise<Progreso | null> {
+export async function cargarProgresoRemoto(slug: string): Promise<Progreso | null> {
   if (!supabase) return null
   const user = await obtenerUsuario()
   if (!user) return null
@@ -61,19 +61,21 @@ export async function cargarProgresoRemoto(): Promise<Progreso | null> {
     .from('progreso')
     .select('data')
     .eq('user_id', user.id)
+    .eq('slug', slug)
     .single()
   return (data?.data as Progreso) ?? null
 }
 
-export async function guardarProgresoRemoto(progreso: Progreso): Promise<void> {
+export async function guardarProgresoRemoto(slug: string, progreso: Progreso): Promise<void> {
   if (!supabase) return
   const user = await obtenerUsuario()
   if (!user) return
   await supabase.from('progreso').upsert({
     user_id:    user.id,
+    slug,
     data:       progreso,
     updated_at: new Date().toISOString(),
-  })
+  }, { onConflict: 'user_id,slug' })
 }
 
 // --- Perfil de usuario ---
