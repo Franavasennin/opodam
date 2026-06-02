@@ -15,7 +15,8 @@ const NOTAS = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25]
 // (siempre consonante) + un colchón de aire muy suave. Sin drones graves de "motor".
 function crearAmbient(): AudioState | null {
   try {
-    const AC: typeof AudioContext = (window as any).AudioContext || (window as any).webkitAudioContext
+    const w = window as Window & { webkitAudioContext?: typeof AudioContext }
+    const AC: typeof AudioContext | undefined = w.AudioContext || w.webkitAudioContext
     if (!AC) return null
     const ctx = new AC()
 
@@ -97,9 +98,9 @@ function crearAmbient(): AudioState | null {
 
 function detener(state: AudioState | null) {
   if (!state) return
-  try { if (state.timer) clearInterval(state.timer) } catch {}
-  try { state.noise?.stop() } catch {}
-  try { state.ctx.close() } catch {}
+  try { if (state.timer) clearInterval(state.timer) } catch { /* noop */ }
+  try { state.noise?.stop() } catch { /* noop */ }
+  try { state.ctx.close() } catch { /* noop */ }
 }
 
 export function useMusica() {
