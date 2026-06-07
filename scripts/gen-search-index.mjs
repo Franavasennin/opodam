@@ -7,7 +7,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { pipeline } from '@xenova/transformers'
 
-const SLUGS = ['cgpc', 'policia-local', 'aux-enfermeria', 'guardia-civil']
+const SLUGS = ['cgpc', 'policia-local', 'aux-enfermeria', 'guardia-civil', 'aux-judicial', 'tramitacion-judicial']
 const TOPICS = 'src/data/topics'
 const OUT = 'public/search'
 const CHUNK = 600
