@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export function useNotifications() {
-  const [permiso, setPermiso] = useState<NotificationPermission>('default')
-
-  useEffect(() => {
-    if ('Notification' in window) setPermiso(Notification.permission)
-  }, [])
+  // Estado inicial perezoso: lee el permiso una sola vez, sin efecto.
+  const [permiso, setPermiso] = useState<NotificationPermission>(
+    () => ('Notification' in window ? Notification.permission : 'default')
+  )
 
   async function solicitarPermiso(): Promise<boolean> {
     if (!('Notification' in window)) return false

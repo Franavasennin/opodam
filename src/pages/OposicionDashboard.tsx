@@ -1,8 +1,13 @@
 // src/pages/OposicionDashboard.tsx
+import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../data/oposiciones'
 import { useProgress } from '../hooks/useProgress'
 import { CuentaAtras } from '../components/ui/CuentaAtras'
+import { obtenerPerfil, tieneAccesoOposicion } from '../services/supabase'
+import { BannerTrial } from '../components/ui/BannerTrial'
+import { BannerPaywall } from '../components/promo/BannerPaywall'
+import type { Perfil } from '../types'
 
 const MENU = [
   { icon: '📚', label: 'Temario', sub: 'Estudia los temas', path: 'temario' },
@@ -28,6 +33,14 @@ export default function OposicionDashboard() {
   const navigate = useNavigate()
   const { progreso } = useProgress()
   const oposicion = OPOSICIONES.find(op => op.slug === slug)
+  const [acceso, setAcceso] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    if (slug) tieneAccesoOposicion(slug).then(setAcceso)
+  }, [slug])
+
+  const [perfil, setPerfil] = useState<Perfil | null>(null)
+  useEffect(() => { obtenerPerfil().then(setPerfil) }, [])
 
   if (!oposicion) {
     return (
@@ -59,6 +72,7 @@ export default function OposicionDashboard() {
 
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      {perfil && <BannerTrial trialStart={perfil.trial_start ?? null} rol={perfil.rol} />}
       {/* ════════ MÓVIL ════════ */}
       <div className="lg:hidden">
         <header
@@ -88,6 +102,12 @@ export default function OposicionDashboard() {
           </div>
 
           <div style={{ marginTop: 16 }}><CuentaAtras slug={slug!} /></div>
+
+          {acceso === false && (
+            <div style={{ marginTop: 16 }}>
+              <BannerPaywall slug={slug!} nombreOposicion={oposicion.nombre} />
+            </div>
+          )}
 
           <div className="eyebrow" style={{ margin: '22px 4px 10px' }}>Tu preparación</div>
           <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingBottom: 32 }}>
@@ -144,6 +164,13 @@ export default function OposicionDashboard() {
 
           {/* Cuenta atrás examen */}
           <div style={{ marginTop: 20 }}><CuentaAtras slug={slug!} /></div>
+
+          {/* Paywall */}
+          {acceso === false && (
+            <div style={{ marginTop: 20 }}>
+              <BannerPaywall slug={slug!} nombreOposicion={oposicion.nombre} />
+            </div>
+          )}
 
           {/* Plan diario + ProCoach */}
           <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 16, marginTop: 24 }}>

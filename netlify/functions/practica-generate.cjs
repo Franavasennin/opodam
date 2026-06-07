@@ -6,8 +6,9 @@ const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions'
 const MODEL = 'llama-3.1-8b-instant'
 
 function resolverOrigen(event) {
-  const permitidas = (process.env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean)
-  if (permitidas.length === 0) return '*'
+  const env = (process.env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean)
+  // Fail-closed: sin ALLOWED_ORIGINS, caer a una lista conocida (dev + prod Netlify), nunca '*'.
+  const permitidas = env.length ? env : ['http://localhost:3000', 'http://localhost:8888', 'https://opodam.netlify.app']
   const origin = (event && event.headers && (event.headers.origin || event.headers.Origin)) || ''
   return permitidas.includes(origin) ? origin : permitidas[0]
 }
@@ -31,6 +32,22 @@ const TITULOS_CATEGORIA = {
 
 function buildPrompt(payload) {
   const p = payload || {}
+  if (p.tipo === 'tutor-test') {
+    return `A partir de la DUDA del alumno y el CONTEXTO del temario, genera 4 preguntas tipo test que comprueben si ha entendido.
+Devuelve SOLO JSON: { "preguntas": [{ "enunciado": "...", "opciones": ["a","b","c","d"], "respuestaCorrecta": 0, "explicacion": "..." }] }.
+4 preguntas, 4 opciones, respuestaCorrecta índice 0-3, explicación breve. Solo información del CONTEXTO. Español.
+DUDA: ${(p.duda || '').slice(0, 500)}
+CONTEXTO:
+${(p.contexto || '').slice(0, 6000)}`
+  }
+  if (p.tipo === 'tutor-flashcards') {
+    return `A partir de la DUDA del alumno y el CONTEXTO del temario, genera 4 flashcards de repaso.
+Devuelve SOLO JSON: { "flashcards": [{ "pregunta": "...", "respuesta": "..." }] }.
+4 flashcards claras y concisas. Solo información del CONTEXTO. Español.
+DUDA: ${(p.duda || '').slice(0, 500)}
+CONTEXTO:
+${(p.contexto || '').slice(0, 6000)}`
+  }
   if (p.tipo === 'supuesto') {
     return `Genera un supuesto práctico de oposición para el cuerpo "${p.slug || 'policía'}", basándote EN EL TEMARIO de abajo.
 Devuelve SOLO JSON: { "titulo": "...", "caso": "...", "preguntas": [{ "enunciado": "...", "opciones": ["a","b","c","d"], "respuestaCorrecta": 0, "explicacion": "..." }] }.
@@ -73,8 +90,12 @@ exports.handler = async function (event) {
 
   let payload
   try { payload = JSON.parse(event.body || '{}') } catch { return { statusCode: 400, headers: corsHeaders(event), body: JSON.stringify({ error: 'JSON invalido' }) } }
-  if (payload.tipo !== 'psicotecnico' && payload.tipo !== 'supuesto') {
+  const TIPOS = ['psicotecnico', 'supuesto', 'tutor-test', 'tutor-flashcards']
+  if (!TIPOS.includes(payload.tipo)) {
     return { statusCode: 400, headers: corsHeaders(event), body: JSON.stringify({ error: 'tipo invalido' }) }
+  }
+  if ((payload.tipo === 'tutor-test' || payload.tipo === 'tutor-flashcards') && !payload.duda) {
+    return { statusCode: 400, headers: corsHeaders(event), body: JSON.stringify({ error: 'falta duda' }) }
   }
 
   const groqBody = {
@@ -100,6 +121,17 @@ exports.handler = async function (event) {
     const data = await r.json()
     const content = data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content
     const parsed = extraerJSON(content)
+    if (payload.tipo === 'tutor-test') {
+      const items = parsed && parsed.preguntas
+      if (!validarItems(items)) return { statusCode: 502, headers: corsHeaders(event), body: JSON.stringify({ error: 'Respuesta no valida' }) }
+      return { statusCode: 200, headers: corsHeaders(event), body: JSON.stringify({ preguntas: items }) }
+    }
+    if (payload.tipo === 'tutor-flashcards') {
+      const fc = parsed && parsed.flashcards
+      const ok = Array.isArray(fc) && fc.length > 0 && fc.every(f => f && typeof f.pregunta === 'string' && typeof f.respuesta === 'string')
+      if (!ok) return { statusCode: 502, headers: corsHeaders(event), body: JSON.stringify({ error: 'Respuesta no valida' }) }
+      return { statusCode: 200, headers: corsHeaders(event), body: JSON.stringify({ flashcards: fc }) }
+    }
     if (payload.tipo === 'supuesto') {
       if (!parsed || typeof parsed.caso !== 'string' || !validarItems(parsed.preguntas)) {
         return { statusCode: 502, headers: corsHeaders(event), body: JSON.stringify({ error: 'Respuesta no valida' }) }

@@ -195,11 +195,19 @@ export function SesionDiaria() {
                 extra = { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent)' }
               }
               const activo = extra.color != null
+              const detalle = p.explicaciones?.[j]
+              const esCorr = j === getPreguntaCorrecta(p)
+              const esEleg = j === respActual
               return (
-                <button key={j} type="button" className="opt" disabled={mostrandoExplicacion} onClick={() => responderPregunta(j)} style={extra}>
-                  <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: activo ? 'var(--accent-ink)' : 'var(--mute)', background: activo ? (extra.borderColor as string) : 'var(--surface)', border: `1px solid ${activo ? (extra.borderColor as string) : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
-                  <span>{op}</span>
-                </button>
+                <div key={j} style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                  <button type="button" className="opt" disabled={mostrandoExplicacion} onClick={() => responderPregunta(j)} style={extra}>
+                    <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: activo ? 'var(--accent-ink)' : 'var(--mute)', background: activo ? (extra.borderColor as string) : 'var(--surface)', border: `1px solid ${activo ? (extra.borderColor as string) : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
+                    <span>{op}{mostrandoExplicacion && esEleg && <span style={{ marginLeft: 6, fontSize: 11, opacity: 0.85 }}>· tu respuesta</span>}</span>
+                  </button>
+                  {mostrandoExplicacion && detalle && (
+                    <p style={{ margin: '0 0 0 4px', fontSize: 11.5, color: esCorr ? 'var(--accent)' : esEleg ? 'var(--warn)' : 'var(--mute)', fontStyle: 'italic', lineHeight: 1.45 }}>{detalle}</p>
+                  )}
+                </div>
               )
             })}
           </div>

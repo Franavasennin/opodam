@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { getProgreso, saveProgreso, resetProgreso, PROGRESO_KEY } from '../../src/services/storage'
+import { getProgreso, saveProgreso, resetProgreso, getProgresoKey } from '../../src/services/storage'
 import type { Progreso } from '../../src/types'
 
 const progresoVacio: Progreso = {
@@ -21,7 +21,7 @@ describe('getProgreso', () => {
   })
   it('devuelve progreso guardado previamente', () => {
     const dato: Progreso = { ...progresoVacio, tiempoTotalSegundos: 300 }
-    localStorage.setItem(PROGRESO_KEY, JSON.stringify(dato))
+    localStorage.setItem(getProgresoKey(), JSON.stringify(dato))
     expect(getProgreso()).toEqual(dato)
   })
 })
@@ -30,7 +30,7 @@ describe('saveProgreso', () => {
   it('persiste en localStorage', () => {
     const dato: Progreso = { ...progresoVacio, tiempoTotalSegundos: 600 }
     saveProgreso(dato)
-    expect(JSON.parse(localStorage.getItem(PROGRESO_KEY)!)).toEqual(dato)
+    expect(JSON.parse(localStorage.getItem(getProgresoKey())!)).toEqual(dato)
   })
 })
 

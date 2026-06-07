@@ -3,6 +3,8 @@ import * as cgpc from './cgpc/index'
 import * as policiaLocal from './policia-local/index'
 import * as auxEnfermeria from './aux-enfermeria/index'
 import * as guardiaCivil from './guardia-civil/index'
+import * as tramitacionJudicial from './tramitacion-judicial/index'
+import * as auxJudicial from './aux-judicial/index'
 
 export interface ModuloTopics {
   TEMAS_META: ReadonlyArray<{ id: number; titulo: string; bloque: string }>
@@ -15,6 +17,8 @@ const MODULOS: Record<string, ModuloTopics> = {
   'policia-local': policiaLocal,
   'aux-enfermeria': auxEnfermeria,
   'guardia-civil': guardiaCivil,
+  'tramitacion-judicial': tramitacionJudicial,
+  'aux-judicial': auxJudicial,
 }
 
 export function obtenerTopics(slug: string): ModuloTopics {

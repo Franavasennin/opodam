@@ -8,10 +8,7 @@ import { getPreguntaCorrecta } from '../types'
 
 const LETRAS = ['A', 'B', 'C', 'D', 'E', 'F']
 
-const topbar: React.CSSProperties = {
-  height: 52, borderBottom: '1px solid var(--border-soft)',
-  background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
-}
+import { TestTopbar } from '../components/test/Shared'
 
 export function Tests() {
   const navigate = useNavigate()
@@ -36,10 +33,7 @@ export function Tests() {
   // ── Selección de tema ──
   if (temaId === null) return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
-      <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
-        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Tests y simulacros</span>
-      </header>
+      <TestTopbar title="Tests y simulacros" onBack={() => navigate(`/oposicion/${slug}`)} />
       <main className="max-w-2xl mx-auto px-4 pt-4 pb-12">
         <div className="eyebrow" style={{ marginBottom: 10 }}>Practica preguntas</div>
         <h1 className="display" style={{ margin: '0 0 18px', fontSize: 30, letterSpacing: '-0.015em' }}>
@@ -83,10 +77,7 @@ export function Tests() {
   // ── Resultado ──
   if (enviado) return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
-      <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <button onClick={() => setTemaId(null)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
-        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Resultado</span>
-      </header>
+      <TestTopbar title="Resultado" onBack={() => setTemaId(null)} />
       <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
         <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, textAlign: 'center' }}>
           <div className="eyebrow" style={{ marginBottom: 6 }}>Nota equivalente</div>
@@ -114,10 +105,10 @@ export function Tests() {
   // ── Preguntas ──
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
-      <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <button onClick={() => setTemaId(null)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
-        <span style={{ fontWeight: 600, fontSize: 13.5, letterSpacing: '-0.01em', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{tema.titulo}</span>
-      </header>
+      <TestTopbar 
+        title={<span style={{ fontWeight: 600, fontSize: 13.5, letterSpacing: '-0.01em', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{tema.titulo}</span>}
+        onBack={() => setTemaId(null)} 
+      />
       <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
         {tema.preguntas.map((p, i) => (
           <div key={i} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>

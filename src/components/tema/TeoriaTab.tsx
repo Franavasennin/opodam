@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import type { Tema } from '../../types'
 import { parsearTeoria } from './parsearTeoria'
 
-interface Props { tema: Tema; onTeoriaLeida: () => void }
+interface Props { tema: Tema; onTeoriaLeida: () => void; irASeccion?: { i: number } | null }
 
 const ttsDisponible = typeof window !== 'undefined' && 'speechSynthesis' in window
 
@@ -20,13 +20,26 @@ function trocear(texto: string, max = 220): string[] {
   return out
 }
 
-export function TeoriaTab({ tema, onTeoriaLeida }: Props) {
+export function TeoriaTab({ tema, onTeoriaLeida, irASeccion }: Props) {
   const [leyendo, setLeyendo] = useState(false)
+  const [resaltada, setResaltada] = useState<number | null>(null)
 
   useEffect(() => {
     const t = setTimeout(onTeoriaLeida, 5000)
     return () => clearTimeout(t)
   }, [onTeoriaLeida])
+
+  // Scroll + resaltado al recibir una sección objetivo (clic en el mapa mental).
+  useEffect(() => {
+    if (irASeccion == null) return
+    const i = irASeccion.i
+    const el = document.getElementById(`seccion-${i}`)
+    if (!el) return
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setResaltada(i)
+    const t = setTimeout(() => setResaltada(null), 1600)
+    return () => clearTimeout(t)
+  }, [irASeccion])
 
   // Detener la lectura al desmontar o cambiar de tema.
   useEffect(() => {
@@ -65,7 +78,16 @@ export function TeoriaTab({ tema, onTeoriaLeida }: Props) {
       {tema.secciones.map((s, i) => {
         const bloques = parsearTeoria(s.contenido)
         return (
-          <section key={i}>
+          <section
+            key={i}
+            id={`seccion-${i}`}
+            style={{
+              scrollMarginTop: 16,
+              borderRadius: 10,
+              transition: 'background 0.4s',
+              background: resaltada === i ? 'var(--accent-soft)' : 'transparent',
+            }}
+          >
             {s.titulo && (
               <>
                 <span style={{ display: 'block', fontFamily: "'JetBrains Mono', monospace", fontSize: 10.5, letterSpacing: '0.06em', color: 'var(--mute)', textTransform: 'uppercase', marginBottom: 4 }}>

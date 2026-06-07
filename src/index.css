@@ -62,6 +62,10 @@ html.dark .hero .hero-grain { background-image: radial-gradient(rgba(255,255,255
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
 }
 
 /* ── Tipografía display ─────────────────────────────────────── */

@@ -1,0 +1,109 @@
+{
+  "id": 26,
+  "titulo": "Actos procesales. Resoluciones judiciales",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "Clases de resoluciones judiciales: providencias, autos y sentencias",
+      "contenido": "Los actos procesales, atendiendo al sujeto del que proceden, se clasifican en actos de las partes y actos del órgano jurisdiccional; entre estos últimos se incluyen los del juez o tribunal y los del Letrado de la Administración de Justicia (LAJ). La mayoría de los actos del juez o de las Salas de justicia se traducen en resoluciones, que pueden tener carácter jurisdiccional o gubernativo. Las resoluciones jurisdiccionales (art. 206 y ss. LEC) son: las providencias, que se dictan cuando la resolución se refiere a cuestiones procesales que requieren decisión judicial por establecerlo la ley y no se exige forma de auto; se limitan a expresar lo que por ellas se manda e incluyen una sucinta motivación cuando lo disponga la ley o lo estime conveniente el tribunal. Los autos, que se dictan para decidir recursos contra providencias o decretos, sobre admisión o inadmisión de demanda, reconvención, acumulación de acciones, prueba, transacciones, medidas cautelares y nulidad o validez de actuaciones, así como presupuestos procesales y cuestiones incidentales (art. 206.1.2º LEC); serán siempre motivados y contendrán en párrafos separados y numerados los antecedentes de hecho y los fundamentos de derecho (art. 208 LEC). Las sentencias, que ponen fin al proceso en primera o segunda instancia tras concluir su tramitación ordinaria, y resuelven los recursos extraordinarios y la revisión de sentencias firmes."
+    },
+    {
+      "titulo": "La sentencia: estructura, firmeza y ejecutoria",
+      "contenido": "La fórmula de la sentencia según la LEC comprende: el encabezamiento (lugar, fecha, tribunal, juez o magistrados, ponente si es colegiado, datos de los litigantes, abogados y procuradores y objeto del pleito); los antecedentes de hecho, en párrafos numerados, con las pretensiones, hechos, pruebas propuestas y practicadas y hechos probados; los fundamentos de derecho, con los puntos de hecho y de derecho y las normas aplicables; y el fallo, con los pronunciamientos numerados sobre las pretensiones y las costas, determinando en su caso la cantidad objeto de condena sin reservarla para la ejecución. Es sentencia firme aquella contra la que no cabe recurso alguno, salvo revisión y otros extraordinarios (art. 245.3 LOPJ), bien por no preverlo la ley, bien por haber transcurrido el plazo sin recurrir. Las resoluciones firmes pasan en autoridad de cosa juzgada. Se llama ejecutoria al documento público y solemne en que se consigna una sentencia firme, encabezado en nombre del Rey. Las sentencias pueden dictarse de viva voz cuando lo autorice la ley, sin perjuicio de su posterior documentación, y siempre serán motivadas."
+    },
+    {
+      "titulo": "Resoluciones gubernativas y de los órganos colegiados",
+      "contenido": "Las resoluciones de carácter gubernativo son los acuerdos: se denominan así las resoluciones de los tribunales cuando no estén constituidos en Salas de justicia, las de las Salas de gobierno y las de los jueces y presidentes cuando tengan carácter gubernativo; también las advertencias y correcciones que recaigan sobre personas sujetas a responsabilidad disciplinaria (p. ej. correcciones a abogados y procuradores). En los órganos colegiados (art. 253 LOPJ) los autos y sentencias se deliberan y votan inmediatamente después de las vistas; vota primero el ponente y después los demás magistrados por orden inverso a su antigüedad, votando el último quien preside. Los autos y sentencias se dictan por mayoría absoluta de votos, salvo que la ley exija mayor proporción. Quien tome parte en la votación firmará lo acordado aunque hubiera disentido, pudiendo formular voto particular en forma de sentencia, que se incorpora al libro de sentencias y se notifica a las partes. En caso de no obtenerse mayoría se procede a resolver la discordia mediante nueva vista, ampliando el número de magistrados (dos más si el número de discordantes fue impar y tres si fue par)."
+    },
+    {
+      "titulo": "Especialidades en el proceso penal y dictado de resoluciones",
+      "contenido": "Conforme a los artículos 141 y siguientes de la Ley de Enjuiciamiento Criminal (LECR), se dictan providencias cuando se resuelvan cuestiones procesales reservadas al juez que no requieran forma de auto; autos cuando se decidan incidentes o puntos esenciales que afecten directamente a los investigados o encausados, la competencia, la recusación, los recursos contra providencias o decretos, la prisión y soltura, o un derecho fundamental; y sentencias cuando se decida definitivamente la cuestión criminal. Son sentencias firmes cuando no quepa contra ellas recurso ordinario ni extraordinario, salvo los de revisión y rehabilitación. Respecto al número de magistrados: en el Tribunal Supremo bastan dos para providencias, tres para autos y siete para sentencias; en el Tribunal Superior de Justicia y audiencias, dos para providencias y tres para autos o sentencias. El LAJ determina el magistrado ponente según el turno establecido al inicio del año judicial sobre criterios objetivos. Los tribunales no pueden variar sus resoluciones tras firmarlas, pero sí aclarar conceptos oscuros y rectificar errores materiales; los errores materiales manifiestos y aritméticos pueden rectificarse en cualquier momento."
+    },
+    {
+      "titulo": "Las resoluciones del Letrado de la Administración de Justicia",
+      "contenido": "El LAJ es fedatario público y depositario del poder de documentación. Sus actos se clasifican en actos de ordenación, de documentación, de mediación y comunicación, y de conservación y custodia. Como actos de ordenación dicta diligencias de ordenación, que dan a los autos el curso que la ley establezca (son nulas de pleno derecho las que decidan cuestiones reservadas a providencia, auto o sentencia); contra las diligencias de ordenación y decretos no definitivos cabe recurso de reposición ante el propio LAJ, salvo que la ley prevea recurso directo de revisión. También dicta decretos cuando se admita a trámite la demanda, cuando ponga término a un procedimiento de su competencia exclusiva o cuando sea preciso razonar lo resuelto; los decretos serán siempre motivados. Como actos de documentación se materializan en actas (constancia de un acto o hecho con trascendencia procesal), diligencias (de constancia, de ordenación, de comunicación y de ejecución) y notas (de referencia, de resumen de autos y de examen de trámite; estas últimas corresponden hoy al Cuerpo de Gestión Procesal y Administrativa, art. 476 d LOPJ). Es responsable del Archivo Judicial de Gestión y de la llevanza de los libros de registro."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Clases de resoluciones judiciales",
+      "codigo": "graph TD\n  R[Resoluciones del organo judicial] --> J[Del juez o tribunal]\n  R --> L[Del LAJ]\n  J --> JU[Jurisdiccionales]\n  J --> GU[Gubernativas: acuerdos]\n  JU --> P[Providencias]\n  JU --> A[Autos motivados art. 208 LEC]\n  JU --> S[Sentencias: ponen fin al proceso]\n  L --> D[Diligencias de ordenacion]\n  L --> DE[Decretos motivados]"
+    },
+    {
+      "tipo": "mermaid",
+      "titulo": "Numero de magistrados para dictar resoluciones",
+      "codigo": "graph TD\n  TS[Tribunal Supremo] --> TS1[Providencias: 2]\n  TS --> TS2[Autos: 3]\n  TS --> TS3[Sentencias: 7]\n  TSJ[TSJ y Audiencias] --> TSJ1[Providencias: 2]\n  TSJ --> TSJ2[Autos o sentencias: 3]\n  V[Votacion art. 253 LOPJ] --> V1[Vota primero el ponente]\n  V --> V2[Mayoria absoluta de votos]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      { "id": "root", "data": { "label": "Actos procesales: resoluciones judiciales" }, "position": { "x": 0, "y": 0 } },
+      { "id": "n1", "data": { "label": "Providencias (cuestiones procesales)" }, "position": { "x": -320, "y": -130 } },
+      { "id": "n2", "data": { "label": "Autos (motivados, art. 208 LEC)" }, "position": { "x": -320, "y": -30 } },
+      { "id": "n3", "data": { "label": "Sentencias (ponen fin al proceso)" }, "position": { "x": -320, "y": 70 } },
+      { "id": "n4", "data": { "label": "Estructura sentencia: encabezamiento, AH, FD, fallo" }, "position": { "x": -150, "y": 170 } },
+      { "id": "n5", "data": { "label": "Firmeza y cosa juzgada (art. 245.3 LOPJ)" }, "position": { "x": 150, "y": 170 } },
+      { "id": "n6", "data": { "label": "Ejecutoria: documento de sentencia firme" }, "position": { "x": 320, "y": -130 } },
+      { "id": "n7", "data": { "label": "Acuerdos (resoluciones gubernativas)" }, "position": { "x": 320, "y": -30 } },
+      { "id": "n8", "data": { "label": "Organos colegiados: voto particular" }, "position": { "x": 320, "y": 70 } },
+      { "id": "n9", "data": { "label": "Magistrados: TS 2/3/7; TSJ 2/3" }, "position": { "x": 0, "y": -190 } },
+      { "id": "n10", "data": { "label": "Especialidades penales (LECR arts. 141 y ss.)" }, "position": { "x": 0, "y": 250 } },
+      { "id": "n11", "data": { "label": "LAJ: diligencias de ordenacion y decretos" }, "position": { "x": -320, "y": 250 } },
+      { "id": "n12", "data": { "label": "Actas, diligencias y notas; libro de sentencias" }, "position": { "x": 320, "y": 250 } }
+    ],
+    "aristas": [
+      { "id": "e1", "source": "root", "target": "n1" },
+      { "id": "e2", "source": "root", "target": "n2" },
+      { "id": "e3", "source": "root", "target": "n3" },
+      { "id": "e4", "source": "n3", "target": "n4" },
+      { "id": "e5", "source": "n3", "target": "n5" },
+      { "id": "e6", "source": "root", "target": "n6" },
+      { "id": "e7", "source": "root", "target": "n7" },
+      { "id": "e8", "source": "n7", "target": "n8" },
+      { "id": "e9", "source": "root", "target": "n9" },
+      { "id": "e10", "source": "root", "target": "n10" },
+      { "id": "e11", "source": "root", "target": "n11" },
+      { "id": "e12", "source": "n11", "target": "n12" }
+    ]
+  },
+  "flashcards": [
+    { "id": "t26-f01", "pregunta": "¿Qué clases de resoluciones jurisdiccionales dicta el juez o tribunal?", "respuesta": "Providencias, autos y sentencias." },
+    { "id": "t26-f02", "pregunta": "¿Cuándo se dicta una providencia?", "respuesta": "Cuando la resolución se refiere a cuestiones procesales que requieren decisión judicial por establecerlo la ley y no se exige forma de auto." },
+    { "id": "t26-f03", "pregunta": "¿Qué contienen los autos según el art. 208 LEC?", "respuesta": "Serán siempre motivados, con antecedentes de hecho y fundamentos de derecho en párrafos separados y numerados y la parte dispositiva." },
+    { "id": "t26-f04", "pregunta": "¿Para qué se dictan las sentencias?", "respuesta": "Para poner fin al proceso en primera o segunda instancia y para resolver los recursos extraordinarios y la revisión de sentencias firmes." },
+    { "id": "t26-f05", "pregunta": "¿Cuáles son las partes de la fórmula de la sentencia?", "respuesta": "Encabezamiento, antecedentes de hecho, fundamentos de derecho y fallo." },
+    { "id": "t26-f06", "pregunta": "¿Qué es una sentencia firme?", "respuesta": "Aquella contra la que no cabe recurso alguno, salvo revisión y otros extraordinarios (art. 245.3 LOPJ)." },
+    { "id": "t26-f07", "pregunta": "¿Qué es la ejecutoria?", "respuesta": "El documento público y solemne en que se consigna una sentencia firme, encabezado en nombre del Rey." },
+    { "id": "t26-f08", "pregunta": "¿Qué son los acuerdos?", "respuesta": "Las resoluciones de carácter gubernativo de tribunales no constituidos en Sala, Salas de gobierno y jueces y presidentes, así como las correcciones disciplinarias." },
+    { "id": "t26-f09", "pregunta": "¿En qué orden votan los magistrados en un órgano colegiado?", "respuesta": "Primero el ponente y después los demás por orden inverso a su antigüedad; el que preside vota el último." },
+    { "id": "t26-f10", "pregunta": "¿Por qué mayoría se dictan los autos y sentencias en órganos colegiados?", "respuesta": "Por mayoría absoluta de votos, salvo que la ley exija mayor proporción." },
+    { "id": "t26-f11", "pregunta": "¿Qué es el voto particular?", "respuesta": "El que formula, en forma de sentencia, quien disiente de la mayoría; se incorpora al libro de sentencias y se notifica con la sentencia." },
+    { "id": "t26-f12", "pregunta": "¿Cuántos magistrados se necesitan en el Tribunal Supremo para dictar sentencias?", "respuesta": "Siete magistrados, salvo que la ley disponga otra cosa." },
+    { "id": "t26-f13", "pregunta": "¿Cuántos magistrados bastan para dictar una providencia en el Tribunal Supremo?", "respuesta": "Dos magistrados." },
+    { "id": "t26-f14", "pregunta": "¿Cuántos magistrados se necesitan en el TSJ y audiencias para dictar autos o sentencias?", "respuesta": "Tres magistrados." },
+    { "id": "t26-f15", "pregunta": "¿Quién determina el magistrado ponente en los tribunales colegiados?", "respuesta": "El Letrado de la Administración de Justicia, según el turno establecido al principio del año judicial sobre criterios objetivos." },
+    { "id": "t26-f16", "pregunta": "¿Pueden los tribunales variar sus resoluciones tras firmarlas?", "respuesta": "No, pero sí aclarar algún concepto oscuro y rectificar cualquier error material." },
+    { "id": "t26-f17", "pregunta": "¿Qué recurso cabe contra las diligencias de ordenación y decretos no definitivos?", "respuesta": "Recurso de reposición ante el LAJ que dictó la resolución, salvo que la ley prevea recurso directo de revisión." },
+    { "id": "t26-f18", "pregunta": "¿Cuándo dicta decreto el LAJ?", "respuesta": "Cuando se admita a trámite la demanda, cuando ponga término a un procedimiento de su competencia exclusiva o cuando sea preciso razonar lo resuelto." },
+    { "id": "t26-f19", "pregunta": "¿En qué se materializan los actos de documentación del LAJ?", "respuesta": "En actas, diligencias y notas." },
+    { "id": "t26-f20", "pregunta": "¿A quién corresponde hoy extender las notas?", "respuesta": "Al Cuerpo de Gestión Procesal y Administrativa (art. 476 d LOPJ)." }
+  ],
+  "preguntas": [
+    { "id": "t26-q01", "enunciado": "La resolución que decide la nulidad del procedimiento adoptará la forma de:", "opciones": ["Providencia", "Auto", "Acuerdo"], "correcta": 1, "explicacion": "La nulidad de actuaciones se resuelve mediante auto.", "explicaciones": ["La providencia se reserva a cuestiones procesales menores.", "Correcto: la nulidad o validez de actuaciones reviste forma de auto.", "El acuerdo es una resolución gubernativa, no jurisdiccional."] },
+    { "id": "t26-q02", "enunciado": "Los procedimientos para la revisión de sentencias firmes se resuelven mediante:", "opciones": ["Sentencia", "Auto", "Providencia"], "correcta": 0, "explicacion": "La revisión de sentencias firmes se resuelve mediante sentencia.", "explicaciones": ["Correcto: se resuelve por sentencia.", "El auto no decide la revisión de sentencias firmes.", "La providencia no es la forma adecuada."] },
+    { "id": "t26-q03", "enunciado": "Las providencias incluirán una sucinta motivación:", "opciones": ["Cuando el tribunal lo estime conveniente o lo disponga la ley", "En todo caso", "Solo cuando lo solicite la parte"], "correcta": 0, "explicacion": "Llevan sucinta motivación cuando lo disponga la ley o lo estime conveniente quien las dicta.", "explicaciones": ["Correcto: cuando lo disponga la ley o lo estime conveniente el tribunal.", "No se motivan en todo caso.", "No depende de la solicitud de la parte."] },
+    { "id": "t26-q04", "enunciado": "El documento público y solemne en que se consigna una sentencia firme se denomina:", "opciones": ["Acuerdo", "Ejecutoria", "Decreto"], "correcta": 1, "explicacion": "La ejecutoria consigna la sentencia firme y se encabeza en nombre del Rey.", "explicaciones": ["El acuerdo es una resolución gubernativa.", "Correcto: la ejecutoria.", "El decreto es una resolución del LAJ."] },
+    { "id": "t26-q05", "enunciado": "En un órgano colegiado, ¿quién vota primero?", "opciones": ["El presidente", "El ponente", "El magistrado más antiguo"], "correcta": 1, "explicacion": "Vota primero el ponente; el que preside vota el último.", "explicaciones": ["El presidente vota el último.", "Correcto: vota primero el ponente.", "Los demás votan por orden inverso a su antigüedad."] },
+    { "id": "t26-q06", "enunciado": "Los autos y sentencias en los órganos colegiados se dictan por:", "opciones": ["Mayoría simple", "Mayoría absoluta de votos", "Unanimidad"], "correcta": 1, "explicacion": "Se dictan por mayoría absoluta de votos, salvo mayor proporción legal.", "explicaciones": ["No basta la mayoría simple.", "Correcto: mayoría absoluta de votos.", "No se exige unanimidad."] },
+    { "id": "t26-q07", "enunciado": "En el proceso penal, el número de magistrados para dictar una providencia en el Tribunal Supremo es de:", "opciones": ["Siete", "Tres", "Dos"], "correcta": 2, "explicacion": "Para providencias en el Tribunal Supremo bastan dos magistrados.", "explicaciones": ["Siete se exigen para sentencias.", "Tres se exigen para autos.", "Correcto: dos magistrados para providencias."] },
+    { "id": "t26-q08", "enunciado": "En el TSJ y las audiencias, para dictar autos o sentencias son necesarios:", "opciones": ["Dos magistrados", "Tres magistrados", "Cinco magistrados"], "correcta": 1, "explicacion": "Se necesitan tres magistrados para autos o sentencias.", "explicaciones": ["Dos bastan solo para providencias.", "Correcto: tres magistrados.", "No se exigen cinco."] },
+    { "id": "t26-q09", "enunciado": "El recurso que decida sobre una providencia se resolverá por medio de:", "opciones": ["Sentencia", "Auto", "Providencia"], "correcta": 1, "explicacion": "Los recursos contra providencias se deciden mediante auto.", "explicaciones": ["No se resuelve por sentencia.", "Correcto: mediante auto.", "No se resuelve por otra providencia."] },
+    { "id": "t26-q10", "enunciado": "¿A quién corresponde extender en los autos certificación literal de las sentencias?", "opciones": ["Al Letrado de la Administración de Justicia", "Al juez o presidente", "Al servicio de publicaciones"], "correcta": 0, "explicacion": "El LAJ pone en los autos certificación literal de las sentencias y demás resoluciones definitivas.", "explicaciones": ["Correcto: corresponde al LAJ.", "No corresponde al juez o presidente.", "No existe tal servicio de publicaciones."] },
+    { "id": "t26-q11", "enunciado": "Las diligencias del LAJ que dan a los autos el curso legal son:", "opciones": ["Diligencias de ordenación", "Diligencias de constancia", "Notas de referencia"], "correcta": 0, "explicacion": "Las diligencias de ordenación tienen por objeto dar a los autos el curso que la ley establezca.", "explicaciones": ["Correcto: las diligencias de ordenación.", "Las de constancia dejan constancia de hechos.", "Las notas de referencia remiten a otra actuación."] },
+    { "id": "t26-q12", "enunciado": "Son sentencias firmes en el proceso penal cuando no cabe recurso, salvo:", "opciones": ["Apelación", "Revisión y rehabilitación", "Reposición"], "correcta": 1, "explicacion": "Son firmes cuando no quepa recurso ordinario ni extraordinario, salvo los de revisión y rehabilitación.", "explicaciones": ["La apelación es un recurso ordinario.", "Correcto: salvo revisión y rehabilitación.", "La reposición no es excepción a la firmeza."] },
+    { "id": "t26-q13", "enunciado": "El voto particular se formula:", "opciones": ["En forma de sentencia", "Verbalmente sin constancia", "Solo por el presidente"], "correcta": 0, "explicacion": "El disidente puede formular voto particular en forma de sentencia.", "explicaciones": ["Correcto: en forma de sentencia.", "No es verbal ni sin constancia.", "Puede formularlo cualquier magistrado disidente."] },
+    { "id": "t26-q14", "enunciado": "Los errores materiales manifiestos y aritméticos de las resoluciones:", "opciones": ["No pueden corregirse", "Podrán rectificarse en cualquier momento", "Solo se corrigen en casación"], "correcta": 1, "explicacion": "Los errores materiales manifiestos y aritméticos pueden rectificarse en cualquier momento.", "explicaciones": ["Sí pueden corregirse.", "Correcto: en cualquier momento.", "No requieren llegar a casación."] },
+    { "id": "t26-q15", "enunciado": "¿Cuándo dicta decreto el LAJ?", "opciones": ["Al admitir a trámite la demanda", "Para resolver la nulidad de actuaciones", "Para imponer una pena"], "correcta": 0, "explicacion": "El LAJ dicta decreto al admitir a trámite la demanda, al terminar un procedimiento de su competencia o al razonar lo resuelto.", "explicaciones": ["Correcto: al admitir a trámite la demanda.", "La nulidad la decide el tribunal por auto.", "La imposición de penas corresponde al tribunal por sentencia."] }
+  ]
+}

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { calcularPuntuacionTest } from '../../services/progress'
+import { ReviewOption } from './Shared'
 
 export interface PreguntaTest {
   id: string
@@ -7,6 +8,7 @@ export interface PreguntaTest {
   opciones: string[]
   respuestaCorrecta: number
   explicacion: string
+  explicaciones?: string[]
 }
 
 interface Props {
@@ -48,12 +50,26 @@ export function MotorTest({ preguntas, titulo, onTerminar }: Props) {
           <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {aciertos} aciertos · ❌ {errores} errores</div>
         </div>
         {preguntas.map((p, i) => {
-          const ok = respuestas[i] === p.respuestaCorrecta
+          const elegida = respuestas[i]
+          const ok = elegida === p.respuestaCorrecta
           return (
-            <div key={p.id} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16, borderLeft: `3px solid ${ok ? 'var(--accent)' : 'var(--warn)'}` }}>
-              <p style={{ margin: 0, fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>{p.enunciado}</p>
-              <p style={{ margin: '6px 0 0', fontSize: 12, color: 'var(--accent)' }}>Correcta: {p.opciones[p.respuestaCorrecta]}</p>
-              <p style={{ margin: '4px 0 0', fontSize: 12, color: 'var(--mute)', fontStyle: 'italic' }}>{p.explicacion}</p>
+            <div key={p.id} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16, borderLeft: `3px solid ${elegida === null ? 'var(--border)' : ok ? 'var(--accent)' : 'var(--warn)'}` }}>
+              <p style={{ margin: '0 0 10px', fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>{p.enunciado}</p>
+              {p.opciones.map((op, j) => {
+                const esCorr = j === p.respuestaCorrecta
+                const esEleg = j === elegida
+                const detalle = p.explicaciones?.[j] ?? (esCorr ? p.explicacion : '')
+                return (
+                  <ReviewOption
+                    key={j}
+                    opcion={op}
+                    index={j}
+                    esCorrecta={esCorr}
+                    esElegida={esEleg}
+                    detalle={detalle}
+                  />
+                )
+              })}
             </div>
           )
         })}

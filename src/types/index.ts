@@ -57,6 +57,9 @@ export interface Pregunta {
   correcta?: number
   respuestaCorrecta?: number
   explicacion: string
+  // Opcional: razonamiento por cada opción (mismo orden que `opciones`).
+  // Si falta, la UI usa la explicación global en la opción correcta.
+  explicaciones?: string[]
 }
 
 // Helpers de normalización entre ambos formatos
@@ -135,9 +138,13 @@ export interface Progreso {
   rendimientoPorTema: Record<string, RendimientoTema>
 }
 
+export type EstadoAcceso = 'activo' | 'sin-oposicion' | 'expirado'
+
 export interface Perfil {
   id: string
   email: string
   oposiciones: string[]
   created_at: string
+  rol?: 'owner' | 'beta' | 'trial'
+  trial_start?: string | null
 }

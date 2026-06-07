@@ -4,21 +4,28 @@ import * as cgpc from '../data/supuestos/cgpc/index'
 import * as pl from '../data/supuestos/policia-local/index'
 import { MotorTest, type PreguntaTest } from '../components/test/MotorTest'
 
-const MODULOS: Record<string, { cargarSupuesto: (id: string) => Promise<any> }> = {
-  'cgpc': cgpc,
-  'policia-local': pl,
+type SupuestoVista = { titulo: string; caso: string; preguntas: PreguntaTest[] }
+
+const MODULOS: Record<string, { cargarSupuesto: (id: string) => Promise<SupuestoVista | null> }> = {
+  'cgpc': cgpc as unknown as { cargarSupuesto: (id: string) => Promise<SupuestoVista | null> },
+  'policia-local': pl as unknown as { cargarSupuesto: (id: string) => Promise<SupuestoVista | null> },
 }
 
 export default function SupuestoDetalle() {
   const navigate = useNavigate()
   const { slug, id } = useParams<{ slug: string; id: string }>()
-  const [supuesto, setSupuesto] = useState<{ titulo: string; caso: string; preguntas: PreguntaTest[] } | null>(null)
+  const [supuesto, setSupuesto] = useState<SupuestoVista | null>(null)
   const [cargado, setCargado] = useState(false)
 
   useEffect(() => {
-    const modulo = MODULOS[slug ?? 'cgpc']
-    if (!modulo || !id) { setCargado(true); return }
-    modulo.cargarSupuesto(id).then(s => { setSupuesto(s); setCargado(true) })
+    let cancel = false
+    ;(async () => {
+      const modulo = MODULOS[slug ?? 'cgpc']
+      if (!modulo || !id) { if (!cancel) setCargado(true); return }
+      const s = await modulo.cargarSupuesto(id)
+      if (!cancel) { setSupuesto(s); setCargado(true) }
+    })()
+    return () => { cancel = true }
   }, [slug, id])
 
   useEffect(() => {

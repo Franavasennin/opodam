@@ -1,5 +1,5 @@
 import type { Progreso } from '../types'
-import { getProgreso, saveProgreso } from './storage'
+import { getProgreso, saveProgreso, getActiveSlug } from './storage'
 import { cargarProgresoRemoto, guardarProgresoRemoto, obtenerUsuario } from './supabase'
 
 export function mergeProgreso(local: Progreso, remoto: Progreso): Progreso {
@@ -58,13 +58,15 @@ export function mergeProgreso(local: Progreso, remoto: Progreso): Progreso {
 export async function sincronizar(): Promise<void> {
   const usuario = await obtenerUsuario()
   if (!usuario) return
+  // El progreso se guarda por oposición (slug), no mezclado en una sola fila.
+  const slug   = getActiveSlug()
   const local  = getProgreso()
-  const remoto = await cargarProgresoRemoto()
+  const remoto = await cargarProgresoRemoto(slug)
   if (!remoto) {
-    await guardarProgresoRemoto(local)
+    await guardarProgresoRemoto(slug, local)
     return
   }
   const merged = mergeProgreso(local, remoto)
   saveProgreso(merged)
-  await guardarProgresoRemoto(merged)
+  await guardarProgresoRemoto(slug, merged)
 }

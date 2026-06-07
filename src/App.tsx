@@ -1,9 +1,8 @@
 import { useEffect, Suspense, lazy } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { RutaProtegida } from './components/layout/RutaProtegida'
+import { RutaProtegida, RutaConSesion } from './components/layout/RutaProtegida'
 import { sincronizar } from './services/sync'
 import { migrarProgresoLegado } from './services/storage'
-import { iniciarSesionAnonima } from './services/supabase'
 
 // Auth callback (magic link)
 import AuthCallback from './pages/auth/AuthCallback'
@@ -22,10 +21,9 @@ function RootOrCallback() {
 }
 
 // Onboarding (no protegidas)
-// AUTH DESACTIVADO — reactivar mas adelante:
-// import OnboardingEmail from './pages/onboarding/OnboardingEmail'
-// import OnboardingConfirmar from './pages/onboarding/OnboardingConfirmar'
-// import OnboardingOposicion from './pages/onboarding/OnboardingOposicion'
+import OnboardingEmail from './pages/onboarding/OnboardingEmail'
+import OnboardingConfirmar from './pages/onboarding/OnboardingConfirmar'
+import OnboardingOposicion from './pages/onboarding/OnboardingOposicion'
 
 // Páginas de la app (protegidas)
 import MisOposiciones from './pages/MisOposiciones'
@@ -65,14 +63,10 @@ migrarProgresoLegado()
 
 export default function App() {
   useEffect(() => {
-    iniciarSesionAnonima()
-      .then(({ error }) => { if (!error) return sincronizar() })
-      .catch(() => { /* sin conexión, ignorar */ })
+    sincronizar().catch(() => { /* sin conexión, ignorar */ })
     const onVisible = () => {
       if (document.visibilityState !== 'visible') return
-      iniciarSesionAnonima()
-        .then(({ error }) => { if (!error) return sincronizar() })
-        .catch(() => {})
+      sincronizar().catch(() => {})
     }
     document.addEventListener('visibilitychange', onVisible)
     return () => document.removeEventListener('visibilitychange', onVisible)
@@ -85,12 +79,12 @@ export default function App() {
         <Routes>
         {/* Auth callback — destino del magic link */}
         <Route path="/auth/callback" element={<AuthCallback />} />
-
-        {/* AUTH DESACTIVADO — reactivar mas adelante.
-            Rutas de onboarding y AuthCallback conservadas pero sin montar. */}
+        <Route path="/onboarding/email" element={<OnboardingEmail />} />
+        <Route path="/onboarding/confirmar" element={<OnboardingConfirmar />} />
+        <Route path="/onboarding/oposicion" element={<OnboardingOposicion />} />
 
         {/* App protegida */}
-        <Route path="/mis-oposiciones" element={<RutaProtegida><MisOposiciones /></RutaProtegida>} />
+        <Route path="/mis-oposiciones" element={<RutaConSesion><MisOposiciones /></RutaConSesion>} />
         <Route path="/oposicion/:slug" element={<RutaProtegida><OposicionDashboard /></RutaProtegida>} />
         <Route path="/oposicion/:slug/temario" element={<RutaProtegida><Temario /></RutaProtegida>} />
         <Route path="/oposicion/:slug/temario/:id" element={<RutaProtegida><TemaDetalle /></RutaProtegida>} />

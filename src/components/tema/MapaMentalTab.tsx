@@ -3,7 +3,7 @@ import type { Node, Edge } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
 import type { Tema } from '../../types'
 
-interface Props { tema: Tema }
+interface Props { tema: Tema; onSeleccion?: (label: string) => void }
 
 // ── Normalización de ambos formatos de nodo ──────────────────────────────────
 // Formato A (correcto): { id, data: { label }, position: { x, y } }
@@ -160,7 +160,7 @@ function nodeStyle(isRoot: boolean): React.CSSProperties {
   }
 }
 
-export function MapaMentalTab({ tema }: Props) {
+export function MapaMentalTab({ tema, onSeleccion }: Props) {
   const rawNodos = tema.mapaMental?.nodos ?? []
   const rawAristas = tema.mapaMental?.aristas ?? []
 
@@ -169,23 +169,37 @@ export function MapaMentalTab({ tema }: Props) {
   }
 
   const { nodes, edges } = buildLayout(rawNodos, rawAristas)
+  if (onSeleccion) {
+    for (const n of nodes) n.style = { ...(n.style as React.CSSProperties), cursor: 'pointer' }
+  }
 
   return (
-    <div style={{ height: 500, border: '1px solid var(--border)' }} className="rounded-xl overflow-hidden">
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        fitView
-        fitViewOptions={{ padding: 0.2 }}
-        attributionPosition="bottom-left"
-        nodesDraggable={false}
-        nodesConnectable={false}
-        elementsSelectable={false}
-      >
-        <Background />
-        <Controls showInteractive={false} />
-        <MiniMap zoomable pannable />
-      </ReactFlow>
+    <div>
+      {onSeleccion && (
+        <p style={{ fontSize: 12, color: 'var(--mute)', margin: '0 0 8px', textAlign: 'center' }}>
+          💡 Toca un concepto para ir a esa parte de la teoría
+        </p>
+      )}
+      <div style={{ height: 500, border: '1px solid var(--border)' }} className="rounded-xl overflow-hidden">
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
+          fitView
+          fitViewOptions={{ padding: 0.2 }}
+          attributionPosition="bottom-left"
+          nodesDraggable={false}
+          nodesConnectable={false}
+          elementsSelectable={false}
+          onNodeClick={(_, node) => {
+            const label = (node.data as { label?: string })?.label
+            if (label && onSeleccion) onSeleccion(label)
+          }}
+        >
+          <Background />
+          <Controls showInteractive={false} />
+          <MiniMap zoomable pannable />
+        </ReactFlow>
+      </div>
     </div>
   )
 }
