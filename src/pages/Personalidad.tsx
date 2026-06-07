@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { cargarCuestionario, puntuar, interpretacion, type ResultadoRasgo } from '../data/personalidad/index'
+import { supabase } from '../services/supabase'
+import { obtenerPerfil, guardarPerfil } from '../services/psicologico'
 
 const ESCALA = [1, 2, 3, 4, 5]
 
@@ -21,6 +23,36 @@ export default function Personalidad() {
 
   function elegir(id: string, valor: number) {
     setRespuestas(prev => ({ ...prev, [id]: valor }))
+  }
+
+  async function verResultado() {
+    const resultado = puntuar(respuestas)
+    setResultado(resultado)
+    // Guardar en Supabase si hay sesión
+    if (!supabase || !slug) return
+    try {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) return
+      // Mapeo rasgo → BigFive aproximado
+      const get = (rasgo: string) => resultado.find(r => r.rasgo === rasgo)?.puntuacion ?? 50
+      const bigFive = {
+        O: get('sociabilidad'),        // Apertura ≈ sociabilidad/curiosidad
+        C: get('responsabilidad'),     // Conscientiousness
+        E: get('sociabilidad'),        // Extraversión
+        A: get('trabajo_equipo'),      // Amabilidad
+        N: 100 - get('estabilidad'),   // Neuroticismo = inverso estabilidad
+      }
+      const perfilActual = await obtenerPerfil(user.id, slug) ?? {}
+      await guardarPerfil(user.id, slug, {
+        ...perfilActual,
+        personalidad: {
+          completado: true,
+          bigFive,
+          sesgoDeseabilidad: 0, // sin escala de deseabilidad en este cuestionario
+          fecha: new Date().toISOString().slice(0, 10),
+        },
+      })
+    } catch { /* sin conexión — resultado local igual se muestra */ }
   }
 
   // ── Resultado ──
@@ -79,7 +111,7 @@ export default function Personalidad() {
             <div className="flex justify-between" style={{ fontSize: 10, color: 'var(--mute)', marginTop: 8 }}><span>En desacuerdo</span><span>De acuerdo</span></div>
           </div>
         ))}
-        <button onClick={() => setResultado(puntuar(respuestas))} disabled={completos < total}
+        <button onClick={verResultado} disabled={completos < total}
           className="btn-editorial btn-acc" style={{ width: '100%', opacity: completos < total ? 0.4 : 1 }}>
           Ver resultado
         </button>

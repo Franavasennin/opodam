@@ -52,6 +52,7 @@ const Entrevista = lazy(() => import('./pages/Entrevista'))
 const Personalidad = lazy(() => import('./pages/Personalidad'))
 const TutorGlobal = lazy(() => import('./pages/TutorGlobal'))
 const InformeIdoneidad = lazy(() => import('./pages/InformeIdoneidad'))
+const Biodata = lazy(() => import('./pages/Biodata'))
 
 const Loading = () => (
   <div className="min-h-screen flex items-center justify-center bg-slate-50">
@@ -103,6 +104,7 @@ export default function App() {
         <Route path="/oposicion/:slug/personalidad" element={<RutaProtegida><Personalidad /></RutaProtegida>} />
         <Route path="/oposicion/:slug/tutor" element={<RutaProtegida><TutorGlobal /></RutaProtegida>} />
         <Route path="/oposicion/:slug/informe-psicologico" element={<RutaProtegida><InformeIdoneidad /></RutaProtegida>} />
+        <Route path="/oposicion/:slug/biodata" element={<RutaProtegida><Biodata /></RutaProtegida>} />
 
         <Route path="/procoach" element={<ProCoachAI />} />
         <Route path="/procoach/chat" element={<ProCoachChat />} />

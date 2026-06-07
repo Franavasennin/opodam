@@ -18,6 +18,7 @@ const MENU = [
   { icon: '📋', label: 'Supuestos prácticos', sub: 'Casos tipo examen', path: 'supuestos' },
   { icon: '🎤', label: 'Entrevista', sub: 'Entrena la entrevista personal', path: 'entrevista' },
   { icon: '🧩', label: 'Test de personalidad', sub: 'Conoce tu perfil', path: 'personalidad' },
+  { icon: '📝', label: 'Biodata', sub: 'Cuestionario de perfil personal', path: 'biodata', soloSlug: 'guardia-civil' },
   { icon: '🗂️', label: 'Informe psicológico', sub: 'Veredicto de idoneidad', path: 'informe-psicologico', soloSlug: 'guardia-civil' },
   { icon: '📊', label: 'Estadísticas', sub: 'Ver mi progreso', path: 'estadisticas' },
 ]
