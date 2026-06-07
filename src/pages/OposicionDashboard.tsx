@@ -7,6 +7,8 @@ import { CuentaAtras } from '../components/ui/CuentaAtras'
 import { obtenerPerfil, tieneAccesoOposicion } from '../services/supabase'
 import { BannerTrial } from '../components/ui/BannerTrial'
 import { BannerPaywall } from '../components/promo/BannerPaywall'
+import { BienvenidaGuiada } from '../components/ui/BienvenidaGuiada'
+import { pedirPermiso, comprobarRacha } from '../services/notificaciones'
 import type { Perfil } from '../types'
 
 const MENU = [
@@ -40,6 +42,15 @@ export default function OposicionDashboard() {
   useEffect(() => {
     if (slug) tieneAccesoOposicion(slug).then(setAcceso)
   }, [slug])
+
+  useEffect(() => {
+    // Pedir permiso de notificación de forma diferida (no bloquea UI)
+    const t = setTimeout(() => {
+      pedirPermiso().then(ok => { if (ok) comprobarRacha(progreso.racha?.dias ?? 0) })
+    }, 3000)
+    return () => clearTimeout(t)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const [perfil, setPerfil] = useState<Perfil | null>(null)
   useEffect(() => { obtenerPerfil().then(setPerfil) }, [])
@@ -111,6 +122,7 @@ export default function OposicionDashboard() {
             </div>
           )}
 
+          <BienvenidaGuiada esNuevo={estudiados === 0 && aciertosMedia === 0} />
           <div className="eyebrow" style={{ margin: '22px 4px 10px' }}>Tu preparación</div>
           <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingBottom: 32 }}>
             {MENU.filter(item => !(oposicion.ocultar ?? []).includes(item.path) && (!item.soloSlug || item.soloSlug === slug)).map(item => (

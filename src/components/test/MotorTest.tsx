@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { calcularPuntuacionTest } from '../../services/progress'
 import { ReviewOption } from './Shared'
+import { registrarEstudio } from '../../services/notificaciones'
 
 export interface PreguntaTest {
   id: string
@@ -36,6 +37,7 @@ export function MotorTest({ preguntas, titulo, onTerminar }: Props) {
   }
 
   function finalizar() {
+    registrarEstudio()
     setTerminado(true)
     onTerminar?.({ aciertos, errores, total: preguntas.length })
   }

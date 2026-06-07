@@ -9,6 +9,7 @@ import AuthCallback from './pages/auth/AuthCallback'
 
 // Si Supabase redirige al root con token de auth (PKCE: ?code= / Implicit: #access_token=),
 // renderizamos AuthCallback antes de que Navigate borre el parámetro.
+// Si no hay token, mostramos la landing page pública.
 function RootOrCallback() {
   if (typeof window !== 'undefined') {
     const hash   = window.location.hash
@@ -17,8 +18,11 @@ function RootOrCallback() {
       return <AuthCallback />
     }
   }
-  return <Navigate to="/mis-oposiciones" replace />
+  return <Landing />
 }
+
+// Landing pública
+import Landing from './pages/Landing'
 
 // Onboarding (no protegidas)
 import OnboardingEmail from './pages/onboarding/OnboardingEmail'
