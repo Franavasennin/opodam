@@ -21,9 +21,9 @@ const CONFIG = {
 
 const LETRAS = ['A', 'B', 'C', 'D', 'E', 'F']
 
-import { TestTopbar, ReviewOption, topbarStyle } from '../components/test/Shared'
+import { TestTopbar, ReviewOption } from '../components/test/Shared'
 
-const topbar = topbarStyle
+
 
 export function Examen() {
   const { slug } = useParams<{ slug: string }>()

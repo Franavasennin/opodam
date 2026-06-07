@@ -36,9 +36,9 @@ export function TeoriaTab({ tema, onTeoriaLeida, irASeccion }: Props) {
     const el = document.getElementById(`seccion-${i}`)
     if (!el) return
     el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    setResaltada(i)
-    const t = setTimeout(() => setResaltada(null), 1600)
-    return () => clearTimeout(t)
+    const t1 = setTimeout(() => setResaltada(i), 0)
+    const t2 = setTimeout(() => setResaltada(null), 1600)
+    return () => { clearTimeout(t1); clearTimeout(t2) }
   }, [irASeccion])
 
   // Detener la lectura al desmontar o cambiar de tema.

@@ -20,7 +20,7 @@ export function Dashboard() {
     if (permiso === 'granted' && progreso.notificaciones.activas) {
       programarRecordatorio(progreso.notificaciones.hora)
     }
-  }, [permiso, progreso.notificaciones])
+  }, [permiso, progreso.notificaciones, programarRecordatorio])
 
   const todosIds = TEMAS_META.map(t => t.id)
   const vueltaActual = contarVueltasGlobal(progreso.temas, TOTAL_TEMAS)

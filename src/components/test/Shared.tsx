@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const topbarStyle: React.CSSProperties = {
+const topbarStyle: React.CSSProperties = {
   height: 52, borderBottom: '1px solid var(--border-soft)',
   background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
 }

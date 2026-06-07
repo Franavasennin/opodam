@@ -35,7 +35,7 @@ function parsearLegal(limpio: string): BloqueTeoria[] {
   return partes.map((parte): BloqueTeoria => {
     const art = parte.match(RE_ARTICULO)
     if (art) return { tipo: 'articulo', etiqueta: `Artículo ${art[2]}`, texto: parte.slice(art[0].length).trim() }
-    if (/^BIBLIOGRAF[IÍ]A/i.test(parte)) return { tipo: 'biblio', texto: parte.replace(/^BIBLIOGRAF[IÍ]A\s*[•:.\-]?\s*/i, '').trim() }
+    if (/^BIBLIOGRAF[IÍ]A/i.test(parte)) return { tipo: 'biblio', texto: parte.replace(/^BIBLIOGRAF[IÍ]A\s*[•:.-]?\s*/i, '').trim() }
     if (RE_ESTRUCTURA.test(parte) && parte.length <= 110) return { tipo: 'estructura', texto: parte }
     return { tipo: 'parrafo', texto: parte }
   })

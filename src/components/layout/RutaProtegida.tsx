@@ -31,6 +31,10 @@ export function RutaProtegida({ children }: { children: React.ReactNode }) {
     return () => { activo = false }
   }, [])
 
+  useEffect(() => {
+    if (fase === 'externo') window.location.href = URL_EXPIRACION
+  }, [fase])
+
   if (fase === 'cargando') {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg)' }}>
@@ -40,7 +44,7 @@ export function RutaProtegida({ children }: { children: React.ReactNode }) {
   }
   if (fase === 'onboarding') return <Navigate to="/onboarding/email" replace />
   if (fase === 'interno')    return <Navigate to="/mis-oposiciones" replace />
-  if (fase === 'externo')    { window.location.href = URL_EXPIRACION; return null }
+  if (fase === 'externo') return null
   return <>{children}</>
 }
 

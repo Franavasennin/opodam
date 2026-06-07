@@ -51,6 +51,7 @@ export const OPOSICIONES: Oposicion[] = [
     disponible: true,
     color: '#7c3aed',
     numTemas: 29,
+    ocultar: ['psicotecnicos', 'entrevista', 'personalidad'],
   },
   {
     slug: 'tramitacion-judicial',
@@ -59,5 +60,6 @@ export const OPOSICIONES: Oposicion[] = [
     disponible: true,
     color: '#b45309',
     numTemas: 31,
+    ocultar: ['psicotecnicos', 'entrevista', 'personalidad'],
   },
 ]

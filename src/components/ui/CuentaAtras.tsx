@@ -26,7 +26,7 @@ export function CuentaAtras({ slug }: Props) {
 
   useEffect(() => {
     let vivo = true
-    setCargando(true)
+    setTimeout(() => { if (vivo) setCargando(true) }, 0)
     obtenerConvocatoria(slug).then(c => { if (vivo) { setConv(c); setCargando(false) } })
     return () => { vivo = false }
   }, [slug])

@@ -18,6 +18,7 @@ const MENU = [
   { icon: '📋', label: 'Supuestos prácticos', sub: 'Casos tipo examen', path: 'supuestos' },
   { icon: '🎤', label: 'Entrevista', sub: 'Entrena la entrevista personal', path: 'entrevista' },
   { icon: '🧩', label: 'Test de personalidad', sub: 'Conoce tu perfil', path: 'personalidad' },
+  { icon: '🗂️', label: 'Informe psicológico', sub: 'Veredicto de idoneidad', path: 'informe-psicologico', soloSlug: 'guardia-civil' },
   { icon: '📊', label: 'Estadísticas', sub: 'Ver mi progreso', path: 'estadisticas' },
 ]
 
@@ -111,7 +112,7 @@ export default function OposicionDashboard() {
 
           <div className="eyebrow" style={{ margin: '22px 4px 10px' }}>Tu preparación</div>
           <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingBottom: 32 }}>
-            {MENU.filter(item => !(oposicion.ocultar ?? []).includes(item.path)).map(item => (
+            {MENU.filter(item => !(oposicion.ocultar ?? []).includes(item.path) && (!item.soloSlug || item.soloSlug === slug)).map(item => (
               <button key={item.path} onClick={() => ir(item.path)} className="card"
                 style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16 }}>
                 <span style={{ width: 44, height: 44, borderRadius: 12, background: 'var(--surface-2)', border: '1px solid var(--border-soft)', fontSize: 20, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.icon}</span>
@@ -190,8 +191,17 @@ export default function OposicionDashboard() {
 
             <button onClick={() => navigate('/procoach')} className="card" style={{ textAlign: 'left', cursor: 'pointer', background: 'var(--accent-soft)', border: 0, borderRadius: 22, padding: 22 }}>
               <div className="eyebrow" style={{ color: 'var(--accent)', marginBottom: 10 }}>ProCoach sugiere</div>
-              <div className="display" style={{ fontSize: 22, lineHeight: 1.15, color: 'var(--accent)' }}>Entrena la entrevista esta semana.</div>
-              <p style={{ marginTop: 10, fontSize: 12.5, color: 'var(--accent)', opacity: 0.85 }}>Practica con feedback y consejos para el tribunal.</p>
+              {(oposicion.ocultar ?? []).includes('entrevista') ? (
+                <>
+                  <div className="display" style={{ fontSize: 22, lineHeight: 1.15, color: 'var(--accent)' }}>Repasa tus temas flojos.</div>
+                  <p style={{ marginTop: 10, fontSize: 12.5, color: 'var(--accent)', opacity: 0.85 }}>Resuelve dudas con el tutor inteligente.</p>
+                </>
+              ) : (
+                <>
+                  <div className="display" style={{ fontSize: 22, lineHeight: 1.15, color: 'var(--accent)' }}>Entrena la entrevista esta semana.</div>
+                  <p style={{ marginTop: 10, fontSize: 12.5, color: 'var(--accent)', opacity: 0.85 }}>Practica con feedback y consejos para el tribunal.</p>
+                </>
+              )}
               <span className="btn-editorial btn-acc" style={{ height: 38, marginTop: 14 }}>Empezar</span>
             </button>
           </div>
