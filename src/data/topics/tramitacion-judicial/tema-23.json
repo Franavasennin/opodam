@@ -1,0 +1,109 @@
+{
+  "id": 23,
+  "titulo": "Los procedimientos laborales. El proceso ordinario ante la jurisdicción social. Procedimientos especiales y recursos",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "El proceso laboral: regulación y ámbito",
+      "contenido": "El proceso laboral se rige por la Ley 36/2011, de 10 de octubre, reguladora de la Jurisdicción Social (LRJS), que derogó el Texto Refundido de la Ley de Procedimiento Laboral (RD Legislativo 2/1995) y fue modificada, entre otras, por la Ley 3/2012 de reforma del mercado laboral. Los órganos del orden jurisdiccional social conocen (art. 2 LRJS) de las cuestiones litigiosas que se promueven entre empresarios y trabajadores como consecuencia del contrato de trabajo; de las acciones por daños derivados de accidentes de trabajo y enfermedades profesionales; de los litigios de los trabajadores autónomos económicamente dependientes; de la tutela de los derechos de libertad sindical, huelga y demás derechos fundamentales con conexión con la prestación de servicios; de los conflictos colectivos y la impugnación de convenios; de la materia electoral sindical; de la constitución y régimen de sindicatos y asociaciones empresariales; y, muy especialmente, de las prestaciones de Seguridad Social (incluidas desempleo y dependencia). Quedan excluidas las cuestiones atribuidas a otros órdenes, como las penales o las contencioso-administrativas ajenas a la materia social."
+    },
+    {
+      "titulo": "Principios, capacidad procesal y representación",
+      "contenido": "El proceso laboral se inspira en los principios de oralidad, inmediación, concentración y celeridad, junto con la gratuidad para el trabajador y el beneficiario de la Seguridad Social. Tienen capacidad procesal los que se encuentren en el pleno ejercicio de sus derechos civiles; además, tienen capacidad para comparecer los trabajadores mayores de 16 y menores de 18 años respecto de los derechos e intereses derivados de los contratos de trabajo y de la relación de Seguridad Social cuando legalmente no precisen autorización de sus padres o tutores para su celebración. Las partes pueden comparecer por sí mismas o conferir su representación a abogado, procurador, graduado social colegiado o a cualquier persona que se encuentre en pleno ejercicio de sus derechos civiles. La defensa por abogado es facultativa en la instancia (debe anunciarse para que la otra parte pueda valerse también de ella) y preceptiva en los recursos de suplicación y casación. Los sindicatos pueden actuar en defensa de los derechos e intereses de sus afiliados."
+    },
+    {
+      "titulo": "Actos previos: conciliación o mediación y reclamación administrativa previa",
+      "contenido": "Con carácter general es requisito previo para la tramitación del proceso el intento de conciliación o, en su caso, de mediación ante el servicio administrativo correspondiente (SMAC) o ante los órganos que asuman estas funciones. La solicitud de conciliación interrumpe los plazos de prescripción y suspende los de caducidad (el cómputo se reanuda al día siguiente de intentada la conciliación o transcurridos quince días desde su presentación sin celebrarse). Quedan exceptuados de la conciliación previa, entre otros, los procesos de Seguridad Social, los de disfrute de vacaciones, los de materia electoral, los de conflictos colectivos, los de impugnación de convenios y los de tutela de derechos fundamentales. Cuando se demanda al Estado u otras Administraciones públicas, el requisito previo es la reclamación administrativa previa o el agotamiento de la vía administrativa en los términos legalmente previstos. Lo acordado en conciliación tiene fuerza ejecutiva entre las partes sin necesidad de ratificación."
+    },
+    {
+      "titulo": "El procedimiento ordinario: demanda, juicio, prueba y sentencia",
+      "contenido": "El procedimiento ordinario se inicia por demanda, que debe contener la designación del órgano, los datos de las partes, una enumeración clara y concreta de los hechos, la súplica y la fecha y firma. Si la demanda presenta defectos, el secretario (Letrado de la Administración de Justicia) advierte para su subsanación en el plazo de cuatro días. Admitida la demanda, se cita a las partes para los actos de conciliación y juicio, que se celebran en única convocatoria pero en sucesivos actos: primero la conciliación ante el Letrado de la Administración de Justicia y, de no avenirse, el juicio ante el juez. En el juicio el demandante ratifica o amplía la demanda, el demandado contesta, y se practican las pruebas admitidas (interrogatorio de las partes, testigos, pericial, documental), formulándose después conclusiones. De lo actuado se extiende acta. La sentencia se dicta en el plazo de cinco días; es susceptible o no de recurso según la cuantía y la materia, y debe pronunciarse sobre todas las pretensiones."
+    },
+    {
+      "titulo": "Procedimientos especiales y sistema de recursos",
+      "contenido": "Junto al ordinario, la LRJS regula procedimientos especiales por razón de la materia: despidos y sanciones, reclamaciones al Estado por salarios de tramitación, extinción del contrato por causas objetivas, despidos colectivos, vacaciones, materia electoral, clasificación profesional, movilidad geográfica y modificación de condiciones, conflictos colectivos, impugnación de convenios, impugnación de estatutos de los sindicatos y tutela de los derechos fundamentales y libertades públicas. En el despido, el plazo para accionar es de veinte días hábiles desde la fecha del despido (plazo de caducidad), y la sentencia calificará el despido como procedente, improcedente o nulo. En materia de prestaciones de Seguridad Social es preciso agotar la vía administrativa previa. El sistema de recursos comprende los recursos contra resoluciones interlocutorias (reposición y revisión), el recurso de suplicación ante la Sala de lo Social del Tribunal Superior de Justicia, y el recurso de casación —ordinario y para la unificación de doctrina— ante la Sala de lo Social del Tribunal Supremo."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Fases del proceso laboral ordinario",
+      "codigo": "graph TD\n  A[Conciliación/mediación previa - SMAC] --> B[Demanda]\n  B --> C[Admisión y subsanación (4 días)]\n  C --> D[Citación a conciliación y juicio]\n  D --> E[Conciliación ante el LAJ]\n  E --> F[Juicio: alegaciones, prueba y conclusiones]\n  F --> G[Sentencia (5 días)]\n  G --> H[Recursos: suplicación / casación]"
+    },
+    {
+      "tipo": "mermaid",
+      "titulo": "Sistema de recursos en el orden social",
+      "codigo": "graph TD\n  R[Resoluciones del Juzgado de lo Social] --> I[Interlocutorias: reposición y revisión]\n  R --> S[Suplicación ante la Sala de lo Social del TSJ]\n  S --> C1[Casación para unificación de doctrina ante el TS]\n  R2[Sentencias de la Audiencia Nacional / TSJ en instancia] --> C2[Casación ordinaria ante el TS]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [
+      { "id": "root", "data": { "label": "Los procedimientos laborales" }, "position": { "x": 0, "y": 0 } },
+      { "id": "n1", "data": { "label": "Ley 36/2011 reguladora de la Jurisdicción Social" }, "position": { "x": -320, "y": -130 } },
+      { "id": "n2", "data": { "label": "Ámbito: art. 2 LRJS (contrato, Seguridad Social...)" }, "position": { "x": -320, "y": -30 } },
+      { "id": "n3", "data": { "label": "Principios: oralidad, inmediación, concentración, celeridad" }, "position": { "x": -320, "y": 70 } },
+      { "id": "n4", "data": { "label": "Capacidad: trabajadores de 16-18 años" }, "position": { "x": -150, "y": 160 } },
+      { "id": "n5", "data": { "label": "Conciliación previa (SMAC)" }, "position": { "x": 150, "y": 160 } },
+      { "id": "n6", "data": { "label": "Reclamación previa frente a las AAPP" }, "position": { "x": 320, "y": -130 } },
+      { "id": "n7", "data": { "label": "Demanda y subsanación (4 días)" }, "position": { "x": 320, "y": -30 } },
+      { "id": "n8", "data": { "label": "Conciliación y juicio en única convocatoria" }, "position": { "x": 320, "y": 70 } },
+      { "id": "n9", "data": { "label": "Sentencia en 5 días" }, "position": { "x": 0, "y": -190 } },
+      { "id": "n10", "data": { "label": "Despido: 20 días hábiles de caducidad" }, "position": { "x": 0, "y": 240 } },
+      { "id": "n11", "data": { "label": "Procedimientos especiales por la materia" }, "position": { "x": -300, "y": 240 } },
+      { "id": "n12", "data": { "label": "Recursos: suplicación (TSJ) y casación (TS)" }, "position": { "x": 300, "y": 240 } }
+    ],
+    "aristas": [
+      { "id": "e1", "source": "root", "target": "n1" },
+      { "id": "e2", "source": "root", "target": "n2" },
+      { "id": "e3", "source": "root", "target": "n3" },
+      { "id": "e4", "source": "n3", "target": "n4" },
+      { "id": "e5", "source": "root", "target": "n5" },
+      { "id": "e6", "source": "n5", "target": "n6" },
+      { "id": "e7", "source": "root", "target": "n7" },
+      { "id": "e8", "source": "n7", "target": "n8" },
+      { "id": "e9", "source": "n8", "target": "n9" },
+      { "id": "e10", "source": "root", "target": "n10" },
+      { "id": "e11", "source": "n10", "target": "n11" },
+      { "id": "e12", "source": "root", "target": "n12" }
+    ]
+  },
+  "flashcards": [
+    { "id": "t23-f01", "pregunta": "¿Qué norma rige el proceso laboral?", "respuesta": "La Ley 36/2011, de 10 de octubre, reguladora de la Jurisdicción Social (LRJS)." },
+    { "id": "t23-f02", "pregunta": "¿Qué texto derogó la LRJS?", "respuesta": "El Texto Refundido de la Ley de Procedimiento Laboral (RD Legislativo 2/1995)." },
+    { "id": "t23-f03", "pregunta": "¿Qué artículo delimita el ámbito del orden social?", "respuesta": "El artículo 2 de la LRJS." },
+    { "id": "t23-f04", "pregunta": "Cita cuatro principios del proceso laboral.", "respuesta": "Oralidad, inmediación, concentración y celeridad (además de gratuidad para el trabajador)." },
+    { "id": "t23-f05", "pregunta": "¿A partir de qué edad puede comparecer el trabajador por sí mismo?", "respuesta": "Los mayores de 16 y menores de 18 años respecto de los derechos del contrato y de Seguridad Social cuando no precisen autorización." },
+    { "id": "t23-f06", "pregunta": "¿Quiénes pueden ostentar la representación de las partes?", "respuesta": "Abogado, procurador, graduado social colegiado o persona en pleno ejercicio de sus derechos civiles." },
+    { "id": "t23-f07", "pregunta": "¿Cuándo es preceptiva la defensa de abogado?", "respuesta": "En los recursos de suplicación y casación (en la instancia es facultativa)." },
+    { "id": "t23-f08", "pregunta": "¿Cuál es el requisito previo general al proceso laboral?", "respuesta": "El intento de conciliación o mediación ante el servicio administrativo (SMAC)." },
+    { "id": "t23-f09", "pregunta": "¿Qué efecto tiene la solicitud de conciliación sobre los plazos?", "respuesta": "Interrumpe la prescripción y suspende la caducidad." },
+    { "id": "t23-f10", "pregunta": "Cita dos procesos exceptuados de la conciliación previa.", "respuesta": "Los de Seguridad Social y los de conflictos colectivos (también vacaciones, materia electoral, tutela de derechos fundamentales...)." },
+    { "id": "t23-f11", "pregunta": "¿Qué requisito previo se exige al demandar a una Administración pública?", "respuesta": "La reclamación administrativa previa o el agotamiento de la vía administrativa." },
+    { "id": "t23-f12", "pregunta": "¿En qué plazo se subsana una demanda defectuosa?", "respuesta": "En cuatro días, a requerimiento del Letrado de la Administración de Justicia." },
+    { "id": "t23-f13", "pregunta": "¿Cómo se celebran la conciliación y el juicio?", "respuesta": "En única convocatoria, pero en actos sucesivos: primero conciliación ante el LAJ y, sin avenencia, juicio ante el juez." },
+    { "id": "t23-f14", "pregunta": "¿En qué plazo se dicta la sentencia en el proceso ordinario?", "respuesta": "En el plazo de cinco días." },
+    { "id": "t23-f15", "pregunta": "¿Cuál es el plazo para accionar por despido?", "respuesta": "Veinte días hábiles desde el despido (plazo de caducidad)." },
+    { "id": "t23-f16", "pregunta": "¿Cómo puede calificarse un despido en sentencia?", "respuesta": "Procedente, improcedente o nulo." },
+    { "id": "t23-f17", "pregunta": "Cita tres procedimientos especiales de la LRJS.", "respuesta": "Despidos y sanciones, conflictos colectivos y tutela de derechos fundamentales (entre otros)." },
+    { "id": "t23-f18", "pregunta": "¿Ante qué órgano se interpone el recurso de suplicación?", "respuesta": "Ante la Sala de lo Social del Tribunal Superior de Justicia." },
+    { "id": "t23-f19", "pregunta": "¿Ante qué órgano se interpone la casación?", "respuesta": "Ante la Sala de lo Social del Tribunal Supremo." },
+    { "id": "t23-f20", "pregunta": "¿Qué modalidades de casación existen en el orden social?", "respuesta": "La casación ordinaria y la casación para la unificación de doctrina." }
+  ],
+  "preguntas": [
+    { "id": "t23-q01", "enunciado": "El proceso laboral se rige por:", "opciones": ["La Ley 36/2011 reguladora de la Jurisdicción Social", "La Ley de Enjuiciamiento Civil exclusivamente", "El Estatuto de los Trabajadores"], "correcta": 0, "explicacion": "La norma procesal del orden social es la LRJS (Ley 36/2011).", "explicaciones": ["Correcto: la Ley 36/2011 reguladora de la Jurisdicción Social.", "La LEC es supletoria, no la norma rectora del proceso social.", "El Estatuto de los Trabajadores es norma sustantiva, no procesal."] },
+    { "id": "t23-q02", "enunciado": "¿Qué norma derogó la LRJS?", "opciones": ["El Estatuto de los Trabajadores", "El Texto Refundido de la Ley de Procedimiento Laboral (RD Leg. 2/1995)", "La Ley de Enjuiciamiento Civil"], "correcta": 1, "explicacion": "La LRJS derogó el TRLPL de 1995.", "explicaciones": ["El Estatuto de los Trabajadores no fue derogado por la LRJS.", "Correcto: derogó el Texto Refundido de la Ley de Procedimiento Laboral.", "La LEC sigue vigente como supletoria."] },
+    { "id": "t23-q03", "enunciado": "El ámbito del orden jurisdiccional social se delimita en:", "opciones": ["El artículo 1 de la Constitución", "El artículo 2 de la LRJS", "El artículo 24 de la Constitución"], "correcta": 1, "explicacion": "El art. 2 LRJS enumera las materias del orden social.", "explicaciones": ["El art. 1 CE define el Estado, no el orden social.", "Correcto: el artículo 2 de la LRJS.", "El art. 24 CE consagra la tutela judicial efectiva, no el ámbito social."] },
+    { "id": "t23-q04", "enunciado": "Es un principio del proceso laboral:", "opciones": ["La escritura como regla general", "La oralidad", "El doble grado obligatorio"], "correcta": 1, "explicacion": "El proceso laboral es predominantemente oral.", "explicaciones": ["La escritura no es la regla: predomina la oralidad.", "Correcto: la oralidad, junto con inmediación, concentración y celeridad.", "No existe un doble grado obligatorio en todos los casos."] },
+    { "id": "t23-q05", "enunciado": "Un trabajador de 16 años con contrato:", "opciones": ["No tiene ninguna capacidad procesal", "Puede comparecer respecto de los derechos de su contrato y de Seguridad Social", "Necesita siempre autorización judicial"], "correcta": 1, "explicacion": "Los mayores de 16 y menores de 18 pueden comparecer respecto de esos derechos cuando no precisen autorización.", "explicaciones": ["Sí tiene capacidad en el ámbito de su contrato.", "Correcto: puede comparecer respecto de los derechos derivados del contrato y de la Seguridad Social.", "No requiere autorización judicial para ello."] },
+    { "id": "t23-q06", "enunciado": "La defensa de abogado en el proceso laboral es preceptiva:", "opciones": ["Siempre, desde la demanda", "En los recursos de suplicación y casación", "Nunca"], "correcta": 1, "explicacion": "En la instancia es facultativa; es preceptiva en suplicación y casación.", "explicaciones": ["En la instancia es facultativa, no obligatoria.", "Correcto: es preceptiva en suplicación y casación.", "Sí es preceptiva en los recursos."] },
+    { "id": "t23-q07", "enunciado": "El intento de conciliación previa se realiza, con carácter general, ante:", "opciones": ["El Juzgado de lo Social", "El servicio administrativo de conciliación-mediación (SMAC)", "La Inspección de Trabajo"], "correcta": 1, "explicacion": "Es un trámite previo ante el SMAC u órgano que asuma esa función.", "explicaciones": ["El Juzgado conoce del juicio, no de la conciliación previa.", "Correcto: ante el servicio administrativo de conciliación-mediación.", "La Inspección de Trabajo no realiza la conciliación previa al proceso."] },
+    { "id": "t23-q08", "enunciado": "La solicitud de conciliación previa:", "opciones": ["No afecta a los plazos", "Interrumpe la prescripción y suspende la caducidad", "Solo interrumpe la caducidad"], "correcta": 1, "explicacion": "Interrumpe la prescripción y suspende la caducidad.", "explicaciones": ["Sí afecta a los plazos.", "Correcto: interrumpe la prescripción y suspende la caducidad.", "Afecta a ambos plazos, no solo a la caducidad."] },
+    { "id": "t23-q09", "enunciado": "Está exceptuado de la conciliación previa el proceso de:", "opciones": ["Reclamación de cantidad ordinaria", "Seguridad Social", "Despido disciplinario"], "correcta": 1, "explicacion": "Los procesos de Seguridad Social están exceptuados (requieren reclamación administrativa previa).", "explicaciones": ["La reclamación de cantidad sí requiere conciliación previa.", "Correcto: los de Seguridad Social están exceptuados de la conciliación.", "El despido requiere conciliación previa (salvo frente a AAPP)."] },
+    { "id": "t23-q10", "enunciado": "Una demanda con defectos se subsana en el plazo de:", "opciones": ["Cuatro días", "Diez días", "Veinte días"], "correcta": 0, "explicacion": "El LAJ advierte para subsanar en cuatro días.", "explicaciones": ["Correcto: cuatro días.", "Diez días no es el plazo de subsanación de la demanda social.", "Veinte días es el plazo de caducidad del despido, no de subsanación."] },
+    { "id": "t23-q11", "enunciado": "La conciliación y el juicio en el proceso ordinario:", "opciones": ["Se celebran en días distintos", "Se celebran en única convocatoria", "Se celebran solo si lo pide el demandado"], "correcta": 1, "explicacion": "Se celebran en única convocatoria, en actos sucesivos.", "explicaciones": ["No se celebran en días distintos por regla general.", "Correcto: en única convocatoria (conciliación y, sin avenencia, juicio).", "No dependen de que lo pida el demandado."] },
+    { "id": "t23-q12", "enunciado": "La sentencia en el proceso ordinario se dicta en el plazo de:", "opciones": ["Cinco días", "Veinte días", "Un mes"], "correcta": 0, "explicacion": "El plazo para dictar sentencia es de cinco días.", "explicaciones": ["Correcto: cinco días.", "Veinte días es el plazo de caducidad del despido.", "Un mes no es el plazo legal para la sentencia social ordinaria."] },
+    { "id": "t23-q13", "enunciado": "El plazo para reclamar contra un despido es de:", "opciones": ["Veinte días hábiles", "Un año", "Treinta días naturales"], "correcta": 0, "explicacion": "El plazo de caducidad de la acción de despido es de 20 días hábiles.", "explicaciones": ["Correcto: veinte días hábiles desde el despido.", "Un año es el plazo de prescripción de otras acciones, no del despido.", "No son treinta días naturales."] },
+    { "id": "t23-q14", "enunciado": "El recurso de suplicación se interpone ante:", "opciones": ["La Sala de lo Social del Tribunal Superior de Justicia", "El Tribunal Constitucional", "La Audiencia Provincial"], "correcta": 0, "explicacion": "La suplicación se resuelve por la Sala de lo Social del TSJ.", "explicaciones": ["Correcto: la Sala de lo Social del Tribunal Superior de Justicia.", "El Tribunal Constitucional no conoce de la suplicación.", "La Audiencia Provincial pertenece al orden civil/penal, no al social."] },
+    { "id": "t23-q15", "enunciado": "En el orden social existe la casación:", "opciones": ["Únicamente ordinaria", "Ordinaria y para la unificación de doctrina", "No existe casación social"], "correcta": 1, "explicacion": "Caben la casación ordinaria y la casación para la unificación de doctrina ante el TS.", "explicaciones": ["No es solo ordinaria: también existe la de unificación de doctrina.", "Correcto: casación ordinaria y para la unificación de doctrina.", "Sí existe casación en el orden social, ante la Sala de lo Social del TS."] }
+  ]
+}

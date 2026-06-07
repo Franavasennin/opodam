@@ -21,10 +21,9 @@ const CONFIG = {
 
 const LETRAS = ['A', 'B', 'C', 'D', 'E', 'F']
 
-const topbar: React.CSSProperties = {
-  height: 52, borderBottom: '1px solid var(--border-soft)',
-  background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
-}
+import { TestTopbar, ReviewOption, topbarStyle } from '../components/test/Shared'
+
+const topbar = topbarStyle
 
 export function Examen() {
   const { slug } = useParams<{ slug: string }>()
@@ -109,9 +108,7 @@ export function Examen() {
   if (fase === 'inicio') {
     return (
       <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
-        <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-          <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Examen oficial</span>
-        </header>
+        <TestTopbar title="Examen oficial" />
         <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <div>
             <div className="eyebrow" style={{ marginBottom: 10 }}>Examen evaluado</div>
@@ -166,11 +163,15 @@ export function Examen() {
     const enBlanco = preguntas.filter(q => respuestas[q.id] === null).length
     return (
       <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
-        <header className="sticky top-0 z-10 flex items-center justify-between px-4" style={topbar}>
-          <span className="num-display" style={{ fontSize: 13.5, color: 'var(--ink-soft)' }}>{indice + 1}/{preguntas.length}</span>
-          <span className="num-display" style={{ fontWeight: 600, fontSize: 15, color: tiempo < 300 ? 'var(--warn)' : 'var(--accent)' }}>⏱ {mins}:{segs}</span>
-          <button onClick={() => setFase('confirmacion')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--mute)', fontSize: 12, textDecoration: 'underline' }}>Entregar</button>
-        </header>
+        <TestTopbar 
+          title={<span className="num-display" style={{ fontSize: 13.5, color: 'var(--ink-soft)' }}>{indice + 1}/{preguntas.length}</span>}
+          rightContent={
+            <div className="flex items-center gap-4">
+              <span className="num-display" style={{ fontWeight: 600, fontSize: 15, color: tiempo < 300 ? 'var(--warn)' : 'var(--accent)' }}>⏱ {mins}:{segs}</span>
+              <button onClick={() => setFase('confirmacion')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--mute)', fontSize: 12, textDecoration: 'underline' }}>Entregar</button>
+            </div>
+          }
+        />
         {fase === 'confirmacion' && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(0,0,0,0.45)' }}>
             <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, maxWidth: 340, width: '100%', textAlign: 'center', display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -241,9 +242,7 @@ export function Examen() {
       .slice(0, 3)
     return (
       <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
-        <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-          <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Resultado del examen</span>
-        </header>
+        <TestTopbar title="Resultado del examen" />
         <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, textAlign: 'center' }}>
             <div className="eyebrow" style={{ marginBottom: 6 }}>Nota</div>
@@ -277,10 +276,7 @@ export function Examen() {
   if (fase === 'revision' && resultado) {
     return (
       <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
-        <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-          <button onClick={() => setFase('resultados')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
-          <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Revisión</span>
-        </header>
+        <TestTopbar title="Revisión" onBack={() => setFase('resultados')} />
         <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {preguntas.map((p, i) => {
             const elegida  = resultado.respuestasUsuario[p.id]
@@ -293,16 +289,19 @@ export function Examen() {
                 {p.opciones.map((op, j) => {
                   const esCorr = j === correcta
                   const esEleg = j === elegida
+                  const detalle = p.explicaciones?.[j] ?? (esCorr ? p.explicacion : '')
                   return (
-                    <p key={j} style={{
-                      margin: '0 0 4px', fontSize: 12.5, padding: '5px 10px', borderRadius: 8,
-                      background: esCorr ? 'var(--accent-soft)' : esEleg ? 'var(--warn-soft)' : 'transparent',
-                      color: esCorr ? 'var(--accent)' : esEleg ? 'var(--warn)' : 'var(--ink-soft)',
-                      fontWeight: esCorr ? 600 : 400,
-                    }}>{esCorr ? '✅' : esEleg ? '❌' : '○'} {op}</p>
+                    <ReviewOption
+                      key={j}
+                      opcion={op}
+                      index={j}
+                      esCorrecta={esCorr}
+                      esElegida={esEleg}
+                      detalle={detalle}
+                    />
                   )
                 })}
-                <p style={{ margin: '6px 0 0', fontSize: 12, color: 'var(--mute)', fontStyle: 'italic' }}>{p.explicacion}</p>
+
               </div>
             )
           })}

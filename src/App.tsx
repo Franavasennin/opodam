@@ -22,10 +22,9 @@ function RootOrCallback() {
 }
 
 // Onboarding (no protegidas)
-// AUTH DESACTIVADO — reactivar mas adelante:
-// import OnboardingEmail from './pages/onboarding/OnboardingEmail'
-// import OnboardingConfirmar from './pages/onboarding/OnboardingConfirmar'
-// import OnboardingOposicion from './pages/onboarding/OnboardingOposicion'
+import OnboardingEmail from './pages/onboarding/OnboardingEmail'
+import OnboardingConfirmar from './pages/onboarding/OnboardingConfirmar'
+import OnboardingOposicion from './pages/onboarding/OnboardingOposicion'
 
 // Páginas de la app (protegidas)
 import MisOposiciones from './pages/MisOposiciones'
@@ -86,8 +85,10 @@ export default function App() {
         {/* Auth callback — destino del magic link */}
         <Route path="/auth/callback" element={<AuthCallback />} />
 
-        {/* AUTH DESACTIVADO — reactivar mas adelante.
-            Rutas de onboarding y AuthCallback conservadas pero sin montar. */}
+        {/* Onboarding (público) */}
+        <Route path="/onboarding/email" element={<OnboardingEmail />} />
+        <Route path="/onboarding/confirmar" element={<OnboardingConfirmar />} />
+        <Route path="/onboarding/oposicion" element={<OnboardingOposicion />} />
 
         {/* App protegida */}
         <Route path="/mis-oposiciones" element={<RutaProtegida><MisOposiciones /></RutaProtegida>} />

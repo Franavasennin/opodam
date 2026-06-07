@@ -1,21 +1,20 @@
-const { test } = require('node:test')
-const assert = require('node:assert')
-const { buildSystemPrompt, validarMensajes } = require('../functions/entrevista-chat.cjs')
+import { test, expect } from 'vitest'
+import { buildSystemPrompt, validarMensajes } from '../functions/entrevista-chat.cjs'
 
 test('buildSystemPrompt menciona el cuerpo y el modo practica', () => {
   const p = buildSystemPrompt({ cuerpo: 'cgpc', modo: 'practica' })
-  assert.match(p, /cgpc/i)
-  assert.match(p, /STAR/)
-  assert.match(p, /entrenador/i)
+  expect(p).toMatch(/cgpc/i)
+  expect(p).toMatch(/STAR/)
+  expect(p).toMatch(/entrenador/i)
 })
 
 test('buildSystemPrompt en modo examen pide feedback minimo', () => {
   const p = buildSystemPrompt({ cuerpo: 'policia-local', modo: 'examen' })
-  assert.match(p, /examen/i)
+  expect(p).toMatch(/examen/i)
 })
 
 test('validarMensajes acepta validos y rechaza invalidos', () => {
-  assert.strictEqual(validarMensajes([{ role: 'user', content: 'hola' }]), null)
-  assert.notStrictEqual(validarMensajes([]), null)
-  assert.notStrictEqual(validarMensajes([{ role: 'x', content: 'y' }]), null)
+  expect(validarMensajes([{ role: 'user', content: 'hola' }])).toBeNull()
+  expect(validarMensajes([])).not.toBeNull()
+  expect(validarMensajes([{ role: 'x', content: 'y' }])).not.toBeNull()
 })

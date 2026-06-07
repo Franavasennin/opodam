@@ -85,6 +85,46 @@ export async function obtenerPerfil(): Promise<Perfil | null> {
   return data as Perfil
 }
 
+// --- Suscripciones por oposición ---
+
+export async function tieneAccesoOposicion(slug: string): Promise<boolean> {
+  if (!supabase) return true // dev local sin .env: acceso libre
+  const { data: { session } } = await supabase.auth.getSession()
+  if (!session?.user) return false
+
+  const { data, error } = await supabase
+    .from('oposicion_subscriptions')
+    .select('status')
+    .eq('user_id', session.user.id)
+    .eq('oposicion_slug', slug)
+    .in('status', ['active', 'past_due'])
+    .maybeSingle()
+
+  if (error) {
+    console.error('[tieneAccesoOposicion]', error.message)
+    return false
+  }
+  return data != null
+}
+
+export async function iniciarCheckout(slug: string): Promise<void> {
+  if (!supabase) return
+  const { data: { session } } = await supabase.auth.getSession()
+  if (!session) return
+
+  const base = import.meta.env.VITE_FUNCTIONS_URL || '/.netlify/functions'
+  const res = await fetch(`${base}/stripe-checkout`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${session.access_token}`,
+    },
+    body: JSON.stringify({ oposicion_slug: slug }),
+  })
+  const json = await res.json()
+  if (json.url) window.location.href = json.url
+}
+
 export async function crearPerfil(oposiciones: string[]): Promise<{ error: string | null }> {
   if (!supabase) return { error: 'Supabase no configurado' }
   const { data: { session } } = await supabase.auth.getSession()

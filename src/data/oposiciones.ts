@@ -48,14 +48,16 @@ export const OPOSICIONES: Oposicion[] = [
     slug: 'aux-judicial',
     nombre: 'Auxiliar Judicial',
     descripcion: 'Administración de Justicia',
-    disponible: false,
+    disponible: true,
     color: '#7c3aed',
+    numTemas: 29,
   },
   {
     slug: 'tramitacion-judicial',
     nombre: 'Tramitación Judicial',
     descripcion: 'Administración de Justicia',
-    disponible: false,
+    disponible: true,
     color: '#b45309',
+    numTemas: 31,
   },
 ]

@@ -1,21 +1,14 @@
-const { test } = require('node:test')
-const assert = require('node:assert')
-const { buildSystemPrompt, normalizarFlashcard, normalizarPregunta } = require('../functions/tutor-chat.cjs')
+import { test, expect } from 'vitest'
+import { buildSystemPrompt, normalizarFlashcard, normalizarPregunta } from '../functions/tutor-chat.cjs'
 
 test('normalizarFlashcard soporta ambos formatos', () => {
-  assert.deepStrictEqual(
-    normalizarFlashcard({ anverso: 'a', reverso: 'b' }),
-    { front: 'a', back: 'b' }
-  )
-  assert.deepStrictEqual(
-    normalizarFlashcard({ pregunta: 'p', respuesta: 'r' }),
-    { front: 'p', back: 'r' }
-  )
+  expect(normalizarFlashcard({ anverso: 'a', reverso: 'b' })).toEqual({ front: 'a', back: 'b' })
+  expect(normalizarFlashcard({ pregunta: 'p', respuesta: 'r' })).toEqual({ front: 'p', back: 'r' })
 })
 
 test('normalizarPregunta resuelve la opción correcta en ambos formatos', () => {
-  assert.strictEqual(normalizarPregunta({ enunciado: 'e', opciones: ['x','y'], correcta: 1 }).correctaTexto, 'y')
-  assert.strictEqual(normalizarPregunta({ enunciado: 'e', opciones: ['x','y','z'], respuestaCorrecta: 2 }).correctaTexto, 'z')
+  expect(normalizarPregunta({ enunciado: 'e', opciones: ['x','y'], correcta: 1 }).correctaTexto).toBe('y')
+  expect(normalizarPregunta({ enunciado: 'e', opciones: ['x','y','z'], respuestaCorrecta: 2 }).correctaTexto).toBe('z')
 })
 
 test('buildSystemPrompt incluye el título, las secciones y la regla de aviso', () => {
@@ -25,7 +18,7 @@ test('buildSystemPrompt incluye el título, las secciones y la regla de aviso', 
     flashcards: [{ anverso: 'fa', reverso: 'fb' }],
     preguntas: [{ enunciado: 'pe', opciones: ['o1','o2'], correcta: 0 }],
   })
-  assert.match(prompt, /Tema Test/)
-  assert.match(prompt, /contenido uno/)
-  assert.match(prompt, /no aparece en el temario oficial/i)
+  expect(prompt).toMatch(/Tema Test/)
+  expect(prompt).toMatch(/contenido uno/)
+  expect(prompt).toMatch(/no aparece en el temario oficial/i)
 })
