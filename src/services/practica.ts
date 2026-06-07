@@ -11,6 +11,8 @@ export interface SupuestoGenerado {
   preguntas: PreguntaTest[]
 }
 
+// La respuesta del endpoint es dinámica (preguntas o supuesto); se castea en cada uso.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function post(body: unknown): Promise<{ data: any; error: string | null }> {
   try {
     const res = await fetch(ENDPOINT, {
@@ -36,4 +38,20 @@ export async function generarSupuesto(slug: string, contexto: string): Promise<{
   const { data, error } = await post({ tipo: 'supuesto', slug, contexto })
   if (error || !data) return { supuesto: null, error }
   return { supuesto: (data.supuesto as SupuestoGenerado) ?? null, error: null }
+}
+
+export interface FlashcardGenerada { pregunta: string; respuesta: string }
+
+export async function generarTestDuda(duda: string, contexto: string): Promise<{ preguntas: PreguntaTest[]; error: string | null }> {
+  const { data, error } = await post({ tipo: 'tutor-test', duda, contexto })
+  if (error || !data) return { preguntas: [], error }
+  const items = (data.preguntas as Omit<PreguntaTest, 'id'>[]) ?? []
+  const preguntas = items.map((q, i) => ({ ...q, id: `tutor-q${i}` }))
+  return { preguntas, error: null }
+}
+
+export async function generarFlashcardsDuda(duda: string, contexto: string): Promise<{ flashcards: FlashcardGenerada[]; error: string | null }> {
+  const { data, error } = await post({ tipo: 'tutor-flashcards', duda, contexto })
+  if (error || !data) return { flashcards: [], error }
+  return { flashcards: (data.flashcards as FlashcardGenerada[]) ?? [], error: null }
 }

@@ -4,8 +4,10 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../data/oposiciones'
 import { useProgress } from '../hooks/useProgress'
 import { CuentaAtras } from '../components/ui/CuentaAtras'
+import { obtenerPerfil, tieneAccesoOposicion } from '../services/supabase'
+import { BannerTrial } from '../components/ui/BannerTrial'
 import { BannerPaywall } from '../components/promo/BannerPaywall'
-import { tieneAccesoOposicion } from '../services/supabase'
+import type { Perfil } from '../types'
 
 const MENU = [
   { icon: '📚', label: 'Temario', sub: 'Estudia los temas', path: 'temario' },
@@ -37,6 +39,9 @@ export default function OposicionDashboard() {
     if (slug) tieneAccesoOposicion(slug).then(setAcceso)
   }, [slug])
 
+  const [perfil, setPerfil] = useState<Perfil | null>(null)
+  useEffect(() => { obtenerPerfil().then(setPerfil) }, [])
+
   if (!oposicion) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg)' }}>
@@ -67,6 +72,7 @@ export default function OposicionDashboard() {
 
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      {perfil && <BannerTrial trialStart={perfil.trial_start ?? null} rol={perfil.rol} />}
       {/* ════════ MÓVIL ════════ */}
       <div className="lg:hidden">
         <header

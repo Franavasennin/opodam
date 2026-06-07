@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import type { Progreso, Perfil } from '../types'
+import type { Progreso, Perfil, EstadoAcceso } from '../types'
 
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined
 const key = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
@@ -16,6 +16,15 @@ export async function enviarMagicLink(email: string): Promise<{ error: string | 
   const { error } = await supabase.auth.signInWithOtp({
     email,
     options: { emailRedirectTo: window.location.origin },
+  })
+  return { error: error?.message ?? null }
+}
+
+export async function iniciarSesionGoogle(): Promise<{ error: string | null }> {
+  if (!supabase) return { error: 'Supabase no configurado' }
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin },
   })
   return { error: error?.message ?? null }
 }
@@ -44,7 +53,7 @@ export async function obtenerUsuario() {
   return data?.session?.user ?? null
 }
 
-export async function cargarProgresoRemoto(): Promise<Progreso | null> {
+export async function cargarProgresoRemoto(slug: string): Promise<Progreso | null> {
   if (!supabase) return null
   const user = await obtenerUsuario()
   if (!user) return null
@@ -52,19 +61,21 @@ export async function cargarProgresoRemoto(): Promise<Progreso | null> {
     .from('progreso')
     .select('data')
     .eq('user_id', user.id)
+    .eq('slug', slug)
     .single()
   return (data?.data as Progreso) ?? null
 }
 
-export async function guardarProgresoRemoto(progreso: Progreso): Promise<void> {
+export async function guardarProgresoRemoto(slug: string, progreso: Progreso): Promise<void> {
   if (!supabase) return
   const user = await obtenerUsuario()
   if (!user) return
   await supabase.from('progreso').upsert({
     user_id:    user.id,
+    slug,
     data:       progreso,
     updated_at: new Date().toISOString(),
-  })
+  }, { onConflict: 'user_id,slug' })
 }
 
 // --- Perfil de usuario ---
@@ -139,4 +150,40 @@ export async function crearPerfil(oposiciones: string[]): Promise<{ error: strin
 
   if (error) console.error('[crearPerfil] Supabase error:', error)
   return { error: error ? error.message : null }
+}
+
+/**
+ * Estado de acceso calculado en el servidor (RPC).
+ * - error de red/RPC → fail-open 'activo' (no expulsamos por fallo transitorio).
+ * - data null (sin fila en profiles) → 'sin-oposicion' (aún no completó onboarding).
+ */
+export async function estadoAcceso(): Promise<EstadoAcceso> {
+  if (!supabase) return 'activo'
+  try {
+    const { data, error } = await supabase.rpc('estado_acceso')
+    if (error) return 'activo'
+    if (data == null) return 'sin-oposicion'
+    return data as EstadoAcceso
+  } catch {
+    return 'activo'
+  }
+}
+
+/** Marca el inicio del trial (now() del servidor) si aún no estaba marcado. */
+export async function activarTrial(): Promise<void> {
+  if (!supabase) return
+  const user = await obtenerUsuario()
+  if (!user) return
+  // Solo escribe si trial_start es null, para no reiniciar la cuenta atrás
+  const { data } = await supabase
+    .from('profiles')
+    .select('trial_start')
+    .eq('id', user.id)
+    .single()
+  if (data && data.trial_start == null) {
+    await supabase
+      .from('profiles')
+      .update({ trial_start: new Date().toISOString() })
+      .eq('id', user.id)
+  }
 }
