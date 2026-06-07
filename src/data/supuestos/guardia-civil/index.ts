@@ -13,19 +13,16 @@ export interface Supuesto {
 }
 
 export const SUPUESTOS_META = [
-  { id: 'sup-pl-01', titulo: 'Estacionamiento indebido y vía pública' },
-  { id: 'sup-pl-02', titulo: 'Identificación de persona sospechosa' },
-  { id: 'sup-pl-03', titulo: 'Intervención en altercado nocturno' },
-  { id: 'sup-pl-04', titulo: 'Vehículo mal estacionado bloqueando salida de emergencia' },
-  { id: 'sup-pl-05', titulo: 'Ruidos de local nocturno que supera los decibelios' },
-  { id: 'sup-pl-06', titulo: 'Accidente de tráfico urbano con herido leve' },
+  { id: 'sup-gc-01', titulo: 'Actuación ante infracción de tráfico grave: alcohol y velocidad' },
+  { id: 'sup-gc-02', titulo: 'Intervención ante violencia doméstica en zona rural' },
+  { id: 'sup-gc-03', titulo: 'Expediente disciplinario por filtración de información reservada' },
 ] as const
 
 export async function cargarSupuesto(id: string): Promise<Supuesto | null> {
   const meta = SUPUESTOS_META.find(s => s.id === id)
   if (!meta) return null
   try {
-    const fichero = id.replace('sup-pl-', 'supuesto-')
+    const fichero = id.replace('sup-gc-', 'supuesto-')
     const modulo = await import(`./${fichero}.json`)
     return modulo.default as Supuesto
   } catch {

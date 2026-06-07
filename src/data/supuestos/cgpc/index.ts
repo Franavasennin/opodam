@@ -14,6 +14,11 @@ export interface Supuesto {
 
 export const SUPUESTOS_META = [
   { id: 'sup-cgpc-01', titulo: 'Identificación en la vía pública' },
+  { id: 'sup-cgpc-02', titulo: 'Caso de vulneración de la intimidad y secreto' },
+  { id: 'sup-cgpc-03', titulo: 'Detención y derechos del detenido' },
+  { id: 'sup-cgpc-04', titulo: 'Manifestación no comunicada — protocolo de actuación' },
+  { id: 'sup-cgpc-05', titulo: 'Consumo de alcohol en vía pública' },
+  { id: 'sup-cgpc-06', titulo: 'Menor de 16 años sospechoso de hurto' },
 ] as const
 
 export async function cargarSupuesto(id: string): Promise<Supuesto | null> {

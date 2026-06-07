@@ -1,10 +1,16 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import * as cgpc from '../data/supuestos/cgpc/index'
 import * as pl from '../data/supuestos/policia-local/index'
+import * as gc from '../data/supuestos/guardia-civil/index'
+import * as aj from '../data/supuestos/aux-judicial/index'
+import * as tj from '../data/supuestos/tramitacion-judicial/index'
 
 const MODULOS: Record<string, { SUPUESTOS_META: readonly { id: string; titulo: string }[] }> = {
   'cgpc': cgpc,
   'policia-local': pl,
+  'guardia-civil': gc,
+  'aux-judicial': aj,
+  'tramitacion-judicial': tj,
 }
 
 export default function Supuestos() {

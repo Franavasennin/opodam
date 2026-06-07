@@ -2,13 +2,20 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import * as cgpc from '../data/supuestos/cgpc/index'
 import * as pl from '../data/supuestos/policia-local/index'
+import * as gc from '../data/supuestos/guardia-civil/index'
+import * as aj from '../data/supuestos/aux-judicial/index'
+import * as tj from '../data/supuestos/tramitacion-judicial/index'
 import { MotorTest, type PreguntaTest } from '../components/test/MotorTest'
 
 type SupuestoVista = { titulo: string; caso: string; preguntas: PreguntaTest[] }
+type ModuloSupuesto = { cargarSupuesto: (id: string) => Promise<SupuestoVista | null> }
 
-const MODULOS: Record<string, { cargarSupuesto: (id: string) => Promise<SupuestoVista | null> }> = {
-  'cgpc': cgpc as unknown as { cargarSupuesto: (id: string) => Promise<SupuestoVista | null> },
-  'policia-local': pl as unknown as { cargarSupuesto: (id: string) => Promise<SupuestoVista | null> },
+const MODULOS: Record<string, ModuloSupuesto> = {
+  'cgpc': cgpc as unknown as ModuloSupuesto,
+  'policia-local': pl as unknown as ModuloSupuesto,
+  'guardia-civil': gc as unknown as ModuloSupuesto,
+  'aux-judicial': aj as unknown as ModuloSupuesto,
+  'tramitacion-judicial': tj as unknown as ModuloSupuesto,
 }
 
 export default function SupuestoDetalle() {
