@@ -3,6 +3,19 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { CATEGORIAS, cargarCategoria } from '../data/psicotecnicos/index'
 import { MotorTest, type PreguntaTest } from '../components/test/MotorTest'
 import { generarPsicotecnicos } from '../services/practica'
+import { supabase } from '../services/supabase'
+import { obtenerPerfil, guardarPerfil } from '../services/psicologico'
+
+// Convierte % aciertos a percentil aproximado
+function pctToPercentil(pct: number): number {
+  if (pct >= 90) return 95
+  if (pct >= 80) return 80
+  if (pct >= 70) return 65
+  if (pct >= 60) return 50
+  if (pct >= 50) return 35
+  if (pct >= 40) return 20
+  return 10
+}
 
 export default function Psicotecnicos() {
   const navigate = useNavigate()
@@ -12,6 +25,30 @@ export default function Psicotecnicos() {
   const [preguntas, setPreguntas] = useState<PreguntaTest[]>([])
   const [cargando, setCargando] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [resultadosCat, setResultadosCat] = useState<Record<string, number>>({})
+
+  async function onTerminar(res: { aciertos: number; errores: number; total: number }) {
+    if (!catId || !supabase || !slug) return
+    const pct = res.total ? Math.round((res.aciertos / res.total) * 100) : 0
+    const nuevosResultados = { ...resultadosCat, [catId]: pct }
+    setResultadosCat(nuevosResultados)
+    try {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) return
+      const vals = Object.values(nuevosResultados)
+      const mediaGlobal = Math.round(vals.reduce((a, b) => a + b, 0) / vals.length)
+      const perfilActual = await obtenerPerfil(user.id, slug) ?? {}
+      await guardarPerfil(user.id, slug, {
+        ...perfilActual,
+        psicotecnicos: {
+          completado: vals.length >= CATEGORIAS.length,
+          resultados: nuevosResultados,
+          globalPercentil: pctToPercentil(mediaGlobal),
+          fecha: new Date().toISOString().slice(0, 10),
+        },
+      })
+    } catch { /* sin conexión — continúa sin guardar */ }
+  }
 
   async function abrir(id: string, label: string) {
     setCatId(id); setTitulo(label); setError(null)
@@ -57,7 +94,7 @@ export default function Psicotecnicos() {
         {catId && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div className="eyebrow">{titulo}</div>
-            <MotorTest preguntas={preguntas} titulo={titulo} />
+            <MotorTest preguntas={preguntas} titulo={titulo} onTerminar={onTerminar} />
             <button onClick={generarMas} disabled={cargando} className="btn-editorial btn-sec" style={{ width: '100%' }}>
               {cargando ? 'Generando…' : '+ Generar más preguntas'}
             </button>
