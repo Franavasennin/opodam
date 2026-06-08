@@ -47,6 +47,11 @@ export async function obtenerConvocatoria(slug: string): Promise<Convocatoria> {
         base.tituloBOE = data.convocatoria.titulo
         base.fechaPublicacion = data.convocatoria.fecha
         base.boletinUrl = data.convocatoria.url || base.boletinUrl
+        // Fecha del examen extraída automáticamente del documento (ISO YYYY-MM-DD).
+        // El JSON puede fijarla manualmente; la función solo la rellena si está vacía.
+        if (!base.fechaExamen && data.convocatoria.fechaExamen) {
+          base.fechaExamen = data.convocatoria.fechaExamen
+        }
       }
     }
   } catch { /* sin función / offline: usa el JSON base */ }
