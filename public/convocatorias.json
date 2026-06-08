@@ -1,5 +1,5 @@
 {
-  "_nota": "Estado de convocatoria por oposición. 'estado': activa | parada | sin-convocatoria. 'fechaExamen' en ISO YYYY-MM-DD o null. Guardia Civil se comprueba además en vivo contra el BOE.",
+  "_nota": "Estado base de convocatoria por oposición. La consulta en vivo la hace /.netlify/functions/boe (BOE) o /.netlify/functions/boc (BOC). 'estado': activa | parada | sin-convocatoria. 'fechaExamen' en ISO YYYY-MM-DD o null.",
   "guardia-civil": {
     "fuente": "BOE",
     "estado": "sin-convocatoria",
@@ -23,5 +23,17 @@
     "estado": "sin-convocatoria",
     "fechaExamen": null,
     "boletinUrl": "https://www.gobiernodecanarias.org/boc/"
+  },
+  "aux-judicial": {
+    "fuente": "BOE",
+    "estado": "sin-convocatoria",
+    "fechaExamen": null,
+    "boletinUrl": "https://www.boe.es/buscar/boe.php?campo%5B0%5D=TIT&dato%5B0%5D=auxilio+judicial"
+  },
+  "tramitacion-judicial": {
+    "fuente": "BOE",
+    "estado": "sin-convocatoria",
+    "fechaExamen": null,
+    "boletinUrl": "https://www.boe.es/buscar/boe.php?campo%5B0%5D=TIT&dato%5B0%5D=tramitaci%C3%B3n+procesal"
   }
 }

@@ -9,6 +9,8 @@ const LOTE = 10
 
 const CUERPOS = {
   'guardia-civil': { keywords: ['guardia civil'], verbos: ['convoca', 'pruebas selectivas', 'ingreso', 'proceso selectivo'] },
+  'aux-judicial': { keywords: ['auxilio judicial', 'auxiliar judicial'], verbos: ['convoca', 'pruebas selectivas', 'proceso selectivo'] },
+  'tramitacion-judicial': { keywords: ['tramitación procesal', 'tramitacion procesal'], verbos: ['convoca', 'pruebas selectivas', 'proceso selectivo'] },
 }
 
 function corsHeaders() {

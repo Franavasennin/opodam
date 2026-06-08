@@ -34,21 +34,22 @@ export async function obtenerConvocatoria(slug: string): Promise<Convocatoria> {
   const json = await cargarJson()
   const base: Convocatoria = { ...POR_DEFECTO, ...(json[slug] ?? {}) }
 
-  // Comprobación en vivo en el BOE (solo cuerpos estatales).
-  if (base.fuente === 'BOE') {
-    try {
-      const r = await fetch(`/.netlify/functions/boe?cuerpo=${encodeURIComponent(slug)}`)
-      if (r.ok) {
-        const data = await r.json()
-        if (data && data.convocatoria) {
-          base.estado = 'activa'
-          base.tituloBOE = data.convocatoria.titulo
-          base.fechaPublicacion = data.convocatoria.fecha
-          base.boletinUrl = data.convocatoria.url || base.boletinUrl
-        }
+  // Comprobación en vivo: BOE (estatales) o BOC (canarios).
+  const fnUrl = base.fuente === 'BOE'
+    ? `/.netlify/functions/boe?cuerpo=${encodeURIComponent(slug)}`
+    : `/.netlify/functions/boc?cuerpo=${encodeURIComponent(slug)}`
+  try {
+    const r = await fetch(fnUrl)
+    if (r.ok) {
+      const data = await r.json()
+      if (data && data.convocatoria) {
+        base.estado = 'activa'
+        base.tituloBOE = data.convocatoria.titulo
+        base.fechaPublicacion = data.convocatoria.fecha
+        base.boletinUrl = data.convocatoria.url || base.boletinUrl
       }
-    } catch { /* sin función / offline: usa el JSON base */ }
-  }
+    }
+  } catch { /* sin función / offline: usa el JSON base */ }
 
   return base
 }
