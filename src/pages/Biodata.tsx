@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { PREGUNTAS_BIODATA_GC } from '../data/psicologico/preguntas-biodata-gc'
+import { getPreguntasBiodata } from '../data/psicologico/preguntas-biodata-gc'
 import { supabase } from '../services/supabase'
 import { obtenerPerfil, guardarPerfil } from '../services/psicologico'
 
@@ -9,7 +9,11 @@ const topbar: React.CSSProperties = {
   background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
 }
 
-const SECCIONES = Array.from(new Set(PREGUNTAS_BIODATA_GC.map(p => p.seccion)))
+const NOMBRE_CUERPO: Record<string, string> = {
+  'guardia-civil': 'Guardia Civil',
+  'cgpc': 'Policía Canaria',
+  'policia-local': 'Policía Local',
+}
 
 export default function Biodata() {
   const navigate = useNavigate()
@@ -19,7 +23,9 @@ export default function Biodata() {
   const [guardado, setGuardado] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  const total = PREGUNTAS_BIODATA_GC.length
+  const preguntas = getPreguntasBiodata(slug ?? 'guardia-civil')
+  const SECCIONES = Array.from(new Set(preguntas.map(p => p.seccion)))
+  const total = preguntas.length
   const completos = Object.keys(respuestas).length
 
   function responder(clave: string, valor: string | number) {
@@ -52,7 +58,7 @@ export default function Biodata() {
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
         <button onClick={() => navigate(`/oposicion/${slug}`)}
           style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
-        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Biodata — Guardia Civil</span>
+        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Biodata — {NOMBRE_CUERPO[slug ?? ''] ?? 'Cuerpo policial'}</span>
         <span className="num-display" style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--mute)' }}>
           {completos}/{total}
         </span>
@@ -68,7 +74,7 @@ export default function Biodata() {
           <section key={sec}>
             <div className="eyebrow" style={{ marginBottom: 10 }}>{sec}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              {PREGUNTAS_BIODATA_GC.filter(p => p.seccion === sec).map(p => (
+              {preguntas.filter(p => p.seccion === sec).map(p => (
                 <div key={p.id} className="card"
                   style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '14px 16px' }}>
                   <p style={{ margin: '0 0 10px', fontSize: 13.5, color: 'var(--ink)', lineHeight: 1.4 }}>{p.pregunta}</p>

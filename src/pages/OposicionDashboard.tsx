@@ -20,7 +20,7 @@ const MENU = [
   { icon: '📋', label: 'Supuestos prácticos', sub: 'Casos tipo examen', path: 'supuestos' },
   { icon: '🎤', label: 'Entrevista', sub: 'Entrena la entrevista personal', path: 'entrevista' },
   { icon: '🧩', label: 'Test de personalidad', sub: 'Conoce tu perfil', path: 'personalidad' },
-  { icon: '📝', label: 'Biodata', sub: 'Cuestionario de perfil personal', path: 'biodata', soloSlugs: ['guardia-civil'] },
+  { icon: '📝', label: 'Biodata', sub: 'Cuestionario de perfil personal', path: 'biodata', soloSlugs: ['guardia-civil', 'cgpc', 'policia-local'] },
   { icon: '🗂️', label: 'Informe psicológico', sub: 'Veredicto de idoneidad', path: 'informe-psicologico', soloSlugs: ['guardia-civil', 'cgpc', 'policia-local'] },
   { icon: '📊', label: 'Estadísticas', sub: 'Ver mi progreso', path: 'estadisticas' },
 ]

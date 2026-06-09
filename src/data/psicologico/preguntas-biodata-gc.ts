@@ -1,5 +1,5 @@
-// Cuestionario Biodata — Guardia Civil
-// Solo disponible para oposicion_slug = 'guardia-civil'
+// Cuestionario Biodata — Cuerpos policiales
+// Disponible para: guardia-civil, cgpc, policia-local
 // Las respuestas se guardan en PerfilPsicologico.biodata.respuestas
 
 export type TipoCampo = 'numero' | 'select' | 'texto' | 'boolean'
@@ -13,6 +13,12 @@ export interface PreguntaBiodata {
   min?: number                // para tipo 'numero'
   max?: number
   clave: string               // key en el objeto respuestas
+}
+
+const NOMBRE_CUERPO_BIODATA: Record<string, string> = {
+  'guardia-civil': 'Guardia Civil',
+  'cgpc': 'Policía Canaria',
+  'policia-local': 'Policía Local',
 }
 
 export const PREGUNTAS_BIODATA_GC: PreguntaBiodata[] = [
@@ -66,11 +72,12 @@ export const PREGUNTAS_BIODATA_GC: PreguntaBiodata[] = [
     clave: 'voluntariado',
   },
 
-  // ── Motivación ─────────────────────────────────────────────────────
+  // ── Motivación — las preguntas bg-07 y bg-08 se inyectan con nombre del cuerpo
+  // (ver getPreguntasBiodata)
   {
     id: 'bg-07',
     seccion: 'Motivación',
-    pregunta: '¿Cuánto tiempo llevas preparando oposiciones a Guardia Civil?',
+    pregunta: '¿Cuánto tiempo llevas preparando esta oposición?',
     tipo: 'select',
     opciones: ['Menos de 6 meses', '6 meses – 1 año', '1 – 2 años', 'Más de 2 años'],
     clave: 'tiempoPreparacion',
@@ -78,7 +85,7 @@ export const PREGUNTAS_BIODATA_GC: PreguntaBiodata[] = [
   {
     id: 'bg-08',
     seccion: 'Motivación',
-    pregunta: '¿Cuál es tu principal motivación para ser Guardia Civil?',
+    pregunta: '¿Cuál es tu principal motivación para opositar?',
     tipo: 'select',
     opciones: [
       'Vocación de servicio público',
@@ -125,3 +132,13 @@ export const PREGUNTAS_BIODATA_GC: PreguntaBiodata[] = [
     clave: 'rolLiderazgo',
   },
 ]
+
+/** Devuelve las preguntas de biodata con los textos adaptados al cuerpo. */
+export function getPreguntasBiodata(slug: string): PreguntaBiodata[] {
+  const nombre = NOMBRE_CUERPO_BIODATA[slug] ?? 'este cuerpo'
+  return PREGUNTAS_BIODATA_GC.map(p => {
+    if (p.id === 'bg-07') return { ...p, pregunta: `¿Cuánto tiempo llevas preparando oposiciones a ${nombre}?` }
+    if (p.id === 'bg-08') return { ...p, pregunta: `¿Cuál es tu principal motivación para ser ${nombre}?` }
+    return p
+  })
+}
