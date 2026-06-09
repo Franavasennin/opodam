@@ -120,6 +120,20 @@ exports.handler = async function (event) {
         })
 
         console.log(`[stripe-webhook] ✅ Usuario ${userId} activado para ${oposicionSlug}`)
+
+        // Email de confirmación de pago via SendGrid (fire-and-forget)
+        if (session.customer_details?.email) {
+          const baseUrl = process.env.URL || 'https://opodam.netlify.app'
+          fetch(`${baseUrl}/.netlify/functions/send-email`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              tipo: 'pago-confirmado',
+              to: session.customer_details.email,
+              data: { oposicion: oposicionSlug, importe: '19,90 €' },
+            }),
+          }).catch(e => console.warn('[stripe-webhook] send-email falló:', e?.message))
+        }
         break
       }
 
