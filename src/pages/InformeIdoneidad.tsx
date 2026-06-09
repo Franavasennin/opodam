@@ -36,7 +36,7 @@ export default function InformeIdoneidad() {
       if (!user) { navigate('/'); return }
       const perfil = await obtenerPerfil(user.id, slug)
       if (!cancel) {
-        setInforme(perfil ? calcularInforme(perfil) : null)
+        setInforme(perfil ? calcularInforme(perfil, slug) : null)
         setCargando(false)
       }
     })()

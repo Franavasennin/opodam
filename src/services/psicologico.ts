@@ -37,16 +37,41 @@ export async function guardarPerfil(
   return { error: error?.message ?? null }
 }
 
-// ── Motor algorítmico de idoneidad (GC) ───────────────────────────
-// Criterios acordados (sesión 2026-06-07):
+// ── Textos por cuerpo ─────────────────────────────────────────────
+const NOMBRE_CUERPO: Record<string, string> = {
+  'guardia-civil': 'la Guardia Civil',
+  'cgpc': 'la Policía Canaria',
+  'policia-local': 'la Policía Local',
+}
+
+const PREGUNTAS_BASE: Record<string, string[]> = {
+  'guardia-civil': [
+    '¿Por qué quieres ser Guardia Civil?',
+    '¿Cómo reaccionarías ante una orden que consideras injusta?',
+    '¿Has tenido algún conflicto en un equipo? ¿Cómo lo resolviste?',
+  ],
+  'cgpc': [
+    '¿Por qué quieres ser Policía Canaria?',
+    '¿Cómo actuarías ante una situación de riesgo en la vía pública?',
+    '¿Has tenido algún conflicto en un equipo? ¿Cómo lo resolviste?',
+  ],
+  'policia-local': [
+    '¿Por qué quieres ser Policía Local?',
+    '¿Cómo mediarías en un conflicto vecinal?',
+    '¿Cómo gestionarías una situación de violencia doméstica?',
+  ],
+}
+
+// ── Motor algorítmico de idoneidad ────────────────────────────────
+// Criterios (sesión 2026-06-07, extendido a CGPC/PL 2026-06-09):
 //   Psicotécnicos global ≥ P50 → APTO  |  < P35 → RIESGO
 //   Estabilidad emocional (N inverso) > 55 → APTO | < 40 → RIESGO
 //   Responsabilidad (C) > 60 → APTO | < 45 → RIESGO
 //   Extraversión (E) > 45 → APTO
-//   Biodata actividad física ≥ 3h/sem → APTO | < 1h → RIESGO
+//   Biodata actividad física ≥ 3h/sem → APTO | < 1h → RIESGO  (solo GC)
 //   Entrevista coherencia > 6/10 → APTO | < 4/10 → RIESGO
 
-export function calcularInforme(perfil: PerfilPsicologico): InformeIdoneidad {
+export function calcularInforme(perfil: PerfilPsicologico, slug = 'guardia-civil'): InformeIdoneidad {
   const fortalezas: string[] = []
   const mejoras: string[] = []
   const riesgos: string[] = []
@@ -69,7 +94,7 @@ export function calcularInforme(perfil: PerfilPsicologico): InformeIdoneidad {
     else mejoras.push(`Estabilidad emocional mejorable (${estabilidad}/100)`)
 
     if (C > 60) fortalezas.push(`Alta responsabilidad y autodisciplina (C=${C})`)
-    else if (C < 45) riesgos.push(`Baja responsabilidad percibida (C=${C}) — área crítica para GC`)
+    else if (C < 45) riesgos.push(`Baja responsabilidad percibida (C=${C}) — área crítica para ${NOMBRE_CUERPO[slug] ?? 'el cuerpo'}`)
     else mejoras.push(`Responsabilidad a reforzar (C=${C})`)
 
     if (E > 45) fortalezas.push(`Extraversión adecuada para trabajo en equipo (E=${E})`)
@@ -82,7 +107,7 @@ export function calcularInforme(perfil: PerfilPsicologico): InformeIdoneidad {
   if (perfil.biodata?.completado) {
     const horas = Number(perfil.biodata.respuestas['actividadFisicaHoras'] ?? 0)
     if (horas >= 3) fortalezas.push(`Actividad física regular (${horas}h/sem)`)
-    else if (horas < 1) riesgos.push(`Actividad física insuficiente (${horas}h/sem) — GC valora condición física`)
+    else if (horas < 1) riesgos.push(`Actividad física insuficiente (${horas}h/sem) — ${NOMBRE_CUERPO[slug] ?? 'el cuerpo'} valora la condición física`)
     else mejoras.push(`Actividad física a aumentar (${horas}h/sem, objetivo ≥3h)`)
   }
 
@@ -102,9 +127,7 @@ export function calcularInforme(perfil: PerfilPsicologico): InformeIdoneidad {
 
   // — Preguntas probables en entrevista —
   const preguntasProbables: string[] = [
-    '¿Por qué quieres ser Guardia Civil?',
-    '¿Cómo reaccionarías ante una orden que consideras injusta?',
-    '¿Has tenido algún conflicto en un equipo? ¿Cómo lo resolviste?',
+    ...(PREGUNTAS_BASE[slug] ?? PREGUNTAS_BASE['guardia-civil']),
   ]
   if (perfil.personalidad?.bigFive.N && perfil.personalidad.bigFive.N > 60)
     preguntasProbables.push('¿Cómo gestionas el estrés en situaciones de alta presión?')
@@ -112,9 +135,10 @@ export function calcularInforme(perfil: PerfilPsicologico): InformeIdoneidad {
     preguntasProbables.push('Cuéntame sobre tu experiencia previa relacionada con seguridad o servicio público.')
 
   // — Recomendación —
+  const nombreCuerpo = NOMBRE_CUERPO[slug] ?? 'el cuerpo'
   const recomendacion =
     veredicto === 'apto'
-      ? 'Perfil compatible con los requisitos psicológicos de la Guardia Civil. Mantén la constancia en preparación física y sigue practicando entrevistas.'
+      ? `Perfil compatible con los requisitos psicológicos de ${nombreCuerpo}. Mantén la constancia en preparación física y sigue practicando entrevistas.`
       : veredicto === 'riesgo'
         ? 'Perfil con áreas de mejora. Trabaja los puntos señalados antes de la prueba psicológica.'
         : 'Perfil con factores de riesgo significativos. Consulta con un psicólogo antes de continuar la preparación.'
