@@ -28,12 +28,13 @@ if ('serviceWorker' in navigator) {
   })
 }
 
-function ErrorFallback({ error }: { error: Error }) {
+function ErrorFallback({ error }: { error: unknown }) {
+  const mensaje = error instanceof Error ? error.message : String(error)
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12, padding: 24, textAlign: 'center' }}>
       <span style={{ fontSize: 40 }}>⚠️</span>
       <p style={{ fontWeight: 600, fontSize: 16 }}>Algo ha ido mal</p>
-      <p style={{ color: '#666', fontSize: 13 }}>{error?.message}</p>
+      <p style={{ color: '#666', fontSize: 13 }}>{mensaje}</p>
       <button onClick={() => window.location.reload()}
         style={{ marginTop: 8, padding: '10px 24px', borderRadius: 10, border: 0, background: '#1C1410', color: '#fff', cursor: 'pointer', fontSize: 14 }}>
         Recargar
