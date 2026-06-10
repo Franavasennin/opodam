@@ -106,6 +106,7 @@ exports.handler = async function (event) {
           current_period_end: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365 * 10).toISOString(),
           updated_at: new Date().toISOString(),
         })
+        await db.query('profiles', 'PATCH', `id=eq.${usuario.id}`, { rol: 'beta' })
       }
       return {
         statusCode: 200,
