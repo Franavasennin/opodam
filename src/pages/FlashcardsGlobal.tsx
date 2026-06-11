@@ -29,11 +29,13 @@ export function FlashcardsGlobal() {
         return
       }
       const resultado: { card: Flashcard }[] = []
-      for (const meta of TEMAS_META) {
-        try {
-          const tema = await cargarTema(meta.id)
-          tema.flashcards.filter(c => ids.includes(c.id)).forEach(card => resultado.push({ card }))
-        } catch { /* tema no cargado */ }
+      // Carga en paralelo (los temas son independientes); se ignoran los que fallen.
+      const temas = await Promise.all(
+        TEMAS_META.map(meta => cargarTema(meta.id).catch(() => null))
+      )
+      for (const tema of temas) {
+        if (!tema) continue
+        tema.flashcards.filter(c => ids.includes(c.id)).forEach(card => resultado.push({ card }))
       }
       setPendientes(resultado)
       setCargando(false)

@@ -13,10 +13,23 @@
 //   SENDGRID_FROM     (ej. noreply@opodam.es)
 
 const sgMail = require('@sendgrid/mail')
+const crypto = require('crypto')
+const { comprobarLimite } = require('./_ratelimit.cjs')
 
 const API_KEY = process.env.SENDGRID_API_KEY
 const FROM    = process.env.SENDGRID_FROM || 'noreply@opodam.es'
 const APP_URL = process.env.URL || 'https://opodam.netlify.app'
+const SEND_EMAIL_SECRET = process.env.SEND_EMAIL_SECRET
+
+// Compara el secreto en tiempo constante. Sin secreto configurado → denegar (fail-closed).
+function secretoValido(event) {
+  if (!SEND_EMAIL_SECRET) return false
+  const provided = event.headers['x-send-email-secret'] || event.headers['X-Send-Email-Secret'] || ''
+  const a = Buffer.from(String(provided))
+  const b = Buffer.from(String(SEND_EMAIL_SECRET))
+  if (a.length !== b.length) return false
+  return crypto.timingSafeEqual(a, b)
+}
 
 function corsHeaders() {
   const allowed = (process.env.ALLOWED_ORIGINS || APP_URL).split(',').map(s => s.trim())
@@ -119,6 +132,14 @@ exports.handler = async function (event) {
   if (event.httpMethod === 'OPTIONS') return { statusCode: 204, headers: corsHeaders(), body: '' }
   if (event.httpMethod !== 'POST') return { statusCode: 405, headers: corsHeaders(), body: JSON.stringify({ error: 'Method not allowed' }) }
 
+  const limite = await comprobarLimite(event, { clave: 'send-email', max: 5, ventanaSeg: 60 })
+  if (!limite.permitido) {
+    return { statusCode: 429, headers: { ...corsHeaders(), 'Retry-After': String(limite.resetSeg) }, body: JSON.stringify({ error: 'Demasiadas peticiones' }) }
+  }
+  if (!secretoValido(event)) {
+    return { statusCode: 401, headers: corsHeaders(), body: JSON.stringify({ error: 'No autorizado' }) }
+  }
+
   if (!API_KEY) return { statusCode: 500, headers: corsHeaders(), body: JSON.stringify({ error: 'SENDGRID_API_KEY no configurada' }) }
   sgMail.setApiKey(API_KEY)
 
@@ -127,6 +148,9 @@ exports.handler = async function (event) {
 
   const { tipo, to, data = {} } = body
   if (!tipo || !to) return { statusCode: 400, headers: corsHeaders(), body: JSON.stringify({ error: 'Faltan campos: tipo, to' }) }
+  if (typeof to !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)) {
+    return { statusCode: 400, headers: corsHeaders(), body: JSON.stringify({ error: 'Destinatario inválido' }) }
+  }
 
   const tmpl = TEMPLATES[tipo]
   if (!tmpl) return { statusCode: 400, headers: corsHeaders(), body: JSON.stringify({ error: `Tipo desconocido: ${tipo}` }) }

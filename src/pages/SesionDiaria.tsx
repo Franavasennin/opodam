@@ -36,26 +36,28 @@ export function SesionDiaria() {
       const sesion = obtenerSesionHoy()
       if (sesion.completada) { setFase('completada'); return }
 
-      // Cargar flashcards pendientes
+      // Cargar flashcards pendientes (en paralelo; se ignoran los temas que fallen)
       const fcs: Flashcard[] = []
-      for (const meta of TEMAS_META) {
-        try {
-          const tema = await cargarTema(meta.id)
-          tema.flashcards
-            .filter(c => sesion.flashcardIds.includes(c.id))
-            .forEach(c => fcs.push(c))
-        } catch { /* skip */ }
+      const temasFc = await Promise.all(
+        TEMAS_META.map(meta => cargarTema(meta.id).catch(() => null))
+      )
+      for (const tema of temasFc) {
+        if (!tema) continue
+        tema.flashcards
+          .filter(c => sesion.flashcardIds.includes(c.id))
+          .forEach(c => fcs.push(c))
       }
 
-      // Cargar preguntas de temas débiles (hasta 10)
+      // Cargar preguntas de temas débiles (hasta 10), en paralelo
       const temasDebiles = calcularDebilidades(progreso.rendimientoPorTema, 3)
       const prgs: PreguntaExt[] = []
-      for (const temaId of temasDebiles) {
-        try {
-          const tema = await cargarTema(temaId)
-          const shuffled = [...tema.preguntas].sort(() => Math.random() - 0.5).slice(0, 4)
-          shuffled.forEach(p => prgs.push({ ...p, temaId }))
-        } catch { /* skip */ }
+      const temasDeb = await Promise.all(
+        temasDebiles.map(temaId => cargarTema(temaId).then(tema => ({ temaId, tema })).catch(() => null))
+      )
+      for (const r of temasDeb) {
+        if (!r) continue
+        const shuffled = [...r.tema.preguntas].sort(() => Math.random() - 0.5).slice(0, 4)
+        shuffled.forEach(p => prgs.push({ ...p, temaId: r.temaId }))
       }
       const pregSel = prgs.slice(0, 10)
 

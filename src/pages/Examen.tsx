@@ -39,17 +39,25 @@ export function Examen() {
   const [cargando, setCargando] = useState(false)
   const [resultado, setResultado] = useState<ExamenResultado | null>(null)
   const intervalo = useRef<ReturnType<typeof setInterval> | undefined>(undefined)
+  // Refs siempre apuntando al estado más reciente, para que el temporizador
+  // lea los valores vivos (evita la trampa de la clausura obsoleta en setInterval).
+  const respuestasRef = useRef(respuestas)
+  respuestasRef.current = respuestas
+  const preguntasRef = useRef(preguntas)
+  preguntasRef.current = preguntas
 
   useEffect(() => () => clearInterval(intervalo.current), [])
 
   async function iniciarExamen() {
     setCargando(true)
     const todas: PreguntaExt[] = []
-    for (const m of TEMAS_META) {
-      try {
-        const tema = await cargarTema(m.id)
-        tema.preguntas.forEach(p => todas.push({ ...p, temaId: m.id }))
-      } catch { /* skip */ }
+    // Carga en paralelo (los temas son independientes); se ignoran los que fallen.
+    const resultados = await Promise.all(
+      TEMAS_META.map(m => cargarTema(m.id).then(tema => ({ m, tema })).catch(() => null))
+    )
+    for (const r of resultados) {
+      if (!r) continue
+      r.tema.preguntas.forEach(p => todas.push({ ...p, temaId: r.m.id }))
     }
     const cfg = CONFIG[modo]
     const sel = seleccionarPreguntas(todas, progreso.rendimientoPorTema, cfg.preguntas)
@@ -65,7 +73,7 @@ export function Examen() {
     clearInterval(intervalo.current)
     intervalo.current = setInterval(() => {
       setTiempo(t => {
-        if (t <= 1) { clearInterval(intervalo.current); finalizarExamen(sel, init); return 0 }
+        if (t <= 1) { clearInterval(intervalo.current); finalizarExamen(preguntasRef.current, respuestasRef.current); return 0 }
         return t - 1
       })
     }, 1000)

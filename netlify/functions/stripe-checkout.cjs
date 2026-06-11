@@ -93,8 +93,11 @@ exports.handler = async function (event) {
 
   const origin = event.headers.origin || event.headers.Origin || process.env.ALLOWED_ORIGINS?.split(',')[0] || 'https://opodam.netlify.app'
 
-  // --- Bypass para beta testers ---
-  const betaTesters = ['itsdamaaa.19@gmail.com', 'esterlcorreas@gmail.com']
+  // --- Bypass para beta testers (lista en env var BETA_TESTERS, separada por comas) ---
+  const betaTesters = (process.env.BETA_TESTERS || '')
+    .split(',')
+    .map(s => s.trim().toLowerCase())
+    .filter(Boolean)
   if (usuario.email && betaTesters.includes(usuario.email.toLowerCase())) {
     try {
       const db = supabaseAdmin()

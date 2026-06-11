@@ -33,9 +33,13 @@ export function Simulacro() {
   useEffect(() => {
     async function cargar() {
       const todas: PreguntaExt[] = []
-      for (const m of TEMAS_META) {
-        try { (await cargarTema(m.id)).preguntas.forEach(p => todas.push({ ...p, temaId: m.id })) }
-        catch { /* skip */ }
+      // Carga en paralelo (los temas son independientes); se ignoran los que fallen.
+      const resultados = await Promise.all(
+        TEMAS_META.map(m => cargarTema(m.id).then(tema => ({ m, tema })).catch(() => null))
+      )
+      for (const r of resultados) {
+        if (!r) continue
+        r.tema.preguntas.forEach(p => todas.push({ ...p, temaId: r.m.id }))
       }
       const sel = barajar(todas).slice(0, 60)
       setPreguntas(sel)

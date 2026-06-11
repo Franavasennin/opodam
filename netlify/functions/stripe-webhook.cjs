@@ -126,7 +126,10 @@ exports.handler = async function (event) {
           const baseUrl = process.env.URL || 'https://opodam.netlify.app'
           fetch(`${baseUrl}/.netlify/functions/send-email`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Send-Email-Secret': process.env.SEND_EMAIL_SECRET || '',
+            },
             body: JSON.stringify({
               tipo: 'pago-confirmado',
               to: session.customer_details.email,
