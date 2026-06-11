@@ -14,7 +14,7 @@ These plans were selected by the maintainer from a larger audit (findings
 |------|-------|----------|--------|------------|--------|
 | 001 | Fix: exam timeout discards the user's answers | P1 | S | — | DONE (2026-06-11) |
 | 002 | Secure `send-email` function (auth + rate limit) | P1 | S–M | — | DONE (2026-06-11) — operador debe fijar `SEND_EMAIL_SECRET` en Netlify (y exponerla al webhook) o no se enviarán correos |
-| 003 | Verify/enable RLS on the `progreso` table | P1 | S | — | BLOCKED — migración `supabase/migrations/2026-06-11-progreso-rls.sql` escrita; falta que el operador ejecute el diagnóstico y la aplique en Supabase |
+| 003 | Verify/enable RLS on the `progreso` table | P1 | S | — | DONE (2026-06-11) — verificado en Supabase: `relrowsecurity = true`, RLS ya estaba activo; no hizo falta aplicar la migración (queda como respaldo) |
 | 004 | Move beta-tester emails out of source into env var | P2 | S | — | DONE (2026-06-11) — operador debe fijar `BETA_TESTERS` en Netlify (CSV con los 2 emails) antes de desplegar o los testers pierden acceso |
 | 005 | Parallelize `cargarTema` loads (exam/session startup) | P2 | S | — | DONE (2026-06-11) — Examen, Simulacro, SesionDiaria (2 bucles), FlashcardsGlobal |
 
