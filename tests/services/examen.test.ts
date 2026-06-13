@@ -3,28 +3,39 @@ import { calcularNotaExamen, calcularDebilidadesPorExamen } from '../../src/serv
 
 beforeEach(() => localStorage.clear())
 
-describe('calcularNotaExamen', () => {
-  it('50 aciertos 0 errores = 10.00', () => {
-    expect(calcularNotaExamen(50, 0)).toBe(10)
+describe('calcularNotaExamen (consciente del total y la penalización)', () => {
+  it('50 aciertos de 50, 0 errores = 10.00', () => {
+    expect(calcularNotaExamen(50, 0, 50)).toBe(10)
   })
-  it('25 aciertos 0 errores = 5.00 (aprobado justo)', () => {
-    expect(calcularNotaExamen(25, 0)).toBe(5)
+  it('25 aciertos de 50, 0 errores = 5.00 (aprobado justo)', () => {
+    expect(calcularNotaExamen(25, 0, 50)).toBe(5)
   })
-  it('37 aciertos 9 errores = 6.80', () => {
-    // 37*0.20=7.40, floor(9/3)*0.20=0.60, nota=6.80
-    expect(calcularNotaExamen(37, 9)).toBe(6.80)
+  it('37 aciertos 9 errores de 50 = 6.80 (penalización 1/3)', () => {
+    // (37 − 9×1/3)/50×10 = (37−3)/50×10 = 6.80
+    expect(calcularNotaExamen(37, 9, 50)).toBe(6.80)
   })
-  it('3 errores exactos restan 0.20', () => {
-    expect(calcularNotaExamen(25, 3)).toBe(4.80)
+  it('penaliza de forma continua: 25 aciertos 2 errores de 50 ≈ 4.87', () => {
+    // (25 − 2×1/3)/50×10 = 24.3333/50×10 = 4.866… → 4.87
+    expect(calcularNotaExamen(25, 2, 50)).toBe(4.87)
   })
-  it('2 errores NO restan nada', () => {
-    expect(calcularNotaExamen(25, 2)).toBe(5)
+  it('penalización 0: los errores no restan', () => {
+    expect(calcularNotaExamen(25, 10, 50, 0)).toBe(5)
+  })
+  it('penalización mayor (1/2) resta más', () => {
+    // (24 − 6×1/2)/50×10 = (24−3)/50×10 = 4.20
+    expect(calcularNotaExamen(24, 6, 50, 1 / 2)).toBe(4.20)
+  })
+  it('corrige el techo del mini-examen: 25 de 25 = 10', () => {
+    expect(calcularNotaExamen(25, 0, 25)).toBe(10)
   })
   it('nota nunca negativa', () => {
-    expect(calcularNotaExamen(0, 50)).toBe(0)
+    expect(calcularNotaExamen(0, 50, 50)).toBe(0)
   })
   it('nota máxima 10', () => {
-    expect(calcularNotaExamen(100, 0)).toBe(10)
+    expect(calcularNotaExamen(100, 0, 50)).toBe(10)
+  })
+  it('total 0 devuelve 0 sin romper', () => {
+    expect(calcularNotaExamen(0, 0, 0)).toBe(0)
   })
 })
 

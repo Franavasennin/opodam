@@ -127,6 +127,15 @@ export interface ExamenResultado {
   resultadosPorTema: Record<string, RendimientoTema>
 }
 
+// Cuaderno de errores: una entrada por pregunta fallada al menos una vez.
+// Se "gradúa" (sale del cuaderno) cuando se acierta 2 veces seguidas.
+export interface ErrorPregunta {
+  temaId: number
+  fallos: number
+  aciertosSeguidos: number
+  ultimoFallo: string             // YYYY-MM-DD
+}
+
 export interface Progreso {
   temas: Record<string, ProgresoTema>
   flashcards: Record<string, EstadoFlashcard>
@@ -136,6 +145,8 @@ export interface Progreso {
   historialExamenes: ExamenResultado[]
   sesionDiaria: { fecha: string; flashcardIds: string[]; preguntaIds: string[]; completada: boolean } | null
   rendimientoPorTema: Record<string, RendimientoTema>
+  // Cuaderno de errores (clave = id de pregunta). Default {} para progresos antiguos.
+  erroresPorPregunta: Record<string, ErrorPregunta>
 }
 
 export type EstadoAcceso = 'activo' | 'sin-oposicion' | 'expirado'

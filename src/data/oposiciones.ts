@@ -8,6 +8,12 @@ export interface Oposicion {
   numTemas?: number
   /** Segmentos de sección a ocultar para esta oposición (p. ej. 'psicotecnicos'). */
   ocultar?: string[]
+  /**
+   * Fracción de un acierto que se resta por cada error en la nota (0 = no penaliza).
+   * Ej.: 1/3 → tres errores anulan un acierto. Default 1/3 si se omite.
+   * ⚠️ Confirmar con las bases reales de cada convocatoria.
+   */
+  penalizacionPorError?: number
 }
 
 export const OPOSICIONES: Oposicion[] = [
@@ -18,6 +24,7 @@ export const OPOSICIONES: Oposicion[] = [
     disponible: true,
     color: '#2563eb',
     numTemas: 45,
+    penalizacionPorError: 1 / 3,
   },
   {
     slug: 'policia-local',
@@ -26,6 +33,7 @@ export const OPOSICIONES: Oposicion[] = [
     disponible: true,
     color: '#1d4ed8',
     numTemas: 37,
+    penalizacionPorError: 1 / 3,
   },
   {
     slug: 'aux-enfermeria',
@@ -35,6 +43,7 @@ export const OPOSICIONES: Oposicion[] = [
     color: '#0891b2',
     numTemas: 24,
     ocultar: ['psicotecnicos', 'supuestos', 'entrevista', 'personalidad'],
+    penalizacionPorError: 1 / 3,
   },
   {
     slug: 'guardia-civil',
@@ -43,6 +52,7 @@ export const OPOSICIONES: Oposicion[] = [
     disponible: true,
     color: '#15803d',
     numTemas: 25,
+    penalizacionPorError: 1 / 3,
   },
   {
     slug: 'aux-judicial',
@@ -52,6 +62,7 @@ export const OPOSICIONES: Oposicion[] = [
     color: '#7c3aed',
     numTemas: 29,
     ocultar: ['psicotecnicos', 'entrevista', 'personalidad'],
+    penalizacionPorError: 1 / 3,
   },
   {
     slug: 'tramitacion-judicial',
@@ -61,5 +72,6 @@ export const OPOSICIONES: Oposicion[] = [
     color: '#b45309',
     numTemas: 31,
     ocultar: ['psicotecnicos', 'entrevista', 'personalidad'],
+    penalizacionPorError: 1 / 3,
   },
 ]

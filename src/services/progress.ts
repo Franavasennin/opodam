@@ -1,14 +1,14 @@
 import type { Progreso } from '../types'
 import { getProgreso, saveProgreso } from './storage'
-import { actualizarRendimientoTema } from './examen'
+import { actualizarRendimientoTema, calcularNotaExamen } from './examen'
 
 export function calcularPuntuacionTest(
   aciertos: number,
   errores: number,
   total: number,
+  penalizacion = 1 / 3,
 ): number {
-  const raw = (aciertos - errores / 3) / total * 10
-  return Math.max(0, Math.round(raw * 100) / 100)
+  return calcularNotaExamen(aciertos, errores, total, penalizacion)
 }
 
 export function debeActualizarRacha(ultimoEstudio: string | null): boolean {

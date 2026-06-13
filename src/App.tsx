@@ -42,6 +42,7 @@ const TemaDetalle = lazy(() => import('./pages/TemaDetalle').then(m => ({ defaul
 const FlashcardsGlobal = lazy(() => import('./pages/FlashcardsGlobal').then(m => ({ default: m.FlashcardsGlobal })))
 const Tests = lazy(() => import('./pages/Tests').then(m => ({ default: m.Tests })))
 const Simulacro = lazy(() => import('./pages/Simulacro').then(m => ({ default: m.Simulacro })))
+const RepasoErrores = lazy(() => import('./pages/RepasoErrores').then(m => ({ default: m.RepasoErrores })))
 const Estadisticas = lazy(() => import('./pages/Estadisticas').then(m => ({ default: m.Estadisticas })))
 const Examen = lazy(() => import('./pages/Examen').then(m => ({ default: m.Examen })))
 const SesionDiaria = lazy(() => import('./pages/SesionDiaria').then(m => ({ default: m.SesionDiaria })))
@@ -97,6 +98,7 @@ export default function App() {
         <Route path="/oposicion/:slug/flashcards" element={<RutaProtegida><FlashcardsGlobal /></RutaProtegida>} />
         <Route path="/oposicion/:slug/tests" element={<RutaProtegida><Tests /></RutaProtegida>} />
         <Route path="/oposicion/:slug/tests/simulacro" element={<RutaProtegida><Simulacro /></RutaProtegida>} />
+        <Route path="/oposicion/:slug/repaso-errores" element={<RutaProtegida><RepasoErrores /></RutaProtegida>} />
         <Route path="/oposicion/:slug/estadisticas" element={<RutaProtegida><Estadisticas /></RutaProtegida>} />
         <Route path="/oposicion/:slug/examen" element={<RutaProtegida><Examen /></RutaProtegida>} />
         <Route path="/oposicion/:slug/sesion-diaria" element={<RutaProtegida><SesionDiaria /></RutaProtegida>} />

@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
 import { calcularPuntuacionTest } from '../services/progress'
+import { registrarLote, contarErrores } from '../services/errores'
+import { getPenalizacion, describirPenalizacion, consejoEstrategia } from '../services/nota'
 import { obtenerTopics } from '../data/topics'
 import type { Tema } from '../types'
 import { getPreguntaCorrecta } from '../types'
@@ -30,6 +32,9 @@ export function Tests() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [temaId])
 
+  const nErrores = contarErrores()
+  const pen = getPenalizacion(slug ?? 'cgpc')
+
   // ── Selección de tema ──
   if (temaId === null) return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
@@ -50,6 +55,17 @@ export function Tests() {
             <span style={{ opacity: 0.7 }}>›</span>
           </div>
         </button>
+        {nErrores > 0 && (
+          <button onClick={() => navigate(`/oposicion/${slug}/repaso-errores`)} className="card"
+            style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '13px 14px', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--warn)', borderRadius: 14, marginBottom: 18 }}>
+            <span style={{ fontSize: 22 }}>🩹</span>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--ink)' }}>Repasar mis fallos</div>
+              <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 2 }}>{nErrores} {nErrores === 1 ? 'pregunta pendiente' : 'preguntas pendientes'} · acierta 2 veces para graduarla</div>
+            </div>
+            <span style={{ color: 'var(--warn)', fontSize: 16 }}>›</span>
+          </button>
+        )}
         <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {TEMAS_META.map(m => (
             <button key={m.id} onClick={() => setTemaId(m.id)} className="card"
@@ -71,6 +87,11 @@ export function Tests() {
 
   function enviar() {
     guardarTest(tema!.id, aciertos, errores, tema!.preguntas.length)
+    registrarLote(tema!.preguntas.map((p, i) => ({
+      id: p.id,
+      temaId: tema!.id,
+      acierto: respuestas[i] === getPreguntaCorrecta(p),
+    })))
     setEnviado(true)
   }
 
@@ -82,11 +103,16 @@ export function Tests() {
         <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, textAlign: 'center' }}>
           <div className="eyebrow" style={{ marginBottom: 6 }}>Nota equivalente</div>
           <div className="num-display" style={{ fontSize: 56, color: 'var(--accent)', lineHeight: 1 }}>
-            {calcularPuntuacionTest(aciertos, errores, tema.preguntas.length).toFixed(2)}
+            {calcularPuntuacionTest(aciertos, errores, tema.preguntas.length, pen).toFixed(2)}
           </div>
-          <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>sobre 10</div>
+          <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>sobre 10 · {describirPenalizacion(pen)}</div>
           <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {aciertos} aciertos · ❌ {errores} errores</div>
         </div>
+        {errores > 0 && (
+          <div className="card" style={{ background: 'var(--accent-soft)', border: '1px solid var(--accent)', borderRadius: 14, padding: '12px 14px', fontSize: 12.5, color: 'var(--accent)' }}>
+            💡 {consejoEstrategia(pen)}
+          </div>
+        )}
         {tema.preguntas.map((p, i) => {
           const ok = respuestas[i] === getPreguntaCorrecta(p)
           return (
@@ -97,7 +123,12 @@ export function Tests() {
             </div>
           )
         })}
-        <button onClick={() => setTemaId(null)} className="btn-editorial btn-acc" style={{ width: '100%' }}>Volver</button>
+        {errores > 0 && (
+          <button onClick={() => navigate(`/oposicion/${slug}/repaso-errores`)} className="btn-editorial btn-acc" style={{ width: '100%' }}>
+            🩹 Repasar mis fallos ahora
+          </button>
+        )}
+        <button onClick={() => setTemaId(null)} className="btn-editorial btn-sec" style={{ width: '100%' }}>Volver</button>
       </main>
     </div>
   )

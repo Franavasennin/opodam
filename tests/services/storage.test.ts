@@ -11,6 +11,7 @@ const progresoVacio: Progreso = {
   historialExamenes: [],
   sesionDiaria: null,
   rendimientoPorTema: {},
+  erroresPorPregunta: {},
 }
 
 beforeEach(() => localStorage.clear())

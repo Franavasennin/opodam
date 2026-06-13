@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { obtenerTopics } from '../data/topics'
 import { useProgress } from '../hooks/useProgress'
 import type { PreguntaExt, ExamenResultado } from '../types'
@@ -10,6 +10,8 @@ import {
   seleccionarPreguntas,
   guardarExamen,
 } from '../services/examen'
+import { registrarLote } from '../services/errores'
+import { getPenalizacion, describirPenalizacion } from '../services/nota'
 
 type Fase = 'inicio' | 'en-curso' | 'confirmacion' | 'resultados' | 'revision'
 type Modo = 'completo' | 'mini'
@@ -27,6 +29,8 @@ import { TestTopbar, ReviewOption } from '../components/test/Shared'
 
 export function Examen() {
   const { slug } = useParams<{ slug: string }>()
+  const navigate = useNavigate()
+  const pen = getPenalizacion(slug ?? 'cgpc')
   const { cargarTema, TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
   const { progreso, refrescar } = useProgress()
   const [fase, setFase] = useState<Fase>('inicio')
@@ -86,7 +90,12 @@ export function Examen() {
     const aciertos = prgs.filter(p => resps[p.id] === getPreguntaCorrecta(p)).length
     const errores  = prgs.filter(p => resps[p.id] !== null && resps[p.id] !== getPreguntaCorrecta(p)).length
     const enBlanco = prgs.filter(p => resps[p.id] === null).length
-    const nota     = calcularNotaExamen(aciertos, errores)
+    const nota     = calcularNotaExamen(aciertos, errores, prgs.length, pen)
+    // Cuaderno de errores: registra las respondidas (las en blanco se omiten)
+    registrarLote(
+      prgs.filter(p => resps[p.id] !== null && resps[p.id] !== undefined)
+          .map(p => ({ id: p.id, temaId: p.temaId, acierto: resps[p.id] === getPreguntaCorrecta(p) }))
+    )
     const porTema  = calcularDebilidadesPorExamen(
       prgs.map(p => ({ id: p.id, temaId: p.temaId })),
       resps,
@@ -257,8 +266,13 @@ export function Examen() {
             <div className="num-display" style={{ fontSize: 56, lineHeight: 1, color: resultado.aprobado ? 'var(--accent)' : 'var(--warn)' }}>{resultado.nota.toFixed(2)}</div>
             <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>{resultado.aprobado ? '✅ APROBADO' : '❌ SUSPENSO'} · mínimo 5,00</div>
             <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {resultado.aciertos} · ❌ {resultado.errores} · ⬜ {resultado.enBlanco}</div>
-            <div className="num-display" style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>⏱ {mins}:{segs} empleados</div>
+            <div className="num-display" style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>⏱ {mins}:{segs} empleados · {describirPenalizacion(pen)}</div>
           </div>
+          {resultado.errores > 0 && (
+            <button onClick={() => navigate(`/oposicion/${slug}/repaso-errores`)} className="btn-editorial btn-acc" style={{ width: '100%' }}>
+              🩹 Repasar las {resultado.errores} falladas ahora
+            </button>
+          )}
           {topErrores.length > 0 && (
             <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
               <div className="eyebrow" style={{ marginBottom: 10 }}>Temas con más fallos</div>

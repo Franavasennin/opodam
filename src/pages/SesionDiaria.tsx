@@ -5,6 +5,7 @@ import { obtenerTopics } from '../data/topics'
 import { responderFlashcard } from '../services/spaced-repetition'
 import { obtenerSesionHoy, completarSesionDiaria, calcularDebilidades } from '../services/adaptativo'
 import { actualizarRendimientoTema } from '../services/examen'
+import { registrarLote } from '../services/errores'
 import type { Flashcard, PreguntaExt } from '../types'
 import { getPreguntaCorrecta, getFlashcardFront, getFlashcardBack } from '../types'
 
@@ -100,6 +101,12 @@ export function SesionDiaria() {
       })
       Object.entries(porTema).forEach(([id, r]) =>
         actualizarRendimientoTema(Number(id), r.aciertos, r.errores, r.total)
+      )
+      registrarLote(
+        preguntas
+          .map((p, i) => ({ id: p.id, temaId: p.temaId, resp: respuestas[i], correcta: getPreguntaCorrecta(p) }))
+          .filter(x => x.resp !== null && x.resp !== undefined)
+          .map(x => ({ id: x.id, temaId: x.temaId, acierto: x.resp === x.correcta }))
       )
       completarSesionDiaria()
       refrescar()

@@ -60,6 +60,7 @@ const progresoInicial: Progreso = {
   historialExamenes: [],
   sesionDiaria: null,
   rendimientoPorTema: {},
+  erroresPorPregunta: {},
 }
 
 export function getProgreso(): Progreso {

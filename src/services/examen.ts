@@ -1,9 +1,19 @@
 import type { ExamenResultado, PreguntaExt, Progreso, RendimientoTema } from '../types'
 import { getProgreso, saveProgreso } from './storage'
 
-// ── Puntuación CGPC ─────────────────────────────────────────
-export function calcularNotaExamen(aciertos: number, errores: number): number {
-  const bruta = (aciertos * 0.20) - (Math.floor(errores / 3) * 0.20)
+// ── Puntuación (parametrizada por tribunal) ─────────────────
+// Fórmula estándar, consciente del total de preguntas y de la penalización
+// por error de cada oposición: nota = (aciertos − errores×pen) / total × 10.
+// `penalizacion` = fracción de un acierto que resta cada error (1/3 por defecto;
+// 0 = sin penalización).
+export function calcularNotaExamen(
+  aciertos: number,
+  errores: number,
+  total: number,
+  penalizacion = 1 / 3,
+): number {
+  if (total <= 0) return 0
+  const bruta = (aciertos - errores * penalizacion) / total * 10
   return Math.max(0, Math.min(10, Math.round(bruta * 100) / 100))
 }
 

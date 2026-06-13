@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { calcularPuntuacionTest } from '../services/progress'
+import { registrarLote } from '../services/errores'
+import { getPenalizacion, describirPenalizacion } from '../services/nota'
 import { obtenerTopics } from '../data/topics'
 import type { Pregunta } from '../types'
 import { getPreguntaCorrecta } from '../types'
@@ -21,6 +23,7 @@ export function Simulacro() {
   const navigate = useNavigate()
   const { slug } = useParams<{ slug: string }>()
   const { cargarTema, TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
+  const pen = getPenalizacion(slug ?? 'cgpc')
   const [preguntas, setPreguntas] = useState<PreguntaExt[]>([])
   const [respuestas, setRespuestas] = useState<(number | null)[]>([])
   const [indice, setIndice] = useState(0)
@@ -51,6 +54,18 @@ export function Simulacro() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  // Al terminar, registra los fallos del simulacro en el cuaderno de errores (una vez).
+  useEffect(() => {
+    if (!terminado || !preguntas.length) return
+    registrarLote(
+      preguntas
+        .map((p, i) => ({ p, resp: respuestas[i] }))
+        .filter(x => x.resp !== null && x.resp !== undefined)
+        .map(({ p, resp }) => ({ id: p.id, temaId: p.temaId, acierto: resp === getPreguntaCorrecta(p) }))
+    )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [terminado])
+
   function iniciar() {
     setIniciado(true)
     intervalo.current = setInterval(() => {
@@ -78,7 +93,7 @@ export function Simulacro() {
           <div style={{ position: 'relative' }}>
             <div style={{ fontSize: 44 }}>🎯</div>
             <h1 className="display" style={{ margin: '12px 0 8px', fontSize: 30 }}>Simulacro <span className="display-italic" style={{ color: 'var(--accent)' }}>completo</span></h1>
-            <p style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.72)', margin: 0 }}>{preguntas.length} preguntas · 120 min · −0,33 por error</p>
+            <p style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.72)', margin: 0 }}>{preguntas.length} preguntas · 120 min · {describirPenalizacion(pen)}</p>
             <button onClick={iniciar} className="btn-editorial btn-acc" style={{ marginTop: 22 }}>Comenzar examen</button>
           </div>
         </div>
@@ -91,7 +106,7 @@ export function Simulacro() {
   if (terminado) {
     const aciertos = respuestas.filter((r, i) => preguntas[i] && r === getPreguntaCorrecta(preguntas[i])).length
     const errores  = respuestas.filter((r, i) => r !== null && preguntas[i] && r !== getPreguntaCorrecta(preguntas[i])).length
-    const punt = calcularPuntuacionTest(aciertos, errores, preguntas.length)
+    const punt = calcularPuntuacionTest(aciertos, errores, preguntas.length, pen)
     return (
       <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
         <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
@@ -103,8 +118,14 @@ export function Simulacro() {
             <div className="num-display" style={{ fontSize: 56, color: 'var(--accent)', lineHeight: 1 }}>{punt.toFixed(2)}</div>
             <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>sobre 10</div>
             <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {aciertos} aciertos · ❌ {errores} errores · ⬜ {preguntas.length - aciertos - errores} en blanco</div>
+            <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>{describirPenalizacion(pen)}</div>
           </div>
-          <button onClick={() => navigate(`/oposicion/${slug}/estadisticas`)} className="btn-editorial btn-acc" style={{ width: '100%' }}>Ver estadísticas</button>
+          {errores > 0 && (
+            <button onClick={() => navigate(`/oposicion/${slug}/repaso-errores`)} className="btn-editorial btn-acc" style={{ width: '100%' }}>
+              🩹 Repasar las {errores} falladas ahora
+            </button>
+          )}
+          <button onClick={() => navigate(`/oposicion/${slug}/estadisticas`)} className="btn-editorial btn-sec" style={{ width: '100%' }}>Ver estadísticas</button>
           <button onClick={() => navigate(`/oposicion/${slug}/tests`)} className="btn-editorial btn-sec" style={{ width: '100%' }}>Volver</button>
         </main>
       </div>
