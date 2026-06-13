@@ -29,12 +29,22 @@ export function generarSesionDiaria(
 ): NonNullable<Progreso['sesionDiaria']> {
   const temasDebiles = calcularDebilidades(rendimiento, 3)
   const pendientesHoy = flashcardsPendientesHoy(estadosFlashcards)
-  // Flashcards de temas débiles primero
-  const deTemasDebiles = pendientesHoy.filter(id =>
+  // Ordenar por fragilidad: nivel más bajo primero (lo menos consolidado) y, a
+  // igual nivel, la más vencida antes. Así el repaso ataca primero lo más frágil.
+  const porFragilidad = [...pendientesHoy].sort((a, b) => {
+    const ea = estadosFlashcards[a], eb = estadosFlashcards[b]
+    return (ea.nivel - eb.nivel) || (ea.proximoRepaso < eb.proximoRepaso ? -1 : 1)
+  })
+  // Flashcards de temas débiles primero (manteniendo el orden de fragilidad)
+  const deTemasDebiles = porFragilidad.filter(id =>
     temasDebiles.some(temaId => id.startsWith(`t${String(temaId).padStart(2, '0')}`))
   )
-  const resto = pendientesHoy.filter(id => !deTemasDebiles.includes(id))
-  const flashcardIds = [...deTemasDebiles, ...resto].slice(0, 10)
+  const resto = porFragilidad.filter(id => !deTemasDebiles.includes(id))
+  // Cola elástica: entre MIN y MAX según el backlog real, en vez de cortar
+  // siempre a 10 (con mucho backlog, cortar fijo degrada el repaso espaciado).
+  const MIN_SESION = 10, MAX_SESION = 30
+  const limite = Math.min(MAX_SESION, Math.max(MIN_SESION, porFragilidad.length))
+  const flashcardIds = [...deTemasDebiles, ...resto].slice(0, limite)
   // Guardar temaIds como "tema:N" para cargar dinámicamente en la página
   const preguntaIds = temasDebiles.map(id => `tema:${id}`)
   return { fecha, flashcardIds, preguntaIds, completada: false }
