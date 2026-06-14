@@ -1,6 +1,6 @@
 import { useEffect, Suspense, lazy } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { RutaProtegida, RutaConSesion } from './components/layout/RutaProtegida'
+import { RutaConSesion, RutaOposicion } from './components/layout/RutaProtegida'
 import { sincronizar } from './services/sync'
 import { migrarProgresoLegado } from './services/storage'
 
@@ -92,25 +92,25 @@ export default function App() {
 
         {/* App protegida */}
         <Route path="/mis-oposiciones" element={<RutaConSesion><MisOposiciones /></RutaConSesion>} />
-        <Route path="/oposicion/:slug" element={<RutaProtegida><OposicionDashboard /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/temario" element={<RutaProtegida><Temario /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/temario/:id" element={<RutaProtegida><TemaDetalle /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/flashcards" element={<RutaProtegida><FlashcardsGlobal /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/tests" element={<RutaProtegida><Tests /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/tests/simulacro" element={<RutaProtegida><Simulacro /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/repaso-errores" element={<RutaProtegida><RepasoErrores /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/estadisticas" element={<RutaProtegida><Estadisticas /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/examen" element={<RutaProtegida><Examen /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/sesion-diaria" element={<RutaProtegida><SesionDiaria /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/perfil" element={<RutaProtegida><Perfil /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/psicotecnicos" element={<RutaProtegida><Psicotecnicos /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/supuestos" element={<RutaProtegida><Supuestos /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/supuestos/:id" element={<RutaProtegida><SupuestoDetalle /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/entrevista" element={<RutaProtegida><Entrevista /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/personalidad" element={<RutaProtegida><Personalidad /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/tutor" element={<RutaProtegida><TutorGlobal /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/informe-psicologico" element={<RutaProtegida><InformeIdoneidad /></RutaProtegida>} />
-        <Route path="/oposicion/:slug/biodata" element={<RutaProtegida><Biodata /></RutaProtegida>} />
+        <Route path="/oposicion/:slug" element={<RutaConSesion><OposicionDashboard /></RutaConSesion>} />
+        <Route path="/oposicion/:slug/temario" element={<RutaOposicion><Temario /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/temario/:id" element={<RutaOposicion><TemaDetalle /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/flashcards" element={<RutaOposicion><FlashcardsGlobal /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/tests" element={<RutaOposicion><Tests /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/tests/simulacro" element={<RutaOposicion><Simulacro /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/repaso-errores" element={<RutaOposicion><RepasoErrores /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/estadisticas" element={<RutaOposicion><Estadisticas /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/examen" element={<RutaOposicion><Examen /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/sesion-diaria" element={<RutaOposicion><SesionDiaria /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/perfil" element={<RutaConSesion><Perfil /></RutaConSesion>} />
+        <Route path="/oposicion/:slug/psicotecnicos" element={<RutaOposicion><Psicotecnicos /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/supuestos" element={<RutaOposicion><Supuestos /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/supuestos/:id" element={<RutaOposicion><SupuestoDetalle /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/entrevista" element={<RutaOposicion><Entrevista /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/personalidad" element={<RutaOposicion><Personalidad /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/tutor" element={<RutaOposicion><TutorGlobal /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/informe-psicologico" element={<RutaOposicion><InformeIdoneidad /></RutaOposicion>} />
+        <Route path="/oposicion/:slug/biodata" element={<RutaOposicion><Biodata /></RutaOposicion>} />
 
         <Route path="/procoach" element={<ProCoachAI />} />
         <Route path="/procoach/chat" element={<ProCoachChat />} />
