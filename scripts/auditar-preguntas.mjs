@@ -27,25 +27,38 @@ const STOP = new Set(['el','la','los','las','un','una','de','del','al','a','en',
 function contenido(frase) {
   return norm(sinPrefijo(frase)).split(' ').filter(w => w.length > 2 && !STOP.has(w))
 }
-// ¿La explicación niega la frase dada? (busca "no/nunca/tampoco" + alguna palabra de contenido cercana)
-function explicacionNiega(expl, frase) {
-  const e = norm(expl)
+// ¿El texto niega esta palabra? ("no/nunca/tampoco" + la palabra dentro de 0-2 tokens)
+function niegaPalabra(texto, p) {
+  const re = new RegExp(`\\b(no|nunca|tampoco)\\b(?:\\s+\\w+){0,2}\\s+\\b${p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`)
+  return re.test(norm(texto))
+}
+// ¿La explicación CONTRADICE la frase? Solo cuenta si la explicación niega una
+// palabra que la frase AFIRMA. Si la frase ya contiene esa misma negación
+// ("no contamina", "no retroactividad"…), es acuerdo, no contradicción.
+function explicacionContradice(expl, frase) {
   const palabras = contenido(frase)
   if (!palabras.length) return false
+  // "no solo X sino Y" no es negación de X/Y, sino énfasis aditivo.
+  const e = norm(expl).replace(/\bno solo\b/g, ' ')
   for (const p of palabras) {
-    const re = new RegExp(`\\b(no|nunca|tampoco)\\b(?:\\s+\\w+){0,2}\\s+\\b${p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`)
-    if (re.test(e)) return true
+    if (niegaPalabra(e, p) && !niegaPalabra(frase, p)) return true
   }
   return false
 }
-// ¿La explicación afirma esta frase? (al menos la mitad de sus palabras de contenido aparecen y NO está negada)
+// Una pregunta ya negativa ("¿Qué está prohibido?", "NO se puede…") invierte la
+// polaridad: la explicación negará la opción correcta. La detección de
+// contradicción no es fiable ahí, así que se omite.
+function preguntaNegativa(enunciado) {
+  return /\b(no|nunca|jamas|prohibid\w*|salvo|excepto|incorrect\w*|fals\w*)\b/.test(norm(enunciado))
+}
+// ¿La explicación afirma esta frase? (al menos la mitad de sus palabras de contenido aparecen y NO la contradice)
 function explicacionAfirma(expl, frase) {
   const e = norm(expl)
   const palabras = contenido(frase)
   if (!palabras.length) return false
   const presentes = palabras.filter(p => e.includes(p))
   if (presentes.length < Math.ceil(palabras.length / 2)) return false
-  return !explicacionNiega(expl, frase)
+  return !explicacionContradice(expl, frase)
 }
 
 const cuerpos = readdirSync(ROOT, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => d.name)
@@ -72,7 +85,7 @@ for (const cuerpo of cuerpos) {
         continue
       }
       const marcada = ops[idx]
-      if (expl && explicacionNiega(expl, marcada)) {
+      if (expl && !preguntaNegativa(p.enunciado) && explicacionContradice(expl, marcada)) {
         totalContra++
         informe.push(`[CONTRADICCION] ${cuerpo}/${f} ${p.id}\n   P: ${p.enunciado}\n   marcada(${idx}): ${marcada}\n   explicacion: ${expl}`)
         continue
