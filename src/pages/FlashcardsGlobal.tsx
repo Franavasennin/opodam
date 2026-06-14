@@ -5,6 +5,7 @@ import { flashcardsPendientesHoy, responderFlashcard, ordenarPorFragilidad } fro
 import { obtenerTopics } from '../data/topics'
 import { ttsDisponible, hablar, pararTTS, textoFlashcard } from '../services/tts'
 import type { Flashcard } from '../types'
+import { getFlashcardFront, getFlashcardBack } from '../types'
 
 const topbar: React.CSSProperties = {
   height: 52, borderBottom: '1px solid var(--border-soft)',
@@ -55,13 +56,13 @@ export function FlashcardsGlobal() {
   useEffect(() => {
     if (!audio) return
     const item = pendientes[indice]
-    if (item) hablar(textoFlashcard(item.card.pregunta))
+    if (item) hablar(textoFlashcard(getFlashcardFront(item.card)))
   }, [audio, indice, pendientes])
 
   useEffect(() => {
     if (!audio || !verRespuesta) return
     const item = pendientes[indice]
-    if (item) hablar(item.card.respuesta)
+    if (item) hablar(getFlashcardBack(item.card))
   }, [verRespuesta, audio, indice, pendientes])
 
   useEffect(() => () => pararTTS(), [])
