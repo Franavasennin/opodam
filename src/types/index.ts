@@ -100,8 +100,12 @@ export interface ProgresoTema {
 
 export interface EstadoFlashcard {
   proximoRepaso: string           // YYYY-MM-DD
-  nivel: number                   // 0-5
+  nivel: number                   // 0-5 (legado SM-2; se mantiene para UI/orden)
   intervalo: number               // days until next review
+  // P3.1 FSRS-4.5 — opcionales: ausentes en estados pre-FSRS (se migran al vuelo)
+  stability?: number              // S FSRS
+  difficulty?: number             // D FSRS (1..10)
+  ultimaRevision?: string         // YYYY-MM-DD del último repaso
 }
 
 export type PreguntaExt = Pregunta & { temaId: number }

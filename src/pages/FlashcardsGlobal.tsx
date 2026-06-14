@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
 import { flashcardsPendientesHoy, responderFlashcard, ordenarPorFragilidad } from '../services/spaced-repetition'
 import { obtenerTopics } from '../data/topics'
+import { ttsDisponible, hablar, pararTTS, textoFlashcard } from '../services/tts'
 import type { Flashcard } from '../types'
 
 const topbar: React.CSSProperties = {
@@ -19,6 +20,7 @@ export function FlashcardsGlobal() {
   const [indice, setIndice] = useState(0)
   const [verRespuesta, setVerRespuesta] = useState(false)
   const [cargando, setCargando] = useState(true)
+  const [audio, setAudio] = useState(false)
 
   useEffect(() => {
     async function cargar() {
@@ -48,6 +50,21 @@ export function FlashcardsGlobal() {
     cargar()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  // P3.5 — modo audio: lee la pregunta al aparecer la card y la respuesta al revelarla.
+  useEffect(() => {
+    if (!audio) return
+    const item = pendientes[indice]
+    if (item) hablar(textoFlashcard(item.card.pregunta))
+  }, [audio, indice, pendientes])
+
+  useEffect(() => {
+    if (!audio || !verRespuesta) return
+    const item = pendientes[indice]
+    if (item) hablar(item.card.respuesta)
+  }, [verRespuesta, audio, indice, pendientes])
+
+  useEffect(() => () => pararTTS(), [])
 
   if (cargando) return <div className="min-h-screen flex justify-center py-16" style={{ background: 'var(--bg)', color: 'var(--mute)' }}>Cargando…</div>
 
@@ -82,7 +99,16 @@ export function FlashcardsGlobal() {
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
         <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>🃏 Flashcards</span>
-        <span className="num-display" style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--mute)' }}>{indice + 1}/{pendientes.length}</span>
+        {ttsDisponible() && (
+          <button
+            onClick={() => setAudio(a => { if (a) pararTTS(); return !a })}
+            title={audio ? 'Desactivar audio' : 'Leer en voz alta'}
+            aria-pressed={audio}
+            style={{ marginLeft: 'auto', background: 'none', border: 0, cursor: 'pointer', fontSize: 18, opacity: audio ? 1 : 0.5 }}>
+            {audio ? '🔊' : '🔇'}
+          </button>
+        )}
+        <span className="num-display" style={{ marginLeft: ttsDisponible() ? 8 : 'auto', fontSize: 12, color: 'var(--mute)' }}>{indice + 1}/{pendientes.length}</span>
       </header>
       <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
         <div onClick={() => setVerRespuesta(true)} className="card"

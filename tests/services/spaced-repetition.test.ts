@@ -4,20 +4,30 @@ import type { EstadoFlashcard } from '../../src/types'
 
 beforeEach(() => localStorage.clear())
 
-describe('calcularProximoRepaso', () => {
-  it('Fácil aumenta el intervalo', () => {
-    const e: EstadoFlashcard = { proximoRepaso: '2026-01-01', nivel: 2, intervalo: 3 }
-    expect(calcularProximoRepaso(e, 'facil').intervalo).toBeGreaterThan(3)
+describe('calcularProximoRepaso (FSRS-4.5)', () => {
+  const HOY = '2026-06-14'
+  it('primera vez ⇒ deja estado FSRS y orden fácil > dudoso > difícil', () => {
+    const nueva = (): EstadoFlashcard => ({ proximoRepaso: HOY, nivel: 0, intervalo: 1 })
+    const facil = calcularProximoRepaso(nueva(), 'facil', HOY)
+    const dudoso = calcularProximoRepaso(nueva(), 'dudoso', HOY)
+    const dificil = calcularProximoRepaso(nueva(), 'dificil', HOY)
+    expect(facil.stability).toBeGreaterThan(0)
+    expect(facil.difficulty).toBeGreaterThanOrEqual(1)
+    expect(facil.ultimaRevision).toBe(HOY)
+    expect(facil.intervalo).toBeGreaterThan(dudoso.intervalo)
+    expect(facil.stability!).toBeGreaterThan(dudoso.stability!)
+    expect(dudoso.stability!).toBeGreaterThan(dificil.stability!)
   })
-  it('Difícil reinicia intervalo a 1', () => {
+  it('Difícil reduce la estabilidad de una card madura', () => {
+    const e: EstadoFlashcard = { proximoRepaso: HOY, nivel: 4, intervalo: 30, stability: 30, difficulty: 5, ultimaRevision: '2026-05-15' }
+    const nuevo = calcularProximoRepaso(e, 'dificil', HOY)
+    expect(nuevo.stability!).toBeLessThan(30)
+  })
+  it('migra un estado legado SM-2 sin parámetros FSRS', () => {
     const e: EstadoFlashcard = { proximoRepaso: '2026-01-01', nivel: 3, intervalo: 10 }
-    expect(calcularProximoRepaso(e, 'dificil').intervalo).toBe(1)
-  })
-  it('Dudoso mantiene o reduce el intervalo', () => {
-    const e: EstadoFlashcard = { proximoRepaso: '2026-01-01', nivel: 2, intervalo: 6 }
-    const nuevo = calcularProximoRepaso(e, 'dudoso')
-    expect(nuevo.intervalo).toBeLessThanOrEqual(6)
-    expect(nuevo.intervalo).toBeGreaterThan(0)
+    const nuevo = calcularProximoRepaso(e, 'facil', HOY)
+    expect(nuevo.stability).toBeGreaterThan(0)
+    expect(nuevo.difficulty).toBeGreaterThanOrEqual(1)
   })
 })
 

@@ -6,6 +6,7 @@ import { obtenerTopics } from '../data/topics'
 import { useProgress } from '../hooks/useProgress'
 import { CuentaAtras } from '../components/ui/CuentaAtras'
 import { PanelEnRiesgo } from '../components/ui/PanelEnRiesgo'
+import { PanelPreExamen } from '../components/ui/PanelPreExamen'
 import { PanelPlan } from '../components/ui/PanelPlan'
 import { obtenerPerfil, tieneAccesoOposicion } from '../services/supabase'
 import { BannerTrial } from '../components/ui/BannerTrial'
@@ -129,6 +130,7 @@ export default function OposicionDashboard() {
           )}
 
           <BienvenidaGuiada esNuevo={estudiados === 0 && aciertosMedia === 0} />
+          <div style={{ marginTop: 16 }}><PanelPreExamen temas={temasObj} metas={TEMAS_META} /></div>
           <div style={{ marginTop: 16 }}><PanelEnRiesgo temas={temasObj} metas={TEMAS_META} /></div>
           <div className="eyebrow" style={{ margin: '22px 4px 10px' }}>Tu preparación</div>
           <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingBottom: 32 }}>
@@ -193,6 +195,9 @@ export default function OposicionDashboard() {
               <BannerPaywall slug={slug!} nombreOposicion={oposicion.nombre} />
             </div>
           )}
+
+          {/* Modo pre-examen (P3.4) */}
+          <div style={{ marginTop: 20 }}><PanelPreExamen temas={temasObj} metas={TEMAS_META} /></div>
 
           {/* En riesgo de olvido (P1.3) */}
           <div style={{ marginTop: 20 }}><PanelEnRiesgo temas={temasObj} metas={TEMAS_META} /></div>

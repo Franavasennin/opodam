@@ -1,26 +1,68 @@
 import type { EstadoFlashcard } from '../types'
 import { getProgreso, saveProgreso } from './storage'
+import { type EstadoFSRS, type Grado, estadoInicial, repasar, intervaloDias } from './fsrs'
+import { diasEntre } from './dominio'
 
 type Calificacion = 'facil' | 'dudoso' | 'dificil'
+
+// La UI tiene 3 botones; los mapeamos a los grados FSRS (Easy no se usa).
+const GRADO: Record<Calificacion, Grado> = { dificil: 1, dudoso: 2, facil: 3 }
+
+/** ¿El estado ya tiene parámetros FSRS? */
+function tieneFSRS(e: EstadoFlashcard): boolean {
+  return typeof e.stability === 'number' && typeof e.difficulty === 'number'
+}
+
+/**
+ * Estima un estado FSRS inicial a partir del legado SM-2 {nivel, intervalo}:
+ * la estabilidad arranca del intervalo previo y la dificultad baja a mayor nivel.
+ */
+function migrarAFSRS(e: EstadoFlashcard): EstadoFSRS {
+  return {
+    stability: Math.max(0.1, e.intervalo || 1),
+    difficulty: Math.min(10, Math.max(1, 7 - (e.nivel ?? 0))),
+  }
+}
+
+// P3.1 — nivel legado derivado de la estabilidad, solo para UI/orden por fragilidad.
+function nivelDesdeEstabilidad(s: number): number {
+  if (s < 2) return 0
+  if (s < 7) return 1
+  if (s < 21) return 2
+  if (s < 60) return 3
+  if (s < 180) return 4
+  return 5
+}
 
 export function calcularProximoRepaso(
   estado: EstadoFlashcard,
   calificacion: Calificacion,
+  hoy: string = new Date().toISOString().slice(0, 10),
 ): EstadoFlashcard {
-  let { nivel, intervalo } = estado
-  if (calificacion === 'dificil') {
-    intervalo = 1
-    nivel = Math.max(0, nivel - 1)
-  } else if (calificacion === 'dudoso') {
-    intervalo = Math.max(1, Math.ceil(intervalo * 0.8))
+  const g = GRADO[calificacion]
+  let fsrs: EstadoFSRS
+  if (tieneFSRS(estado)) {
+    const dias = estado.ultimaRevision ? diasEntre(estado.ultimaRevision, hoy) : 0
+    fsrs = repasar({ stability: estado.stability!, difficulty: estado.difficulty! }, g, dias)
+  } else if (estado.ultimaRevision || (estado.intervalo ?? 0) > 1 || (estado.nivel ?? 0) > 0) {
+    // estado legado con historia ⇒ migrar y aplicar el repaso
+    const dias = estado.ultimaRevision ? diasEntre(estado.ultimaRevision, hoy) : 0
+    fsrs = repasar(migrarAFSRS(estado), g, dias)
   } else {
-    const factor = nivel < 2 ? 1.5 : nivel < 4 ? 2.0 : 2.5
-    intervalo = Math.round(intervalo * factor)
-    nivel = Math.min(5, nivel + 1)
+    // primera vez ⇒ estado FSRS inicial
+    fsrs = estadoInicial(g)
   }
-  const fecha = new Date()
-  fecha.setDate(fecha.getDate() + intervalo)
-  return { nivel, intervalo, proximoRepaso: fecha.toISOString().slice(0, 10) }
+  const intervalo = intervaloDias(fsrs.stability)
+  const fecha = new Date(`${hoy}T00:00:00Z`)
+  fecha.setUTCDate(fecha.getUTCDate() + intervalo)
+  return {
+    nivel: nivelDesdeEstabilidad(fsrs.stability),
+    intervalo,
+    proximoRepaso: fecha.toISOString().slice(0, 10),
+    stability: fsrs.stability,
+    difficulty: fsrs.difficulty,
+    ultimaRevision: hoy,
+  }
 }
 
 export function flashcardsPendientesHoy(
