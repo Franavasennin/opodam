@@ -61,6 +61,8 @@ const progresoInicial: Progreso = {
   sesionDiaria: null,
   rendimientoPorTema: {},
   erroresPorPregunta: {},
+  calibracion: { seguroAcierto: 0, seguroFallo: 0, dudoAcierto: 0, dudoFallo: 0 },
+  tiempoPorTema: {},
 }
 
 export function getProgreso(): Progreso {

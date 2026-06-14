@@ -32,11 +32,17 @@ function buildSystemPrompt(contexto) {
   let bloque = `## CONTENIDO DEL TEMA\n\n### Teoría\n${teoria}\n\n### Flashcards\n${fcs}\n\n### Preguntas tipo test\n${tests}`
   if (bloque.length > MAX_CONTEXTO_CHARS) bloque = bloque.slice(0, MAX_CONTEXTO_CHARS)
 
+  // P2.2: perfil del alumno (debilidades), si el cliente lo envía. Saneado y acotado.
+  let perfil = typeof c.perfilAlumno === 'string' ? c.perfilAlumno.trim() : ''
+  if (perfil.length > 1200) perfil = perfil.slice(0, 1200)
+  const bloquePerfil = perfil ? `\n\n${perfil}` : ''
+
   return `Eres TUTOR, un profesor experto que resuelve dudas sobre el tema "${titulo}" de una oposición en España.
 
 Responde basándote EN EL CONTENIDO DEL TEMA que aparece más abajo. Cuando la respuesta esté en el temario, cita la sección de la que proviene. Sé claro, didáctico y conciso. Responde siempre en español.
 
 Si la duda NO está cubierta por el contenido del tema, puedes responder con tu conocimiento general, pero AVISANDO claramente al principio con esta frase exacta: "⚠️ Esto no aparece en el temario oficial de este tema:". Nunca inventes artículos, fechas ni datos como si fueran del temario.
+${bloquePerfil}
 
 ${bloque}`
 }

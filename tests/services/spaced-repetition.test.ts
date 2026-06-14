@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { calcularProximoRepaso, flashcardsPendientesHoy } from '../../src/services/spaced-repetition'
+import { calcularProximoRepaso, flashcardsPendientesHoy, ordenarPorFragilidad } from '../../src/services/spaced-repetition'
 import type { EstadoFlashcard } from '../../src/types'
 
 beforeEach(() => localStorage.clear())
@@ -35,5 +35,30 @@ describe('flashcardsPendientesHoy', () => {
     expect(ids).toContain('a')
     expect(ids).toContain('b')
     expect(ids).not.toContain('c')
+  })
+})
+
+describe('ordenarPorFragilidad', () => {
+  const estados: Record<string, EstadoFlashcard> = {
+    'baja-vencida': { proximoRepaso: '2026-06-01', nivel: 0, intervalo: 1 },
+    'baja-reciente': { proximoRepaso: '2026-06-10', nivel: 0, intervalo: 1 },
+    'alta': { proximoRepaso: '2026-06-01', nivel: 4, intervalo: 20 },
+  }
+  it('prioriza el nivel más bajo', () => {
+    const orden = ordenarPorFragilidad(['alta', 'baja-reciente'], estados)
+    expect(orden[0]).toBe('baja-reciente')
+  })
+  it('a igual nivel, lo más vencido primero', () => {
+    const orden = ordenarPorFragilidad(['baja-reciente', 'baja-vencida'], estados)
+    expect(orden).toEqual(['baja-vencida', 'baja-reciente'])
+  })
+  it('los ids sin estado van al final', () => {
+    const orden = ordenarPorFragilidad(['huérfana', 'alta'], estados)
+    expect(orden[orden.length - 1]).toBe('huérfana')
+  })
+  it('no muta el array de entrada', () => {
+    const entrada = ['alta', 'baja-vencida']
+    ordenarPorFragilidad(entrada, estados)
+    expect(entrada).toEqual(['alta', 'baja-vencida'])
   })
 })

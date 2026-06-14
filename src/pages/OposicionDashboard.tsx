@@ -2,8 +2,11 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../data/oposiciones'
+import { obtenerTopics } from '../data/topics'
 import { useProgress } from '../hooks/useProgress'
 import { CuentaAtras } from '../components/ui/CuentaAtras'
+import { PanelEnRiesgo } from '../components/ui/PanelEnRiesgo'
+import { PanelPlan } from '../components/ui/PanelPlan'
 import { obtenerPerfil, tieneAccesoOposicion } from '../services/supabase'
 import { BannerTrial } from '../components/ui/BannerTrial'
 import { BannerPaywall } from '../components/promo/BannerPaywall'
@@ -65,6 +68,8 @@ export default function OposicionDashboard() {
 
   const ir = (path: string) => navigate(`/oposicion/${slug}/${path}`)
 
+  const { TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
+
   // ── métricas reales ──
   const temasObj = progreso.temas ?? {}
   const total = oposicion.numTemas ?? Object.keys(temasObj).length
@@ -115,6 +120,7 @@ export default function OposicionDashboard() {
           </div>
 
           <div style={{ marginTop: 16 }}><CuentaAtras slug={slug!} /></div>
+          <div style={{ marginTop: 12 }}><PanelPlan slug={slug!} temas={temasObj} total={total} /></div>
 
           {acceso === false && (
             <div style={{ marginTop: 16 }}>
@@ -123,6 +129,7 @@ export default function OposicionDashboard() {
           )}
 
           <BienvenidaGuiada esNuevo={estudiados === 0 && aciertosMedia === 0} />
+          <div style={{ marginTop: 16 }}><PanelEnRiesgo temas={temasObj} metas={TEMAS_META} /></div>
           <div className="eyebrow" style={{ margin: '22px 4px 10px' }}>Tu preparación</div>
           <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingBottom: 32 }}>
             {MENU.filter(item => !(oposicion.ocultar ?? []).includes(item.path) && (!item.soloSlugs || item.soloSlugs.includes(slug ?? ''))).map(item => (
@@ -176,8 +183,9 @@ export default function OposicionDashboard() {
             ))}
           </div>
 
-          {/* Cuenta atrás examen */}
+          {/* Cuenta atrás examen + plan inverso (P1.6) */}
           <div style={{ marginTop: 20 }}><CuentaAtras slug={slug!} /></div>
+          <div style={{ marginTop: 12 }}><PanelPlan slug={slug!} temas={temasObj} total={total} /></div>
 
           {/* Paywall */}
           {acceso === false && (
@@ -185,6 +193,9 @@ export default function OposicionDashboard() {
               <BannerPaywall slug={slug!} nombreOposicion={oposicion.nombre} />
             </div>
           )}
+
+          {/* En riesgo de olvido (P1.3) */}
+          <div style={{ marginTop: 20 }}><PanelEnRiesgo temas={temasObj} metas={TEMAS_META} /></div>
 
           {/* Plan diario + ProCoach */}
           <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 16, marginTop: 24 }}>

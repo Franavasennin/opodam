@@ -43,6 +43,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./tests/setup.ts'],
     // Los .cjs de netlify/functions son pruebas para Node, no para Vitest.
-    exclude: ['**/node_modules/**', '**/dist/**', 'netlify/**'],
+    // e2e/ son specs de Playwright (otro runner), no de Vitest.
+    exclude: ['**/node_modules/**', '**/dist/**', 'netlify/**', 'e2e/**'],
   },
 })

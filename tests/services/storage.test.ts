@@ -12,6 +12,8 @@ const progresoVacio: Progreso = {
   sesionDiaria: null,
   rendimientoPorTema: {},
   erroresPorPregunta: {},
+  calibracion: { seguroAcierto: 0, seguroFallo: 0, dudoAcierto: 0, dudoFallo: 0 },
+  tiempoPorTema: {},
 }
 
 beforeEach(() => localStorage.clear())

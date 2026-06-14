@@ -1,7 +1,14 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
 import { obtenerTopics } from '../data/topics'
+import { estadoDominio, diasEntre, type EstadoDominio } from '../services/dominio'
 import type { Bloque } from '../types'
+
+const CHIP: Record<Exclude<EstadoDominio, 'nuevo'>, { texto: string; color: string; bg: string }> = {
+  dominado: { texto: '🟢 Dominado', color: 'var(--accent)', bg: 'var(--accent-soft)' },
+  riesgo:   { texto: '🟡 En riesgo', color: '#a07a2c', bg: 'color-mix(in srgb, #a07a2c 14%, transparent)' },
+  olvidado: { texto: '🔴 Repasar', color: 'var(--warn)', bg: 'color-mix(in srgb, var(--warn) 14%, transparent)' },
+}
 
 export function Temario() {
   const { progreso } = useProgress()
@@ -18,7 +25,8 @@ export function Temario() {
     const p = progreso.temas[String(meta.id)]
     const vueltas = p?.vueltas ?? 0
     const aciertos = p?.porcentajeAciertos ?? 0
-    const dominado = aciertos >= 80 && vueltas >= 3
+    const estado = estadoDominio(p)
+    const chip = estado === 'nuevo' ? null : CHIP[estado]
     return (
       <button
         key={meta.id}
@@ -37,12 +45,14 @@ export function Temario() {
         <div style={{ flex: 1, minWidth: 0 }}>
           <p style={{ margin: 0, fontSize: 13.5, fontWeight: 600, color: 'var(--ink)', letterSpacing: '-0.01em', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{meta.titulo}</p>
           <p style={{ margin: '2px 0 0', fontSize: 11.5, color: 'var(--mute)' }}>
-            {p?.ultimaRevision ? `Última: ${p.ultimaRevision}` : 'Sin estudiar'}
+            {p?.ultimaRevision
+              ? (() => { const d = diasEntre(p.ultimaRevision); return d === 0 ? 'Revisado hoy' : `Hace ${d} día${d === 1 ? '' : 's'}` })()
+              : 'Sin estudiar'}
           </p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4, flexShrink: 0 }}>
-          {dominado
-            ? <span className="pill pill-accent">Dominado</span>
+          {chip
+            ? <span style={{ fontSize: 11, fontWeight: 600, color: chip.color, background: chip.bg, borderRadius: 999, padding: '3px 9px', whiteSpace: 'nowrap' }}>{chip.texto}</span>
             : aciertos > 0
               ? <span className="num-display" style={{ fontSize: 15, color: 'var(--accent)' }}>{aciertos}<span style={{ fontSize: 10 }}>%</span></span>
               : <span style={{ color: 'var(--mute)', fontSize: 16 }}>›</span>}

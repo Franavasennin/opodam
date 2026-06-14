@@ -23,13 +23,13 @@ export function mergeProgreso(local: Progreso, remoto: Progreso): Progreso {
   // tiempoTotalSegundos: max
   merged.tiempoTotalSegundos = Math.max(local.tiempoTotalSegundos, remoto.tiempoTotalSegundos)
 
-  // historialExamenes: unión deduplicada por id, últimos 10
+  // historialExamenes: unión deduplicada por id, últimos 50 (P1.6)
   const todos = [...merged.historialExamenes, ...remoto.historialExamenes]
   const vistos = new Set<string>()
   merged.historialExamenes = todos
     .filter(e => { if (vistos.has(e.id)) return false; vistos.add(e.id); return true })
     .sort((a, b) => b.id.localeCompare(a.id))
-    .slice(0, 10)
+    .slice(0, 50)
 
   // sesionDiaria: más reciente
   if (remoto.sesionDiaria) {

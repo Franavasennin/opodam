@@ -134,6 +134,20 @@ export interface ErrorPregunta {
   fallos: number
   aciertosSeguidos: number
   ultimoFallo: string             // YYYY-MM-DD
+  // P1.5: confianza declarada en el último intento fallado. Un 'seguro' que falla
+  // (ilusión de saber) es lo más peligroso → prioridad máxima en el cuaderno.
+  confianza?: 'seguro' | 'dudo'
+}
+
+// P1.5: calibración de confianza. Cuenta cómo se reparten las respuestas según
+// lo seguro que estaba el alumno frente al resultado real.
+export type Confianza = 'seguro' | 'dudo'
+
+export interface Calibracion {
+  seguroAcierto: number
+  seguroFallo: number   // "falsos seguros" = ilusión de saber
+  dudoAcierto: number
+  dudoFallo: number
 }
 
 export interface Progreso {
@@ -147,6 +161,10 @@ export interface Progreso {
   rendimientoPorTema: Record<string, RendimientoTema>
   // Cuaderno de errores (clave = id de pregunta). Default {} para progresos antiguos.
   erroresPorPregunta: Record<string, ErrorPregunta>
+  // P1.5: calibración de confianza acumulada. Default a ceros para progresos antiguos.
+  calibracion: Calibracion
+  // P2.4: segundos de estudio acumulados por tema (clave = id de tema). Default {}.
+  tiempoPorTema: Record<string, number>
 }
 
 export type EstadoAcceso = 'activo' | 'sin-oposicion' | 'expirado'

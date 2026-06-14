@@ -1,7 +1,8 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
 import { obtenerTopics } from '../data/topics'
+import { Pomodoro } from '../components/ui/Pomodoro'
 import { TeoriaTab } from '../components/tema/TeoriaTab'
 import { EsquemasTab } from '../components/tema/EsquemasTab'
 import { MapaMentalTab } from '../components/tema/MapaMentalTab'
@@ -24,13 +25,28 @@ export function TemaDetalle() {
   // Sección de teoría a la que saltar tras pulsar un nodo del mapa mental.
   // Es un objeto (no un número) para re-disparar el scroll aunque se repita índice.
   const [seccionObjetivo, setSeccionObjetivo] = useState<{ i: number } | null>(null)
-  const { progreso, marcarTeoriaLeida, marcarVueltaCompleta } = useProgress()
+  const [pomodoroAbierto, setPomodoroAbierto] = useState(false)
+  const { progreso, marcarTeoriaLeida, marcarVueltaCompleta, registrarTiempo } = useProgress()
   const { cargarTema } = obtenerTopics(slug ?? 'cgpc')
 
   useEffect(() => {
     cargarTema(temaId).then(setTema).catch(() => navigate(`/oposicion/${slug}/temario`))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [temaId, navigate])
+
+  // P2.4: cronómetro de fondo. Suma segundos solo con la pestaña visible y
+  // descarta el tiempo (vuelca en localStorage) cada 30s y al desmontar.
+  const segsRef = useRef(0)
+  useEffect(() => {
+    const tick = setInterval(() => {
+      if (document.visibilityState === 'visible') segsRef.current += 1
+      if (segsRef.current >= 30) { registrarTiempo(temaId, segsRef.current); segsRef.current = 0 }
+    }, 1000)
+    return () => {
+      clearInterval(tick)
+      if (segsRef.current > 0) { registrarTiempo(temaId, segsRef.current); segsRef.current = 0 }
+    }
+  }, [temaId, registrarTiempo])
 
   const handleTeoriaLeida = useCallback(() => marcarTeoriaLeida(temaId), [temaId, marcarTeoriaLeida])
 
@@ -46,7 +62,19 @@ export function TemaDetalle() {
             <button onClick={() => navigate(`/oposicion/${slug}/temario`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 13.5, display: 'flex', alignItems: 'center', gap: 5 }}>
               ← <span style={{ fontWeight: 500 }}>Temario</span>
             </button>
-            {vueltas > 0 && <span className="pill">🔄 ×{vueltas}</span>}
+            <div className="flex items-center gap-2">
+              {vueltas > 0 && <span className="pill">🔄 ×{vueltas}</span>}
+              <button
+                onClick={() => setPomodoroAbierto(v => !v)}
+                aria-label="Temporizador Pomodoro"
+                title="Pomodoro 25/5"
+                style={{
+                  background: pomodoroAbierto ? 'var(--accent)' : 'none', border: '1px solid var(--border)',
+                  borderRadius: 10, padding: '4px 9px', cursor: 'pointer', fontSize: 14,
+                  color: pomodoroAbierto ? 'var(--surface)' : 'var(--ink)',
+                }}
+              >🍅</button>
+            </div>
           </div>
           <div className="eyebrow" style={{ marginTop: 8 }}>Tema {temaId}</div>
           <h1 className="display" style={{ margin: '2px 0 0', fontSize: 21, lineHeight: 1.12, letterSpacing: '-0.01em' }}>{tema.titulo}</h1>
@@ -82,6 +110,8 @@ export function TemaDetalle() {
         )}
         {tab === "Flashcards"  && <FlashcardsTab tema={tema} onVueltaCompleta={() => marcarVueltaCompleta(temaId)} />}
       </div>
+
+      {pomodoroAbierto && <Pomodoro onCerrar={() => setPomodoroAbierto(false)} />}
 
       <BotonTutor onClick={() => setTutorAbierto(true)} />
       <TutorPanel

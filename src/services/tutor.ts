@@ -13,6 +13,8 @@ export interface ContextoTema {
   secciones: Array<{ titulo: string; contenido: string }>
   flashcards: Array<Record<string, unknown>>
   preguntas: Array<Record<string, unknown>>
+  // P2.2: bloque compacto con las debilidades del alumno (null = sin datos).
+  perfilAlumno?: string | null
 }
 
 const ENDPOINT = '/.netlify/functions/tutor-chat'

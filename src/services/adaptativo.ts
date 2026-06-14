@@ -1,6 +1,6 @@
 import type { Progreso } from '../types'
 import { getProgreso, saveProgreso } from './storage'
-import { flashcardsPendientesHoy } from './spaced-repetition'
+import { flashcardsPendientesHoy, ordenarPorFragilidad } from './spaced-repetition'
 
 // ── Cálculo de debilidades ──────────────────────────────────
 export function calcularDebilidades(
@@ -31,10 +31,7 @@ export function generarSesionDiaria(
   const pendientesHoy = flashcardsPendientesHoy(estadosFlashcards)
   // Ordenar por fragilidad: nivel más bajo primero (lo menos consolidado) y, a
   // igual nivel, la más vencida antes. Así el repaso ataca primero lo más frágil.
-  const porFragilidad = [...pendientesHoy].sort((a, b) => {
-    const ea = estadosFlashcards[a], eb = estadosFlashcards[b]
-    return (ea.nivel - eb.nivel) || (ea.proximoRepaso < eb.proximoRepaso ? -1 : 1)
-  })
+  const porFragilidad = ordenarPorFragilidad(pendientesHoy, estadosFlashcards)
   // Flashcards de temas débiles primero (manteniendo el orden de fragilidad)
   const deTemasDebiles = porFragilidad.filter(id =>
     temasDebiles.some(temaId => id.startsWith(`t${String(temaId).padStart(2, '0')}`))

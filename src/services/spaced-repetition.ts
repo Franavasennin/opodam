@@ -32,6 +32,24 @@ export function flashcardsPendientesHoy(
     .map(([id]) => id)
 }
 
+/**
+ * P1.4 — Ordena ids de flashcard por fragilidad: primero el nivel más bajo
+ * (lo menos consolidado) y, a igual nivel, lo más vencido. Así el repaso
+ * ataca antes lo que más riesgo tiene de olvidarse. Los ids sin estado van al final.
+ */
+export function ordenarPorFragilidad(
+  ids: string[],
+  estados: Record<string, EstadoFlashcard>,
+): string[] {
+  return [...ids].sort((a, b) => {
+    const ea = estados[a], eb = estados[b]
+    if (!ea && !eb) return 0
+    if (!ea) return 1
+    if (!eb) return -1
+    return (ea.nivel - eb.nivel) || (ea.proximoRepaso < eb.proximoRepaso ? -1 : ea.proximoRepaso > eb.proximoRepaso ? 1 : 0)
+  })
+}
+
 export function responderFlashcard(flashcardId: string, calificacion: Calificacion): void {
   const p = getProgreso()
   const actual = p.flashcards[flashcardId] ?? {

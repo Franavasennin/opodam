@@ -1,6 +1,7 @@
 import type { Progreso } from '../types'
 import { getProgreso, saveProgreso } from './storage'
 import { actualizarRendimientoTema, calcularNotaExamen } from './examen'
+import { acumularTiempo } from './tiempo'
 
 export function calcularPuntuacionTest(
   aciertos: number,
@@ -52,6 +53,15 @@ export function registrarEstudio(temaId: number): void {
     p.racha.dias = 1
   }
   p.racha.ultimoEstudio = hoy
+  saveProgreso(p)
+}
+
+/** P2.4: acumula segundos de estudio del tema (y al total global). */
+export function registrarTiempoTema(temaId: number, segundos: number): void {
+  if (segundos <= 0) return
+  const p = getProgreso()
+  p.tiempoPorTema = acumularTiempo(p.tiempoPorTema ?? {}, temaId, segundos)
+  p.tiempoTotalSegundos += Math.round(segundos)
   saveProgreso(p)
 }
 

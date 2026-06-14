@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
-import { flashcardsPendientesHoy, responderFlashcard } from '../services/spaced-repetition'
+import { flashcardsPendientesHoy, responderFlashcard, ordenarPorFragilidad } from '../services/spaced-repetition'
 import { obtenerTopics } from '../data/topics'
 import type { Flashcard } from '../types'
 
@@ -28,15 +28,20 @@ export function FlashcardsGlobal() {
         setCargando(false)
         return
       }
-      const resultado: { card: Flashcard }[] = []
       // Carga en paralelo (los temas son independientes); se ignoran los que fallen.
       const temas = await Promise.all(
         TEMAS_META.map(meta => cargarTema(meta.id).catch(() => null))
       )
+      const porId = new Map<string, Flashcard>()
       for (const tema of temas) {
         if (!tema) continue
-        tema.flashcards.filter(c => ids.includes(c.id)).forEach(card => resultado.push({ card }))
+        tema.flashcards.filter(c => ids.includes(c.id)).forEach(card => porId.set(card.id, card))
       }
+      // P1.4: repasar primero lo más frágil (nivel bajo / más vencido).
+      const resultado = ordenarPorFragilidad(ids, progreso.flashcards)
+        .map(id => porId.get(id))
+        .filter((c): c is Flashcard => c != null)
+        .map(card => ({ card }))
       setPendientes(resultado)
       setCargando(false)
     }

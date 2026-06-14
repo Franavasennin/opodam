@@ -1,13 +1,13 @@
 // Cuaderno de errores: registra preguntas falladas del temario y las "gradúa"
 // (las saca del cuaderno) cuando se aciertan GRADUACION veces seguidas.
-import type { Progreso } from '../types'
+import type { Confianza, Progreso } from '../types'
 import { getProgreso, saveProgreso } from './storage'
 
 export const GRADUACION = 2 // aciertos seguidos para salir del cuaderno
 
 function hoy(): string { return new Date().toISOString().slice(0, 10) }
 
-function aplicar(p: Progreso, preguntaId: string, temaId: number, acierto: boolean): void {
+function aplicar(p: Progreso, preguntaId: string, temaId: number, acierto: boolean, confianza?: Confianza): void {
   const cuaderno = p.erroresPorPregunta ?? (p.erroresPorPregunta = {})
   const actual = cuaderno[preguntaId]
   if (!acierto) {
@@ -16,6 +16,7 @@ function aplicar(p: Progreso, preguntaId: string, temaId: number, acierto: boole
       fallos: (actual?.fallos ?? 0) + 1,
       aciertosSeguidos: 0,
       ultimoFallo: hoy(),
+      confianza,                    // P1.5: 'seguro' marca un falso seguro
     }
     return
   }
@@ -30,25 +31,33 @@ function aplicar(p: Progreso, preguntaId: string, temaId: number, acierto: boole
 }
 
 /** Registra el resultado de una única pregunta. */
-export function registrarRespuesta(preguntaId: string, temaId: number, acierto: boolean): void {
+export function registrarRespuesta(preguntaId: string, temaId: number, acierto: boolean, confianza?: Confianza): void {
   const p = getProgreso()
-  aplicar(p, preguntaId, temaId, acierto)
+  aplicar(p, preguntaId, temaId, acierto, confianza)
   saveProgreso(p)
 }
 
 /** Registra un test/examen entero en una sola escritura. Las en blanco se omiten. */
-export function registrarLote(items: Array<{ id: string; temaId: number; acierto: boolean }>): void {
+export function registrarLote(items: Array<{ id: string; temaId: number; acierto: boolean; confianza?: Confianza }>): void {
   if (!items.length) return
   const p = getProgreso()
-  for (const it of items) aplicar(p, it.id, it.temaId, it.acierto)
+  for (const it of items) aplicar(p, it.id, it.temaId, it.acierto, it.confianza)
   saveProgreso(p)
 }
 
-/** Preguntas pendientes en el cuaderno, las más frágiles primero (más fallos, más antiguas). */
+/**
+ * Preguntas pendientes en el cuaderno, las más frágiles primero.
+ * P1.5: un "falso seguro" (confianza='seguro' al fallar) va antes que todo —
+ * es la laguna más peligrosa. Luego, por nº de fallos y antigüedad.
+ */
 export function preguntasEnCuaderno(p: Progreso = getProgreso()): Array<{ id: string; temaId: number }> {
   const cuaderno = p.erroresPorPregunta ?? {}
+  const esFalsoSeguro = (e: { confianza?: Confianza }) => (e.confianza === 'seguro' ? 1 : 0)
   return Object.entries(cuaderno)
-    .sort(([, a], [, b]) => (b.fallos - a.fallos) || (a.ultimoFallo < b.ultimoFallo ? -1 : 1))
+    .sort(([, a], [, b]) =>
+      (esFalsoSeguro(b) - esFalsoSeguro(a)) ||
+      (b.fallos - a.fallos) ||
+      (a.ultimoFallo < b.ultimoFallo ? -1 : 1))
     .map(([id, e]) => ({ id, temaId: e.temaId }))
 }
 

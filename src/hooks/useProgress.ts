@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import { getProgreso, saveProgreso } from '../services/storage'
-import { registrarEstudio, completarVuelta, guardarResultadoTest } from '../services/progress'
+import { registrarEstudio, completarVuelta, guardarResultadoTest, registrarTiempoTema } from '../services/progress'
 import type { Progreso } from '../types'
 
 export function useProgress() {
@@ -30,5 +30,10 @@ export function useProgress() {
     refrescar()
   }, [refrescar])
 
-  return { progreso, marcarTeoriaLeida, marcarVueltaCompleta, guardarTest, actualizarNotificaciones, refrescar }
+  // P2.4: no refresca el estado (es telemetría de fondo; evita re-render por tick).
+  const registrarTiempo = useCallback((temaId: number, segundos: number) => {
+    registrarTiempoTema(temaId, segundos)
+  }, [])
+
+  return { progreso, marcarTeoriaLeida, marcarVueltaCompleta, guardarTest, actualizarNotificaciones, registrarTiempo, refrescar }
 }

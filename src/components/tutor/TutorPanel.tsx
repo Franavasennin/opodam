@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import type { Tema } from '../../types'
 import { preguntarTutor, type MensajeTutor, type ContextoTema } from '../../services/tutor'
 import { cargarHistorial, guardarHistorial } from '../../services/tutorHistorial'
+import { useProgress } from '../../hooks/useProgress'
+import { obtenerTopics } from '../../data/topics'
+import { construirPerfilAlumno } from '../../services/perfilAlumno'
 
 interface Props {
   oposicion: string
@@ -10,7 +13,7 @@ interface Props {
   onCerrar: () => void
 }
 
-function construirContexto(oposicion: string, tema: Tema): ContextoTema {
+function construirContexto(oposicion: string, tema: Tema, perfilAlumno: string | null): ContextoTema {
   return {
     oposicion,
     temaId: tema.id,
@@ -18,10 +21,13 @@ function construirContexto(oposicion: string, tema: Tema): ContextoTema {
     secciones: tema.secciones ?? [],
     flashcards: (tema.flashcards ?? []) as unknown as ContextoTema['flashcards'],
     preguntas: (tema.preguntas ?? []) as unknown as ContextoTema['preguntas'],
+    perfilAlumno,
   }
 }
 
 export function TutorPanel({ oposicion, tema, abierto, onCerrar }: Props) {
+  const { progreso } = useProgress()
+  const { TEMAS_META } = obtenerTopics(oposicion)
   const [mensajes, setMensajes] = useState<MensajeTutor[]>([])
   const [input, setInput] = useState('')
   const [cargando, setCargando] = useState(false)
@@ -37,15 +43,16 @@ export function TutorPanel({ oposicion, tema, abierto, onCerrar }: Props) {
     finRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [mensajes, cargando])
 
-  async function enviar() {
-    const texto = input.trim()
-    if (!texto || cargando) return
+  async function enviarTexto(texto: string) {
+    const limpio = texto.trim()
+    if (!limpio || cargando) return
     setError(null)
-    const nuevos: MensajeTutor[] = [...mensajes, { role: 'user', content: texto }]
+    const nuevos: MensajeTutor[] = [...mensajes, { role: 'user', content: limpio }]
     setMensajes(nuevos)
     setInput('')
     setCargando(true)
-    const { content, error: err } = await preguntarTutor(nuevos, construirContexto(oposicion, tema))
+    const perfil = construirPerfilAlumno(progreso, TEMAS_META)
+    const { content, error: err } = await preguntarTutor(nuevos, construirContexto(oposicion, tema, perfil))
     setCargando(false)
     if (err || !content) {
       setError('No se pudo contactar con el tutor, inténtalo de nuevo.')
@@ -55,6 +62,8 @@ export function TutorPanel({ oposicion, tema, abierto, onCerrar }: Props) {
     setMensajes(finales)
     guardarHistorial(oposicion, tema.id, finales)
   }
+
+  const enviar = () => enviarTexto(input)
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); enviar() }
@@ -98,6 +107,18 @@ export function TutorPanel({ oposicion, tema, abierto, onCerrar }: Props) {
         </main>
 
         <footer className="bg-white border-t border-slate-200 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+          <div className="flex gap-2 overflow-x-auto pb-2 -mt-1">
+            <button
+              onClick={() => enviarTexto(`Explícame por qué suelo fallar en «${tema.titulo}» y dame un ejemplo nuevo para no repetir el error.`)}
+              disabled={cargando}
+              className="shrink-0 text-xs font-semibold rounded-full border border-slate-200 text-slate-600 px-3 py-1.5 hover:bg-slate-50 disabled:opacity-40"
+            >🔍 Explícame mi fallo</button>
+            <button
+              onClick={() => enviarTexto(`Ponme 3 preguntas tipo test nuevas sobre «${tema.titulo}», una a una, esperando mi respuesta antes de corregir.`)}
+              disabled={cargando}
+              className="shrink-0 text-xs font-semibold rounded-full border border-slate-200 text-slate-600 px-3 py-1.5 hover:bg-slate-50 disabled:opacity-40"
+            >📝 3 preguntas nuevas</button>
+          </div>
           <div className="flex items-end gap-2">
             <textarea
               value={input}

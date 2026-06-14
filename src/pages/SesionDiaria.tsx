@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
 import { obtenerTopics } from '../data/topics'
-import { responderFlashcard } from '../services/spaced-repetition'
+import { responderFlashcard, flashcardsPendientesHoy } from '../services/spaced-repetition'
 import { obtenerSesionHoy, completarSesionDiaria, calcularDebilidades } from '../services/adaptativo'
 import { actualizarRendimientoTema } from '../services/examen'
 import { registrarLote } from '../services/errores'
@@ -123,6 +123,8 @@ export function SesionDiaria() {
   // ── Completada ──
   if (fase === 'completada') {
     const aciertos = preguntas.filter((p, i) => respuestas[i] === getPreguntaCorrecta(p)).length
+    // P1.4: la sesión corta a 30 flashcards; si aún quedan vencidas, ofrecer seguir.
+    const restantes = flashcardsPendientesHoy(progreso.flashcards).length
     return (
       <div className="min-h-screen fade-up flex flex-col items-center justify-center text-center px-4" style={{ background: 'var(--bg)' }}>
         <div style={{ fontSize: 60 }}>🎉</div>
@@ -136,7 +138,12 @@ export function SesionDiaria() {
           Racha: <span className="num-display" style={{ fontWeight: 600, color: 'var(--accent)' }}>{progreso.racha.dias} días 🔥</span>
         </p>
         <p style={{ fontSize: 11.5, color: 'var(--mute)', margin: '8px 0 20px' }}>Vuelve mañana para la siguiente sesión</p>
-        <button onClick={() => navigate(`/oposicion/${slug}`)} className="btn-editorial btn-acc" style={{ maxWidth: 320, width: '100%' }}>Volver al inicio</button>
+        {restantes > 0 && (
+          <button onClick={() => navigate(`/oposicion/${slug}/flashcards`)} className="btn-editorial btn-acc" style={{ maxWidth: 320, width: '100%', marginBottom: 10 }}>
+            Seguir repasando ({restantes} pendientes) →
+          </button>
+        )}
+        <button onClick={() => navigate(`/oposicion/${slug}`)} className="btn-editorial btn-sec" style={{ maxWidth: 320, width: '100%' }}>Volver al inicio</button>
       </div>
     )
   }

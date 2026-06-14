@@ -70,7 +70,8 @@ export function seleccionarPreguntas(
 // ── Guardar resultado ───────────────────────────────────────
 export function guardarExamen(resultado: ExamenResultado): void {
   const p = getProgreso()
-  p.historialExamenes = [resultado, ...p.historialExamenes].slice(0, 10)
+  // P1.6 quick win: cap 10 → 50 para tener evolución histórica real.
+  p.historialExamenes = [resultado, ...p.historialExamenes].slice(0, 50)
   for (const [temaIdStr, res] of Object.entries(resultado.resultadosPorTema)) {
     const actual = p.rendimientoPorTema[temaIdStr] ?? { aciertos: 0, errores: 0, total: 0 }
     p.rendimientoPorTema[temaIdStr] = {
