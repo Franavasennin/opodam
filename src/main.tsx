@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import * as Sentry from '@sentry/react'
 import App from './App'
+import { initPWA } from './pwa'
 import './index.css'
 
 // ── Sentry — monitorización de errores en producción ──────────────
@@ -21,12 +22,8 @@ if (SENTRY_DSN) {
   })
 }
 
-// Registra el service worker (PWA instalable + estudio sin conexión)
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => { /* no crítico */ })
-  })
-}
+// Registra el service worker vía vite-plugin-pwa (auto-update + aviso de nueva versión).
+initPWA()
 
 function ErrorFallback({ error }: { error: unknown }) {
   const mensaje = error instanceof Error ? error.message : String(error)
