@@ -103,6 +103,14 @@ export async function tieneAccesoOposicion(slug: string): Promise<boolean> {
   const { data: { session } } = await supabase.auth.getSession()
   if (!session?.user) return false
 
+  // Los roles owner/beta tienen acceso ilimitado a todo, sin suscripción.
+  const { data: perfil } = await supabase
+    .from('profiles')
+    .select('rol')
+    .eq('id', session.user.id)
+    .maybeSingle()
+  if (perfil?.rol === 'owner' || perfil?.rol === 'beta') return true
+
   const { data, error } = await supabase
     .from('oposicion_subscriptions')
     .select('status')
