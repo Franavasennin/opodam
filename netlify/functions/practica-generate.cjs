@@ -1,9 +1,9 @@
 // netlify/functions/practica-generate.cjs
-// Genera ítems de práctica (psicotécnicos o supuestos) bajo demanda con Groq.
-// Efímero: no persiste. Reutiliza GROQ_API_KEY.
+// Genera ítems de práctica (psicotécnicos o supuestos) bajo demanda con Mistral.
+// Efímero: no persiste. Reutiliza MISTRAL_API_KEY.
 
-const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions'
-const MODEL = 'llama-3.1-8b-instant'
+const MISTRAL_URL = 'https://api.mistral.ai/v1/chat/completions'
+const MODEL = 'mistral-small-latest'
 
 function resolverOrigen(event) {
   const env = (process.env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean)
@@ -83,7 +83,7 @@ const { comprobarLimite } = require('./_ratelimit.cjs')
 exports.handler = async function (event) {
   if (event.httpMethod === 'OPTIONS') return { statusCode: 204, headers: corsHeaders(event), body: '' }
   if (event.httpMethod !== 'POST') return { statusCode: 405, headers: corsHeaders(event), body: JSON.stringify({ error: 'Method Not Allowed' }) }
-  if (!process.env.GROQ_API_KEY) return { statusCode: 500, headers: corsHeaders(event), body: JSON.stringify({ error: 'GROQ_API_KEY no configurada en el servidor' }) }
+  if (!process.env.MISTRAL_API_KEY) return { statusCode: 500, headers: corsHeaders(event), body: JSON.stringify({ error: 'MISTRAL_API_KEY no configurada en el servidor' }) }
   const limite = await comprobarLimite(event, { clave: 'practica', max: 12, ventanaSeg: 60 })
   if (!limite.permitido) return { statusCode: 429, headers: { ...corsHeaders(event), 'Retry-After': String(limite.resetSeg) }, body: JSON.stringify({ error: 'Demasiadas peticiones, espera un momento.' }) }
   if (typeof fetch !== 'function') return { statusCode: 500, headers: corsHeaders(event), body: JSON.stringify({ error: 'Runtime sin fetch global (Node < 18)' }) }
@@ -98,7 +98,7 @@ exports.handler = async function (event) {
     return { statusCode: 400, headers: corsHeaders(event), body: JSON.stringify({ error: 'falta duda' }) }
   }
 
-  const groqBody = {
+  const requestBody = {
     model: MODEL,
     messages: [{ role: 'user', content: buildPrompt(payload) }],
     temperature: 0.4,
@@ -108,15 +108,15 @@ exports.handler = async function (event) {
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), 25000)
   try {
-    const r = await fetch(GROQ_URL, {
+    const r = await fetch(MISTRAL_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${process.env.GROQ_API_KEY}` },
-      body: JSON.stringify(groqBody),
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${process.env.MISTRAL_API_KEY}` },
+      body: JSON.stringify(requestBody),
       signal: controller.signal,
     })
     if (!r.ok) {
       const text = await r.text()
-      return { statusCode: r.status, headers: corsHeaders(event), body: JSON.stringify({ error: 'Groq error', detail: text }) }
+      return { statusCode: r.status, headers: corsHeaders(event), body: JSON.stringify({ error: 'Mistral error', detail: text }) }
     }
     const data = await r.json()
     const content = data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content
@@ -145,7 +145,7 @@ exports.handler = async function (event) {
     return { statusCode: 200, headers: corsHeaders(event), body: JSON.stringify({ preguntas: items }) }
   } catch (err) {
     const msg = err && err.name === 'AbortError' ? 'Tiempo de espera agotado' : String(err && err.message ? err.message : err)
-    return { statusCode: 502, headers: corsHeaders(event), body: JSON.stringify({ error: 'Error contactando con Groq', detail: msg }) }
+    return { statusCode: 502, headers: corsHeaders(event), body: JSON.stringify({ error: 'Error contactando con Mistral', detail: msg }) }
   } finally {
     clearTimeout(timeout)
   }

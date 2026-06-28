@@ -1,14 +1,14 @@
 // netlify/functions/banco-generar.cjs
-// P2.1 Banco inteligente: genera BORRADORES de preguntas con Groq y los inserta
+// P2.1 Banco inteligente: genera BORRADORES de preguntas con Mistral y los inserta
 // en banco_preguntas con estado='borrador'. NUNCA crea preguntas 'activa': el
 // paso borrador -> revisada -> activa es manual/auditado (regla dura). Endpoint
 // de administración: requiere el secreto BANCO_GENERAR_SECRET (fail-closed).
 //
-// Env requeridas: GROQ_API_KEY, VITE_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY,
+// Env requeridas: MISTRAL_API_KEY, VITE_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY,
 //                 BANCO_GENERAR_SECRET.
 
-const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions'
-const MODEL = 'llama-3.1-8b-instant'
+const MISTRAL_URL = 'https://api.mistral.ai/v1/chat/completions'
+const MODEL = 'mistral-small-latest'
 
 function resolverOrigen(event) {
   const env = (process.env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean)
@@ -74,7 +74,7 @@ const { comprobarLimite } = require('./_ratelimit.cjs')
 exports.handler = async function (event) {
   if (event.httpMethod === 'OPTIONS') return { statusCode: 204, headers: corsHeaders(event), body: '' }
   if (event.httpMethod !== 'POST') return { statusCode: 405, headers: corsHeaders(event), body: JSON.stringify({ error: 'Method Not Allowed' }) }
-  if (!process.env.GROQ_API_KEY) return { statusCode: 500, headers: corsHeaders(event), body: JSON.stringify({ error: 'GROQ_API_KEY no configurada' }) }
+  if (!process.env.MISTRAL_API_KEY) return { statusCode: 500, headers: corsHeaders(event), body: JSON.stringify({ error: 'MISTRAL_API_KEY no configurada' }) }
 
   // Fail-closed: sin secreto configurado, el endpoint queda cerrado.
   const secreto = process.env.BANCO_GENERAR_SECRET
@@ -95,7 +95,7 @@ exports.handler = async function (event) {
     return { statusCode: 400, headers: corsHeaders(event), body: JSON.stringify({ error: 'Faltan slug, temaId o contexto' }) }
   }
 
-  const groqBody = {
+  const requestBody = {
     model: MODEL,
     messages: [{ role: 'user', content: buildPrompt({ n, titulo, contexto: payload.contexto }) }],
     temperature: 0.5,
@@ -105,15 +105,15 @@ exports.handler = async function (event) {
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), 25000)
   try {
-    const r = await fetch(GROQ_URL, {
+    const r = await fetch(MISTRAL_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${process.env.GROQ_API_KEY}` },
-      body: JSON.stringify(groqBody),
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${process.env.MISTRAL_API_KEY}` },
+      body: JSON.stringify(requestBody),
       signal: controller.signal,
     })
     if (!r.ok) {
       const text = await r.text()
-      return { statusCode: r.status, headers: corsHeaders(event), body: JSON.stringify({ error: 'Groq error', detail: text }) }
+      return { statusCode: r.status, headers: corsHeaders(event), body: JSON.stringify({ error: 'Mistral error', detail: text }) }
     }
     const data = await r.json()
     const content = data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content
@@ -135,7 +135,7 @@ exports.handler = async function (event) {
 
     return { statusCode: 200, headers: corsHeaders(event), body: JSON.stringify({ creados: filas.length, estado: 'borrador' }) }
   } catch (err) {
-    return { statusCode: 500, headers: corsHeaders(event), body: JSON.stringify({ error: err && err.name === 'AbortError' ? 'Timeout de Groq' : 'Error interno' }) }
+    return { statusCode: 500, headers: corsHeaders(event), body: JSON.stringify({ error: err && err.name === 'AbortError' ? 'Timeout de Mistral' : 'Error interno' }) }
   } finally {
     clearTimeout(timeout)
   }
