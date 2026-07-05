@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { useSeo } from '../hooks/useSeo'
 
 const OPOSICIONES = [
   { emoji: '👮', nombre: 'Policía Canaria (CGPC)', temas: 45 },
@@ -21,6 +22,11 @@ const FUNCIONALIDADES = [
 ]
 
 export default function Landing() {
+  useSeo({
+    title: 'OpoDAM · Academia de oposiciones en Canarias',
+    description: 'Prepara tu oposición en Canarias (Policía Local, Policía Canaria, Guardia Civil, Justicia, Sanidad) con temario, tests, tutor IA y simulacros de examen.',
+    path: '/',
+  })
   const navigate = useNavigate()
   const ir = () => navigate('/onboarding/email')
 
@@ -129,6 +135,11 @@ export default function Landing() {
       {/* ── Footer ── */}
       <footer style={{ borderTop: '1px solid var(--border)', padding: '24px', textAlign: 'center' }}>
         <span style={{ fontSize: 12, color: 'var(--mute)' }}>© 2026 OpoDAM · Canarias · Hecho para opositores de verdad.</span>
+        <div style={{ marginTop: 8, display: 'flex', gap: 16, justifyContent: 'center' }}>
+          <a href="/terminos"   style={{ fontSize: 12, color: 'var(--mute)' }}>Términos</a>
+          <a href="/privacidad" style={{ fontSize: 12, color: 'var(--mute)' }}>Privacidad</a>
+          <a href="/reembolsos" style={{ fontSize: 12, color: 'var(--mute)' }}>Reembolsos</a>
+        </div>
       </footer>
     </div>
   )

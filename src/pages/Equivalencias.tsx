@@ -1,5 +1,6 @@
 // src/pages/Equivalencias.tsx
 import { useNavigate } from 'react-router-dom'
+import { useSeo } from '../hooks/useSeo'
 
 const topbar: React.CSSProperties = {
   height: 52, borderBottom: '1px solid var(--border-soft)',
@@ -117,6 +118,11 @@ function Tabla({ filas }: { filas: string[][] }) {
 }
 
 export default function Equivalencias() {
+  useSeo({
+    title: 'Equivalencias de temario entre oposiciones',
+    description: 'Tabla de equivalencias de temario entre Policía Canaria (CGPC) y Policía Local en Canarias.',
+    path: '/equivalencias',
+  })
   const navigate = useNavigate()
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
