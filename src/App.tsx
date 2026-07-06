@@ -58,6 +58,9 @@ const Personalidad = lazy(() => import('./pages/Personalidad'))
 const TutorGlobal = lazy(() => import('./pages/TutorGlobal'))
 const InformeIdoneidad = lazy(() => import('./pages/InformeIdoneidad'))
 const Biodata = lazy(() => import('./pages/Biodata'))
+const Terminos = lazy(() => import('./pages/Terminos'))
+const Privacidad = lazy(() => import('./pages/Privacidad'))
+const Reembolsos = lazy(() => import('./pages/Reembolsos'))
 
 const Loading = () => (
   <div className="min-h-screen flex items-center justify-center bg-slate-50">
@@ -115,6 +118,9 @@ export default function App() {
         <Route path="/procoach" element={<ProCoachAI />} />
         <Route path="/procoach/chat" element={<ProCoachChat />} />
         <Route path="/equivalencias" element={<Equivalencias />} />
+        <Route path="/terminos"   element={<Terminos />} />
+        <Route path="/privacidad" element={<Privacidad />} />
+        <Route path="/reembolsos" element={<Reembolsos />} />
 
         {/* Redirecciones */}
         <Route path="/" element={<RootOrCallback />} />

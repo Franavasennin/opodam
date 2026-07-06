@@ -7,6 +7,7 @@ import { registrarLote, contarErrores } from '../services/errores'
 import { registrarCalibracion } from '../services/calibracion'
 import { elegirTemasMezcla, intercalarPreguntas } from '../services/mezcla'
 import { cargarBancoActivo, fusionarBanco } from '../services/banco'
+import { seleccionarPreguntasTest, PREGUNTAS_POR_TEST, type ModoDificultad } from '../services/seleccionTest'
 import { getPenalizacion, describirPenalizacion, consejoEstrategia } from '../services/nota'
 import { obtenerTopics } from '../data/topics'
 import type { Tema, Pregunta, Confianza } from '../types'
@@ -27,6 +28,9 @@ export function Tests() {
   const { cargarTema, TEMAS_META } = obtenerTopics(slug ?? 'cgpc')
   const [temaId, setTemaId] = useState<number | null>(null)
   const [tema, setTema] = useState<Tema | null>(null)
+  // banco = todas las preguntas del tema (hasta 50); preguntasDelTest = las 30 seleccionadas.
+  const [preguntasDelTest, setPreguntasDelTest] = useState<Pregunta[]>([])
+  const [modo, setModo] = useState<ModoDificultad | null>(null)
   const [respuestas, setRespuestas] = useState<(number | null)[]>([])
   const [confianza, setConfianza] = useState<(Confianza | null)[]>([])
   const [enviado, setEnviado] = useState(false)
@@ -36,18 +40,28 @@ export function Tests() {
 
   useEffect(() => {
     if (temaId === null || temaId === ID_MEZCLA) return
+    setTema(null)
+    setModo(null)
+    setPreguntasDelTest([])
     cargarTema(temaId).then(async t => {
-      // P2.1: fusiona las preguntas locales con el banco activo de Supabase
-      // (preguntas nuevas auditadas) para no repetir contenido en 3ª+ vuelta.
+      // P2.1: fusiona las preguntas locales con el banco activo de Supabase.
       const banco = await cargarBancoActivo(slug ?? 'cgpc', temaId)
-      const preguntas = banco.length ? fusionarBanco(t.preguntas, banco) : t.preguntas
-      setTema({ ...t, preguntas })
-      setRespuestas(new Array(preguntas.length).fill(null))
-      setConfianza(new Array(preguntas.length).fill(null))
+      const todasPreguntas = banco.length ? fusionarBanco(t.preguntas, banco) : t.preguntas
+      // Guardamos el banco completo en tema.preguntas; las 30 del test se eligen al confirmar dificultad.
+      setTema({ ...t, preguntas: todasPreguntas })
       setEnviado(false)
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [temaId])
+
+  function elegirModo(m: ModoDificultad) {
+    if (!tema) return
+    const sel = seleccionarPreguntasTest(tema.preguntas, m, PREGUNTAS_POR_TEST)
+    setModo(m)
+    setPreguntasDelTest(sel)
+    setRespuestas(new Array(sel.length).fill(null))
+    setConfianza(new Array(sel.length).fill(null))
+  }
 
   async function iniciarMezcla() {
     const { ids } = elegirTemasMezcla(progreso.temas ?? {}, TEMAS_META.map(m => m.id))
@@ -127,16 +141,59 @@ export function Tests() {
 
   if (!tema) return <div className="min-h-screen flex justify-center py-16" style={{ background: 'var(--bg)', color: 'var(--mute)' }}>Cargando…</div>
 
-  const aciertos = respuestas.filter((r, i) => r === getPreguntaCorrecta(tema.preguntas[i])).length
-  const errores  = respuestas.filter((r, i) => r !== null && r !== getPreguntaCorrecta(tema.preguntas[i])).length
+  // ── Selector de dificultad (entre elegir tema y hacer el test) ──
+  if (!esMezcla && modo === null) return (
+    <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
+      <TestTopbar title={tema.titulo} onBack={() => { setTemaId(null); setTema(null) }} />
+      <main className="max-w-2xl mx-auto px-4 pt-6 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+        <div className="eyebrow" style={{ marginBottom: 4 }}>Elige la dificultad</div>
+        <h2 className="display" style={{ margin: '0 0 8px', fontSize: 26, letterSpacing: '-0.015em' }}>
+          ¿Cómo quieres <span className="display-italic" style={{ color: 'var(--accent)' }}>practicar?</span>
+        </h2>
+        <p style={{ margin: '0 0 16px', fontSize: 13.5, color: 'var(--mute)' }}>
+          Banco: <strong style={{ color: 'var(--ink)' }}>{tema.preguntas.length} preguntas</strong> · el test saca {PREGUNTAS_POR_TEST} al azar cada vez.
+        </p>
+
+        <button onClick={() => elegirModo('normal')} className="card"
+          style={{ width: '100%', textAlign: 'left', padding: '20px 20px', borderRadius: 18, border: '1px solid var(--border)', background: 'var(--surface)', cursor: 'pointer' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+            <span style={{ fontSize: 32 }}>📝</span>
+            <div>
+              <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--ink)' }}>Normal</div>
+              <div style={{ fontSize: 13, color: 'var(--mute)', marginTop: 3 }}>Preguntas directas sobre el temario. Ideal para primera y segunda vuelta.</div>
+            </div>
+            <span style={{ marginLeft: 'auto', color: 'var(--mute)', fontSize: 18 }}>›</span>
+          </div>
+        </button>
+
+        <button onClick={() => elegirModo('dificil')} className="card"
+          style={{ width: '100%', textAlign: 'left', padding: '20px 20px', borderRadius: 18, border: '2px solid var(--warn)', background: 'color-mix(in srgb, var(--warn) 8%, var(--surface))', cursor: 'pointer' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+            <span style={{ fontSize: 32 }}>🔥</span>
+            <div>
+              <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--ink)' }}>Super Difícil</div>
+              <div style={{ fontSize: 13, color: 'var(--mute)', marginTop: 3 }}>60% preguntas trampa (distractores muy parecidos, plazos, nº de artículo, matices). Como el examen real.</div>
+            </div>
+            <span style={{ marginLeft: 'auto', color: 'var(--warn)', fontSize: 18 }}>›</span>
+          </div>
+        </button>
+      </main>
+    </div>
+  )
+
+  // Preguntas activas del test (30 seleccionadas, o todas en mezcla).
+  const preguntasActivas = esMezcla ? tema.preguntas : preguntasDelTest
+
+  const aciertos = respuestas.filter((r, i) => r === getPreguntaCorrecta(preguntasActivas[i])).length
+  const errores  = respuestas.filter((r, i) => r !== null && r !== getPreguntaCorrecta(preguntasActivas[i])).length
   // P1.5: calibración de este test (solo preguntas con confianza declarada)
-  const seguroFallo = respuestas.filter((r, i) => confianza[i] === 'seguro' && r !== getPreguntaCorrecta(tema.preguntas[i])).length
+  const seguroFallo = respuestas.filter((r, i) => confianza[i] === 'seguro' && r !== getPreguntaCorrecta(preguntasActivas[i])).length
   const conConfianza = confianza.filter(c => c !== null).length
 
   function enviar() {
     // temaId real por pregunta (en mezcla viene en la propia pregunta).
     const idDe = (p: Pregunta) => (p as PreguntaExt).temaId ?? tema!.id
-    const items = tema!.preguntas.map((p, i) => ({
+    const items = preguntasActivas.map((p, i) => ({
       id: p.id,
       temaId: idDe(p),
       acierto: respuestas[i] === getPreguntaCorrecta(p),
@@ -145,7 +202,7 @@ export function Tests() {
     if (esMezcla) {
       // Registra el rendimiento en cada tema real (sin tocar vueltas/porcentaje).
       const porTema = new Map<number, { ac: number; er: number; tot: number }>()
-      tema!.preguntas.forEach((p, i) => {
+      preguntasActivas.forEach((p, i) => {
         const id = idDe(p)
         const acc = porTema.get(id) ?? { ac: 0, er: 0, tot: 0 }
         acc.tot += 1
@@ -155,7 +212,7 @@ export function Tests() {
       })
       porTema.forEach((v, id) => actualizarRendimientoTema(id, v.ac, v.er, v.tot))
     } else {
-      guardarTest(tema!.id, aciertos, errores, tema!.preguntas.length)
+      guardarTest(tema!.id, aciertos, errores, preguntasActivas.length)
     }
     registrarLote(items)
     registrarCalibracion(items)
@@ -170,7 +227,7 @@ export function Tests() {
         <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, textAlign: 'center' }}>
           <div className="eyebrow" style={{ marginBottom: 6 }}>Nota equivalente</div>
           <div className="num-display" style={{ fontSize: 56, color: 'var(--accent)', lineHeight: 1 }}>
-            {calcularPuntuacionTest(aciertos, errores, tema.preguntas.length, pen).toFixed(2)}
+            {calcularPuntuacionTest(aciertos, errores, preguntasActivas.length, pen).toFixed(2)}
           </div>
           <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>sobre 10 · {describirPenalizacion(pen)}</div>
           <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {aciertos} aciertos · ❌ {errores} errores</div>
@@ -190,7 +247,12 @@ export function Tests() {
             ✅ Buena calibración: no fallaste ninguna de las que marcaste "Seguro".
           </div>
         )}
-        {tema.preguntas.map((p, i) => {
+        {modo === 'dificil' && (
+          <div style={{ background: 'color-mix(in srgb, var(--warn) 10%, var(--surface))', border: '1px solid var(--warn)', borderRadius: 12, padding: '8px 14px', fontSize: 12.5, color: 'var(--warn)', fontWeight: 600 }}>
+            🔥 Modo Super Difícil
+          </div>
+        )}
+        {preguntasActivas.map((p, i) => {
           const ok = respuestas[i] === getPreguntaCorrecta(p)
           return (
             <div key={i} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16, borderLeft: `3px solid ${ok ? 'var(--accent)' : 'var(--warn)'}` }}>
@@ -205,7 +267,10 @@ export function Tests() {
             🩹 Repasar mis fallos ahora
           </button>
         )}
-        <button onClick={() => setTemaId(null)} className="btn-editorial btn-sec" style={{ width: '100%' }}>Volver</button>
+        <button onClick={() => { setModo(null); setPreguntasDelTest([]); setEnviado(false) }} className="btn-editorial btn-sec" style={{ width: '100%' }}>
+          Repetir con otras preguntas
+        </button>
+        <button onClick={() => { setTemaId(null); setTema(null); setModo(null) }} className="btn-editorial btn-sec" style={{ width: '100%' }}>Volver al temario</button>
       </main>
     </div>
   )
@@ -213,12 +278,17 @@ export function Tests() {
   // ── Preguntas ──
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
-      <TestTopbar 
-        title={<span style={{ fontWeight: 600, fontSize: 13.5, letterSpacing: '-0.01em', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{tema.titulo}</span>}
-        onBack={() => setTemaId(null)} 
+      <TestTopbar
+        title={
+          <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600, fontSize: 13.5, letterSpacing: '-0.01em', overflow: 'hidden' }}>
+            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{esMezcla ? '🔀 Mezcla inteligente' : tema.titulo}</span>
+            {modo === 'dificil' && <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, background: 'var(--warn)', color: '#fff', borderRadius: 6, padding: '1px 7px' }}>🔥 DIFÍCIL</span>}
+          </span>
+        }
+        onBack={() => esMezcla ? setTemaId(null) : setModo(null)}
       />
       <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-        {tema.preguntas.map((p, i) => (
+        {preguntasActivas.map((p, i) => (
           <div key={i} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
             <p style={{ margin: '0 0 10px', fontSize: 14.5, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.4 }}>
               <span className="num-display" style={{ color: 'var(--mute)', marginRight: 6 }}>{i + 1}.</span>{p.enunciado}

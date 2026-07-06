@@ -60,6 +60,9 @@ export interface Pregunta {
   // Opcional: razonamiento por cada opción (mismo orden que `opciones`).
   // Si falta, la UI usa la explicación global en la opción correcta.
   explicaciones?: string[]
+  // Dificultad de la pregunta. Ausente = 'normal' (compatibilidad con bancos antiguos).
+  // 'dificil' = pregunta trampa (distractores muy cercanos, matices, plazos, nº de artículo…).
+  dificultad?: 'normal' | 'dificil'
 }
 
 // Helpers de normalización entre ambos formatos
