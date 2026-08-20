@@ -96,6 +96,12 @@ export async function obtenerPerfil(): Promise<Perfil | null> {
   return data as Perfil
 }
 
+/** Roles con acceso a contenido privado (ej. certificaciones para estudio personal). */
+export async function esOwner(): Promise<boolean> {
+  const perfil = await obtenerPerfil()
+  return perfil?.rol === 'owner' || perfil?.rol === 'beta'
+}
+
 // --- Suscripciones por oposición ---
 
 export async function tieneAccesoOposicion(slug: string): Promise<boolean> {

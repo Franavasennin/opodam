@@ -1,0 +1,1412 @@
+{
+  "id": 13,
+  "titulo": "3.2 · Diseño de redes seguras",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "DISEÑO DE REDES SEGURAS\n\nEn el ámbito de la ciberseguridad, diseñar redes seguras es un proceso fundamental para proteger los activos digitales de una organización. Cada red tiene características únicas según su entorno operativo, ya sea una fábrica, un hospital o una oficina corporativa. Sin embargo, existen principios y tecnologías comunes que se aplican para garantizar la seguridad en cualquier infraestructura de red.\n\n\nFUNDAMENTOS DE LA SEGMENTACIÓN DE RED\n\nUno de los pilares para diseñar redes seguras es la segmentación. Los firewalls (cortafuegos) son herramientas esenciales en este proceso, ya que permiten dividir la red en segmentos lógicos y controlar el flujo de tráfico entre ellos. Esta segmentación ayuda a contener posibles ataques, limitando el acceso no autorizado a áreas críticas de la red. Además de los firewalls, existen otros dispositivos que contribuyen a la seguridad de la red, como:\n\n- Honeypots (trampas para atacantes): sistemas diseñados para atraer y analizar el comportamiento de los atacantes.\n- Jump servers (servidores de salto): dispositivos que permiten el acceso controlado a zonas internas de la red desde ubicaciones externas.\n- Sensores de red: dispositivos que recopilan datos sobre el tráfico y posibles amenazas.\n- Load balancers (balanceadores de carga): herramientas que distribuyen el tráfico entre múltiples servidores para optimizar el rendimiento y la disponibilidad.\n\n\nZONAS DE SEGURIDAD: CONCEPTO Y APLICACIÓN\n\nLas zonas de seguridad (security zones) son un concepto clave en el diseño de redes seguras. A diferencia de las subredes o rangos de direcciones IP, las zonas de seguridad agrupan dispositivos según su función o tipo de acceso. Por ejemplo, una red puede dividirse en:\n\n- Zona interna (trusted zone): donde se encuentran los servidores y dispositivos críticos.\n- Zona externa (untrusted zone): que incluye la conexión a Internet.\n- Zona de servidores (servers zone): donde residen los servidores de aplicaciones.\n- Zona de bases de datos (databases zone): que alberga los sistemas de gestión de bases de datos.\n- Zona de pantalla (screened zone): una subred aislada que actúa como barrera entre la zona interna y externa.\n\n\nLa implementación de estas zonas permite establecer reglas de seguridad más precisas. Por ejemplo, se puede permitir el tráfico desde la zona interna a la externa, pero restringir el acceso desde la externa a la interna. Esto reduce la superficie de ataque (attack surface) y minimiza el riesgo de intrusiones.\n\n\nSUPERFICIE DE ATAQUE Y REDUCCIÓN DE RIESGOS\n\nLa superficie de ataque se refiere a todos los posibles puntos de entrada que un atacante podría explotar para acceder a una red. Esta superficie incluye:\n\n- Código de aplicaciones con vulnerabilidades.\n- Puertos abiertos innecesarios en servidores.\n- Procesos de autenticación débiles.\n- Errores humanos en la configuración de dispositivos.\n- Conexiones de red no seguras.\n\nPara reducir la superficie de ataque, es fundamental:\n\n- Auditar y parchear aplicaciones regularmente.\n- Cerrar puertos innecesarios en firewalls y servidores.\n- Implementar autenticación multifactor (MFA).\n- Monitorizar el tráfico en tiempo real para detectar actividades sospechosas.\n- Proteger la conectividad física y lógica de la red, incluyendo el cableado y las conexiones inalámbricas.\n\n\nPROTECCIÓN DE LA CONECTIVIDAD FÍSICA Y LÓGICA\n\nLa seguridad de una red no se limita a la protección lógica. La infraestructura física también es vulnerable a ataques. Algunas medidas clave incluyen:\n\n- Proteger el cableado de red para evitar interceptaciones (tapping).\n- Utilizar cifrado de nivel de aplicación para proteger los datos en tránsito.\n- Implementar túneles IPsec (IP Security) para conexiones seguras entre sitios remotos.\n- Usar concentradores VPN (Virtual Private Network) para permitir el acceso seguro a la red corporativa desde ubicaciones externas.\n\nEl cifrado es especialmente importante, ya que incluso si un atacante logra capturar los paquetes de red, no podrá interpretarlos sin la clave de descifrado.\n\n\nSISTEMAS DE PREVENCIÓN DE INTRUSIONES (IPS)\n\nLos sistemas de prevención de intrusiones (IPS, Intrusion Prevention System) son dispositivos diseñados para analizar el tráfico en tiempo real y bloquear amenazas conocidas. A diferencia de los sistemas de detección de intrusiones (IDS, Intrusion Detection System), que solo alertan sobre actividades sospechosas, los IPS pueden tomar medidas activas para detener los ataques.\n\n\nCONFIGURACIONES DE IPS: ACTIVA Y PASIVA\n\nLos IPS pueden operar en dos modos principales:\n\n- Modo activo (inline): el dispositivo se coloca directamente en el flujo de tráfico. Si el IPS falla, puede configurarse para:\n  - Fail open: el tráfico continúa fluyendo sin protección.\n  - Fail close: el tráfico se bloquea completamente, lo que puede causar interrupciones en la red.\n\n- Modo pasivo (out-of-band): el IPS recibe una copia del tráfico a través de técnicas como el port mirroring (SPAN) o un Network Tap (dispositivo físico que divide la señal). Este modo no interfiere con el tráfico, pero tampoco puede bloquear ataques en tiempo real.\n\nLa elección entre estos modos depende de la tolerancia al riesgo y la disponibilidad de la red de la organización.\n\n\nDISPOSITIVOS DE RED Y SU ROL EN LA SEGURIDAD\n\nAdemás de los firewalls y IPS, existen otros dispositivos de red que contribuyen a la seguridad:\n\n\nJUMP SERVERS (SERVIDORES DE SALTO)\n\nUn jump server es un dispositivo interno que actúa como punto de acceso controlado desde redes externas. Su función principal es permitir a los administradores acceder a servidores internos de manera segura. Para ello:\n\n- El servidor de salto debe estar altamente protegido (hardened).\n- Solo usuarios autorizados pueden acceder a él.\n- Desde el jump server, los administradores pueden conectarse a otros servidores internos mediante protocolos seguros como SSH.\n\nEste enfoque reduce el riesgo de que un atacante acceda directamente a la red interna.\n\n\nPROXY SERVERS (SERVIDORES PROXY)\n\nUn proxy server actúa como intermediario entre los dispositivos internos y los servicios externos. Sus funciones incluyen:\n\n- Caching (almacenamiento en caché): guarda copias de respuestas a solicitudes frecuentes para reducir el ancho de banda y mejorar el rendimiento.\n- Filtrado de URLs: bloquea el acceso a sitios web no autorizados.\n- Escaneo de contenido: analiza el tráfico en busca de malware o exploits.\n- Traducción de direcciones de red (NAT): oculta las direcciones IP internas al tráfico externo.\n\nExisten varios tipos de proxies:\n\n- Explicit proxy: requiere configuración manual en el dispositivo del usuario.\n- Transparent proxy: opera sin que el usuario sea consciente de su existencia.\n- Forward proxy: controla el tráfico saliente desde la red interna.\n- Reverse proxy: gestiona el tráfico entrante hacia servidores internos.\n- Open proxy: un proxy accesible públicamente, que representa un riesgo de seguridad significativo.\n\n\nLOAD BALANCERS (BALANCEADORES DE CARGA)\n\nLos balanceadores de carga distribuyen el tráfico entre múltiples servidores para mejorar el rendimiento y la disponibilidad. Sus funciones incluyen:\n\n- Distribución de carga: equilibra el tráfico entre servidores activos.\n- Tolerancia a fallos: redirige el tráfico si un servidor falla.\n- Offloading: descarga tareas como el cifrado SSL/TLS de los servidores.\n- Caching: almacena respuestas frecuentes para acelerar las solicitudes.\n- Priorización: asigna prioridad a ciertos tipos de tráfico o aplicaciones.\n\nLos balanceadores pueden operar en configuraciones:\n\n- Active-active: todos los servidores están activos y reciben tráfico.\n- Active-passive: algunos servidores están en standby y solo se activan si fallan los servidores principales.\n\n\nSENSORES Y COLECTORES\n\nLos sensores son dispositivos que recopilan datos sobre el tráfico y el estado de la red. Estos datos se envían a un colector central, que puede ser:\n\n- Un sistema de gestión de información y eventos de seguridad (SIEM, Security Information and Event Management).\n- Una consola propietaria para dispositivos específicos como firewalls o IPS.\n\nLos colectores permiten:\n\n- Consolidar datos de múltiples fuentes.\n- Generar informes y alertas.\n- Correlacionar eventos para detectar patrones de ataque.\n\n\nSEGURIDAD EN PUERTOS (PORT SECURITY)\n\nLa seguridad en puertos (port security) se refiere a las medidas de autenticación y control de acceso en los puertos de red, tanto en switches como en puntos de acceso inalámbrico. Un ejemplo común es el protocolo 802.1X, que implementa autenticación basada en puertos.\n\n\nPROTOCOLO 802.1X Y EAP\n\nEl estándar 802.1X define un marco para el control de acceso a la red basado en puertos. Utiliza el protocolo EAP (Extensible Authentication Protocol) para autenticar dispositivos y usuarios. Los componentes clave son:\n\n- Supplicant (solicitante): el dispositivo del usuario que intenta acceder a la red.\n- Authenticator (autenticador): el switch o punto de acceso que controla el acceso.\n- Authentication server (servidor de autenticación): una base de datos como RADIUS, LDAP o TACACS+ que valida las credenciales.\n\nEl proceso de autenticación sigue estos pasos:\n\n1. El solicitante se conecta al puerto del autenticador.\n2. El autenticador solicita credenciales al solicitante mediante EAP.\n3. El solicitante envía sus credenciales.\n4. El autenticador reenvía las credenciales al servidor de autenticación.\n5. Si las credenciales son válidas, el servidor de autenticación autoriza el acceso.\n\n\nTIPOS DE FIREWALLS\n\nLos firewalls son dispositivos esenciales para controlar el tráfico entre redes. Existen varios tipos, cada uno con características y capacidades específicas:\n\n\nFIREWALLS TRADICIONALES\n\nLos firewalls tradicionales operan en las capas 3 y 4 del modelo OSI, controlando el tráfico basado en direcciones IP y números de puerto (TCP/UDP). Sus funciones incluyen:\n\n- Filtrado de tráfico basado en reglas.\n- Traducción de direcciones de red (NAT).\n- Integración con VPN para conexiones seguras.\n\n\nFIREWALLS DE SIGUIENTE GENERACIÓN (NGFW)\n\nLos firewalls de siguiente generación (NGFW, Next Generation Firewall) operan en la capa 7 del modelo OSI, lo que les permite analizar el tráfico a nivel de aplicación. Sus características incluyen:\n\n- Inspección profunda de paquetes (DPI, Deep Packet Inspection).\n- Control de aplicaciones: permite o bloquea tráfico basado en la aplicación (ej. bloquear Twitter pero permitir SQL Server).\n- Categorización de URLs: bloquea el acceso a sitios web específicos.\n- Integración con IPS: puede bloquear vulnerabilidades conocidas.\n\n\nFIREWALLS UNIFICADOS DE AMENAZAS (UTM)\n\nLos dispositivos UTM (Unified Threat Management) combinan múltiples funciones de seguridad en un solo dispositivo, incluyendo:\n\n- Filtrado de URLs y contenido.\n- Detección y prevención de malware.\n- Filtrado de spam.\n- VPN.\n- Control de ancho de banda (QoS).\n\nAunque son versátiles, su rendimiento puede verse afectado si se activan demasiadas funciones simultáneamente.\n\n\nFIREWALLS DE APLICACIÓN WEB (WAF)\n\nLos WAF (Web Application Firewalls) están diseñados específicamente para proteger aplicaciones web. Analizan el tráfico HTTP/HTTPS y bloquean ataques como:\n\n- Inyecciones SQL.\n- Cross-site scripting (XSS).\n- Ataques basados en errores web.\n\nSon especialmente importantes para cumplir con estándares como el PCI DSS (Payment Card Industry Data Security Standard).\n\n\nCOMUNICACIONES SEGURAS\n\nLas comunicaciones seguras son esenciales para proteger los datos en tránsito, especialmente en entornos con usuarios remotos o conexiones entre sitios.\n\n\nVPN (VIRTUAL PRIVATE NETWORK)\n\nUna VPN (Red Privada Virtual) cifra los datos y los envía a través de una red pública como Internet. Los componentes clave incluyen:\n\n- VPN concentrator: dispositivo que gestiona las conexiones VPN.\n- Túneles IPsec: proporcionan cifrado y autenticación para conexiones seguras entre sitios.\n- SSL/TLS VPN: permiten el acceso remoto seguro desde dispositivos individuales.\n\nLos tipos de VPN incluyen:\n\n- Remote access VPN: para usuarios individuales.\n- Site-to-site VPN: para conexiones entre oficinas remotas y la sede central.\n\n\nSD-WAN Y SASE\n\nSD-WAN (Software-Defined Wide Area Network) es una tecnología diseñada para optimizar el acceso a aplicaciones en la nube. Permite:\n\n- Crear redes dinámicas y flexibles.\n- Priorizar el tráfico según la aplicación.\n- Reducir la latencia al acceder a servicios en la nube.\n\nSASE (Secure Access Service Edge) combina SD-WAN con funciones de seguridad en la nube, como:\n\n- Firewalls en la nube.\n- Pasarelas de seguridad web.\n- Control de acceso basado en identidad.\n\nSASE permite a los usuarios acceder de manera segura a aplicaciones en la nube desde cualquier ubicación.\n\n\nBUENAS PRÁCTICAS PARA EL DISEÑO DE REDES SEGURAS\n\nPara diseñar una red segura, es fundamental seguir estas buenas prácticas:\n\n- Implementar segmentación de red con firewalls y zonas de seguridad.\n- Reducir la superficie de ataque mediante la eliminación de servicios innecesarios y la aplicación de parches.\n- Utilizar dispositivos de seguridad como IPS, proxies y balanceadores de carga.\n- Proteger la conectividad física y lógica con cifrado y autenticación robusta.\n- Monitorizar el tráfico en tiempo real con sensores y SIEM.\n- Aplicar autenticación multifactor (MFA) y control de acceso basado en roles (RBAC).\n- Mantener actualizados los dispositivos de red y los sistemas operativos.\n- Realizar auditorías y pruebas de penetración periódicas para identificar vulnerabilidades.\n\n\nCONCLUSIÓN\n\nDiseñar redes seguras es un proceso continuo que requiere una combinación de tecnologías, políticas y buenas prácticas. Desde la segmentación de red hasta la implementación de firewalls de siguiente generación y soluciones de comunicación segura como VPN y SASE, cada componente juega un papel crucial en la protección de los activos digitales. Al adoptar un enfoque proactivo y mantenerse actualizado con las últimas amenazas y tecnologías, las organizaciones pueden minimizar los riesgos y garantizar la continuidad de sus operaciones."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Diseño de Redes Seguras] --> B[Segmentación de Red]\nA --> C[Zonas de Seguridad]\nA --> D[Superficie de Ataque]\nA --> E[Dispositivos de Red]\nA --> F[Tipos de Firewalls]\nA --> G[Comunicaciones Seguras]\n\nB --> B1[Firewalls]\nB --> B2[Honeypots]\nB --> B3[Jump Servers]\nB --> B4[Sensores]\nB --> B5[Load Balancers]\n\nC --> C1[Zona Interna]\nC --> C2[Zona Externa]\nC --> C3[Zona de Servidores]\nC --> C4[Zona de Bases de Datos]\nC --> C5[Zona de Pantalla]\n\nD --> D1[Código Vulnerable]\nD --> D2[Puertos Abiertos]\nD --> D3[Autenticación Débil]\nD --> D4[Errores de Configuración]\nD --> D5[Cableado Expuesto]\n\nE --> E1[Jump Servers]\nE --> E2[Proxy Servers]\nE --> E3[Load Balancers]\nE --> E4[Sensores y Colectores]\nE --> E5[Seguridad en Puertos]\n\nF --> F1[Firewalls Tradicionales]\nF --> F2[Firewalls NGFW]\nF --> F3[Firewalls UTM]\nF --> F4[Firewalls WAF]\n\nG --> G1[VPN]\nG --> G2[IPsec]\nG --> G3[SSL/TLS VPN]\nG --> G4[SD-WAN]\nG --> G5[SASE]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc13-01",
+      "pregunta": "¿Qué es una zona de seguridad (security zone) en el diseño de redes y cómo se diferencia de una subred?",
+      "respuesta": "Una zona de seguridad es un segmento lógico de la red que agrupa dispositivos según su función o tipo de acceso, mientras que una subred se basa en rangos de direcciones IP. Las zonas de seguridad permiten aplicar reglas de seguridad más granulares y específicas."
+    },
+    {
+      "id": "fc13-02",
+      "pregunta": "¿Qué es la superficie de ataque (attack surface) y cómo se puede reducir?",
+      "respuesta": "La superficie de ataque es el conjunto de puntos de entrada potenciales que un atacante podría explotar. Se reduce auditando aplicaciones, cerrando puertos innecesarios, implementando autenticación multifactor (MFA), monitorizando tráfico en tiempo real y protegiendo la conectividad física y lógica."
+    },
+    {
+      "id": "fc13-03",
+      "pregunta": "¿Cuál es la diferencia entre un sistema de prevención de intrusiones (IPS) y un sistema de detección de intrusiones (IDS)?",
+      "respuesta": "Un IPS analiza el tráfico en tiempo real y puede bloquear amenazas activamente, mientras que un IDS solo alerta sobre actividades sospechosas sin tomar medidas para detenerlas."
+    },
+    {
+      "id": "fc13-04",
+      "pregunta": "¿Qué es un jump server y por qué es importante en la seguridad de la red?",
+      "respuesta": "Un jump server es un dispositivo interno que actúa como punto de acceso controlado desde redes externas. Es importante porque permite a los administradores acceder a servidores internos de manera segura, reduciendo el riesgo de intrusiones directas."
+    },
+    {
+      "id": "fc13-05",
+      "pregunta": "¿Qué funciones cumple un proxy server en una red?",
+      "respuesta": "Un proxy server actúa como intermediario entre dispositivos internos y servicios externos. Sus funciones incluyen caching, filtrado de URLs, escaneo de contenido y traducción de direcciones de red (NAT)."
+    },
+    {
+      "id": "fc13-06",
+      "pregunta": "¿Qué es un balanceador de carga (load balancer) y qué ventajas ofrece?",
+      "respuesta": "Un balanceador de carga distribuye el tráfico entre múltiples servidores para mejorar el rendimiento y la disponibilidad. Ofrece ventajas como tolerancia a fallos, offloading de tareas (ej. cifrado SSL), caching y priorización de tráfico."
+    },
+    {
+      "id": "fc13-07",
+      "pregunta": "¿Qué es el protocolo 802.1X y cómo se relaciona con EAP?",
+      "respuesta": "El protocolo 802.1X es un estándar para el control de acceso a la red basado en puertos. Utiliza el protocolo EAP (Extensible Authentication Protocol) para autenticar dispositivos y usuarios antes de permitir el acceso a la red."
+    },
+    {
+      "id": "fc13-08",
+      "pregunta": "¿Cuáles son las diferencias entre un firewall tradicional y un firewall de siguiente generación (NGFW)?",
+      "respuesta": "Un firewall tradicional opera en las capas 3 y 4 del modelo OSI, controlando tráfico basado en direcciones IP y puertos. Un NGFW opera en la capa 7, permitiendo el análisis del tráfico a nivel de aplicación y el control basado en aplicaciones y URLs."
+    },
+    {
+      "id": "fc13-09",
+      "pregunta": "¿Qué es un firewall UTM y qué funciones puede incluir?",
+      "respuesta": "Un firewall UTM (Unified Threat Management) combina múltiples funciones de seguridad en un solo dispositivo, como filtrado de URLs, detección de malware, filtrado de spam, VPN y control de ancho de banda (QoS)."
+    },
+    {
+      "id": "fc13-10",
+      "pregunta": "¿Qué es un firewall WAF y para qué tipo de ataques está diseñado?",
+      "respuesta": "Un firewall WAF (Web Application Firewall) está diseñado para proteger aplicaciones web. Analiza el tráfico HTTP/HTTPS y bloquea ataques como inyecciones SQL, cross-site scripting (XSS) y errores web."
+    },
+    {
+      "id": "fc13-11",
+      "pregunta": "¿Qué es una VPN y qué tipos existen?",
+      "respuesta": "Una VPN (Virtual Private Network) cifra los datos y los envía a través de una red pública como Internet. Los tipos incluyen VPN de acceso remoto (remote access VPN) para usuarios individuales y VPN de sitio a sitio (site-to-site VPN) para conexiones entre oficinas."
+    },
+    {
+      "id": "fc13-12",
+      "pregunta": "¿Qué es SD-WAN y cómo se relaciona con SASE?",
+      "respuesta": "SD-WAN (Software-Defined Wide Area Network) es una tecnología diseñada para optimizar el acceso a aplicaciones en la nube. SASE (Secure Access Service Edge) combina SD-WAN con funciones de seguridad en la nube, como firewalls y pasarelas de seguridad web."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes dispositivos se utiliza PRIMARIAMENTE para atraer y analizar el comportamiento de atacantes en una red?",
+      "opciones": [
+        "Honeypot",
+        "Jump server",
+        "Load balancer",
+        "Proxy server"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un honeypot es un sistema diseñado específicamente para atraer y analizar el comportamiento de atacantes, según el temario.",
+      "id": "p13-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de zonas de seguridad, ¿qué zona se caracteriza por ser una subred aislada que actúa como barrera entre la zona interna y externa?",
+      "opciones": [
+        "Zona interna (trusted zone)",
+        "Zona de pantalla (screened zone)",
+        "Zona de bases de datos (databases zone)",
+        "Zona externa (untrusted zone)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La zona de pantalla (screened zone) es una subred aislada que actúa como barrera entre la zona interna y externa, según el temario.",
+      "id": "p13-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de firewall opera en la capa 7 del modelo OSI y permite analizar el tráfico a nivel de aplicación?",
+      "opciones": [
+        "Firewall tradicional",
+        "Firewall de siguiente generación (NGFW)",
+        "Firewall de aplicación web (WAF)",
+        "Firewall UTM"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los firewalls de siguiente generación (NGFW) operan en la capa 7 del modelo OSI y permiten análisis a nivel de aplicación, según el temario.",
+      "id": "p13-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una función típica de un balanceador de carga?",
+      "opciones": [
+        "Distribuir el tráfico entre múltiples servidores",
+        "Realizar inspección profunda de paquetes (DPI)",
+        "Redirigir el tráfico si un servidor falla",
+        "Descargar tareas como el cifrado SSL/TLS de los servidores"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La inspección profunda de paquetes (DPI) es una función de los firewalls de siguiente generación (NGFW), no de los balanceadores de carga.",
+      "id": "p13-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno donde un administrador necesita acceder de manera segura a servidores internos desde una red externa, ¿qué dispositivo sería el MÁS adecuado?",
+      "opciones": [
+        "Proxy server",
+        "Jump server",
+        "Honeypot",
+        "Load balancer"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un jump server es un dispositivo interno que actúa como punto de acceso controlado desde redes externas, según el temario.",
+      "id": "p13-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo se utiliza en el estándar 802.1X para autenticar dispositivos y usuarios en la seguridad de puertos?",
+      "opciones": [
+        "RADIUS",
+        "EAP",
+        "TACACS+",
+        "LDAP"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El estándar 802.1X utiliza el protocolo EAP (Extensible Authentication Protocol) para autenticar dispositivos y usuarios, según el temario.",
+      "id": "p13-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante ha logrado interceptar el tráfico de red entre dos oficinas remotas, pero no puede interpretar los datos capturados. ¿Qué tecnología es la responsable de esta protección?",
+      "opciones": [
+        "VPN con túneles IPsec",
+        "Firewall tradicional",
+        "Proxy server",
+        "Balanceador de carga"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los túneles IPsec proporcionan cifrado y autenticación para conexiones seguras entre sitios, según el temario.",
+      "id": "p13-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes tipos de proxy representa un riesgo de seguridad significativo debido a su accesibilidad pública?",
+      "opciones": [
+        "Explicit proxy",
+        "Transparent proxy",
+        "Reverse proxy",
+        "Open proxy"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Un open proxy es un proxy accesible públicamente y representa un riesgo de seguridad significativo, según el temario.",
+      "id": "p13-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un sistema de prevención de intrusiones (IPS), ¿qué modo de operación permite al dispositivo tomar medidas activas para bloquear amenazas en tiempo real?",
+      "opciones": [
+        "Modo pasivo (out-of-band)",
+        "Modo activo (inline)",
+        "Modo híbrido",
+        "Modo de solo alerta"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El modo activo (inline) permite al IPS tomar medidas activas para bloquear amenazas en tiempo real, según el temario.",
+      "id": "p13-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema donde los usuarios deben autenticarse mediante credenciales antes de acceder a la red, y el switch verifica estas credenciales con un servidor central. ¿Qué protocolo está utilizando el switch para esta autenticación?",
+      "opciones": [
+        "IPsec",
+        "EAP",
+        "RADIUS",
+        "SSL/TLS"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El protocolo RADIUS se utiliza como servidor de autenticación en el estándar 802.1X para validar credenciales, según el temario.",
+      "id": "p13-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas y permitir que múltiples dispositivos compartan una única dirección IP pública?",
+      "opciones": [
+        "a) NAT (Network Address Translation)",
+        "b) VLAN (Virtual Local Area Network)",
+        "c) VPN (Virtual Private Network)",
+        "d) Proxy inverso"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El NAT (Network Address Translation) traduce direcciones IP privadas a una única IP pública, ocultando así la infraestructura interna según el temario.",
+      "id": "p13-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En comparación con un firewall tradicional, ¿qué ventaja ofrece un firewall de siguiente generación (NGFW) que opera en la capa 7 del modelo OSI?",
+      "opciones": [
+        "a) Bloquea tráfico basado en direcciones IP y puertos",
+        "b) Permite el control de aplicaciones y la inspección profunda de paquetes (DPI)",
+        "c) Solo filtra tráfico entre redes internas",
+        "d) No requiere configuración de reglas complejas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los NGFW analizan el tráfico a nivel de aplicación (capa 7) y permiten control de aplicaciones y DPI, según el temario.",
+      "id": "p13-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes dispositivos NO está diseñado para proteger activamente la red contra intrusiones en tiempo real?",
+      "opciones": [
+        "a) IPS (Intrusion Prevention System)",
+        "b) Honeypot",
+        "c) Firewall de siguiente generación (NGFW)",
+        "d) SIEM (Security Information and Event Management)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un honeypot es una trampa para atraer atacantes y analizar su comportamiento, pero no protege activamente la red según el temario.",
+      "id": "p13-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un servidor proxy para que los empleados accedan a Internet. ¿Qué tipo de proxy permite a los usuarios navegar sin configuración manual en sus dispositivos?",
+      "opciones": [
+        "a) Explicit proxy",
+        "b) Transparent proxy",
+        "c) Reverse proxy",
+        "d) Open proxy"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un transparent proxy opera sin que el usuario configure manualmente el proxy, según el temario.",
+      "id": "p13-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno donde se requiere alta disponibilidad y tolerancia a fallos, ¿qué configuración de balanceador de carga distribuye el tráfico entre todos los servidores activos?",
+      "opciones": [
+        "a) Active-passive",
+        "b) Active-active",
+        "c) Fail open",
+        "d) Fail close"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La configuración active-active distribuye el tráfico entre todos los servidores activos, según el temario.",
+      "id": "p13-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante logra acceder físicamente a un cable de red y conecta un dispositivo para interceptar el tráfico. ¿Qué medida de seguridad física podría haber evitado esta vulnerabilidad?",
+      "opciones": [
+        "a) Uso de VPN",
+        "b) Protección del cableado de red (tapping)",
+        "c) Implementación de VLANs",
+        "d) Cifrado de nivel de aplicación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Proteger el cableado de red evita interceptaciones físicas (tapping), según el temario.",
+      "id": "p13-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dada la siguiente descripción: 'Dispositivo que actúa como punto de acceso controlado desde redes externas, permitiendo a los administradores acceder a servidores internos de manera segura'. ¿Qué concepto se describe?",
+      "opciones": [
+        "a) Firewall",
+        "b) Jump server",
+        "c) Honeypot",
+        "d) Balanceador de carga"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un jump server permite acceso controlado y seguro a servidores internos desde redes externas, según el temario.",
+      "id": "p13-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza para ocultar las direcciones IP internas y permitir que múltiples dispositivos compartan una única dirección IP pública, además de proporcionar una capa adicional de seguridad al filtrar el tráfico no deseado?",
+      "opciones": [
+        "a) VPN (Red Privada Virtual)",
+        "b) NAT (Network Address Translation)",
+        "c) VLAN (Virtual Local Area Network)",
+        "d) DMZ (Zona Desmilitarizada)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "NAT traduce direcciones IP privadas a públicas, ocultando las internas y permitiendo el acceso a Internet con una sola IP pública. Además, actúa como barrera de seguridad al filtrar tráfico no autorizado.",
+      "id": "p13-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un balanceador de carga está configurado en modo active-passive y el servidor principal falla, ¿qué acción tomará el balanceador?",
+      "opciones": [
+        "a) Redirigirá el tráfico a los servidores activos restantes",
+        "b) Bloqueará todo el tráfico hasta que el servidor principal se recupere",
+        "c) Continuará enviando tráfico al servidor fallido",
+        "d) Generará una alerta pero no redirigirá el tráfico"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En modo active-passive, si el servidor principal falla, el balanceador redirige el tráfico a los servidores en standby, según el temario.",
+      "id": "p13-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador configura un túnel IPsec entre dos oficinas remotas para garantizar la confidencialidad y autenticidad de los datos transmitidos. ¿Qué capa del modelo OSI NO está siendo protegida directamente por IPsec?",
+      "opciones": [
+        "a) Capa 3 (Red)",
+        "b) Capa 4 (Transporte)",
+        "c) Capa 7 (Aplicación)",
+        "d) Capa 2 (Enlace de datos)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "IPsec opera en las capas 3 y 4, pero no protege directamente la capa 2 (Enlace de datos), según el temario.",
+      "id": "p13-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza para agrupar dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad más precisas entre segmentos?",
+      "opciones": [
+        "Subredes (subnets)",
+        "Zonas de seguridad (security zones)",
+        "VLANs (Virtual Local Area Networks)",
+        "DMZ (Demilitarized Zone)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso, a diferencia de las subredes o VLANs que se basan en direcciones IP o segmentación lógica.",
+      "id": "p13-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos?",
+      "opciones": [
+        "a) Firewall tradicional",
+        "b) Zona de seguridad",
+        "c) Balanceador de carga",
+        "d) Proxy transparente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso, lo que permite establecer reglas de seguridad más precisas y reducir la superficie de ataque entre segmentos.",
+      "id": "p13-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza para agrupar dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad diferenciadas entre segmentos de red?",
+      "opciones": [
+        "a) Firewall de siguiente generación (NGFW)",
+        "b) Zona de seguridad (security zone)",
+        "c) Proxy inverso",
+        "d) Balanceador de carga"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las zonas de seguridad (security zones) agrupan dispositivos según su función o tipo de acceso, facilitando la aplicación de políticas de seguridad específicas entre segmentos de red.",
+      "id": "p13-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza para agrupar dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad diferenciadas entre segmentos de red mediante políticas de control de acceso?",
+      "opciones": [
+        "a) VLAN (Virtual Local Area Network)",
+        "b) NAT (Network Address Translation)",
+        "c) DHCP (Dynamic Host Configuration Protocol)",
+        "d) ARP (Address Resolution Protocol)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las VLAN permiten segmentar lógicamente la red en grupos de dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad específicas entre segmentos.",
+      "id": "p13-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dada la siguiente descripción: 'Dispositivo que actúa como intermediario entre los dispositivos internos y los servicios externos, almacenando copias de respuestas frecuentes para reducir el ancho de banda y mejorar el rendimiento'. ¿Qué concepto se describe?",
+      "opciones": [
+        "Firewall",
+        "Proxy server",
+        "Honeypot",
+        "Jump server"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un proxy server actúa como intermediario y realiza funciones como caching para almacenar copias de respuestas frecuentes.",
+      "id": "p13-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno donde un administrador necesita acceder de manera segura a servidores internos desde una red externa, ¿qué dispositivo sería el MÁS adecuado para este propósito?",
+      "opciones": [
+        "Firewall",
+        "Jump server",
+        "Balanceador de carga",
+        "Honeypot"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un jump server es un dispositivo diseñado específicamente para permitir el acceso controlado y seguro a servidores internos desde redes externas.",
+      "id": "p13-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de firewall está diseñado específicamente para proteger aplicaciones web analizando el tráfico HTTP/HTTPS y bloqueando ataques como inyecciones SQL o XSS?",
+      "opciones": [
+        "Firewall tradicional",
+        "Firewall de siguiente generación (NGFW)",
+        "Firewall de aplicación web (WAF)",
+        "Firewall unificado de amenazas (UTM)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un firewall de aplicación web (WAF) está diseñado para proteger aplicaciones web analizando el tráfico HTTP/HTTPS y bloqueando ataques específicos.",
+      "id": "p13-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para agrupar dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad diferenciadas entre segmentos mediante políticas de control de acceso?",
+      "opciones": [
+        "a) Firewall tradicional",
+        "b) Zona de seguridad (security zone)",
+        "c) Balanceador de carga",
+        "d) Proxy transparente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las zonas de seguridad (security zones) agrupan dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos de red mediante políticas de control de acceso, como se describe en el temario.",
+      "id": "p13-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa ha implementado un sistema de segmentación de red con zonas de seguridad, donde la zona de bases de datos (databases zone) contiene servidores críticos con información sensible. Para acceder a estos servidores desde la zona interna, se requiere que el tráfico pase primero por un firewall tradicional que filtra según IP y puerto, luego por un firewall de siguiente generación (NGFW) que analiza el contenido de la aplicación, y finalmente por un WAF que protege específicamente contra ataques a aplicaciones web. Sin embargo, tras una auditoría de seguridad, se detecta que un atacante logró explotar una vulnerabilidad en una aplicación web interna para acceder a los servidores de bases de datos. ¿Cuál de los siguientes factores contribuyó MÁS directamente a que este ataque fuera exitoso?",
+      "opciones": [
+        "a) El firewall tradicional permitió el tráfico desde la zona interna a la de bases de datos sin inspeccionar el contenido de la aplicación.",
+        "b) El WAF no estaba configurado para bloquear el tráfico interno entre zonas, ya que solo estaba diseñado para proteger contra ataques externos.",
+        "c) El NGFW no aplicó políticas de control de aplicaciones para restringir el acceso a servicios específicos dentro de la zona de bases de datos.",
+        "d) La zona de bases de datos no estaba aislada físicamente o lógicamente de otras zonas, permitiendo el movimiento lateral sin restricciones."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Aunque el firewall tradicional y el WAF también tienen roles en la seguridad, el NGFW es el dispositivo que opera en la capa 7 y debería haber aplicado políticas de control de aplicaciones para restringir el acceso a servicios internos, lo que habría mitigado el movimiento lateral del atacante.",
+      "id": "p13-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización ha implementado una arquitectura de red con segmentación avanzada, utilizando un firewall tradicional para filtrar tráfico entre zonas, un NGFW para inspección profunda de aplicaciones, y un WAF para proteger aplicaciones web. Sin embargo, tras un ataque exitoso, se determina que el atacante explotó una vulnerabilidad en un servidor de bases de datos ubicado en la zona interna, accediendo desde una red externa a través de un túnel IPsec mal configurado. ¿Qué medida de seguridad, implementada en el túnel IPsec, habría MÁS probablemente evitado que el atacante aprovechara la vulnerabilidad?",
+      "opciones": [
+        "a) Configurar el túnel IPsec en modo transporte en lugar de túnel para reducir la sobrecarga criptográfica.",
+        "b) Implementar autenticación de encabezado (AH) junto con cifrado (ESP) para garantizar integridad y autenticidad del tráfico.",
+        "c) Deshabilitar el reenvío de fragmentos (DF) en el túnel IPsec para evitar ataques de fragmentación.",
+        "d) Utilizar un algoritmo de cifrado simétrico más rápido como DES en lugar de AES para mejorar el rendimiento."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La implementación de autenticación de encabezado (AH) junto con cifrado (ESP) en IPsec garantiza tanto la confidencialidad como la integridad y autenticidad del tráfico, lo que habría impedido que el atacante modificara o inyectara paquetes maliciosos en el túnel.",
+      "id": "p13-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto de los servidores de salto (jump servers), ¿qué característica de seguridad es esencial para garantizar que solo usuarios autorizados puedan acceder a ellos desde redes externas?",
+      "opciones": [
+        "a) Que el servidor de salto esté configurado en modo transparente para los usuarios",
+        "b) Que el servidor de salto utilice autenticación multifactor (MFA) y esté altamente protegido (hardened)",
+        "c) Que el servidor de salto permita el acceso directo a la red interna sin restricciones",
+        "d) Que el servidor de salto almacene copias en caché de los datos internos para acelerar el acceso"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un jump server debe estar altamente protegido (hardened) y utilizar autenticación multifactor (MFA) para garantizar que solo usuarios autorizados puedan acceder a él, reduciendo así el riesgo de intrusiones no autorizadas.",
+      "id": "p13-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza para agrupar dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad diferenciadas entre segmentos mediante políticas de control de acceso basadas en la identidad de los usuarios?",
+      "opciones": [
+        "a) Firewall tradicional",
+        "b) Segmentación por VLAN (Virtual LAN)",
+        "c) Zona de seguridad (security zone)",
+        "d) Balanceador de carga"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso y permiten aplicar reglas de seguridad diferenciadas, incluyendo políticas basadas en la identidad de los usuarios, a diferencia de las VLAN que se enfocan en segmentación lógica por puertos o direcciones.",
+      "id": "p13-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas y permitir que múltiples dispositivos compartan una única dirección IP pública, además de proporcionar una capa adicional de seguridad al filtrar el tráfico no deseado?",
+      "opciones": [
+        "a) NAT (Network Address Translation)",
+        "b) Proxy inverso (Reverse Proxy)",
+        "c) Firewall de aplicación web (WAF)",
+        "d) Balanceador de carga"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "NAT oculta las direcciones IP internas al tráfico externo, permitiendo la compartición de una única IP pública, mientras que el filtrado de tráfico no deseado se realiza mediante reglas configuradas en el dispositivo que implementa NAT.",
+      "id": "p13-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para agrupar dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad diferenciadas entre segmentos mediante políticas de control de acceso basado en la identidad del usuario?",
+      "opciones": [
+        "a) Firewall tradicional",
+        "b) Segmentación de red por VLAN",
+        "c) Control de acceso basado en roles (RBAC)",
+        "d) Zona de seguridad (security zone)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso, permitiendo aplicar reglas de seguridad diferenciadas entre segmentos, incluyendo políticas basadas en la identidad del usuario.",
+      "id": "p13-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la segmentación de red, ¿qué tecnología permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas de control de acceso?",
+      "opciones": [
+        "a) Firewall tradicional",
+        "b) Zona de seguridad",
+        "c) Balanceador de carga",
+        "d) Proxy transparente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad más precisas entre segmentos de red. Esta es una práctica fundamental para reducir la superficie de ataque y contener posibles intrusiones.",
+      "id": "p13-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno donde un atacante logró interceptar el tráfico de red entre dos oficinas remotas, pero no puede interpretar los datos capturados. ¿Qué tecnología es la responsable de esta protección?",
+      "opciones": [
+        "a) NAT (Network Address Translation)",
+        "b) VPN con túnel IPsec",
+        "c) Balanceador de carga en modo active-active",
+        "d) Proxy inverso"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un túnel IPsec cifra los datos en tránsito, protegiendo su confidencialidad y autenticidad, según el temario.",
+      "id": "p13-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas de control de acceso basado en la identidad del usuario?",
+      "opciones": [
+        "a) Firewall tradicional",
+        "b) Balanceador de carga",
+        "c) Segmentación de red basada en VLANs",
+        "d) Proxy transparente"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La segmentación de red basada en VLANs permite agrupar dispositivos lógicamente según su función, mientras que el control de acceso basado en la identidad del usuario se implementa mediante políticas en firewalls o soluciones como 802.1X, integradas en este diseño.",
+      "id": "p13-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza principalmente para agrupar dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad diferenciadas entre segmentos mediante políticas de control de acceso basado en la identidad del usuario?",
+      "opciones": [
+        "a) Firewall tradicional",
+        "b) Virtual LAN (VLAN)",
+        "c) Network Access Control (NAC)",
+        "d) Proxy inverso"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El Network Access Control (NAC) permite agrupar dispositivos y aplicar políticas de control de acceso basadas en la identidad del usuario, asegurando que solo dispositivos autorizados y con credenciales válidas puedan acceder a segmentos específicos de la red.",
+      "id": "p13-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa una segmentación de red avanzada con zonas de seguridad (trusted, servers, databases y screened zone) y utiliza un firewall tradicional entre la zona interna y la screened zone, un NGFW entre la screened zone y la zona de servidores, y un WAF para proteger aplicaciones web en la zona de servidores. Sin embargo, durante una auditoría, se detecta que un atacante logró acceder a un servidor de bases de datos desde una red externa mediante un túnel IPsec configurado con autenticación básica (pre-shared key) y sin cifrado de datos en tránsito. ¿Qué medida de seguridad, implementada en el túnel IPsec, habría MÁS probablemente evitado que el atacante explotara la vulnerabilidad en el servidor de bases de datos?",
+      "opciones": [
+        "a) Configurar el túnel IPsec para operar en modo transporte en lugar de modo túnel, reduciendo la sobrecarga del cifrado.",
+        "b) Implementar autenticación multifactor (MFA) en el túnel IPsec para garantizar que solo usuarios autorizados puedan establecer la conexión.",
+        "c) Habilitar el cifrado de datos en tránsito (ESP) y fortalecer la autenticación con certificados digitales en lugar de claves pre-compartidas.",
+        "d) Reducir el tiempo de vida de las claves (Lifetime) del túnel IPsec para minimizar la ventana de exposición a ataques."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La vulnerabilidad explotada se debe a la falta de cifrado en tránsito (ESP) y el uso de autenticación débil (pre-shared keys). Habilitar el cifrado de datos y fortalecer la autenticación con certificados digitales es la medida más efectiva para proteger el túnel IPsec según el temario.",
+      "id": "p13-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa ha implementado una arquitectura de red con segmentación avanzada, utilizando firewalls tradicionales, NGFW y WAF. Sin embargo, tras un ataque exitoso, se determina que el atacante explotó una vulnerabilidad en un servidor de bases de datos ubicado en la zona interna, accediendo desde una red externa a través de un túnel IPsec mal configurado. ¿Qué medida de seguridad, implementada en el túnel IPsec, habría MÁS probablemente evitado que el atacante aprovechara la vulnerabilidad?",
+      "opciones": [
+        "a) Uso de autenticación multifactor (MFA) en el túnel",
+        "b) Configuración de políticas de cifrado más robustas (ej. AES-256)",
+        "c) Implementación de un firewall UTM en el túnel",
+        "d) Restricción de acceso por IP en el túnel IPsec"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Restringir el acceso por IP en el túnel IPsec limitaría el tráfico permitido, reduciendo la superficie de ataque, según el temario.",
+      "id": "p13-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para agrupar dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad diferenciadas entre segmentos mediante políticas de control de acceso basadas en la identidad del usuario?",
+      "opciones": [
+        "a) VLAN (Virtual Local Area Network)",
+        "b) DMZ (Zona Desmilitarizada)",
+        "c) NAC (Network Access Control)",
+        "d) VPN (Red Privada Virtual)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El NAC (Network Access Control) permite agrupar dispositivos según su función o tipo de acceso y aplicar políticas de control de acceso basadas en la identidad del usuario, garantizando que solo dispositivos autorizados y con credenciales válidas puedan acceder a segmentos específicos de la red.",
+      "id": "p13-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para proteger el acceso a la red en puertos físicos, autenticando dispositivos y usuarios antes de permitir la conexión?",
+      "opciones": [
+        "a) NAT (Network Address Translation)",
+        "b) 802.1X con EAP",
+        "c) Proxy inverso (Reverse Proxy)",
+        "d) Balanceador de carga en modo active-passive"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El protocolo 802.1X, en combinación con EAP, es la tecnología estándar para autenticar dispositivos y usuarios en puertos de red, controlando el acceso antes de permitir la conexión, como se describe en el temario bajo 'Seguridad en puertos (Port Security)'.",
+      "id": "p13-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para proteger el acceso físico a los puertos de red en switches y puntos de acceso inalámbrico, autenticando dispositivos y usuarios antes de permitir la conexión según el estándar 802.1X?",
+      "opciones": [
+        "a) Network Address Translation (NAT)",
+        "b) Port Security con protocolo 802.1X y autenticación EAP",
+        "c) Firewall de siguiente generación (NGFW)",
+        "d) Balanceador de carga"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El estándar 802.1X y el protocolo EAP implementan autenticación basada en puertos, permitiendo que solo dispositivos y usuarios autorizados accedan a la red a través de switches o puntos de acceso, reduciendo así el riesgo de acceso no autorizado.",
+      "id": "p13-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para proteger el acceso a la red en puertos físicos, autenticando dispositivos antes de permitir la conexión, y se basa en el estándar IEEE 802.1X?",
+      "opciones": [
+        "a) Network Address Translation (NAT)",
+        "b) Port Security con autenticación 802.1X",
+        "c) Virtual Private Network (VPN)",
+        "d) Firewall de aplicación web (WAF)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El estándar 802.1X es una tecnología de control de acceso a la red basada en puertos que autentica dispositivos y usuarios antes de permitir la conexión, utilizando autenticación como EAP sobre RADIUS.",
+      "id": "p13-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para proteger el acceso a la red en puertos físicos de switches, autenticando dispositivos antes de permitir la conexión y basándose en el estándar IEEE 802.1X?",
+      "opciones": [
+        "a) Network Address Translation (NAT)",
+        "b) Port Security con 802.1X",
+        "c) Virtual LAN (VLAN)",
+        "d) Stateful Packet Inspection (SPI)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El estándar 802.1X implementa Port Security al autenticar dispositivos conectados a puertos de red mediante EAP, garantizando que solo dispositivos autorizados accedan a la red.",
+      "id": "p13-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno donde un atacante logró acceder físicamente a un cable de red y conectar un dispositivo para interceptar el tráfico, ¿qué medida de seguridad física podría haber evitado esta vulnerabilidad?",
+      "opciones": [
+        "a) Implementar autenticación multifactor (MFA)",
+        "b) Proteger el cableado de red para evitar interceptaciones (tapping)",
+        "c) Usar túneles IPsec para cifrar el tráfico",
+        "d) Configurar un firewall tradicional en la red"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Proteger el cableado de red evita interceptaciones físicas (tapping), una medida clave para la seguridad física de la red (temario: 'PROTECCIÓN DE LA CONECTIVIDAD FÍSICA Y LÓGICA').",
+      "id": "p13-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un diseño de red con segmentación avanzada, ¿qué tecnología se utiliza PRIMARIAMENTE para garantizar que solo dispositivos autenticados puedan conectarse a un switch, controlando el acceso en los puertos físicos mediante el estándar IEEE 802.1X?",
+      "opciones": [
+        "a) Network Access Control (NAC)",
+        "b) Port Security (802.1X)",
+        "c) MAC filtering (filtrado por dirección MAC)",
+        "d) VLANs (Virtual Local Area Networks)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El estándar IEEE 802.1X es la tecnología específica para autenticar dispositivos en puertos físicos de switches, utilizando un servidor de autenticación como RADIUS, y es una medida clave de seguridad en redes seguras.",
+      "id": "p13-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa una arquitectura de red con segmentación avanzada, utilizando firewalls tradicionales, NGFW y WAF. Sin embargo, tras un ataque exitoso, se determina que el atacante explotó una vulnerabilidad en un servidor de bases de datos ubicado en la zona interna, accediendo desde una red externa a través de un túnel IPsec mal configurado. ¿Qué medida de seguridad, implementada en el túnel IPsec, habría MÁS probablemente evitado que el atacante aprovechara la vulnerabilidad?",
+      "opciones": [
+        "a) Usar autenticación multifactor (MFA) en el túnel",
+        "b) Configurar el túnel IPsec con cifrado de datos en tránsito",
+        "c) Implementar un firewall tradicional en la zona interna",
+        "d) Aplicar parches de seguridad en el servidor de bases de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Configurar el túnel IPsec con cifrado de datos en tránsito garantiza la confidencialidad de la información, evitando que el atacante interprete los datos interceptados (temario: 'COMUNICACIONES SEGURAS - TÚNELES IPSEC').",
+      "id": "p13-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un diseño de red con segmentación avanzada utilizando zonas de seguridad (trusted, servers, databases y screened zone). Para acceder a los servidores de bases de datos desde la red externa, se requiere pasar por un firewall tradicional, un NGFW y un WAF. Sin embargo, durante una auditoría se detecta que un atacante logró acceder a un servidor de bases de datos mediante un túnel IPsec mal configurado, explotando una vulnerabilidad en una aplicación web interna. ¿Qué combinación de medidas de seguridad en el túnel IPsec habría MÁS probablemente evitado que el atacante aprovechara esta vulnerabilidad?",
+      "opciones": [
+        "a) Configurar autenticación basada en certificados digitales en lugar de pre-shared keys y habilitar el modo de cifrado AES-256 para datos en tránsito",
+        "b) Usar autenticación multifactor (MFA) en el túnel IPsec y reducir el ancho de banda del túnel para limitar el impacto de un posible ataque",
+        "c) Implementar un firewall tradicional adicional en el túnel IPsec y desactivar el NAT-Traversal para evitar problemas de encapsulación",
+        "d) Cambiar el protocolo de túnel de IPsec a SSL/TLS y reducir el tiempo de vida de las claves de sesión a 30 minutos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La autenticación basada en certificados digitales es más robusta que las pre-shared keys, y el cifrado AES-256 garantiza confidencialidad e integridad de los datos en tránsito, reduciendo el riesgo de que el tráfico sea interceptado o manipulado.",
+      "id": "p13-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización ha implementado una arquitectura de red con segmentación avanzada utilizando zonas de seguridad (trusted, servers, databases y screened zone). Para acceder a los servidores de bases de datos desde la red externa, se requiere autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso y un túnel IPsec con autenticación mutua y cifrado AES-256. Sin embargo, durante una auditoría se detecta que un atacante logró acceder a un servidor de bases de datos mediante un ataque de 'pass-the-hash' desde un dispositivo interno no autorizado. ¿Qué combinación de medidas de seguridad implementadas en la arquitectura habría MÁS probablemente evitado que el atacante aprovechara esta vulnerabilidad?",
+      "opciones": [
+        "a) Implementar un firewall de siguiente generación (NGFW) con inspección profunda de paquetes entre la zona de servidores y la zona de bases de datos, combinado con un sistema de autenticación multifactor (MFA) para el acceso a los servidores de bases de datos.",
+        "b) Configurar el túnel IPsec para utilizar autenticación basada en certificados digitales en lugar de claves pre-compartidas, y habilitar el modo 'fail close' en el IPS ubicado entre las zonas de servidores y bases de datos.",
+        "c) Aplicar el estándar 802.1X en todos los switches de la red, incluyendo un servidor de autenticación RADIUS con políticas de control de acceso basado en roles (RBAC), y desplegar un jump server con autenticación biométrica para el acceso administrativo.",
+        "d) Segmentar la red en VLANs independientes para cada zona de seguridad y aplicar reglas estrictas de filtrado en los firewalls tradicionales, además de implementar un sistema de detección de intrusiones (IDS) en modo pasivo para monitorización continua."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La opción 'c' aborda directamente la vulnerabilidad de 'pass-the-hash' al requerir autenticación basada en identidad mediante 802.1X con RADIUS y RBAC, y refuerza el acceso administrativo con un jump server de alta seguridad. Esto limita el acceso solo a dispositivos y usuarios autorizados, evitando que credenciales robadas sean reutilizadas.",
+      "id": "p13-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto de la segmentación de red, ¿qué tecnología permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas de control de acceso basado en la identidad del usuario?",
+      "opciones": [
+        "VLANs (Virtual Local Area Networks)",
+        "Zonas de seguridad (security zones)",
+        "Firewalls tradicionales",
+        "Balanceadores de carga"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad más precisas y diferenciadas entre segmentos, como se describe en el temario.",
+      "id": "p13-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas de control de acceso basadas en la identidad del usuario?",
+      "opciones": [
+        "a) VLAN (Virtual Local Area Network)",
+        "b) Segmentación por subredes IP",
+        "c) Zona de seguridad (security zone)",
+        "d) Firewall de siguiente generación (NGFW)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad precisas basadas en políticas de control de acceso, incluyendo la identidad del usuario.",
+      "id": "p13-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas de control de acceso basado en la identidad del usuario?",
+      "opciones": [
+        "a) VLAN (Virtual Local Area Network)",
+        "b) Zonas de seguridad (security zones)",
+        "c) Segmentación basada en IP",
+        "d) Firewall tradicional"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad más precisas y diferenciadas entre segmentos, mientras que las VLANs segmentan por redes lógicas pero no necesariamente basadas en identidad.",
+      "id": "p13-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la segmentación de red avanzada, ¿qué tecnología permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas de control de acceso basado en la identidad del usuario?",
+      "opciones": [
+        "a) Zonas de seguridad (security zones)",
+        "b) VLANs (Virtual Local Area Networks)",
+        "c) Control de acceso basado en roles (RBAC)",
+        "d) Firewalls tradicionales"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso, permitiendo aplicar reglas de seguridad diferenciadas mediante políticas de control de acceso basado en la identidad del usuario, según el temario.",
+      "id": "p13-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para proteger el acceso a la red en puertos físicos de switches y puntos de acceso inalámbrico, autenticando dispositivos antes de permitir la conexión, y se basa en el estándar IEEE 802.1X?",
+      "opciones": [
+        "a) Proxy server",
+        "b) Network Access Control (NAC)",
+        "c) Port Security con MAC filtering",
+        "d) Firewall de aplicación (WAF)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El estándar IEEE 802.1X es una tecnología de control de acceso a la red basada en puertos que utiliza el protocolo EAP para autenticar dispositivos o usuarios antes de permitir la conexión.",
+      "id": "p13-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas basadas en el rol del usuario?",
+      "opciones": [
+        "a) Firewall de siguiente generación (NGFW)",
+        "b) Zona de seguridad (security zone)",
+        "c) Control de acceso basado en roles (RBAC)",
+        "d) Balanceador de carga"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad específicas entre segmentos, mientras que RBAC es un modelo de control de acceso, no una tecnología de red.",
+      "id": "p13-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la segmentación de red basada en zonas de seguridad, ¿qué tecnología permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciales entre segmentos mediante políticas de control de acceso basado en roles de usuario?",
+      "opciones": [
+        "a) Firewall tradicional",
+        "b) Proxy inverso",
+        "c) Network Access Control (NAC)",
+        "d) Balanceador de carga"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El Network Access Control (NAC) permite agrupar dispositivos según roles de usuario y aplicar políticas de acceso diferenciadas, siendo clave en la segmentación de red para controlar el acceso basado en roles.",
+      "id": "p13-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa una arquitectura de red con segmentación avanzada utilizando zonas de seguridad (trusted, servers, databases y screened zone). Para acceder a los servidores de bases de datos desde la red externa, se requiere autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso y un túnel IPsec con autenticación mutua y cifrado AES-256. Sin embargo, durante una auditoría se detecta que un atacante logró acceder a un servidor de bases de datos mediante un ataque de 'pass-the-hash' desde un dispositivo interno no autorizado. ¿Qué combinación de medidas de seguridad implementadas en la arquitectura habría MÁS probablemente evitado que el atacante aprovechara esta vulnerabilidad?",
+      "opciones": [
+        "Implementar un firewall de aplicación web (WAF) en la zona de bases de datos",
+        "Aplicar autenticación multifactor (MFA) para el acceso a los servidores de bases de datos",
+        "Usar un proxy inverso en lugar de un proxy forward",
+        "Configurar el túnel IPsec para usar autenticación basada en certificados en lugar de pre-shared keys"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La autenticación multifactor (MFA) habría añadido una capa adicional de seguridad para evitar el acceso no autorizado mediante técnicas como 'pass-the-hash', como se recomienda en el temario.",
+      "id": "p13-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un diseño de red con segmentación avanzada utilizando zonas de seguridad (trusted, servers, databases y screened zone). Para acceder a los servidores de bases de datos desde la red externa, se requiere autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso, un túnel IPsec con autenticación mutua y cifrado AES-256, y un NGFW que aplica políticas de control de aplicaciones. Sin embargo, durante una auditoría se detecta que un atacante logró acceder a un servidor de bases de datos mediante la explotación de una vulnerabilidad en un servicio interno no autorizado que se ejecutaba en segundo plano. ¿Qué combinación de medidas de seguridad implementadas en la arquitectura habría MÁS probablemente evitado que el atacante aprovechara esta vulnerabilidad?",
+      "opciones": [
+        "a) Implementar un IPS en modo inline con fail close para bloquear tráfico no autorizado y un WAF para proteger aplicaciones web.",
+        "b) Configurar el NGFW para bloquear todo el tráfico no explícitamente permitido entre zonas, integrar un SIEM para correlación de eventos y aplicar autenticación multifactor (MFA) en el jump server.",
+        "c) Utilizar un proxy inverso con inspección SSL/TLS para descifrar tráfico y un balanceador de carga en modo active-passive para redirigir el tráfico no autorizado.",
+        "d) Implementar un firewall tradicional entre la screened zone y la zona de bases de datos, junto con un sistema de prevención de intrusiones (IPS) en modo pasivo y un proxy forward para filtrar URLs."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La opción b) aborda la vulnerabilidad al combinar la restricción estricta del tráfico entre zonas mediante el NGFW, la detección y respuesta proactiva con un SIEM, y la autenticación robusta en el jump server, lo que reduce la exposición a servicios internos no autorizados.",
+      "id": "p13-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa una arquitectura de red con segmentación avanzada utilizando zonas de seguridad (trusted, servers, databases y screened zone). Para acceder a los servidores de bases de datos desde la red externa, se requiere autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso, un túnel IPsec con autenticación mutua y cifrado AES-256, y un NGFW que aplica políticas de control de aplicaciones. Sin embargo, durante una auditoría se detecta que un atacante logró acceder a un servidor de bases de datos mediante la explotación de una vulnerabilidad en un servicio interno no autorizado que se ejecutaba en segundo plano, el cual no estaba incluido en las reglas de control de aplicaciones del NGFW. ¿Qué combinación de medidas de seguridad implementadas en la arquitectura habría MÁS probablemente evitado que el atacante aprovechara esta vulnerabilidad?",
+      "opciones": [
+        "Implementar un WAF (Web Application Firewall) en la zona de servidores para filtrar tráfico HTTP/HTTPS y bloquear ataques a aplicaciones web, junto con un IPS (Intrusion Prevention System) en modo activo para bloquear tráfico malicioso en tiempo real.",
+        "Configurar el NGFW para operar en modo 'fail close' en lugar de 'fail open', asegurando que cualquier tráfico no autorizado sea bloqueado automáticamente, incluso si esto interrumpe la conectividad.",
+        "Aplicar políticas de control de aplicaciones más estrictas en el NGFW, incluyendo reglas específicas para bloquear servicios internos no autorizados, y complementar con un sistema de detección de anomalías basado en IA para identificar comportamientos sospechosos.",
+        "Utilizar un proxy inverso con capacidad de escaneo de contenido en la screened zone para analizar todo el tráfico entrante antes de que llegue al NGFW, combinado con un jump server para restringir el acceso a los servidores de bases de datos solo desde dispositivos autorizados."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La aplicación de políticas de control de aplicaciones más estrictas en el NGFW, incluyendo reglas específicas para bloquear servicios internos no autorizados, aborda directamente la vulnerabilidad explotada. Complementar con un sistema de detección de anomalías basado en IA añade una capa adicional de protección al identificar comportamientos anómalos que podrían indicar un ataque.",
+      "id": "p13-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto de la segmentación de red, ¿qué tecnología permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas basadas en el rol del usuario?",
+      "opciones": [
+        "Firewall de siguiente generación (NGFW)",
+        "Zonas de seguridad (security zones)",
+        "Control de acceso basado en roles (RBAC)",
+        "Balanceador de carga (load balancer)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El control de acceso basado en roles (RBAC) permite asignar permisos según el rol del usuario, facilitando la segmentación de red con reglas diferenciadas entre segmentos.",
+      "id": "p13-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué dispositivo de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas y permitir que múltiples dispositivos compartan una única dirección IP pública, además de proporcionar una capa adicional de seguridad al filtrar el tráfico no deseado?",
+      "opciones": [
+        "Proxy inverso (reverse proxy)",
+        "Servidor NAT (Network Address Translation)",
+        "Balanceador de carga (load balancer)",
+        "Firewall tradicional"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servidor NAT traduce direcciones IP privadas a públicas y filtra tráfico no deseado, ocultando las IPs internas.",
+      "id": "p13-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un diseño de red con segmentación avanzada, ¿qué tecnología permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas basadas en el contexto de la aplicación utilizada por los usuarios?",
+      "opciones": [
+        "a) Firewall de siguiente generación (NGFW)",
+        "b) Segmentación mediante VLANs",
+        "c) Control de acceso basado en roles (RBAC)",
+        "d) Proxies inversos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los firewalls de siguiente generación (NGFW) operan en la capa 7 (aplicación) y permiten aplicar políticas de seguridad basadas en el contexto de las aplicaciones, no solo en direcciones IP o puertos.",
+      "id": "p13-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un túnel IPsec entre dos oficinas remotas para conectar sus redes internas. Durante una auditoría, se detecta que el túnel no cifra el contenido de los datos en tránsito. ¿Qué medida de seguridad implementada en el túnel IPsec habría evitado esta vulnerabilidad?",
+      "opciones": [
+        "Autenticación mutua con certificados digitales",
+        "Cifrado de datos con AES-256",
+        "Uso de autenticación básica (pre-shared key)",
+        "Implementación de NAT-Traversal"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El cifrado de datos con AES-256 en el túnel IPsec garantiza que los datos en tránsito estén protegidos contra interceptaciones.",
+      "id": "p13-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un diseño de red con segmentación avanzada, ¿qué tecnología permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas de control de acceso basado en la identidad del usuario?",
+      "opciones": [
+        "Zonas de seguridad (security zones)",
+        "Control de acceso basado en identidad (IAM)",
+        "Firewall tradicional",
+        "Balanceador de carga (load balancer)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El control de acceso basado en identidad (IAM) permite autenticar usuarios y aplicar políticas de seguridad diferenciadas según su identidad.",
+      "id": "p13-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la segmentación de red avanzada, ¿qué tecnología permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas basadas en el contexto de la aplicación utilizada por los usuarios?",
+      "opciones": [
+        "a) Firewall de siguiente generación (NGFW)",
+        "b) Balanceador de carga con modo activo-pasivo",
+        "c) Proxy inverso transparente",
+        "d) Honeypot"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El firewall de siguiente generación (NGFW) opera en la capa 7 del modelo OSI, permitiendo aplicar políticas de control de aplicaciones, lo que facilita la segmentación basada en el contexto de las aplicaciones utilizadas por los usuarios.",
+      "id": "p13-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas y permitir que múltiples dispositivos compartan una única dirección IP pública, además de filtrar tráfico no deseado mediante reglas de acceso?",
+      "opciones": [
+        "a) Firewall tradicional",
+        "b) Proxy server",
+        "c) Network Address Translation (NAT)",
+        "d) Balanceador de carga"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El NAT (Network Address Translation) se utiliza principalmente para ocultar direcciones IP internas tras una única IP pública, mientras que los firewalls filtran tráfico y los proxies actúan como intermediarios, pero el NAT es la tecnología específica para este propósito.",
+      "id": "p13-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un diseño de red con segmentación avanzada utilizando zonas de seguridad (trusted, servers, databases y screened zone). Para acceder a los servidores de bases de datos desde la red externa, se requiere autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso y un túnel IPsec con autenticación mutua y cifrado AES-256. Sin embargo, durante una auditoría se detecta que un atacante logró acceder a un servidor de bases de datos mediante un ataque de 'pass-the-hash' desde un dispositivo interno no autorizado. ¿Qué combinación de medidas de seguridad implementadas en la arquitectura habría MÁS probablemente evitado que el atacante aprovechara esta vulnerabilidad?",
+      "opciones": [
+        "Implementar autenticación multifactor (MFA) en el túnel IPsec y desactivar servicios innecesarios en los servidores de bases de datos",
+        "Usar firewalls tradicionales entre todas las zonas y aplicar políticas de control de aplicaciones en el NGFW",
+        "Configurar el IPS en modo activo (inline) y habilitar el registro de eventos en el SIEM",
+        "Implementar un proxy inverso para gestionar el tráfico entrante y aplicar políticas de control de ancho de banda"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La combinación de MFA en el túnel IPsec y la desactivación de servicios innecesarios reduce la superficie de ataque y evita la explotación de credenciales.",
+      "id": "p13-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un diseño de red con segmentación avanzada utilizando zonas de seguridad (trusted, servers, databases y screened zone). Para acceder a los servidores de bases de datos desde la red externa, se requiere autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso, un túnel IPsec con autenticación mutua y cifrado AES-256, y un NGFW que aplica políticas de control de aplicaciones. Sin embargo, tras una auditoría, se detecta que un atacante logró acceder a un servidor de bases de datos mediante la explotación de una vulnerabilidad en un servicio interno no autorizado, que no estaba incluido en las reglas de control de aplicaciones del NGFW. ¿Qué combinación de medidas de seguridad implementadas en la arquitectura habría MÁS probablemente evitado que el atacante aprovechara esta vulnerabilidad?",
+      "opciones": [
+        "Implementar un IPS en modo activo (inline) con reglas personalizadas para detectar y bloquear tráfico anómalo en la zona de servidores, y configurar el NGFW para rechazar tráfico no asociado a aplicaciones autorizadas.",
+        "Aplicar autenticación basada en roles (RBAC) en el servidor de bases de datos y restringir el acceso desde la zona de servidores únicamente a servicios explícitamente autorizados mediante listas de control de acceso (ACL) en el firewall tradicional.",
+        "Utilizar un proxy inverso con inspección de tráfico SSL/TLS para descifrar y analizar todo el tráfico entrante a la zona de bases de datos, complementado con un WAF para bloquear ataques en el nivel de aplicación.",
+        "Implementar un sistema de segmentación dinámica basado en software (SDN) que replique automáticamente las políticas de seguridad en todos los dispositivos de red, incluyendo firewalls, switches y servidores."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un proxy inverso con inspección SSL/TLS y un WAF permitirían analizar el tráfico entrante a la zona de bases de datos, bloqueando ataques en el nivel de aplicación que el NGFW no detectó por no estar en sus reglas. Esta medida complementa el control de aplicaciones del NGFW al actuar como capa adicional de protección específica para aplicaciones web.",
+      "id": "p13-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un entorno donde un administrador necesita acceder de manera segura a servidores internos desde una red externa, ¿qué dispositivo sería el MÁS adecuado para facilitar este acceso controlado?",
+      "opciones": [
+        "Servidor de salto (jump server)",
+        "Proxy inverso (reverse proxy)",
+        "Firewall tradicional",
+        "Balanceador de carga (load balancer)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El servidor de salto (jump server) actúa como punto de acceso controlado desde redes externas, permitiendo acceso seguro a servidores internos.",
+      "id": "p13-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas basadas en el contexto de la aplicación utilizada por los usuarios?",
+      "opciones": [
+        "a) Firewall tradicional",
+        "b) Balanceador de carga",
+        "c) Zona de seguridad (security zone)",
+        "d) Proxy explícito"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso, permitiendo establecer reglas de seguridad específicas para cada segmento, como aplicar políticas basadas en el contexto de la aplicación utilizada.",
+      "id": "p13-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas y permitir que múltiples dispositivos compartan una única dirección IP pública, además de proporcionar una capa adicional de seguridad al filtrar tráfico no deseado mediante reglas de control de acceso?",
+      "opciones": [
+        "a) Proxy inverso",
+        "b) Servidor de salto (jump server)",
+        "c) Balanceador de carga",
+        "d) NAT (Network Address Translation)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El NAT (Network Address Translation) oculta las direcciones IP internas al tráfico externo y permite que múltiples dispositivos compartan una única dirección IP pública, además de filtrar tráfico no deseado mediante reglas de control de acceso.",
+      "id": "p13-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un túnel IPsec entre dos oficinas remotas para conectar sus redes internas. Durante una auditoría, se detecta que el túnel no autentica mutuamente los extremos. ¿Qué medida de seguridad implementada en el túnel IPsec habría evitado esta vulnerabilidad?",
+      "opciones": [
+        "Configurar autenticación mutua (pre-shared keys o certificados)",
+        "Aumentar el tamaño del túnel a 256 bits",
+        "Desactivar el modo transporte y usar modo túnel",
+        "Reducir el MTU del túnel"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La autenticación mutua en IPsec garantiza que ambos extremos del túnel sean legítimos, evitando ataques de intermediario (MITM).",
+      "id": "p13-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes tecnologías de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas de los dispositivos y permitir que todos compartan una única dirección IP pública, además de proporcionar funciones de filtrado de tráfico no deseado?",
+      "opciones": [
+        "a) Proxy inverso (Reverse Proxy)",
+        "b) Balanceador de carga (Load Balancer)",
+        "c) Traducción de direcciones de red (NAT)",
+        "d) Sistema de prevención de intrusiones (IPS)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El NAT (Network Address Translation) se utiliza principalmente para ocultar direcciones IP internas al traducirlas a una IP pública compartida, además de filtrar tráfico no deseado mediante reglas de acceso.",
+      "id": "p13-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red permite ocultar las direcciones IP internas de los dispositivos y, al mismo tiempo, filtrar el tráfico no deseado mediante reglas de control de acceso?",
+      "opciones": [
+        "a) Proxy inverso (Reverse Proxy)",
+        "b) Traductor de direcciones de red (NAT)",
+        "c) Balanceador de carga (Load Balancer)",
+        "d) Honeypot"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El NAT (Network Address Translation) oculta las direcciones IP internas al traducirlas a una única dirección IP pública, mientras que los firewalls o dispositivos con reglas de control de acceso filtran el tráfico no deseado.",
+      "id": "p13-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red necesita acceder de manera segura a servidores internos desde una red externa. ¿Qué dispositivo sería el MÁS adecuado para facilitar este acceso controlado?",
+      "opciones": [
+        "Jump server (servidor de salto)",
+        "Balanceador de carga",
+        "Proxy inverso",
+        "Honeypot"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un jump server actúa como punto de acceso controlado y seguro para administrar servidores internos desde redes externas.",
+      "id": "p13-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una arquitectura de red con segmentación avanzada, ¿qué combinación de tecnologías permitiría MÁS efectivamente reducir la superficie de ataque en una zona de bases de datos?",
+      "opciones": [
+        "Firewall tradicional, NGFW, WAF y autenticación 802.1X en switches",
+        "Balanceador de carga, proxy inverso y VPN",
+        "Honeypot, NAT y SD-WAN",
+        "Proxy explícito, VLAN y IPS en modo pasivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La combinación de firewalls (tradicional y NGFW), WAF y autenticación 802.1X proporciona capas múltiples de protección para la zona de bases de datos.",
+      "id": "p13-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas de los dispositivos y permitir que compartan una única dirección IP pública, además de proporcionar funciones de filtrado de tráfico no deseado mediante reglas de control de acceso?",
+      "opciones": [
+        "a) Proxy inverso",
+        "b) Balanceador de carga",
+        "c) Concentrador VPN",
+        "d) NAT (Network Address Translation)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El NAT (Network Address Translation) oculta las direcciones IP internas al tráfico externo, permitiendo que múltiples dispositivos compartan una única IP pública y filtrando tráfico no deseado mediante reglas configurables.",
+      "id": "p13-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un diseño de red con segmentación avanzada utilizando zonas de seguridad. Para acceder a los servidores de bases de datos desde la red externa, se requiere autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso y un túnel IPsec con autenticación mutua. Sin embargo, durante una auditoría se detecta que un atacante logró acceder a un servidor de bases de datos mediante un ataque de 'pass-the-hash' desde un dispositivo interno no autorizado. ¿Qué medida de seguridad implementada en la arquitectura habría MÁS probablemente evitado que el atacante aprovechara esta vulnerabilidad?",
+      "opciones": [
+        "Implementar autenticación multifactor (MFA) en el túnel IPsec",
+        "Aumentar el tamaño del túnel IPsec a 512 bits",
+        "Desactivar el modo túnel y usar modo transporte en IPsec",
+        "Reducir el MTU del túnel IPsec"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La autenticación multifactor (MFA) en el túnel IPsec añade una capa adicional de seguridad, dificultando ataques como 'pass-the-hash'.",
+      "id": "p13-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa ha implementado una arquitectura de red con segmentación avanzada utilizando zonas de seguridad (trusted, servers, databases y screened zone). Para acceder a los servidores de bases de datos desde la red externa, se requiere autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso, un túnel IPsec con autenticación mutua y cifrado AES-256, y un NGFW que aplica políticas de control de aplicaciones. Sin embargo, durante una auditoría se detecta que un atacante logró acceder a un servidor de bases de datos mediante la explotación de una vulnerabilidad en un servicio interno no autorizado que se ejecutaba en segundo plano, el cual no estaba incluido en las reglas de control de aplicaciones del NGFW. Además, el atacante logró moverse lateralmente desde un dispositivo comprometido en la zona 'trusted' hacia la zona 'databases'. ¿Qué combinación de medidas de seguridad implementadas en la arquitectura habría MÁS probablemente evitado que el atacante aprovechara esta vulnerabilidad y reducido la superficie de ataque en el movimiento lateral?",
+      "opciones": [
+        "Implementar segmentación micro (microsegmentación) mediante firewalls internos entre zonas y aplicar políticas de control de aplicaciones basadas en roles en el NGFW, además de deshabilitar servicios innecesarios en los servidores de la zona 'trusted'.",
+        "Aumentar el ancho de banda del túnel IPsec y configurar un balanceador de carga en modo active-passive para distribuir el tráfico entre la zona 'trusted' y 'databases'.",
+        "Desplegar un honeypot en la zona 'trusted' para detectar movimientos laterales y redirigir el tráfico sospechoso a una zona aislada (screened zone) mediante un firewall tradicional.",
+        "Implementar un sistema de detección de intrusiones (IDS) en modo pasivo para monitorizar el tráfico entre zonas y generar alertas, sin bloquear el tráfico en tiempo real."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La microsegmentación (implementada con firewalls internos o soluciones como SDN) permite aplicar políticas de control de acceso granulares entre zonas, restringiendo el movimiento lateral. Además, deshabilitar servicios innecesarios reduce la superficie de ataque y evita que servicios no autorizados sean explotados. Esto aborda tanto la vulnerabilidad como el movimiento lateral.",
+      "id": "p13-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas basadas en el contexto de la aplicación utilizada por los usuarios?",
+      "opciones": [
+        "Firewall de siguiente generación (NGFW)",
+        "Segmentación por VLANs",
+        "Control de acceso basado en identidad (RBAC)",
+        "Proxy inverso"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los firewalls de siguiente generación (NGFW) operan en la capa 7 del modelo OSI, permitiendo el control de aplicaciones y la aplicación de políticas de seguridad basadas en el contexto de la aplicación utilizada.",
+      "id": "p13-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un diseño de red con segmentación avanzada, ¿qué tecnología permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas basadas en el rol del usuario?",
+      "opciones": [
+        "Control de acceso basado en roles (RBAC)",
+        "Balanceadores de carga en modo active-passive",
+        "Túneles IPsec",
+        "Honeypots"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El control de acceso basado en roles (RBAC) permite agrupar dispositivos y usuarios según sus funciones, aplicando reglas de seguridad diferenciadas según el rol.",
+      "id": "p13-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas de los dispositivos y, al mismo tiempo, filtrar el tráfico no deseado mediante reglas de control de acceso?",
+      "opciones": [
+        "a) Network Address Translation (NAT)",
+        "b) Port Address Translation (PAT)",
+        "c) Proxy inverso (Reverse Proxy)",
+        "d) Virtual Local Area Network (VLAN)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "NAT oculta las direcciones IP internas al traducirlas a una única dirección IP pública, mientras que los firewalls o dispositivos asociados aplican reglas de filtrado para bloquear tráfico no deseado.",
+      "id": "p13-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red permite agrupar dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas entre segmentos mediante políticas basadas en el contexto del dispositivo (ej. tipo de sistema operativo o versión)?",
+      "opciones": [
+        "a) Zonas de seguridad (security zones)",
+        "b) Control de acceso basado en roles (RBAC)",
+        "c) Segmentación dinámica mediante SDN (Software-Defined Networking)",
+        "d) VLANs (Virtual Local Area Networks)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso, permitiendo establecer políticas de seguridad diferenciadas entre segmentos, incluyendo reglas basadas en el contexto del dispositivo como su sistema operativo o versión.",
+      "id": "p13-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas y permitir que múltiples dispositivos compartan una única dirección IP pública, además de proporcionar funciones de filtrado de tráfico no deseado mediante reglas de control de acceso?",
+      "opciones": [
+        "a) Firewall tradicional",
+        "b) Proxy inverso",
+        "c) NAT (Network Address Translation)",
+        "d) VPN (Virtual Private Network)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El NAT (Network Address Translation) permite ocultar direcciones IP internas al traducirlas a una única IP pública, además de incluir funciones básicas de filtrado mediante reglas de control de acceso en los firewalls que lo implementan.",
+      "id": "p13-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red permite ocultar las direcciones IP internas de los dispositivos y, al mismo tiempo, filtrar el tráfico no deseado mediante reglas de control de acceso específicas para cada segmento?",
+      "opciones": [
+        "a) Proxy inverso (Reverse Proxy)",
+        "b) Network Address Translation (NAT)",
+        "c) Virtual LAN (VLAN)",
+        "d) Software-Defined Wide Area Network (SD-WAN)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Network Address Translation (NAT) oculta las direcciones IP internas al tráfico externo y, al combinarse con firewalls o dispositivos de filtrado, permite aplicar reglas de control de acceso para filtrar tráfico no deseado.",
+      "id": "p13-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas de los dispositivos y permitir que compartan una única dirección IP pública, además de proporcionar funciones de filtrado de tráfico no deseado mediante reglas de control de acceso basadas en puertos y direcciones?",
+      "opciones": [
+        "a) Proxy inverso",
+        "b) Network Address Translation (NAT)",
+        "c) Firewall de siguiente generación (NGFW)",
+        "d) Balanceador de carga"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "NAT (Network Address Translation) oculta las direcciones IP internas al tráfico externo, compartiendo una única IP pública, y los firewalls tradicionales suelen implementar reglas de control de acceso basadas en puertos y direcciones para filtrar el tráfico.",
+      "id": "p13-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa una arquitectura de red con segmentación avanzada utilizando zonas de seguridad. Para acceder a los servidores de bases de datos desde la red externa, se requiere autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso y un túnel IPsec con autenticación mutua. Sin embargo, durante una auditoría se detecta que un atacante logró acceder a un servidor de bases de datos mediante un ataque de 'pass-the-hash' desde un dispositivo interno no autorizado. ¿Qué medida de seguridad implementada en la arquitectura habría MÁS probablemente evitado que el atacante aprovechara esta vulnerabilidad?",
+      "opciones": [
+        "Implementar autenticación multifactor (MFA) en el túnel IPsec",
+        "Aplicar políticas de control de aplicaciones en un NGFW",
+        "Usar cables de red blindados (STP) en la zona de bases de datos",
+        "Configurar un firewall tradicional en modo fail-close"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La autenticación multifactor (MFA) en el túnel IPsec añadiría una capa adicional de seguridad, dificultando el uso de credenciales robadas en ataques como 'pass-the-hash'.",
+      "id": "p13-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa ha implementado una arquitectura de red con segmentación avanzada utilizando zonas de seguridad (trusted, servers, databases y screened zone). Para acceder a los servidores de bases de datos desde la red externa, se requiere autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso, un túnel IPsec con autenticación mutua y cifrado AES-256, y un NGFW que aplica políticas de control de aplicaciones. Durante una auditoría, se detecta que un atacante logró acceder a un servidor de bases de datos mediante la explotación de una vulnerabilidad en un servicio interno no autorizado que se ejecutaba en segundo plano, no incluido en las reglas del NGFW. ¿Qué combinación de medidas de seguridad implementadas en la arquitectura habría MÁS probablemente evitado este acceso no autorizado?",
+      "opciones": [
+        "Implementar un jump server con autenticación multifactor (MFA) para acceder a los servidores internos, en lugar de permitir túneles IPsec directos desde redes externas, y aplicar microsegmentación con firewalls de aplicación en cada zona para restringir el tráfico lateral.",
+        "Configurar el NGFW para bloquear todo el tráfico no autorizado a puertos no estándar y deshabilitar el servicio interno vulnerable mediante políticas de control de aplicaciones basadas en firmas de malware.",
+        "Utilizar un proxy inverso con autenticación basada en certificados para todas las conexiones entrantes a la zona de bases de datos, y aplicar reglas estrictas de filtrado en el firewall tradicional para evitar el acceso no autorizado a puertos no estándar.",
+        "Implementar un sistema de detección y respuesta (EDR) en la zona de bases de datos para bloquear automáticamente servicios no autorizados en tiempo real, combinado con un túnel IPsec que incluya autenticación basada en tokens y cifrado GCM en lugar de AES-256."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La implementación de un jump server con MFA reduce la exposición de la red interna al limitar el acceso a servidores críticos solo desde un dispositivo controlado y autenticado. La microsegmentación con firewalls de aplicación en cada zona impide el movimiento lateral, incluso si un servicio no autorizado es explotado, al restringir el tráfico entre segmentos.",
+      "id": "p13-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa un diseño de red con segmentación avanzada utilizando zonas de seguridad (trusted, servers, databases y screened zone). Para garantizar que solo dispositivos autorizados accedan a la zona de bases de datos, se implementa autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso, un túnel IPsec con autenticación mutua y cifrado AES-256, y un WAF que protege contra ataques a aplicaciones web. Sin embargo, durante una auditoría se detecta que un atacante logró comprometer un dispositivo en la zona 'trusted' mediante un ataque de phishing y, desde allí, intentó moverse lateralmente hacia la zona 'databases' explotando una vulnerabilidad en un servicio interno no documentado que se ejecutaba en segundo plano. ¿Qué combinación de medidas de seguridad implementadas en la arquitectura habría MÁS probablemente evitado que el atacante aprovechara esta vulnerabilidad y reducido la superficie de ataque en el movimiento lateral?",
+      "opciones": [
+        "Implementar un firewall de siguiente generación (NGFW) con control de aplicaciones en la zona 'trusted' para bloquear servicios no autorizados y aplicar políticas de control de acceso basado en roles (RBAC) en la zona 'databases'.",
+        "Configurar un proxy inverso (reverse proxy) en la zona 'screened' para validar todas las solicitudes antes de llegar a la zona 'databases' y aplicar autenticación multifactor (MFA) en cada salto entre zonas.",
+        "Utilizar un honeypot en la zona 'trusted' para detectar y analizar intentos de movimiento lateral, junto con un sistema de prevención de intrusiones (IPS) en modo activo (inline) para bloquear tráfico no autorizado entre segmentos.",
+        "Implementar un jump server con autenticación biométrica en la zona 'screened' y configurar el túnel IPsec para que solo permita tráfico cifrado desde dispositivos previamente registrados en una lista blanca de certificados."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La implementación de un NGFW con control de aplicaciones en la zona 'trusted' permitiría bloquear servicios no autorizados antes de que el tráfico alcance la zona 'databases', mientras que las políticas RBAC en la zona 'databases' restringirían el acceso solo a usuarios o sistemas con roles específicos, reduciendo así la superficie de ataque.",
+      "id": "p13-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red agrupa dispositivos según su función o tipo de acceso, permitiendo aplicar reglas de seguridad diferenciadas entre segmentos mediante políticas basadas en el rol del usuario?",
+      "opciones": [
+        "a) Zonas de seguridad (security zones)",
+        "b) Balanceadores de carga (load balancers)",
+        "c) Proxies inversos (reverse proxies)",
+        "d) Concentradores VPN (VPN concentrators)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las zonas de seguridad agrupan dispositivos según su función o tipo de acceso, facilitando la aplicación de reglas de seguridad diferenciadas mediante políticas basadas en roles (ej. zona de bases de datos vs. zona interna).",
+      "id": "p13-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando firewalls tradicionales y firewalls de siguiente generación (NGFW), ¿cuál de las siguientes afirmaciones es CORRECTA?",
+      "opciones": [
+        "a) Los firewalls tradicionales operan en la capa 7 del modelo OSI y analizan el tráfico a nivel de aplicación.",
+        "b) Los NGFW solo filtran tráfico basado en direcciones IP y puertos, igual que los firewalls tradicionales.",
+        "c) Los NGFW permiten el control de aplicaciones y la inspección profunda de paquetes (DPI).",
+        "d) Los firewalls tradicionales pueden bloquear ataques como inyecciones SQL o XSS."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los NGFW operan en la capa 7 del modelo OSI, permitiendo análisis avanzado del tráfico a nivel de aplicación (ej. control de aplicaciones y DPI).",
+      "id": "p13-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes dispositivos NO está diseñado para ocultar direcciones IP internas o proporcionar funciones de filtrado de tráfico?",
+      "opciones": [
+        "a) Proxy server",
+        "b) Balanceador de carga (load balancer)",
+        "c) Honeypot",
+        "d) Firewall con NAT"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El honeypot es un sistema diseñado para atraer y analizar atacantes, no para ocultar IPs ni filtrar tráfico.",
+      "id": "p13-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un diseño de red con segmentación avanzada, se implementa autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso y un túnel IPsec con autenticación mutua. Sin embargo, un atacante logra acceder a un servidor interno mediante un ataque de 'pass-the-hash'. ¿Qué medida de seguridad habría evitado MÁS probablemente este ataque?",
+      "opciones": [
+        "a) Implementar autenticación multifactor (MFA) en el túnel IPsec.",
+        "b) Aplicar políticas de control de aplicaciones en un NGFW.",
+        "c) Desactivar el protocolo SMB en los servidores internos.",
+        "d) Usar un firewall tradicional con reglas de filtrado estrictas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La autenticación multifactor (MFA) en el túnel IPsec añade una capa adicional de seguridad que dificulta ataques como 'pass-the-hash', que explotan credenciales robadas.",
+      "id": "p13-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dada la siguiente descripción: 'Dispositivo que actúa como intermediario entre dispositivos internos y servicios externos, almacenando copias de respuestas frecuentes para reducir el ancho de banda y mejorar el rendimiento'. ¿Qué concepto se describe?",
+      "opciones": [
+        "a) Proxy server",
+        "b) Balanceador de carga",
+        "c) Firewall de siguiente generación (NGFW)",
+        "d) Honeypot"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un proxy server actúa como intermediario, realiza caching (almacenamiento en caché) y puede filtrar tráfico, mejorando el rendimiento y la seguridad.",
+      "id": "p13-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas y filtrar el tráfico no deseado mediante reglas de control de acceso basadas en el contexto del tráfico (ej. aplicación, usuario o servicio)?",
+      "opciones": [
+        "Proxy inverso",
+        "Balanceador de carga con NAT",
+        "Firewall de nueva generación (NGFW)",
+        "Honeypot"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un firewall de nueva generación (NGFW) opera en la capa 7 del modelo OSI, permitiendo filtrar y controlar el tráfico según el contexto de la aplicación, el usuario o el servicio, además de ocultar direcciones IP internas.",
+      "id": "p13-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué dispositivo de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas de los dispositivos y, al mismo tiempo, filtrar el tráfico no deseado mediante reglas de control de acceso basadas en el contexto del tráfico (como la aplicación, el usuario o el servicio)?",
+      "opciones": [
+        "a) Firewall de siguiente generación (NGFW)",
+        "b) Proxy inverso (Reverse Proxy)",
+        "c) Balanceador de carga (Load Balancer)",
+        "d) Proxy transparente (Transparent Proxy)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un firewall de siguiente generación (NGFW) opera en la capa 7 del modelo OSI y puede analizar el tráfico en función de la aplicación, el usuario o el servicio, además de filtrar el tráfico no deseado. Los proxies (inverso o transparente) se enfocan principalmente en ocultar IPs o filtrar URLs, pero no analizan el contexto del tráfico a nivel de aplicación como un NGFW.",
+      "id": "p13-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un túnel IPsec entre dos oficinas remotas. Durante una auditoría, se detecta que el túnel no autentica mutuamente los extremos. ¿Qué medida de seguridad implementada en el túnel IPsec habría evitado esta vulnerabilidad?",
+      "opciones": [
+        "a) Configurar autenticación mutua (pre-shared keys o certificados digitales).",
+        "b) Usar un firewall tradicional con reglas de filtrado estrictas.",
+        "c) Implementar un NGFW en el túnel.",
+        "d) Desactivar el protocolo IPsec y usar SSL/TLS."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La autenticación mutua en IPsec garantiza que ambos extremos del túnel se autentiquen, evitando ataques como el 'man-in-the-middle'.",
+      "id": "p13-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de red se utiliza PRIMARIAMENTE para ocultar las direcciones IP internas y permitir que múltiples dispositivos compartan una única dirección IP pública, además de proporcionar funciones de filtrado de tráfico no deseado?",
+      "opciones": [
+        "a) NAT (Network Address Translation)",
+        "b) Proxy server",
+        "c) Balanceador de carga",
+        "d) Honeypot"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "NAT oculta las direcciones IP internas al tráfico externo y permite que múltiples dispositivos compartan una única IP pública, además de filtrar tráfico no deseado.",
+      "id": "p13-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un diseño de red con segmentación avanzada utilizando zonas de seguridad. Para acceder a los servidores de bases de datos desde la red externa, se requiere autenticación basada en identidad mediante el estándar 802.1X en los switches de acceso y un túnel IPsec con autenticación mutua. Sin embargo, un atacante logra comprometer un dispositivo en la zona 'trusted' mediante phishing y moverse lateralmente hacia la zona 'databases'. ¿Qué combinación de medidas de seguridad habría MÁS probablemente evitado este movimiento lateral?",
+      "opciones": [
+        "a) Implementar microsegmentación (ej. VLANs aisladas) y políticas de control de acceso estrictas entre zonas.",
+        "b) Usar un firewall tradicional con reglas de filtrado basadas en IP.",
+        "c) Configurar un NGFW con control de aplicaciones.",
+        "d) Desactivar el protocolo SMB en los servidores."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La microsegmentación y políticas de control de acceso estrictas entre zonas limitan el movimiento lateral de atacantes, reduciendo la superficie de ataque.",
+      "id": "p13-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Secure Infrastructures",
+      "youtubeId": "l64La1xYXL4"
+    },
+    {
+      "titulo": "Intrusion Prevention",
+      "youtubeId": "7QuYupuic3Q"
+    },
+    {
+      "titulo": "Network Appliances",
+      "youtubeId": "WlOslEy3ztg"
+    },
+    {
+      "titulo": "Port Security",
+      "youtubeId": "QhLQ6J4satw"
+    },
+    {
+      "titulo": "Firewall Types",
+      "youtubeId": "mq1HRM-zGtQ"
+    },
+    {
+      "titulo": "Secure Communication",
+      "youtubeId": "uU3e_ntg-3g"
+    }
+  ]
+}

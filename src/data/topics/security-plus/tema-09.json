@@ -1,0 +1,1416 @@
+{
+  "id": 9,
+  "titulo": "2.4 · Malware y ataques físicos",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "MALWARE Y ATAQUES FÍSICOS: CONCEPTOS CLAVE PARA EL EXAMEN COMPTIA SECURITY+ SY0-701\n\n\n\n¿QUÉ ES EL MALWARE?\n\nEl malware (software malicioso) es un término amplio que describe cualquier tipo de software diseñado para realizar acciones dañinas en un sistema. Estas acciones pueden incluir:\n\n- Capturar pulsaciones de teclado (keylogging) y enviarlas a los atacantes.\n- Mostrar publicidad no deseada en pantalla, generando ingresos para el atacante.\n- Infectar sistemas con virus o gusanos que propagan malware, cifran datos o convierten el dispositivo en un bot.\n- Robar datos personales, financieros o corporativos.\n\nEl malware rara vez actúa de forma aislada. Suele combinar múltiples técnicas para infectar un sistema de manera más efectiva. Por ejemplo, un gusano puede explotar una vulnerabilidad conocida para instalarse, luego descargar un troyano que abra una puerta trasera (backdoor) y finalmente instalar ransomware para cifrar los datos.\n\n\n\nTIPOS DE MALWARE Y SUS CARACTERÍSTICAS\n\n\n\nVIRUS\n\nUn virus informático es un tipo de malware que se replica a sí mismo y requiere intervención humana para activarse, como hacer clic en un enlace o ejecutar un archivo. Una vez activado, puede:\n\n- Moverse por el sistema de archivos.\n- Acceder a otros sistemas en la red.\n- Causar interrupciones o funcionar en segundo plano sin ser detectado.\n\nExisten diferentes tipos de virus:\n\n- Virus de sector de arranque: Se ejecutan al iniciar el sistema operativo.\n- Virus en scripts: Aprovechan vulnerabilidades en navegadores o aplicaciones como Microsoft Office.\n- Virus sin archivos (fileless): Operan exclusivamente en la memoria RAM, sin escribirse en el disco duro, lo que dificulta su detección por antivirus tradicionales.\n\n\n\nGUSANOS (WORMS)\n\nLos gusanos son malware que se replican automáticamente sin necesidad de intervención humana. Se propagan rápidamente a través de redes, aprovechando vulnerabilidades en sistemas operativos o aplicaciones. Algunos ejemplos destacados incluyen:\n\n- El gusano WannaCry: Se propagó usando la vulnerabilidad EternalBlue, instalando ransomware en sistemas vulnerables.\n- Gusanos de red: Pueden saturar el ancho de banda o causar denegación de servicio (DoS).\n\nPara prevenir infecciones por gusanos, es crucial:\n- Mantener los sistemas y aplicaciones actualizados.\n- Usar firewalls de red y personales.\n- Implementar sistemas de prevención de intrusiones (IPS).\n\n\n\nRANSOMWARE\n\nEl ransomware (software de rescate) es un tipo de malware que cifra los datos de un sistema y exige un pago para restaurarlos. Características comunes:\n\n- Cifra archivos personales, documentos y medios almacenados en el dispositivo.\n- El sistema operativo sigue funcionando para mostrar mensajes de rescate.\n- Los atacantes suelen exigir pagos en criptomonedas.\n\nPara protegerse contra el ransomware:\n- Realizar copias de seguridad offline y actualizadas.\n- Mantener el sistema operativo y las aplicaciones al día.\n- Usar software antimalware con firmas actualizadas.\n\n\n\nSPYWARE\n\nEl spyware (software espía) monitorea las actividades del usuario y recopila información sin su consentimiento. Puede:\n\n- Registrar pulsaciones de teclado (keyloggers).\n- Capturar pantallas o mensajes instantáneos.\n- Enviar datos a servidores controlados por atacantes.\n- Mostrar publicidad no deseada o cometer fraudes de afiliados.\n\nEl spyware suele instalarse mediante:\n- Software P2P (peer-to-peer).\n- Enlaces maliciosos en correos electrónicos.\n- Falsos programas de seguridad.\n\nPara detectar y eliminar spyware:\n- Usar software antimalware especializado como Malwarebytes.\n- Investigar cuidadosamente el software antes de instalarlo.\n- Mantener actualizadas las firmas de detección.\n\n\n\nBLOATWARE\n\nEl bloatware (software innecesario) son aplicaciones preinstaladas en dispositivos nuevos, generalmente por fabricantes o distribuidores. Estas aplicaciones pueden:\n\n- Consumir recursos del sistema (CPU, RAM, almacenamiento).\n- Introducir vulnerabilidades de seguridad.\n- Ejecutarse automáticamente al iniciar el sistema, afectando el rendimiento.\n\nPara eliminar bloatware:\n- Desinstalar manualmente aplicaciones no deseadas.\n- Usar herramientas de terceros diseñadas para eliminar software.\n- Investigar la procedencia del dispositivo antes de comprarlo.\n\n\n\nKEYLOGGERS\n\nLos keyloggers (registradores de teclado) capturan todas las pulsaciones de teclado realizadas en un sistema. Pueden:\n\n- Registrar contraseñas, nombres de usuario y datos financieros.\n- Capturar información del portapapeles.\n- Tomar capturas de pantalla de la actividad en pantalla.\n- Enviar los datos recopilados a servidores controlados por atacantes.\n\nLos keyloggers pueden ser parte de herramientas como Dark Comet, un RAT (Remote Access Trojan) que permite a los atacantes controlar remotamente un sistema.\n\n\n\nLOGIC BOMBS\n\nUna logic bomb (bomba lógica) es un tipo de malware que permanece inactivo hasta que se cumple una condición específica, como:\n\n- Una fecha u hora determinada.\n- La ejecución de un usuario específico.\n- La modificación de ciertos archivos.\n\nCuando se activa, puede:\n- Borrar datos.\n- Formatear discos.\n- Reiniciar sistemas.\n- Instalar otro malware.\n\nUn ejemplo real ocurrió en Corea del Sur en 2013, donde un correo malicioso instaló un troyano que, al día siguiente a las 2 p.m., borró los datos de sistemas bancarios y cajeros automáticos.\n\nPara prevenir logic bombs:\n- Limitar los permisos de los usuarios.\n- Monitorear cambios en archivos críticos del sistema.\n- Implementar políticas de control de cambios.\n\n\n\nROOTKITS\n\nUn rootkit es un malware avanzado que se oculta en el núcleo (kernel) del sistema operativo, haciéndolo casi indetectable para el software antimalware tradicional. Características:\n\n- Se ejecuta como parte del sistema operativo, por lo que no aparece en listas de procesos.\n- Tiene acceso completo al sistema y puede modificar su comportamiento.\n\nExisten diferentes tipos de rootkits:\n- Rootkits de kernel: Se integran en el núcleo del sistema.\n- Rootkits de usuario: Funcionan como procesos normales pero son difíciles de detectar.\n\nPara combatir rootkits:\n- Usar herramientas especializadas de eliminación de rootkits.\n- Implementar Secure Boot (arranque seguro), que verifica la integridad del kernel antes de cargar el sistema operativo.\n- Mantener el firmware y el sistema operativo actualizados.\n\n\n\nATAQUES FÍSICOS\n\nLos ataques físicos no dependen de vulnerabilidades en software o redes, sino de acceder directamente a los dispositivos. Algunos ejemplos incluyen:\n\n\n\nBRUTE FORCE (FUERZA BRUTA)\n\nEl brute force es un método para forzar el acceso a sistemas físicos, como:\n\n- Abrir puertas o ventanas cerradas con candados.\n- Romper cerraduras o sistemas de seguridad.\n- Acceder a áreas restringidas sin autorización.\n\nEste tipo de ataque es especialmente relevante en centros de datos, donde el acceso físico puede comprometer toda la infraestructura.\n\n\n\nCLONACIÓN DE RFID\n\nLa clonación de RFID (Radio-Frequency Identification) permite duplicar tarjetas de acceso o llaves electrónicas. Esto se logra:\n\n- Usando dispositivos de clonación disponibles comercialmente (por menos de $50 USD).\n- Leyendo la tarjeta original y copiando su información a otra tarjeta en segundos.\n\nPara mitigar este riesgo:\n- Implementar autenticación multifactor (MFA).\n- Usar tarjetas con chips criptográficos.\n- Limitar el acceso físico a áreas sensibles.\n\n\n\nATAQUES AL ENTORNO\n\nLos atacantes pueden comprometer el entorno físico donde se encuentran los sistemas, como:\n\n- Apagar el suministro eléctrico de un centro de datos.\n- Manipular sistemas HVAC (calefacción, ventilación y aire acondicionado) para sobrecalentar los equipos y causar su apagado.\n- Acceder a sistemas de supresión de incendios para activarlos y causar una denegación de servicio.\n\n\n\nDENEGACIÓN DE SERVICIO (DoS Y DDoS)\n\nUna denegación de servicio (DoS) ocurre cuando un atacante inutiliza un servicio, ya sea:\n\n- Sobrecargando el servicio con tráfico.\n- Explotando vulnerabilidades conocidas.\n- Eliminando el suministro eléctrico de un sistema.\n\nUn ataque distribuido de denegación de servicio (DDoS) utiliza múltiples dispositivos infectados (botnets) para saturar un servicio desde diferentes ubicaciones geográficas. Ejemplos de ataques DDoS:\n\n- Ataques de amplificación DNS: Se envían consultas DNS pequeñas a servidores mal configurados, que responden con respuestas mucho más grandes, saturando el ancho de banda.\n- Ataques de reflexión: Se aprovechan protocolos como NTP o ICMP para generar tráfico masivo.\n\nEl botnet Zeus, por ejemplo, llegó a controlar más de 3.6 millones de dispositivos, permitiendo ataques coordinados a gran escala.\n\n\n\nATAQUES A DNS\n\nLos ataques a DNS (Domain Name System) redirigen a los usuarios a sitios maliciosos en lugar de a los legítimos. Técnicas comunes incluyen:\n\n\n\nENVENENAMIENTO DE DNS (DNS POISONING)\n\nEl envenenamiento de DNS modifica las respuestas de los servidores DNS para redirigir el tráfico a direcciones IP controladas por atacantes. Esto puede ocurrir:\n\n- Modificando la configuración del servidor DNS.\n- Alterando el archivo hosts local en un equipo.\n- Realizando ataques de intermediario (man-in-the-middle) durante consultas DNS.\n\n\n\nHIJACKING DE URL (URL HIJACKING)\n\nTambién conocido como typo squatting o brand jacking, consiste en registrar dominios con nombres similares a los legítimos para:\n\n- Mostrar publicidad y generar ingresos.\n- Redirigir tráfico a competidores.\n- Capturar credenciales de inicio de sesión.\n- Distribuir malware.\n\nEjemplos de técnicas de hijacking:\n- Usar dominios con errores ortográficos (ej: professormesser.com vs. professormessor.com).\n- Registrar dominios con extensiones diferentes (ej: .org en lugar de .com).\n- Aprovechar dominios caducados o mal escritos.\n\n\n\nBUENAS PRÁCTICAS PARA PREVENIR MALWARE Y ATAQUES FÍSICOS\n\n\n\nPREVENCIÓN DE MALWARE\n\n- Mantener el sistema operativo y las aplicaciones actualizados con los últimos parches de seguridad.\n- Usar software antimalware con firmas de detección actualizadas.\n- Realizar copias de seguridad offline y periódicas de los datos críticos.\n- Limitar los permisos de los usuarios para reducir el riesgo de infección.\n- Educar a los usuarios sobre los riesgos de hacer clic en enlaces o descargar archivos desconocidos.\n- Implementar firewalls de red y personales, así como sistemas de prevención de intrusiones (IPS).\n\n\n\nPREVENCIÓN DE ATAQUES FÍSICOS\n\n- Controlar el acceso físico a áreas sensibles mediante:\n  - Tarjetas de acceso con autenticación multifactor (MFA).\n  - Vigilancia y cámaras de seguridad.\n  - Sistemas de alarma y detección de intrusos.\n- Proteger el entorno físico de los sistemas:\n  - Usar fuentes de alimentación ininterrumpida (UPS) para evitar cortes de energía.\n  - Monitorear y proteger sistemas HVAC.\n  - Limitar el acceso a sistemas de supresión de incendios.\n- Implementar políticas de seguridad física, como:\n  - Inspecciones periódicas de áreas restringidas.\n  - Control de inventario de dispositivos.\n  - Capacitación del personal sobre procedimientos de seguridad.\n\n\n\nPREVENCIÓN DE ATAQUES A DNS Y REDES\n\n- Configurar servidores DNS para evitar ataques de envenenamiento.\n- Usar DNSSEC (DNS Security Extensions) para autenticar respuestas DNS.\n- Implementar firewalls y sistemas de detección de intrusiones en la red.\n- Monitorear el tráfico de red para detectar patrones de ataque.\n- Educar a los usuarios sobre cómo identificar dominios sospechosos y evitar hacer clic en enlaces no verificados.\n\n\n\nCONCLUSIÓN\n\nEl malware y los ataques físicos representan amenazas significativas para la seguridad de los sistemas y datos. Comprender los diferentes tipos de malware, sus métodos de propagación y las técnicas de ataque físico es esencial para implementar medidas de protección efectivas. Las buenas prácticas, como mantener los sistemas actualizados, realizar copias de seguridad, controlar el acceso físico y educar a los usuarios, son fundamentales para reducir el riesgo de infecciones y ataques. Además, la implementación de tecnologías de seguridad como firewalls, IPS, MFA y DNSSEC puede ayudar a mitigar estas amenazas y proteger la infraestructura crítica.\n\n"
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Malware y ataques físicos] --> B[Malware]\nA --> C[Ataques físicos]\nA --> D[Ataques a DNS]\nA --> E[Denegación de servicio]\n\nB --> B1[Virus]\nB --> B2[Gusanos]\nB --> B3[Ransomware]\nB --> B4[Spyware]\nB --> B5[Bloatware]\nB --> B6[Keyloggers]\nB --> B7[Logic bombs]\nB --> B8[Rootkits]\n\nC --> C1[Brute force]\nC --> C2[Clonación de RFID]\nC --> C3[Manipulación de entorno]\n\nD --> D1[Envenenamiento de DNS]\nD --> D2[Hijacking de URL]\n\nE --> E1[DoS]\nE --> E2[DDoS]\nE --> E3[Ataques de amplificación]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc9-01",
+      "pregunta": "¿Qué es el malware y cuáles son algunos ejemplos de sus acciones dañinas?",
+      "respuesta": "El malware es cualquier software diseñado para realizar acciones dañinas en un sistema. Ejemplos de sus acciones incluyen capturar pulsaciones de teclado (keylogging), mostrar publicidad no deseada, cifrar datos con ransomware, robar información personal o financiera, y convertir el dispositivo en un bot para ataques coordinados."
+    },
+    {
+      "id": "fc9-02",
+      "pregunta": "¿Qué diferencia existe entre un virus y un gusano (worm)?",
+      "respuesta": "Un virus requiere intervención humana (como hacer clic en un enlace) para activarse y replicarse, mientras que un gusano se replica automáticamente sin necesidad de intervención, propagándose rápidamente a través de redes aprovechando vulnerabilidades."
+    },
+    {
+      "id": "fc9-03",
+      "pregunta": "¿Qué es el ransomware y cómo protegen las organizaciones contra él?",
+      "respuesta": "El ransomware es un malware que cifra los datos de un sistema y exige un pago para restaurarlos. Las organizaciones se protegen realizando copias de seguridad offline y actualizadas, manteniendo los sistemas actualizados y usando software antimalware con firmas actualizadas."
+    },
+    {
+      "id": "fc9-04",
+      "pregunta": "¿Qué es el spyware y cómo suele instalarse en un sistema?",
+      "respuesta": "El spyware es un malware que monitorea las actividades del usuario sin su consentimiento, registrando pulsaciones de teclado, capturando pantallas o enviando datos a servidores controlados por atacantes. Suele instalarse mediante software P2P, enlaces maliciosos en correos electrónicos o falsos programas de seguridad."
+    },
+    {
+      "id": "fc9-05",
+      "pregunta": "¿Qué es un rootkit y por qué es difícil de detectar?",
+      "respuesta": "Un rootkit es un malware avanzado que se oculta en el núcleo (kernel) del sistema operativo, haciéndolo casi indetectable para el software antimalware tradicional. Se ejecuta como parte del sistema operativo y tiene acceso completo al sistema."
+    },
+    {
+      "id": "fc9-06",
+      "pregunta": "¿Qué es una logic bomb y cuál es un ejemplo real de su uso?",
+      "respuesta": "Una logic bomb es un malware que permanece inactivo hasta que se cumple una condición específica, como una fecha u hora determinada. Un ejemplo real ocurrió en Corea del Sur en 2013, donde un correo malicioso instaló un troyano que, al día siguiente a las 2 p.m., borró los datos de sistemas bancarios y cajeros automáticos."
+    },
+    {
+      "id": "fc9-07",
+      "pregunta": "¿Qué es un ataque de fuerza bruta (brute force) en el contexto de ataques físicos?",
+      "respuesta": "Un ataque de fuerza bruta en el contexto físico consiste en forzar el acceso a sistemas mediante métodos como abrir puertas o ventanas cerradas con candados, romper cerraduras o acceder a áreas restringidas sin autorización."
+    },
+    {
+      "id": "fc9-08",
+      "pregunta": "¿Qué es la clonación de RFID y cómo se puede mitigar este riesgo?",
+      "respuesta": "La clonación de RFID permite duplicar tarjetas de acceso o llaves electrónicas usando dispositivos de clonación. Para mitigar este riesgo, se recomienda implementar autenticación multifactor (MFA), usar tarjetas con chips criptográficos y limitar el acceso físico a áreas sensibles."
+    },
+    {
+      "id": "fc9-09",
+      "pregunta": "¿Qué es un ataque de denegación de servicio (DoS) y cómo se diferencia de un DDoS?",
+      "respuesta": "Un ataque de denegación de servicio (DoS) inutiliza un servicio mediante sobrecarga o explotación de vulnerabilidades. Un DDoS (ataque distribuido) utiliza múltiples dispositivos infectados (botnets) para saturar un servicio desde diferentes ubicaciones geográficas."
+    },
+    {
+      "id": "fc9-10",
+      "pregunta": "¿Qué es el envenenamiento de DNS (DNS poisoning) y cómo redirige a los usuarios a sitios maliciosos?",
+      "respuesta": "El envenenamiento de DNS modifica las respuestas de los servidores DNS para redirigir el tráfico a direcciones IP controladas por atacantes. Esto puede ocurrir modificando la configuración del servidor DNS, alterando el archivo hosts local o realizando ataques de intermediario durante consultas DNS."
+    },
+    {
+      "id": "fc9-11",
+      "pregunta": "¿Qué es el hijacking de URL (URL hijacking) y cuáles son algunas técnicas comunes?",
+      "respuesta": "El hijacking de URL consiste en registrar dominios con nombres similares a los legítimos para redirigir tráfico a sitios maliciosos. Técnicas comunes incluyen usar dominios con errores ortográficos, registrar dominios con extensiones diferentes o aprovechar dominios caducados."
+    },
+    {
+      "id": "fc9-12",
+      "pregunta": "¿Qué es un botnet y cómo se utiliza en ataques DDoS?",
+      "respuesta": "Un botnet es una red de dispositivos infectados controlados por un atacante. En ataques DDoS, el atacante envía una sola orden a la botnet para saturar un servicio con tráfico masivo desde múltiples ubicaciones, aprovechando la amplificación de protocolos como DNS o NTP."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes tipos de malware NO requiere intervención humana para activarse y se propaga automáticamente a través de redes?",
+      "opciones": [
+        "Virus",
+        "Gusano (Worm)",
+        "Ransomware",
+        "Spyware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los gusanos (worms) son malware que se replican automáticamente sin necesidad de intervención humana, a diferencia de los virus que requieren activación manual.",
+      "id": "p9-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado de una empresa nota que su sistema ha sido cifrado y aparece un mensaje exigiendo un pago en criptomoneda para restaurar los archivos. ¿Qué tipo de malware es el más probable que haya infectado su equipo?",
+      "opciones": [
+        "Virus de sector de arranque",
+        "Ransomware",
+        "Rootkit",
+        "Logic Bomb"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ransomware cifra los datos y exige un pago para restaurarlos, siendo una característica distintiva de este tipo de malware según el temario.",
+      "id": "p9-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico consiste en duplicar tarjetas de acceso o llaves electrónicas para obtener acceso no autorizado a áreas restringidas?",
+      "opciones": [
+        "Brute Force",
+        "Clonación de RFID",
+        "Ataque al entorno",
+        "Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La clonación de RFID permite duplicar tarjetas de acceso o llaves electrónicas, facilitando el acceso no autorizado a áreas sensibles.",
+      "id": "p9-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un método común de propagación del spyware?",
+      "opciones": [
+        "Software P2P (peer-to-peer)",
+        "Enlaces maliciosos en correos electrónicos",
+        "Infección por gusanos (worms)",
+        "Falsos programas de seguridad"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El spyware suele instalarse mediante software P2P, enlaces maliciosos o falsos programas de seguridad, pero no se propaga típicamente por gusanos (worms).",
+      "id": "p9-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante instala un malware que permanece inactivo hasta que se cumple una condición específica, como una fecha u hora determinada, para luego borrar datos críticos. ¿Qué tipo de malware describe mejor este escenario?",
+      "opciones": [
+        "Rootkit",
+        "Logic Bomb",
+        "Keylogger",
+        "Bloatware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Una logic bomb es un malware que se activa al cumplirse una condición específica, como una fecha u hora, y puede realizar acciones dañinas como borrar datos.",
+      "id": "p9-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un centro de datos, un atacante accede físicamente a un sistema de supresión de incendios y lo activa, causando una denegación de servicio. ¿Qué tipo de ataque físico se está describiendo?",
+      "opciones": [
+        "Brute Force",
+        "Ataque al entorno",
+        "Clonación de RFID",
+        "Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los ataques al entorno comprometen el entorno físico donde se encuentran los sistemas, como activar sistemas de supresión de incendios para causar una denegación de servicio.",
+      "id": "p9-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de malware se caracteriza por operar exclusivamente en la memoria RAM sin escribirse en el disco duro, lo que dificulta su detección por antivirus tradicionales?",
+      "opciones": [
+        "Virus de sector de arranque",
+        "Virus sin archivos (fileless)",
+        "Gusano (Worm)",
+        "Bloatware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los virus sin archivos (fileless) operan en la memoria RAM y no dejan rastro en el disco duro, lo que los hace difíciles de detectar para los antivirus tradicionales.",
+      "id": "p9-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante utiliza un dispositivo para leer una tarjeta de acceso RFID y copiar su información en otra tarjeta en segundos. ¿Qué técnica de ataque físico está utilizando?",
+      "opciones": [
+        "Brute Force",
+        "Clonación de RFID",
+        "Ataque al entorno",
+        "Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La clonación de RFID permite duplicar tarjetas de acceso o llaves electrónicas mediante dispositivos que copian la información de una tarjeta a otra.",
+      "id": "p9-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado recibe un correo electrónico con un enlace a un sitio web que parece legítimo, pero al hacer clic, su sistema es infectado con malware. ¿Qué técnica de malware es más probable que se haya utilizado para distribuirlo?",
+      "opciones": [
+        "Virus en scripts",
+        "Gusano (Worm)",
+        "Ransomware",
+        "Bloatware"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los virus en scripts aprovechan vulnerabilidades en navegadores o aplicaciones como Microsoft Office, y suelen distribuirse mediante enlaces maliciosos en correos electrónicos.",
+      "id": "p9-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante explota una vulnerabilidad conocida en un sistema para instalar un malware que le permite controlar remotamente el dispositivo de la víctima. ¿Qué tipo de malware describe mejor esta situación?",
+      "opciones": [
+        "Keylogger",
+        "Rootkit",
+        "Remote Access Trojan (RAT)",
+        "Logic Bomb"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un Remote Access Trojan (RAT) permite a los atacantes controlar remotamente un sistema, explotando vulnerabilidades para instalar el malware y obtener acceso no autorizado.",
+      "id": "p9-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por replicarse automáticamente sin necesidad de intervención humana y aprovechar vulnerabilidades en sistemas operativos o aplicaciones para propagarse rápidamente?",
+      "opciones": [
+        "a) Virus",
+        "b) Gusano (Worm)",
+        "c) Ransomware",
+        "d) Spyware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los gusanos (worms) son malware que se replican automáticamente sin intervención humana, propagándose a través de redes aprovechando vulnerabilidades en sistemas operativos o aplicaciones.",
+      "id": "p9-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante instala un malware en un sistema que no deja rastro en el disco duro, ya que opera exclusivamente en la memoria RAM. ¿Qué tipo de malware describe mejor este escenario?",
+      "opciones": [
+        "a) Rootkit",
+        "b) Virus sin archivos (fileless)",
+        "c) Logic bomb",
+        "d) Keylogger"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los virus sin archivos (fileless) operan exclusivamente en la memoria RAM sin escribirse en el disco duro, lo que dificulta su detección por antivirus tradicionales.",
+      "id": "p9-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un método común de propagación del spyware según el temario?",
+      "opciones": [
+        "a) Software P2P (peer-to-peer)",
+        "b) Enlaces maliciosos en correos electrónicos",
+        "c) Explotación de vulnerabilidades en el kernel del sistema operativo",
+        "d) Falsos programas de seguridad"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El spyware suele instalarse mediante software P2P, enlaces maliciosos o falsos programas de seguridad, pero no mediante explotación de vulnerabilidades en el kernel.",
+      "id": "p9-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por instalarse en el núcleo del sistema operativo y ocultarse para evitar su detección por herramientas antimalware tradicionales?",
+      "opciones": [
+        "a) Spyware",
+        "b) Rootkit",
+        "c) Gusano (Worm)",
+        "d) Logic Bomb"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un rootkit se integra en el núcleo (kernel) del sistema operativo, lo que le permite operar de manera oculta y evadir la detección por software antimalware convencional.",
+      "id": "p9-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado recibe un correo electrónico con un archivo adjunto que, al abrirse, instala un malware que le permite al atacante controlar remotamente su dispositivo. ¿Qué tipo de malware es el más probable que se haya utilizado?",
+      "opciones": [
+        "a) Ransomware",
+        "b) Troyano (Trojan)",
+        "c) Gusano (Worm)",
+        "d) Spyware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un troyano (Trojan) es un malware que se disfraza como software legítimo y permite a los atacantes controlar remotamente el dispositivo infectado.",
+      "id": "p9-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico consiste en duplicar tarjetas de acceso RFID para obtener acceso no autorizado a áreas restringidas?",
+      "opciones": [
+        "a) Brute force",
+        "b) Clonación de RFID",
+        "c) Ataque al entorno",
+        "d) Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La clonación de RFID permite duplicar tarjetas de acceso o llaves electrónicas para acceder a áreas restringidas sin autorización.",
+      "id": "p9-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de malware se caracteriza por instalarse en el sector de arranque del disco duro y ejecutarse automáticamente al iniciar el sistema operativo?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Gusano (worm)",
+        "c) Ransomware",
+        "d) Spyware"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El virus de sector de arranque se instala en el sector de arranque del disco duro y se activa automáticamente al iniciar el sistema operativo, permitiendo su replicación y ejecución antes de que el sistema esté completamente operativo.",
+      "id": "p9-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se oculta en el núcleo del sistema operativo, haciéndolo casi indetectable para el software antimalware tradicional?",
+      "opciones": [
+        "a) Spyware",
+        "b) Rootkit",
+        "c) Ransomware",
+        "d) Gusano (Worm)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un rootkit es un malware avanzado que se oculta en el núcleo del sistema operativo, haciéndolo casi indetectable para el software antimalware tradicional.",
+      "id": "p9-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un técnico de mantenimiento de un centro de datos recibe una notificación falsa de un sistema de alerta temprana indicando una falla crítica en los servidores. Al acceder físicamente a la sala de servidores bajo esta premisa, el técnico descubre que el sistema de refrigeración ha sido manipulado para simular una temperatura crítica, obligando a la activación manual de los sistemas de climatización. Sin embargo, al activarse, estos sistemas inundan la sala con gas refrigerante, causando una interrupción inmediata del servicio. ¿Qué tipo de ataque físico describe mejor este escenario?",
+      "opciones": [
+        "a) Ataque de envenenamiento de DNS para redirigir el tráfico de red y simular una alerta falsa.",
+        "b) Ataque de manipulación ambiental (HVAC) combinado con activación de sistemas de supresión de incendios para causar una denegación de servicio.",
+        "c) Clonación de tarjetas de acceso RFID para obtener acceso no autorizado a la sala de servidores.",
+        "d) Uso de un keylogger para capturar credenciales de acceso al sistema de climatización y manipular su configuración."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este escenario describe un ataque físico que combina la manipulación de sistemas ambientales (HVAC) con la activación de sistemas de supresión de incendios, causando una denegación de servicio. Según el temario, los ataques físicos pueden incluir la manipulación de entornos como HVAC para comprometer la disponibilidad de los sistemas.",
+      "id": "p9-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un técnico de mantenimiento de un datacenter recibe una llamada de su supervisor indicando que hay un fallo crítico en un servidor de producción. Al llegar al rack, observa que el sistema de refrigeración ha sido manipulado para simular una temperatura anormalmente alta, lo que activa automáticamente los sistemas de climatización de emergencia. Sin embargo, estos sistemas inundan la sala con un gas refrigerante no tóxico, causando una interrupción inmediata del servicio y la necesidad de evacuar el área. ¿Qué tipo de ataque físico describe mejor este escenario?",
+      "opciones": [
+        "a) Ataque de denegación de servicio (DoS) mediante manipulación de sistemas HVAC para causar sobrecalentamiento",
+        "b) Ataque de clonación de tarjetas RFID para acceder a la sala de servidores y manipular el sistema de refrigeración",
+        "c) Ataque de lógica bomba en el sistema de control ambiental que se activa bajo condiciones específicas",
+        "d) Ataque de envenenamiento de DNS para redirigir el tráfico de monitoreo del datacenter a un servidor malicioso"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este escenario describe un ataque físico que aprovecha la manipulación de sistemas HVAC (calefacción, ventilación y aire acondicionado) para causar una denegación de servicio (DoS) mediante la activación forzada de sistemas de emergencia, causando interrupciones en el servicio.",
+      "id": "p9-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por replicarse automáticamente sin intervención humana y aprovechar vulnerabilidades en sistemas operativos o aplicaciones para propagarse rápidamente?",
+      "opciones": [
+        "a) Virus",
+        "b) Gusano (Worm)",
+        "c) Spyware",
+        "d) Ransomware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los gusanos (worms) son malware que se replican automáticamente sin necesidad de intervención humana y se propagan a través de redes explotando vulnerabilidades en sistemas operativos o aplicaciones (según el temario).",
+      "id": "p9-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por instalarse en el sector de arranque del disco duro y ejecutarse automáticamente al iniciar el sistema operativo?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Gusano (worm)",
+        "c) Spyware",
+        "d) Rootkit"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los virus de sector de arranque se instalan en el sector de arranque del disco duro y se ejecutan automáticamente durante el proceso de inicio del sistema operativo, antes de que el sistema esté completamente cargado.",
+      "id": "p9-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por instalarse en el sector de arranque del disco duro y ejecutarse automáticamente al iniciar el sistema operativo, dificultando su eliminación completa?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Gusano (worm)",
+        "c) Spyware",
+        "d) Rootkit"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los virus de sector de arranque se instalan en el sector de arranque del disco duro y se ejecutan al iniciar el sistema operativo, lo que los hace difíciles de eliminar completamente sin reinstalar el sistema.",
+      "id": "p9-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico consiste en manipular sistemas de climatización (HVAC) para causar sobrecalentamiento en equipos y provocar su interrupción por protección térmica?",
+      "opciones": [
+        "a) Clonación de RFID",
+        "b) Brute Force en puertas",
+        "c) Ataque al entorno (Environmental Attack)",
+        "d) Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este tipo de ataque físico, clasificado como 'ataque al entorno', aprovecha la manipulación de sistemas HVAC para generar condiciones adversas que obliguen a los equipos a apagarse automáticamente por protección térmica.",
+      "id": "p9-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico se basa en manipular sistemas de climatización (HVAC) para causar sobrecalentamiento en equipos y provocar su interrupción por protección térmica?",
+      "opciones": [
+        "a) Clonación de RFID",
+        "b) Ataque al entorno (manipulación de HVAC)",
+        "c) Denegación de servicio (DoS)",
+        "d) Brute force"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque al entorno mediante manipulación de sistemas HVAC busca alterar las condiciones ambientales para forzar el apagado de equipos por sobrecalentamiento, aprovechando sus sistemas de protección térmica.",
+      "id": "p9-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de malware se caracteriza por instalarse en el núcleo del sistema operativo y ocultarse para evitar su detección por herramientas antimalware tradicionales?",
+      "opciones": [
+        "a) Rootkit",
+        "b) Gusano (Worm)",
+        "c) Ransomware",
+        "d) Spyware"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un rootkit se oculta en el núcleo (kernel) del sistema operativo, haciéndolo casi indetectable para el software antimalware tradicional (según el temario).",
+      "id": "p9-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un técnico de mantenimiento recibe una notificación falsa de un sistema de alerta temprana indicando una falla crítica en los servidores. Al acceder físicamente a la sala de servidores bajo esta premisa, descubre que los sistemas de climatización han sido manipulados para simular una temperatura anormalmente alta, activando automáticamente los sistemas de emergencia que inundan la sala con gas refrigerante. ¿Qué tipo de ataque físico describe mejor este escenario?",
+      "opciones": [
+        "a) Brute Force",
+        "b) Clonación de RFID",
+        "c) Ataque al entorno",
+        "d) Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este escenario describe un ataque al entorno, donde se manipulan sistemas físicos como climatización para causar una interrupción de servicio (según el temario).",
+      "id": "p9-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por instalarse en el sector de arranque del disco duro y ejecutarse automáticamente al iniciar el sistema operativo, lo que dificulta su eliminación completa incluso después de reiniciar el equipo?",
+      "opciones": [
+        "a) Virus en scripts",
+        "b) Virus de sector de arranque",
+        "c) Rootkit de usuario",
+        "d) Gusano (worm)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los virus de sector de arranque se instalan en el sector de arranque del disco duro y se ejecutan automáticamente al iniciar el sistema operativo, permaneciendo activos incluso después de reinicios y dificultando su eliminación total.",
+      "id": "p9-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante accede físicamente a un centro de datos y manipula los sensores de temperatura de los sistemas de climatización (HVAC) para que reporten lecturas falsas de sobrecalentamiento. Sin embargo, en lugar de activar una alarma, el sistema de emergencia inunda la sala con un gas refrigerante no inflamable que, aunque no daña los equipos, causa una interrupción del servicio al requerir evacuación y limpieza. ¿Qué tipo de ataque físico se describe en este escenario?",
+      "opciones": [
+        "a) Ataque de denegación de servicio (DoS) mediante manipulación de sistemas de climatización para causar sobrecalentamiento y activar protecciones térmicas.",
+        "b) Ataque de ingeniería social física para acceder a áreas restringidas y sabotear equipos críticos.",
+        "c) Ataque de envenenamiento de sensores (sensor spoofing) combinado con manipulación de sistemas HVAC para generar una denegación de servicio ambiental.",
+        "d) Ataque de fuerza bruta para acceder a sistemas de climatización y desactivar su funcionamiento normal."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El escenario describe un ataque que combina la manipulación de sensores (sensor spoofing) para falsificar datos de temperatura y la explotación de sistemas HVAC para generar una denegación de servicio ambiental, requiriendo evacuación y limpieza, sin dañar físicamente los equipos.",
+      "id": "p9-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un empleado recibe un correo electrónico con un enlace a un sitio web que parece legítimo, pero al hacer clic, su sistema es infectado con malware que se replica automáticamente sin necesidad de intervención humana. ¿Qué tipo de malware es el más probable que se haya utilizado para distribuirlo?",
+      "opciones": [
+        "a) Virus",
+        "b) Gusano (Worm)",
+        "c) Spyware",
+        "d) Ransomware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un gusano (worm) se replica automáticamente sin necesidad de intervención humana y puede distribuirse mediante enlaces maliciosos (según el temario).",
+      "id": "p9-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR la diferencia principal entre un virus informático y un gusano (worm)?",
+      "opciones": [
+        "Un virus requiere intervención humana para activarse, mientras que un gusano se replica automáticamente sin necesidad de interacción.",
+        "Un virus se propaga por redes, mientras que un gusano solo infecta archivos locales.",
+        "Un virus siempre cifra datos, mientras que un gusano solo roba información.",
+        "Un virus puede operar en la memoria RAM, mientras que un gusano siempre se escribe en el disco duro."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, los virus requieren intervención humana (ej: hacer clic en un archivo) para activarse, mientras que los gusanos se replican automáticamente sin necesidad de interacción.",
+      "id": "p9-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por permanecer inactivo hasta que se cumple una condición específica (como una fecha u hora) y luego ejecuta una acción dañina como borrar datos?",
+      "opciones": [
+        "Rootkit",
+        "Logic bomb",
+        "Spyware",
+        "Bloatware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define las logic bombs como malware que permanece inactivo hasta que se cumple una condición específica, como una fecha u hora, para luego ejecutar acciones dañinas.",
+      "id": "p9-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por ejecutarse exclusivamente en la memoria RAM de un sistema, sin escribirse en el disco duro, lo que dificulta su detección por antivirus tradicionales y suele requerir ejecución previa de otro malware para activarse?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Gusano (worm)",
+        "c) Virus sin archivos (fileless)",
+        "d) Rootkit"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los virus sin archivos (fileless) operan en la memoria RAM y no dejan huella en el disco duro, lo que los hace difíciles de detectar. Requieren ejecución previa de otro malware para activarse, ya que no pueden persistir en el sistema de forma autónoma.",
+      "id": "p9-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante instala un malware en un sistema que no deja rastro en el disco duro porque opera exclusivamente en la memoria RAM. ¿Qué tipo de malware describe mejor este escenario?",
+      "opciones": [
+        "Virus de sector de arranque",
+        "Virus sin archivos (fileless)",
+        "Gusano (worm)",
+        "Rootkit"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define los virus sin archivos (fileless) como malware que opera exclusivamente en la memoria RAM, sin escribirse en el disco duro, lo que dificulta su detección.",
+      "id": "p9-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un técnico de mantenimiento recibe una llamada de emergencia indicando un fallo crítico en un servidor. Al llegar, observa que los sensores de temperatura han sido manipulados para reportar lecturas falsas de sobrecalentamiento, activando los sistemas de climatización de emergencia que inundan la sala con gas refrigerante, causando una interrupción del servicio. ¿Qué tipo de ataque físico se describe?",
+      "opciones": [
+        "Clonación de RFID",
+        "Manipulación de sistemas HVAC",
+        "Brute force",
+        "Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe los ataques al entorno, como la manipulación de sistemas HVAC, para causar sobrecalentamiento en equipos y provocar interrupciones por protección térmica.",
+      "id": "p9-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de malware se caracteriza por instalarse en el sector de arranque del disco duro y ejecutarse automáticamente al iniciar el sistema operativo, pero NO requiere que el sistema operativo esté completamente cargado para activarse?",
+      "opciones": [
+        "a) Virus residente en memoria",
+        "b) Virus de sector de arranque",
+        "c) Gusano de red",
+        "d) Rootkit de kernel"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El virus de sector de arranque se instala en el sector de arranque del disco duro y se ejecuta automáticamente al iniciar el sistema operativo, incluso antes de que el SO esté completamente cargado. Esta técnica permite que el malware se active sin depender de la integridad del sistema operativo.",
+      "id": "p9-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por ocultarse en el núcleo del sistema operativo y modificar su comportamiento para evitar su detección, actuando como parte integral del sistema?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Rootkit",
+        "c) Gusano (worm)",
+        "d) Spyware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un rootkit se integra en el núcleo (kernel) del sistema operativo, haciéndolo casi indetectable para las herramientas antimalware tradicionales al ejecutarse como parte del sistema.",
+      "id": "p9-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico consiste en aprovechar sistemas de climatización (HVAC) para simular condiciones ambientales anormales y activar mecanismos de emergencia que interrumpan el servicio de un centro de datos?",
+      "opciones": [
+        "a) Clonación de RFID",
+        "b) Manipulación de HVAC para causar sobrecalentamiento",
+        "c) Fuerza bruta en cerraduras electrónicas",
+        "d) Inyección de malware en sistemas de refrigeración"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La manipulación de sistemas HVAC puede simular condiciones como sobrecalentamiento, activando sistemas de emergencia (ej. inundación con gas refrigerante) para causar interrupciones de servicio, sin necesidad de dañar físicamente los equipos.",
+      "id": "p9-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante explota una vulnerabilidad conocida en un sistema para instalar un malware que le permite controlar remotamente el dispositivo de la víctima sin dejar rastro en el disco duro. ¿Qué tipo de malware describe mejor esta situación?",
+      "opciones": [
+        "Gusano (worm)",
+        "Virus sin archivos (fileless)",
+        "Rootkit",
+        "Logic bomb"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario indica que los rootkits se integran en el núcleo del sistema operativo y pueden operar sin dejar rastro en el disco duro, dificultando su detección.",
+      "id": "p9-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un centro de datos, un atacante accede físicamente a un sistema de supresión de incendios y lo activa manualmente, causando una denegación de servicio al inundar la sala con agente extintor. ¿Qué tipo de ataque físico se está describiendo?",
+      "opciones": [
+        "Clonación de RFID",
+        "Manipulación de sistemas de supresión de incendios",
+        "Brute force",
+        "Denegación de servicio (DoS) por sobrecarga de red"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe los ataques al entorno, incluyendo la manipulación de sistemas de supresión de incendios para causar interrupciones de servicio.",
+      "id": "p9-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por replicarse automáticamente sin necesidad de intervención humana, aprovechando vulnerabilidades en sistemas operativos o aplicaciones para propagarse rápidamente?",
+      "opciones": [
+        "Virus",
+        "Gusano (Worm)",
+        "Ransomware",
+        "Spyware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los gusanos (worms) son malware que se replican automáticamente sin intervención humana y se propagan rápidamente a través de redes aprovechando vulnerabilidades en sistemas operativos o aplicaciones.",
+      "id": "p9-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de malware se caracteriza por instalarse en el firmware de un dispositivo y ejecutarse antes que el sistema operativo, lo que le permite persistir incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Rootkit de kernel",
+        "b) Virus de sector de arranque",
+        "c) Malware sin archivos (fileless)",
+        "d) Firmware malware o 'firmware rootkit'"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Este tipo de malware se instala en el firmware del dispositivo (como la BIOS/UEFI), lo que le permite ejecutarse antes que el sistema operativo y persistir incluso después de reinstalar el sistema, ya que forma parte del hardware.",
+      "id": "p9-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado recibe un correo electrónico con un archivo adjunto que, al abrirse, instala un malware que le permite al atacante controlar remotamente su dispositivo sin dejar rastro en el disco duro. ¿Qué tipo de malware describe mejor esta situación?",
+      "opciones": [
+        "Rootkit",
+        "Logic Bomb",
+        "RAT (Remote Access Trojan)",
+        "Bloatware"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un RAT (Remote Access Trojan) es un tipo de malware que permite a los atacantes controlar remotamente un sistema, y puede operar sin dejar rastro en el disco duro si se ejecuta en memoria.",
+      "id": "p9-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico consiste en manipular el suministro eléctrico de un centro de datos para causar una interrupción del servicio sin necesidad de acceder a los equipos?",
+      "opciones": [
+        "a) Clonación de tarjetas RFID",
+        "b) Brute force en cerraduras",
+        "c) Manipulación de sistemas HVAC",
+        "d) Ataque de denegación de servicio por corte de energía"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La técnica descrita corresponde a un ataque de denegación de servicio (DoS) mediante corte de energía, donde el atacante interrumpe el suministro eléctrico para inutilizar los sistemas sin necesidad de acceder físicamente a los equipos.",
+      "id": "p9-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por operar exclusivamente en la memoria RAM sin escribirse en el disco duro, lo que dificulta su detección por antivirus tradicionales?",
+      "opciones": [
+        "Virus de sector de arranque",
+        "Virus sin archivos (fileless)",
+        "Rootkit",
+        "Logic Bomb"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los virus sin archivos (fileless) operan exclusivamente en la memoria RAM, sin escribirse en el disco duro, lo que dificulta su detección por antivirus tradicionales.",
+      "id": "p9-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico consiste en manipular los sistemas de climatización (HVAC) para simular condiciones de sobrecalentamiento y activar automáticamente los mecanismos de emergencia, causando una interrupción del servicio sin dañar físicamente los equipos?",
+      "opciones": [
+        "a) Clonación de RFID",
+        "b) Ataque de denegación de servicio (DoS) por manipulación de HVAC",
+        "c) Brute force en sistemas de seguridad física",
+        "d) Hijacking de URL en sistemas de control ambiental"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este ataque aprovecha la manipulación de los sistemas HVAC para simular condiciones ambientales anormales, activando respuestas de emergencia que interrumpen el servicio, como inundar la sala con gas refrigerante sin dañar los equipos.",
+      "id": "p9-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un técnico de mantenimiento recibe una notificación falsa de un sistema de alerta temprana indicando una falla crítica en los servidores. Al llegar, descubre que los sensores de temperatura han sido manipulados para reportar lecturas falsas de sobrecalentamiento, activando los sistemas de climatización de emergencia que inundan la sala con gas refrigerante, causando una interrupción del servicio. ¿Qué tipo de ataque físico se describe?",
+      "opciones": [
+        "Brute Force",
+        "Clonación de RFID",
+        "Manipulación de sistemas HVAC",
+        "Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La manipulación de sistemas HVAC consiste en alterar los sensores de temperatura para simular condiciones anormales y activar mecanismos de emergencia que interrumpan el servicio.",
+      "id": "p9-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por requerir que un usuario ejecute un archivo infectado para activarse y luego propagarse mediante la modificación de otros archivos o programas en el sistema?",
+      "opciones": [
+        "a) Gusano (Worm)",
+        "b) Virus",
+        "c) Ransomware",
+        "d) Logic Bomb"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un virus informático necesita intervención humana para activarse (como ejecutar un archivo infectado) y se replica modificando otros archivos o programas en el sistema.",
+      "id": "p9-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante accede físicamente a un centro de datos y manipula los sensores de temperatura de los sistemas de climatización (HVAC) para que reporten lecturas falsas de sobrecalentamiento. Sin embargo, en lugar de activar una alarma, el sistema de emergencia inunda la sala con un gas refrigerante no inflamable que causa una interrupción del servicio al requerir evacuación y limpieza. ¿Qué tipo de ataque físico se describe en este escenario?",
+      "opciones": [
+        "Brute Force",
+        "Clonación de RFID",
+        "Ataque al entorno mediante manipulación de HVAC",
+        "Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este escenario describe un ataque al entorno mediante la manipulación de sistemas HVAC para simular condiciones anormales y activar mecanismos de emergencia que interrumpan el servicio.",
+      "id": "p9-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de malware se caracteriza por instalarse en el sector de arranque del disco duro y ejecutarse automáticamente al iniciar el sistema operativo, dificultando su eliminación completa?",
+      "opciones": [
+        "Virus sin archivos (fileless)",
+        "Virus de sector de arranque",
+        "Rootkit",
+        "Logic Bomb"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los virus de sector de arranque se instalan en el sector de arranque del disco duro y se ejecutan automáticamente al iniciar el sistema operativo, lo que dificulta su eliminación completa incluso después de reiniciar.",
+      "id": "p9-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por ocultarse en el firmware de un dispositivo y ejecutarse antes que el sistema operativo, permitiendo su persistencia incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Rootkit de firmware",
+        "c) Gusano (worm)",
+        "d) Spyware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El rootkit de firmware se instala en el firmware del dispositivo, lo que le permite ejecutarse antes que el sistema operativo y persistir incluso tras reinstalaciones o cambios de hardware, dificultando su detección y eliminación.",
+      "id": "p9-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de malware se caracteriza por ocultarse en el núcleo del sistema operativo (kernel) y modificar su comportamiento para evitar ser detectado, actuando como parte integral del sistema?",
+      "opciones": [
+        "a) Rootkit",
+        "b) Gusano (Worm)",
+        "c) Troyano (Trojan)",
+        "d) Spyware"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un rootkit se integra en el núcleo del sistema operativo, haciéndolo casi indetectable para el software antimalware tradicional al operar como parte del sistema.",
+      "id": "p9-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por instalarse en el firmware de un dispositivo y ejecutarse antes que el sistema operativo, lo que le permite persistir incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Rootkit",
+        "b) Virus de sector de arranque",
+        "c) Gusano (worm)",
+        "d) Bloatware"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un rootkit se oculta en el núcleo del sistema operativo o en el firmware, permitiendo su ejecución antes que el sistema operativo y dificultando su eliminación incluso con cambios en el hardware.",
+      "id": "p9-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de malware se caracteriza por ocultarse en el firmware de un dispositivo y ejecutarse antes que el sistema operativo, lo que le permite persistir incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Rootkit de kernel",
+        "c) Gusano (worm)",
+        "d) Malware en memoria (fileless)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los virus de sector de arranque se instalan en el sector de arranque del disco duro o en el firmware de un dispositivo y se ejecutan antes que el sistema operativo, permitiendo su persistencia incluso tras reinstalaciones o cambios de disco.",
+      "id": "p9-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de malware se caracteriza por instalarse en el firmware de un dispositivo y ejecutarse antes que el sistema operativo, permitiendo su persistencia incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Rootkit",
+        "b) Virus de sector de arranque",
+        "c) Malware sin archivos (fileless)",
+        "d) Malware en firmware"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Este malware aprovecha el firmware, que es código de bajo nivel en dispositivos, para ejecutarse antes que el sistema operativo y persistir tras reinstalaciones o cambios en el disco.",
+      "id": "p9-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de malware se caracteriza por ocultarse en el firmware de un dispositivo (como la BIOS o UEFI) y ejecutarse antes que el sistema operativo, lo que le permite persistir incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Rootkit",
+        "b) Gusano (worm)",
+        "c) Virus de sector de arranque",
+        "d) Malware sin archivos (fileless)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un rootkit puede instalarse en el firmware (como la BIOS/UEFI) para ejecutarse antes que el sistema operativo, permitiéndole persistir incluso tras reinstalaciones o cambios de hardware, lo que lo hace difícil de detectar y eliminar.",
+      "id": "p9-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por instalarse en el firmware de un dispositivo (como la BIOS o UEFI) y ejecutarse antes que el sistema operativo, lo que le permite persistir incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Rootkit",
+        "b) Gusano (Worm)",
+        "c) Troyano",
+        "d) Malware sin archivos (Fileless)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los rootkits pueden ocultarse en el firmware del sistema (como BIOS/UEFI) y ejecutarse antes que el sistema operativo, lo que les permite mantenerse ocultos y persistir incluso tras reinstalaciones del SO o cambios de disco duro.",
+      "id": "p9-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de malware se caracteriza por instalarse en el firmware de un dispositivo (como la BIOS o UEFI) y ejecutarse antes que el sistema operativo, lo que le permite persistir incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Rootkit de kernel",
+        "b) Gusano (worm)",
+        "c) Virus de sector de arranque",
+        "d) Malware sin archivos (fileless)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los rootkits de firmware, como los que se instalan en la BIOS o UEFI, se ejecutan antes que el sistema operativo y pueden persistir incluso tras reinstalaciones o cambios de hardware, ya que están integrados en el firmware del dispositivo.",
+      "id": "p9-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante accede físicamente a una sala de servidores y manipula el panel de control del sistema HVAC para que, en lugar de enfriar, active los ventiladores en modo de máxima potencia durante horas. El objetivo es sobrecalentar los equipos hasta el punto de activar los sensores térmicos de protección, forzando un apagado de emergencia. ¿Qué tipo de ataque físico, según el temario de CompTIA Security+, describe mejor este escenario?",
+      "opciones": [
+        "a) Clonación de RFID para duplicar tarjetas de acceso y acceder a la sala de servidores.",
+        "b) Ataque de manipulación del entorno mediante el sistema HVAC para causar sobrecalentamiento y denegación de servicio.",
+        "c) Brute force para forzar cerraduras y acceder a áreas restringidas.",
+        "d) Envenenamiento de DNS para redirigir el tráfico de red hacia servidores maliciosos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escenario describe un ataque físico que manipula el sistema HVAC para alterar las condiciones ambientales (sobrecalentamiento) y causar una denegación de servicio, sin necesidad de acceder directamente a los equipos. Esto se alinea con las técnicas de 'ataques al entorno' mencionadas en el temario.",
+      "id": "p9-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un técnico de mantenimiento recibe una llamada de emergencia indicando un fallo crítico en un servidor. Al llegar, observa que los sensores de temperatura han sido manipulados para reportar lecturas falsas de sobrecalentamiento, activando los sistemas de climatización de emergencia que inundan la sala con gas refrigerante, causando una interrupción del servicio. ¿Qué técnica de ataque físico describe mejor este escenario?",
+      "opciones": [
+        "a) Clonación de RFID",
+        "b) Ataque al entorno mediante manipulación de sistemas HVAC",
+        "c) Brute force",
+        "d) Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este escenario describe un ataque físico al entorno mediante la manipulación de sistemas HVAC para simular condiciones de sobrecalentamiento y activar mecanismos de emergencia, causando una interrupción del servicio, según el temario.",
+      "id": "p9-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por replicarse automáticamente sin necesidad de intervención humana, aprovechando vulnerabilidades en sistemas operativos o aplicaciones para propagarse rápidamente a través de redes?",
+      "opciones": [
+        "Virus",
+        "Gusano (Worm)",
+        "Troyano",
+        "Ransomware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los gusanos (worms) son malware que se replican automáticamente sin intervención humana y se propagan a través de redes explotando vulnerabilidades en sistemas operativos o aplicaciones, según el temario.",
+      "id": "p9-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico consiste en duplicar tarjetas de acceso RFID para obtener acceso no autorizado a áreas restringidas, según el temario de CompTIA Security+ SY0-701?",
+      "opciones": [
+        "a) Brute force",
+        "b) Clonación de RFID",
+        "c) Manipulación de sistemas HVAC",
+        "d) Ataque al suministro eléctrico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La clonación de RFID permite duplicar tarjetas de acceso o llaves electrónicas, copiando su información a otra tarjeta en segundos, lo que facilita el acceso no autorizado a áreas restringidas.",
+      "id": "p9-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico consiste en manipular los sistemas de climatización (HVAC) para simular condiciones de sobrecalentamiento en equipos críticos y activar automáticamente los mecanismos de protección térmica, causando una interrupción del servicio sin dañar físicamente los dispositivos?",
+      "opciones": [
+        "a) Clonación de RFID",
+        "b) Ataque de envenenamiento de DNS",
+        "c) Manipulación de HVAC para activación de emergencia",
+        "d) Fuerza bruta en cerraduras electrónicas"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La técnica descrita corresponde a la manipulación de sistemas HVAC para generar lecturas falsas de sobrecalentamiento, activando así los mecanismos de protección térmica (como apagado de emergencia) sin necesidad de dañar físicamente los equipos. Este método es un ataque físico común en centros de datos según el temario.",
+      "id": "p9-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por permanecer inactivo hasta que se cumple una condición específica (como una fecha u hora) y, al activarse, puede borrar datos o formatear discos?",
+      "opciones": [
+        "a) Virus",
+        "b) Gusano (Worm)",
+        "c) Logic Bomb",
+        "d) Spyware"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Una logic bomb es un malware que permanece inactivo hasta que se cumple una condición específica, como una fecha u hora, y al activarse puede causar daños como borrar datos o formatear discos.",
+      "id": "p9-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante accede físicamente a un centro de datos y manipula los sensores de temperatura de los sistemas HVAC para que reporten lecturas falsas de sobrecalentamiento. Sin embargo, en lugar de activar una alarma, el sistema de emergencia inunda la sala con un gas refrigerante no inflamable que causa una interrupción del servicio al requerir evacuación y limpieza. ¿Qué tipo de ataque físico se describe en este escenario?",
+      "opciones": [
+        "Clonación de RFID",
+        "Brute Force",
+        "Ataque al entorno (manipulación de HVAC)",
+        "Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este escenario describe un ataque al entorno mediante la manipulación de sistemas HVAC para simular condiciones de sobrecalentamiento y activar mecanismos de emergencia, causando una interrupción del servicio.",
+      "id": "p9-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de malware se caracteriza por ocultarse en el firmware de un dispositivo (como la BIOS o UEFI) y ejecutarse antes que el sistema operativo, lo que le permite persistir incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Rootkit de kernel",
+        "c) Malware sin archivos (fileless)",
+        "d) Rootkit de firmware"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El rootkit de firmware se instala en el firmware de dispositivos como la BIOS o UEFI, ejecutándose antes que el sistema operativo y permitiendo su persistencia incluso tras reinstalaciones o cambios de hardware.",
+      "id": "p9-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué tipo de malware se caracteriza por instalarse en el firmware de un dispositivo (como la BIOS o UEFI) y ejecutarse antes que el sistema operativo, lo que le permite persistir incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Rootkit de kernel",
+        "b) Malware sin archivos (fileless)",
+        "c) Rootkit de firmware",
+        "d) Logic bomb"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este tipo de malware se conoce como rootkit de firmware, ya que se instala en el firmware del dispositivo (ej. BIOS/UEFI) y se ejecuta antes del sistema operativo, permitiendo su persistencia incluso tras reinstalaciones o cambios de hardware.",
+      "id": "p9-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué tipo de malware se caracteriza por instalarse en el sector de arranque del disco duro y ejecutarse automáticamente al iniciar el sistema operativo, lo que dificulta su eliminación completa incluso después de reinstalar el sistema operativo?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Gusano (worm)",
+        "c) Rootkit",
+        "d) Spyware"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los virus de sector de arranque se instalan en el sector de arranque del disco duro y se ejecutan automáticamente al iniciar el sistema operativo, lo que dificulta su eliminación completa incluso después de reinstalar el sistema operativo.",
+      "id": "p9-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante logra acceder físicamente a un centro de datos y manipula los sensores de humedad de los sistemas HVAC para que reporten lecturas falsas de alta humedad ambiental. Sin embargo, en lugar de activar una alarma, el sistema de emergencia inunda la sala con un aerosol deshumidificante químico que, al reaccionar con el aire, genera un vapor tóxico corrosivo para los componentes electrónicos, causando una denegación de servicio prolongada. ¿Qué tipo de ataque físico, según el temario de CompTIA Security+, describe mejor este escenario?",
+      "opciones": [
+        "a) Ataque de manipulación de sensores HVAC para simular condiciones ambientales críticas que activan sistemas de emergencia con consecuencias dañinas indirectas.",
+        "b) Clonación de tarjetas RFID para obtener acceso no autorizado y manipular sistemas críticos desde la consola de control.",
+        "c) Denegación de servicio (DoS) mediante la sobrecarga de sistemas de climatización con tráfico de red simulado.",
+        "d) Ataque de fuerza bruta para forzar el acceso a áreas restringidas y activar manualmente los sistemas de supresión de incendios."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario describe un ataque físico que manipula los sensores HVAC para simular condiciones ambientales falsas, activando sistemas de emergencia con consecuencias no previstas (generación de vapor tóxico). Esto se alinea con la técnica de ataques al entorno, específicamente la manipulación de sistemas HVAC para causar interrupciones.",
+      "id": "p9-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un técnico de mantenimiento de un centro de datos recibe una notificación automatizada de un sistema de gestión de edificios (BMS) indicando una falla crítica en el sistema de refrigeración. Al acceder físicamente a la sala de servidores, descubre que los sensores de temperatura están funcionando correctamente, pero el panel de control del BMS muestra lecturas falsas de sobrecalentamiento en equipos específicos. El atacante había accedido previamente a la red de gestión del edificio para manipular los datos de los sensores mediante un ataque de inyección de comandos en el firmware del sistema HVAC. ¿Qué tipo de técnica de ataque físico describe mejor este escenario?",
+      "opciones": [
+        "a) Clonación de tarjetas RFID para acceso no autorizado a la sala de servidores.",
+        "b) Manipulación de sensores y sistemas de control HVAC mediante inyección de comandos en el firmware, causando lecturas falsas de sobrecalentamiento.",
+        "c) Activación manual de sistemas de supresión de incendios para inundar la sala con agente extintor.",
+        "d) Ataque de fuerza bruta sobre cerraduras electrónicas para acceder a áreas restringidas."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este escenario describe la manipulación de sistemas HVAC mediante inyección de comandos en el firmware, una técnica que permite alterar las lecturas de los sensores y activar respuestas de emergencia falsas, según el temario de ataques físicos y manipulación de entornos.",
+      "id": "p9-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por replicarse automáticamente sin intervención humana, aprovechando vulnerabilidades en sistemas operativos o aplicaciones para propagarse rápidamente a través de redes?",
+      "opciones": [
+        "Virus",
+        "Gusano (worm)",
+        "Troyano",
+        "Ransomware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los gusanos (worms) son malware que se replican automáticamente sin necesidad de intervención humana, propagándose mediante vulnerabilidades en sistemas o aplicaciones, según el temario.",
+      "id": "p9-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando los conceptos, ¿qué diferencia principal existe entre un virus informático y un gusano (worm) según el temario de CompTIA Security+?",
+      "opciones": [
+        "Los virus requieren intervención humana para activarse, mientras que los gusanos se replican automáticamente sin necesidad de ella.",
+        "Los virus se ejecutan en la memoria RAM, mientras que los gusanos solo infectan el disco duro.",
+        "Los gusanos cifran datos, mientras que los virus solo se replican.",
+        "Los virus son más difíciles de detectar que los gusanos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario indica que los virus requieren intervención humana para activarse, mientras que los gusanos se replican automáticamente sin necesidad de ella.",
+      "id": "p9-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico implica duplicar tarjetas de acceso RFID para obtener acceso no autorizado a áreas restringidas, según el temario de CompTIA Security+ SY0-701?",
+      "opciones": [
+        "a) Brute force",
+        "b) Clonación de RFID",
+        "c) Manipulación de HVAC",
+        "d) Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La clonación de RFID es un método que permite duplicar tarjetas de acceso RFID usando dispositivos comerciales, facilitando el acceso no autorizado a áreas restringidas.",
+      "id": "p9-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado recibe un correo electrónico con un archivo adjunto que, al abrirse, instala un malware que captura todas las pulsaciones de teclado realizadas en su dispositivo. ¿Qué tipo de malware describe mejor esta situación?",
+      "opciones": [
+        "Keylogger",
+        "Ransomware",
+        "Rootkit",
+        "Logic bomb"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los keyloggers capturan pulsaciones de teclado y las envían a los atacantes, según la definición del temario.",
+      "id": "p9-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico consiste en manipular sistemas de climatización (HVAC) para simular condiciones de alta humedad y activar sistemas de deshumidificación de emergencia que inunden la sala con agentes químicos corrosivos?",
+      "opciones": [
+        "a) Ataque de clonación de RFID",
+        "b) Manipulación del sistema HVAC para DoS",
+        "c) Ataque de inundación con gas refrigerante",
+        "d) Ataque de sobrecalentamiento simulado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el temario, la manipulación del sistema HVAC para simular condiciones anómalas (como alta humedad) y activar respuestas de emergencia es un tipo de ataque físico que puede causar DoS mediante agentes químicos corrosivos, no necesariamente inundaciones o sobrecalentamientos directos.",
+      "id": "p9-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por instalarse en el firmware de un dispositivo (como la BIOS o UEFI) y ejecutarse antes que el sistema operativo, permitiendo su persistencia incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Rootkit",
+        "b) Virus de sector de arranque",
+        "c) Malware sin archivos (fileless)",
+        "d) Troyano"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los rootkits pueden ocultarse en el núcleo del sistema operativo o en el firmware (como BIOS/UEFI), lo que les permite ejecutarse antes que el sistema operativo y persistir incluso tras reinstalaciones o cambios de disco duro.",
+      "id": "p9-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un técnico de mantenimiento recibe una notificación falsa de un sistema de alerta temprana indicando una falla crítica en los servidores. Al acceder físicamente a la sala de servidores, descubre que los sensores de temperatura han sido manipulados para reportar lecturas falsas de sobrecalentamiento, activando los sistemas de climatización de emergencia que inundan la sala con gas refrigerante, causando una interrupción del servicio. ¿Qué tipo de ataque físico describe mejor este escenario?",
+      "opciones": [
+        "Manipulación de sistemas HVAC",
+        "Clonación de RFID",
+        "Brute force (fuerza bruta)",
+        "Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La manipulación de sistemas HVAC para simular condiciones de sobrecalentamiento y activar mecanismos de emergencia es un ataque físico descrito en el temario.",
+      "id": "p9-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por instalarse en el núcleo del sistema operativo (kernel) y modificar su comportamiento para evitar ser detectado, actuando como parte integral del sistema?",
+      "opciones": [
+        "Rootkit",
+        "Virus de sector de arranque",
+        "Troyano",
+        "Logic bomb"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los rootkits se ocultan en el kernel del sistema operativo, modificando su comportamiento para evitar detección, según el temario.",
+      "id": "p9-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante logra acceso físico a un centro de datos y manipula el sistema de gestión de edificios (BMS) para que los sensores de humedad reporten lecturas falsas de alta humedad ambiental. Sin embargo, en lugar de activar una alarma, el sistema de emergencia activa los rociadores automáticos de supresión de incendios, que liberan un agente químico que reacciona con la humedad ambiental formando un vapor corrosivo. Este vapor daña irreversiblemente los circuitos impresos de los servidores, causando una denegación de servicio prolongada. ¿Qué técnica de ataque físico, según el temario de CompTIA Security+, describe mejor este escenario?",
+      "opciones": [
+        "a) Clonación de tarjetas RFID para acceder a áreas restringidas",
+        "b) Manipulación de sistemas HVAC para simular sobrecalentamiento y activar mecanismos de emergencia",
+        "c) Ataque a sistemas de supresión de incendios mediante manipulación de sensores ambientales",
+        "d) Brute force para forzar el acceso a salas de servidores"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este escenario describe un ataque físico donde el atacante manipula sensores ambientales (en este caso de humedad) para activar sistemas de emergencia como rociadores de supresión de incendios, causando daño físico a los equipos mediante agentes químicos corrosivos. Según el temario, esto se enmarca en la sección de 'Ataques al entorno'.",
+      "id": "p9-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante instala un malware en un sistema que no deja rastro en el disco duro porque opera exclusivamente en la memoria RAM y se activa al cumplirse una condición específica, como una fecha u hora. ¿Qué tipo de malware describe mejor este escenario?",
+      "opciones": [
+        "Logic bomb sin archivos (fileless)",
+        "Virus de sector de arranque",
+        "Ransomware",
+        "Rootkit"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Una logic bomb puede operar como malware sin archivos (fileless) y activarse bajo condiciones específicas, según el temario.",
+      "id": "p9-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por ocultarse en el firmware de un dispositivo (como la BIOS o UEFI) y ejecutarse antes que el sistema operativo, lo que le permite persistir incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Rootkit",
+        "c) Malware sin archivos (fileless)",
+        "d) Troyano"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un rootkit puede ocultarse en el kernel o firmware del sistema, como la BIOS/UEFI, ejecutándose antes que el sistema operativo y persistiendo tras reinstalaciones o cambios de hardware.",
+      "id": "p9-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando los conceptos, ¿qué diferencia principal existe entre un virus informático y un gusano (worm)?",
+      "opciones": [
+        "a) Los virus requieren intervención humana para activarse, mientras que los gusanos se replican automáticamente sin necesidad de acción humana.",
+        "b) Los virus solo afectan a sistemas Windows, mientras que los gusanos pueden afectar cualquier sistema operativo.",
+        "c) Los gusanos cifran datos, mientras que los virus solo muestran publicidad no deseada.",
+        "d) Los virus operan en la memoria RAM, mientras que los gusanos se instalan en el disco duro."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La diferencia clave es que los virus requieren intervención humana para activarse (ej: ejecutar un archivo), mientras que los gusanos se replican automáticamente sin necesidad de acción humana.",
+      "id": "p9-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué tipo de malware se caracteriza por instalarse en el sector de arranque del disco duro y ejecutarse automáticamente al iniciar el sistema operativo?",
+      "opciones": [
+        "a) Troyano",
+        "b) Virus de sector de arranque",
+        "c) Gusano (worm)",
+        "d) Rootkit"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los virus de sector de arranque se instalan en el sector de arranque del disco y se activan al iniciar el sistema operativo, lo que les permite ejecutarse antes que el sistema y persistir incluso después de reinstalar el sistema operativo.",
+      "id": "p9-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante accede físicamente a un centro de datos y manipula los sensores de temperatura del sistema HVAC para que reporten lecturas falsas de sobrecalentamiento. Sin embargo, en lugar de activar una alarma, el sistema de emergencia inunda la sala con un gas refrigerante no inflamable, causando una interrupción del servicio. ¿Qué tipo de ataque físico describe mejor este escenario?",
+      "opciones": [
+        "a) Clonación de RFID",
+        "b) Manipulación de sistemas HVAC para simular condiciones críticas",
+        "c) Brute force en cerraduras electrónicas",
+        "d) Denegación de servicio (DoS) mediante corte de energía"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este escenario describe un ataque físico que manipula sistemas HVAC para simular condiciones de sobrecalentamiento y activar mecanismos de emergencia, causando una interrupción del servicio sin dañar físicamente los equipos.",
+      "id": "p9-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por ejecutarse exclusivamente en la memoria RAM de un sistema, sin escribirse en el disco duro, y suele requerir ejecución previa de otro malware para activarse?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Gusano (worm)",
+        "c) Virus sin archivos (fileless)",
+        "d) Rootkit"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los virus sin archivos (fileless) operan exclusivamente en la memoria RAM, lo que dificulta su detección por antivirus tradicionales, y generalmente necesitan otro malware para activarse.",
+      "id": "p9-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué característica define principalmente a un malware de tipo 'fileless' según el temario de CompTIA Security+?",
+      "opciones": [
+        "Se ejecuta exclusivamente en la memoria RAM sin escribirse en el disco duro, dificultando su detección por antivirus tradicionales",
+        "Requiere intervención humana para activarse, como hacer clic en un archivo o enlace",
+        "Se propaga automáticamente a través de redes explotando vulnerabilidades sin necesidad de interacción",
+        "Se instala en el sector de arranque del disco duro y se ejecuta al iniciar el sistema operativo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, los malware fileless operan exclusivamente en la memoria RAM, sin dejar rastro en el disco duro, lo que los hace difíciles de detectar con herramientas antivirus tradicionales que suelen buscar archivos infectados.",
+      "id": "p9-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de malware se caracteriza por instalarse en el firmware de un dispositivo (como la BIOS o UEFI) y ejecutarse antes que el sistema operativo, permitiendo su persistencia incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Virus en sector de arranque",
+        "b) Rootkit de kernel",
+        "c) Malware sin archivos (fileless)",
+        "d) Firmware malware"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El malware de firmware se instala en el firmware de un dispositivo (BIOS/UEFI), ejecutándose antes que el sistema operativo, lo que le permite persistir incluso tras reinstalar el SO o cambiar el disco duro.",
+      "id": "p9-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué característica principal diferencia a un malware de tipo 'rootkit' de otros tipos de malware según el temario de CompTIA Security+ SY0-701?",
+      "opciones": [
+        "a) Se replica automáticamente sin intervención humana, aprovechando vulnerabilidades en redes.",
+        "b) Se oculta en el núcleo (kernel) del sistema operativo, haciéndolo casi indetectable para el software antimalware tradicional.",
+        "c) Opera exclusivamente en la memoria RAM, sin escribirse en el disco duro, lo que dificulta su detección.",
+        "d) Infecta el sector de arranque del disco duro y se ejecuta al iniciar el sistema operativo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un rootkit se caracteriza por integrarse en el núcleo del sistema operativo, actuando como parte integral del sistema y evadiendo su detección por métodos tradicionales.",
+      "id": "p9-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta que múltiples servidores en su centro de datos están experimentando fallas intermitentes sin causa aparente en el hardware. Tras una investigación forense, se descubre que el problema se debe a que un atacante ha instalado un *rootkit* avanzado que modifica el comportamiento del sistema operativo para evitar la detección. ¿Qué característica específica de los *rootkits* permite que este malware persista y evite ser eliminado, incluso después de reinstalar el sistema operativo desde cero?",
+      "opciones": [
+        "a) Se ejecuta exclusivamente en la memoria RAM, lo que lo hace inaccesible para herramientas de análisis de disco.",
+        "b) Se oculta en el firmware de la BIOS o UEFI y se ejecuta antes que el sistema operativo, permitiendo su persistencia a través de reinicios y reinstalaciones.",
+        "c) Utiliza técnicas de ofuscación avanzada en el código para evitar ser detectado por antivirus tradicionales.",
+        "d) Se propaga automáticamente a través de la red aprovechando vulnerabilidades en protocolos de comunicación, lo que dificulta su aislamiento."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los rootkits que se instalan en el firmware (como la BIOS o UEFI) se ejecutan antes que el sistema operativo, lo que les permite persistir incluso después de reinstalar el sistema o cambiar el disco duro, ya que forman parte integral del arranque del dispositivo.",
+      "id": "p9-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante logra acceso físico a un centro de procesamiento de datos y modifica el firmware de los controladores de los sensores de humedad del sistema HVAC para que reporten lecturas falsas de baja humedad ambiental. El sistema de gestión de edificios (BMS) interpreta estas lecturas como una condición de sequedad extrema y activa automáticamente los humidificadores de emergencia, que inundan la sala con vapor de agua sobrecalentado. Este vapor, al condensarse en los componentes electrónicos de los servidores, genera cortocircuitos intermitentes que corrompen datos críticos sin dejar evidencia física aparente en los discos duros. ¿Qué técnica de ataque físico, según el temario de CompTIA Security+, describe mejor este escenario?",
+      "opciones": [
+        "a) Ataque de manipulación de sensores mediante inyección de firmware malicioso en dispositivos HVAC",
+        "b) Ataque de denegación de servicio mediante sobrecarga de sistemas de climatización",
+        "c) Ataque de clonación de RFID para acceso no autorizado a la sala de servidores",
+        "d) Ataque de suplantación de sensores mediante envenenamiento de DNS en el sistema BMS"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario describe la modificación del firmware de los controladores de sensores HVAC para alterar su comportamiento, lo que corresponde a un ataque de manipulación de sensores mediante inyección de firmware malicioso, técnica específica dentro de los ataques físicos al entorno según el temario.",
+      "id": "p9-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de malware se caracteriza por replicarse automáticamente sin intervención humana y aprovechar vulnerabilidades en sistemas operativos o aplicaciones para propagarse rápidamente a través de redes?",
+      "opciones": [
+        "a) Virus",
+        "b) Gusano (worm)",
+        "c) Troyano",
+        "d) Spyware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los gusanos (worms) son malware que se replican automáticamente sin necesidad de intervención humana, propagándose a través de redes aprovechando vulnerabilidades en sistemas operativos o aplicaciones.",
+      "id": "p9-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué característica principal diferencia a un keylogger de otros tipos de malware según el temario de CompTIA Security+?",
+      "opciones": [
+        "a) Se replica automáticamente sin intervención humana a través de redes",
+        "b) Captura y registra todas las pulsaciones de teclado realizadas en un sistema",
+        "c) Se oculta en el núcleo del sistema operativo (kernel) modificando su comportamiento",
+        "d) Se instala en el firmware de un dispositivo y ejecuta antes que el sistema operativo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un keylogger se especializa en registrar pulsaciones de teclado para robar información sensible, como contraseñas o datos financieros, sin replicarse ni ocultarse en el kernel.",
+      "id": "p9-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué tipo de malware se caracteriza por registrarse automáticamente en el sistema operativo como parte del kernel y modificar su comportamiento para ocultarse y evitar su detección?",
+      "opciones": [
+        "a) Gusano (Worm)",
+        "b) Rootkit",
+        "c) Logic Bomb",
+        "d) Spyware"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los rootkits se integran en el núcleo del sistema operativo (kernel), actuando como parte integral del sistema y ocultándose de herramientas de detección tradicionales, lo que los hace muy difíciles de identificar y eliminar.",
+      "id": "p9-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante instala un malware en un sistema que no deja rastro en el disco duro porque opera exclusivamente en la memoria RAM. Este malware se activa al cumplirse una condición específica, como una fecha u hora. ¿Qué tipo de malware describe mejor este escenario?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Gusano (worm)",
+        "c) Virus sin archivos (fileless)",
+        "d) Rootkit"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los virus sin archivos (fileless) operan exclusivamente en la memoria RAM, sin escribirse en el disco duro, lo que dificulta su detección por antivirus tradicionales.",
+      "id": "p9-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué tipo de malware se caracteriza por instalarse en el firmware de un dispositivo (como la BIOS o UEFI) y ejecutarse antes que el sistema operativo, permitiendo su persistencia incluso después de reinstalar el sistema operativo o cambiar el disco duro?",
+      "opciones": [
+        "a) Virus en sector de arranque",
+        "b) Gusano (worm)",
+        "c) Rootkit de firmware",
+        "d) Spyware"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un rootkit de firmware se instala en el firmware de un dispositivo como la BIOS o UEFI y se ejecuta antes que el sistema operativo, lo que le permite persistir incluso después de reinstalar el sistema operativo o cambiar el disco duro.",
+      "id": "p9-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico implica duplicar tarjetas de acceso RFID para obtener acceso no autorizado a áreas restringidas?",
+      "opciones": [
+        "a) Brute force",
+        "b) Clonación de RFID",
+        "c) Denegación de servicio (DoS)",
+        "d) Envenenamiento de DNS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La clonación de RFID permite duplicar tarjetas de acceso o llaves electrónicas para acceder a áreas restringidas sin autorización.",
+      "id": "p9-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+ SY0-701, ¿qué tipo de malware se caracteriza por instalarse en el sector de arranque del disco duro y ejecutarse automáticamente al iniciar el sistema operativo?",
+      "opciones": [
+        "a) Virus de sector de arranque",
+        "b) Gusano (worm)",
+        "c) Spyware",
+        "d) Rootkit"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los virus de sector de arranque se instalan en el sector de arranque del disco duro y se ejecutan automáticamente al iniciar el sistema operativo, aprovechando esta fase crítica del proceso de arranque.",
+      "id": "p9-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque físico consiste en manipular los sistemas de climatización (HVAC) para causar una denegación de servicio sin necesidad de dañar físicamente los equipos?",
+      "opciones": [
+        "a) Clonación de tarjetas RFID para acceder a áreas restringidas",
+        "b) Brute force para forzar cerraduras físicas",
+        "c) Manipulación de sensores de temperatura para activar sistemas de emergencia que inunden la sala con gas refrigerante",
+        "d) Envío de correos electrónicos con enlaces maliciosos para distribuir malware"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La manipulación de sensores de temperatura en sistemas HVAC puede activar sistemas de emergencia como rociadores de gas refrigerante, causando una interrupción del servicio sin dañar los equipos directamente.",
+      "id": "p9-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un técnico de mantenimiento recibe una notificación falsa de un sistema de alerta temprana indicando una falla crítica en los servidores. Al acceder físicamente a la sala de servidores, descubre que los sensores de temperatura han sido manipulados para reportar lecturas falsas de sobrecalentamiento, activando los sistemas de climatización de emergencia que inundan la sala con gas refrigerante, causando una interrupción del servicio. ¿Qué técnica de ataque físico, según el temario de CompTIA Security+, describe mejor este escenario?",
+      "opciones": [
+        "a) Brute force",
+        "b) Clonación de RFID",
+        "c) Ataque al entorno (manipulación de HVAC)",
+        "d) Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La manipulación de sistemas HVAC para simular condiciones de sobrecalentamiento es un ejemplo de ataque al entorno, diseñado para causar interrupciones en los equipos y servicios.",
+      "id": "p9-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante logra acceso físico a un centro de datos y modifica el firmware de los controladores de los sensores de humedad del sistema HVAC para que reporten lecturas falsas de baja humedad ambiental. El sistema de gestión de edificios (BMS) interpreta estas lecturas como una condición de sequedad extrema y activa automáticamente los humidificadores de emergencia, que inundan la sala con vapor de agua sobrecalentado. Este vapor, al condensarse en los componentes electrónicos de los servidores, genera cortocircuitos intermitentes que corrompen datos críticos sin dejar evidencia física aparente en los discos duros. ¿Qué técnica de ataque físico, según el temario de CompTIA Security+, describe mejor este escenario?",
+      "opciones": [
+        "Manipulación de sensores en sistemas HVAC para causar corrosión química en componentes electrónicos",
+        "Ataque de denegación de servicio (DoS) mediante manipulación de sistemas de climatización (HVAC) para generar condiciones ambientales adversas",
+        "Clonación de tarjetas de acceso RFID para obtener acceso no autorizado a áreas restringidas",
+        "Inyección de lógica maliciosa en firmware de dispositivos críticos para alterar su comportamiento"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este escenario describe un ataque físico donde se manipula el firmware de los controladores de los sensores de humedad para alterar su comportamiento, generando condiciones ambientales que dañan los equipos sin necesidad de acceso lógico directo.",
+      "id": "p9-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "An Overview of Malware",
+      "youtubeId": "-eZs8wjjGGE"
+    },
+    {
+      "titulo": "Viruses and Worms",
+      "youtubeId": "Su8ANmAoerU"
+    },
+    {
+      "titulo": "Spyware and Bloatware",
+      "youtubeId": "-VmI3xFJw78"
+    },
+    {
+      "titulo": "Other Malware Types",
+      "youtubeId": "nu27ovJ5rqw"
+    },
+    {
+      "titulo": "Physical Attacks",
+      "youtubeId": "oIpOuTX2HRs"
+    },
+    {
+      "titulo": "Denial of Service",
+      "youtubeId": "Z7OntvK--PQ"
+    },
+    {
+      "titulo": "DNS Attacks",
+      "youtubeId": "BoxeL5ybOXI"
+    }
+  ]
+}

@@ -1,0 +1,1408 @@
+{
+  "id": 25,
+  "titulo": "5.1 · Políticas y gobernanza de seguridad",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LA IMPORTANCIA DE LAS POLÍTICAS DE SEGURIDAD EN LA CIBERSEGURIDAD\n\nLas políticas de seguridad son fundamentales para garantizar los principios básicos de la ciberseguridad: confidencialidad (confidentiality), integridad (integrity) y disponibilidad (availability), conocidos como el modelo CIA. Estas políticas establecen reglas claras que deben seguir todos los miembros de una organización para mantener un entorno seguro. Pueden ser amplias, como requisitos de almacenamiento de datos o procedimientos para eventos específicos, o detalladas, como normas para el uso de la red Wi-Fi o los requisitos para acceder de forma remota a la red.\n\nLas políticas de seguridad no son solo recomendaciones, sino que en muchos casos son mandatos obligatorios para la organización. Su objetivo es responder preguntas críticas sobre la infraestructura de seguridad, como qué hacer si se detecta un virus en un equipo, cómo gestionar el acceso a la VPN desde dispositivos personales o qué pasos seguir si se aprovecha una vulnerabilidad para acceder a un servicio. Además, estas políticas definen los roles y responsabilidades de cada persona involucrada en la seguridad, asegurando que todos sepan con quién comunicarse ante cualquier incidente.\n\n\nUNA DE LAS POLÍTICAS MÁS IMPORTANTES: LA POLÍTICA DE USO ACEPTABLE (AUP)\n\nLa política de uso aceptable (AUP, Acceptable Use Policy) es un conjunto de normas que define qué acciones son permitidas al utilizar los recursos tecnológicos de la organización. Esto incluye el uso de computadoras, teléfonos móviles y otros dispositivos. La AUP no solo informa a los empleados sobre el uso adecuado de la tecnología, sino que también protege a la organización en caso de litigios legales. Por ejemplo, si un empleado es despedido por incumplir estas políticas, la documentación de la AUP sirve como respaldo para justificar la decisión.\n\n\nPLANES DE CONTINUIDAD DEL NEGOCIO Y RECUPERACIÓN ANTE DESASTRES\n\nLas políticas de continuidad del negocio (business continuity) son esenciales para garantizar que la organización pueda seguir operando incluso en situaciones adversas. Un ejemplo práctico es el caso de una empresa minorista que pierde acceso a su red para procesar transacciones con tarjetas de crédito. Según el plan de continuidad, el personal debería realizar transacciones manuales y usar llamadas telefónicas para aprobar pagos. Es crucial que estos planes se planifiquen y prueben antes de que ocurra un desastre.\n\nCuando el desastre es de gran magnitud o afecta a toda la organización durante un período prolongado, se requiere un plan formal de recuperación ante desastres (disaster recovery plan). Este plan debe cubrir diversos escenarios, como desastres naturales (huracanes, inundaciones), fallos técnicos o desastres causados por humanos. Entre las medidas clave se incluyen:\n\n- Ubicaciones de recuperación alternativas en caso de que las instalaciones principales queden inutilizables.\n- Métodos para recuperar datos perdidos.\n- Procesos para restaurar aplicaciones y sistemas.\n- Disponibilidad del equipo de TI y empleados en las ubicaciones de recuperación.\n\n\nGESTIÓN DE INCIDENTES DE SEGURIDAD\n\nLas políticas de seguridad también deben incluir procedimientos detallados para gestionar incidentes de seguridad. Algunos ejemplos de incidentes incluyen:\n\n- Un usuario que abre un archivo adjunto malicioso, instalando malware que se comunica con un servidor externo.\n- Ataques de denegación de servicio distribuido (DDoS, Distributed Denial of Service).\n- Fugas de información confidencial fuera de la organización.\n\nPara responder a estos incidentes, es necesario contar con un equipo especializado en respuesta a incidentes (incident response team). Este equipo está compuesto por diferentes roles, como:\n\n- El equipo de respuesta a incidentes, que está capacitado y preparado para actuar ante cualquier evento de seguridad.\n- El equipo de gestión de seguridad de TI (IT security management), que proporciona los recursos necesarios para abordar los incidentes.\n- Oficiales de cumplimiento (compliance officers), que aseguran que los sistemas y datos cumplan con los mandatos regulatorios.\n- Personal técnico, que resuelve los problemas técnicos derivados de los incidentes.\n- La comunidad de usuarios, que puede proporcionar información valiosa sobre lo ocurrido durante el incidente.\n\nUn recurso útil para entender el proceso de respuesta a incidentes es el documento NIST SP 800-61 Revision 2, titulado \"Computer Security Incident Handling Guide\". Este documento describe el ciclo de vida de respuesta a incidentes, que incluye la preparación, detección y análisis, contención, erradicación, recuperación y actividades posteriores al incidente.\n\n\nEL CICLO DE VIDA DEL DESARROLLO DE SOFTWARE (SDLC)\n\nEl ciclo de vida del desarrollo de software (SDLC, Software Development Life Cycle) es un conjunto de procesos y procedimientos para crear aplicaciones de software. El objetivo es llevar una idea desde la fase inicial hasta la implementación final, asegurando que la aplicación se desarrolle dentro del presupuesto y el cronograma establecidos. Aunque no existe un único método correcto para el SDLC, tener una estructura clara ayuda a mantener el enfoque y la productividad del equipo.\n\nDos de los modelos más comunes son:\n\n- Modelo en cascada (waterfall): Un ciclo lineal que sigue una secuencia clara: requisitos, desarrollo, pruebas, implementación y mantenimiento continuo.\n- Modelo ágil (agile): Un enfoque iterativo y rápido que combina diseño, desarrollo, pruebas, implementación y revisión en ciclos continuos hasta completar la aplicación.\n\n\nGESTIÓN DE CAMBIOS (CHANGE MANAGEMENT)\n\nLa gestión de cambios (change management) es un proceso esencial para implementar modificaciones en los sistemas de una organización de manera segura. Este proceso incluye:\n\n- Evaluar el alcance del cambio: ¿Se trata de un solo servidor, múltiples dispositivos o una actualización de sistema operativo?\n- Analizar el riesgo asociado al cambio.\n- Crear un plan formal que detalle qué sistemas se verán afectados.\n- Obtener la aprobación del cambio, generalmente a través de una junta de control de cambios (change control board).\n- Documentar el cambio una vez completado.\n\nUn aspecto crítico de la gestión de cambios es contar con un plan de retroceso (backout plan), que permita revertir el cambio si algo sale mal. Las organizaciones con un proceso de gestión de cambios bien definido pueden implementar cambios con el menor riesgo posible. Si una organización no tiene un proceso formal de gestión de cambios, es recomendable implementarlo lo antes posible.\n\n\nESTÁNDARES DE SEGURIDAD\n\nLos estándares de seguridad son documentos formales que establecen los requisitos y procesos para manejar diferentes situaciones en el entorno tecnológico. Proporcionan documentación extensa que reduce el riesgo en los entornos de TI. Algunas organizaciones crean sus propios estándares, mientras que otras adoptan estándares ya establecidos por organizaciones como la ISO (International Organization for Standardization) o NIST (National Institute of Standards and Technology).\n\nEntre los estándares más importantes se encuentran los relacionados con contraseñas. Cada organización define su propia política de complejidad de contraseñas, que puede incluir:\n\n- Requisitos de longitud y complejidad.\n- Frecuencia de cambio de contraseñas.\n- Métodos seguros para almacenar contraseñas, como el uso de gestores de contraseñas.\n- Procesos para restablecer contraseñas de manera segura.\n\nOtros estándares importantes incluyen:\n\n- Control de acceso (Access Control): Define qué información puede acceder un usuario y en qué momento. Puede incluir políticas como el uso obligatorio de control de acceso obligatorio (MAC, Mandatory Access Control) en lugar de control de acceso discrecional (DAC, Discretionary Access Control).\n- Eliminación de acceso: Establece cómo y cuándo se retira el acceso a un usuario, ya sea por motivos de seguridad, expiración de cuentas o salida de la organización.\n- Seguridad física: Define normas para el acceso a las instalaciones, como el uso obligatorio de tarjetas de identificación electrónicas, requisitos de biometría o acompañamiento de visitantes.\n- Cifrado: Establece estándares para el uso de algoritmos de cifrado y hashing, especialmente para el almacenamiento seguro de contraseñas. También define requisitos de cifrado según el estado de los datos: en uso, en tránsito o en reposo.\n\n\nPROCEDIMIENTOS DE SEGURIDAD\n\nLos procedimientos de seguridad son pasos detallados que deben seguirse para realizar tareas específicas de manera segura. Uno de los procedimientos más comunes es la gestión de cambios, que asegura que cada modificación en los sistemas se realice con controles y equilibrios para prevenir errores, tiempo de inactividad y confusión.\n\nOtros procedimientos importantes incluyen:\n\n- Incorporación de personal (onboarding): Proceso de integrar a nuevos empleados o transferidos a la organización. Incluye la entrega del manual del empleado, la creación de cuentas de usuario, la asignación de permisos y la entrega de dispositivos tecnológicos.\n\n- Desvinculación de personal (offboarding): Proceso de gestionar la salida de un empleado de la organización. Incluye la recuperación de hardware, la gestión de datos almacenados en los dispositivos y la desactivación de cuentas de usuario para evitar la pérdida de claves de cifrado u otros datos críticos.\n\n- Manuales de procedimientos (playbooks): Documentos que describen los pasos a seguir en situaciones específicas, como la investigación de una brecha de datos o la recuperación ante un ataque de ransomware. Estos manuales pueden integrarse en plataformas de orquestación, automatización y respuesta de seguridad (SOAR, Security Orchestration, Automation and Response), que permiten automatizar tareas repetitivas y liberar al equipo de seguridad para que se enfoque en tareas más críticas.\n\n\nGOBERNANZA DE SEGURIDAD\n\nLa gobernanza de seguridad define la estructura y los procesos para la toma de decisiones en una organización. Puede ser centralizada, donde un grupo único toma las decisiones para toda la organización, o descentralizada, donde las decisiones se toman en diferentes niveles o departamentos.\n\nEn el sector público, la gobernanza está sujeta a requisitos legales, administrativos y, en muchos casos, políticos. Las reuniones y documentos suelen ser accesibles al público, a diferencia de las organizaciones privadas. La gobernanza en el sector público se enfoca en proteger los intereses de los ciudadanos y garantizar la transparencia.\n\n\nCONSIDERACIONES LEGALES Y REGULATORIAS\n\nLos profesionales de seguridad de TI deben estar al tanto de las regulaciones que afectan a su organización y al tipo de datos que manejan. Algunas regulaciones importantes incluyen:\n\n- Sarbanes-Oxley (SOX): Ley que regula la transparencia financiera en las organizaciones, especialmente en empresas públicas. Desde la perspectiva de TI, se enfoca en proteger los datos financieros y garantizar su disponibilidad para las personas autorizadas.\n\n- HIPAA (Health Insurance Portability and Accountability Act): Ley que protege la información de salud. Establece requisitos para el almacenamiento, transferencia y divulgación de datos médicos, asegurando su confidencialidad e integridad.\n\nAdemás, existen requisitos legales para reportar actividades ilegales, responder a órdenes judiciales (legal holds) y divulgar brechas de seguridad en un plazo determinado. Las regulaciones varían según la jurisdicción, por lo que es crucial cumplir con los requisitos legales locales.\n\n\nCONSIDERACIONES ESPECÍFICAS POR INDUSTRIA Y ALCANCE\n\nLas consideraciones de seguridad varían según la industria y el alcance geográfico de la organización:\n\n- Industrias reguladas: Sectores como servicios públicos o generación de energía pueden requerir requisitos estrictos de acceso a la información, a menudo implementando redes aisladas (air-gapped) para proteger los sistemas críticos.\n\n- Sector médico: Requiere un alto nivel de seguridad para proteger la información médica, combinando disponibilidad para el personal autorizado con confidencialidad para el resto.\n\n- Alcance regional: Organizaciones con un enfoque local o regional manejan datos específicos de su área geográfica, como registros municipales o estatales.\n\n- Alcance nacional: Organizaciones a nivel nacional deben cumplir con regulaciones más amplias, como las relacionadas con la defensa nacional y la comunicación entre estados.\n\n- Alcance global: Empresas con oficinas en diferentes países enfrentan desafíos adicionales debido a las distintas leyes de protección de datos en cada jurisdicción.\n\n\nROLES Y RESPONSABILIDADES EN LA GESTIÓN DE DATOS\n\nEn una organización, diferentes personas son responsables de distintos aspectos de los datos que se almacenan. Los roles clave incluyen:\n\n- Propietario de datos (data owner): Persona de alto nivel responsable de un tipo específico de datos. Por ejemplo, el vicepresidente de ventas puede ser el propietario de los datos de relaciones con clientes, mientras que el tesorero puede ser el propietario de los datos financieros. El propietario de datos supervisa todos los aspectos de la información y es responsable final de su seguridad y cumplimiento.\n\n- Controlador de datos (data controller): Define cómo se utiliza la información. Por ejemplo, el departamento de nóminas puede ser el controlador de datos, indicando al procesador de datos cómo debe manejar la información salarial.\n\n- Procesador de datos (data processor): Ejecuta las instrucciones del controlador de datos. En el ejemplo anterior, una empresa externa de nóminas sería el procesador de datos, ya que maneja información confidencial como detalles bancarios de los empleados.\n\n- Custodio de datos (data custodian) o administrador de datos (data steward): Responsable de la seguridad, precisión y privacidad de los datos. Este rol asegura el cumplimiento de las leyes y regulaciones, asigna etiquetas de sensibilidad a los datos y gestiona los controles de acceso para garantizar que solo las personas autorizadas puedan acceder a la información necesaria.\n\n\nIMPORTANCIA DE LA DOCUMENTACIÓN Y ACTUALIZACIÓN CONTINUA\n\nLa documentación es un pilar fundamental en la gestión de políticas y procedimientos de seguridad. Sin una documentación adecuada, es imposible garantizar el cumplimiento, la respuesta a incidentes o la continuidad del negocio. Además, los procedimientos y políticas deben revisarse y actualizarse periódicamente para adaptarse a nuevas tecnologías, amenazas emergentes y cambios en la organización.\n\nLas plataformas de orquestación, automatización y respuesta de seguridad (SOAR) pueden integrar múltiples sistemas y automatizar tareas repetitivas, permitiendo que el equipo de seguridad se enfoque en actividades más estratégicas. Sin embargo, incluso con la automatización, es esencial mantener los manuales de procedimientos actualizados y revisar regularmente los procesos para identificar oportunidades de mejora en eficiencia y seguridad.\n\n\nCONCLUSIÓN\n\nLas políticas y la gobernanza de seguridad son componentes esenciales para mantener un entorno seguro y cumplir con los requisitos legales y regulatorios. Desde la creación de políticas de uso aceptable hasta la implementación de planes de continuidad del negocio y recuperación ante desastres, cada aspecto debe estar bien documentado y comunicado. Los estándares de seguridad, los procedimientos detallados y la asignación clara de roles y responsabilidades aseguran que la organización pueda responder de manera efectiva a incidentes y mantener la confidencialidad, integridad y disponibilidad de sus datos."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Políticas y Gobernanza de Seguridad] --> B[Políticas de Seguridad]\nA --> C[Estándares de Seguridad]\nA --> D[Procedimientos de Seguridad]\nA --> E[Gobernanza y Cumplimiento]\n\nB --> B1[Modelo CIA: Confidencialidad, Integridad, Disponibilidad]\nB --> B2[Política de Uso Aceptable AUP]\nB --> B3[Planes de Continuidad del Negocio]\nB --> B4[Planes de Recuperación ante Desastres]\nB --> B5[Gestión de Incidentes de Seguridad]\nB --> B6[Ciclo de Vida del Desarrollo de Software SDLC]\nB --> B7[Gestión de Cambios Change Management]\n\nC --> C1[Estándares de Contraseñas]\nC --> C2[Control de Acceso]\nC --> C3[Seguridad Física]\nC --> C4[Cifrado de Datos]\n\nD --> D1[Gestión de Cambios]\nD --> D2[Onboarding y Offboarding]\nD --> D3[Manuales de Procedimientos Playbooks]\nD --> D4[Plataformas SOAR]\n\nE --> E1[Gobernanza Centralizada vs Descentralizada]\nE --> E2[Regulaciones: SOX, HIPAA]\nE --> E3[Consideraciones por Industria y Alcance]\nE --> E4[Roles de Datos: Propietario, Controlador, Procesador, Custodio]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc25-01",
+      "pregunta": "¿Qué significa el modelo CIA en ciberseguridad y qué principios representa?",
+      "respuesta": "El modelo CIA (Confidentiality, Integrity, Availability) representa los tres principios fundamentales de la ciberseguridad: confidencialidad (garantizar que la información solo sea accesible para quienes estén autorizados), integridad (asegurar que la información no sea alterada de manera no autorizada) y disponibilidad (garantizar que la información esté accesible cuando sea necesaria)."
+    },
+    {
+      "id": "fc25-02",
+      "pregunta": "¿Qué es una política de uso aceptable (AUP) y cuál es su propósito?",
+      "respuesta": "La política de uso aceptable (AUP, Acceptable Use Policy) es un conjunto de normas que define qué acciones son permitidas al utilizar los recursos tecnológicos de una organización. Su propósito es informar a los empleados sobre el uso adecuado de la tecnología y proteger a la organización en caso de litigios legales."
+    },
+    {
+      "id": "fc25-03",
+      "pregunta": "¿Qué diferencia hay entre un plan de continuidad del negocio y un plan de recuperación ante desastres?",
+      "respuesta": "Un plan de continuidad del negocio (business continuity) se enfoca en mantener las operaciones durante interrupciones menores o temporales, mientras que un plan de recuperación ante desastres (disaster recovery plan) está diseñado para situaciones de gran magnitud o prolongadas, como desastres naturales o fallos masivos de sistemas."
+    },
+    {
+      "id": "fc25-04",
+      "pregunta": "¿Qué es un equipo de respuesta a incidentes (incident response team) y cuáles son sus roles clave?",
+      "respuesta": "Un equipo de respuesta a incidentes es un grupo especializado encargado de gestionar y resolver incidentes de seguridad. Sus roles clave incluyen el equipo de respuesta a incidentes, el equipo de gestión de seguridad de TI, oficiales de cumplimiento, personal técnico y la comunidad de usuarios."
+    },
+    {
+      "id": "fc25-05",
+      "pregunta": "¿Qué es el ciclo de vida del desarrollo de software (SDLC) y cuáles son los modelos más comunes?",
+      "respuesta": "El SDLC (Software Development Life Cycle) es un conjunto de procesos para crear aplicaciones de software. Los modelos más comunes son el modelo en cascada (waterfall), que sigue una secuencia lineal, y el modelo ágil (agile), que es iterativo y rápido."
+    },
+    {
+      "id": "fc25-06",
+      "pregunta": "¿Qué es la gestión de cambios (change management) y por qué es importante?",
+      "respuesta": "La gestión de cambios es un proceso para implementar modificaciones en los sistemas de manera segura. Es importante porque ayuda a prevenir errores, tiempo de inactividad y confusión al realizar cambios en la infraestructura tecnológica."
+    },
+    {
+      "id": "fc25-07",
+      "pregunta": "¿Qué son los estándares de seguridad y cuáles son algunos ejemplos clave?",
+      "respuesta": "Los estándares de seguridad son documentos formales que establecen requisitos y procesos para manejar situaciones en el entorno tecnológico. Ejemplos clave incluyen estándares de contraseñas, control de acceso (ACL), seguridad física y cifrado de datos."
+    },
+    {
+      "id": "fc25-08",
+      "pregunta": "¿Qué es un manual de procedimientos (playbook) y cómo se integra con las plataformas SOAR?",
+      "respuesta": "Un manual de procedimientos (playbook) es un documento que describe los pasos a seguir en situaciones específicas, como brechas de datos o ataques de ransomware. Se integra con plataformas SOAR (Security Orchestration, Automation and Response) para automatizar tareas repetitivas y mejorar la eficiencia del equipo de seguridad."
+    },
+    {
+      "id": "fc25-09",
+      "pregunta": "¿Qué es la gobernanza de seguridad y cuáles son los modelos de gobernanza más comunes?",
+      "respuesta": "La gobernanza de seguridad define la estructura y procesos para la toma de decisiones en una organización. Los modelos más comunes son la gobernanza centralizada, donde un grupo único toma las decisiones, y la gobernanza descentralizada, donde las decisiones se toman en diferentes niveles o departamentos."
+    },
+    {
+      "id": "fc25-10",
+      "pregunta": "¿Qué regulaciones importantes deben conocer los profesionales de seguridad de TI y en qué sectores se aplican?",
+      "respuesta": "Algunas regulaciones importantes incluyen Sarbanes-Oxley (SOX) para empresas públicas y HIPAA para el sector de salud. Los profesionales de seguridad deben conocer estas regulaciones para garantizar el cumplimiento y proteger los datos sensibles."
+    },
+    {
+      "id": "fc25-11",
+      "pregunta": "¿Qué roles están involucrados en la gestión de datos y cuáles son sus responsabilidades?",
+      "respuesta": "Los roles clave en la gestión de datos son: propietario de datos (responsable final de la seguridad y cumplimiento), controlador de datos (define cómo se usa la información), procesador de datos (ejecuta las instrucciones del controlador) y custodio de datos (asegura la seguridad, precisión y privacidad de los datos)."
+    },
+    {
+      "id": "fc25-12",
+      "pregunta": "¿Por qué es importante la documentación en la gestión de políticas y procedimientos de seguridad?",
+      "respuesta": "La documentación es fundamental porque permite garantizar el cumplimiento, responder a incidentes y mantener la continuidad del negocio. Sin documentación adecuada, es imposible asegurar que las políticas y procedimientos se apliquen correctamente."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un principio fundamental del modelo CIA en el contexto de las políticas de seguridad?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) Disponibilidad",
+        "d) Autenticación"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El modelo CIA se refiere a Confidencialidad, Integridad y Disponibilidad, no incluye Autenticación. Este principio es clave en la definición de políticas de seguridad según el temario.",
+      "id": "p25-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un plan de continuidad del negocio que permite realizar transacciones manuales cuando falla la red. ¿Qué principio del modelo CIA se prioriza en este escenario?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) Disponibilidad",
+        "d) No repudio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El plan de continuidad del negocio prioriza la disponibilidad, asegurando que la organización pueda seguir operando incluso ante fallos en la infraestructura tecnológica.",
+      "id": "p25-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué política define explícitamente las acciones permitidas al utilizar los recursos tecnológicos de una organización?",
+      "opciones": [
+        "a) Política de continuidad del negocio",
+        "b) Política de uso aceptable (AUP)",
+        "c) Política de gestión de cambios",
+        "d) Política de recuperación ante desastres"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Política de Uso Aceptable (AUP) establece qué acciones son permitidas al utilizar los recursos tecnológicos de la organización, protegiendo tanto a empleados como a la empresa.",
+      "id": "p25-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el ciclo de vida del desarrollo de software (SDLC), ¿qué modelo sigue una secuencia lineal y rígida de fases como requisitos, desarrollo, pruebas e implementación?",
+      "opciones": [
+        "a) Modelo ágil",
+        "b) Modelo en cascada",
+        "c) Modelo iterativo",
+        "d) Modelo DevOps"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El modelo en cascada (waterfall) sigue una secuencia lineal y rígida de fases, a diferencia del modelo ágil que es iterativo y flexible.",
+      "id": "p25-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes roles es responsable de definir cómo se utiliza la información dentro de una organización?",
+      "opciones": [
+        "a) Propietario de datos",
+        "b) Controlador de datos",
+        "c) Procesador de datos",
+        "d) Custodio de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El controlador de datos define cómo se utiliza la información, mientras que el procesador de datos ejecuta esas instrucciones según lo establecido por el controlador.",
+      "id": "p25-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa recibe una orden judicial para retener todos los correos electrónicos relacionados con un empleado específico. ¿Qué procedimiento debe activarse?",
+      "opciones": [
+        "a) Plan de continuidad del negocio",
+        "b) Legal hold",
+        "c) Gestión de cambios",
+        "d) Desvinculación de personal"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un legal hold es un procedimiento legal que obliga a retener datos relevantes para una investigación o litigio, como en este caso con una orden judicial.",
+      "id": "p25-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué estándar de seguridad define requisitos para el almacenamiento seguro de contraseñas y el uso de algoritmos de cifrado?",
+      "opciones": [
+        "a) ISO 27001",
+        "b) NIST SP 800-61",
+        "c) HIPAA",
+        "d) SOX"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "ISO 27001 es un estándar que establece requisitos para sistemas de gestión de seguridad de la información, incluyendo políticas de contraseñas y cifrado.",
+      "id": "p25-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado es despedido por acceder a archivos confidenciales sin autorización. ¿Qué política documentada respalda esta decisión?",
+      "opciones": [
+        "a) Política de gestión de cambios",
+        "b) Política de uso aceptable (AUP)",
+        "c) Plan de recuperación ante desastres",
+        "d) Política de continuidad del negocio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Política de Uso Aceptable (AUP) documenta las normas de uso de recursos tecnológicos y permite justificar acciones disciplinarias como el despido por incumplimiento.",
+      "id": "p25-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización adopta un modelo de gobernanza de seguridad descentralizado. ¿Qué implica esta decisión?",
+      "opciones": [
+        "a) Todas las decisiones de seguridad son tomadas por un único grupo central",
+        "b) Las decisiones de seguridad se toman en diferentes niveles o departamentos",
+        "c) La gobernanza está sujeta a requisitos legales y políticos",
+        "d) La documentación de políticas no es obligatoria"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En un modelo descentralizado, las decisiones de seguridad se distribuyen entre diferentes niveles o departamentos de la organización, a diferencia del modelo centralizado.",
+      "id": "p25-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de TI implementa un cambio en un servidor crítico sin seguir el proceso formal de gestión de cambios. ¿Qué riesgo principal enfrenta la organización?",
+      "opciones": [
+        "a) Incumplimiento de regulaciones como HIPAA",
+        "b) Posible tiempo de inactividad no planificado y fallos en el sistema",
+        "c) Violación de la confidencialidad de datos",
+        "d) Falta de documentación para auditorías internas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La gestión de cambios formal incluye evaluar riesgos y crear planes de retroceso para evitar fallos en sistemas críticos durante la implementación de cambios.",
+      "id": "p25-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué política de seguridad establece explícitamente las acciones permitidas y prohibidas al utilizar los recursos tecnológicos de una organización?",
+      "opciones": [
+        "Política de Continuidad del Negocio (BCP)",
+        "Política de Uso Aceptable (AUP)",
+        "Política de Gestión de Cambios",
+        "Política de Recuperación ante Desastres (DRP)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Política de Uso Aceptable (AUP) define qué acciones son permitidas o prohibidas al usar recursos tecnológicos, protegiendo a la organización y a los empleados.",
+      "id": "p25-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el modelo CIA (Confidencialidad, Integridad, Disponibilidad), ¿qué principio se prioriza cuando una organización implementa un plan de continuidad que permite realizar transacciones manuales ante fallos en la red?",
+      "opciones": [
+        "Confidencialidad",
+        "Integridad",
+        "Disponibilidad",
+        "Autenticación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El principio de Disponibilidad se prioriza en este escenario, ya que el objetivo es garantizar que los servicios sigan operativos incluso ante fallos técnicos.",
+      "id": "p25-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un rol definido en la gestión de datos según el temario?",
+      "opciones": [
+        "Propietario de datos",
+        "Controlador de datos",
+        "Auditor de datos",
+        "Custodio de datos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona los roles de Propietario, Controlador y Custodio de datos, pero no incluye el de Auditor de datos como rol definido.",
+      "id": "p25-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de control de acceso donde los permisos se asignan automáticamente según la clasificación de los datos. ¿Qué modelo de control de acceso está utilizando?",
+      "opciones": [
+        "Control de Acceso Discrecional (DAC)",
+        "Control de Acceso Obligatorio (MAC)",
+        "Control de Acceso Basado en Roles (RBAC)",
+        "Control de Acceso Basado en Atributos (ABAC)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Control de Acceso Obligatorio (MAC) asigna permisos automáticamente según la clasificación de los datos, a diferencia del DAC, donde los propietarios deciden los permisos.",
+      "id": "p25-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué estándar de seguridad se enfoca en requisitos para el almacenamiento seguro de contraseñas y el uso de algoritmos de cifrado?",
+      "opciones": [
+        "ISO 27001",
+        "NIST SP 800-63",
+        "PCI DSS",
+        "HIPAA"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El estándar NIST SP 800-63 define requisitos para autenticación, incluyendo almacenamiento seguro de contraseñas y algoritmos de cifrado.",
+      "id": "p25-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa recibe una orden judicial para retener todos los correos electrónicos de un empleado específico. ¿Qué procedimiento debe activarse?",
+      "opciones": [
+        "Política de Desvinculación (Offboarding)",
+        "Retención Legal (Legal Hold)",
+        "Gestión de Cambios",
+        "Plan de Continuidad del Negocio (BCP)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Retención Legal (Legal Hold) es el procedimiento que garantiza que los datos relevantes se conserven según lo exigido por una orden judicial.",
+      "id": "p25-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol es responsable de definir cómo se utiliza la información dentro de una organización?",
+      "opciones": [
+        "a) Propietario de datos (data owner)",
+        "b) Controlador de datos (data controller)",
+        "c) Procesador de datos (data processor)",
+        "d) Custodio de datos (data custodian)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El controlador de datos (data controller) es el rol que define cómo se utiliza la información, estableciendo las reglas para su procesamiento, según lo indicado en el temario.",
+      "id": "p25-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué estándar de seguridad define requisitos específicos para el uso obligatorio de biometría en el acceso a instalaciones de una organización?",
+      "opciones": [
+        "a) ISO/IEC 27001",
+        "b) NIST SP 800-63",
+        "c) HIPAA",
+        "d) Sarbanes-Oxley (SOX)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El estándar NIST SP 800-63 se enfoca en directrices para autenticación digital, incluyendo requisitos para métodos biométricos en el acceso físico y lógico.",
+      "id": "p25-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. está diseñando su política de gobernanza de seguridad para cumplir con el RGPD y el estándar NIST SP 800-53. ¿Qué enfoque de gobernanza de seguridad (centralizado o descentralizado) sería más adecuado para garantizar el cumplimiento normativo en ambas jurisdicciones, y por qué?",
+      "opciones": [
+        "a) Centralizado, porque permite una aplicación uniforme de políticas y facilita la auditoría de cumplimiento en múltiples regiones.",
+        "b) Descentralizado, porque permite adaptar las políticas a los requisitos legales específicos de cada jurisdicción sin conflicto.",
+        "c) Centralizado, porque reduce costos operativos al evitar duplicación de equipos de seguridad en cada región.",
+        "d) Descentralizado, porque incrementa la agilidad de la organización al delegar decisiones a equipos locales."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un enfoque centralizado permite aplicar políticas uniformes y estandarizadas, lo que facilita la auditoría y el cumplimiento de normativas como el RGPD (UE) y NIST SP 800-53 (EE.UU.), reduciendo riesgos de inconsistencias entre regiones.",
+      "id": "p25-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. está diseñando su política de gobernanza de seguridad para cumplir con el RGPD y el estándar NIST SP 800-53. Según el temario, ¿qué enfoque de gobernanza de seguridad (centralizado o descentralizado) sería más adecuado para garantizar el cumplimiento normativo en ambas jurisdicciones, y por qué?",
+      "opciones": [
+        "a) Un enfoque centralizado, ya que permite una toma de decisiones unificada que facilita la aplicación consistente de políticas de seguridad en todas las ubicaciones geográficas.",
+        "b) Un enfoque descentralizado, porque permite adaptar las políticas a los requisitos específicos de cada jurisdicción, como el RGPD en la UE y las regulaciones locales en EE.UU.",
+        "c) Un enfoque híbrido, donde las políticas globales se definen centralmente pero se ajustan localmente para cumplir con regulaciones específicas.",
+        "d) Un enfoque centralizado en la UE y descentralizado en EE.UU., priorizando la rigurosidad del RGPD sobre la flexibilidad en EE.UU."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un enfoque híbrido permite definir políticas globales (como las basadas en NIST SP 800-53) de manera centralizada para garantizar consistencia, mientras se realizan ajustes locales para cumplir con regulaciones específicas como el RGPD en la UE.",
+      "id": "p25-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un componente clave del modelo CIA (Confidencialidad, Integridad, Disponibilidad) según el temario?",
+      "opciones": [
+        "a) Confidencialidad: Garantizar que la información solo sea accesible para personas autorizadas.",
+        "b) Integridad: Asegurar que la información no sea alterada de manera no autorizada.",
+        "c) Disponibilidad: Mantener los sistemas operativos y accesibles para los usuarios autorizados.",
+        "d) Autenticación: Verificar la identidad de los usuarios antes de otorgar acceso a los recursos."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El modelo CIA se compone exclusivamente de Confidencialidad, Integridad y Disponibilidad. La autenticación es un mecanismo de seguridad, pero no un principio fundamental del modelo.",
+      "id": "p25-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de control de acceso donde los permisos se asignan automáticamente según la clasificación de los datos (ej: secreto, confidencial, público). ¿Qué modelo de control de acceso está utilizando?",
+      "opciones": [
+        "a) Control de acceso discrecional (DAC).",
+        "b) Control de acceso obligatorio (MAC).",
+        "c) Control de acceso basado en roles (RBAC).",
+        "d) Control de acceso basado en atributos (ABAC)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El modelo MAC asigna permisos automáticamente según la clasificación de los datos, donde la seguridad se basa en niveles jerárquicos predefinidos.",
+      "id": "p25-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué política de seguridad define explícitamente las acciones permitidas y prohibidas al utilizar los recursos tecnológicos de una organización, protegiendo a la empresa en litigios legales?",
+      "opciones": [
+        "a) Política de continuidad del negocio.",
+        "b) Política de uso aceptable (AUP).",
+        "c) Política de gestión de cambios.",
+        "d) Política de recuperación ante desastres."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Política de Uso Aceptable (AUP) establece normas para el uso de recursos tecnológicos y sirve como respaldo legal en caso de incumplimiento.",
+      "id": "p25-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué política de seguridad establece los pasos específicos que deben seguirse para gestionar la salida de un empleado de la organización, incluyendo la recuperación de hardware y la desactivación de cuentas?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Procedimiento de desvinculación de personal (offboarding)",
+        "c) Plan de continuidad del negocio",
+        "d) Política de gestión de cambios"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El procedimiento de desvinculación de personal (offboarding) detalla los pasos para gestionar la salida de un empleado, como la recuperación de hardware y la desactivación de cuentas, según lo descrito en el temario sobre procedimientos de seguridad.",
+      "id": "p25-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes roles es responsable de definir cómo se utiliza la información dentro de una organización, según el temario?",
+      "opciones": [
+        "a) Propietario de datos (data owner).",
+        "b) Controlador de datos (data controller).",
+        "c) Procesador de datos (data processor).",
+        "d) Custodio de datos (data custodian)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El controlador de datos (data controller) define cómo se utiliza la información, mientras que el procesador de datos ejecuta esas instrucciones.",
+      "id": "p25-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad define específicamente los pasos para el proceso de desvinculación de un empleado, incluyendo la recuperación de dispositivos y la desactivación de cuentas?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Plan de continuidad del negocio",
+        "c) Procedimiento de offboarding",
+        "d) Gestión de incidentes de seguridad"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El procedimiento de offboarding (desvinculación de personal) detalla los pasos específicos para gestionar la salida de un empleado, como la recuperación de hardware y la desactivación de cuentas, según el temario.",
+      "id": "p25-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol es responsable de garantizar la seguridad, precisión y privacidad de los datos, asignando etiquetas de sensibilidad y gestionando los controles de acceso?",
+      "opciones": [
+        "a) Propietario de datos (data owner)",
+        "b) Controlador de datos (data controller)",
+        "c) Custodio de datos (data custodian)",
+        "d) Procesador de datos (data processor)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El custodio de datos (data custodian) es responsable de la seguridad, precisión y privacidad de los datos, incluyendo la asignación de etiquetas de sensibilidad y la gestión de controles de acceso.",
+      "id": "p25-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad define específicamente los requisitos para el uso seguro de contraseñas dentro de una organización?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Política de complejidad de contraseñas",
+        "c) Política de gestión de cambios",
+        "d) Política de continuidad del negocio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La política de complejidad de contraseñas establece requisitos específicos para la longitud, complejidad y frecuencia de cambio de contraseñas, así como métodos seguros para su almacenamiento y restablecimiento.",
+      "id": "p25-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. está diseñando su política de gobernanza de seguridad. ¿Qué enfoque (centralizado o descentralizado) sería más adecuado para garantizar el cumplimiento normativo en ambas jurisdicciones, y por qué?",
+      "opciones": [
+        "a) Centralizado, porque unifica las decisiones y facilita el cumplimiento de regulaciones como el RGPD y NIST SP 800-53.",
+        "b) Descentralizado, porque permite adaptarse mejor a las diferencias legales entre jurisdicciones.",
+        "c) Centralizado, porque reduce costos operativos al centralizar recursos.",
+        "d) Descentralizado, porque delega la responsabilidad a cada filial, evitando cuellos de botella."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un enfoque centralizado es más adecuado para garantizar el cumplimiento normativo en múltiples jurisdicciones, ya que unifica políticas y procesos bajo un marco común.",
+      "id": "p25-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. ha implementado un sistema de control de acceso basado en roles (RBAC) para gestionar los permisos de sus empleados. Sin embargo, un auditor externo ha identificado que, durante un proceso de desvinculación de un empleado, el sistema no desactivó automáticamente el acceso a un sistema crítico que almacena datos financieros sensibles. Según el temario, ¿qué política o procedimiento específico debería haber sido revisado y actualizado para evitar este incidente?",
+      "opciones": [
+        "a) La política de desvinculación de personal (offboarding), que debe incluir pasos claros para la desactivación inmediata de todos los accesos, especialmente en sistemas críticos.",
+        "b) La política de uso aceptable (AUP), que define las acciones permitidas y prohibidas al usar los recursos tecnológicos.",
+        "c) El plan de continuidad del negocio, que prioriza la disponibilidad de sistemas incluso en situaciones adversas.",
+        "d) El estándar de cifrado, que establece requisitos para el almacenamiento seguro de datos sensibles."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La política de desvinculación de personal (offboarding) debe incluir procedimientos específicos para la desactivación inmediata de accesos, especialmente en sistemas críticos, como parte de la gestión de salida del empleado.",
+      "id": "p25-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad define los roles y responsabilidades específicos para el manejo seguro de datos en una organización?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Política de gestión de datos (Data Management Policy)",
+        "c) Política de continuidad del negocio",
+        "d) Política de gobernanza de seguridad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La política de gestión de datos (Data Management Policy) define los roles como propietario, controlador, procesador y custodio de datos, asignando responsabilidades claras para el manejo seguro de la información.",
+      "id": "p25-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué política de seguridad establece los pasos específicos que deben seguirse para gestionar la incorporación de un nuevo empleado a la organización, incluyendo la creación de cuentas y asignación de permisos?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Procedimiento de incorporación de personal (onboarding)",
+        "c) Plan de continuidad del negocio",
+        "d) Política de gestión de cambios"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El procedimiento de incorporación de personal (onboarding) detalla los pasos para integrar a nuevos empleados, como la creación de cuentas y asignación de permisos, según el temario.",
+      "id": "p25-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué rol dentro de la gestión de datos es responsable de asignar etiquetas de sensibilidad a la información y gestionar los controles de acceso para garantizar su confidencialidad e integridad?",
+      "opciones": [
+        "a) Propietario de datos (data owner)",
+        "b) Controlador de datos (data controller)",
+        "c) Custodio de datos (data custodian) o administrador de datos (data steward)",
+        "d) Procesador de datos (data processor)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El custodio de datos o administrador de datos es el rol encargado de la seguridad, precisión y privacidad de los datos, incluyendo la asignación de etiquetas de sensibilidad y la gestión de controles de acceso.",
+      "id": "p25-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una organización, ¿qué rol es responsable de definir cómo se utiliza la información dentro de la misma?",
+      "opciones": [
+        "a) Propietario de datos",
+        "b) Controlador de datos",
+        "c) Procesador de datos",
+        "d) Custodio de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El rol de controlador de datos define cómo se utiliza la información, según las responsabilidades asignadas en la gestión de datos.",
+      "id": "p25-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad establece los pasos específicos que deben seguirse para gestionar la incorporación de un nuevo empleado a la organización, incluyendo la creación de cuentas de usuario y la asignación de permisos?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Procedimiento de incorporación de personal (onboarding)",
+        "c) Plan de continuidad del negocio",
+        "d) Política de gestión de cambios"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El procedimiento de incorporación de personal (onboarding) detalla los pasos para integrar a nuevos empleados, incluyendo la creación de cuentas y asignación de permisos, según lo descrito en el temario.",
+      "id": "p25-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad define específicamente los requisitos para el uso seguro de dispositivos móviles dentro de una organización, incluyendo restricciones en la instalación de aplicaciones y el acceso a redes inalámbricas?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Política de continuidad del negocio",
+        "c) Procedimiento de desvinculación de personal",
+        "d) Manual de recuperación ante desastres"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La política de uso aceptable (AUP) aborda el uso adecuado de todos los recursos tecnológicos, incluyendo dispositivos móviles, al definir acciones permitidas y prohibidas para proteger la organización.",
+      "id": "p25-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad establece los requisitos para el uso seguro de dispositivos móviles dentro de una organización, incluyendo restricciones en la instalación de aplicaciones y el acceso a redes inalámbricas?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Política de gestión de cambios",
+        "c) Política de continuidad del negocio",
+        "d) Política de incorporación de personal"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La política de uso aceptable (AUP) define las normas para el uso seguro de dispositivos tecnológicos, incluyendo restricciones en aplicaciones y acceso a redes inalámbricas.",
+      "id": "p25-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad define los pasos específicos para gestionar la incorporación de un nuevo empleado, incluyendo la creación de cuentas de usuario y la asignación inicial de permisos?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Política de incorporación de personal (onboarding)",
+        "c) Política de gestión de cambios (change management)",
+        "d) Política de desvinculación de personal (offboarding)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La política de incorporación de personal (onboarding) establece los pasos detallados para integrar a nuevos empleados, incluyendo la creación de cuentas y asignación de permisos iniciales.",
+      "id": "p25-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué rol es responsable de la seguridad, precisión y privacidad de los datos, asignando etiquetas de sensibilidad y gestionando los controles de acceso?",
+      "opciones": [
+        "a) Propietario de datos",
+        "b) Controlador de datos",
+        "c) Custodio de datos",
+        "d) Procesador de datos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El rol de custodio de datos (o administrador de datos) es responsable de la seguridad, precisión y privacidad de los datos, incluyendo la gestión de controles de acceso.",
+      "id": "p25-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un cambio en un servidor crítico sin seguir el proceso formal de gestión de cambios. ¿Qué riesgo principal enfrenta la organización?",
+      "opciones": [
+        "a) Violación de la confidencialidad de los datos",
+        "b) Incremento de la complejidad en la gestión de incidentes",
+        "c) Posible tiempo de inactividad no planificado y fallos en los sistemas",
+        "d) Incumplimiento de la política de uso aceptable (AUP)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La falta de gestión de cambios formal aumenta el riesgo de tiempo de inactividad no planificado y fallos en los sistemas debido a cambios no probados o documentados.",
+      "id": "p25-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol es responsable de ejecutar las instrucciones del controlador de datos y manejar información confidencial siguiendo las políticas establecidas?",
+      "opciones": [
+        "a) Propietario de datos (Data Owner)",
+        "b) Controlador de datos (Data Controller)",
+        "c) Procesador de datos (Data Processor)",
+        "d) Custodio de datos (Data Custodian)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El procesador de datos (Data Processor) ejecuta las instrucciones del controlador de datos, manejando información confidencial como datos financieros o de salud, según lo definido en políticas como HIPAA o SOX.",
+      "id": "p25-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol dentro de la gestión de datos es responsable de supervisar todos los aspectos de la información y garantizar su seguridad y cumplimiento normativo?",
+      "opciones": [
+        "a) Controlador de datos (data controller)",
+        "b) Procesador de datos (data processor)",
+        "c) Propietario de datos (data owner)",
+        "d) Custodio de datos (data custodian)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El propietario de datos (data owner) es el rol de alto nivel responsable de supervisar todos los aspectos de un tipo específico de datos, incluyendo su seguridad y cumplimiento con normativas.",
+      "id": "p25-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad define explícitamente los requisitos para el uso seguro de dispositivos móviles dentro de una organización, incluyendo restricciones en la instalación de aplicaciones y el acceso a redes inalámbricas?",
+      "opciones": [
+        "Política de uso aceptable (AUP)",
+        "Política de gestión de cambios",
+        "Política de incidencia de seguridad",
+        "Política de continuidad del negocio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Política de Uso Aceptable (AUP) establece normas sobre el uso de recursos tecnológicos, incluyendo dispositivos móviles, y puede incluir restricciones como las mencionadas.",
+      "id": "p25-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad establece los procedimientos para gestionar la incorporación de nuevos proveedores externos que requieren acceso temporal a los sistemas de la organización?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Procedimiento de incorporación de personal (onboarding)",
+        "c) Procedimiento de gestión de proveedores terceros",
+        "d) Política de gestión de cambios (Change Management)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El procedimiento de gestión de proveedores terceros define los pasos para integrar proveedores externos con acceso temporal, incluyendo evaluación de riesgos, asignación de permisos y controles de acceso. La AUP y el onboarding se enfocan en empleados, mientras que la gestión de cambios se aplica a modificaciones en sistemas internos.",
+      "id": "p25-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifique el concepto a partir del siguiente ejemplo: Una empresa implementa un sistema donde los permisos de acceso a datos se asignan automáticamente según su clasificación (secreto, confidencial, público).",
+      "opciones": [
+        "Control de Acceso Discrecional (DAC)",
+        "Control de Acceso Obligatorio (MAC)",
+        "Control de Acceso Basado en Roles (RBAC)",
+        "Control de Acceso Basado en Atributos (ABAC)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ejemplo describe el Control de Acceso Obligatorio (MAC), donde los permisos se asignan según clasificaciones predefinidas y no pueden ser modificados por los usuarios.",
+      "id": "p25-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad define los pasos específicos para gestionar la incorporación de nuevos proveedores externos que requieren acceso temporal a los sistemas de la organización?",
+      "opciones": [
+        "a) Política de gestión de cambios",
+        "b) Política de uso aceptable (AUP)",
+        "c) Procedimiento de incorporación de proveedores (vendor onboarding)",
+        "d) Plan de continuidad del negocio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El procedimiento de incorporación de proveedores (vendor onboarding) define los pasos para integrar proveedores externos con acceso temporal, incluyendo evaluación de riesgos, asignación de permisos y documentación necesaria.",
+      "id": "p25-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad define los requisitos para el uso seguro de dispositivos móviles dentro de una organización, incluyendo restricciones en la instalación de aplicaciones y el acceso a redes inalámbricas?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Política de gestión de cambios",
+        "c) Política de seguridad de dispositivos móviles",
+        "d) Política de continuidad del negocio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La política de seguridad de dispositivos móviles es específica para definir cómo deben usarse los dispositivos móviles en la organización, incluyendo restricciones en aplicaciones y redes, según lo detallado en el temario.",
+      "id": "p25-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización recibe una orden judicial para retener todos los correos electrónicos relacionados con un empleado específico. ¿Qué procedimiento debe activarse?",
+      "opciones": [
+        "Plan de continuidad del negocio",
+        "Retención legal (Legal Hold)",
+        "Gestión de cambios",
+        "Desvinculación de personal"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Retención Legal (Legal Hold) es el procedimiento que activa la organización para preservar datos relevantes ante una orden judicial.",
+      "id": "p25-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. está implementando un modelo de gobernanza de seguridad basado en el principio de 'responsabilidad local'. Según el temario, ¿qué riesgo principal enfrenta esta organización si no se establecen controles centralizados adicionales para garantizar el cumplimiento normativo en ambas jurisdicciones?",
+      "opciones": [
+        "a) Pérdida de eficiencia operativa debido a la duplicación de esfuerzos en cada región",
+        "b) Incumplimiento de requisitos legales específicos de cada jurisdicción (ej. RGPD en UE o SOX en EE.UU.) por falta de armonización en políticas",
+        "c) Mayor exposición a ataques cibernéticos al descentralizar la toma de decisiones de seguridad",
+        "d) Dificultad para asignar roles y responsabilidades claros en cada departamento regional"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El riesgo principal es el incumplimiento de requisitos legales específicos de cada jurisdicción, ya que las regulaciones como el RGPD (UE) y SOX (EE.UU.) exigen controles estrictos y documentación detallada que pueden no ser consistentes en un modelo de gobernanza descentralizado.",
+      "id": "p25-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. ha implementado un sistema de gestión de identidades y accesos (IAM) basado en atributos para asignar permisos dinámicos a sus empleados. Sin embargo, durante una auditoría, se detecta que un empleado de la filial europea accedió a un sistema financiero crítico de la sede en EE.UU. sin que el sistema IAM registrara este evento en los logs de auditoría, violando el requisito de trazabilidad de la política de gobernanza. Según el temario, ¿qué componente específico de la gobernanza de seguridad debería ser revisado y reforzado para garantizar el cumplimiento de los requisitos de auditoría en todas las jurisdicciones?",
+      "opciones": [
+        "a) Implementar un proceso de gestión de cambios centralizado que incluya la revisión de configuraciones de IAM en todas las jurisdicciones.",
+        "b) Actualizar la política de uso aceptable (AUP) para incluir cláusulas específicas sobre el acceso transnacional a sistemas críticos.",
+        "c) Revisar y alinear los estándares de documentación y registro de eventos del sistema IAM con los requisitos de auditoría de ambas jurisdicciones, garantizando la trazabilidad en logs centralizados.",
+        "d) Asignar un custodio de datos específico para cada filial, responsable de supervisar los accesos a sistemas críticos en su jurisdicción."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La trazabilidad de eventos en sistemas IAM es un requisito transversal en estándares de gobernanza y auditoría, especialmente en entornos multinacionales. Los logs centralizados y alineados con requisitos regulatorios (como RGPD en la UE o SOX en EE.UU.) aseguran que los eventos de acceso sean registrados y auditables en todas las jurisdicciones.",
+      "id": "p25-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué diferencia principal existe entre el rol de 'propietario de datos' (data owner) y el de 'controlador de datos' (data controller) según el temario?",
+      "opciones": [
+        "El propietario de datos define cómo se utiliza la información, mientras que el controlador de datos supervisa todos los aspectos de la seguridad y cumplimiento normativo.",
+        "El propietario de datos supervisa todos los aspectos de la información y es responsable final de su seguridad, mientras que el controlador de datos define cómo se utiliza la información.",
+        "El controlador de datos asigna etiquetas de sensibilidad y gestiona los controles de acceso, mientras que el propietario de datos ejecuta las instrucciones del controlador.",
+        "Ambos roles son idénticos, pero el término 'propietario' se usa en el sector privado y 'controlador' en el público."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El propietario de datos (data owner) es responsable de supervisar todos los aspectos de la información y su seguridad, mientras que el controlador de datos (data controller) define cómo se utiliza la información, según el temario.",
+      "id": "p25-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema donde los permisos de acceso a datos se asignan automáticamente según su clasificación (secreto, confidencial, público). ¿Qué concepto de gobernanza de seguridad se está aplicando?",
+      "opciones": [
+        "Control de acceso obligatorio (MAC)",
+        "Control de acceso discrecional (DAC)",
+        "Gestión de cambios",
+        "Política de uso aceptable (AUP)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El control de acceso obligatorio (MAC) asigna permisos automáticamente según etiquetas de sensibilidad, como se describe en el temario sobre estándares de seguridad.",
+      "id": "p25-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo principal de la política de uso aceptable (AUP) según el temario?",
+      "opciones": [
+        "Definir qué acciones están permitidas al utilizar los recursos tecnológicos de la organización.",
+        "Proteger a la organización en litigios legales mediante documentación de incumplimientos.",
+        "Establecer requisitos técnicos para el cifrado de datos en reposo.",
+        "Informar a los empleados sobre el uso adecuado de la tecnología."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La AUP se enfoca en definir acciones permitidas y proteger legalmente a la organización, no en requisitos técnicos de cifrado, según el temario.",
+      "id": "p25-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa multinacional con operaciones en la UE y EE.UU. decide implementar un modelo de gobernanza de seguridad descentralizado para adaptarse a las regulaciones locales. ¿Qué riesgo principal enfrenta si no se establecen controles centralizados adicionales?",
+      "opciones": [
+        "Mayor exposición a brechas de datos debido a la falta de estandarización en controles de acceso.",
+        "Incompatibilidad con el estándar NIST SP 800-53.",
+        "Dificultad para cumplir con regulaciones como el RGPD y SOX simultáneamente.",
+        "Reducción en la eficiencia operativa de los equipos de TI locales."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un modelo descentralizado sin controles centralizados puede generar conflictos en el cumplimiento de regulaciones como el RGPD (UE) y SOX (EE.UU.), según el temario sobre consideraciones legales y regulatorias.",
+      "id": "p25-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué política de seguridad define los pasos específicos para gestionar la incorporación de un nuevo empleado, incluyendo la creación de cuentas de usuario y la asignación inicial de permisos?",
+      "opciones": [
+        "Política de uso aceptable (AUP)",
+        "Política de incorporación de personal (onboarding)",
+        "Política de gestión de cambios",
+        "Política de recuperación ante desastres"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La política de incorporación de personal (onboarding) detalla los pasos para integrar nuevos empleados, incluyendo la creación de cuentas y asignación de permisos, según el temario.",
+      "id": "p25-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol es responsable de asignar etiquetas de sensibilidad a los datos y gestionar los controles de acceso para garantizar su confidencialidad e integridad?",
+      "opciones": [
+        "Propietario de datos (data owner)",
+        "Controlador de datos (data controller)",
+        "Custodio de datos (data custodian) o administrador de datos (data steward)",
+        "Procesador de datos (data processor)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El custodio de datos (data custodian) o administrador de datos (data steward) es responsable de asignar etiquetas de sensibilidad y gestionar controles de acceso, según el temario.",
+      "id": "p25-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué estándar de seguridad se enfoca en requisitos para el almacenamiento seguro de contraseñas y el uso de algoritmos de cifrado, según el temario?",
+      "opciones": [
+        "ISO 27001",
+        "NIST SP 800-53",
+        "HIPAA",
+        "Sarbanes-Oxley (SOX)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El estándar NIST SP 800-53 establece requisitos para el almacenamiento seguro de contraseñas y algoritmos de cifrado, según el temario sobre estándares de seguridad.",
+      "id": "p25-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad define los requisitos para la gestión de la salida de empleados de una organización, incluyendo la recuperación de hardware, la desactivación de cuentas y la transferencia de datos críticos?",
+      "opciones": [
+        "a) Política de incorporación de personal (onboarding)",
+        "b) Política de desvinculación de personal (offboarding)",
+        "c) Política de uso aceptable (AUP)",
+        "d) Política de continuidad del negocio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La política de desvinculación de personal (offboarding) establece los pasos para gestionar la salida de un empleado, incluyendo la recuperación de dispositivos, desactivación de cuentas y manejo de datos sensibles, según el temario.",
+      "id": "p25-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué componente de la gobernanza de seguridad debería reforzarse para garantizar el cumplimiento de los requisitos de auditoría en todas las jurisdicciones, según el temario?",
+      "opciones": [
+        "Control de acceso obligatorio (MAC)",
+        "Documentación y actualización continua de políticas",
+        "Política de uso aceptable (AUP)",
+        "Gestión de cambios"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La documentación y actualización continua de políticas es esencial para garantizar cumplimiento y trazabilidad en auditorías, según el temario sobre gobernanza de seguridad.",
+      "id": "p25-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de gestión de identidades y accesos (IAM) basado en atributos para asignar permisos dinámicos. Sin embargo, durante una auditoría, se detecta que un evento de acceso no quedó registrado en los logs. ¿Qué principio del modelo CIA se ve comprometido?",
+      "opciones": [
+        "Confidencialidad",
+        "Integridad",
+        "Disponibilidad",
+        "Trazabilidad"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La falta de registros en los logs compromete la trazabilidad, un principio crítico para auditorías y cumplimiento, según el temario sobre gobernanza de seguridad.",
+      "id": "p25-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué rol dentro de la gestión de datos es responsable de supervisar todos los aspectos de la información y garantizar su seguridad y cumplimiento normativo según el temario?",
+      "opciones": [
+        "a) Controlador de datos (data controller)",
+        "b) Procesador de datos (data processor)",
+        "c) Propietario de datos (data owner)",
+        "d) Custodio de datos (data custodian)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El propietario de datos (data owner) es el rol de alto nivel responsable de supervisar todos los aspectos de la información, incluyendo su seguridad y cumplimiento normativo.",
+      "id": "p25-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes roles NO está directamente relacionado con la gestión de datos según el temario?",
+      "opciones": [
+        "Propietario de datos (data owner)",
+        "Controlador de datos (data controller)",
+        "Administrador de red (network administrator)",
+        "Custodio de datos (data custodian)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El rol de administrador de red no se menciona en el temario como parte de la gestión de datos, a diferencia de los otros roles que sí están definidos.",
+      "id": "p25-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad define los requisitos para el acceso remoto a la red de la organización, incluyendo la autenticación multifactor y la protección de los dispositivos utilizados?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Política de gestión de cambios",
+        "c) Política de acceso remoto y VPN",
+        "d) Política de recuperación ante desastres"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La política de acceso remoto y VPN establece normas específicas para el uso seguro de conexiones remotas, incluyendo autenticación multifactor y protección de dispositivos, como parte de las políticas de seguridad detalladas en el temario.",
+      "id": "p25-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué estándar de seguridad, mencionado en el temario, se enfoca en requisitos para el almacenamiento seguro de contraseñas y el uso de algoritmos de cifrado?",
+      "opciones": [
+        "NIST SP 800-53",
+        "ISO 27001",
+        "PCI DSS",
+        "HIPAA"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El estándar NIST SP 800-53 incluye requisitos para el almacenamiento seguro de contraseñas y algoritmos de cifrado, según el temario.",
+      "id": "p25-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. decide implementar un modelo de gobernanza de seguridad descentralizado. ¿Qué riesgo principal enfrenta si no se establecen controles centralizados adicionales?",
+      "opciones": [
+        "Inconsistencias en el cumplimiento normativo entre jurisdicciones",
+        "Reducción de la eficiencia operativa",
+        "Aumento de costos en TI",
+        "Dificultad para asignar roles de seguridad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un modelo descentralizado sin controles centralizados puede generar inconsistencias en el cumplimiento de regulaciones como el RGPD y NIST SP 800-53, según el temario.",
+      "id": "p25-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué política de seguridad define los requisitos específicos para la gestión de la incorporación de nuevos proveedores externos que requieren acceso temporal a los sistemas de la organización?",
+      "opciones": [
+        "a) Política de Uso Aceptable (AUP)",
+        "b) Política de Gestión de Proveedores Externos",
+        "c) Política de Incorporación de Personal (Onboarding)",
+        "d) Política de Continuidad del Negocio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Política de Gestión de Proveedores Externos define los pasos y requisitos para integrar a proveedores con acceso temporal, incluyendo evaluaciones de riesgo y controles de acceso.",
+      "id": "p25-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol dentro de la gobernanza de seguridad es responsable de definir cómo se utiliza la información dentro de una organización?",
+      "opciones": [
+        "a) Propietario de datos (data owner)",
+        "b) Controlador de datos (data controller)",
+        "c) Custodio de datos (data custodian)",
+        "d) Procesador de datos (data processor)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El rol de controlador de datos (data controller) es el encargado de definir cómo se utiliza la información en la organización, según se detalla en el temario sobre roles y responsabilidades en la gestión de datos.",
+      "id": "p25-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué rol es responsable de ejecutar las instrucciones del controlador de datos (data controller) en la gestión de datos de una organización?",
+      "opciones": [
+        "a) Propietario de datos (data owner)",
+        "b) Procesador de datos (data processor)",
+        "c) Custodio de datos (data custodian)",
+        "d) Oficial de cumplimiento (compliance officer)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El procesador de datos (data processor) es responsable de ejecutar las instrucciones del controlador de datos (data controller), como lo indica el temario al definir este rol como quien maneja los datos según las directivas establecidas.",
+      "id": "p25-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. ha implementado un sistema de gestión de identidades y accesos (IAM) basado en roles (RBAC) para asignar permisos a sus empleados. Sin embargo, durante una auditoría interna, se detecta que un empleado de la filial europea accedió a un sistema financiero crítico de la sede en EE.UU. utilizando credenciales de un compañero que estaba de vacaciones, sin que el sistema IAM registrara este evento en los logs de auditoría. Según el temario, ¿qué componente específico de la gobernanza de seguridad debería ser reforzado para garantizar el cumplimiento de los requisitos de trazabilidad y no repudio en ambas jurisdicciones?",
+      "opciones": [
+        "a) Implementar un sistema de autenticación multifactor (MFA) obligatorio para todos los accesos remotos y críticos.",
+        "b) Revisar y reforzar el componente de auditoría y registro de eventos (logging) del sistema IAM para asegurar que todos los accesos queden registrados con detalles como usuario, hora, ubicación y dispositivo utilizado.",
+        "c) Asignar el rol de 'controlador de datos' (data controller) al empleado que permitió el acceso no autorizado, para que sea responsable de las consecuencias.",
+        "d) Centralizar la gestión de identidades y accesos (IAM) en un único equipo global para evitar inconsistencias entre filiales."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que la gobernanza de seguridad debe incluir procedimientos detallados de auditoría para garantizar trazabilidad y no repudio. El componente de logging es crítico para registrar y verificar todos los accesos, especialmente en entornos multinacionales con requisitos regulatorios distintos.",
+      "id": "p25-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. ha implementado un sistema de gestión de identidades y accesos (IAM) basado en atributos para asignar permisos dinámicos. Sin embargo, durante una auditoría, se detecta que un evento de acceso no quedó registrado en los logs. ¿Qué principio del modelo CIA se ve comprometido?",
+      "opciones": [
+        "Integridad",
+        "Disponibilidad",
+        "Confidencialidad",
+        "Autenticación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La falta de registros en logs compromete la integridad de los datos, ya que no se puede verificar la exactitud de los accesos realizados, según el modelo CIA.",
+      "id": "p25-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué diferencia principal existe entre el rol de 'propietario de datos' (data owner) y el de 'controlador de datos' (data controller) en la gestión de datos de una organización?",
+      "opciones": [
+        "El propietario de datos es responsable de la seguridad y cumplimiento normativo, mientras que el controlador de datos define cómo se utiliza la información.",
+        "Ambos roles son idénticos y pueden intercambiarse sin afectar la gestión de datos.",
+        "El controlador de datos es siempre un empleado interno, mientras que el propietario de datos puede ser externo.",
+        "El propietario de datos asigna etiquetas de sensibilidad, mientras que el controlador de datos ejecuta las instrucciones del primero."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define que el 'propietario de datos' supervisa la seguridad y cumplimiento, mientras que el 'controlador de datos' define el uso de la información.",
+      "id": "p25-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol dentro de la gobernanza de seguridad es responsable de supervisar la clasificación de datos y garantizar que los controles de acceso se apliquen correctamente para proteger su confidencialidad e integridad?",
+      "opciones": [
+        "a) Propietario de datos (data owner)",
+        "b) Controlador de datos (data controller)",
+        "c) Custodio de datos (data custodian)",
+        "d) Procesador de datos (data processor)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El custodio de datos (data custodian) es responsable de la seguridad técnica y operativa de los datos, incluyendo la asignación de etiquetas de sensibilidad y la gestión de los controles de acceso para garantizar su confidencialidad e integridad.",
+      "id": "p25-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. implementa un modelo de gobernanza de seguridad descentralizado. ¿Qué riesgo principal enfrenta si no se establecen controles centralizados adicionales?",
+      "opciones": [
+        "Dificultad para garantizar el cumplimiento normativo en ambas jurisdicciones debido a diferencias regulatorias.",
+        "Aumento de la productividad del equipo de TI por menor burocracia.",
+        "Reducción de costos operativos en la gestión de políticas de seguridad.",
+        "Simplificación de la auditoría interna al centralizar decisiones."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que un modelo descentralizado sin controles adicionales puede generar incumplimiento normativo por diferencias entre jurisdicciones.",
+      "id": "p25-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento formal define los requisitos para el manejo seguro de contraseñas, incluyendo su almacenamiento, complejidad y frecuencia de cambio?",
+      "opciones": [
+        "a) Política de Uso Aceptable (AUP)",
+        "b) Estándar de seguridad de contraseñas",
+        "c) Plan de Continuidad del Negocio",
+        "d) Manual de Procedimientos de Incorporación (Onboarding)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los estándares de seguridad, como los relacionados con contraseñas, establecen requisitos formales para su manejo seguro, incluyendo almacenamiento, complejidad y frecuencia de cambio.",
+      "id": "p25-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto del modelo CIA, ¿qué principio se ve comprometido si un sistema de gestión de identidades y accesos (IAM) no registra eventos de acceso en los logs durante una auditoría?",
+      "opciones": [
+        "Integridad.",
+        "Confidencialidad.",
+        "Disponibilidad.",
+        "No repudio."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La falta de registros en logs afecta la capacidad de verificar acciones, comprometiendo la integridad del sistema.",
+      "id": "p25-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol dentro de la gobernanza de seguridad es responsable de asignar etiquetas de sensibilidad a los datos y gestionar los controles de acceso para garantizar su confidencialidad e integridad?",
+      "opciones": [
+        "a) Propietario de datos (data owner)",
+        "b) Controlador de datos (data controller)",
+        "c) Custodio de datos (data custodian) o administrador de datos (data steward)",
+        "d) Procesador de datos (data processor)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El custodio o administrador de datos es el responsable directo de asignar etiquetas de sensibilidad (ej: secreto, confidencial, público) y gestionar los controles de acceso para proteger la confidencialidad e integridad de los datos.",
+      "id": "p25-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento formal define los requisitos para la gestión de la salida de empleados de una organización, incluyendo la recuperación de hardware, la desactivación de cuentas y la transferencia de datos críticos?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Plan de continuidad del negocio",
+        "c) Procedimiento de desvinculación de personal (offboarding)",
+        "d) Política de gestión de cambios"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El procedimiento de desvinculación de personal (offboarding) detalla los pasos específicos para gestionar la salida de un empleado, incluyendo la recuperación de hardware, desactivación de cuentas y manejo de datos críticos, como se menciona en el temario bajo los procedimientos de seguridad.",
+      "id": "p25-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol dentro de la gestión de datos es responsable de asignar etiquetas de sensibilidad a los datos y gestionar los controles de acceso para garantizar su confidencialidad e integridad?",
+      "opciones": [
+        "Custodio de datos (data custodian).",
+        "Controlador de datos (data controller).",
+        "Procesador de datos (data processor).",
+        "Propietario de datos (data owner)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define que el 'custodio de datos' asigna etiquetas de sensibilidad y gestiona controles de acceso.",
+      "id": "p25-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. implementa un modelo de gobernanza de seguridad descentralizado donde cada filial gestiona sus propios controles de acceso y políticas de cifrado. Durante una auditoría de cumplimiento del estándar NIST SP 800-53, se detecta que la filial europea no ha implementado el algoritmo de cifrado AES-256 para datos en reposo, mientras que la filial estadounidense sí lo ha hecho. Según el temario, ¿qué principio fundamental del modelo CIA se ve comprometido como consecuencia directa de esta falta de uniformidad en los controles?",
+      "opciones": [
+        "a) Confidencialidad, porque el algoritmo de cifrado determina el nivel de protección de los datos y su cumplimiento normativo varía entre jurisdicciones.",
+        "b) Integridad, ya que el uso de algoritmos diferentes afecta la consistencia de los datos entre sistemas.",
+        "c) Disponibilidad, porque la falta de uniformidad impide el acceso a los datos desde diferentes regiones.",
+        "d) No repudio, ya que no se pueden garantizar las acciones realizadas en los datos por falta de controles estandarizados."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La confidencialidad se compromete porque los requisitos de cifrado (como AES-256) son esenciales para proteger los datos sensibles, y su implementación desigual entre jurisdicciones afecta el cumplimiento normativo y la protección uniforme de la información.",
+      "id": "p25-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. ha implementado un sistema de gestión de identidades y accesos (IAM) basado en roles (RBAC) para asignar permisos. Durante una auditoría, se detecta que un empleado accedió a un sistema crítico usando credenciales de un compañero. ¿Qué principio del modelo CIA se ve comprometido?",
+      "opciones": [
+        "No repudio.",
+        "Confidencialidad.",
+        "Integridad.",
+        "Disponibilidad."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El uso no autorizado de credenciales afecta la capacidad de atribuir acciones a un usuario específico, comprometiendo el no repudio.",
+      "id": "p25-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué principio del modelo CIA se ve comprometido cuando una organización no documenta adecuadamente los procedimientos de gestión de cambios en sus sistemas?",
+      "opciones": [
+        "a) Confidencialidad, porque los cambios no autorizados podrían exponer datos sensibles.",
+        "b) Integridad, porque la falta de documentación impide verificar que los cambios se apliquen correctamente.",
+        "c) Disponibilidad, porque los fallos en los cambios podrían dejar sistemas inoperables.",
+        "d) No se compromete ningún principio del modelo CIA, solo la eficiencia operativa."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La integridad se ve afectada al no poder garantizar que los cambios se realicen de manera precisa y verificable, según los procedimientos documentados en la gestión de cambios.",
+      "id": "p25-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes roles en la gestión de datos es responsable de definir cómo se utiliza la información dentro de una organización?",
+      "opciones": [
+        "a) Propietario de datos (data owner)",
+        "b) Controlador de datos (data controller)",
+        "c) Procesador de datos (data processor)",
+        "d) Custodio de datos (data custodian)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El controlador de datos (data controller) define cómo se utiliza la información, según el temario.",
+      "id": "p25-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gobernanza de seguridad, ¿qué modelo (centralizado o descentralizado) es más adecuado para una organización multinacional que debe cumplir con regulaciones como el RGPD en la UE y estándares como NIST SP 800-53 en EE.UU.?",
+      "opciones": [
+        "a) Descentralizado, porque permite adaptarse mejor a las necesidades locales de cada filial.",
+        "b) Centralizado, porque garantiza uniformidad en los controles y cumplimiento normativo en todas las jurisdicciones.",
+        "c) Ambos modelos son igualmente adecuados, ya que las regulaciones son compatibles entre sí.",
+        "d) Ninguno, porque las regulaciones son incompatibles y requieren un modelo híbrido ad-hoc."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un modelo centralizado de gobernanza de seguridad es más adecuado para garantizar el cumplimiento normativo uniforme en múltiples jurisdicciones, según el temario.",
+      "id": "p25-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema donde los permisos de acceso a datos se asignan automáticamente según su clasificación (ej: secreto, confidencial, público). ¿Qué modelo de control de acceso está utilizando?",
+      "opciones": [
+        "a) Control de acceso discrecional (DAC, Discretionary Access Control)",
+        "b) Control de acceso obligatorio (MAC, Mandatory Access Control)",
+        "c) Control de acceso basado en roles (RBAC, Role-Based Access Control)",
+        "d) Control de acceso basado en atributos (ABAC, Attribute-Based Access Control)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El modelo de control de acceso obligatorio (MAC) asigna permisos según la clasificación de los datos, según el temario.",
+      "id": "p25-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué documento formal define los requisitos para el manejo seguro de contraseñas, incluyendo su almacenamiento, complejidad y frecuencia de cambio?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Política de contraseñas",
+        "c) Plan de continuidad del negocio",
+        "d) Manual de procedimientos de gestión de cambios"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La política de contraseñas define los requisitos específicos para el manejo seguro de contraseñas, según el temario.",
+      "id": "p25-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol dentro de la gobernanza de seguridad es responsable de supervisar todos los aspectos de la información y garantizar su seguridad y cumplimiento normativo?",
+      "opciones": [
+        "a) Propietario de datos (data owner)",
+        "b) Controlador de datos (data controller)",
+        "c) Procesador de datos (data processor)",
+        "d) Custodio de datos (data custodian)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El propietario de datos (data owner) es el rol responsable de supervisar todos los aspectos de la información y garantizar su seguridad y cumplimiento normativo, según se detalla en el temario.",
+      "id": "p25-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización multinacional implementa un modelo de gobernanza de seguridad descentralizado donde cada filial gestiona sus propios controles de acceso. ¿Qué riesgo principal enfrenta si no se establecen controles centralizados adicionales?",
+      "opciones": [
+        "a) Mayor complejidad en la gestión de incidentes de seguridad.",
+        "b) Incumplimiento de regulaciones debido a la falta de uniformidad en los controles.",
+        "c) Reducción de la eficiencia operativa en las filiales.",
+        "d) Aumento de los costos de implementación de políticas de seguridad."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La falta de controles centralizados puede llevar al incumplimiento de regulaciones debido a la falta de uniformidad en los controles entre jurisdicciones.",
+      "id": "p25-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué componente de la gobernanza de seguridad es responsable de definir los requisitos para el almacenamiento seguro de contraseñas y el uso de algoritmos de cifrado?",
+      "opciones": [
+        "a) Política de uso aceptable (AUP)",
+        "b) Estándares de seguridad",
+        "c) Plan de continuidad del negocio",
+        "d) Manual de procedimientos (playbook)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los estándares de seguridad son documentos formales que establecen requisitos como el almacenamiento seguro de contraseñas y el uso de algoritmos de cifrado, según lo descrito en el temario.",
+      "id": "p25-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una organización, un empleado accede a un sistema crítico usando credenciales de otro compañero sin registrar el evento en los logs de auditoría. ¿Qué principio del modelo CIA se ve comprometido?",
+      "opciones": [
+        "a) Confidencialidad, porque los datos podrían ser accedidos por personas no autorizadas.",
+        "b) Integridad, porque no se puede verificar el origen del acceso.",
+        "c) Disponibilidad, porque el sistema podría quedar inoperable.",
+        "d) No se compromete ningún principio, solo la trazabilidad de los eventos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La integridad se ve comprometida al no poder verificar el origen y la autenticidad del acceso, según el modelo CIA.",
+      "id": "p25-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de gestión de identidades y accesos (IAM) donde los permisos se asignan automáticamente según la clasificación de los datos (ej: secreto, confidencial, público). ¿Qué concepto de gobernanza de seguridad se está aplicando?",
+      "opciones": [
+        "a) Clasificación de datos y control de acceso obligatorio (MAC)",
+        "b) Control de acceso basado en roles (RBAC)",
+        "c) Gestión de cambios en el IAM",
+        "d) Política de uso aceptable (AUP)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Se está aplicando el concepto de clasificación de datos junto con control de acceso obligatorio (MAC), donde los permisos se asignan según la sensibilidad de los datos.",
+      "id": "p25-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol dentro de la gobernanza de seguridad es responsable de definir las políticas de clasificación de datos y asignar los niveles de sensibilidad correspondientes?",
+      "opciones": [
+        "a) Propietario de datos (data owner)",
+        "b) Controlador de datos (data controller)",
+        "c) Custodio de datos (data custodian)",
+        "d) Procesador de datos (data processor)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El custodio de datos (data custodian) es responsable de asignar etiquetas de sensibilidad a los datos y gestionar los controles de acceso para garantizar su confidencialidad e integridad, según lo descrito en el temario.",
+      "id": "p25-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol dentro de la gobernanza de seguridad es responsable de ejecutar las instrucciones del controlador de datos y manejar información confidencial siguiendo las políticas establecidas?",
+      "opciones": [
+        "a) Propietario de datos (Data Owner)",
+        "b) Procesador de datos (Data Processor)",
+        "c) Custodio de datos (Data Custodian)",
+        "d) Oficial de cumplimiento (Compliance Officer)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El procesador de datos (Data Processor) es quien ejecuta las instrucciones del controlador de datos y maneja información confidencial siguiendo las políticas establecidas, como una empresa externa de nóminas que procesa datos salariales.",
+      "id": "p25-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema donde los permisos de acceso a datos se asignan automáticamente según su clasificación (ej: secreto, confidencial, público). ¿Qué concepto de gobernanza de seguridad se está aplicando?",
+      "opciones": [
+        "Gobernanza centralizada.",
+        "Modelo de control de acceso basado en roles (RBAC).",
+        "Modelo de control de acceso obligatorio (MAC).",
+        "Procedimiento de desvinculación de personal (offboarding)."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El sistema descrito asigna permisos automáticamente según la clasificación de los datos, lo que corresponde al modelo de control de acceso basado en roles (RBAC).",
+      "id": "p25-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué rol dentro de la gobernanza de seguridad es responsable de supervisar todos los aspectos de la información y garantizar su seguridad y cumplimiento normativo?",
+      "opciones": [
+        "a) Controlador de datos (Data Controller)",
+        "b) Procesador de datos (Data Processor)",
+        "c) Custodio de datos (Data Custodian) o administrador de datos (Data Steward)",
+        "d) Propietario de datos (Data Owner)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El rol de **propietario de datos** (Data Owner) es el responsable final de supervisar todos los aspectos de la información, incluyendo su seguridad y cumplimiento normativo, según el temario.",
+      "id": "p25-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué rol dentro de la gobernanza de seguridad es responsable de definir los requisitos para la gestión segura de dispositivos móviles, incluyendo restricciones en la instalación de aplicaciones y el acceso a redes inalámbricas?",
+      "opciones": [
+        "a) El custodio de datos (data custodian)",
+        "b) El controlador de datos (data controller)",
+        "c) El propietario de datos (data owner)",
+        "d) El administrador de TI"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El propietario de datos es el rol de alto nivel que define los requisitos para la gestión segura de recursos tecnológicos, incluyendo dispositivos móviles y políticas de acceso.",
+      "id": "p25-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué rol dentro de la gestión de datos es responsable de asignar etiquetas de sensibilidad a los datos y gestionar los controles de acceso para garantizar su confidencialidad e integridad?",
+      "opciones": [
+        "Propietario de datos (data owner).",
+        "Controlador de datos (data controller).",
+        "Custodio de datos (data custodian).",
+        "Procesador de datos (data processor)."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El custodio de datos (data custodian) es responsable de asignar etiquetas de sensibilidad y gestionar los controles de acceso para proteger la confidencialidad e integridad de los datos.",
+      "id": "p25-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué rol dentro de la gobernanza de seguridad es responsable de definir cómo se utiliza la información dentro de una organización?",
+      "opciones": [
+        "a) Propietario de datos (Data Owner)",
+        "b) Controlador de datos (Data Controller)",
+        "c) Procesador de datos (Data Processor)",
+        "d) Custodio de datos (Data Custodian)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El rol de Controlador de datos (Data Controller) es el responsable de definir cómo se utiliza la información según las necesidades de la organización, mientras que el Propietario de datos supervisa su seguridad y el Procesador ejecuta las instrucciones.",
+      "id": "p25-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué diferencia principal existe entre el rol de 'propietario de datos' (data owner) y el de 'controlador de datos' (data controller)?",
+      "opciones": [
+        "El propietario de datos define cómo se utiliza la información, mientras que el controlador supervisa su seguridad.",
+        "El propietario de datos supervisa todos los aspectos de la información y es responsable final de su seguridad, mientras que el controlador define cómo se utiliza la información.",
+        "El controlador de datos asigna etiquetas de sensibilidad, mientras que el propietario gestiona los controles de acceso.",
+        "No hay diferencia, ambos roles son equivalentes en la gestión de datos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El propietario de datos es responsable de la seguridad y cumplimiento de los datos, mientras que el controlador define cómo se utiliza la información.",
+      "id": "p25-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. implementa un sistema de gestión de identidades y accesos (IAM) basado en roles (RBAC) para asignar permisos a sus empleados. Durante una auditoría interna, se detecta que un empleado de la filial europea accedió a un sistema financiero crítico de la sede en EE.UU. utilizando credenciales de un compañero que estaba de vacaciones, sin que el sistema IAM registrara este evento en los logs de auditoría. Según el temario, ¿qué componente específico de la gobernanza de seguridad debería ser reforzado para garantizar el cumplimiento de los requisitos de trazabilidad y no repudio en ambas jurisdicciones?",
+      "opciones": [
+        "a) Implementar un sistema de autenticación multifactor (MFA) obligatorio para todos los accesos a sistemas críticos.",
+        "b) Reforzar el rol del 'custodio de datos' (data custodian) para asignar etiquetas de sensibilidad y gestionar controles de acceso basados en dichas etiquetas.",
+        "c) Establecer un proceso formal de gestión de cambios (change management) que incluya la revisión de permisos asignados y la documentación de todas las modificaciones en el sistema IAM.",
+        "d) Documentar y auditar periódicamente los logs de auditoría del sistema IAM para garantizar que todos los eventos sean registrados, incluyendo accesos no autorizados o uso de credenciales compartidas."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario destaca la importancia de la documentación y auditoría de logs para garantizar trazabilidad y no repudio. Los logs de auditoría son esenciales para registrar todos los eventos de acceso y detectar actividades sospechosas, como el uso de credenciales compartidas.",
+      "id": "p25-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización multinacional con operaciones en la UE y EE.UU. implementa un sistema de gestión de identidades y accesos (IAM) basado en roles (RBAC) para asignar permisos. Durante una auditoría, se detecta que un empleado accedió a un sistema crítico usando credenciales de un compañero. Según el temario, ¿qué componente específico de la gobernanza de seguridad debería ser reforzado para garantizar el cumplimiento de los requisitos de trazabilidad y no repudio en ambas jurisdicciones?",
+      "opciones": [
+        "La política de uso aceptable (AUP).",
+        "El proceso de gestión de cambios (change management).",
+        "La documentación y los logs de auditoría del sistema IAM.",
+        "El estándar de cifrado para datos en tránsito."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de auditoría son esenciales para garantizar la trazabilidad y el no repudio, ya que registran quién accedió a los sistemas y qué acciones realizó, cumpliendo con requisitos normativos en ambas jurisdicciones.",
+      "id": "p25-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Security Policies",
+      "youtubeId": "5kY9kvzeWjA"
+    },
+    {
+      "titulo": "Security Standards",
+      "youtubeId": "jBvdRpXaomk"
+    },
+    {
+      "titulo": "Security Procedures",
+      "youtubeId": "vJINnOZyQNg"
+    },
+    {
+      "titulo": "Security Considerations",
+      "youtubeId": "4tGFraaP48Q"
+    },
+    {
+      "titulo": "Data Roles and Responsibilities",
+      "youtubeId": "gxNi-04yP8Q"
+    }
+  ]
+}

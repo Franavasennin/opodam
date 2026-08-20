@@ -1,0 +1,1404 @@
+{
+  "id": 21,
+  "titulo": "4.6 · Gestión de identidad y accesos",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "GESTIÓN DE IDENTIDAD Y ACCESOS (IAM) EN LA CIBERSEGURIDAD\n\nLa gestión de identidad y accesos (IAM, por sus siglas en inglés) es un proceso fundamental en ciberseguridad que garantiza que los usuarios tengan el nivel adecuado de acceso a los recursos necesarios, en el momento correcto y durante el tiempo preciso. Este proceso abarca desde la solicitud inicial de acceso hasta la revocación del mismo, pasando por ajustes intermedios como promociones, cambios de departamento o modificaciones en las responsabilidades laborales. IAM es esencial en entornos donde los usuarios acceden a aplicaciones y datos distribuidos en múltiples sistemas, ya sean dispositivos locales, centros de datos o entornos en la nube.\n\nEl ciclo de vida de IAM comienza con la creación de una cuenta de usuario y finaliza con su desactivación, un proceso que suele alinearse con las fases de incorporación (onboarding) y desvinculación (offboarding) de empleados. Durante este ciclo, se asignan permisos específicos basados en las necesidades del usuario, asegurando que no se otorguen privilegios excesivos. Por ejemplo, un nuevo empleado puede requerir acceso a correo electrónico, una aplicación principal y a internet, pero no necesariamente permisos de administrador. La asignación de permisos debe ser precisa: solo lo necesario para desempeñar el trabajo, evitando el acceso continuo o extendido innecesario.\n\nDentro de IAM, se gestionan múltiples elementos clave:\n\n- Nombre del usuario y sus atributos.\n- Permisos de grupo, que agrupan usuarios con roles similares para simplificar la administración.\n- Permisos individuales para aplicaciones específicas.\n- Registro y monitoreo de todas las actividades de acceso, lo que no solo mejora la seguridad sino que también puede ser un requisito regulatorio según la organización.\n\nUn aspecto crítico de IAM es la verificación de identidad (identity verification), especialmente durante la creación de cuentas. Este proceso, conocido como resolución, asegura que el usuario sea quien dice ser. La verificación puede incluir:\n\n- Proporcionar información conocida solo por el usuario, como contraseñas o respuestas a preguntas de seguridad.\n- Validación adicional mediante documentos oficiales, como pasaportes o licencias de conducir.\n- Reuniones en persona o verificaciones automatizadas que revisan informes crediticios o datos históricos.\n- Un proceso llamado atestación (attestation), donde se recopilan pruebas adicionales para confirmar la identidad del usuario.\n\n\nAUTENTICACIÓN Y AUTORIZACIÓN\n\nLa autenticación es el proceso mediante el cual un usuario demuestra su identidad al sistema, generalmente proporcionando un nombre de usuario y contraseña. Una vez autenticado, el sistema valida estas credenciales a través de un servidor de autenticación centralizado, como un concentrador VPN o un servidor de Active Directory. Si las credenciales son correctas, el usuario recibe acceso al recurso solicitado.\n\nLa autorización, por su parte, determina qué recursos y acciones están permitidos para el usuario autenticado. Este proceso se basa en políticas definidas previamente y puede implementarse mediante diversos protocolos y tecnologías.\n\n\nPROTOCOLOS DE AUTENTICACIÓN Y AUTORIZACIÓN\n\nLDAP (LIGHTWEIGHT DIRECTORY ACCESS PROTOCOL)\n\nLDAP es un protocolo estándar para acceder a directorios de datos en una red, basado en la especificación X.500 del ITU (Unión Internacional de Telecomunicaciones). Originalmente, el protocolo DAP (Directory Access Protocol) funcionaba con el modelo OSI, pero LDAP se desarrolló para ser más eficiente y compatible con diversos sistemas operativos.\n\nLDAP utiliza un formato estructurado para enumerar nombres distinguidos (distinguished names) en X.500, que comienza con un atributo, un signo igual y su valor. Por ejemplo, CN=NombreComún se refiere a un dispositivo o usuario. Esta estructura permite organizar los componentes de la red en un árbol de información de directorio (directory information tree), donde cada nodo puede representar países, organizaciones, departamentos o dispositivos individuales. Los objetos individuales en este árbol se denominan objetos hoja (leaf objects).\n\n\nSAML (SECURITY ASSERTION MARKUP LANGUAGE)\n\nSAML es un lenguaje de marcado que permite la autenticación de usuarios en bases de datos de terceros. En lugar de mantener una base de datos de usuarios propia, las organizaciones pueden delegar la autenticación a un proveedor externo. SAML es útil en entornos donde los usuarios acceden a múltiples servicios, pero su diseño original no está optimizado para dispositivos móviles.\n\nEl proceso básico de SAML involucra tres componentes:\n\n- Dispositivo del cliente (generalmente un navegador web).\n- Servidor de recursos al que se intenta acceder.\n- Servidor de autorización que valida las credenciales.\n\nCuando un usuario intenta acceder a un recurso sin estar autenticado, el servidor de recursos envía una solicitud SAML cifrada al servidor de autorización. El usuario proporciona sus credenciales, que son validadas por el servidor de autorización. Si son correctas, se genera un token SAML que el cliente puede presentar al servidor de recursos para obtener acceso.\n\n\nOAUTH\n\nOAuth es un marco de autorización diseñado para sistemas modernos y móviles. Aunque es un marco de autorización, no incluye autenticación, por lo que suele usarse junto con OpenID para combinar ambos procesos. OAuth permite a los usuarios otorgar acceso a recursos en cuentas de terceros sin compartir sus credenciales. Por ejemplo, una aplicación de terceros como Zapier puede solicitar acceso a recursos en Google Drive, y el usuario autoriza este acceso mediante OAuth.\n\n\nFEDERACIÓN DE IDENTIDADES\n\nLa federación de identidades permite el acceso a recursos sin necesidad de una base de datos de autenticación local. Los usuarios pueden autenticarse utilizando credenciales de proveedores externos como Twitter, Facebook o LinkedIn. Para que esto funcione, el sitio web debe establecer una relación de confianza con el proveedor de identidad, permitiendo a los usuarios iniciar sesión con sus cuentas existentes.\n\n\nCONTROLES DE ACCESO\n\nUna vez autenticado un usuario, los controles de acceso determinan qué recursos puede utilizar y qué acciones puede realizar. Existen varios modelos de control de acceso, cada uno con características y niveles de seguridad distintos.\n\n\nPRINCIPIOS BÁSICOS DE CONTROL DE ACCESO\n\nEl principio de menor privilegio (least privilege) es una práctica de seguridad fundamental que consiste en asignar a los usuarios solo los permisos necesarios para realizar su trabajo. Esto minimiza el riesgo de que un usuario malintencionado o un malware cause daños, ya que las acciones maliciosas estarían limitadas por los permisos del usuario.\n\n\nTIPOS DE CONTROLES DE ACCESO\n\nCONTROL DE ACCESO OBLIGATORIO (MANDATORY ACCESS CONTROL, MAC)\n\nEn el modelo MAC, los recursos se etiquetan con niveles de sensibilidad como confidencial, secreto o ultrasecreto. El administrador del sistema define qué usuarios tienen acceso a qué etiquetas. Este modelo es común en entornos de alta seguridad, donde la clasificación de datos es crítica.\n\n\nCONTROL DE ACCESO DISCRECIONAL (DISCRETIONARY ACCESS CONTROL, DAC)\n\nEn el modelo DAC, el propietario del recurso decide quién puede acceder a él y con qué permisos. Por ejemplo, si un usuario crea un archivo, puede establecer permisos de lectura, escritura o ejecución para otros usuarios. Este modelo ofrece flexibilidad pero puede ser menos seguro si los usuarios no configuran correctamente los permisos.\n\n\nCONTROL DE ACCESO BASADO EN ROLES (ROLE-BASED ACCESS CONTROL, RBAC)\n\nEl modelo RBAC asigna permisos basados en el rol del usuario dentro de la organización. Por ejemplo, los gerentes pueden tener acceso a ciertos datos, mientras que los empleados de envío y recepción tienen permisos diferentes. Los administradores crean grupos con permisos específicos y asignan usuarios a estos grupos, simplificando la gestión de accesos.\n\n\nCONTROL DE ACCESO BASADO EN REGLAS (RULE-BASED ACCESS CONTROL, RULE-BAC)\n\nEn este modelo, el administrador define reglas que determinan el acceso a los recursos. Estas reglas pueden incluir restricciones de tiempo, como permitir el acceso solo entre las 9:00 a.m. y las 5:00 p.m., o condiciones técnicas, como requerir el uso de un navegador específico. Cada regla se asocia con un objeto y se evalúa al intentar acceder a él.\n\n\nCONTROL DE ACCESO BASADO EN ATRIBUTOS (ATTRIBUTE-BASED ACCESS CONTROL, ABAC)\n\nEl modelo ABAC es más moderno y flexible, utilizando múltiples criterios para determinar el acceso. Estos criterios pueden incluir la dirección IP del usuario, la hora del día, la acción solicitada (lectura o escritura) y la relación del usuario con los datos. Los administradores pueden combinar estos atributos para crear reglas de acceso complejas y granulares.\n\n\nRESTRICCIONES DE ACCESO\n\nLas restricciones de acceso pueden aplicarse según el momento del día o la zona horaria del usuario. Por ejemplo:\n\n- Un laboratorio de formación puede ser inaccesible entre la medianoche y las 6:00 a.m.\n- Las salas de conferencias pueden tener acceso limitado después de las 8:00 p.m.\n- Las bases de datos de I+D pueden estar disponibles solo entre las 8:00 a.m. y las 6:00 p.m.\n\nEstas restricciones ayudan a reducir el riesgo de accesos no autorizados fuera del horario laboral.\n\n\nAUTENTICACIÓN MULTIFACTOR (MFA)\n\nLa autenticación multifactor (MFA) combina dos o más factores de autenticación para aumentar la seguridad. Los factores de autenticación se clasifican en categorías:\n\n- ALGO QUE SABES (something you know): Contraseñas, PIN o patrones.\n- ALGO QUE TIENES (something you have): Tarjetas inteligentes, llaves de seguridad USB, tokens de hardware o software, y dispositivos móviles.\n- ALGO QUE ERES (something you are): Biometría como huellas dactilares, reconocimiento facial o de voz.\n- DÓNDE ESTÁS (somewhere you are): Geolocalización basada en GPS o dirección IP.\n\nLa MFA reduce significativamente el riesgo de accesos no autorizados, ya que un atacante necesitaría comprometer múltiples factores para tener éxito. Por ejemplo, incluso si un atacante obtiene la contraseña de un usuario, necesitaría también el dispositivo móvil del usuario para recibir un código SMS o acceder a una app de autenticación.\n\n\nSEGURIDAD DE CONTRASEÑAS\n\nLas contraseñas siguen siendo un método común de autenticación, pero su seguridad depende de su complejidad y gestión. Para crear contraseñas seguras, se recomienda:\n\n- Utilizar una combinación de letras mayúsculas y minúsculas, números y caracteres especiales.\n- Evitar palabras comunes o información personal.\n- Usar frases largas en lugar de contraseñas cortas.\n- Establecer una longitud mínima de 8 caracteres, aunque muchos sistemas exigen 12 o más.\n\nLa entropía de una contraseña mide su imprevisibilidad y resistencia a ataques como fuerza bruta o spraying de contraseñas. Una contraseña con alta entropía es más difícil de adivinar.\n\n\nGESTIÓN DE CONTRASEÑAS\n\nLas contraseñas deben rotarse periódicamente según la política de la organización. Los plazos comunes son 30, 60 o 90 días, aunque en sistemas críticos pueden ser más cortos, como 15 o 7 días. Además, los sistemas suelen recordar el historial de contraseñas para evitar su reutilización.\n\nPara gestionar múltiples contraseñas de forma segura, se recomienda el uso de gestores de contraseñas. Estos gestores almacenan las contraseñas en una base de datos cifrada y requieren autenticación adicional para acceder a ellas. Muchos sistemas operativos incluyen gestores de contraseñas integrados, y existen soluciones de terceros y empresariales.\n\n\nAUTENTICACIÓN SIN CONTRASEÑA (PASSWORDLESS)\n\nLa autenticación sin contraseña elimina la necesidad de recordar contraseñas, utilizando métodos alternativos como:\n\n- Reconocimiento facial o de huellas dactilares en dispositivos móviles.\n- PIN o tarjetas inteligentes en sistemas operativos como Windows.\n- Tokens de hardware o software.\n\nEste enfoque reduce el riesgo de reutilización de contraseñas y simplifica el proceso de autenticación. Sin embargo, suele combinarse con otros factores de autenticación para mayor seguridad.\n\n\nPERMISOS TEMPORALES (JUST-IN-TIME PERMISSIONS)\n\nEn entornos empresariales, los permisos temporales permiten a los usuarios obtener acceso administrativo solo cuando es necesario y por un tiempo limitado. Este enfoque, conocido como just-in-time permissions, reduce el riesgo de accesos permanentes innecesarios. El proceso implica:\n\n- Solicitar permisos desde un centro de clearinghouse o bóveda de credenciales.\n- Crear credenciales temporales basadas en políticas de seguridad predefinidas.\n- Asignar estas credenciales al usuario por un período limitado.\n- Eliminar las credenciales temporales después de su uso.\n\nEsto asegura que las credenciales principales nunca se compartan y que los permisos se revocan automáticamente después de su uso."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\n  IAM[Gestión de Identidad y Accesos] -->|Incluye| Autenticacion[Autenticación y Autorización]\n  IAM -->|Incluye| ControlAcceso[Controles de Acceso]\n  IAM -->|Incluye| MFA[Autenticación Multifactor]\n  IAM -->|Incluye| Politicas[Políticas y Gestión]\n\n  Autenticacion -->|Protocolos| LDAP[LDAP]\n  Autenticacion -->|Protocolos| SAML[SAML]\n  Autenticacion -->|Protocolos| OAuth[OAuth]\n  Autenticacion -->|Federación| Federacion[Federación de Identidades]\n\n  ControlAcceso -->|Modelos| MAC[Control de Acceso Obligatorio MAC]\n  ControlAcceso -->|Modelos| DAC[Control de Acceso Discrecional DAC]\n  ControlAcceso -->|Modelos| RBAC[Control de Acceso Basado en Roles RBAC]\n  ControlAcceso -->|Modelos| RULEBAC[Control de Acceso Basado en Reglas RULE-BAC]\n  ControlAcceso -->|Modelos| ABAC[Control de Acceso Basado en Atributos ABAC]\n\n  MFA -->|Factores| AlgoQueSabes[Algo que sabes: contraseña, PIN]\n  MFA -->|Factores| AlgoQueTienes[Algo que tienes: token, tarjeta inteligente]\n  MFA -->|Factores| AlgoQueEres[Algo que eres: biometría]\n  MFA -->|Factores| DondeEstas[Dónde estás: geolocalización]\n\n  Politicas -->|Gestión de contraseñas| Rotacion[Rotación de contraseñas]\n  Politicas -->|Gestión de contraseñas| Gestor[Gestores de contraseñas]\n  Politicas -->|Autenticación| Passwordless[Autenticación sin contraseña]\n  Politicas -->|Permisos| Temporales[Permisos temporales JIT]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc21-01",
+      "pregunta": "¿Qué es IAM y cuál es su objetivo principal en ciberseguridad?",
+      "respuesta": "IAM (Identity and Access Management) es un proceso que gestiona el acceso de usuarios a recursos en sistemas, asegurando que tengan los permisos adecuados en el momento correcto. Su objetivo es asignar solo los accesos necesarios para desempeñar el trabajo, evitando privilegios excesivos."
+    },
+    {
+      "id": "fc21-02",
+      "pregunta": "¿Cuáles son las fases principales del ciclo de vida de IAM?",
+      "respuesta": "El ciclo de vida de IAM comienza con la creación de una cuenta de usuario (durante el onboarding) y finaliza con su desactivación (durante el offboarding). Incluye ajustes intermedios como promociones, cambios de departamento o modificaciones en responsabilidades."
+    },
+    {
+      "id": "fc21-03",
+      "pregunta": "¿Qué es la verificación de identidad (identity verification) en IAM y por qué es importante?",
+      "respuesta": "Es el proceso de confirmar que un usuario es quien dice ser durante la creación de una cuenta. Es crucial para evitar asignar permisos a usuarios no autorizados. Incluye validación con documentos oficiales, preguntas de seguridad o reuniones en persona."
+    },
+    {
+      "id": "fc21-04",
+      "pregunta": "¿Qué es LDAP y en qué se basa su estructura?",
+      "respuesta": "LDAP (Lightweight Directory Access Protocol) es un protocolo para acceder a directorios de datos en red, basado en la especificación X.500 del ITU. Su estructura utiliza nombres distinguidos (ej. CN=NombreComún) y organiza los componentes en un árbol de información de directorio."
+    },
+    {
+      "id": "fc21-05",
+      "pregunta": "¿Cómo funciona el proceso de autenticación y autorización con SAML?",
+      "respuesta": "SAML (Security Assertion Markup Language) permite autenticar usuarios en bases de datos de terceros. El proceso involucra: 1) El cliente solicita acceso a un recurso, 2) El servidor de recursos redirige al servidor de autorización, 3) El usuario proporciona credenciales, 4) El servidor de autorización valida y genera un token SAML, 5) El cliente presenta el token al servidor de recursos para obtener acceso."
+    },
+    {
+      "id": "fc21-06",
+      "pregunta": "¿Qué es OAuth y cómo se diferencia de SAML?",
+      "respuesta": "OAuth es un marco de autorización diseñado para sistemas modernos y móviles, que permite a los usuarios otorgar acceso a recursos en cuentas de terceros sin compartir credenciales. A diferencia de SAML, OAuth no incluye autenticación, por lo que suele usarse con OpenID."
+    },
+    {
+      "id": "fc21-07",
+      "pregunta": "¿Qué es la federación de identidades y qué beneficios ofrece?",
+      "respuesta": "La federación de identidades permite el acceso a recursos usando credenciales de proveedores externos (ej. Twitter, Facebook). Beneficios: evita la necesidad de una base de datos de autenticación local y simplifica el inicio de sesión para los usuarios."
+    },
+    {
+      "id": "fc21-08",
+      "pregunta": "¿Qué es el principio de menor privilegio (least privilege) en controles de acceso?",
+      "respuesta": "Es una práctica de seguridad que consiste en asignar a los usuarios solo los permisos necesarios para realizar su trabajo, evitando privilegios adicionales como acceso de administrador. Esto minimiza el riesgo de daños en caso de compromiso de una cuenta."
+    },
+    {
+      "id": "fc21-09",
+      "pregunta": "¿Cuáles son los cinco modelos principales de control de acceso?",
+      "respuesta": "1) Control de Acceso Obligatorio (MAC), 2) Control de Acceso Discrecional (DAC), 3) Control de Acceso Basado en Roles (RBAC), 4) Control de Acceso Basado en Reglas (RULE-BAC), 5) Control de Acceso Basado en Atributos (ABAC)."
+    },
+    {
+      "id": "fc21-10",
+      "pregunta": "¿Qué es la autenticación multifactor (MFA) y cuáles son sus factores principales?",
+      "respuesta": "MFA combina dos o más factores de autenticación para aumentar la seguridad. Los factores principales son: algo que sabes (contraseña), algo que tienes (token), algo que eres (biometría) y dónde estás (geolocalización)."
+    },
+    {
+      "id": "fc21-11",
+      "pregunta": "¿Qué recomendaciones se dan para crear contraseñas seguras?",
+      "respuesta": "Usar combinaciones de letras mayúsculas/minúsculas, números y caracteres especiales; evitar palabras comunes o información personal; usar frases largas; establecer una longitud mínima de 8-12 caracteres; y priorizar la entropía para aumentar la imprevisibilidad."
+    },
+    {
+      "id": "fc21-12",
+      "pregunta": "¿Qué son los permisos temporales (just-in-time permissions) y cuál es su beneficio?",
+      "respuesta": "Son permisos administrativos asignados temporalmente solo cuando son necesarios. Beneficios: reducen el riesgo de accesos permanentes innecesarios y evitan compartir credenciales principales, ya que se crean credenciales temporales que se eliminan después de su uso."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un factor de autenticación en el contexto de MFA?",
+      "opciones": [
+        "Algo que sabes (ej. contraseña)",
+        "Algo que tienes (ej. token de hardware)",
+        "Algo que eres (ej. huella dactilar)",
+        "Algo que posees (ej. dirección MAC)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los factores de autenticación en MFA se clasifican en cuatro categorías: algo que sabes, algo que tienes, algo que eres y dónde estás. La dirección MAC no es un factor de autenticación.",
+      "id": "p21-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el modelo de control de acceso RBAC, los permisos se asignan según:",
+      "opciones": [
+        "La sensibilidad de los datos (ej. confidencial, secreto)",
+        "El rol del usuario dentro de la organización",
+        "Las reglas definidas por el administrador",
+        "Los atributos del usuario y del recurso"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "RBAC (Role-Based Access Control) asigna permisos basados en el rol del usuario, simplificando la gestión al agrupar usuarios con funciones similares.",
+      "id": "p21-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo permite a un usuario autenticarse en múltiples servicios sin compartir credenciales con el proveedor de servicios?",
+      "opciones": [
+        "LDAP",
+        "SAML",
+        "OAuth",
+        "Kerberos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "OAuth es un marco de autorización que permite a los usuarios otorgar acceso a recursos en cuentas de terceros sin compartir sus credenciales.",
+      "id": "p21-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para que un usuario solo pueda acceder a una base de datos entre las 8:00 a.m. y las 6:00 p.m. ¿Qué tipo de control de acceso está aplicando?",
+      "opciones": [
+        "Control de acceso basado en roles (RBAC)",
+        "Control de acceso basado en reglas (RULE-BAC)",
+        "Control de acceso obligatorio (MAC)",
+        "Control de acceso discrecional (DAC)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "RULE-BAC permite definir reglas como restricciones de tiempo para el acceso a recursos, como en este escenario.",
+      "id": "p21-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes elementos NO forma parte del ciclo de vida de IAM según el temario?",
+      "opciones": [
+        "Creación de cuentas de usuario",
+        "Asignación de permisos basados en necesidades",
+        "Desactivación de cuentas (offboarding)",
+        "Cifrado de datos en tránsito"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El ciclo de vida de IAM incluye la creación, asignación de permisos y desactivación de cuentas, pero no el cifrado de datos en tránsito, que es un proceso de seguridad adicional.",
+      "id": "p21-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un usuario intenta acceder a un recurso interno desde una ubicación geográfica no habitual. El sistema deniega el acceso aunque las credenciales sean correctas. ¿Qué factor de autenticación adicional está aplicando el sistema?",
+      "opciones": [
+        "Algo que sabes",
+        "Algo que tienes",
+        "Dónde estás",
+        "Algo que eres"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El factor 'dónde estás' (geolocalización) se utiliza para restringir el acceso basado en la ubicación del usuario, como en este escenario.",
+      "id": "p21-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el protocolo SAML, ¿cuál es el componente que genera el token de autenticación después de validar las credenciales del usuario?",
+      "opciones": [
+        "Servidor de recursos",
+        "Servidor de autorización",
+        "Dispositivo del cliente",
+        "Directorio LDAP"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servidor de autorización valida las credenciales y genera el token SAML que el cliente presenta al servidor de recursos para obtener acceso.",
+      "id": "p21-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado de una empresa recibe permisos temporales de administrador para instalar un software crítico, pero estos permisos se revocan automáticamente después de 30 minutos. ¿Qué práctica de IAM está implementando la empresa?",
+      "opciones": [
+        "Principio de menor privilegio",
+        "Permisos just-in-time (JIT)",
+        "Autenticación multifactor (MFA)",
+        "Control de acceso basado en atributos (ABAC)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los permisos just-in-time (JIT) asignan acceso temporal solo cuando es necesario y lo revocan automáticamente después, reduciendo el riesgo de accesos permanentes.",
+      "id": "p21-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué modelo de control de acceso permite al propietario de un archivo decidir quién puede acceder a él y con qué permisos?",
+      "opciones": [
+        "MAC (Control de Acceso Obligatorio)",
+        "RBAC (Control de Acceso Basado en Roles)",
+        "DAC (Control de Acceso Discrecional)",
+        "ABAC (Control de Acceso Basado en Atributos)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "DAC (Discretionary Access Control) permite al propietario del recurso decidir los permisos de acceso, como en el ejemplo de un archivo.",
+      "id": "p21-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema donde los usuarios deben presentar tanto una tarjeta inteligente como su huella dactilar para acceder a áreas restringidas. ¿Qué principio de seguridad está aplicando?",
+      "opciones": [
+        "Principio de menor privilegio",
+        "Autenticación multifactor (MFA)",
+        "Control de acceso obligatorio (MAC)",
+        "Federación de identidades"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La combinación de tarjeta inteligente (algo que tienes) y huella dactilar (algo que eres) es un ejemplo de autenticación multifactor (MFA), que aumenta la seguridad al requerir múltiples factores.",
+      "id": "p21-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un modelo de control de acceso mencionado en el temario?",
+      "opciones": [
+        "Control de Acceso Basado en Atributos (ABAC)",
+        "Control de Acceso Basado en Reglas (RULE-BAC)",
+        "Control de Acceso Basado en Necesidad (NBAC)",
+        "Control de Acceso Discrecional (DAC)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona ABAC, RULE-BAC, DAC y MAC como modelos de control de acceso, pero no incluye NBAC.",
+      "id": "p21-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de MFA, si un sistema requiere que el usuario ingrese una contraseña y además escanee su huella dactilar, ¿qué factores de autenticación está utilizando?",
+      "opciones": [
+        "Algo que sabes y algo que eres",
+        "Algo que tienes y algo que eres",
+        "Algo que sabes y algo que tienes",
+        "Algo que eres y donde estás"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La contraseña es 'algo que sabes' y la huella dactilar es 'algo que eres', según la clasificación de factores de autenticación en el temario.",
+      "id": "p21-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para que un usuario pueda acceder a un archivo solo si su dirección IP pertenece a la red interna de la empresa. ¿Qué modelo de control de acceso está aplicando?",
+      "opciones": [
+        "Control de Acceso Basado en Atributos (ABAC)",
+        "Control de Acceso Basado en Roles (RBAC)",
+        "Control de Acceso Discrecional (DAC)",
+        "Control de Acceso Obligatorio (MAC)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "ABAC utiliza múltiples criterios, como la dirección IP, para determinar el acceso, según lo descrito en el temario.",
+      "id": "p21-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo de autenticación permite a un usuario iniciar sesión en múltiples servicios utilizando credenciales de un proveedor externo como Google o Facebook?",
+      "opciones": [
+        "SAML",
+        "LDAP",
+        "OAuth",
+        "Federación de identidades"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La federación de identidades permite autenticarse con proveedores externos sin mantener una base de datos local, como se explica en el temario.",
+      "id": "p21-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un usuario intenta acceder a un recurso crítico desde una ubicación geográfica inusual. El sistema deniega el acceso aunque las credenciales sean correctas. ¿Qué principio de seguridad está aplicando el sistema?",
+      "opciones": [
+        "Principio de menor privilegio",
+        "Principio de defensa en profundidad",
+        "Principio de confidencialidad",
+        "Principio de integridad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El sistema aplica defensa en profundidad al combinar autenticación con verificación de ubicación geográfica, un concepto implícito en el temario.",
+      "id": "p21-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el ciclo de vida de IAM, ¿qué fase NO está incluida según el temario?",
+      "opciones": [
+        "Creación de la cuenta de usuario",
+        "Asignación de permisos temporales",
+        "Rotación automática de contraseñas",
+        "Desactivación de la cuenta"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona la creación, asignación de permisos y desactivación como fases del ciclo de vida de IAM, pero no la rotación automática de contraseñas.",
+      "id": "p21-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado recibe permisos de administrador para instalar un software crítico, pero estos permisos expiran automáticamente después de 2 horas. ¿Qué práctica de IAM está implementando la empresa?",
+      "opciones": [
+        "Permisos temporales (just-in-time permissions)",
+        "Autenticación multifactor (MFA)",
+        "Control de acceso basado en roles (RBAC)",
+        "Principio de menor privilegio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los permisos temporales (just-in-time permissions) asignan acceso solo cuando es necesario y por un tiempo limitado, como describe el temario.",
+      "id": "p21-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué elemento NO forma parte del proceso de verificación de identidad (identity verification) según el temario?",
+      "opciones": [
+        "Proporcionar información conocida solo por el usuario",
+        "Validación mediante documentos oficiales",
+        "Uso de contraseñas compartidas",
+        "Atestación (attestation)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario describe la verificación de identidad mediante información conocida, documentos oficiales y atestación, pero no menciona contraseñas compartidas.",
+      "id": "p21-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un sistema de control de acceso permite a los usuarios acceder a un recurso solo si su rol en la organización coincide con el permiso requerido. ¿Qué modelo de control de acceso está utilizando?",
+      "opciones": [
+        "Control de Acceso Basado en Roles (RBAC)",
+        "Control de Acceso Discrecional (DAC)",
+        "Control de Acceso Basado en Atributos (ABAC)",
+        "Control de Acceso Obligatorio (MAC)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "RBAC asigna permisos según el rol del usuario, como se detalla en el temario.",
+      "id": "p21-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para que los usuarios solo puedan acceder a un recurso entre las 9:00 a.m. y las 5:00 p.m. ¿Qué tipo de control de acceso está aplicando?",
+      "opciones": [
+        "Control de Acceso Basado en Reglas (RULE-BAC)",
+        "Control de Acceso Basado en Roles (RBAC)",
+        "Control de Acceso Discrecional (DAC)",
+        "Control de Acceso Obligatorio (MAC)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "RULE-BAC permite definir reglas como restricciones de tiempo, como se menciona en el temario.",
+      "id": "p21-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes modelos de control de acceso NO se basa en la clasificación de sensibilidad de los recursos?",
+      "opciones": [
+        "a) Control de Acceso Obligatorio (MAC)",
+        "b) Control de Acceso Discrecional (DAC)",
+        "c) Control de Acceso Basado en Roles (RBAC)",
+        "d) Control de Acceso Basado en Atributos (ABAC)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "RBAC asigna permisos según el rol del usuario en la organización, no según la clasificación de sensibilidad de los recursos (característico de MAC).",
+      "id": "p21-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de autenticación multifactor (MFA), si un usuario debe proporcionar su contraseña y además responder a una pregunta de seguridad predeterminada, ¿qué tipo de factores de autenticación está utilizando?",
+      "opciones": [
+        "a) Algo que sabe (something you know)",
+        "b) Algo que tiene (something you have)",
+        "c) Algo que es (something you are)",
+        "d) Combinación de algo que sabe y algo que es"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Ambos son factores de tipo 'algo que sabe' (contraseña y respuesta de seguridad), por lo que no cumplen con el requisito de MFA de combinar diferentes categorías.",
+      "id": "p21-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para que un usuario solo pueda acceder a un recurso si su dirección IP pertenece a la red interna de la empresa Y si su rol en el sistema es 'desarrollador'. ¿Qué modelo de control de acceso está aplicando?",
+      "opciones": [
+        "a) Control de Acceso Basado en Reglas (RULE-BAC)",
+        "b) Control de Acceso Basado en Atributos (ABAC)",
+        "c) Control de Acceso Discrecional (DAC)",
+        "d) Control de Acceso Obligatorio (MAC)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "ABAC utiliza múltiples atributos (como dirección IP y rol) para determinar el acceso, permitiendo reglas más complejas y granulares.",
+      "id": "p21-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo de autenticación permite a un usuario iniciar sesión en múltiples servicios utilizando credenciales de un proveedor externo como Google, sin compartir su contraseña con el proveedor de servicios?",
+      "opciones": [
+        "a) SAML",
+        "b) LDAP",
+        "c) OAuth",
+        "d) RADIUS"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "OAuth es un marco de autorización que permite delegar acceso a recursos en terceros sin compartir credenciales, comúnmente usado con OpenID para autenticación.",
+      "id": "p21-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado recibe permisos temporales de administrador para instalar un software crítico, pero estos permisos se revocan automáticamente después de 15 minutos. ¿Qué práctica de IAM está implementando la empresa?",
+      "opciones": [
+        "a) Principio de menor privilegio",
+        "b) Permisos just-in-time (JIT)",
+        "c) Autenticación multifactor (MFA)",
+        "d) Control de acceso basado en roles (RBAC)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los permisos just-in-time (JIT) asignan acceso temporal y limitado solo cuando es necesario, revocándose automáticamente tras su uso.",
+      "id": "p21-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de autenticación sin contraseña (passwordless), ¿cuál de los siguientes métodos NO se considera un factor de autenticación válido según el temario?",
+      "opciones": [
+        "a) Reconocimiento facial en un dispositivo móvil",
+        "b) Uso de un PIN en una tarjeta inteligente",
+        "c) Ingreso de una contraseña temporal enviada por SMS",
+        "d) Huella dactilar en un lector biométrico"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La autenticación sin contraseña elimina el uso de contraseñas tradicionales, incluyendo las temporales como códigos SMS. Los métodos válidos son factores biométricos, PINs o tarjetas inteligentes.",
+      "id": "p21-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un sistema de control de acceso permite a los usuarios acceder a un recurso solo si su dirección IP coincide con la de la oficina principal Y si el acceso ocurre entre las 9:00 a.m. y las 5:00 p.m. ¿Qué modelo de control de acceso está utilizando?",
+      "opciones": [
+        "a) Control de Acceso Basado en Reglas (RULE-BAC)",
+        "b) Control de Acceso Basado en Atributos (ABAC)",
+        "c) Control de Acceso Discrecional (DAC)",
+        "d) Control de Acceso Obligatorio (MAC)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "RULE-BAC permite definir reglas específicas como restricciones de tiempo e IP para determinar el acceso a los recursos.",
+      "id": "p21-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué elemento NO forma parte del proceso de verificación de identidad (identity verification) durante la creación de cuentas?",
+      "opciones": [
+        "a) Proporcionar información conocida solo por el usuario, como contraseñas o respuestas a preguntas de seguridad",
+        "b) Validación mediante documentos oficiales como pasaportes o licencias de conducir",
+        "c) Uso exclusivo de biometría sin ningún otro método complementario",
+        "d) Reuniones en persona o verificaciones automatizadas que revisan informes crediticios"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que la verificación de identidad puede incluir métodos como contraseñas, documentos oficiales o verificaciones automatizadas, pero no especifica el uso exclusivo de biometría sin otros métodos complementarios.",
+      "id": "p21-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un factor de autenticación válido en el contexto de MFA según el temario?",
+      "opciones": [
+        "a) Huella dactilar",
+        "b) Dirección MAC del dispositivo",
+        "c) Tarjeta inteligente",
+        "d) Reconocimiento facial"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La dirección MAC no se considera un factor de autenticación en MFA, ya que no cumple con las categorías tradicionales (algo que sabes, tienes, eres o dónde estás).",
+      "id": "p21-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para que un usuario pueda acceder a un archivo solo si su rol en la organización es 'gerente' Y si el archivo está etiquetado como 'confidencial'. ¿Qué modelos de control de acceso están combinados en este escenario?",
+      "opciones": [
+        "a) RBAC y MAC",
+        "b) DAC y ABAC",
+        "c) RULE-BAC y RBAC",
+        "d) MAC y ABAC"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "RBAC asigna permisos según el rol del usuario, mientras que MAC utiliza etiquetas de sensibilidad para los recursos, ambos modelos están combinados en este escenario.",
+      "id": "p21-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué elemento NO forma parte de los atributos típicos que se gestionan durante el ciclo de vida de una cuenta de usuario?",
+      "opciones": [
+        "a) Nombre completo del usuario",
+        "b) Dirección IP del dispositivo desde el que se accede",
+        "c) Departamento o área funcional del usuario",
+        "d) Correo electrónico corporativo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que durante el ciclo de vida de IAM se gestionan elementos como el nombre del usuario, sus permisos de grupo y permisos individuales, pero no incluye la dirección IP del dispositivo como un atributo típico del usuario.",
+      "id": "p21-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el modelo RBAC, los permisos se asignan según:",
+      "opciones": [
+        "a) La clasificación de sensibilidad del recurso",
+        "b) El rol del usuario en la organización",
+        "c) Las reglas definidas por el administrador",
+        "d) La geolocalización del usuario"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "RBAC (Role-Based Access Control) asigna permisos basados en el rol del usuario dentro de la organización, simplificando la gestión de accesos.",
+      "id": "p21-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué elemento NO forma parte de los protocolos de autenticación y autorización mencionados en la sección correspondiente?",
+      "opciones": [
+        "a. LDAP",
+        "b. SAML",
+        "c. OAuth",
+        "d. RADIUS"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona LDAP, SAML y OAuth como protocolos clave de autenticación y autorización, pero RADIUS no es incluido en la sección específica sobre estos protocolos.",
+      "id": "p21-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para que un usuario solo pueda acceder a un recurso entre las 9:00 a.m. y las 5:00 p.m. ¿Qué modelo de control de acceso está aplicando?",
+      "opciones": [
+        "a) MAC (Mandatory Access Control)",
+        "b) DAC (Discretionary Access Control)",
+        "c) RBAC (Role-Based Access Control)",
+        "d) Rule-BAC (Rule-Based Access Control)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Rule-BAC permite definir reglas de acceso, como restricciones de tiempo, para determinar cuándo un usuario puede acceder a un recurso.",
+      "id": "p21-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué elemento NO forma parte de los permisos típicos que se gestionan durante el ciclo de vida de una cuenta de usuario?",
+      "opciones": [
+        "a) Permisos de grupo basados en roles organizacionales",
+        "b) Permisos individuales para aplicaciones específicas",
+        "c) Permisos de lectura/escritura en archivos del sistema operativo",
+        "d) Permisos de acceso geográfico según la ubicación del usuario"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona que durante el ciclo de vida de IAM se gestionan permisos de grupo, permisos individuales para aplicaciones y registro de actividades, pero no incluye permisos de acceso geográfico como elemento típico gestionado.",
+      "id": "p21-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿cuál de los siguientes protocolos NO se utiliza para la autorización en entornos de federación de identidades?",
+      "opciones": [
+        "a) OAuth",
+        "b) SAML",
+        "c) LDAP",
+        "d) OpenID Connect"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "LDAP es un protocolo para acceder a directorios de datos, no está diseñado para autorización en federación de identidades, a diferencia de OAuth, SAML y OpenID Connect que sí se utilizan en este contexto.",
+      "id": "p21-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el protocolo SAML, ¿qué componente genera el token de autenticación después de validar las credenciales del usuario?",
+      "opciones": [
+        "a) El servidor de recursos",
+        "b) El servidor de autorización",
+        "c) El dispositivo del cliente",
+        "d) El proveedor de identidad externo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En SAML, el servidor de autorización valida las credenciales y genera el token SAML que el cliente presenta al servidor de recursos.",
+      "id": "p21-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué modelo de control de acceso requiere que un administrador asigne niveles de sensibilidad a los recursos y defina qué usuarios pueden acceder a cada nivel?",
+      "opciones": [
+        "a) Control de Acceso Discrecional (DAC)",
+        "b) Control de Acceso Obligatorio (MAC)",
+        "c) Control de Acceso Basado en Roles (RBAC)",
+        "d) Control de Acceso Basado en Reglas (Rule-BAC)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El modelo MAC asigna niveles de sensibilidad a los recursos (como 'confidencial', 'secreto' o 'ultrasecreto') y el administrador define qué usuarios pueden acceder a cada nivel, basado en políticas estrictas.",
+      "id": "p21-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema de control de acceso donde los usuarios pueden acceder a un recurso crítico solo si cumplen TODAS las siguientes condiciones: (1) su rol en la organización es 'analista de seguridad', (2) el acceso ocurre desde una dirección IP registrada en el rango de la oficina central (192.168.1.0/24), (3) el acceso se realiza entre las 8:00 a.m. y 6:00 p.m. en horario laboral de la empresa, y (4) el dispositivo utilizado tiene un certificado de seguridad válido emitido por la PKI interna. ¿Qué modelo(s) de control de acceso está(n) combinando en este escenario?",
+      "opciones": [
+        "a) RBAC y ABAC, con restricciones de tiempo y geolocalización",
+        "b) MAC y DAC, con autenticación basada en roles y atributos",
+        "c) Rule-BAC y ABAC, con permisos basados en reglas y atributos dinámicos",
+        "d) RBAC y Rule-BAC, con autenticación basada en roles y condiciones temporales"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario combina RBAC (asignación de permisos según el rol 'analista de seguridad') con ABAC (atributos como dirección IP, horario laboral y certificado de dispositivo), junto con restricciones de tiempo y geolocalización que son características típicas de Rule-BAC.",
+      "id": "p21-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un sistema de control de acceso permite a los usuarios acceder a un recurso solo si su dirección IP coincide con la de la oficina principal Y si el rol del usuario es 'desarrollador'. ¿Qué modelos de control de acceso están combinados en este escenario?",
+      "opciones": [
+        "a) RBAC y Rule-BAC",
+        "b) MAC y ABAC",
+        "c) DAC y RBAC",
+        "d) ABAC y DAC"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario combina RBAC (basado en roles) y Rule-BAC (basado en reglas como la dirección IP), aplicando múltiples criterios para el acceso.",
+      "id": "p21-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto de los modelos de control de acceso, ¿qué modelo se caracteriza por permitir que el propietario de un recurso decida quién puede acceder a él y con qué permisos?",
+      "opciones": [
+        "Control de Acceso Basado en Roles (RBAC)",
+        "Control de Acceso Discrecional (DAC)",
+        "Control de Acceso Obligatorio (MAC)",
+        "Control de Acceso Basado en Reglas (RULE-BAC)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El modelo DAC permite que el propietario del recurso (usuario) defina permisos de acceso, como se menciona en el temario.",
+      "id": "p21-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué protocolo NO está diseñado para la federación de identidades ni para la autenticación en sistemas distribuidos?",
+      "opciones": [
+        "a. LDAP",
+        "b. SAML",
+        "c. OAuth",
+        "d. RADIUS"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "LDAP, SAML y OAuth están diseñados para entornos de autenticación y autorización distribuidos o federados. RADIUS, aunque se usa para autenticación, está más orientado a conexiones de red como VPNs y no para federación de identidades.",
+      "id": "p21-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para que un usuario solo pueda acceder a un recurso si su dirección IP pertenece a la red interna de la empresa Y si el acceso ocurre entre las 9:00 a.m. y las 5:00 p.m. ¿Qué modelo(s) de control de acceso está(n) combinando en este escenario?",
+      "opciones": [
+        "RBAC y ABAC",
+        "RULE-BAC y ABAC",
+        "DAC y MAC",
+        "MAC y RBAC"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El modelo RULE-BAC permite definir reglas como restricciones de tiempo e IP, mientras que ABAC utiliza múltiples atributos (dirección IP y horario) para determinar el acceso.",
+      "id": "p21-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el protocolo SAML, ¿qué componente es responsable de generar el token de autenticación después de validar las credenciales del usuario?",
+      "opciones": [
+        "Servidor de recursos",
+        "Servidor de autorización",
+        "Dispositivo del cliente",
+        "Proveedor de identidad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el temario, el servidor de autorización valida las credenciales y genera el token SAML que el cliente presenta al servidor de recursos.",
+      "id": "p21-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué elemento NO forma parte de los atributos típicos que se gestionan durante el ciclo de vida de una cuenta de usuario según el temario?",
+      "opciones": [
+        "Nombre del usuario",
+        "Permisos de grupo",
+        "Huella dactilar biométrica",
+        "Registro de actividades de acceso"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona atributos como nombre, permisos y registros de actividad, pero no incluye datos biométricos como la huella dactilar en este contexto.",
+      "id": "p21-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema donde los usuarios deben autenticarse con su contraseña y, adicionalmente, presentar un token de hardware conectado a un puerto USB. ¿Qué principio de seguridad está aplicando este sistema?",
+      "opciones": [
+        "Principio de menor privilegio",
+        "Autenticación multifactor (MFA)",
+        "Control de acceso basado en roles (RBAC)",
+        "Autenticación sin contraseña (passwordless)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La combinación de contraseña (algo que sabes) y token de hardware (algo que tienes) es un ejemplo claro de MFA, que aumenta la seguridad mediante múltiples factores.",
+      "id": "p21-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué elemento NO forma parte de los factores de autenticación MFA mencionados?",
+      "opciones": [
+        "a) Algo que sabes (contraseñas o PIN)",
+        "b) Algo que tienes (token de hardware o dispositivo móvil)",
+        "c) Algo que ves (imágenes o códigos visuales)",
+        "d) Dónde estás (geolocalización o dirección IP)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los factores de autenticación MFA según el temario incluyen 'algo que sabes', 'algo que tienes', 'algo que eres' (biometría) y 'dónde estás' (geolocalización), pero no mencionan 'algo que ves' como un factor válido.",
+      "id": "p21-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para que un usuario solo pueda acceder a un archivo si su rol en la organización es 'gerente' Y si el archivo está etiquetado como 'confidencial'. ¿Qué modelos de control de acceso están combinados en este escenario?",
+      "opciones": [
+        "RBAC y MAC",
+        "DAC y ABAC",
+        "RULE-BAC y DAC",
+        "MAC y ABAC"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "RBAC asigna permisos según el rol del usuario ('gerente'), mientras que MAC utiliza etiquetas de sensibilidad ('confidencial') para restringir el acceso.",
+      "id": "p21-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la verificación de identidad durante la creación de cuentas, ¿qué método NO se considera parte del proceso de resolución según el temario?",
+      "opciones": [
+        "Proporcionar una contraseña conocida",
+        "Validación mediante documentos oficiales",
+        "Uso de un certificado digital emitido por una PKI",
+        "Reunión en persona con el usuario"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona la validación con documentos oficiales y reuniones en persona como parte de la resolución, pero no incluye certificados digitales en este contexto.",
+      "id": "p21-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema donde los usuarios deben autenticarse con su huella dactilar y, adicionalmente, responder a una pregunta de seguridad predeterminada. ¿Qué tipo de factores de autenticación está utilizando este sistema?",
+      "opciones": [
+        "Algo que eres y algo que sabes",
+        "Algo que tienes y algo que eres",
+        "Algo que sabes y algo que tienes",
+        "Algo que eres y algo que haces"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La huella dactilar corresponde a 'algo que eres' (biometría), y la pregunta de seguridad a 'algo que sabes' (conocimiento), cumpliendo con dos factores de MFA.",
+      "id": "p21-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿cuál de los siguientes protocolos NO está diseñado para la autenticación ni para la autorización en sistemas distribuidos?",
+      "opciones": [
+        "a) LDAP",
+        "b) SAML",
+        "c) OAuth",
+        "d) FTP"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El protocolo FTP (File Transfer Protocol) está diseñado para la transferencia de archivos, no para autenticación ni autorización en sistemas distribuidos como LDAP, SAML u OAuth.",
+      "id": "p21-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la autenticación multifactor (MFA), ¿qué factor NO está incluido en las categorías definidas por el temario?",
+      "opciones": [
+        "a) Algo que sabes (contraseña)",
+        "b) Algo que tienes (token de hardware)",
+        "c) Algo que eres (biometría)",
+        "d) Algo que posees (documento de identidad físico)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario clasifica los factores de MFA en 'algo que sabes', 'algo que tienes', 'algo que eres' y 'dónde estás', sin incluir 'documento de identidad físico' como factor.",
+      "id": "p21-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para que un usuario solo pueda acceder a un recurso si su dirección IP pertenece a la red interna de la empresa Y si el rol del usuario es 'desarrollador'. ¿Qué modelos de control de acceso están combinando en este escenario?",
+      "opciones": [
+        "a) RBAC y Rule-BAC",
+        "b) DAC y ABAC",
+        "c) MAC y RBAC",
+        "d) Rule-BAC y ABAC"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El modelo RBAC asigna permisos según el rol del usuario, mientras que Rule-BAC aplica reglas como restricciones de dirección IP. Ambos se combinan en este escenario.",
+      "id": "p21-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué protocolo NO está diseñado para la federación de identidades ni para la autenticación en sistemas distribuidos?",
+      "opciones": [
+        "a) SAML",
+        "b) OAuth",
+        "c) LDAP",
+        "d) Kerberos"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona SAML, OAuth y LDAP como protocolos para federación o autenticación distribuida, pero no incluye Kerberos.",
+      "id": "p21-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué principio de seguridad se aplica cuando un sistema deniega el acceso a un usuario aunque sus credenciales sean correctas, debido a que el acceso ocurre desde una ubicación geográfica inusual?",
+      "opciones": [
+        "a) Principio de menor privilegio",
+        "b) Principio de defensa en profundidad",
+        "c) Principio de confianza cero (Zero Trust)",
+        "d) Principio de segregación de funciones"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El principio de confianza cero (Zero Trust) evalúa múltiples factores, como la ubicación geográfica, para determinar el acceso, incluso si las credenciales son correctas.",
+      "id": "p21-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el ciclo de vida de IAM, ¿qué elemento NO forma parte de los atributos típicos que se gestionan durante la creación de una cuenta de usuario?",
+      "opciones": [
+        "a) Nombre del usuario",
+        "b) Permisos de grupo",
+        "c) Color de fondo del escritorio",
+        "d) Registro de actividades de acceso"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que se gestionan atributos como nombre, permisos y registro de actividades, pero no incluye 'color de fondo del escritorio'.",
+      "id": "p21-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un sistema de control de acceso permite a los usuarios acceder a un recurso solo si su dirección IP coincide con la de la oficina principal Y si el acceso ocurre entre las 9:00 a.m. y las 5:00 p.m. ¿Qué modelo(s) de control de acceso está(n) combinando en este escenario?",
+      "opciones": [
+        "a) Rule-BAC y ABAC",
+        "b) RBAC y MAC",
+        "c) DAC y RBAC",
+        "d) MAC y Rule-BAC"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Rule-BAC aplica reglas como restricciones horarias, mientras que ABAC combina múltiples atributos (dirección IP y horario) para determinar el acceso.",
+      "id": "p21-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué método NO se considera parte del proceso de verificación de identidad (resolución) durante la creación de cuentas según el temario?",
+      "opciones": [
+        "a) Proporcionar información conocida solo por el usuario (contraseña)",
+        "b) Validación mediante documentos oficiales (pasaporte)",
+        "c) Uso de un gestor de contraseñas para almacenar credenciales",
+        "d) Atestación mediante pruebas adicionales (informes crediticios)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona métodos como contraseñas, documentos oficiales y atestación, pero no incluye el uso de gestores de contraseñas como parte del proceso de verificación.",
+      "id": "p21-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa permisos temporales para que un usuario obtenga acceso administrativo solo cuando sea necesario y por un tiempo limitado. ¿Qué práctica de IAM está aplicando?",
+      "opciones": [
+        "a) Rotación de contraseñas",
+        "b) Just-in-time permissions",
+        "c) Autenticación sin contraseña",
+        "d) Segregación de funciones"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La práctica de 'just-in-time permissions' permite asignar permisos temporales y revocarlos automáticamente después de su uso, reduciendo riesgos.",
+      "id": "p21-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de control de acceso para su base de datos de clientes donde los permisos se asignan automáticamente según la combinación de tres atributos: (1) el rol del usuario en el sistema (ej: 'soporte técnico', 'gerente', 'analista'), (2) la ubicación geográfica desde la que se realiza el acceso (ej: 'oficina central', 'sucursal remota', 'dispositivo móvil'), y (3) el tipo de dispositivo utilizado (ej: 'equipo corporativo', 'dispositivo personal'). ¿Qué modelo(s) de control de acceso está(n) implementando en este escenario según el temario?",
+      "opciones": [
+        "a) RBAC y ABAC",
+        "b) DAC y MAC",
+        "c) RBAC y Rule-BAC",
+        "d) ABAC y MAC"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El modelo RBAC (Role-Based Access Control) se aplica al asignar permisos según el rol del usuario, mientras que ABAC (Attribute-Based Access Control) utiliza múltiples atributos (rol, ubicación y tipo de dispositivo) para determinar el acceso.",
+      "id": "p21-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un modelo de control de acceso mencionado explícitamente en el temario?",
+      "opciones": [
+        "a) Control de Acceso Basado en Roles (RBAC)",
+        "b) Control de Acceso Basado en Atributos (ABAC)",
+        "c) Control de Acceso Basado en Propietario (OBAC)",
+        "d) Control de Acceso Obligatorio (MAC)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona RBAC, ABAC, MAC y DAC como modelos de control de acceso, pero no OBAC.",
+      "id": "p21-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de autenticación multifactor (MFA), ¿qué factor NO está incluido en las categorías definidas por el temario?",
+      "opciones": [
+        "a) Algo que sabes (ej: contraseña)",
+        "b) Algo que tienes (ej: token de hardware)",
+        "c) Algo que eres (ej: huella dactilar)",
+        "d) Algo que recuerdas (ej: pregunta de seguridad)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario clasifica los factores en 'algo que sabes', 'algo que tienes', 'algo que eres' y 'dónde estás', pero no menciona 'algo que recuerdas' como categoría independiente.",
+      "id": "p21-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo está diseñado específicamente para acceder a directorios de datos en una red y utiliza nombres distinguidos (distinguished names) en su estructura jerárquica?",
+      "opciones": [
+        "a) SAML",
+        "b) OAuth",
+        "c) LDAP",
+        "d) Kerberos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "LDAP (Lightweight Directory Access Protocol) es el protocolo diseñado para acceder a directorios de datos en una red, utilizando nombres distinguidos en un formato jerárquico como CN=NombreComún.",
+      "id": "p21-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto del modelo ABAC (Attribute-Based Access Control), ¿cuál de los siguientes atributos NO es un ejemplo típico que se utiliza para determinar el acceso a un recurso según el temario?",
+      "opciones": [
+        "a) La dirección IP del usuario",
+        "b) La hora del día en que se realiza el acceso",
+        "c) El tipo de archivo que el usuario intenta acceder (ej: .exe, .pdf, .docx)",
+        "d) La relación del usuario con los datos (ej: propietario, editor, lector)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que en ABAC se utilizan atributos como dirección IP, hora del día, acción solicitada (lectura/escritura) y relación del usuario con los datos, pero no el tipo de archivo como criterio de control de acceso.",
+      "id": "p21-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema donde los permisos se asignan automáticamente según la combinación de tres atributos: rol del usuario, ubicación geográfica y tipo de dispositivo. ¿Qué modelo(s) de control de acceso está(n) implementando?",
+      "opciones": [
+        "a) RBAC",
+        "b) ABAC",
+        "c) MAC",
+        "d) DAC"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "ABAC (Attribute-Based Access Control) utiliza múltiples atributos como rol, ubicación y tipo de dispositivo para determinar el acceso.",
+      "id": "p21-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué protocolo está diseñado específicamente para acceder a directorios de datos en una red y utiliza nombres distinguidos (distinguished names) en su estructura jerárquica?",
+      "opciones": [
+        "a) SAML",
+        "b) OAuth",
+        "c) LDAP",
+        "d) OpenID"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "LDAP (Lightweight Directory Access Protocol) es un protocolo estándar para acceder a directorios de datos en una red, utilizando una estructura jerárquica basada en nombres distinguidos como CN=NombreComún.",
+      "id": "p21-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué elemento NO se considera parte de los atributos típicos gestionados durante el ciclo de vida de una cuenta de usuario?",
+      "opciones": [
+        "a) Nombre completo del usuario",
+        "b) Dirección IP del dispositivo",
+        "c) Permisos asignados a la cuenta",
+        "d) Rol o función del usuario en la organización"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que durante el ciclo de vida de IAM se gestionan atributos como el nombre del usuario, permisos y roles, pero no incluye la dirección IP del dispositivo como un atributo típico de la cuenta.",
+      "id": "p21-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el protocolo LDAP, ¿qué elemento estructural se utiliza para identificar de forma única un objeto en el árbol de directorio según el temario?",
+      "opciones": [
+        "a) Nombre de usuario y contraseña",
+        "b) Nombre distinguido (distinguished name)",
+        "c) Token de autenticación SAML",
+        "d) Huella dactilar almacenada en la base de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "LDAP utiliza nombres distinguidos (distinguished names) para identificar de forma única cada objeto en el árbol de directorio, siguiendo un formato estructurado como CN=NombreComún u otros atributos jerárquicos.",
+      "id": "p21-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué elemento NO forma parte de los factores de autenticación MFA mencionados?",
+      "opciones": [
+        "a) Huella dactilar",
+        "b) Reconocimiento facial",
+        "c) Contraseña de un solo uso (OTP)",
+        "d) Firma digital"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario clasifica los factores en 'algo que sabes', 'algo que tienes', 'algo que eres' y 'dónde estás', pero no menciona firma digital como factor.",
+      "id": "p21-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa permisos temporales para que un usuario obtenga acceso administrativo solo cuando sea necesario y por un tiempo limitado. ¿Qué práctica de IAM está aplicando?",
+      "opciones": [
+        "a) Rotación de contraseñas",
+        "b) Just-in-time permissions",
+        "c) Autenticación sin contraseña",
+        "d) Verificación de identidad (resolución)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Just-in-time permissions es una práctica de IAM que asigna permisos temporales solo cuando son necesarios y los revoca automáticamente.",
+      "id": "p21-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un atributo típico gestionado durante el ciclo de vida de una cuenta de usuario según el temario?",
+      "opciones": [
+        "a) Nombre completo del usuario",
+        "b) Dirección MAC del dispositivo utilizado",
+        "c) Rol del usuario en la organización",
+        "d) Permisos asignados a la cuenta"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que durante el ciclo de vida de IAM se gestionan atributos como el nombre del usuario, sus permisos y roles, pero no incluye la dirección MAC del dispositivo como un atributo típico.",
+      "id": "p21-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de los modelos de control de acceso, ¿cuál de las siguientes afirmaciones describe mejor la diferencia entre RBAC y ABAC?",
+      "opciones": [
+        "a) RBAC se basa en roles predefinidos, mientras que ABAC evalúa múltiples atributos dinámicos para determinar el acceso",
+        "b) RBAC requiere autenticación multifactor, mientras que ABAC no",
+        "c) RBAC es más seguro que ABAC en todos los escenarios",
+        "d) ABAC solo se aplica a sistemas locales, mientras que RBAC funciona en entornos distribuidos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, RBAC asigna permisos basados en roles fijos, mientras que ABAC utiliza múltiples atributos (como dirección IP, hora del día o tipo de dispositivo) para determinar el acceso de forma más granular.",
+      "id": "p21-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué elemento NO se considera parte de los factores de autenticación MFA mencionados?",
+      "opciones": [
+        "a) Contraseña",
+        "b) Tarjeta inteligente",
+        "c) Huella dactilar",
+        "d) Número de teléfono registrado"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El número de teléfono registrado no está incluido en las categorías de factores de autenticación MFA definidas por el temario, que solo menciona: algo que sabes, algo que tienes, algo que eres y dónde estás.",
+      "id": "p21-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo, según el temario, NO está diseñado para la federación de identidades ni para la autenticación en sistemas distribuidos?",
+      "opciones": [
+        "a) SAML",
+        "b) OAuth",
+        "c) LDAP",
+        "d) OpenID Connect"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que LDAP es un protocolo para acceder a directorios de datos en una red, pero no está diseñado para federación de identidades ni autenticación en sistemas distribuidos.",
+      "id": "p21-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué protocolo está diseñado para acceder a directorios de datos y utiliza una estructura jerárquica basada en nombres distinguidos (distinguished names) en su árbol de información de directorio?",
+      "opciones": [
+        "a) SAML",
+        "b) OAuth",
+        "c) LDAP",
+        "d) Kerberos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "LDAP es el protocolo estándar para acceder a directorios de datos en una red y utiliza nombres distinguidos (distinguished names) en un árbol de información de directorio (directory information tree) para organizar los objetos de forma jerárquica.",
+      "id": "p21-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué protocolo utiliza nombres distinguidos (distinguished names) en su estructura jerárquica para organizar objetos en un árbol de información de directorio?",
+      "opciones": [
+        "a. SAML",
+        "b. LDAP",
+        "c. OAuth",
+        "d. RADIUS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "LDAP utiliza nombres distinguidos (distinguished names) en una estructura jerárquica llamada árbol de información de directorio (directory information tree) para organizar objetos como usuarios y dispositivos.",
+      "id": "p21-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema donde los permisos se asignan automáticamente según la combinación de tres atributos: (1) el rol del usuario en el sistema, (2) la ubicación geográfica desde la que se realiza el acceso, y (3) el tipo de dispositivo utilizado. ¿Qué modelo(s) de control de acceso está(n) implementando en este escenario según el temario?",
+      "opciones": [
+        "a) RBAC y Rule-BAC",
+        "b) ABAC",
+        "c) MAC y DAC",
+        "d) RBAC y ABAC"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define ABAC como un modelo que utiliza múltiples atributos (rol, ubicación geográfica y tipo de dispositivo) para determinar el acceso, por lo que es el único modelo aplicable en este escenario.",
+      "id": "p21-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué elemento NO está incluido en los factores de autenticación MFA mencionados?",
+      "opciones": [
+        "a) Algo que sabes (something you know)",
+        "b) Algo que tienes (something you have)",
+        "c) Algo que haces (something you do)",
+        "d) Algo que eres (something you are)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario especifica cuatro categorías de factores de autenticación MFA: algo que sabes, algo que tienes, algo que eres y dónde estás, excluyendo 'algo que haces'.",
+      "id": "p21-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de control de acceso para su base de datos de clientes donde los permisos se asignan automáticamente según la combinación de cuatro atributos: (1) el rol del usuario en el sistema (ej: 'soporte técnico', 'gerente', 'analista'), (2) la ubicación geográfica desde la que se realiza el acceso (ej: 'oficina central', 'sucursal remota', 'dispositivo móvil'), (3) el tipo de dispositivo utilizado (ej: 'equipo corporativo', 'dispositivo personal'), y (4) el nivel de criticidad del recurso al que se intenta acceder (ej: 'bajo', 'medio', 'alto'). ¿Qué modelo(s) de control de acceso está(n) implementando en este escenario según el temario?",
+      "opciones": [
+        "a) RBAC y ABAC combinados",
+        "b) RBAC, ABAC y MAC",
+        "c) Solo ABAC",
+        "d) DAC y RBAC combinados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El modelo RBAC gestiona permisos por roles, ABAC por atributos (rol, ubicación, dispositivo, etc.), y MAC por niveles de criticidad o sensibilidad de los recursos, siendo este último explícitamente mencionado en el temario para entornos de alta seguridad.",
+      "id": "p21-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema de control de acceso para su entorno de desarrollo donde los permisos se asignan automáticamente según la combinación de: (1) el rol del usuario (ej: 'desarrollador', 'analista de calidad', 'gerente de proyecto'), (2) el entorno de desarrollo al que intenta acceder (ej: 'desarrollo', 'pruebas', 'producción'), y (3) la fase del ciclo de vida del software en la que se encuentra el proyecto (ej: 'pre-alfa', 'alfa', 'beta', 'lanzamiento'). ¿Qué modelo(s) de control de acceso está(n) implementando en este escenario según el temario?",
+      "opciones": [
+        "a) RBAC y ABAC combinados, ya que se asignan permisos basados en roles y se aplican atributos adicionales como entorno y fase del proyecto.",
+        "b) Exclusivamente RBAC, porque los permisos se asignan únicamente en función del rol del usuario dentro de la organización.",
+        "c) Exclusivamente ABAC, ya que se utilizan múltiples atributos (rol, entorno y fase) para determinar el acceso, sin depender de roles predefinidos.",
+        "d) MAC, porque el sistema etiqueta los entornos de desarrollo con niveles de sensibilidad y el administrador define qué usuarios acceden a cada etiqueta."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El modelo RBAC asigna permisos basados en roles, mientras que ABAC permite combinar múltiples atributos (como entorno y fase del proyecto) para determinar el acceso, lo que se ajusta al escenario descrito según el temario.",
+      "id": "p21-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto del ciclo de vida de IAM, ¿qué fase NO está incluida según el temario?",
+      "opciones": [
+        "a) Creación de la cuenta de usuario",
+        "b) Asignación de permisos basados en roles",
+        "c) Rotación automática de contraseñas cada 24 horas",
+        "d) Desactivación de la cuenta al finalizar el empleo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona la creación, asignación de permisos y desactivación como fases clave del ciclo de vida de IAM, pero no incluye la rotación automática de contraseñas como parte de este ciclo.",
+      "id": "p21-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el protocolo LDAP, ¿qué atributo estructural se utiliza para identificar de forma única un objeto en el árbol de información de directorio según el temario?",
+      "opciones": [
+        "a) Nombre común (CN)",
+        "b) Nombre distinguido (DN)",
+        "c) Identificador de objeto (OID)",
+        "d) Atributo de grupo (GA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "LDAP utiliza el nombre distinguido (DN, Distinguished Name) como atributo estructural único para identificar objetos en el árbol de información de directorio, ya que combina el nombre común con la ruta jerárquica del objeto.",
+      "id": "p21-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué fase del ciclo de vida de una cuenta de usuario NO está explícitamente mencionada como parte del proceso de incorporación (onboarding)?",
+      "opciones": [
+        "a) Asignación inicial de permisos básicos",
+        "b) Verificación de identidad (resolución) mediante documentos oficiales",
+        "c) Configuración de permisos de administrador permanente para todos los usuarios",
+        "d) Registro de actividades de acceso en logs"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona la asignación inicial de permisos básicos, verificación de identidad y registro de actividades, pero no la configuración de permisos de administrador permanente como parte del onboarding.",
+      "id": "p21-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué elemento NO es un atributo típico gestionado durante el ciclo de vida de una cuenta de usuario?",
+      "opciones": [
+        "a) Nombre del usuario",
+        "b) Permisos de grupo",
+        "c) Dirección IP del dispositivo utilizado",
+        "d) Registro de actividades de acceso"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que durante el ciclo de vida de IAM se gestionan elementos como el nombre del usuario, permisos de grupo, permisos individuales y registro de actividades, pero no incluye la dirección IP del dispositivo como un atributo típico gestionado.",
+      "id": "p21-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué elemento NO forma parte de los atributos típicos gestionados durante el ciclo de vida de una cuenta de usuario?",
+      "opciones": [
+        "a) Nombre del usuario",
+        "b) Permisos de grupo",
+        "c) Dirección MAC del dispositivo del usuario",
+        "d) Registro de actividades de acceso"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona como elementos clave del ciclo de vida de IAM: nombre del usuario, permisos de grupo, permisos individuales y registro de actividades, pero no incluye la dirección MAC como atributo típico gestionado.",
+      "id": "p21-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué elemento NO es un método válido de verificación de identidad durante la creación de cuentas según el proceso de 'resolución'?",
+      "opciones": [
+        "a) Proporcionar información conocida solo por el usuario, como contraseñas o respuestas a preguntas de seguridad.",
+        "b) Validación mediante documentos oficiales, como pasaportes o licencias de conducir.",
+        "c) Uso de un token de hardware para acceder a un sistema en la nube.",
+        "d) Reuniones en persona o verificaciones automatizadas que revisan informes crediticios."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El token de hardware es un factor de autenticación (algo que tienes) utilizado en MFA, no un método de verificación de identidad durante la creación de cuentas según el proceso de 'resolución' descrito en el temario.",
+      "id": "p21-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué protocolo está diseñado específicamente para acceder a directorios de datos y utiliza una estructura jerárquica basada en nombres distinguidos (distinguished names) para organizar objetos en un árbol de información de directorio?",
+      "opciones": [
+        "a) SAML",
+        "b) OAuth",
+        "c) LDAP",
+        "d) RADIUS"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "LDAP (Lightweight Directory Access Protocol) está diseñado para acceder a directorios de datos y utiliza una estructura jerárquica basada en nombres distinguidos (DN) para organizar objetos en un árbol de información de directorio (DIT). Los demás protocolos mencionados tienen propósitos distintos dentro de IAM.",
+      "id": "p21-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema donde los permisos se asignan automáticamente según la combinación de tres atributos: (1) el rol del usuario en el sistema, (2) la ubicación geográfica desde la que se realiza el acceso, y (3) el tipo de dispositivo utilizado. ¿Qué modelo(s) de control de acceso está(n) implementando en este escenario según el temario?",
+      "opciones": [
+        "a) RBAC y DAC",
+        "b) ABAC",
+        "c) MAC y Rule-BAC",
+        "d) RBAC y ABAC"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe el modelo ABAC como aquel que utiliza múltiples atributos (rol, ubicación, dispositivo) para determinar el acceso, lo que coincide con este escenario.",
+      "id": "p21-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué elemento NO se considera parte de los factores de autenticación MFA mencionados?",
+      "opciones": [
+        "a) Algo que sabes (ej: contraseña)",
+        "b) Algo que tienes (ej: token de hardware)",
+        "c) Algo que eres (ej: biometría)",
+        "d) Algo que posees (ej: certificado digital firmado por una CA)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario clasifica los factores de MFA en 'algo que sabes', 'algo que tienes', 'algo que eres' y 'dónde estás', pero no incluye 'algo que posees' como categoría específica.",
+      "id": "p21-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de control de acceso para su entorno de desarrollo donde los permisos se asignan automáticamente según la combinación de: (1) el rol del usuario (ej: 'desarrollador', 'analista de calidad'), (2) el entorno de desarrollo al que intenta acceder (ej: 'desarrollo', 'producción'), y (3) la fase del ciclo de vida del software (ej: 'alfa', 'beta'). ¿Qué modelo(s) de control de acceso está(n) implementando este sistema según el temario?",
+      "opciones": [
+        "a) RBAC y Rule-BAC",
+        "b) ABAC",
+        "c) MAC y DAC",
+        "d) RBAC y MAC"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe el modelo ABAC como aquel que utiliza múltiples atributos (rol, entorno, fase del ciclo de vida) para determinar el acceso, lo que coincide con este escenario.",
+      "id": "p21-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué modelo de control de acceso se caracteriza por asignar permisos a los usuarios en función de su rol dentro de la organización, simplificando la gestión mediante grupos predefinidos?",
+      "opciones": [
+        "a) Control de Acceso Basado en Atributos (ABAC)",
+        "b) Control de Acceso Discrecional (DAC)",
+        "c) Control de Acceso Basado en Roles (RBAC)",
+        "d) Control de Acceso Obligatorio (MAC)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El modelo RBAC asigna permisos según el rol del usuario en la organización, agrupando usuarios con roles similares para simplificar la administración de accesos.",
+      "id": "p21-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué protocolo está diseñado específicamente para la federación de identidades y permite a los usuarios autenticarse en múltiples servicios mediante credenciales de proveedores externos sin necesidad de mantener una base de datos de autenticación local?",
+      "opciones": [
+        "a) LDAP",
+        "b) SAML",
+        "c) OAuth",
+        "d) Kerberos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "SAML (Security Assertion Markup Language) es un protocolo diseñado para la federación de identidades, permitiendo autenticación delegada a proveedores externos sin gestionar bases de datos locales.",
+      "id": "p21-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para que un usuario solo pueda acceder a un recurso si su dirección IP pertenece a la red interna de la empresa Y si el rol del usuario es 'administrador'. ¿Qué modelos de control de acceso están combinando en este escenario?",
+      "opciones": [
+        "a) DAC y RBAC",
+        "b) RBAC y ABAC",
+        "c) MAC y RULE-BAC",
+        "d) ABAC y RULE-BAC"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El rol del usuario ('administrador') se gestiona mediante RBAC, mientras que la restricción por dirección IP es un atributo típico de ABAC.",
+      "id": "p21-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué elemento NO forma parte de los atributos típicos gestionados durante el ciclo de vida de una cuenta de usuario?",
+      "opciones": [
+        "a) Nombre del usuario",
+        "b) Permisos de grupo",
+        "c) Nivel de sensibilidad de los datos",
+        "d) Registro de actividades de acceso"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que durante el ciclo de vida de IAM se gestionan: nombre del usuario, permisos de grupo, permisos individuales y registro de actividades, pero no el nivel de sensibilidad de los datos.",
+      "id": "p21-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo, según el temario, está diseñado específicamente para acceder a directorios de datos y utiliza una estructura jerárquica basada en nombres distinguidos (distinguished names)?",
+      "opciones": [
+        "a) SAML",
+        "b) OAuth",
+        "c) LDAP",
+        "d) RADIUS"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "LDAP es el protocolo diseñado para acceder a directorios de datos y utiliza nombres distinguidos en una estructura jerárquica (directory information tree).",
+      "id": "p21-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué atributo NO forma parte de los factores de autenticación utilizados en MFA?",
+      "opciones": [
+        "a) Algo que sabes (ej: contraseña)",
+        "b) Algo que tienes (ej: token de hardware)",
+        "c) Algo que eres (ej: reconocimiento facial)",
+        "d) Algo que posees (ej: documento de identificación físico)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona como factores de autenticación en MFA: algo que sabes, algo que tienes, algo que eres y dónde estás. 'Algo que posees' como documento físico no se incluye explícitamente como factor de autenticación.",
+      "id": "p21-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de IAM, ¿qué modelo de control de acceso se caracteriza por asignar permisos a los usuarios en función de políticas predefinidas que pueden incluir restricciones de tiempo, tipo de dispositivo o ubicación geográfica?",
+      "opciones": [
+        "a) Control de Acceso Basado en Roles (RBAC)",
+        "b) Control de Acceso Basado en Reglas (RULE-BAC)",
+        "c) Control de Acceso Discrecional (DAC)",
+        "d) Control de Acceso Obligatorio (MAC)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El modelo RULE-BAC (Rule-Based Access Control) permite definir reglas específicas para el acceso, como restricciones de tiempo o condiciones técnicas, a diferencia de otros modelos que se basan en roles, propietarios o clasificación de datos.",
+      "id": "p21-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un método válido de verificación de identidad durante la creación de cuentas según el proceso de 'resolución' mencionado en el temario?",
+      "opciones": [
+        "a) Proporcionar una contraseña",
+        "b) Validar un pasaporte",
+        "c) Realizar una llamada telefónica al solicitante",
+        "d) Recopilar datos históricos del usuario"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona como métodos de verificación: proporcionar información conocida (contraseña), validación con documentos oficiales (pasaporte), reuniones en persona y atestación, pero no una llamada telefónica.",
+      "id": "p21-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para que un usuario solo pueda acceder a un recurso si el acceso ocurre entre las 9:00 a.m. y las 5:00 p.m. ¿Qué modelo de control de acceso está aplicando?",
+      "opciones": [
+        "a) MAC",
+        "b) RBAC",
+        "c) RULE-BAC",
+        "d) ABAC"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El modelo RULE-BAC permite definir reglas como restricciones de tiempo para el acceso a recursos, a diferencia de MAC, RBAC o ABAC.",
+      "id": "p21-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto de la autenticación multifactor (MFA), ¿qué combinación de factores sería la más segura según el temario?",
+      "opciones": [
+        "a) Contraseña + PIN",
+        "b) Contraseña + token de hardware",
+        "c) Reconocimiento facial + dirección IP",
+        "d) Token de software + contraseña"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La combinación de contraseña (algo que sabes) y token de hardware (algo que tienes) es la más segura según el temario, ya que usa dos categorías distintas de factores MFA.",
+      "id": "p21-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Identity and Access Management",
+      "youtubeId": "ZoOyyqhptik"
+    },
+    {
+      "titulo": "Access Controls",
+      "youtubeId": "9ANHcZwJfdQ"
+    },
+    {
+      "titulo": "Multifactor Authentication",
+      "youtubeId": "MpIzA4fNWew"
+    },
+    {
+      "titulo": "Password Security",
+      "youtubeId": "eMOe-PLBy1k"
+    }
+  ]
+}

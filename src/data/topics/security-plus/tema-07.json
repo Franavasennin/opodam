@@ -1,0 +1,1416 @@
+{
+  "id": 7,
+  "titulo": "2.3 · Vulnerabilidades de software y aplicaciones",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LAS VULNERABILIDADES DE SOFTWARE Y APLICACIONES son uno de los vectores de ataque más explotados en la ciberseguridad moderna. Estas vulnerabilidades permiten a los atacantes comprometer sistemas, robar datos o escalar privilegios sin necesidad de credenciales válidas. A continuación, se detallan los principales tipos de vulnerabilidades, sus mecanismos de explotación y las medidas de mitigación recomendadas para el examen CompTIA Security+ SY0-701.\n\n\nINYECCIONES EN MEMORIA (MEMORY INJECTIONS)\n\nLas inyecciones en memoria son técnicas avanzadas donde el malware se inserta en procesos legítimos que ya están en ejecución en el sistema. Este método permite al atacante evadir los sistemas de detección de malware, ya que el código malicioso se ejecuta como parte de un proceso autorizado. La memoria de un sistema operativo contiene múltiples elementos críticos: Dynamic Link Libraries (DLLs o bibliotecas de enlace dinámico), hilos (threads), búferes y funciones de gestión de memoria. El malware puede optar por ejecutarse como un proceso independiente o inyectarse en uno existente.\n\n\nLa inyección de DLL es una de las técnicas más comunes dentro de este grupo. Una DLL es un archivo ejecutable que múltiples aplicaciones pueden utilizar simultáneamente. Para que esta técnica funcione, el atacante debe colocar primero la DLL maliciosa en un almacenamiento accesible para el sistema objetivo. Luego, modifica la ruta de acceso de la DLL en el proceso objetivo para que, al ejecutarse, cargue la versión maliciosa en lugar de la legítima. Una vez inyectada, la DLL maliciosa hereda los permisos del proceso huésped, lo que puede permitir la escalada de privilegios (privilege escalation) sin necesidad de autenticación adicional.\n\n\nLos riesgos asociados a las inyecciones en memoria son altos, ya que permiten al atacante operar con los mismos permisos que el proceso comprometido. Esto puede incluir acceso a datos sensibles, ejecución de comandos arbitrarios o incluso el control total del sistema. Las medidas de protección incluyen mantener el software actualizado, implementar listas de control de aplicaciones (Application Allowlisting) y utilizar herramientas de detección de comportamientos anómalos en memoria.\n\n\n\nDESBORDAMIENTOS DE BÚFER (BUFFER OVERFLOWS)\n\nUn desbordamiento de búfer ocurre cuando un atacante escribe más datos en un área de memoria de lo que el programa espera, sobrescribiendo información adyacente. Los desarrolladores suelen implementar comprobaciones de límites (bounds checking) para evitar que los datos escritos excedan el espacio asignado. Sin embargo, si un atacante logra explotar una vulnerabilidad de este tipo, puede modificar el flujo de ejecución del programa o incluso ejecutar código arbitrario.\n\n\nExisten dos tipos principales de desbordamientos de búfer: basados en pila (stack-based) y basados en montículo (heap-based). En el ejemplo clásico, un atacante aprovecha una variable que controla los permisos de un usuario. Si la variable es de tipo entero y ocupa 2 bytes, pero el atacante escribe 9 bytes en un búfer de 8 bytes, el noveno byte sobrescribirá el primer byte de la variable de permisos. Si el valor resultante supera un umbral crítico (por ejemplo, 24,000 en lugar de 2,000), el sistema otorgará permisos de administrador al usuario malicioso.\n\n\nLa explotación de desbordamientos de búfer no es trivial. Un error en el cálculo puede causar una caída del sistema (denegación de servicio o DoS). Sin embargo, cuando se realiza correctamente, permite la ejecución de código con privilegios elevados sin necesidad de credenciales. Para mitigar este riesgo, los desarrolladores deben implementar comprobaciones de límites estrictas, utilizar lenguajes de programación seguros (como Rust o Go) y aplicar parches de seguridad de manera oportuna. Los sistemas operativos modernos también incluyen protecciones como ASLR (Address Space Layout Randomization) y DEP (Data Execution Prevention) para dificultar la explotación.\n\n\n\nCONDICIONES DE CARRERA (RACE CONDITIONS)\n\nLas condiciones de carrera (race conditions) ocurren cuando dos o más hilos o procesos acceden a un recurso compartido de manera simultánea, y el resultado depende del orden de ejecución, que no está controlado por la aplicación. Los desarrolladores suelen asumir que los eventos ocurren en un orden secuencial predecible, pero en entornos multihilo o distribuidos, esto no siempre es así. Un atacante puede aprovechar esta situación para manipular el estado del sistema en su beneficio.\n\n\nUn ejemplo clásico es el ataque Time of Check to Time of Use (TOCTOU), donde un proceso verifica un recurso (por ejemplo, un archivo o un valor en memoria) y, entre ese momento y el uso efectivo del recurso, otro proceso lo modifica. En el ámbito financiero, esto puede permitir a un atacante duplicar transacciones. Por ejemplo, si dos usuarios intentan transferir fondos desde la misma cuenta al mismo tiempo, y el sistema no actualiza inmediatamente el saldo, ambos podrían retirar el mismo dinero, resultando en un saldo negativo.\n\n\nLas condiciones de carrera no se limitan a sistemas financieros. En 2004, el Mars Rover Spirit sufrió un problema de este tipo debido a un bucle de reinicio causado por un error en el sistema de archivos durante el proceso de arranque. En 2023, un equipo de investigadores explotó una condición de carrera en el sistema de infoentretenimiento de un Tesla Model 3 mediante Bluetooth, logrando escalar privilegios hasta obtener acceso root y ganar un premio de 100,000 dólares. \n\n\nPara prevenir condiciones de carrera, los desarrolladores deben implementar mecanismos de sincronización, como semáforos (semaphores), bloqueos (locks) o transacciones atómicas. Además, es crucial realizar pruebas de concurrencia exhaustivas durante el desarrollo de aplicaciones.\n\n\n\nACTUALIZACIONES MALICIOSAS (MALICIOUS UPDATES)\n\nLas actualizaciones de software son esenciales para corregir vulnerabilidades conocidas, pero también representan un riesgo si el proceso de actualización es comprometido. Un atacante puede insertar código malicioso en una actualización legítima, lo que le permite distribuir malware a gran escala. Este tipo de ataque se conoce como supply chain attack (ataque a la cadena de suministro), ya que aprovecha la confianza en los proveedores de software.\n\n\nUn caso emblemático es el incidente de SolarWinds en diciembre de 2020. Los atacantes lograron comprometer el sistema de desarrollo de SolarWinds y modificaron el código de la aplicación Orion. Las actualizaciones legítimas de Orion, firmadas digitalmente por la empresa, contenían el código malicioso. Esto permitió a los atacantes infiltrarse en cientos de agencias gubernamentales y empresas Fortune 500, ya que Orion es una herramienta de gestión de TI ampliamente utilizada. \n\n\nPara mitigar el riesgo de actualizaciones maliciosas, se recomienda:\n\n- Realizar copias de seguridad (backups) antes de aplicar cualquier actualización.\n- Descargar actualizaciones solo desde fuentes oficiales y verificadas.\n- Validar las firmas digitales de los paquetes de actualización.\n- Implementar un proceso de prueba en entornos controlados antes de desplegar actualizaciones en producción.\n- Utilizar herramientas de gestión de parches centralizadas que verifiquen la integridad de las actualizaciones.\n\n\nEs importante recordar que incluso las actualizaciones legítimas pueden contener vulnerabilidades no descubiertas. Por ello, la monitorización continua y la respuesta rápida a incidentes son fundamentales.\n\n\n\nVULNERABILIDADES EN SISTEMAS OPERATIVOS (OPERATING SYSTEM VULNERABILITIES)\n\nLos sistemas operativos son el núcleo de cualquier dispositivo informático y, por tanto, un objetivo prioritario para los atacantes. La complejidad de los sistemas operativos modernos, como Windows 11, que contiene millones de líneas de código, aumenta exponencialmente las posibilidades de que existan vulnerabilidades no descubiertas. Los investigadores de seguridad y los atacantes buscan constantemente estas vulnerabilidades para explotarlas antes de que sean parcheadas.\n\n\nMicrosoft, por ejemplo, publica actualizaciones de seguridad el segundo martes de cada mes, conocido como Patch Tuesday. En mayo de 2023, se lanzaron casi 50 parches para resolver vulnerabilidades en Windows y otras aplicaciones. Estos parches incluyen correcciones para elevación de privilegios, bypass de funciones de seguridad, ejecución remota de código (RCE) y otras amenazas críticas. \n\n\nLas vulnerabilidades en sistemas operativos pueden permitir:\n\n- Ejecución de código arbitrario con privilegios elevados.\n- Acceso no autorizado a datos sensibles.\n- Denegación de servicio (DoS) en servicios críticos.\n- Escalada de privilegios en el sistema.\n\n\nPara protegerse, es fundamental:\n\n- Aplicar parches de seguridad tan pronto como estén disponibles.\n- Implementar políticas de actualización automatizada en entornos empresariales.\n- Realizar pruebas de los parches en entornos de staging antes de desplegarlos en producción.\n- Mantener copias de seguridad actualizadas para permitir la recuperación en caso de fallos.\n- Monitorizar alertas de seguridad de los fabricantes de sistemas operativos.\n\n\nEn entornos empresariales complejos, la gestión de parches puede requerir herramientas especializadas como Microsoft Endpoint Configuration Manager o Red Hat Satellite para garantizar una cobertura completa y minimizar el tiempo de exposición a vulnerabilidades.\n\n\n\nINYECCIÓN DE SQL (SQL INJECTION)\n\nLa inyección de SQL (SQLi) es una de las vulnerabilidades más antiguas y extendidas en aplicaciones web. Consiste en insertar código SQL malicioso en los campos de entrada de una aplicación, aprovechando la falta de validación de datos. SQL (Structured Query Language) es el lenguaje estándar para interactuar con bases de datos relacionales, y muchas aplicaciones web lo utilizan para consultar información.\n\n\nUn atacante puede explotar una vulnerabilidad de inyección de SQL introduciendo caracteres especiales, como comillas simples o punto y coma, seguidos de comandos SQL adicionales. Por ejemplo, en un formulario de inicio de sesión, en lugar de introducir un nombre de usuario válido, el atacante podría escribir:\n\n  ' OR '1'='1\n\nEsto modificaría la consulta SQL original para que siempre devuelva verdadero, permitiendo al atacante iniciar sesión sin credenciales válidas. Las consecuencias pueden ser graves: acceso a datos sensibles, modificación o eliminación de registros, ejecución de comandos del sistema operativo o incluso la toma de control total de la base de datos.\n\n\nExisten varios tipos de inyecciones de SQL:\n\n- Inyección clásica: El atacante introduce código SQL directamente en los campos de entrada.\n- Inyección basada en errores: El atacante fuerza errores en la base de datos para obtener información útil, como nombres de tablas o estructura de la base de datos.\n- Inyección ciega: El atacante no ve los resultados directamente, pero puede inferir información mediante técnicas como el tiempo de respuesta o el comportamiento de la aplicación.\n\n\nPara prevenir inyecciones de SQL, los desarrolladores deben:\n\n- Utilizar consultas parametrizadas (prepared statements) en lugar de concatenar cadenas de texto.\n- Implementar validación de entrada estricta, rechazando caracteres sospechosos.\n- Aplicar el principio de mínimo privilegio en las cuentas de bases de datos.\n- Utilizar firewalls de aplicaciones web (WAF) para bloquear intentos de inyección.\n- Realizar pruebas de penetración y análisis de código estático para identificar vulnerabilidades.\n\n\n\nCROSS-SITE SCRIPTING (XSS)\n\nCross-Site Scripting (XSS) es una vulnerabilidad que permite a un atacante inyectar scripts maliciosos en páginas web vistas por otros usuarios. Estos scripts se ejecutan en el contexto del navegador de la víctima, lo que les permite robar cookies, sesiones, credenciales o realizar acciones en nombre del usuario. XSS es una de las vulnerabilidades más comunes en aplicaciones web y se clasifica en tres tipos principales:\n\n\n- XSS reflejado (Reflected XSS): El script malicioso se refleja en la respuesta del servidor, generalmente a través de un enlace manipulado enviado al usuario. Este tipo de XSS requiere que la víctima haga clic en un enlace malicioso.\n- XSS almacenado (Stored XSS o Persistent XSS): El script malicioso se almacena en el servidor, por ejemplo, en un campo de comentarios o en un perfil de usuario. Cuando otros usuarios acceden a esa página, el script se ejecuta automáticamente en sus navegadores.\n- XSS basado en DOM (DOM-based XSS): El ataque ocurre completamente en el lado del cliente, manipulando el Document Object Model (DOM) de la página web sin necesidad de que el servidor procese el script.\n\n\nUn ejemplo práctico de XSS almacenado ocurrió en 2017 con la vulnerabilidad en el sitio web de Subaru. Los atacantes descubrieron que el token de sesión de los usuarios no caducaba y permitía realizar acciones en nombre de otros usuarios. Además, el sitio web era vulnerable a XSS, lo que permitía a los atacantes robar el token de sesión de las víctimas y obtener acceso completo a sus cuentas.\n\n\nPara mitigar los riesgos de XSS, se recomienda:\n\n- Validar y sanitizar todas las entradas de usuario antes de renderizarlas en el navegador.\n- Utilizar encabezados de seguridad como Content Security Policy (CSP) para restringir la ejecución de scripts.\n- Implementar frameworks modernos que escapen automáticamente el contenido dinámico, como React o Angular.\n- Educar a los usuarios para que eviten hacer clic en enlaces sospechosos y mantengan sus navegadores actualizados.\n- Desactivar JavaScript en navegadores cuando no sea necesario, aunque esto puede limitar la funcionalidad de algunos sitios web.\n\n\nLas vulnerabilidades de software y aplicaciones son un campo en constante evolución, y los atacantes siempre buscan nuevas formas de explotarlas. Por ello, es fundamental que los profesionales de ciberseguridad comprendan estos conceptos, se mantengan actualizados con las últimas amenazas y apliquen las mejores prácticas de desarrollo seguro y gestión de parches."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Vulnerabilidades de software y aplicaciones] --> B[Inyecciones en memoria]\nA --> C[Desbordamientos de búfer]\nA --> D[Condiciones de carrera]\nA --> E[Actualizaciones maliciosas]\nA --> F[Vulnerabilidades en sistemas operativos]\nA --> G[Inyección de SQL]\nA --> H[Cross-Site Scripting XSS]\n\nB --> B1[Inyección de DLL]\nB --> B2[Escalada de privilegios]\nB --> B3[Evasión de detección]\n\nC --> C1[Basado en pila]\nC --> C2[Basado en montículo]\nC --> C3[Ejecución de código arbitrario]\n\nD --> D1[TOCTOU Time of Check to Time of Use]\nD --> D2[Manipulación de transacciones]\nD --> D3[Ejemplo Tesla Model 3]\n\nE --> E1[SolarWinds 2020]\nE --> E2[Supply chain attack]\nE --> E3[Firmas digitales falsas]\n\nF --> F1[Patch Tuesday]\nF --> F2[Elevación de privilegios]\nF --> F3[Ejecución remota de código]\n\nG --> G1[Inyección clásica]\nG --> G2[Inyección basada en errores]\nG --> G3[Consultas parametrizadas]\n\nH --> H1[XSS reflejado]\nH --> H2[XSS almacenado]\nH --> H3[Token de sesión Subaru 2017]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc7-01",
+      "pregunta": "¿Qué es una inyección en memoria (memory injection) y cómo permite a un atacante evadir los sistemas de detección de malware?",
+      "respuesta": "Una técnica donde el malware se inserta en un proceso legítimo ya en ejecución en el sistema. Permite evadir la detección porque el código malicioso se ejecuta como parte de un proceso autorizado, heredando sus permisos."
+    },
+    {
+      "id": "fc7-02",
+      "pregunta": "¿Qué es una DLL y cómo se utiliza en un ataque de inyección de DLL?",
+      "respuesta": "Dynamic Link Library (biblioteca de enlace dinámico) es un archivo ejecutable que múltiples aplicaciones pueden usar. En un ataque de inyección de DLL, el atacante modifica la ruta de acceso de la DLL en un proceso objetivo para que cargue una versión maliciosa en lugar de la legítima."
+    },
+    {
+      "id": "fc7-03",
+      "pregunta": "¿Qué es un desbordamiento de búfer (buffer overflow) y qué consecuencias puede tener?",
+      "respuesta": "Ocurre cuando un atacante escribe más datos en un área de memoria de lo esperado, sobrescribiendo información adyacente. Puede permitir la ejecución de código arbitrario, escalada de privilegios o denegación de servicio (DoS)."
+    },
+    {
+      "id": "fc7-04",
+      "pregunta": "¿Qué es una condición de carrera (race condition) y qué tipo de ataque es el TOCTOU?",
+      "respuesta": "Ocurre cuando dos o más procesos acceden a un recurso compartido de manera simultánea y el resultado depende del orden de ejecución. TOCTOU (Time of Check to Time of Use) es un tipo de condición de carrera donde un proceso verifica un recurso y otro lo modifica antes de su uso."
+    },
+    {
+      "id": "fc7-05",
+      "pregunta": "¿Qué es un ataque de supply chain (cadena de suministro) y qué ejemplo famoso ocurrió en 2020?",
+      "respuesta": "Ataque donde se compromete el proceso de desarrollo o distribución de software para insertar código malicioso en actualizaciones legítimas. Ejemplo: SolarWinds en diciembre de 2020, donde los atacantes modificaron el código de Orion y distribuyeron actualizaciones maliciosas a cientos de organizaciones."
+    },
+    {
+      "id": "fc7-06",
+      "pregunta": "¿Qué es Patch Tuesday y qué tipo de vulnerabilidades se corrigen en estas actualizaciones?",
+      "respuesta": "El segundo martes de cada mes, Microsoft publica actualizaciones de seguridad para Windows y otras aplicaciones. Se corrigen vulnerabilidades como elevación de privilegios, bypass de funciones de seguridad, ejecución remota de código (RCE) y otras amenazas críticas."
+    },
+    {
+      "id": "fc7-07",
+      "pregunta": "¿Qué es una inyección de SQL (SQLi) y cómo puede explotarse en un formulario de inicio de sesión?",
+      "respuesta": "Vulnerabilidad donde un atacante inserta código SQL malicioso en los campos de entrada de una aplicación. En un formulario de inicio de sesión, podría escribir ' OR '1'='1 para modificar la consulta SQL y acceder sin credenciales válidas."
+    },
+    {
+      "id": "fc7-08",
+      "pregunta": "¿Cuáles son los tres tipos principales de Cross-Site Scripting (XSS) y en qué se diferencian?",
+      "respuesta": "Reflejado: El script malicioso se refleja en la respuesta del servidor y requiere que la víctima haga clic en un enlace. Almacenado: El script se almacena en el servidor y se ejecuta automáticamente en los navegadores de las víctimas. Basado en DOM: El ataque ocurre completamente en el lado del cliente, manipulando el DOM sin procesamiento en el servidor."
+    },
+    {
+      "id": "fc7-09",
+      "pregunta": "¿Qué es ASLR y cómo ayuda a prevenir desbordamientos de búfer?",
+      "respuesta": "Address Space Layout Randomization (ASLR) es una técnica de seguridad que randomiza la ubicación en memoria de los procesos y bibliotecas. Dificulta la explotación de desbordamientos de búfer al hacer impredecible la ubicación del código malicioso."
+    },
+    {
+      "id": "fc7-10",
+      "pregunta": "¿Qué medidas de mitigación se recomiendan para prevenir inyecciones de SQL?",
+      "respuesta": "Usar consultas parametrizadas (prepared statements), implementar validación de entrada estricta, aplicar el principio de mínimo privilegio en cuentas de bases de datos, utilizar firewalls de aplicaciones web (WAF) y realizar pruebas de penetración."
+    },
+    {
+      "id": "fc7-11",
+      "pregunta": "¿Qué es DEP y cómo contribuye a la seguridad del sistema?",
+      "respuesta": "Data Execution Prevention (DEP) es una función de seguridad que evita que el código se ejecute en áreas de memoria que no están designadas para código ejecutable. Ayuda a prevenir la ejecución de código malicioso inyectado en búferes de datos."
+    },
+    {
+      "id": "fc7-12",
+      "pregunta": "¿Qué es un ataque de escalada de privilegios y cómo puede lograrse mediante un desbordamiento de búfer?",
+      "respuesta": "Técnica para obtener permisos más altos que los asignados inicialmente. En un desbordamiento de búfer, si el atacante sobrescribe una variable que controla los permisos, puede modificar su valor para otorgar privilegios de administrador sin necesidad de credenciales."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de inyección en memoria según el temario?",
+      "opciones": [
+        "Inyección de DLL",
+        "Inyección de código en hilos (threads)",
+        "Inyección de búferes",
+        "Inyección de procesos independientes"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona la inyección de DLL, inyección en procesos existentes o independientes, pero no especifica la 'inyección de búferes' como técnica de inyección en memoria.",
+      "id": "p7-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Qué diferencia principal existe entre un desbordamiento de búfer basado en pila (stack-based) y uno basado en montículo (heap-based)?",
+      "opciones": [
+        "El stack-based sobrescribe el flujo de ejecución del programa, mientras que el heap-based modifica el contenido de la memoria dinámica sin afectar el flujo.",
+        "El stack-based solo ocurre en sistemas Linux, mientras que el heap-based es exclusivo de Windows.",
+        "El stack-based requiere acceso físico al sistema, mientras que el heap-based puede explotarse de forma remota.",
+        "El stack-based siempre causa una denegación de servicio, mientras que el heap-based permite escalada de privilegios."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, el desbordamiento de búfer basado en pila afecta el flujo de ejecución, mientras que el basado en montículo modifica memoria dinámica sin alterar directamente el flujo.",
+      "id": "p7-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de explotación aprovecha un atacante cuando manipula el orden de ejecución de hilos para modificar un recurso compartido antes de que otro proceso lo utilice?",
+      "opciones": [
+        "Desbordamiento de búfer",
+        "Inyección de DLL",
+        "Condición de carrera (Race Condition)",
+        "Inyección de SQL"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario describe las condiciones de carrera como situaciones donde el resultado depende del orden de ejecución no controlado de hilos o procesos.",
+      "id": "p7-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Un atacante logra modificar una actualización legítima de un software de gestión de TI para incluir código malicioso antes de su distribución. ¿Qué tipo de ataque se está describiendo?",
+      "opciones": [
+        "Inyección en memoria",
+        "Actualización maliciosa (Malicious Update)",
+        "Cross-Site Scripting (XSS)",
+        "Desbordamiento de búfer"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona las actualizaciones maliciosas como un tipo de ataque a la cadena de suministro donde se compromete el proceso de actualización.",
+      "id": "p7-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué medida de mitigación es MENOS efectiva para prevenir inyecciones de SQL según el temario?",
+      "opciones": [
+        "Utilizar consultas parametrizadas (prepared statements)",
+        "Implementar firewalls de aplicaciones web (WAF)",
+        "Desactivar JavaScript en los navegadores de los usuarios",
+        "Validar y sanitizar todas las entradas de usuario"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario no menciona la desactivación de JavaScript como medida de mitigación para inyecciones de SQL; se enfoca en validación, WAF y consultas parametrizadas.",
+      "id": "p7-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el concepto: Un atacante explota una vulnerabilidad en un sistema operativo para ejecutar código con privilegios elevados sin autenticación. ¿Qué tipo de vulnerabilidad es más probable que esté explotando?",
+      "opciones": [
+        "Inyección de DLL",
+        "Vulnerabilidad en sistemas operativos (Operating System Vulnerabilities)",
+        "Cross-Site Scripting (XSS)",
+        "Condición de carrera (Race Condition)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario señala que las vulnerabilidades en sistemas operativos pueden permitir ejecución de código con privilegios elevados sin necesidad de credenciales.",
+      "id": "p7-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una empresa aplica parches de seguridad mensuales en sus sistemas. Sin embargo, un atacante logra explotar una vulnerabilidad crítica en un servicio web 3 días después de que el parche fue lanzado, antes de que la empresa lo implemente. ¿Qué principio de gestión de parches NO se está aplicando correctamente?",
+      "opciones": [
+        "Validación de firmas digitales en las actualizaciones",
+        "Implementación de parches en entornos de staging antes de producción",
+        "Aplicación inmediata de parches críticos",
+        "Monitorización continua de vulnerabilidades"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario enfatiza la importancia de aplicar parches críticos tan pronto como estén disponibles, especialmente cuando son críticos, para minimizar la ventana de exposición.",
+      "id": "p7-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de XSS ocurre cuando el script malicioso se almacena en el servidor y se ejecuta automáticamente en los navegadores de los usuarios que acceden a la página afectada?",
+      "opciones": [
+        "XSS reflejado",
+        "XSS basado en DOM",
+        "XSS almacenado (Stored XSS)",
+        "Inyección de SQL"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario clasifica el XSS almacenado como aquel donde el script se almacena en el servidor y se ejecuta automáticamente en los navegadores de las víctimas.",
+      "id": "p7-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante inyecta una DLL maliciosa en un proceso legítimo del sistema para evadir la detección de malware. ¿Qué técnica de inyección en memoria está utilizando?",
+      "opciones": [
+        "Inyección de código en hilos (threads)",
+        "Inyección de DLL",
+        "Desbordamiento de búfer en la pila",
+        "Condición de carrera en el montículo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe la inyección de DLL como una técnica donde el malware se inserta en un proceso existente mediante una DLL maliciosa.",
+      "id": "p7-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una medida recomendada para mitigar vulnerabilidades en sistemas operativos según el temario?",
+      "opciones": [
+        "Aplicar parches de seguridad de manera inmediata",
+        "Realizar copias de seguridad antes de aplicar actualizaciones",
+        "Desactivar el sistema de actualizaciones automáticas",
+        "Monitorizar alertas de seguridad de los fabricantes"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario recomienda aplicar parches y mantener actualizaciones automáticas, no desactivarlas, para reducir la exposición a vulnerabilidades.",
+      "id": "p7-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de inyección en memoria aprovecha un atacante cuando modifica la ruta de acceso de una DLL en un proceso legítimo para cargar una versión maliciosa en lugar de la original?",
+      "opciones": [
+        "Inyección de DLL",
+        "Desbordamiento de búfer basado en pila",
+        "Condición de carrera (Race Condition)",
+        "Inyección de SQL"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La inyección de DLL es una técnica donde el atacante reemplaza una DLL legítima por una maliciosa en la ruta de acceso de un proceso, heredando sus permisos. (Tema: Inyecciones en memoria)",
+      "id": "p7-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando desbordamientos de búfer, ¿qué característica distingue principalmente a un desbordamiento basado en montículo (heap-based) de uno basado en pila (stack-based)?",
+      "opciones": [
+        "El desbordamiento basado en montículo ocurre en memoria dinámica asignada durante la ejecución del programa, mientras que el basado en pila afecta a la memoria estática de la pila de llamadas.",
+        "El desbordamiento basado en pila solo puede explotarse en sistemas operativos Linux, mientras que el basado en montículo afecta exclusivamente a Windows.",
+        "El desbordamiento basado en montículo siempre requiere credenciales de administrador para ser explotado, a diferencia del basado en pila.",
+        "El desbordamiento basado en pila es más fácil de mitigar con ASLR, mientras que el basado en montículo requiere DEP para su prevención."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El desbordamiento basado en montículo (heap) ocurre en memoria dinámica asignada durante la ejecución, mientras que el basado en pila (stack) afecta a la memoria estática de la pila de llamadas. (Tema: Desbordamientos de búfer)",
+      "id": "p7-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una medida recomendada para mitigar inyecciones de SQL según el temario?",
+      "opciones": [
+        "Utilizar consultas parametrizadas (prepared statements) en lugar de concatenar cadenas de texto.",
+        "Implementar validación de entrada estricta, rechazando caracteres sospechosos como comillas simples o punto y coma.",
+        "Aplicar el principio de mínimo privilegio en las cuentas de bases de datos.",
+        "Desactivar completamente JavaScript en los navegadores de los usuarios para evitar ejecuciones de scripts maliciosos."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Desactivar JavaScript no es una medida recomendada para mitigar inyecciones de SQL, ya que no aborda la causa raíz del problema. (Tema: Inyección de SQL)",
+      "id": "p7-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante explota una vulnerabilidad en un sistema operativo que le permite ejecutar código con privilegios elevados sin autenticación previa. ¿Qué tipo de vulnerabilidad es más probable que esté explotando?",
+      "opciones": [
+        "Elevación de privilegios (Privilege Escalation)",
+        "Inyección de DLL",
+        "Desbordamiento de búfer",
+        "Condición de carrera (Race Condition)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La elevación de privilegios permite a un atacante obtener permisos más altos que los asignados inicialmente, incluso sin autenticación. (Tema: Vulnerabilidades en sistemas operativos)",
+      "id": "p7-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de inyección en memoria aprovecha un atacante cuando modifica el contenido de una DLL en memoria sin alterar su ubicación en el sistema de archivos?",
+      "opciones": [
+        "a) Inyección de DLL tradicional (modificación de ruta en disco)",
+        "b) Inyección de código en memoria mediante reflexión (memory reflection injection)",
+        "c) Inyección de DLL en memoria (DLL injection in-memory)",
+        "d) Inyección de ruta de búsqueda de DLL (DLL search order hijacking)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La inyección de DLL en memoria (DLL injection in-memory) consiste en modificar el contenido de una DLL ya cargada en memoria del proceso objetivo, sin necesidad de alterar el archivo en disco, lo que dificulta su detección.",
+      "id": "p7-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Un atacante intercepta una actualización legítima de un software de gestión de TI y la modifica para incluir código malicioso antes de distribuirla a los usuarios finales. ¿Qué tipo de ataque se está describiendo?",
+      "opciones": [
+        "Actualización maliciosa (Malicious Update) o ataque a la cadena de suministro (Supply Chain Attack)",
+        "Inyección de DLL",
+        "Desbordamiento de búfer",
+        "Condición de carrera (Race Condition)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Una actualización maliciosa implica comprometer el proceso de actualización legítima para distribuir código malicioso, siendo un ataque a la cadena de suministro. (Tema: Actualizaciones maliciosas)",
+      "id": "p7-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante explota una vulnerabilidad en un sistema de archivos de un dispositivo embebido durante el proceso de arranque, causando un bucle de reinicio que impide el funcionamiento normal. ¿Qué tipo de vulnerabilidad está explotando?",
+      "opciones": [
+        "Condición de carrera (Race Condition)",
+        "Inyección de SQL",
+        "Desbordamiento de búfer basado en montículo",
+        "XSS almacenado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ejemplo del Mars Rover Spirit en 2004 ilustra cómo una condición de carrera durante el arranque puede causar un bucle de reinicio. (Tema: Condiciones de carrera)",
+      "id": "p7-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué medida de mitigación es MENOS efectiva para prevenir desbordamientos de búfer según el temario?",
+      "opciones": [
+        "Desactivar completamente la memoria dinámica (heap) en el sistema operativo.",
+        "Implementar comprobaciones de límites estrictas en el código.",
+        "Utilizar lenguajes de programación seguros como Rust o Go.",
+        "Aplicar protecciones como ASLR y DEP en el sistema operativo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Desactivar la memoria dinámica no es una medida viable ni recomendada, ya que muchos programas dependen de ella. (Tema: Desbordamientos de búfer)",
+      "id": "p7-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante inyecta código malicioso en una DLL legítima de un proceso del sistema para evadir la detección de malware. ¿Qué técnica de inyección en memoria está utilizando?",
+      "opciones": [
+        "Inyección de DLL",
+        "Desbordamiento de búfer basado en pila",
+        "Condición de carrera (Race Condition)",
+        "XSS reflejado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La inyección de DLL permite al atacante reemplazar una DLL legítima por una maliciosa para evadir detecciones. (Tema: Inyecciones en memoria)",
+      "id": "p7-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Identifica el concepto: Un atacante explota una vulnerabilidad en un servicio web que permite ejecutar comandos del sistema operativo mediante una consulta SQL maliciosa. ¿Qué tipo de vulnerabilidad está explotando?",
+      "opciones": [
+        "Inyección de SQL con ejecución remota de comandos (RCE)",
+        "Desbordamiento de búfer basado en montículo",
+        "Condición de carrera (Race Condition)",
+        "XSS almacenado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La inyección de SQL puede permitir la ejecución remota de comandos (RCE) si la vulnerabilidad es lo suficientemente grave. (Tema: Inyección de SQL)",
+      "id": "p7-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de inyección en memoria NO requiere modificar la ruta de acceso de una DLL en el sistema de archivos para cargar una versión maliciosa?",
+      "opciones": [
+        "a) Inyección de DLL modificando el contenido de la DLL en memoria sin alterar su ubicación en el sistema de archivos",
+        "b) Inyección de DLL mediante la manipulación de la ruta de acceso en el proceso objetivo",
+        "c) Inyección de código malicioso en un hilo (thread) en ejecución para aprovechar sus permisos",
+        "d) Inyección de código en un búfer de memoria para sobrescribir el puntero de retorno de una función"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La técnica descrita en la opción 'a' corresponde a la inyección de DLL en memoria, donde el atacante modifica el contenido de la DLL directamente en memoria sin alterar su ubicación en el sistema de archivos, según el temario sobre inyecciones en memoria.",
+      "id": "p7-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando desbordamientos de búfer, ¿qué característica distingue principalmente a un desbordamiento basado en montículo (heap-based) de uno basado en pila (stack-based) en términos de gestión de memoria?",
+      "opciones": [
+        "a) El desbordamiento basado en montículo ocurre en la memoria dinámica asignada durante la ejecución del programa, mientras que el basado en pila ocurre en la memoria estática de la pila de llamadas",
+        "b) El desbordamiento basado en pila siempre permite la ejecución de código arbitrario, mientras que el basado en montículo solo causa denegación de servicio",
+        "c) El desbordamiento basado en montículo solo afecta a variables locales, mientras que el basado en pila afecta a estructuras de datos globales",
+        "d) El desbordamiento basado en pila es más fácil de explotar que el basado en montículo, ya que la pila tiene un tamaño fijo y predecible"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, el desbordamiento basado en montículo ocurre en la memoria dinámica (heap), asignada durante la ejecución, mientras que el basado en pila ocurre en la memoria estática de la pila de llamadas (stack), donde se almacenan variables locales y direcciones de retorno.",
+      "id": "p7-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de inyección de SQL según el temario?",
+      "opciones": [
+        "a) Inyección clásica",
+        "b) Inyección basada en errores",
+        "c) Inyección ciega",
+        "d) Inyección de DLL"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La inyección de DLL no es un tipo de inyección de SQL, sino una técnica de inyección en memoria según el temario. Los tipos de inyección de SQL mencionados son clásica, basada en errores y ciega.",
+      "id": "p7-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Un atacante explota una vulnerabilidad en un sistema operativo que le permite ejecutar código con privilegios elevados sin autenticación previa, aprovechando una falla en la gestión de permisos. ¿Qué tipo de vulnerabilidad está explotando según el temario?",
+      "opciones": [
+        "a) Desbordamiento de búfer",
+        "b) Inyección en memoria",
+        "c) Elevación de privilegios (Privilege Escalation)",
+        "d) Condición de carrera (Race Condition)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Según el temario, una vulnerabilidad que permite ejecutar código con privilegios elevados sin autenticación previa se clasifica como elevación de privilegios (Privilege Escalation), un tipo de vulnerabilidad en sistemas operativos.",
+      "id": "p7-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes medidas NO es recomendada para prevenir condiciones de carrera según el temario?",
+      "opciones": [
+        "Implementar semáforos o bloqueos (locks) para sincronizar el acceso a recursos compartidos",
+        "Utilizar transacciones atómicas para garantizar operaciones indivisibles",
+        "Permitir múltiples hilos de ejecución sin restricciones para mejorar el rendimiento",
+        "Realizar pruebas de concurrencia exhaustivas durante el desarrollo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las condiciones de carrera se previenen mediante mecanismos de sincronización como semáforos o bloqueos, no permitiendo múltiples hilos sin restricciones, ya que esto aumenta el riesgo de condiciones de carrera.",
+      "id": "p7-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el concepto: Un atacante explota una vulnerabilidad en un sistema operativo que permite ejecutar código con privilegios elevados sin autenticación previa. ¿Qué tipo de vulnerabilidad es más probable que esté explotando?",
+      "opciones": [
+        "a) Desbordamiento de búfer",
+        "b) Inyección en memoria",
+        "c) Ejecución remota de código (RCE)",
+        "d) Condición de carrera (Race Condition)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Según el temario, una vulnerabilidad que permite ejecutar código con privilegios elevados sin autenticación previa se clasifica como ejecución remota de código (RCE) en sistemas operativos.",
+      "id": "p7-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una empresa implementa parches de seguridad mensualmente, pero un atacante logra explotar una vulnerabilidad crítica en un servicio web 2 días después de que el parche fue lanzado, antes de que la empresa lo implemente. ¿Qué principio de gestión de parches NO se está aplicando correctamente según el temario?",
+      "opciones": [
+        "a) Aplicar parches de seguridad tan pronto como estén disponibles",
+        "b) Realizar pruebas de los parches en entornos de staging antes de desplegarlos en producción",
+        "c) Implementar políticas de actualización automatizada en entornos empresariales",
+        "d) Descargar actualizaciones solo desde fuentes oficiales y verificadas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, el principio de aplicar parches de seguridad tan pronto como estén disponibles no se está aplicando correctamente, ya que la empresa espera un mes para implementarlos, exponiendo el sistema a vulnerabilidades conocidas.",
+      "id": "p7-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria NO requiere que el atacante coloque una DLL maliciosa en el sistema de archivos antes de modificar la ruta de acceso en el proceso objetivo?",
+      "opciones": [
+        "a) Inyección de DLL mediante modificación de la ruta en memoria",
+        "b) Inyección de DLL clásica (modificación de la ruta en el sistema de archivos)",
+        "c) Inyección de código en hilos (thread injection)",
+        "d) Inyección de DLL por carga forzada en memoria"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La inyección de DLL mediante modificación de la ruta en memoria (opción a) no requiere colocar la DLL maliciosa en el sistema de archivos, ya que el atacante inyecta directamente el código en el proceso objetivo sin alterar archivos.",
+      "id": "p7-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante inyecta una DLL maliciosa en un proceso legítimo del sistema para evadir la detección de malware, aprovechando que la DLL hereda los permisos del proceso huésped. ¿Qué técnica de inyección en memoria está utilizando según el temario?",
+      "opciones": [
+        "a) Inyección de DLL modificando la ruta de acceso en el proceso objetivo",
+        "b) Inyección de código en un hilo (thread) para modificar un recurso compartido",
+        "c) Inyección de código en un búfer de memoria para sobrescribir el puntero de retorno de una función",
+        "d) Inyección de DLL en memoria sin alterar su ubicación en el sistema de archivos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, la técnica descrita corresponde a la inyección de DLL modificando la ruta de acceso en el proceso objetivo, lo que permite cargar la versión maliciosa de la DLL en lugar de la legítima.",
+      "id": "p7-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de desarrollo implementa una aplicación web que gestiona transacciones financieras críticas. Durante una auditoría de seguridad, se detecta que la aplicación utiliza consultas SQL concatenadas directamente con datos de entrada del usuario sin ningún tipo de validación. Un atacante, mediante un ataque de inyección de SQL, logra modificar el saldo de una cuenta sin autenticación. ¿Qué técnica de mitigación, específicamente recomendada en el temario para este tipo de vulnerabilidad, NO se ha aplicado correctamente en este escenario?",
+      "opciones": [
+        "a) Utilizar consultas parametrizadas (prepared statements) en lugar de concatenar cadenas de texto con datos de entrada.",
+        "b) Implementar firewalls de aplicaciones web (WAF) para bloquear intentos de inyección de SQL en tiempo real.",
+        "c) Aplicar el principio de mínimo privilegio en las cuentas de bases de datos utilizadas por la aplicación.",
+        "d) Realizar copias de seguridad (backups) diarias de la base de datos para recuperar datos en caso de explotación."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Aunque los backups son importantes para la recuperación de datos, no son una medida de mitigación directa para prevenir inyecciones de SQL. Las opciones a), b) y c) son técnicas específicas mencionadas en el temario para mitigar este tipo de vulnerabilidad.",
+      "id": "p7-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de inyección en memoria NO requiere que el atacante coloque una DLL maliciosa en el sistema de archivos antes de modificar la ruta de acceso en el proceso objetivo?",
+      "opciones": [
+        "Inyección de DLL mediante modificación de ruta en memoria",
+        "Inyección de DLL clásica (modificación de ruta en disco)",
+        "Inyección de DLL basada en herencia de permisos",
+        "Inyección de DLL con DLL hijacking"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La técnica de inyección en memoria que no requiere colocar una DLL maliciosa en el sistema de archivos es la modificación directa de la ruta de acceso en memoria, aprovechando que la DLL maliciosa ya está cargada en el proceso objetivo.",
+      "id": "p7-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Qué diferencia principal existe entre un desbordamiento de búfer basado en pila (stack-based) y uno basado en montículo (heap-based) en términos de gestión de memoria?",
+      "opciones": [
+        "El desbordamiento basado en pila sobrescribe direcciones de retorno, mientras que el basado en montículo sobrescribe metadatos de asignación de memoria.",
+        "El desbordamiento basado en pila afecta a variables globales, mientras que el basado en montículo afecta a variables locales.",
+        "El desbordamiento basado en pila es más fácil de explotar, mientras que el basado en montículo requiere acceso a memoria dinámica.",
+        "El desbordamiento basado en pila ocurre en el heap, mientras que el basado en montículo ocurre en la pila."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los desbordamientos basados en pila sobrescriben direcciones de retorno o marcos de pila, mientras que los basados en montículo sobrescriben metadatos de asignación de memoria dinámica (heap), como encabezados de bloques.",
+      "id": "p7-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué medida de mitigación es MENOS efectiva para prevenir condiciones de carrera según el temario?",
+      "opciones": [
+        "a. Implementar semáforos y bloqueos para sincronizar el acceso a recursos compartidos.",
+        "b. Realizar pruebas de concurrencia exhaustivas durante el desarrollo de aplicaciones.",
+        "c. Utilizar consultas SQL parametrizadas en la aplicación web afectada.",
+        "d. Aplicar transacciones atómicas en operaciones que involucren recursos compartidos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las condiciones de carrera se previenen con mecanismos de sincronización, pruebas de concurrencia y transacciones atómicas. Utilizar consultas SQL parametrizadas es una medida para mitigar inyecciones de SQL, no condiciones de carrera.",
+      "id": "p7-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Un atacante explota una vulnerabilidad en un sistema de archivos de un dispositivo embebido durante el proceso de arranque, causando un bucle de reinicio que impide el funcionamiento normal. ¿Qué tipo de vulnerabilidad está explotando según el temario?",
+      "opciones": [
+        "Condición de carrera (Race Condition)",
+        "Desbordamiento de búfer (Buffer Overflow)",
+        "Inyección de DLL",
+        "Inyección de SQL"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este escenario describe una condición de carrera (Race Condition) explotada durante el proceso de arranque, como el caso del Mars Rover Spirit mencionado en el temario.",
+      "id": "p7-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de mitigación es MENOS efectiva para prevenir inyecciones de DLL según el temario?",
+      "opciones": [
+        "a) Implementar listas de control de aplicaciones (Application Allowlisting)",
+        "b) Validar firmas digitales de DLLs antes de su carga",
+        "c) Permitir la carga dinámica de bibliotecas sin restricciones adicionales",
+        "d) Utilizar herramientas de detección de comportamientos anómalos en memoria"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario destaca que las inyecciones de DLL requieren colocar primero la DLL maliciosa en el sistema, por lo que permitir la carga dinámica sin restricciones adicionales (opción c) no mitiga el riesgo, ya que no evita la colocación inicial del malware.",
+      "id": "p7-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de inyección en memoria NO requiere modificar la ruta de acceso de una DLL en el proceso objetivo para cargar una versión maliciosa?",
+      "opciones": [
+        "a) Inyección de DLL mediante modificación de la ruta en el registro del sistema",
+        "b) Inyección de código en memoria sin alterar archivos en el sistema de archivos",
+        "c) Inyección de DLL maliciosa en un proceso legítimo y modificación de su ruta de acceso",
+        "d) Inyección de DLL a través de un exploit que aprovecha una vulnerabilidad en la carga dinámica de bibliotecas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La técnica que no requiere modificar la ruta de acceso de una DLL es la inyección de código en memoria sin alterar archivos en el sistema de archivos, ya que se ejecuta directamente en el espacio de memoria del proceso objetivo sin necesidad de manipular rutas.",
+      "id": "p7-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una empresa aplica parches de seguridad mensuales en sus sistemas. Sin embargo, un atacante logra explotar una vulnerabilidad crítica en un servicio web 3 días después de que el parche fue lanzado, antes de que la empresa lo implemente. ¿Qué principio de gestión de parches NO se está aplicando correctamente según el temario?",
+      "opciones": [
+        "Principio de actualización inmediata (Patch Tuesday no es suficiente)",
+        "Principio de segmentación de parches",
+        "Principio de prueba en entornos controlados",
+        "Principio de monitorización continua"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El principio de actualización inmediata requiere aplicar parches tan pronto como estén disponibles, no solo en el ciclo mensual de Patch Tuesday.",
+      "id": "p7-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de mitigación es MENOS efectiva para prevenir inyecciones de DLL (Dynamic Link Library) en sistemas operativos?",
+      "opciones": [
+        "a) Implementar listas de control de aplicaciones (Application Allowlisting)",
+        "b) Validar la integridad de los archivos de DLL antes de su carga",
+        "c) Realizar análisis estático de código en aplicaciones que utilizan DLLs",
+        "d) Permitir que los usuarios modifiquen manualmente las rutas de acceso de DLLs en el sistema"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario recomienda medidas como allowlisting, validación de integridad y análisis estático, pero NO menciona como efectiva permitir que los usuarios modifiquen rutas de DLLs manualmente, ya que esto aumenta el riesgo de inyecciones.",
+      "id": "p7-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de desarrollo de software utiliza un sistema de gestión de versiones que aplica parches de seguridad automáticamente en sus servidores de producción cada domingo a las 3 AM. Sin embargo, un atacante logra explotar una vulnerabilidad crítica en un servicio web desplegado en estos servidores el martes siguiente, aprovechando que el parche correspondiente aún no había sido liberado por el proveedor de software. Durante la investigación posterior, se descubre que el proveedor lanzó el parche el lunes a las 10 AM, pero la empresa no implementó un mecanismo para detectar y aplicar parches fuera del ciclo semanal automático. ¿Qué principio fundamental de gestión de parches NO se está aplicando correctamente en este escenario?",
+      "opciones": [
+        "a) Validación de firmas digitales en los paquetes de actualización antes de su instalación",
+        "b) Implementación de un proceso de parcheo continuo (Continuous Patching) para vulnerabilidades críticas",
+        "c) Realización de pruebas de regresión en entornos de staging antes de aplicar parches en producción",
+        "d) Utilización de herramientas de gestión de parches centralizadas con capacidades de detección de vulnerabilidades en tiempo real"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El principio que NO se está aplicando correctamente es la implementación de un proceso de parcheo continuo para vulnerabilidades críticas, ya que el ciclo semanal automático no permite mitigar amenazas críticas que requieren una respuesta inmediata una vez liberado el parche.",
+      "id": "p7-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de desarrollo implementa una aplicación crítica para la gestión de inventarios en una empresa manufacturera. Durante una auditoría, se detecta que la aplicación utiliza consultas SQL concatenadas directamente con datos de entrada del usuario sin validación. Un atacante explota esta vulnerabilidad para modificar el precio de productos en la base de datos, causando pérdidas financieras. ¿Qué técnica de mitigación, específica para inyecciones de SQL según el temario, NO se ha aplicado correctamente en este escenario?",
+      "opciones": [
+        "a) Utilizar consultas parametrizadas (prepared statements) en lugar de concatenar cadenas de texto.",
+        "b) Implementar firewalls de aplicaciones web (WAF) para bloquear intentos de inyección.",
+        "c) Aplicar el principio de mínimo privilegio en las cuentas de bases de datos.",
+        "d) Desactivar JavaScript en los navegadores de los usuarios para evitar ejecución de scripts maliciosos."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La medida 'd' no es relevante para mitigar inyecciones de SQL, ya que esta vulnerabilidad se explota a nivel de servidor y no depende de la ejecución de JavaScript en el cliente. Las opciones a, b y c son técnicas específicas recomendadas en el temario para prevenir inyecciones de SQL.",
+      "id": "p7-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria permite al atacante modificar el contenido de una DLL en memoria sin alterar su ubicación en el sistema de archivos?",
+      "opciones": [
+        "a) Inyección de DLL mediante modificación de la ruta de acceso en el registro",
+        "b) Inyección de DLL en memoria (DLL Injection in Memory)",
+        "c) Inyección de código en hilos (Thread Injection)",
+        "d) Inyección basada en montículo (Heap-based Injection)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La inyección de DLL en memoria permite modificar el contenido de una DLL directamente en la memoria del proceso objetivo sin necesidad de alterar su ubicación en el sistema de archivos, evitando así la detección basada en archivos.",
+      "id": "p7-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de inyección en memoria NO requiere que el atacante coloque una DLL maliciosa en el sistema de archivos para modificar su comportamiento en un proceso objetivo?",
+      "opciones": [
+        "a) Inyectar código malicioso directamente en la memoria del proceso sin alterar DLLs",
+        "b) Modificar la ruta de acceso de una DLL en el proceso objetivo para cargar una versión maliciosa",
+        "c) Sobrescribir el contenido de una DLL legítima en memoria sin modificar su ubicación en el sistema de archivos",
+        "d) Utilizar técnicas de desbordamiento de búfer para ejecutar código arbitrario en el proceso"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, la técnica que no requiere colocar una DLL maliciosa en el sistema de archivos es inyectar código malicioso directamente en la memoria del proceso, sin necesidad de manipular DLLs.",
+      "id": "p7-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria permite al atacante modificar el contenido de una DLL en memoria sin alterar su ubicación en el sistema de archivos ni modificar la ruta de acceso en el proceso objetivo?",
+      "opciones": [
+        "a) Inyección de DLL clásica (modificando la ruta en el sistema de archivos)",
+        "b) Inyección de código en memoria (Memory Code Injection)",
+        "c) Inyección de DLL en memoria (DLL Injection in Memory)",
+        "d) Manipulación de permisos de hilos (Thread Permission Manipulation)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La técnica de inyección de DLL en memoria permite modificar el contenido de una DLL directamente en la memoria del proceso objetivo sin alterar su ubicación en el sistema de archivos, evitando así la detección basada en cambios en el disco.",
+      "id": "p7-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria permite al atacante modificar el comportamiento de una DLL legítima en memoria sin alterar su contenido en el sistema de archivos ni modificar su ruta de acceso en el proceso objetivo?",
+      "opciones": [
+        "a) Inyección de DLL mediante modificación de la ruta de acceso en el registro del sistema",
+        "b) Inyección de código malicioso en la pila (stack) del proceso objetivo",
+        "c) Modificación del contenido de la DLL directamente en memoria mediante técnicas de escritura arbitraria",
+        "d) Sobrescritura de variables de entorno que afecten la carga de la DLL"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que una técnica avanzada de inyección en memoria permite modificar el contenido de una DLL en memoria sin alterar su ubicación en el sistema de archivos ni la ruta de acceso en el proceso objetivo.",
+      "id": "p7-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria permite al atacante modificar el comportamiento de una DLL legítima en memoria sin alterar su contenido en el sistema de archivos ni modificar la ruta de acceso en el proceso objetivo?",
+      "opciones": [
+        "a) Inyección de DLL mediante modificación de ruta en el registro",
+        "b) Carga forzada de DLL en memoria sin modificar el sistema de archivos",
+        "c) Modificación de parámetros en memoria para alterar el comportamiento de la DLL",
+        "d) Inyección de código en el búfer de la DLL objetivo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Esta técnica se conoce como modificación de parámetros en memoria, donde el atacante altera el comportamiento de una DLL legítima en ejecución sin modificar el archivo en el sistema de archivos ni su ruta de acceso.",
+      "id": "p7-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria NO requiere que el atacante modifique la ruta de acceso de una DLL en el proceso objetivo para cargar una versión maliciosa?",
+      "opciones": [
+        "a) DLL Injection por modificación de ruta en el registro del sistema",
+        "b) Inyección de código malicioso directamente en memoria sin alterar archivos",
+        "c) Manipulación de hilos para ejecutar código en un proceso legítimo",
+        "d) Overwriting de la memoria de una DLL legítima sin modificar su ubicación en el sistema de archivos"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La técnica de modificar el contenido de una DLL en memoria sin alterar su ubicación en el sistema de archivos ni su ruta de acceso se conoce como inyección por *reflective DLL injection* o *memory overwriting*, según el temario.",
+      "id": "p7-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria permite al atacante modificar el contenido de un búfer en memoria sin alterar su ubicación en el sistema de archivos ni modificar la ruta de acceso en el proceso objetivo?",
+      "opciones": [
+        "Inyección de DLL en pila (DLL Stack Injection)",
+        "Modificación de búfer en memoria (Buffer Overflow en memoria)",
+        "Inyección de código en hilos (Thread Injection)",
+        "Inyección de DLL dinámica (Dynamic DLL Injection)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El desbordamiento de búfer basado en memoria (buffer overflow) permite al atacante sobrescribir áreas de memoria en tiempo de ejecución sin necesidad de alterar archivos en el sistema de archivos o rutas de acceso.",
+      "id": "p7-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de mitigación es MENOS efectiva para prevenir inyecciones de SQL según el temario?",
+      "opciones": [
+        "a) Utilizar consultas parametrizadas (prepared statements).",
+        "b) Implementar validación de entrada estricta.",
+        "c) Filtrar caracteres sospechosos en los campos de entrada.",
+        "d) Desactivar completamente el acceso a la base de datos."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Desactivar completamente el acceso a la base de datos no es una medida práctica ni recomendada; las técnicas efectivas incluyen consultas parametrizadas y validación de entrada.",
+      "id": "p7-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Un atacante inyecta una DLL maliciosa en un proceso legítimo del sistema para evadir la detección de malware, aprovechando que la DLL hereda los permisos del proceso huésped. ¿Qué técnica de inyección en memoria está utilizando según el temario?",
+      "opciones": [
+        "a) Inyección de DLL clásica (clásica DLL injection)",
+        "b) Inyección de DLL mediante carga forzada (DLL Hijacking)",
+        "c) Inyección de código en memoria sin DLL (DLL-Free Memory Injection)",
+        "d) Inyección de DLL mediante manipulación de la tabla de módulos cargados (Module Stomping)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El atacante está utilizando la técnica de inyección de DLL clásica (clásica DLL injection), donde la DLL maliciosa se inyecta en un proceso legítimo y hereda sus permisos.",
+      "id": "p7-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa una aplicación crítica para la gestión de inventarios que utiliza un sistema de colas de mensajes para sincronizar transacciones entre múltiples usuarios. Durante una auditoría, se detecta que la aplicación no implementa mecanismos de sincronización adecuados al acceder a una cola compartida de actualización de stock. Un atacante, aprovechando este escenario, manipula el orden de ejecución de los hilos para forzar una condición de carrera donde dos usuarios distintos retiran la misma unidad de producto antes de que el sistema actualice el inventario. ¿Qué principio de diseño de aplicaciones NO se ha aplicado correctamente según el temario?",
+      "opciones": [
+        "Implementación de transacciones atómicas para garantizar la atomicidad en operaciones críticas",
+        "Uso de bloqueos (locks) para evitar condiciones de carrera en el acceso a recursos compartidos",
+        "Aplicación del patrón de diseño 'Singleton' para asegurar una única instancia de la cola de mensajes",
+        "Utilización de semáforos para controlar el acceso concurrente a la cola compartida"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El patrón Singleton garantiza una única instancia de una clase, pero no resuelve problemas de concurrencia en el acceso a recursos compartidos. La mitigación adecuada requiere mecanismos específicos como transacciones atómicas, bloqueos o semáforos para evitar condiciones de carrera.",
+      "id": "p7-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria NO requiere modificar el contenido de una DLL en el sistema de archivos para cargar una versión maliciosa?",
+      "opciones": [
+        "a) Inyección de DLL mediante modificación de ruta de acceso",
+        "b) Inyección de código en búfer en memoria",
+        "c) Inyección de DLL en memoria sin alterar su ubicación en el sistema de archivos",
+        "d) Inyección de DLL mediante manipulación de permisos del proceso huésped"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La técnica de inyección de DLL en memoria permite modificar el comportamiento de una DLL legítima directamente en memoria, sin necesidad de alterar su contenido o ubicación en el sistema de archivos.",
+      "id": "p7-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de mitigación es MENOS efectiva para prevenir inyecciones en memoria que explotan vulnerabilidades en DLLs?",
+      "opciones": [
+        "a) Implementar listas de control de aplicaciones (Application Allowlisting)",
+        "b) Utilizar herramientas de detección de comportamientos anómalos en memoria",
+        "c) Confiar únicamente en la validación de rutas de acceso de DLLs sin aplicar otros controles",
+        "d) Mantener el software y sistemas operativos actualizados con parches de seguridad"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La validación de rutas de acceso de DLLs por sí sola no es suficiente, ya que los atacantes pueden modificar el contenido de la DLL en memoria o utilizar técnicas como la inyección directa sin alterar la ruta en el sistema de archivos.",
+      "id": "p7-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de mitigación es MENOS efectiva para prevenir desbordamientos de búfer en aplicaciones desarrolladas en lenguajes no seguros?",
+      "opciones": [
+        "a) Implementar comprobaciones de límites en el código fuente",
+        "b) Utilizar lenguajes de programación seguros como Rust",
+        "c) Confiar únicamente en sistemas de detección de intrusos (IDS) para bloquear exploits",
+        "d) Aplicar parches de seguridad de manera oportuna"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los sistemas de detección de intrusos (IDS) no son una medida directa ni efectiva contra desbordamientos de búfer, ya que estos ocurren a nivel de aplicación y no necesariamente generan tráfico malicioso detectable por la red.",
+      "id": "p7-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante explota una vulnerabilidad en un sistema de archivos de un dispositivo embebido durante el proceso de arranque, causando un bucle de reinicio que impide el funcionamiento normal. ¿Qué tipo de vulnerabilidad está explotando según el temario?",
+      "opciones": [
+        "Condición de carrera (Race Condition)",
+        "Inyección de DLL",
+        "Desbordamiento de búfer",
+        "Inyección de SQL"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este escenario describe una condición de carrera (Race Condition) explotada durante el proceso de arranque, como el caso del Mars Rover Spirit mencionado en el temario.",
+      "id": "p7-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de inyección en memoria permite al atacante modificar el comportamiento de una DLL legítima en memoria sin alterar su contenido en el sistema de archivos ni modificar su ruta de acceso en el proceso objetivo?",
+      "opciones": [
+        "Inyección de DLL mediante modificación de ruta",
+        "Inyección en búfer en memoria",
+        "Inyección de código en memoria sin DLL",
+        "Modificación en tiempo de ejecución de la DLL en memoria"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Según el temario, la técnica que permite modificar el comportamiento de una DLL legítima en memoria sin alterar su contenido en el sistema de archivos ni su ruta de acceso es la modificación en tiempo de ejecución de la DLL en memoria.",
+      "id": "p7-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el concepto a partir del siguiente ejemplo: Un atacante inyecta código malicioso en una DLL legítima de un proceso del sistema para evadir la detección de malware.",
+      "opciones": [
+        "Inyección de DLL",
+        "Desbordamiento de búfer",
+        "Inyección de SQL",
+        "Condición de carrera"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ejemplo describe la técnica de inyección de DLL, donde se inyecta una DLL maliciosa en un proceso legítimo para evadir la detección.",
+      "id": "p7-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria NO permite al atacante cargar una DLL maliciosa en el sistema de archivos antes de modificar su comportamiento en un proceso objetivo?",
+      "opciones": [
+        "a) Inyección de DLL mediante modificación de ruta de acceso en el proceso",
+        "b) Inyección de código en búfer en memoria",
+        "c) Modificación del contenido de una DLL legítima en memoria sin alterar su ubicación en el sistema de archivos",
+        "d) Inyección de DLL mediante herencia de permisos del proceso huésped"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La técnica que no requiere colocar una DLL maliciosa en el sistema de archivos es la modificación del contenido de una DLL legítima directamente en memoria, sin alterar su ubicación en el disco.",
+      "id": "p7-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de inyección en memoria permite modificar el comportamiento de un proceso legítimo sin necesidad de colocar una DLL maliciosa en el sistema de archivos?",
+      "opciones": [
+        "Inyección de DLL mediante modificación de ruta de acceso",
+        "Inyección de código en búferes en memoria",
+        "Inyección de DLL en memoria mediante parches en tiempo de ejecución",
+        "Inyección de hilos maliciosos en procesos legítimos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La inyección de código en búferes en memoria permite modificar el comportamiento de un proceso sin alterar archivos en el sistema de archivos, aprovechando vulnerabilidades en la gestión de memoria del proceso.",
+      "id": "p7-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa una aplicación crítica para gestionar el acceso a áreas restringidas mediante tarjetas RFID. Durante una auditoría, se detecta que la aplicación almacena en memoria el identificador de usuario y el nivel de acceso asociado en un búfer de tamaño fijo. Un atacante, con acceso físico temporal al terminal, aprovecha esta vulnerabilidad para enviar un identificador excesivamente largo (superior a 1024 caracteres) que sobrescribe el búfer y modifica el nivel de acceso del usuario actual a 'administrador', permitiendo el acceso a zonas restringidas. ¿Qué tipo de vulnerabilidad está explotando el atacante según el temario?",
+      "opciones": [
+        "a) Inyección de DLL en memoria",
+        "b) Desbordamiento de búfer basado en montículo (heap-based)",
+        "c) Desbordamiento de búfer basado en pila (stack-based)",
+        "d) Condición de carrera en hilos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La vulnerabilidad descrita corresponde a un desbordamiento de búfer *basado en pila* (stack-based), donde el atacante sobrescribe el búfer en la pila de ejecución, incluyendo el valor del nivel de acceso almacenado en memoria adyacente.",
+      "id": "p7-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes NO es una medida recomendada para mitigar inyecciones de SQL según el temario?",
+      "opciones": [
+        "Utilizar consultas parametrizadas (prepared statements)",
+        "Implementar validación de entrada estricta",
+        "Aplicar el principio de mínimo privilegio en las cuentas de bases de datos",
+        "Desactivar JavaScript en el navegador de los usuarios"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Desactivar JavaScript en el navegador de los usuarios no es una medida recomendada para mitigar inyecciones de SQL, ya que no aborda la vulnerabilidad en la aplicación web.",
+      "id": "p7-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de mitigación es MENOS efectiva para prevenir inyecciones de DLL en memoria?",
+      "opciones": [
+        "a) Implementar listas de control de aplicaciones (Application Allowlisting)",
+        "b) Utilizar herramientas de detección de comportamientos anómalos en memoria",
+        "c) Confiar únicamente en la validación de rutas de acceso de DLLs",
+        "d) Mantener el software actualizado con los últimos parches de seguridad"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La validación de rutas de acceso de DLLs no es suficiente para prevenir inyecciones de DLL, ya que el atacante puede modificar el comportamiento en memoria sin alterar las rutas en el sistema de archivos.",
+      "id": "p7-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria permite al atacante modificar el comportamiento de un proceso legítimo sin necesidad de colocar una DLL maliciosa en el sistema de archivos?",
+      "opciones": [
+        "a) Inyección de DLL",
+        "b) Inyección en búfer",
+        "c) Inyección en pila (stack injection)",
+        "d) Inyección en montículo (heap injection)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La inyección en búfer permite al atacante sobrescribir áreas de memoria de un proceso en ejecución sin necesidad de modificar archivos en el sistema de archivos, como DLLs.",
+      "id": "p7-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Qué diferencia existe entre una condición de carrera basada en TOCTOU y una condición de carrera clásica en hilos?",
+      "opciones": [
+        "TOCTOU implica verificar un recurso y modificarlo antes de su uso, mientras que la clásica manipula el orden de ejecución de hilos en recursos compartidos.",
+        "TOCTOU solo ocurre en sistemas financieros, mientras que las clásicas son exclusivas de sistemas embebidos.",
+        "TOCTOU requiere acceso físico al sistema, mientras que las clásicas no.",
+        "TOCTOU es un tipo de desbordamiento de búfer, mientras que las clásicas son inyecciones de DLL."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "TOCTOU (Time of Check to Time of Use) es un subtipo de condición de carrera donde se verifica un recurso y se modifica antes de su uso, mientras que las clásicas manipulan el orden de ejecución en hilos compartidos.",
+      "id": "p7-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria permite al atacante modificar el comportamiento de un proceso legítimo sin necesidad de colocar una DLL maliciosa en el sistema de archivos ni alterar su ruta de acceso en el proceso objetivo?",
+      "opciones": [
+        "Inyección de DLL",
+        "Desbordamiento de búfer",
+        "Inyección de código en memoria (Code Injection)",
+        "Inyección por DLL en memoria (DLL Injection in Memory)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La inyección de código en memoria (Code Injection) permite modificar el comportamiento de un proceso legítimo directamente en memoria, sin requerir la modificación del sistema de archivos ni la ruta de acceso de una DLL. El atacante inyecta código malicioso en un área de memoria ya asignada al proceso.",
+      "id": "p7-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué medida de mitigación es MENOS efectiva para prevenir desbordamientos de búfer en aplicaciones desarrolladas en lenguajes no seguros?",
+      "opciones": [
+        "Implementar comprobaciones de límites estrictas",
+        "Utilizar lenguajes de programación seguros como Rust",
+        "Aplicar parches de seguridad de manera oportuna",
+        "Desactivar la protección ASLR en el sistema operativo"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Desactivar ASLR (Address Space Layout Randomization) reduce la protección contra desbordamientos de búfer, ya que dificulta la explotación al randomizar la ubicación de la memoria.",
+      "id": "p7-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de mitigación es MENOS efectiva para prevenir inyecciones en memoria que explotan vulnerabilidades en DLLs según el temario?",
+      "opciones": [
+        "a) Implementar listas de control de aplicaciones (Application Allowlisting)",
+        "b) Utilizar herramientas de detección de comportamientos anómalos en memoria",
+        "c) Validar y sanitizar todas las entradas de usuario en tiempo de ejecución",
+        "d) Mantener el software actualizado"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Aunque la validación y sanitización de entradas es útil para inyecciones como SQLi, no es una medida directa contra inyecciones en memoria que explotan DLLs, ya que estas técnicas operan en memoria sin depender de entradas de usuario.",
+      "id": "p7-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria permite al atacante modificar el comportamiento de un proceso legítimo sin necesidad de alterar el contenido de una DLL en el sistema de archivos ni modificar su ruta de acceso en el proceso objetivo?",
+      "opciones": [
+        "Inyección en búfer (Buffer Injection)",
+        "Inyección en DLL (DLL Injection)",
+        "Inyección en hilo (Thread Injection)",
+        "Inyección en montículo (Heap Injection)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La inyección en búfer permite modificar el contenido de un búfer en memoria sin alterar su ubicación en el sistema de archivos ni modificar la ruta de acceso, según se detalla en el temario sobre técnicas de inyección en memoria.",
+      "id": "p7-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una empresa implementa parches de seguridad mensualmente, pero un atacante explota una vulnerabilidad crítica en un servicio web 2 días después de que el parche fue lanzado, antes de que la empresa lo implemente. ¿Qué principio de gestión de parches NO se está aplicando correctamente según el temario?",
+      "opciones": [
+        "Aplicar parches tan pronto como estén disponibles",
+        "Implementar políticas de actualización automatizada",
+        "Realizar pruebas de parches en entornos de staging",
+        "Descargar actualizaciones solo desde fuentes oficiales"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El principio de aplicar parches tan pronto como estén disponibles no se está cumpliendo, ya que la empresa espera al ciclo mensual en lugar de implementarlos de forma inmediata.",
+      "id": "p7-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de manufactura utiliza un sistema embebido para controlar sus líneas de producción, donde un microcontrolador ejecuta un firmware basado en un sistema operativo en tiempo real (RTOS). Durante una auditoría de seguridad, se descubre que el firmware no implementa protección ASLR (Address Space Layout Randomization) ni DEP (Data Execution Prevention), y además, el proceso de actualización del firmware no valida la integridad del archivo mediante una firma digital antes de su instalación. Un atacante, con acceso a la red interna, logra interceptar una actualización legítima del firmware, modificar su contenido para incluir código malicioso que deshabilita los mecanismos de control de seguridad del RTOS, y luego distribuirla a los dispositivos embebidos. ¿Qué combinación de vulnerabilidades y técnicas de explotación está utilizando el atacante según el temario?",
+      "opciones": [
+        "a) Inyección en memoria (DLL injection) en el proceso del RTOS + Vulnerabilidad de desbordamiento de búfer en el firmware + Ausencia de validación de firmas digitales en actualizaciones.",
+        "b) Supply chain attack (ataque a la cadena de suministro) + Vulnerabilidad de condición de carrera en el proceso de arranque del RTOS + Ausencia de ASLR y DEP.",
+        "c) Inyección de SQL en el sistema de gestión de producción + Vulnerabilidad TOCTOU en el manejo de colas de mensajes + Ausencia de firmas digitales en actualizaciones.",
+        "d) Supply chain attack (ataque a la cadena de suministro) + Ausencia de ASLR y DEP en el RTOS + Ausencia de validación de integridad en actualizaciones del firmware."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El atacante está explotando un *supply chain attack* al modificar una actualización legítima del firmware (sin validar su integridad con firmas digitales), y aprovecha la ausencia de protecciones ASLR y DEP en el RTOS para facilitar la ejecución de código malicioso en memoria. El temario destaca que estas protecciones son críticas para mitigar vulnerabilidades en sistemas embebidos y firmware.",
+      "id": "p7-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes NO es una medida recomendada para mitigar condiciones de carrera según el temario?",
+      "opciones": [
+        "Implementar mecanismos de sincronización como semáforos o bloqueos",
+        "Realizar pruebas de concurrencia exhaustivas durante el desarrollo",
+        "Desactivar la protección ASLR en el sistema operativo",
+        "Utilizar transacciones atómicas en operaciones críticas"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Desactivar ASLR no tiene relación con la mitigación de condiciones de carrera y, de hecho, reduce la seguridad general del sistema.",
+      "id": "p7-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de inyección en memoria permite al atacante modificar el comportamiento de un proceso legítimo sin necesidad de colocar una DLL maliciosa en el sistema de archivos?",
+      "opciones": [
+        "Inyección de DLL (DLL Injection)",
+        "Inyección de código en memoria (Code Injection)",
+        "Inyección de hilos (Thread Injection)",
+        "Inyección de montículo (Heap Injection)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La inyección de código en memoria permite modificar el comportamiento de un proceso legítimo sin requerir una DLL maliciosa en el sistema de archivos, según el temario.",
+      "id": "p7-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando inyecciones de SQL clásicas y basadas en errores, ¿qué característica las diferencia principalmente según el temario?",
+      "opciones": [
+        "Las inyecciones clásicas requieren acceso a la base de datos, mientras que las basadas en errores no.",
+        "Las inyecciones basadas en errores explotan mensajes de error para obtener información, mientras que las clásicas inyectan código SQL directo.",
+        "Las inyecciones clásicas solo afectan a aplicaciones web, mientras que las basadas en errores afectan a sistemas operativos.",
+        "Las inyecciones basadas en errores siempre permiten la ejecución de comandos del sistema, mientras que las clásicas no."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las inyecciones de SQL basadas en errores explotan los mensajes de error de la base de datos para obtener información estructural, según el temario.",
+      "id": "p7-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una medida recomendada para mitigar desbordamientos de búfer según el temario?",
+      "opciones": [
+        "Implementar comprobaciones de límites estrictas en el código.",
+        "Utilizar lenguajes de programación seguros como Rust o Go.",
+        "Desactivar ASLR y DEP en sistemas operativos.",
+        "Aplicar parches de seguridad de manera oportuna."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Desactivar ASLR y DEP aumenta la vulnerabilidad a desbordamientos de búfer, según el temario.",
+      "id": "p7-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Un atacante explota una vulnerabilidad en un sistema embebido durante el proceso de arranque, causando un bucle de reinicio que impide el funcionamiento normal. ¿Qué tipo de vulnerabilidad está explotando según el temario?",
+      "opciones": [
+        "Desbordamiento de búfer en memoria dinámica.",
+        "Condición de carrera en el sistema de archivos.",
+        "Inyección de DLL en el firmware.",
+        "Inyección de SQL en la base de datos del dispositivo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ejemplo del Mars Rover Spirit en 2004 ilustra una condición de carrera en el sistema de archivos durante el arranque, según el temario.",
+      "id": "p7-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el concepto a partir del siguiente ejemplo: Un atacante modifica una actualización legítima de un software de gestión de TI para incluir código malicioso antes de su distribución a los usuarios finales.",
+      "opciones": [
+        "Inyección de DLL.",
+        "Actualización maliciosa (Malicious Update).",
+        "Desbordamiento de búfer en memoria.",
+        "Condición de carrera en hilos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ejemplo describe un ataque a la cadena de suministro mediante una actualización maliciosa, según el temario.",
+      "id": "p7-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de mitigación es MENOS efectiva para prevenir inyecciones de DLL en memoria que explotan vulnerabilidades en el sistema?",
+      "opciones": [
+        "a) Implementar listas de control de aplicaciones (Application Allowlisting)",
+        "b) Utilizar herramientas de detección de comportamientos anómalos en memoria",
+        "c) Aplicar parches de seguridad en el sistema operativo de manera oportuna",
+        "d) Deshabilitar completamente la carga dinámica de bibliotecas en el sistema"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Aunque deshabilitar la carga dinámica de bibliotecas podría prevenir inyecciones de DLL, esta medida no es práctica ni recomendada según el temario, ya que muchas aplicaciones legítimas dependen de DLLs para funcionar.",
+      "id": "p7-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una empresa aplica parches de seguridad mensualmente, pero un atacante explota una vulnerabilidad crítica en un servicio web 5 días después de que el parche fue lanzado, antes de que la empresa lo implemente. ¿Qué principio de gestión de parches NO se está aplicando correctamente según el temario?",
+      "opciones": [
+        "Priorización de parches críticos.",
+        "Implementación inmediata de parches.",
+        "Validación de firmas digitales en parches.",
+        "Pruebas en entornos controlados antes de desplegar."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El principio de implementación inmediata de parches no se aplica correctamente, ya que el atacante explotó la vulnerabilidad antes de la implementación, según el temario.",
+      "id": "p7-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria permite modificar el comportamiento de un proceso legítimo sin necesidad de alterar el contenido de una DLL en el sistema de archivos ni modificar su ruta de acceso en el proceso objetivo?",
+      "opciones": [
+        "Inyección de DLL clásica",
+        "Inyección en hilos (Thread Hijacking)",
+        "Inyección basada en montaje (DLL Injection) en memoria",
+        "Inyección de código en búfer (Buffer Overflow Injection)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La técnica de inyección en hilos (Thread Hijacking) modifica el comportamiento de un proceso legítimo en memoria sin requerir alterar el contenido de una DLL en el sistema de archivos ni modificar su ruta de acceso.",
+      "id": "p7-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una medida recomendada para prevenir condiciones de carrera según el temario?",
+      "opciones": [
+        "Implementar semáforos o bloqueos (locks).",
+        "Realizar pruebas de concurrencia exhaustivas.",
+        "Desactivar la multitarea en aplicaciones críticas.",
+        "Utilizar transacciones atómicas."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Desactivar la multitarea no previene condiciones de carrera y puede afectar el funcionamiento de aplicaciones críticas, según el temario.",
+      "id": "p7-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa de desarrollo de software utiliza un sistema CI/CD automatizado para distribuir actualizaciones de seguridad a sus clientes. Un atacante, con acceso a la red interna de la empresa, logra interceptar una actualización legítima destinada a un cliente específico, modificar su contenido para incluir un backdoor que otorga acceso remoto sin autenticación, y luego reenviarla al cliente. El cliente, al instalar la actualización, ejecuta el código malicioso sin sospechar, ya que la actualización estaba firmada digitalmente por la empresa. Según el temario, ¿qué combinación de vulnerabilidades y técnicas de explotación está explotando el atacante?",
+      "opciones": [
+        "a) Inyección de DLL maliciosa en memoria + falta de validación de integridad en el proceso de actualización.",
+        "b) Condición de carrera (TOCTOU) en el sistema de archivos + desbordamiento de búfer en el firmware.",
+        "c) Actualización maliciosa (supply chain attack) + falta de verificación de firmas digitales en el proceso de actualización.",
+        "d) Inyección de SQL en la base de datos del sistema CI/CD + escalada de privilegios mediante ASLR."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El atacante está explotando una actualización maliciosa al modificar el contenido de una actualización legítima (supply chain attack), aprovechando la falta de verificación de firmas digitales en el proceso de actualización para que el cliente la acepte como válida.",
+      "id": "p7-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes es un tipo de inyección en memoria según el temario?",
+      "opciones": [
+        "a) Inyección de DLL",
+        "b) Desbordamiento de búfer basado en pila",
+        "c) Inyección de SQL clásica",
+        "d) Condición de carrera TOCTOU"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, la inyección de DLL (Dynamic Link Library) es una técnica específica de inyección en memoria donde se modifica la ruta de acceso de una DLL legítima para cargar una versión maliciosa.",
+      "id": "p7-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando desbordamientos de búfer basados en pila (stack-based) y montículo (heap-based), ¿qué característica los distingue principalmente según el temario?",
+      "opciones": [
+        "Los desbordamientos basados en pila ocurren en memoria estática, mientras que los basados en montículo ocurren en memoria dinámica gestionada por el sistema.",
+        "Los desbordamientos basados en montículo requieren permisos de administrador para explotarse, mientras que los basados en pila no.",
+        "Los desbordamientos basados en pila siempre causan denegación de servicio (DoS), mientras que los basados en montículo permiten ejecución de código arbitrario.",
+        "Los desbordamientos basados en montículo solo afectan a aplicaciones en tiempo real (RTOS), mientras que los basados en pila afectan a cualquier aplicación."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los desbordamientos basados en pila ocurren en la memoria estática de la pila (stack), mientras que los basados en montículo ocurren en la memoria dinámica gestionada por el sistema (heap).",
+      "id": "p7-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de mitigación es MENOS efectiva para prevenir vulnerabilidades de desbordamiento de búfer en aplicaciones desarrolladas en lenguajes no seguros como C o C++?",
+      "opciones": [
+        "a) Implementar comprobaciones de límites estrictas en el código",
+        "b) Utilizar lenguajes de programación seguros como Rust o Go",
+        "c) Aplicar parches de seguridad de manera oportuna",
+        "d) Comentar el código para documentar posibles vulnerabilidades"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario destaca que comentar el código no mitiga vulnerabilidades de desbordamiento de búfer, ya que se trata de una práctica de documentación, no de seguridad.",
+      "id": "p7-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de mitigación NO es recomendada para prevenir condiciones de carrera según el temario?",
+      "opciones": [
+        "Implementar semáforos (semaphores) para sincronizar el acceso a recursos compartidos.",
+        "Utilizar transacciones atómicas para garantizar operaciones indivisibles.",
+        "Deshabilitar completamente el multihilo en la aplicación para evitar condiciones de carrera.",
+        "Aplicar bloqueos (locks) en secciones críticas del código."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Deshabilitar el multihilo no es una solución viable, ya que muchas aplicaciones requieren concurrencia. Las condiciones de carrera se previenen con sincronización, no eliminando el multihilo.",
+      "id": "p7-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el concepto a partir del siguiente ejemplo: Un equipo de desarrollo implementa una aplicación crítica para la gestión de inventarios en una empresa manufacturera. Durante una auditoría, se detecta que la aplicación utiliza consultas SQL concatenadas directamente con datos de entrada del usuario sin validación. Un atacante explota esta vulnerabilidad para modificar el precio de productos en la base de datos, causando pérdidas financieras.",
+      "opciones": [
+        "Inyección de SQL clásica",
+        "Inyección basada en errores",
+        "Inyección ciega",
+        "Cross-Site Scripting (XSS)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ejemplo describe una inyección de SQL clásica, donde el atacante introduce código SQL malicioso directamente en los campos de entrada sin validación.",
+      "id": "p7-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una empresa aplica parches de seguridad mensualmente, pero un atacante explota una vulnerabilidad crítica en un servicio web 2 días después de que el parche fue lanzado, antes de que la empresa lo implemente. ¿Qué principio de gestión de parches NO se está aplicando correctamente según el temario?",
+      "opciones": [
+        "Aplicación inmediata de parches críticos",
+        "Validación de integridad de actualizaciones",
+        "Implementación en entornos de prueba antes de producción",
+        "Monitorización continua de vulnerabilidades"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El principio de gestión de parches que falla es la aplicación inmediata de parches críticos, ya que la empresa espera a un ciclo mensual en lugar de priorizar vulnerabilidades críticas.",
+      "id": "p7-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de mitigación es MENOS efectiva para prevenir vulnerabilidades de inyección de DLL en memoria?",
+      "opciones": [
+        "Implementar listas de control de aplicaciones (Application Allowlisting).",
+        "Utilizar herramientas de detección de comportamientos anómalos en memoria.",
+        "Depurar manualmente cada DLL antes de su carga en procesos críticos.",
+        "Mantener el software y los sistemas operativos actualizados con los últimos parches de seguridad."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario no recomienda la depuración manual de DLLs como medida de mitigación, ya que es un proceso manual, propenso a errores y no escalable para entornos empresariales.",
+      "id": "p7-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria permite al atacante modificar el comportamiento de un proceso legítimo sin necesidad de cargar una DLL maliciosa en el sistema de archivos ni alterar su ruta de acceso?",
+      "opciones": [
+        "a) Inyección de DLL en memoria",
+        "b) Parcheo en memoria (Memory Patching)",
+        "c) Inyección de código en el búfer de pila",
+        "d) Manipulación de hilos (Thread Hijacking)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El parcheo en memoria (Memory Patching) permite modificar el comportamiento de un proceso legítimo directamente en memoria sin alterar el sistema de archivos ni las rutas de las DLLs. Esta técnica no requiere cargar una DLL maliciosa, sino que inyecta cambios en el código o datos en ejecución.",
+      "id": "p7-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de mitigación es MENOS efectiva para prevenir inyecciones de DLL en memoria según el temario?",
+      "opciones": [
+        "Implementar listas de control de aplicaciones (Application Allowlisting).",
+        "Utilizar herramientas de detección de comportamientos anómalos en memoria.",
+        "Aplicar parches de seguridad en el sistema operativo.",
+        "Desactivar la carga dinámica de DLLs en el sistema."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Desactivar la carga dinámica de DLLs no es una práctica recomendada, ya que muchas aplicaciones legítimas dependen de esta funcionalidad.",
+      "id": "p7-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa de logística utiliza un sistema embebido en sus almacenes para gestionar el inventario mediante un RTOS (Real-Time Operating System). Durante una auditoría, se detecta que el firmware no implementa DEP (Data Execution Prevention) ni ASLR (Address Space Layout Randomization), y que el proceso de actualización del firmware no valida la integridad de los archivos mediante firmas digitales. Un atacante, con acceso a la red interna, intercepta una actualización legítima del firmware, modifica su contenido para incluir código malicioso que deshabilita los mecanismos de control de seguridad del RTOS, y luego la distribuye a los dispositivos embebidos. ¿Qué combinación de vulnerabilidades y técnicas de explotación está utilizando el atacante según el temario?",
+      "opciones": [
+        "a) Desbordamiento de búfer + Inyección de DLL en memoria, aprovechando la falta de DEP y ASLR para ejecutar código malicioso en el kernel del RTOS.",
+        "b) Actualización maliciosa + Vulnerabilidades en el sistema operativo del RTOS, aprovechando la ausencia de validación de firmas digitales para instalar código no autorizado.",
+        "c) Condición de carrera + Inyección de SQL, explotando la falta de sincronización en el proceso de actualización para modificar el firmware durante su instalación.",
+        "d) Inyección en memoria + Vulnerabilidades en el sistema de archivos, aprovechando la falta de ASLR para cargar una DLL maliciosa en el proceso de arranque del RTOS."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El atacante está explotando una actualización maliciosa (supply chain attack) al modificar una actualización legítima sin validar su integridad con firmas digitales, lo que permite instalar código malicioso en el firmware del RTOS. Además, aprovecha la ausencia de DEP y ASLR para facilitar la ejecución del código malicioso en el sistema.",
+      "id": "p7-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes técnicas NO es un método común para explotar vulnerabilidades de desbordamiento de búfer según el temario?",
+      "opciones": [
+        "Modificar el flujo de ejecución del programa sobrescribiendo direcciones de retorno en la pila",
+        "Ejecutar código arbitrario en el montículo (heap) sobrescribiendo punteros de funciones",
+        "Duplicar transacciones financieras aprovechando condiciones de carrera en sistemas multihilo",
+        "Sobrescribir variables de permisos en la pila para escalar privilegios"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las condiciones de carrera (race conditions) son un tipo de vulnerabilidad distinto a los desbordamientos de búfer, aunque ambas pueden explotarse para manipular el sistema.",
+      "id": "p7-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando inyecciones de DLL en memoria y inyecciones de SQL, ¿qué característica las diferencia principalmente según el temario?",
+      "opciones": [
+        "Las inyecciones de DLL requieren modificar la ruta de acceso de la DLL en el sistema de archivos, mientras que las inyecciones de SQL no necesitan alterar archivos",
+        "Las inyecciones de SQL solo pueden ejecutarse en aplicaciones web, mientras que las inyecciones de DLL afectan a procesos locales",
+        "Las inyecciones de DLL permiten escalar privilegios sin autenticación, mientras que las inyecciones de SQL solo permiten acceso a datos",
+        "Las inyecciones de DLL modifican el comportamiento de procesos en ejecución, mientras que las inyecciones de SQL alteran consultas a bases de datos"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Las inyecciones en memoria (como DLL) modifican procesos en ejecución, mientras que las inyecciones de SQL alteran consultas a bases de datos.",
+      "id": "p7-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una medida recomendada para mitigar vulnerabilidades de inyección de DLL en memoria según el temario?",
+      "opciones": [
+        "Implementar listas de control de aplicaciones (Application Allowlisting)",
+        "Validar firmas digitales en DLLs antes de cargarlas en memoria",
+        "Aplicar parches de seguridad en el sistema operativo y aplicaciones",
+        "Utilizar consultas parametrizadas en aplicaciones web"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Las consultas parametrizadas son una medida para prevenir inyecciones de SQL, no inyecciones de DLL en memoria.",
+      "id": "p7-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante explota una vulnerabilidad en un sistema embebido durante el proceso de arranque, causando un bucle de reinicio que impide el funcionamiento normal. ¿Qué tipo de vulnerabilidad está explotando según el temario?",
+      "opciones": [
+        "Desbordamiento de búfer en el firmware del dispositivo",
+        "Condición de carrera en el sistema de archivos durante el arranque",
+        "Inyección de DLL en un proceso crítico del RTOS",
+        "Inyección de SQL en la base de datos del dispositivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ejemplo del Mars Rover Spirit en el temario ilustra cómo un error en el sistema de archivos durante el proceso de arranque puede causar bucles de reinicio.",
+      "id": "p7-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el concepto a partir del siguiente ejemplo: Un equipo de desarrollo implementa una aplicación crítica para la gestión de inventarios en una empresa manufacturera. Durante una auditoría, se detecta que la aplicación utiliza consultas SQL concatenadas directamente con datos de entrada del usuario sin validación.",
+      "opciones": [
+        "Inyección de DLL en memoria",
+        "Inyección de SQL clásica",
+        "Desbordamiento de búfer basado en pila",
+        "Condición de carrera en hilos de ejecución"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ejemplo describe una inyección de SQL clásica, donde se concatenan datos de entrada directamente en consultas sin validación.",
+      "id": "p7-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de mitigación es MENOS efectiva para prevenir condiciones de carrera según el temario?",
+      "opciones": [
+        "Implementar semáforos y bloqueos (locks) en el código",
+        "Realizar pruebas de concurrencia exhaustivas durante el desarrollo",
+        "Confiar en que el orden de ejecución siempre será secuencial y predecible",
+        "Utilizar transacciones atómicas para operaciones críticas"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Asumir que el orden de ejecución siempre será secuencial y predecible es una práctica insegura que no mitiga condiciones de carrera.",
+      "id": "p7-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de inyección en memoria permite al atacante modificar el comportamiento de un proceso legítimo sin necesidad de cargar una DLL maliciosa en el sistema de archivos ni alterar su ruta de acceso en el proceso objetivo?",
+      "opciones": [
+        "Inyección de DLL en memoria",
+        "Inyección de código en hilos (thread injection)",
+        "Inyección de memoria directa (direct memory injection)",
+        "Inyección de montículo (heap injection)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La inyección de código en hilos permite modificar el comportamiento de un proceso legítimo inyectando código directamente en los hilos de ejecución sin alterar el sistema de archivos ni rutas de DLL, según el temario.",
+      "id": "p7-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una empresa aplica parches de seguridad mensualmente. Sin embargo, un atacante logra explotar una vulnerabilidad crítica en un servicio web 3 días después de que el parche fue lanzado, antes de que la empresa lo implemente. ¿Qué principio de gestión de parches NO se está aplicando correctamente según el temario?",
+      "opciones": [
+        "Priorización de parches críticos según su severidad",
+        "Implementación inmediata de parches críticos",
+        "Validación de firmas digitales en parches antes de su aplicación",
+        "Pruebas de parches en entornos controlados antes de desplegarlos en producción"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El principio de implementación inmediata de parches críticos no se está aplicando, ya que la empresa espera a un ciclo mensual para aplicar parches.",
+      "id": "p7-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de desarrollo de una aplicación crítica para la gestión de inventarios en una empresa manufacturera implementa un sistema de actualización automática de firmware en sus dispositivos embebidos. Durante una auditoría, se descubre que el proceso de actualización no valida la integridad de los paquetes mediante firmas digitales y que el firmware no implementa protecciones como ASLR (Address Space Layout Randomization) ni DEP (Data Execution Prevention). Un atacante con acceso a la red interna intercepta una actualización legítima, modifica su contenido para incluir código malicioso que deshabilita los mecanismos de control de seguridad del firmware, y luego la distribuye a los dispositivos embebidos. ¿Qué combinación de técnicas de explotación y vulnerabilidades está explotando el atacante según el temario?",
+      "opciones": [
+        "a) Inyección de DLL en memoria aprovechando la falta de ASLR y DEP, y actualización maliciosa sin validación de firmas digitales.",
+        "b) Desbordamiento de búfer en la pila (stack-based) durante el proceso de arranque, y condición de carrera en el sistema de archivos del firmware.",
+        "c) Inyección de SQL en el proceso de actualización, y falta de comprobaciones de límites en el firmware.",
+        "d) Explotación de una condición de carrera en el manejo de hilos del firmware, y actualización maliciosa sin validación de integridad."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El atacante explota la falta de ASLR y DEP para facilitar la inyección de DLL en memoria, combinado con una actualización maliciosa que no valida firmas digitales, permitiendo la distribución de código malicioso en el firmware.",
+      "id": "p7-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de mitigación es MENOS efectiva para prevenir desbordamientos de búfer en aplicaciones desarrolladas en lenguajes no seguros como C o C++?",
+      "opciones": [
+        "Implementar comprobaciones de límites estrictas en el código",
+        "Utilizar lenguajes de programación seguros como Rust o Go",
+        "Confiar en que los usuarios finales actualizarán sus aplicaciones manualmente",
+        "Aplicar parches de seguridad de manera oportuna en el sistema operativo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Confiar en que los usuarios finales actualicen manualmente es una medida ineficaz, ya que depende de factores externos y no garantiza protección.",
+      "id": "p7-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Memory Injections",
+      "youtubeId": "kBcTczu8FsM"
+    },
+    {
+      "titulo": "Buffer Overflows",
+      "youtubeId": "0-qeeI5jTqU"
+    },
+    {
+      "titulo": "Race Conditions",
+      "youtubeId": "MKptc1lPSw8"
+    },
+    {
+      "titulo": "Malicious Updates",
+      "youtubeId": "KbtUrdBy9Yo"
+    },
+    {
+      "titulo": "Operating System Vulnerabilities",
+      "youtubeId": "narir8qpGq8"
+    },
+    {
+      "titulo": "SQL Injection",
+      "youtubeId": "qFUOLkEk8AQ"
+    },
+    {
+      "titulo": "Cross-site Scripting",
+      "youtubeId": "PKgw0CLZIhE"
+    }
+  ]
+}

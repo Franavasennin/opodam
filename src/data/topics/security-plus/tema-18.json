@@ -1,0 +1,1408 @@
+{
+  "id": 18,
+  "titulo": "4.3 · Gestión de vulnerabilidades",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "GESTIÓN DE VULNERABILIDADES EN CIBERSEGURIDAD\n\n\nLa gestión de vulnerabilidades es un proceso esencial en cualquier estrategia de ciberseguridad. Consiste en identificar, evaluar, priorizar y mitigar las debilidades en sistemas, aplicaciones, redes y procesos que podrían ser explotadas por actores maliciosos. Este proceso no solo ayuda a prevenir ataques, sino que también permite a las organizaciones mantener la integridad, confidencialidad y disponibilidad de sus activos digitales. A continuación, se detallan los conceptos clave, herramientas y metodologías asociadas a la gestión de vulnerabilidades.\n\n\nVULNERABILITY SCANNING (ESCANEO DE VULNERABILIDADES)\n\n\nEl escaneo de vulnerabilidades es una técnica automatizada que permite identificar posibles debilidades en sistemas, redes o aplicaciones antes de que sean explotadas por atacantes. A diferencia de un test de penetración (penetration test), que simula un ataque real, el escaneo de vulnerabilidades se limita a detectar la presencia de vulnerabilidades sin explotarlas. Este proceso es fundamental para descubrir sistemas expuestos, puertos abiertos o configuraciones inseguras que podrían ser aprovechadas por un atacante.\n\n\nEl escaneo de vulnerabilidades puede realizarse tanto desde el exterior de la red como desde el interior. Un escaneo externo ayuda a identificar dispositivos accesibles desde Internet que podrían ser objetivos de ataques remotos. Por ejemplo, un escaneo de puertos puede revelar qué puertos están abiertos en un sistema, lo que podría indicar servicios vulnerables. Sin embargo, es igualmente importante realizar escaneos internos, ya que un atacante que ya haya comprometido un sistema dentro de la red podría moverse lateralmente para explotar otras vulnerabilidades.\n\n\nLos escáneres de vulnerabilidades generan informes detallados que clasifican las vulnerabilidades según su severidad, como críticas, altas, medias, bajas o informativas. Estos informes suelen incluir descripciones técnicas, referencias a bases de datos de vulnerabilidades como el CVE (Common Vulnerabilities and Exposures) y recomendaciones para mitigar los riesgos. Sin embargo, es crucial revisar estos informes con cuidado, ya que pueden contener falsos positivos (vulnerabilidades que no existen) o falsos negativos (vulnerabilidades reales que no fueron detectadas).\n\n\nUn ejemplo de vulnerabilidad crítica podría ser una debilidad en el generador de números aleatorios de una biblioteca criptográfica como OpenSSL, que podría permitir la generación de claves SSH débiles y, por tanto, facilitar el acceso no autorizado a un sistema. Otro caso común es la detección de sistemas operativos sin soporte, como versiones antiguas de Unix, que ya no reciben actualizaciones de seguridad y, por lo tanto, son más susceptibles a ataques.\n\n\n\nHERRAMIENTAS DE ANÁLISIS ESTÁTICO Y DINÁMICO\n\n\nAdemás de los escáneres de vulnerabilidades tradicionales, existen herramientas especializadas para analizar el código fuente de aplicaciones en busca de debilidades. El análisis estático de aplicaciones (Static Application Security Testing, SAST) revisa el código sin ejecutarlo, identificando posibles vulnerabilidades como desbordamientos de búfer, inyecciones de SQL o configuraciones inseguras de autenticación. Aunque estas herramientas son efectivas para detectar problemas en el código, no siempre identifican vulnerabilidades relacionadas con la implementación de tecnologías específicas, como protocolos de autenticación o criptografía insegura.\n\n\nPor otro lado, el análisis dinámico de aplicaciones, también conocido como fuzzing, consiste en introducir datos aleatorios o maliciosos en una aplicación en ejecución para observar su comportamiento. El objetivo es identificar respuestas inesperadas, como caídas del sistema, mensajes de error o excepciones, que podrían indicar la presencia de vulnerabilidades. El fuzzing puede realizarse de forma automatizada y es especialmente útil para probar aplicaciones complejas con múltiples entradas de datos. Un ejemplo histórico de fuzzing es el Basic Fuzzing Framework (BFF), desarrollado por el CERT (Computer Emergency Response Team) de Carnegie Mellon, que permite a los desarrolladores probar sus aplicaciones en busca de vulnerabilidades.\n\n\n\nTHREAT INTELLIGENCE (INTELIGENCIA DE AMENAZAS)\n\n\nLa inteligencia de amenazas es un componente clave en la gestión de vulnerabilidades, ya que proporciona información actualizada sobre las tácticas, técnicas y procedimientos (TTPs) utilizados por actores maliciosos. Esta inteligencia permite a las organizaciones anticiparse a los ataques, priorizar la mitigación de vulnerabilidades y mejorar sus defensas. La inteligencia de amenazas puede obtenerse de diversas fuentes, como foros de hackers, redes sociales, informes gubernamentales, datos comerciales públicos y servicios de inteligencia de terceros.\n\n\nLas fuentes de inteligencia de amenazas pueden ser de código abierto (Open-Source Intelligence, OSINT), como información disponible en Internet, o de pago, proporcionada por empresas especializadas que recopilan y analizan datos de múltiples organizaciones. Estas empresas pueden detectar tendencias en los ataques y alertar a sus clientes antes de que una amenaza específica llegue a sus redes. Un ejemplo de colaboración en inteligencia de amenazas es el Cyber Threat Alliance (CTA), una organización que recopila y valida información sobre amenazas cibernéticas, asignando niveles de severidad y distribuyéndola a sus miembros.\n\n\nLa dark web (red oscura) es otra fuente valiosa de inteligencia de amenazas, ya que en ella se pueden encontrar foros y mercados donde los atacantes comparten herramientas, técnicas y datos robados. Monitorear estos espacios puede ayudar a las organizaciones a identificar si sus activos están siendo discutidos o comercializados por actores maliciosos.\n\n\n\nPENETRATION TESTING (TEST DE PENETRACIÓN)\n\n\nEl test de penetración, o pentesting, es un proceso en el que se simula un ataque real contra los sistemas de una organización para evaluar su resistencia a las intrusiones. A diferencia del escaneo de vulnerabilidades, el pentesting implica la explotación activa de vulnerabilidades para determinar si un atacante podría comprometer un sistema. Este tipo de pruebas es esencial para identificar debilidades que podrían pasar desapercibidas en un escaneo automatizado.\n\n\nAntes de realizar un test de penetración, es fundamental establecer las Reglas de Compromiso (Rules of Engagement), que definen el alcance, los objetivos, los horarios permitidos, los sistemas en y fuera de alcance, y los contactos de emergencia. Estas reglas aseguran que la prueba se realice de manera controlada y no afecte a sistemas críticos. Por ejemplo, las pruebas pueden realizarse fuera del horario laboral para evitar interrupciones en los servicios.\n\n\nDurante el pentesting, los profesionales de seguridad intentan explotar vulnerabilidades conocidas, como desbordamientos de búfer, ataques de fuerza bruta, inyecciones de SQL o ingeniería social. Una vez que se gana acceso a un sistema, el siguiente paso es el movimiento lateral, donde el atacante intenta acceder a otros sistemas dentro de la red. Para mantener el acceso, los atacantes suelen crear puertas traseras (backdoors), como cuentas de usuario adicionales o contraseñas predeterminadas modificadas.\n\n\n\nPROCESO DE GESTIÓN DE VULNERABILIDADES\n\n\nLa gestión de vulnerabilidades sigue un ciclo continuo que incluye varias fases: identificación, evaluación, priorización, mitigación y verificación. Este proceso debe integrarse en la estrategia general de seguridad de la organización para garantizar que las vulnerabilidades se aborden de manera eficiente y oportuna.\n\n\nLa identificación de vulnerabilidades puede realizarse mediante escaneos automatizados, pruebas de penetración, análisis de registros o inteligencia de amenazas. Una vez identificadas, las vulnerabilidades deben evaluarse para determinar su severidad y el riesgo que representan para la organización. Herramientas como el Common Vulnerability Scoring System (CVSS) ayudan a asignar una puntuación a cada vulnerabilidad, lo que facilita la priorización. El CVSS considera factores como la complejidad de la explotación, el impacto en la confidencialidad, integridad y disponibilidad, y la necesidad de privilegios especiales.\n\n\nLa priorización de vulnerabilidades depende de varios factores, como la severidad, el factor de exposición (exposure factor), el entorno donde se encuentra la vulnerabilidad y el impacto potencial en la organización. Por ejemplo, una vulnerabilidad en un servidor web público con acceso a Internet tendrá una prioridad más alta que una en un sistema aislado en un laboratorio. Además, el factor de exposición indica la probabilidad de que la vulnerabilidad sea explotada. Por ejemplo, una vulnerabilidad que cause un 50% de indisponibilidad en un servicio tiene un factor de exposición del 50%.\n\n\n\nMITIGACIÓN Y REMEDIACIÓN\n\n\nLa mitigación de vulnerabilidades puede lograrse mediante diversas estrategias, siendo la más común la aplicación de parches de seguridad (patching). Los parches son actualizaciones proporcionadas por los fabricantes de software para corregir vulnerabilidades conocidas. En casos urgentes, como vulnerabilidades de día cero (zero-day), los fabricantes pueden lanzar parches no programados para proteger a los usuarios antes de que los atacantes exploten la debilidad.\n\n\nSin embargo, en algunas situaciones, no es posible aplicar un parche de inmediato. En estos casos, se pueden implementar controles de compensación (compensating controls) para reducir el riesgo. Por ejemplo, se puede desactivar un servicio vulnerable, revocar el acceso a una aplicación o segmentar la red para limitar el movimiento lateral de un atacante. La segmentación puede lograrse mediante el uso de VLANs (Virtual Local Area Networks), firewalls de próxima generación o redes aireadas (air-gapped networks), que aíslan físicamente los sistemas críticos.\n\n\nOtra opción es transferir el riesgo a una póliza de ciberseguro, que puede cubrir pérdidas financieras derivadas de un ataque, como costos de recuperación de datos, multas regulatorias o demandas legales. Sin embargo, es importante revisar los términos de la póliza, ya que algunas exclusiones pueden aplicarse, como actos intencionales o transferencias de fondos.\n\n\n\nVERIFICACIÓN Y MONITOREO\n\n\nUna vez aplicados los parches o implementados los controles de mitigación, es esencial verificar que la vulnerabilidad ha sido efectivamente resuelta. Esto puede hacerse mediante un nuevo escaneo de vulnerabilidades, pruebas manuales o auditorías. En organizaciones grandes, es recomendable implementar un sistema de informes que monitoree el estado de los parches en todos los sistemas, identificando aquellos que aún requieren actualización o que tienen excepciones.\n\n\nEl monitoreo continuo es clave para garantizar que las vulnerabilidades no reaparezcan o que nuevas vulnerabilidades no sean introducidas por cambios en la configuración o actualizaciones de software. Además, es importante mantenerse informado sobre nuevas amenazas y vulnerabilidades mediante la inteligencia de amenazas y la participación en comunidades de seguridad.\n\n\n\nDESAFÍOS EN LA GESTIÓN DE VULNERABILIDADES\n\n\nUno de los mayores desafíos en la gestión de vulnerabilidades es la cantidad de datos generados por los escáneres y herramientas de seguridad. Filtrar los falsos positivos y falsos negativos requiere tiempo y experiencia. Los falsos positivos son vulnerabilidades reportadas que no existen, mientras que los falsos negativos son vulnerabilidades reales que no fueron detectadas. Ambos casos pueden llevar a una falsa sensación de seguridad o a la omisión de riesgos críticos.\n\n\nOtro desafío es la gestión de parches en entornos complejos, donde múltiples sistemas, aplicaciones y configuraciones deben mantenerse actualizados. En algunos casos, aplicar un parche puede causar incompatibilidades con otros sistemas, lo que requiere pruebas exhaustivas antes de implementarlo en producción. Esto puede retrasar la aplicación de parches críticos y aumentar el riesgo de explotación.\n\n\nFinalmente, la gestión de vulnerabilidades debe equilibrar la seguridad con la disponibilidad y funcionalidad de los sistemas. En algunos casos, una organización puede decidir no aplicar un parche si el riesgo de explotación es bajo y el impacto en la operación es alto. Estas decisiones deben tomarse en conjunto con un comité de seguridad o de control de cambios, que evalúe los riesgos y beneficios de cada acción.\n\n\n\nBUENAS PRÁCTICAS\n\n\nPara implementar una gestión de vulnerabilidades efectiva, las organizaciones deben seguir una serie de buenas prácticas:\n\n- Realizar escaneos de vulnerabilidades de manera regular, tanto internos como externos.\n- Utilizar herramientas actualizadas con las últimas firmas de vulnerabilidades para minimizar falsos positivos y negativos.\n- Priorizar las vulnerabilidades según su severidad, impacto y entorno.\n- Implementar un proceso de gestión de parches que incluya pruebas y despliegue controlado.\n- Utilizar inteligencia de amenazas para anticiparse a las tácticas de los atacantes.\n- Segmentar la red para limitar el movimiento lateral en caso de compromiso.\n- Mantener un inventario actualizado de activos y vulnerabilidades.\n- Capacitar al personal en ciberseguridad para reconocer y responder a amenazas.\n- Colaborar con comunidades de seguridad y compartir información sobre amenazas.\n\n\nLa gestión de vulnerabilidades es un proceso dinámico que requiere atención constante y adaptación a medida que evolucionan las amenazas y las tecnologías. Al seguir estas prácticas, las organizaciones pueden reducir significativamente su superficie de ataque y mejorar su postura de seguridad."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Gestión de Vulnerabilidades] --> B[Identificación]\nA --> C[Evaluación]\nA --> D[Priorización]\nA --> E[Mitigación]\nA --> F[Verificación]\n\nB --> B1[Escaneo de vulnerabilidades]\nB --> B2[Análisis estático de código]\nB --> B3[Análisis dinámico de código]\nB --> B4[Inteligencia de amenazas]\nB --> B5[Test de penetración]\n\nC --> C1[Severidad: CVSS]\nC --> C2[Factor de exposición]\nC --> C3[Impacto en la organización]\n\nD --> D1[Priorización por riesgo]\nD --> D2[Entorno: público vs privado]\nD --> D3[Urgencia: zero-day vs parche programado]\n\nE --> E1[Aplicación de parches]\nE --> E2[Controles de compensación]\nE --> E3[Segmentación de red]\nE --> E4[Ciberseguro]\n\nF --> F1[Verificación de parches]\nF --> F2[Informes de auditoría]\nF --> F3[Monitoreo continuo]\n\nB1 --> B1a[Escaneo interno]\nB1 --> B1b[Escaneo externo]\nB1 --> B1c[Escaneo de puertos]\n\nB5 --> B5a[Reglas de compromiso]\nB5 --> B5b[Explotación activa]\nB5 --> B5c[Movimiento lateral]\n\nE2 --> E2a[Desactivar servicios]\nE2 --> E2b[Revocación de acceso]\nE2 --> E2c[Firewalls internos]\nE2 --> E2d[ACLs en routers]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc18-01",
+      "pregunta": "¿Qué diferencia existe entre un escaneo de vulnerabilidades y un test de penetración?",
+      "respuesta": "Un escaneo de vulnerabilidades detecta posibles debilidades sin explotarlas, mientras que un test de penetración simula un ataque real explotando activamente las vulnerabilidades para evaluar la resistencia del sistema."
+    },
+    {
+      "id": "fc18-02",
+      "pregunta": "¿Qué es un falso positivo en el contexto de la gestión de vulnerabilidades?",
+      "respuesta": "Un falso positivo es una vulnerabilidad reportada por un escáner que, tras revisión, no existe realmente en el sistema."
+    },
+    {
+      "id": "fc18-03",
+      "pregunta": "¿Qué es el CVSS y para qué se utiliza?",
+      "respuesta": "El CVSS (Common Vulnerability Scoring System) es un sistema de puntuación que asigna un valor numérico a las vulnerabilidades según su severidad, impacto y complejidad de explotación, facilitando su priorización."
+    },
+    {
+      "id": "fc18-04",
+      "pregunta": "¿Qué es el fuzzing y en qué se diferencia del análisis estático de código?",
+      "respuesta": "El fuzzing es una técnica de análisis dinámico que introduce datos aleatorios en una aplicación en ejecución para identificar respuestas inesperadas. A diferencia del análisis estático, que revisa el código sin ejecutarlo, el fuzzing evalúa el comportamiento en tiempo real."
+    },
+    {
+      "id": "fc18-05",
+      "pregunta": "¿Qué son las Reglas de Compromiso en un test de penetración?",
+      "respuesta": "Las Reglas de Compromiso (Rules of Engagement) son un documento formal que define el alcance, objetivos, horarios permitidos, sistemas en y fuera de alcance, y contactos de emergencia para un test de penetración, asegurando que la prueba se realice de manera controlada."
+    },
+    {
+      "id": "fc18-06",
+      "pregunta": "¿Qué es la segmentación de red y cuál es su objetivo en la gestión de vulnerabilidades?",
+      "respuesta": "La segmentación de red divide una red en segmentos aislados (usando VLANs, firewalls o redes aireadas) para limitar el movimiento lateral de un atacante en caso de compromiso, reduciendo así el impacto potencial de un ataque."
+    },
+    {
+      "id": "fc18-07",
+      "pregunta": "¿Qué es un parche de seguridad y por qué es importante aplicarlo?",
+      "respuesta": "Un parche de seguridad es una actualización proporcionada por un fabricante para corregir una vulnerabilidad conocida. Aplicarlo es crucial para reducir el riesgo de explotación y mantener los sistemas protegidos."
+    },
+    {
+      "id": "fc18-08",
+      "pregunta": "¿Qué es la inteligencia de amenazas y qué fuentes pueden utilizarse para obtenerla?",
+      "respuesta": "La inteligencia de amenazas es información actualizada sobre tácticas y técnicas de actores maliciosos. Puede obtenerse de fuentes de código abierto (OSINT), como foros de hackers o informes gubernamentales, o de servicios de inteligencia de terceros que recopilan datos de múltiples organizaciones."
+    },
+    {
+      "id": "fc18-09",
+      "pregunta": "¿Qué es un control de compensación y cuándo se utiliza?",
+      "respuesta": "Un control de compensación es una medida alternativa para mitigar una vulnerabilidad cuando no es posible aplicar un parche de inmediato. Ejemplos incluyen desactivar un servicio vulnerable, revocar acceso o segmentar la red."
+    },
+    {
+      "id": "fc18-10",
+      "pregunta": "¿Qué es el factor de exposición en la gestión de vulnerabilidades?",
+      "respuesta": "El factor de exposición es un porcentaje que indica la probabilidad de que una vulnerabilidad sea explotada. Por ejemplo, una vulnerabilidad que cause un 50% de indisponibilidad en un servicio tiene un factor de exposición del 50%."
+    },
+    {
+      "id": "fc18-11",
+      "pregunta": "¿Qué es una vulnerabilidad de día cero (zero-day) y por qué es especialmente peligrosa?",
+      "respuesta": "Una vulnerabilidad de día cero es una debilidad desconocida por el fabricante que es explotada por atacantes antes de que se lance un parche. Es peligrosa porque no hay protección disponible hasta que se descubre y se corrige."
+    },
+    {
+      "id": "fc18-12",
+      "pregunta": "¿Qué es un CVE y dónde se pueden consultar las vulnerabilidades asociadas?",
+      "respuesta": "Un CVE (Common Vulnerabilities and Exposures) es un identificador único para una vulnerabilidad conocida. Las vulnerabilidades asociadas pueden consultarse en bases de datos como el National Vulnerability Database (NVD) o el sitio oficial de CVE (cve.mitre.org)."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones describe MEJOR la diferencia entre un escaneo de vulnerabilidades y un test de penetración?",
+      "opciones": [
+        "El escaneo de vulnerabilidades detecta posibles debilidades sin explotarlas, mientras que el test de penetración simula un ataque real explotando vulnerabilidades activamente.",
+        "El escaneo de vulnerabilidades solo se realiza internamente, mientras que el test de penetración siempre se hace desde el exterior de la red.",
+        "El test de penetración genera informes detallados con clasificaciones de severidad, mientras que el escaneo de vulnerabilidades no proporciona esta información.",
+        "El escaneo de vulnerabilidades es un proceso manual, mientras que el test de penetración se automatiza completamente."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escaneo de vulnerabilidades identifica debilidades sin explotarlas (detección pasiva), mientras que el test de penetración implica explotación activa para evaluar la resistencia real (simulación de ataque).",
+      "id": "p18-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué herramienta o metodología se utiliza para analizar el código fuente de una aplicación SIN ejecutarla, identificando posibles vulnerabilidades como inyecciones de SQL o desbordamientos de búfer?",
+      "opciones": [
+        "Análisis estático de aplicaciones (SAST)",
+        "Fuzzing (análisis dinámico)",
+        "Escaneo de vulnerabilidades basado en red",
+        "Test de penetración (pentesting)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El SAST (Static Application Security Testing) revisa el código fuente sin ejecutarlo, detectando vulnerabilidades como inyecciones de SQL o desbordamientos de búfer.",
+      "id": "p18-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión de vulnerabilidades, ¿qué término describe la probabilidad de que una vulnerabilidad sea explotada por un atacante?",
+      "opciones": [
+        "Factor de exposición (Exposure Factor)",
+        "Severidad crítica",
+        "Puntuación CVSS",
+        "Nivel de riesgo residual"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El factor de exposición indica la probabilidad de que una vulnerabilidad sea explotada, considerando el entorno y las condiciones de acceso.",
+      "id": "p18-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta que uno de sus servidores web públicos tiene una vulnerabilidad crítica sin parchear. ¿Qué acción de mitigación sería la MÁS adecuada en este escenario?",
+      "opciones": [
+        "Aplicar el parche de seguridad de inmediato, incluso si requiere reiniciar el servidor fuera del horario laboral.",
+        "Desactivar el servicio web temporalmente hasta que se aplique el parche.",
+        "Transferir el riesgo a un ciberseguro sin aplicar el parche.",
+        "Implementar un control de compensación como segmentar la red para aislar el servidor."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La aplicación inmediata del parche es la medida más efectiva para mitigar una vulnerabilidad crítica en un servidor expuesto públicamente.",
+      "id": "p18-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de inteligencia de amenazas se obtiene de fuentes como foros de hackers, redes sociales o la dark web?",
+      "opciones": [
+        "Inteligencia de amenazas de código abierto (OSINT)",
+        "Inteligencia de amenazas de pago (comercial)",
+        "Inteligencia de amenazas gubernamental",
+        "Inteligencia de amenazas basada en IA"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La OSINT (Open-Source Intelligence) recopila información de fuentes accesibles públicamente, incluyendo la dark web.",
+      "id": "p18-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo típico de un escaneo de vulnerabilidades?",
+      "opciones": [
+        "Explotar activamente una vulnerabilidad para confirmar su existencia.",
+        "Identificar puertos abiertos en un sistema.",
+        "Detectar sistemas operativos sin soporte.",
+        "Generar informes con clasificaciones de severidad."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escaneo de vulnerabilidades detecta debilidades sin explotarlas; la explotación activa es característica del test de penetración.",
+      "id": "p18-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa realiza un escaneo interno de vulnerabilidades y detecta que un sistema crítico tiene una vulnerabilidad media sin parchear. El equipo de TI decide no aplicar el parche porque el sistema está aislado en una red aireada (air-gapped). ¿Qué estrategia de mitigación están aplicando?",
+      "opciones": [
+        "Control de compensación (compensating control)",
+        "Transferencia de riesgo (ciberseguro)",
+        "Aceptación de riesgo (risk acceptance)",
+        "Eliminación del activo vulnerable"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La segmentación mediante redes aireadas actúa como control de compensación, reduciendo el riesgo sin necesidad de parchear.",
+      "id": "p18-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el proceso de gestión de vulnerabilidades, ¿qué fase implica asignar una puntuación a cada vulnerabilidad para priorizar su mitigación?",
+      "opciones": [
+        "Evaluación",
+        "Identificación",
+        "Priorización",
+        "Verificación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La fase de evaluación incluye el uso de sistemas como el CVSS para asignar puntuaciones de severidad y facilitar la priorización.",
+      "id": "p18-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de seguridad detecta que un escáner de vulnerabilidades reportó una vulnerabilidad que no existe en el sistema (falso positivo). ¿Qué impacto directo puede tener esto en la organización?",
+      "opciones": [
+        "Generar una falsa sensación de seguridad al creer que el sistema está protegido cuando no lo está.",
+        "Aumentar el riesgo de explotación al no detectar vulnerabilidades reales.",
+        "Provocar un aumento en el costo de las primas del ciberseguro.",
+        "Inutilizar el sistema afectado por la aplicación incorrecta de parches."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los falsos positivos pueden llevar a la organización a subestimar riesgos reales, creando una falsa sensación de seguridad.",
+      "id": "p18-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de monitoreo continuo para gestionar vulnerabilidades. ¿Qué acción NO sería parte de este proceso?",
+      "opciones": [
+        "Aplicar parches de seguridad sin probar su compatibilidad en entornos de desarrollo.",
+        "Revisar informes de escaneos para identificar vulnerabilidades no parcheadas.",
+        "Verificar que los controles de mitigación implementados sigan siendo efectivos.",
+        "Mantenerse actualizado sobre nuevas amenazas mediante inteligencia de amenazas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Aplicar parches sin pruebas previas de compatibilidad puede causar interrupciones y no es parte de un monitoreo continuo efectivo.",
+      "id": "p18-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de herramientas se utiliza para evaluar el riesgo de una vulnerabilidad considerando factores como la complejidad de explotación, el impacto en la confidencialidad y la disponibilidad, y los privilegios necesarios?",
+      "opciones": [
+        "a) Escáneres de vulnerabilidades automatizados",
+        "b) Análisis de código estático (SAST)",
+        "c) Common Vulnerability Scoring System (CVSS)",
+        "d) Herramientas de fuzzing"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El CVSS es un sistema estándar que asigna puntuaciones a vulnerabilidades basándose en métricas como la complejidad de explotación, el impacto en la confidencialidad, integridad y disponibilidad, y los privilegios requeridos.",
+      "id": "p18-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué fase del proceso de gestión de vulnerabilidades se encarga de determinar el nivel de riesgo asociado a una vulnerabilidad identificada, considerando factores como la facilidad de explotación y el impacto en los activos críticos?",
+      "opciones": [
+        "a) Identificación",
+        "b) Evaluación",
+        "c) Priorización",
+        "d) Mitigación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La evaluación es la fase donde se analizan las vulnerabilidades detectadas para determinar su severidad y riesgo, utilizando métricas como CVSS, antes de priorizarlas para su mitigación.",
+      "id": "p18-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones describe MEJOR el papel de los controles de compensación en la gestión de vulnerabilidades?",
+      "opciones": [
+        "a) Son actualizaciones de software proporcionadas por los fabricantes para corregir vulnerabilidades conocidas.",
+        "b) Se implementan cuando no es posible aplicar un parche de seguridad de inmediato, reduciendo el riesgo mediante alternativas como segmentación de red o desactivación de servicios.",
+        "c) Consisten en herramientas automatizadas que evalúan el riesgo de las vulnerabilidades asignando puntuaciones según el CVSS.",
+        "d) Son procesos manuales que verifican la efectividad de los parches aplicados en los sistemas críticos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles de compensación son medidas alternativas que se implementan cuando no es viable aplicar un parche de seguridad de inmediato, como segmentar la red o desactivar servicios vulnerables, para reducir el riesgo de explotación.",
+      "id": "p18-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se enfoca en evaluar los sistemas desde la perspectiva de un atacante externo, simulando accesos remotos sin autenticación?",
+      "opciones": [
+        "a) Escaneo interno",
+        "b) Escaneo externo",
+        "c) Análisis estático (SAST)",
+        "d) Fuzzing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo externo evalúa los sistemas desde fuera de la red, simulando ataques remotos sin autenticación, a diferencia del interno que se realiza dentro de la red.",
+      "id": "p18-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se enfoca en evaluar los sistemas desde la perspectiva de un usuario interno con privilegios elevados, simulando accesos no autorizados dentro de la red?",
+      "opciones": [
+        "a) Escaneo externo",
+        "b) Escaneo interno con credenciales de administrador",
+        "c) Escaneo de red aireada (air-gapped)",
+        "d) Escaneo de aplicaciones web"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo interno con credenciales de administrador evalúa la seguridad desde la perspectiva de un usuario con privilegios elevados, simulando accesos no autorizados dentro de la red para identificar vulnerabilidades explotables en entornos internos.",
+      "id": "p18-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué fase del proceso de gestión de vulnerabilidades se encarga de validar que una vulnerabilidad ha sido efectivamente corregida tras aplicar un parche o control de mitigación?",
+      "opciones": [
+        "a) Identificación",
+        "b) Evaluación",
+        "c) Verificación",
+        "d) Priorización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La fase de verificación asegura que la vulnerabilidad ha sido efectivamente resuelta mediante pruebas como nuevos escaneos, pruebas manuales o auditorías, confirmando que la mitigación fue exitosa.",
+      "id": "p18-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de vulnerabilidades se busca identificar PRIMARIAMENTE mediante un análisis estático de código (SAST) en una aplicación web?",
+      "opciones": [
+        "a) Vulnerabilidades relacionadas con la implementación de protocolos de autenticación inseguros, como el uso de contraseñas débiles.",
+        "b) Vulnerabilidades que solo pueden detectarse durante la ejecución del software, como fugas de memoria en tiempo real.",
+        "c) Vulnerabilidades en el código fuente sin necesidad de ejecutar la aplicación, como inyecciones de SQL o desbordamientos de búfer.",
+        "d) Vulnerabilidades en la configuración de red que afectan al servidor donde se despliega la aplicación."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El análisis estático (SAST) revisa el código fuente de una aplicación sin ejecutarla, identificando vulnerabilidades como inyecciones de SQL o desbordamientos de búfer que están presentes en el código mismo.",
+      "id": "p18-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué fase del proceso de gestión de vulnerabilidades se encarga de asignar una puntuación numérica a cada vulnerabilidad para facilitar su priorización y comparación?",
+      "opciones": [
+        "a) Identificación",
+        "b) Evaluación",
+        "c) Priorización",
+        "d) Verificación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La evaluación es la fase donde se asigna una puntuación a las vulnerabilidades, generalmente utilizando sistemas como el CVSS (Common Vulnerability Scoring System), para determinar su severidad y riesgo.",
+      "id": "p18-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización utiliza un escáner de vulnerabilidades que reporta una alta severidad en una vulnerabilidad de desbordamiento de búfer en un servicio interno de autenticación. Sin embargo, tras revisar los registros de logs y realizar pruebas manuales, el equipo de seguridad confirma que el servicio no es accesible desde la red interna debido a un firewall correctamente configurado que bloquea todo el tráfico hacia ese puerto. ¿Qué estrategia de mitigación está aplicando implícitamente esta organización con esta configuración?",
+      "opciones": [
+        "a) Aplicar un parche inmediato al servicio para eliminar la vulnerabilidad, independientemente del riesgo real.",
+        "b) Implementar un control de compensación mediante la segmentación de red (VLAN) para aislar el servicio y reducir su exposición.",
+        "c) Aplicar inteligencia de amenazas para determinar si la vulnerabilidad está siendo explotada activamente en el sector.",
+        "d) Utilizar controles de compensación como la desactivación del servicio vulnerable hasta que se aplique el parche."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La organización está aplicando un control de compensación al mantener el firewall correctamente configurado, lo que reduce la exposición de la vulnerabilidad al bloquear el acceso al servicio vulnerable, mitigando así el riesgo sin necesidad de parchear inmediatamente.",
+      "id": "p18-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante explota una vulnerabilidad de día cero (zero-day) en un servicio web expuesto a Internet. ¿Qué fase del ciclo de gestión de vulnerabilidades debería haber prevenido este incidente?",
+      "opciones": [
+        "Identificación (Identification)",
+        "Priorización (Prioritization)",
+        "Mitigación (Mitigation)",
+        "Verificación (Verification)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La fase de identificación incluye el uso de inteligencia de amenazas y escaneos para detectar vulnerabilidades conocidas y desconocidas (como day-zero) antes de que sean explotadas.",
+      "id": "p18-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué fase del proceso de gestión de vulnerabilidades se encarga de asignar una puntuación numérica a cada vulnerabilidad para priorizar su mitigación, considerando factores como la complejidad de explotación y el impacto en la confidencialidad?",
+      "opciones": [
+        "a) Identificación",
+        "b) Evaluación",
+        "c) Priorización",
+        "d) Mitigación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La priorización utiliza sistemas como el CVSS para asignar puntuaciones basadas en métricas técnicas y de impacto, facilitando la toma de decisiones sobre qué vulnerabilidades mitigar primero.",
+      "id": "p18-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué fase del proceso de gestión de vulnerabilidades se encarga de implementar medidas temporales o permanentes para reducir el riesgo asociado a una vulnerabilidad, incluso cuando no es posible aplicar un parche de inmediato?",
+      "opciones": [
+        "a) Identificación",
+        "b) Evaluación",
+        "c) Mitigación",
+        "d) Verificación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La fase de mitigación consiste en implementar controles de compensación o parches para reducir el riesgo de una vulnerabilidad, especialmente cuando no se puede aplicar un parche de inmediato.",
+      "id": "p18-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta que un servicio de autenticación interno tiene una vulnerabilidad de inyección de SQL sin parchear. El equipo de TI decide implementar un firewall de aplicación web (WAF) para bloquear este tipo de ataques hasta que se aplique el parche. ¿Qué estrategia de mitigación están aplicando?",
+      "opciones": [
+        "a) Aplicación de parches (patching)",
+        "b) Controles de compensación",
+        "c) Segmentación de red (air-gapping)",
+        "d) Transferencia de riesgo (ciberseguro)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles de compensación, como un WAF, reducen el riesgo de explotación sin corregir la vulnerabilidad subyacente, actuando como medida temporal.",
+      "id": "p18-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de inteligencia de amenazas se obtiene de fuentes como foros de hackers o la dark web?",
+      "opciones": [
+        "a) Información sobre vulnerabilidades conocidas (CVE)",
+        "b) Tácticas, técnicas y procedimientos (TTPs) de actores maliciosos",
+        "c) Datos de configuraciones inseguras en sistemas internos",
+        "d) Métricas de riesgo basadas en el factor de exposición"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La inteligencia de amenazas recopila TTPs de actores maliciosos, útil para anticipar ataques y priorizar vulnerabilidades según amenazas emergentes.",
+      "id": "p18-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué fase del proceso de gestión de vulnerabilidades se encarga de evaluar la severidad de una vulnerabilidad detectada mediante un sistema de puntuación estándar?",
+      "opciones": [
+        "a) Identificación",
+        "b) Evaluación",
+        "c) Priorización",
+        "d) Mitigación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La fase de evaluación utiliza sistemas como el CVSS para asignar una puntuación numérica que refleje la severidad de la vulnerabilidad, considerando factores como complejidad de explotación, impacto y privilegios necesarios.",
+      "id": "p18-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se enfoca en evaluar la seguridad de aplicaciones en tiempo de ejecución, introduciendo datos maliciosos o aleatorios para identificar respuestas inesperadas o fallos?",
+      "opciones": [
+        "a) Análisis estático de código (SAST)",
+        "b) Fuzzing (análisis dinámico)",
+        "c) Escaneo de puertos",
+        "d) Test de penetración"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El fuzzing es una técnica de análisis dinámico que evalúa aplicaciones en ejecución introduciendo datos aleatorios o maliciosos para detectar vulnerabilidades como caídas del sistema o respuestas inesperadas.",
+      "id": "p18-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de vulnerabilidades se busca identificar PRIMARIAMENTE mediante un análisis estático de código fuente (SAST) en un entorno de desarrollo de software?",
+      "opciones": [
+        "a) Vulnerabilidades relacionadas con la configuración de firewalls en la red",
+        "b) Vulnerabilidades en el código fuente que podrían permitir inyecciones de SQL o desbordamientos de búfer",
+        "c) Vulnerabilidades en servicios en ejecución que no han sido parcheados",
+        "d) Vulnerabilidades en protocolos de red como TLS o SSH"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El análisis estático de código (SAST) revisa el código fuente sin ejecutarlo, identificando debilidades como inyecciones de SQL, desbordamientos de búfer o configuraciones inseguras de autenticación directamente en el código.",
+      "id": "p18-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de herramienta se utiliza para identificar vulnerabilidades en aplicaciones en tiempo de ejecución mediante la introducción de datos maliciosos o aleatorios, con el fin de observar respuestas inesperadas que puedan indicar fallos de seguridad?",
+      "opciones": [
+        "a) Análisis Estático de Código (SAST)",
+        "b) Escaneo de vulnerabilidades basado en firmas",
+        "c) Fuzzing (análisis dinámico)",
+        "d) Pentesting manual"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El fuzzing es una técnica de análisis dinámico que introduce datos maliciosos o aleatorios en una aplicación en ejecución para detectar vulnerabilidades como caídas o errores inesperados, a diferencia del SAST que analiza el código sin ejecutarlo.",
+      "id": "p18-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta mediante un escaneo de vulnerabilidades que uno de sus servidores de bases de datos, aislado en una red aireada (air-gapped), presenta una vulnerabilidad crítica de autenticación débil en un servicio interno no expuesto a Internet. El equipo de TI decide no aplicar el parche de inmediato debido a que el sistema no es accesible desde redes externas ni internas, pero implementa un monitoreo adicional de logs y restringe el acceso físico a la sala donde se encuentra el servidor. ¿Qué estrategia de mitigación está aplicando la organización en este escenario?",
+      "opciones": [
+        "a) Aplicación de un control de compensación mediante segmentación de red con VLANs",
+        "b) Implementación de un firewall de aplicación web (WAF) para bloquear intentos de autenticación desde redes internas",
+        "c) Mitigación por aislamiento y monitoreo continuo, reduciendo el riesgo sin modificar el sistema",
+        "d) Transferencia del riesgo mediante la contratación de un ciberseguro específico para este servidor"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La organización está aplicando una estrategia de mitigación por aislamiento y monitoreo continuo, ya que el sistema no es accesible desde redes externas ni internas, pero se implementan medidas adicionales (monitoreo de logs y restricción física) para reducir el riesgo sin aplicar un parche inmediato.",
+      "id": "p18-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de control de acceso basado en roles (RBAC) para mitigar el riesgo de una vulnerabilidad crítica en un servicio de autenticación interno que no puede ser parcheado de inmediato debido a dependencias críticas en producción. El RBAC restringe el acceso a este servicio a solo dos administradores con perfiles específicos, y se implementa un registro detallado de todas las actividades realizadas en el sistema. ¿Qué principio de gestión de vulnerabilidades está aplicando esta organización con esta estrategia?",
+      "opciones": [
+        "a) Control de compensación mediante reducción de privilegios y monitoreo",
+        "b) Segmentación de red para aislar el sistema vulnerable",
+        "c) Transferencia del riesgo mediante un ciberseguro",
+        "d) Aplicación de parches no programados en el sistema crítico"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La organización está aplicando un control de compensación al implementar el RBAC (reducción de privilegios) y el monitoreo detallado, lo que reduce el riesgo de explotación sin parchear el sistema, tal como se describe en el temario sobre estrategias de mitigación.",
+      "id": "p18-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de escaneo de vulnerabilidades se utiliza para evaluar la seguridad de una aplicación web mediante la introducción de datos aleatorios o maliciosos en tiempo de ejecución, observando sus respuestas para detectar fallos?",
+      "opciones": [
+        "a) Análisis estático de código (SAST)",
+        "b) Fuzzing (análisis dinámico)",
+        "c) Escaneo de vulnerabilidades basado en firmas",
+        "d) Test de penetración (pentesting)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El fuzzing (análisis dinámico) introduce datos aleatorios o maliciosos en una aplicación en ejecución para identificar respuestas inesperadas que puedan indicar vulnerabilidades, a diferencia del SAST que analiza el código sin ejecutarlo.",
+      "id": "p18-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué fase del proceso de gestión de vulnerabilidades se encarga de determinar si una vulnerabilidad reportada por un escaneo automatizado realmente existe en el sistema, evitando así falsos positivos?",
+      "opciones": [
+        "a) Mitigación",
+        "b) Verificación",
+        "c) Priorización",
+        "d) Identificación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La fase de verificación consiste en validar que las vulnerabilidades detectadas realmente existen en el sistema, especialmente para descartar falsos positivos generados por escáneres automatizados.",
+      "id": "p18-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué fase del proceso de gestión de vulnerabilidades se encarga de asignar una puntuación numérica a cada vulnerabilidad detectada, utilizando el sistema CVSS (Common Vulnerability Scoring System), para priorizar su mitigación según factores como la complejidad de explotación y el impacto en la confidencialidad?",
+      "opciones": [
+        "a) Identificación",
+        "b) Evaluación",
+        "c) Priorización",
+        "d) Mitigación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La fase de priorización utiliza el CVSS para asignar puntuaciones que permiten ordenar las vulnerabilidades según su riesgo, facilitando la toma de decisiones sobre cuáles mitigar primero.",
+      "id": "p18-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se utiliza para evaluar la seguridad de una aplicación web mediante el análisis de su código fuente SIN ejecutar la aplicación, con el objetivo de detectar vulnerabilidades como inyecciones de SQL o desbordamientos de búfer?",
+      "opciones": [
+        "a) Escaneo dinámico (DAST)",
+        "b) Fuzzing",
+        "c) Análisis estático de código (SAST)",
+        "d) Escaneo de red externo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El análisis estático de código (SAST) revisa el código fuente sin ejecutarlo, identificando vulnerabilidades en el código mismo, como inyecciones de SQL o desbordamientos de búfer. Esto difiere del escaneo dinámico (DAST), que opera sobre aplicaciones en ejecución.",
+      "id": "p18-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se utiliza para evaluar la seguridad de un sistema operativo o un servicio de red mediante el envío de paquetes especialmente diseñados para detectar respuestas anómalas, sin explotar activamente las vulnerabilidades encontradas?",
+      "opciones": [
+        "a) Análisis estático de código (SAST)",
+        "b) Escaneo pasivo de red",
+        "c) Fuzzing de red",
+        "d) Escaneo activo de vulnerabilidades"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El escaneo activo de vulnerabilidades envía paquetes o solicitudes a sistemas para detectar respuestas que indiquen posibles vulnerabilidades, sin explotarlas activamente como en un test de penetración.",
+      "id": "p18-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se realiza desde fuera de la red de la organización, simulando el punto de vista de un atacante externo sin acceso autenticado, para identificar sistemas y servicios expuestos a Internet?",
+      "opciones": [
+        "a) Escaneo interno de vulnerabilidades",
+        "b) Escaneo externo de vulnerabilidades",
+        "c) Fuzzing (análisis dinámico)",
+        "d) Análisis estático de código (SAST)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo externo de vulnerabilidades evalúa la seguridad desde la perspectiva de un atacante remoto sin acceso previo a la red, identificando sistemas expuestos como servidores web o bases de datos accesibles desde Internet.",
+      "id": "p18-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de análisis de vulnerabilidades se utiliza para introducir datos aleatorios o maliciosos en una aplicación en ejecución con el objetivo de detectar respuestas inesperadas que puedan indicar fallos de seguridad?",
+      "opciones": [
+        "a) Análisis Estático de Código (SAST)",
+        "b) Fuzzing (análisis dinámico)",
+        "c) Escaneo de vulnerabilidades basado en firmas",
+        "d) Prueba de penetración (pentesting)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El fuzzing es una técnica de análisis dinámico que introduce datos aleatorios o maliciosos en aplicaciones en ejecución para observar su comportamiento y detectar vulnerabilidades como fallos o respuestas inesperadas.",
+      "id": "p18-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué fase del proceso de gestión de vulnerabilidades se encarga de asignar un factor de exposición (exposure factor) a una vulnerabilidad para evaluar su probabilidad de explotación?",
+      "opciones": [
+        "a) Identificación",
+        "b) Evaluación",
+        "c) Priorización",
+        "d) Mitigación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La fase de evaluación incluye la asignación del factor de exposición, que mide la probabilidad de que una vulnerabilidad sea explotada en el entorno específico de la organización.",
+      "id": "p18-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización realiza un escaneo de vulnerabilidades en su infraestructura crítica y detecta una vulnerabilidad crítica (CVE-2023-12345) en un servicio de autenticación interno que no puede ser parcheado inmediatamente debido a dependencias de legado. El equipo de seguridad decide implementar un control de compensación que consiste en: 1) Bloquear el acceso a este servicio desde todas las redes internas mediante firewalls, 2) Limitar el acceso físico al servidor a solo dos administradores autorizados, 3) Implementar un sistema de monitoreo en tiempo real de logs para detectar intentos de acceso no autorizados, y 4) Configurar un sistema de alerta automática que notifique al equipo de seguridad si se detectan patrones sospechosos. ¿Qué principio fundamental de gestión de vulnerabilidades está aplicando esta organización al implementar este enfoque?",
+      "opciones": [
+        "a) Reducción de la superficie de ataque mediante la segmentación de red y el control de acceso",
+        "b) Transferencia del riesgo a un proveedor de ciberseguro mediante la implementación de un WAF",
+        "c) Aceptación del riesgo residual tras evaluar que la probabilidad de explotación es mínima",
+        "d) Mitigación de la vulnerabilidad mediante la aplicación inmediata de parches de seguridad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La organización está aplicando el principio de **reducción de la superficie de ataque** al implementar controles de compensación que limitan la exposición de la vulnerabilidad, como la segmentación de red, el control de acceso físico y el monitoreo en tiempo real, sin depender del parcheo inmediato.",
+      "id": "p18-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización financiera realiza un escaneo de vulnerabilidades interno en su infraestructura crítica y detecta una vulnerabilidad crítica en un servicio de autenticación interno que no puede ser parcheado inmediatamente debido a dependencias de un sistema legado. El equipo de seguridad decide implementar un control de compensación que incluye: 1) Aplicar un firewall de próxima generación para bloquear todo el tráfico hacia el puerto afectado, 2) Restringir el acceso físico al servidor a solo el administrador principal, 3) Implementar un sistema de monitoreo en tiempo real de logs con alertas automatizadas para intentos de acceso no autorizados, y 4) Deshabilitar temporalmente el servicio hasta que se implemente una solución permanente. ¿Qué principio de gestión de vulnerabilidades está aplicando esta organización al implementar este enfoque, según el temario?",
+      "opciones": [
+        "a) Reducción del factor de exposición (exposure factor) mediante segmentación de red y controles de acceso",
+        "b) Priorización de vulnerabilidades mediante el sistema CVSS para asignar puntuaciones numéricas",
+        "c) Transferencia del riesgo a un ciberseguro para cubrir posibles pérdidas financieras",
+        "d) Validación de la efectividad de la mitigación mediante pruebas manuales y auditorías"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El principio aplicado es la reducción del factor de exposición (exposure factor), que consiste en disminuir la probabilidad de explotación de una vulnerabilidad mediante controles como segmentación de red y restricción de accesos, según lo descrito en el temario sobre mitigación y controles de compensación.",
+      "id": "p18-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto de la gestión de vulnerabilidades, ¿qué término describe la probabilidad de que una vulnerabilidad sea explotada por un atacante, considerando factores como la accesibilidad del sistema y la facilidad de explotación?",
+      "opciones": [
+        "Factor de exposición (Exposure Factor)",
+        "Puntuación CVSS",
+        "Severidad de la vulnerabilidad",
+        "Impacto en la confidencialidad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El factor de exposición (Exposure Factor) evalúa la probabilidad de que una vulnerabilidad sea explotada, considerando aspectos como la accesibilidad del sistema y la facilidad de explotación, según el temario.",
+      "id": "p18-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de herramientas se utiliza para evaluar el riesgo de una vulnerabilidad considerando factores como la complejidad de explotación, el impacto en la confidencialidad, la disponibilidad y los privilegios necesarios?",
+      "opciones": [
+        "a) Herramientas de análisis estático de código (SAST)",
+        "b) Herramientas de análisis dinámico de aplicaciones (DAST)",
+        "c) Sistemas de puntuación como CVSS",
+        "d) Escáneres de vulnerabilidades básicos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El sistema de puntuación CVSS (Common Vulnerability Scoring System) asigna valores numéricos a vulnerabilidades considerando factores como complejidad de explotación, impacto y privilegios necesarios para priorizar su mitigación.",
+      "id": "p18-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de escaneo de vulnerabilidades se realiza para evaluar la seguridad de una aplicación web mediante el análisis de su código fuente SIN ejecutar la aplicación, con el objetivo de detectar vulnerabilidades como inyecciones de SQL o desbordamientos de búfer?",
+      "opciones": [
+        "a) Escaneo dinámico de aplicaciones (DAST)",
+        "b) Análisis estático de código (SAST)",
+        "c) Escaneo de puertos",
+        "d) Test de penetración"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El análisis estático de código (SAST) revisa el código fuente sin ejecutarlo, identificando vulnerabilidades como inyecciones de SQL o desbordamientos de búfer, mientras que el escaneo dinámico (DAST) analiza la aplicación en ejecución.",
+      "id": "p18-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se realiza para evaluar la seguridad de un sistema operativo o servicio de red mediante el envío de paquetes especialmente diseñados para detectar respuestas anómalas, SIN explotar activamente las vulnerabilidades encontradas?",
+      "opciones": [
+        "a) Escaneo pasivo",
+        "b) Escaneo activo",
+        "c) Escaneo basado en firmas",
+        "d) Escaneo de configuración"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo activo implica enviar paquetes o solicitudes a los sistemas para detectar vulnerabilidades sin explotarlas activamente, a diferencia del escaneo pasivo que solo monitorea el tráfico.",
+      "id": "p18-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el proceso de gestión de vulnerabilidades, ¿qué fase implica asignar una puntuación a cada vulnerabilidad para priorizar su mitigación, considerando factores como la complejidad de explotación y el impacto en la confidencialidad?",
+      "opciones": [
+        "Evaluación de vulnerabilidades",
+        "Priorización de vulnerabilidades",
+        "Identificación de vulnerabilidades",
+        "Verificación de vulnerabilidades"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La evaluación de vulnerabilidades incluye asignar una puntuación (como CVSS) para priorizar su mitigación, según el temario.",
+      "id": "p18-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa realiza un escaneo interno de vulnerabilidades y detecta que un sistema crítico tiene una vulnerabilidad media sin parchear. El equipo de TI decide no aplicar el parche porque el sistema está aislado en una red aireada (air-gapped) y no es accesible desde redes externas. ¿Qué estrategia de mitigación están aplicando?",
+      "opciones": [
+        "Aceptación del riesgo",
+        "Mitigación mediante controles de compensación",
+        "Transferencia del riesgo mediante ciberseguro",
+        "Eliminación del riesgo mediante desactivación del sistema"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La organización está aceptando el riesgo al no aplicar el parche, ya que el sistema no es accesible y el riesgo de explotación es bajo, según el temario.",
+      "id": "p18-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En la fase de evaluación del proceso de gestión de vulnerabilidades, ¿qué sistema de puntuación estandarizado se utiliza PRIMARIAMENTE para asignar un valor numérico a las vulnerabilidades detectadas, permitiendo comparar su severidad y priorizar su mitigación?",
+      "opciones": [
+        "a) CWE (Common Weakness Enumeration)",
+        "b) CVSS (Common Vulnerability Scoring System)",
+        "c) CVE (Common Vulnerabilities and Exposures)",
+        "d) NIST SP 800-53"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El CVSS es el sistema estándar utilizado para asignar puntuaciones numéricas a vulnerabilidades, considerando factores como complejidad de explotación, impacto en confidencialidad e integridad, y privilegios necesarios, lo que facilita la priorización.",
+      "id": "p18-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se utiliza para evaluar la seguridad de un sistema operativo o servicio de red mediante el envío de paquetes especialmente diseñados para detectar respuestas anómalas, SIN explotar activamente las vulnerabilidades encontradas?",
+      "opciones": [
+        "a) Escaneo pasivo",
+        "b) Fuzzing",
+        "c) Escaneo activo no invasivo",
+        "d) Análisis estático de código (SAST)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El escaneo activo no invasivo envía paquetes diseñados para detectar respuestas anómalas sin explotar las vulnerabilidades, a diferencia del fuzzing (b) que introduce datos maliciosos en ejecución o el SAST (d) que analiza código sin ejecutarlo.",
+      "id": "p18-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización financiera detecta mediante un escaneo de vulnerabilidades que uno de sus servidores de bases de datos, aislado en una red aireada (air-gapped), presenta una vulnerabilidad crítica de autenticación débil en un servicio interno no expuesto a Internet. El equipo de TI decide no aplicar el parche de inmediato, pero implementa un monitoreo adicional de logs y restringe el acceso físico a la sala del servidor. ¿Qué estrategia de mitigación está aplicando la organización en este escenario?",
+      "opciones": [
+        "Mitigación mediante controles de compensación",
+        "Aceptación del riesgo",
+        "Transferencia del riesgo mediante ciberseguro",
+        "Eliminación del riesgo mediante desactivación del servicio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La organización está aplicando controles de compensación (monitoreo de logs y restricción de acceso físico) para reducir el riesgo sin aplicar el parche, según el temario.",
+      "id": "p18-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un control de acceso basado en roles (RBAC) para mitigar el riesgo de una vulnerabilidad crítica en un servicio de autenticación interno que no puede ser parcheado de inmediato. El RBAC restringe el acceso a este servicio a solo dos administradores con perfiles específicos y se implementa un registro detallado de todas las actividades. ¿Qué principio fundamental de gestión de vulnerabilidades está aplicando esta organización?",
+      "opciones": [
+        "Principio de menor privilegio (Least Privilege)",
+        "Principio de defensa en profundidad (Defense in Depth)",
+        "Principio de segmentación de red (Network Segmentation)",
+        "Principio de aceptación del riesgo (Risk Acceptance)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El RBAC aplica el principio de menor privilegio al restringir el acceso a solo los administradores necesarios, reduciendo así el riesgo de explotación, según el temario.",
+      "id": "p18-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el proceso de gestión de vulnerabilidades, ¿qué fase se encarga de determinar si una vulnerabilidad reportada por un escaneo automatizado realmente existe en el sistema, evitando así falsos positivos?",
+      "opciones": [
+        "a) Identificación",
+        "b) Evaluación",
+        "c) Verificación",
+        "d) Priorización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La fase de verificación se encarga de confirmar la existencia real de las vulnerabilidades detectadas, evitando falsos positivos mediante pruebas manuales o reevaluaciones.",
+      "id": "p18-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se realiza para evaluar la seguridad de una aplicación web mediante el análisis de su código fuente SIN ejecutar la aplicación, con el objetivo de detectar vulnerabilidades como inyecciones de SQL o desbordamientos de búfer?",
+      "opciones": [
+        "a) Escaneo dinámico (DAST)",
+        "b) Análisis estático de código (SAST)",
+        "c) Escaneo de puertos",
+        "d) Test de penetración"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El análisis estático de código (SAST) revisa el código fuente sin ejecutarlo, identificando vulnerabilidades como inyecciones de SQL o desbordamientos de búfer.",
+      "id": "p18-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta mediante un escaneo de vulnerabilidades que uno de sus servidores de bases de datos, aislado en una red aireada (air-gapped), presenta una vulnerabilidad crítica de autenticación débil en un servicio interno no expuesto a Internet. El equipo de TI decide no aplicar el parche de inmediato, pero implementa un monitoreo adicional de logs y restringe el acceso físico a la sala del servidor. ¿Qué estrategia de mitigación está aplicando la organización en este escenario?",
+      "opciones": [
+        "a) Aplicación de parches de seguridad",
+        "b) Implementación de controles de compensación",
+        "c) Transferencia del riesgo a un ciberseguro",
+        "d) Segmentación de red mediante VLANs"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La organización está aplicando controles de compensación al implementar monitoreo adicional y restricciones físicas para reducir el riesgo sin aplicar el parche de inmediato.",
+      "id": "p18-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo principal del escaneo de vulnerabilidades?",
+      "opciones": [
+        "a) Detectar vulnerabilidades sin explotarlas",
+        "b) Simular un ataque real para comprometer sistemas",
+        "c) Generar informes detallados de vulnerabilidades",
+        "d) Identificar puertos abiertos o servicios vulnerables"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo de vulnerabilidades se limita a detectar vulnerabilidades sin explotarlas, a diferencia del test de penetración que simula ataques reales.",
+      "id": "p18-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de escaneo de vulnerabilidades se realiza para evaluar la seguridad de un sistema operativo o servicio de red mediante el envío de paquetes especialmente diseñados para detectar respuestas anómalas, sin explotar activamente las vulnerabilidades encontradas?",
+      "opciones": [
+        "Escaneo pasivo",
+        "Escaneo activo con explotación simulada",
+        "Escaneo basado en firmas",
+        "Escaneo de puertos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este tipo de escaneo corresponde al análisis de vulnerabilidades mediante la técnica de escaneo activo (active vulnerability scanning), que envía paquetes diseñados para detectar respuestas anómalas sin explotar las vulnerabilidades, a diferencia de los tests de penetración que sí las explotan.",
+      "id": "p18-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización financiera detecta una vulnerabilidad crítica en un servicio de autenticación interno que no puede ser parcheado inmediatamente debido a dependencias de un sistema legado. El equipo de seguridad implementa un firewall de próxima generación para bloquear todo el tráfico hacia el puerto afectado y restringe el acceso físico al servidor. ¿Qué principio fundamental de gestión de vulnerabilidades está aplicando esta organización?",
+      "opciones": [
+        "a) Aplicación de parches de seguridad",
+        "b) Implementación de controles de compensación",
+        "c) Transferencia del riesgo a un ciberseguro",
+        "d) Priorización basada en CVSS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La organización está aplicando controles de compensación al implementar firewalls y restricciones físicas para reducir el riesgo sin aplicar el parche de inmediato.",
+      "id": "p18-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de escaneo de vulnerabilidades se realiza para evaluar la seguridad de un sistema operativo o servicio de red mediante el envío de paquetes especialmente diseñados para detectar respuestas anómalas, SIN explotar activamente las vulnerabilidades encontradas, pero que además incluye la simulación de ataques contra servicios específicos para evaluar su resistencia?",
+      "opciones": [
+        "a) Análisis dinámico de aplicaciones (DAST)",
+        "b) Escaneo de vulnerabilidades pasivo",
+        "c) Escaneo de vulnerabilidades activo con pruebas de explotación simulada",
+        "d) Análisis estático de código fuente (SAST)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este tipo de escaneo combina el envío de paquetes para detectar respuestas anómalas con pruebas de explotación simulada (sin causar daño real) para evaluar la resistencia de los servicios, según se describe en el temario al mencionar herramientas de análisis de vulnerabilidades.",
+      "id": "p18-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de escaneo de vulnerabilidades se enfoca en evaluar sistemas mediante la simulación de accesos no autorizados desde la perspectiva de un usuario con privilegios elevados, pero sin explotar activamente las vulnerabilidades detectadas?",
+      "opciones": [
+        "a) Escaneo interno de vulnerabilidades con privilegios",
+        "b) Escaneo dinámico de aplicaciones (DAST)",
+        "c) Análisis estático de código fuente (SAST)",
+        "d) Prueba de penetración con escalada de privilegios"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escaneo interno de vulnerabilidades con privilegios evalúa sistemas desde la perspectiva de un usuario con acceso elevado, simulando accesos no autorizados sin explotar activamente las vulnerabilidades, a diferencia de un test de penetración que sí las explotaría.",
+      "id": "p18-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización realiza un escaneo de vulnerabilidades en su infraestructura crítica y detecta una vulnerabilidad crítica (CVE-2023-45678) en un servicio de autenticación interno que no puede ser parcheado inmediatamente debido a dependencias de un sistema legado sin soporte. El equipo de seguridad implementa las siguientes medidas: 1) Configurar un firewall de aplicación web (WAF) para bloquear todas las solicitudes dirigidas al puerto afectado, 2) Implementar un sistema de autenticación multifactor (MFA) adicional para acceder al servicio, 3) Restringir el acceso al servicio solo a usuarios con un perfil específico mediante control de acceso basado en roles (RBAC), y 4) Monitorear en tiempo real los logs del servicio para detectar intentos de acceso no autorizados. ¿Qué principio fundamental de gestión de vulnerabilidades está aplicando la organización al implementar este enfoque?",
+      "opciones": [
+        "a) Transferencia del riesgo mediante la implementación de pólizas de ciberseguro para cubrir posibles pérdidas financieras derivadas de un ataque.",
+        "b) Reducción de la superficie de ataque mediante la segmentación de la red y el aislamiento del sistema afectado.",
+        "c) Aplicación de controles de compensación que mitigan el riesgo sin eliminar la vulnerabilidad subyacente.",
+        "d) Eliminación total del riesgo mediante la desactivación permanente del servicio vulnerable."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La organización está implementando controles de compensación (compensating controls) al aplicar medidas alternativas como WAF, MFA, RBAC y monitoreo, que reducen el riesgo de explotación sin parchear la vulnerabilidad.",
+      "id": "p18-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto de la gestión de vulnerabilidades, ¿qué técnica consiste en introducir datos aleatorios o maliciosos en una aplicación en ejecución para detectar respuestas inesperadas que puedan indicar fallos de seguridad?",
+      "opciones": [
+        "a) Análisis estático de código (SAST)",
+        "b) Escaneo de puertos",
+        "c) Fuzzing (análisis dinámico)",
+        "d) Test de penetración"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El fuzzing es una técnica de análisis dinámico que introduce datos aleatorios en aplicaciones en ejecución para detectar vulnerabilidades.",
+      "id": "p18-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se centra en evaluar sistemas desde la perspectiva de un atacante externo, simulando accesos no autorizados a través de Internet?",
+      "opciones": [
+        "a) Escaneo interno con privilegios elevados",
+        "b) Escaneo externo de red",
+        "c) Análisis dinámico de aplicaciones (fuzzing)",
+        "d) Análisis estático de código fuente (SAST)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo externo de red evalúa la seguridad de sistemas accesibles desde Internet, simulando ataques remotos sin explotar activamente las vulnerabilidades detectadas.",
+      "id": "p18-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En la gestión de vulnerabilidades, ¿qué término describe la probabilidad de que una vulnerabilidad sea explotada por un atacante, considerando factores como la accesibilidad del sistema y la facilidad de explotación?",
+      "opciones": [
+        "a) Factor de exposición (Exposure Factor)",
+        "b) Puntuación CVSS",
+        "c) Inteligencia de amenazas",
+        "d) Control de compensación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El factor de exposición indica la probabilidad de que una vulnerabilidad sea explotada, basado en su accesibilidad y facilidad de explotación.",
+      "id": "p18-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una fase del proceso de gestión de vulnerabilidades según el temario?",
+      "opciones": [
+        "a) Identificación",
+        "b) Explotación activa",
+        "c) Priorización",
+        "d) Verificación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La explotación activa es parte de un test de penetración, no del proceso de gestión de vulnerabilidades, que se centra en identificar, evaluar, priorizar y mitigar.",
+      "id": "p18-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta mediante un escaneo de vulnerabilidades que un servidor de bases de datos, aislado en una red aireada (air-gapped), presenta una vulnerabilidad crítica de autenticación débil. El equipo decide no aplicar el parche de inmediato, pero implementa un monitoreo adicional de logs y restringe el acceso físico a la sala del servidor. ¿Qué estrategia de mitigación están aplicando?",
+      "opciones": [
+        "a) Aplicación de parches de seguridad",
+        "b) Segmentación de red mediante VLANs",
+        "c) Controles de compensación",
+        "d) Transferencia del riesgo a un ciberseguro"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los controles de compensación reducen el riesgo cuando no es posible aplicar parches, como en este caso con monitoreo y restricción física.",
+      "id": "p18-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de análisis de vulnerabilidades se utiliza para evaluar la seguridad de un sistema operativo o servicio de red mediante el envío de paquetes especialmente diseñados para detectar respuestas anómalas, SIN explotar activamente las vulnerabilidades encontradas, pero que incluye la simulación de ataques contra servicios específicos para evaluar su resistencia?",
+      "opciones": [
+        "a) Análisis estático de aplicaciones (SAST)",
+        "b) Fuzzing",
+        "c) Escaneo de vulnerabilidades pasivo",
+        "d) Escaneo de vulnerabilidades activo con simulación de exploits"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Esta técnica se conoce como escaneo activo con simulación de exploits, donde se envían paquetes diseñados para probar la resistencia de los servicios sin explotar activamente las vulnerabilidades, pero evaluando su comportamiento ante posibles ataques.",
+      "id": "p18-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de vulnerabilidades, ¿qué técnica consiste en introducir datos aleatorios o maliciosos en una aplicación en ejecución para detectar respuestas inesperadas que puedan indicar fallos de seguridad, sin analizar el código fuente ni ejecutar pruebas de penetración?",
+      "opciones": [
+        "a) Análisis estático de aplicaciones (SAST)",
+        "b) Escaneo de vulnerabilidades basado en paquetes",
+        "c) Fuzzing (análisis dinámico de aplicaciones)",
+        "d) Monitoreo de logs en tiempo real"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El fuzzing es una técnica de análisis dinámico que introduce datos aleatorios o maliciosos en una aplicación en ejecución para observar su comportamiento y detectar vulnerabilidades, sin requerir el análisis del código fuente.",
+      "id": "p18-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización realiza un escaneo de vulnerabilidades y detecta una vulnerabilidad crítica en un servicio de autenticación interno que no puede ser parcheado de inmediato debido a dependencias de legado. El equipo implementa un firewall de aplicación web (WAF) para bloquear el tráfico dirigido al puerto afectado. ¿Qué principio fundamental de gestión de vulnerabilidades está aplicando?",
+      "opciones": [
+        "a) Transferencia del riesgo",
+        "b) Mitigación mediante controles de compensación",
+        "c) Eliminación de la vulnerabilidad",
+        "d) Aceptación del riesgo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles de compensación, como el WAF, reducen el riesgo cuando no es posible aplicar parches de inmediato.",
+      "id": "p18-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de escaneo de vulnerabilidades evalúa la seguridad de un sistema mediante el análisis de su configuración, puertos abiertos y servicios expuestos, SIN explotar activamente las vulnerabilidades encontradas?",
+      "opciones": [
+        "a) Escaneo de configuración",
+        "b) Escaneo de puertos y servicios (Network Scanning)",
+        "c) Fuzzing (análisis dinámico)",
+        "d) Análisis estático de código (SAST)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo de puertos y servicios, también denominado Network Scanning, analiza la configuración de sistemas, puertos abiertos y servicios expuestos sin explotar las vulnerabilidades detectadas, a diferencia de pruebas como el fuzzing o el pentesting.",
+      "id": "p18-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta mediante un escaneo de vulnerabilidades que un sistema crítico tiene una vulnerabilidad media sin parchear. El equipo de TI decide no aplicar el parche porque el sistema está aislado en una red aireada (air-gapped) y no es accesible desde redes externas. ¿Qué estrategia de mitigación están aplicando?",
+      "opciones": [
+        "a) Aplicación de parches de seguridad",
+        "b) Segmentación de red mediante firewalls",
+        "c) Aceptación del riesgo",
+        "d) Transferencia del riesgo a un ciberseguro"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La aceptación del riesgo es una estrategia válida cuando el impacto de la explotación es bajo, como en sistemas aislados.",
+      "id": "p18-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el proceso de gestión de vulnerabilidades, ¿qué fase se encarga de asignar una puntuación numérica a cada vulnerabilidad detectada, utilizando el sistema CVSS (Common Vulnerability Scoring System), para priorizar su mitigación según factores como la complejidad de explotación y el impacto en la confidencialidad?",
+      "opciones": [
+        "a) Identificación",
+        "b) Evaluación",
+        "c) Priorización",
+        "d) Mitigación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La fase de evaluación asigna puntuaciones CVSS para determinar la severidad y priorizar la mitigación de vulnerabilidades.",
+      "id": "p18-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones describe MEJOR la diferencia entre el análisis estático de aplicaciones (SAST) y el análisis dinámico de aplicaciones (DAST o fuzzing)?",
+      "opciones": [
+        "El SAST analiza el código fuente sin ejecutarlo, mientras que el DAST introduce datos maliciosos en una aplicación en ejecución para observar su comportamiento.",
+        "El SAST solo detecta vulnerabilidades en aplicaciones web, mientras que el DAST evalúa sistemas operativos y servicios de red.",
+        "El SAST requiere acceso a la red interna, mientras que el DAST se realiza desde Internet.",
+        "El SAST es más rápido que el DAST porque no necesita ejecutar la aplicación, pero el DAST es más preciso al detectar vulnerabilidades en tiempo de ejecución."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El SAST revisa el código fuente sin ejecutarlo, mientras que el DAST (fuzzing) introduce datos maliciosos en una aplicación en ejecución para detectar respuestas inesperadas que puedan indicar fallos de seguridad.",
+      "id": "p18-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta mediante un escaneo de vulnerabilidades que un servidor de bases de datos, aislado en una red aireada (air-gapped), presenta una vulnerabilidad crítica de autenticación débil. El equipo decide no aplicar el parche de inmediato, pero implementa un monitoreo adicional de logs y restringe el acceso físico a la sala del servidor. ¿Qué estrategia de mitigación está aplicando la organización en este escenario?",
+      "opciones": [
+        "Control de compensación mediante segmentación de red y monitoreo.",
+        "Aplicación de parches de emergencia sin pruebas previas.",
+        "Transferencia del riesgo a un ciberseguro.",
+        "Desactivación temporal del servicio afectado."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La organización está aplicando controles de compensación, como el monitoreo adicional y la restricción de acceso físico, para reducir el riesgo sin aplicar el parche de inmediato.",
+      "id": "p18-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se enfoca en evaluar sistemas desde la perspectiva de un atacante externo, simulando accesos no autorizados a través de Internet?",
+      "opciones": [
+        "Escaneo externo de vulnerabilidades.",
+        "Análisis estático de aplicaciones (SAST).",
+        "Escaneo interno de vulnerabilidades.",
+        "Prueba de penetración (pentesting)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un escaneo externo de vulnerabilidades evalúa la seguridad de sistemas accesibles desde Internet, simulando el punto de vista de un atacante remoto.",
+      "id": "p18-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de análisis de vulnerabilidades se utiliza para identificar fallos de seguridad en aplicaciones web mediante la introducción de datos aleatorios o maliciosos en tiempo de ejecución, observando respuestas inesperadas que puedan indicar vulnerabilidades como desbordamientos de búfer o inyecciones de código?",
+      "opciones": [
+        "a) Análisis estático de aplicaciones (SAST)",
+        "b) Fuzzing (análisis dinámico)",
+        "c) Escaneo de puertos",
+        "d) Monitoreo de logs en tiempo real"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El fuzzing (análisis dinámico) consiste en introducir datos aleatorios o maliciosos en una aplicación en ejecución para detectar respuestas inesperadas que puedan indicar vulnerabilidades, a diferencia del SAST que analiza el código sin ejecutarlo.",
+      "id": "p18-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de gestión de vulnerabilidades se utiliza para evaluar la seguridad de un sistema mediante el análisis de su configuración, puertos abiertos y servicios expuestos, SIN explotar activamente las vulnerabilidades encontradas ni simular ataques?",
+      "opciones": [
+        "a) Análisis dinámico de aplicaciones (DAST o fuzzing)",
+        "b) Escaneo de vulnerabilidades basado en firmas de CVEs",
+        "c) Test de penetración (pentesting) con explotación activa",
+        "d) Análisis estático de aplicaciones (SAST)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo de vulnerabilidades basado en firmas de CVEs (Common Vulnerabilities and Exposures) identifica configuraciones inseguras, puertos abiertos y servicios expuestos sin explotarlos activamente, a diferencia del pentesting o el fuzzing que requieren ejecución o simulación de ataques.",
+      "id": "p18-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de gestión de vulnerabilidades se utiliza para evaluar la seguridad de un sistema mediante el análisis de su configuración, puertos abiertos y servicios expuestos, SIN explotar activamente las vulnerabilidades encontradas ni simular ataques, pero que además permite identificar servicios no autorizados o puertos innecesarios que podrían ser explotados?",
+      "opciones": [
+        "a) Análisis dinámico de aplicaciones (DAST o fuzzing)",
+        "b) Escaneo de vulnerabilidades basado en firmas",
+        "c) Análisis de configuración de red y sistemas",
+        "d) Inteligencia de amenazas (Threat Intelligence)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El análisis de configuración de red y sistemas permite evaluar la seguridad mediante la revisión de configuraciones, puertos abiertos y servicios expuestos sin explotar vulnerabilidades ni simular ataques, identificando riesgos como servicios no autorizados o puertos innecesarios.",
+      "id": "p18-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de gestión de vulnerabilidades se utiliza para evaluar la seguridad de un sistema mediante el análisis de su configuración, puertos abiertos y servicios expuestos, SIN explotar activamente las vulnerabilidades encontradas ni simular ataques, pero que además permite identificar servicios no autorizados o puertos innecesarios que podrían ser explotados?",
+      "opciones": [
+        "a) Análisis estático de aplicaciones (SAST)",
+        "b) Escaneo de vulnerabilidades basado en firmas",
+        "c) Evaluación de configuración (Benchmarking)",
+        "d) Inteligencia de amenazas (Threat Intelligence)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Esta técnica se conoce como evaluación de configuración o benchmarking, que revisa la configuración de sistemas para identificar servicios no autorizados o puertos innecesarios sin explotar vulnerabilidades activamente. No analiza código (SAST) ni introduce datos maliciosos (fuzzing).",
+      "id": "p18-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de vulnerabilidades, ¿qué técnica consiste en introducir datos aleatorios o maliciosos en una aplicación en ejecución para detectar respuestas inesperadas que puedan indicar fallos de seguridad, como caídas del sistema o excepciones, SIN analizar el código fuente ni ejecutar pruebas de penetración?",
+      "opciones": [
+        "a) Análisis estático de aplicaciones (SAST)",
+        "b) Análisis dinámico de aplicaciones (DAST o fuzzing)",
+        "c) Escaneo de vulnerabilidades basado en CVSS",
+        "d) Monitoreo de logs en tiempo real"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El fuzzing o análisis dinámico de aplicaciones (DAST) consiste en introducir datos aleatorios o maliciosos en una aplicación en ejecución para observar su comportamiento y detectar vulnerabilidades sin analizar el código fuente ni explotar activamente las vulnerabilidades.",
+      "id": "p18-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización del sector salud implementa un sistema de monitoreo continuo de vulnerabilidades en su infraestructura crítica. Durante un escaneo automatizado, se detecta una vulnerabilidad crítica (CVE-2024-12345) en un servidor de historiales médicos que aloja datos de pacientes sensibles. El servidor utiliza un sistema operativo heredado sin soporte oficial desde hace más de 2 años, por lo que no existe un parche disponible. El equipo de seguridad evalúa las siguientes opciones para mitigar el riesgo: 1) Implementar un firewall de aplicación web (WAF) para bloquear todo el tráfico HTTP/HTTPS dirigido a este servidor específico, 2) Migrar los datos históricos a un nuevo servidor moderno y parcheado, 3) Configurar un sistema de autenticación multifactor (MFA) adicional para acceder al servidor, 4) Aislar el servidor en una red aireada (air-gapped) y deshabilitar todos los servicios no esenciales. ¿Qué combinación de estrategias de mitigación alineada con los principios de compensación de vulnerabilidades describe MEJOR este escenario según el temario?",
+      "opciones": [
+        "a) Opciones 1, 3 y 4: Implementar un WAF, MFA adicional y aislar el servidor en una red aireada, ya que estas medidas reducen el riesgo mediante controles compensatorios sin depender de un parche inexistente",
+        "b) Opción 2: Migrar los datos históricos a un nuevo servidor moderno y parcheado, ya que esta es la única solución permanente y no temporal",
+        "c) Opciones 1 y 2: Implementar un WAF y migrar los datos, ya que combinan una medida temporal con una solución definitiva",
+        "d) Opciones 2 y 4: Migrar datos y aislar el servidor, ya que ambas acciones eliminan la exposición del sistema vulnerable"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las opciones 1, 3 y 4 aplican controles de compensación al bloquear accesos no autorizados, añadir autenticación adicional y aislar el sistema, reduciendo el riesgo sin requerir un parche inexistente. La opción 2 no es viable en este contexto porque el sistema operativo heredado no puede recibir parches y migrar datos no mitiga la vulnerabilidad en el servidor original.",
+      "id": "p18-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización realiza un escaneo de vulnerabilidades y detecta una vulnerabilidad crítica (CVE-2023-45678) en un servicio de autenticación interno que no puede ser parcheado de inmediato debido a dependencias de legado. El equipo implementa un firewall de aplicación web (WAF) para bloquear el tráfico dirigido al puerto afectado. ¿Qué principio fundamental de gestión de vulnerabilidades está aplicando?",
+      "opciones": [
+        "Mitigación mediante control de compensación (segmentación con WAF).",
+        "Transferencia del riesgo a un ciberseguro.",
+        "Aplicación de parches de emergencia sin pruebas previas.",
+        "Desactivación temporal del servicio afectado."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La organización está aplicando un control de compensación mediante la segmentación con un WAF para reducir el riesgo sin aplicar el parche de inmediato.",
+      "id": "p18-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de escaneo de vulnerabilidades según el temario?",
+      "opciones": [
+        "a) Escaneo estático de código fuente (SAST)",
+        "b) Escaneo dinámico de aplicaciones en ejecución (DAST o fuzzing)",
+        "c) Escaneo de inteligencia de amenazas (Threat Intelligence Scanning)",
+        "d) Escaneo de puertos y servicios en sistemas operativos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona SAST, DAST/fuzzing y escaneo de puertos/servicios como tipos de escaneo, pero no incluye el 'escaneo de inteligencia de amenazas' como técnica de escaneo de vulnerabilidades.",
+      "id": "p18-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta que un servicio crítico en su red interna tiene una vulnerabilidad de autenticación débil (CVE-2023-12345) que no puede ser parcheada de inmediato debido a dependencias de legado. El equipo de seguridad implementa un firewall para bloquear todo el tráfico hacia el puerto afectado y configura un monitoreo en tiempo real de logs. ¿Qué principio de gestión de vulnerabilidades está aplicando?",
+      "opciones": [
+        "a) Aplicación de parches de seguridad (patching)",
+        "b) Controles de compensación (compensating controls)",
+        "c) Transferencia de riesgo (risk transference)",
+        "d) Eliminación de la vulnerabilidad (vulnerability elimination)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles de compensación son medidas temporales implementadas cuando no es posible aplicar un parche de inmediato, como el uso de firewalls o monitoreo adicional para reducir el riesgo.",
+      "id": "p18-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué fase del proceso de gestión de vulnerabilidades se encarga de asignar una puntuación numérica a cada vulnerabilidad detectada para priorizar su mitigación?",
+      "opciones": [
+        "a) Identificación",
+        "b) Evaluación",
+        "c) Priorización",
+        "d) Mitigación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La fase de evaluación incluye la asignación de puntuaciones como CVSS para determinar la severidad y priorizar las vulnerabilidades según su impacto y riesgo.",
+      "id": "p18-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de análisis de vulnerabilidades consiste en introducir datos aleatorios o maliciosos en una aplicación en ejecución para detectar respuestas inesperadas, como caídas del sistema o excepciones?",
+      "opciones": [
+        "a) Análisis estático de aplicaciones (SAST)",
+        "b) Fuzzing (DAST)",
+        "c) Escaneo de puertos",
+        "d) Prueba de penetración (pentesting)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El fuzzing (DAST) introduce datos aleatorios o maliciosos en aplicaciones en ejecución para observar respuestas inesperadas que puedan indicar vulnerabilidades.",
+      "id": "p18-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización realiza un escaneo interno de vulnerabilidades y detecta que un sistema crítico tiene una vulnerabilidad media sin parchear. El equipo decide no aplicar el parche porque el sistema está aislado en una red aireada (air-gapped) y no es accesible desde redes externas. ¿Qué estrategia de mitigación están aplicando?",
+      "opciones": [
+        "a) Aplicación de parches de seguridad (patching)",
+        "b) Controles de compensación (compensating controls)",
+        "c) Eliminación de la vulnerabilidad (vulnerability elimination)",
+        "d) Transferencia de riesgo (risk transference)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La red aireada (air-gapped) actúa como un control de compensación al aislar físicamente el sistema y reducir su exposición a ataques, mitigando el riesgo sin necesidad de parchear.",
+      "id": "p18-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de análisis de vulnerabilidades se utiliza para evaluar la seguridad de un sistema mediante el envío de paquetes especialmente diseñados para detectar respuestas anómalas SIN explotar activamente las vulnerabilidades encontradas, pero que además incluye la simulación de ataques contra servicios específicos para evaluar su resistencia?",
+      "opciones": [
+        "a) Análisis estático de código (SAST)",
+        "b) Fuzzing (análisis dinámico)",
+        "c) Escaneo de puertos con Nmap",
+        "d) Escaneo de vulnerabilidades con simulación de ataques (simulated attack scanning)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El escaneo de vulnerabilidades con simulación de ataques (simulated attack scanning) evalúa la resistencia de los servicios mediante paquetes diseñados para detectar respuestas anómalas, sin explotar activamente las vulnerabilidades, pero incluyendo pruebas controladas contra servicios específicos.",
+      "id": "p18-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de vulnerabilidades, ¿qué técnica de análisis se utiliza para evaluar la seguridad de un sistema mediante el envío de paquetes especialmente diseñados para detectar respuestas anómalas SIN explotar activamente las vulnerabilidades encontradas, pero que además permite identificar servicios no autorizados o puertos innecesarios que podrían ser explotados?",
+      "opciones": [
+        "a) Análisis estático de código (SAST)",
+        "b) Escaneo de vulnerabilidades basado en firmas",
+        "c) Escaneo pasivo de puertos y servicios",
+        "d) Análisis de configuración de sistemas"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El análisis de configuración de sistemas (opción d) evalúa la seguridad mediante la revisión de puertos abiertos, servicios expuestos y configuraciones, sin explotar vulnerabilidades activamente. Sin embargo, el escaneo pasivo de puertos y servicios (opción c) se enfoca en identificar servicios no autorizados o puertos innecesarios que podrían ser explotados, sin realizar pruebas de explotación activa.",
+      "id": "p18-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de escaneo de vulnerabilidades se realiza para evaluar la seguridad de un sistema mediante el análisis de su configuración, puertos abiertos y servicios expuestos, SIN explotar activamente las vulnerabilidades encontradas ni simular ataques?",
+      "opciones": [
+        "a) Escaneo de vulnerabilidades basado en CVSS",
+        "b) Escaneo de configuración y servicios (configuración segura)",
+        "c) Prueba de penetración (pentesting)",
+        "d) Inteligencia de amenazas (Threat Intelligence)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que este tipo de escaneo evalúa la configuración, puertos abiertos y servicios expuestos sin explotar vulnerabilidades ni simular ataques.",
+      "id": "p18-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el proceso de gestión de vulnerabilidades, ¿qué término describe la probabilidad de que una vulnerabilidad sea explotada por un atacante, considerando factores como la accesibilidad del sistema y la facilidad de explotación?",
+      "opciones": [
+        "a) Severidad",
+        "b) Factor de exposición (exposure factor)",
+        "c) Impacto",
+        "d) Complejidad de explotación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El factor de exposición indica la probabilidad de que una vulnerabilidad sea explotada, considerando su accesibilidad y facilidad de explotación.",
+      "id": "p18-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización del sector salud implementa un sistema de monitoreo continuo de vulnerabilidades en su infraestructura crítica. Durante un escaneo automatizado, se detecta una vulnerabilidad crítica (CVE-2024-12345) en un servidor de historiales médicos que aloja datos de pacientes sensibles. El servidor utiliza un sistema operativo heredado sin soporte oficial. El equipo de seguridad evalúa las siguientes opciones para mitigar el riesgo: 1) Implementar un firewall de aplicación web (WAF) para bloquear todo el tráfico HTTP/HTTPS dirigido a este servidor, 2) Migrar los datos históricos a un nuevo servidor moderno y parcheado, 3) Configurar un sistema de autenticación multifactor (MFA) adicional para acceder al servidor, 4) Aislar el servidor en una red aireada (air-gapped) y deshabilitar todos los servicios no esenciales. ¿Qué combinación de estrategias de mitigación describe MEJOR este escenario según el temario?",
+      "opciones": [
+        "a) 1 y 4 (WAF + air-gapped)",
+        "b) 2 y 3 (migración + MFA)",
+        "c) 1, 3 y 4 (WAF + MFA + air-gapped)",
+        "d) 2, 3 y 4 (migración + MFA + air-gapped)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La combinación de migración a un servidor moderno y parcheado, MFA adicional y aislamiento en red aireada (air-gapped) alinea las estrategias con los principios de compensación y mitigación del temario.",
+      "id": "p18-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de gestión de vulnerabilidades se utiliza para evaluar la seguridad de un sistema mediante el análisis de su configuración, puertos abiertos y servicios expuestos, SIN explotar activamente las vulnerabilidades encontradas ni simular ataques, y que además permite identificar servicios no autorizados o puertos innecesarios que podrían ser explotados?",
+      "opciones": [
+        "a) Análisis estático de código (SAST)",
+        "b) Escaneo de vulnerabilidades no intrusivo",
+        "c) Fuzzing (análisis dinámico de aplicaciones)",
+        "d) Test de penetración (pentesting)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo de vulnerabilidades no intrusivo analiza la configuración, puertos abiertos y servicios expuestos sin explotar vulnerabilidades ni simular ataques, identificando servicios no autorizados o innecesarios. Esta técnica es parte del proceso de identificación de riesgos potenciales.",
+      "id": "p18-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta mediante un escaneo de vulnerabilidades que un servidor crítico tiene una vulnerabilidad crítica sin parchear. El equipo decide implementar un firewall para bloquear el tráfico dirigido al puerto afectado, en lugar de aplicar el parche de inmediato. ¿Qué principio de gestión de vulnerabilidades está aplicando?",
+      "opciones": [
+        "Transferencia de riesgo mediante ciberseguro",
+        "Aplicación de controles de compensación",
+        "Segmentación de red mediante VLANs",
+        "Monitoreo continuo de logs"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles de compensación son estrategias implementadas cuando no es posible aplicar un parche de inmediato, como desactivar servicios o bloquear tráfico, según el temario.",
+      "id": "p18-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de inteligencia de amenazas según el temario?",
+      "opciones": [
+        "Open-Source Intelligence (OSINT)",
+        "Inteligencia de amenazas de código abierto",
+        "Inteligencia de amenazas de pago (comercial)",
+        "Inteligencia de amenazas basada en IA generativa"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona OSINT y fuentes de pago como tipos de inteligencia de amenazas, pero no incluye inteligencia basada en IA generativa.",
+      "id": "p18-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de vulnerabilidades, ¿qué técnica de análisis se utiliza para evaluar la seguridad de un sistema mediante el análisis de su configuración, puertos abiertos y servicios expuestos, SIN explotar activamente las vulnerabilidades encontradas, pero que además permite identificar configuraciones inseguras como contraseñas por defecto o cifrado débil?",
+      "opciones": [
+        "a) Análisis estático de código (SAST)",
+        "b) Fuzzing (análisis dinámico)",
+        "c) Escaneo de configuración",
+        "d) Test de penetración"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El escaneo de configuración evalúa la seguridad de sistemas analizando su configuración, puertos abiertos y servicios expuestos sin explotar vulnerabilidades, identificando también configuraciones inseguras como contraseñas por defecto o cifrado débil.",
+      "id": "p18-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de análisis de vulnerabilidades se utiliza para evaluar la seguridad de un sistema operativo o servicio de red mediante el envío de paquetes especialmente diseñados para detectar respuestas anómalas, pero SIN explotar activamente las vulnerabilidades encontradas ni simular ataques?",
+      "opciones": [
+        "a) Análisis de código estático (SAST)",
+        "b) Fuzzing",
+        "c) Escaneo de vulnerabilidades basado en firmas",
+        "d) Escaneo pasivo de puertos y servicios"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El escaneo pasivo de puertos y servicios evalúa la configuración y exposición de sistemas sin explotar vulnerabilidades ni simular ataques, detectando únicamente respuestas anómalas en paquetes recibidos.",
+      "id": "p18-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se enfoca en evaluar la seguridad de una aplicación web mediante la introducción de datos maliciosos en tiempo de ejecución, sin analizar su código fuente ni ejecutar pruebas de penetración activas?",
+      "opciones": [
+        "a) Análisis Estático de Código (SAST)",
+        "b) Fuzzing (análisis dinámico)",
+        "c) Escaneo de puertos",
+        "d) Escaneo de vulnerabilidades de red"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El fuzzing (análisis dinámico) consiste en introducir datos aleatorios o maliciosos en una aplicación en ejecución para detectar respuestas inesperadas que puedan indicar fallos de seguridad, sin necesidad de analizar el código fuente ni realizar pruebas de penetración activas.",
+      "id": "p18-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de vulnerabilidades, ¿qué técnica de análisis se utiliza para evaluar la seguridad de una aplicación web mediante la introducción de datos maliciosos en tiempo de ejecución, sin analizar su código fuente ni ejecutar pruebas de penetración activas?",
+      "opciones": [
+        "a) Análisis estático de código (SAST)",
+        "b) Fuzzing (análisis dinámico)",
+        "c) Escaneo de vulnerabilidades basado en red",
+        "d) Test de penetración (pentesting)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El fuzzing (análisis dinámico) consiste en introducir datos aleatorios o maliciosos en una aplicación en ejecución para detectar respuestas inesperadas que puedan indicar vulnerabilidades, sin requerir análisis de código fuente ni pruebas de penetración activas.",
+      "id": "p18-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización del sector salud detecta mediante un escaneo automatizado una vulnerabilidad crítica (CVE-2024-12345) en un servidor de historiales médicos que aloja datos de pacientes sensibles. El servidor utiliza un sistema operativo heredado sin soporte oficial. El equipo de seguridad evalúa implementar un firewall de aplicación web (WAF) para bloquear el tráfico HTTP/HTTPS dirigido a este servidor. ¿Qué principio de gestión de vulnerabilidades está aplicando?",
+      "opciones": [
+        "Aplicación de parches de seguridad",
+        "Implementación de controles de compensación",
+        "Segmentación de red mediante VLANs",
+        "Transferencia de riesgo mediante ciberseguro"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El firewall de aplicación web (WAF) actúa como un control de compensación al bloquear tráfico dirigido a un servicio vulnerable no parcheable, según el temario.",
+      "id": "p18-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de escaneo de vulnerabilidades se realiza para evaluar la seguridad de un sistema operativo o servicio de red mediante el envío de paquetes especialmente diseñados para detectar respuestas anómalas, SIN explotar activamente las vulnerabilidades encontradas, pero que además incluye la simulación de ataques contra servicios específicos para evaluar su resistencia?",
+      "opciones": [
+        "Escaneo pasivo",
+        "Escaneo activo con simulación de ataques",
+        "Test de penetración (Penetration Testing)",
+        "Análisis estático de código (SAST)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo activo con simulación de ataques evalúa la resistencia de servicios específicos sin explotar vulnerabilidades, según el temario.",
+      "id": "p18-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización financiera detecta mediante un escaneo de vulnerabilidades que uno de sus servidores de bases de datos, aislado en una red aireada (air-gapped), presenta una vulnerabilidad crítica de autenticación débil. El equipo decide no aplicar el parche de inmediato, pero implementa un monitoreo adicional de logs y restringe el acceso físico a la sala del servidor. ¿Qué combinación de estrategias de mitigación describe MEJOR este escenario?",
+      "opciones": [
+        "Aplicación de parches + Segmentación de red",
+        "Controles de compensación + Monitoreo continuo",
+        "Transferencia de riesgo + Aplicación de parches",
+        "Segmentación de red + Aplicación de parches"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La organización aplica controles de compensación (monitoreo de logs y restricción de acceso físico) en lugar de parches, según el temario.",
+      "id": "p18-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Vulnerability Scanning",
+      "youtubeId": "9B0mtWk_AM0"
+    },
+    {
+      "titulo": "Threat Intelligence",
+      "youtubeId": "86fruE9jkKk"
+    },
+    {
+      "titulo": "Penetration Testing",
+      "youtubeId": "-LevHAzXgFs"
+    },
+    {
+      "titulo": "Analyzing Vulnerabilities",
+      "youtubeId": "eyVy1gKCuAU"
+    },
+    {
+      "titulo": "Vulnerability Remediation",
+      "youtubeId": "P9xakfmX70c"
+    }
+  ]
+}

@@ -1,8 +1,9 @@
 // src/pages/MisOposiciones.tsx
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../data/oposiciones'
 import { setActiveSlug } from '../services/storage'
-import { activarTrial } from '../services/supabase'
+import { activarTrial, esOwner } from '../services/supabase'
 import { BannerNutriplan } from '../components/promo/BannerNutriplan'
 
 const GLYPH: Record<string, string> = {
@@ -11,12 +12,17 @@ const GLYPH: Record<string, string> = {
   'aux-enfermeria': '🏥',
   'aux-judicial': '⚖️',
   'tramitacion-judicial': '📋',
+  'security-plus': '🔐',
 }
 
 export default function MisOposiciones() {
   const navigate = useNavigate()
-  const disponibles = OPOSICIONES.filter(op => op.disponible)
-  const proximamente = OPOSICIONES.filter(op => !op.disponible)
+  const [puedeVerPrivadas, setPuedeVerPrivadas] = useState(false)
+  useEffect(() => { esOwner().then(setPuedeVerPrivadas) }, [])
+
+  const visibles = OPOSICIONES.filter(op => !op.privado || puedeVerPrivadas)
+  const disponibles = visibles.filter(op => op.disponible)
+  const proximamente = visibles.filter(op => !op.disponible)
 
   async function handleEntrar(slug: string) {
     setActiveSlug(slug)

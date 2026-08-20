@@ -1,0 +1,1420 @@
+{
+  "id": 10,
+  "titulo": "2.4 · Ataques de red, aplicación y criptográficos",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "ATAQUES INALÁMBRICOS (WIRELESS ATTACKS)\n\nUn ataque de desautenticación (deauthentication attack) es un tipo de denegación de servicio (DoS) que desconecta repentinamente a los dispositivos de una red inalámbrica sin previo aviso. Este ataque aprovecha una vulnerabilidad en los marcos de gestión (management frames) del estándar 802.11, que en versiones antiguas no estaban cifrados. Estos marcos son responsables de conectar, autenticar y desconectar dispositivos de la red, pero al enviarse en texto claro, un atacante puede manipularlos para forzar desconexiones.\n\nPara realizar este ataque, el atacante necesita conocer la dirección MAC (Media Access Control) del dispositivo víctima y del punto de acceso. Utiliza herramientas como Airodump-ng para capturar tráfico y obtener estas direcciones, y luego emplea Aireplay-ng para enviar tramas de desautenticación masivas. Mientras el atacante mantenga este envío, el dispositivo víctima no podrá reconectarse. Aunque el estándar 802.11ac y versiones posteriores cifran algunos marcos de gestión, otros como los de autenticación y asociación siguen sin cifrarse, por lo que el riesgo persiste parcialmente.\n\nOtro tipo de ataque inalámbrico es el bloqueo por radiofrecuencia (RF jamming), un ataque de denegación de servicio que interfiere con las señales inalámbricas. El objetivo es reducir la relación señal-ruido, impidiendo que los dispositivos reciban datos legítimos del punto de acceso. Este ataque no solo afecta a un solo dispositivo, sino a todos los usuarios cercanos a la red. Aunque dispositivos como microondas o luces fluorescentes pueden causar interferencias accidentales, un atacante puede generar señales intencionales de manera constante, aleatoria o en momentos específicos para dificultar su detección. Para localizar la fuente de la interferencia, se utilizan técnicas como la caza de zorros (fox hunting), que emplean antenas direccionales y atenuadores para triangular la ubicación exacta del transmisor malicioso.\n\n\nATAQUES EN RUTA (ON-PATH ATTACKS)\n\nUn ataque en ruta, también conocido como ataque de intermediario (man-in-the-middle, MITM), permite a un atacante interceptar, modificar o redirigir el tráfico entre dos dispositivos sin que estos sean conscientes. Este ataque es invisible para las víctimas, ya que el tráfico parece fluir normalmente. Un ejemplo común es el envenenamiento ARP (ARP poisoning), que explota la falta de cifrado y autenticación en el protocolo ARP (Address Resolution Protocol).\n\nEn un escenario típico, un atacante en la misma subred que las víctimas envía respuestas ARP falsas para asociar su dirección MAC con la dirección IP de otro dispositivo, como un router. Esto redirige todo el tráfico entre la víctima y el router a través del atacante, quien puede monitorizar, modificar o incluso bloquear las comunicaciones. Por ejemplo, si la víctima intenta acceder a un sitio web, el atacante podría capturar credenciales de inicio de sesión o inyectar código malicioso.\n\nOtra variante es el ataque en ruta en el navegador (on-path browser attack), donde malware instalado en el dispositivo de la víctima actúa como proxy. Este malware redirige el tráfico antes y después de que se envíe a la red, permitiendo al atacante capturar información incluso si el tráfico está cifrado. Por ejemplo, al iniciar sesión en un banco, el malware captura el nombre de usuario, contraseña y otros datos sensibles, y luego el atacante puede iniciar sesiones adicionales en segundo plano sin que la víctima lo note.\n\n\nATAQUES DE REPETICIÓN (REPLAY ATTACKS)\n\nUn ataque de repetición consiste en capturar datos legítimos transmitidos entre un cliente y un servidor, y reenviarlos más tarde para suplantar al cliente original. Este ataque no requiere interceptar el tráfico en tiempo real, pero sí obtener información reutilizable, como hashes de contraseñas o identificadores de sesión (session IDs).\n\nUn ejemplo es el ataque \"Pass the Hash\", donde el atacante captura un hash de contraseña durante el proceso de autenticación y lo reenvía al servidor para ganar acceso sin conocer la contraseña original. Para prevenir este tipo de ataques, se recomienda usar cifrado para ocultar el tráfico y técnicas como el salting, que añade valores aleatorios a las contraseñas antes de generar el hash, haciendo que cada autenticación genere un hash diferente.\n\nOtro escenario común es el secuestro de sesión (session hijacking), donde el atacante captura un identificador de sesión (session ID) almacenado en las cookies del navegador. Este ID permite al atacante acceder al servidor como si fuera la víctima, sin necesidad de credenciales. Las cookies pueden ser capturadas mediante herramientas como Wireshark, exploits de scripting entre sitios (XSS) o extensiones del navegador que modifiquen los encabezados HTTP. Para mitigar este riesgo, es esencial cifrar todo el tráfico, preferiblemente con HTTPS, y usar extensiones del navegador que fuercen conexiones cifradas.\n\n\nCÓDIGO MALICIOSO (MALICIOUS CODE)\n\nEl código malicioso abarca una amplia gama de técnicas utilizadas por los atacantes para ganar acceso a sistemas, incluyendo ejecutables, scripts, macros, virus, troyanos y ransomware. A diferencia de otros métodos, el código malicioso requiere conocimientos técnicos más avanzados para su implementación y explotación.\n\nUn ejemplo notable es el ransomware WannaCry, que explotó una vulnerabilidad en el protocolo SMBv1 (Server Message Block) para ejecutar código arbitrario en sistemas Windows. Una vez dentro, el atacante podía instalar software adicional para cifrar los archivos de la víctima y exigir un rescate. Otro caso es el ataque de scripting entre sitios (XSS) sufrido por British Airways, donde los atacantes inyectaron código JavaScript malicioso en las páginas de pago, capturando información de tarjetas de crédito de aproximadamente 380,000 víctimas. También se han utilizado ataques de inyección SQL, como el ocurrido en la base de datos de salud de Estonia, donde los atacantes accedieron a información médica de ciudadanos al explotar una vulnerabilidad en la aplicación.\n\nPara defenderse contra el código malicioso, se recomienda implementar soluciones como antimalware, firewalls, actualizaciones continuas de parches y capacitación de usuarios para evitar prácticas inseguras, como hacer clic en enlaces desconocidos o proporcionar información sensible por teléfono.\n\n\nATAQUES A APLICACIONES (APPLICATION ATTACKS)\n\nLos ataques a aplicaciones explotan vulnerabilidades en el diseño, implementación o configuración de software. Un tipo común es la inyección de código, donde un atacante introduce datos maliciosos en una aplicación para alterar su comportamiento. Un ejemplo es la inyección SQL, donde el atacante envía consultas SQL maliciosas a una base de datos a través de campos de entrada no validados, permitiendo acceder, modificar o eliminar datos.\n\nOtro ataque es el desbordamiento de búfer (buffer overflow), que ocurre cuando una aplicación recibe más datos de los que puede manejar en un área específica de la memoria. Esto puede sobrescribir datos adyacentes y, en algunos casos, permitir la ejecución de código arbitrario. Aunque este ataque es difícil de explotar de manera consistente, si el atacante logra repetir el exploit, puede obtener control total sobre la aplicación.\n\nLa escalada de privilegios (privilege escalation) es otro ataque común, donde un atacante aprovecha una vulnerabilidad para obtener permisos más altos de los asignados originalmente. Esto puede ser vertical, obteniendo acceso de administrador, o horizontal, moviéndose entre cuentas de usuarios con permisos similares. Por ejemplo, la vulnerabilidad CVE-2023-29336 en el controlador win32k de Windows permitía a los atacantes obtener privilegios de sistema. Para prevenir este tipo de ataques, es crucial aplicar parches de seguridad, actualizar antivirus y usar técnicas como la prevención de ejecución de datos (DEP) y la aleatorización del diseño del espacio de direcciones (ASLR).\n\nLos ataques de solicitud entre sitios (CSRF, Cross-Site Request Forgery) explotan la confianza que un sitio web tiene en el navegador del usuario. Por ejemplo, si una víctima está autenticada en su cuenta bancaria, un atacante puede enviar un enlace malicioso que, al ser clickeado, realiza una transferencia de fondos sin que la víctima lo note. Para mitigar este riesgo, los sitios web implementan tokens antiforgery que validan cada solicitud.\n\nLa travesía de directorios (directory traversal) es un ataque que explota configuraciones incorrectas en servidores web. Permite a un atacante acceder a archivos fuera del directorio raíz del sitio web, como archivos del sistema operativo. Por ejemplo, un atacante podría enviar una URL con secuencias como \"../\" para moverse hacia atrás en el sistema de archivos y acceder a archivos sensibles como /etc/passwd en sistemas Linux.\n\n\nATAQUES CRIPTOGRÁFICOS (CRYPTOGRAPHIC ATTACKS)\n\nLa criptografía es fundamental para la seguridad de los datos, pero su efectividad depende de la fortaleza de los algoritmos y su implementación. Un ataque criptográfico puede dirigirse directamente al algoritmo o a su implementación en el software.\n\nEl ataque de cumpleaños (birthday attack) explota la probabilidad de colisiones en funciones hash. En un grupo de 23 personas, hay un 50% de probabilidad de que dos compartan cumpleaños. En criptografía, esto se traduce en encontrar dos textos planos diferentes que generen el mismo hash (hash collision). El algoritmo MD5, por ejemplo, fue vulnerado en 1996 debido a colisiones, y en 2008 se demostró que podía usarse para crear certificados falsos. Para evitar este tipo de ataques, se recomienda usar algoritmos con salidas de hash más grandes, como SHA-256.\n\nEl ataque de degradación (downgrade attack) fuerza a dos dispositivos a usar un algoritmo de cifrado más débil o a no cifrar el tráfico en absoluto. Un ejemplo es el SSL stripping, donde un atacante en ruta intercepta una conexión HTTPS y la degrada a HTTP, permitiendo capturar datos sensibles como credenciales de inicio de sesión. Este ataque combina técnicas de intermediario con la manipulación de protocolos de cifrado. Para prevenirlo, se recomienda usar HSTS (HTTP Strict Transport Security) y asegurarse de que los sitios web siempre redirijan a conexiones HTTPS.\n\n\nATAQUES A CONTRASEÑAS (PASSWORD ATTACKS)\n\nLas contraseñas son un objetivo común para los atacantes, especialmente si se almacenan en texto claro. Aunque es una práctica insegura, algunas aplicaciones aún cometen este error, permitiendo a los atacantes acceder a credenciales almacenadas en bases de datos. La mejor práctica es almacenar contraseñas como hashes, utilizando algoritmos como SHA-256 o bcrypt, que generan un valor de longitud fija a partir de la contraseña original.\n\nLos atacantes utilizan técnicas como el ataque de fuerza bruta (brute force) para adivinar contraseñas, probando todas las combinaciones posibles de caracteres. Sin embargo, este método es lento y puede activar bloqueos de cuenta. Una variante es el ataque de spraying, donde el atacante prueba contraseñas comunes en múltiples cuentas para evitar bloqueos. Por ejemplo, probar las contraseñas más usadas como \"123456\" o \"password\" en varias cuentas sin exceder el límite de intentos por cuenta.\n\nOtro método es el ataque de diccionario, donde el atacante utiliza listas de palabras comunes o contraseñas filtradas de brechas anteriores para intentar adivinar credenciales. Para protegerse, se recomienda usar contraseñas largas y complejas, habilitar la autenticación multifactor (MFA) y aplicar políticas de bloqueo de cuentas tras varios intentos fallidos.\n\n\nINDICADORES DE COMPROMISO (INDICATORS OF COMPROMISE)\n\nLos indicadores de compromiso (IoC) son señales que sugieren que un sistema ha sido comprometido. Detectarlos a tiempo puede evitar daños mayores. Algunos IoC comunes incluyen:\n\n- Tráfico inusual: Un aumento anormal en el tráfico de red, especialmente en horarios no habituales o desde ubicaciones internacionales.\n- Cambios en hashes de archivos: Si los hashes de archivos críticos cambian sin motivo aparente, podría indicar la presencia de malware.\n- Bloqueos de cuentas: Una cuenta bloqueada sin intentos de inicio de sesión por parte del usuario legítimo puede ser señal de un ataque de fuerza bruta o de un atacante intentando acceder.\n- Sesiones imposibles: Si un usuario inicia sesión desde dos ubicaciones geográficas distantes en un corto período de tiempo, es probable que su cuenta haya sido comprometida.\n- Consumo de recursos: Un aumento repentino en el uso de ancho de banda o CPU en horarios inusuales puede indicar la exfiltración de datos o la ejecución de malware.\n- Modificaciones en DNS: Cambios en las entradas DNS pueden redirigir el tráfico a servidores controlados por atacantes.\n- Archivos cifrados: La presencia de archivos cifrados sin explicación puede ser señal de un ataque de ransomware.\n- Logs faltantes o alterados: Los atacantes suelen eliminar logs para ocultar sus actividades. La ausencia de logs en momentos críticos o la presencia de logs fuera de ciclo pueden ser indicadores de compromiso.\n- Datos filtrados: Si información sensible aparece en internet sin explicación, es probable que haya habido una exfiltración de datos.\n\nPara detectar IoC, es esencial implementar sistemas de monitoreo como SIEM (Security Information and Event Management), mantener registros detallados y configurar alertas automáticas para actividades sospechosas."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Ataques de red, aplicación y criptográficos] --> B[Ataques inalámbricos]\nA --> C[Ataques en ruta]\nA --> D[Ataques de repetición]\nA --> E[Código malicioso]\nA --> F[Ataques a aplicaciones]\nA --> G[Ataques criptográficos]\nA --> H[Ataques a contraseñas]\nA --> I[Indicadores de compromiso]\n\nB --> B1[Desautenticación (Deauthentication)]\nB --> B2[Bloqueo por RF (RF Jamming)]\n\nC --> C1[Envenenamiento ARP (ARP Poisoning)]\nC --> C2[Ataque en ruta en navegador (On-path Browser)]\n\nD --> D1[Pass the Hash]\nD --> D2[Secuestro de sesión (Session Hijacking)]\n\nE --> E1[Ransomware]\nE --> E2[XSS]\nE --> E3[Inyección SQL]\n\nF --> F1[Inyección de código]\nF --> F2[Desbordamiento de búfer]\nF --> F3[Escalada de privilegios]\nF --> F4[CSRF]\nF --> F5[Travesía de directorios]\n\nG --> G1[Ataque de cumpleaños]\nG --> G2[Ataque de degradación (Downgrade)]\nG --> G3[SSL Stripping]\n\nH --> H1[Fuerza bruta]\nH --> H2[Spraying]\nH --> H3[Ataque de diccionario]\n\nI --> I1[Tráfico inusual]\nI --> I2[Cambios en hashes]\nI --> I3[Bloqueos de cuentas]\nI --> I4[Sesiones imposibles]\nI --> I5[Consumo de recursos]\nI --> I6[Datos filtrados]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc10-01",
+      "pregunta": "¿Qué es un ataque de desautenticación (deauthentication attack) y cómo funciona?",
+      "respuesta": "Es un ataque de denegación de servicio (DoS) que desconecta dispositivos de una red inalámbrica explotando la falta de cifrado en los marcos de gestión del estándar 802.11. El atacante envía tramas de desautenticación masivas para forzar la desconexión."
+    },
+    {
+      "id": "fc10-02",
+      "pregunta": "¿Qué herramientas se utilizan comúnmente para realizar un ataque de desautenticación?",
+      "respuesta": "Airodump-ng para capturar tráfico y obtener direcciones MAC, y Aireplay-ng para enviar tramas de desautenticación."
+    },
+    {
+      "id": "fc10-03",
+      "pregunta": "¿Qué es un ataque de bloqueo por RF (RF Jamming) y cómo afecta a una red inalámbrica?",
+      "respuesta": "Es un ataque de denegación de servicio que interfiere con las señales inalámbricas para reducir la relación señal-ruido, impidiendo que los dispositivos reciban datos legítimos. Afecta a todos los usuarios cercanos a la red."
+    },
+    {
+      "id": "fc10-04",
+      "pregunta": "¿Qué es un ataque en ruta (on-path attack) y qué técnicas comunes lo implementan?",
+      "respuesta": "Es un ataque donde un atacante intercepta, modifica o redirige el tráfico entre dos dispositivos sin que estos sean conscientes. Técnicas comunes incluyen envenenamiento ARP (ARP poisoning) y ataques en ruta en el navegador (on-path browser attack)."
+    },
+    {
+      "id": "fc10-05",
+      "pregunta": "¿Cómo funciona el envenenamiento ARP (ARP Poisoning) en un ataque en ruta?",
+      "respuesta": "El atacante envía respuestas ARP falsas para asociar su dirección MAC con la dirección IP de otro dispositivo, como un router. Esto redirige todo el tráfico entre la víctima y el router a través del atacante."
+    },
+    {
+      "id": "fc10-06",
+      "pregunta": "¿Qué es un ataque de repetición (replay attack) y qué tipos comunes existen?",
+      "respuesta": "Es un ataque donde un atacante captura datos legítimos y los reenvía más tarde para suplantar al cliente original. Tipos comunes incluyen 'Pass the Hash' y secuestro de sesión (session hijacking)."
+    },
+    {
+      "id": "fc10-07",
+      "pregunta": "¿Qué es el ataque 'Pass the Hash' y cómo se mitiga?",
+      "respuesta": "Es un ataque donde el atacante captura un hash de contraseña y lo reenvía al servidor para ganar acceso sin conocer la contraseña original. Se mitiga usando cifrado y técnicas como el salting."
+    },
+    {
+      "id": "fc10-08",
+      "pregunta": "¿Qué es el secuestro de sesión (session hijacking) y cómo se captura un session ID?",
+      "respuesta": "Es un ataque donde el atacante captura un identificador de sesión (session ID) almacenado en las cookies del navegador para acceder al servidor como si fuera la víctima. Los session IDs pueden capturarse mediante herramientas como Wireshark o exploits XSS."
+    },
+    {
+      "id": "fc10-09",
+      "pregunta": "¿Qué es el código malicioso (malicious code) y qué tipos comunes existen?",
+      "respuesta": "Es cualquier software diseñado para dañar, infiltrarse o explotar sistemas sin consentimiento. Tipos comunes incluyen ransomware, virus, troyanos, macros maliciosas y exploits como XSS o inyección SQL."
+    },
+    {
+      "id": "fc10-10",
+      "pregunta": "¿Qué es un ataque de inyección SQL y cómo se previene?",
+      "respuesta": "Es un ataque donde un atacante introduce consultas SQL maliciosas en campos de entrada no validados de una aplicación para acceder, modificar o eliminar datos. Se previene validando y sanitizando todas las entradas de usuario."
+    },
+    {
+      "id": "fc10-11",
+      "pregunta": "¿Qué es un ataque de escalada de privilegios (privilege escalation) y cómo se mitiga?",
+      "respuesta": "Es un ataque donde un atacante aprovecha una vulnerabilidad para obtener permisos más altos de los asignados originalmente. Se mitiga aplicando parches de seguridad, usando DEP y ASLR, y limitando los permisos de los usuarios."
+    },
+    {
+      "id": "fc10-12",
+      "pregunta": "¿Qué es un ataque CSRF (Cross-Site Request Forgery) y cómo se protege?",
+      "respuesta": "Es un ataque donde un atacante engaña a un usuario autenticado para que realice acciones no deseadas en un sitio web. Se protege usando tokens antiforgery que validan cada solicitud."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes ataques inalámbricos aprovecha la falta de cifrado en los marcos de gestión del estándar 802.11 para desconectar dispositivos de una red?",
+      "opciones": [
+        "Ataque de desautenticación (deauthentication attack)",
+        "Ataque de bloqueo por radiofrecuencia (RF jamming)",
+        "Ataque de intermediario (MITM) mediante envenenamiento ARP",
+        "Ataque de repetición (replay attack)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque de desautenticación explota la vulnerabilidad en los marcos de gestión del estándar 802.11, que en versiones antiguas no estaban cifrados, para forzar desconexiones masivas.",
+      "id": "p10-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Cuál es la principal diferencia entre un ataque de desautenticación y un ataque de bloqueo por radiofrecuencia (RF jamming)?",
+      "opciones": [
+        "El desautenticación afecta solo a un dispositivo específico, mientras que el RF jamming interfiere con todos los dispositivos cercanos.",
+        "El desautenticación requiere conocimiento de la dirección MAC, mientras que el RF jamming no necesita información previa.",
+        "El desautenticación es un ataque pasivo, mientras que el RF jamming es activo.",
+        "El desautenticación solo funciona en redes cableadas, mientras que el RF jamming es exclusivo de redes inalámbricas."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de desautenticación necesita conocer las direcciones MAC del dispositivo víctima y del punto de acceso, mientras que el RF jamming interfiere con las señales sin requerir información específica.",
+      "id": "p10-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante captura un hash de contraseña y lo reenvía al servidor para ganar acceso sin conocer la contraseña original, ¿qué tipo de ataque se está realizando?",
+      "opciones": [
+        "Ataque de repetición (replay attack)",
+        "Ataque de fuerza bruta (brute force attack)",
+        "Ataque de diccionario (dictionary attack)",
+        "Ataque de inyección SQL"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque 'Pass the Hash' es un tipo de ataque de repetición donde se reenvía un hash capturado para suplantar al cliente original.",
+      "id": "p10-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un método típico para mitigar ataques de repetición?",
+      "opciones": [
+        "Usar cifrado para ocultar el tráfico.",
+        "Implementar técnicas como el salting en los hashes de contraseñas.",
+        "Aplicar autenticación multifactor (MFA).",
+        "Desactivar el protocolo ARP en la red."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Desactivar el protocolo ARP no es una práctica recomendada y no mitiga ataques de repetición; las otras opciones son medidas válidas.",
+      "id": "p10-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Un usuario reporta que su dispositivo se desconecta constantemente de la red inalámbrica sin motivo aparente. Tras analizar el tráfico, se detectan tramas de desautenticación masivas. ¿Qué herramienta es más probable que esté utilizando el atacante?",
+      "opciones": [
+        "Wireshark",
+        "Airodump-ng",
+        "Metasploit",
+        "John the Ripper"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Airodump-ng se utiliza para capturar tráfico inalámbrico y obtener direcciones MAC, y Aireplay-ng para enviar tramas de desautenticación.",
+      "id": "p10-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el concepto: Un atacante intercepta el tráfico entre un cliente y un servidor, redirigiéndolo a través de su propio dispositivo para capturar credenciales. ¿Qué tipo de ataque está realizando?",
+      "opciones": [
+        "Ataque de repetición (replay attack)",
+        "Ataque en ruta (on-path attack o MITM)",
+        "Ataque de desbordamiento de búfer (buffer overflow)",
+        "Ataque de degradación (downgrade attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque en ruta (MITM) permite interceptar, modificar o redirigir tráfico entre dos dispositivos sin que las víctimas sean conscientes.",
+      "id": "p10-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un empleado de una empresa recibe un correo con un enlace a una página de inicio de sesión falsa de su banco. Al introducir sus credenciales, el atacante captura los datos y los reenvía al servidor legítimo, permitiéndole acceder a la cuenta. ¿Qué técnica combinó el atacante para lograr este ataque?",
+      "opciones": [
+        "Phishing y ataque de repetición (replay attack)",
+        "Phishing y ataque de fuerza bruta (brute force attack)",
+        "Phishing y ataque de inyección SQL",
+        "Phishing y ataque de desbordamiento de búfer (buffer overflow)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El phishing se usó para engañar al usuario y obtener credenciales, y el ataque de repetición permitió reenviar los datos capturados para suplantar al usuario.",
+      "id": "p10-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué vulnerabilidad explotó el ransomware WannaCry para ejecutar código arbitrario en sistemas Windows?",
+      "opciones": [
+        "Una vulnerabilidad en el protocolo SMBv1 (Server Message Block).",
+        "Una vulnerabilidad en el protocolo ARP.",
+        "Una vulnerabilidad en el protocolo HTTPS.",
+        "Una vulnerabilidad en el protocolo DNS."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "WannaCry explotó una vulnerabilidad en el protocolo SMBv1 para ejecutar código arbitrario y propagarse.",
+      "id": "p10-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante envía un enlace malicioso a un usuario autenticado en su cuenta bancaria. Al hacer clic, el enlace realiza una transferencia de fondos sin que el usuario lo note. ¿Qué tipo de ataque está utilizando el atacante?",
+      "opciones": [
+        "Ataque de repetición (replay attack)",
+        "Ataque de solicitud entre sitios (CSRF)",
+        "Ataque de inyección SQL",
+        "Ataque de desbordamiento de búfer (buffer overflow)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque CSRF explota la confianza que un sitio web tiene en el navegador del usuario para realizar acciones no autorizadas.",
+      "id": "p10-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes es un indicador de compromiso (IoC) que sugiere la presencia de malware en un sistema?",
+      "opciones": [
+        "Un aumento repentino en el consumo de CPU en horarios inusuales.",
+        "La presencia de múltiples usuarios autenticados simultáneamente en una sola cuenta.",
+        "El cambio de la dirección IP del servidor web.",
+        "La actualización automática de un navegador web."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un aumento repentino en el consumo de recursos como CPU es un IoC común que puede indicar la ejecución de malware o exfiltración de datos.",
+      "id": "p10-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para comprometer la seguridad de una conexión?",
+      "opciones": [
+        "Fuerza bruta sobre claves de cifrado débiles",
+        "Colisiones en funciones hash para generar certificados falsos",
+        "Manipulación de protocolos para forzar el uso de cifrado débil o sin cifrado",
+        "Inyección de código en aplicaciones que procesan datos cifrados"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El ataque de degradación manipula los protocolos de negociación de cifrado para forzar el uso de algoritmos más débiles o incluso desactivar el cifrado, como en el caso de SSL stripping.",
+      "id": "p10-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un ataque de repetición, ¿qué tipo de dato capturado permite al atacante suplantar a un usuario sin conocer su contraseña original?",
+      "opciones": [
+        "Un hash de contraseña almacenado en la base de datos",
+        "Un identificador de sesión (session ID) válido",
+        "La dirección MAC del dispositivo de la víctima",
+        "El certificado SSL del servidor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un identificador de sesión capturado puede reutilizarse para acceder al servidor como si fuera la víctima, sin necesidad de credenciales, mediante técnicas como el secuestro de sesión.",
+      "id": "p10-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante para forzar el uso de un algoritmo de cifrado más débil durante una negociación de protocolo?",
+      "opciones": [
+        "a) Ataque de repetición",
+        "b) Ataque de degradación (downgrade attack)",
+        "c) Ataque de cumplpleaños (birthday attack)",
+        "d) Envenenamiento ARP"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación (downgrade attack) manipula la negociación de protocolos de cifrado para obligar a las partes a usar versiones más débiles o incluso a no cifrar el tráfico, facilitando la interceptación de datos.",
+      "id": "p10-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Un atacante envía un enlace malicioso a un usuario autenticado en su cuenta bancaria. Al hacer clic, el enlace realiza una transferencia de fondos sin que el usuario lo note. ¿Qué técnica está utilizando el atacante?",
+      "opciones": [
+        "Ataque de fuerza bruta",
+        "Cross-Site Request Forgery (CSRF)",
+        "Inyección SQL",
+        "Ataque de desbordamiento de búfer"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque CSRF explota la confianza que un sitio web tiene en el navegador del usuario para realizar acciones no autorizadas, como transferencias de fondos.",
+      "id": "p10-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de cumpleaños (birthday attack) para comprometer la seguridad de un sistema?",
+      "opciones": [
+        "a) La probabilidad de colisiones en funciones hash para encontrar dos textos planos diferentes con el mismo valor hash",
+        "b) La fuerza bruta para adivinar contraseñas mediante combinaciones de caracteres",
+        "c) La degradación de protocolos de cifrado a versiones más débiles como SSL 3.0",
+        "d) El envenenamiento ARP para redirigir tráfico entre dispositivos en una red local"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un ataque de cumpleaños explota la probabilidad matemática de que existan colisiones en funciones hash, es decir, dos entradas distintas que generen el mismo valor hash, lo que permite al atacante crear certificados o firmas falsas.",
+      "id": "p10-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes protocolos es MÁS susceptible a sufrir un ataque de degradación (downgrade attack) debido a su diseño y falta de soporte para versiones modernas de cifrado?",
+      "opciones": [
+        "a) HTTP/2",
+        "b) SSL 3.0",
+        "c) TLS 1.3",
+        "d) IPSec"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "SSL 3.0 es extremadamente vulnerable a ataques de degradación porque su diseño no soporta protocolos de cifrado modernos y es propenso a vulnerabilidades como POODLE, lo que permite a los atacantes forzar su uso para explotar fallos conocidos.",
+      "id": "p10-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para comprometer la seguridad de una conexión, según el temario proporcionado?",
+      "opciones": [
+        "a) Forzar el uso de un algoritmo de cifrado más débil durante la negociación de protocolo",
+        "b) Capturar hashes de contraseñas y reenviarlos al servidor para suplantar al usuario",
+        "c) Interferir con las señales inalámbricas para impedir la comunicación legítima",
+        "d) Enviar tramas de desautenticación masivas para desconectar dispositivos de la red inalámbrica"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un ataque de degradación fuerza a dos dispositivos a usar un algoritmo de cifrado más débil o a no cifrar el tráfico, como en el caso del SSL stripping, que degrada conexiones HTTPS a HTTP para capturar datos sensibles.",
+      "id": "p10-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de ataque inalámbrico interfiere con las señales de radiofrecuencia para impedir que los dispositivos reciban datos legítimos?",
+      "opciones": [
+        "Ataque de desautenticación",
+        "Ataque de bloqueo por radiofrecuencia (RF jamming)",
+        "Ataque de envenenamiento ARP",
+        "Ataque de degradación de cifrado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de bloqueo por radiofrecuencia (RF jamming) interfiere con las señales inalámbricas, reduciendo la relación señal-ruido y afectando a todos los dispositivos cercanos.",
+      "id": "p10-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante envía un enlace malicioso a un usuario autenticado en su cuenta bancaria. Al hacer clic, el enlace realiza una transferencia de fondos sin que el usuario lo note. ¿Qué técnica está utilizando el atacante?",
+      "opciones": [
+        "Ataque de travesía de directorios",
+        "Cross-Site Request Forgery (CSRF)",
+        "Ataque de inyección SQL",
+        "Ataque de escalada de privilegios"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque CSRF permite a un atacante realizar acciones no autorizadas en nombre de un usuario autenticado, como transferencias de fondos, sin que el usuario lo note.",
+      "id": "p10-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador de red detecta que los usuarios de una sucursal remota experimentan intermitencias en la conectividad inalámbrica, especialmente durante las horas pico. Al analizar el tráfico con Wireshark, observa tramas de desautenticación dirigidas a múltiples dispositivos, pero no identifica patrones claros de interferencia por RF jamming. ¿Qué técnica adicional, no mencionada en los logs de tráfico, es PROBABLE que esté utilizando el atacante para mantener el ataque de desautenticación de manera persistente y selectiva?",
+      "opciones": [
+        "a) Envío de tramas de desautenticación con direcciones MAC falsificadas pero válidas de puntos de acceso legítimos, aprovechando la falta de autenticación en marcos de gestión 802.11.",
+        "b) Inyección de paquetes maliciosos en el tráfico de broadcast para saturar el ancho de banda y forzar desconexiones.",
+        "c) Explotación de vulnerabilidades en el protocolo WPA3 mediante ataques de diccionario para forzar la reautenticación constante de los dispositivos.",
+        "d) Uso de un ataque de envenenamiento ARP para redirigir el tráfico de gestión de red a través de un nodo controlado por el atacante."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El estándar 802.11 no cifra los marcos de gestión (como los de desautenticación), lo que permite a un atacante enviar tramas falsificadas con direcciones MAC de puntos de acceso legítimos, manteniendo el ataque de manera persistente y selectiva.",
+      "id": "p10-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto de ataques inalámbricos, ¿qué protocolo es MÁS vulnerable a ataques de desautenticación debido a que sus marcos de gestión siguen sin cifrarse en versiones actuales del estándar 802.11?",
+      "opciones": [
+        "a) 802.11n",
+        "b) 802.11ac",
+        "c) 802.11ax",
+        "d) 802.11i"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las versiones 802.11n y anteriores no cifran los marcos de gestión como los de autenticación y asociación, lo que los hace vulnerables a ataques de desautenticación. Aunque 802.11ac y versiones posteriores cifran algunos marcos de gestión, los de autenticación y asociación aún no se cifran, manteniendo el riesgo.",
+      "id": "p10-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar el uso de un protocolo de cifrado obsoleto o sin cifrado en una conexión segura?",
+      "opciones": [
+        "a) Explotar vulnerabilidades en el protocolo TLS para forzar la negociación de versiones antiguas como SSLv3",
+        "b) Utilizar técnicas de envenenamiento ARP para redirigir el tráfico a un servidor falso que no soporte cifrado",
+        "c) Capturar hashes de contraseñas y reutilizarlos en conexiones posteriores para autenticarse",
+        "d) Interceptar tramas de desautenticación inalámbrica para forzar la reconexión sin cifrado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un ataque de degradación explota vulnerabilidades en protocolos como TLS para forzar a los dispositivos a negociar versiones antiguas o inseguras (como SSLv3) que carecen de cifrado adecuado o usan algoritmos débiles.",
+      "id": "p10-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante intercepta el tráfico entre un cliente y un servidor, redirigiéndolo a través de su propio dispositivo para capturar credenciales, ¿qué tipo de ataque está realizando?",
+      "opciones": [
+        "Ataque de repetición (Replay Attack)",
+        "Ataque en ruta (On-Path Attack o Man-in-the-Middle)",
+        "Ataque de fuerza bruta (Brute Force Attack)",
+        "Ataque de degradación (Downgrade Attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque en ruta (MITM) permite a un atacante interceptar, modificar o redirigir el tráfico entre dos dispositivos sin que estos sean conscientes, capturando credenciales u otros datos sensibles.",
+      "id": "p10-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar el uso de un protocolo de cifrado obsoleto o sin cifrado en una conexión segura, según el temario proporcionado?",
+      "opciones": [
+        "a) Ataque de cumpleaños",
+        "b) SSL stripping",
+        "c) Inyección SQL",
+        "d) Ataque de fuerza bruta"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El SSL stripping es una técnica de degradación que intercepta una conexión HTTPS y la degrada a HTTP, permitiendo al atacante capturar datos sensibles como credenciales.",
+      "id": "p10-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un empleado recibe un correo con un enlace a una página de inicio de sesión falsa de su banco. Al introducir sus credenciales, el atacante captura los datos y los reenvía al servidor legítimo, permitiéndole acceder a la cuenta. ¿Qué técnica combinó el atacante?",
+      "opciones": [
+        "Ataque de repetición (Replay Attack) + Phishing",
+        "Ataque en ruta (On-Path Attack) + Phishing",
+        "Ataque de fuerza bruta (Brute Force) + Ingeniería social",
+        "Ataque de degradación (Downgrade Attack) + Inyección SQL"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El atacante combinó un ataque en ruta (MITM) para capturar credenciales y un phishing para engañar a la víctima y que introduzca sus datos en la página falsa.",
+      "id": "p10-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo de autenticación inalámbrica es MÁS vulnerable a ataques de desautenticación debido a que sus marcos de gestión no se cifran en versiones antiguas del estándar 802.11?",
+      "opciones": [
+        "a) WPA3",
+        "b) WPA2",
+        "c) WEP",
+        "d) WPA"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El protocolo WEP (Wired Equivalent Privacy) es el más vulnerable a ataques de desautenticación porque sus marcos de gestión, como los de autenticación y asociación, se transmiten en texto claro, sin cifrado, incluso en versiones antiguas del estándar 802.11.",
+      "id": "p10-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Un usuario reporta que su dispositivo se desconecta constantemente de la red inalámbrica sin motivo aparente. Tras analizar el tráfico, se detectan tramas de desautenticación masivas dirigidas a múltiples dispositivos. ¿Qué técnica adicional, no mencionada en los logs, es PROBABLE que esté utilizando el atacante para mantener el ataque de manera persistente?",
+      "opciones": [
+        "Bloqueo por radiofrecuencia (RF jamming) para interferir con la señal",
+        "Envenenamiento ARP para redirigir el tráfico a través de su dispositivo",
+        "Uso de herramientas como Aireplay-ng para enviar tramas de desautenticación de forma automatizada y continua",
+        "Ataque de fuerza bruta sobre la contraseña del punto de acceso"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Para mantener un ataque de desautenticación de manera persistente, el atacante utiliza herramientas como Aireplay-ng para enviar tramas de desautenticación de forma automatizada y continua.",
+      "id": "p10-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante en un ataque de degradación (downgrade attack) para forzar el uso de un protocolo de cifrado obsoleto o sin cifrado durante una negociación de conexión segura?",
+      "opciones": [
+        "a) Fuerza bruta para descifrar el tráfico",
+        "b) Manipulación de la negociación de protocolos para priorizar versiones antiguas o inseguras",
+        "c) Captura de hashes de contraseñas para suplantar usuarios",
+        "d) Generación de colisiones en funciones hash para falsificar certificados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación (downgrade attack) explota la negociación de protocolos para forzar a las partes a usar versiones antiguas, débiles o sin cifrado, aprovechando que estas versiones son más fáciles de comprometer.",
+      "id": "p10-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un portal de autenticación web que utiliza TLS 1.2 con cifrado AES-256 para proteger las credenciales de los usuarios. Sin embargo, tras analizar los logs de tráfico, se observa que el 20% de las conexiones iniciales al servidor se establecen con TLS 1.0 y cifrado RC4, a pesar de que el servidor soporta versiones más seguras. ¿Qué técnica criptográfica es MÁS PROBABLE que esté explotando el atacante para forzar esta degradación en la negociación del protocolo?",
+      "opciones": [
+        "a) ARP poisoning para manipular las respuestas DNS y redirigir el tráfico a un servidor proxy malicioso que degrade el protocolo.",
+        "b) Ataque de degradación (downgrade attack) mediante la manipulación de los mensajes de negociación de TLS para forzar el uso de protocolos obsoletos.",
+        "c) Inyección de tramas de desautenticación en la red inalámbrica para forzar a los clientes a reconectarse con versiones inseguras del protocolo.",
+        "d) Explotación de una vulnerabilidad en el protocolo SMBv1 para ejecutar código arbitrario y modificar la configuración del servidor web."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de degradación (downgrade attack) explota la negociación de protocolos para forzar el uso de versiones inseguras o sin cifrado, como TLS 1.0 con RC4, aprovechando la falta de integridad en la negociación inicial del protocolo.",
+      "id": "p10-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa un portal de autenticación web que utiliza TLS 1.2 con cifrado AES-256 para proteger las comunicaciones. Sin embargo, tras analizar los logs de tráfico, se observa que el 30% de las conexiones iniciales al servidor se degradan a TLS 1.0 con cifrado RC4, a pesar de que la infraestructura soporta versiones más seguras. ¿Qué técnica criptográfica específica está explotando el atacante para forzar esta degradación en la negociación del protocolo de conexión?",
+      "opciones": [
+        "a) El atacante está utilizando un ataque de degradación (downgrade attack) mediante la manipulación de las respuestas del servidor en la negociación TLS, aprovechando que RC4 es un algoritmo obsoleto soportado por defecto en algunas configuraciones.",
+        "b) El atacante está explotando una vulnerabilidad en el protocolo ARP para redirigir el tráfico y forzar la conexión a TLS 1.0, ya que RC4 es más fácil de descifrar en ataques en ruta.",
+        "c) El atacante está utilizando un ataque de repetición para capturar y reenviar paquetes TLS 1.0, obligando al servidor a mantener esta versión debido a la falta de integridad en los mensajes.",
+        "d) El atacante está aprovechando un ataque de inyección SQL para modificar las reglas de autenticación del servidor, forzando la degradación a TLS 1.0 con RC4 para facilitar el robo de credenciales."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque de degradación (downgrade attack) explota la negociación de protocolos en TLS para forzar el uso de versiones obsoleta o algoritmos débiles como RC4, aprovechando que algunos servidores mantienen soporte por compatibilidad con clientes antiguos.",
+      "id": "p10-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar el uso de un protocolo de cifrado obsoleto o sin cifrado durante una negociación de conexión segura?",
+      "opciones": [
+        "Interceptar y modificar paquetes ARP para redirigir el tráfico.",
+        "Forzar la negociación de protocolos débiles mediante manipulación de respuestas del servidor.",
+        "Capturar hashes de contraseñas para reutilizarlos en autenticaciones posteriores.",
+        "Enviar tramas de desautenticación masivas para interrumpir la conexión."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación explota la negociación de protocolos para forzar el uso de versiones débiles o sin cifrado, como se describe en el temario sobre técnicas criptográficas.",
+      "id": "p10-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno empresarial, un administrador detecta que múltiples usuarios reportan lentitud en la red inalámbrica y desconexiones intermitentes. Al analizar el tráfico con Wireshark, observa tramas de desautenticación dirigidas a dispositivos específicos, pero no identifica interferencia por RF jamming. ¿Qué técnica adicional es PROBABLE que esté utilizando el atacante para mantener el ataque de manera selectiva?",
+      "opciones": [
+        "Ataque de fuerza bruta contra el punto de acceso para adivinar la contraseña.",
+        "Envenenamiento ARP para redirigir el tráfico a través de un intermediario.",
+        "Uso de herramientas como Aireplay-ng para enviar tramas de desautenticación dirigidas a direcciones MAC específicas.",
+        "Inyección de código malicioso en los dispositivos de los usuarios para capturar credenciales."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que herramientas como Aireplay-ng se usan para enviar tramas de desautenticación masivas o dirigidas a direcciones MAC específicas.",
+      "id": "p10-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo de autenticación inalámbrica es MÁS susceptible a sufrir un ataque de desautenticación debido a que sus marcos de gestión no se cifran en versiones antiguas del estándar 802.11?",
+      "opciones": [
+        "a) WPA3",
+        "b) WEP",
+        "c) WPA2",
+        "d) WPA Enterprise"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "WEP (Wired Equivalent Privacy) es el protocolo más susceptible porque utiliza marcos de gestión sin cifrar en versiones antiguas del estándar 802.11, lo que permite a los atacantes manipular tramas de desautenticación fácilmente.",
+      "id": "p10-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante intercepta el tráfico entre un cliente y un servidor, redirigiéndolo a través de su propio dispositivo para capturar credenciales. ¿Qué tipo de ataque está realizando?",
+      "opciones": [
+        "Ataque de repetición (replay attack).",
+        "Ataque en ruta (man-in-the-middle, MITM).",
+        "Ataque de desautenticación (deauthentication attack).",
+        "Ataque de degradación (downgrade attack)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define el ataque en ruta (MITM) como la técnica que permite interceptar y redirigir tráfico para capturar credenciales.",
+      "id": "p10-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes técnicas criptográficas NO se asocia comúnmente con un ataque de degradación (downgrade attack)?",
+      "opciones": [
+        "a) Forzar el uso de TLS 1.0 en lugar de TLS 1.2 para establecer una conexión",
+        "b) Interceptar y modificar marcos de gestión inalámbricos sin cifrado para desconectar dispositivos",
+        "c) Reducir la negociación de cifrado a un algoritmo débil como RC4 en lugar de AES-256",
+        "d) Explotar la falta de cifrado en marcos de gestión del estándar 802.11 para enviar tramas de desautenticación"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Un ataque de degradación (downgrade attack) afecta principalmente protocolos de cifrado como TLS, no marcos de gestión inalámbricos. Estos últimos son vulnerables a ataques de desautenticación, pero no directamente a degradación criptográfica.",
+      "id": "p10-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de ataques inalámbricos, ¿qué protocolo de autenticación inalámbrica es MÁS vulnerable a sufrir un ataque de desautenticación debido a que sus marcos de gestión no se cifran en versiones antiguas del estándar 802.11, específicamente por la falta de cifrado en los marcos de autenticación y asociación?",
+      "opciones": [
+        "a) WPA3",
+        "b) WPA2",
+        "c) WEP",
+        "d) WPA"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "WEP (Wired Equivalent Privacy) es el protocolo más vulnerable a ataques de desautenticación porque sus marcos de gestión, incluyendo los de autenticación y asociación, no se cifran en versiones antiguas del estándar 802.11, lo que permite a los atacantes manipularlos fácilmente.",
+      "id": "p10-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo de autenticación inalámbrica es MÁS vulnerable a sufrir un ataque de desautenticación debido a que sus marcos de gestión no se cifran en versiones antiguas del estándar 802.11?",
+      "opciones": [
+        "a) WPA3",
+        "b) WPA2",
+        "c) WEP",
+        "d) WPA"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El protocolo WEP (Wired Equivalent Privacy) es el más vulnerable a ataques de desautenticación porque sus marcos de gestión no se cifran en versiones antiguas del estándar 802.11, lo que permite a los atacantes manipular estas tramas fácilmente.",
+      "id": "p10-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica específica explota un atacante en un ataque de degradación (downgrade attack) para forzar el uso de un protocolo de cifrado obsoleto como SSLv2 o TLS 1.0 en una conexión segura?",
+      "opciones": [
+        "a) Interceptar y modificar las negociaciones de protocolo mediante ataques de intermediario (MITM) para eliminar opciones de cifrado moderno.",
+        "b) Enviar tramas de desautenticación masivas a dispositivos inalámbricos para interrumpir la conexión.",
+        "c) Capturar hashes de contraseñas y reenviarlos para suplantar usuarios legítimos.",
+        "d) Generar colisiones en funciones hash para falsificar certificados digitales."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un ataque de degradación explota la manipulación de la negociación del protocolo durante el handshake TLS/SSL, eliminando opciones de cifrado moderno para forzar el uso de versiones inseguras como SSLv2 o TLS 1.0, comúnmente mediante ataques MITM.",
+      "id": "p10-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una red empresarial que utiliza el estándar 802.11ac con autenticación WPA2-Enterprise, un administrador observa que usuarios de un departamento específico experimentan desconexiones intermitentes y lentitud en la red inalámbrica. Tras analizar los logs del punto de acceso, se detectan tramas de desautenticación dirigidas exclusivamente a dispositivos de ese departamento, pero no se identifican patrones de RF jamming ni de interferencia externa. ¿Qué técnica adicional, no reflejada en los logs, es PROBABLE que esté utilizando el atacante para mantener el ataque de desautenticación de manera selectiva y persistente contra estos dispositivos específicos?",
+      "opciones": [
+        "a) Enviar tramas de desautenticación con direcciones MAC falsas que imiten la del punto de acceso, aprovechando que los marcos de gestión en 802.11ac aún permiten la manipulación de tramas de autenticación y asociación.",
+        "b) Realizar un ataque de envenenamiento ARP para redirigir el tráfico de los dispositivos objetivo a través de un servidor malicioso que envíe tramas de desautenticación personalizadas.",
+        "c) Explotar la vulnerabilidad de los marcos de gestión no cifrados en versiones antiguas del estándar 802.11 para enviar tramas de desautenticación dirigidas a dispositivos específicos que aún no hayan actualizado sus firmwares.",
+        "d) Utilizar un ataque de degradación (downgrade attack) para forzar a los dispositivos a usar protocolos de autenticación inalámbrica más antiguos y vulnerables, como WEP, que permiten manipular tramas de desautenticación con mayor facilidad."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los marcos de gestión de autenticación y asociación en el estándar 802.11 siguen sin cifrarse incluso en versiones modernas como 802.11ac, lo que permite a un atacante enviar tramas de desautenticación dirigidas a dispositivos específicos sin necesidad de autenticación previa, manteniendo el ataque de manera selectiva.",
+      "id": "p10-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Dificultad alta: Una empresa implementa un portal de autenticación web que utiliza TLS 1.2 con cifrado AES-256. Sin embargo, tras analizar los logs, se observa que el 25% de las conexiones iniciales se degradan a TLS 1.0 con cifrado RC4. ¿Qué técnica criptográfica específica está explotando el atacante para forzar esta degradación?",
+      "opciones": [
+        "Ataque de fuerza bruta contra el servidor para adivinar la versión de TLS.",
+        "Ataque de degradación (downgrade attack) mediante manipulación de la negociación del protocolo.",
+        "Ataque de repetición para reutilizar credenciales capturadas en conexiones anteriores.",
+        "Ataque de desautenticación para interrumpir la conexión legítima."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe el ataque de degradación como una técnica que fuerza la negociación de protocolos débiles o sin cifrado, como TLS 1.0 con RC4.",
+      "id": "p10-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica inalámbrica explota un atacante al enviar tramas de desautenticación masivas para desconectar dispositivos de una red 802.11 sin necesidad de descifrar el tráfico?",
+      "opciones": [
+        "Ataque de intermediario (MITM) mediante envenenamiento ARP",
+        "Ataque de desautenticación (deauthentication attack)",
+        "Bloqueo por radiofrecuencia (RF jamming)",
+        "Ataque de repetición (replay attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de desautenticación aprovecha la falta de cifrado en los marcos de gestión del estándar 802.11 para forzar desconexiones masivas de dispositivos.",
+      "id": "p10-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un ataque en ruta (MITM) mediante envenenamiento ARP, ¿qué protocolo es explotado debido a su falta de autenticación y cifrado en su diseño original?",
+      "opciones": [
+        "DHCP (Dynamic Host Configuration Protocol)",
+        "ARP (Address Resolution Protocol)",
+        "ICMP (Internet Control Message Protocol)",
+        "TCP (Transmission Control Protocol)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El protocolo ARP es explotado en ataques MITM porque sus respuestas no requieren autenticación ni cifrado, permitiendo redirigir tráfico.",
+      "id": "p10-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar el uso de un algoritmo de cifrado más débil durante la negociación de un protocolo seguro, según el temario?",
+      "opciones": [
+        "a) Fuerza bruta sobre el hash de la contraseña",
+        "b) Manipulación de la negociación de protocolos (como TLS) para priorizar versiones antiguas o sin cifrado",
+        "c) Intercepción de marcos de gestión inalámbricos para capturar credenciales",
+        "d) Envenenamiento ARP para redirigir el tráfico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación explota la negociación de protocolos como TLS para forzar el uso de versiones antiguas (ej. SSLv2, TLS 1.0) o algoritmos débiles (ej. RC4), aprovechando que algunos clientes o servidores permiten conexiones menos seguras por compatibilidad.",
+      "id": "p10-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante captura un identificador de sesión (session ID) almacenado en una cookie del navegador de una víctima y lo reutiliza para acceder a su cuenta bancaria. ¿Qué tipo de ataque está realizando?",
+      "opciones": [
+        "Ataque de fuerza bruta",
+        "Secuestro de sesión (session hijacking)",
+        "Ataque de inyección SQL",
+        "Ataque de degradación (downgrade attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El secuestro de sesión implica capturar y reutilizar identificadores de sesión válidos para suplantar a la víctima.",
+      "id": "p10-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una empresa implementa un portal web con TLS 1.3, pero tras analizar los logs, se observa que el 15% de las conexiones iniciales se degradan a TLS 1.0 con cifrado RC4. ¿Qué técnica criptográfica específica está explotando el atacante para forzar esta degradación?",
+      "opciones": [
+        "Ataque de cumpleaños (birthday attack)",
+        "Ataque de degradación (downgrade attack) mediante manipulación de la negociación del protocolo",
+        "Ataque de fuerza bruta sobre el handshake TLS",
+        "Ataque de repetición (replay attack) sobre paquetes de negociación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de degradación fuerza a los dispositivos a usar versiones más débiles o sin cifrado durante la negociación del protocolo TLS.",
+      "id": "p10-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante para forzar la negociación de un protocolo de cifrado inseguro, como SSLv2, durante la conexión entre un cliente y un servidor?",
+      "opciones": [
+        "a) Ataque de cumpleaños (birthday attack)",
+        "b) Ataque de degradación (downgrade attack)",
+        "c) Ataque de fuerza bruta (brute force)",
+        "d) Ataque de repetición (replay attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de degradación (downgrade attack) manipula la negociación de protocolos para forzar el uso de versiones inseguras como SSLv2 o TLS 1.0, aprovechando vulnerabilidades en la negociación automática.",
+      "id": "p10-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el concepto: Un atacante envía un enlace malicioso a un usuario autenticado en su cuenta bancaria. Al hacer clic, el enlace realiza una transferencia de fondos sin que el usuario lo note. ¿Qué tipo de ataque está utilizando el atacante?",
+      "opciones": [
+        "Ataque de fuerza bruta",
+        "Ataque CSRF (Cross-Site Request Forgery)",
+        "Ataque de inyección de código",
+        "Ataque de repetición (replay attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque CSRF explota la confianza de un sitio web en el navegador del usuario para realizar acciones no deseadas.",
+      "id": "p10-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un empleado recibe un correo con un enlace a una página de inicio de sesión falsa de su banco. Tras introducir sus credenciales, el atacante captura los datos y los reenvía al servidor legítimo, permitiéndole acceder a la cuenta. ¿Qué técnica combinó el atacante?",
+      "opciones": [
+        "Phishing y ataque de intermediario (MITM)",
+        "Ataque de fuerza bruta y secuestro de sesión",
+        "Ataque de degradación y envenenamiento DNS",
+        "Ataque CSRF y XSS"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El atacante combinó phishing (para obtener credenciales) y un ataque MITM (para reenviar los datos al servidor legítimo).",
+      "id": "p10-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una red empresarial que utiliza estándares 802.11ac con autenticación WPA3-Enterprise, un administrador detecta que usuarios de un departamento específico experimentan desconexiones intermitentes y lentitud en la red inalámbrica. Tras analizar los logs del punto de acceso, se identifican tramas de desautenticación dirigidas exclusivamente a dispositivos de ese departamento. Sin embargo, el análisis espectral no revela interferencias por RF jamming ni patrones de tráfico anormal. ¿Qué técnica adicional, no reflejada en los logs, es PROBABLE que esté utilizando el atacante para mantener el ataque de desautenticación de manera selectiva y persistente contra estos dispositivos específicos?",
+      "opciones": [
+        "a) Enviar tramas de desautenticación con direcciones MAC falsificadas que coincidan con las de los dispositivos objetivo, aprovechando que los marcos de gestión 802.11 no cifran completamente las direcciones MAC en versiones antiguas del estándar.",
+        "b) Forzar un downgrade del protocolo de autenticación de WPA3 a WPA2 mediante un ataque de degradación (downgrade attack) en la negociación de seguridad, explotando la compatibilidad hacia atrás del estándar.",
+        "c) Utilizar un ataque de repetición (replay attack) para reenviar tramas de desautenticación capturadas previamente, asegurando que los dispositivos no puedan reconectarse al punto de acceso.",
+        "d) Implementar un ataque de envenenamiento ARP para redirigir el tráfico de los dispositivos objetivo a través de un equipo controlado por el atacante, permitiendo el envío selectivo de tramas de desautenticación desde esa ubicación."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El atacante probablemente esté explotando que, aunque 802.11ac cifra algunos marcos de gestión, las direcciones MAC siguen siendo visibles en texto claro en versiones antiguas del estándar, permitiendo falsificar tramas de desautenticación dirigidas a dispositivos específicos.",
+      "id": "p10-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un entorno empresarial con red 802.11ac, un administrador detecta desconexiones intermitentes en dispositivos de un departamento específico. Los logs muestran tramas de desautenticación dirigidas solo a esos dispositivos, pero no hay evidencia de RF jamming. ¿Qué técnica adicional es PROBABLE que esté utilizando el atacante para mantener el ataque de manera selectiva?",
+      "opciones": [
+        "Envenenamiento ARP para redirigir tráfico",
+        "Ataque de desautenticación selectiva mediante herramientas como Aireplay-ng con direcciones MAC específicas",
+        "Ataque de fuerza bruta sobre el protocolo WPA3",
+        "Ataque de degradación TLS en el tráfico inalámbrico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El atacante podría estar usando herramientas como Aireplay-ng para enviar tramas de desautenticación selectivas a dispositivos específicos.",
+      "id": "p10-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar el uso de un protocolo de cifrado inseguro como SSLv2?",
+      "opciones": [
+        "Ataque de cumpleaños (birthday attack)",
+        "Ataque de fuerza bruta (brute force)",
+        "Ataque de degradación (downgrade attack)",
+        "Ataque de repetición (replay attack)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El ataque de degradación fuerza a los dispositivos a negociar protocolos o algoritmos de cifrado más débiles o inseguros, como SSLv2, explotando vulnerabilidades en la negociación de conexiones seguras.",
+      "id": "p10-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un ataque inalámbrico, ¿qué tipo de tramas son explotadas en un ataque de desautenticación debido a que no se cifran en versiones antiguas del estándar 802.11?",
+      "opciones": [
+        "Tramas de datos",
+        "Tramas de gestión (management frames)",
+        "Tramas de control",
+        "Tramas de autenticación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los ataques de desautenticación explotan las tramas de gestión del estándar 802.11, que en versiones antiguas no están cifradas, permitiendo manipular la conexión de dispositivos.",
+      "id": "p10-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante para encontrar dos textos planos diferentes que generen el mismo hash (colisión) en un sistema?",
+      "opciones": [
+        "Ataque de degradación (downgrade attack)",
+        "Ataque de cumpleaños (birthday attack)",
+        "Ataque de fuerza bruta (brute force)",
+        "Ataque de repetición (replay attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de cumpleaños explota la probabilidad de colisiones en funciones hash, permitiendo encontrar dos textos planos con el mismo hash para comprometer sistemas criptográficos.",
+      "id": "p10-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Un administrador de red observa que usuarios de un departamento específico experimentan desconexiones intermitentes en la red inalámbrica 802.11ac. Los logs muestran tramas de desautenticación dirigidas solo a esos dispositivos, pero no hay evidencia de interferencia por RF jamming. ¿Qué técnica adicional es PROBABLE que esté utilizando el atacante para mantener el ataque de manera selectiva?",
+      "opciones": [
+        "Ataque de envenenamiento ARP para redirigir tráfico",
+        "Enviar tramas de desautenticación con direcciones MAC falsas",
+        "Realizar un ataque de fuerza bruta contra las contraseñas de la red",
+        "Implementar un ataque de degradación en el cifrado WPA3"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El atacante podría estar enviando tramas de desautenticación con direcciones MAC falsas para forzar desconexiones selectivas en dispositivos específicos, explotando la falta de autenticación en las tramas de gestión.",
+      "id": "p10-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo común de un ataque de repetición (replay attack)?",
+      "opciones": [
+        "Capturar un hash de contraseña y reenviarlo al servidor",
+        "Reutilizar un identificador de sesión (session ID) capturado",
+        "Interceptar tráfico en tiempo real para modificar datos",
+        "Suplantar a un cliente legítimo mediante datos reenviados"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los ataques de repetición no requieren interceptar tráfico en tiempo real; se basan en reenviar datos legítimos capturados previamente para suplantar a un cliente.",
+      "id": "p10-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante intercepta una conexión HTTPS entre un cliente y un servidor, degradándola a HTTP para capturar credenciales de inicio de sesión. ¿Qué técnica criptográfica está explotando?",
+      "opciones": [
+        "Ataque de fuerza bruta (brute force)",
+        "Ataque de degradación (downgrade attack) combinado con MITM",
+        "Ataque de cumpleaños (birthday attack)",
+        "Ataque de repetición (replay attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El atacante combina un ataque en ruta (MITM) con un ataque de degradación para forzar la conexión a un protocolo inseguro (HTTP), explotando la falta de HSTS en el servidor.",
+      "id": "p10-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante en un ataque de degradación (downgrade attack) para forzar el uso de un protocolo de cifrado inseguro como SSLv3?",
+      "opciones": [
+        "a) Explotación de la falta de autenticación en el protocolo ARP",
+        "b) Manipulación de la negociación de protocolos de cifrado durante el handshake TLS",
+        "c) Generación de colisiones en funciones hash como MD5",
+        "d) Inyección de código malicioso en tramas de gestión 802.11"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación explota la negociación de protocolos de cifrado durante el handshake TLS para forzar el uso de versiones inseguras como SSLv3, aprovechando que algunos clientes o servidores permiten conexiones con protocolos obsoletos.",
+      "id": "p10-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el concepto: Un atacante captura un identificador de sesión (session ID) almacenado en una cookie del navegador de una víctima y lo reutiliza para acceder a su cuenta bancaria sin credenciales.",
+      "opciones": [
+        "Ataque de repetición (replay attack)",
+        "Secuestro de sesión (session hijacking)",
+        "Ataque de fuerza bruta (brute force)",
+        "Ataque de inyección SQL"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El secuestro de sesión (session hijacking) consiste en capturar y reutilizar un identificador de sesión válido para acceder a cuentas sin autenticación adicional.",
+      "id": "p10-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una red empresarial con autenticación WPA3-Enterprise y cifrado AES-GCMP, un atacante logra interceptar las tramas de desautenticación dirigidas a dispositivos específicos mediante el envío de mensajes falsos de autenticación (authentication frames) con direcciones MAC falsificadas. Sin embargo, el administrador de red observa que, además de las desconexiones, los dispositivos afectados muestran un aumento anormal en el consumo de CPU y memoria, así como la ejecución de procesos desconocidos en segundo plano. ¿Qué técnica criptográfica adicional está explotando el atacante para mantener el ataque de manera persistente y comprometer los dispositivos de forma más profunda?",
+      "opciones": [
+        "a) Realiza un ataque de degradación (downgrade attack) para forzar el uso de protocolos inseguros como WPA2 con TKIP, explotando la vulnerabilidad en la negociación del estándar 802.11",
+        "b) Utiliza un ataque de repetición (replay attack) para reenviar tramas de autenticación legítimas y mantener la conexión activa, evitando que los dispositivos se reconecten correctamente",
+        "c) Inyecta código malicioso en los dispositivos mediante la explotación de una vulnerabilidad en el protocolo de autenticación WPA3, aprovechando la falta de parches en los controladores inalámbricos",
+        "d) Fuerza la degradación de la conexión a un algoritmo de cifrado más débil como AES-CCMP a TKIP mediante la manipulación de los marcos de gestión cifrados en WPA3"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El aumento en el consumo de CPU y memoria, junto con la ejecución de procesos desconocidos, indica la inyección de código malicioso. En redes inalámbricas, esto puede lograrse explotando vulnerabilidades en los controladores o firmwares de los dispositivos, aprovechando la falta de actualizaciones de seguridad.",
+      "id": "p10-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante para forzar la negociación de un algoritmo de cifrado más débil, como RC4, durante la conexión entre un cliente y un servidor?",
+      "opciones": [
+        "Ataque de cumpleaños (birthday attack)",
+        "Ataque de degradación (downgrade attack)",
+        "Ataque de fuerza bruta (brute force)",
+        "Ataque de repetición (replay attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de degradación fuerza a los dispositivos a negociar algoritmos de cifrado más débiles o inseguros, como RC4, durante el establecimiento de la conexión.",
+      "id": "p10-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante cuando intercepta una conexión HTTPS y fuerza al cliente a degradar la negociación a HTTP para capturar credenciales de inicio de sesión?",
+      "opciones": [
+        "a) Ataque de cumpleaños (birthday attack)",
+        "b) Ataque de degradación (downgrade attack)",
+        "c) Ataque de repetición (replay attack)",
+        "d) Ataque de fuerza bruta (brute force attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación (downgrade attack) manipula la negociación del protocolo para forzar el uso de versiones inseguras como HTTP, permitiendo al atacante capturar credenciales en texto claro.",
+      "id": "p10-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En comparación con un ataque de desautenticación, ¿qué característica diferencia principalmente a un ataque de RF jamming?",
+      "opciones": [
+        "Interfiere con las señales inalámbricas para reducir la relación señal-ruido, afectando a todos los dispositivos cercanos.",
+        "Requiere conocer la dirección MAC del dispositivo víctima y del punto de acceso.",
+        "Utiliza herramientas como Aireplay-ng para enviar tramas de desautenticación.",
+        "Solo afecta a dispositivos específicos dentro de la red inalámbrica."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque de RF jamming interfiere con las señales inalámbricas para reducir la relación señal-ruido, afectando a todos los dispositivos cercanos, a diferencia del ataque de desautenticación que solo afecta a dispositivos específicos.",
+      "id": "p10-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante en un ataque de degradación (downgrade attack) para forzar el uso de un algoritmo de cifrado como RC4 durante la negociación de una conexión TLS?",
+      "opciones": [
+        "a) Manipulación de los mensajes de negociación del protocolo TLS para eliminar opciones de cifrado moderno",
+        "b) Inyección de paquetes ARP falsos para redirigir el tráfico a un servidor malicioso",
+        "c) Envío de tramas de desautenticación inalámbrica para interrumpir la conexión legítima",
+        "d) Explotación de vulnerabilidades en el protocolo SMB para ejecutar código arbitrario"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En un ataque de degradación TLS, el atacante manipula los mensajes de negociación del protocolo para eliminar opciones de cifrado moderno como AES, forzando la conexión a usar algoritmos débiles como RC4.",
+      "id": "p10-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un administrador de red observa que usuarios de un departamento específico experimentan desconexiones intermitentes en la red inalámbrica 802.11ac. Los logs muestran tramas de desautenticación dirigidas solo a esos dispositivos, pero no hay evidencia de interferencia por RF jamming. ¿Qué técnica adicional es PROBABLE que esté utilizando el atacante para mantener el ataque de manera selectiva?",
+      "opciones": [
+        "Enviar tramas de desautenticación con direcciones MAC falsificadas de dispositivos específicos.",
+        "Realizar un ataque de fuerza bruta para adivinar las contraseñas de los dispositivos afectados.",
+        "Inyectar código malicioso en los dispositivos para ejecutar procesos desconocidos en segundo plano.",
+        "Utilizar un ataque de degradación (downgrade attack) para forzar el uso de protocolos inseguros."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El atacante podría estar enviando tramas de desautenticación con direcciones MAC falsificadas de dispositivos específicos para mantener el ataque de manera selectiva y persistente.",
+      "id": "p10-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica adicional, no relacionada con el envío de tramas de desautenticación falsas, puede utilizar un atacante para mantener un ataque de desautenticación selectivo y persistente contra dispositivos específicos en una red 802.11ac, aprovechando vulnerabilidades en el estándar?",
+      "opciones": [
+        "a) Inyección de tramas de autenticación falsas con direcciones MAC falsificadas para mantener la condición de desautenticación.",
+        "b) Generación de interferencia por RF jamming en la frecuencia específica del departamento afectado.",
+        "c) Explotación de la falta de cifrado en los marcos de gestión de autenticación para enviar mensajes de desautenticación selectivos.",
+        "d) Uso de técnicas de ARP poisoning para redirigir el tráfico y forzar desconexiones en dispositivos específicos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Aunque el estándar 802.11c cifra algunos marcos de gestión, las tramas de autenticación siguen sin cifrarse en versiones antiguas, permitiendo a un atacante enviar mensajes de autenticación falsos para mantener la condición de desautenticación de forma selectiva.",
+      "id": "p10-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar el uso de un algoritmo de cifrado más débil durante la negociación de un protocolo seguro?",
+      "opciones": [
+        "Ataque de cumpleaños (birthday attack)",
+        "SSL stripping",
+        "Ataque de fuerza bruta",
+        "Ataque de inyección SQL"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El SSL stripping es una técnica de ataque de degradación que fuerza la conexión a usar HTTP en lugar de HTTPS, permitiendo capturar datos sensibles.",
+      "id": "p10-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica se utiliza en un ataque de degradación (downgrade attack) para forzar que un cliente y un servidor utilicen un protocolo de cifrado inseguro como SSLv2 en lugar de TLS?",
+      "opciones": [
+        "a) Envenenamiento ARP para interceptar la negociación del protocolo",
+        "b) Manipulación de los mensajes de negociación del protocolo (como en TLS) para eliminar opciones seguras de la lista de algoritmos ofrecidos",
+        "c) Inyección de tramas de desautenticación en la red para interrumpir la conexión segura",
+        "d) Captura de hashes de contraseñas para reutilizarlos en la autenticación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En un ataque de degradación, el atacante manipula los mensajes de negociación del protocolo (por ejemplo, en TLS) para eliminar o desordenar las opciones seguras de cifrado, forzando al cliente y servidor a seleccionar un protocolo obsoleto como SSLv2.",
+      "id": "p10-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica específica explota un ataque de degradación (downgrade attack) para forzar el uso de un protocolo de cifrado obsoleto como SSLv2 durante la negociación de una conexión segura?",
+      "opciones": [
+        "a) Inyección de paquetes falsos de negociación de protocolo",
+        "b) Manipulación de los parámetros de negociación del cliente (ClientHello) para excluir algoritmos modernos",
+        "c) Explotación de vulnerabilidades en el protocolo de autenticación mutua",
+        "d) Uso de fuerza bruta para descifrar claves de sesión"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación explota la manipulación de los parámetros de negociación del cliente (ClientHello) durante la fase de establecimiento de la conexión TLS, eliminando o priorizando algoritmos modernos para forzar el uso de protocolos inseguros como SSLv2.",
+      "id": "p10-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red detecta que, en una empresa con autenticación WPA3-Enterprise y cifrado AES-GCMP en su red 802.11ac, los dispositivos de un departamento específico experimentan desconexiones intermitentes. Tras analizar los logs, se observa que las tramas de desautenticación dirigidas solo afectan a esos dispositivos, pero no hay evidencia de interferencia por RF jamming ni patrones anormales en el tráfico. Sin embargo, durante el ataque, los dispositivos afectados muestran un aumento inusual en el consumo de recursos y la ejecución de procesos desconocidos en segundo plano. ¿Qué técnica criptográfica adicional, no relacionada con el envío de tramas de desautenticación falsas, está explotando el atacante para mantener el ataque de manera persistente y comprometer los dispositivos de forma más profunda?",
+      "opciones": [
+        "a) El atacante está utilizando un ataque de degradación (downgrade attack) para forzar el uso de un protocolo de cifrado más débil, como TKIP en lugar de GCMP, aprovechando vulnerabilidades en la negociación de 4-way handshake.",
+        "b) El atacante está inyectando tramas de autenticación falsas con direcciones MAC falsificadas para mantener las desconexiones selectivas, aunque el estándar 802.11ac cifre algunos marcos de gestión.",
+        "c) El atacante está explotando una vulnerabilidad en el protocolo EAP (Extensible Authentication Protocol) utilizado en WPA3-Enterprise para forzar la autenticación con credenciales robadas.",
+        "d) El atacante está aprovechando la falta de cifrado en los marcos de gestión de autenticación y asociación en versiones antiguas del estándar 802.11 para enviar tramas de desautenticación selectivas, aunque el sistema use WPA3-Enterprise."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El aumento anormal en el consumo de recursos y la ejecución de procesos desconocidos en segundo plano sugieren que el atacante está explotando una vulnerabilidad en el protocolo de autenticación WPA3-Enterprise, como un ataque de degradación en el 4-way handshake, para forzar el uso de un cifrado más débil (ej. TKIP) o para inyectar código malicioso mediante manipulaciones en la negociación de claves.",
+      "id": "p10-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En una red empresarial que implementa autenticación WPA3-Enterprise con cifrado AES-GCMP en su infraestructura 802.11ac, un administrador detecta que los dispositivos de un departamento específico experimentan desconexiones intermitentes y lentitud en la red inalámbrica. Tras analizar los logs, se identifican tramas de desautenticación dirigidas exclusivamente a esos dispositivos. Sin embargo, el análisis espectral no revela interferencias por RF jamming ni patrones de tráfico anormal. Además, los dispositivos afectados muestran un aumento anormal en el consumo de CPU y memoria, junto con la ejecución de procesos desconocidos en segundo plano. ¿Qué técnica criptográfica adicional, no relacionada con el envío directo de tramas de desautenticación, está explotando el atacante para mantener el ataque de manera persistente y comprometer los dispositivos de forma más profunda?",
+      "opciones": [
+        "a) Enviar tramas falsas de autenticación (authentication frames) con direcciones MAC falsificadas para forzar desconexiones selectivas.",
+        "b) Inyectar código malicioso mediante un exploit de desbordamiento de búfer en el firmware del punto de acceso que afecte solo a los dispositivos del departamento seleccionado.",
+        "c) Aprovechar una vulnerabilidad en el protocolo WPA3-Enterprise que permita la inyección de tramas de gestión cifradas pero manipuladas, causando corrupción en la capa de enlace de datos de los dispositivos afectados.",
+        "d) Utilizar un ataque de downgrade criptográfico para forzar al cliente a usar protocolos de autenticación inseguros como EAP-MD5, permitiendo la captura y reutilización de credenciales de autenticación."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La técnica corresponde a la inyección de tramas de gestión cifradas pero manipuladas, aprovechando que WPA3-Enterprise cifra parte de los marcos de gestión (como los de desautenticación) pero no todos, lo que permite a un atacante inyectar mensajes falsos que corrompen la comunicación en la capa de enlace de datos de los dispositivos específicos.",
+      "id": "p10-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de ataque inalámbrico explota la falta de cifrado en los marcos de gestión del estándar 802.11 para forzar la desconexión de dispositivos de una red?",
+      "opciones": [
+        "Ataque de RF jamming",
+        "Ataque de desautenticación",
+        "Ataque de intermediario (MITM)",
+        "Ataque de repetición"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de desautenticación aprovecha que los marcos de gestión del estándar 802.11, como los de autenticación y asociación, no se cifran en versiones antiguas, permitiendo manipularlos para forzar desconexiones.",
+      "id": "p10-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar que un cliente y un servidor utilicen un protocolo de cifrado inseguro como SSLv3 en lugar de TLS?",
+      "opciones": [
+        "a) Fuerza bruta",
+        "b) Inyección de código malicioso en el handshake",
+        "c) Manipulación de la negociación del protocolo durante el intercambio inicial",
+        "d) Colisión de hashes"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El ataque de degradación explota la negociación del protocolo durante el intercambio inicial (handshake) para forzar el uso de versiones inseguras como SSLv3, aprovechando la falta de validación estricta en versiones antiguas de TLS.",
+      "id": "p10-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante intercepta una conexión HTTPS entre un cliente y un servidor, forzando que la negociación del protocolo degrade a HTTP para capturar credenciales de inicio de sesión. ¿Qué técnica criptográfica está explotando?",
+      "opciones": [
+        "Ataque de cumpleaños",
+        "Ataque de degradación (downgrade attack)",
+        "Ataque de colisión de hash",
+        "Ataque de fuerza bruta"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de degradación (downgrade attack) fuerza a los dispositivos a usar protocolos de cifrado más débiles o sin cifrado, como degradar HTTPS a HTTP, para capturar datos sensibles.",
+      "id": "p10-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar que un cliente y un servidor negocien un protocolo de cifrado inseguro como SSLv3 en lugar de TLS?",
+      "opciones": [
+        "a) Manipulación de los parámetros de negociación del protocolo",
+        "b) Inyección de tramas de gestión falsas en la red inalámbrica",
+        "c) Captura y reenvío de paquetes legítimos (replay attack)",
+        "d) Envío de tramas de desautenticación masivas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque de degradación explota la manipulación de los parámetros de negociación del protocolo durante el handshake TLS/SSL, forzando el uso de versiones o algoritmos de cifrado más débiles o inseguros como SSLv3.",
+      "id": "p10-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de marcos (frames) del estándar 802.11 son explotados en un ataque de desautenticación debido a que no se cifran en versiones antiguas del protocolo?",
+      "opciones": [
+        "a) Marcos de datos",
+        "b) Marcos de gestión",
+        "c) Marcos de control",
+        "d) Marcos de autenticación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los ataques de desautenticación aprovechan la falta de cifrado en los marcos de gestión del estándar 802.11, ya que estos son responsables de conectar, autenticar y desconectar dispositivos de la red y se envían en texto claro en versiones antiguas.",
+      "id": "p10-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo inalámbrico es MÁS vulnerable a sufrir un ataque de desautenticación debido a que sus marcos de gestión no se cifran en versiones antiguas del estándar 802.11?",
+      "opciones": [
+        "WPA3-Enterprise",
+        "WPA2-PSK",
+        "WEP",
+        "WPA3-SAE"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "WEP es el protocolo más vulnerable a ataques de desautenticación, ya que sus marcos de gestión no se cifran y su diseño es inherentemente inseguro.",
+      "id": "p10-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un administrador de red detecta que, en una empresa con autenticación WPA3-Enterprise y cifrado AES-GCMP, los dispositivos de un departamento específico experimentan desconexiones intermitentes. Los logs muestran tramas de desautenticación dirigidas solo a esos dispositivos, pero no hay evidencia de interferencia por RF jamming. ¿Qué técnica adicional, no reflejada en los logs, es PROBABLE que esté utilizando el atacante para mantener el ataque de manera selectiva?",
+      "opciones": [
+        "Envenenamiento ARP para redirigir tráfico",
+        "Ataque de degradación (downgrade attack) en el protocolo de autenticación",
+        "Manipulación de marcos de autenticación falsos con direcciones MAC falsificadas",
+        "Inyección de código malicioso en los dispositivos afectados"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El atacante puede enviar marcos de autenticación falsos con direcciones MAC falsificadas para forzar desconexiones selectivas y persistentes, aprovechando que algunos marcos de gestión en 802.11 no se cifran.",
+      "id": "p10-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica específica explota un atacante cuando fuerza la negociación de una conexión TLS a SSLv2, permitiendo la explotación de vulnerabilidades conocidas en este protocolo obsoleto?",
+      "opciones": [
+        "a) Ataque de repetición (Replay Attack)",
+        "b) Ataque de degradación (Downgrade Attack)",
+        "c) Ataque de cumpleaños (Birthday Attack)",
+        "d) Ataque de fuerza bruta (Brute Force Attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación (downgrade attack) manipula la negociación del protocolo para forzar el uso de versiones inseguras como SSLv2, explotando vulnerabilidades conocidas en estos protocolos obsoleto.",
+      "id": "p10-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar el uso de un algoritmo de cifrado más débil, como RC4, durante la negociación de una conexión TLS?",
+      "opciones": [
+        "Ataque de cumpleaños",
+        "Ataque de colisión de hash",
+        "Manipulación de la negociación del protocolo de cifrado",
+        "Envenenamiento ARP"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El ataque de degradación manipula la negociación del protocolo de cifrado durante el handshake TLS para forzar el uso de algoritmos débiles como RC4 o incluso sin cifrado.",
+      "id": "p10-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un entorno empresarial que utiliza autenticación WPA3-Enterprise con cifrado AES-GCMP en su red 802.11ac, un administrador detecta que los dispositivos de un departamento específico experimentan desconexiones intermitentes y lentitud en la red inalámbrica. Tras analizar los logs, se identifican tramas de desautenticación dirigidas exclusivamente a esos dispositivos, pero no hay evidencia de interferencia por RF jamming ni patrones de tráfico anormal. Además, los dispositivos afectados muestran un aumento anormal en el consumo de CPU y memoria, junto con la ejecución de procesos desconocidos en segundo plano. ¿Qué técnica criptográfica adicional, no relacionada con el envío directo de tramas de desautenticación, está explotando el atacante para mantener el ataque de manera persistente y comprometer los dispositivos de forma más profunda?",
+      "opciones": [
+        "a) Enviar tramas de desautenticación falsas con direcciones MAC falsificadas para forzar desconexiones selectivas.",
+        "b) Explotar vulnerabilidades en el estándar 802.11ac que permitan la inyección de código malicioso en los marcos de gestión cifrados, aprovechando que algunos marcos como los de autenticación y asociación aún no se cifran.",
+        "c) Realizar un ataque de downgrade criptográfico en las negociaciones de conexión inalámbrica para forzar el uso de algoritmos de cifrado más débiles como TKIP, permitiendo la ejecución de exploits posteriores.",
+        "d) Utilizar técnicas de ARP poisoning para redirigir el tráfico de los dispositivos afectados hacia un servidor controlado por el atacante, capturando credenciales y ejecutando comandos remotos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El estándar 802.11ac cifra algunos marcos de gestión, pero otros como los de autenticación y asociación aún no se cifran, lo que permite a un atacante inyectar código malicioso en estos marcos para comprometer dispositivos de manera persistente, incluso sin enviar tramas de desautenticación directas.",
+      "id": "p10-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar el uso de un protocolo de cifrado inseguro como SSLv3 en lugar de TLS durante la negociación de una conexión segura?",
+      "opciones": [
+        "a) Fuerza bruta sobre el algoritmo de cifrado",
+        "b) Manipulación de la negociación del protocolo para priorizar versiones antiguas",
+        "c) Inyección de paquetes maliciosos en la pila TCP/IP",
+        "d) Explotación de vulnerabilidades en el estándar 802.11"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación explota la manipulación de la negociación del protocolo durante el handshake TLS/SSL para forzar el uso de versiones inseguras como SSLv3, según el temario.",
+      "id": "p10-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En comparación con un ataque de desautenticación inalámbrica, ¿qué característica principal diferencia a un ataque de RF jamming?",
+      "opciones": [
+        "a) El ataque de RF jamming requiere conocer la dirección MAC del dispositivo víctima",
+        "b) El ataque de RF jamming afecta a todos los dispositivos cercanos a la red, no solo a uno específico",
+        "c) El ataque de RF jamming se basa en la explotación de marcos de gestión no cifrados",
+        "d) El ataque de RF jamming solo puede realizarse con herramientas como Aireplay-ng"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de RF jamming interfiere con las señales inalámbricas de manera indiscriminada, afectando a todos los dispositivos cercanos, a diferencia del ataque de desautenticación que se dirige a un dispositivo específico.",
+      "id": "p10-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un método típico para mitigar ataques de repetición (replay attacks)?",
+      "opciones": [
+        "a) Uso de cifrado para ocultar el tráfico",
+        "b) Implementación de salting en los hashes de contraseñas",
+        "c) Envío de tramas de desautenticación masivas para interrumpir la conexión",
+        "d) Uso de identificadores de sesión (session IDs) con tiempo de vida limitado"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El envío de tramas de desautenticación masivas es un método de ataque, no de mitigación; los métodos típicos incluyen cifrado, salting y limitación de tiempo de vida de sesiones.",
+      "id": "p10-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante intercepta una conexión HTTPS entre un cliente y un servidor, forzando que la negociación del protocolo degrade a HTTP para capturar credenciales de inicio de sesión. ¿Qué técnica criptográfica específica está explotando el atacante?",
+      "opciones": [
+        "a) Inyección de código malicioso en el navegador de la víctima",
+        "b) Manipulación de la negociación del protocolo (SSL stripping)",
+        "c) Explotación de vulnerabilidades en el estándar 802.11",
+        "d) Fuerza bruta sobre el algoritmo de cifrado AES-256"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El atacante está utilizando SSL stripping, una técnica de ataque en ruta que degrada la conexión HTTPS a HTTP para capturar credenciales, según el temario.",
+      "id": "p10-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante cuando fuerza la negociación de una conexión TLS a SSLv3 para explotar vulnerabilidades conocidas en este protocolo obsoleto?",
+      "opciones": [
+        "a) Ataque de degradación (downgrade attack)",
+        "b) Ataque de repetición (replay attack)",
+        "c) Ataque de cumpleaños (birthday attack)",
+        "d) Ataque de fuerza bruta (brute force attack)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un ataque de degradación (downgrade attack) fuerza a los dispositivos a usar protocolos o algoritmos de cifrado más débiles, como SSLv3 en lugar de TLS, aprovechando vulnerabilidades conocidas en versiones obsoletas.",
+      "id": "p10-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante para forzar el uso de un algoritmo de cifrado más débil durante una negociación de protocolo seguro?",
+      "opciones": [
+        "a) Ataque de cumpleaños",
+        "b) Ataque de degradación (downgrade attack)",
+        "c) Ataque de fuerza bruta",
+        "d) Ataque de inyección de código"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación explota la negociación del protocolo para forzar el uso de algoritmos de cifrado más débiles o incluso sin cifrado.",
+      "id": "p10-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de ataque inalámbrico aprovecha la vulnerabilidad de los marcos de gestión no cifrados en el estándar 802.11 para enviar tramas falsas que desconecten dispositivos de la red sin necesidad de descifrar el tráfico?",
+      "opciones": [
+        "a) Ataque de RF jamming",
+        "b) Ataque de desautenticación (deauthentication attack)",
+        "c) Ataque de envenenamiento ARP (ARP poisoning)",
+        "d) Ataque de degradación (downgrade attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los ataques de desautenticación explotan los marcos de gestión no cifrados del estándar 802.11 para enviar tramas falsas que obligan a los dispositivos a desconectarse de la red.",
+      "id": "p10-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de ataques criptográficos se basan en explotar la probabilidad matemática de encontrar dos entradas distintas que generen el mismo valor hash (colisión)?",
+      "opciones": [
+        "a) Ataque de fuerza bruta",
+        "b) Ataque de cumpleaños (birthday attack)",
+        "c) Ataque de repetición (replay attack)",
+        "d) Ataque de degradación (downgrade attack)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de cumpleaños explota la probabilidad de colisiones en funciones hash, permitiendo encontrar dos textos planos diferentes que generen el mismo hash, como ocurrió con el algoritmo MD5.",
+      "id": "p10-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar el uso de un algoritmo de cifrado como RC4 durante la negociación de una conexión TLS?",
+      "opciones": [
+        "a) Fuerza bruta sobre el algoritmo de cifrado",
+        "b) Manipulación de la negociación del protocolo para priorizar algoritmos débiles",
+        "c) Inyección de paquetes maliciosos en la pila TCP/IP",
+        "d) Explotación de vulnerabilidades en el estándar 802.11"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación manipula la negociación del protocolo TLS para forzar el uso de algoritmos de cifrado débiles como RC4.",
+      "id": "p10-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En una red empresarial que utiliza autenticación WPA3-Enterprise con cifrado AES-GCMP en su infraestructura 802.11ac, un administrador detecta que los dispositivos de un departamento específico experimentan desconexiones intermitentes. Tras analizar los logs, se identifican tramas de desautenticación dirigidas exclusivamente a esos dispositivos, pero no hay evidencia de interferencia por RF jamming ni patrones de tráfico anormal. Además, los dispositivos afectados muestran un aumento anormal en el consumo de CPU y memoria, junto con la ejecución de procesos desconocidos en segundo plano. ¿Qué técnica criptográfica adicional, no relacionada con el envío directo de tramas de desautenticación, está explotando el atacante para mantener el ataque de manera persistente y comprometer los dispositivos de forma más profunda?",
+      "opciones": [
+        "a) Ataque de degradación (downgrade attack) para forzar el uso de protocolos inseguros como SSLv3 en lugar de TLS.",
+        "b) Ataque de repetición (replay attack) para reutilizar identificadores de sesión capturados y mantener el acceso.",
+        "c) Inyección de código malicioso mediante vulnerabilidades en el controlador de red para ejecutar procesos en segundo plano y facilitar el ataque.",
+        "d) Envenenamiento ARP para redirigir el tráfico de los dispositivos afectados al atacante y capturar credenciales."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El aumento anormal en el consumo de recursos y la ejecución de procesos desconocidos en segundo plano sugieren la ejecución de código malicioso. Este malware puede manipular el controlador de red del dispositivo para mantener el ataque de desautenticación de manera persistente, incluso sin enviar tramas directamente, explotando vulnerabilidades en el firmware o controladores.",
+      "id": "p10-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de ataque criptográfico explota la probabilidad matemática de que dos textos planos distintos generen el mismo valor hash, permitiendo a un atacante crear colisiones para comprometer la integridad de un sistema?",
+      "opciones": [
+        "a) Ataque de fuerza bruta",
+        "b) Ataque de cumpleaños",
+        "c) Ataque de degradación",
+        "d) Ataque de repetición"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de cumpleaños explota la probabilidad estadística de encontrar colisiones en funciones hash, como las vulnerabilidades demostradas en algoritmos como MD5.",
+      "id": "p10-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante cuando fuerza la negociación de una conexión TLS para usar el algoritmo de cifrado DES en lugar de AES-256?",
+      "opciones": [
+        "a) Ataque de degradación (downgrade attack)",
+        "b) Ataque de cumpleaños (birthday attack)",
+        "c) Ataque de colisión hash",
+        "d) Ataque de fuerza bruta"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un ataque de degradación (downgrade attack) fuerza a los dispositivos a utilizar protocolos o algoritmos de cifrado más débiles durante la negociación de la conexión, como DES en lugar de AES-256.",
+      "id": "p10-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante cuando fuerza la negociación de una conexión TLS para usar el algoritmo de cifrado 3DES en lugar de AES-256?",
+      "opciones": [
+        "Ataque de degradación (downgrade attack)",
+        "Ataque de colisión de hash",
+        "Ataque de repetición (replay attack)",
+        "Ataque de desbordamiento de búfer"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un ataque de degradación (downgrade attack) fuerza a los dispositivos a usar algoritmos de cifrado más débiles durante la negociación del protocolo, como 3DES en lugar de AES-256.",
+      "id": "p10-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un administrador de red detecta que los dispositivos de un departamento específico experimentan desconexiones intermitentes en una red 802.11ac con autenticación WPA3-Enterprise. Los logs muestran tramas de desautenticación dirigidas solo a esos dispositivos, pero no hay evidencia de interferencia por RF jamming. ¿Qué técnica adicional, no reflejada en los logs, es PROBABLE que esté utilizando el atacante para mantener el ataque de manera selectiva?",
+      "opciones": [
+        "Envenenamiento ARP para redirigir el tráfico a través del atacante",
+        "Inyección de código malicioso en los dispositivos para forzar desconexiones",
+        "Uso de un ataque de degradación (downgrade attack) en el protocolo de autenticación",
+        "Generación de tramas de desautenticación con direcciones MAC falsificadas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El código malicioso puede forzar desconexiones o consumir recursos de los dispositivos, manteniendo el ataque de manera persistente sin necesidad de enviar tramas de desautenticación directamente.",
+      "id": "p10-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar el uso de un protocolo de autenticación inseguro como PAP en lugar de métodos más seguros como CHAP en una conexión PPP?",
+      "opciones": [
+        "a) Envenenamiento de caché ARP para interceptar la negociación del protocolo",
+        "b) Manipulación de los mensajes de negociación para aceptar protocolos obsoletos",
+        "c) Explotación de vulnerabilidades en el algoritmo de cifrado de la conexión",
+        "d) Inyección de tramas de desautenticación para forzar la reconexión con protocolos inseguros"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación manipula los mensajes de negociación entre dispositivos para forzar el uso de protocolos inseguros como PAP en lugar de métodos más robustos como CHAP, aprovechando la falta de autenticación en la negociación.",
+      "id": "p10-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante cuando fuerza la negociación de una conexión TLS para usar el algoritmo de cifrado 3DES en lugar de AES-256, aprovechando vulnerabilidades en protocolos antiguos?",
+      "opciones": [
+        "a) Ataque de colisión en hash",
+        "b) Ataque de degradación (downgrade attack)",
+        "c) Ataque de cumpleaños (birthday attack)",
+        "d) Ataque de fuerza bruta"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un ataque de degradación (downgrade attack) fuerza a los dispositivos a usar algoritmos de cifrado más débiles como 3DES en lugar de AES-256 durante la negociación de TLS, aprovechando protocolos obsoletos.",
+      "id": "p10-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un atacante cuando fuerza la negociación de una conexión TLS para usar el algoritmo de cifrado RC4 en lugar de AES-256?",
+      "opciones": [
+        "a) Ataque de cumpleaños (birthday attack)",
+        "b) Ataque de degradación (downgrade attack)",
+        "c) Ataque de colisión de hash",
+        "d) Ataque de fuerza bruta"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque de degradación (downgrade attack) fuerza a los dispositivos a usar un algoritmo de cifrado más débil como RC4 en lugar de AES-256 durante la negociación del protocolo TLS.",
+      "id": "p10-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica explota un ataque de degradación (downgrade attack) para forzar el uso de un protocolo de autenticación inseguro como PAP en lugar de CHAP en una conexión PPP?",
+      "opciones": [
+        "a) Envenenamiento ARP",
+        "b) Fuerza bruta",
+        "c) Negociación de protocolos obsoleta",
+        "d) Ataque de colisión"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un ataque de degradación explota la negociación de protocolos para forzar el uso de versiones inseguras como PAP en lugar de CHAP durante la autenticación PPP, aprovechando la falta de validación estricta en la elección de métodos.",
+      "id": "p10-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una red empresarial que implementa autenticación WPA3-Enterprise con cifrado AES-GCMP en su infraestructura 802.11ax, un administrador detecta que los dispositivos de un departamento específico experimentan desconexiones intermitentes y lentitud en la red inalámbrica. Tras analizar los logs del punto de acceso, se identifican tramas de desautenticación dirigidas exclusivamente a esos dispositivos, pero no hay evidencia de interferencia por RF jamming ni patrones de tráfico anormal. Sin embargo, durante el análisis forense, se observa que los dispositivos afectados tienen instalado un software de gestión remota no autorizado que se activa automáticamente durante los episodios de desconexión. ¿Qué técnica adicional, no relacionada con el envío directo de tramas de desautenticación, está explotando el atacante para mantener el ataque de manera persistente y comprometer los dispositivos de forma más profunda, aprovechando una vulnerabilidad en el estándar 802.11?",
+      "opciones": [
+        "a) El atacante está explotando la vulnerabilidad de los marcos de autenticación no cifrados en versiones antiguas del estándar 802.11 para enviar tramas de desautenticación selectivas, combinado con un ataque de inyección de código malicioso mediante el software de gestión remota instalado en los dispositivos.",
+        "b) El atacante está utilizando un ataque de degradación (downgrade attack) para forzar el uso de protocolos de cifrado inseguros como WEP en los dispositivos afectados, aprovechando la negociación de autenticación WPA3-Enterprise.",
+        "c) El atacante está explotando una vulnerabilidad en el estándar 802.11ax que permite la instalación remota de software malicioso mediante el envío de tramas de desautenticación, aprovechando la falta de verificación de integridad en los marcos de gestión.",
+        "d) El atacante está utilizando un ataque de repetición (replay attack) para reenviar tramas de desautenticación válidas capturadas previamente, combinado con la ejecución de un script malicioso en los dispositivos afectados que simula un reinicio del sistema para mantener el ataque."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El estándar 802.11ax (Wi-Fi 6) sigue dejando sin cifrar ciertos marcos de gestión, como los de autenticación y asociación, lo que permite a un atacante explotar vulnerabilidades en su implementación para instalar software malicioso de forma remota. Esto se logra mediante la inyección de tramas maliciosas que aprovechan la falta de verificación de integridad en estos marcos.",
+      "id": "p10-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En una red empresarial que implementa autenticación WPA3-Enterprise con cifrado AES-GCMP en su infraestructura 802.11ax, un administrador detecta que los dispositivos de un departamento específico experimentan desconexiones intermitentes y lentitud en la red inalámbrica. Tras analizar los logs del punto de acceso, se identifica que las tramas de desautenticación dirigidas solo afectan a dispositivos que han instalado recientemente una actualización de firmware proporcionada por un proveedor externo. Además, se observa que durante los episodios de desconexión, los dispositivos afectados envían ráfagas de tráfico ARP no solicitado a la dirección broadcast de la red. ¿Qué técnica adicional, no relacionada con el envío directo de tramas de desautenticación falsas, está explotando el atacante para mantener el ataque de manera persistente y comprometer los dispositivos de forma más profunda?",
+      "opciones": [
+        "El atacante está explotando una vulnerabilidad en el firmware actualizado para inyectar código malicioso que fuerza la generación de tramas de desautenticación desde los dispositivos comprometidos, actuando como un bot en la red.",
+        "El atacante está utilizando un ataque de envenenamiento ARP para redirigir el tráfico de los dispositivos comprometidos a un servidor controlado, generando así un aumento en el consumo de recursos y la interrupción del servicio.",
+        "El atacante está explotando una vulnerabilidad en el estándar 802.11ax que permite la manipulación de los marcos de gestión cifrados para enviar tramas de desautenticación desde los dispositivos comprometidos.",
+        "El atacante está utilizando un ataque de repetición (replay attack) para reenviar tramas de desautenticación legítimas capturadas previamente, forzando desconexiones intermitentes en los dispositivos objetivo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El envenenamiento ARP permite al atacante redirigir el tráfico de los dispositivos comprometidos hacia un servidor controlado, lo que puede generar un aumento en el consumo de recursos y la interrupción del servicio, coincidiendo con los síntomas observados. Esta técnica no requiere el envío directo de tramas de desautenticación falsas desde el atacante.",
+      "id": "p10-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Wireless Attacks",
+      "youtubeId": "tSLqrKhUvts"
+    },
+    {
+      "titulo": "On-path Attacks",
+      "youtubeId": "M_Af6_8JTuo"
+    },
+    {
+      "titulo": "Replay Attacks",
+      "youtubeId": "ai6qS13gKRo"
+    },
+    {
+      "titulo": "Malicious Code",
+      "youtubeId": "xDhUBQ_lnUA"
+    },
+    {
+      "titulo": "Application Attacks",
+      "youtubeId": "yRSqIGjeb7s"
+    },
+    {
+      "titulo": "Cryptographic Attacks",
+      "youtubeId": "7aJaEQy6Yoc"
+    },
+    {
+      "titulo": "Password Attacks",
+      "youtubeId": "-ZfbifHwEVE"
+    },
+    {
+      "titulo": "Indicators of Compromise",
+      "youtubeId": "x72hG9GvkaQ"
+    }
+  ]
+}

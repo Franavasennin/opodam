@@ -90,6 +90,8 @@ export interface Tema {
   mapaMental: { nodos: NodoMapa[]; aristas: AristaMapa[] }
   flashcards: Flashcard[]
   preguntas: Pregunta[]
+  // Vídeos fuente (solo temas con contenido en vídeo, p.ej. security-plus). Opcional.
+  videos?: { titulo: string; youtubeId: string }[]
 }
 
 // ── Progress types ─────────────────────────────────────────

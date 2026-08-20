@@ -1,0 +1,1404 @@
+{
+  "id": 26,
+  "titulo": "5.2 · Gestión de riesgos",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LA GESTIÓN DE RIESGOS (RISK MANAGEMENT) es un proceso fundamental en cualquier organización para identificar, evaluar y mitigar posibles amenazas antes de que se conviertan en problemas graves. A medida que una organización crece, el riesgo asociado también aumenta, por lo que es crucial comprender dónde pueden surgir estos riesgos y cómo abordarlos de manera efectiva.\n\n\n\nLas amenazas a una organización pueden provenir tanto del interior como del exterior. La gestión de riesgos permite a la empresa calificar (qualify) estos riesgos, es decir, determinar su probabilidad de ocurrencia y su impacto potencial. Existen diferentes enfoques para realizar una evaluación de riesgos (risk assessment), ya que cada organización tiene requisitos y preocupaciones distintas en cuanto a las amenazas.\n\n\n\n\nLOS TIPOS DE EVALUACIÓN DE RIESGOS\n\n\n\n\nUna organización puede llevar a cabo una evaluación de riesgos puntual (one-time risk assessment) en situaciones específicas. Por ejemplo, cuando una empresa está adquiriendo otra organización, puede realizar una evaluación de riesgos para identificar los posibles problemas que podría enfrentar con la adquisición. Otro caso común es cuando se instala nuevo equipo o software, y la organización desea entender los riesgos asociados con su implementación.\n\n\n\n\nTambién existen evaluaciones de riesgos continuas (ongoing risk assessment), que suelen estar integradas en procesos como el control de cambios (Change Control). En este caso, cada cambio propuesto debe ir acompañado de un análisis de riesgos para determinar su impacto potencial. Este tipo de evaluación es recurrente y se actualiza constantemente.\n\n\n\n\nLas evaluaciones de riesgos ad hoc son aquellas realizadas con un propósito específico y limitado en el tiempo. Por ejemplo, si el CEO de una empresa regresa de una conferencia donde se ha enterado de un nuevo tipo de ataque que ha afectado a otras empresas, puede solicitar una evaluación ad hoc para determinar si la organización es vulnerable a ese riesgo en particular. Este tipo de evaluación suele ser estrecha en su alcance y, una vez completada, el comité encargado puede disolverse, ya que es poco probable que sea necesario repetirla.\n\n\n\n\nPor otro lado, algunas organizaciones realizan evaluaciones de riesgos siguiendo un calendario fijo, como cada tres, seis o doce meses. Estas evaluaciones pueden ser internas, realizadas por el equipo de seguridad de la empresa, o externas, llevadas a cabo por terceros. Además, existen evaluaciones de riesgos obligatorias impuestas por regulaciones o estándares, como el estándar de seguridad de datos de la industria de tarjetas de pago (PCI DSS), que exige evaluaciones anuales para organizaciones que manejan información de tarjetas de crédito.\n\n\n\n\nLA ANÁLISIS DE RIESGOS (RISK ANALYSIS)\n\n\n\n\nDeterminar los niveles de riesgo puede variar significativamente según las variables involucradas. Una forma de evaluar el riesgo es mediante una evaluación cualitativa (qualitative risk assessment), que analiza factores de riesgo individuales y los criterios asociados a cada uno. Un método común para representar esta evaluación es mediante una cuadrícula de semáforo (Traffic Light Grid), donde se asignan niveles de riesgo bajo, medio o alto a cada categoría.\n\n\n\n\nPor ejemplo, en una organización, se puede evaluar el riesgo asociado a clientes con sistemas operativos Windows heredados (Legacy Windows clients). Si se determina que el impacto es medio, la tasa de ocurrencia anual (annualized rate of occurrence) es alta, y el costo de los controles es medio, el riesgo general se clasificaría como alto. Otro ejemplo podría ser el personal no capacitado, donde el impacto es bajo, la tasa de ocurrencia anual es media, y el costo de los controles es bajo, lo que resultaría en un riesgo general medio.\n\n\n\n\nEn contraste, una evaluación cuantitativa (quantitative risk assessment) permite calcular valores específicos para ciertos riesgos. Esta evaluación comienza con la tasa de ocurrencia anual (annualized rate of occurrence, Aro), que indica con qué frecuencia un riesgo puede ocurrir en un año. Por ejemplo, la probabilidad de que un huracán afecte a Montana es menor que en Florida.\n\n\n\n\nTambién se asigna un valor al activo (asset value, AV), que representa el valor del activo para la organización. Este valor no se limita al costo de reemplazo, sino que también incluye el impacto en las ventas de la empresa, posibles multas y otros costos asociados. Otro concepto clave es el factor de exposición (exposure factor, EF), que es el porcentaje del valor del activo que se perdería si el riesgo se materializa. Por ejemplo, si se pierde un cuarto del activo, el EF es 0.25; si se pierde el activo completo, el EF es 1.0.\n\n\n\n\nCon estos valores, se puede calcular la expectativa de pérdida única (single loss expectancy, SLE), que es la pérdida monetaria si ocurre un solo evento. Por ejemplo, si se roba una computadora portátil con un valor de $1,000 y el EF es 1.0, la SLE es $1,000. Luego, se calcula la expectativa de pérdida anualizada (annualized loss expectancy, ALE) multiplicando la Aro por la SLE. Si se espera que se roben siete computadoras portátiles al año, la Aro es 7 y la ALE sería $7,000.\n\n\n\n\nEs importante considerar múltiples impactos en los cálculos de riesgo, como la vida humana, la propiedad, la seguridad y los aspectos financieros. La probabilidad de un riesgo (likelihood) es un valor cualitativo, mientras que la probabilidad de riesgo (risk probability) es cuantitativa y puede basarse en datos históricos o proyecciones futuras. Aunque estos términos a veces se usan indistintamente, la probabilidad de riesgo suele asociarse a una medición estadística.\n\n\n\n\nLA TOLERANCIA AL RIESGO (RISK APPETITE Y RISK TOLERANCE)\n\n\n\n\nLa tolerancia al riesgo (risk appetite) se refiere a la cantidad de riesgo que una organización está dispuesta a aceptar. Algunas organizaciones establecen valores cualitativos para su tolerancia al riesgo, como conservadora, neutral o expansionista. Por ejemplo, una organización puede tener una tolerancia al riesgo baja para ciertos tipos de amenazas, pero una tolerancia más alta para otros.\n\n\n\n\nLa tolerancia al riesgo (risk tolerance) es un concepto relacionado pero distinto. Representa una variación más amplia que la tolerancia al riesgo y puede cambiar según la situación. Por ejemplo, en una autopista, el límite de velocidad es la tolerancia al riesgo establecida por el gobierno, pero la aplicación de la ley puede tener una tolerancia al riesgo más alta, permitiendo que los conductores excedan ligeramente el límite sin ser multados. Sin embargo, en condiciones climáticas adversas, la tolerancia al riesgo puede reducirse significativamente.\n\n\n\n\nEL REGISTRO DE RIESGOS (RISK REGISTER)\n\n\n\n\nUn proyecto en una organización suele incluir una lista de riesgos asociados a su implementación. Estos riesgos se documentan en un registro de riesgos (risk register), donde cada riesgo se detalla para que todos los involucrados lo comprendan. El objetivo del registro es documentar los riesgos y, si es posible, proporcionar opciones o soluciones para evitarlos.\n\n\n\n\nCada entrada en el registro incluye un indicador clave de riesgo (key risk indicator) que detalla el riesgo, como la falta de definición del propósito del proyecto, la incompletud en el diseño o la falta de claridad en el cronograma. Para cada indicador, se asigna un responsable (owner) que gestionará el riesgo y se determina el umbral de riesgo (risk threshold), es decir, el punto en el que se debe actuar para mitigar el riesgo. Es fundamental equilibrar el costo de mitigar el riesgo con el costo potencial que podría representar para la organización.\n\n\n\n\nLAS ESTRATEGIAS DE GESTIÓN DE RIESGOS (RISK MANAGEMENT STRATEGIES)\n\n\n\n\nLas organizaciones pueden adoptar diversas estrategias para gestionar los riesgos. Una de ellas es transferir el riesgo (transfer the risk), lo que implica trasladar la responsabilidad del riesgo a otra parte. Un ejemplo común es la contratación de un seguro de ciberseguridad, donde la aseguradora asume parte del riesgo.\n\n\n\n\nOtra estrategia es aceptar el riesgo (accept the risk), que es la opción más común. Esto permite a la organización decidir cómo manejar el riesgo, ya sea mediante exenciones a políticas existentes o excepciones a los procedimientos de seguridad. Por ejemplo, una organización puede tener una política que exige parchear todos los dispositivos dentro de tres días tras la publicación de un parche. Sin embargo, si un parche causa problemas críticos en un software esencial, la empresa puede crear una excepción que permita retrasar el parcheo hasta resolver el conflicto.\n\n\n\n\nTambién existe la opción de evitar el riesgo (avoid the risk) por completo, eliminando la necesidad de gestionarlo. Por último, se puede mitigar el riesgo (mitigate the risk), reduciendo su probabilidad o impacto. Por ejemplo, invertir en un firewall de próxima generación puede mitigar los riesgos asociados a la conectividad a Internet.\n\n\n\n\nEl informe de riesgos (risk reporting) es una herramienta clave para rastrear múltiples riesgos en una organización. Este informe lista todos los riesgos que la empresa está gestionando, describe cada uno y proporciona orientación sobre cómo abordarlos. Es un documento dinámico que se actualiza constantemente y que suele ser consultado por la alta dirección para tomar decisiones comerciales informadas.\n\n\n\n\nEL ANÁLISIS DE IMPACTO EN EL NEGOCIO (BUSINESS IMPACT ANALYSIS, BIA)\n\n\n\n\nCuando ocurre una interrupción, uno de los datos más importantes que los gerentes desean conocer es cuánto tiempo tardará la organización en recuperarse. El objetivo de tiempo de recuperación (recovery time objective, RTO) define este plazo. Por ejemplo, una organización puede considerar que no está operativa hasta que tanto el servidor de base de datos como el servidor web estén funcionando. El tiempo que tarda en recuperarse ambos sistemas es el RTO.\n\n\n\n\nOtro concepto clave es el objetivo de punto de recuperación (recovery point objective, RPO), que es el punto en el tiempo al que se puede recuperar la operación. Por ejemplo, si una organización requiere tener al menos los últimos 12 meses de datos disponibles para sus clientes, el RPO sería de 12 meses. Si es necesario restaurar datos desde copias de seguridad, se debe asegurar que se cuente con al menos esos 12 meses de datos antes de considerar que la operación se ha recuperado.\n\n\n\n\nEl tiempo medio de reparación (mean time to repair, MTTR) describe cuánto tiempo, en promedio, tarda una organización en resolver un problema. Este valor incluye el tiempo para diagnosticar el problema, obtener equipos de reemplazo, instalarlos y configurarlos. La MTTR puede variar según los recursos disponibles. Por ejemplo, si una organización tiene un contrato con un tercero que proporciona equipos de reemplazo en dos horas, el MTTR podría reducirse significativamente.\n\n\n\n\nEl tiempo medio entre fallos (mean time between failures, MTBF) es otro indicador importante, especialmente para equipos nuevos. Representa el tiempo estimado que un sistema funcionará antes de que ocurra otra falla. Este valor puede ser proporcionado por el fabricante o basado en el historial de rendimiento del equipo. Se calcula dividiendo el tiempo total de actividad del equipo entre el número total de fallos. El MTBF ayuda a gestionar el riesgo de tiempo de inactividad y a predecir posibles problemas con el equipo.\n\n\n\n\nEstos conceptos son esenciales para planificar la recuperación ante desastres y garantizar que la organización pueda minimizar el impacto de las interrupciones en sus operaciones."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Gestión de Riesgos] --> B[Evaluación de Riesgos]\nA --> C[Análisis de Riesgos]\nA --> D[Estrategias de Gestión]\nA --> E[Análisis de Impacto en el Negocio]\n\nB --> B1[Puntual]\nB --> B2[Continua]\nB --> B3[Ad hoc]\nB --> B4[Programada]\n\nC --> C1[Cualitativa]\nC --> C2[Cuantitativa]\n\nD --> D1[Transferir]\nD --> D2[Aceptar]\nD --> D3[Evitar]\nD --> D4[Mitigar]\n\nE --> E1[RTO]\nE --> E2[RPO]\nE --> E3[MTTR]\nE --> E4[MTBF]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc26-01",
+      "pregunta": "¿Qué es la gestión de riesgos (Risk Management) y por qué es importante para las organizaciones?",
+      "respuesta": "La gestión de riesgos es un proceso para identificar, evaluar y mitigar amenazas antes de que se conviertan en problemas graves. Es importante porque, a medida que una organización crece, el riesgo asociado aumenta, y este proceso ayuda a entender dónde pueden surgir estos riesgos y cómo abordarlos de manera efectiva."
+    },
+    {
+      "id": "fc26-02",
+      "pregunta": "¿Cuáles son los cuatro tipos principales de evaluaciones de riesgos (risk assessments) mencionados en la transcripción?",
+      "respuesta": "Puntual (one-time), continua (ongoing), ad hoc y programada (scheduled)."
+    },
+    {
+      "id": "fc26-03",
+      "pregunta": "¿Qué es una evaluación de riesgos ad hoc (ad hoc risk assessment) y en qué situaciones se utiliza?",
+      "respuesta": "Es una evaluación realizada con un propósito específico y limitado en el tiempo. Se utiliza cuando una organización necesita analizar un riesgo concreto, como un nuevo tipo de ataque del que se ha tenido conocimiento en una conferencia."
+    },
+    {
+      "id": "fc26-04",
+      "pregunta": "¿Qué es una evaluación cualitativa de riesgos (qualitative risk assessment) y cómo se representa comúnmente?",
+      "respuesta": "Es un método para evaluar riesgos basado en factores cualitativos, como impacto y probabilidad, sin asignar valores numéricos. Se representa comúnmente mediante una cuadrícula de semáforo (Traffic Light Grid), donde se asignan niveles de riesgo bajo, medio o alto."
+    },
+    {
+      "id": "fc26-05",
+      "pregunta": "¿Qué es la tasa de ocurrencia anual (annualized rate of occurrence, Aro) en una evaluación cuantitativa de riesgos?",
+      "respuesta": "Es un valor que indica con qué frecuencia un riesgo puede ocurrir en un año. Por ejemplo, la probabilidad de que un huracán afecte a Montana es menor que en Florida."
+    },
+    {
+      "id": "fc26-06",
+      "pregunta": "¿Qué es el factor de exposición (exposure factor, EF) y cómo se calcula?",
+      "respuesta": "Es el porcentaje del valor de un activo que se perdería si un riesgo se materializa. Se calcula dividiendo la pérdida esperada entre el valor total del activo. Por ejemplo, si se pierde un cuarto del activo, el EF es 0.25."
+    },
+    {
+      "id": "fc26-07",
+      "pregunta": "¿Qué es la expectativa de pérdida única (single loss expectancy, SLE) y cómo se calcula?",
+      "respuesta": "Es la pérdida monetaria esperada si ocurre un solo evento de riesgo. Se calcula multiplicando el valor del activo (AV) por el factor de exposición (EF). Por ejemplo, si un activo vale $1,000 y el EF es 1.0, la SLE es $1,000."
+    },
+    {
+      "id": "fc26-08",
+      "pregunta": "¿Qué diferencia hay entre tolerancia al riesgo (risk appetite) y tolerancia al riesgo (risk tolerance)?",
+      "respuesta": "La tolerancia al riesgo (risk appetite) es la cantidad de riesgo que una organización está dispuesta a aceptar, mientras que la tolerancia al riesgo (risk tolerance) es la variación más amplia que puede tener esa aceptación y puede cambiar según la situación."
+    },
+    {
+      "id": "fc26-09",
+      "pregunta": "¿Qué es un registro de riesgos (risk register) y qué información contiene?",
+      "respuesta": "Es un documento que lista los riesgos asociados a un proyecto, detallando cada riesgo, su indicador clave, el responsable y el umbral de riesgo. Su objetivo es documentar los riesgos y proporcionar soluciones para evitarlos."
+    },
+    {
+      "id": "fc26-10",
+      "pregunta": "¿Cuáles son las cuatro estrategias principales de gestión de riesgos (risk management strategies)?",
+      "respuesta": "Transferir el riesgo, aceptar el riesgo, evitar el riesgo y mitigar el riesgo."
+    },
+    {
+      "id": "fc26-11",
+      "pregunta": "¿Qué es el objetivo de tiempo de recuperación (recovery time objective, RTO) y cómo se define?",
+      "respuesta": "Es el plazo en el que una organización debe recuperarse tras una interrupción. Se define como el tiempo que tarda en volver a estar operativa, por ejemplo, hasta que tanto el servidor de base de datos como el servidor web estén funcionando."
+    },
+    {
+      "id": "fc26-12",
+      "pregunta": "¿Qué es el objetivo de punto de recuperación (recovery point objective, RPO) y por qué es importante?",
+      "respuesta": "Es el punto en el tiempo al que se puede recuperar la operación tras una interrupción. Es importante porque define cuántos datos históricos deben estar disponibles para considerar que la operación se ha recuperado, como los últimos 12 meses de datos."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR una evaluación de riesgos ad hoc según el temario?",
+      "opciones": [
+        "Evaluación realizada de manera recurrente cada 6 meses por un equipo interno.",
+        "Evaluación puntual solicitada por el CEO tras conocer un nuevo tipo de ataque en una conferencia.",
+        "Evaluación obligatoria impuesta por regulaciones como PCI DSS para organizaciones que manejan tarjetas de crédito.",
+        "Evaluación continua integrada en procesos como el control de cambios (Change Control)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define las evaluaciones ad hoc como aquellas realizadas con un propósito específico y limitado en el tiempo, como la solicitud del CEO tras enterarse de un nuevo ataque.",
+      "id": "p26-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una evaluación cualitativa de riesgos, si un riesgo tiene un impacto bajo, una tasa de ocurrencia anual media y un costo de controles bajo, ¿qué nivel de riesgo general se asignaría según el ejemplo del temario?",
+      "opciones": [
+        "Bajo",
+        "Medio",
+        "Alto",
+        "Crítico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que, en este escenario, el riesgo general se clasificaría como medio, basado en los criterios de impacto, ocurrencia y costo de controles.",
+      "id": "p26-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué estrategia de gestión de riesgos implica trasladar la responsabilidad de un riesgo a otra parte, como contratar un seguro de ciberseguridad?",
+      "opciones": [
+        "Aceptar el riesgo",
+        "Mitigar el riesgo",
+        "Transferir el riesgo",
+        "Evitar el riesgo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario define la transferencia del riesgo como la estrategia de trasladar la responsabilidad del riesgo a otra parte, como ocurre con los seguros de ciberseguridad.",
+      "id": "p26-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de evaluación de riesgos mencionado en el temario?",
+      "opciones": [
+        "Evaluación de riesgos puntual",
+        "Evaluación de riesgos continua",
+        "Evaluación de riesgos ad hoc",
+        "Evaluación de riesgos dinámica"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario enumera los tipos de evaluación de riesgos como puntual, continua, ad hoc y obligatoria, pero no menciona 'evaluación de riesgos dinámica'.",
+      "id": "p26-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto del registro de riesgos, ¿qué elemento define el punto en el que se debe actuar para mitigar un riesgo?",
+      "opciones": [
+        "Indicador clave de riesgo (Key Risk Indicator)",
+        "Umbral de riesgo (Risk Threshold)",
+        "Responsable (Owner)",
+        "Costo de mitigación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario explica que el umbral de riesgo (Risk Threshold) es el punto en el que se debe actuar para mitigar el riesgo dentro del registro de riesgos.",
+      "id": "p26-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización calcula que el valor de un activo es $10,000 y que, si ocurre un evento de riesgo, perderá el 30% de su valor. ¿Cuál es la expectativa de pérdida única (SLE) en este caso?",
+      "opciones": [
+        "$3,000",
+        "$7,000",
+        "$10,000",
+        "$30,000"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define la SLE como el valor del activo multiplicado por el factor de exposición (EF). Aquí, SLE = $10,000 * 0.30 = $3,000.",
+      "id": "p26-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Si una organización tiene una tolerancia al riesgo baja para amenazas internas pero alta para amenazas externas, ¿qué concepto del temario se está aplicando?",
+      "opciones": [
+        "Tolerancia al riesgo (Risk Appetite)",
+        "Tolerancia al riesgo (Risk Tolerance)",
+        "Evaluación cualitativa de riesgos",
+        "Análisis de impacto en el negocio (BIA)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define la tolerancia al riesgo (Risk Appetite) como la cantidad de riesgo que una organización está dispuesta a aceptar, que puede variar según el tipo de amenaza.",
+      "id": "p26-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa desea calcular el tiempo estimado que un sistema funcionará antes de que ocurra otra falla. ¿Qué métrica del temario debería utilizar?",
+      "opciones": [
+        "MTTR (Mean Time to Repair)",
+        "MTBF (Mean Time Between Failures)",
+        "RTO (Recovery Time Objective)",
+        "RPO (Recovery Point Objective)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define el MTBF como el tiempo estimado que un sistema funcionará antes de que ocurra otra falla, útil para gestionar el riesgo de tiempo de inactividad.",
+      "id": "p26-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una organización acepta un riesgo mediante una excepción a su política de parcheo debido a problemas críticos en un software esencial, ¿qué estrategia de gestión de riesgos está aplicando?",
+      "opciones": [
+        "Transferir el riesgo",
+        "Mitigar el riesgo",
+        "Aceptar el riesgo",
+        "Evitar el riesgo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que aceptar el riesgo es una estrategia común que permite a la organización manejar el riesgo mediante excepciones a políticas, como en este caso.",
+      "id": "p26-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización calcula que la probabilidad de que un huracán afecte a su centro de datos en Florida es de 0.1 al año, el valor del activo es $500,000 y el factor de exposición es 0.8. ¿Cuál es la expectativa de pérdida anualizada (ALE)?",
+      "opciones": [
+        "$40,000",
+        "$50,000",
+        "$400,000",
+        "$500,000"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define la ALE como Aro * SLE. Aquí, SLE = $500,000 * 0.8 = $400,000 y Aro = 0.1, por lo que ALE = 0.1 * $400,000 = $40,000.",
+      "id": "p26-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR una evaluación de riesgos puntual (one-time risk assessment) según el temario?",
+      "opciones": [
+        "Evaluación realizada de forma recurrente cada 6 meses para cumplir con regulaciones como PCI DSS.",
+        "Análisis de riesgos realizado específicamente para evaluar los riesgos asociados a la adquisición de otra empresa.",
+        "Evaluación ad hoc solicitada por el CEO tras conocer un nuevo tipo de ataque en una conferencia.",
+        "Proceso continuo integrado en el control de cambios (Change Control) de la organización."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Una evaluación de riesgos puntual se realiza en situaciones específicas como adquisiciones de empresas, según el temario.",
+      "id": "p26-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la adquisición de otra empresa o a la implementación de nuevo software?",
+      "opciones": [
+        "a) Evaluación de riesgos puntual (one-time risk assessment)",
+        "b) Evaluación de riesgos continua (ongoing risk assessment)",
+        "c) Evaluación de riesgos ad hoc",
+        "d) Evaluación de riesgos obligatoria por regulación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que una evaluación de riesgos puntual se realiza en situaciones específicas como la adquisición de otra organización o la instalación de nuevo equipo o software.",
+      "id": "p26-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR una evaluación de riesgos obligatoria según el temario?",
+      "opciones": [
+        "a) Evaluación realizada por el equipo interno de seguridad cada 6 meses.",
+        "b) Evaluación exigida por regulaciones o estándares como PCI DSS que debe realizarse anualmente.",
+        "c) Evaluación puntual (one-time) para analizar riesgos en una adquisición de otra empresa.",
+        "d) Evaluación ad hoc solicitada por el CEO tras conocer un nuevo tipo de ataque."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el temario, las evaluaciones de riesgos obligatorias son aquellas impuestas por regulaciones o estándares como PCI DSS, que exigen evaluaciones anuales para organizaciones que manejan información de tarjetas de crédito.",
+      "id": "p26-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza para analizar específicamente los riesgos asociados con la implementación de un nuevo sistema de software en una organización?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos puntual (one-time risk assessment)",
+        "c) Evaluación de riesgos obligatoria",
+        "d) Evaluación de riesgos continua"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que una evaluación de riesgos puntual se realiza en situaciones específicas como la implementación de nuevo equipo o software para entender los riesgos asociados a su implementación.",
+      "id": "p26-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización desea calcular el tiempo estimado que un sistema funcionará antes de que ocurra otra falla. ¿Qué métrica del temario debería utilizar?",
+      "opciones": [
+        "MTTR (Tiempo medio de reparación).",
+        "MTBF (Tiempo medio entre fallos).",
+        "RTO (Objetivo de tiempo de recuperación).",
+        "RPO (Objetivo de punto de recuperación)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El MTBF (Mean Time Between Failures) mide el tiempo estimado entre fallos, según el temario.",
+      "id": "p26-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una evaluación cualitativa de riesgos, si un riesgo tiene un impacto bajo, una tasa de ocurrencia anual media y un costo de controles bajo, ¿qué nivel de riesgo general se asignaría?",
+      "opciones": [
+        "Riesgo bajo.",
+        "Riesgo medio.",
+        "Riesgo alto.",
+        "Riesgo crítico."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un impacto bajo, tasa de ocurrencia media y costo de controles bajo resultan en un riesgo general medio, según el ejemplo del temario.",
+      "id": "p26-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones NO es una estrategia de gestión de riesgos mencionada en el temario?",
+      "opciones": [
+        "Aceptar el riesgo mediante excepciones a políticas.",
+        "Transferir el riesgo a un proveedor de servicios en la nube.",
+        "Evitar el riesgo eliminando la actividad que lo genera.",
+        "Reducir el riesgo mediante la implementación de un firewall."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona aceptar, transferir, evitar y mitigar el riesgo, pero no menciona transferirlo a un proveedor de servicios en la nube como estrategia.",
+      "id": "p26-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización acepta un riesgo mediante una excepción a su política de parcheo debido a problemas críticos en un software esencial. ¿Qué estrategia de gestión de riesgos está aplicando?",
+      "opciones": [
+        "Mitigar el riesgo.",
+        "Transferir el riesgo.",
+        "Aceptar el riesgo.",
+        "Evitar el riesgo."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Aceptar el riesgo implica crear excepciones a políticas para manejarlo, según el temario.",
+      "id": "p26-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa desea calcular cuánto tiempo tardará en recuperarse un sistema crítico tras una falla, considerando que debe estar operativo en 4 horas. ¿Qué métrica del temario se ajusta a este escenario?",
+      "opciones": [
+        "RPO (Objetivo de punto de recuperación).",
+        "MTTR (Tiempo medio de reparación).",
+        "RTO (Objetivo de tiempo de recuperación).",
+        "MTBF (Tiempo medio entre fallos)."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El RTO (Recovery Time Objective) define el tiempo máximo aceptable para recuperar un sistema, según el temario.",
+      "id": "p26-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Si una organización calcula que la probabilidad de que un huracán afecte a su centro de datos en Florida es de 0.2 al año, el valor del activo es $1,000,000 y el factor de exposición es 0.75, ¿cuál es la expectativa de pérdida anualizada (ALE)?",
+      "opciones": [
+        "$150,000",
+        "$200,000",
+        "$100,000",
+        "$75,000"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La ALE se calcula como Aro (0.2) × SLE (AV × EF = $1,000,000 × 0.75 = $750,000), resultando en $150,000, según el temario.",
+      "id": "p26-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la adquisición de otra empresa?",
+      "opciones": [
+        "Evaluación de riesgos puntual (one-time risk assessment)",
+        "Evaluación de riesgos continua (ongoing risk assessment)",
+        "Evaluación de riesgos ad hoc",
+        "Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que una evaluación de riesgos puntual se realiza en situaciones específicas como la adquisición de otra organización.",
+      "id": "p26-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué métrica del temario permite calcular el tiempo estimado que un sistema funcionará antes de que ocurra otra falla?",
+      "opciones": [
+        "MTTR (Mean Time To Repair)",
+        "MTBF (Mean Time Between Failures)",
+        "RTO (Recovery Time Objective)",
+        "RPO (Recovery Point Objective)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El MTBF (Mean Time Between Failures) es la métrica que estima el tiempo entre fallos de un sistema, según el temario.",
+      "id": "p26-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el temario, ¿qué estrategia de gestión de riesgos implica trasladar la responsabilidad de un riesgo a otra parte, como contratar un seguro de ciberseguridad?",
+      "opciones": [
+        "Evitar el riesgo",
+        "Transferir el riesgo",
+        "Aceptar el riesgo",
+        "Mitigar el riesgo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la transferencia de riesgo como la estrategia de trasladar la responsabilidad a otra parte, como un seguro.",
+      "id": "p26-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones NO es un tipo de evaluación de riesgos mencionado en el temario?",
+      "opciones": [
+        "Evaluación de riesgos ad hoc",
+        "Evaluación de riesgos puntual",
+        "Evaluación de riesgos reactiva",
+        "Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario no menciona evaluaciones de riesgos reactivas; solo describe ad hoc, puntual, continua y obligatoria.",
+      "id": "p26-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué elemento del registro de riesgos define el punto en el que se debe actuar para mitigar un riesgo?",
+      "opciones": [
+        "Responsable (owner)",
+        "Indicador clave de riesgo (key risk indicator)",
+        "Umbral de riesgo (risk threshold)",
+        "Costo de mitigación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El umbral de riesgo (risk threshold) es el punto en el que se debe actuar para mitigar el riesgo, según el temario.",
+      "id": "p26-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización calcula que el valor de un activo es $20,000 y que, si ocurre un evento de riesgo, perderá el 40% de su valor. ¿Cuál es la expectativa de pérdida única (SLE) en este caso?",
+      "opciones": [
+        "$8,000",
+        "$12,000",
+        "$20,000",
+        "$50,000"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La SLE se calcula multiplicando el valor del activo ($20,000) por el factor de exposición (40% = 0.4), resultando en $8,000.",
+      "id": "p26-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para identificar los riesgos asociados a cambios en los procesos o sistemas de una organización, como modificaciones en la configuración de firewalls o actualizaciones de software?",
+      "opciones": [
+        "a) Evaluación de riesgos puntual (one-time risk assessment)",
+        "b) Evaluación de riesgos continua (ongoing risk assessment)",
+        "c) Evaluación de riesgos ad hoc",
+        "d) Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos continuas están integradas en procesos como el control de cambios (Change Control), donde cada cambio propuesto requiere un análisis de riesgos para determinar su impacto potencial.",
+      "id": "p26-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a cambios en los procesos o sistemas de una organización, como modificaciones en la configuración de firewalls o actualizaciones de software?",
+      "opciones": [
+        "a) Evaluación de riesgos puntual (one-time risk assessment)",
+        "b) Evaluación de riesgos continua (ongoing risk assessment)",
+        "c) Evaluación de riesgos ad hoc",
+        "d) Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos continuas suelen estar integradas en procesos como el control de cambios (Change Control), donde cada cambio propuesto requiere un análisis de riesgos para determinar su impacto potencial.",
+      "id": "p26-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización calcula que la probabilidad de que un tornado afecte a su centro de datos en Kansas es de 0.05 al año, el valor del activo es $1,000,000 y el factor de exposición es 0.6. ¿Cuál es la expectativa de pérdida anualizada (ALE)?",
+      "opciones": [
+        "$30,000",
+        "$50,000",
+        "$60,000",
+        "$100,000"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La ALE se calcula multiplicando la Aro (0.05) por la SLE ($1,000,000 * 0.6 = $600,000), resultando en $30,000.",
+      "id": "p26-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la migración de su infraestructura de TI a un entorno en la nube pública. Durante la evaluación, el equipo de seguridad identifica que el proveedor de la nube no ofrece soporte para una versión específica de un software heredado que la empresa utiliza en sus sistemas críticos. Tras analizar las métricas, se determina que el MTBF del software en el entorno actual es de 18 meses, pero en la nube podría reducirse a 6 meses debido a la falta de soporte. ¿Qué estrategia de gestión de riesgos debería implementarse PRIMERO para abordar este escenario, según el temario?",
+      "opciones": [
+        "a) Aceptar el riesgo mediante una excepción formal a la política de migración a la nube, documentando los riesgos residuales y los controles compensatorios.",
+        "b) Transferir el riesgo contratando un seguro de ciberseguridad que cubra fallos en sistemas críticos en entornos en la nube.",
+        "c) Mitigar el riesgo implementando un entorno híbrido que mantenga el software heredado en un entorno local con soporte garantizado.",
+        "d) Evitar el riesgo deteniendo completamente el proyecto de migración a la nube para no exponer el software heredado a nuevos riesgos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La estrategia más adecuada es mitigar el riesgo mediante un entorno híbrido, ya que mantiene el software heredado en un entorno controlado (local) con soporte garantizado, reduciendo así la probabilidad de fallos críticos sin detener el proyecto de migración.",
+      "id": "p26-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a cambios en la infraestructura de red, como actualizaciones en switches o routers?",
+      "opciones": [
+        "a) Evaluación de riesgos continuos (ongoing risk assessment)",
+        "b) Evaluación de riesgos ad hoc",
+        "c) Evaluación de riesgos obligatoria",
+        "d) Evaluación de riesgos puntual (one-time risk assessment)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos continuos están integradas en procesos como el control de cambios (Change Control), donde cada modificación en la infraestructura, como actualizaciones en switches o routers, debe ir acompañada de un análisis de riesgos.",
+      "id": "p26-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para identificar riesgos asociados a la integración de un nuevo proveedor de servicios en la nube en una organización?",
+      "opciones": [
+        "a) Evaluación de riesgos puntual (one-time risk assessment)",
+        "b) Evaluación de riesgos ad hoc",
+        "c) Evaluación de riesgos obligatoria",
+        "d) Evaluación de riesgos continua (ongoing risk assessment)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que una evaluación de riesgos puntual se realiza en situaciones específicas como la adquisición de otra empresa o la instalación de nuevo equipo/software, incluyendo la integración de proveedores externos como servicios en la nube.",
+      "id": "p26-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la migración de datos a un nuevo proveedor de servicios en la nube?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos puntual (one-time risk assessment)",
+        "c) Evaluación de riesgos obligatoria",
+        "d) Evaluación de riesgos continua (ongoing risk assessment)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos puntuales (one-time risk assessments) se realizan en situaciones específicas como la implementación de nuevo equipo o software, incluyendo migraciones a entornos en la nube.",
+      "id": "p26-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la migración de su infraestructura de TI a un entorno en la nube pública. Durante la evaluación, se identifica que el proveedor de la nube no soporta una versión específica de un software heredado crítico. Según el temario, ¿qué métrica debería usarse para estimar el tiempo que el software funcionará antes de fallar en el nuevo entorno?",
+      "opciones": [
+        "MTTR (Mean Time To Repair)",
+        "MTBF (Mean Time Between Failures)",
+        "RTO (Recovery Time Objective)",
+        "RPO (Recovery Point Objective)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El MTBF mide el tiempo estimado entre fallos de un sistema, útil para predecir la fiabilidad del software en el nuevo entorno.",
+      "id": "p26-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar riesgos asociados a la implementación de cambios en la configuración de firewalls o actualizaciones de software en una organización?",
+      "opciones": [
+        "a) Evaluación de riesgos puntual (one-time risk assessment)",
+        "b) Evaluación de riesgos continua (ongoing risk assessment)",
+        "c) Evaluación de riesgos ad hoc",
+        "d) Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos continuas suelen estar integradas en procesos como el control de cambios, donde cada modificación en firewalls o software requiere un análisis de riesgos.",
+      "id": "p26-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización calcula que el valor de un activo es $50,000 y que, si ocurre un evento de riesgo, perderá el 25% de su valor. ¿Cuál es la expectativa de pérdida única (SLE) en este caso?",
+      "opciones": [
+        "$12,500",
+        "$25,000",
+        "$50,000",
+        "$100,000"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La SLE se calcula como AV × EF (50,000 × 0.25 = 12,500), según la fórmula del temario.",
+      "id": "p26-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el temario, ¿qué concepto se aplica cuando una organización establece una tolerancia baja para amenazas internas pero alta para amenazas externas?",
+      "opciones": [
+        "Tolerancia al riesgo (risk tolerance)",
+        "Tolerancia al riesgo (risk appetite)",
+        "Evaluación cualitativa de riesgos",
+        "Registro de riesgos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario distingue entre tolerancia al riesgo (risk tolerance) como una variación más amplia según la situación, aplicable en este escenario.",
+      "id": "p26-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la integración de un nuevo proveedor de servicios en la nube en una organización?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos continua (Change Control)",
+        "c) Evaluación de riesgos obligatoria por regulación",
+        "d) Evaluación de riesgos puntual (one-time risk assessment)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos puntuales (one-time risk assessments) se realizan en situaciones específicas como la integración de nuevo equipo, software o, en este caso, proveedores de servicios en la nube.",
+      "id": "p26-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la migración de su infraestructura de TI a un entorno en la nube pública. Durante el análisis, se identifica que el proveedor de la nube no ofrece soporte para una versión específica de un software heredado que la empresa utiliza en sus sistemas críticos. Según el temario, ¿qué estrategia de gestión de riesgos debería implementarse PRIMERO para abordar este escenario, considerando que el software es esencial para las operaciones y no puede ser reemplazado de inmediato?",
+      "opciones": [
+        "a) Transferir el riesgo mediante la contratación de un seguro de ciberseguridad que cubra fallos en el software heredado.",
+        "b) Mitigar el riesgo implementando controles adicionales de seguridad en el entorno en la nube, como segmentación de red y monitoreo continuo.",
+        "c) Aceptar el riesgo temporalmente mediante una excepción a la política de parcheo, documentando los controles compensatorios implementados.",
+        "d) Evitar el riesgo cancelando la migración a la nube y manteniendo el software heredado en el entorno local."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que aceptar el riesgo es una estrategia común cuando no es posible evitar, transferir o mitigar el riesgo de inmediato, especialmente mediante excepciones documentadas a políticas como la de parcheo, siempre que se implementen controles compensatorios.",
+      "id": "p26-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización acepta un riesgo mediante una excepción a su política de parcheo debido a problemas críticos en un software esencial. Según el temario, ¿qué estrategia de gestión de riesgos está aplicando?",
+      "opciones": [
+        "Transferir el riesgo",
+        "Aceptar el riesgo",
+        "Evitar el riesgo",
+        "Mitigar el riesgo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe la aceptación del riesgo como una estrategia que permite excepciones a políticas, como en este caso.",
+      "id": "p26-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de evaluación de riesgos se realiza específicamente cuando una organización desea analizar los riesgos asociados a la integración de un nuevo proveedor de servicios en la nube, según el temario?",
+      "opciones": [
+        "Evaluación de riesgos puntual (one-time risk assessment)",
+        "Evaluación de riesgos ad hoc",
+        "Evaluación de riesgos obligatoria",
+        "Evaluación de riesgos continua (ongoing risk assessment)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que una evaluación de riesgos puntual se realiza en situaciones específicas como la integración de nuevo software o equipos, incluyendo la adopción de nuevos proveedores de servicios en la nube.",
+      "id": "p26-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una evaluación cualitativa de riesgos, si un riesgo tiene un impacto alto, una tasa de ocurrencia anual baja y un costo de controles alto, ¿qué nivel de riesgo general se asignaría según el ejemplo del temario?",
+      "opciones": [
+        "Bajo",
+        "Medio",
+        "Alto",
+        "Crítico"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario indica que, en una evaluación cualitativa, un riesgo con impacto alto, tasa de ocurrencia baja y costo de controles alto se clasificaría como riesgo alto en una cuadrícula de semáforo.",
+      "id": "p26-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una estrategia de gestión de riesgos mencionada en el temario?",
+      "opciones": [
+        "Transferir el riesgo",
+        "Eliminar el riesgo",
+        "Aceptar el riesgo",
+        "Mitigar el riesgo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario enumera cuatro estrategias: transferir, aceptar, evitar y mitigar el riesgo. 'Eliminar el riesgo' no se menciona como estrategia formal.",
+      "id": "p26-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar riesgos asociados a la integración de un nuevo proveedor de servicios en la nube en una organización?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos puntual (one-time risk assessment)",
+        "c) Evaluación de riesgos obligatoria",
+        "d) Evaluación de riesgos continua (ongoing risk assessment)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos puntuales (one-time risk assessment) se realizan en situaciones específicas como la integración de un nuevo proveedor de servicios, incluyendo servicios en la nube.",
+      "id": "p26-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la implementación de cambios en la configuración de firewalls o actualizaciones de software en una organización?",
+      "opciones": [
+        "a) Evaluación de riesgos puntual (one-time risk assessment)",
+        "b) Evaluación de riesgos ad hoc",
+        "c) Evaluación de riesgos continua integrada al control de cambios (Change Control)",
+        "d) Evaluación de riesgos obligatoria por regulación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos continuas suelen estar integradas en procesos como el control de cambios, donde cada cambio propuesto debe ir acompañado de un análisis de riesgos para determinar su impacto potencial.",
+      "id": "p26-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia existe entre la tolerancia al riesgo (risk tolerance) y la tolerancia al riesgo (risk appetite) según el temario?",
+      "opciones": [
+        "La tolerancia al riesgo es cualitativa y la tolerancia al riesgo es cuantitativa",
+        "La tolerancia al riesgo es una variación más amplia y puede cambiar según la situación, mientras que la tolerancia al riesgo es un valor cualitativo fijo",
+        "Ambos términos son sinónimos y se usan indistintamente",
+        "La tolerancia al riesgo se aplica solo a riesgos financieros y la tolerancia al riesgo a riesgos operativos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario distingue que la tolerancia al riesgo (risk appetite) es un valor cualitativo fijo, mientras que la tolerancia al riesgo (risk tolerance) es más amplia y variable según la situación.",
+      "id": "p26-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la adquisición de otra empresa, pero no incluye la integración inmediata de sistemas o procesos?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos puntual (one-time risk assessment)",
+        "c) Evaluación de riesgos continua (ongoing risk assessment)",
+        "d) Evaluación de riesgos obligatoria por regulación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que una evaluación de riesgos puntual (one-time risk assessment) se realiza en situaciones específicas como la adquisición de otra organización para identificar posibles problemas, sin incluir la integración inmediata.",
+      "id": "p26-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la adquisición de otra empresa, pero sin incluir la integración inmediata de sistemas o procesos?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos puntual (one-time risk assessment)",
+        "c) Evaluación de riesgos obligatoria",
+        "d) Evaluación de riesgos continua (ongoing risk assessment)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que una evaluación de riesgos puntual (one-time risk assessment) se realiza en situaciones específicas como la adquisición de otra organización, pero no necesariamente implica integración inmediata de sistemas o procesos.",
+      "id": "p26-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la integración de un nuevo proveedor de servicios en la nube (CSP) que ofrece un modelo de responsabilidad compartida. Durante el análisis, se identifica que el CSP no proporciona documentación detallada sobre los controles de seguridad implementados en su infraestructura, lo que dificulta la evaluación de riesgos de la organización. Según el temario, ¿qué tipo de evaluación de riesgos específico debería realizarse para abordar este escenario?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc para analizar la falta de documentación del CSP",
+        "b) Evaluación de riesgos continua integrada en el proceso de control de cambios",
+        "c) Evaluación de riesgos obligatoria impuesta por regulaciones de la industria",
+        "d) Evaluación de riesgos puntual (one-time) para la adquisición de servicios en la nube"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos ad hoc se realizan con un propósito específico y limitado en el tiempo, como analizar una nueva vulnerabilidad o, en este caso, la falta de documentación crítica de un proveedor de servicios.",
+      "id": "p26-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la migración de su infraestructura de TI a un entorno en la nube pública. Durante el análisis, se identifica que el proveedor de la nube no ofrece soporte para una versión específica de un software heredado que la empresa utiliza en sus sistemas críticos. Según el temario, ¿qué métrica debería usarse para estimar el tiempo que el software funcionará antes de fallar en el nuevo entorno?",
+      "opciones": [
+        "MTTR (Tiempo medio de reparación)",
+        "MTBF (Tiempo medio entre fallos)",
+        "RPO (Objetivo de punto de recuperación)",
+        "ALE (Expectativa de pérdida anualizada)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El MTBF (Mean Time Between Failures) es la métrica adecuada para estimar el tiempo entre fallos de un sistema o software, incluso en entornos en la nube, según el temario.",
+      "id": "p26-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR la diferencia entre una evaluación de riesgos puntual (one-time risk assessment) y una evaluación de riesgos continua (ongoing risk assessment) según el temario?",
+      "opciones": [
+        "La evaluación puntual se realiza una sola vez y no se repite, mientras que la continua se integra en procesos como el control de cambios y se actualiza constantemente.",
+        "La evaluación puntual es obligatoria por regulaciones, mientras que la continua es opcional y depende de la organización.",
+        "La evaluación puntual analiza riesgos internos, mientras que la continua se enfoca en riesgos externos.",
+        "La evaluación puntual se realiza por terceros, mientras que la continua es realizada internamente por el equipo de seguridad."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define la evaluación puntual como una evaluación realizada en situaciones específicas y limitada en el tiempo, mientras que la continua está integrada en procesos como el control de cambios y se actualiza constantemente.",
+      "id": "p26-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una evaluación cualitativa de riesgos, si un riesgo tiene un impacto alto, una tasa de ocurrencia anual baja y un costo de controles bajo, ¿qué nivel de riesgo general se asignaría según el ejemplo del temario?",
+      "opciones": [
+        "Alto",
+        "Medio",
+        "Bajo",
+        "No determinable"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que en una evaluación cualitativa, si el impacto es alto pero la tasa de ocurrencia anual es baja y el costo de controles es bajo, el riesgo general se clasificaría como medio.",
+      "id": "p26-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la adquisición de otra empresa SIN incluir la integración inmediata de sistemas o procesos?",
+      "opciones": [
+        "a) Evaluación de riesgos puntual (one-time risk assessment)",
+        "b) Evaluación de riesgos ad hoc",
+        "c) Evaluación de riesgos obligatoria",
+        "d) Evaluación de riesgos continua (ongoing risk assessment)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que una evaluación de riesgos puntual se realiza en situaciones específicas como la adquisición de otra empresa, sin incluir la integración inmediata de sistemas o procesos, a diferencia de las evaluaciones continuas que sí lo hacen.",
+      "id": "p26-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización desea calcular cuánto tiempo tardará en recuperarse un sistema crítico tras una falla, considerando que debe estar operativo en 4 horas. ¿Qué métrica del temario se ajusta a este escenario?",
+      "opciones": [
+        "MTBF (Mean Time Between Failures)",
+        "RTO (Recovery Time Objective)",
+        "RPO (Recovery Point Objective)",
+        "MTTR (Mean Time To Repair)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define el RTO (Recovery Time Objective) como el plazo en el que una organización debe recuperarse para estar operativa, en este caso, 4 horas.",
+      "id": "p26-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la adquisición de otra empresa, pero sin incluir la integración inmediata de sistemas o procesos?",
+      "opciones": [
+        "Evaluación de riesgos ad hoc",
+        "Evaluación de riesgos puntual (one-time risk assessment)",
+        "Evaluación de riesgos continua (ongoing risk assessment)",
+        "Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que una evaluación de riesgos puntual se realiza en situaciones específicas como la adquisición de otra organización, sin incluir necesariamente la integración inmediata.",
+      "id": "p26-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la implementación de un nuevo sistema de software en una organización, pero sin incluir la adquisición o integración con otras empresas?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos puntual (one-time risk assessment)",
+        "c) Evaluación de riesgos continua (ongoing risk assessment)",
+        "d) Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que una evaluación de riesgos puntual (one-time risk assessment) se realiza en situaciones específicas como la instalación de nuevo equipo o software, donde la organización desea entender los riesgos asociados a su implementación.",
+      "id": "p26-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué concepto se aplica cuando una organización establece una tolerancia baja para amenazas internas pero alta para amenazas externas?",
+      "opciones": [
+        "Tolerancia al riesgo (risk tolerance)",
+        "Tolerancia al riesgo (risk appetite)",
+        "Registro de riesgos (risk register)",
+        "Análisis de impacto en el negocio (BIA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la tolerancia al riesgo (risk appetite) como la cantidad de riesgo que una organización está dispuesta a aceptar, que puede variar según el tipo de amenaza.",
+      "id": "p26-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué métrica de gestión de riesgos se utiliza para estimar el tiempo promedio que un sistema funcionará sin fallar antes de que ocurra un evento disruptivo?",
+      "opciones": [
+        "a) MTTR (Mean Time To Repair)",
+        "b) MTBF (Mean Time Between Failures)",
+        "c) RTO (Recovery Time Objective)",
+        "d) RPO (Recovery Point Objective)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El MTBF (Mean Time Between Failures) mide el tiempo promedio que un sistema opera correctamente antes de fallar, siendo clave para predecir fallos y gestionar riesgos de tiempo de inactividad.",
+      "id": "p26-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la implementación de un nuevo sistema de gestión de inventario (SGI) en su cadena de suministro. Durante las pruebas piloto, se detecta que el SGI no es compatible con un protocolo de comunicación crítico utilizado por un proveedor externo clave. Tras analizar las métricas, se determina que la probabilidad de que el proveedor externalice sus operaciones a un tercero que no soporte el protocolo es del 25% anual (Aro), el valor del activo (AV) es $250,000 y el factor de exposición (EF) es 0.4. ¿Cuál es la expectativa de pérdida anualizada (ALE) si la organización decide implementar el SGI sin modificaciones, según el temario?",
+      "opciones": [
+        "$100,000",
+        "$25,000",
+        "$62,500",
+        "$40,000"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La ALE se calcula como Aro × SLE. Primero, SLE = AV × EF = $250,000 × 0.4 = $100,000. Luego, ALE = 0.25 × $100,000 = $25,000.",
+      "id": "p26-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la migración de su infraestructura de TI a un entorno en la nube pública. Durante el análisis, el equipo de seguridad identifica que el proveedor de la nube no ofrece soporte para una versión específica de un software heredado crítico utilizado en sus sistemas. Tras revisar las métricas, se determina que el MTBF (Mean Time Between Failures) del software en el entorno actual es de 24 meses, pero en la nube podría reducirse a 8 meses debido a la falta de soporte y a la incompatibilidad con la infraestructura del proveedor. ¿Qué estrategia de gestión de riesgos debería implementarse PRIMERO para abordar este escenario, según el temario, considerando que el software es esencial para las operaciones y no puede ser reemplazado de inmediato?",
+      "opciones": [
+        "a) Aceptar el riesgo mediante una excepción a la política de migración a la nube, permitiendo el uso del software heredado sin soporte en el nuevo entorno, ya que es crítico para las operaciones.",
+        "b) Transferir el riesgo a un tercero mediante la contratación de un seguro de ciberseguridad que cubra los posibles fallos del software heredado en la nube.",
+        "c) Mitigar el riesgo implementando controles adicionales, como la duplicación del software heredado en un entorno local paralelo para garantizar redundancia y reducir el impacto de fallos.",
+        "d) Evitar el riesgo posponiendo indefinidamente la migración a la nube hasta que el proveedor ofrezca soporte para el software heredado."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La estrategia de mitigar el riesgo implica reducir su probabilidad o impacto. Implementar un entorno local paralelo como redundancia disminuye el impacto potencial de fallos en el software heredado, alineándose con el enfoque de gestión de riesgos del temario.",
+      "id": "p26-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente cuando una organización desea analizar los riesgos asociados a la implementación de un nuevo sistema de software en sus operaciones, pero sin incluir la adquisición o integración con otras empresas?",
+      "opciones": [
+        "Evaluación de riesgos puntual (one-time risk assessment)",
+        "Evaluación de riesgos ad hoc",
+        "Evaluación de riesgos continua (ongoing risk assessment)",
+        "Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Una evaluación de riesgos puntual (one-time risk assessment) se realiza en situaciones específicas como la instalación de nuevo software o equipo, según el temario.",
+      "id": "p26-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el temario, ¿qué estrategia de gestión de riesgos implica eliminar por completo la exposición a un riesgo para evitar que se materialice?",
+      "opciones": [
+        "Mitigar el riesgo",
+        "Aceptar el riesgo",
+        "Transferir el riesgo",
+        "Evitar el riesgo"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Evitar el riesgo (avoid the risk) consiste en eliminar por completo la exposición a un riesgo, según el temario.",
+      "id": "p26-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la implementación de cambios en la configuración de firewalls o actualizaciones de software en una organización, pero NO está relacionado con la adquisición de otra empresa ni con la migración a la nube?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos obligatoria por regulación",
+        "c) Evaluación de riesgos continua integrada en el control de cambios",
+        "d) Evaluación de riesgos puntual por calendario fijo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Según el temario, las evaluaciones de riesgos continuas están integradas en procesos como el control de cambios (Change Control), donde cada cambio propuesto, como actualizaciones de firewalls o software, requiere un análisis de riesgos para determinar su impacto potencial.",
+      "id": "p26-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar riesgos asociados a la implementación de un cambio en la infraestructura física de una organización, como la actualización de hardware en un centro de datos?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos puntual (one-time risk assessment)",
+        "c) Evaluación de riesgos continua (ongoing risk assessment)",
+        "d) Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que una evaluación de riesgos puntual se realiza para situaciones específicas como la instalación de nuevo equipo o software, incluyendo actualizaciones de hardware en infraestructura física.",
+      "id": "p26-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la implementación de cambios en la configuración de firewalls o actualizaciones de software, pero con un enfoque en la revisión de políticas de seguridad internas?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos continua (integrada en el control de cambios)",
+        "c) Evaluación de riesgos obligatoria por regulación",
+        "d) Evaluación de riesgos puntual (one-time risk assessment)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las evaluaciones de riesgos continuas están integradas en procesos como el control de cambios, donde cada modificación en firewalls o software debe ir acompañada de un análisis de riesgos para evaluar su impacto en las políticas de seguridad internas.",
+      "id": "p26-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Compare los conceptos de 'tolerancia al riesgo' (risk tolerance) y 'tolerancia al riesgo' (risk appetite) según el temario. ¿Cuál de las siguientes afirmaciones es correcta?",
+      "opciones": [
+        "La tolerancia al riesgo (risk appetite) es una variación más amplia que puede cambiar según la situación, mientras que la tolerancia al riesgo (risk tolerance) es un valor cualitativo fijo.",
+        "La tolerancia al riesgo (risk appetite) es un valor cualitativo que define la cantidad de riesgo que una organización está dispuesta a aceptar, mientras que la tolerancia al riesgo (risk tolerance) representa una variación más amplia que puede ajustarse según la situación.",
+        "Ambos conceptos son idénticos y se usan indistintamente en el temario.",
+        "La tolerancia al riesgo (risk tolerance) es un valor cuantitativo, mientras que la tolerancia al riesgo (risk appetite) es cualitativo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la tolerancia al riesgo (risk appetite) como un valor cualitativo sobre la cantidad de riesgo aceptable, mientras que la tolerancia al riesgo (risk tolerance) es una variación más amplia que puede ajustarse según la situación.",
+      "id": "p26-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una evaluación cualitativa de riesgos, si un riesgo tiene un impacto medio, una tasa de ocurrencia anual baja y un costo de controles alto, ¿qué nivel de riesgo general se asignaría según el ejemplo del temario?",
+      "opciones": [
+        "Bajo",
+        "Medio",
+        "Alto",
+        "No determinable"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un impacto medio, una tasa de ocurrencia anual baja y un costo de controles alto suelen resultar en un riesgo general alto, según el ejemplo del temario.",
+      "id": "p26-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la implementación de un nuevo firewall en su red. Durante las pruebas, se detecta que el firewall no es compatible con un protocolo crítico utilizado por un proveedor externo. Tras analizar las métricas, se determina que la probabilidad de que el proveedor externalice sus operaciones a un tercero que no soporte el protocolo es del 30% anual (Aro), el valor del activo (AV) es $500,000 y el factor de exposición (EF) es 0.5. ¿Cuál es la expectativa de pérdida anualizada (ALE) según el temario?",
+      "opciones": [
+        "$75,000",
+        "$150,000",
+        "$300,000",
+        "$50,000"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La ALE se calcula como Aro * AV * EF = 0.30 * $500,000 * 0.5 = $75,000, según el temario.",
+      "id": "p26-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la implementación de un nuevo sistema de autenticación multifactor (MFA) en su entorno de TI. Durante las pruebas, se detecta que el sistema MFA no es compatible con un protocolo de autenticación heredado utilizado por un proveedor externo crítico, lo que podría afectar la continuidad de operaciones esenciales. Tras analizar las métricas, se determina que la probabilidad de que el proveedor externalice sus operaciones a un tercero que no soporte el protocolo es del 15% anual (Aro), el valor del activo (AV) es $1,200,000 (incluyendo costos de multas por incumplimiento contractual y pérdida de productividad), y el factor de exposición (EF) es 0.7. ¿Cuál es la expectativa de pérdida anualizada (ALE) si la organización decide implementar el sistema MFA sin modificaciones, según el temario?",
+      "opciones": [
+        "a) $126,000",
+        "b) $84,000",
+        "c) $1,260,000",
+        "d) $189,000"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La ALE se calcula multiplicando la Aro (0.15) por el SLE (AV * EF = $1,200,000 * 0.7 = $840,000), resultando en $126,000 ($840,000 * 0.15). Esta métrica cuantitativa permite priorizar riesgos basándose en su impacto financiero anual.",
+      "id": "p26-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización desea calcular cuánto tiempo tardará en recuperarse un sistema crítico tras una falla, considerando que debe estar operativo en 4 horas. Según el temario, ¿qué métrica se ajusta a este escenario?",
+      "opciones": [
+        "MTBF (Mean Time Between Failures)",
+        "MTTR (Mean Time To Repair)",
+        "RTO (Recovery Time Objective)",
+        "RPO (Recovery Point Objective)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El RTO (Recovery Time Objective) define el tiempo máximo aceptable para recuperar un sistema crítico, según el temario.",
+      "id": "p26-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza cuando una organización analiza los riesgos asociados a la implementación de un nuevo sistema de software, pero sin incluir la adquisición de otra empresa ni cambios en la infraestructura física?",
+      "opciones": [
+        "Evaluación de riesgos puntual (one-time risk assessment)",
+        "Evaluación de riesgos continua (ongoing risk assessment)",
+        "Evaluación de riesgos ad hoc",
+        "Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos puntuales se realizan en situaciones específicas como la instalación de nuevo equipo o software, sin incluir adquisiciones o cambios físicos.",
+      "id": "p26-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la implementación de cambios en la infraestructura física de una organización, como la actualización de hardware en un centro de datos, pero sin incluir la adquisición de otra empresa ni cambios en la configuración de firewalls?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos de control de cambios (Change Control)",
+        "c) Evaluación de riesgos obligatoria por regulación",
+        "d) Evaluación de riesgos de migración a la nube"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos continuas suelen integrarse en procesos como el control de cambios (Change Control), donde cada cambio propuesto, como actualizaciones de hardware, requiere un análisis de riesgos para determinar su impacto potencial.",
+      "id": "p26-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización establece que su tolerancia al riesgo para amenazas internas es baja, pero para amenazas externas es alta. Según el temario, ¿qué concepto se está aplicando?",
+      "opciones": [
+        "Risk appetite",
+        "Risk tolerance",
+        "Risk threshold",
+        "Risk exposure"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define 'risk appetite' como la cantidad de riesgo que una organización está dispuesta a aceptar, que puede variar según el tipo de amenaza.",
+      "id": "p26-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente cuando una organización desea analizar los riesgos asociados a la implementación de un nuevo sistema de software en sus operaciones, pero sin incluir la adquisición de otra empresa ni cambios en la infraestructura física?",
+      "opciones": [
+        "Evaluación de riesgos ad hoc",
+        "Evaluación de riesgos continua (Change Control)",
+        "Evaluación de riesgos obligatoria",
+        "Evaluación de riesgos puntual (one-time risk assessment)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos puntuales se realizan en situaciones específicas como la instalación de nuevo software, sin incluir adquisiciones o cambios en infraestructura física.",
+      "id": "p26-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a cambios en los procesos o sistemas de una organización, como la modificación de políticas de seguridad internas o la actualización de software, pero sin incluir la adquisición de otra empresa ni cambios en la infraestructura física?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos continua (Change Control)",
+        "c) Evaluación de riesgos obligatoria",
+        "d) Evaluación de riesgos puntual (one-time risk assessment)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las evaluaciones de riesgos continuas están integradas en procesos como el control de cambios (Change Control), donde cada modificación en políticas o software requiere un análisis de riesgos recurrente.",
+      "id": "p26-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué estrategia de gestión de riesgos implica eliminar por completo la exposición a un riesgo para evitar que se materialice?",
+      "opciones": [
+        "Transferir el riesgo",
+        "Aceptar el riesgo",
+        "Evitar el riesgo",
+        "Mitigar el riesgo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que evitar el riesgo consiste en eliminar la exposición al mismo, eliminando la necesidad de gestionarlo.",
+      "id": "p26-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la migración de su infraestructura de TI a un entorno en la nube pública. Durante el análisis, se identifica que el proveedor de la nube no soporta una versión específica de un software heredado crítico. Según el temario, ¿qué métrica debería usarse para estimar el tiempo que el software funcionará antes de fallar en el nuevo entorno?",
+      "opciones": [
+        "MTBF (Mean Time Between Failures)",
+        "MTTR (Mean Time To Repair)",
+        "RTO (Recovery Time Objective)",
+        "RPO (Recovery Point Objective)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define el MTBF como el tiempo estimado que un sistema funcionará antes de que ocurra otra falla, útil para evaluar la fiabilidad del software en el nuevo entorno.",
+      "id": "p26-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la implementación de un nuevo sistema de software en una organización, pero sin incluir cambios en la infraestructura física ni en la configuración de firewalls?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos de software",
+        "c) Evaluación de riesgos continua",
+        "d) Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos puntuales se realizan en situaciones específicas como la instalación de nuevo software, sin incluir cambios en infraestructura física o configuraciones de firewalls.",
+      "id": "p26-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización calcula que la probabilidad de que un huracán afecte a su centro de datos en Florida es de 0.1 al año, el valor del activo es $500,000 y el factor de exposición es 0.8. ¿Cuál es la expectativa de pérdida anualizada (ALE) según el temario?",
+      "opciones": [
+        "$40,000",
+        "$50,000",
+        "$4,000",
+        "$400,000"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define ALE = Aro × SLE, donde SLE = AV × EF. Aquí, SLE = $500,000 × 0.8 = $400,000 y ALE = 0.1 × $400,000 = $40,000.",
+      "id": "p26-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la implementación de un nuevo sistema de autenticación biométrica para el acceso a sus instalaciones físicas. Durante las pruebas piloto, se detecta que el sistema tiene una alta tasa de falsos positivos (10% anual) y una baja tolerancia al riesgo para amenazas internas como el acceso no autorizado. Según el temario, ¿qué estrategia de gestión de riesgos debería implementarse PRIMERO para abordar este escenario, considerando que el sistema es crítico para la seguridad física pero no puede ser reemplazado en el corto plazo?",
+      "opciones": [
+        "a) Aceptar el riesgo mediante una excepción temporal a la política de autenticación, documentando la justificación y los controles compensatorios implementados.",
+        "b) Mitigar el riesgo implementando controles adicionales como cámaras de vigilancia y registros de acceso manual como complemento al sistema biométrico.",
+        "c) Transferir el riesgo contratando un seguro de responsabilidad civil que cubra posibles incidentes de acceso no autorizado.",
+        "d) Evitar el riesgo desactivando completamente el sistema biométrico y volviendo a métodos tradicionales de autenticación como tarjetas de acceso físicas."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La estrategia de mitigar el riesgo (opción b) es la más adecuada en este escenario, ya que permite mantener el sistema crítico en funcionamiento mientras se reducen sus vulnerabilidades mediante controles compensatorios, como lo sugiere el temario al mencionar la implementación de controles adicionales.",
+      "id": "p26-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza cuando una organización analiza los riesgos asociados a la adquisición de otra empresa, pero sin incluir la integración inmediata de sistemas o procesos?",
+      "opciones": [
+        "Evaluación de riesgos ad hoc",
+        "Evaluación de riesgos obligatoria",
+        "Evaluación de riesgos puntual (one-time risk assessment)",
+        "Evaluación de riesgos continua (ongoing risk assessment)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos puntuales (one-time risk assessment) se realizan en situaciones específicas como la adquisición de otra organización, sin incluir necesariamente la integración inmediata.",
+      "id": "p26-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un factor considerado en el cálculo de la Expectativa de Pérdida Anualizada (ALE) según el temario?",
+      "opciones": [
+        "Tasa de ocurrencia anual (Aro)",
+        "Factor de exposición (EF)",
+        "Tolerancia al riesgo (risk tolerance)",
+        "Valor del activo (AV)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario indica que la ALE se calcula usando Aro, AV y EF, pero la tolerancia al riesgo (risk tolerance) no es un factor numérico en este cálculo.",
+      "id": "p26-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización desea evaluar los riesgos asociados a la implementación de un nuevo sistema de software, pero sin incluir cambios en la infraestructura física ni en la configuración de firewalls. Según el temario, ¿qué tipo de evaluación de riesgos específica debería realizarse?",
+      "opciones": [
+        "Evaluación de riesgos ad hoc",
+        "Evaluación de riesgos obligatoria",
+        "Evaluación de riesgos puntual (one-time risk assessment)",
+        "Evaluación de riesgos continua (ongoing risk assessment)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario describe las evaluaciones de riesgos puntuales como adecuadas para analizar riesgos en la implementación de nuevos sistemas de software sin cambios en infraestructura o firewalls.",
+      "id": "p26-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente cuando una organización desea analizar los riesgos asociados a la implementación de un nuevo sistema de software en sus operaciones, pero sin incluir cambios en la infraestructura física, configuración de firewalls ni adquisición de otra empresa?",
+      "opciones": [
+        "a) Evaluación de riesgos puntual (one-time risk assessment)",
+        "b) Evaluación de riesgos ad hoc",
+        "c) Evaluación de riesgos continua (ongoing risk assessment)",
+        "d) Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que una evaluación de riesgos puntual se realiza en situaciones específicas, como la implementación de nuevo software, sin incluir otros cambios adicionales.",
+      "id": "p26-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la implementación de un nuevo sistema operativo en una organización, pero sin incluir cambios en la infraestructura física, configuración de firewalls ni adquisición de otra empresa?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos continua",
+        "c) Evaluación de riesgos obligatoria",
+        "d) Evaluación de riesgos puntual"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Según el temario, una evaluación de riesgos puntual (one-time risk assessment) se realiza en situaciones específicas como la instalación de nuevo software o equipo, sin incluir otros cambios estructurales.",
+      "id": "p26-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización calcula que la probabilidad de que un huracán afecte a su centro de datos en Florida es de 0.1 al año (Aro), el valor del activo es $500,000 (AV) y el factor de exposición es 0.8 (EF). ¿Cuál es la Expectativa de Pérdida Anualizada (ALE) según el temario?",
+      "opciones": [
+        "$40,000",
+        "$50,000",
+        "$400,000",
+        "$500,000"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario explica que ALE = Aro × AV × EF = 0.1 × $500,000 × 0.8 = $40,000.",
+      "id": "p26-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente cuando una organización desea analizar los riesgos asociados a la implementación de un nuevo sistema de software en sus operaciones, pero sin incluir cambios en la infraestructura física ni en la configuración de firewalls, y tampoco implica la adquisición de otra empresa?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos continua",
+        "c) Evaluación de riesgos obligatoria",
+        "d) Evaluación de riesgos puntual"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos puntuales (one-time risk assessment) se realizan en situaciones específicas como la instalación de nuevo software sin incluir cambios en infraestructura física, configuración de firewalls ni adquisición de empresas.",
+      "id": "p26-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente para analizar los riesgos asociados a la implementación de un nuevo sistema de software en una organización, pero sin incluir cambios en la infraestructura física, configuración de firewalls ni adquisición de otra empresa, y cuyo objetivo principal es garantizar la compatibilidad con proveedores externos críticos?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos en el contexto de control de cambios (Change Control)",
+        "c) Evaluación de riesgos obligatoria por regulaciones externas",
+        "d) Evaluación de riesgos continua"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos en el contexto de control de cambios (Change Control) se realizan cada vez que se propone un cambio en los sistemas, incluyendo la implementación de nuevo software, para analizar su impacto potencial.",
+      "id": "p26-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la implementación de un nuevo sistema de control de acceso basado en roles (RBAC) en su entorno de TI. Durante las pruebas, se identifica que el sistema no soporta la integración con un protocolo de autenticación heredado utilizado por un proveedor externo crítico, lo que podría generar un riesgo de interrupción en las operaciones comerciales. Tras analizar las métricas, se determina que la probabilidad de que el proveedor externalice sus operaciones a un tercero que no soporte el protocolo es del 20% anual (Aro), el valor del activo (AV) afectado —incluyendo costos de multas contractuales y pérdida de productividad— es de $1,500,000, y el factor de exposición (EF) es 0.65. Sin embargo, la organización decide implementar el sistema RBAC sin modificaciones debido a restricciones presupuestarias en el corto plazo. ¿Cuál es la expectativa de pérdida anualizada (ALE) resultante de esta decisión, según el temario?",
+      "opciones": [
+        "$195,000",
+        "$300,000",
+        "$19,500",
+        "$30,000"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La ALE se calcula como Aro × SLE, donde SLE = AV × EF. Por lo tanto, SLE = $1,500,000 × 0.65 = $975,000. Luego, ALE = 0.20 × $975,000 = $195,000.",
+      "id": "p26-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la implementación de un nuevo sistema de control de acceso basado en roles (RBAC) en su entorno de TI. Durante las pruebas, se identifica que el sistema no soporta la integración con un protocolo de autenticación heredado utilizado por un proveedor externo crítico, lo que podría generar un riesgo de interrupción en las operaciones comerciales. La organización decide implementar el sistema RBAC sin modificaciones debido a restricciones presupuestarias en el corto plazo. Según el temario, ¿qué estrategia de gestión de riesgos está aplicando la organización al NO modificar el sistema heredado, a pesar del riesgo identificado?",
+      "opciones": [
+        "a) Mitigar el riesgo mediante la implementación de controles adicionales en el sistema RBAC para compensar la falta de integración con el protocolo heredado.",
+        "b) Transferir el riesgo a un tercero, como un proveedor de soluciones de autenticación, para que asuma la responsabilidad de la interrupción.",
+        "c) Aceptar el riesgo mediante una excepción a la política de seguridad, documentando la decisión y sus implicaciones en el registro de riesgos.",
+        "d) Evitar el riesgo eliminando por completo la dependencia del proveedor externo crítico, aunque esto implique cambios significativos en los procesos comerciales."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La organización está aplicando la estrategia de **aceptar el riesgo** al implementar el sistema RBAC sin modificaciones, a pesar del riesgo identificado, y documentando esta decisión como una excepción en el registro de riesgos.",
+      "id": "p26-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente cuando una organización desea analizar los riesgos asociados a la implementación de un nuevo sistema de software en sus operaciones, pero sin incluir cambios en la infraestructura física ni en la configuración de firewalls?",
+      "opciones": [
+        "Evaluación de riesgos ad hoc",
+        "Evaluación de riesgos obligatoria",
+        "Evaluación de riesgos puntual",
+        "Evaluación de riesgos continua"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario define las evaluaciones de riesgos puntuales como aquellas realizadas en situaciones específicas, como la implementación de nuevo software, sin incluir cambios en infraestructura física ni configuración de firewalls.",
+      "id": "p26-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un elemento incluido en el cálculo de la Expectativa de Pérdida Anualizada (ALE) según el temario?",
+      "opciones": [
+        "Tasa de ocurrencia anual (Aro)",
+        "Valor del activo (AV)",
+        "Factor de exposición (EF)",
+        "Nivel de tolerancia al riesgo (Risk Appetite)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La ALE se calcula multiplicando Aro × SLE (AV × EF). El nivel de tolerancia al riesgo no forma parte del cálculo matemático de la ALE.",
+      "id": "p26-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente cuando una organización desea analizar los riesgos asociados a la implementación de un nuevo sistema de software en sus operaciones, pero sin incluir cambios en la infraestructura física ni en la configuración de firewalls, y cuyo objetivo principal es garantizar la compatibilidad con normativas de cumplimiento (compliance) como ISO 27001 o NIST?",
+      "opciones": [
+        "a) Evaluación de riesgos de cumplimiento (Compliance Risk Assessment)",
+        "b) Evaluación de riesgos ad hoc",
+        "c) Evaluación de riesgos continuos",
+        "d) Evaluación de riesgos obligatoria"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que las evaluaciones de riesgos pueden tener enfoques específicos según el objetivo, como garantizar la compatibilidad con normativas de cumplimiento, lo que se alinea con una evaluación de riesgos de cumplimiento.",
+      "id": "p26-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente cuando una organización desea analizar los riesgos asociados a la implementación de un nuevo sistema operativo en sus operaciones, pero sin incluir cambios en la infraestructura física ni en la configuración de firewalls?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos continua",
+        "c) Evaluación de riesgos obligatoria",
+        "d) Evaluación de riesgos puntual (one-time risk assessment)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Las evaluaciones de riesgos puntuales se realizan en situaciones específicas, como la implementación de un nuevo sistema operativo, sin incluir otros cambios. Según el temario, este tipo de evaluación es adecuado para analizar riesgos en escenarios concretos y limitados en el tiempo.",
+      "id": "p26-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente cuando una organización desea analizar los riesgos asociados a la implementación de un nuevo sistema de software en sus operaciones, pero sin incluir cambios en la infraestructura física, configuración de firewalls ni adquisición de otra empresa, y cuyo objetivo principal es garantizar la compatibilidad con normativas de cumplimiento (compliance) como ISO 27001 o NIST?",
+      "opciones": [
+        "a) Evaluación de riesgos ad hoc",
+        "b) Evaluación de riesgos continua",
+        "c) Evaluación de riesgos obligatoria por regulación",
+        "d) Evaluación de riesgos puntual"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que las evaluaciones ad hoc son específicas, limitadas en el tiempo y con un propósito concreto, como verificar la compatibilidad con normativas de cumplimiento.",
+      "id": "p26-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué concepto del temario se aplica cuando una organización establece una tolerancia baja para amenazas internas pero alta para amenazas externas?",
+      "opciones": [
+        "Tolerancia al riesgo (Risk Tolerance)",
+        "Tolerancia al riesgo (Risk Appetite)",
+        "Cuadrícula de semáforo (Traffic Light Grid)",
+        "Registro de riesgos (Risk Register)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la tolerancia al riesgo (Risk Appetite) como la cantidad de riesgo que una organización está dispuesta a aceptar, que puede variar según el tipo de amenaza.",
+      "id": "p26-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una organización acepta un riesgo mediante una excepción a su política de parcheo debido a problemas críticos en un software esencial, ¿qué estrategia de gestión de riesgos está aplicando según el temario?",
+      "opciones": [
+        "Transferir el riesgo",
+        "Aceptar el riesgo",
+        "Evitar el riesgo",
+        "Mitigar el riesgo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que aceptar el riesgo permite crear excepciones a políticas existentes, como retrasar parcheos críticos para evitar fallos en software esencial.",
+      "id": "p26-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización calcula que la probabilidad de que un tornado afecte a su centro de datos en Kansas es de 0.05 al año (Aro), el valor del activo es $1,000,000 (AV) y el factor de exposición es 0.6 (EF). ¿Cuál es la expectativa de pérdida anualizada (ALE) según el temario?",
+      "opciones": [
+        "$30,000",
+        "$50,000",
+        "$60,000",
+        "$100,000"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La ALE se calcula como Aro × AV × EF = 0.05 × $1,000,000 × 0.6 = $30,000. El temario define este cálculo como Expectativa de Pérdida Anualizada.",
+      "id": "p26-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de evaluación de riesgos se realiza específicamente cuando una organización desea analizar los riesgos asociados a la implementación de cambios en la configuración de firewalls, pero con un enfoque en la revisión de políticas de seguridad internas?",
+      "opciones": [
+        "Evaluación de riesgos ad hoc",
+        "Evaluación de riesgos obligatoria",
+        "Evaluación de riesgos puntual",
+        "Evaluación de riesgos continua"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario define las evaluaciones de riesgos continuas como aquellas integradas en procesos como el control de cambios (Change Control), donde cada cambio en firewalls requiere análisis de riesgos.",
+      "id": "p26-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización está evaluando los riesgos asociados a la implementación de un nuevo sistema de autenticación basado en tokens en su entorno de TI. Durante el análisis, se identifica que los tokens no son compatibles con un protocolo de autenticación heredado utilizado por un proveedor externo crítico, lo que podría generar un riesgo de interrupción en las operaciones comerciales. La organización decide implementar el sistema de tokens sin modificaciones y, además, establece un umbral de riesgo (risk threshold) que indica que la mitigación solo se activará si el impacto financiero supera los $500,000 anuales. Según el temario, ¿qué estrategia de gestión de riesgos está aplicando la organización al NO modificar el sistema heredado y al establecer el umbral de riesgo mencionado?",
+      "opciones": [
+        "a) Transferir el riesgo a través de un seguro de ciberseguridad que cubra interrupciones en operaciones críticas.",
+        "b) Aceptar el riesgo y establecer un umbral de riesgo para decidir cuándo intervenir, basado en métricas cuantitativas.",
+        "c) Mitigar el riesgo implementando un sistema de tokens alternativo que sí sea compatible con el protocolo heredado, a pesar del aumento en costos.",
+        "d) Evitar el riesgo descontinuando el uso del protocolo heredado en todas las operaciones de la organización."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La estrategia de aceptar el riesgo (accept the risk) permite a la organización decidir cómo manejar el riesgo, incluyendo la definición de umbrales de riesgo (risk thresholds) para decidir cuándo intervenir, como en este caso donde se establece un límite financiero ($500,000) para activar acciones de mitigación.",
+      "id": "p26-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Risk Management",
+      "youtubeId": "cLhUMoQS1a8"
+    },
+    {
+      "titulo": "Risk Analysis",
+      "youtubeId": "Ykx7t54y-oo"
+    },
+    {
+      "titulo": "Risk Management Strategies",
+      "youtubeId": "pmyuWY7Pbag"
+    },
+    {
+      "titulo": "Business Impact Analysis",
+      "youtubeId": "myI-v3mj7Kc"
+    }
+  ]
+}

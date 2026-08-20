@@ -1,0 +1,1392 @@
+{
+  "id": 24,
+  "titulo": "4.9 · Gestión de logs",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LA GESTIÓN DE LOGS (LOG MANAGEMENT) es un proceso fundamental en la ciberseguridad que consiste en la recolección, almacenamiento, análisis y correlación de datos generados por diversos sistemas y dispositivos en una red. Estos logs (registros) contienen información crítica sobre eventos de seguridad, tráfico de red, intentos de acceso y otras actividades que pueden indicar la presencia de amenazas o vulnerabilidades. A continuación, se detallan los aspectos clave de este proceso y los tipos de logs más relevantes en un entorno empresarial moderno.\n\n\nQUÉ INFORMACIÓN CONTIENEN LOS LOGS\n\nLos logs almacenan datos de seguridad relacionados con múltiples aspectos de la infraestructura tecnológica. Entre la información más valiosa se incluyen:\n\n- Flujos de tráfico bloqueados y permitidos en la red, lo que permite identificar patrones de acceso anómalos o intentos de explotación.\n- Intentos de exploits (exploit attempts) detectados por sistemas de prevención de intrusiones (IPS, Intrusion Prevention Systems).\n- Categorías de URLs bloqueadas en estaciones de trabajo, lo que ayuda a detectar acceso a sitios maliciosos o no autorizados.\n- Tráfico DNS (Domain Name System) sospechoso, como consultas sin respuesta o patrones inusuales que podrían indicar actividad de malware.\n- Registros de firewalls, que muestran direcciones IP de origen y destino, números de puerto utilizados, aplicaciones en uso y si el tráfico fue permitido o bloqueado.\n- Eventos de autenticación en sistemas operativos, como inicios y cierres de sesión, cambios de contraseñas o bloqueos de cuentas.\n- Registros de dispositivos de infraestructura de red, como switches, routers y puntos de acceso inalámbrico, que pueden revelar cambios en tablas de enrutamiento, errores de autenticación o ataques como denegaciones de servicio (DoS).\n- Datos de vulnerabilidad (vulnerability scan logs) generados por escáneres que identifican sistemas sin parches, configuraciones incorrectas o servicios innecesarios.\n- Metadatos (metadata) en documentos, correos electrónicos e imágenes, que pueden incluir información sobre el dispositivo de origen, ubicaciones GPS o detalles de creación.\n- Registros de sistemas de detección y prevención de intrusiones (IDS/IPS), que alertan sobre ataques conocidos como floods de SYN o intentos de explotación de vulnerabilidades.\n\n\nTIPOS DE DISPOSITIVOS QUE GENERAN LOGS\n\nLos logs se generan en múltiples dispositivos y sistemas dentro de una red. Cada uno de estos dispositivos proporciona información única que, al correlacionarse, ofrece una visión integral de la seguridad.\n\n\nFIREWALLS\n\nLos firewalls son una de las fuentes más importantes de logs de seguridad. Registran todo el tráfico que entra y sale de la red, incluyendo:\n- Direcciones IP de origen y destino.\n- Números de puerto utilizados.\n- Aplicaciones en uso (especialmente en firewalls de nueva generación o NGFW, Next Generation Firewalls).\n- Categorías de URLs accedidas.\n- Decisiones tomadas por el firewall (permitir o bloquear tráfico).\n\nEn un firewall de nueva generación, los logs pueden incluir detalles como el tipo de aplicación detectada (ej. redes sociales, streaming) o anomalías en el tráfico, lo que facilita la identificación de actividades sospechosas. Cada línea en un log de firewall representa un flujo de tráfico individual, con información como la fecha, hora, direcciones MAC, IPs y el resultado del flujo (aceptado o bloqueado).\n\n\nSISTEMAS OPERATIVOS\n\nLos sistemas operativos generan logs de seguridad que son esenciales para detectar actividades maliciosas. Estos logs pueden incluir:\n- Eventos de autenticación, como inicios y cierres de sesión, cambios de contraseña o bloqueos de cuentas.\n- Intentos de fuerza bruta (brute force attacks) contra servicios o cuentas.\n- Cambios en archivos críticos del sistema, como la modificación o eliminación de archivos importantes.\n- Deshabilitación de servicios que no deberían ser modificados manualmente, lo que podría indicar una intrusión.\n- Alertas de seguridad generadas automáticamente cuando se detectan actividades inusuales.\n\nEn sistemas Windows, estos logs se encuentran en el Visor de eventos (Event Viewer), mientras que en sistemas Linux o macOS, se almacenan en el directorio /var/log. La información de estos logs puede ser consolidada en un SIEM (Security Information and Event Management) para su análisis.\n\n\nDISPOSITIVOS DE INFRAESTRUCTURA DE RED\n\nLos dispositivos de infraestructura de red, como switches, routers, puntos de acceso inalámbrico y concentradores VPN, también generan logs valiosos. Estos logs pueden revelar:\n- Cambios en tablas de enrutamiento, que podrían indicar intentos de manipulación de tráfico.\n- Errores de autenticación en dispositivos de red, como intentos fallidos de acceso a switches o routers.\n- Ataques como floods de SYN (ataques de denegación de servicio) que son bloqueados automáticamente por el dispositivo.\n- Configuraciones incorrectas o cambios no autorizados en la infraestructura.\n\nPor ejemplo, un log de un switch podría mostrar un intento de ataque SYN en un puerto específico, seguido de una acción automática para bloquear el tráfico malicioso durante un período determinado.\n\n\nSISTEMAS DE DETECCIÓN Y PREVENCIÓN DE INTRUSIONES (IDS/IPS)\n\nLos sistemas IDS (Intrusion Detection Systems) e IPS (Intrusion Prevention Systems) generan logs que alertan sobre intentos de explotación de vulnerabilidades conocidas. Estos logs incluyen:\n- Marca de tiempo (timestamp) del evento.\n- Clase del alerta (ej. denegación de servicio, escaneo de puertos).\n- Prioridad del alerta dentro del sistema.\n- Direcciones IP y puertos de origen y destino involucrados.\n- Descripción del ataque detectado, como un flood de SYN o un intento de exploit.\n\nEstos logs son especialmente útiles para identificar ataques en tiempo real y tomar medidas correctivas inmediatas. Herramientas como Snort, un IPS de código abierto, generan logs detallados que pueden ser integrados en un SIEM para correlación con otros eventos de seguridad.\n\n\nDISPOSITIVOS DE PUNTO FINAL (ENDPOINT DEVICES)\n\nLos dispositivos de punto final, como laptops, desktops, teléfonos móviles y tablets, también generan una gran cantidad de logs. Estos logs pueden incluir:\n- Eventos de inicio y cierre de sesión en el dispositivo.\n- Información sobre procesos en ejecución y eventos del sistema.\n- Cambios en la configuración del dispositivo, como modificaciones en contraseñas o bloqueos de cuentas.\n- Registros de servicios de directorio, que muestran intentos de autenticación en Active Directory u otros servicios similares.\n\nLa información de estos logs puede ser consolidada en un SIEM para correlacionarla con eventos de red y otros dispositivos, lo que permite rastrear el movimiento de un posible atacante a través de la red.\n\n\nESCANEADORES DE VULNERABILIDADES (VULNERABILITY SCANNERS)\n\nLos escáneres de vulnerabilidades generan logs que detallan los resultados de los análisis de seguridad realizados en la red. Estos logs pueden revelar:\n- Dispositivos sin firewall configurado o sin protección antivirus.\n- Configuraciones incorrectas, como recursos compartidos accesibles sin autenticación.\n- Sistemas operativos o aplicaciones con vulnerabilidades conocidas que requieren parches.\n- Dispositivos con cuentas de invitado (guest accounts) habilitadas, lo que viola las mejores prácticas de seguridad.\n- Recursos compartidos de red (NFS, Network File System) accesibles sin restricciones.\n\nPor ejemplo, un log de escaneo podría mostrar que un sistema operativo específico está desactualizado o que un recurso compartido de archivos está accesible para cualquier usuario en la red, lo que representa un riesgo significativo para la seguridad.\n\n\nMETADATOS EN DOCUMENTOS Y ARCHIVOS\n\nLos documentos, correos electrónicos e imágenes contienen metadatos que pueden proporcionar información valiosa sobre su origen y contenido. Estos metadatos incluyen:\n- Información sobre el dispositivo utilizado para crear el archivo, como el modelo de cámara en una foto o el tipo de navegador en un documento.\n- Ubicaciones GPS asociadas a imágenes o archivos.\n- Detalles sobre el creador del documento, como su nombre, dirección, número de teléfono o título.\n- Información sobre servidores de correo y rutas de transferencia en el caso de correos electrónicos.\n- Datos de autenticación y firmas digitales en documentos.\n\nPor ejemplo, en un correo electrónico, los metadatos pueden mostrar la dirección IP del servidor que envió el mensaje, las rutas de transferencia y detalles sobre las firmas digitales. En una imagen, se puede encontrar información sobre el dispositivo que la tomó, la ubicación GPS y la fecha de captura. Esta información puede ser útil para investigar incidentes de seguridad o rastrear el origen de un archivo malicioso.\n\n\nHERRAMIENTAS DE ANÁLISIS DE PAQUETES (PACKET ANALYSIS TOOLS)\n\nLas herramientas de análisis de paquetes, como Wireshark, permiten capturar y analizar el tráfico de red a nivel de paquete. Esto proporciona una visión detallada de todo el tráfico que circula por la red, incluyendo:\n- Flujos de tráfico HTTP, FTP u otros protocolos.\n- Comandos específicos dentro de los paquetes, como solicitudes GET o POST en HTTP.\n- Detalles de los protocolos utilizados, como Ethernet, IPv4, TCP o HTTP.\n- Información sobre archivos transferidos y su contenido.\n\nPor ejemplo, al capturar tráfico HTTP, se pueden ver los comandos enviados y recibidos, así como los archivos transferidos. En el panel de detalles de Wireshark, se puede desglosar cada paquete para ver los encabezados de Ethernet, IPv4, TCP y los datos de la aplicación, lo que permite un análisis profundo de las comunicaciones en la red.\n\n\nEL PAPEL DEL SIEM EN LA GESTIÓN DE LOGS\n\nUn SIEM (Security Information and Event Management) es una herramienta esencial para la gestión de logs, ya que centraliza, correlaciona y analiza la información generada por múltiples dispositivos y sistemas. Las funciones clave de un SIEM incluyen:\n\n- Consolidación de logs de diferentes fuentes en una sola plataforma.\n- Correlación de eventos para identificar patrones o actividades sospechosas.\n- Generación de alertas automáticas cuando se detectan eventos de seguridad críticos.\n- Creación de informes automatizados que resumen la actividad de seguridad.\n- Provisión de paneles de control (dashboards) para visualizar información clave en tiempo real.\n\nSin un SIEM, la gestión de logs puede ser abrumadora debido al volumen de datos generados. Sin embargo, incluso con un SIEM, es crucial configurar correctamente los filtros y reglas para evitar la sobrecarga de información irrelevante. Además, es importante revisar regularmente los informes y alertas generados, ya que muchos incidentes de seguridad pueden pasar desapercibidos si los logs no son monitoreados adecuadamente.\n\n\nINFORMES AUTOMATIZADOS Y DASHBOARDS\n\nLos informes automatizados son una herramienta valiosa para resumir la información de seguridad y facilitar su revisión. Estos informes pueden ser generados por el SIEM o por herramientas de terceros y pueden incluir:\n- Resúmenes diarios o semanales de eventos de seguridad.\n- Alertas sobre dispositivos o sistemas con vulnerabilidades críticas.\n- Estadísticas sobre el tráfico de red y patrones de acceso.\n- Información sobre usuarios y dispositivos conectados a la red.\n\nSin embargo, la creación de informes automatizados puede ser un desafío, especialmente en entornos con grandes volúmenes de datos. Procesar terabytes de información para generar un solo informe puede requerir una cantidad significativa de recursos computacionales. Por lo tanto, es importante equilibrar la cantidad de información incluida en los informes con el tiempo y los recursos necesarios para generarlos. Además, los informes deben ser revisados regularmente para garantizar que la información sea relevante y útil.\n\n\nLos dashboards (paneles de control) son otra herramienta clave para visualizar información de seguridad en tiempo real. Estos paneles pueden ser personalizados o predefinidos y suelen mostrar:\n- Estado actual de los sistemas y dispositivos.\n- Alertas activas y eventos de seguridad recientes.\n- Información sobre reglas de firewall y configuraciones de seguridad.\n- Datos sobre usuarios y dispositivos conectados a la red.\n\nLos dashboards están diseñados para proporcionar una visión rápida y clara del estado de la seguridad en un momento dado, por lo que suelen enfocarse en información actual o de corto plazo. La información a largo plazo, aunque valiosa, puede no ser adecuada para un dashboard debido al tiempo que requiere compilarla.\n\n\nBUENAS PRÁCTICAS EN LA GESTIÓN DE LOGS\n\nPara garantizar una gestión efectiva de los logs, es importante seguir una serie de buenas prácticas:\n\n- Centralizar los logs en un SIEM para facilitar su análisis y correlación.\n- Configurar reglas y filtros para reducir el ruido y enfocarse en eventos relevantes.\n- Revisar regularmente los informes y alertas generados por el SIEM.\n- Almacenar los logs durante un período adecuado para cumplir con requisitos de cumplimiento y auditoría.\n- Proteger los logs contra modificaciones o accesos no autorizados, ya que son evidencia crítica en investigaciones forenses.\n- Asegurar que los dispositivos estén sincronizados en tiempo (time synchronization) para que los logs puedan correlacionarse correctamente.\n- Implementar políticas de retención de logs que definan cuánto tiempo se almacenarán los datos y cuándo se eliminarán.\n- Capacitar al personal de seguridad en el uso de herramientas de gestión de logs y análisis de eventos.\n\n\nDESAFÍOS EN LA GESTIÓN DE LOGS\n\nLa gestión de logs presenta varios desafíos que las organizaciones deben abordar:\n\n- Volumen de datos: La cantidad de logs generados puede ser abrumadora, especialmente en redes grandes con múltiples dispositivos.\n- Complejidad: Correlacionar eventos de diferentes fuentes requiere una comprensión profunda de los sistemas y protocolos involucrados.\n- Recursos: Procesar y analizar grandes volúmenes de logs puede requerir recursos computacionales significativos.\n- Privacidad: Los logs pueden contener información sensible, como datos de usuarios o detalles de comunicaciones, lo que plantea preocupaciones sobre la privacidad y el cumplimiento normativo.\n- Falta de acción: A menudo, las organizaciones generan informes y alertas pero no toman medidas para responder a los eventos detectados.\n\nPara superar estos desafíos, es crucial implementar herramientas automatizadas, como SIEMs, y establecer procesos claros para la revisión y respuesta a eventos de seguridad.\n\n\nCONCLUSIÓN\n\nLa gestión de logs es un componente esencial de cualquier estrategia de ciberseguridad. Los logs proporcionan información valiosa sobre la actividad en la red, los intentos de acceso, las vulnerabilidades y los eventos de seguridad, lo que permite a las organizaciones detectar, responder y mitigar amenazas de manera efectiva. Al centralizar, correlacionar y analizar los logs utilizando herramientas como SIEMs, dashboards e informes automatizados, las organizaciones pueden mejorar su postura de seguridad y reducir el riesgo de incidentes graves. Sin embargo, para que la gestión de logs sea efectiva, es fundamental seguir buenas prácticas, asignar recursos adecuados y capacitar al personal en el uso de estas herramientas y procesos."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Gestión de logs] --> B[Fuentes de logs]\nA --> C[Herramientas de análisis]\nA --> D[Buenas prácticas]\n\nB --> B1[Firewalls]\nB --> B2[Sistemas operativos]\nB --> B3[Dispositivos de red]\nB --> B4[IDS/IPS]\nB --> B5[Punto final]\nB --> B6[Escáneres de vulnerabilidades]\nB --> B7[Metadatos]\nB --> B8[Análisis de paquetes]\n\nC --> C1[SIEM]\nC --> C2[Informes automatizados]\nC --> C3[Dashboards]\n\nD --> D1[Centralización]\nD --> D2[Filtros y reglas]\nD --> D3[Revisión periódica]\nD --> D4[Protección de logs]\nD --> D5[Sincronización de tiempo]\nD --> D6[Políticas de retención]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc24-01",
+      "pregunta": "¿Qué tipo de información pueden contener los logs de seguridad?",
+      "respuesta": "Flujos de tráfico bloqueados/permitidos, intentos de exploits, categorías de URLs bloqueadas, tráfico DNS sospechoso, registros de firewalls, eventos de autenticación, cambios en archivos críticos, errores en dispositivos de red, vulnerabilidades detectadas por escáneres, metadatos en documentos y alertas de IDS/IPS."
+    },
+    {
+      "id": "fc24-02",
+      "pregunta": "¿Qué detalles específicos proporcionan los logs de firewalls?",
+      "respuesta": "Direcciones IP de origen y destino, números de puerto, aplicaciones en uso (especialmente en NGFW), categorías de URLs, decisiones de permitir/bloquear tráfico, direcciones MAC y marcas de tiempo."
+    },
+    {
+      "id": "fc24-03",
+      "pregunta": "¿Qué tipo de eventos de seguridad se pueden detectar en los logs de sistemas operativos?",
+      "respuesta": "Intentos de fuerza bruta, cambios en archivos críticos, deshabilitación de servicios, eventos de autenticación (inicios/cierres de sesión, cambios de contraseña), bloqueos de cuentas y alertas de seguridad automáticas."
+    },
+    {
+      "id": "fc24-04",
+      "pregunta": "¿Qué información relevante pueden proporcionar los logs de dispositivos de infraestructura de red como switches o routers?",
+      "respuesta": "Cambios en tablas de enrutamiento, errores de autenticación, ataques como floods de SYN bloqueados, configuraciones incorrectas y cambios no autorizados en la infraestructura."
+    },
+    {
+      "id": "fc24-05",
+      "pregunta": "¿Qué tipo de alertas generan los sistemas IDS/IPS en sus logs?",
+      "respuesta": "Alertas sobre intentos de explotación de vulnerabilidades conocidas, como denegaciones de servicio (DoS), escaneos de puertos, floods de SYN, con detalles como marcas de tiempo, clase de alerta, prioridad, IPs y puertos involucrados."
+    },
+    {
+      "id": "fc24-06",
+      "pregunta": "¿Qué información pueden contener los metadatos en documentos, correos electrónicos o imágenes?",
+      "respuesta": "Dispositivo de origen, ubicaciones GPS, detalles del creador (nombre, dirección, teléfono), servidores de correo, rutas de transferencia, firmas digitales y datos de autenticación."
+    },
+    {
+      "id": "fc24-07",
+      "pregunta": "¿Qué herramientas permiten analizar el tráfico de red a nivel de paquete y qué información proporcionan?",
+      "respuesta": "Herramientas como Wireshark. Proporcionan detalles de flujos HTTP/FTP, comandos específicos en paquetes, encabezados de protocolos (Ethernet, IPv4, TCP) y contenido de archivos transferidos."
+    },
+    {
+      "id": "fc24-08",
+      "pregunta": "¿Cuál es la función principal de un SIEM en la gestión de logs?",
+      "respuesta": "Centralizar, correlacionar y analizar logs de múltiples dispositivos para generar alertas, informes automatizados y dashboards, facilitando la detección y respuesta a incidentes de seguridad."
+    },
+    {
+      "id": "fc24-09",
+      "pregunta": "¿Qué son los informes automatizados y por qué son importantes en la gestión de logs?",
+      "respuesta": "Resúmenes de actividad de seguridad generados por el SIEM o herramientas de terceros. Son importantes porque facilitan la revisión de eventos críticos sin necesidad de analizar grandes volúmenes de datos manualmente."
+    },
+    {
+      "id": "fc24-10",
+      "pregunta": "¿Qué información suelen mostrar los dashboards en un entorno de seguridad?",
+      "respuesta": "Estado actual de sistemas y dispositivos, alertas activas, reglas de firewall, eventos recientes de seguridad, información sobre usuarios y dispositivos conectados, todo en tiempo real."
+    },
+    {
+      "id": "fc24-11",
+      "pregunta": "¿Qué buenas prácticas se recomiendan para una gestión efectiva de logs?",
+      "respuesta": "Centralizar logs en un SIEM, configurar filtros y reglas, revisar informes y alertas periódicamente, almacenar logs adecuadamente, protegerlos contra accesos no autorizados, sincronizar el tiempo en dispositivos y definir políticas de retención."
+    },
+    {
+      "id": "fc24-12",
+      "pregunta": "¿Cuáles son los principales desafíos en la gestión de logs?",
+      "respuesta": "Volumen abrumador de datos, complejidad en la correlación de eventos, requerimientos de recursos computacionales, preocupaciones de privacidad, falta de acción ante informes generados y necesidad de personal capacitado."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes tipos de logs NO es generado típicamente por un sistema operativo?",
+      "opciones": [
+        "a) Eventos de autenticación como inicios y cierres de sesión",
+        "b) Cambios en tablas de enrutamiento de la red",
+        "c) Intentos de fuerza bruta contra cuentas de usuario",
+        "d) Modificaciones en archivos críticos del sistema"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los cambios en tablas de enrutamiento son típicos de dispositivos de infraestructura de red (como routers), no de sistemas operativos. El temario especifica que los sistemas operativos generan logs de autenticación, fuerza bruta y cambios en archivos críticos.",
+      "id": "p24-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista de seguridad revisa los logs de un firewall y observa múltiples registros con el mismo puerto de destino (80) y direcciones IP externas conocidas por distribuir malware. ¿Qué tipo de evento está analizando?",
+      "opciones": [
+        "a) Escaneo de puertos",
+        "b) Flood de SYN",
+        "c) Tráfico HTTP sospechoso",
+        "d) Denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escaneo de puertos se identifica por múltiples conexiones a diferentes puertos de un mismo host o múltiples hosts en el mismo puerto (ej. 80). El temario menciona que los firewalls registran flujos de tráfico bloqueados/permitidos para detectar patrones anómalos.",
+      "id": "p24-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué herramienta es esencial para centralizar y correlacionar logs de múltiples dispositivos en tiempo real?",
+      "opciones": [
+        "a) Wireshark",
+        "b) SIEM",
+        "c) Snort",
+        "d) NGFW"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un SIEM (Security Information and Event Management) centraliza, correlaciona y analiza logs de distintos dispositivos, según el temario. Wireshark es una herramienta de análisis de paquetes, Snort es un IPS, y NGFW es un firewall de nueva generación.",
+      "id": "p24-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En los logs de un escáner de vulnerabilidades, ¿qué hallazgo representaría una vulnerabilidad crítica según el temario?",
+      "opciones": [
+        "a) Un sistema operativo desactualizado",
+        "b) Un recurso compartido NFS accesible sin autenticación",
+        "c) Un puerto abierto en un servidor web",
+        "d) Un firewall con reglas por defecto"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que los escáneres de vulnerabilidades revelan recursos compartidos accesibles sin autenticación (ej. NFS) como un riesgo significativo. Un sistema operativo desactualizado también es una vulnerabilidad, pero el ejemplo más crítico es el acceso no autorizado a recursos.",
+      "id": "p24-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de log proporcionaría información sobre la ubicación GPS asociada a una imagen subida a un servidor?",
+      "opciones": [
+        "a) Logs de firewall",
+        "b) Metadatos en documentos",
+        "c) Logs de IDS/IPS",
+        "d) Logs de sistema operativo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los metadatos en documentos (incluyendo imágenes) pueden contener información como ubicaciones GPS, según el temario. Los firewalls, IDS/IPS y sistemas operativos no registran este tipo de datos.",
+      "id": "p24-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante realiza un ataque de fuerza bruta contra un servidor SSH. ¿En qué tipo de log aparecería este evento?",
+      "opciones": [
+        "a) Logs de firewall (bloqueando el tráfico)",
+        "b) Logs de sistema operativo (autenticación)",
+        "c) Logs de IDS/IPS (exploit attempt)",
+        "d) Logs de escáner de vulnerabilidades (intentos de acceso)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los sistemas operativos generan logs de autenticación que incluyen intentos de fuerza bruta, como inicios/cierres de sesión fallidos. El temario especifica que estos logs pueden alertar sobre ataques de fuerza bruta contra servicios.",
+      "id": "p24-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones describe MEJOR la diferencia entre un IDS y un IPS según el temario?",
+      "opciones": [
+        "a) Un IDS bloquea tráfico malicioso; un IPS solo detecta y alerta",
+        "b) Un IDS detecta y alerta sobre intrusiones; un IPS puede tomar medidas preventivas",
+        "c) Un IDS requiere configuración manual; un IPS es automático",
+        "d) Un IDS solo funciona en redes cableadas; un IPS funciona en redes inalámbricas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define que los IDS detectan intrusiones y generan alertas, mientras que los IPS no solo detectan, sino que también pueden tomar medidas preventivas (ej. bloquear tráfico).",
+      "id": "p24-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un switch y observa un aumento repentino en paquetes SYN hacia un servidor web, seguido de un bloqueo automático del tráfico. ¿Qué tipo de ataque está siendo mitigado?",
+      "opciones": [
+        "a) Ataque de denegación de servicio (DoS)",
+        "b) Exploit de vulnerabilidad en el servidor web",
+        "c) Escaneo de puertos",
+        "d) Man-in-the-middle (MITM)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que los dispositivos de infraestructura de red (como switches) pueden revelar ataques como floods de SYN (DoS) que son bloqueados automáticamente. Este patrón coincide con un ataque de denegación de servicio.",
+      "id": "p24-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué práctica es CRÍTICA para garantizar que los logs de diferentes dispositivos puedan correlacionarse correctamente?",
+      "opciones": [
+        "a) Configurar firewalls para bloquear tráfico irrelevante",
+        "b) Sincronizar el tiempo en todos los dispositivos (time synchronization)",
+        "c) Eliminar logs antiguos para ahorrar espacio",
+        "d) Usar un solo tipo de dispositivo generador de logs"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que la sincronización de tiempo (time synchronization) es esencial para correlacionar logs de distintos dispositivos. Sin esto, los eventos no pueden alinearse correctamente en análisis forenses o SIEMs.",
+      "id": "p24-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un empleado recibe un correo electrónico con un archivo adjunto malicioso. Al analizar los metadatos del archivo, se descubre que fue creado en una ubicación geográfica distinta a la del empleado. ¿Qué tipo de log o dato NO sería útil para rastrear el origen del archivo?",
+      "opciones": [
+        "a) Metadatos del archivo (ej. GPS, dispositivo)",
+        "b) Logs de firewall (tráfico saliente del correo)",
+        "c) Logs de autenticación del servidor de correo (SMTP)",
+        "d) Logs de escáner de vulnerabilidades (puertos abiertos en el servidor)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los logs de escáner de vulnerabilidades (vulnerability scan logs) no aportan información sobre el origen de un archivo malicioso en un correo electrónico. Los metadatos del archivo, logs de firewall y logs de autenticación del servidor de correo son relevantes para rastrear el origen, según el temario.",
+      "id": "p24-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de log proporcionaría información sobre un intento de fuerza bruta contra una cuenta de administrador en un servidor Linux?",
+      "opciones": [
+        "a) Log de firewall (permitir/bloquear tráfico)",
+        "b) Log de autenticación del sistema operativo (Event Viewer en Windows o /var/log/auth.log en Linux)",
+        "c) Log de escáner de vulnerabilidades (vulnerability scan logs)",
+        "d) Log de metadatos en documentos (metadata en archivos)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de autenticación del sistema operativo registran eventos como inicios de sesión, cambios de contraseña o intentos de fuerza bruta, según el temario.",
+      "id": "p24-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista observa en los logs de un router un aumento anómalo en consultas DNS dirigidas a servidores no autorizados. ¿Qué tipo de amenaza está probablemente detectando?",
+      "opciones": [
+        "a) Ataque de denegación de servicio (DoS)",
+        "b) Tráfico DNS sospechoso (posible actividad de malware)",
+        "c) Fuerza bruta contra servicios de red",
+        "d) Exploit de vulnerabilidad en el router"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el tráfico DNS sospechoso, como consultas no autorizadas, puede indicar actividad de malware.",
+      "id": "p24-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un dato típico que registraría un firewall de nueva generación (NGFW)?",
+      "opciones": [
+        "a) Tipo de aplicación detectada (ej. redes sociales)",
+        "b) Cambios en la configuración del firewall por un administrador",
+        "c) Direcciones MAC de los dispositivos involucrados en el tráfico",
+        "d) Categorías de URLs accedidas (ej. sitios maliciosos)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de firewall registran tráfico y decisiones de seguridad, pero no suelen incluir cambios en su propia configuración, según la descripción del temario.",
+      "id": "p24-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante realiza un ataque de inundación SYN (SYN flood) contra un servidor web. ¿En qué tipo de dispositivo se generaría un log que registre este evento y su mitigación automática?",
+      "opciones": [
+        "a) Sistema de detección/prevención de intrusiones (IDS/IPS)",
+        "b) Escáner de vulnerabilidades",
+        "c) Switch de red",
+        "d) Firewall de nueva generación (NGFW)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los dispositivos de infraestructura de red, como switches, pueden registrar ataques SYN y acciones automáticas de mitigación, según el temario.",
+      "id": "p24-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de información NO registraría típicamente un sistema operativo en sus logs de seguridad?",
+      "opciones": [
+        "a) Eventos de autenticación como inicios y cierres de sesión",
+        "b) Intentos de fuerza bruta contra cuentas o servicios",
+        "c) Flujos de tráfico bloqueados por un firewall",
+        "d) Cambios en archivos críticos del sistema"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de un sistema operativo se centran en eventos locales como autenticaciones, fuerza bruta o cambios en archivos, pero no en flujos de tráfico bloqueados por un firewall, ya que esto es responsabilidad de dispositivos de red como firewalls.",
+      "id": "p24-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado recibe un correo electrónico con un archivo adjunto malicioso. ¿Qué tipo de log NO proporcionaría información útil para rastrear el origen del archivo?",
+      "opciones": [
+        "a) Log de firewall (tráfico de red asociado al correo)",
+        "b) Metadatos del archivo adjunto (ej. ubicación GPS en imágenes)",
+        "c) Log de autenticación del servidor de correo (inicios de sesión)",
+        "d) Log de escáner de vulnerabilidades (vulnerability scan logs)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los logs de escáner de vulnerabilidades no registran eventos relacionados con el envío o recepción de correos electrónicos, según el temario.",
+      "id": "p24-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un sistema IDS y observa múltiples alertas con prioridad 'alta' sobre intentos de exploit contra un servicio específico. ¿Qué acción debería tomar PRIMERO según el temario?",
+      "opciones": [
+        "a) Configurar un firewall para bloquear todo el tráfico hacia el servicio afectado",
+        "b) Verificar la correlación con logs de otros dispositivos (ej. firewall o SIEM)",
+        "c) Eliminar los logs antiguos para liberar espacio en el almacenamiento",
+        "d) Actualizar manualmente el servicio afectado sin analizar el impacto"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los logs de IDS/IPS deben correlacionarse con otros eventos para identificar patrones o amenazas reales, priorizando la acción basada en evidencia integrada.",
+      "id": "p24-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de log generaría un sistema operativo al detectar la modificación no autorizada de un archivo crítico del sistema?",
+      "opciones": [
+        "a) Log de firewall (permitir/bloquear tráfico)",
+        "b) Log de autenticación (cambios de contraseña o inicios de sesión)",
+        "c) Log de sistema operativo (cambios en archivos críticos)",
+        "d) Log de metadatos en documentos (metadata en archivos)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario indica que los logs de sistema operativo registran cambios en archivos críticos, como modificaciones o eliminaciones no autorizadas.",
+      "id": "p24-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante realiza un escaneo de puertos contra un servidor. ¿En qué tipo de log aparecería este evento con mayor probabilidad?",
+      "opciones": [
+        "a) Log de sistema operativo (intentos de autenticación fallidos)",
+        "b) Log de firewall (flujos de tráfico bloqueados o permitidos)",
+        "c) Log de escáner de vulnerabilidades (resultados de análisis)",
+        "d) Log de metadatos en documentos (metadata en archivos)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de firewall registran flujos de tráfico, incluyendo intentos de escaneo de puertos, según la descripción del temario.",
+      "id": "p24-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un entorno empresarial, ¿qué herramienta es esencial para correlacionar logs de múltiples dispositivos y generar alertas en tiempo real sobre amenazas?",
+      "opciones": [
+        "a) Un escáner de vulnerabilidades",
+        "b) Un sistema SIEM (Security Information and Event Management)",
+        "c) Un analizador de paquetes como Wireshark",
+        "d) Un firewall de nueva generación (NGFW)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que un SIEM es esencial para centralizar, correlacionar y analizar logs de múltiples fuentes en tiempo real.",
+      "id": "p24-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de log proporcionaría información sobre un intento de explotación de una vulnerabilidad conocida en un servicio web?",
+      "opciones": [
+        "a) Log de un firewall que muestra tráfico bloqueado hacia el puerto 80",
+        "b) Log de un sistema IDS/IPS que alerta sobre un intento de exploit",
+        "c) Log de autenticación de un sistema operativo que registra inicios de sesión fallidos",
+        "d) Log de un escáner de vulnerabilidades que identifica sistemas sin parches"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los sistemas IDS/IPS generan logs que alertan sobre intentos de explotación de vulnerabilidades conocidas, incluyendo detalles como direcciones IP, puertos y descripción del ataque (temario: 'Sistemas de detección y prevención de intrusiones').",
+      "id": "p24-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un dato típico que registraría un sistema operativo en sus logs de seguridad?",
+      "opciones": [
+        "a) Cambios en archivos críticos del sistema",
+        "b) Ubicación GPS asociada a una imagen subida a un servidor",
+        "c) Bloqueos de cuentas por intentos fallidos de autenticación",
+        "d) Deshabilitación de servicios no autorizados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de sistemas operativos no registran metadatos como ubicación GPS; esta información se encuentra en metadatos de archivos o imágenes (temario: 'Metadatos en documentos y archivos').",
+      "id": "p24-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de log proporcionaría información sobre el tráfico DNS sospechoso, como consultas sin respuesta o patrones inusuales que podrían indicar actividad de malware?",
+      "opciones": [
+        "a) Logs de firewalls de nueva generación (NGFW)",
+        "b) Logs de sistemas de detección y prevención de intrusiones (IDS/IPS)",
+        "c) Logs de servidores DNS o dispositivos de infraestructura de red",
+        "d) Logs de escáneres de vulnerabilidades"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de servidores DNS o dispositivos de infraestructura de red registran consultas DNS, incluyendo patrones anómalos como consultas sin respuesta o tráfico sospechoso, útil para detectar actividad de malware.",
+      "id": "p24-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de información específica sobre tráfico de red NO registraría típicamente un firewall de nueva generación (NGFW)?",
+      "opciones": [
+        "a) Direcciones MAC de origen y destino en cada flujo de tráfico",
+        "b) Categorías de URLs accedidas por los usuarios",
+        "c) Aplicaciones detectadas en el tráfico (ej. redes sociales, streaming)",
+        "d) Decisión de permitir o bloquear el tráfico (aceptado/bloqueado)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los firewalls de nueva generación (NGFW) registran información avanzada como categorías de URLs, aplicaciones detectadas y decisiones de tráfico, pero no almacenan típicamente direcciones MAC, ya que estas son propias del nivel de enlace de datos y no suelen ser relevantes para la seguridad en el nivel de red o aplicación que gestiona un NGFW.",
+      "id": "p24-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante realiza un ataque de inundación SYN (SYN flood) contra un servidor web. ¿Qué tipo de dispositivo generaría un log que registre este evento y su mitigación automática?",
+      "opciones": [
+        "a) Sistema operativo del servidor web",
+        "b) Firewall de nueva generación (NGFW)",
+        "c) Dispositivo de infraestructura de red como un router",
+        "d) Escáner de vulnerabilidades"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los dispositivos de infraestructura de red, como routers, registran ataques como floods de SYN y acciones automáticas de mitigación en sus logs (temario: 'Dispositivos de infraestructura de red').",
+      "id": "p24-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de información específica sobre el tráfico de red NO registraría típicamente un sistema de detección y prevención de intrusiones (IDS/IPS) según el temario?",
+      "opciones": [
+        "a) Intentos de fuerza bruta contra cuentas de usuario",
+        "b) Direcciones IP de origen y destino involucradas en un ataque",
+        "c) Marca de tiempo (timestamp) del evento detectado",
+        "d) Contenido exacto de los paquetes de datos intercambiados"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los sistemas IDS/IPS registran metadatos y eventos de seguridad (como direcciones IP, timestamps o tipos de ataques), pero no el contenido exacto de los paquetes de datos, ya que su enfoque es detectar patrones de amenazas, no analizar el tráfico en detalle.",
+      "id": "p24-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de información específica sobre tráfico de red registraría típicamente un sistema de detección y prevención de intrusiones (IDS/IPS) según el temario?",
+      "opciones": [
+        "a) Cambios en la configuración de un router",
+        "b) Direcciones IP y puertos de origen y destino involucrados en un ataque detectado",
+        "c) Modificaciones en archivos críticos del sistema en un servidor Linux",
+        "d) Registros de autenticación fallidos en un servicio de directorio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los IDS/IPS generan logs que incluyen direcciones IP, puertos de origen/destino y descripciones de ataques como floods de SYN o intentos de exploit, según el temario.",
+      "id": "p24-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de log proporcionaría información sobre un cambio no autorizado en la configuración de un router, como la modificación de una tabla de enrutamiento?",
+      "opciones": [
+        "a) Log de firewall",
+        "b) Log de sistema operativo",
+        "c) Log de dispositivo de infraestructura de red",
+        "d) Log de escáner de vulnerabilidades"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de dispositivos de infraestructura de red, como routers, registran cambios en tablas de enrutamiento, errores de autenticación y ataques como floods de SYN. Estos eventos son típicos en switches, routers y puntos de acceso inalámbrico.",
+      "id": "p24-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista de seguridad revisa los logs de un sistema IDS/IPS y observa múltiples alertas con prioridad 'media' sobre intentos de escaneo de puertos dirigidos a un segmento de red que no alberga servidores críticos. Sin embargo, al correlacionar estos eventos con los logs de autenticación del sistema operativo, nota que no hay registros de inicios de sesión recientes en dichos servidores. ¿Qué acción debería tomar el analista PRIMERO según el temario, considerando que el objetivo es priorizar recursos y evitar falsos positivos?",
+      "opciones": [
+        "Revisar los logs de firewall para verificar si el tráfico de escaneo fue bloqueado antes de llegar a los servidores.",
+        "Ignorar las alertas del IDS/IPS, ya que no hay evidencia de actividad maliciosa en los logs de autenticación.",
+        "Iniciar un escaneo de vulnerabilidades en los servidores del segmento para confirmar si están expuestos a exploits conocidos.",
+        "Configurar el SIEM para aumentar la prioridad de estas alertas y notificar al equipo de red para que bloquee las IPs de origen temporalmente."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que los logs de firewall son esenciales para verificar si el tráfico malicioso fue bloqueado antes de alcanzar los servidores, lo que permite priorizar recursos al evitar análisis innecesarios en sistemas ya protegidos.",
+      "id": "p24-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un analista de seguridad revisa los logs de un sistema IDS/IPS tras recibir una alerta sobre múltiples intentos de explotación de una vulnerabilidad crítica en un servicio web expuesto en Internet. Los logs muestran que los ataques provienen de múltiples direcciones IP distribuidas geográficamente, pero todos comparten el mismo User-Agent en los paquetes HTTP. ¿Qué acción adicional debería realizar el analista PRIMERO, según el temario, para determinar si estos eventos representan un ataque coordinado o un falso positivo?",
+      "opciones": [
+        "a) Correlacionar los logs del IDS/IPS con los registros de autenticación del servidor web para verificar si hubo inicios de sesión exitosos durante el período del ataque.",
+        "b) Analizar los logs del firewall para identificar si el tráfico malicioso fue bloqueado o permitido, y revisar las reglas de filtrado aplicadas en ese momento.",
+        "c) Revisar los metadatos de los logs del IDS/IPS para identificar si los ataques coinciden con un patrón conocido de herramientas automatizadas de escaneo, como Nmap o Metasploit.",
+        "d) Consultar los logs de los dispositivos de punto final (endpoints) en la red interna para detectar si algún usuario accedió al servicio web afectado desde una ubicación no autorizada."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario destaca que los metadatos en los logs (incluyendo User-Agent) pueden revelar patrones de herramientas automatizadas. Analizar esta información ayudaría a diferenciar entre un ataque coordinado y un falso positivo generado por un escáner automático.",
+      "id": "p24-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes tipos de logs NO es generado típicamente por un escáner de vulnerabilidades según el temario?",
+      "opciones": [
+        "a) Dispositivos sin firewall configurado",
+        "b) Configuraciones incorrectas en recursos compartidos",
+        "c) Intentos de fuerza bruta contra cuentas de administrador",
+        "d) Sistemas operativos desactualizados"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los escáneres de vulnerabilidades registran hallazgos como dispositivos sin firewall, configuraciones incorrectas o sistemas desactualizados, pero no generan logs sobre intentos de fuerza bruta contra cuentas, ya que esto corresponde a logs de sistemas operativos o firewalls.",
+      "id": "p24-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un IDS/IPS y observa múltiples alertas con prioridad 'alta' sobre intentos de explotación de una vulnerabilidad crítica en un servicio web. ¿Qué acción debería tomar PRIMERO según el temario?",
+      "opciones": [
+        "a) Bloquear inmediatamente el tráfico desde las IPs origen",
+        "b) Correlacionar los eventos con logs de autenticación del sistema operativo",
+        "c) Generar un informe automatizado para el equipo de TI",
+        "d) Desconectar el servicio web afectado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que la correlación con logs de autenticación del sistema operativo es clave para validar si los intentos de explotación corresponden a actividades legítimas o maliciosas antes de tomar acciones.",
+      "id": "p24-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de información específica sobre el tráfico de red registraría típicamente un sistema operativo en sus logs de seguridad?",
+      "opciones": [
+        "a) Direcciones IP de origen y destino en conexiones de red",
+        "b) Intentos de fuerza bruta contra servicios o cuentas",
+        "c) Categorías de URLs bloqueadas en estaciones de trabajo",
+        "d) Flujos de tráfico bloqueados y permitidos en firewalls"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los sistemas operativos registran eventos de autenticación y seguridad como intentos de fuerza bruta en sus logs, mientras que los firewalls y herramientas de análisis de tráfico manejan la información de direcciones IP y flujos de red.",
+      "id": "p24-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de información específica sobre el tráfico de red registraría típicamente un escáner de vulnerabilidades según el temario?",
+      "opciones": [
+        "a) Direcciones IP de origen y destino en conexiones sospechosas",
+        "b) Dispositivos sin firewall configurado o sin protección antivirus",
+        "c) Cambios en tablas de enrutamiento en routers",
+        "d) Modificaciones no autorizadas en archivos críticos del sistema"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los escáneres de vulnerabilidades generan logs que detallan resultados de análisis de seguridad, como dispositivos sin firewall o sin protección antivirus, configuraciones incorrectas o sistemas operativos desactualizados.",
+      "id": "p24-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de log proporcionaría información sobre el tráfico DNS sospechoso, como consultas sin respuesta o patrones inusuales que podrían indicar actividad de malware?",
+      "opciones": [
+        "a) Logs de firewall",
+        "b) Logs de sistema operativo",
+        "c) Logs de dispositivos de infraestructura de red (ej. switches o routers)",
+        "d) Logs de herramientas de análisis de paquetes (ej. Wireshark)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Las herramientas de análisis de paquetes, como Wireshark, capturan y analizan el tráfico de red a nivel de paquete, permitiendo identificar patrones sospechosos en consultas DNS, incluyendo consultas sin respuesta o comportamientos anómalos que podrían indicar actividad maliciosa.",
+      "id": "p24-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué práctica es CRÍTICA para garantizar que los logs de diferentes dispositivos puedan correlacionarse correctamente según el temario?",
+      "opciones": [
+        "a) Configurar firewalls para bloquear tráfico no autorizado",
+        "b) Sincronizar los dispositivos en tiempo (time synchronization)",
+        "c) Almacenar logs en formato plano sin procesar",
+        "d) Eliminar logs antiguos cada semana"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que la sincronización de tiempo (time synchronization) entre dispositivos es esencial para correlacionar eventos de manera precisa y evitar inconsistencias en los logs.",
+      "id": "p24-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un router y observa un aumento anómalo en consultas DNS dirigidas a servidores no autorizados. ¿Qué tipo de amenaza está probablemente detectando?",
+      "opciones": [
+        "a) Ataque de fuerza bruta contra cuentas de administrador",
+        "b) Tráfico DNS sospechoso indicativo de actividad de malware",
+        "c) Modificación no autorizada de tablas de enrutamiento",
+        "d) Escaneo de puertos en segmentos de red críticos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario especifica que el tráfico DNS sospechoso, como consultas a servidores no autorizados, puede indicar actividad de malware o intentos de exfiltración de datos.",
+      "id": "p24-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de información específica sobre tráfico de red NO registraría típicamente un sistema de detección y prevención de intrusiones (IDS/IPS) según el temario?",
+      "opciones": [
+        "a) Direcciones IP de origen y destino",
+        "b) Prioridad del alerta (ej. 'alta', 'media')",
+        "c) Cambios en archivos críticos del sistema operativo",
+        "d) Descripción del ataque detectado (ej. flood de SYN)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de IDS/IPS registran información sobre tráfico de red y ataques, pero los cambios en archivos críticos del sistema operativo son típicos de logs de sistemas operativos, no de IDS/IPS.",
+      "id": "p24-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista de seguridad revisa los logs de un SIEM tras recibir una alerta sobre múltiples intentos de conexión SSH fallidos desde una IP externa a un servidor crítico. Los logs muestran que los intentos coinciden con patrones de fuerza bruta conocidos, pero el firewall de nueva generación (NGFW) no ha registrado tráfico bloqueado hacia ese puerto. Además, los logs del sistema operativo del servidor no muestran correspondencia con los horarios de los intentos. ¿Qué tipo de log adicional debería revisar el analista PRIMERO para determinar si los eventos representan un ataque real o un falso positivo, según el temario?",
+      "opciones": [
+        "a) Logs de autenticación del servidor VPN que podrían mostrar conexiones legítimas desde la misma IP externa en ese período.",
+        "b) Logs de los dispositivos de punto final (endpoint devices) que podrían indicar si algún usuario interno está usando SSH desde una red externa.",
+        "c) Logs del escáner de vulnerabilidades que podrían revelar si el servidor tiene configuraciones inseguras que permitan ataques sin registro.",
+        "d) Logs de los switches de red que podrían mostrar tráfico anómalo hacia el servidor, como inundaciones SYN no relacionadas con SSH."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los logs de autenticación del servidor VPN podrían confirmar si la IP externa corresponde a una conexión legítima, validando así si los intentos de SSH son parte de un ataque o un falso positivo.",
+      "id": "p24-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un switch tras recibir una alerta sobre un aumento repentino en paquetes SYN hacia un servidor web, seguido de un bloqueo automático del tráfico. ¿Qué tipo de ataque está siendo mitigado?",
+      "opciones": [
+        "a) Ataque de fuerza bruta contra cuentas de administrador",
+        "b) Flood de SYN (ataque de denegación de servicio)",
+        "c) Escaneo de puertos en segmentos de red",
+        "d) Explotación de una vulnerabilidad crítica en un servicio web"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los switches generan logs que revelan ataques como floods de SYN, los cuales son bloqueados automáticamente por el dispositivo para mitigar el impacto.",
+      "id": "p24-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de información específica sobre tráfico de red registraría típicamente un sistema de detección y prevención de intrusiones (IDS/IPS) para identificar un ataque de fuerza bruta contra un servicio web?",
+      "opciones": [
+        "a) El contenido completo de los paquetes HTTP interceptados en el tráfico.",
+        "b) La dirección MAC del dispositivo atacante y su ruta de red.",
+        "c) El número de intentos de conexión fallidos en un intervalo de tiempo determinado.",
+        "d) La ubicación GPS asociada al dispositivo que origina los paquetes."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario indica que los logs de IDS/IPS registran eventos como intentos de fuerza bruta, incluyendo el número de intentos de conexión fallidos en un intervalo de tiempo para detectar patrones sospechosos.",
+      "id": "p24-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un dato típico que registraría un firewall de nueva generación (NGFW) según el temario?",
+      "opciones": [
+        "Direcciones IP de origen y destino",
+        "Números de puerto utilizados",
+        "Información sobre el dispositivo de origen de un archivo adjunto en un correo electrónico",
+        "Decisiones tomadas por el firewall (permitir o bloquear tráfico)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los firewalls registran tráfico de red, pero no información sobre metadatos de archivos adjuntos en correos, que corresponde a logs de metadatos según el temario.",
+      "id": "p24-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un sistema IDS tras recibir una alerta sobre múltiples intentos de explotación de una vulnerabilidad crítica en un servicio web. Los logs muestran que los ataques provienen de múltiples direcciones IP distribuidas geográficamente, pero todos comparten el mismo User-Agent en los paquetes HTTP. ¿Qué acción adicional debería realizar el analista PRIMERO, según el temario, para determinar si estos eventos representan un ataque coordinado?",
+      "opciones": [
+        "Revisar los logs de autenticación del sistema operativo para verificar inicios de sesión recientes",
+        "Correlacionar los logs con los registros de tráfico DNS para identificar patrones de consultas sospechosas",
+        "Analizar los metadatos de los archivos web afectados para rastrear su origen",
+        "Verificar los logs del firewall para confirmar si el tráfico fue bloqueado o permitido"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los metadatos en documentos o archivos web pueden incluir información sobre el origen o creación, útil para rastrear la procedencia de un ataque coordinado, según el temario.",
+      "id": "p24-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de información específica sobre tráfico de red registraría típicamente un escáner de vulnerabilidades en sus logs?",
+      "opciones": [
+        "a) Puertos abiertos y servicios expuestos en los sistemas analizados",
+        "b) Intentos de fuerza bruta contra cuentas administrativas",
+        "c) Cambios en tablas de enrutamiento en routers",
+        "d) Tráfico DNS con patrones inusuales indicativos de malware"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los escáneres de vulnerabilidades registran principalmente puertos abiertos, servicios expuestos y configuraciones incorrectas en los sistemas analizados, como parte de su proceso de identificación de riesgos.",
+      "id": "p24-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno donde se detecta un aumento anómalo en consultas DNS dirigidas a servidores no autorizados, ¿qué tipo de amenaza está probablemente siendo detectada?",
+      "opciones": [
+        "Ataque de fuerza bruta contra cuentas de usuario",
+        "Actividad de malware que utiliza DNS para comunicarse con servidores de comando y control",
+        "Escaneo de puertos no autorizado en la red",
+        "Inyección de código SQL en una aplicación web"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El tráfico DNS sospechoso, como consultas sin respuesta o patrones inusuales, puede indicar actividad de malware según el temario.",
+      "id": "p24-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de información específica sobre el tráfico de red registraría típicamente un escáner de vulnerabilidades en sus logs para identificar sistemas desactualizados?",
+      "opciones": [
+        "a) Patrones de tráfico anómalo en puertos específicos, como puertos abiertos sin servicios asignados",
+        "b) Dispositivos sin parches de seguridad aplicados o con configuraciones incorrectas, como sistemas operativos desactualizados",
+        "c) Intentos de fuerza bruta contra cuentas de administrador en servicios web",
+        "d) Cambios no autorizados en tablas de enrutamiento de routers"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los escáneres de vulnerabilidades registran principalmente información sobre sistemas desactualizados, configuraciones incorrectas o servicios innecesarios, como dispositivos sin parches aplicados o sistemas operativos sin actualizar.",
+      "id": "p24-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de información específica sobre tráfico de red registraría típicamente un sistema operativo en sus logs de seguridad para detectar cambios no autorizados en archivos críticos del sistema?",
+      "opciones": [
+        "a) Registros de modificaciones o eliminaciones de archivos del sistema con timestamps y usuarios responsables",
+        "b) Flujos de tráfico bloqueados por firewall con direcciones IP de origen y destino",
+        "c) Consultas DNS sospechosas sin respuesta hacia servidores no autorizados",
+        "d) Intentos de fuerza bruta contra cuentas de administrador con patrones de repetición"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los sistemas operativos registran cambios en archivos críticos del sistema, como modificaciones o eliminaciones, incluyendo timestamps y usuarios responsables, lo que ayuda a detectar actividades no autorizadas.",
+      "id": "p24-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un SIEM y observa múltiples alertas con prioridad 'alta' sobre intentos de explotación de una vulnerabilidad crítica en un servicio web. ¿Qué acción debería tomar PRIMERO según el temario?",
+      "opciones": [
+        "Bloquear inmediatamente el tráfico hacia el servicio web afectado",
+        "Correlacionar los eventos con los logs de autenticación del sistema operativo",
+        "Generar un informe automatizado para enviar a la dirección de la empresa",
+        "Revisar los logs de metadatos en los archivos del servicio web"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Correlacionar eventos con logs de autenticación ayuda a determinar si los intentos de explotación están asociados a cuentas comprometidas, según el temario.",
+      "id": "p24-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista de seguridad está investigando un incidente en el que un archivo compartido en un servidor de archivos Windows ha sido modificado inesperadamente. Tras revisar los logs del sistema operativo, observa que no hay registros en los logs de seguridad de Windows que indiquen cambios en el archivo, pero sí encuentra múltiples entradas en los logs del escáner de vulnerabilidades que muestran un análisis reciente del servidor. ¿Cuál de los siguientes tipos de logs debería revisar el analista PRIMERO para verificar si el escáner de vulnerabilidades pudo haber realizado cambios no autorizados en el archivo, según el temario?",
+      "opciones": [
+        "a) Logs de autenticación del sistema operativo (Eventos 4624, 4625, 4776 en Windows).",
+        "b) Logs de cambios en archivos del sistema operativo (Eventos 4663 en Windows).",
+        "c) Logs de aplicaciones del escáner de vulnerabilidades (ej. Nessus, OpenVAS) que registran acciones realizadas durante el escaneo.",
+        "d) Logs de tráfico de red del firewall que podrían mostrar conexiones no autorizadas al servidor."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de aplicaciones de escáneres de vulnerabilidades registran acciones específicas realizadas durante el análisis, como modificaciones en archivos, lo que permitiría identificar si el escaneo causó cambios no autorizados.",
+      "id": "p24-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un analista de seguridad revisa los logs de un SIEM tras recibir una alerta sobre múltiples intentos de conexión SSH fallidos desde una IP externa a un servidor crítico. Los logs muestran que los intentos coinciden con patrones de fuerza bruta conocidos, pero el firewall de nueva generación (NGFW) no ha registrado tráfico bloqueado hacia ese puerto. ¿Qué tipo de log adicional debería revisar el analista PRIMERO para determinar si los eventos representan un ataque real o un falso positivo?",
+      "opciones": [
+        "Logs de metadatos en archivos del servidor",
+        "Logs de autenticación del sistema operativo del servidor",
+        "Logs de tráfico DNS del servidor",
+        "Logs de escáner de vulnerabilidades del servidor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de autenticación del sistema operativo mostrarían si los intentos de fuerza bruta coinciden con inicios de sesión reales o no, ayudando a identificar falsos positivos.",
+      "id": "p24-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de log proporcionaría información sobre un cambio no autorizado en un archivo crítico del sistema operativo, como la modificación de un archivo de configuración en un servidor Linux?",
+      "opciones": [
+        "a) Logs de firewall (permitir/bloquear tráfico)",
+        "b) Logs de autenticación del sistema operativo (inicios de sesión, cambios de contraseña)",
+        "c) Logs del sistema operativo (cambios en archivos críticos)",
+        "d) Logs de escáner de vulnerabilidades (sistemas desactualizados)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs del sistema operativo registran cambios en archivos críticos del sistema, como la modificación de archivos de configuración, lo que permite detectar actividades no autorizadas (según el temario).",
+      "id": "p24-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando los logs generados por un firewall de nueva generación (NGFW) y un sistema IDS/IPS, ¿qué información es exclusiva de los logs del NGFW?",
+      "opciones": [
+        "a) Direcciones IP de origen y destino involucradas en un ataque",
+        "b) Categorías de URLs bloqueadas (ej. redes sociales, streaming)",
+        "c) Prioridad de alertas sobre intentos de explotación de vulnerabilidades",
+        "d) Descripción de ataques como floods de SYN"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los firewalls de nueva generación (NGFW) registran categorías de URLs bloqueadas, como redes sociales o streaming, mientras que los IDS/IPS se enfocan en alertas de exploits y patrones de ataque (según el temario).",
+      "id": "p24-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un dato típico que registraría un escáner de vulnerabilidades en sus logs?",
+      "opciones": [
+        "a) Dispositivos sin firewall configurado",
+        "b) Intentos de fuerza bruta contra cuentas de administrador",
+        "c) Sistemas operativos desactualizados",
+        "d) Recursos compartidos accesibles sin autenticación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los escáneres de vulnerabilidades registran información sobre sistemas desactualizados o configuraciones incorrectas, pero los intentos de fuerza bruta son típicamente registrados en los logs de autenticación del sistema operativo (según el temario).",
+      "id": "p24-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un SIEM y observa múltiples alertas con prioridad 'alta' sobre intentos de explotación de una vulnerabilidad crítica en un servicio web. Los logs muestran que los ataques provienen de múltiples direcciones IP distribuidas geográficamente. ¿Qué acción debería tomar el analista PRIMERO, según el temario?",
+      "opciones": [
+        "a) Revisar los logs del firewall para confirmar si el tráfico fue bloqueado",
+        "b) Correlacionar los eventos con los logs del sistema operativo para verificar inicios de sesión sospechosos",
+        "c) Analizar los metadatos de los archivos de log para identificar patrones en los User-Agents",
+        "d) Consultar los logs del escáner de vulnerabilidades para verificar si el servicio está desactualizado"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Al observar múltiples IPs con el mismo User-Agent, el analista debe verificar si se trata de un ataque coordinado (ej. botnet) analizando patrones en los metadatos de los logs (según el temario).",
+      "id": "p24-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de log proporcionaría información sobre un aumento anómalo en consultas DNS dirigidas a servidores no autorizados, que podría indicar actividad de malware?",
+      "opciones": [
+        "a) Logs de firewall (permitir/bloquear tráfico DNS)",
+        "b) Logs de tráfico DNS sospechoso (consultas sin respuesta o patrones inusuales)",
+        "c) Logs del sistema operativo (eventos de autenticación)",
+        "d) Logs de escáner de vulnerabilidades (sistemas desactualizados)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de tráfico DNS sospechoso registran consultas sin respuesta o patrones inusuales que podrían indicar actividad de malware (según el temario).",
+      "id": "p24-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante realiza un ataque de denegación de servicio (DoS) utilizando un flood de SYN contra un servidor web. ¿Qué tipo de dispositivo generaría un log que registre este evento y su mitigación automática?",
+      "opciones": [
+        "a) Sistema IDS/IPS",
+        "b) Firewall de nueva generación (NGFW)",
+        "c) Router de la red",
+        "d) Escáner de vulnerabilidades"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los sistemas IDS/IPS generan logs detallados sobre ataques como floods de SYN y su mitigación automática (según el temario).",
+      "id": "p24-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de información específica sobre tráfico de red registraría típicamente un sistema operativo en sus logs de seguridad para detectar cambios en la configuración de red?",
+      "opciones": [
+        "a) Intentos de fuerza bruta contra cuentas de administrador",
+        "b) Cambios en tablas de enrutamiento o configuraciones de red",
+        "c) Tráfico DNS sospechoso (consultas sin respuesta)",
+        "d) Alertas sobre exploits contra vulnerabilidades conocidas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs del sistema operativo pueden registrar cambios en tablas de enrutamiento o configuraciones de red, lo que podría indicar intentos de manipulación (según el temario).",
+      "id": "p24-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un SIEM y observa múltiples alertas con prioridad 'media' sobre intentos de escaneo de puertos dirigidos a un segmento de red sin servidores críticos. Los logs de autenticación del sistema operativo no muestran inicios de sesión recientes en dichos servidores. ¿Qué acción debería tomar el analista PRIMERO, según el temario?",
+      "opciones": [
+        "a) Bloquear inmediatamente las IPs origen de los escaneos",
+        "b) Revisar los logs del firewall para confirmar si el tráfico fue bloqueado",
+        "c) Correlacionar los eventos con los logs del escáner de vulnerabilidades para verificar si los servidores están desactualizados",
+        "d) Ignorar las alertas por ser falsos positivos dado que no hay servidores críticos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El analista debe revisar los logs del firewall para confirmar si el tráfico sospechoso fue bloqueado, priorizando recursos y evitando falsos positivos (según el temario).",
+      "id": "p24-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista de seguridad está investigando un incidente en el que múltiples servidores en un entorno de red empresarial han registrado cambios no autorizados en archivos críticos del sistema operativo. Tras revisar los logs de los sistemas operativos, no se encuentran registros que indiquen estos cambios. Sin embargo, al correlacionar los logs con los datos de metadatos de los archivos afectados, se observa que todos fueron modificados aproximadamente en el mismo horario y que la herramienta de análisis de paquetes (como Wireshark) registró tráfico anómalo hacia un servidor interno no autorizado. Según el temario, ¿qué tipo de información específica en los logs de metadatos de los archivos debería revisar el analista PRIMERO para determinar el origen del incidente?",
+      "opciones": [
+        "a) El dispositivo de origen que creó o modificó los archivos, incluyendo su dirección MAC, modelo y sistema operativo.",
+        "b) La ubicación GPS asociada a los archivos, especialmente si provienen de dispositivos móviles o portátiles.",
+        "c) Los detalles de autenticación en los metadatos, como el usuario que realizó la última modificación y su dirección IP asociada.",
+        "d) Los servidores de correo involucrados en la transferencia de los archivos, incluyendo rutas de transferencia y direcciones IP de los servidores SMTP."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los metadatos de los archivos suelen incluir información sobre el usuario que realizó la última modificación y su dirección IP asociada, lo que permitiría correlacionar el cambio no autorizado con una actividad sospechosa en la red.",
+      "id": "p24-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un router y observa un aumento repentino en paquetes SYN hacia un servidor web, seguido de un bloqueo automático del tráfico. ¿Qué tipo de ataque está siendo mitigado?",
+      "opciones": [
+        "a) Ataque de fuerza bruta contra un servicio web",
+        "b) Ataque de denegación de servicio (DoS) tipo flood de SYN",
+        "c) Escaneo de puertos no autorizado",
+        "d) Explotación de una vulnerabilidad crítica en un servicio web"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un aumento repentino en paquetes SYN seguido de bloqueo automático es característico de un ataque de flood de SYN (DoS), registrado en logs de dispositivos de infraestructura como routers (según el temario).",
+      "id": "p24-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de información específica sobre tráfico de red registraría típicamente un escáner de vulnerabilidades en sus logs para identificar sistemas con configuraciones incorrectas?",
+      "opciones": [
+        "a) Direcciones IP de origen y destino de los paquetes bloqueados por el firewall",
+        "b) Detalles de los puertos abiertos y servicios expuestos en los sistemas analizados",
+        "c) Registros de autenticación fallidos en cuentas de administrador",
+        "d) Metadatos de imágenes subidas a servidores con información GPS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los escáneres de vulnerabilidades registran detalles sobre puertos abiertos, servicios expuestos y configuraciones incorrectas en los sistemas analizados, como parte de su función principal de identificar riesgos.",
+      "id": "p24-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando los logs de un firewall de nueva generación (NGFW) y un sistema IDS/IPS, ¿qué información es exclusiva de los logs del NGFW según el temario?",
+      "opciones": [
+        "a) Direcciones IP de origen y destino",
+        "b) Categorías de URLs bloqueadas (ej. redes sociales, streaming)",
+        "c) Intentos de explotación de vulnerabilidades conocidas",
+        "d) Prioridad de alertas (alta, media, baja)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los NGFW registran categorías de URLs bloqueadas o aplicaciones detectadas (como redes sociales o streaming), mientras que los IDS/IPS se enfocan en patrones de ataque y exploits.",
+      "id": "p24-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre gestión de logs, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar cambios en la configuración de autenticación?",
+      "opciones": [
+        "a) Modificaciones en las reglas de firewall del sistema operativo",
+        "b) Cambios en las políticas de contraseñas o bloqueo de cuentas",
+        "c) Tráfico DNS sospechoso hacia servidores no autorizados",
+        "d) Flujos de tráfico bloqueados por un NGFW en la red"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de seguridad de un sistema operativo registran eventos como cambios en políticas de contraseñas o bloqueos de cuentas, ya que estos están directamente relacionados con la autenticación y el acceso.",
+      "id": "p24-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar cambios en la configuración de autenticación, como la modificación de políticas de contraseñas?",
+      "opciones": [
+        "a) Eventos de autenticación fallidos (logon failures) y bloqueos de cuentas por intentos de fuerza bruta.",
+        "b) Cambios en archivos críticos del sistema, como la edición de archivos de configuración en /etc/ en Linux.",
+        "c) Registros de tráfico de red bloqueado o permitido por el firewall interno del sistema operativo.",
+        "d) Alertas sobre vulnerabilidades críticas en servicios de autenticación como LDAP o Kerberos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los logs de autenticación en sistemas operativos registran eventos como inicios y cierres de sesión, cambios de contraseñas y bloqueos de cuentas, incluyendo intentos fallidos que podrían indicar ataques de fuerza bruta.",
+      "id": "p24-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de logs, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la deshabilitación no autorizada de un servicio crítico del sistema?",
+      "opciones": [
+        "a) Entradas en el log de eventos de autenticación que indiquen cambios en políticas de contraseñas.",
+        "b) Registros en el log de seguridad sobre modificaciones en archivos de configuración del servicio.",
+        "c) Alertas en el log de firewall sobre tráfico bloqueado hacia el puerto del servicio.",
+        "d) Eventos en el log de red que muestren cambios en la tabla de enrutamiento del router."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que los logs de seguridad de los sistemas operativos registran cambios en archivos críticos del sistema, como la deshabilitación de servicios que no deberían ser modificados manualmente.",
+      "id": "p24-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre gestión de logs, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar cambios no autorizados en la configuración de red, como la modificación de rutas estáticas?",
+      "opciones": [
+        "a) Registros de autenticación de usuarios que accedieron al sistema mediante SSH.",
+        "b) Eventos de cambio en tablas de enrutamiento, IPs asignadas o modificaciones en reglas de firewall locales.",
+        "c) Alertas de detección de tráfico anómalo en puertos no estándar mediante un IDS/IPS.",
+        "d) Entradas en los logs de metadatos de archivos modificados en el sistema."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que los sistemas operativos generan logs de cambios en archivos críticos y configuraciones de red, incluyendo tablas de enrutamiento y reglas de firewall locales.",
+      "id": "p24-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de logs, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la creación no autorizada de una nueva cuenta de usuario?",
+      "opciones": [
+        "a) Eventos de autenticación fallidos en servicios críticos",
+        "b) Registros de cambios en la configuración de autenticación, como la modificación de políticas de contraseñas",
+        "c) Eventos de creación, modificación o eliminación de cuentas de usuario",
+        "d) Alertas sobre fallos en la sincronización de tiempo en el sistema"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de seguridad de los sistemas operativos registran eventos como la creación, modificación o eliminación de cuentas de usuario, lo que permite detectar actividades no autorizadas relacionadas con la gestión de identidades.",
+      "id": "p24-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la creación no autorizada de una nueva cuenta de usuario?",
+      "opciones": [
+        "a) Registros de cambios en archivos críticos del sistema, como modificaciones en archivos de configuración.",
+        "b) Eventos de autenticación que muestren inicios y cierres de sesión por usuarios no autorizados.",
+        "c) Alertas sobre la creación, modificación o eliminación de cuentas de usuario en el sistema.",
+        "d) Información sobre intentos de fuerza bruta (brute force) contra servicios o cuentas existentes."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de seguridad de los sistemas operativos registran eventos como la creación de cuentas de usuario, lo que permite detectar actividades no autorizadas. Esta información se encuentra típicamente en el Visor de eventos (Windows) o en /var/log/ (Linux).",
+      "id": "p24-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de información específica sobre tráfico de red registraría típicamente un escáner de vulnerabilidades en sus logs para identificar sistemas desactualizados?",
+      "opciones": [
+        "a) Intentos de fuerza bruta contra cuentas de administrador",
+        "b) Sistemas operativos o aplicaciones con vulnerabilidades conocidas que requieren parches",
+        "c) Cambios no autorizados en archivos críticos del sistema",
+        "d) Tráfico DNS sospechoso o patrones inusuales"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los escáneres de vulnerabilidades registran sistemas operativos o aplicaciones con vulnerabilidades conocidas, como información clave para identificar riesgos de seguridad.",
+      "id": "p24-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un analista de seguridad está investigando un incidente en el que un archivo compartido en un servidor de archivos Windows ha sido modificado inesperadamente. Tras revisar los logs del sistema operativo, observa que no hay registros en los logs de seguridad de Windows que indiquen cambios en el archivo, pero sí encuentra múltiples entradas en los logs del escáner de vulnerabilidades que muestran un análisis reciente del servidor. ¿Cuál de los siguientes tipos de logs debería revisar el analista PRIMERO para verificar si el escáner de vulnerabilidades pudo haber realizado cambios no autorizados en el archivo?",
+      "opciones": [
+        "a) Logs de metadatos del archivo afectado",
+        "b) Logs de tráfico DNS del servidor",
+        "c) Logs de autenticación del sistema operativo",
+        "d) Logs de firewall del servidor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los metadatos del archivo pueden revelar información sobre el dispositivo o herramienta que modificó el archivo, incluyendo si fue alterado durante un escaneo de vulnerabilidades.",
+      "id": "p24-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la deshabilitación no autorizada de un servicio crítico del sistema?",
+      "opciones": [
+        "a) Un registro en el log de eventos de seguridad con el evento ID 4663 (intento de acceso a objeto) y el nombre del servicio afectado.",
+        "b) Un registro en el log de eventos del sistema con el evento ID 7034 (servicio falló al iniciar) y el nombre del servicio afectado.",
+        "c) Un registro en el log de firewall con la regla que bloqueó el tráfico hacia el puerto del servicio.",
+        "d) Un registro en el log de autenticación con el evento ID 4624 (inicio de sesión exitoso) del usuario que deshabilitó el servicio."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que los logs de sistemas operativos registran la deshabilitación de servicios como eventos en el log de eventos del sistema, con eventos como el ID 7034 que indican fallos en el inicio de servicios.",
+      "id": "p24-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando los logs generados por un firewall de nueva generación (NGFW) y un sistema IDS/IPS, ¿qué información es exclusiva de los logs del NGFW según el temario?",
+      "opciones": [
+        "a) Registros de direcciones IP de origen y destino involucradas en un ataque.",
+        "b) Categorías de URLs accedidas (ej. redes sociales, streaming) y aplicaciones detectadas.",
+        "c) Alertas sobre intentos de explotación de vulnerabilidades conocidas.",
+        "d) Marca de tiempo y prioridad de los eventos de seguridad."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario especifica que los firewalls de nueva generación (NGFW) registran detalles como categorías de URLs y tipos de aplicaciones detectadas, información no típica en logs de IDS/IPS.",
+      "id": "p24-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un dato típico que registraría un escáner de vulnerabilidades en sus logs según el temario?",
+      "opciones": [
+        "a) Dispositivos sin firewall configurado o sin protección antivirus.",
+        "b) Configuraciones incorrectas en recursos compartidos de red.",
+        "c) Tráfico DNS sospechoso detectado en la red.",
+        "d) Sistemas operativos o aplicaciones con vulnerabilidades conocidas que requieren parches."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario indica que los escáneres de vulnerabilidades registran datos como dispositivos sin firewall, configuraciones incorrectas en recursos compartidos, y sistemas desactualizados, pero no tráfico DNS sospechoso (este es registrado por firewalls o IDS/IPS).",
+      "id": "p24-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un router tras recibir una alerta sobre un aumento repentino en paquetes SYN hacia un servidor web, seguido de un bloqueo automático del tráfico. ¿Qué tipo de ataque está siendo mitigado?",
+      "opciones": [
+        "a) Un ataque de fuerza bruta contra cuentas de usuario.",
+        "b) Un ataque de inundación SYN (SYN flood) que podría causar denegación de servicio.",
+        "c) Un escaneo de puertos no autorizado.",
+        "d) Un intento de explotación de una vulnerabilidad crítica en un servicio web."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los logs de routers pueden registrar ataques como floods de SYN que son bloqueados automáticamente, lo que indica un ataque de denegación de servicio (DoS).",
+      "id": "p24-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de información específica sobre tráfico de red registraría típicamente un escáner de vulnerabilidades en sus logs para identificar sistemas con configuraciones incorrectas?",
+      "opciones": [
+        "a) Direcciones IP de origen y destino de los paquetes analizados.",
+        "b) Recursos compartidos de red (NFS) accesibles sin restricciones o cuentas de invitado habilitadas.",
+        "c) Alertas sobre intentos de explotación de vulnerabilidades conocidas.",
+        "d) Cambios en tablas de enrutamiento en dispositivos de red."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario señala que los escáneres de vulnerabilidades registran configuraciones incorrectas como recursos compartidos accesibles sin autenticación o cuentas de invitado habilitadas.",
+      "id": "p24-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista de seguridad está investigando un incidente en el que múltiples servidores en una red empresarial han registrado cambios no autorizados en archivos críticos del sistema operativo. Tras revisar los logs de los sistemas operativos, no se encuentran registros que indiquen estos cambios. Sin embargo, al correlacionar los logs con los datos de metadatos de los archivos afectados, se observa que todos fueron modificados aproximadamente en el mismo horario. Según el temario, ¿qué tipo de información específica en los logs de metadatos de los archivos debería revisar el analista PRIMERO para determinar el origen del incidente?",
+      "opciones": [
+        "a) La dirección IP del dispositivo que creó o modificó los archivos.",
+        "b) El nombre del usuario que realizó los cambios en los archivos.",
+        "c) La marca de tiempo exacta de la modificación y el dispositivo de origen asociado.",
+        "d) Los puertos utilizados en la transferencia de los archivos modificados."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario indica que los metadatos en archivos pueden incluir información como el dispositivo de origen y la marca de tiempo, clave para rastrear cambios no autorizados.",
+      "id": "p24-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un SIEM y observa múltiples alertas con prioridad 'alta' sobre intentos de explotación de una vulnerabilidad crítica en un servicio web. Los logs muestran que los ataques provienen de múltiples direcciones IP distribuidas geográficamente, pero todos comparten el mismo User-Agent en los paquetes HTTP. ¿Qué acción debería tomar el analista PRIMERO, según el temario, para determinar si estos eventos representan un ataque coordinado?",
+      "opciones": [
+        "a) Revisar los logs de autenticación del sistema operativo para verificar inicios de sesión recientes desde esas IPs.",
+        "b) Correlacionar los logs con los registros de metadatos de los archivos del servicio web afectado para identificar cambios no autorizados.",
+        "c) Analizar los logs de firewall para confirmar si el tráfico malicioso fue bloqueado o permitido.",
+        "d) Verificar los logs de IDS/IPS para confirmar si los intentos de explotación fueron detectados y priorizados correctamente."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario destaca que los logs de firewall registran decisiones de tráfico (permitir/bloquear), esencial para verificar si los ataques fueron mitigados o no.",
+      "id": "p24-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre gestión de logs, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la modificación no autorizada de un archivo del sistema?",
+      "opciones": [
+        "a) El hash criptográfico del archivo antes y después de la modificación",
+        "b) El usuario y la hora exacta en que se modificó el archivo",
+        "c) El número de puerto utilizado para acceder al archivo desde la red",
+        "d) La dirección MAC del dispositivo que realizó la modificación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de seguridad de un sistema operativo típicamente registran el usuario y la hora exacta de cambios en archivos críticos, lo que permite detectar modificaciones no autorizadas según el temario.",
+      "id": "p24-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista de seguridad está investigando un incidente en el que múltiples estaciones de trabajo en una red empresarial han registrado intentos de conexión a servidores C&C (Command and Control) conocidos por malware. Tras revisar los logs de los firewalls de nueva generación (NGFW), no se encuentran registros de tráfico saliente hacia estos servidores. Sin embargo, al correlacionar los logs con los datos de metadatos de los archivos ejecutables en las estaciones afectadas, se observa que todos los binarios tienen el mismo hash (SHA-256) y fueron creados en un rango de tiempo muy cercano. Según el temario sobre gestión de logs, ¿qué tipo de información específica en los logs del sistema operativo debería revisar el analista PRIMERO para identificar el origen de la infección, dado que los logs de red no muestran evidencia del tráfico malicioso?",
+      "opciones": [
+        "Registros de creación/modificación de archivos ejecutables en los logs de auditoría de sistemas Windows (Security Event Logs) o syslog en Linux.",
+        "Registros de autenticación en los logs de Active Directory que muestren inicios de sesión sospechosos en las estaciones afectadas.",
+        "Registros de firewall que muestren intentos de conexión saliente bloqueados por políticas de aplicación en el NGFW.",
+        "Registros de escáner de vulnerabilidades que indiquen sistemas con software desactualizado en las estaciones afectadas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los logs de auditoría de sistemas operativos registran eventos como la creación o modificación de archivos ejecutables, lo que permitiría identificar el momento y origen de la infección en las estaciones de trabajo, incluso si el tráfico malicioso no fue registrado por los firewalls.",
+      "id": "p24-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario sobre gestión de logs, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar cambios en la configuración de autenticación, como la modificación de políticas de contraseñas?",
+      "opciones": [
+        "a) Eventos de autenticación con el evento ID 4624 (inicio de sesión exitoso) del usuario que realizó el cambio.",
+        "b) Eventos en el log de seguridad con el evento ID 4739 (cambio en la política de auditoría) o 4738 (cambio en la membresía de un grupo).",
+        "c) Registros en el log de firewall que muestren tráfico hacia el controlador de dominio.",
+        "d) Alertas en el log de IDS/IPS sobre intentos de fuerza bruta contra cuentas de usuario."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que los logs de sistemas operativos registran cambios en políticas de autenticación como eventos en el log de seguridad, con IDs específicos como 4739 o 4738.",
+      "id": "p24-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la creación no autorizada de una nueva cuenta de usuario?",
+      "opciones": [
+        "a) Cambios en la configuración de autenticación, como la modificación de políticas de contraseñas.",
+        "b) Eventos de autenticación como inicios y cierres de sesión, incluyendo la creación de nuevas cuentas.",
+        "c) Modificaciones en archivos críticos del sistema, como la eliminación de archivos importantes.",
+        "d) Deshabilitación de servicios que no deberían ser modificados manualmente."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de seguridad de un sistema operativo registran eventos de autenticación, incluyendo la creación de nuevas cuentas de usuario, como parte de los eventos de seguridad críticos.",
+      "id": "p24-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes tipos de logs NO registraría típicamente un escáner de vulnerabilidades según el temario?",
+      "opciones": [
+        "a) Dispositivos sin firewall configurado.",
+        "b) Flujos de tráfico bloqueados por un firewall.",
+        "c) Configuraciones incorrectas en recursos compartidos.",
+        "d) Sistemas operativos desactualizados."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los escáneres de vulnerabilidades generan logs sobre sistemas sin parches, configuraciones incorrectas o servicios innecesarios, pero no registran flujos de tráfico bloqueados por firewalls.",
+      "id": "p24-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un router y observa múltiples intentos de conexión a servidores no autorizados desde una misma dirección IP interna. ¿Qué tipo de amenaza está probablemente detectando?",
+      "opciones": [
+        "a) Un ataque de fuerza bruta contra cuentas de usuario.",
+        "b) Un intento de exfiltración de datos mediante DNS tunneling.",
+        "c) Un escaneo de puertos no autorizado desde la red interna.",
+        "d) Un ataque de denegación de servicio (DoS) contra servidores externos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de routers pueden revelar intentos de conexión a servidores no autorizados, lo que sugiere un escaneo de puertos o actividad maliciosa desde la red interna.",
+      "id": "p24-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de logs, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la modificación no autorizada de un archivo del sistema?",
+      "opciones": [
+        "a) El hash (SHA-256) del archivo antes y después de la modificación, junto con el usuario y hora del cambio",
+        "b) La ubicación GPS del dispositivo donde se realizó el cambio en el archivo",
+        "c) El número de puerto utilizado para acceder al archivo a través de la red",
+        "d) La dirección MAC del dispositivo que intentó acceder al archivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los logs de seguridad de un sistema operativo registran cambios en archivos críticos del sistema, incluyendo el usuario, hora y detalles del cambio, como el hash del archivo para detectar modificaciones no autorizadas.",
+      "id": "p24-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista revisa los logs de un SIEM y observa múltiples alertas con prioridad 'alta' sobre intentos de explotación de una vulnerabilidad crítica en un servicio web. Los logs muestran que los ataques provienen de múltiples direcciones IP distribuidas geográficamente, pero todos comparten el mismo User-Agent en los paquetes HTTP. ¿Qué acción debería tomar el analista PRIMERO, según el temario?",
+      "opciones": [
+        "a) Bloquear todas las direcciones IP de origen inmediatamente.",
+        "b) Correlacionar los logs con los metadatos de los archivos involucrados para identificar patrones.",
+        "c) Revisar los logs de autenticación del sistema operativo para confirmar accesos no autorizados.",
+        "d) Analizar los logs de tráfico DNS para detectar consultas sospechosas."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La correlación con metadatos de archivos puede revelar patrones compartidos (como el mismo User-Agent) que indiquen un ataque coordinado, siendo el primer paso para determinar su origen.",
+      "id": "p24-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la modificación no autorizada de un archivo del sistema?",
+      "opciones": [
+        "a) Cambios en la configuración de autenticación, como la modificación de políticas de contraseñas.",
+        "b) Eventos de autenticación como inicios y cierres de sesión.",
+        "c) Registros de cambios en archivos críticos del sistema, como su modificación o eliminación.",
+        "d) Deshabilitación de servicios que no deberían ser modificados manualmente."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de seguridad de un sistema operativo registran cambios en archivos críticos del sistema, como modificaciones o eliminaciones no autorizadas.",
+      "id": "p24-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista está investigando un incidente donde un archivo compartido en un servidor Windows fue modificado sin autorización. Los logs de seguridad de Windows no muestran registros del cambio, pero sí hay entradas en los logs del escáner de vulnerabilidades que indican un análisis reciente del servidor. ¿Qué tipo de log debería revisar el analista PRIMERO para verificar si el escáner pudo haber realizado cambios no autorizados?",
+      "opciones": [
+        "a) Logs de autenticación del sistema operativo.",
+        "b) Logs de metadatos de los archivos afectados.",
+        "c) Logs de tráfico de red del servidor.",
+        "d) Logs de configuración del escáner de vulnerabilidades."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de autenticación del sistema operativo pueden revelar si el escáner de vulnerabilidades (u otro proceso) realizó cambios en el archivo mediante una cuenta autorizada.",
+      "id": "p24-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la modificación no autorizada de la hora del sistema?",
+      "opciones": [
+        "a) Eventos de autenticación con credenciales de administrador",
+        "b) Cambios en la configuración de red detectados por el sistema",
+        "c) Registros de eventos de auditoría sobre modificaciones en el reloj del sistema",
+        "d) Alertas de IDS/IPS sobre intentos de manipulación de tiempo NTP"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de seguridad de los sistemas operativos registran cambios en la configuración crítica, como la hora del sistema, como eventos de auditoría para detectar manipulaciones no autorizadas.",
+      "id": "p24-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista de seguridad está investigando un incidente en el que un archivo crítico del sistema en un servidor Linux ha sido modificado sin autorización. Tras revisar los logs de seguridad del sistema operativo (ubicados en /var/log/), no se encuentran registros que indiquen cambios en el archivo. Sin embargo, al correlacionar los logs con los datos de metadatos del archivo afectado, se observa que la última modificación coincide con un rango de tiempo en el que se ejecutó un escaneo de vulnerabilidades en el servidor. Según el temario sobre gestión de logs, ¿qué tipo de información específica en los logs del escáner de vulnerabilidades debería revisar el analista PRIMERO para determinar si el escaneo pudo haber realizado cambios no autorizados en el archivo?",
+      "opciones": [
+        "a) Registros de intentos de conexión a servicios vulnerables detectados durante el escaneo",
+        "b) Entradas que indiquen si el escáner intentó modificar archivos del sistema o realizar cambios en la configuración",
+        "c) Alertas sobre sistemas con configuraciones incorrectas que podrían facilitar la modificación de archivos",
+        "d) Información sobre la detección de archivos críticos sin protección adecuada (ej. permisos excesivos) durante el análisis"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de escáneres de vulnerabilidades pueden incluir detalles sobre acciones realizadas durante el análisis, como modificaciones en archivos o configuraciones, lo que es crítico para identificar cambios no autorizados.",
+      "id": "p24-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un analista de seguridad está investigando un incidente en el que un archivo crítico del sistema en un servidor Linux ha sido modificado sin autorización. Los logs de seguridad del sistema operativo (ubicados en /var/log/) no muestran registros que indiquen cambios en el archivo. Sin embargo, al correlacionar los logs con los datos de metadatos del archivo afectado, se observa que la última modificación coincide con un rango de tiempo en el que se ejecutó un escaneo de vulnerabilidades en el servidor. Según el temario sobre gestión de logs, ¿qué tipo de información específica en los logs del escáner de vulnerabilidades debería revisar el analista PRIMERO para determinar si el escaneo pudo haber realizado cambios no autorizados en el archivo?",
+      "opciones": [
+        "a) Registros de direcciones IP de origen del escáner que podrían indicar un acceso no autorizado.",
+        "b) Entradas que muestren si el escáner intentó modificar archivos durante el análisis, como cambios en permisos o contenido.",
+        "c) Alertas sobre sistemas desactualizados o configuraciones incorrectas detectadas durante el escaneo.",
+        "d) Información sobre el tiempo de ejecución del escaneo y si este superó los umbrales configurados para evitar impactos en el rendimiento."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los escáneres de vulnerabilidades pueden registrar acciones como modificaciones de archivos durante el análisis, especialmente si se configuran para realizar pruebas activas. Revisar estas entradas permitiría confirmar si el escaneo alteró el archivo sin autorización.",
+      "id": "p24-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de gestión de logs, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la modificación no autorizada de la configuración de red, como cambios en reglas de firewall locales?",
+      "opciones": [
+        "a) Registros de intentos de fuerza bruta en servicios de red",
+        "b) Eventos de autenticación en el servicio de red local",
+        "c) Cambios en archivos de configuración del sistema (ej. /etc/network/interfaces en Linux)",
+        "d) Alertas de IDS/IPS sobre tráfico sospechoso en la interfaz de red"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de seguridad de sistemas operativos registran cambios en archivos críticos del sistema, incluyendo configuraciones de red como reglas de firewall locales o archivos de configuración de interfaces.",
+      "id": "p24-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando los logs generados por un firewall de nueva generación (NGFW) y un escáner de vulnerabilidades, ¿qué información es exclusiva de los logs del NGFW según el temario?",
+      "opciones": [
+        "Direcciones IP de origen y destino con puertos utilizados.",
+        "Categorías de URLs bloqueadas en estaciones de trabajo.",
+        "Información sobre el tipo de aplicación detectada (ej. redes sociales, streaming).",
+        "Dispositivos sin firewall configurado o sin protección antivirus."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los firewalls de nueva generación (NGFW) registran información detallada sobre el tipo de aplicación detectada en el tráfico, lo que no es típico en logs de escáneres de vulnerabilidades.",
+      "id": "p24-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de logs, ¿qué tipo de información específica registraría típicamente un escáner de vulnerabilidades en sus logs para identificar sistemas con cuentas de usuario habilitadas por defecto?",
+      "opciones": [
+        "a) Direcciones IP de los sistemas analizados con puertos abiertos.",
+        "b) Listado de recursos compartidos accesibles sin autenticación, incluyendo permisos de usuarios.",
+        "c) Cambios en la configuración de firewall de los sistemas escaneados.",
+        "d) Metadatos de archivos críticos modificados en los sistemas analizados."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los escáneres de vulnerabilidades registran típicamente información sobre configuraciones incorrectas, como cuentas de usuario habilitadas por defecto o recursos compartidos accesibles sin autenticación, según se detalla en el temario.",
+      "id": "p24-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de logs, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la creación no autorizada de un nuevo servicio en el sistema?",
+      "opciones": [
+        "a) Cambios en la configuración de red, como modificaciones en reglas de firewall locales.",
+        "b) Intentos de fuerza bruta contra servicios o cuentas de usuario.",
+        "c) Registros de eventos de autenticación, como inicios y cierres de sesión.",
+        "d) Eventos de creación, modificación o eliminación de servicios del sistema operativo."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los sistemas operativos registran eventos relacionados con la creación, modificación o eliminación de servicios en sus logs de seguridad, lo que permite detectar cambios no autorizados que podrían indicar una intrusión o actividad maliciosa.",
+      "id": "p24-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de logs, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la modificación no autorizada de la configuración de autenticación, como la deshabilitación de políticas de contraseñas?",
+      "opciones": [
+        "a) Registros de cambios en archivos de configuración del sistema (ej. /etc/passwd en Linux o SAM en Windows)",
+        "b) Eventos de intentos de autenticación fallidos con credenciales incorrectas",
+        "c) Alertas de integridad de archivos del sistema (ej. Tripwire o File Integrity Monitoring)",
+        "d) Registros de desconexiones de usuarios por inactividad prolongada"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los sistemas operativos registran cambios en archivos de configuración críticos como /etc/passwd (Linux) o SAM (Windows) para detectar modificaciones no autorizadas en políticas de autenticación.",
+      "id": "p24-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la modificación no autorizada de la hora del sistema?",
+      "opciones": [
+        "Cambios en la configuración de autenticación.",
+        "Eventos de autenticación con timestamps inconsistentes o modificaciones en la hora del sistema.",
+        "Deshabilitación no autorizada de servicios críticos.",
+        "Modificación de archivos de configuración del sistema."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de seguridad de un sistema operativo registran eventos de autenticación y cambios en la configuración, incluyendo modificaciones en la hora del sistema que pueden detectarse mediante timestamps inconsistentes.",
+      "id": "p24-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la modificación no autorizada de la configuración de seguridad del sistema, como la deshabilitación de un servicio de protección antivirus?",
+      "opciones": [
+        "a) Registros de cambios en el archivo de configuración del firewall local",
+        "b) Entradas que indiquen la desactivación de un servicio crítico del sistema mediante eventos de servicio (Service Control Manager)",
+        "c) Alertas de IDS/IPS sobre intentos de exploit contra el servicio antivirus",
+        "d) Datos de metadatos en archivos del sistema que muestren modificaciones recientes"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de seguridad de un sistema operativo registran eventos como la desactivación de servicios críticos mediante el Service Control Manager (SCM) en Windows, lo que permite detectar modificaciones no autorizadas en la configuración de seguridad.",
+      "id": "p24-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre gestión de logs, ¿qué tipo de información específica registraría típicamente un sistema operativo en sus logs de seguridad para detectar la modificación no autorizada de la configuración de red, como cambios en reglas de firewall locales?",
+      "opciones": [
+        "a) Registros de intentos de autenticación fallidos en el firewall local.",
+        "b) Eventos de creación, modificación o eliminación de reglas en el firewall local del sistema operativo.",
+        "c) Alertas sobre tráfico bloqueado por el firewall local del sistema operativo.",
+        "d) Registros de consultas DNS realizadas por el sistema operativo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los logs de seguridad del sistema operativo en este contexto registrarían cambios específicos en la configuración de red, como modificaciones en reglas de firewall locales, para detectar actividades no autorizadas.",
+      "id": "p24-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista de seguridad está investigando un incidente donde un servicio crítico en un servidor Linux ha sido deshabilitado sin autorización. Tras revisar los logs de seguridad del sistema operativo (/var/log/), no encuentra registros que indiquen la deshabilitación del servicio. Sin embargo, al correlacionar los logs con los datos de metadatos de los archivos de configuración del servicio, observa que la última modificación coincide con un rango de tiempo en el que se ejecutó un escaneo de vulnerabilidades en el servidor. Según el temario sobre gestión de logs, ¿qué tipo de información específica en los logs del escáner de vulnerabilidades debería revisar el analista PRIMERO para determinar si el escaneo pudo haber realizado cambios no autorizados en la configuración del servicio?",
+      "opciones": [
+        "a) Registros de cuentas de usuario habilitadas por defecto en el servidor.",
+        "b) Eventos de autenticación que indiquen intentos de acceso al servicio.",
+        "c) Acciones realizadas por el escáner, como modificaciones en archivos de configuración o reinicio de servicios.",
+        "d) Alertas sobre sistemas desactualizados o configuraciones incorrectas en el servicio."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los logs de escáneres de vulnerabilidades registran acciones explícitas como modificaciones en archivos de configuración o reinicios de servicios, lo que permite identificar cambios no autorizados. Esta información es clave para determinar si el escaneo alteró la configuración del servicio.",
+      "id": "p24-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un analista de seguridad está investigando un incidente donde un servicio crítico en un servidor Linux (ej. Apache) fue deshabilitado sin autorización. Tras revisar los logs de seguridad del sistema operativo (/var/log/), no encuentra registros que indiquen la deshabilitación del servicio. Sin embargo, al correlacionar los logs con los metadatos del archivo de configuración del servicio (ej. /etc/apache2/apache2.conf), observa que la última modificación coincide con un rango de tiempo en el que se ejecutó un escaneo de vulnerabilidades en el servidor. Según el temario sobre gestión de logs, ¿qué tipo de información específica en los logs del escáner de vulnerabilidades debería revisar el analista PRIMERO para determinar si el escaneo pudo haber realizado cambios no autorizados en la configuración del servicio?",
+      "opciones": [
+        "a) Registros de tareas programadas (cron jobs) ejecutadas durante el escaneo que puedan haber modificado archivos del sistema.",
+        "b) Alertas de vulnerabilidades detectadas en el servicio Apache durante el escaneo, que podrían indicar que el escaneo intentó parchear o deshabilitar el servicio como medida de mitigación.",
+        "c) Registros de cambios en la configuración del escáner (ej. ajustes de políticas de escaneo) que permitieran modificaciones en archivos del sistema.",
+        "d) Información sobre el usuario o proceso que ejecutó el escaneo, incluyendo permisos utilizados y acciones realizadas en el sistema de archivos."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los logs del escáner de vulnerabilidades suelen registrar el usuario o proceso que ejecutó el escaneo, así como los permisos empleados y las acciones realizadas en el sistema de archivos, lo que permite identificar si el escaneo modificó archivos críticos como los de configuración del servicio Apache.",
+      "id": "p24-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Log Data",
+      "youtubeId": "EDru1LTYDJw"
+    }
+  ]
+}

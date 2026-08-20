@@ -1,0 +1,1400 @@
+{
+  "id": 23,
+  "titulo": "4.8 · Respuesta a incidentes",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LA RESPUESTA A INCIDENTES (INCIDENT RESPONSE) es un proceso crítico en la ciberseguridad que permite a las organizaciones identificar, contener, erradicar y recuperarse de eventos de seguridad. Este proceso no solo minimiza el impacto de un incidente, sino que también fortalece las defensas futuras mediante lecciones aprendidas. A continuación, se detallan los aspectos clave de la respuesta a incidentes, basados en el marco de trabajo del NIST (Instituto Nacional de Estándares y Tecnología de EE.UU.) y en las mejores prácticas del sector.\n\n\nLA IMPORTANCIA DE LA PREPARACIÓN\n\nAntes de que ocurra un incidente, es fundamental establecer un plan de respuesta estructurado. Este plan debe incluir políticas claras, procedimientos detallados y recursos preparados para actuar con rapidez. Uno de los documentos de referencia más importantes es el NIST SP 800-61 Rev. 2, titulado \"Computer Security Incident Handling Guide\", que describe el ciclo de vida completo de la respuesta a incidentes.\n\n\nPara estar preparados, las organizaciones deben contar con:\n\n- Una lista actualizada de contactos clave que incluya a todos los involucrados en la respuesta a incidentes (equipos de TI, legal, relaciones públicas, etc.).\n- Un \"kit de emergencia\" (incident go bag) con herramientas especializadas, como laptops con software forense, medios extraíbles para copias de seguridad, software de captura de datos y sistemas de imagen digital.\n- Documentación esencial, como diagramas de red, baselines de seguridad, hashes de archivos críticos y copias de imágenes de sistemas operativos y aplicaciones conocidas como buenas.\n- Políticas y procedimientos documentados que todos los miembros de la organización conozcan y sigan durante un incidente.\n\n\nDETECCIÓN Y ANÁLISIS DE INCIDENTES\n\nDetectar un incidente de seguridad no siempre es sencillo, ya que los sistemas pueden estar bajo constante ataque. Los administradores de seguridad deben estar atentos a señales como:\n\n- Alertas de sistemas de prevención de intrusiones (IPS, Intrusion Prevention Systems) que detecten intentos de exploits, como desbordamientos de búfer (buffer overflow).\n- Informes de antivirus que indiquen la presencia de malware en estaciones de trabajo.\n- Cambios no autorizados en configuraciones de seguridad.\n- Aumentos inusuales en el tráfico de red, que podrían indicar exfiltración de datos.\n\n\nLos registros (logs) son una fuente valiosa de información. Por ejemplo, los logs de servidores web pueden revelar escaneos de vulnerabilidades, mientras que los logs de firewalls pueden mostrar conexiones sospechosas. Es crucial revisar estos registros con regularidad y correlacionarlos con eventos conocidos, como la publicación de parches de seguridad por parte de proveedores como Microsoft.\n\n\nCONTENCIÓN, ERRADICACIÓN Y RECUPERACIÓN\n\nUna vez detectado un incidente, el siguiente paso es contenerlo para evitar que se propague. Esto puede implicar:\n\n- Aislar sistemas infectados en un entorno controlado, como un sandbox (entorno de pruebas aislado), para analizar el comportamiento del malware sin riesgo.\n- Desconectar dispositivos comprometidos de la red.\n- Bloquear direcciones IP o dominios maliciosos en firewalls o sistemas de filtrado.\n\n\nLa erradicación consiste en eliminar la causa raíz del incidente. Esto puede incluir:\n\n- Eliminar malware o reinstalar sistemas operativos desde imágenes conocidas como buenas.\n- Deshabilitar cuentas de usuario comprometidas o creadas por el atacante.\n- Parchear vulnerabilidades que permitieron el acceso inicial.\n\n\nLa recuperación implica restaurar los sistemas a su estado operativo normal. Las organizaciones deben:\n\n- Restaurar datos desde copias de seguridad confiables.\n- Verificar la integridad de los sistemas restaurados.\n- Implementar medidas adicionales para prevenir futuros incidentes, como cambios en políticas de seguridad o configuraciones de red.\n\n\nLECCIONES APRENDIDAS Y MEJORA CONTINUA\n\nTras resolver un incidente, es esencial realizar una reunión post-incidente (post-incident meeting) para analizar lo ocurrido. Esta reunión debe incluir a todos los involucrados y abordar preguntas clave como:\n\n- ¿Qué ocurrió exactamente durante el incidente?\n- ¿Cuál fue la línea de tiempo del evento?\n- ¿Cómo funcionó el proceso de respuesta?\n- ¿Se identificaron indicadores de compromiso (IOCs, Indicators of Compromise) que no fueron detectados inicialmente?\n- ¿Qué cambios se deben implementar para mejorar la respuesta futura?\n\n\nEstas reuniones permiten identificar brechas en la preparación y ajustar los planes de respuesta. La mejora continua es un principio fundamental en la respuesta a incidentes, ya que cada evento proporciona oportunidades para fortalecer las defensas.\n\n\nPRUEBAS Y SIMULACIONES\n\nAntes de que ocurra un incidente real, las organizaciones deben realizar pruebas y simulaciones para evaluar la efectividad de sus planes de respuesta. Estas pruebas pueden incluir:\n\n- Ejercicios de mesa (tabletop exercises), donde los equipos discuten escenarios hipotéticos y sus respuestas.\n- Simulaciones de ataques, como envío de correos phishing (suplantación de identidad por correo) para evaluar la conciencia de los usuarios y la eficacia de los filtros de correo.\n\n\nLas simulaciones permiten identificar áreas de mejora sin afectar sistemas de producción. Por ejemplo, una simulación de phishing puede revelar usuarios que hacen clic en enlaces maliciosos, lo que indica la necesidad de capacitación adicional.\n\n\nANÁLISIS DE CAUSA RAÍZ (ROOT CAUSE ANALYSIS)\n\nEl análisis de causa raíz es un proceso para identificar las vulnerabilidades o fallos que permitieron que ocurriera el incidente. Este análisis puede incluir:\n\n- Revisión de logs y registros de sistemas.\n- Análisis de archivos modificados o malware encontrado.\n- Evaluación de configuraciones de seguridad y políticas.\n\n\nEl objetivo es entender no solo cómo ocurrió el incidente, sino también por qué los controles de seguridad existentes no lo evitaron. Esto permite implementar medidas correctivas, como parches de seguridad, cambios en políticas de firewall o mejoras en la monitorización.\n\n\nCAZA DE AMENAZAS (THREAT HUNTING)\n\nLa caza de amenazas es un proceso proactivo para identificar actividades maliciosas antes de que causen un incidente. Esto implica:\n\n- Buscar vulnerabilidades conocidas y asegurarse de que los sistemas estén parcheados.\n- Monitorear el tráfico de red en busca de patrones sospechosos.\n\n- Utilizar herramientas automatizadas de detección y respuesta (EDR, Endpoint Detection and Response) para identificar comportamientos anómalos.\n\n\nLa caza de amenazas complementa la respuesta a incidentes al permitir la detección temprana de amenazas.\n\n\nLA IMPORTANCIA DE LA INVESTIGACIÓN FORENSE DIGITAL\n\nLa investigación forense digital es esencial para recopilar pruebas que puedan usarse en investigaciones legales o para entender mejor un incidente. Las mejores prácticas para la adquisición, análisis y preservación de datos están documentadas en el RFC 3227, \"Guidelines for Evidence Collection and Archiving\".\n\n\nDurante una investigación forense, es crucial:\n\n- Mantener la integridad de los datos: cualquier modificación podría invalidar las pruebas en un proceso legal.\n- Documentar cada paso del proceso de adquisición, incluyendo quién accedió a los datos y cuándo.\n- Utilizar cadenas de custodia (chain of custody) para registrar el manejo de las pruebas, ya sea mediante firmas digitales o hashes.\n\n\nLa adquisición de datos puede incluir:\n\n- Copias de discos duros o imágenes de sistemas.\n- Registros de memoria (RAM) en sistemas en ejecución.\n- Logs de firewalls, servidores y dispositivos de red.\n- Datos de sistemas virtuales, como snapshots de máquinas virtuales.\n\n\nEs importante recopilar datos de todas las fuentes posibles, incluso de ubicaciones menos obvias, como archivos temporales, registros de reciclaje o marcadores de navegadores. La documentación detallada de cómo se adquirieron los datos es esencial para su uso en procesos legales futuros.\n\n\nLEGAL HOLD Y E-DISCOVERY\n\nUn legal hold es una solicitud legal para preservar datos específicos que podrían ser relevantes en un proceso judicial. Este proceso implica:\n\n- Identificar los datos requeridos y su ubicación.\n- Asegurar que los datos no sean modificados o eliminados.\n- Almacenar los datos en un repositorio seguro y accesible.\n\n\nLa e-discovery (descubrimiento electrónico) es el proceso de recopilar, preparar y producir documentos electrónicos para su uso en procesos legales. Como profesional de seguridad, es posible que se le solicite recopilar grandes cantidades de datos para su análisis por parte de un equipo forense.\n\n\nCONCLUSIÓN\n\nLa respuesta a incidentes es un proceso cíclico que requiere preparación, detección, contención, erradicación, recuperación y mejora continua. Las organizaciones deben invertir en planes de respuesta bien documentados, pruebas regulares y capacitación para sus equipos. La investigación forense digital y el análisis de causa raíz son herramientas clave para entender y prevenir futuros incidentes. Al seguir las mejores prácticas y aprender de cada evento, las organizaciones pueden reducir el impacto de los incidentes y fortalecer su postura de seguridad."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Respuesta a Incidentes] --> B[Preparación]\nA --> C[Detección y Análisis]\nA --> D[Contención]\nA --> E[Erradicación]\nA --> F[Recuperación]\nA --> G[Lecciones Aprendidas]\n\nB --> B1[Lista de contactos actualizada]\nB --> B2[Kit de emergencia (incident go bag)]\nB --> B3[Documentación: diagramas, baselines, hashes]\nB --> B4[Políticas y procedimientos documentados]\n\nC --> C1[Alertas de IPS]\nC --> C2[Informes de antivirus]\nC --> C3[Cambios no autorizados en configuraciones]\nC --> C4[Aumento inusual en tráfico de red]\nC --> C5[Revisión de logs: servidores web, firewalls]\n\nD --> D1[Aislar sistemas infectados en sandbox]\nD --> D2[Desconectar dispositivos comprometidos]\nD --> D3[Bloquear IPs o dominios maliciosos]\n\nE --> E1[Eliminar malware o reinstalar sistemas]\nE --> E2[Deshabilitar cuentas comprometidas]\nE --> E3[Parchear vulnerabilidades]\n\nF --> F1[Restaurar datos desde copias de seguridad]\nF --> F2[Verificar integridad de sistemas restaurados]\nF --> F3[Implementar medidas adicionales de seguridad]\n\nG --> G1[Reunión post-incidente (post-incident meeting)]\nG --> G2[Análisis de causa raíz (Root Cause Analysis)]\nG --> G3[Pruebas y simulaciones]\nG --> G4[Caza de amenazas (Threat Hunting)]\n\nG --> G5[Investigación forense digital]\nG --> G6[Legal hold y e-discovery]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc23-01",
+      "pregunta": "¿Qué documento del NIST es fundamental para la respuesta a incidentes y cuál es su título?",
+      "respuesta": "NIST SP 800-61 Rev. 2, titulado 'Computer Security Incident Handling Guide'."
+    },
+    {
+      "id": "fc23-02",
+      "pregunta": "¿Qué es un 'incident go bag' y qué debe incluir?",
+      "respuesta": "Es un kit de emergencia con herramientas especializadas para responder a incidentes. Debe incluir laptops con software forense, medios extraíbles, software de captura de datos, sistemas de imagen digital y copias de imágenes de sistemas operativos conocidas como buenas."
+    },
+    {
+      "id": "fc23-03",
+      "pregunta": "Menciona tres señales que pueden indicar un incidente de seguridad en curso.",
+      "respuesta": "Alertas de IPS por intentos de exploits, informes de antivirus sobre malware en estaciones de trabajo y cambios no autorizados en configuraciones de seguridad."
+    },
+    {
+      "id": "fc23-04",
+      "pregunta": "¿Qué es un sandbox y para qué se utiliza en la respuesta a incidentes?",
+      "respuesta": "Es un entorno de pruebas aislado donde se puede ejecutar malware o software sospechoso para analizar su comportamiento sin riesgo para los sistemas productivos."
+    },
+    {
+      "id": "fc23-05",
+      "pregunta": "¿Qué pasos incluye el proceso de contención durante un incidente?",
+      "respuesta": "Aislar sistemas infectados en un sandbox, desconectar dispositivos comprometidos de la red y bloquear direcciones IP o dominios maliciosos en firewalls."
+    },
+    {
+      "id": "fc23-06",
+      "pregunta": "¿Qué es el análisis de causa raíz (Root Cause Analysis) y por qué es importante?",
+      "respuesta": "Es un proceso para identificar las vulnerabilidades o fallos que permitieron un incidente. Es importante porque permite implementar medidas correctivas para prevenir futuros incidentes."
+    },
+    {
+      "id": "fc23-07",
+      "pregunta": "¿Qué es una reunión post-incidente (post-incident meeting) y qué preguntas clave debe abordar?",
+      "respuesta": "Es una reunión para analizar lo ocurrido durante un incidente. Debe abordar preguntas como qué ocurrió, cuál fue la línea de tiempo, cómo funcionó el proceso de respuesta y qué cambios se deben implementar."
+    },
+    {
+      "id": "fc23-08",
+      "pregunta": "¿Qué es un ejercicio de mesa (tabletop exercise) y qué ventajas ofrece?",
+      "respuesta": "Es un ejercicio donde los equipos discuten escenarios hipotéticos y sus respuestas sin afectar sistemas de producción. Ofrece la ventaja de evaluar procesos y procedimientos en un entorno controlado y de bajo riesgo."
+    },
+    {
+      "id": "fc23-09",
+      "pregunta": "¿Qué es la caza de amenazas (Threat Hunting) y qué implica?",
+      "respuesta": "Es un proceso proactivo para identificar actividades maliciosas antes de que causen un incidente. Implica buscar vulnerabilidades conocidas, monitorear tráfico de red y usar herramientas EDR para detectar comportamientos anómalos."
+    },
+    {
+      "id": "fc23-10",
+      "pregunta": "¿Qué es un legal hold y qué implica para una organización?",
+      "respuesta": "Es una solicitud legal para preservar datos específicos que podrían ser relevantes en un proceso judicial. Implica identificar los datos requeridos, asegurar que no sean modificados y almacenarlos en un repositorio seguro."
+    },
+    {
+      "id": "fc23-11",
+      "pregunta": "¿Qué es la cadena de custodia (chain of custody) y por qué es crucial en la investigación forense digital?",
+      "respuesta": "Es un registro del manejo de las pruebas que documenta quién accedió a los datos y cuándo. Es crucial porque garantiza la integridad de los datos y su validez en procesos legales."
+    },
+    {
+      "id": "fc23-12",
+      "pregunta": "¿Qué es la e-discovery y qué papel juega un profesional de seguridad en este proceso?",
+      "respuesta": "Es el proceso de recopilar, preparar y producir documentos electrónicos para su uso en procesos legales. Un profesional de seguridad puede ser solicitado para recopilar grandes cantidades de datos para su análisis por parte de un equipo forense."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "Según el temario, ¿cuál de los siguientes elementos NO forma parte típicamente de un 'kit de emergencia' (incident go bag) para respuesta a incidentes?",
+      "opciones": [
+        "a) Laptops con software forense preinstalado",
+        "b) Medios extraíbles para copias de seguridad",
+        "c) Diagramas de red actualizados en tiempo real",
+        "d) Software de captura de datos y sistemas de imagen digital"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que el 'kit de emergencia' incluye herramientas como laptops forenses, medios extraíbles y software de captura, pero no especifica que los diagramas de red deban estar actualizados en tiempo real dentro del kit.",
+      "id": "p23-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué documento del NIST es considerado una referencia clave para el ciclo de vida completo de la respuesta a incidentes?",
+      "opciones": [
+        "a) NIST SP 800-53",
+        "b) NIST SP 800-61 Rev. 2",
+        "c) NIST SP 800-171",
+        "d) NIST SP 800-12"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario cita explícitamente el NIST SP 800-61 Rev. 2, titulado 'Computer Security Incident Handling Guide', como la guía de referencia para el ciclo de vida de la respuesta a incidentes.",
+      "id": "p23-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la respuesta a incidentes, ¿qué acción NO corresponde a la fase de contención?",
+      "opciones": [
+        "a) Aislar sistemas infectados en un sandbox",
+        "b) Restaurar datos desde copias de seguridad",
+        "c) Desconectar dispositivos comprometidos de la red",
+        "d) Bloquear direcciones IP maliciosas en firewalls"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La restauración de datos desde copias de seguridad es parte de la fase de recuperación, no de contención. Las otras opciones son medidas típicas de contención según el temario.",
+      "id": "p23-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo principal de la reunión post-incidente (post-incident meeting)?",
+      "opciones": [
+        "a) Identificar indicadores de compromiso (IOCs) no detectados inicialmente",
+        "b) Determinar responsabilidades legales para sancionar al atacante",
+        "c) Analizar la línea de tiempo del evento",
+        "d) Evaluar el funcionamiento del proceso de respuesta"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que la reunión post-incidente busca analizar el incidente, la línea de tiempo, el proceso de respuesta y posibles mejoras, pero no menciona determinar responsabilidades legales para sancionar.",
+      "id": "p23-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de seguridad observa un aumento inusual en el tráfico de red hacia un servidor externo. Según el temario, ¿qué tipo de incidente podría estar ocurriendo?",
+      "opciones": [
+        "a) Exfiltración de datos",
+        "b) Inyección SQL",
+        "c) Denegación de servicio (DoS)",
+        "d) Cross-site scripting (XSS)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que aumentos inusuales en el tráfico de red podrían indicar exfiltración de datos, es decir, la transferencia no autorizada de información desde la red interna.",
+      "id": "p23-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué principio forense digital garantiza que las pruebas recopiladas puedan ser admitidas en un proceso legal?",
+      "opciones": [
+        "a) Uso de cadenas de custodia (chain of custody)",
+        "b) Análisis de logs en tiempo real",
+        "c) Eliminación de archivos temporales",
+        "d) Restauración de sistemas desde imágenes buenas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que las cadenas de custodia son esenciales para registrar el manejo de pruebas y garantizar su integridad en procesos legales.",
+      "id": "p23-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante ha comprometido una cuenta de administrador mediante un ataque de phishing, ¿cuál sería la PRIMERA acción recomendada en la fase de erradicación?",
+      "opciones": [
+        "a) Deshabilitar la cuenta de usuario comprometida",
+        "b) Parchear todas las vulnerabilidades del sistema",
+        "c) Restaurar el sistema desde una imagen conocida como buena",
+        "d) Analizar los logs para identificar la fuente del ataque"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario indica que, en la fase de erradicación, una de las primeras acciones es deshabilitar cuentas comprometidas para evitar que el atacante las utilice nuevamente.",
+      "id": "p23-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué herramienta o proceso NO está directamente relacionado con la caza de amenazas (threat hunting)?",
+      "opciones": [
+        "a) Análisis de logs de firewalls",
+        "b) Uso de herramientas EDR para detectar comportamientos anómalos",
+        "c) Restauración de sistemas desde copias de seguridad",
+        "d) Monitoreo de tráfico de red en busca de patrones sospechosos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La restauración de sistemas desde copias de seguridad es parte de la fase de recuperación, no de la caza de amenazas. Las otras opciones son mencionadas en el temario como componentes de la caza de amenazas.",
+      "id": "p23-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Durante una investigación forense, un analista recopila datos de la memoria RAM de un sistema en ejecución. ¿Qué principio forense está aplicando al hacerlo?",
+      "opciones": [
+        "a) Preservación de la integridad de los datos",
+        "b) Adquisición de datos en caliente (live acquisition)",
+        "c) Documentación de la cadena de custodia",
+        "d) Análisis de causa raíz"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que la adquisición de datos puede incluir registros de memoria (RAM) en sistemas en ejecución, lo que implica una adquisición en caliente para capturar información volátil.",
+      "id": "p23-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización detecta que un atacante ha explotado una vulnerabilidad no parcheada en un servidor web. Tras contener el incidente, ¿qué medida de erradicación es MENOS efectiva para evitar futuros incidentes similares?",
+      "opciones": [
+        "a) Parchear la vulnerabilidad explotada",
+        "b) Deshabilitar cuentas de usuario creadas por el atacante",
+        "c) Restaurar el servidor desde una imagen conocida como buena",
+        "d) Eliminar todos los logs del servidor para ocultar el rastro del ataque"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario indica que la erradicación implica eliminar la causa raíz (como parchear vulnerabilidades o deshabilitar cuentas), pero eliminar logs no solo no resuelve el problema, sino que dificulta la investigación forense y el análisis de causa raíz.",
+      "id": "p23-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué diferencia fundamental existe entre la fase de 'contención' y la fase de 'erradicación' en la respuesta a incidentes?",
+      "opciones": [
+        "La contención busca detener la propagación del incidente, mientras que la erradicación elimina la causa raíz que permitió el incidente.",
+        "La contención solo aplica a incidentes físicos, mientras que la erradicación es exclusiva de incidentes lógicos.",
+        "La contención implica restaurar sistemas desde copias de seguridad, mientras que la erradicación se enfoca en aislar sistemas infectados.",
+        "La contención es opcional, mientras que la erradicación es obligatoria según el NIST SP 800-61 Rev. 2."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La contención tiene como objetivo limitar el impacto del incidente, mientras que la erradicación busca eliminar la causa raíz que lo permitió (NIST SP 800-61 Rev. 2).",
+      "id": "p23-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de respuesta a incidentes detecta que un atacante ha modificado archivos críticos en un servidor web. ¿Qué principio forense digital están aplicando al realizar una copia de seguridad de estos archivos antes de cualquier modificación adicional?",
+      "opciones": [
+        "Cadena de custodia (chain of custody)",
+        "Integridad de los datos",
+        "Legal hold",
+        "Análisis de causa raíz"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La integridad de los datos garantiza que las pruebas no sean alteradas, lo que es esencial para su validez legal (RFC 3227).",
+      "id": "p23-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes elementos NO es un componente típico de un 'kit de emergencia' (incident go bag) según el temario?",
+      "opciones": [
+        "Copias de imágenes de sistemas operativos conocidos como buenos.",
+        "Medios extraíbles para copias de seguridad.",
+        "Software de captura de datos forenses.",
+        "Herramientas de desarrollo de software."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Un kit de emergencia incluye herramientas especializadas para respuesta a incidentes, no herramientas de desarrollo (NIST SP 800-61 Rev. 2).",
+      "id": "p23-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante ha explotado una vulnerabilidad no parcheada en un servidor SQL, ¿qué medida de erradicación sería MENOS efectiva para evitar futuros incidentes similares?",
+      "opciones": [
+        "Aplicar el parche de seguridad correspondiente al servidor SQL.",
+        "Deshabilitar cuentas de usuario no autorizadas en el servidor.",
+        "Restaurar el servidor desde una imagen limpia.",
+        "Aumentar el ancho de banda de la red del servidor."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Aumentar el ancho de banda no aborda la vulnerabilidad subyacente; la erradicación efectiva requiere solucionar la causa raíz (parchear la vulnerabilidad).",
+      "id": "p23-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué documento del NIST es considerado una referencia clave para la adquisición, análisis y preservación de pruebas digitales en investigaciones forenses?",
+      "opciones": [
+        "NIST SP 800-61 Rev. 2",
+        "RFC 3227",
+        "NIST SP 800-53",
+        "ISO/IEC 27035"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El RFC 3227, 'Guidelines for Evidence Collection and Archiving', proporciona directrices para la recolección y preservación de pruebas digitales.",
+      "id": "p23-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de seguridad observa que un servidor web está enviando grandes cantidades de datos a una IP externa desconocida. Según el temario, ¿qué tipo de incidente podría estar ocurriendo?",
+      "opciones": [
+        "Escaneo de vulnerabilidades",
+        "Exfiltración de datos",
+        "Denegación de servicio (DoS)",
+        "Ataque de fuerza bruta"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El envío inusual de datos a una IP externa sugiere exfiltración de datos, un indicador común de compromiso (IOC).",
+      "id": "p23-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Durante una reunión post-incidente, el equipo discute si se implementaron controles de seguridad adecuados para prevenir el incidente. ¿Qué proceso están realizando al abordar esta pregunta?",
+      "opciones": [
+        "Análisis de causa raíz (Root Cause Analysis)",
+        "Evaluación de legal hold",
+        "Prueba de mesa (tabletop exercise)",
+        "Caza de amenazas (Threat Hunting)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El análisis de causa raíz busca identificar las vulnerabilidades o fallos que permitieron el incidente para implementar medidas correctivas.",
+      "id": "p23-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo principal de la caza de amenazas (Threat Hunting) según el temario?",
+      "opciones": [
+        "Identificar actividades maliciosas antes de que causen un incidente.",
+        "Buscar vulnerabilidades conocidas y asegurar que los sistemas estén parcheados.",
+        "Restaurar sistemas desde copias de seguridad tras un incidente.",
+        "Utilizar herramientas automatizadas de detección y respuesta (EDR) para detectar comportamientos anómalos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La caza de amenazas es un proceso proactivo; la restauración de sistemas es parte de la fase de recuperación, no de la caza de amenazas.",
+      "id": "p23-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista forense recopila datos de la memoria RAM de un sistema en ejecución para analizar un posible compromiso. ¿Qué principio forense está aplicando al hacerlo?",
+      "opciones": [
+        "Legal hold",
+        "Cadena de custodia",
+        "Adquisición de datos en estado volátil",
+        "Análisis de causa raíz"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La adquisición de datos en estado volátil, como la memoria RAM, es clave para preservar pruebas que podrían perderse al apagar el sistema (RFC 3227).",
+      "id": "p23-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un ejercicio de mesa (tabletop exercise), el equipo de respuesta a incidentes simula un ataque de phishing exitoso que compromete una cuenta de administrador. ¿Qué medida de mejora continua sería MENOS relevante para este escenario?",
+      "opciones": [
+        "Implementar autenticación multifactor (MFA) para cuentas administrativas.",
+        "Revisar y actualizar políticas de contraseñas.",
+        "Aumentar el ancho de banda de la red para mejorar el rendimiento.",
+        "Capacitar a los usuarios para identificar correos de phishing."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Aumentar el ancho de banda no aborda la causa raíz del incidente; las medidas de mejora continua deben enfocarse en controles de seguridad y capacitación.",
+      "id": "p23-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué elemento NO es parte típica de un 'kit de emergencia' (incident go bag) para respuesta a incidentes?",
+      "opciones": [
+        "a) Laptops con software forense preinstalado",
+        "b) Medios extraíbles para copias de seguridad",
+        "c) Documentación de políticas de marketing y ventas",
+        "d) Sistemas de imagen digital para discos duros"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que el 'kit de emergencia' incluye herramientas técnicas como laptops forenses, medios de backup y sistemas de imagen digital, pero no documentación de áreas no técnicas como marketing.",
+      "id": "p23-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia clave establece el temario entre la fase de 'contención' y la fase de 'erradicación' en la respuesta a incidentes?",
+      "opciones": [
+        "a) La contención busca eliminar la causa raíz, mientras la erradicación aísla el incidente para evitar propagación",
+        "b) La contención aísla el incidente para evitar propagación, mientras la erradicación elimina la causa raíz",
+        "c) Ambas fases son idénticas y pueden realizarse en cualquier orden",
+        "d) La contención solo aplica a incidentes físicos, mientras la erradicación es digital"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que la contención busca limitar el impacto del incidente (aislando sistemas), mientras la erradicación elimina la causa raíz (ej. malware o cuentas comprometidas).",
+      "id": "p23-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte del proceso de erradicación en la respuesta a incidentes?",
+      "opciones": [
+        "a) Deshabilitar cuentas de usuario comprometidas",
+        "b) Parchear vulnerabilidades explotadas por el atacante",
+        "c) Restaurar sistemas desde copias de seguridad confiables",
+        "d) Eliminar malware o reinstalar sistemas operativos desde imágenes conocidas como buenas"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La restauración de sistemas desde copias de seguridad confiables corresponde a la fase de recuperación, no a la de erradicación, que se enfoca en eliminar la causa raíz del incidente.",
+      "id": "p23-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento del NIST proporciona directrices específicas para la adquisición, análisis y preservación de pruebas digitales en investigaciones forenses?",
+      "opciones": [
+        "a) NIST SP 800-61 Rev. 2",
+        "b) NIST SP 800-86",
+        "c) RFC 3227",
+        "d) NIST SP 800-53"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El RFC 3227, titulado 'Guidelines for Evidence Collection and Archiving', es el documento que detalla las mejores prácticas para la adquisición, análisis y preservación de pruebas digitales en investigaciones forenses.",
+      "id": "p23-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante ha explotado una vulnerabilidad no parcheada en un servidor SQL, ¿qué medida de erradicación sería MENOS efectiva para evitar futuros incidentes similares según el temario?",
+      "opciones": [
+        "a) Parchear la vulnerabilidad explotada",
+        "b) Implementar un firewall de aplicaciones web (WAF)",
+        "c) Desconectar el servidor de la red temporalmente",
+        "d) Realizar un análisis de causa raíz para identificar fallos en los controles"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario indica que la erradicación debe eliminar la causa raíz (ej. parchear vulnerabilidades), mientras desconectar el servidor es una medida de contención temporal.",
+      "id": "p23-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué documento del NIST es considerado una referencia clave para el ciclo de vida completo de la respuesta a incidentes según el temario?",
+      "opciones": [
+        "a) NIST SP 800-61 Rev. 2",
+        "b) NIST SP 800-53",
+        "c) NIST SP 800-86",
+        "d) RFC 3227"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario cita explícitamente el NIST SP 800-61 Rev. 2 como guía para el ciclo de vida de la respuesta a incidentes.",
+      "id": "p23-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Durante una investigación forense, un analista recopila datos de la memoria RAM de un sistema en ejecución. ¿Qué principio forense está aplicando al hacerlo según el temario?",
+      "opciones": [
+        "a) Preservación de la evidencia",
+        "b) Integridad de los datos",
+        "c) Análisis de causa raíz",
+        "d) Legal hold"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que la adquisición de datos en sistemas en ejecución (como RAM) es parte de la preservación de la evidencia para análisis forense.",
+      "id": "p23-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de seguridad observa que un servidor web está enviando grandes cantidades de datos a una IP externa desconocida. ¿Qué tipo de incidente podría estar ocurriendo según el temario?",
+      "opciones": [
+        "a) Exfiltración de datos (data exfiltration)",
+        "b) Denegación de servicio (DoS)",
+        "c) Inyección SQL",
+        "d) Cross-site scripting (XSS)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario describe que aumentos inusuales en el tráfico de red pueden indicar exfiltración de datos, especialmente si se dirige a IPs externas desconocidas.",
+      "id": "p23-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un ejercicio de mesa (tabletop exercise), el equipo simula un ataque de phishing que compromete una cuenta de administrador. ¿Qué medida de mejora continua sería MENOS relevante para este escenario según el temario?",
+      "opciones": [
+        "a) Implementar autenticación multifactor (MFA)",
+        "b) Capacitar a los usuarios en reconocimiento de phishing",
+        "c) Desplegar un sistema de detección de intrusos en la red (NIDS)",
+        "d) Realizar un análisis de causa raíz del incidente simulado"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario destaca que las simulaciones de phishing evalúan la conciencia de los usuarios y la eficacia de filtros de correo, no la implementación de sistemas de red como NIDS.",
+      "id": "p23-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de respuesta a incidentes detecta que un atacante ha creado cuentas de usuario no autorizadas en un servidor. ¿Qué acción NO corresponde a la fase de contención según el temario?",
+      "opciones": [
+        "a) Deshabilitar las cuentas de usuario comprometidas",
+        "b) Bloquear las IPs asociadas al atacante en el firewall",
+        "c) Aislar el servidor en un sandbox para análisis",
+        "d) Reiniciar el servidor para eliminar las cuentas"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario indica que la contención busca limitar el impacto (ej. deshabilitar cuentas, aislar sistemas), pero reiniciar el servidor podría eliminar evidencia forense y no es una acción de contención.",
+      "id": "p23-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué diferencia clave existe entre la fase de 'contención' y la fase de 'erradicación' en la respuesta a incidentes?",
+      "opciones": [
+        "La contención busca limitar el impacto del incidente sin eliminar la causa raíz, mientras que la erradicación elimina la causa raíz para evitar futuras recurrencias.",
+        "La contención implica restaurar sistemas a su estado operativo normal, mientras que la erradicación se enfoca en bloquear direcciones IP maliciosas.",
+        "La contención requiere análisis forense, mientras que la erradicación solo implica reinstalar sistemas operativos desde imágenes conocidas.",
+        "La contención es un proceso legal, mientras que la erradicación es un proceso técnico."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define la contención como la acción de limitar el impacto del incidente sin eliminar la causa raíz, mientras que la erradicación elimina la causa raíz para prevenir futuras recurrencias.",
+      "id": "p23-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO forma parte típicamente del proceso de 'legal hold' en la respuesta a incidentes?",
+      "opciones": [
+        "a) Identificar los datos relevantes para el proceso judicial y su ubicación en los sistemas.",
+        "b) Implementar controles para evitar la modificación o eliminación de los datos preservados.",
+        "c) Analizar los datos conservados para determinar si contienen indicios de compromiso (IOCs).",
+        "d) Almacenar los datos en un repositorio seguro y accesible, separado del entorno de producción."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El 'legal hold' se centra en la preservación de datos relevantes para procesos legales, no en su análisis forense o técnico. El análisis de datos para IOCs forma parte de otras fases como la investigación forense.",
+      "id": "p23-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte del proceso de 'legal hold' en la respuesta a incidentes?",
+      "opciones": [
+        "a) Identificar los datos relevantes para la preservación legal.",
+        "b) Eliminar copias de seguridad antiguas para reducir el espacio de almacenamiento.",
+        "c) Asegurar que los datos no sean modificados o eliminados.",
+        "d) Almacenar los datos en un repositorio seguro y accesible."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La eliminación de copias de seguridad no forma parte del legal hold, ya que su objetivo es preservar datos, no eliminarlos.",
+      "id": "p23-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Durante una reunión post-incidente, el equipo discute si los controles de seguridad existentes podrían haber evitado el incidente. ¿Qué proceso están realizando al abordar esta pregunta?",
+      "opciones": [
+        "Análisis de causa raíz (Root Cause Analysis).",
+        "Legal hold.",
+        "E-discovery.",
+        "Caza de amenazas (Threat Hunting)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define el análisis de causa raíz como un proceso para identificar vulnerabilidades o fallos que permitieron el incidente, incluyendo la evaluación de controles de seguridad.",
+      "id": "p23-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento del NIST es considerado una referencia clave para la adquisición, análisis y preservación de pruebas digitales en investigaciones forenses?",
+      "opciones": [
+        "NIST SP 800-61 Rev. 2.",
+        "RFC 3227.",
+        "NIST SP 800-53.",
+        "NIST SP 800-171."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las mejores prácticas para la adquisición, análisis y preservación de datos en investigaciones forenses están documentadas en el RFC 3227.",
+      "id": "p23-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de seguridad observa un aumento inusual en el tráfico de red hacia un servidor externo desconocido. Según el temario, ¿qué tipo de incidente podría estar ocurriendo?",
+      "opciones": [
+        "Exfiltración de datos (Data Exfiltration).",
+        "Denegación de servicio (DoS).",
+        "Ataque de fuerza bruta.",
+        "Phishing."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario señala que aumentos inusuales en el tráfico de red pueden indicar exfiltración de datos, donde un atacante envía información sensible a un servidor externo.",
+      "id": "p23-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO forma parte del proceso de contención durante un incidente de seguridad?",
+      "opciones": [
+        "Aislar sistemas infectados en un entorno controlado como un sandbox",
+        "Deshabilitar cuentas de usuario comprometidas o recién creadas",
+        "Bloquear direcciones IP o dominios maliciosos en firewalls",
+        "Implementar cambios en políticas de firewall para prevenir futuros ataques"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La contención busca limitar el daño y evitar la propagación del incidente, no implementar cambios permanentes en políticas de firewall que corresponden a la fase de erradicación o mejora continua.",
+      "id": "p23-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué herramienta o proceso NO está directamente relacionado con la caza de amenazas (threat hunting) según el temario?",
+      "opciones": [
+        "Sistemas de detección y respuesta (EDR).",
+        "Análisis de logs de servidores web.",
+        "Ejercicios de mesa (tabletop exercises).",
+        "Monitoreo de tráfico de red en busca de patrones sospechosos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario describe los ejercicios de mesa como pruebas para evaluar planes de respuesta, no como herramientas o procesos directamente relacionados con la caza de amenazas.",
+      "id": "p23-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un analista forense recopila datos de la memoria RAM de un sistema en ejecución para analizar un posible compromiso. ¿Qué principio forense está aplicando al hacerlo según el temario?",
+      "opciones": [
+        "Principio de volatilidad.",
+        "Principio de cadena de custodia.",
+        "Principio de legal hold.",
+        "Principio de integridad de datos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que la adquisición de datos de memoria RAM es un ejemplo de aplicar el principio de volatilidad, ya que la RAM es un dato volátil que debe recopilarse rápidamente.",
+      "id": "p23-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Durante un incidente de seguridad, el equipo de respuesta observa que un atacante ha modificado archivos críticos en un servidor web y ha creado cuentas de usuario no autorizadas con privilegios elevados. Tras contener el incidente aislando el servidor en un entorno controlado, ¿cuál de las siguientes acciones sería la MENOS efectiva para avanzar en la fase de erradicación según el temario?",
+      "opciones": [
+        "a) Eliminar las cuentas de usuario no autorizadas y reiniciar el servidor desde una imagen limpia conocida.",
+        "b) Analizar los logs del sistema para identificar el vector de ataque inicial y las modificaciones realizadas en los archivos críticos.",
+        "c) Desconectar el servidor de la red de producción y realizar una copia forense de la memoria RAM y los discos duros antes de cualquier otra acción.",
+        "d) Restaurar los archivos críticos desde una copia de seguridad limpia y aplicar parches de seguridad en el servidor afectado."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La opción incorrecta es la 'c', ya que la fase de erradicación se enfoca en eliminar la causa raíz y restaurar la integridad del sistema, no en la adquisición forense inicial, que es parte de la investigación forense posterior.",
+      "id": "p23-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO corresponde a la fase de contención durante un incidente de seguridad?",
+      "opciones": [
+        "Desconectar dispositivos comprometidos de la red para evitar la propagación del ataque.",
+        "Aislar sistemas infectados en un entorno controlado como un sandbox para analizar el comportamiento del malware.",
+        "Eliminar cuentas de usuario comprometidas o creadas por el atacante para evitar accesos futuros.",
+        "Bloquear direcciones IP o dominios maliciosos en firewalls o sistemas de filtrado."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La eliminación de cuentas comprometidas o creación de nuevas por el atacante es parte de la fase de erradicación, no de contención.",
+      "id": "p23-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué principio forense digital garantiza que las pruebas recopiladas puedan ser admitidas en un proceso legal según el temario?",
+      "opciones": [
+        "Principio de integridad de los datos.",
+        "Principio de cadena de custodia (chain of custody).",
+        "Principio de adquisición en caliente (live acquisition).",
+        "Principio de análisis forense proactivo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La cadena de custodia registra el manejo de las pruebas para garantizar su autenticidad y admisibilidad en procesos legales.",
+      "id": "p23-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante ha explotado una vulnerabilidad no parcheada en un servidor web, ¿qué medida de erradicación sería MENOS efectiva para evitar futuros incidentes similares según el temario?",
+      "opciones": [
+        "Aplicar parches de seguridad disponibles para la vulnerabilidad explotada.",
+        "Deshabilitar cuentas de usuario no autorizadas creadas por el atacante.",
+        "Implementar un sistema de monitoreo de tráfico de red para detectar exfiltración de datos.",
+        "Restaurar el servidor desde una imagen limpia sin aplicar los parches pendientes."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El monitoreo de tráfico es una medida de detección, no de erradicación. La erradicación requiere eliminar la causa raíz, como aplicar parches o restaurar sistemas.",
+      "id": "p23-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un componente típico de un 'kit de emergencia' (incident go bag) según el temario?",
+      "opciones": [
+        "Copias de imágenes de sistemas operativos y aplicaciones conocidas como buenas.",
+        "Software de captura de datos y sistemas de imagen digital.",
+        "Documentación de diagramas de red y baselines de seguridad.",
+        "Herramientas de explotación de vulnerabilidades para pruebas de penetración."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El kit de emergencia incluye recursos para respuesta a incidentes, no herramientas ofensivas como las de explotación de vulnerabilidades.",
+      "id": "p23-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica del proceso de 'legal hold' en la respuesta a incidentes?",
+      "opciones": [
+        "a) Identificar los datos requeridos y su ubicación.",
+        "b) Asegurar que los datos no sean modificados o eliminados.",
+        "c) Analizar los datos para determinar su relevancia en el incidente.",
+        "d) Almacenar los datos en un repositorio seguro y accesible."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El 'legal hold' se enfoca en preservar y asegurar datos relevantes para un proceso legal, no en su análisis directo, que corresponde a otras fases como la investigación forense.",
+      "id": "p23-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO corresponde a la fase de 'recuperación' en la respuesta a incidentes?",
+      "opciones": [
+        "a) Restaurar datos desde copias de seguridad confiables",
+        "b) Verificar la integridad de los sistemas restaurados",
+        "c) Implementar medidas adicionales para prevenir futuros incidentes, como cambios en políticas de seguridad",
+        "d) Eliminar cuentas de usuario comprometidas o creadas por el atacante"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La eliminación de cuentas comprometidas es una acción de la fase de erradicación, no de recuperación. Las opciones a, b y c son acciones típicas de la fase de recuperación según el temario.",
+      "id": "p23-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica de la fase de 'recuperación' en la respuesta a incidentes?",
+      "opciones": [
+        "a) Restaurar datos desde copias de seguridad confiables",
+        "b) Verificar la integridad de los sistemas restaurados",
+        "c) Implementar medidas adicionales para prevenir futuros incidentes, como cambios en políticas de seguridad",
+        "d) Deshabilitar cuentas de usuario comprometidas o creadas por el atacante"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La deshabilitación de cuentas de usuario comprometidas corresponde a la fase de erradicación, no a la de recuperación, que se centra en restaurar sistemas y validar su integridad.",
+      "id": "p23-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica de la fase de 'legal hold' en la respuesta a incidentes?",
+      "opciones": [
+        "a) Identificar los datos relevantes para la preservación",
+        "b) Asegurar que los datos no sean modificados ni eliminados",
+        "c) Analizar los datos en busca de indicadores de compromiso (IOCs)",
+        "d) Documentar el proceso de recopilación y manejo de los datos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El 'legal hold' se centra en la preservación de datos, no en su análisis. La opción c) corresponde a una actividad típica de la fase de análisis forense o respuesta a incidentes, no del 'legal hold'.",
+      "id": "p23-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Durante una investigación forense en un servidor comprometido, el equipo identifica que el atacante ha instalado un rootkit en el sistema operativo. Tras aislar el equipo y realizar una copia forense de la memoria RAM, ¿qué medida adicional sería MENOS efectiva para garantizar la integridad de las pruebas digitales según el temario?",
+      "opciones": [
+        "a) Realizar una imagen forense del disco duro del sistema usando herramientas como FTK Imager o dd, verificando los hashes de las imágenes generadas.",
+        "b) Desconectar el servidor de la red eléctrica para evitar cualquier posible alteración de los datos en la memoria RAM.",
+        "c) Documentar en un informe forense detallado el procedimiento realizado, incluyendo timestamps, herramientas utilizadas y personal involucrado.",
+        "d) Utilizar un entorno controlado (sandbox) para analizar el rootkit sin afectar el sistema original, asegurando que no se modifiquen los datos originales."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Desconectar el servidor de la red eléctrica no es una práctica recomendada en forense digital, ya que puede alterar el estado de la memoria RAM y perderse información crítica. La integridad de las pruebas se garantiza mediante la documentación y el uso de herramientas adecuadas.",
+      "id": "p23-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un ejercicio de mesa (tabletop exercise), el equipo de respuesta a incidentes simula un ataque de phishing que compromete una cuenta de administrador. ¿Qué medida de mejora continua sería MENOS relevante para este escenario según el temario?",
+      "opciones": [
+        "Evaluar la efectividad de los filtros de correo para bloquear correos phishing.",
+        "Implementar un sistema de autenticación multifactor (MFA) para cuentas administrativas.",
+        "Realizar un análisis de causa raíz para identificar cómo se explotó la vulnerabilidad.",
+        "Modificar la política de contraseñas para requerir cambios trimestrales obligatorios."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Modificar políticas de contraseñas no aborda directamente la vulnerabilidad explotada en un ataque de phishing, que suele estar relacionada con la ingeniería social.",
+      "id": "p23-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica del proceso de 'contención' durante un incidente de seguridad?",
+      "opciones": [
+        "a) Aislar sistemas infectados en un entorno controlado (sandbox)",
+        "b) Desconectar dispositivos comprometidos de la red",
+        "c) Bloquear direcciones IP o dominios maliciosos en firewalls",
+        "d) Eliminar cuentas de usuario comprometidas o creadas por el atacante"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La eliminación de cuentas de usuario comprometidas es una acción típica de la fase de erradicación, no de contención. Las opciones a, b y c son medidas de contención para limitar la propagación del incidente.",
+      "id": "p23-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO forma parte del proceso de 'legal hold' en la respuesta a incidentes?",
+      "opciones": [
+        "a) Identificar los datos relevantes y su ubicación almacenada",
+        "b) Bloquear la modificación o eliminación de los datos identificados",
+        "c) Realizar una copia forense de los datos en el sistema afectado",
+        "d) Almacenar los datos en un repositorio seguro y accesible"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El 'legal hold' se enfoca en preservar datos relevantes para un proceso judicial, pero no incluye realizar copias forenses. Esta acción corresponde más al análisis forense digital.",
+      "id": "p23-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de respuesta a incidentes detecta que un atacante ha modificado archivos críticos en un servidor web. Tras aislar el servidor en un entorno controlado, ¿qué medida adicional sería MENOS efectiva para garantizar la integridad de las pruebas digitales según el temario?",
+      "opciones": [
+        "Realizar una copia forense de la memoria RAM del sistema",
+        "Documentar cada paso del proceso de adquisición de datos",
+        "Modificar los archivos críticos para restaurar su funcionalidad",
+        "Utilizar cadenas de custodia (chain of custody) para registrar el manejo de las pruebas"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Modificar los archivos críticos comprometería la integridad de las pruebas digitales, violando el principio de preservación forense.",
+      "id": "p23-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica de la fase de 'contención' durante un incidente de seguridad?",
+      "opciones": [
+        "Aislar sistemas infectados en un entorno controlado como un sandbox",
+        "Desconectar dispositivos comprometidos de la red",
+        "Bloquear direcciones IP o dominios maliciosos en firewalls",
+        "Restaurar datos desde copias de seguridad confiables"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La restauración de datos desde copias de seguridad es parte de la fase de recuperación, no de la contención. Las otras opciones son acciones típicas durante la contención para evitar la propagación del incidente.",
+      "id": "p23-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario aplicado, un administrador de seguridad observa que un servidor web está enviando grandes cantidades de datos a una IP externa desconocida. Según el temario, ¿qué tipo de incidente podría estar ocurriendo y qué acción sería la PRIMERA en la fase de contención?",
+      "opciones": [
+        "Exfiltración de datos; desconectar el servidor de la red inmediatamente",
+        "Ataque de denegación de servicio (DoS); bloquear el tráfico entrante en el firewall",
+        "Infección por malware; reinstalar el sistema operativo desde una imagen limpia",
+        "Escaneo de vulnerabilidades; parchear el servidor web"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El aumento inusual de tráfico hacia una IP externa desconocida sugiere exfiltración de datos, y la primera acción en contención es aislar el sistema afectado.",
+      "id": "p23-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO corresponde a la fase de 'legal hold' en la respuesta a incidentes?",
+      "opciones": [
+        "a) Identificar los datos relevantes para preservar",
+        "b) Asegurar que los datos no sean modificados o eliminados",
+        "c) Almacenar los datos en un repositorio seguro y accesible",
+        "d) Analizar los datos para determinar la causa raíz del incidente"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La fase de 'legal hold' se enfoca en preservar y proteger los datos, no en su análisis forense o determinación de causa raíz, que son procesos posteriores.",
+      "id": "p23-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO forma parte típicamente de un 'kit de emergencia' (incident go bag) para respuesta a incidentes?",
+      "opciones": [
+        "Copias de imágenes de sistemas operativos y aplicaciones conocidas como buenas",
+        "Software de captura de datos y sistemas de imagen digital",
+        "Documentación de políticas y procedimientos de seguridad",
+        "Herramientas para realizar análisis de causa raíz en tiempo real"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El análisis de causa raíz es un proceso posterior al incidente, no un elemento típico de un kit de emergencia.",
+      "id": "p23-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Durante una reunión post-incidente, el equipo discute si los controles de seguridad existentes podrían haber evitado el incidente. ¿Qué proceso están realizando al abordar esta pregunta según el temario?",
+      "opciones": [
+        "Análisis de causa raíz (Root Cause Analysis)",
+        "Legal hold",
+        "Caza de amenazas (Threat Hunting)",
+        "E-discovery"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El análisis de causa raíz busca identificar las vulnerabilidades o fallos que permitieron el incidente, incluyendo la evaluación de controles de seguridad.",
+      "id": "p23-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de respuesta a incidentes detecta que un atacante ha explotado una vulnerabilidad en un servidor web mediante un ataque de inyección SQL, logrando acceder a la base de datos y exfiltrar información sensible. Tras aislar el servidor afectado en un entorno controlado, el equipo identifica que el atacante ha modificado archivos críticos del sistema y ha creado cuentas de usuario con privilegios elevados. Según el temario, ¿cuál de las siguientes acciones sería la MENOS efectiva para avanzar en la fase de erradicación y garantizar la integridad de las pruebas digitales?",
+      "opciones": [
+        "a) Realizar una copia forense de la memoria RAM del servidor antes de desconectarlo de la red para preservar el estado actual del sistema.",
+        "b) Restaurar el servidor desde una imagen limpia y conocida (golden image) para eliminar cualquier rastro del atacante, eliminando así las cuentas maliciosas y los archivos modificados.",
+        "c) Analizar los logs del servidor para identificar los IOCs (Indicadores de Compromiso) y correlacionarlos con otras fuentes de datos, como firewalls o sistemas EDR.",
+        "d) Deshabilitar las cuentas de usuario maliciosas detectadas y cambiar las credenciales de acceso a la base de datos, pero mantener los archivos críticos modificados para su análisis forense posterior."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La fase de erradicación busca eliminar la causa raíz del incidente y restaurar la integridad de los sistemas. Mantener archivos críticos modificados por el atacante no es efectivo para erradicar la amenaza y puede comprometer la integridad de las pruebas, ya que estos archivos podrían contener código malicioso o backdoors.",
+      "id": "p23-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Durante una investigación forense en un servidor comprometido por un ataque de ransomware, el equipo de respuesta a incidentes identifica que el malware ha cifrado archivos críticos y ha dejado un archivo de nota de rescate en el sistema. Tras aislar el servidor afectado y realizar una copia forense de la memoria RAM, ¿qué acción adicional sería la MENOS efectiva para garantizar la integridad de las pruebas digitales y avanzar en la fase de erradicación según el temario?",
+      "opciones": [
+        "a) Realizar una imagen forense de los discos duros del servidor afectado antes de reiniciarlo, asegurando que no se modifiquen los datos originales.",
+        "b) Desinstalar inmediatamente el software de antivirus que detectó el ransomware para evitar conflictos durante el análisis forense.",
+        "c) Documentar detalladamente el estado del sistema, incluyendo los hashes de los archivos cifrados y la nota de rescate, antes de cualquier acción de recuperación.",
+        "d) Revisar los logs de eventos del sistema y firewall para identificar la IP de origen del ataque y correlacionarlos con otros indicadores de compromiso (IOCs)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Desinstalar el antivirus no es una acción recomendada durante la fase forense, ya que podría alterar el estado del sistema y comprometer la integridad de las pruebas. Las demás opciones son pasos críticos en la preservación y análisis de pruebas digitales.",
+      "id": "p23-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO forma parte típicamente de la fase de contención durante un incidente de seguridad?",
+      "opciones": [
+        "Desconectar dispositivos comprometidos de la red para evitar la propagación del ataque.",
+        "Aislar sistemas infectados en un entorno controlado, como un sandbox, para analizar el malware sin riesgo.",
+        "Parchear vulnerabilidades que permitieron el acceso inicial al sistema.",
+        "Bloquear direcciones IP o dominios maliciosos en firewalls o sistemas de filtrado."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El parcheo de vulnerabilidades es parte de la fase de erradicación, no de contención. La contención busca limitar el impacto inmediato del incidente.",
+      "id": "p23-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre respuesta a incidentes, ¿qué acción NO es parte típica del proceso de 'legal hold' durante un incidente de seguridad?",
+      "opciones": [
+        "a) Identificar y preservar datos relevantes para un proceso judicial",
+        "b) Asegurar que los datos no sean modificados ni eliminados",
+        "c) Almacenar los datos en un repositorio seguro y accesible",
+        "d) Analizar los datos para determinar la causa raíz del incidente"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El proceso de 'legal hold' se centra en la preservación de datos, no en su análisis. La identificación de la causa raíz corresponde a un análisis de causa raíz o a la fase de erradicación.",
+      "id": "p23-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un administrador de seguridad detecta un aumento inusual en el tráfico de red hacia un servidor externo desconocido, ¿qué tipo de incidente podría estar ocurriendo según el temario?",
+      "opciones": [
+        "Exfiltración de datos (data exfiltration).",
+        "Ataque de denegación de servicio (DoS).",
+        "Infección por malware.",
+        "Escaneo de vulnerabilidades."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un aumento inusual en el tráfico de red hacia un servidor externo desconocido es típico de exfiltración de datos, donde un atacante intenta extraer información sensible.",
+      "id": "p23-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué principio forense digital garantiza que las pruebas recopiladas puedan ser admitidas en un proceso legal?",
+      "opciones": [
+        "Principio de integridad de los datos.",
+        "Principio de autenticidad de las pruebas.",
+        "Principio de cadena de custodia (chain of custody).",
+        "Principio de minimización del impacto."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La cadena de custodia registra el manejo de las pruebas, asegurando que no sean alteradas y puedan ser admitidas en un proceso legal.",
+      "id": "p23-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de respuesta a incidentes detecta que un atacante ha modificado archivos críticos en un servidor web y ha creado cuentas de usuario no autorizadas. Tras aislar el servidor en un entorno controlado, ¿qué medida adicional sería la MENOS efectiva para garantizar la integridad de las pruebas digitales según el temario?",
+      "opciones": [
+        "Realizar una copia forense de la memoria RAM del sistema.",
+        "Documentar cada paso del proceso de adquisición de pruebas.",
+        "Iniciar la restauración inmediata del servidor desde una imagen limpia.",
+        "Utilizar herramientas de hash para verificar la integridad de los archivos recopilados."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La restauración inmediata del servidor podría alterar o eliminar pruebas críticas. La integridad de las pruebas debe priorizarse antes de cualquier acción que modifique el sistema.",
+      "id": "p23-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre respuesta a incidentes, ¿qué acción NO es parte típicamente de la fase de 'legal hold' durante un incidente de seguridad?",
+      "opciones": [
+        "a) Identificar y marcar los datos relevantes para preservación",
+        "b) Asegurar que los datos no sean modificados ni eliminados",
+        "c) Almacenar los datos en un repositorio seguro y accesible",
+        "d) Analizar y correlacionar los datos para determinar la causa raíz del incidente"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La fase de 'legal hold' se enfoca en la preservación de pruebas, no en su análisis. El análisis de causa raíz corresponde a otra fase posterior del proceso de respuesta a incidentes.",
+      "id": "p23-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de respuesta a incidentes, ¿qué acción NO es parte típica de la fase de 'recuperación' en la respuesta a incidentes?",
+      "opciones": [
+        "a) Restaurar datos desde copias de seguridad confiables",
+        "b) Verificar la integridad de los sistemas restaurados",
+        "c) Implementar medidas adicionales para prevenir futuros incidentes",
+        "d) Realizar un análisis de causa raíz para identificar vulnerabilidades"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El análisis de causa raíz es parte del proceso de mejora continua y lecciones aprendidas, no de la fase de recuperación. Las otras opciones son acciones típicas de esta fase.",
+      "id": "p23-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO forma parte típicamente del proceso de 'legal hold' durante un incidente de seguridad?",
+      "opciones": [
+        "a) Identificar y marcar los datos relevantes que deben preservarse",
+        "b) Asegurar que los datos no sean modificados ni eliminados",
+        "c) Realizar un análisis forense completo de los datos preservados",
+        "d) Almacenar los datos en un repositorio seguro y accesible"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El proceso de 'legal hold' se enfoca en la identificación, preservación y protección de los datos relevantes, pero no incluye el análisis forense detallado, que es parte de la investigación posterior.",
+      "id": "p23-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario aplicado, un atacante ha explotado una vulnerabilidad no parcheada en un servidor SQL, logrando acceder a la base de datos y exfiltrar información sensible. Tras contener el incidente aislando el servidor en un entorno controlado, ¿cuál de las siguientes acciones sería la MENOS efectiva para avanzar en la fase de erradicación según el temario?",
+      "opciones": [
+        "Eliminar cuentas de usuario no autorizadas creadas por el atacante.",
+        "Reinstalar el sistema operativo desde una imagen conocida como buena.",
+        "Parchear la vulnerabilidad explotada y aplicar controles adicionales.",
+        "Restaurar los datos desde una copia de seguridad sin verificar su integridad."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Restaurar datos sin verificar su integridad podría reintroducir malware o datos corruptos. La erradicación requiere acciones que eliminen la causa raíz y aseguren la integridad del sistema.",
+      "id": "p23-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de respuesta a incidentes detecta que un atacante ha explotado una vulnerabilidad en un servidor de archivos compartidos mediante un ataque de fuerza bruta, logrando acceder a documentos confidenciales. Tras contener el incidente aislando el servidor en un entorno controlado, el análisis forense inicial revela que el atacante ha modificado permisos de archivos, creado cuentas de usuario no autorizadas y dejado archivos temporales con metadatos que sugieren exfiltración de datos. Según el temario, ¿cuál de las siguientes acciones sería la MENOS efectiva para avanzar en la fase de erradicación y garantizar la integridad de las pruebas digitales?",
+      "opciones": [
+        "Realizar una copia forense bit a bit de los discos del servidor afectado antes de cualquier modificación adicional, incluyendo el uso de herramientas como FTK Imager o dd para preservar la integridad de los datos.",
+        "Deshabilitar todas las cuentas de usuario no autorizadas creadas por el atacante y verificar que no existan procesos maliciosos en ejecución mediante herramientas como Task Manager o herramientas de análisis de memoria como Volatility.",
+        "Restaurar el servidor desde una imagen limpia conocida y parchear la vulnerabilidad explotada, pero sin analizar previamente los archivos temporales y metadatos modificados por el atacante para entender el alcance del compromiso.",
+        "Documentar todos los indicadores de compromiso (IOCs) identificados, como hashes de archivos maliciosos, direcciones IP maliciosas o patrones de tráfico sospechoso, y actualizar las reglas de detección en los sistemas de monitorización."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La fase de erradicación requiere eliminar la causa raíz del incidente, por lo que restaurar el servidor sin analizar previamente los archivos temporales y metadatos (que pueden contener IOCs o evidencia adicional) sería contraproducente. El temario enfatiza la importancia de preservar la integridad de las pruebas digitales mediante copias forenses antes de cualquier modificación.",
+      "id": "p23-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica del proceso de 'legal hold' durante un incidente de seguridad?",
+      "opciones": [
+        "a) Identificar los datos relevantes para el proceso legal y su ubicación.",
+        "b) Asegurar que los datos no sean modificados ni eliminados.",
+        "c) Analizar el contenido de los datos para determinar su relevancia en el incidente.",
+        "d) Almacenar los datos en un repositorio seguro y accesible."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El análisis del contenido de los datos no es parte del proceso de 'legal hold', ya que su objetivo es preservar la integridad y accesibilidad de los datos, no evaluar su contenido.",
+      "id": "p23-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica de la fase de 'erradicación' en la respuesta a incidentes?",
+      "opciones": [
+        "a) Eliminar malware de los sistemas comprometidos",
+        "b) Deshabilitar cuentas de usuario comprometidas o creadas por el atacante",
+        "c) Restaurar datos desde copias de seguridad confiables",
+        "d) Parchear vulnerabilidades que permitieron el acceso inicial"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La restauración de datos desde copias de seguridad es parte de la fase de recuperación, no de la erradicación. La erradicación se enfoca en eliminar la causa raíz del incidente.",
+      "id": "p23-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante ha explotado una vulnerabilidad no parcheada en un servidor web mediante un ataque de inyección SQL, ¿qué medida de erradicación sería MENOS efectiva para evitar futuros incidentes similares según el temario?",
+      "opciones": [
+        "Aplicar parches de seguridad al servidor web afectado.",
+        "Reinstalar el sistema operativo desde una imagen conocida como buena.",
+        "Deshabilitar cuentas de usuario comprometidas creadas por el atacante.",
+        "Aumentar el ancho de banda de la red para mejorar el rendimiento del servidor."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Aumentar el ancho de banda no aborda la vulnerabilidad subyacente ni elimina la causa raíz del incidente, por lo que es una medida no efectiva para la erradicación.",
+      "id": "p23-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de respuesta a incidentes del NIST, ¿qué acción NO está directamente relacionada con la fase de 'contención' durante un incidente de seguridad?",
+      "opciones": [
+        "a) Aislar sistemas infectados en un entorno controlado (sandbox)",
+        "b) Bloquear direcciones IP o dominios maliciosos en firewalls",
+        "c) Eliminar cuentas de usuario comprometidas o creadas por el atacante",
+        "d) Desconectar dispositivos comprometidos de la red"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La eliminación de cuentas comprometidas pertenece a la fase de erradicación, donde se eliminan las causas raíz del incidente. La contención busca evitar la propagación del incidente sin modificar aún los sistemas afectados.",
+      "id": "p23-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre respuesta a incidentes, ¿qué acción NO corresponde típicamente a la fase de 'recuperación' en el proceso de respuesta a incidentes?",
+      "opciones": [
+        "a) Restaurar datos desde copias de seguridad confiables y verificadas",
+        "b) Aplicar parches de seguridad críticos a sistemas que fueron afectados por el incidente",
+        "c) Implementar cambios en políticas de seguridad o configuraciones de red para prevenir futuros incidentes",
+        "d) Eliminar cuentas de usuario comprometidas o creadas por el atacante"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La eliminación de cuentas de usuario comprometidas o creadas por el atacante es una acción propia de la fase de erradicación, no de recuperación. Las otras opciones sí son típicas de la fase de recuperación.",
+      "id": "p23-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO corresponde típicamente a la fase de 'contención' durante un incidente de seguridad?",
+      "opciones": [
+        "a) Aislar sistemas infectados en un entorno controlado, como un sandbox.",
+        "b) Desconectar dispositivos comprometidos de la red.",
+        "c) Parchear vulnerabilidades identificadas como causa raíz del incidente.",
+        "d) Bloquear direcciones IP o dominios maliciosos en firewalls o sistemas de filtrado."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La fase de contención se enfoca en limitar la propagación del incidente y aislar los sistemas afectados, mientras que parchear vulnerabilidades es una acción propia de la fase de erradicación.",
+      "id": "p23-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Durante una investigación forense en un servidor comprometido por un ataque de ransomware, el equipo de respuesta identifica que el malware ha cifrado archivos críticos. Tras aislar el servidor y realizar una copia forense de la memoria RAM, ¿qué acción adicional sería la MENOS efectiva para garantizar la integridad de las pruebas digitales según el temario?",
+      "opciones": [
+        "Realizar una copia forense del disco duro del servidor afectado.",
+        "Reiniciar el servidor para limpiar el malware y restaurar los archivos desde copias de seguridad.",
+        "Documentar cada paso del proceso de adquisición de pruebas.",
+        "Utilizar herramientas forenses para calcular hashes de los archivos críticos antes de cualquier modificación."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Reiniciar el servidor podría alterar o eliminar pruebas forenses críticas, como el estado de la memoria RAM o archivos temporales, comprometiendo la integridad de las pruebas.",
+      "id": "p23-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo principal de la reunión post-incidente (post-incident meeting) según el temario?",
+      "opciones": [
+        "Identificar indicadores de compromiso (IOCs) que no fueron detectados inicialmente.",
+        "Determinar responsabilidades legales y sanciones para los responsables del incidente.",
+        "Evaluar el funcionamiento del proceso de respuesta al incidente.",
+        "Proponer cambios para mejorar la respuesta futura a incidentes."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La reunión post-incidente se enfoca en mejorar los procesos y la preparación, no en asignar responsabilidades legales o sanciones.",
+      "id": "p23-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Tras contener un ataque de ransomware que ha cifrado archivos críticos en un servidor de archivos compartidos, el equipo de respuesta a incidentes identifica que el atacante ha dejado un archivo de nota de rescate y ha modificado permisos de acceso a carpetas sensibles. Durante la fase de erradicación, el equipo propone las siguientes acciones. ¿Cuál de ellas sería la MENOS efectiva para garantizar la integridad de las pruebas digitales y avanzar en la recuperación según el temario?",
+      "opciones": [
+        "Reinstalar el sistema operativo desde una imagen limpia y restaurar los datos desde copias de seguridad verificadas, excluyendo los archivos modificados por el atacante.",
+        "Capturar una imagen forense del disco duro del servidor comprometido antes de cualquier modificación adicional, incluyendo la eliminación de la nota de rescate.",
+        "Realizar un análisis forense en profundidad de los metadatos de los archivos cifrados y modificados para identificar la huella del atacante y posibles IOCs.",
+        "Eliminar inmediatamente los archivos temporales y logs del sistema para 'limpiar' el servidor antes de restaurar los datos, argumentando que podrían contener información sensible del atacante."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario enfatiza que la integridad de las pruebas digitales debe preservarse en todo momento, por lo que eliminar archivos temporales o logs antes del análisis forense invalida la cadena de custodia y podría destruir evidencia relevante.",
+      "id": "p23-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de respuesta a incidentes detecta que un atacante ha explotado una vulnerabilidad en un servidor de bases de datos MySQL mediante un ataque de inyección SQL, logrando acceder a información confidencial y exfiltrar datos. Tras contener el incidente aislando el servidor en un entorno controlado, el análisis forense inicial revela que el atacante ha modificado permisos de acceso, creado cuentas de usuario no autorizadas con privilegios elevados y dejado archivos temporales con metadatos que sugieren exfiltración de datos. Según el temario, ¿cuál de las siguientes acciones sería la MENOS efectiva para avanzar en la fase de erradicación y garantizar la integridad de las pruebas digitales?",
+      "opciones": [
+        "Realizar una copia forense de la memoria RAM del servidor afectado antes de apagar el sistema para preservar el estado volátil de los procesos en ejecución.",
+        "Restaurar el servidor desde una imagen limpia y conocida como buena, pero sin analizar previamente los archivos temporales y metadatos identificados para entender el alcance del compromiso.",
+        "Deshabilitar todas las cuentas de usuario no autorizadas creadas por el atacante y cambiar las credenciales de todas las cuentas con privilegios elevados.",
+        "Implementar reglas de firewall adicionales para bloquear el tráfico hacia IP externa desconocida asociada con la exfiltración de datos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que la fase de erradicación debe incluir un análisis forense exhaustivo antes de restaurar sistemas para garantizar la eliminación completa de la causa raíz. Restaurar el servidor sin analizar los archivos temporales y metadatos comprometería la integridad de las pruebas y no garantizaría la eliminación del atacante.",
+      "id": "p23-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿cuál de las siguientes acciones NO corresponde típicamente a la fase de 'contención' en un incidente de seguridad?",
+      "opciones": [
+        "Aislar sistemas comprometidos en un entorno controlado (sandbox).",
+        "Bloquear direcciones IP o dominios maliciosos en firewalls.",
+        "Deshabilitar cuentas de usuario comprometidas o creadas por el atacante.",
+        "Desconectar dispositivos comprometidos de la red."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La deshabilitación de cuentas comprometidas es una acción típica de la fase de erradicación, no de contención, según el temario.",
+      "id": "p23-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica de la fase de 'análisis de causa raíz' (Root Cause Analysis) durante la respuesta a incidentes?",
+      "opciones": [
+        "a) Revisión de logs y registros de sistemas para identificar patrones de comportamiento anómalo.",
+        "b) Análisis de archivos modificados o malware encontrado durante el incidente.",
+        "c) Implementación inmediata de parches de seguridad en sistemas críticos sin validar su efectividad.",
+        "d) Evaluación de configuraciones de seguridad y políticas para identificar fallos en los controles."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La fase de análisis de causa raíz se enfoca en identificar y entender las vulnerabilidades o fallos que permitieron el incidente, pero la implementación de parches debe ser parte de la fase de erradicación o recuperación, no del análisis en sí.",
+      "id": "p23-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica del proceso de 'caza de amenazas' (Threat Hunting) durante la respuesta a incidentes o preparación para incidentes?",
+      "opciones": [
+        "a) Buscar vulnerabilidades conocidas en sistemas y asegurarse de que estén parcheadas.",
+        "b) Monitorear el tráfico de red en busca de patrones sospechosos mediante herramientas de análisis de red.",
+        "c) Restaurar datos desde copias de seguridad después de un incidente confirmado.",
+        "d) Utilizar herramientas automatizadas de detección y respuesta (EDR) para identificar comportamientos anómalos en endpoints."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La restauración de datos desde copias de seguridad corresponde a la fase de recuperación en la respuesta a incidentes, no a la caza de amenazas, que es un proceso proactivo previo o durante la monitorización continua.",
+      "id": "p23-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de respuesta a incidentes, ¿qué acción NO es parte típica del proceso de 'caza de amenazas' (Threat Hunting) durante la preparación o respuesta a incidentes?",
+      "opciones": [
+        "a) Buscar vulnerabilidades conocidas y asegurarse de que los sistemas estén parcheados.",
+        "b) Monitorear el tráfico de red en busca de patrones sospechosos.",
+        "c) Analizar logs de sistemas para identificar indicadores de compromiso (IOCs) no detectados previamente.",
+        "d) Restaurar datos desde copias de seguridad tras un incidente de seguridad."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La caza de amenazas es un proceso proactivo para identificar actividades maliciosas antes de que causen un incidente, y no incluye la restauración de datos, que es parte de la fase de recuperación.",
+      "id": "p23-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de respuesta a incidentes detecta que un atacante ha modificado archivos críticos en un servidor web y ha creado cuentas de usuario no autorizadas con privilegios elevados. Tras contener el incidente aislando el servidor en un entorno controlado, ¿cuál de las siguientes acciones sería la MENOS efectiva para avanzar en la fase de erradicación según el temario?",
+      "opciones": [
+        "Eliminar las cuentas de usuario no autorizadas.",
+        "Restaurar los archivos críticos desde una copia de seguridad confiable.",
+        "Parchear la vulnerabilidad explotada por el atacante.",
+        "Reinstalar el sistema operativo desde una imagen conocida como buena."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Eliminar cuentas de usuario no autorizadas es una acción de erradicación, pero restaurar archivos desde copias de seguridad es más efectivo para garantizar la integridad del sistema.",
+      "id": "p23-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre respuesta a incidentes, ¿qué acción NO es parte típica de la fase de 'detección y análisis' durante un incidente de seguridad?",
+      "opciones": [
+        "a) Revisar logs de servidores web para identificar escaneos de vulnerabilidades.",
+        "b) Correlacionar eventos con parches de seguridad publicados por proveedores como Microsoft.",
+        "c) Aislar sistemas infectados en un entorno controlado (sandbox) para evitar propagación.",
+        "d) Monitorear aumentos inusuales en el tráfico de red que podrían indicar exfiltración de datos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La fase de detección y análisis se centra en identificar y analizar incidentes mediante logs, alertas y patrones sospechosos, mientras que el aislar sistemas infectados (opción c) corresponde a la fase de contención.",
+      "id": "p23-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica de la fase de 'detección y análisis' durante un incidente de seguridad?",
+      "opciones": [
+        "a) Revisar logs de servidores web para identificar escaneos de vulnerabilidades.",
+        "b) Correlacionar eventos con parches de seguridad publicados por proveedores.",
+        "c) Implementar controles de firewall para bloquear tráfico malicioso en tiempo real.",
+        "d) Utilizar herramientas de monitoreo para detectar cambios no autorizados en configuraciones de seguridad."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La implementación de controles de firewall para bloquear tráfico malicioso en tiempo real corresponde a la fase de contención, no a la detección y análisis.",
+      "id": "p23-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica del proceso de 'caza de amenazas' (Threat Hunting) durante la respuesta a incidentes?",
+      "opciones": [
+        "a) Buscar vulnerabilidades conocidas y asegurarse de que los sistemas estén parcheados.",
+        "b) Monitorear el tráfico de red en busca de patrones sospechosos.",
+        "c) Eliminar cuentas de usuario comprometidas identificadas durante la investigación.",
+        "d) Utilizar herramientas automatizadas de detección y respuesta (EDR) para identificar comportamientos anómalos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La eliminación de cuentas comprometidas es una acción típica de la fase de erradicación, no de la caza de amenazas, que se enfoca en la detección proactiva de amenazas antes de que causen incidentes.",
+      "id": "p23-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO forma parte típicamente del proceso de 'recuperación' en la respuesta a incidentes?",
+      "opciones": [
+        "Restaurar datos desde copias de seguridad confiables.",
+        "Verificar la integridad de los sistemas restaurados.",
+        "Implementar medidas adicionales para prevenir futuros incidentes.",
+        "Eliminar malware o reinstalar sistemas operativos desde imágenes conocidas como buenas."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La eliminación de malware o reinstalación de sistemas operativos es una acción típica de la fase de erradicación, no de recuperación.",
+      "id": "p23-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de respuesta a incidentes detecta que un atacante ha explotado una vulnerabilidad en un servidor de autenticación centralizada (como Active Directory) mediante un ataque de pass-the-hash, logrando acceso a múltiples sistemas en la red. Tras contener el incidente aislando el servidor de autenticación y desconectando los sistemas comprometidos, el análisis forense inicial revela que el atacante ha modificado políticas de grupo, creado cuentas de servicio no autorizadas con privilegios elevados y dejado archivos temporales en rutas compartidas. Según el temario, ¿cuál de las siguientes acciones sería la MENOS efectiva para avanzar en la fase de erradicación y garantizar la integridad de las pruebas digitales?",
+      "opciones": [
+        "Reinstalar el servidor de autenticación desde una imagen conocida como buena y restaurar las políticas de grupo desde una copia de seguridad anterior al incidente, verificando previamente la integridad de ambos mediante hashes criptográficos.",
+        "Deshabilitar todas las cuentas de usuario no autorizadas identificadas en los logs y revocar los tokens de autenticación en caché (como Kerberos tickets) en todos los sistemas afectados, incluyendo servidores y estaciones de trabajo.",
+        "Realizar un análisis forense completo del servidor de autenticación para identificar el vector de ataque inicial (ej: vulnerabilidad CVE no parcheada) y documentar los IOCs (Indicadores de Compromiso) asociados, pero sin tomar medidas adicionales hasta obtener aprobación legal.",
+        "Eliminar manualmente los archivos temporales dejados por el atacante en rutas compartidas y restablecer los permisos de acceso a carpetas críticas basándose en las configuraciones previas al incidente, sin validar cambios en políticas de grupo."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Según el temario, durante la fase de erradicación se deben eliminar las causas raíz del incidente y restaurar los sistemas a un estado conocido como bueno. Eliminar manualmente archivos o restablecer permisos sin validar las políticas de grupo (que podrían estar comprometidas) no garantiza la integridad de las pruebas digitales ni elimina completamente la causa raíz, ya que los cambios en políticas podrían persistir.",
+      "id": "p23-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de respuesta a incidentes, ¿qué elemento NO es parte típica de la fase de 'erradicación' en un proceso de respuesta a incidentes?",
+      "opciones": [
+        "a) Eliminar malware o reinstalar sistemas operativos desde imágenes conocidas como buenas.",
+        "b) Deshabilitar cuentas de usuario comprometidas o creadas por el atacante.",
+        "c) Restaurar datos desde copias de seguridad confiables.",
+        "d) Parchear vulnerabilidades que permitieron el acceso inicial."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La restauración de datos desde copias de seguridad es parte de la fase de recuperación, no de la erradicación. Las otras opciones corresponden a acciones típicas de esta fase.",
+      "id": "p23-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO corresponde típicamente a la fase de 'recuperación' en el proceso de respuesta a incidentes?",
+      "opciones": [
+        "a) Restaurar datos desde copias de seguridad confiables",
+        "b) Verificar la integridad de los sistemas restaurados",
+        "c) Implementar parches de seguridad en sistemas afectados",
+        "d) Bloquear direcciones IP maliciosas en el firewall"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La fase de recuperación se enfoca en restaurar sistemas y datos a su estado operativo normal, no en acciones de contención como bloquear IPs. Implementar parches es parte de la erradicación.",
+      "id": "p23-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante ha explotado una vulnerabilidad no parcheada en un servidor SQL mediante un ataque de inyección SQL, ¿qué medida de erradicación sería MENOS efectiva para evitar futuros incidentes similares según el temario?",
+      "opciones": [
+        "Reinstalar el sistema operativo desde una imagen conocida como buena.",
+        "Deshabilitar cuentas de usuario creadas por el atacante.",
+        "Aplicar parches de seguridad pendientes en el servidor SQL.",
+        "Bloquear el tráfico de red hacia el servidor SQL desde la red interna."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Aunque aplicar parches es una medida de prevención, la erradicación implica eliminar la causa raíz ya explotada. Bloquear tráfico no corrige la vulnerabilidad subyacente, solo la contiene.",
+      "id": "p23-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO corresponde típicamente a la fase de 'detección y análisis' durante un incidente de seguridad?",
+      "opciones": [
+        "a) Analizar logs de firewalls para identificar conexiones sospechosas",
+        "b) Revisar alertas de sistemas de prevención de intrusiones (IPS) por intentos de exploits",
+        "c) Desconectar sistemas comprometidos para evitar la propagación del incidente",
+        "d) Correlacionar eventos con parches de seguridad publicados por proveedores"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La desconexión de sistemas comprometidos es una acción típica de la fase de contención, no de detección y análisis.",
+      "id": "p23-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica de la fase de 'erradicación' en un proceso de respuesta a incidentes?",
+      "opciones": [
+        "a) Eliminar malware o reinstalar sistemas operativos desde imágenes conocidas como buenas.",
+        "b) Restaurar datos desde copias de seguridad confiables para devolver los sistemas a su estado operativo normal.",
+        "c) Deshabilitar cuentas de usuario comprometidas o creadas por el atacante.",
+        "d) Parchear vulnerabilidades que permitieron el acceso inicial al sistema."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La restauración de datos desde copias de seguridad corresponde a la fase de recuperación, no a la de erradicación, que se enfoca en eliminar la causa raíz del incidente.",
+      "id": "p23-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando las fases de respuesta a incidentes, ¿qué acción NO corresponde típicamente a la fase de 'recuperación'?",
+      "opciones": [
+        "Restaurar datos desde copias de seguridad confiables.",
+        "Verificar la integridad de los sistemas restaurados.",
+        "Implementar medidas adicionales para prevenir futuros incidentes.",
+        "Eliminar cuentas de usuario comprometidas."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La eliminación de cuentas comprometidas es parte de la fase de erradicación. La recuperación se enfoca en restaurar sistemas y verificar su integridad.",
+      "id": "p23-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, durante la fase de contención de un incidente de seguridad, ¿qué acción sería MENOS efectiva para evitar la propagación de un malware detectado en un servidor mediante un ataque de ransomware?",
+      "opciones": [
+        "a) Desconectar el servidor de la red para aislarlo y evitar la exfiltración de datos",
+        "b) Bloquear el acceso a servicios críticos del servidor para limitar el impacto operativo",
+        "c) Reiniciar el servidor inmediatamente para eliminar el proceso malicioso en ejecución",
+        "d) Crear una copia forense de la memoria RAM del servidor antes de cualquier otra acción"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Reiniciar el servidor no elimina el malware persistente ni garantiza la integridad de las pruebas forenses. La contención requiere acciones que eviten la propagación sin alterar el estado del sistema comprometido.",
+      "id": "p23-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un ejercicio de mesa (tabletop exercise) donde se simula un ataque de phishing que compromete una cuenta de administrador, ¿qué medida de mejora continua sería MENOS relevante para este escenario según el temario?",
+      "opciones": [
+        "Implementar autenticación multifactor (MFA) para cuentas administrativas.",
+        "Realizar capacitación en conciencia de seguridad para usuarios finales.",
+        "Aislar el servidor de autenticación en un entorno controlado.",
+        "Revisar políticas de contraseñas para fortalecer su complejidad."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El aislamiento de servidores es una medida de contención, no una acción de mejora continua. Las mejoras continuas se enfocan en políticas y capacitación post-incidente.",
+      "id": "p23-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO es parte típica del proceso de 'caza de amenazas' (Threat Hunting) durante la respuesta a incidentes o preparación?",
+      "opciones": [
+        "Buscar vulnerabilidades conocidas y asegurarse de que los sistemas estén parcheados.",
+        "Monitorear el tráfico de red en busca de patrones sospechosos.",
+        "Utilizar herramientas automatizadas de detección y respuesta (EDR) para identificar comportamientos anómalos.",
+        "Aislar sistemas comprometidos en un entorno controlado para análisis."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El aislamiento de sistemas comprometidos es parte de la fase de contención, no de la caza de amenazas, que es un proceso proactivo de detección temprana.",
+      "id": "p23-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de respuesta a incidentes detecta que un atacante ha explotado una vulnerabilidad en un servidor de autenticación centralizada (como Active Directory) mediante un ataque de pass-the-hash, logrando acceso a múltiples sistemas en la red. Tras contener el incidente aislando el servidor de autenticación y desconectando los sistemas comprometidos, el análisis forense inicial revela que el atacante ha modificado políticas de grupo y creado cuentas de servicio no autorizadas con privilegios elevados. Según el temario, ¿cuál de las siguientes acciones sería la MENOS efectiva para avanzar en la fase de erradicación y garantizar la integridad de las pruebas digitales?",
+      "opciones": [
+        "Reinstalar el sistema operativo del servidor de autenticación desde una imagen conocida como buena.",
+        "Aplicar parches de seguridad pendientes en el servidor de autenticación.",
+        "Eliminar las políticas de grupo modificadas por el atacante y restaurar las originales desde una copia de seguridad.",
+        "Realizar un análisis forense de la memoria RAM del servidor para identificar técnicas de ataque."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El análisis forense de memoria RAM es parte de la fase de detección/análisis, no de erradicación. La erradicación implica eliminar la causa raíz y restaurar sistemas a un estado conocido seguro.",
+      "id": "p23-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Incident Response",
+      "youtubeId": "X2UiMLxRdhE"
+    },
+    {
+      "titulo": "Incident Planning",
+      "youtubeId": "CYFe16lCRMk"
+    },
+    {
+      "titulo": "Digital Forensics",
+      "youtubeId": "UtDWApdO8Zk"
+    }
+  ]
+}

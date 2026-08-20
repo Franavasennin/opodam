@@ -1,0 +1,1416 @@
+{
+  "id": 20,
+  "titulo": "4.5 · Herramientas y protocolos de seguridad",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "FIREWALLS\n\nUn firewall basado en red (network-based firewall) es un dispositivo que se coloca en línea dentro de la red para decidir si el tráfico debe ser permitido o bloqueado. Estos firewalls pueden tomar decisiones basándose en números de puerto (asociados a firewalls tradicionales) o en la aplicación específica que genera el tráfico, algo más común en firewalls de nueva generación (Next Generation Firewall o NGFW).\n\nLos firewalls modernos no solo controlan el tráfico, sino que también ofrecen servicios adicionales. Por ejemplo, pueden actuar como endpoints de VPN (puntos finales de Red Privada Virtual) o concentradores de VPN, permitiendo conexiones punto a punto entre sitios o acceso remoto. Muchos firewalls también funcionan como routers o dispositivos de capa 3 (layer 3), ubicándose en puntos de entrada/salida (ingress/egress) de la red, donde se conecta la red interna con internet. En estos puntos, pueden realizar funciones como traducción de direcciones de red (NAT) y enrutamiento dinámico.\n\nLos firewalls de nueva generación (NGFW) analizan el tráfico en profundidad para identificar aplicaciones específicas, no solo puertos. Esto permite tomar decisiones más precisas sobre qué tráfico permitir o bloquear. Un NGFW puede reconocer aplicaciones como SSH, RDP (Remote Desktop Protocol), DNS o NTP, incluso cuando estas aplicaciones no están asociadas a sus puertos tradicionales. Por ejemplo, un NGFW puede identificar tráfico SSH por la aplicación en sí, no solo por el puerto TCP 22. Esto proporciona mayor flexibilidad y seguridad, ya que permite aplicar reglas basadas en el comportamiento de la aplicación.\n\nLas reglas de un firewall suelen evaluarse desde la parte superior de la lista hacia abajo. Por ello, es común colocar las reglas más específicas en la parte superior y las más genéricas en la parte inferior. La mayoría de los firewalls incluyen una regla de denegación implícita (implicit deny), que bloquea todo el tráfico que no coincida con ninguna regla específica. Esta regla actúa como un mecanismo de seguridad por defecto.\n\nUn firewall puede configurarse con reglas que incluyen parámetros como direcciones IP de origen y destino, números de puerto, protocolos, usuarios, categorías de aplicaciones, listas de URLs y otros criterios. Por ejemplo, una regla podría permitir todo el tráfico SSH (puerto 22) desde cualquier IP remota a un servidor local, o bloquear todo el tráfico ICMP (usado en ping) desde internet hacia la red interna.\n\nLos firewalls también pueden proteger redes internas mediante el uso de subredes protegidas (screened subnets o DMZ). Estas subredes alojan servicios que necesitan ser accesibles desde internet, como servidores web, sin exponer la red interna donde se almacenan datos sensibles. El tráfico de internet se dirige a la subred protegida, evitando el acceso directo a la red interna.\n\n\nINTRUSION PREVENTION SYSTEMS (IPS)\n\nUn sistema de prevención de intrusiones (IPS) monitorea el tráfico en tiempo real y utiliza firmas (signatures) para identificar y bloquear software malicioso. Estas firmas son patrones específicos de tráfico asociados a amenazas conocidas, como gusanos o exploits. Algunos IPS también pueden detectar anomalías en el tráfico, como inyecciones en bases de datos, sin necesidad de firmas específicas.\n\nLas reglas de un IPS son similares a las de un firewall, pero se enfocan en vulnerabilidades y amenazas. Un IPS puede tener miles de firmas, que se agrupan en categorías para facilitar su gestión. Por ejemplo, se pueden crear grupos de reglas para bloquear todo el tráfico asociado a inyecciones en bases de datos o malware conocido. Aunque los IPS son muy efectivos, pueden generar falsos positivos, por lo que es importante ajustar las reglas para equilibrar seguridad y funcionalidad.\n\n\nFILTRADO WEB (WEB FILTERING)\n\nEl filtrado web permite controlar el acceso a sitios web y el contenido que se muestra en los navegadores. Esto se logra mediante filtros de contenido, que pueden basarse en URLs, categorías de sitios web o reputación de los mismos. Los filtros de contenido pueden bloquear sitios conocidos por contener malware, virus o contenido inapropiado.\n\nExisten diferentes enfoques para implementar filtrado web. Algunos firewalls de nueva generación incluyen capacidades de filtrado web, pero también se pueden usar proxies o agentes instalados en los dispositivos de los usuarios. Los agentes basados en cliente (agent-based) permiten aplicar políticas de filtrado incluso cuando los usuarios están fuera de la red corporativa, ya que el filtrado se realiza en el dispositivo del usuario.\n\nLos proxies actúan como intermediarios entre los usuarios y el tráfico web. Un proxy explícito requiere configuración en la aplicación del usuario, mientras que un proxy transparente opera sin que el usuario lo note. Los proxies pueden filtrar URLs, cachear contenido para mejorar el rendimiento y controlar el acceso a internet basado en usuarios o direcciones IP.\n\nAdemás del filtrado basado en URLs, algunas soluciones evalúan la reputación de los sitios web. Los sitios se clasifican en categorías como de confianza, bajo riesgo, riesgo medio, sospechosos o alto riesgo. Esto permite bloquear automáticamente sitios con mala reputación y permitir solo aquellos considerados seguros.\n\nOtra técnica de filtrado web es el filtrado DNS, que bloquea solicitudes a dominios conocidos por ser maliciosos. Cuando un usuario intenta acceder a un sitio bloqueado, el servidor DNS no devuelve la dirección IP correspondiente, impidiendo la conexión. Esta técnica funciona incluso si el usuario intenta acceder a un sitio malicioso mediante una aplicación que genera solicitudes DNS.\n\n\nSEGURIDAD DEL SISTEMA OPERATIVO\n\nEn entornos con dispositivos Windows, Active Directory (AD) es una base de datos centralizada que almacena información sobre usuarios, dispositivos, grupos de seguridad, recursos compartidos y políticas. AD permite gestionar autenticaciones, permisos y políticas de seguridad de manera centralizada. Por ejemplo, se pueden asignar permisos a usuarios individuales o grupos, y aplicar políticas de grupo (Group Policy) para configurar parámetros de seguridad en dispositivos y usuarios.\n\nEn Linux, el sistema operativo utiliza por defecto un modelo de control de acceso discrecional (Discretionary Access Control o DAC), donde los usuarios pueden asignar permisos a recursos. Sin embargo, en entornos de alta seguridad, se prefiere un modelo de control de acceso obligatorio (Mandatory Access Control o MAC), donde un administrador central asigna los permisos. SELinux (Security-Enhanced Linux) es una implementación de MAC que permite aplicar el principio de mínimo privilegio, limitando el alcance de posibles brechas de seguridad.\n\n\nPROTOCOLOS SEGUROS\n\nPara proteger el tráfico en redes cableadas o inalámbricas, es fundamental cifrar los datos. Protocolos como Telnet, FTP, SMTP o IMAP envían información sin cifrar, lo que los hace vulnerables a ataques. Protocolos seguros como SSH, SFTP, IMAPS o HTTPS cifran el tráfico, protegiendo datos sensibles.\n\nEl uso de protocolos seguros se puede identificar por los números de puerto. Por ejemplo, HTTP usa el puerto 80 y HTTPS el puerto 443. Sin embargo, solo el uso de un puerto seguro no garantiza que el tráfico esté cifrado; es necesario verificar la configuración del servidor y realizar capturas de paquetes para confirmar el cifrado.\n\nEn redes inalámbricas, protocolos como WPA3 cifran todo el tráfico entre dispositivos y puntos de acceso. También se pueden usar VPNs para crear túneles cifrados entre dispositivos y concentradores de VPN, protegiendo todo el tráfico que pasa por la red.\n\n\nSEGURIDAD DEL CORREO ELECTRÓNICO\n\nLos protocolos de correo electrónico como SMTP no incluyen verificaciones de seguridad robustas, lo que facilita el spoofing (suplantación de identidad). Para mitigar este riesgo, se utilizan protocolos como SPF (Sender Policy Framework), DKIM (DomainKeys Identified Mail) y DMARC (Domain-based Message Authentication, Reporting & Conformance).\n\nSPF define qué servidores están autorizados a enviar correos en nombre de un dominio. DKIM añade firmas digitales a los correos para verificar su autenticidad. DMARC especifica qué acciones tomar con correos que no pasan las verificaciones de SPF y DKIM, como aceptarlos, ponerlos en cuarentena o rechazarlos. Además, DMARC permite generar informes sobre correos validados y no validados, ayudando a identificar intentos de spoofing.\n\n\nMONITORIZACIÓN DE DATOS\n\nLa monitorización de integridad de archivos (File Integrity Monitoring o FIM) es una técnica para detectar cambios no autorizados en archivos críticos del sistema. En Windows, herramientas como el verificador de archivos del sistema (SFC) escanean archivos del sistema operativo y los restauran si detectan modificaciones. En Linux, herramientas como Tripwire monitorizan cambios en archivos en tiempo real.\n\nLos sistemas de prevención de pérdida de datos (Data Loss Prevention o DLP) monitorizan el tráfico de red y los datos en uso, movimiento o reposo para bloquear la transmisión de información sensible. Por ejemplo, un DLP puede bloquear el envío de números de seguro social o información médica por correo electrónico o USB. Las soluciones DLP pueden ser locales, de red o basadas en la nube, y se integran con firewalls, endpoints o servidores de correo.\n\n\nSEGURIDAD DE ENDPOINTS\n\nLos endpoints (dispositivos de usuario como computadoras, laptops o móviles) son objetivos comunes de ataques. Para protegerlos, se emplea un enfoque de defensa en profundidad, combinando firewalls, control de acceso, evaluaciones de postura (posture assessment) y soluciones de detección y respuesta (EDR/XDR).\n\nLas evaluaciones de postura verifican que los dispositivos cumplan con las políticas de seguridad antes de permitirles acceder a la red. Esto incluye verificar la instalación y actualización de antivirus, la presencia de certificados corporativos y el cifrado de almacenamiento. Si un dispositivo no cumple, puede ser puesto en cuarentena en una VLAN aislada hasta que se corrija.\n\nLas soluciones EDR (Endpoint Detection and Response) y XDR (Extended Detection and Response) van más allá del antivirus tradicional. EDR utiliza análisis de comportamiento y aprendizaje automático para detectar amenazas, proporcionar análisis de causa raíz y automatizar respuestas como la cuarentena de malware o la restauración del sistema. XDR amplía esta capacidad correlacionando datos de múltiples sistemas y fuentes, como tráfico de red y comportamiento de usuarios, para identificar amenazas más complejas."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Herramientas y protocolos de seguridad] --> B[Firewalls]\nA --> C[Sistemas de prevención de intrusiones]\nA --> D[Filtrado web]\nA --> E[Seguridad del sistema operativo]\nA --> F[Protocolos seguros]\nA --> G[Seguridad del correo electrónico]\nA --> H[Monitorización de datos]\nA --> I[Seguridad de endpoints]\n\nB --> B1[Firewall basado en red]\nB --> B2[Firewall de nueva generación (NGFW)]\nB --> B3[Reglas y denegación implícita]\nB --> B4[Subredes protegidas (DMZ)]\n\nC --> C1[Firmas de amenazas]\nC --> C2[Detección de anomalías]\nC --> C3[Reglas y grupos de firmas]\n\nD --> D1[Filtros de contenido]\nD --> D2[Proxies explícitos y transparentes]\nD --> D3[Filtrado DNS]\nD --> D4[Reputación de sitios web]\n\nE --> E1[Active Directory en Windows]\nE --> E2[SELinux en Linux]\nE --> E3[Políticas de grupo (Group Policy)]\n\nF --> F1[Protocolos inseguros vs seguros]\nF --> F2[Cifrado en redes inalámbricas]\nF --> F3[VPNs para túneles cifrados]\n\nG --> G1[SPF para autorización de servidores]\nG --> G2[DKIM para firmas digitales]\nG --> G3[DMARC para políticas de validación]\n\nH --> H1[Monitorización de integridad de archivos (FIM)]\nH --> H2[Sistemas DLP para datos sensibles]\nH --> H3[DLP en correo y almacenamiento en la nube]\n\nI --> I1[Defensa en profundidad]\nI --> I2[Evaluaciones de postura (posture assessment)]\nI --> I3[Soluciones EDR y XDR]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc20-01",
+      "pregunta": "¿Qué es un firewall basado en red (network-based firewall) y qué decisiones puede tomar?",
+      "respuesta": "Un firewall basado en red es un dispositivo que se coloca en línea dentro de la red para decidir si el tráfico debe ser permitido o bloqueado. Puede tomar decisiones basadas en números de puerto (firewalls tradicionales) o en la aplicación específica que genera el tráfico (firewalls de nueva generación)."
+    },
+    {
+      "id": "fc20-02",
+      "pregunta": "¿Qué funciones adicionales pueden ofrecer los firewalls modernos además de filtrar tráfico?",
+      "respuesta": "Los firewalls modernos pueden actuar como endpoints de VPN, concentradores de VPN, routers (dispositivos de capa 3), realizar traducción de direcciones de red (NAT) y enrutamiento dinámico."
+    },
+    {
+      "id": "fc20-03",
+      "pregunta": "¿Qué es un firewall de nueva generación (NGFW) y en qué se diferencia de un firewall tradicional?",
+      "respuesta": "Un NGFW analiza el tráfico en profundidad para identificar aplicaciones específicas, no solo puertos. Esto permite tomar decisiones más precisas sobre qué tráfico permitir o bloquear, incluso cuando las aplicaciones no están asociadas a sus puertos tradicionales."
+    },
+    {
+      "id": "fc20-04",
+      "pregunta": "¿Qué es la regla de denegación implícita (implicit deny) en un firewall?",
+      "respuesta": "Es una regla que bloquea todo el tráfico que no coincida con ninguna regla específica en la lista de reglas del firewall. Actúa como un mecanismo de seguridad por defecto."
+    },
+    {
+      "id": "fc20-05",
+      "pregunta": "¿Qué es un sistema de prevención de intrusiones (IPS) y cómo funciona?",
+      "respuesta": "Un IPS monitorea el tráfico en tiempo real y utiliza firmas (patrones de tráfico asociados a amenazas conocidas) para identificar y bloquear software malicioso. También puede detectar anomalías sin necesidad de firmas específicas."
+    },
+    {
+      "id": "fc20-06",
+      "pregunta": "¿Qué es el filtrado web y qué técnicas se utilizan para implementarlo?",
+      "respuesta": "El filtrado web controla el acceso a sitios web y el contenido que se muestra en los navegadores. Se implementa mediante filtros de contenido basados en URLs, categorías de sitios, reputación de sitios, proxies o agentes en dispositivos de usuarios."
+    },
+    {
+      "id": "fc20-07",
+      "pregunta": "¿Qué es Active Directory y qué funciones de seguridad permite realizar?",
+      "respuesta": "Active Directory es una base de datos centralizada en entornos Windows que almacena información sobre usuarios, dispositivos, grupos de seguridad y políticas. Permite gestionar autenticaciones, permisos y políticas de seguridad de manera centralizada."
+    },
+    {
+      "id": "fc20-08",
+      "pregunta": "¿Qué son los protocolos seguros y por qué son importantes?",
+      "respuesta": "Los protocolos seguros, como SSH, SFTP, IMAPS o HTTPS, cifran el tráfico para proteger datos sensibles. Son importantes porque protocolos inseguros como Telnet, FTP o SMTP envían información sin cifrar, lo que los hace vulnerables a ataques."
+    },
+    {
+      "id": "fc20-09",
+      "pregunta": "¿Qué son SPF, DKIM y DMARC en el contexto de la seguridad del correo electrónico?",
+      "respuesta": "SPF define qué servidores están autorizados a enviar correos en nombre de un dominio. DKIM añade firmas digitales para verificar la autenticidad de los correos. DMARC especifica qué acciones tomar con correos que no pasan las verificaciones de SPF y DKIM y genera informes sobre correos validados y no validados."
+    },
+    {
+      "id": "fc20-10",
+      "pregunta": "¿Qué es la monitorización de integridad de archivos (FIM) y qué herramientas se utilizan?",
+      "respuesta": "La FIM detecta cambios no autorizados en archivos críticos del sistema. En Windows se usa el verificador de archivos del sistema (SFC), y en Linux herramientas como Tripwire."
+    },
+    {
+      "id": "fc20-11",
+      "pregunta": "¿Qué es un sistema DLP y qué tipos de datos puede proteger?",
+      "respuesta": "Un sistema DLP (Data Loss Prevention) monitoriza el tráfico de red y los datos en uso, movimiento o reposo para bloquear la transmisión de información sensible, como números de seguro social o información médica."
+    },
+    {
+      "id": "fc20-12",
+      "pregunta": "¿Qué es una evaluación de postura (posture assessment) en seguridad de endpoints?",
+      "respuesta": "Es un proceso para verificar que los dispositivos cumplan con las políticas de seguridad antes de permitirles acceder a la red. Incluye verificar la instalación de antivirus, actualizaciones, certificados corporativos y cifrado de almacenamiento."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una función típica de un firewall de nueva generación (NGFW)?",
+      "opciones": [
+        "Analizar el tráfico en profundidad para identificar aplicaciones específicas como SSH o RDP.",
+        "Actuar como concentrador de VPN para conexiones punto a punto entre sitios.",
+        "Realizar traducción de direcciones de red (NAT) para ocultar direcciones IP internas.",
+        "Bloquear automáticamente todo el tráfico ICMP (ping) sin permitir excepciones."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los firewalls de nueva generación (NGFW) no bloquean automáticamente todo el tráfico ICMP, ya que esto no es una función típica de estos dispositivos. La opción correcta describe funciones reales de un NGFW según el temario.",
+      "id": "p20-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un firewall, ¿qué regla se evalúa primero si las reglas están ordenadas de la siguiente manera? 1) Permitir tráfico SSH desde 192.168.1.0/24 a 10.0.0.10, 2) Denegar todo el tráfico TCP, 3) Permitir tráfico HTTP desde cualquier IP a 10.0.0.20",
+      "opciones": [
+        "Permitir tráfico SSH desde 192.168.1.0/24 a 10.0.0.10",
+        "Denegar todo el tráfico TCP",
+        "Permitir tráfico HTTP desde cualquier IP a 10.0.0.20",
+        "No se puede determinar sin conocer la regla implícita"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los firewalls evalúan las reglas desde la parte superior de la lista hacia abajo, por lo que se aplicará la primera regla que coincida con el tráfico, en este caso la regla de tráfico SSH.",
+      "id": "p20-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para transferir archivos de manera cifrada y reemplaza al FTP tradicional?",
+      "opciones": [
+        "SFTP",
+        "SSH",
+        "HTTPS",
+        "IMAPS"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SFTP (SSH File Transfer Protocol) es un protocolo seguro que cifra la transferencia de archivos y reemplaza al FTP tradicional no cifrado, según el temario.",
+      "id": "p20-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red configura un firewall para bloquear todo el tráfico de salida hacia dominios con mala reputación. ¿Qué técnica de filtrado está utilizando?",
+      "opciones": [
+        "Filtrado DNS",
+        "Filtrado por URL",
+        "Filtrado por categorías de aplicaciones",
+        "Filtrado por reputación de sitios web"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El filtrado DNS bloquea solicitudes a dominios conocidos por ser maliciosos al no devolver su dirección IP, como se describe en el temario sobre filtrado web.",
+      "id": "p20-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando un firewall tradicional y un NGFW, ¿cuál de las siguientes afirmaciones es CORRECTA?",
+      "opciones": [
+        "Un firewall tradicional identifica aplicaciones por su puerto, mientras que un NGFW lo hace por el comportamiento de la aplicación.",
+        "Un firewall tradicional puede actuar como concentrador de VPN, pero un NGFW no.",
+        "Un NGFW solo permite tráfico basado en direcciones IP, mientras que un firewall tradicional usa reglas más flexibles.",
+        "Un firewall tradicional no puede realizar NAT, pero un NGFW sí."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La principal diferencia entre un firewall tradicional y un NGFW es que el primero identifica aplicaciones por su puerto, mientras que el NGFW lo hace por el comportamiento de la aplicación, según el temario.",
+      "id": "p20-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante intenta explotar una vulnerabilidad en un servidor web mediante inyección SQL. ¿Qué sistema detectaría y bloquearía esta amenaza?",
+      "opciones": [
+        "Un IPS con firmas para inyecciones en bases de datos",
+        "Un firewall que bloquea todo el tráfico SQL",
+        "Un proxy que filtra URLs maliciosas",
+        "Un DLP que monitoriza tráfico de red"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un IPS (Intrusion Prevention System) detecta y bloquea amenazas conocidas como inyecciones SQL mediante firmas específicas, según el temario.",
+      "id": "p20-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué modelo de control de acceso se utiliza en Linux cuando un administrador central asigna permisos a los usuarios y recursos?",
+      "opciones": [
+        "Mandatory Access Control (MAC)",
+        "Discretionary Access Control (DAC)",
+        "Role-Based Access Control (RBAC)",
+        "Attribute-Based Access Control (ABAC)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El modelo Mandatory Access Control (MAC) es el que utiliza un administrador central para asignar permisos, como en SELinux, según el temario.",
+      "id": "p20-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno corporativo, un empleado intenta acceder a un sitio web de phishing desde su laptop fuera de la red. ¿Qué solución de filtrado web podría bloquear este acceso aunque el empleado no esté en la red interna?",
+      "opciones": [
+        "Un agente basado en cliente (agent-based) instalado en la laptop",
+        "Un proxy transparente en la red interna",
+        "Un firewall que filtra por IP de origen",
+        "Un sistema DLP que monitoriza el tráfico de red"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los agentes basados en cliente permiten aplicar políticas de filtrado incluso cuando los usuarios están fuera de la red corporativa, según el temario sobre filtrado web.",
+      "id": "p20-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un servidor de correo recibe un correo que no pasa las verificaciones de SPF ni DKIM. Según DMARC, ¿qué acción debería tomar el servidor si la política de DMARC está configurada para rechazar correos no válidos?",
+      "opciones": [
+        "Rechazar el correo y no entregarlo al destinatario",
+        "Aceptar el correo pero marcarlo como sospechoso",
+        "Poner el correo en cuarentena para revisión manual",
+        "Redirigir el correo a un servidor de análisis de malware"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "DMARC permite especificar acciones como rechazar correos que no pasan las verificaciones de SPF y DKIM, según el temario sobre seguridad del correo electrónico.",
+      "id": "p20-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un dispositivo endpoint no cumple con las políticas de seguridad corporativas porque tiene un antivirus desactualizado. ¿Qué mecanismo se activaría para proteger la red en este escenario?",
+      "opciones": [
+        "Poner el dispositivo en cuarentena en una VLAN aislada",
+        "Bloquear todo el tráfico del dispositivo mediante un firewall",
+        "Forzar la actualización del antivirus mediante una política de grupo",
+        "Registrar el dispositivo en un sistema DLP para monitorizar su tráfico"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las evaluaciones de postura (posture assessment) pueden poner en cuarentena un dispositivo que no cumpla con las políticas hasta que se corrija, según el temario sobre seguridad de endpoints.",
+      "id": "p20-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de filtrado web bloquearía automáticamente el acceso a un dominio conocido por distribuir malware, incluso si el usuario intenta acceder mediante una aplicación que genera solicitudes DNS?",
+      "opciones": [
+        "Filtrado basado en categorías de URLs",
+        "Filtrado DNS",
+        "Filtrado por reputación de sitios web",
+        "Filtrado mediante proxy explícito"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El filtrado DNS bloquea solicitudes a dominios maliciosos al no devolver su dirección IP, impidiendo la conexión. Esto funciona incluso con aplicaciones que generan solicitudes DNS (temario: Filtrado Web).",
+      "id": "p20-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno Linux con SELinux activado, ¿qué modelo de control de acceso se está aplicando cuando un administrador central asigna permisos a los usuarios y recursos?",
+      "opciones": [
+        "Control de Acceso Discrecional (DAC)",
+        "Control de Acceso Obligatorio (MAC)",
+        "Control de Acceso Basado en Roles (RBAC)",
+        "Control de Acceso Basado en Atributos (ABAC)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "SELinux implementa el modelo de Control de Acceso Obligatorio (MAC), donde un administrador central define los permisos (temario: Seguridad del Sistema Operativo).",
+      "id": "p20-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes protocolos NO cifra el tráfico por defecto y, por lo tanto, es vulnerable a ataques de intermediario (MITM)?",
+      "opciones": [
+        "HTTPS",
+        "SSH",
+        "Telnet",
+        "SFTP"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Telnet envía datos sin cifrar, exponiendo credenciales y tráfico a ataques como MITM (temario: Protocolos Seguros).",
+      "id": "p20-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall para permitir tráfico HTTP solo desde la subred 192.168.1.0/24 a un servidor web interno. ¿Qué tipo de firewall está utilizando si este análisis se basa en el puerto 80 y no en la aplicación específica?",
+      "opciones": [
+        "Firewall de nueva generación (NGFW)",
+        "Firewall tradicional basado en puertos",
+        "Firewall con capacidad de filtrado DNS",
+        "Firewall como endpoint de VPN"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un firewall tradicional basado en puertos toma decisiones solo por números de puerto (como el 80 para HTTP), sin analizar la aplicación (temario: Firewalls).",
+      "id": "p20-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué mecanismo de seguridad del correo electrónico verificaría que un correo proviene realmente del dominio declarado y no es un intento de spoofing?",
+      "opciones": [
+        "SPF (Sender Policy Framework)",
+        "DMARC (Domain-based Message Authentication, Reporting & Conformance)",
+        "DKIM (DomainKeys Identified Mail)",
+        "TLS para SMTP"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "DKIM añade firmas digitales a los correos para verificar su autenticidad y evitar spoofing (temario: Seguridad del Correo Electrónico).",
+      "id": "p20-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante intenta explotar una vulnerabilidad en un servidor web mediante inyección SQL. ¿Qué sistema detectaría y bloquearía esta amenaza si está configurado para identificar patrones de tráfico malicioso conocidos?",
+      "opciones": [
+        "Firewall tradicional",
+        "Sistema de Prevención de Intrusiones (IPS)",
+        "Proxy web",
+        "Evaluación de postura (posture assessment)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un IPS monitorea tráfico en tiempo real y bloquea software malicioso usando firmas de amenazas conocidas, como inyecciones SQL (temario: Intrusion Prevention Systems).",
+      "id": "p20-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un empleado intenta acceder a un sitio de phishing desde una laptop fuera de la red corporativa, ¿qué solución de filtrado web podría bloquear este acceso aunque el dispositivo no esté en la red interna?",
+      "opciones": [
+        "Proxy web transparente",
+        "Agente basado en cliente (agent-based)",
+        "Filtrado DNS en el router doméstico",
+        "Firewall como endpoint de VPN"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los agentes basados en cliente aplican políticas de filtrado en el dispositivo del usuario, incluso fuera de la red corporativa (temario: Filtrado Web).",
+      "id": "p20-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando SPF y DKIM en la seguridad del correo electrónico, ¿cuál de las siguientes afirmaciones es CORRECTA?",
+      "opciones": [
+        "SPF verifica la autenticidad del contenido del correo, mientras que DKIM valida los servidores autorizados.",
+        "DKIM añade firmas digitales para verificar la autenticidad del correo, mientras que SPF define qué servidores pueden enviar correos en nombre de un dominio.",
+        "SPF y DKIM son lo mismo y se usan indistintamente en todos los servidores de correo.",
+        "DMARC es un reemplazo de SPF y DKIM, por lo que no se usan juntos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "DKIM firma digitalmente los correos para verificar su autenticidad, mientras que SPF define qué servidores están autorizados a enviar correos en nombre de un dominio (temario: Seguridad del Correo Electrónico).",
+      "id": "p20-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un servidor de correo recibe un correo que falla las verificaciones de SPF y DKIM. Si la política de DMARC está configurada para 'rechazar', ¿qué acción tomará el servidor con este correo?",
+      "opciones": [
+        "Lo pondrá en cuarentena para revisión manual.",
+        "Lo aceptará pero marcará como sospechoso.",
+        "Lo rechazará y no lo entregará al destinatario.",
+        "Lo redirigirá a un servidor de análisis de malware."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "DMARC con política 'rechazar' indica al servidor que no acepte correos que fallen SPF o DKIM, bloqueando su entrega (temario: Seguridad del Correo Electrónico).",
+      "id": "p20-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un dispositivo endpoint no cumple con las políticas de seguridad corporativas porque tiene un antivirus desactualizado. ¿Qué mecanismo activaría automáticamente la red para protegerse en este escenario?",
+      "opciones": [
+        "Evaluación de postura (posture assessment) que lo pone en cuarentena en una VLAN aislada.",
+        "Un firewall tradicional que bloquea todo su tráfico.",
+        "Un IPS que escanea el dispositivo en busca de malware.",
+        "Un proxy web que filtra su tráfico HTTP."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La evaluación de postura verifica el cumplimiento de políticas y, si no se cumple (ej. antivirus desactualizado), el dispositivo es puesto en cuarentena en una VLAN aislada (temario: Seguridad de Endpoints).",
+      "id": "p20-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional Telnet, proporcionando cifrado en las comunicaciones remotas?",
+      "opciones": [
+        "a) FTP",
+        "b) SSH",
+        "c) SNMP",
+        "d) HTTP"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "SSH (Secure Shell) es el protocolo seguro que reemplaza a Telnet, ya que cifra todo el tráfico de comunicaciones remotas, a diferencia de Telnet que envía datos sin cifrar.",
+      "id": "p20-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un firewall de nueva generación (NGFW), ¿qué característica lo diferencia claramente de un firewall tradicional basado en puertos?",
+      "opciones": [
+        "a) Bloquea todo el tráfico por defecto",
+        "b) Analiza el tráfico en función de la aplicación específica, no solo del puerto",
+        "c) Solo permite tráfico HTTP/HTTPS",
+        "d) No requiere configuración manual de reglas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un NGFW analiza el tráfico en profundidad para identificar aplicaciones específicas, como SSH o RDP, incluso cuando no usan sus puertos tradicionales, a diferencia de los firewalls tradicionales que solo revisan puertos.",
+      "id": "p20-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de filtrado web evalúa la reputación de un dominio en función de su historial de seguridad y lo bloquea automáticamente si es sospechoso, incluso antes de analizar su contenido?",
+      "opciones": [
+        "a) Filtrado basado en URLs",
+        "b) Filtrado por categorías de sitios web",
+        "c) Filtrado por reputación de dominios",
+        "d) Filtrado mediante proxy explícito"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El filtrado por reputación de dominios analiza el historial de seguridad de un dominio y lo clasifica en categorías como de confianza, riesgo medio o alto riesgo, bloqueando automáticamente aquellos con mala reputación.",
+      "id": "p20-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall para bloquear todo el tráfico ICMP (usado en ping) desde internet hacia la red interna. ¿Qué tipo de regla está aplicando?",
+      "opciones": [
+        "a) Regla basada en puerto",
+        "b) Regla basada en protocolo",
+        "c) Regla basada en reputación de dominio",
+        "d) Regla basada en aplicación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El firewall está aplicando una regla basada en protocolo, ya que ICMP es un protocolo específico (no un puerto) que se está bloqueando para evitar ataques como ping floods.",
+      "id": "p20-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional FTP, proporcionando cifrado en la transferencia de archivos?",
+      "opciones": [
+        "a) HTTP",
+        "b) SFTP",
+        "c) Telnet",
+        "d) DNS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "SFTP (Secure File Transfer Protocol) es un protocolo seguro que reemplaza al FTP tradicional, ya que cifra tanto los datos como las credenciales durante la transferencia de archivos.",
+      "id": "p20-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué característica clave diferencia a un firewall de nueva generación (NGFW) de un firewall tradicional basado en puertos?",
+      "opciones": [
+        "a) Analiza el tráfico en función de la aplicación específica que lo genera, no solo del puerto",
+        "b) Solo permite tráfico basado en direcciones IP de origen y destino",
+        "c) Bloquea automáticamente todo el tráfico ICMP sin excepciones",
+        "d) Actúa exclusivamente como endpoint de VPN sin funciones de filtrado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un NGFW identifica y gestiona el tráfico según la aplicación (ej. SSH, RDP) independientemente del puerto utilizado, a diferencia de los firewalls tradicionales que solo analizan puertos.",
+      "id": "p20-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de filtrado web se basa en analizar el comportamiento de las aplicaciones en lugar de solo bloquear URLs o dominios específicos?",
+      "opciones": [
+        "a) Filtrado basado en reputación de dominios",
+        "b) Filtrado basado en firmas de malware conocidas",
+        "c) Filtrado basado en el comportamiento de la aplicación (Application Awareness)",
+        "d) Filtrado basado en listas blancas/negras de IPs"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El filtrado basado en el comportamiento de la aplicación (Application Awareness) es una técnica avanzada que permite a los firewalls de nueva generación (NGFW) identificar y controlar aplicaciones específicas, incluso si no usan puertos tradicionales, mejorando la precisión del filtrado.",
+      "id": "p20-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para cifrar comunicaciones en redes inalámbricas y reemplaza al estándar WEP, proporcionando mayor seguridad en entornos Wi-Fi?",
+      "opciones": [
+        "a) WPA2",
+        "b) SSL",
+        "c) TLS 1.3",
+        "d) IPsec"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "WPA2 (Wi-Fi Protected Access 2) es el protocolo seguro que reemplazó a WEP, ofreciendo cifrado robusto mediante AES y mejorando la autenticación en redes inalámbricas.",
+      "id": "p20-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red configura un firewall de nueva generación (NGFW) para permitir el tráfico de una aplicación específica, como Zoom, pero observa que en algunas ocasiones el tráfico de la aplicación se bloquea sin razón aparente. Tras revisar las reglas, descubre que el NGFW está aplicando una regla genérica que deniega todo el tráfico UDP antes que la regla específica que permite Zoom. ¿Qué característica del NGFW está siendo afectada negativamente por este orden de reglas?",
+      "opciones": [
+        "a) La capacidad de identificar aplicaciones por su comportamiento, no solo por puertos tradicionales",
+        "b) La función de actuar como endpoint de VPN para conexiones remotas",
+        "c) La capacidad de realizar NAT (Network Address Translation) en la red interna",
+        "d) La función de filtrado web basada en reputación de dominios"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los NGFW identifican aplicaciones por su comportamiento en la red (ej: patrones de tráfico de Zoom), pero una regla genérica que bloquea UDP antes puede interferir en su detección, ya que Zoom utiliza UDP.",
+      "id": "p20-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador de red configura un firewall de nueva generación (NGFW) para proteger un servidor web interno que aloja una aplicación crítica. El NGFW está configurado con reglas basadas en aplicaciones, permitiendo tráfico HTTP/HTTPS solo para la aplicación específica. Sin embargo, tras implementar una actualización en la aplicación, los usuarios reportan errores de conexión. Al revisar los logs del NGFW, se observa que el tráfico de la aplicación se está bloqueando, aunque las reglas de aplicación están correctamente configuradas. ¿Cuál es la causa más probable de este comportamiento?",
+      "opciones": [
+        "a) El NGFW está aplicando una regla genérica que deniega todo el tráfico UDP antes que las reglas específicas de la aplicación, afectando la comunicación de la aplicación actualizada que utiliza un puerto no estándar.",
+        "b) La aplicación actualizada utiliza un protocolo no estándar que el NGFW no puede identificar, por lo que lo bloquea por defecto.",
+        "c) El servidor web interno no tiene configurado correctamente el certificado SSL, lo que hace que el NGFW lo marque como tráfico no seguro y lo bloquee.",
+        "d) El firewall está configurado para bloquear todo el tráfico ICMP, lo que interfiere con la comunicación de la aplicación debido a dependencias en el protocolo ICMP."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los NGFW analizan el tráfico en profundidad para identificar aplicaciones específicas, pero si una regla genérica que deniega tráfico (ej. UDP) se coloca antes que las reglas específicas de la aplicación, bloqueará todo el tráfico que no coincida con las reglas superiores, incluyendo el tráfico de la aplicación actualizada que pueda usar puertos no estándar.",
+      "id": "p20-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional Telnet en comunicaciones remotas cifradas?",
+      "opciones": [
+        "a) SSH",
+        "b) SFTP",
+        "c) HTTPS",
+        "d) WPA3"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SSH (Secure Shell) es el protocolo seguro que reemplaza a Telnet, proporcionando cifrado en las comunicaciones remotas para evitar ataques de intermediario (MITM).",
+      "id": "p20-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional HTTP en comunicaciones web cifradas con autenticación de servidor?",
+      "opciones": [
+        "a) FTP",
+        "b) SSH",
+        "c) HTTPS",
+        "d) SFTP"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "HTTPS (HTTP Secure) es el protocolo que reemplaza al HTTP tradicional al añadir cifrado SSL/TLS, garantizando la confidencialidad e integridad de las comunicaciones web.",
+      "id": "p20-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de filtrado web evalúa la reputación de un dominio en función de su historial de seguridad y lo bloquea automáticamente si es sospechoso?",
+      "opciones": [
+        "a) Filtrado basado en URLs",
+        "b) Filtrado DNS",
+        "c) Filtrado por categorías",
+        "d) Filtrado por reputación"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El filtrado por reputación clasifica los sitios en categorías como de confianza, bajo riesgo, riesgo medio, sospechosos o alto riesgo, permitiendo bloquear automáticamente sitios con mala reputación.",
+      "id": "p20-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional SMTP en comunicaciones de correo electrónico cifradas con autenticación de servidor?",
+      "opciones": [
+        "a) SFTP",
+        "b) SMTPS",
+        "c) IMAPS",
+        "d) POP3S"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "SMTPS (SMTP Secure) es el protocolo seguro que reemplaza al SMTP tradicional, utilizando cifrado (generalmente TLS) para proteger las comunicaciones de correo electrónico, incluyendo la autenticación del servidor.",
+      "id": "p20-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional DNS en comunicaciones cifradas, especialmente en entornos donde se requiere autenticación y cifrado de las consultas?",
+      "opciones": [
+        "a) DNSSEC",
+        "b) DoH (DNS over HTTPS)",
+        "c) LDAPS",
+        "d) SNMPv3"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "DoH (DNS over HTTPS) es un protocolo que cifra las consultas DNS mediante HTTPS, protegiendo la privacidad y autenticidad de las respuestas, a diferencia de DNS tradicional que transmite las consultas en texto plano.",
+      "id": "p20-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de filtrado web evalúa el comportamiento de las aplicaciones en tiempo real y bloquea tráfico malicioso basado en patrones de uso anómalos, incluso si el dominio o URL no están previamente catalogados como sospechosos?",
+      "opciones": [
+        "a) Filtrado basado en reputación de dominios",
+        "b) Filtrado DNS",
+        "c) Filtrado basado en comportamiento de aplicaciones (sandboxing)",
+        "d) Filtrado por categorías de contenido"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El filtrado basado en comportamiento de aplicaciones analiza el tráfico en tiempo real para detectar patrones anómalos, como conexiones no autorizadas o comportamientos típicos de malware, sin depender de listas previas de dominios o URLs.",
+      "id": "p20-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante intenta explotar una vulnerabilidad en un servidor web mediante inyección SQL, ¿qué sistema detectaría y bloquearía esta amenaza si está configurado para identificar patrones de tráfico malicioso conocidos?",
+      "opciones": [
+        "a) Un firewall tradicional",
+        "b) Un sistema de prevención de intrusiones (IPS)",
+        "c) Un proxy web",
+        "d) Un sistema de monitoreo de integridad de archivos (FIM)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un IPS monitorea el tráfico en tiempo real y utiliza firmas para identificar y bloquear software malicioso, como inyecciones SQL, basándose en patrones conocidos.",
+      "id": "p20-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué modelo de control de acceso se aplica en Linux cuando un administrador central asigna permisos a los usuarios y recursos, limitando el alcance de posibles brechas de seguridad?",
+      "opciones": [
+        "a) DAC (Discretionary Access Control)",
+        "b) MAC (Mandatory Access Control)",
+        "c) RBAC (Role-Based Access Control)",
+        "d) ABAC (Attribute-Based Access Control)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "SELinux es una implementación de MAC en Linux, donde un administrador central asigna permisos, aplicando el principio de mínimo privilegio para limitar brechas de seguridad.",
+      "id": "p20-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un servidor de correo recibe un correo que no pasa las verificaciones de SPF ni DKIM. Según DMARC, si la política está configurada para 'rechazar', ¿qué acción tomará el servidor con este correo?",
+      "opciones": [
+        "a) Aceptará el correo y lo marcará como sospechoso",
+        "b) Pondrá el correo en cuarentena",
+        "c) Rechazará el correo y no lo entregará al destinatario",
+        "d) Redirigirá el correo a un servidor de análisis adicional"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "DMARC permite especificar acciones como 'rechazar' para correos que no pasan las verificaciones de SPF y DKIM, lo que implica que el servidor no entregará el correo al destinatario.",
+      "id": "p20-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador de red configura un firewall de nueva generación (NGFW) para proteger un servidor web interno que aloja una aplicación crítica. El NGFW está configurado con reglas basadas en aplicaciones, permitiendo tráfico HTTP/HTTPS solo para la aplicación específica. Sin embargo, tras implementar una actualización en la aplicación, los usuarios reportan errores de conexión. Al revisar los logs del NGFW, se observa que el tráfico de la aplicación se está bloqueando, aunque las reglas de aplicación están correctamente configuradas. ¿Cuál es la causa más probable de este comportamiento, considerando que la aplicación ahora utiliza puertos no estándar para comunicarse con sus servicios internos?",
+      "opciones": [
+        "a) El firewall está aplicando una regla de denegación implícita que bloquea todo el tráfico no asociado a puertos estándar como 80 o 443, sin considerar la aplicación específica.",
+        "b) El firewall está utilizando un proxy explícito que no puede interpretarse con los nuevos puertos no estándar de la aplicación.",
+        "c) El firewall está aplicando un filtrado basado en reputación de dominios que ha bloqueado los nuevos servidores internos de la aplicación por considerarlos sospechosos.",
+        "d) El firewall está utilizando un agente basado en cliente que no puede actualizarse automáticamente para reconocer los nuevos puertos de la aplicación."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los NGFW que analizan tráfico basado en aplicaciones requieren que las reglas permitan explícitamente los puertos y protocolos que utiliza la aplicación, incluso si estos no son los estándar (80/443). Si la aplicación actualizada usa puertos no estándar, el firewall bloqueará el tráfico al no coincidir con las reglas configuradas.",
+      "id": "p20-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro reemplaza al tradicional Telnet para proporcionar comunicaciones remotas cifradas?",
+      "opciones": [
+        "a) FTP",
+        "b) SSH",
+        "c) RDP",
+        "d) HTTP"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "SSH (Secure Shell) cifra las comunicaciones remotas, a diferencia de Telnet que transmite datos en texto plano. (Protocolo seguro)",
+      "id": "p20-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional DNS en entornos donde se requiere autenticación y cifrado de las consultas?",
+      "opciones": [
+        "a) DNSSEC",
+        "b) DoH (DNS over HTTPS)",
+        "c) SNMPv3",
+        "d) LDAPS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "DoH (DNS over HTTPS) cifra las consultas DNS mediante HTTPS, protegiendo la privacidad y autenticidad de las solicitudes, a diferencia de DNS tradicional que transmite las consultas en texto claro.",
+      "id": "p20-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una función típica de un sistema de prevención de intrusiones (IPS)?",
+      "opciones": [
+        "a) Bloquear tráfico malicioso usando firmas de amenazas conocidas",
+        "b) Detectar anomalías en el tráfico sin necesidad de firmas",
+        "c) Cifrar comunicaciones entre dispositivos internos",
+        "d) Agrupar reglas en categorías como inyecciones SQL o malware"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El cifrado de comunicaciones no es función de un IPS; esta tarea corresponde a protocolos como SSH o VPN. (IPS)",
+      "id": "p20-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall para permitir tráfico HTTP solo desde la subred 192.168.1.0/24 a un servidor web interno. ¿Qué tipo de firewall está utilizando si este análisis se basa únicamente en el puerto 80?",
+      "opciones": [
+        "a) Firewall de nueva generación (NGFW)",
+        "b) Firewall tradicional basado en puertos",
+        "c) Firewall con filtrado DNS",
+        "d) Firewall con control de aplicaciones"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un firewall tradicional basado en puertos analiza el tráfico según números de puerto (ej. puerto 80 para HTTP), sin considerar la aplicación específica. (Firewalls)",
+      "id": "p20-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para cifrar el tráfico de red en entornos inalámbricos y reemplaza al estándar WEP, proporcionando mayor seguridad en conexiones Wi-Fi?",
+      "opciones": [
+        "a) SSL",
+        "b) IPsec",
+        "c) WPA3",
+        "d) TLS"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "WPA3 es el protocolo de seguridad diseñado específicamente para redes inalámbricas (Wi-Fi), reemplazando a WEP y WPA/WPA2, y proporcionando cifrado robusto para proteger las comunicaciones inalámbricas.",
+      "id": "p20-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué característica clave diferencia a un firewall de nueva generación (NGFW) de un firewall tradicional basado en puertos en cuanto a la gestión de reglas?",
+      "opciones": [
+        "a) Los NGFW evalúan reglas en orden aleatorio para evitar sesgos en el tráfico",
+        "b) Los NGFW permiten ordenar reglas basadas en aplicaciones específicas en lugar de solo puertos",
+        "c) Los firewalls tradicionales no requieren reglas de denegación implícita, a diferencia de los NGFW",
+        "d) Los NGFW bloquean todo el tráfico UDP por defecto, mientras que los firewalls tradicionales lo permiten"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los NGFW permiten ordenar reglas basadas en aplicaciones específicas (como SSH o RDP) en lugar de solo puertos, lo que ofrece mayor flexibilidad y precisión en el control del tráfico.",
+      "id": "p20-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de filtrado web se basa en analizar el comportamiento de las aplicaciones en tiempo real, detectando patrones de uso anómalos y bloqueando tráfico malicioso incluso si el dominio o URL no están catalogados como sospechosos previamente?",
+      "opciones": [
+        "a) Filtrado basado en reputación de dominios",
+        "b) Filtrado basado en firmas de malware conocidas",
+        "c) Filtrado basado en comportamiento de aplicaciones (Deep Packet Inspection)",
+        "d) Filtrado basado en listas negras de IPs"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El filtrado basado en comportamiento de aplicaciones analiza patrones anómalos en tiempo real, identificando amenazas no conocidas mediante técnicas como Deep Packet Inspection (DPI), algo que no depende de listas previas de dominios o URLs.",
+      "id": "p20-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional FTP en la transferencia de archivos cifrada?",
+      "opciones": [
+        "a) SFTP",
+        "b) HTTP",
+        "c) Telnet",
+        "d) SNMP"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SFTP (SSH File Transfer Protocol) cifra la transferencia de archivos, a diferencia de FTP que transmite datos en texto plano. (Protocolos seguros)",
+      "id": "p20-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall de nueva generación (NGFW) para permitir tráfico de una aplicación específica, como Zoom, pero observa que en algunas ocasiones el tráfico se bloquea sin razón aparente. Tras revisar las reglas, descubre que el NGFW está aplicando una regla genérica que deniega todo el tráfico UDP antes que la regla específica que permite Zoom. ¿Qué característica del NGFW está siendo afectada negativamente por este orden de reglas?",
+      "opciones": [
+        "a) La regla de denegación implícita",
+        "b) El análisis a nivel de aplicación",
+        "c) El filtrado basado en reputación de dominios",
+        "d) La traducción de direcciones de red (NAT)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El NGFW identifica aplicaciones como Zoom por su comportamiento, pero una regla genérica que deniega UDP antes puede bloquear tráfico legítimo de la aplicación. (Firewalls)",
+      "id": "p20-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador de red configura un firewall de nueva generación (NGFW) para permitir el tráfico de la aplicación Zoom, pero observa que, en algunas ocasiones, los usuarios internos no pueden iniciar sesión en reuniones porque el tráfico se bloquea. Tras revisar los logs, se detecta que el NGFW está aplicando una regla genérica que deniega todo el tráfico UDP antes que la regla específica que permite Zoom. Además, se observa que Zoom utiliza puertos no estándar (como 8801-8802) para el audio/video, mientras que el tráfico de control (puerto 443 TCP) sí pasa correctamente. ¿Qué característica clave del NGFW está siendo afectada negativamente por este orden de reglas y cómo podría solucionarse?",
+      "opciones": [
+        "a) La capacidad de inspección profunda de aplicaciones (deep packet inspection) del NGFW, que no puede identificar Zoom cuando usa puertos no estándar, por lo que debe activarse la detección basada en huellas digitales de la aplicación (fingerprinting) en las reglas.",
+        "b) El orden de evaluación de reglas, ya que las reglas genéricas (denegar UDP) deberían colocarse después de las específicas (permitir Zoom), para evitar que bloqueen tráfico legítimo antes de que sea evaluado por reglas más específicas.",
+        "c) La función de NAT (Network Address Translation) del NGFW, que no está traduciendo correctamente los puertos no estándar de Zoom, requiriendo una regla adicional para mapear estos puertos.",
+        "d) La capacidad de filtrado web del NGFW, que está bloqueando el tráfico UDP por considerarlo potencialmente malicioso, por lo que debe desactivarse el filtrado de comportamiento en tiempo real."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El orden de las reglas es crítico en un NGFW, ya que se evalúan secuencialmente. Las reglas genéricas (como denegar todo el tráfico UDP) deben colocarse después de las específicas (permitir Zoom) para evitar bloqueos innecesarios de tráfico legítimo que no ha sido evaluado aún.",
+      "id": "p20-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro reemplaza al tradicional FTP para transferir archivos de manera cifrada?",
+      "opciones": [
+        "a) SSH",
+        "b) SFTP",
+        "c) SCP",
+        "d) HTTPS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "SFTP (SSH File Transfer Protocol) es un protocolo seguro que utiliza SSH para transferir archivos cifrados, reemplazando al FTP tradicional que no cifra el tráfico.",
+      "id": "p20-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando un firewall tradicional y un NGFW, ¿qué afirmación es CORRECTA?",
+      "opciones": [
+        "a) Un firewall tradicional analiza el tráfico basado en la aplicación, mientras que un NGFW solo usa números de puerto.",
+        "b) Un firewall tradicional bloquea tráfico ICMP por defecto, mientras que un NGFW no.",
+        "c) Un NGFW identifica aplicaciones específicas como SSH o RDP incluso cuando no usan sus puertos tradicionales.",
+        "d) Un NGFW no puede actuar como endpoint de VPN."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un NGFW analiza el tráfico en profundidad para identificar aplicaciones específicas, no solo puertos, lo que permite aplicar reglas basadas en el comportamiento de la aplicación.",
+      "id": "p20-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional ICMP (usado en ping) en redes donde se requiere cifrado del tráfico de diagnóstico?",
+      "opciones": [
+        "a) SNMPv3",
+        "b) HTTPS",
+        "c) SSH",
+        "d) ICMPv2"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "SSH (Secure Shell) es un protocolo seguro que cifra las comunicaciones, incluyendo el tráfico de diagnóstico, a diferencia de ICMP tradicional que no cifra los mensajes de ping.",
+      "id": "p20-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional DNS en consultas cifradas, especialmente en entornos donde se requiere autenticación y cifrado de las consultas?",
+      "opciones": [
+        "a) DNSSEC",
+        "b) DoH (DNS over HTTPS)",
+        "c) SNMPv3",
+        "d) LDAPS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "DoH (DNS over HTTPS) cifra las consultas DNS mediante el protocolo HTTPS, protegiéndolas de ataques de intermediario (MITM) y garantizando privacidad. DNSSEC, por su parte, solo autentica respuestas DNS pero no cifra las consultas.",
+      "id": "p20-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional ICMP (usado en ping) en redes donde se requiere autenticación y cifrado del tráfico de diagnóstico?",
+      "opciones": [
+        "a) SNMPv3",
+        "b) ICMPv6",
+        "c) SSH",
+        "d) IPSec"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SNMPv3 es el protocolo seguro que reemplaza a versiones anteriores de SNMP y también puede usarse para tráfico de diagnóstico, ya que incluye autenticación y cifrado, a diferencia de ICMP tradicional que no ofrece estas capacidades.",
+      "id": "p20-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno Linux con SELinux activado, ¿qué modelo de control de acceso se está aplicando?",
+      "opciones": [
+        "a) DAC (Discretionary Access Control).",
+        "b) MAC (Mandatory Access Control).",
+        "c) RBAC (Role-Based Access Control).",
+        "d) ABAC (Attribute-Based Access Control)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "SELinux implementa el modelo MAC (Mandatory Access Control), donde un administrador central asigna permisos para limitar brechas de seguridad.",
+      "id": "p20-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional HTTP en comunicaciones web cifradas con autenticación tanto de servidor como de cliente?",
+      "opciones": [
+        "a) SSH",
+        "b) HTTPS",
+        "c) SFTP",
+        "d) LDAPS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "HTTPS (HTTP Secure) es el protocolo que reemplaza al HTTP tradicional al agregar cifrado (TLS/SSL) y autenticación de servidor. Sin embargo, para autenticación de cliente, se requieren certificados adicionales, lo que no es estándar en HTTPS básico.",
+      "id": "p20-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional ICMP (usado en ping) en entornos donde se requiere autenticación y cifrado del tráfico de diagnóstico, proporcionando una alternativa segura a las herramientas de red basadas en ICMP?",
+      "opciones": [
+        "a) SNMPv3",
+        "b) ICMPv6 con autenticación",
+        "c) TCPdump con cifrado",
+        "d) Nmap con SSL/TLS"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SNMPv3 es el protocolo seguro que reemplaza a versiones anteriores de SNMP, incluyendo la necesidad de autenticación y cifrado para el tráfico de diagnóstico, a diferencia de ICMP que no ofrece estas características.",
+      "id": "p20-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red configura un firewall de nueva generación (NGFW) para proteger un servidor web interno que aloja una aplicación crítica. El NGFW está configurado con reglas basadas en aplicaciones, permitiendo tráfico HTTP/HTTPS solo para la aplicación específica. Sin embargo, tras implementar una actualización en la aplicación, los usuarios reportan errores de conexión. Al revisar los logs del NGFW, se observa que el tráfico de la aplicación se está bloqueando, aunque las reglas de aplicación están correctamente configuradas. ¿Cuál es la causa más probable de este comportamiento, considerando que la aplicación ahora utiliza un nuevo protocolo propietario en lugar de HTTP/HTTPS para comunicarse con sus servicios internos?",
+      "opciones": [
+        "a) El firewall está aplicando una regla genérica que deniega todo el tráfico UDP antes que la regla específica que permite HTTP/HTTPS, afectando el nuevo protocolo propietario.",
+        "b) El firewall no puede identificar el nuevo protocolo propietario porque no está incluido en su base de datos de firmas de aplicaciones, por lo que lo bloquea por defecto.",
+        "c) El servidor web interno está mal configurado y no acepta conexiones entrantes en el nuevo protocolo propietario, generando errores de conexión.",
+        "d) La actualización de la aplicación introdujo un fallo de seguridad que está siendo detectado y bloqueado por el IPS integrado en el NGFW."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los NGFW dependen de firmas o patrones predefinidos para identificar aplicaciones. Si la aplicación utiliza un protocolo propietario no reconocido, el firewall lo bloqueará por defecto, ya que no puede clasificarlo como tráfico seguro.",
+      "id": "p20-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un empleado intenta acceder a un sitio web de phishing desde su laptop fuera de la red corporativa. ¿Qué solución de filtrado web podría bloquear este acceso aunque el dispositivo no esté en la red interna?",
+      "opciones": [
+        "a) Proxy explícito.",
+        "b) Agente basado en cliente (agent-based).",
+        "c) Firewall tradicional.",
+        "d) Sistema de prevención de intrusiones (IPS)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los agentes basados en cliente permiten aplicar políticas de filtrado incluso cuando los usuarios están fuera de la red corporativa, ya que el filtrado se realiza en el dispositivo del usuario.",
+      "id": "p20-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional ICMP (usado en ping) en entornos donde se requiere autenticación y cifrado del tráfico de diagnóstico, proporcionando una alternativa segura a herramientas como 'ping' tradicionales?",
+      "opciones": [
+        "a) SNMPv3",
+        "b) ICMPv6",
+        "c) TCP Ping",
+        "d) mping (ICMP cifrado)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SNMPv3 es el protocolo estándar que reemplaza a ICMP en entornos donde se requiere autenticación y cifrado del tráfico de diagnóstico, ya que ICMP no cifra ni autentica su tráfico por defecto.",
+      "id": "p20-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un firewall de nueva generación (NGFW), ¿qué característica clave lo diferencia de un firewall tradicional basado en puertos?",
+      "opciones": [
+        "a) Analiza el tráfico en profundidad para identificar aplicaciones específicas, no solo puertos",
+        "b) Bloquea todo el tráfico UDP por defecto",
+        "c) Opera exclusivamente en la capa de enlace (capa 2)",
+        "d) No permite configurar reglas basadas en direcciones IP"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un NGFW analiza el tráfico en profundidad para identificar aplicaciones específicas, como SSH o RDP, incluso cuando no están asociadas a sus puertos tradicionales.",
+      "id": "p20-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional DNS en entornos donde se requiere autenticación y cifrado de las consultas, además de proteger contra ataques como DNS spoofing?",
+      "opciones": [
+        "a) DNSSEC",
+        "b) DoH (DNS over HTTPS)",
+        "c) DNSCrypt",
+        "d) IPsec"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "DNSCrypt es un protocolo que cifra las consultas DNS y autentica las respuestas para evitar ataques como DNS spoofing, proporcionando mayor seguridad que DNS tradicional.",
+      "id": "p20-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional SNMP (Simple Network Management Protocol) en entornos donde se requiere autenticación y cifrado de las consultas de gestión de red?",
+      "opciones": [
+        "a) SNMPv3",
+        "b) TLS 1.3",
+        "c) SSH",
+        "d) IPsec"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SNMPv3 es la versión segura de SNMP que incluye autenticación y cifrado, a diferencia de las versiones anteriores (SNMPv1 y SNMPv2c) que no proporcionaban estas características de seguridad.",
+      "id": "p20-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional SNMPv2c en entornos donde se requiere autenticación y cifrado de las consultas de gestión de red?",
+      "opciones": [
+        "a) SNMPv3",
+        "b) LDAPS",
+        "c) TLS",
+        "d) IPsec"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SNMPv3 es la versión segura del protocolo SNMP, ya que incluye autenticación, cifrado y control de acceso, a diferencia de SNMPv2c que no cifra el tráfico.",
+      "id": "p20-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional HTTP en comunicaciones web cifradas, proporcionando autenticación tanto del servidor como del cliente?",
+      "opciones": [
+        "a) SSH",
+        "b) SFTP",
+        "c) HTTPS con autenticación mutua",
+        "d) DNSSEC"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "HTTPS con autenticación mutua (mTLS) cifra el tráfico web y valida tanto la identidad del servidor como del cliente mediante certificados digitales, a diferencia de HTTP tradicional que no cifra ni autentica.",
+      "id": "p20-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué característica clave diferencia a un firewall de nueva generación (NGFW) de un firewall tradicional en cuanto a la identificación del tráfico?",
+      "opciones": [
+        "a) Los NGFW solo analizan el tráfico basado en números de puerto, mientras que los firewalls tradicionales analizan aplicaciones.",
+        "b) Los NGFW identifican el tráfico por la aplicación específica que lo genera, no solo por el puerto o protocolo.",
+        "c) Los firewalls tradicionales pueden bloquear tráfico ICMP, pero los NGFW no tienen esta capacidad.",
+        "d) Los NGFW solo funcionan como endpoints de VPN, mientras que los firewalls tradicionales actúan como routers."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los NGFW analizan el tráfico en profundidad para identificar aplicaciones específicas (como SSH o RDP) independientemente de los puertos tradicionales, a diferencia de los firewalls tradicionales que solo usan números de puerto para tomar decisiones.",
+      "id": "p20-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional SNMP en entornos de gestión de red donde se requiere autenticación y cifrado de las consultas?",
+      "opciones": [
+        "a) SNMPv3",
+        "b) SSH",
+        "c) TLS",
+        "d) IPSec"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SNMPv3 es la versión segura de SNMP que incluye autenticación y cifrado para proteger las consultas de gestión de red, a diferencia de versiones anteriores como SNMPv1 o SNMPv2c.",
+      "id": "p20-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red configura un firewall de nueva generación (NGFW) para proteger un servidor web interno que aloja una aplicación crítica. El NGFW está configurado con reglas basadas en aplicaciones, permitiendo tráfico HTTP/HTTPS solo para la aplicación específica. Tras implementar una actualización en la aplicación, los usuarios reportan errores de conexión. Al revisar los logs del NGFW, se observa que el tráfico de la aplicación se está bloqueando, aunque las reglas de aplicación están correctamente configuradas. ¿Cuál es la causa más probable de este comportamiento, considerando que la aplicación ahora utiliza un nuevo protocolo propietario (no HTTP/HTTPS) para comunicarse con sus servicios internos?",
+      "opciones": [
+        "a) El NGFW está aplicando una regla genérica que deniega todo el tráfico no HTTP/HTTPS antes que la regla específica de la aplicación.",
+        "b) La aplicación está utilizando puertos no estándar que no están permitidos en las reglas del firewall tradicional basado en puertos.",
+        "c) El NGFW no puede identificar el nuevo protocolo propietario porque no está incluido en su base de datos de firmas de aplicaciones.",
+        "d) El servidor web interno no está configurado para manejar el nuevo protocolo propietario, por lo que el tráfico se bloquea en el servidor."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un NGFW identifica aplicaciones basándose en firmas conocidas en su base de datos. Si el nuevo protocolo propietario no está incluido en estas firmas, el firewall no podrá reconocerlo como tráfico permitido, bloqueándolo a pesar de tener reglas específicas para la aplicación.",
+      "id": "p20-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador de red configura un firewall de nueva generación (NGFW) para permitir el tráfico de una aplicación crítica que utiliza puertos dinámicos y no estándar (como 50000-51000 TCP) para comunicarse con sus servicios internos. La regla del NGFW está configurada para permitir tráfico basado en la aplicación específica, pero tras implementar una actualización, los usuarios reportan que la aplicación falla intermitentemente. Al revisar los logs del NGFW, se observa que el tráfico de la aplicación se bloquea en momentos aleatorios, mientras que las reglas de aplicación están correctamente definidas. ¿Cuál es la causa más probable de este comportamiento y qué característica del NGFW está siendo afectada?",
+      "opciones": [
+        "a) El NGFW está aplicando una regla genérica que deniega todo el tráfico TCP antes que la regla específica de la aplicación, bloqueando los puertos dinámicos no estándar.",
+        "b) La aplicación ahora utiliza un protocolo propietario no compatible con el análisis basado en aplicaciones del NGFW, requiriendo una actualización del firmware del firewall.",
+        "c) El NGFW está configurado para analizar solo tráfico en puertos estándar (como 80 o 443), ignorando los puertos dinámicos de la aplicación.",
+        "d) La actualización de la aplicación introdujo un nuevo vector de ataque que el NGFW no puede detectar, requiriendo una regla personalizada para puertos dinámicos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los NGFW evalúan reglas en orden, por lo que una regla genérica que deniega tráfico TCP (como 'denegar todo TCP') bloquearía el tráfico de la aplicación antes de evaluar la regla específica basada en la aplicación. Esto es común cuando las reglas genéricas se colocan antes que las específicas en la lista de reglas del firewall.",
+      "id": "p20-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional SNMPv3 en entornos de gestión de red donde se requiere autenticación y cifrado de las consultas?",
+      "opciones": [
+        "a) LDAP",
+        "b) SNMPv2c",
+        "c) TLS",
+        "d) SNMPv3"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "SNMPv3 es la versión del protocolo Simple Network Management Protocol que incluye autenticación y cifrado, a diferencia de versiones anteriores como SNMPv2c que carecen de estas características de seguridad.",
+      "id": "p20-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional DNS en consultas cifradas, proporcionando autenticación y protección contra ataques como la suplantación de DNS (DNS spoofing) mediante el uso de firmas digitales?",
+      "opciones": [
+        "a) SFTP",
+        "b) DNSSEC",
+        "c) IMAPS",
+        "d) SNMPv3"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "DNSSEC (Domain Name System Security Extensions) añade firmas digitales a las respuestas DNS para autenticar su origen y proteger contra ataques como la suplantación de DNS.",
+      "id": "p20-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional SNMP en entornos de gestión de red donde se requiere autenticación y cifrado de las consultas, además de ser compatible con entornos IPv6?",
+      "opciones": [
+        "a) LDAPS",
+        "b) SNMPv3",
+        "c) SSH",
+        "d) TLS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "SNMPv3 es la versión más segura de SNMP, ya que incluye autenticación, cifrado y soporte para IPv6, a diferencia de versiones anteriores como SNMPv1 o SNMPv2c que carecen de estas características.",
+      "id": "p20-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall de nueva generación (NGFW) para permitir tráfico de una aplicación crítica que utiliza puertos dinámicos no estándar (50000-51000 TCP). Tras implementar una actualización, los usuarios reportan fallos intermitentes. Al revisar los logs, se observa que el tráfico se bloquea en momentos aleatorios. ¿Cuál es la causa más probable?",
+      "opciones": [
+        "a) El firewall no soporta puertos dinámicos y bloquea todo el tráfico no estándar",
+        "b) El orden de las reglas del NGFW está afectando el tráfico, ya que una regla genérica de denegación se aplica antes que la regla específica de la aplicación",
+        "c) La aplicación ahora utiliza UDP en lugar de TCP",
+        "d) El firewall no puede analizar tráfico cifrado con SSL/TLS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En un NGFW, el orden de las reglas es crítico: si una regla genérica de denegación se aplica antes que una regla específica que permite la aplicación, el tráfico se bloqueará incorrectamente.",
+      "id": "p20-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué modelo de control de acceso se aplica en un entorno Linux con SELinux activado?",
+      "opciones": [
+        "a) DAC (Discretionary Access Control)",
+        "b) RBAC (Role-Based Access Control)",
+        "c) MAC (Mandatory Access Control)",
+        "d) ABAC (Attribute-Based Access Control)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "SELinux implementa el modelo MAC (Mandatory Access Control), donde un administrador central asigna permisos en lugar de que los usuarios los gestionen.",
+      "id": "p20-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional SNMPv1/v2c en entornos de gestión de red, proporcionando autenticación y cifrado de las consultas mediante el uso de TLS y claves criptográficas?",
+      "opciones": [
+        "a) SNMPv3",
+        "b) SSH",
+        "c) LDAPS",
+        "d) IPsec"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SNMPv3 es la versión segura de SNMP que incluye autenticación, cifrado y control de acceso, a diferencia de SNMPv1/v2c que no ofrecen estas características de seguridad por defecto.",
+      "id": "p20-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué característica clave diferencia a un firewall de nueva generación (NGFW) de un firewall tradicional basado en puertos en cuanto a la identificación del tráfico?",
+      "opciones": [
+        "a) El NGFW identifica el tráfico por el número de puerto TCP/UDP, mientras que el firewall tradicional lo hace por la aplicación específica.",
+        "b) El firewall tradicional identifica el tráfico por la aplicación específica, mientras que el NGFW lo hace por el número de puerto TCP/UDP.",
+        "c) El NGFW identifica el tráfico por la aplicación específica (como SSH o RDP), incluso cuando no usa los puertos tradicionales, mientras que el firewall tradicional solo lo hace por puertos.",
+        "d) Ambos firewalls identifican el tráfico exclusivamente por direcciones IP de origen y destino, sin considerar puertos ni aplicaciones."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un NGFW analiza el tráfico en profundidad para identificar aplicaciones específicas (ej. SSH, RDP) más allá de los puertos tradicionales, a diferencia de los firewalls tradicionales que solo usan números de puerto.",
+      "id": "p20-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional SNMP en entornos de gestión de red, proporcionando autenticación y cifrado de las consultas, además de ser compatible con entornos IPv6 y basado en estándares abiertos como IETF?",
+      "opciones": [
+        "a) SNMPv3",
+        "b) SSH",
+        "c) TLS",
+        "d) HTTPS"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SNMPv3 es el único protocolo de la lista que cumple con los requisitos de autenticación, cifrado y compatibilidad con IPv6 según el temario, siendo el estándar actual para gestión de red segura.",
+      "id": "p20-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red implementa un firewall de nueva generación (NGFW) para proteger un servidor web interno que aloja una aplicación crítica. El NGFW está configurado con reglas basadas en aplicaciones para permitir tráfico HTTP/HTTPS únicamente para la aplicación específica. Tras una actualización de la aplicación, los usuarios reportan fallos intermitentes en la conexión. Al revisar los logs del NGFW, se observa que el tráfico de la aplicación se bloquea en momentos aleatorios, aunque las reglas de aplicación están correctamente definidas. ¿Cuál es la causa más probable de este comportamiento, considerando que la aplicación ahora utiliza un protocolo propietario basado en UDP para comunicarse con servicios internos, pero el NGFW solo está configurado para inspeccionar tráfico TCP?",
+      "opciones": [
+        "El NGFW no puede inspeccionar tráfico UDP porque su motor de inspección solo analiza tráfico TCP, lo que provoca bloqueos aleatorios del protocolo propietario.",
+        "La aplicación está utilizando un puerto no estándar que no está incluido en las reglas del NGFW, aunque estas estén basadas en aplicaciones.",
+        "El firewall está aplicando una regla genérica que deniega todo el tráfico UDP antes que la regla específica de la aplicación, afectando su funcionalidad.",
+        "La actualización de la aplicación introdujo un cambio en el comportamiento de la aplicación que requiere un reajuste en la regla de aplicación del NGFW para incluir el nuevo protocolo UDP."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los firewalls de nueva generación pueden analizar tráfico basado en aplicaciones, pero algunos motores de inspección priorizan protocolos como TCP, dejando tráfico UDP (como el protocolo propietario) sin inspección adecuada, lo que genera bloqueos intermitentes.",
+      "id": "p20-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador de red configura un firewall de nueva generación (NGFW) para proteger un servidor web interno que aloja una aplicación crítica. La aplicación utiliza un protocolo propietario basado en UDP para comunicarse con servicios internos en puertos dinámicos (50000-51000). El NGFW está configurado con reglas basadas en aplicaciones para permitir tráfico HTTP/HTTPS únicamente. Tras implementar una actualización, los usuarios reportan fallos intermitentes en la conexión. Al revisar los logs del NGFW, se observa que el tráfico UDP de la aplicación se bloquea en momentos aleatorios, aunque las reglas de aplicación están correctamente definidas. ¿Cuál es la causa más probable de este comportamiento y qué característica del NGFW está siendo afectada?",
+      "opciones": [
+        "a) El NGFW no puede inspeccionar tráfico UDP, ya que solo filtra aplicaciones en tráfico TCP por defecto.",
+        "b) Las reglas basadas en aplicaciones del NGFW solo aplican a protocolos estándar como HTTP/HTTPS, ignorando protocolos propietarios como el usado por la aplicación.",
+        "c) El tráfico UDP no puede ser bloqueado por un NGFW, ya que este tipo de firewall solo maneja tráfico TCP.",
+        "d) La regla de denegación implícita del NGFW está bloqueando el tráfico UDP antes de que las reglas basadas en aplicaciones puedan aplicarse."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los firewalls de nueva generación (NGFW) analizan el tráfico en profundidad para identificar aplicaciones específicas, pero su capacidad de inspección depende del protocolo. Muchos NGFW están optimizados para tráfico TCP y pueden tener limitaciones en la inspección de protocolos propietarios o no estándar, como UDP en puertos dinámicos, especialmente si no están configurados explícitamente para ello.",
+      "id": "p20-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional FTP en transferencias de archivos, proporcionando cifrado en la comunicación?",
+      "opciones": [
+        "a) SFTP (SSH File Transfer Protocol)",
+        "b) SCP (Secure Copy Protocol)",
+        "c) HTTP (Hypertext Transfer Protocol)",
+        "d) TFTP (Trivial File Transfer Protocol)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SFTP es un protocolo seguro que utiliza SSH para cifrar las transferencias de archivos, a diferencia de FTP que transmite datos sin cifrado.",
+      "id": "p20-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno Linux con SELinux activado, ¿qué modelo de control de acceso se aplica?",
+      "opciones": [
+        "a) DAC (Discretionary Access Control)",
+        "b) RBAC (Role-Based Access Control)",
+        "c) MAC (Mandatory Access Control)",
+        "d) ABAC (Attribute-Based Access Control)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "SELinux implementa el modelo MAC (Mandatory Access Control), donde un administrador central asigna permisos en lugar de los usuarios.",
+      "id": "p20-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional SMTP en comunicaciones de correo electrónico cifradas y autenticadas?",
+      "opciones": [
+        "a) SMTPS (SMTP sobre SSL/TLS)",
+        "b) POP3S (POP3 sobre SSL/TLS)",
+        "c) IMAPS (IMAP sobre SSL/TLS)",
+        "d) LDAPS (LDAP sobre SSL/TLS)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SMTPS (SMTP sobre SSL/TLS) es el protocolo seguro que reemplaza al SMTP tradicional, proporcionando cifrado y autenticación para las comunicaciones de correo electrónico.",
+      "id": "p20-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall para bloquear todo el tráfico hacia dominios con mala reputación en la web. ¿Qué técnica de filtrado está utilizando?",
+      "opciones": [
+        "a) Filtrado basado en reputación de URLs",
+        "b) Filtrado por categorías de aplicaciones",
+        "c) Filtrado por puertos dinámicos",
+        "d) Filtrado por direcciones MAC"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El filtrado basado en reputación de URLs evalúa la confianza de los dominios y bloquea aquellos con mala reputación.",
+      "id": "p20-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional DNS en consultas cifradas, proporcionando autenticación y protección contra ataques como la suplantación de DNS (DNS spoofing) mediante el uso de cifrado y autenticación?",
+      "opciones": [
+        "a) SSH",
+        "b) DNSSEC",
+        "c) TLS",
+        "d) IPSec"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "DNSSEC (Domain Name System Security Extensions) es el protocolo que proporciona autenticación y protección contra la suplantación de DNS mediante firmas digitales y cifrado, evitando ataques como DNS spoofing.",
+      "id": "p20-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué característica adicional, además del filtrado basado en URLs, ofrece un firewall de nueva generación (NGFW) en comparación con un firewall tradicional para mejorar la seguridad del tráfico web?",
+      "opciones": [
+        "a) Inspección profunda de paquetes (DPI) para identificar aplicaciones específicas como Zoom o Netflix, incluso si usan puertos no estándar",
+        "b) Cifrado automático de todo el tráfico web saliente sin necesidad de configuración",
+        "c) Bloqueo automático de todos los dominios con mala reputación sin necesidad de reglas manuales",
+        "d) Autenticación obligatoria de usuarios para todo el tráfico web mediante credenciales corporativas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los NGFW realizan inspección profunda de paquetes (DPI) para identificar aplicaciones específicas, incluso cuando usan puertos no estándar, lo que no es posible en firewalls tradicionales basados únicamente en puertos.",
+      "id": "p20-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional DNS en consultas cifradas, proporcionando autenticación y protección contra ataques como DNS spoofing?",
+      "opciones": [
+        "a) DNSSEC (Domain Name System Security Extensions)",
+        "b) DoH (DNS over HTTPS)",
+        "c) DHCP (Dynamic Host Configuration Protocol)",
+        "d) SNMP (Simple Network Management Protocol)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "DNSSEC añade firmas digitales a las respuestas DNS, autenticando su origen y protegiendo contra ataques como DNS spoofing.",
+      "id": "p20-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall de nueva generación (NGFW) para permitir tráfico de una aplicación crítica que utiliza puertos dinámicos no estándar (50000-51000 TCP). Tras implementar una actualización, los usuarios reportan fallos intermitentes. ¿Cuál es la causa más probable de este comportamiento?",
+      "opciones": [
+        "a) El NGFW no está configurado para inspeccionar tráfico en puertos dinámicos",
+        "b) La regla del firewall está aplicando una denegación implícita por defecto",
+        "c) El tráfico UDP está siendo bloqueado por una regla genérica",
+        "d) Los puertos dinámicos no son compatibles con firewalls modernos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los NGFW pueden tener limitaciones para inspeccionar tráfico en puertos dinámicos no estándar, lo que puede causar bloqueos intermitentes.",
+      "id": "p20-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red configura un firewall de nueva generación (NGFW) para proteger un servidor web interno que aloja una aplicación crítica. La aplicación utiliza un protocolo propietario basado en UDP para comunicarse con servicios internos en puertos dinámicos (49152-65535). El NGFW está configurado con reglas basadas en aplicaciones para permitir tráfico HTTP/HTTPS, pero tras una actualización, los usuarios reportan fallos intermitentes en la conexión. Al revisar los logs del NGFW, se observa que el tráfico UDP de la aplicación se bloquea en momentos aleatorios, aunque las reglas de aplicación están correctamente definidas. ¿Cuál es la causa más probable de este comportamiento y qué característica del NGFW está siendo afectada?",
+      "opciones": [
+        "a) El NGFW está bloqueando el tráfico UDP porque no está configurado para inspeccionar protocolos no estándar, solo analiza tráfico TCP y HTTP/HTTPS.",
+        "b) El firewall no tiene reglas específicas para puertos dinámicos (49152-65535), por lo que aplica la regla genérica de denegación implícita (implicit deny) en esos puertos.",
+        "c) La aplicación no está utilizando los puertos dinámicos correctos, ya que los puertos UDP no son compatibles con protocolos propietarios en entornos empresariales.",
+        "d) El NGFW está aplicando un filtrado basado en reputación de direcciones IP, bloqueando los puertos dinámicos por considerarlos de alto riesgo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los NGFW modernos pueden identificar aplicaciones por su comportamiento, pero requieren configuración específica para protocolos no estándar. En este caso, el NGFW no está configurado para inspeccionar tráfico UDP en puertos dinámicos, solo analiza tráfico TCP y HTTP/HTTPS, lo que provoca bloqueos intermitentes del tráfico de la aplicación propietaria.",
+      "id": "p20-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador de red configura un firewall de nueva generación (NGFW) para permitir el tráfico de una aplicación crítica que utiliza el protocolo QUIC (basado en UDP) para comunicarse con servicios internos en puertos dinámicos. El NGFW está configurado para inspeccionar tráfico TCP y HTTP/HTTPS, pero tras implementar una actualización, los usuarios reportan fallos intermitentes en la conexión. Al revisar los logs del NGFW, se observa que el tráfico QUIC se bloquea en momentos aleatorios, aunque las reglas basadas en aplicaciones están correctamente definidas. ¿Cuál es la causa más probable de este comportamiento y qué característica del NGFW está siendo afectada?",
+      "opciones": [
+        "a) El NGFW no soporta inspección profunda de tráfico UDP, lo que impide identificar correctamente el tráfico de aplicaciones que usan QUIC.",
+        "b) La regla de denegación implícita del NGFW está bloqueando el tráfico UDP antes de que se evalúen las reglas basadas en aplicaciones.",
+        "c) El NGFW requiere una configuración adicional para permitir tráfico QUIC, ya que no está incluido en las firmas de aplicaciones predefinidas.",
+        "d) El tráfico QUIC está siendo bloqueado por una regla genérica que deniega todo el tráfico UDP antes de llegar a las reglas específicas de la aplicación."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los firewalls de nueva generación (NGFW) suelen priorizar la inspección de tráfico TCP sobre UDP, especialmente en protocolos como QUIC, que no siempre son reconocidos por sus firmas de aplicaciones. Esto limita su capacidad para aplicar reglas basadas en aplicaciones a tráfico UDP no estándar.",
+      "id": "p20-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué característica adicional, específica de los firewalls de nueva generación (NGFW), permite identificar aplicaciones como SSH o RDP incluso cuando estas no utilizan sus puertos tradicionales?",
+      "opciones": [
+        "a) Inspección profunda de paquetes (DPI - Deep Packet Inspection)",
+        "b) Filtrado basado en direcciones IP de origen",
+        "c) Traducción de direcciones de red (NAT)",
+        "d) Enrutamiento dinámico por capas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los NGFW utilizan inspección profunda de paquetes (DPI) para analizar el contenido de los paquetes y reconocer aplicaciones por su comportamiento, no solo por puertos.",
+      "id": "p20-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional SNMPv1/v2c en entornos de gestión de red, proporcionando autenticación y cifrado mediante el uso de TLS y claves criptográficas?",
+      "opciones": [
+        "a) SNMPv3",
+        "b) IPsec",
+        "c) SSH",
+        "d) HTTPS"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SNMPv3 es la versión más segura del protocolo de gestión de red Simple Network Management Protocol, ya que incluye autenticación y cifrado de datos mediante TLS o claves criptográficas, a diferencia de versiones anteriores como SNMPv1/v2c.",
+      "id": "p20-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro reemplaza al tradicional FTP en transferencias de archivos, proporcionando cifrado en la comunicación?",
+      "opciones": [
+        "a) SCP",
+        "b) SFTP",
+        "c) FTPS",
+        "d) b y c son correctas"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "FTPS (FTP Secure) es una extensión del protocolo FTP que añade cifrado mediante TLS/SSL, mientras que SFTP es un protocolo independiente basado en SSH. Ambos son válidos para reemplazar FTP inseguro. (Temario: 'Protocolos seguros como [...] SFTP, [...] cifran el tráfico').",
+      "id": "p20-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional ICMP (usado en herramientas como 'ping') en entornos donde se requiere autenticación y cifrado del tráfico de diagnóstico, proporcionando una alternativa segura a las herramientas tradicionales?",
+      "opciones": [
+        "a) SSH",
+        "b) ICMPv6",
+        "c) SCP",
+        "d) SNMPv3"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SSH (Secure Shell) es un protocolo seguro que proporciona autenticación y cifrado, y puede usarse para realizar funciones de diagnóstico remoto como 'ping' de manera segura, a diferencia de ICMP tradicional que no cifra el tráfico.",
+      "id": "p20-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro reemplaza al tradicional SNMP en entornos de gestión de red, proporcionando autenticación y cifrado mediante el uso de TLS y claves criptográficas?",
+      "opciones": [
+        "a) SNMPv3",
+        "b) SNMPv2c",
+        "c) SNMPv1",
+        "d) Simple Network Management Protocol (SNMP) sin cifrado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SNMPv3 es la versión del protocolo que incluye autenticación y cifrado mediante TLS y claves criptográficas, a diferencia de SNMPv1 y v2c que no lo proporcionan.",
+      "id": "p20-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué protocolo seguro se utiliza para reemplazar al tradicional HTTP en comunicaciones web, proporcionando autenticación y cifrado tanto del servidor como del cliente?",
+      "opciones": [
+        "a) SSH",
+        "b) HTTPS con autenticación mutua",
+        "c) SFTP",
+        "d) IMAPS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "HTTPS con autenticación mutua (mTLS) cifra el tráfico web y autentica tanto al servidor como al cliente, a diferencia del HTTP tradicional que no proporciona cifrado ni autenticación.",
+      "id": "p20-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall de nueva generación (NGFW) para permitir tráfico de una aplicación crítica que utiliza el protocolo QUIC (basado en UDP) para comunicarse con servicios internos en puertos dinámicos. El NGFW está configurado para inspeccionar tráfico TCP y HTTP/HTTPS, pero tras implementar una actualización, los usuarios reportan fallos intermitentes en la conexión. Al revisar los logs, se observa que el tráfico QUIC se bloquea en momentos aleatorios, aunque las reglas basadas en aplicaciones están correctamente definidas. ¿Cuál es la causa más probable de este comportamiento?",
+      "opciones": [
+        "a) El NGFW no soporta el protocolo QUIC.",
+        "b) Las reglas del NGFW están ordenadas incorrectamente, priorizando reglas genéricas sobre específicas.",
+        "c) El tráfico QUIC usa puertos dinámicos que el NGFW no puede inspeccionar.",
+        "d) El firewall está aplicando una regla de denegación implícita a todo el tráfico UDP."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "QUIC es un protocolo basado en UDP que muchos NGFW tradicionales no inspeccionan por defecto, ya que están optimizados para TCP/HTTP. (Temario: 'Los firewalls modernos [...] analizan el tráfico en profundidad para identificar aplicaciones específicas', pero no menciona soporte para QUIC).",
+      "id": "p20-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué característica adicional específica de los firewalls de nueva generación (NGFW) permite identificar y controlar aplicaciones como SSH o RDP incluso cuando estas no utilizan sus puertos tradicionales?",
+      "opciones": [
+        "a) Inspección profunda de paquetes (DPI) basada en firmas",
+        "b) Filtrado basado en direcciones MAC",
+        "c) Traducción de direcciones de red (NAT) dinámica",
+        "d) Autenticación de usuarios mediante RADIUS"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los NGFW utilizan inspección profunda de paquetes (Deep Packet Inspection, DPI) para analizar el tráfico en busca de patrones específicos de aplicaciones, como SSH o RDP, independientemente del puerto utilizado, lo que permite aplicar reglas basadas en el comportamiento de la aplicación.",
+      "id": "p20-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall para proteger un servidor web interno que aloja una aplicación crítica. La aplicación utiliza un protocolo propietario basado en UDP para comunicarse con servicios internos en puertos dinámicos (50000-51000). El NGFW está configurado con reglas basadas en aplicaciones para permitir tráfico HTTP/HTTPS, pero tras una actualización, los usuarios reportan fallos intermitentes en la conexión. Al revisar los logs, se observa que el tráfico UDP de la aplicación se bloquea en momentos aleatorios, aunque las reglas de aplicación están correctamente definidas. ¿Cuál es la causa más probable de este comportamiento?",
+      "opciones": [
+        "a) El NGFW no soporta inspección de tráfico UDP.",
+        "b) Las reglas del NGFW están ordenadas incorrectamente, priorizando reglas genéricas sobre específicas.",
+        "c) El firewall está aplicando una regla de denegación implícita a todo el tráfico UDP.",
+        "d) La aplicación ahora usa un protocolo que el NGFW no puede identificar."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La regla de denegación implícita bloquea todo el tráfico que no coincida con reglas específicas, incluyendo UDP si no está explícitamente permitido. (Temario: 'La mayoría de los firewalls incluyen una regla de denegación implícita [...] que bloquea todo el tráfico que no coincida con ninguna regla específica').",
+      "id": "p20-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador de red configura un firewall de nueva generación (NGFW) para proteger un servidor interno que aloja una aplicación crítica que utiliza el protocolo SIP (Session Initiation Protocol) para comunicaciones VoIP en tiempo real. El NGFW está configurado para permitir tráfico basado en aplicaciones, pero tras implementar una actualización en la aplicación, los usuarios reportan fallos intermitentes en las llamadas VoIP. Al revisar los logs del NGFW, se observa que el tráfico SIP se bloquea en momentos aleatorios, aunque las reglas de aplicación están correctamente definidas. ¿Cuál es la causa más probable de este comportamiento?",
+      "opciones": [
+        "El NGFW no puede identificar tráfico SIP porque este protocolo utiliza puertos dinámicos y no estándar, superando las capacidades de inspección de aplicaciones del firewall.",
+        "El tráfico SIP se está bloqueando porque el NGFW no está configurado para permitir el tráfico UDP en los puertos dinámicos que utiliza la aplicación (10000-20000).",
+        "El firewall está aplicando una regla genérica que deniega todo el tráfico UDP antes que la regla específica que permite SIP, afectando su funcionamiento.",
+        "El protocolo SIP no está incluido en la base de datos de firmas de aplicaciones del NGFW, por lo que no puede ser identificado correctamente."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los NGFW identifican aplicaciones por su comportamiento, pero si el tráfico SIP utiliza puertos dinámicos UDP fuera de los rangos típicos (como 5060), una regla genérica que deniegue UDP bloqueará el tráfico antes de que el firewall pueda analizarlo como SIP.",
+      "id": "p20-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Firewalls",
+      "youtubeId": "VgNyh4HEqSU"
+    },
+    {
+      "titulo": "Web Filtering",
+      "youtubeId": "I_c0D49uCwQ"
+    },
+    {
+      "titulo": "Operating System Security",
+      "youtubeId": "4dpTyRM6BU8"
+    },
+    {
+      "titulo": "Secure Protocols",
+      "youtubeId": "9NAKCyOtFH0"
+    },
+    {
+      "titulo": "Email Security",
+      "youtubeId": "v6ht9efsnRI"
+    },
+    {
+      "titulo": "Monitoring Data",
+      "youtubeId": "ZDJ-BLPLWq4"
+    },
+    {
+      "titulo": "Endpoint Security",
+      "youtubeId": "83pCkSSj1IQ"
+    }
+  ]
+}

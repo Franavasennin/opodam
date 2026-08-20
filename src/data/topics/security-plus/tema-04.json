@@ -1,0 +1,1420 @@
+{
+  "id": 4,
+  "titulo": "1.4 · Criptografía e infraestructura de clave pública",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LA INFRAESTRUCTURA DE CLAVE PÚBLICA (PUBLIC KEY INFRASTRUCTURE - PKI) es un concepto amplio en criptografía que abarca políticas, procedimientos, hardware y software encargados de crear, distribuir, gestionar, almacenar, revocar y realizar otros procesos relacionados con certificados digitales. Aunque pueda parecer sencillo, incluso en pequeñas empresas implica una planificación considerable y decisiones críticas sobre los métodos de cifrado a utilizar.\n\n\n\nLa PKI se asocia comúnmente con la vinculación de certificados a personas o dispositivos, generalmente en conjunto con una Autoridad de Certificación (Certificate Authority - CA). Su objetivo principal es establecer confianza en que un usuario o dispositivo es realmente quien afirma ser. Antes de profundizar en la criptografía de clave pública, es fundamental entender el cifrado simétrico.\n\n\n\nCIFRADO SIMÉTRICO\n\nEl cifrado simétrico utiliza la misma clave para cifrar y descifrar información. En el cine, este concepto se representa con una maleta con llave que solo el portador puede abrir. Si alguien obtiene esa clave, puede descifrar cualquier dato cifrado con ella. Este método también se conoce como algoritmo de clave secreta o secreto compartido, ya que la misma clave se usa para ambos procesos.\n\n\n\nSin embargo, el cifrado simétrico presenta un problema de escalabilidad. Si hay que compartir la clave con más de 10 personas o dispositivos, la gestión se vuelve compleja. A pesar de esto, el cifrado simétrico sigue siendo muy utilizado por su velocidad y bajo overhead, especialmente cuando se combina con cifrado asimétrico.\n\n\n\nCIFRADO ASIMÉTRICO\n\nEl cifrado asimétrico, en cambio, utiliza dos claves matemáticamente relacionadas: una clave pública y una clave privada. Estas claves se generan simultáneamente y no pueden derivarse una de la otra, incluso si se conoce una. La clave privada solo la posee su dueño, mientras que la clave pública puede distribuirse libremente.\n\n\n\nLa magia del cifrado asimétrico radica en que cualquier persona con la clave pública puede cifrar datos y enviarlos al dueño de la clave privada, quien es el único capaz de descifrarlos. Por ejemplo, si Bob quiere enviar un mensaje cifrado a Alice, usa la clave pública de Alice para cifrarlo. Aunque alguien más intercepte el mensaje cifrado, no podrá descifrarlo sin la clave privada de Alice.\n\n\n\nPara generar un par de claves asimétricas, se emplean números primos grandes y procesos de aleatorización. Este proceso suele realizarse una sola vez y genera una clave privada (que debe protegerse con contraseña) y una clave pública (que puede publicarse en sitios web, redes sociales, etc.).\n\n\n\nGESTIÓN DE CLAVES Y ESCROW\n\nEn entornos con cientos o miles de usuarios, gestionar claves privadas puede ser un desafío. Una solución es el escrow de claves (depósito de claves), donde un tercero almacena las claves privadas hasta que sean necesarias. Esto es útil en casos como la salida de un empleado de la organización o la necesidad de acceder a datos cifrados por un usuario que ya no está disponible.\n\n\n\nAunque delegar la gestión de claves privadas puede parecer controvertido, en algunos casos es esencial para mantener la disponibilidad y continuidad del negocio.\n\n\n\nCIFRADO DE DATOS\n\nEl cifrado de datos es crucial para proteger información almacenada o en tránsito. Existen varios métodos según el contexto:\n\n\n- Cifrado de datos en reposo: Protege datos almacenados en dispositivos como discos duros o SSD. En Windows, se usa BitLocker, mientras que en macOS se emplea FileVault. También existen soluciones de terceros para cifrar archivos individuales.\n\n- Cifrado de bases de datos: Puede aplicarse a nivel de volumen, tabla o columna. Por ejemplo, en una base de datos de empleados, se puede cifrar solo los números de seguridad social mientras se mantienen en texto plano el nombre y el ID del empleado.\n\n- Cifrado en tránsito: Protege datos mientras se transmiten por la red. Protocolos como HTTPS, VPN (con SSL/TLS) y IPsec cifran la comunicación entre dispositivos.\n\n\n\nPara que el cifrado y descifrado funcionen, ambas partes deben usar los mismos algoritmos de cifrado. Algunos ejemplos conocidos son DES (Data Encryption Standard) y AES (Advanced Encryption Standard). Es vital que los algoritmos sean compatibles, ya que no se puede cifrar con DES y descifrar con AES.\n\n\n\nLos algoritmos de cifrado son públicos y conocidos, pero la seguridad radica en la clave. Por ejemplo, un candado es público en su funcionamiento, pero sin la llave correcta, no se puede abrir. Lo mismo ocurre con el cifrado: aunque se conozca el algoritmo, sin la clave adecuada, los datos permanecen inaccesibles.\n\n\n\nATAQUES POR FUERZA BRUTA Y ESTIRAMIENTO DE CLAVES\n\nLos ataques por fuerza bruta intentan adivinar una clave probando todas las combinaciones posibles. Para prevenirlo, se recomiendan claves simétricas de al menos 128 bits y claves asimétricas de 2048 bits o más. A medida que la tecnología avanza, las claves deben ser más largas para mantener la seguridad.\n\n\n\nEl estiramiento de claves (key stretching) es una técnica que aplica múltiples rondas de hashing a una clave, como cifrar una contraseña, luego cifrar el resultado y así sucesivamente. Esto aumenta el tiempo necesario para un ataque de fuerza bruta, añadiendo una capa adicional de seguridad.\n\n\n\nINTERCAMBIO DE CLAVES\n\nCompartir una clave de cifrado de forma segura es un desafío, especialmente en entornos como internet. Existen dos métodos principales:\n\n\n- Intercambio fuera de banda: Transferir la clave físicamente, por ejemplo, mediante un mensajero o en persona. Este método no es práctico en entornos digitales.\n\n- Intercambio en banda: Transferir la clave a través de la red de manera segura. Un enfoque común es usar cifrado asimétrico para cifrar una clave simétrica y enviarla al destinatario, quien la descifra con su clave privada. Este método es rápido y se usa para claves temporales, como las claves de sesión.\n\n\n\nOtra técnica es el intercambio de claves Diffie-Hellman, que permite a dos partes crear la misma clave simétrica sin enviarla por la red. Cada parte combina su clave privada con la clave pública de la otra, generando una clave simétrica compartida.\n\n\n\nTECNOLOGÍAS DE CIFRADO\n\nEn hardware, el Módulo de Plataforma Confiable (Trusted Platform Module - TPM) es un chip especializado en funciones criptográficas. Se usa para generar claves aleatorias, almacenar claves persistentes y proteger datos como las claves de BitLocker. El TPM está protegido contra ataques de fuerza bruta y es común en dispositivos modernos.\n\n\n\nPara entornos a gran escala, como centros de datos, se utilizan Módulos de Seguridad de Hardware (Hardware Security Module - HSM). Estos dispositivos almacenan y gestionan claves de cifrado de manera segura, con redundancia para garantizar disponibilidad. Los HSM también pueden incluir aceleradores criptográficos para realizar operaciones en tiempo real.\n\n\n\nLa gestión centralizada de claves es esencial en organizaciones con múltiples sistemas. Un sistema de gestión de claves permite rotar claves automáticamente, generar informes y mantener un registro de todas las claves utilizadas. Esto incluye claves para SSL/TLS, SSH, BitLocker y Active Directory.\n\n\n\nLas Enclaves Seguras (Secure Enclaves) son procesadores dedicados a la protección de datos en dispositivos como teléfonos móviles y computadoras. Estas enclaves tienen su propio ROM de arranque, generadores de números aleatorios verdaderos y realizan cifrado AES en hardware. Su objetivo es mantener la privacidad de los datos incluso si el dispositivo cae en manos no autorizadas.\n\n\n\nOBSFUCACIÓN\n\nLa ofuscación es el proceso de hacer que la información sea difícil de entender sin ocultarla por completo. A diferencia del cifrado, la ofuscación permite recuperar los datos originales si se conoce el método utilizado. Un ejemplo común es la esteganografía, que oculta datos dentro de imágenes, audio, video o tráfico de red.\n\n\n\nLa esteganografía puede usarse para ocultar mensajes en imágenes, como los puntos amarillos que algunos impresores incluyen en documentos para identificar la máquina utilizada. También se emplea en redes, donde se insertan mensajes en paquetes TCP.\n\n\n\nOtro método de ofuscación es la tokenización, que reemplaza datos sensibles con tokens. Por ejemplo, al pagar con un teléfono móvil, se envía un token en lugar del número real de la tarjeta de crédito. Este token es de un solo uso, lo que evita que sea reutilizado en caso de interceptación.\n\n\n\nLa tokenización es similar al proceso que ocurre al pagar con dispositivos móviles en tiendas. El token se genera en el momento de la transacción y se valida con un servidor remoto, que luego autoriza el pago. La tokenización elimina la necesidad de cifrar los datos durante la transmisión, ya que el token no tiene relación matemática con la información original.\n\n\n\nEl enmascaramiento de datos es otra técnica de ofuscación que oculta parte de la información sensible, como mostrar solo los últimos cuatro dígitos de una tarjeta de crédito en un recibo. Esto protege la prividad sin comprometer la funcionalidad.\n\n\n\nHASHING Y FIRMAS DIGITALES\n\nEl hashing criptográfico convierte datos en una cadena de texto corta, conocida como resumen de mensaje o huella digital. A diferencia del cifrado, el hashing no puede revertirse para recuperar los datos originales. Se usa para verificar la integridad de los datos y en el proceso de creación de firmas digitales.\n\n\n\nUn algoritmo de hashing común es SHA-256, que produce un resumen de 256 bits. Incluso un pequeño cambio en los datos de entrada produce un resumen completamente diferente. Esto ayuda a detectar modificaciones no autorizadas en archivos o mensajes.\n\n\n\nLos ataques de colisión ocurren cuando dos entradas diferentes producen el mismo resumen. Algoritmos como MD5 son vulnerables a colisiones, por lo que ya no se recomiendan para uso criptográfico.\n\n\n\nEl hashing se usa para almacenar contraseñas de manera segura. En lugar de guardar la contraseña en texto plano, se almacena su resumen. Durante el inicio de sesión, la contraseña ingresada se convierte en un resumen y se compara con el almacenado. Para aumentar la seguridad, se añade un valor aleatorio llamado sal (salt) al hashing, lo que evita que las tablas arcoíris (rainbow tables) sean efectivas.\n\n\n\nLas firmas digitales proporcionan autenticación, integridad y no repudio. Para crear una firma digital, el remitente usa su clave privada para cifrar un resumen del mensaje. El destinatario verifica la firma usando la clave pública del remitente. Si la verificación falla, significa que el mensaje ha sido alterado o que la clave privada fue comprometida.\n\n\n\nTECNOLOGÍA BLOCKCHAIN\n\nBlockchain es un libro de contabilidad distribuido que registra transacciones de manera transparente y segura. Todos los participantes en la blockchain mantienen una copia del libro, y los cambios se distribuyen a todos los nodos. Esto permite rastrear transacciones en áreas como pagos, identificación digital, cadena de suministro y votación electrónica.\n\n\n\nCada transacción se agrupa en un bloque, que incluye un resumen hash para garantizar su integridad. Si alguien modifica una transacción, el hash ya no coincidirá, y los nodos rechazarán el bloque modificado. Esto asegura que la blockchain sea resistente a manipulaciones.\n\n\n\nCERTIFICADOS DIGITALES\n\nUn certificado digital es un archivo que contiene una clave pública y una firma digital. Funciona como una identificación digital que proporciona autenticación y confianza. Los certificados son emitidos por Autoridades de Certificación (CA) que validan la identidad del solicitante.\n\n\n\nExisten diferentes métodos para establecer confianza:\n\n\n- Red de confianza (Web of Trust): Los usuarios firman certificados de otros, creando una red de confianza descentralizada.\n\n- Autoridades de Certificación internas: Organizaciones pueden crear su propia CA para emitir certificados a empleados o sistemas internos.\n\n\n\nLos certificados digitales siguen el formato X.509, que incluye información como el número de serie, el algoritmo de firma, el emisor, el titular y la clave pública. Al visitar un sitio web seguro, el navegador verifica el certificado del sitio usando una CA de confianza integrada.\n\n\n\nPara obtener un certificado, se envía una Solicitud de Firma de Certificado (Certificate Signing Request - CSR) a la CA. La CA valida la identidad del solicitante y firma el certificado con su clave privada. El certificado firmado se devuelve al solicitante para su uso.\n\n\n\nLa revocación de certificados es crucial cuando una clave privada se ve comprometida o un certificado ya no es válido. Esto se gestiona mediante Listas de Revocación de Certificados (Certificate Revocation Lists - CRL) o el Protocolo de Estado de Certificado en Línea (Online Certificate Status Protocol - OCSP). OCSP permite a los navegadores verificar el estado de un certificado en tiempo real sin descargar una lista completa de revocaciones.\n\n\n\nOCSP Stapling es una optimización donde el servidor web adjunta el estado de su certificado durante el handshake SSL/TLS, reduciendo la latencia y mejorando la eficiencia."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Criptografía e Infraestructura de Clave Pública (PKI)] --> B[Cifrado Simétrico]\nA --> C[Cifrado Asimétrico]\nA --> D[Gestión de Claves]\nA --> E[Cifrado de Datos]\nA --> F[Intercambio de Claves]\nA --> G[Tecnologías de Cifrado]\nA --> H[Ofuscación]\nA --> I[Hashing y Firmas Digitales]\nA --> J[Blockchain]\nA --> K[Certificados Digitales]\n\nB --> B1[Misma clave para cifrar y descifrar]\nB --> B2[Problemas de escalabilidad]\n\nC --> C1[Clave pública y privada]\nC --> C2[Cualquiera cifra con clave pública]\nC --> C3[Solo dueño descifra con clave privada]\n\nD --> D1[Escrow de claves]\nD --> D2[Gestión centralizada de claves]\n\nE --> E1[Datos en reposo]\nE --> E2[Datos en tránsito]\nE --> E3[Bases de datos cifradas]\n\nF --> F1[Intercambio fuera de banda]\nF --> F2[Intercambio en banda]\nF --> F3[Diffie-Hellman]\n\nG --> G1[TPM]\nG --> G2[HSM]\nG --> G3[Enclaves Seguras]\n\nH --> H1[Esteganografía]\nH --> H2[Tokenización]\nH --> H3[Enmascaramiento de datos]\n\nI --> I1[Hashing criptográfico]\nI --> I2[Firmas digitales]\nI --> I3[Salting]\n\nJ --> J1[Libro de contabilidad distribuido]\nJ --> J2[Transacciones agrupadas en bloques]\nJ --> J3[Hashes para integridad]\n\nK --> K1[Formato X.509]\nK --> K2[Autoridades de Certificación]\nK --> K3[Revocation Lists y OCSP]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc4-01",
+      "pregunta": "¿Qué es la Infraestructura de Clave Pública (PKI) y qué componentes incluye?",
+      "respuesta": "La PKI es un sistema que incluye políticas, procedimientos, hardware y software para gestionar certificados digitales. Sus componentes principales son la creación, distribución, gestión, almacenamiento y revocación de certificados, generalmente vinculados a una Autoridad de Certificación (CA)."
+    },
+    {
+      "id": "fc4-02",
+      "pregunta": "¿Qué diferencia hay entre cifrado simétrico y asimétrico?",
+      "respuesta": "El cifrado simétrico usa la misma clave para cifrar y descifrar, mientras que el asimétrico usa dos claves: una pública (para cifrar) y una privada (para descifrar). El simétrico es más rápido pero tiene problemas de escalabilidad; el asimétrico es más seguro pero más lento."
+    },
+    {
+      "id": "fc4-03",
+      "pregunta": "¿Qué es el escrow de claves (key escrow)?",
+      "respuesta": "Es un método para almacenar claves privadas en un tercero de confianza, permitiendo el acceso a datos cifrados incluso si el usuario original ya no está disponible o ha dejado la organización."
+    },
+    {
+      "id": "fc4-04",
+      "pregunta": "¿Qué es el TPM y para qué se utiliza?",
+      "respuesta": "TPM (Trusted Platform Module) es un chip especializado en funciones criptográficas integrado en dispositivos modernos. Se usa para generar claves aleatorias, almacenar claves persistentes y proteger datos como las claves de BitLocker."
+    },
+    {
+      "id": "fc4-05",
+      "pregunta": "¿Qué es un HSM y en qué entornos se utiliza?",
+      "respuesta": "HSM (Hardware Security Module) es un dispositivo de hardware diseñado para gestionar y almacenar claves criptográficas de manera segura en entornos a gran escala, como centros de datos. Proporciona redundancia y aceleración criptográfica."
+    },
+    {
+      "id": "fc4-06",
+      "pregunta": "¿Qué es la tokenización y cómo protege los datos?",
+      "respuesta": "La tokenización reemplaza datos sensibles (como números de tarjetas de crédito) con tokens únicos y de un solo uso. Esto evita que los datos originales sean interceptados y reutilizados, ya que el token no tiene relación matemática con la información original."
+    },
+    {
+      "id": "fc4-07",
+      "pregunta": "¿Qué es el hashing criptográfico y para qué se usa?",
+      "respuesta": "El hashing convierte datos en una cadena de texto corta (resumen de mensaje) que no puede revertirse para recuperar los datos originales. Se usa para verificar la integridad de archivos, almacenar contraseñas de manera segura y crear firmas digitales."
+    },
+    {
+      "id": "fc4-08",
+      "pregunta": "¿Qué es una firma digital y cómo funciona?",
+      "respuesta": "Una firma digital es un método para autenticar el origen e integridad de un mensaje. El remitente cifra un resumen del mensaje con su clave privada, y el destinatario verifica la firma usando la clave pública del remitente."
+    },
+    {
+      "id": "fc4-09",
+      "pregunta": "¿Qué es la esteganografía y qué tipos de medios puede usar?",
+      "respuesta": "La esteganografía es una técnica de ofuscación que oculta datos dentro de otros medios, como imágenes, audio, video o tráfico de red. El objetivo es que los datos sean difíciles de detectar sin conocer el método de ocultación."
+    },
+    {
+      "id": "fc4-10",
+      "pregunta": "¿Qué es un certificado digital X.509 y qué información contiene?",
+      "respuesta": "Un certificado digital X.509 es un archivo que contiene una clave pública, información de identificación y una firma digital de una Autoridad de Certificación (CA). Incluye datos como el número de serie, algoritmo de firma, emisor, titular y clave pública."
+    },
+    {
+      "id": "fc4-11",
+      "pregunta": "¿Qué es OCSP y cómo mejora la gestión de certificados?",
+      "respuesta": "OCSP (Online Certificate Status Protocol) es un protocolo que permite verificar el estado de un certificado en tiempo real sin descargar una lista completa de revocaciones. OCSP Stapling adjunta el estado del certificado durante el handshake SSL/TLS, mejorando la eficiencia."
+    },
+    {
+      "id": "fc4-12",
+      "pregunta": "¿Qué es el intercambio de claves Diffie-Hellman?",
+      "respuesta": "Es un método para que dos partes creen la misma clave simétrica sin enviarla por la red. Cada parte combina su clave privada con la clave pública de la otra, generando una clave compartida que solo ellos conocen."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre el cifrado simétrico es INCORRECTA según el temario?",
+      "opciones": [
+        "Utiliza la misma clave para cifrar y descifrar la información.",
+        "Es más escalable que el cifrado asimétrico para entornos con muchos usuarios.",
+        "Su principal ventaja es su velocidad y bajo overhead.",
+        "Si la clave se compromete, todos los datos cifrados con ella quedan expuestos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El cifrado simétrico es menos escalable que el asimétrico, ya que requiere compartir la misma clave con todos los usuarios o dispositivos, lo que complica su gestión en entornos grandes.",
+      "id": "p4-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la PKI, ¿qué función cumple una Autoridad de Certificación (CA)?",
+      "opciones": [
+        "Generar pares de claves públicas y privadas para los usuarios.",
+        "Validar la identidad de los solicitantes y emitir certificados digitales firmados.",
+        "Almacenar y gestionar claves privadas en un entorno de escrow.",
+        "Realizar el cifrado y descifrado de datos en tránsito."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La CA es la entidad encargada de validar la identidad de los solicitantes y emitir certificados digitales firmados con su clave privada, estableciendo confianza en la PKI.",
+      "id": "p4-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica se utiliza para proteger contraseñas almacenadas en bases de datos?",
+      "opciones": [
+        "Cifrado simétrico con clave compartida.",
+        "Hashing criptográfico con sal (salt).",
+        "Cifrado asimétrico con clave pública.",
+        "Tokenización de los datos sensibles."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El hashing criptográfico con sal (salt) convierte las contraseñas en resúmenes irreversibles, evitando su exposición incluso si la base de datos es comprometida.",
+      "id": "p4-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dado el siguiente escenario: Un atacante intercepta un mensaje cifrado con AES-256 y la clave pública de un usuario. ¿Qué acción NO podrá realizar el atacante?",
+      "opciones": [
+        "Descifrar el mensaje sin la clave privada del usuario.",
+        "Modificar el mensaje cifrado para alterar su contenido.",
+        "Enviar el mensaje interceptado a otro destinatario.",
+        "Interpretar el algoritmo AES-256 utilizado."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Sin la clave privada del usuario, el atacante no puede descifrar el mensaje, ya que el cifrado asimétrico garantiza que solo la clave privada pueda descifrar datos cifrados con la clave pública.",
+      "id": "p4-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál es la principal diferencia entre el intercambio de claves Diffie-Hellman y el intercambio fuera de banda?",
+      "opciones": [
+        "Diffie-Hellman usa cifrado asimétrico para compartir una clave simétrica en la red, mientras que el intercambio fuera de banda requiere transferencia física de la clave.",
+        "El intercambio fuera de banda es más seguro porque no depende de algoritmos matemáticos.",
+        "Diffie-Hellman genera una clave simétrica compartida sin enviar información por la red, mientras que el intercambio fuera de banda envía la clave cifrada.",
+        "El intercambio fuera de banda es el único método que permite la creación de claves simétricas sin intervención humana."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Diffie-Hellman permite a dos partes crear una clave simétrica compartida sin enviarla por la red, mientras que el intercambio fuera de banda requiere transferencia física de la clave, lo que no es práctico en entornos digitales.",
+      "id": "p4-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué componente de hardware se utiliza para almacenar y gestionar claves de cifrado en un entorno empresarial a gran escala?",
+      "opciones": [
+        "Trusted Platform Module (TPM).",
+        "Secure Enclave.",
+        "Hardware Security Module (HSM).",
+        "Módulo de cifrado AES integrado en CPU."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los HSM están diseñados para entornos a gran escala, como centros de datos, y permiten almacenar y gestionar claves de cifrado de manera segura con redundancia.",
+      "id": "p4-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un método válido para revocar un certificado digital según el temario?",
+      "opciones": [
+        "Lista de Revocación de Certificados (CRL).",
+        "Protocolo de Estado de Certificado en Línea (OCSP).",
+        "Tokenización del certificado.",
+        "OCSP Stapling."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La tokenización es una técnica de ofuscación que reemplaza datos sensibles con tokens, no un método para revocar certificados digitales.",
+      "id": "p4-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un sistema que utiliza firmas digitales, ¿qué garantiza que un mensaje no ha sido alterado durante su transmisión?",
+      "opciones": [
+        "El uso de una clave pública compartida para cifrar el mensaje.",
+        "El resumen del mensaje (hash) cifrado con la clave privada del remitente.",
+        "La tokenización del contenido del mensaje.",
+        "El almacenamiento del mensaje en un HSM."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las firmas digitales garantizan la integridad del mensaje al cifrar un resumen (hash) del mismo con la clave privada del remitente, permitiendo al destinatario verificar que el mensaje no ha sido alterado.",
+      "id": "p4-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de seguridad configura un sistema para cifrar datos en reposo en discos duros de servidores. ¿Qué tecnología específica menciona el temario como ejemplo para este escenario?",
+      "opciones": [
+        "BitLocker en Windows y FileVault en macOS.",
+        "Cifrado asimétrico con claves RSA de 4096 bits.",
+        "Hashing con algoritmo SHA-3.",
+        "Tokenización de los datos almacenados."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona BitLocker para Windows y FileVault para macOS como ejemplos de tecnologías para cifrar datos en reposo en discos duros.",
+      "id": "p4-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de gestión de claves que rota automáticamente las claves de cifrado cada 30 días. ¿Qué beneficio principal aporta esta práctica según el temario?",
+      "opciones": [
+        "Reducir el overhead computacional del cifrado.",
+        "Minimizar el riesgo de compromiso de claves antiguas.",
+        "Eliminar la necesidad de usar certificados digitales.",
+        "Permitir el uso de algoritmos de cifrado más lentos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La rotación periódica de claves reduce el riesgo de que claves antiguas comprometidas puedan ser utilizadas para acceder a datos cifrados, mejorando la seguridad general del sistema.",
+      "id": "p4-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica se utiliza para garantizar que un mensaje no ha sido alterado durante su transmisión, según el temario?",
+      "opciones": [
+        "a) Cifrado simétrico",
+        "b) Firma digital",
+        "c) Hashing criptográfico",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El hashing criptográfico convierte los datos en un resumen único que permite detectar cualquier alteración en el mensaje original. (Concepto: Hashing y firmas digitales).",
+      "id": "p4-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la PKI, ¿qué método NO se utiliza para establecer confianza en los certificados digitales según el temario?",
+      "opciones": [
+        "a) Red de confianza (Web of Trust)",
+        "b) Autoridades de Certificación internas",
+        "c) Intercambio de claves Diffie-Hellman",
+        "d) Certificados X.509"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El intercambio de claves Diffie-Hellman es un método para compartir claves simétricas, no un método para establecer confianza en certificados. (Concepto: PKI y certificados digitales).",
+      "id": "p4-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización desea proteger los datos almacenados en discos duros de sus servidores. ¿Qué tecnología específica menciona el temario como ejemplo para este escenario?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) FileVault o BitLocker",
+        "c) Enclaves Seguras",
+        "d) Módulos de Seguridad de Hardware (HSM)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "FileVault (macOS) y BitLocker (Windows) son ejemplos de cifrado de datos en reposo mencionados en el temario. (Concepto: Cifrado de datos).",
+      "id": "p4-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un beneficio del uso de firmas digitales según el temario?",
+      "opciones": [
+        "a) Autenticación del remitente",
+        "b) Integridad del mensaje",
+        "c) No repudio",
+        "d) Cifrado del mensaje completo"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Las firmas digitales garantizan autenticación, integridad y no repudio, pero no cifran el mensaje completo. (Concepto: Firmas digitales).",
+      "id": "p4-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para proteger contraseñas almacenadas en una base de datos. ¿Qué técnica específica menciona el temario para este propósito?",
+      "opciones": [
+        "a) Cifrado simétrico con AES",
+        "b) Hashing criptográfico con sal",
+        "c) Tokenización de contraseñas",
+        "d) Ofuscación mediante XOR"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda usar hashing criptográfico con sal para almacenar contraseñas de manera segura. (Concepto: Hashing y firmas digitales).",
+      "id": "p4-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante intercepta un mensaje cifrado con RSA y la clave pública del destinatario, ¿qué acción NO podrá realizar el atacante según el temario?",
+      "opciones": [
+        "a) Descifrar el mensaje sin la clave privada",
+        "b) Modificar el mensaje cifrado sin ser detectado",
+        "c) Enviar el mensaje cifrado a otro destinatario",
+        "d) Interceptar la clave pública del destinatario"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El atacante no puede descifrar el mensaje sin la clave privada del destinatario, ya que RSA es un cifrado asimétrico. (Concepto: Cifrado asimétrico).",
+      "id": "p4-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué componente de hardware se utiliza para almacenar y gestionar claves de cifrado en un entorno empresarial a gran escala, según el temario?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) Módulo de Seguridad de Hardware (HSM)",
+        "c) Enclave Segura",
+        "d) Token USB criptográfico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los Módulos de Seguridad de Hardware (HSM) están diseñados para gestionar claves de cifrado en entornos empresariales a gran escala. (Concepto: Tecnologías de cifrado).",
+      "id": "p4-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema que rota automáticamente las claves de cifrado cada 30 días. ¿Qué beneficio principal aporta esta práctica según el temario?",
+      "opciones": [
+        "a) Reducir el uso de recursos computacionales",
+        "b) Minimizar el impacto de un compromiso de clave",
+        "c) Aumentar la velocidad de cifrado",
+        "d) Simplificar la gestión de claves"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La rotación periódica de claves reduce el riesgo asociado a un posible compromiso de una clave específica. (Concepto: Gestión de claves).",
+      "id": "p4-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica se utiliza para ocultar datos sensibles dentro de imágenes o tráfico de red, según el temario?",
+      "opciones": [
+        "a) Cifrado simétrico",
+        "b) Esteganografía",
+        "c) Tokenización",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La esteganografía es la técnica que oculta datos dentro de otros medios como imágenes o tráfico de red. (Concepto: Ofuscación).",
+      "id": "p4-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante intenta generar dos mensajes diferentes que produzcan el mismo resumen hash (colisión). ¿Qué algoritmo de hashing mencionado en el temario es vulnerable a este ataque?",
+      "opciones": [
+        "a) SHA-256",
+        "b) MD5",
+        "c) AES",
+        "d) RSA"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "MD5 es vulnerable a ataques de colisión, por lo que ya no se recomienda para uso criptográfico. (Concepto: Hashing y firmas digitales).",
+      "id": "p4-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué mecanismo criptográfico permite a dos partes generar una clave simétrica compartida sin transmitirla por la red, según el temario?",
+      "opciones": [
+        "a) Cifrado simétrico con clave secreta compartida",
+        "b) Intercambio de claves Diffie-Hellman",
+        "c) Intercambio fuera de banda mediante mensajero",
+        "d) Uso de claves asimétricas para cifrar la clave simétrica"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El intercambio de claves Diffie-Hellman permite a dos partes generar una clave simétrica compartida sin enviarla por la red, combinando sus claves privadas con las claves públicas de la otra parte.",
+      "id": "p4-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un sistema que utiliza PKI, ¿qué componente se encarga de validar la identidad de un usuario o dispositivo antes de emitir un certificado digital?",
+      "opciones": [
+        "a) Autoridad de Registro (RA)",
+        "b) Autoridad de Certificación (CA)",
+        "c) Módulo de Plataforma Confiable (TPM)",
+        "d) Hardware Security Module (HSM)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Autoridad de Registro (RA) valida la identidad del solicitante antes de que la Autoridad de Certificación (CA) emita el certificado digital.",
+      "id": "p4-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un método válido para proteger contraseñas almacenadas en bases de datos según el temario?",
+      "opciones": [
+        "a) Almacenar el resumen hash de la contraseña con una sal aleatoria",
+        "b) Cifrar la contraseña con AES y guardar la clave en texto plano",
+        "c) Usar algoritmos de hashing como SHA-256",
+        "d) Aplicar estiramiento de claves (key stretching)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Cifrar la contraseña con AES y guardar la clave en texto plano no es seguro, ya que la clave podría ser interceptada o expuesta.",
+      "id": "p4-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para proteger datos almacenados en discos duros de servidores. ¿Qué tecnología específica menciona el temario como ejemplo para este escenario?",
+      "opciones": [
+        "a) Esteganografía",
+        "b) BitLocker",
+        "c) Tokenización",
+        "d) Obfuscación de código"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "BitLocker es un ejemplo de tecnología para cifrar datos en reposo en discos duros, mencionado en el temario.",
+      "id": "p4-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología específica se utiliza para proteger claves de cifrado en dispositivos como smartphones y computadoras, manteniendo la privacidad de los datos incluso si el dispositivo es comprometido?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) Enclaves Seguras (Secure Enclaves)",
+        "c) Módulos de Seguridad de Hardware (HSM)",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las Enclaves Seguras son procesadores dedicados que protegen datos mediante cifrado en hardware, incluso si el sistema operativo principal está comprometido. Esta tecnología es común en dispositivos móviles y computadoras modernas.",
+      "id": "p4-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica se utiliza para ocultar datos sensibles dentro de imágenes, según el temario?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Esteganografía",
+        "c) Hashing",
+        "d) Cifrado simétrico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La esteganografía es la técnica que permite ocultar datos dentro de imágenes u otros archivos, según el temario.",
+      "id": "p4-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dado el siguiente escenario: Una organización implementa un sistema que rota automáticamente las claves de cifrado cada 30 días. ¿Qué beneficio principal aporta esta práctica según el temario?",
+      "opciones": [
+        "a) Reducir el consumo de recursos computacionales",
+        "b) Limitar el impacto de una posible exposición de claves",
+        "c) Eliminar la necesidad de usar claves asimétricas",
+        "d) Simplificar la gestión de certificados digitales"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La rotación periódica de claves limita el impacto de una posible exposición, ya que reduce el tiempo en que una clave comprometida puede ser utilizada.",
+      "id": "p4-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué algoritmo de hashing mencionado en el temario es vulnerable a ataques de colisión y ya no se recomienda para uso criptográfico?",
+      "opciones": [
+        "a) SHA-256",
+        "b) MD5",
+        "c) AES",
+        "d) RSA"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "MD5 es vulnerable a ataques de colisión y ya no se recomienda para uso criptográfico, según el temario.",
+      "id": "p4-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de gestión de claves que utiliza un HSM (Hardware Security Module) para almacenar y gestionar las claves de cifrado de sus servidores críticos. Durante una auditoría, se detecta que el HSM ha generado y firmado un certificado digital para un servidor interno sin validar previamente la identidad del administrador responsable. Según el temario de PKI, ¿qué principio fundamental de la infraestructura de clave pública se ha violado en este escenario?",
+      "opciones": [
+        "a) El principio de no repudio, ya que el certificado no garantiza la identidad del servidor.",
+        "b) El principio de autenticación, ya que no se validó la identidad del solicitante antes de emitir el certificado.",
+        "c) El principio de confidencialidad, ya que las claves almacenadas en el HSM podrían estar comprometidas.",
+        "d) El principio de integridad, ya que el certificado no incluye un resumen hash para verificar su contenido."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La PKI exige que una Autoridad de Certificación (CA) o un HSM con funciones de CA valide la identidad del solicitante antes de emitir un certificado, garantizando así la autenticación. El temario destaca que los certificados digitales vinculan claves públicas a identidades verificadas.",
+      "id": "p4-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa desea proteger los datos transmitidos entre sus servidores y clientes. ¿Qué tecnología específica menciona el temario como ejemplo para este escenario?",
+      "opciones": [
+        "a) BitLocker",
+        "b) FileVault",
+        "c) SSL/TLS",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "SSL/TLS es un protocolo de cifrado en tránsito mencionado en el temario para proteger datos durante su transmisión.",
+      "id": "p4-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica se utiliza para proteger contraseñas almacenadas en bases de datos según el temario?",
+      "opciones": [
+        "Cifrado simétrico con AES",
+        "Hashing con sal (salt) y algoritmos como SHA-256",
+        "Ofuscación mediante tokenización",
+        "Esteganografía en archivos de texto"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el hashing con sal (salt) es la técnica específica para almacenar contraseñas de manera segura, evitando ataques con tablas arcoíris.",
+      "id": "p4-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica criptográfica se utiliza para proteger claves privadas en dispositivos como smartphones mediante un procesador dedicado que realiza funciones de cifrado en hardware?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) Hardware Security Module (HSM)",
+        "c) Secure Enclave",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que las Enclaves Seguras (Secure Enclaves) son procesadores dedicados que protegen datos en dispositivos como smartphones, realizando cifrado AES en hardware y manteniendo la privacidad incluso si el dispositivo es comprometido.",
+      "id": "p4-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica criptográfica se utiliza específicamente para proteger claves privadas en dispositivos móviles mediante un procesador dedicado que realiza funciones de cifrado en hardware?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) Enclave Segura (Secure Enclave)",
+        "c) Módulo de Seguridad de Hardware (HSM)",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las Enclaves Seguras son procesadores dedicados en dispositivos móviles y computadoras que protegen claves privadas mediante cifrado en hardware.",
+      "id": "p4-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización desea proteger los datos transmitidos entre sus servidores y clientes. ¿Qué tecnología específica menciona el temario como ejemplo para este escenario?",
+      "opciones": [
+        "BitLocker",
+        "FileVault",
+        "HTTPS con SSL/TLS",
+        "Enclaves Seguras"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario especifica que el cifrado en tránsito se protege con protocolos como HTTPS, VPN (con SSL/TLS) y IPsec.",
+      "id": "p4-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica criptográfica se utiliza para proteger datos sensibles reemplazando los valores originales con tokens generados aleatoriamente y de un solo uso?",
+      "opciones": [
+        "a) Cifrado simétrico",
+        "b) Tokenización",
+        "c) Esteganografía",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La tokenización reemplaza datos sensibles con tokens aleatorios sin relación matemática con la información original, garantizando que los datos reales no sean expuestos durante la transmisión o almacenamiento.",
+      "id": "p4-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dado el siguiente escenario: Un administrador configura un sistema para cifrar datos en reposo en discos duros de servidores. ¿Qué tecnología específica menciona el temario como ejemplo para este escenario?",
+      "opciones": [
+        "BitLocker",
+        "SSL/TLS",
+        "Tokenización",
+        "Esteganografía"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario cita BitLocker como ejemplo de cifrado de datos en reposo en Windows para proteger discos duros.",
+      "id": "p4-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica criptográfica se utiliza específicamente para proteger contraseñas almacenadas en bases de datos mediante la adición de un valor aleatorio único antes de aplicar el hashing?",
+      "opciones": [
+        "a) Salting",
+        "b) Tokenización",
+        "c) Ofuscación",
+        "d) Esteganografía"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El salting es una técnica que añade un valor aleatorio único (sal) al proceso de hashing de contraseñas, evitando que ataques con tablas arcoíris sean efectivos.",
+      "id": "p4-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica criptográfica se utiliza para proteger datos sensibles en tránsito mediante la ocultación de información en archivos multimedia como imágenes?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Esteganografía",
+        "c) Ofuscación de código",
+        "d) Enmascaramiento de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La esteganografía es la técnica que permite ocultar datos sensibles dentro de archivos multimedia como imágenes, audio o video, según el temario.",
+      "id": "p4-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cifrado híbrido donde los datos en tránsito se protegen con AES-256 para el contenido y RSA-2048 para el intercambio de claves de sesión. Durante una auditoría de seguridad, se detecta que un servidor interno está utilizando un algoritmo de hashing MD5 para verificar la integridad de los archivos de configuración transmitidos a otros nodos. ¿Qué vulnerabilidad crítica, según el temario, está siendo explotada en este escenario debido al uso indebido de MD5?",
+      "opciones": [
+        "a) El algoritmo MD5 permite la recuperación de contraseñas almacenadas en texto plano",
+        "b) MD5 es vulnerable a ataques de colisión, lo que podría permitir la manipulación de archivos de configuración sin detección",
+        "c) El uso de MD5 en lugar de RSA compromete la confidencialidad de los datos en tránsito",
+        "d) MD5 genera resúmenes demasiado cortos, facilitando ataques por fuerza bruta"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona explícitamente que MD5 es vulnerable a ataques de colisión, donde dos entradas diferentes pueden producir el mismo resumen hash, permitiendo la manipulación de archivos sin alterar su hash de integridad.",
+      "id": "p4-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cifrado híbrido para proteger datos en tránsito, utilizando AES-256 para el contenido y RSA-4096 para el intercambio de claves de sesión. Durante una auditoría de seguridad, se detecta que un atacante ha logrado interceptar y modificar un paquete de datos cifrado en tránsito, alterando el resumen hash SHA-256 incluido para verificar la integridad. Según el temario, ¿qué principio criptográfico se ha vulnerado en este escenario y por qué el atacante no pudo descifrar el contenido del mensaje?",
+      "opciones": [
+        "a) Se vulneró el principio de confidencialidad, ya que el atacante no pudo descifrar el contenido del mensaje porque RSA-4096 solo cifra la clave simétrica de AES-256, no el mensaje en sí.",
+        "b) Se vulneró el principio de integridad, ya que el atacante pudo alterar el resumen hash SHA-256, demostrando que el mensaje fue modificado durante la transmisión.",
+        "c) Se vulneró el principio de autenticación, ya que el atacante no pudo generar un resumen hash válido con la clave privada del remitente para firmar el mensaje modificado.",
+        "d) Se vulneró el principio de no repudio, ya que el atacante no pudo demostrar que el mensaje alterado fue enviado por el remitente original."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El atacante vulneró el principio de integridad, ya que modificó el mensaje y el resumen hash asociado, demostrando que el contenido fue alterado durante la transmisión. El atacante no pudo descifrar el contenido porque RSA-4096 solo protege la clave simétrica de AES-256, no el mensaje cifrado.",
+      "id": "p4-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de PKI, ¿qué función cumple un certificado digital X.509 en el proceso de establecimiento de confianza entre dos entidades?",
+      "opciones": [
+        "a) Almacenar la clave pública del propietario y ser firmado por una Autoridad de Certificación (CA), validando así su identidad",
+        "b) Cifrar los datos transmitidos entre dos entidades para garantizar confidencialidad",
+        "c) Generar pares de claves públicas y privadas mediante algoritmos como RSA o ECC",
+        "d) Revocar certificados comprometidos mediante el protocolo OCSP o listas CRL"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un certificado digital X.509 contiene la clave pública del propietario y está firmado por una CA, lo que certifica la autenticidad de la clave y vincula la identidad del propietario con su clave pública.",
+      "id": "p4-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología criptográfica específica se utiliza para proteger claves privadas en dispositivos móviles mediante un procesador dedicado que realiza funciones de cifrado en hardware?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) Enclave Seguro (Secure Enclave)",
+        "c) Módulo de Seguridad de Hardware (HSM)",
+        "d) Token de autenticación multifactor (TOTP)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las Enclaves Seguras son procesadores dedicados que protegen datos en dispositivos móviles mediante cifrado en hardware, manteniendo la privacidad incluso si el dispositivo es comprometido.",
+      "id": "p4-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de PKI, ¿qué función cumple el campo 'emisor' (Issuer) en un certificado digital X.509?",
+      "opciones": [
+        "a) Indica el algoritmo criptográfico utilizado para firmar el certificado.",
+        "b) Identifica a la Autoridad de Certificación (CA) que emitió y firmó el certificado.",
+        "c) Muestra la clave pública del titular del certificado.",
+        "d) Incluye el número de serie único que identifica el certificado en la CA."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El campo 'emisor' en un certificado X.509 identifica a la Autoridad de Certificación (CA) que emitió y firmó el certificado, validando así su autenticidad y origen.",
+      "id": "p4-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema que utiliza firmas digitales para autenticar mensajes entre sus servidores. ¿Qué garantiza que un mensaje no ha sido alterado durante su transmisión según el temario?",
+      "opciones": [
+        "El uso de una clave simétrica compartida para cifrar y descifrar el mensaje",
+        "La inclusión de un resumen hash del mensaje cifrado con la clave privada del remitente",
+        "La tokenización de los datos sensibles en el mensaje",
+        "La ofuscación del contenido mediante esteganografía"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que las firmas digitales garantizan integridad al cifrar un resumen del mensaje con la clave privada del remitente, permitiendo al destinatario verificar que no ha sido alterado.",
+      "id": "p4-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué algoritmo de cifrado simétrico se menciona como ejemplo de tecnología utilizada para proteger datos en reposo en entornos Windows?",
+      "opciones": [
+        "a) AES",
+        "b) RSA",
+        "c) DES",
+        "d) Diffie-Hellman"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona BitLocker como tecnología de cifrado de datos en reposo en Windows, que utiliza el algoritmo AES para proteger la información almacenada en discos duros.",
+      "id": "p4-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología de hardware mencionada se utiliza específicamente para proteger claves privadas en dispositivos móviles mediante un procesador dedicado que realiza funciones de cifrado en hardware?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) Módulo de Seguridad de Hardware (HSM)",
+        "c) Enclave Seguro (Secure Enclave)",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que las Enclaves Seguras (Secure Enclaves) son procesadores dedicados en dispositivos móviles que realizan funciones de cifrado en hardware, como el cifrado AES, para proteger datos incluso si el dispositivo es comprometido.",
+      "id": "p4-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué característica clave diferencia a un HSM (Hardware Security Module) de un TPM (Trusted Platform Module) en la gestión de claves criptográficas?",
+      "opciones": [
+        "a) Un HSM está diseñado para entornos a gran escala como centros de datos, mientras que un TPM es un chip integrado en dispositivos individuales como laptops o servidores",
+        "b) Un HSM solo puede almacenar claves privadas, mientras que un TPM puede generar y almacenar tanto claves públicas como privadas",
+        "c) Un HSM requiere conexión a internet para funcionar, mientras que un TPM opera de manera completamente offline",
+        "d) Un HSM es exclusivo de sistemas operativos Windows, mientras que un TPM funciona en cualquier sistema operativo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que los HSM se utilizan en entornos a gran escala (como centros de datos) para gestionar claves de cifrado de manera segura, mientras que los TPM son chips integrados en dispositivos individuales (como laptops o servidores) para funciones criptográficas básicas.",
+      "id": "p4-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué algoritmo de cifrado simétrico se menciona como ejemplo para proteger datos en tránsito en entornos empresariales?",
+      "opciones": [
+        "a) RSA-2048",
+        "b) AES-256",
+        "c) SHA-256",
+        "d) MD5"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que AES (Advanced Encryption Standard) es un ejemplo de algoritmo de cifrado simétrico utilizado para proteger datos en tránsito, destacando su eficiencia y seguridad en entornos empresariales.",
+      "id": "p4-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un sistema que utiliza PKI, ¿qué componente se encarga de validar la identidad de un usuario o dispositivo antes de emitir un certificado digital según el temario?",
+      "opciones": [
+        "La Autoridad de Certificación (CA)",
+        "El Módulo de Seguridad de Hardware (HSM)",
+        "El Protocolo de Estado de Certificado en Línea (OCSP)",
+        "El certificado X.509"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario indica que la CA valida la identidad del solicitante antes de emitir un certificado digital.",
+      "id": "p4-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Dado el siguiente escenario: Una organización implementa un sistema de cifrado híbrido donde los datos en tránsito se protegen con AES-256 para el contenido y RSA-2048 para el intercambio de claves de sesión. Durante una auditoría, se detecta que un servidor interno está utilizando MD5 para verificar la integridad de los archivos de configuración transmitidos. ¿Qué vulnerabilidad crítica, según el temario, está siendo explotada en este escenario?",
+      "opciones": [
+        "El uso de un algoritmo de cifrado simétrico inseguro (AES-256 no es vulnerable, pero MD5 sí lo es)",
+        "La exposición de claves privadas debido a la rotación insuficiente de claves",
+        "La vulnerabilidad a ataques de colisión en el hashing con MD5",
+        "La falta de tokenización en los datos transmitidos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que MD5 es vulnerable a ataques de colisión, lo que compromete la integridad de los datos al permitir la generación de resúmenes idénticos para mensajes diferentes.",
+      "id": "p4-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica criptográfica se utiliza para proteger datos almacenados en discos duros de servidores, según el temario?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Cifrado de datos en reposo (ej. BitLocker en Windows)",
+        "c) Esteganografía",
+        "d) Hashing con sal"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el cifrado de datos en reposo protege datos almacenados en dispositivos como discos duros, con ejemplos como BitLocker en Windows.",
+      "id": "p4-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología criptográfica específica se utiliza para proteger claves privadas en dispositivos como smartphones mediante un procesador dedicado que realiza funciones de cifrado en hardware?",
+      "opciones": [
+        "a) TPM (Trusted Platform Module)",
+        "b) HSM (Hardware Security Module)",
+        "c) Secure Enclave",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que las Secure Enclaves son procesadores dedicados en dispositivos móviles que realizan funciones de cifrado en hardware para proteger datos incluso si el dispositivo es comprometido.",
+      "id": "p4-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un sistema de cifrado híbrido, ¿qué algoritmo simétrico se menciona en el temario como ejemplo para proteger datos en tránsito en entornos empresariales?",
+      "opciones": [
+        "a) RSA-2048",
+        "b) AES-256",
+        "c) DES",
+        "d) SHA-256"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario cita AES (Advanced Encryption Standard) como ejemplo de algoritmo simétrico utilizado para proteger datos en tránsito.",
+      "id": "p4-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué principio criptográfico garantiza que un mensaje no ha sido alterado durante su transmisión cuando se usa una firma digital?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) No repudio",
+        "d) Autenticidad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las firmas digitales, según el temario, proporcionan autenticación, integridad y no repudio; la integridad asegura que el mensaje no ha sido alterado.",
+      "id": "p4-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema que rota automáticamente las claves de cifrado cada 30 días. ¿Qué beneficio principal aporta esta práctica según el temario?",
+      "opciones": [
+        "a) Reduce la complejidad de la gestión de claves",
+        "b) Minimiza el riesgo de exposición de claves comprometidas",
+        "c) Elimina la necesidad de usar algoritmos asimétricos",
+        "d) Aumenta la velocidad de cifrado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que la rotación periódica de claves reduce el riesgo de que claves comprometidas sean utilizadas por atacantes durante períodos prolongados.",
+      "id": "p4-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología de hardware mencionada en el temario se utiliza específicamente para proteger claves privadas en dispositivos móviles mediante un procesador dedicado que realiza funciones de cifrado en hardware?",
+      "opciones": [
+        "a) HSM (Hardware Security Module)",
+        "b) TPM (Trusted Platform Module)",
+        "c) Secure Enclave",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario describe las Secure Enclaves como procesadores dedicados en dispositivos móviles que realizan cifrado en hardware para proteger datos.",
+      "id": "p4-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué campo de un certificado digital X.509 identifica a la entidad que emitió el certificado?",
+      "opciones": [
+        "a) Sujeto (Subject)",
+        "b) Emisor (Issuer)",
+        "c) Número de serie (Serial Number)",
+        "d) Algoritmo de firma (Signature Algorithm)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que el campo 'Emisor' (Issuer) en un certificado X.509 identifica a la Autoridad de Certificación que emitió el certificado.",
+      "id": "p4-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dado el siguiente escenario: Un administrador configura un sistema para cifrar datos en tránsito entre servidores y clientes. ¿Qué tecnología específica menciona el temario como ejemplo para este escenario?",
+      "opciones": [
+        "a) BitLocker",
+        "b) FileVault",
+        "c) VPN con SSL/TLS",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que protocolos como VPN con SSL/TLS cifran la comunicación entre dispositivos, protegiendo datos en tránsito.",
+      "id": "p4-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cifrado híbrido para proteger datos en tránsito, utilizando AES-256 para el contenido y RSA-2048 para el intercambio de claves de sesión. Durante una auditoría, se detecta que un atacante ha logrado interceptar un paquete cifrado y ha reemplazado el resumen hash SHA-256 incluido para verificar la integridad con otro válido generado a partir de un mensaje modificado. Según el temario, ¿qué principio criptográfico se ha vulnerado en este escenario y por qué el atacante no pudo descifrar el contenido del mensaje?",
+      "opciones": [
+        "a) Integridad, porque el atacante no puede generar un hash válido sin la clave privada del emisor, lo que impide descifrar el contenido.",
+        "b) Confidencialidad, porque el atacante no puede descifrar el mensaje sin la clave privada del receptor, aunque logre modificar el hash.",
+        "c) No repudio, porque el atacante no puede firmar el mensaje con la clave privada del emisor, garantizando la autenticidad.",
+        "d) Disponibilidad, porque el mensaje modificado no puede ser descifrado por el receptor debido a la alteración del hash."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El principio vulnerado es la confidencialidad, ya que el atacante no puede descifrar el contenido del mensaje al no poseer la clave privada del receptor. Aunque modifique el hash para alterar la integridad, no afecta la protección del contenido cifrado con AES-256.",
+      "id": "p4-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de gestión de claves que utiliza un HSM (Hardware Security Module) para almacenar y gestionar las claves de cifrado de sus servidores críticos. Durante una auditoría, se detecta que el HSM ha generado y firmado un certificado digital para un servidor interno sin validar previamente la identidad del administrador responsable. ¿Qué principio fundamental de la infraestructura de clave pública se ha violado en este escenario?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) No repudio",
+        "d) Autenticación"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario establece que la PKI vincula certificados a identidades verificadas; al no validar la identidad del administrador, se viola el principio de autenticación, esencial para la confianza en la PKI.",
+      "id": "p4-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica criptográfica se utiliza para proteger claves privadas en dispositivos móviles mediante un procesador dedicado que realiza funciones de cifrado en hardware?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) Enclave Seguro (Secure Enclave)",
+        "c) Hardware Security Module (HSM)",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las Enclaves Seguras (Secure Enclaves) son procesadores dedicados en dispositivos móviles que realizan funciones de cifrado en hardware para proteger datos y claves privadas.",
+      "id": "p4-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología específica se utiliza para proteger datos almacenados en discos duros de servidores mediante cifrado en hardware, manteniendo la privacidad incluso si el dispositivo es comprometido?",
+      "opciones": [
+        "a) Trusted Platform Module (TPM)",
+        "b) Hardware Security Module (HSM)",
+        "c) Secure Enclave",
+        "d) BitLocker con cifrado AES"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que las Enclaves Seguras (Secure Enclaves) son procesadores dedicados que realizan cifrado AES en hardware para proteger datos incluso si el dispositivo es comprometido.",
+      "id": "p4-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica criptográfica se utiliza para proteger datos almacenados en bases de datos mediante la adición de un valor aleatorio único antes de aplicar el hashing?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Salting",
+        "c) Ofuscación",
+        "d) Enmascaramiento de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el *salting* (adición de un valor aleatorio único) se utiliza junto al hashing para proteger contraseñas almacenadas en bases de datos, evitando ataques con tablas arcoíris (rainbow tables).",
+      "id": "p4-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica criptográfica específica se utiliza para proteger datos sensibles en archivos de configuración almacenados en servidores mediante la adición de un valor aleatorio único antes de aplicar el hashing?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Salting",
+        "c) Esteganografía",
+        "d) Enmascaramiento de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el 'salting' (adición de un valor aleatorio único) se utiliza al aplicar hashing a contraseñas o datos sensibles para evitar ataques con tablas arcoíris.",
+      "id": "p4-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología específica se menciona como ejemplo de cifrado simétrico utilizado para proteger datos en tránsito en entornos empresariales?",
+      "opciones": [
+        "a) RSA-2048",
+        "b) AES-256",
+        "c) SHA-256",
+        "d) MD5"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que AES (Advanced Encryption Standard) es un ejemplo de algoritmo de cifrado simétrico utilizado para proteger datos en tránsito en entornos empresariales, destacando su velocidad y eficiencia en el cifrado de comunicaciones.",
+      "id": "p4-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología específica se menciona como ejemplo para proteger datos en tránsito entre servidores y clientes mediante cifrado en hardware?",
+      "opciones": [
+        "a) BitLocker",
+        "b) HSM (Hardware Security Module)",
+        "c) Secure Enclave",
+        "d) TPM (Trusted Platform Module)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona el HSM como tecnología de hardware para gestionar claves de cifrado y proteger datos, incluyendo los transmitidos en tránsito, en entornos a gran escala como centros de datos.",
+      "id": "p4-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dado el siguiente escenario: Un atacante intercepta un mensaje cifrado con AES-256 y reemplaza el resumen hash SHA-256 incluido para verificar la integridad con otro válido generado a partir de un mensaje modificado. ¿Qué principio criptográfico se ha vulnerado en este escenario?",
+      "opciones": [
+        "Confidencialidad",
+        "Integridad",
+        "Autenticación",
+        "No repudio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario explica que el hashing (como SHA-256) garantiza integridad; al modificar el hash, se vulnera este principio aunque el mensaje no pueda descifrarse.",
+      "id": "p4-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tecnología criptográfica específica se utiliza para proteger claves privadas en dispositivos móviles mediante un procesador dedicado que realiza funciones de cifrado en hardware?",
+      "opciones": [
+        "HSM (Hardware Security Module)",
+        "TPM (Trusted Platform Module)",
+        "Secure Enclave",
+        "Blockchain"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que las Secure Enclaves son procesadores dedicados en dispositivos móviles que protegen datos mediante cifrado en hardware.",
+      "id": "p4-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cifrado híbrido para proteger comunicaciones internas entre sus servidores, utilizando AES-256 para el cifrado de los datos en tránsito y RSA-4096 para el intercambio de claves de sesión. Durante una auditoría de seguridad, se detecta que un atacante ha logrado interceptar un mensaje cifrado y ha reemplazado el certificado digital adjunto (usado para autenticar la clave pública del servidor) por otro certificado falso firmado por una CA interna comprometida. Según el temario, ¿qué principio fundamental de la PKI se ha vulnerado en este escenario y por qué el atacante no pudo descifrar el contenido del mensaje aunque tuviera acceso al certificado falso?",
+      "opciones": [
+        "a) Se vulneró el principio de integridad de los certificados, ya que el atacante no pudo alterar el contenido cifrado sin ser detectado al validar el certificado con la CA comprometida.",
+        "b) Se vulneró el principio de no repudio, porque el atacante no pudo generar una firma digital válida con la clave privada del servidor para autenticar el mensaje.",
+        "c) Se vulneró el principio de autenticación, ya que el certificado falso no fue emitido por la CA legítima, lo que impidió al cliente verificar la identidad del servidor de forma confiable.",
+        "d) Se vulneró el principio de confidencialidad, porque el atacante no pudo descifrar el mensaje sin la clave privada del servidor, a pesar de tener acceso al certificado falso."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El principio vulnerado es la autenticación, ya que el certificado falso no fue emitido por la CA legítima (Autoridad de Certificación), lo que impide al cliente verificar la identidad del servidor de forma confiable. El atacante no pudo descifrar el contenido porque la clave privada del servidor sigue siendo necesaria para el descifrado, independientemente del certificado utilizado.",
+      "id": "p4-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cifrado híbrido para proteger comunicaciones internas entre sus servidores, utilizando AES-256 para el cifrado de los datos en tránsito y RSA-2048 para el intercambio de claves de sesión. Durante una auditoría, se detecta que un atacante ha logrado interceptar un mensaje cifrado y ha reemplazado el certificado digital adjunto (usado para autenticar la clave pública del servidor) por otro certificado falso, firmado por una CA interna no comprometida pero sin incluir la clave pública original del servidor. Según el temario, ¿qué principio fundamental de la PKI se ha vulnerado en este escenario y por qué el atacante no pudo descifrar el contenido del mensaje aunque tuviera acceso al certificado falso?",
+      "opciones": [
+        "a) Se vulneró el principio de autenticación, ya que el certificado falso no podía autenticar la clave pública del servidor original, impidiendo que el atacante descifrara el mensaje cifrado con RSA-2048.",
+        "b) Se vulneró el principio de integridad, ya que el certificado falso no incluía el resumen hash original del mensaje, lo que invalidó el proceso de verificación.",
+        "c) Se vulneró el principio de no repudio, ya que el servidor no pudo demostrar que no había enviado el mensaje falso.",
+        "d) Se vulneró el principio de confidencialidad, ya que el atacante pudo acceder al certificado falso y descifrar el mensaje con la clave privada asociada."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque vulnera el principio de autenticación en PKI, ya que el certificado falso no puede autenticar la clave pública del servidor original. El atacante no puede descifrar el mensaje porque RSA-2048 requiere la clave privada asociada a la clave pública original, que no está incluida en el certificado falso.",
+      "id": "p4-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología de hardware se utiliza específicamente para proteger claves privadas en dispositivos móviles mediante un procesador dedicado que realiza funciones de cifrado en hardware?",
+      "opciones": [
+        "Módulo de Plataforma Confiable (TPM)",
+        "Enclave Seguro (Secure Enclave)",
+        "Módulo de Seguridad de Hardware (HSM)",
+        "Tokenización"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las Enclaves Seguras son procesadores dedicados en dispositivos móviles que realizan cifrado AES en hardware para proteger datos incluso si el dispositivo es comprometido.",
+      "id": "p4-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología de hardware específica se utiliza para proteger claves privadas en dispositivos móviles mediante un procesador dedicado que realiza funciones de cifrado en hardware, garantizando el almacenamiento seguro de datos incluso si el dispositivo es comprometido?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) Módulo de Seguridad de Hardware (HSM)",
+        "c) Enclave Seguro (Secure Enclave)",
+        "d) Sistema de Gestión de Claves (KMS)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que las Enclaves Seguras son procesadores dedicados en dispositivos móviles que protegen claves privadas mediante cifrado en hardware, manteniendo la privacidad de los datos incluso en caso de compromiso del dispositivo.",
+      "id": "p4-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cifrado híbrido para proteger comunicaciones internas entre sus servidores, utilizando AES-256 para el cifrado de los datos en tránsito y RSA-4096 para el intercambio de claves de sesión. Durante una auditoría, se detecta que un atacante ha reemplazado el certificado digital adjunto (usado para autenticar la clave pública del servidor) por uno falso firmado por una CA interna no comprometida. ¿Qué principio fundamental de la PKI se ha vulnerado en este escenario?",
+      "opciones": [
+        "Confidencialidad",
+        "Integridad",
+        "Autenticación",
+        "No repudio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario establece que la integridad garantiza que un mensaje no ha sido alterado. Al reemplazar el certificado, se vulnera la autenticación de la clave pública original, afectando la integridad del proceso de cifrado.",
+      "id": "p4-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica criptográfica se utiliza para proteger contraseñas almacenadas en bases de datos mediante la adición de un valor aleatorio único antes de aplicar el hashing?",
+      "opciones": [
+        "Estiramiento de claves (Key Stretching)",
+        "Salting",
+        "Tokenización",
+        "Ofuscación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el 'salting' añade un valor aleatorio único (sal) al hashing de contraseñas para evitar ataques con tablas arcoíris (rainbow tables).",
+      "id": "p4-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología criptográfica específica se utiliza para proteger datos almacenados en discos duros de servidores mediante cifrado en hardware, garantizando la privacidad de los datos incluso si el dispositivo es comprometido?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) Hardware Security Module (HSM)",
+        "c) Secure Enclave",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que el TPM (Trusted Platform Module) es un chip especializado en funciones criptográficas que protege datos como las claves de BitLocker, incluso si el dispositivo es comprometido.",
+      "id": "p4-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué principio criptográfico garantiza que un mensaje no ha sido alterado durante su transmisión cuando se usa una firma digital según el temario?",
+      "opciones": [
+        "Confidencialidad",
+        "Integridad",
+        "Autenticación",
+        "No repudio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario explica que las firmas digitales proporcionan autenticación, integridad y no repudio, siendo la integridad el principio que garantiza que el mensaje no ha sido alterado.",
+      "id": "p4-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología criptográfica específica se utiliza para proteger claves privadas en dispositivos como smartphones mediante un procesador dedicado que realiza funciones de cifrado en hardware y garantiza el almacenamiento seguro de datos incluso si el dispositivo es comprometido?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) Módulo de Seguridad de Hardware (HSM)",
+        "c) Enclave Seguro (Secure Enclave)",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que las Enclaves Seguras son procesadores dedicados en dispositivos móviles que realizan cifrado AES en hardware y mantienen la privacidad de los datos incluso si el dispositivo es comprometido.",
+      "id": "p4-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dado el siguiente escenario: Un atacante intercepta un mensaje cifrado con RSA y la clave pública del destinatario. ¿Qué acción NO podrá realizar el atacante según el temario?",
+      "opciones": [
+        "Descifrar el mensaje sin la clave privada del destinatario",
+        "Modificar el mensaje cifrado sin alterar el resumen hash",
+        "Interceptar la comunicación",
+        "Reemplazar el certificado digital adjunto"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario establece que, con cifrado asimétrico como RSA, solo el dueño de la clave privada puede descifrar el mensaje, incluso si el atacante tiene la clave pública.",
+      "id": "p4-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué algoritmo de hashing es vulnerable a ataques de colisión y ya no se recomienda para uso criptográfico?",
+      "opciones": [
+        "SHA-256",
+        "MD5",
+        "AES-256",
+        "RSA-2048"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que MD5 es vulnerable a ataques de colisión y ya no se recomienda para uso criptográfico debido a su debilidad en la generación de resúmenes.",
+      "id": "p4-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cifrado híbrido para proteger comunicaciones entre sus servidores, utilizando AES-256 para el cifrado de datos en tránsito y RSA-3072 para el intercambio de claves de sesión. Durante una auditoría, se detecta que un atacante ha interceptado un paquete cifrado y ha modificado el IV (Vector de Inicialización) en el encabezado del mensaje antes de reenviarlo. Según el temario, ¿qué principio criptográfico se vulnera en este ataque y por qué el atacante no puede descifrar el contenido del mensaje aunque conozca la clave pública RSA del servidor?",
+      "opciones": [
+        "a) Se vulnera el principio de confidencialidad, ya que el atacante no puede descifrar el mensaje cifrado con AES-256 al no tener la clave privada RSA del servidor, aunque modifique el IV.",
+        "b) Se vulnera el principio de integridad, porque el mensaje ha sido alterado, pero el atacante no puede descifrarlo por la protección de la clave privada RSA del servidor.",
+        "c) Se vulnera el principio de autenticidad, ya que el atacante no puede generar una firma digital válida para el mensaje modificado sin la clave privada RSA del servidor.",
+        "d) Se vulnera el principio de no repudio, porque el atacante no puede demostrar el origen del mensaje modificado sin la clave privada RSA del servidor."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque modifica el IV, comprometiendo la integridad del mensaje, pero el cifrado AES-256 sigue protegido por la clave simétrica de sesión. El atacante no puede descifrar el contenido porque no tiene la clave privada RSA del servidor, necesaria para obtener la clave simétrica de sesión.",
+      "id": "p4-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes algoritmos de cifrado simétrico es el recomendado por el temario para proteger datos en tránsito en entornos empresariales debido a su eficiencia y seguridad?",
+      "opciones": [
+        "DES (Data Encryption Standard)",
+        "3DES (Triple DES)",
+        "AES (Advanced Encryption Standard)",
+        "Blowfish"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona AES como el estándar recomendado para cifrado simétrico por su equilibrio entre seguridad y rendimiento, especialmente en entornos empresariales.",
+      "id": "p4-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología específica se menciona como ejemplo de cifrado simétrico utilizado para proteger datos en reposo en entornos Windows?",
+      "opciones": [
+        "a) TPM (Trusted Platform Module)",
+        "b) BitLocker",
+        "c) HSM (Hardware Security Module)",
+        "d) Secure Enclave"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona BitLocker como tecnología específica para cifrar datos en reposo en discos duros de servidores en entornos Windows.",
+      "id": "p4-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología de hardware específica se menciona como ejemplo para proteger claves privadas en dispositivos móviles mediante un procesador dedicado que realiza funciones de cifrado en hardware?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) Secure Enclave",
+        "c) Hardware Security Module (HSM)",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las Enclaves Seguras (Secure Enclaves) son procesadores dedicados en dispositivos móviles que realizan cifrado en hardware para proteger claves privadas.",
+      "id": "p4-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología específica se menciona como ejemplo para proteger claves privadas en dispositivos móviles mediante un procesador dedicado que realiza funciones de cifrado en hardware?",
+      "opciones": [
+        "a) Módulo de Plataforma Confiable (TPM)",
+        "b) Enclave Seguro (Secure Enclave)",
+        "c) Módulo de Seguridad de Hardware (HSM)",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona las Enclaves Seguras (Secure Enclaves) como procesadores dedicados en dispositivos móviles que realizan funciones de cifrado en hardware para proteger claves privadas y datos sensibles.",
+      "id": "p4-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de PKI, ¿qué campo de un certificado digital X.509 identifica al emisor del certificado?",
+      "opciones": [
+        "a) Subject",
+        "b) Issuer",
+        "c) Public Key",
+        "d) Serial Number"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El campo 'Issuer' del certificado digital X.509 identifica a la Autoridad de Certificación (CA) que emitió el certificado, mientras que 'Subject' identifica al titular del certificado.",
+      "id": "p4-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué algoritmo de cifrado simétrico se menciona como ejemplo para proteger datos en tránsito en entornos empresariales debido a su equilibrio entre seguridad y rendimiento?",
+      "opciones": [
+        "a) DES (Data Encryption Standard)",
+        "b) 3DES (Triple DES)",
+        "c) AES (Advanced Encryption Standard)",
+        "d) Blowfish"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario destaca AES como el algoritmo de cifrado simétrico recomendado para proteger datos en tránsito en entornos empresariales por su eficiencia y seguridad, reemplazando a algoritmos más antiguos como DES o 3DES.",
+      "id": "p4-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de PKI, ¿qué componente de un certificado digital X.509 identifica al titular o sujeto del certificado?",
+      "opciones": [
+        "a) El campo 'Issuer' (Emisor)",
+        "b) El campo 'Subject' (Sujeto)",
+        "c) El campo 'Serial Number' (Número de serie)",
+        "d) El campo 'Signature Algorithm' (Algoritmo de firma)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El campo 'Subject' en un certificado X.509 identifica al titular o sujeto del certificado, es decir, la entidad a la que se le emite el certificado (como una persona, servidor o dispositivo).",
+      "id": "p4-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica criptográfica se utiliza específicamente para proteger datos almacenados en bases de datos mediante el cifrado de columnas o tablas individuales?",
+      "opciones": [
+        "a) Cifrado en tránsito con SSL/TLS",
+        "b) Cifrado de datos en reposo con BitLocker",
+        "c) Cifrado de bases de datos a nivel de columna o tabla",
+        "d) Tokenización de datos sensibles"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona explícitamente que el cifrado de bases de datos puede aplicarse a nivel de volumen, tabla o columna, permitiendo proteger solo los datos sensibles como números de seguridad social.",
+      "id": "p4-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cifrado híbrido para proteger comunicaciones entre sus servidores, utilizando AES-256 para el cifrado de datos en tránsito y RSA-2048 para el intercambio de claves de sesión. Durante una auditoría, se detecta que un atacante ha interceptado un mensaje cifrado y ha modificado el valor de la sal utilizado en el proceso de hashing de las credenciales de autenticación antes de reenviarlo. Según el temario, ¿qué principio criptográfico se vulnera en este ataque y por qué el atacante no puede autenticarse correctamente aunque conozca el hash de la contraseña original?",
+      "opciones": [
+        "a) Se vulnera el principio de autenticación, ya que el atacante no puede generar un hash válido sin conocer la sal original, impidiendo el acceso al sistema.",
+        "b) Se vulnera el principio de confidencialidad, ya que el atacante puede descifrar el mensaje cifrado con RSA al modificar la sal.",
+        "c) Se vulnera el principio de integridad, ya que el hash modificado no coincidirá con el almacenado en el servidor.",
+        "d) Se vulnera el principio de no repudio, ya que el atacante no puede demostrar que el mensaje fue alterado."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El principio vulnerado es la autenticación, ya que el valor de la sal es esencial para generar un hash comparable con el almacenado en el servidor. El atacante no puede autenticarse correctamente porque el hash modificado no coincidirá con el registrado en el sistema debido a la sal original desconocida.",
+      "id": "p4-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un sistema de cifrado híbrido que utiliza AES-256 para el contenido y RSA-4096 para el intercambio de claves de sesión, ¿qué principio criptográfico se vulnera si un atacante modifica el IV (Vector de Inicialización) en el encabezado del mensaje antes de reenviarlo?",
+      "opciones": [
+        "Confidencialidad",
+        "Integridad",
+        "Disponibilidad",
+        "Autenticación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario explica que modificar el IV altera la integridad del mensaje, ya que el IV es esencial para el descifrado correcto y cualquier cambio lo invalida.",
+      "id": "p4-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica criptográfica se utiliza para proteger claves privadas en dispositivos móviles mediante un procesador dedicado que realiza funciones de cifrado en hardware y garantiza el almacenamiento seguro de datos incluso si el dispositivo es comprometido?",
+      "opciones": [
+        "a) Módulo de Seguridad de Hardware (HSM)",
+        "b) Enclave Seguro (Secure Enclave)",
+        "c) Módulo de Plataforma Confiable (TPM)",
+        "d) Cifrado simétrico con AES-256"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las Enclaves Seguras (Secure Enclaves) son procesadores dedicados en dispositivos móviles que realizan cifrado en hardware y protegen datos incluso ante compromisos del dispositivo.",
+      "id": "p4-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un principio fundamental que garantiza la seguridad de un certificado digital X.509 según el temario?",
+      "opciones": [
+        "a) Autenticación de la identidad del titular",
+        "b) Integridad del certificado mediante firma digital",
+        "c) No repudio de transacciones firmadas digitalmente",
+        "d) Ofuscación de la clave privada del titular"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario indica que los certificados X.509 garantizan autenticación, integridad y no repudio, pero no menciona la ofuscación de la clave privada como un principio fundamental.",
+      "id": "p4-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología criptográfica específica se utiliza para proteger datos almacenados en bases de datos mediante el cifrado de columnas o tablas individuales?",
+      "opciones": [
+        "a) BitLocker",
+        "b) Tokenización",
+        "c) Cifrado de bases de datos a nivel de columna o tabla",
+        "d) Esteganografía"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona explícitamente el cifrado de bases de datos a nivel de columna o tabla como técnica para proteger datos sensibles, como números de seguridad social, mientras se mantiene en texto plano otra información.",
+      "id": "p4-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tecnología criptográfica específica se utiliza para proteger datos almacenados en bases de datos mediante el cifrado de columnas o tablas individuales sin afectar la funcionalidad de la base de datos?",
+      "opciones": [
+        "a) Cifrado de datos en reposo (BitLocker)",
+        "b) Tokenización",
+        "c) Cifrado de bases de datos a nivel de columna o tabla (Transparent Data Encryption - TDE)",
+        "d) Hashing con sal"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona específicamente el cifrado de bases de datos a nivel de columna o tabla, como Transparent Data Encryption (TDE), como técnica para proteger datos sensibles en bases de datos sin alterar su estructura operativa.",
+      "id": "p4-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de PKI, ¿qué campo de un certificado digital X.509 identifica el algoritmo utilizado para firmar el certificado?",
+      "opciones": [
+        "a) Subject",
+        "b) Signature Algorithm",
+        "c) Issuer",
+        "d) Public Key"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El campo 'Signature Algorithm' en un certificado X.509 especifica el algoritmo criptográfico utilizado por la Autoridad de Certificación para firmar el certificado, garantizando la integridad y autenticidad del mismo.",
+      "id": "p4-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué campo de un certificado digital X.509 identifica al titular o sujeto del certificado según el temario?",
+      "opciones": [
+        "a) Emisor (Issuer)",
+        "b) Número de serie (Serial Number)",
+        "c) Sujeto (Subject)",
+        "d) Algoritmo de firma (Signature Algorithm)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario indica que el campo 'Sujeto' (Subject) en un certificado X.509 identifica al titular o sujeto del certificado.",
+      "id": "p4-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario de ataque donde un atacante modifica el IV (Vector de Inicialización) en el encabezado de un mensaje cifrado con AES, ¿qué principio criptográfico se vulnera según el temario?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) Autenticación",
+        "d) No repudio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario explica que el IV garantiza la integridad del mensaje; su modificación altera el estado inicial del cifrado, vulnerando este principio.",
+      "id": "p4-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cifrado híbrido para proteger comunicaciones internas. Utiliza AES-256 para cifrar los datos en tránsito y RSA-4096 para el intercambio de claves de sesión. Si un atacante reemplaza el certificado digital adjunto por uno falso firmado por una CA interna no comprometida, ¿qué principio fundamental de la PKI se vulnera según el temario?",
+      "opciones": [
+        "a) Confidencialidad del mensaje",
+        "b) Integridad del certificado",
+        "c) Autenticación de la identidad",
+        "d) No repudio de transacciones"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario señala que la autenticación de identidad es un principio clave de la PKI; un certificado falso vulnera este principio al falsificar la identidad del servidor.",
+      "id": "p4-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cifrado híbrido para proteger comunicaciones internas entre sus servidores utilizando AES-256 para el cifrado de datos en tránsito y RSA-4096 para el intercambio de claves de sesión. Durante una auditoría de seguridad, se detecta que un atacante ha logrado interceptar un mensaje cifrado y ha modificado el campo 'Issuer' (Emisor) del certificado digital adjunto por uno falso, firmado por una CA externa no comprometida. Según el temario de PKI, ¿qué principio fundamental de la infraestructura de clave pública se ha vulnerado en este escenario y por qué el atacante no podría aprovechar este certificado falso para descifrar el contenido del mensaje?",
+      "opciones": [
+        "a) Se vulnera el principio de integridad de los certificados, ya que al modificar el campo 'Issuer', se altera la cadena de confianza y el mensaje no puede ser verificado correctamente, impidiendo su descifrado.",
+        "b) Se vulnera el principio de confidencialidad, ya que el atacante puede descifrar el mensaje con la clave privada correspondiente al certificado falso.",
+        "c) Se vulnera el principio de autenticación, pero el atacante no puede descifrar el mensaje porque la clave privada asociada al certificado falso no es la misma que la usada para cifrar los datos.",
+        "d) Se vulnera el principio de no repudio, ya que el emisor del certificado falso no puede ser identificado, pero el mensaje sigue siendo descifrable."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El principio vulnerado es la autenticación, ya que el certificado falso altera la identidad del emisor, pero el mensaje no puede descifrarse porque la clave privada asociada al certificado falso no coincide con la clave pública utilizada para cifrar los datos con RSA-4096.",
+      "id": "p4-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un sistema de cifrado híbrido que utiliza AES-256 para el contenido y RSA-4096 para el intercambio de claves de sesión, un atacante intercepta un mensaje cifrado y modifica el IV en el encabezado antes de reenviarlo. ¿Qué principio criptográfico se vulnera y por qué el atacante no puede descifrar el contenido del mensaje aunque conozca la clave pública RSA del servidor?",
+      "opciones": [
+        "a) Confidencialidad, porque el atacante no tiene la clave privada RSA para descifrar el mensaje.",
+        "b) Integridad, porque el IV alterado invalida el proceso de descifrado.",
+        "c) Autenticación, porque el certificado adjunto no fue modificado.",
+        "d) No repudio, porque el mensaje no fue firmado digitalmente."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que el IV garantiza la integridad del mensaje; su modificación invalida el descifrado, vulnerando este principio. Además, el atacante no puede descifrar el mensaje sin la clave privada RSA.",
+      "id": "p4-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Public Key Infrastructure - CompTIA Security+ Sy0-701 - 1.4",
+      "youtubeId": "xHAMEF7-inQ"
+    },
+    {
+      "titulo": "Encrypting Data",
+      "youtubeId": "jpsc4c7lntw"
+    },
+    {
+      "titulo": "Key Exchange",
+      "youtubeId": "U6BWn81P5Ec"
+    },
+    {
+      "titulo": "Encryption Technologies",
+      "youtubeId": "u61J0xR_XPU"
+    },
+    {
+      "titulo": "Obfuscation",
+      "youtubeId": "LfuTMzZke4g"
+    },
+    {
+      "titulo": "Hashing and Digital Signatures",
+      "youtubeId": "EcGmQjl6XEo"
+    },
+    {
+      "titulo": "Blockchain Technology",
+      "youtubeId": "-wqU_2ToP1M"
+    },
+    {
+      "titulo": "Certificates",
+      "youtubeId": "cLa94BZH_9s"
+    }
+  ]
+}

@@ -1,0 +1,1400 @@
+{
+  "id": 14,
+  "titulo": "3.3 · Protección de datos",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "TIPOS DE DATOS Y CLASIFICACIONES\n\nUno de los activos más importantes que posee una organización es su información, pero no todos los datos son iguales y su gestión puede variar según quién los posea y qué se haga con ellos. Algunos tipos de datos almacenados por una organización pueden ser datos regulados, es decir, aquellos en los que un tercero establece las normas sobre cómo deben protegerse. Por ejemplo, si una organización almacena información de tarjetas de crédito, debe cumplir con los estándares del PCI DSS (Payment Card Industry Data Security Standard).\n\nAdemás, es crucial considerar las leyes y regulaciones gubernamentales que pueden dictar cómo se almacena la información y durante cuánto tiempo. Otro tipo de datos importante a proteger son los secretos comerciales (trade secrets), que son procesos o información conocidos únicamente por la organización. Muchas empresas estarían interesadas en obtener estos secretos, por lo que es fundamental implementar medidas de seguridad adecuadas.\n\nLa propiedad intelectual (IP) es otro tipo de dato que, aunque visible para otros, se protege mediante leyes de derechos de autor y marcas registradas. La información legal presenta desafíos únicos, ya que debe ser pública en muchos aspectos pero privada en otros. Por ejemplo, los registros judiciales son públicos, pero pueden contener información sensible como datos de identificación personal (PII) o detalles financieros.\n\nLos datos financieros son especialmente sensibles. Las finanzas internas de una empresa deben mantenerse privadas, pero incluso los detalles financieros personales, como números de cuenta bancaria o pagos realizados, también requieren protección.\n\nLos datos pueden ser legibles para humanos, como documentos o hojas de cálculo, o no legibles, como códigos de barras o imágenes que contienen información oculta. Algunos formatos combinan ambos tipos, como un código de barras con números legibles para humanos en la parte inferior.\n\nDiferentes tipos de datos pueden tener distintos niveles de sensibilidad. Por ejemplo, los números de matrícula de vehículos pueden ser accesibles públicamente, mientras que la información médica de una persona debe estar estrictamente protegida. Esto lleva a establecer niveles de sensibilidad y permisos específicos para acceder a los datos.\n\nLos datos propietarios (proprietary data) son aquellos exclusivos de una organización, como secretos comerciales o procesos internos. La información de identificación personal (PII) incluye datos que pueden vincularse a un individuo, como nombres, fechas de nacimiento, direcciones o información biométrica. Desde una perspectiva de salud, la información de salud protegida (PHI) incluye detalles específicos sobre el estado de salud de una persona, registros médicos o pagos relacionados con la atención médica.\n\nPara gestionar estos datos, se pueden crear clasificaciones que determinen los niveles de acceso. Por ejemplo:\n\n- Datos sensibles: pueden incluir propiedad intelectual, PII o PHI.\n- Datos confidenciales: requieren permisos adicionales para su acceso.\n- Datos públicos o no clasificados: accesibles para cualquier persona.\n- Datos privados, clasificados o restringidos: requieren derechos especiales o acuerdos de confidencialidad.\n- Datos críticos: deben estar siempre accesibles, con procesos para garantizar su disponibilidad.\n\n\nESTADOS DE LOS DATOS\n\nLos datos pueden encontrarse en tres estados principales: en reposo, en tránsito y en uso.\n\nLos datos en reposo (data at rest) son aquellos almacenados en dispositivos como discos duros, SSD, unidades flash o cualquier otro medio de almacenamiento. Aunque estos datos no estén cifrados, se consideran en reposo. Para protegerlos, se pueden aplicar técnicas como el cifrado de disco completo, cifrado de bases de datos o cifrado de archivos individuales. Además, se pueden establecer permisos y derechos de acceso para limitar quién puede interactuar con estos datos. Los sistemas operativos permiten asignar permisos a nivel individual o grupal, definiendo qué tipo de acceso tiene cada usuario.\n\nLos datos en tránsito (data in transit) son aquellos que se transfieren a través de una red. Si estos datos no están cifrados durante su transmisión, son vulnerables a interceptaciones. Para protegerlos, se pueden implementar firewalls, sistemas de prevención de intrusiones (IPS) o tecnologías de cifrado como TLS (Transport Layer Security) para comunicaciones web. Para cifrar todo el tráfico de red, se pueden utilizar VPN (Redes Privadas Virtuales) con protocolos como IPsec (Internet Protocol Security).\n\nLos datos en uso (data in use) son aquellos que se encuentran en la memoria RAM o se están procesando en la CPU. Estos datos suelen estar en formato legible, ya que deben ser interpretados por el sistema para realizar operaciones. Esto los hace especialmente atractivos para los atacantes, como ocurrió en el caso de Target en 2013, donde se robaron 110 millones de números de tarjetas de crédito directamente de la memoria de los terminales de punto de venta, a pesar de que los datos en tránsito y en reposo estaban cifrados.\n\n\nSOBERANÍA DE LOS DATOS\n\nLa soberanía de los datos (data sovereignty) se refiere a las leyes y regulaciones que aplican a la información almacenada en un país específico. Esto es especialmente relevante si las normativas locales imponen requisitos estrictos sobre cómo se debe manejar o almacenar la información. Por ejemplo, el Reglamento General de Protección de Datos (GDPR) de la Unión Europea establece que los datos de ciudadanos europeos deben almacenarse dentro de la UE.\n\nLa geolocalización (geolocation) es una herramienta útil para gestionar el acceso a los datos según la ubicación del usuario. Utiliza tecnologías como GPS, información de redes inalámbricas (802.11) o datos de proveedores móviles para determinar la ubicación de un usuario. Esto permite aplicar políticas de acceso basadas en la ubicación, como restringir el acceso a ciertos datos si el usuario no se encuentra dentro de las instalaciones corporativas.\n\n\nPROTECCIÓN DE DATOS\n\nProteger los datos es una de las principales responsabilidades de los profesionales de TI. La pérdida de datos puede ser catastrófica para una organización, ya que la información puede estar distribuida en múltiples ubicaciones: discos duros, dispositivos móviles, redes privadas o públicas, o incluso en la memoria y CPU de los sistemas. Para protegerla, se pueden aplicar varias técnicas:\n\n- Cifrado: convierte los datos legibles (texto plano) en un formato ilegible (texto cifrado o ciphertext). El proceso inverso se denomina descifrado. Un buen cifrado debe garantizar que el texto cifrado sea muy diferente al original, un concepto conocido como confusión. Por ejemplo, el algoritmo PGP puede cifrar un mensaje como \"Hola mundo\" en un texto cifrado irreconocible.\n\n- Hashing: transforma los datos en una cadena de texto única, conocida como hash o resumen. Un hash no puede revertirse para obtener los datos originales, lo que lo hace ideal para almacenar contraseñas o verificar la integridad de archivos. Por ejemplo, al descargar un archivo de Linux, se proporciona un hash para compararlo con el archivo descargado y asegurarse de que no ha sido alterado. Algoritmos como SHA-256 generan hashes de 256 bits, y cambios mínimos en los datos originales producen hashes completamente diferentes.\n\n- Obfuscación: convierte código o datos legibles en versiones difíciles de interpretar para los humanos. Los desarrolladores pueden usar esta técnica para proteger su código, y los atacantes la emplean para ocultar malware. Por ejemplo, una línea de código PHP que muestra \"Hola mundo\" puede transformarse en una versión obfuscada que, aunque ilegible, produce el mismo resultado.\n\n- Enmascaramiento de datos (data masking): oculta parte de los datos sensibles para proteger información como PII o detalles financieros. Por ejemplo, en un recibo de pago con tarjeta de crédito, solo se muestran los últimos cuatro dígitos del número de tarjeta, mientras que el resto se reemplaza con asteriscos.\n\n- Tokenización: reemplaza datos sensibles con tokens temporales que no pueden ser reutilizados. Por ejemplo, al pagar con un teléfono móvil, se envía un token en lugar del número real de la tarjeta de crédito. Este token es de un solo uso y no puede ser reutilizado si es interceptado. La tokenización no requiere algoritmos de cifrado ni hashing, ya que el token y el dato original son valores completamente diferentes sin relación matemática.\n\n- Segmentación: divide los datos en bases de datos más pequeñas y aisladas para dificultar que un atacante acceda a toda la información en caso de una brecha. Por ejemplo, una base de datos con nombres puede tener menos protección que otra con información médica o financiera.\n\n- Restricciones de permisos: gestionan el acceso a los datos mediante autenticación segura y permisos específicos. Esto incluye políticas de contraseñas robustas, factores de autenticación adicionales (MFA) y permisos de archivos que limitan el acceso según el rol del usuario.\n\n\nGEOFENCIADO Y RESTRICCIONES GEOGRÁFICAS\n\nLas restricciones geográficas determinan el acceso a los datos según la ubicación del usuario. Esto se puede lograr mediante:\n\n- Subredes y direcciones IP: útiles para redes internas privadas donde la ubicación de las subredes es conocida.\n- Geolocalización: combina tecnologías como GPS y bases de datos de redes inalámbricas para determinar con precisión la ubicación de un dispositivo móvil.\n- Geo-fencing: aplica políticas de acceso basadas en la ubicación. Por ejemplo, ciertos datos solo pueden ser accedidos si el usuario está dentro de las instalaciones corporativas.\n\nEstas técnicas permiten adaptar el acceso a los datos según el contexto, mejorando la seguridad y cumpliendo con regulaciones específicas de cada región."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Protección de datos] --> B[TIPOS DE DATOS Y CLASIFICACIONES]\nA --> C[ESTADOS DE LOS DATOS]\nA --> D[SOBERANÍA DE LOS DATOS]\nA --> E[PROTECCIÓN DE DATOS]\nA --> F[GEOFENCIADO Y RESTRICCIONES GEOGRÁFICAS]\n\nB --> B1[Datos regulados]\nB --> B2[Secretos comerciales]\nB --> B3[Propiedad intelectual]\nB --> B4[Información legal]\nB --> B5[Datos financieros]\nB --> B6[PII y PHI]\nB --> B7[Clasificaciones de sensibilidad]\n\nC --> C1[Datos en reposo]\nC --> C2[Datos en tránsito]\nC --> C3[Datos en uso]\n\nD --> D1[Leyes locales]\nD --> D2[GDPR]\nD --> D3[Geolocalización]\n\nE --> E1[Cifrado]\nE --> E2[Hashing]\nE --> E3[Obfuscación]\nE --> E4[Enmascaramiento de datos]\nE --> E5[Tokenización]\nE --> E6[Segmentación]\nE --> E7[Restricciones de permisos]\n\nF --> F1[Subredes y direcciones IP]\nF --> F2[Geolocalización]\nF --> F3[Geo-fencing]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc14-01",
+      "pregunta": "¿Qué son los datos regulados y cuál es un ejemplo de normativa que los gestiona?",
+      "respuesta": "Los datos regulados son aquellos en los que un tercero establece las normas sobre cómo deben protegerse. Un ejemplo es el PCI DSS (Payment Card Industry Data Security Standard), que regula la protección de información de tarjetas de crédito."
+    },
+    {
+      "id": "fc14-02",
+      "pregunta": "¿Qué es un secreto comercial y por qué es importante protegerlo?",
+      "respuesta": "Un secreto comercial (trade secret) es información o proceso exclusivo de una organización. Es importante protegerlo porque muchas empresas podrían beneficiarse de acceder a él, y su pérdida podría afectar gravemente a la competitividad."
+    },
+    {
+      "id": "fc14-03",
+      "pregunta": "¿Qué distingue a los datos en reposo de los datos en tránsito?",
+      "respuesta": "Los datos en reposo están almacenados en dispositivos como discos duros, mientras que los datos en tránsito se transfieren a través de redes. Los datos en reposo pueden protegerse con cifrado y permisos, mientras que los datos en tránsito requieren cifrado durante la transmisión para evitar interceptaciones."
+    },
+    {
+      "id": "fc14-04",
+      "pregunta": "¿Qué ocurrió en el ataque a Target en 2013 y qué estado de los datos se vio comprometido?",
+      "respuesta": "Los atacantes instalaron código en los terminales de punto de venta de Target y robaron 110 millones de números de tarjetas de crédito directamente de la memoria RAM de los dispositivos. Esto comprometió los datos en uso (data in use), a pesar de que los datos en tránsito y en reposo estaban cifrados."
+    },
+    {
+      "id": "fc14-05",
+      "pregunta": "¿Qué es la soberanía de los datos y qué regulación europea es un ejemplo de ello?",
+      "respuesta": "La soberanía de los datos se refiere a las leyes y regulaciones que aplican a la información almacenada en un país específico. Un ejemplo es el GDPR (Reglamento General de Protección de Datos) de la Unión Europea, que exige que los datos de ciudadanos europeos se almacenen dentro de la UE."
+    },
+    {
+      "id": "fc14-06",
+      "pregunta": "¿Qué es el hashing y para qué se utiliza comúnmente?",
+      "respuesta": "El hashing es un proceso que transforma los datos en una cadena de texto única llamada hash o resumen. Se utiliza comúnmente para almacenar contraseñas de forma segura y verificar la integridad de archivos descargados, ya que no puede revertirse para obtener los datos originales."
+    },
+    {
+      "id": "fc14-07",
+      "pregunta": "¿Qué es la tokenización y cómo protege los datos sensibles?",
+      "respuesta": "La tokenización reemplaza datos sensibles con tokens temporales que no pueden ser reutilizados. Por ejemplo, al pagar con un teléfono móvil, se envía un token en lugar del número real de la tarjeta de crédito. Esto protege los datos porque el token no tiene relación matemática con el dato original y es de un solo uso."
+    },
+    {
+      "id": "fc14-08",
+      "pregunta": "¿Qué es el geo-fencing y cómo se aplica en la protección de datos?",
+      "respuesta": "El geo-fencing es una técnica que aplica políticas de acceso basadas en la ubicación del usuario. Por ejemplo, ciertos datos solo pueden ser accedidos si el usuario está dentro de las instalaciones corporativas, lo que mejora la seguridad y cumple con regulaciones específicas."
+    },
+    {
+      "id": "fc14-09",
+      "pregunta": "¿Qué es la confusión en el contexto del cifrado y por qué es importante?",
+      "respuesta": "La confusión es un concepto en el cifrado que garantiza que el texto cifrado sea muy diferente al texto plano original. Esto es importante porque dificulta que los atacantes puedan deducir el contenido original de los datos cifrados, incluso si tienen acceso a parte del texto cifrado."
+    },
+    {
+      "id": "fc14-10",
+      "pregunta": "¿Qué es el enmascaramiento de datos y en qué situaciones se utiliza?",
+      "respuesta": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles para proteger información como PII o detalles financieros. Por ejemplo, en un recibo de pago con tarjeta de crédito, solo se muestran los últimos cuatro dígitos del número de tarjeta, mientras que el resto se reemplaza con asteriscos."
+    },
+    {
+      "id": "fc14-11",
+      "pregunta": "¿Qué es la segmentación de datos y cómo mejora la seguridad?",
+      "respuesta": "La segmentación divide los datos en bases de datos más pequeñas y aisladas para dificultar que un atacante acceda a toda la información en caso de una brecha. Esto mejora la seguridad porque cada segmento puede tener diferentes niveles de protección según la sensibilidad de los datos que contiene."
+    },
+    {
+      "id": "fc14-12",
+      "pregunta": "¿Qué es la obfuscación y cómo se utiliza tanto por desarrolladores como por atacantes?",
+      "respuesta": "La obfuscación convierte código o datos legibles en versiones difíciles de interpretar para los humanos. Los desarrolladores la usan para proteger su código, mientras que los atacantes la emplean para ocultar malware. Por ejemplo, una línea de código PHP legible puede transformarse en una versión obfuscada que produce el mismo resultado pero es ilegible."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes tipos de datos está diseñado para ser accesible públicamente pero requiere protección en aspectos específicos como PII o detalles financieros?",
+      "opciones": [
+        "Datos regulados",
+        "Información legal",
+        "Datos financieros",
+        "Secretos comerciales"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La información legal debe ser pública en muchos aspectos, pero puede contener datos sensibles como PII o detalles financieros que requieren protección.",
+      "id": "p14-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Qué diferencia principal existe entre datos en reposo y datos en uso?",
+      "opciones": [
+        "Los datos en reposo están cifrados, mientras que los datos en uso no pueden cifrarse.",
+        "Los datos en reposo están almacenados, mientras que los datos en uso están en memoria RAM o CPU.",
+        "Los datos en reposo son públicos, mientras que los datos en uso son privados.",
+        "Los datos en reposo requieren permisos, mientras que los datos en uso no."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los datos en reposo están almacenados en dispositivos, mientras que los datos en uso están en memoria RAM o CPU durante su procesamiento.",
+      "id": "p14-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos convierte datos legibles en un formato ilegible mediante un algoritmo, garantizando que el texto cifrado sea muy diferente al original?",
+      "opciones": [
+        "Hashing",
+        "Obfuscación",
+        "Cifrado",
+        "Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El cifrado convierte datos legibles (texto plano) en un formato ilegible (texto cifrado), garantizando confusión en el resultado.",
+      "id": "p14-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una empresa almacena información de tarjetas de crédito de sus clientes. ¿Qué estándar de seguridad debe cumplir para proteger estos datos?",
+      "opciones": [
+        "ISO 27001",
+        "PCI DSS",
+        "GDPR",
+        "HIPAA"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los datos de tarjetas de crédito deben cumplir con el estándar PCI DSS (Payment Card Industry Data Security Standard).",
+      "id": "p14-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué concepto se refiere a la obligación de almacenar datos de ciudadanos europeos dentro de la Unión Europea según regulaciones locales?",
+      "opciones": [
+        "Geolocalización",
+        "Soberanía de los datos",
+        "Segmentación de datos",
+        "Enmascaramiento de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La soberanía de los datos se refiere a las leyes que aplican a la información almacenada en un país específico, como el GDPR en la UE.",
+      "id": "p14-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un estado de los datos según el temario?",
+      "opciones": [
+        "Datos en reposo",
+        "Datos en tránsito",
+        "Datos en uso",
+        "Datos en caché"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los tres estados principales de los datos son en reposo, en tránsito y en uso; 'datos en caché' no es un estado reconocido en el temario.",
+      "id": "p14-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Ejemplo: Un desarrollador oculta el código fuente de una aplicación para dificultar su análisis por parte de terceros. ¿Qué técnica de protección de datos está utilizando?",
+      "opciones": [
+        "Cifrado",
+        "Obfuscación",
+        "Tokenización",
+        "Enmascaramiento de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La obfuscación convierte código legible en versiones difíciles de interpretar para los humanos, protegiendo el código fuente.",
+      "id": "p14-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una organización implementa un sistema donde los datos financieros críticos solo pueden ser accedidos si el usuario está dentro de las instalaciones corporativas y autenticado con MFA. ¿Qué técnicas de protección de datos se combinan en este escenario?",
+      "opciones": [
+        "Cifrado y segmentación",
+        "Geofencing y restricciones de permisos",
+        "Hashing y tokenización",
+        "Obfuscación y enmascaramiento de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escenario combina geofencing (restricción por ubicación) y restricciones de permisos (autenticación MFA y acceso limitado) para proteger los datos.",
+      "id": "p14-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos reemplaza datos sensibles con tokens temporales que no pueden ser reutilizados y no tienen relación matemática con el dato original?",
+      "opciones": [
+        "Hashing",
+        "Tokenización",
+        "Cifrado",
+        "Enmascaramiento de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La tokenización reemplaza datos sensibles con tokens temporales de un solo uso, sin relación matemática con el dato original.",
+      "id": "p14-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante intercepta un archivo cifrado con AES-256 durante su transmisión por la red. ¿Qué principio de seguridad garantiza que el atacante no pueda obtener información útil del archivo interceptado?",
+      "opciones": [
+        "Integridad",
+        "Confusión",
+        "Disponibilidad",
+        "Autenticación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El principio de confusión garantiza que el texto cifrado sea muy diferente al original, haciendo inútil la interceptación para obtener información útil.",
+      "id": "p14-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando se reemplazan los últimos cuatro dígitos de un número de tarjeta de crédito por asteriscos en un recibo de pago, ocultando parte de la información sensible?",
+      "opciones": [
+        "Cifrado",
+        "Hashing",
+        "Enmascaramiento de datos",
+        "Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles para proteger información como PII o detalles financieros, como en este caso con el número de tarjeta de crédito.",
+      "id": "p14-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Qué diferencia principal existe entre el cifrado y la tokenización como técnicas de protección de datos?",
+      "opciones": [
+        "El cifrado convierte datos legibles en ilegibles, mientras que la tokenización reemplaza datos sensibles con tokens temporales sin relación matemática con el original.",
+        "El cifrado solo se aplica a datos en tránsito, mientras que la tokenización solo se usa en datos en reposo.",
+        "La tokenización requiere algoritmos de hashing, mientras que el cifrado no.",
+        "El cifrado es reversible, pero la tokenización no permite recuperar el dato original en ningún caso."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado transforma datos legibles en ilegibles mediante algoritmos, mientras que la tokenización reemplaza datos sensibles con tokens temporales sin relación matemática con el original.",
+      "id": "p14-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una empresa reemplaza los datos sensibles de un cliente, como su dirección completa, por un valor genérico como 'XXX' en registros internos accesibles por empleados sin permisos especiales?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Obfuscación",
+        "c) Enmascaramiento de datos",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos oculta parte o la totalidad de los datos sensibles para proteger información como PII, reemplazándolos por valores genéricos en entornos donde no es necesario su acceso completo.",
+      "id": "p14-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una empresa multinacional con sede en Europa almacena datos de clientes que incluyen información personal y financiera. Según el temario, ¿qué regulación debe cumplir para garantizar la soberanía de los datos de sus clientes europeos?",
+      "opciones": [
+        "PCI DSS",
+        "GDPR",
+        "HIPAA",
+        "SOX"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Reglamento General de Protección de Datos (GDPR) de la Unión Europea establece que los datos de ciudadanos europeos deben almacenarse dentro de la UE, garantizando su soberanía.",
+      "id": "p14-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el concepto: Un desarrollador oculta el código fuente de una aplicación para dificultar su análisis por parte de terceros. ¿Qué técnica de protección de datos está utilizando?",
+      "opciones": [
+        "Cifrado",
+        "Obfuscación",
+        "Tokenización",
+        "Enmascaramiento de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La obfuscación convierte código o datos legibles en versiones difíciles de interpretar para los humanos, protegiendo así el código fuente.",
+      "id": "p14-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos garantiza que un token generado para una transacción financiera no pueda ser reutilizado en otra transacción, incluso si es interceptado?",
+      "opciones": [
+        "Cifrado",
+        "Hashing",
+        "Tokenización",
+        "Enmascaramiento de datos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La tokenización reemplaza datos sensibles con tokens temporales de un solo uso que no pueden ser reutilizados ni tienen relación matemática con el dato original.",
+      "id": "p14-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una organización implementa un sistema donde los datos financieros críticos solo pueden ser accedidos si el usuario está autenticado con MFA y su dispositivo se encuentra dentro de un rango de 500 metros de las oficinas corporativas. ¿Qué técnicas de protección de datos se combinan en este escenario?",
+      "opciones": [
+        "Cifrado de datos en reposo y geofencing",
+        "Tokenización y geolocalización",
+        "Restricciones de permisos con MFA y geo-fencing",
+        "Hashing y segmentación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Se combinan restricciones de permisos con autenticación multifactor (MFA) y geo-fencing, que aplica políticas de acceso basadas en la ubicación del usuario.",
+      "id": "p14-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué principio de seguridad garantiza que un atacante no pueda obtener información útil de un archivo cifrado con AES-256 interceptado durante su transmisión, incluso si conoce el algoritmo de cifrado utilizado?",
+      "opciones": [
+        "Confusión",
+        "Difusión",
+        "Cifrado simétrico",
+        "Disponibilidad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El principio de confusión asegura que el texto cifrado sea muy diferente al original, dificultando la obtención de información útil incluso conociendo el algoritmo.",
+      "id": "p14-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de datos requiere permisos adicionales para su acceso y se clasifica como 'datos confidenciales' según el temario?",
+      "opciones": [
+        "Datos públicos",
+        "Datos sensibles",
+        "Datos críticos",
+        "Datos privados, clasificados o restringidos"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los 'datos privados, clasificados o restringidos' requieren permisos adicionales para su acceso, según la clasificación de datos mencionada en el temario.",
+      "id": "p14-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante logra acceder a la memoria RAM de un terminal de punto de venta y extrae números de tarjetas de crédito en formato legible. ¿Qué estado de los datos fue explotado en este ataque?",
+      "opciones": [
+        "Datos en reposo",
+        "Datos en tránsito",
+        "Datos en uso",
+        "Datos críticos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los datos en uso son aquellos que se encuentran en la memoria RAM o se están procesando en la CPU, y son especialmente vulnerables a ataques como el descrito.",
+      "id": "p14-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando se reemplaza el número completo de una tarjeta de crédito por asteriscos en un recibo de pago, mostrando solo los últimos cuatro dígitos?",
+      "opciones": [
+        "Tokenización",
+        "Enmascaramiento de datos (data masking)",
+        "Obfuscación",
+        "Segmentación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta parte de los datos sensibles para proteger información como PII o detalles financieros, como en el ejemplo de los recibos de pago.",
+      "id": "p14-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una empresa reemplaza el nombre completo de un cliente en una base de datos interna por el valor genérico 'CLIENTE_XXX' para ocultar información sensible sin eliminarla?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Obfuscación",
+        "d) Segmentación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles reemplazándolos con valores genéricos o parciales, como en este caso donde se muestra 'CLIENTE_XXX' en lugar del nombre completo.",
+      "id": "p14-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa almacena información de salud protegida (PHI) de sus empleados. Según el temario, ¿qué clasificación de datos aplica a este tipo de información?",
+      "opciones": [
+        "Datos públicos",
+        "Datos sensibles",
+        "Datos confidenciales",
+        "Datos propietarios"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La información de salud protegida (PHI) se clasifica como datos sensibles, que requieren protección especial por su naturaleza confidencial.",
+      "id": "p14-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de propiedad intelectual (IP) en documentos internos por versiones modificadas que mantienen el sentido original pero ocultan detalles críticos, dificultando su reproducción exacta por terceros?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Obfuscación",
+        "c) Tokenización",
+        "d) Enmascaramiento de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La obfuscación convierte datos o código legible en versiones difíciles de interpretar para los humanos, manteniendo su funcionalidad pero ocultando detalles sensibles. Esta técnica es comúnmente aplicada a propiedad intelectual para protegerla de réplicas exactas.",
+      "id": "p14-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una empresa reemplaza los datos de propiedad intelectual (IP) en documentos internos por versiones modificadas que mantienen el sentido original pero ocultan detalles críticos para dificultar su reproducción exacta por terceros?",
+      "opciones": [
+        "Tokenización",
+        "Cifrado",
+        "Obfuscación",
+        "Enmascaramiento de datos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La técnica que modifica el código o datos legibles para hacerlos difíciles de interpretar se denomina obfuscación, según el temario.",
+      "id": "p14-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Un atacante intercepta un archivo cifrado con AES-256 durante su transmisión por la red. ¿Qué principio de seguridad garantiza que el atacante no pueda obtener información útil del archivo interceptado?",
+      "opciones": [
+        "Integridad",
+        "Disponibilidad",
+        "Confidencialidad",
+        "No repudio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El principio de confidencialidad garantiza que los datos sean inaccesibles para personas no autorizadas, incluso si son interceptados en tránsito.",
+      "id": "p14-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de propiedad intelectual (IP) en documentos internos por versiones modificadas que mantienen el sentido original pero ocultan detalles críticos para dificultar su reproducción exacta por terceros?",
+      "opciones": [
+        "a) Obfuscación",
+        "b) Enmascaramiento de datos",
+        "c) Tokenización",
+        "d) Segmentación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La obfuscación convierte datos o código legibles en versiones difíciles de interpretar para los humanos, manteniendo su funcionalidad pero ocultando detalles críticos.",
+      "id": "p14-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos financieros internos de un empleado, como su salario anual, por un valor genérico como 'CONFIDENCIAL' en informes de gestión accesibles a directivos sin permisos especiales?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Tokenización",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible reemplazándola con caracteres o valores genéricos, como en este caso donde se reemplaza el salario real por 'CONFIDENCIAL' para protegerlo en informes accesibles.",
+      "id": "p14-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de logística almacena datos de seguimiento de envíos que incluyen coordenadas GPS en tiempo real de sus vehículos de reparto. Para cumplir con regulaciones de soberanía de datos, la organización decide implementar un sistema donde los datos de ubicación solo puedan ser accedidos si el dispositivo móvil del conductor está registrado dentro de un área geográfica específica (geo-fencing) y el usuario se autentica con MFA. Además, los datos en tránsito se cifran con TLS 1.3 y los datos en reposo se almacenan en discos cifrados con AES-256. ¿Qué principio de seguridad garantiza que, incluso si un atacante intercepta los datos de ubicación en tránsito, no pueda obtener información útil sobre la ruta del vehículo?",
+      "opciones": [
+        "a) El principio de confusión en el algoritmo AES-256, que asegura que el texto cifrado sea irreconocible.",
+        "b) El principio de integridad verificable mediante hashes SHA-256 en los datos transmitidos.",
+        "c) El principio de confidencialidad garantizado por el cifrado TLS 1.3 en los datos en tránsito.",
+        "d) El principio de disponibilidad mediante el geo-fencing que restringe el acceso a los datos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El principio de confidencialidad se garantiza mediante el cifrado TLS 1.3 en los datos en tránsito, asegurando que el atacante no pueda interpretar la información interceptada aunque conozca el algoritmo utilizado.",
+      "id": "p14-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa de salud implementa un sistema de gestión de historiales médicos donde los datos de los pacientes se almacenan en una base de datos cifrada con AES-256. Sin embargo, para cumplir con regulaciones de privacidad, los médicos solo pueden acceder a los registros si su dispositivo está registrado dentro del hospital (geo-fencing) y se autentican con MFA. Además, los datos en tránsito entre el servidor y las terminales médicas se cifran con TLS 1.3. Durante una auditoría de seguridad, se detecta que un atacante intercepta el tráfico cifrado entre el servidor y una terminal ubicada en la sala de urgencias. ¿Qué principio de seguridad garantiza que el atacante no pueda obtener información útil sobre los historiales médicos de los pacientes, a pesar de interceptar el tráfico?",
+      "opciones": [
+        "El principio de confusión en el cifrado AES-256 asegura que el texto cifrado sea irreconocible, incluso si el atacante conoce el algoritmo y la clave.",
+        "El geo-fencing y la autenticación con MFA evitan que el atacante pueda descifrar los datos, ya que el acceso requiere condiciones de ubicación y autenticación adicionales.",
+        "TLS 1.3 garantiza que los datos en tránsito sean inaccesibles para el atacante, ya que el cifrado de la conexión impide la lectura del tráfico interceptado.",
+        "La segmentación de la base de datos limita el acceso del atacante solo a una parte de los datos, reduciendo el impacto de la brecha."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "TLS 1.3 protege los datos en tránsito mediante cifrado, garantizando que incluso si un atacante intercepta el tráfico, no pueda descifrarlo sin la clave de sesión. El geo-fencing y el MFA son medidas complementarias que restringen el acceso, pero no afectan directamente la confidencialidad de los datos interceptados.",
+      "id": "p14-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una empresa reemplaza el número completo de una tarjeta de crédito por asteriscos en un recibo de pago, mostrando solo los últimos cuatro dígitos?",
+      "opciones": [
+        "Tokenización",
+        "Enmascaramiento de datos (data masking)",
+        "Obfuscación",
+        "Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible (como números de tarjeta de crédito) para protegerla, mostrando solo los últimos dígitos como '****-****-****-1234'.",
+      "id": "p14-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia principal existe entre el cifrado y la tokenización como técnicas de protección de datos?",
+      "opciones": [
+        "El cifrado convierte los datos en un formato ilegible, mientras que la tokenización reemplaza los datos sensibles con tokens temporales sin relación matemática con el original.",
+        "Ambas técnicas requieren algoritmos de hashing para generar los tokens o el texto cifrado.",
+        "El cifrado es reversible, pero la tokenización no puede ser revertida bajo ninguna circunstancia.",
+        "La tokenización se usa exclusivamente para datos en tránsito, mientras que el cifrado protege datos en reposo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado transforma los datos en texto ilegible (ciphertext) usando algoritmos, mientras que la tokenización reemplaza los datos sensibles con tokens únicos sin relación matemática con el dato original.",
+      "id": "p14-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de propiedad intelectual (IP) en un documento interno por versiones alteradas que mantienen el sentido original pero ocultan detalles críticos para dificultar su reproducción exacta por terceros?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Obfuscación",
+        "d) Segmentación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La obfuscación convierte el código o datos legibles en versiones difíciles de interpretar para los humanos, manteniendo su funcionalidad pero ocultando detalles críticos. Esta técnica se aplica específicamente a la propiedad intelectual para protegerla de reproducción exacta.",
+      "id": "p14-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza el nombre completo de un cliente en una base de datos interna por un valor genérico como 'CLIENTE_001' para ocultar información sensible sin eliminarla?",
+      "opciones": [
+        "a) Obfuscación",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Tokenización",
+        "d) Segmentación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible reemplazándola con caracteres genéricos o valores aleatorios, como en este caso donde se usa 'CLIENTE_001' para ocultar el nombre real.",
+      "id": "p14-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el concepto: Una organización reemplaza los datos de propiedad intelectual (IP) en documentos internos por versiones modificadas que mantienen el sentido original pero ocultan detalles críticos para dificultar su reproducción exacta por terceros.",
+      "opciones": [
+        "Tokenización",
+        "Obfuscación",
+        "Enmascaramiento de datos",
+        "Segmentación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La obfuscación convierte código o datos legibles en versiones difíciles de interpretar para los humanos, protegiendo así la propiedad intelectual.",
+      "id": "p14-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos financieros internos de un empleado, como su salario anual, por un valor genérico como 'SALARIO_CONFIDENCIAL' en informes de gestión accesibles a directivos sin permisos especiales?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos (Data Masking)",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos (Data Masking) oculta parte de la información sensible reemplazándola con caracteres genéricos o valores no reveladores, como en este caso con el salario anual.",
+      "id": "p14-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos garantiza que un token generado para una transacción financiera no pueda ser reutilizado en otra transacción, incluso si es interceptado?",
+      "opciones": [
+        "Hashing",
+        "Tokenización",
+        "Cifrado asimétrico",
+        "Obfuscación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La tokenización reemplaza los datos sensibles con tokens temporales de un solo uso, que no pueden ser reutilizados ni tienen relación matemática con el dato original.",
+      "id": "p14-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa multinacional con sede en Europa almacena datos de clientes que incluyen información personal y financiera. Según el temario, ¿qué regulación debe cumplir para garantizar la soberanía de los datos de sus clientes europeos?",
+      "opciones": [
+        "PCI DSS",
+        "HIPAA",
+        "GDPR",
+        "ISO 27001"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El GDPR (Reglamento General de Protección de Datos) de la UE establece que los datos de ciudadanos europeos deben almacenarse dentro de la UE, garantizando su soberanía.",
+      "id": "p14-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de investigación médica almacena historiales clínicos digitalizados en una base de datos cifrada con AES-256. Para cumplir con regulaciones de privacidad, los médicos solo pueden acceder a los registros si su dispositivo móvil está registrado dentro del campus hospitalario (geo-fencing) y se autentican con MFA. Además, los datos en tránsito entre el servidor y las terminales médicas se cifran con TLS 1.3. Durante una auditoría, se detecta que un atacante interrumpe la comunicación cifrada entre el servidor y una terminal ubicada en la sala de urgencias, pero no logra extraer información útil de los historiales clínicos interceptados. ¿Qué principio de seguridad, relacionado con el estado de los datos, garantiza que el atacante no pueda obtener información útil del tráfico interceptado?",
+      "opciones": [
+        "a) El cifrado de los datos en tránsito (TLS 1.3) garantiza que el texto cifrado sea irreconocible y no proporcione información útil al atacante, incluso si conoce el algoritmo de cifrado utilizado.",
+        "b) El enmascaramiento de datos aplicado a los historiales clínicos oculta información sensible, como nombres de pacientes, antes de su transmisión.",
+        "c) La tokenización de los números de identificación médica (MPI) reemplaza los datos originales por tokens temporales que no pueden ser reutilizados.",
+        "d) La obfuscación del código fuente de la aplicación médica dificulta la interpretación del tráfico cifrado interceptado."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El principio de seguridad que garantiza la protección en este escenario es el cifrado de los datos en tránsito (TLS 1.3), ya que convierte la información en un formato ilegible que no puede ser descifrado sin la clave correspondiente, incluso si es interceptada.",
+      "id": "p14-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una empresa reemplaza los datos financieros internos de un empleado, como su salario anual, por un valor genérico como 'CONFIDENCIAL' en informes de gestión accesibles a directivos sin permisos especiales?",
+      "opciones": [
+        "Tokenización",
+        "Enmascaramiento de datos",
+        "Obfuscación",
+        "Segmentación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta información sensible (como salarios) reemplazándola con valores genéricos o parcialmente ocultos para protegerla.",
+      "id": "p14-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de propiedad intelectual (IP) en documentos internos por versiones alteradas que mantienen el sentido original pero ocultan detalles críticos para dificultar su reproducción exacta por terceros?",
+      "opciones": [
+        "Enmascaramiento de datos",
+        "Obfuscación",
+        "Tokenización",
+        "Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La obfuscación convierte datos legibles en versiones difíciles de interpretar para los humanos, protegiendo el código o información sensible sin alterar su funcionalidad.",
+      "id": "p14-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de propiedad intelectual (IP) en documentos internos por versiones alteradas que mantienen el sentido original pero ocultan detalles críticos para dificultar su reproducción exacta por terceros?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Obfuscación",
+        "d) Enmascaramiento de datos (data masking)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La obfuscación convierte datos o código legibles en versiones difíciles de interpretar para los humanos, manteniendo su funcionalidad pero ocultando detalles críticos.",
+      "id": "p14-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una empresa reemplaza el nombre completo de un cliente en una base de datos interna por un valor genérico como 'CLIENTE_XXX' para ocultar información sensible sin eliminarla?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Obfuscación",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles reemplazándolos con caracteres genéricos como asteriscos o 'XXX', sin alterar el formato original ni eliminar la información.",
+      "id": "p14-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de protección de datos, ¿qué técnica se utiliza cuando una organización reemplaza los datos de propiedad intelectual (IP) en documentos internos por versiones alteradas que mantienen el sentido original pero ocultan detalles críticos para dificultar su reproducción exacta por terceros?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Obfuscación",
+        "c) Enmascaramiento de datos",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La obfuscación convierte datos o código legible en versiones difíciles de interpretar para los humanos, manteniendo su funcionalidad pero ocultando detalles críticos.",
+      "id": "p14-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización oculta parte de la información sensible en un documento público, como un informe anual, para proteger datos como PII o detalles financieros sin eliminarlos por completo?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Obfuscación",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles, como PII o detalles financieros, para protegerlos sin eliminarlos por completo. Por ejemplo, en un informe anual, se pueden mostrar solo los últimos cuatro dígitos de un número de tarjeta de crédito.",
+      "id": "p14-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de identificación personal (PII) en registros internos por un valor genérico como 'USUARIO_XXX' para ocultar información sensible sin eliminarla?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Obfuscación",
+        "d) Cifrado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles para proteger información como PII, reemplazando segmentos con caracteres genéricos como 'XXX' sin alterar su estructura.",
+      "id": "p14-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de protección de datos, ¿qué técnica se utiliza cuando una organización reemplaza el número completo de una tarjeta de crédito en un documento interno por un valor genérico como '****-****-****-1234' para ocultar información sensible sin eliminarla por completo?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos (data masking)",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles, como los números de tarjeta de crédito, reemplazando los dígitos con caracteres genéricos (ej. asteriscos) para proteger la información sin eliminarla.",
+      "id": "p14-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de protección de datos, ¿qué técnica se utiliza cuando una organización reemplaza el nombre completo de un cliente en un informe público por iniciales y un número de identificación, ocultando información sensible sin eliminarla por completo?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Obfuscación",
+        "c) Enmascaramiento de datos (data masking)",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles para proteger información como PII, mostrando solo partes no críticas como iniciales o números de identificación.",
+      "id": "p14-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de manufactura almacena planos técnicos de sus productos patentados en una base de datos centralizada. Para cumplir con sus políticas internas y evitar la filtración de secretos comerciales, implementa un sistema donde los planos solo pueden ser visualizados en terminales ubicadas dentro de las instalaciones de producción y autenticadas con MFA. Además, los archivos en reposo están cifrados con AES-256 y los datos en tránsito se protegen con TLS 1.3. Durante una auditoría, se detecta que un empleado intenta acceder a los planos desde una ubicación remota usando una VPN corporativa, pero el sistema niega el acceso. ¿Qué técnica de protección de datos combinada con el geo-fencing garantiza que los secretos comerciales no puedan ser expuestos fuera de las instalaciones corporativas?",
+      "opciones": [
+        "a) Segmentación de la base de datos para aislar los planos técnicos",
+        "b) Restricciones de permisos basadas en roles y autenticación multifactor (MFA)",
+        "c) Cifrado de datos en reposo y en tránsito con AES-256 y TLS 1.3",
+        "d) Obfuscación de los planos técnicos en la base de datos para dificultar su interpretación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las restricciones de permisos basadas en roles y autenticación multifactor (MFA) combinadas con geo-fencing garantizan que solo usuarios autorizados dentro de las instalaciones corporativas puedan acceder a los datos sensibles, incluso si poseen credenciales válidas.",
+      "id": "p14-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una empresa reemplaza el número completo de una tarjeta de crédito por asteriscos en un recibo de pago, mostrando solo los últimos cuatro dígitos?",
+      "opciones": [
+        "Cifrado",
+        "Tokenización",
+        "Enmascaramiento de datos",
+        "Hashing"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos oculta parte de los datos sensibles (como números de tarjeta) para proteger información como PII o detalles financieros.",
+      "id": "p14-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza el nombre completo de un cliente en una base de datos interna por un valor genérico como 'CLIENTE_XXX' para ocultar información sensible sin eliminarla?",
+      "opciones": [
+        "Enmascaramiento de datos (data masking)",
+        "Tokenización",
+        "Obfuscación",
+        "Cifrado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles, como nombres completos, reemplazándolos por valores genéricos como 'CLIENTE_XXX' para proteger la información sin eliminarla.",
+      "id": "p14-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de identificación personal (PII), como el número de seguridad social de un cliente, por un valor genérico como 'XXX-XX-1234' en un informe interno accesible por empleados sin permisos especiales?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Obfuscación",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de la información sensible reemplazándola con caracteres genéricos, como asteriscos o valores como 'XXX', sin alterar su estructura original.",
+      "id": "p14-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos financieros internos de un empleado, como su salario bruto anual, por un valor genérico como 'SALARIO_CONFIDENCIAL' en informes de gestión accesibles a directivos sin permisos especiales?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de la información sensible reemplazándola con caracteres o valores genéricos, como en este caso donde se reemplaza el salario real por un texto indicativo.",
+      "id": "p14-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de logística almacena datos de seguimiento de envíos que incluyen coordenadas GPS en tiempo real de sus vehículos de reparto. Para cumplir con regulaciones de soberanía de datos, implementa un sistema donde los datos de ubicación solo puedan ser accedidos si el dispositivo móvil del conductor está registrado dentro de un área geográfica específica (geo-fencing) y el usuario se autentica con MFA. ¿Qué principio de seguridad garantiza que los datos de ubicación no puedan ser accedidos fuera de las instalaciones corporativas?",
+      "opciones": [
+        "Geofencing combinado con autenticación multifactor (MFA)",
+        "Cifrado de datos en tránsito con TLS 1.3",
+        "Tokenización de las coordenadas GPS",
+        "Hashing de los datos de ubicación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El geofencing restringe el acceso a los datos según la ubicación física del usuario, y la autenticación multifactor (MFA) añade una capa adicional de seguridad para garantizar que solo usuarios autorizados puedan acceder a los datos.",
+      "id": "p14-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza datos de propiedad intelectual (IP) en documentos internos por versiones que mantienen el sentido original pero ocultan detalles críticos para evitar su reproducción exacta por terceros?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Obfuscación",
+        "d) Enmascaramiento de datos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La obfuscación convierte datos legibles en versiones difíciles de interpretar para los humanos, manteniendo su funcionalidad pero ocultando detalles sensibles, como ocurre con el código fuente de aplicaciones.",
+      "id": "p14-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de identificación personal (PII) en un informe público, como un comunicado de prensa, por iniciales y un número de identificación aleatorio para ocultar información sensible sin eliminarla por completo?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Obfuscación",
+        "c) Enmascaramiento de datos",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible (como PII) en documentos públicos, mostrando solo porciones no críticas (ej.: iniciales y un ID aleatorio) para proteger la identidad sin eliminar el dato por completo.",
+      "id": "p14-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza el número de identificación fiscal (NIF) de un cliente en un informe público por un valor genérico como 'NIF_XXX' para ocultar información sensible sin eliminarla por completo?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Obfuscación",
+        "c) Enmascaramiento de datos",
+        "d) Cifrado"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible (como el NIF) reemplazándola con caracteres genéricos (ej. 'NIF_XXX'), permitiendo su visualización sin exponer los datos completos.",
+      "id": "p14-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de protección de datos, ¿qué técnica se utiliza cuando una organización reemplaza el número de identificación fiscal (NIF) de un cliente en un documento interno por un valor genérico como 'NIF_XXX' para ocultar información sensible sin eliminarla por completo?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Obfuscación",
+        "d) Segmentación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de la información sensible reemplazándola con caracteres genéricos o símbolos, como en este caso con el NIF.",
+      "id": "p14-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de energía implementa un sistema de control industrial (ICS) donde los datos de telemetría de sensores críticos (como niveles de presión en tuberías) se transmiten entre servidores locales y terminales de operación. Para cumplir con normativas locales y evitar accesos no autorizados, el sistema aplica las siguientes medidas: 1) Los datos en tránsito se cifran con TLS 1.3, 2) Los servidores están ubicados en una sala blindada con control de acceso físico, 3) Los terminales de operación solo permiten visualizar datos si el operador está autenticado con MFA y su dispositivo se encuentra dentro de un rango de 100 metros de la sala de control (geo-fencing), y 4) Los datos en uso en memoria RAM se protegen mediante técnicas de ofuscación de código que impiden su interpretación directa por parte de herramientas de depuración. Un atacante logra infiltrarse en la red interna y accede a un terminal de operación fuera de la zona de geo-fencing, pero no puede extraer información útil de los sensores. ¿Qué principio de seguridad, combinado con el geo-fencing y el MFA, garantiza que el atacante no pueda interpretar los datos críticos en tiempo real, incluso si logra acceder al terminal?",
+      "opciones": [
+        "a) El cifrado de datos en tránsito (TLS 1.3), ya que evita que el atacante intercepte los datos legibles.",
+        "b) La ofuscación de datos en uso, que impide que los datos en memoria RAM sean interpretados directamente por el atacante.",
+        "c) La segmentación de la red, que aísla los datos críticos de otros sistemas.",
+        "d) El almacenamiento de datos en reposo cifrados con AES-256, que protege los datos cuando no están en uso."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La ofuscación de datos en uso protege la información mientras está siendo procesada en la memoria RAM, haciendo que los datos sean incomprensibles para el atacante, incluso si logra acceder al terminal. Esta técnica complementa el geo-fencing y el MFA para evitar la exposición de datos críticos en tiempo real.",
+      "id": "p14-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Dificultad alta: Una organización implementa un sistema donde los datos financieros críticos solo pueden ser accedidos si el usuario está autenticado con MFA y su dispositivo se encuentra dentro de un rango de 500 metros de las oficinas corporativas. Además, los datos en tránsito se cifran con TLS 1.3 y los datos en reposo se almacenan en discos cifrados con AES-256. ¿Qué principio de seguridad garantiza que, incluso si un atacante intercepta los datos financieros en tránsito, no pueda obtener información útil?",
+      "opciones": [
+        "Confusión en el cifrado (AES-256) y protección en tránsito (TLS 1.3)",
+        "Tokenización de los datos financieros",
+        "Geofencing combinado con hashing",
+        "Obfuscación de los datos en reposo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado con AES-256 garantiza confusión en los datos, y TLS 1.3 protege los datos en tránsito, asegurando que un atacante no pueda obtener información útil incluso si intercepta el tráfico.",
+      "id": "p14-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza el número de teléfono de un cliente en un informe interno por un valor como '(XXX) XXX-XXXX' para ocultar parte de la información sensible sin eliminarla por completo?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos (data masking)",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles, como números de teléfono, reemplazando caracteres con símbolos o valores genéricos, manteniendo la estructura visible pero ocultando la información completa.",
+      "id": "p14-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una empresa reemplaza los datos de identificación personal (PII), como el número de licencia de conducir de un cliente, por un valor genérico como 'LICENCIA_XXX' en un informe interno accesible por empleados sin permisos especiales?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Enmascaramiento de datos",
+        "c) Cifrado",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible reemplazándola con caracteres genéricos como 'XXX', sin alterar el formato original para mantener su utilidad en contextos no críticos.",
+      "id": "p14-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de identificación personal (PII), como el número de teléfono de un cliente, por un formato estandarizado como '(XXX) XXX-XXXX' en un informe interno accesible por empleados sin permisos especiales?",
+      "opciones": [
+        "a) Obfuscación",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Tokenización",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible para protegerla sin eliminarla, como reemplazar parte de un número de teléfono con caracteres estándar.",
+      "id": "p14-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de identificación personal (PII), como el número de pasaporte de un cliente, por un valor genérico como 'PASAPORTE_XXX' en un documento interno accesible por empleados sin permisos especiales?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos (data masking)",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible reemplazándola con caracteres o valores genéricos, como se describe en el temario para proteger PII en documentos internos sin eliminarla por completo.",
+      "id": "p14-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de protección de datos, ¿qué técnica se utiliza cuando una organización reemplaza el número de matrícula de un vehículo en un documento público por un valor genérico como 'MATRÍCULA_XXX' para ocultar información sensible sin eliminarla por completo?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Hashing",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de la información sensible reemplazándola con caracteres genéricos, como en este caso, mostrando solo una parte identificable (MATRÍCULA_XXX) y ocultando el resto.",
+      "id": "p14-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos financieros internos de un empleado, como su número de cuenta bancaria, por un valor genérico como 'CUENTA_XXX' en informes de gestión accesibles a directivos sin permisos especiales?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos (data masking)",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible en documentos internos para proteger datos como PII o detalles financieros, sin eliminarlos por completo.",
+      "id": "p14-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza el número completo de un documento de identidad (como DNI o pasaporte) en un informe público por un formato estandarizado como 'DNI_XXX' para ocultar información sensible sin eliminarla por completo?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Obfuscación",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de la información sensible reemplazándola con caracteres o valores genéricos, como en este caso donde se muestra 'DNI_XXX' en lugar del número completo.",
+      "id": "p14-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de propiedad intelectual (IP) en documentos internos por versiones que mantienen el sentido original pero ocultan detalles críticos para evitar su reproducción exacta por terceros?",
+      "opciones": [
+        "Obfuscación",
+        "Tokenización",
+        "Enmascaramiento de datos",
+        "Segmentación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La ofuscación convierte código o datos legibles en versiones difíciles de interpretar, manteniendo la funcionalidad pero ocultando detalles críticos.",
+      "id": "p14-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una empresa de energía implementa un sistema de control industrial (ICS) donde los datos de telemetría de sensores críticos se protegen con las siguientes medidas: 1) Datos en tránsito cifrados con TLS 1.3, 2) Servidores en sala blindada con control de acceso físico, 3) Terminales solo permiten visualizar datos si el operador está autenticado con MFA y dentro de un geo-fencing de 100 metros, y 4) Datos en uso en RAM se protegen con ofuscación. Un atacante accede a un terminal fuera de la zona de geo-fencing pero no puede extraer información útil. ¿Qué principio de seguridad, combinado con el geo-fencing y el MFA, garantiza que el atacante no pueda interpretar los datos críticos?",
+      "opciones": [
+        "Principio de mínimo privilegio",
+        "Principio de confusión",
+        "Defensa en profundidad",
+        "Principio de soberanía de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El principio de confusión garantiza que los datos en uso en RAM, aunque accesibles, sean difíciles de interpretar debido a la ofuscación, incluso si el atacante accede al terminal.",
+      "id": "p14-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una empresa reemplaza los datos financieros internos de un empleado, como su salario anual, por un valor genérico como 'SALARIO_CONFIDENCIAL' en informes de gestión accesibles a directivos sin permisos especiales?",
+      "opciones": [
+        "Tokenización",
+        "Enmascaramiento de datos",
+        "Obfuscación",
+        "Restricciones de permisos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta parte de los datos sensibles (como el salario) para proteger información financiera, mostrando solo un valor genérico.",
+      "id": "p14-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza el número completo de una tarjeta de crédito en un documento interno por asteriscos, mostrando solo los últimos cuatro dígitos?",
+      "opciones": [
+        "Enmascaramiento de datos (data masking)",
+        "Tokenización",
+        "Obfuscación",
+        "Hashing"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible (como el número de tarjeta de crédito) para protegerla, mostrando solo los últimos dígitos como '****-****-****-1234'.",
+      "id": "p14-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de identificación personal (PII) en un informe público, como un comunicado oficial, por un formato que oculta parte de la información sensible sin eliminarla por completo, como mostrar solo las iniciales del nombre y los últimos cuatro dígitos del número de teléfono?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos (data masking)",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles para proteger información como PII o detalles financieros, mostrando solo una parte visible como en el ejemplo descrito.",
+      "id": "p14-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de protección de datos, ¿qué técnica se utiliza cuando una organización reemplaza los datos de identificación personal (PII) en un documento público, como un informe anual, por un formato que oculta parte de la información sensible sin eliminarla por completo, como mostrar solo las iniciales del nombre y los últimos tres dígitos del número de teléfono?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de la información sensible en documentos públicos o internos sin eliminarla por completo, mostrando solo fragmentos legibles para proteger datos como PII. Esta técnica no altera el formato original de los datos, solo los hace menos visibles.",
+      "id": "p14-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una empresa almacena información de tarjetas de crédito de sus clientes. ¿Qué estándar de seguridad debe cumplir para proteger estos datos según el temario?",
+      "opciones": [
+        "PCI DSS (Payment Card Industry Data Security Standard)",
+        "GDPR (Reglamento General de Protección de Datos)",
+        "HIPAA (Health Insurance Portability and Accountability Act)",
+        "SOX (Sarbanes-Oxley Act)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El estándar PCI DSS se aplica específicamente a la protección de datos de tarjetas de crédito y establece requisitos para su almacenamiento y transmisión.",
+      "id": "p14-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el concepto: Una organización reemplaza el nombre completo de un cliente en una base de datos interna por un valor genérico como 'CLIENTE_XXX' para ocultar información sensible sin eliminarla.",
+      "opciones": [
+        "Enmascaramiento de datos (data masking)",
+        "Tokenización",
+        "Obfuscación",
+        "Cifrado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible reemplazándola con caracteres genéricos como 'XXX' o 'CLIENTE_XXX' en bases de datos internas.",
+      "id": "p14-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza el número de teléfono de un cliente en un informe interno por un formato como '(XXX) XXX-XXXX', ocultando parte de la información sensible sin eliminarla por completo?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos oculta parte de los datos sensibles para proteger información como PII o detalles financieros, mostrando solo una parte legible (ejemplo: números de teléfono con asteriscos o formatos parciales).",
+      "id": "p14-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de identificación personal (PII) en un informe público, como un comunicado oficial, por un formato que oculta parte de la información sensible sin eliminarla por completo, como mostrar solo las iniciales del nombre y los últimos tres dígitos del número de teléfono?",
+      "opciones": [
+        "a) Obfuscación",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Tokenización",
+        "d) Cifrado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles para proteger información como PII o detalles financieros, mostrando solo los datos necesarios sin eliminarlos por completo.",
+      "id": "p14-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de identificación personal (PII), como el número de seguridad social de un cliente, por un valor genérico como 'XXX-XX-XXXX' en un informe interno accesible por empleados sin permisos especiales?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible (como el número de seguridad social) reemplazándola con caracteres genéricos, sin alterar la estructura original del dato.",
+      "id": "p14-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una empresa de salud implementa un sistema de gestión de historiales médicos donde los datos de los pacientes se almacenan en una base de datos cifrada con AES-256. Los médicos solo pueden acceder a los registros si su dispositivo está registrado dentro del hospital (geo-fencing) y se autentican con MFA. ¿Qué principio de seguridad garantiza que un atacante que interrumpe la comunicación cifrada entre el servidor y una terminal no pueda extraer información útil de los historiales médicos interceptados?",
+      "opciones": [
+        "Principio de confusión del cifrado (AES-256)",
+        "Principio de soberanía de datos",
+        "Principio de geolocalización",
+        "Principio de segmentación de datos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El principio de confusión garantiza que el texto cifrado con AES-256 sea irreconocible, incluso si el atacante conoce el algoritmo, haciendo que la información interceptada sea inútil.",
+      "id": "p14-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza el número de teléfono de un cliente en un informe interno por un formato como '(XXX) XXX-XXXX' para ocultar parte de la información sensible?",
+      "opciones": [
+        "Enmascaramiento de datos (data masking)",
+        "Tokenización",
+        "Cifrado",
+        "Hashing"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible (como el número de teléfono) reemplazándola con un formato genérico que muestra solo los últimos dígitos.",
+      "id": "p14-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza el nombre completo de un cliente en un informe público por un formato que oculta parte de la información sensible sin eliminarla por completo, como mostrar solo las iniciales del nombre y los últimos tres dígitos del número de teléfono?",
+      "opciones": [
+        "a) Enmascaramiento de datos (data masking)",
+        "b) Tokenización",
+        "c) Obfuscación",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles para proteger información como PII o detalles financieros, mostrando solo una parte legible. En este caso, se oculta parte del nombre y del número de teléfono.",
+      "id": "p14-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia principal existe entre los datos en tránsito y los datos en uso según el temario?",
+      "opciones": [
+        "Los datos en tránsito están cifrados y los datos en uso no pueden ser cifrados",
+        "Los datos en tránsito se transfieren por una red, mientras que los datos en uso están procesándose en la memoria RAM o CPU",
+        "Los datos en tránsito requieren permisos especiales, mientras que los datos en uso son públicos",
+        "Los datos en tránsito son datos regulados y los datos en uso no"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los datos en tránsito están en movimiento a través de una red, mientras que los datos en uso están siendo procesados en la memoria RAM o CPU.",
+      "id": "p14-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una técnica de protección de datos mencionada en el temario?",
+      "opciones": [
+        "Hashing",
+        "Cifrado",
+        "Fragmentación",
+        "Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona técnicas como cifrado, hashing, tokenización, ofuscación, enmascaramiento y segmentación, pero no fragmentación.",
+      "id": "p14-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de identificación personal (PII) en un informe público, como un comunicado oficial, por un formato que oculta parte de la información sensible sin eliminarla por completo, como mostrar solo las iniciales del nombre y los últimos dígitos del número de teléfono?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Enmascaramiento de datos (data masking)",
+        "c) Obfuscación",
+        "d) Cifrado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de la información sensible para protegerla sin eliminarla, como mostrar solo las iniciales del nombre y los últimos dígitos de un número de teléfono en un informe público.",
+      "id": "p14-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de propiedad intelectual (IP) en documentos internos por versiones que mantienen el sentido original pero ocultan detalles críticos mediante la alteración de su estructura o contenido, dificultando su reproducción exacta por terceros sin afectar su utilidad para los empleados autorizados?",
+      "opciones": [
+        "a) Obfuscación",
+        "b) Enmascaramiento de datos",
+        "c) Tokenización",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La ofuscación convierte datos o código legibles en versiones difíciles de interpretar para los humanos, manteniendo su funcionalidad pero ocultando detalles críticos, como se aplica a la propiedad intelectual en documentos internos.",
+      "id": "p14-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de protección de datos, ¿qué técnica se utiliza cuando una organización reemplaza los datos de identificación personal (PII), como el número de licencia de conducir de un cliente, por un valor genérico como 'LICENCIA_XXX' en un informe interno accesible por empleados sin permisos especiales?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos (data masking)",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de la información sensible reemplazándola con caracteres genéricos o símbolos, como 'XXX', para proteger PII sin eliminarla por completo.",
+      "id": "p14-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos consiste en ocultar parte de la información sensible en un documento público, como un informe anual, para proteger datos como PII o detalles financieros sin eliminarlos por completo?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Obfuscación",
+        "c) Enmascaramiento de datos",
+        "d) Segmentación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de los datos sensibles para proteger información como PII o detalles financieros, mostrando solo una parte de los mismos (ejemplo: últimos cuatro dígitos de una tarjeta de crédito) sin eliminarlos por completo.",
+      "id": "p14-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos financieros internos de un empleado, como su número de seguro social, por un valor genérico como 'SSN_XXX' en un informe accesible solo por el departamento de recursos humanos?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos (data masking)",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible (como un número de seguro social) reemplazándola con caracteres genéricos (ej. 'SSN_XXX'), permitiendo su uso sin revelar los datos originales.",
+      "id": "p14-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de desarrollo de software almacena su propiedad intelectual (IP) en servidores en la nube. Para cumplir con sus políticas internas de seguridad y evitar la filtración de detalles críticos de sus algoritmos patentados, implementa un sistema donde los archivos de código fuente solo pueden ser descargados si el usuario está autenticado con MFA, su dispositivo se encuentra dentro de las instalaciones corporativas (geo-fencing) y los datos en uso en memoria RAM están protegidos mediante técnicas de ofuscación que impiden su interpretación directa por herramientas de depuración. Durante una auditoría de seguridad, se detecta que un empleado intenta acceder a los archivos desde una ubicación remota usando una VPN corporativa, pero el sistema niega el acceso. ¿Qué principio de seguridad, combinado con el geo-fencing y el MFA, garantiza que los detalles críticos de la propiedad intelectual no puedan ser extraídos ni interpretados, incluso si un atacante logra acceder al terminal remoto?",
+      "opciones": [
+        "a) El cifrado de datos en reposo con AES-256, que asegura que los archivos no puedan ser leídos sin la clave correspondiente.",
+        "b) La ofuscación de código en uso, que convierte el código legible en versiones difíciles de interpretar para humanos y herramientas de depuración.",
+        "c) La tokenización de los archivos de código fuente, que reemplaza el código original por tokens temporales sin relación matemática con el dato original.",
+        "d) El enmascaramiento de datos, que oculta parte de la información sensible en los archivos para proteger detalles críticos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La ofuscación de código en uso protege los datos mientras están siendo procesados en memoria RAM, haciendo que el código sea ilegible para herramientas de depuración o análisis, incluso si un atacante accede al terminal.",
+      "id": "p14-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de identificación personal (PII), como el número de seguridad social de un cliente, por un valor genérico como 'XXX-XX-1234' en un informe interno accesible por empleados sin permisos especiales?",
+      "opciones": [
+        "Tokenización",
+        "Enmascaramiento de datos",
+        "Hashing",
+        "Segmentación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible reemplazando dígitos con caracteres genéricos como 'XXX'.",
+      "id": "p14-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una empresa reemplaza el número completo de una tarjeta de crédito en un documento interno por asteriscos, mostrando solo los últimos cuatro dígitos?",
+      "opciones": [
+        "Tokenización",
+        "Enmascaramiento de datos (data masking)",
+        "Cifrado",
+        "Obfuscación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible para proteger datos como PII o detalles financieros, mostrando solo una parte visible como en los recibos de tarjetas de crédito.",
+      "id": "p14-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de protección de datos, ¿qué técnica de protección se utiliza cuando una organización reemplaza los datos financieros internos de un empleado, como su número de cuenta bancaria, por un valor genérico como 'CUENTA_XXX' en informes de gestión accesibles solo a directivos autorizados?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Enmascaramiento de datos",
+        "c) Obfuscación",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible reemplazándola por caracteres genéricos, como en el ejemplo de la cuenta bancaria, preservando la utilidad del dato sin exponer la información completa.",
+      "id": "p14-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de protección de datos, ¿qué técnica se utiliza cuando una organización reemplaza los datos de identificación personal (PII) como la dirección completa de un cliente por un formato genérico como 'CIUDAD_XXX' en informes internos accesibles por empleados sin permisos especiales?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos (data masking)",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de la información sensible reemplazándola con caracteres genéricos o valores estandarizados, manteniendo la estructura útil para el uso interno sin exponer datos críticos.",
+      "id": "p14-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de identificación personal (PII), como el número de teléfono de un cliente, por un formato estandarizado como 'XXX-XXX-XXXX' en un informe interno accesible por empleados sin permisos especiales?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos (data masking)",
+        "d) Obfuscación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos (data masking) oculta parte de la información sensible para proteger datos como PII, mostrando solo una parte legible mientras el resto se reemplaza por caracteres genéricos.",
+      "id": "p14-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza un número de identificación fiscal (NIF) completo en un documento público por un formato que oculta parte de la información sensible sin eliminarla por completo, como mostrar solo las iniciales de la provincia y los últimos cuatro dígitos del NIF?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Enmascaramiento de datos",
+        "c) Tokenización",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible en documentos públicos, reemplazando caracteres por símbolos como asteriscos o mostrando solo parte de los datos para protegerlos sin eliminarlos por completo.",
+      "id": "p14-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de propiedad intelectual (IP) en documentos internos por versiones que mantienen el sentido original pero ocultan detalles críticos mediante la alteración de su estructura o contenido, dificultando su reproducción exacta por terceros sin afectar su utilidad para los empleados autorizados?",
+      "opciones": [
+        "a) Obfuscación",
+        "b) Tokenización",
+        "c) Enmascaramiento de datos",
+        "d) Cifrado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La obfuscación convierte datos o código legible en versiones difíciles de interpretar para humanos, manteniendo su funcionalidad pero ocultando detalles críticos. Esta técnica es común para proteger propiedad intelectual (IP) en documentos internos.",
+      "id": "p14-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de protección de datos se utiliza cuando una organización reemplaza el número de teléfono de un cliente en un informe público por un formato como 'XXX-XXX-XXXX', ocultando parte de la información sensible sin eliminarla por completo?",
+      "opciones": [
+        "a) Cifrado",
+        "b) Hashing",
+        "c) Enmascaramiento de datos",
+        "d) Tokenización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El enmascaramiento de datos oculta parte de la información sensible (como un número de teléfono) reemplazando caracteres con símbolos o valores genéricos, manteniendo su utilidad para quienes deben verlo sin revelar la información completa.",
+      "id": "p14-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de protección de datos se utiliza cuando una organización reemplaza los datos de identificación personal (PII) en un informe público, como un comunicado oficial, por iniciales y un número de identificación aleatorio para ocultar información sensible sin eliminarla por completo?",
+      "opciones": [
+        "a) Tokenización",
+        "b) Enmascaramiento de datos",
+        "c) Ofuscación",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enmascaramiento de datos oculta parte de los datos sensibles reemplazándolos con caracteres genéricos o formatos estandarizados, como iniciales y números aleatorios, para proteger PII en documentos públicos sin eliminarlos por completo.",
+      "id": "p14-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de servicios financieros implementa un sistema para gestionar los historiales crediticios de sus clientes. Para cumplir con regulaciones de privacidad y evitar la exposición de datos sensibles, decide aplicar las siguientes medidas: 1) Los archivos de historiales en reposo se cifran con AES-256, 2) Los datos en tránsito se protegen con TLS 1.3, 3) Durante el procesamiento de consultas en tiempo real, los datos en uso en memoria RAM se ofuscan mediante técnicas de *code obfuscation*, 4) Los usuarios solo pueden acceder a los historiales si su dispositivo está dentro de la red corporativa (geo-fencing) y se autentican con MFA, y 5) Los permisos de acceso se asignan según roles, limitando la visualización de datos completos a empleados autorizados. Un atacante logra infiltrarse en la red interna y accede a un terminal ubicado fuera del área de geo-fencing, pero no puede extraer información útil de los historiales crediticios almacenados en memoria RAM. ¿Qué principio de seguridad, combinado con el geo-fencing y el MFA, garantiza que el atacante no pueda interpretar los datos críticos en tiempo real, incluso si logra acceder al terminal?",
+      "opciones": [
+        "a) Integridad de los datos, ya que los hashes garantizan que los datos no han sido alterados durante el proceso.",
+        "b) Ofuscación de código, ya que convierte los datos legibles en versiones difíciles de interpretar para los humanos, incluso si están en memoria RAM.",
+        "c) Cifrado simétrico, ya que garantiza que los datos en uso estén protegidos mediante un algoritmo conocido como AES-256.",
+        "d) Tokenización, ya que reemplaza los datos sensibles con tokens temporales que no pueden ser reutilizados, incluso si son interceptados."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La ofuscación de código (code obfuscation) convierte los datos legibles en versiones difíciles de interpretar para los humanos, lo que impide que un atacante pueda extraer información útil de los datos en uso en memoria RAM, incluso si accede al terminal.",
+      "id": "p14-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa de inteligencia artificial (IA) almacena modelos de machine learning propietarios en servidores en la nube. Para proteger estos secretos comerciales, implementa un sistema donde: 1) Los archivos de modelos se cifran con AES-256 en reposo, 2) La comunicación entre servidores se protege con TLS 1.3 en tránsito, 3) Durante el entrenamiento de los modelos, los datos en uso en memoria RAM se ofuscan mediante técnicas avanzadas de *code obfuscation* que convierten el código en una versión completamente ilegible para herramientas de ingeniería inversa, y 4) Los usuarios solo pueden acceder a los modelos si su dispositivo está autenticado con MFA y se encuentra dentro de las instalaciones corporativas (geo-fencing). Un atacante logra infiltrarse en la red interna y accede a un terminal ubicado fuera de la zona de geo-fencing, pero no puede extraer ni interpretar los parámetros críticos del modelo almacenados en memoria RAM. ¿Qué principio de seguridad, combinado con el geo-fencing y el MFA, garantiza que el atacante no pueda recuperar información útil sobre el modelo, incluso si logra acceder al terminal?",
+      "opciones": [
+        "a) El principio de *defense in depth*, que exige múltiples capas de seguridad para proteger los datos en todos sus estados (reposo, tránsito y uso).",
+        "b) El principio de *least privilege*, que limita el acceso a los datos solo a usuarios autorizados y con permisos mínimos necesarios.",
+        "c) El principio de *data minimization*, que reduce la cantidad de datos sensibles almacenados o procesados para disminuir el riesgo de exposición.",
+        "d) El principio de *confusión* (confusion), que garantiza que el texto cifrado sea irreconocible y no pueda ser relacionado con el dato original sin la clave de descifrado."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El principio de *defense in depth* exige múltiples capas de seguridad (como el cifrado en reposo, TLS en tránsito, ofuscación en uso, MFA y geo-fencing) para proteger los datos en todos sus estados. Este enfoque combinado garantiza que, incluso si una capa falla, las demás siguen protegiendo los datos.",
+      "id": "p14-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Data Types and Classifications",
+      "youtubeId": "R0W0_gZCVzk"
+    },
+    {
+      "titulo": "States of Data",
+      "youtubeId": "71RQaYQ4QSw"
+    },
+    {
+      "titulo": "Protecting Data",
+      "youtubeId": "leX_Qa7wqB4"
+    }
+  ]
+}

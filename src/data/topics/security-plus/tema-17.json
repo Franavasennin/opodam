@@ -1,0 +1,1392 @@
+{
+  "id": 17,
+  "titulo": "4.2 · Gestión de activos",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "GESTIÓN DE ACTIVOS (ASSET MANAGEMENT) es un proceso fundamental en cualquier organización para controlar y supervisar todos los recursos tecnológicos, desde su adquisición hasta su eliminación. Este proceso garantiza que los activos se utilicen de manera eficiente, cumplan con normativas y se protejan adecuadamente durante todo su ciclo de vida. A continuación, se detallan los aspectos clave de este proceso.\n\n\n\nEL PROCESO DE ADQUISICIÓN DE ACTIVOS\n\n\n\nEl proceso de adquisición de activos suele comenzar con una solicitud del usuario final, quien identifica una necesidad específica de hardware o software. Esta solicitud se canaliza a través del departamento de Tecnologías de la Información (IT) y el área de compras, que evalúan aspectos como el presupuesto disponible y la viabilidad de la compra. El proceso incluye:\n\n- Análisis presupuestario: Verificar si el departamento o la organización puede asumir el costo del activo.\n- Aprobaciones formales: Requiere la firma de responsables en IT, compras y, en muchos casos, la dirección de la empresa.\n- Negociación con proveedores: Se discuten precios, términos de licencia y detalles contractuales hasta llegar a un acuerdo mutuo.\n- Compra y entrega: El proveedor entrega el activo y emite una factura con términos de pago, que pueden ser inmediatos o diferidos (por ejemplo, 30 o 60 días).\n\n\n\n\nSISTEMAS DE SEGUIMIENTO DE ACTIVOS (ASSET TRACKING SYSTEMS)\n\n\n\nUna vez adquirido el activo, se registra en un sistema centralizado de seguimiento de activos. Este sistema permite gestionar el ciclo de vida completo del activo, desde su recepción hasta su disposición final. Entre sus funciones principales destacan:\n\n- Asignación de propiedad: Cada activo se vincula a un usuario o departamento responsable, lo que facilita la gestión y el acceso en caso de mantenimiento o actualizaciones.\n- Clasificación de activos: Se categorizan por tipo (por ejemplo, portátil, escritorio, dispositivo móvil) y por naturaleza (hardware o software). Esta clasificación es crucial para aspectos fiscales y contables.\n- Inventario y ubicación: Permite realizar inventarios completos de los dispositivos en la red, como laptops, routers o cables, y conocer su ubicación física.\n- Soporte técnico: Facilita la creación de tickets de soporte al incluir detalles como el modelo y la marca del dispositivo, lo que agiliza la resolución de incidencias.\n- Enumeración de componentes: Un activo como un escritorio puede desglosarse en sus componentes internos (CPU, memoria, unidades de almacenamiento, periféricos) para un seguimiento más detallado.\n\n\n\n\nETIQUETADO Y SEGURIDAD FÍSICA\n\n\n\nPara mejorar la trazabilidad y la seguridad, los activos pueden etiquetarse con un número o código de barras (asset tag). Esta etiqueta cumple dos propósitos:\n\n- Identificación única: Permite asociar el activo con un registro en el sistema de seguimiento.\n- Seguridad: Si el dispositivo se pierde o es robado, la etiqueta visible disuade su uso indebido y facilita su recuperación.\n\n\n\n\nSANITIZACIÓN DE MEDIOS DE ALMACENAMIENTO\n\n\n\nCuando un activo llega al final de su vida útil o se reasigna a otro usuario, es fundamental garantizar que los datos almacenados en sus medios (como discos duros) sean eliminados de forma segura. La sanización de medios depende del destino final del dispositivo:\n\n- Eliminación total: Si el dispositivo se desecha o recicla, se puede optar por borrar completamente los datos o destruir físicamente el medio de almacenamiento.\n- Reutilización interna: Si el dispositivo se reasignará a otro empleado, se deben eliminar solo los archivos sensibles para evitar fugas de información.\n\n\n\n\nMÉTODOS DE ELIMINACIÓN DE DATOS\n\n\n\nExisten varias técnicas para garantizar que los datos no puedan ser recuperados:\n\n- Borrado seguro: Utiliza utilidades especializadas para eliminar archivos de manera que no sean recuperables. Este método es adecuado cuando el dispositivo se reutilizará internamente.\n- Destrucción física: Métodos como el uso de trituradoras industriales, taladros o martillos para perforar los platos de los discos duros. También se puede incinerar el medio de almacenamiento.\n- Degaussing: Aplica un campo electromagnético fuerte para borrar los datos y, en el caso de discos duros, inutilizar el dispositivo.\n\n\n\n\nCERTIFICADO DE DESTRUCCIÓN (CERTIFICATE OF DESTRUCTION)\n\n\n\nCuando una organización externaliza la destrucción de medios de almacenamiento, es esencial obtener un certificado de destrucción. Este documento confirma que los medios han sido destruidos de manera segura y cumple con normativas y estándares de seguridad. El certificado incluye detalles como:\n\n- Identificación de los medios destruidos.\n- Método de destrucción utilizado.\n- Fecha y responsable de la destrucción.\n\n\n\n\nRETENCIÓN DE DATOS (DATA RETENTION)\n\n\n\nLa retención de datos es el proceso de conservar información durante un período determinado, ya sea por obligación legal, normativa o como buena práctica. Este proceso abarca:\n\n- Fuentes originales de datos: Archivos, bases de datos y sistemas donde se generan los datos.\n- Copias y respaldos: Incluye copias de seguridad y cualquier otra réplica de los datos en la organización.\n- Políticas y procedimientos: Deben estar claramente definidos para cumplir con requisitos legales o internos. Por ejemplo, algunas organizaciones deben conservar correos electrónicos durante años o almacenar datos financieros por un plazo específico.\n\n\n\n\nIMPORTANCIA DE LA RETENCIÓN DE DATOS\n\n\n\nLa retención de datos no solo cumple con obligaciones legales, sino que también es una práctica recomendada para:\n\n- Recuperación ante desastres: Permite restaurar datos en caso de pérdida o fallo del sistema principal.\n- Cumplimiento normativo: Evita sanciones por incumplimiento de regulaciones como GDPR, HIPAA o leyes locales.\n- Protección contra pérdidas accidentales: Facilita la recuperación de datos eliminados o corrompidos.\n\n\n\n\nTIPOS DE DATOS Y SUS REQUISITOS DE RETENCIÓN\n\n\n\nNo todos los datos requieren el mismo período de retención. Es fundamental identificar el tipo de datos y aplicar las políticas correspondientes:\n\n- Datos financieros: Suelen requerir retención prolongada para auditorías y cumplimiento fiscal.\n- Datos personales: Deben gestionarse según normativas de privacidad, como el derecho al olvido.\n- Registros de comunicaciones: Correos electrónicos o mensajes pueden estar sujetos a retención obligatoria.\n- Datos operativos: Información crítica para la continuidad del negocio puede necesitar retención indefinida.\n\n\n\n\nBUENAS PRÁCTICAS EN GESTIÓN DE ACTIVOS\n\n\n\nPara implementar una gestión de activos efectiva, las organizaciones deben:\n\n- Documentar todos los activos: Registrar cada dispositivo, software y componente desde su adquisición.\n- Establecer políticas claras: Definir procesos para la adquisición, uso, mantenimiento y disposición de activos.\n- Capacitar al personal: Asegurar que los empleados comprendan la importancia de la gestión de activos y sigan los procedimientos establecidos.\n- Realizar auditorías periódicas: Verificar la precisión de los registros y la ubicación de los activos.\n- Integrar con otros sistemas: Conectar el sistema de seguimiento de activos con herramientas de seguridad, como SIEM (Security Information and Event Management) o DLP (Data Loss Prevention), para mejorar la visibilidad y protección.\n\n\n\n\nBENEFICIOS DE UNA GESTIÓN DE ACTIVOS EFICAZ\n\n\n\nUna gestión de activos bien estructurada aporta múltiples ventajas:\n\n- Reducción de costos: Evita compras duplicadas o la pérdida de activos.\n- Mejora de la seguridad: Minimiza el riesgo de fugas de datos o accesos no autorizados.\n- Cumplimiento normativo: Garantiza que la organización cumpla con leyes y regulaciones aplicables.\n- Optimización de recursos: Permite reutilizar activos y maximizar su vida útil.\n- Facilita la toma de decisiones: Proporciona datos precisos para planificar inversiones en tecnología.\n\n\n\n\nDESAFÍOS EN LA GESTIÓN DE ACTIVOS\n\n\n\nAunque la gestión de activos es esencial, también presenta desafíos que las organizaciones deben abordar:\n\n- Complejidad en entornos híbridos: Gestionar activos en la nube, locales y móviles requiere herramientas y procesos adaptados.\n- Actualización constante: Los activos tecnológicos evolucionan rápidamente, lo que exige mantener los registros actualizados.\n- Cumplimiento de múltiples normativas: Diferentes sectores y regiones tienen requisitos distintos para la gestión de activos y datos.\n- Resistencia al cambio: Los empleados pueden resistirse a seguir nuevos procesos o utilizar sistemas de seguimiento.\n\n\n\n\nHERRAMIENTAS PARA LA GESTIÓN DE ACTIVOS\n\n\n\nExisten diversas herramientas y soluciones tecnológicas que facilitan la gestión de activos, como:\n\n- Software de seguimiento de activos: Herramientas como ServiceNow, BMC Helix o SolarWinds permiten gestionar inventarios, asignar activos y generar informes.\n- Sistemas de gestión de configuración (CMDB): Ayudan a mantener un registro actualizado de los activos y sus relaciones.\n- Plataformas de seguridad integradas: Soluciones como SIEM o DLP pueden correlacionarse con los datos de activos para mejorar la detección de amenazas.\n- Soluciones en la nube: Servicios como AWS Asset Management o Azure Resource Manager permiten gestionar activos en entornos cloud.\n\n\n\n\nCONCLUSIÓN\n\n\n\nLa gestión de activos es un pilar fundamental en la ciberseguridad y la administración eficiente de una organización. Desde la adquisición hasta la disposición final, cada etapa del ciclo de vida de un activo debe gestionarse con precisión para garantizar seguridad, cumplimiento y eficiencia operativa. Implementar procesos robustos y utilizar herramientas adecuadas no solo protege los datos y recursos de la organización, sino que también optimiza la inversión en tecnología y reduce riesgos asociados a la pérdida o mal uso de activos."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Gestión de Activos] --> B[Proceso de Adquisición]\nA --> C[Sistema de Seguimiento de Activos]\nA --> D[Sanitización de Medios]\nA --> E[Retención de Datos]\nA --> F[Buenas Prácticas]\n\nB --> B1[Solicitud del usuario final]\nB --> B2[Evaluación presupuestaria]\nB --> B3[Aprobaciones formales]\nB --> B4[Negociación con proveedores]\nB --> B5[Compra y entrega]\n\nC --> C1[Asignación de propiedad]\nC --> C2[Clasificación de activos]\nC --> C3[Inventario y ubicación]\nC --> C4[Soporte técnico]\nC --> C5[Enumeración de componentes]\n\nD --> D1[Borrado seguro]\nD --> D2[Destrucción física]\nD --> D3[Degaussing]\nD --> D4[Certificado de Destrucción]\n\nE --> E1[Fuentes originales de datos]\nE --> E2[Copias y respaldos]\nE --> E3[Políticas y procedimientos]\n\nF --> F1[Documentación de activos]\nF --> F2[Políticas claras]\nF --> F3[Capacitación del personal]\nF --> F4[Auditorías periódicas]\nF --> F5[Integración con otros sistemas]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc17-01",
+      "pregunta": "¿Qué es la gestión de activos (Asset Management) y por qué es importante en ciberseguridad?",
+      "respuesta": "La gestión de activos es el proceso de controlar y supervisar todos los recursos tecnológicos de una organización, desde su adquisición hasta su eliminación. Es importante en ciberseguridad porque garantiza que los activos se protejan adecuadamente, se utilicen de manera eficiente y cumplan con normativas durante todo su ciclo de vida."
+    },
+    {
+      "id": "fc17-02",
+      "pregunta": "¿Cuáles son los pasos principales del proceso de adquisición de activos?",
+      "respuesta": "Los pasos principales son: solicitud del usuario final, evaluación presupuestaria, aprobaciones formales, negociación con proveedores y compra/entrega del activo."
+    },
+    {
+      "id": "fc17-03",
+      "pregunta": "¿Qué funciones cumple un sistema de seguimiento de activos (Asset Tracking System)?",
+      "respuesta": "Un sistema de seguimiento de activos permite asignar propiedad, clasificar activos, realizar inventarios, gestionar soporte técnico y enumerar componentes internos de los dispositivos."
+    },
+    {
+      "id": "fc17-04",
+      "pregunta": "¿Qué es un asset tag y cuál es su propósito?",
+      "respuesta": "Un asset tag es una etiqueta con un número o código de barras que se coloca en un activo. Su propósito es identificar de manera única el activo en el sistema de seguimiento y actuar como medida de seguridad en caso de pérdida o robo."
+    },
+    {
+      "id": "fc17-05",
+      "pregunta": "¿Qué métodos se pueden usar para sanitizar medios de almacenamiento cuando un activo se reasigna o desecha?",
+      "respuesta": "Los métodos incluyen borrado seguro, destrucción física (con trituradoras, taladros o martillos), degaussing y, en algunos casos, incineración."
+    },
+    {
+      "id": "fc17-06",
+      "pregunta": "¿Qué es un certificado de destrucción (Certificate of Destruction) y por qué es importante?",
+      "respuesta": "Es un documento que confirma que los medios de almacenamiento han sido destruidos de manera segura. Es importante porque cumple con normativas y garantiza que los datos no puedan ser recuperados."
+    },
+    {
+      "id": "fc17-07",
+      "pregunta": "¿Qué es la retención de datos (Data Retention) y qué aspectos abarca?",
+      "respuesta": "La retención de datos es el proceso de conservar información durante un período determinado. Abarca fuentes originales, copias, respaldos y cualquier otra réplica de los datos en la organización."
+    },
+    {
+      "id": "fc17-08",
+      "pregunta": "¿Por qué es importante la retención de datos para una organización?",
+      "respuesta": "Es importante porque cumple con obligaciones legales, facilita la recuperación ante desastres, protege contra pérdidas accidentales y evita sanciones por incumplimiento normativo."
+    },
+    {
+      "id": "fc17-09",
+      "pregunta": "¿Qué tipos de datos suelen requerir retención prolongada y por qué?",
+      "respuesta": "Los datos financieros y personales suelen requerir retención prolongada debido a obligaciones fiscales, auditorías y cumplimiento de normativas como GDPR o HIPAA."
+    },
+    {
+      "id": "fc17-10",
+      "pregunta": "¿Qué buenas prácticas se recomiendan para una gestión de activos efectiva?",
+      "respuesta": "Documentar todos los activos, establecer políticas claras, capacitar al personal, realizar auditorías periódicas e integrar el sistema con otras herramientas de seguridad."
+    },
+    {
+      "id": "fc17-11",
+      "pregunta": "¿Qué herramientas tecnológicas pueden ayudar en la gestión de activos?",
+      "respuesta": "Herramientas como ServiceNow, BMC Helix, SolarWinds, sistemas de gestión de configuración (CMDB), plataformas SIEM/DLP y soluciones en la nube como AWS Asset Management."
+    },
+    {
+      "id": "fc17-12",
+      "pregunta": "¿Cuáles son los beneficios de una gestión de activos bien estructurada?",
+      "respuesta": "Reducción de costos, mejora de la seguridad, cumplimiento normativo, optimización de recursos y facilitación de la toma de decisiones en inversiones tecnológicas."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un paso típico en el proceso de adquisición de activos según el temario?",
+      "opciones": [
+        "Análisis presupuestario para verificar la viabilidad económica del activo.",
+        "Negociación con proveedores para definir términos de licencia y precios.",
+        "Sanitización de medios de almacenamiento antes de la entrega del activo.",
+        "Firma de aprobaciones formales por responsables de IT, compras y dirección."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La sanitización de medios de almacenamiento ocurre al final del ciclo de vida del activo, no durante su adquisición. Los pasos típicos en la adquisición incluyen análisis presupuestario, negociación con proveedores y firmas de aprobación.",
+      "id": "p17-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un sistema de seguimiento de activos permite realizar todas las siguientes funciones EXCEPTO:",
+      "opciones": [
+        "Asignar propiedad de un activo a un usuario o departamento específico.",
+        "Realizar inventarios completos de dispositivos en la red y su ubicación física.",
+        "Generar automáticamente certificados de destrucción para medios de almacenamiento.",
+        "Facilitar la creación de tickets de soporte técnico con detalles del dispositivo."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los certificados de destrucción se generan al externalizar la destrucción de medios, no como función principal de un sistema de seguimiento de activos. Este sistema se enfoca en asignación, inventario, soporte y clasificación de activos.",
+      "id": "p17-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué método de eliminación de datos es más adecuado cuando un activo se reasignará a otro empleado dentro de la misma organización?",
+      "opciones": [
+        "Borrado seguro utilizando utilidades especializadas.",
+        "Destrucción física del medio de almacenamiento.",
+        "Degaussing para inutilizar el dispositivo.",
+        "Incineración del medio de almacenamiento."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El borrado seguro es el método recomendado cuando el dispositivo se reutilizará internamente, ya que elimina archivos sensibles sin destruir el hardware.",
+      "id": "p17-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión de activos, ¿qué propósito cumple principalmente una etiqueta de activo (asset tag)?",
+      "opciones": [
+        "Identificar de manera única el activo y asociarlo con un registro en el sistema de seguimiento.",
+        "Almacenar información confidencial sobre el activo para evitar accesos no autorizados.",
+        "Bloquear físicamente el dispositivo para prevenir su uso indebido.",
+        "Registrar automáticamente el activo en la base de datos de la organización."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La etiqueta de activo cumple dos propósitos principales: identificar de manera única el activo y asociarlo con un registro en el sistema de seguimiento.",
+      "id": "p17-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización debe conservar correos electrónicos durante 7 años por obligación legal. ¿Qué concepto del temario describe mejor este requisito?",
+      "opciones": [
+        "Sanitización de medios de almacenamiento",
+        "Retención de datos (Data Retention)",
+        "Certificado de destrucción",
+        "Clasificación de activos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La retención de datos se refiere al proceso de conservar información durante un período determinado por obligación legal o normativa, como en este caso con los correos electrónicos.",
+      "id": "p17-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre la destrucción física de medios de almacenamiento es FALSA?",
+      "opciones": [
+        "La destrucción física inutiliza el dispositivo y elimina la posibilidad de recuperar datos.",
+        "Se puede realizar mediante trituradoras industriales, taladros o martillos.",
+        "Es el método preferido cuando el dispositivo se reasignará a otro empleado.",
+        "El degaussing es un método alternativo que aplica un campo electromagnético fuerte."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La destrucción física es adecuada para dispositivos que se desechan o reciclan, no para reasignación. En este caso, se recomienda el borrado seguro.",
+      "id": "p17-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa recibe un nuevo servidor para su departamento de TI. Según el proceso de adquisición descrito en el temario, ¿qué paso debe realizarse ANTES de la entrega del activo?",
+      "opciones": [
+        "Firmar un certificado de destrucción para los medios de almacenamiento antiguos.",
+        "Realizar una auditoría de los activos actuales para verificar la necesidad del nuevo servidor.",
+        "Negociar con el proveedor los términos de licencia y el precio del servidor.",
+        "Asignar una etiqueta de activo al servidor antes de su instalación."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Antes de la entrega del activo, se debe negociar con el proveedor los términos de licencia y el precio, como parte del proceso de adquisición.",
+      "id": "p17-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué herramienta o sistema NO está directamente relacionado con la gestión de activos según el temario?",
+      "opciones": [
+        "ServiceNow o BMC Helix (software de seguimiento de activos)",
+        "SIEM (Security Information and Event Management)",
+        "AWS Asset Management (solución en la nube)",
+        "GDPR (Reglamento General de Protección de Datos)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "GDPR es una normativa de privacidad, no una herramienta o sistema de gestión de activos. Las otras opciones son herramientas mencionadas en el temario.",
+      "id": "p17-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado reporta la pérdida de su laptop etiquetada con un asset tag. ¿Qué acción NO debería realizarse en este escenario?",
+      "opciones": [
+        "Verificar en el sistema de seguimiento de activos si la laptop está asignada al empleado.",
+        "Generar un certificado de destrucción para la laptop perdida.",
+        "Bloquear el acceso remoto o deshabilitar el dispositivo si es posible.",
+        "Notificar al departamento de seguridad o TI para iniciar un protocolo de recuperación."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Generar un certificado de destrucción es inapropiado en este escenario, ya que la laptop podría recuperarse. El certificado solo se aplica cuando se destruyen medios de almacenamiento de manera segura.",
+      "id": "p17-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de seguimiento de activos que permite desglosar un escritorio en sus componentes internos (CPU, memoria, unidades de almacenamiento). ¿Qué función del sistema describe mejor esta capacidad?",
+      "opciones": [
+        "Enumeración de componentes",
+        "Asignación de propiedad",
+        "Inventario y ubicación",
+        "Clasificación de activos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La enumeración de componentes permite desglosar un activo en sus partes internas para un seguimiento más detallado, como en este ejemplo con el escritorio.",
+      "id": "p17-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el proceso de adquisición de activos, ¿qué paso se realiza inmediatamente DESPUÉS de la negociación con proveedores?",
+      "opciones": [
+        "a) Análisis presupuestario",
+        "b) Aprobaciones formales",
+        "c) Compra y entrega",
+        "d) Solicitud del usuario final"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Según el temario, tras la negociación con proveedores, el siguiente paso es la compra y entrega del activo, donde el proveedor emite una factura con términos de pago.",
+      "id": "p17-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué función NO cumple un sistema de seguimiento de activos cuando se desglosan los componentes internos de un escritorio (CPU, memoria, unidades de almacenamiento)?",
+      "opciones": [
+        "a) Asignación de propiedad por componente",
+        "b) Clasificación fiscal y contable detallada",
+        "c) Soporte técnico automatizado sin intervención humana",
+        "d) Inventario preciso de hardware interno"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que el desglose de componentes permite asignación de propiedad, clasificación y inventario, pero no automatiza el soporte técnico sin intervención humana.",
+      "id": "p17-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión de activos, ¿qué método de eliminación de datos es el MENOS adecuado para un disco duro que será reasignado a otro empleado?",
+      "opciones": [
+        "a) Borrado seguro con utilidades especializadas",
+        "b) Degaussing",
+        "c) Destrucción física",
+        "d) Formateo rápido del sistema de archivos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario indica que la destrucción física es un método para medios que se desechan o reciclan, no para reutilización interna.",
+      "id": "p17-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización recibe un certificado de destrucción de medios de almacenamiento. ¿Qué información NO debe incluirse en dicho certificado según el temario?",
+      "opciones": [
+        "a) Identificación única de los medios destruidos",
+        "b) Nombre del empleado que reportó la pérdida del activo",
+        "c) Método de destrucción utilizado",
+        "d) Fecha y responsable de la destrucción"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario especifica que el certificado debe incluir identificación de medios, método, fecha y responsable, pero no datos del empleado que reportó la pérdida.",
+      "id": "p17-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un propósito principal de una etiqueta de activo (asset tag) en un dispositivo?",
+      "opciones": [
+        "a) Facilitar la identificación única del activo en el sistema de seguimiento",
+        "b) Disuadir el uso indebido del dispositivo en caso de pérdida o robo",
+        "c) Automatizar el proceso de actualización de firmware del dispositivo",
+        "d) Asociar el activo con un usuario o departamento responsable"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario señala que las etiquetas de activo sirven para identificación única y disuasión de uso indebido, pero no para automatizar actualizaciones de firmware.",
+      "id": "p17-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado de TI recibe un nuevo servidor para el departamento. Según el temario, ¿qué acción debe realizarse ANTES de asignar el activo a un usuario?",
+      "opciones": [
+        "a) Registrar el activo en el sistema de seguimiento de activos",
+        "b) Instalar el sistema operativo y configurar el hardware",
+        "c) Realizar un backup completo de los datos del servidor",
+        "d) Firmar un acuerdo de confidencialidad con el proveedor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario indica que el primer paso tras recibir un activo es registrarlo en el sistema de seguimiento de activos antes de asignarlo a un usuario.",
+      "id": "p17-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una organización debe conservar correos electrónicos durante 5 años por obligación legal, ¿qué concepto del temario describe mejor este requisito?",
+      "opciones": [
+        "a) Sanitización de medios de almacenamiento",
+        "b) Retención de datos (Data Retention)",
+        "c) Certificado de destrucción",
+        "d) Clasificación de activos por naturaleza"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la retención de datos como el proceso de conservar información durante un período determinado por obligación legal o normativa.",
+      "id": "p17-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa externaliza la destrucción de discos duros obsoletos. ¿Qué documento debe exigirse al proveedor para garantizar el cumplimiento normativo?",
+      "opciones": [
+        "a) Informe de borrado seguro",
+        "b) Certificado de destrucción (Certificate of Destruction)",
+        "c) Factura detallada de los servicios prestados",
+        "d) Registro de inventario de activos eliminados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario establece que un certificado de destrucción es esencial para confirmar que los medios han sido destruidos de manera segura y cumplen con normativas.",
+      "id": "p17-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado reporta la pérdida de su laptop etiquetada con un asset tag. ¿Qué acción NO debería realizarse en este escenario según las buenas prácticas del temario?",
+      "opciones": [
+        "a) Bloquear el acceso remoto al dispositivo mediante el sistema de gestión de activos",
+        "b) Notificar al departamento legal para evaluar posibles implicaciones legales",
+        "c) Reutilizar inmediatamente el asset tag en otro dispositivo para mantener el inventario",
+        "d) Realizar una auditoría para verificar si el activo estaba asignado correctamente"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario destaca la importancia de no reutilizar asset tags en otros dispositivos tras una pérdida, ya que esto afecta la trazabilidad y seguridad del inventario.",
+      "id": "p17-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización ha adquirido un lote de 50 servidores para actualizar su infraestructura de TI. Tras la entrega física, el departamento de TI debe realizar una serie de pasos antes de proceder a su instalación y asignación a usuarios. Según el temario, ¿qué acción NO es parte del proceso de adquisición de activos en este escenario?",
+      "opciones": [
+        "a) Verificar que los servidores cumplan con las especificaciones técnicas contratadas mediante pruebas de rendimiento y compatibilidad con el entorno existente.",
+        "b) Registrar cada servidor en el sistema de seguimiento de activos, asignando un asset tag único y vinculándolo al proveedor y número de factura.",
+        "c) Firmar un certificado de destrucción por parte del proveedor para garantizar que los datos residuales en los discos duros hayan sido eliminados antes de la entrega.",
+        "d) Documentar en el sistema de seguimiento la ubicación física prevista (rack, sala, zona) donde se instalarán los servidores tras su recepción."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El certificado de destrucción es un documento requerido al final del ciclo de vida del activo (al desecharlo), no durante su adquisición. Los pasos previos a la instalación incluyen verificación, registro y planificación de ubicación, pero no la destrucción de datos en activos recién adquiridos.",
+      "id": "p17-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes pasos NO forma parte del proceso de adquisición de activos según el temario?",
+      "opciones": [
+        "Análisis presupuestario para verificar la viabilidad económica del activo.",
+        "Negociación con proveedores para definir términos contractuales.",
+        "Asignación de un asset tag al activo antes de su entrega física.",
+        "Obtención de aprobaciones formales por parte de responsables de IT, compras y dirección."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El asset tag se asigna después de la adquisición, no durante el proceso de compra. El temario detalla que la etiquetación es parte del sistema de seguimiento de activos tras la recepción del activo.",
+      "id": "p17-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción es obligatoria realizar en el sistema de seguimiento de activos al desglosar un escritorio en sus componentes internos (CPU, memoria, unidades de almacenamiento) para mantener la trazabilidad?",
+      "opciones": [
+        "a) Asignar un nuevo asset tag único a cada componente interno",
+        "b) Registrar la relación jerárquica entre el escritorio y sus componentes en el sistema",
+        "c) Eliminar el registro del escritorio original para evitar duplicidades",
+        "d) Notificar al proveedor del escritorio sobre el desglose realizado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El sistema de seguimiento de activos debe registrar la relación jerárquica entre el activo principal (escritorio) y sus componentes internos para mantener una trazabilidad detallada, como se menciona en la sección de 'Enumeración de componentes'.",
+      "id": "p17-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué método de eliminación de datos es el MENOS adecuado para un disco duro que será reasignado a otro empleado dentro de la misma organización?",
+      "opciones": [
+        "Borrado seguro con utilidades especializadas.",
+        "Destrucción física mediante trituración del disco.",
+        "Degaussing para inutilizar el dispositivo.",
+        "Formateo rápido del disco."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El degaussing inutiliza el disco duro, por lo que no es adecuado para reasignación. El temario menciona que este método es irreversible y solo aplicable para destrucción.",
+      "id": "p17-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO debe realizarse al registrar un nuevo activo en un sistema de seguimiento de activos?",
+      "opciones": [
+        "a) Asignar el activo a un usuario o departamento responsable.",
+        "b) Clasificar el activo por tipo (hardware/software) y naturaleza (portátil, escritorio, etc.).",
+        "c) Eliminar físicamente el activo antes de registrarlo para garantizar que no contiene datos sensibles.",
+        "d) Registrar la ubicación física del activo en el sistema."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario no menciona la eliminación física del activo como parte del proceso de registro en un sistema de seguimiento. La eliminación se realiza al final del ciclo de vida del activo, no al inicio.",
+      "id": "p17-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización debe conservar correos electrónicos durante 10 años por obligación legal. ¿Qué concepto del temario describe mejor este requisito?",
+      "opciones": [
+        "Sanitización de medios de almacenamiento.",
+        "Retención de datos (Data Retention).",
+        "Asignación de propiedad de activos.",
+        "Clasificación de activos por tipo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El requisito de conservar correos electrónicos durante un período específico se enmarca en el concepto de retención de datos, que incluye obligaciones legales y normativas.",
+      "id": "p17-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO se debe realizar al registrar un nuevo activo en un sistema de seguimiento de activos?",
+      "opciones": [
+        "a) Vincular el activo a un usuario o departamento responsable",
+        "b) Asignar una etiqueta única (asset tag) sin registrarla en el sistema",
+        "c) Categorizar el activo por tipo (hardware/software) y naturaleza",
+        "d) Incluir detalles como modelo y marca para soporte técnico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La etiqueta única (asset tag) debe registrarse en el sistema para garantizar la trazabilidad, por lo que asignarla sin registrarla contraviene las buenas prácticas.",
+      "id": "p17-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO debe realizarse al desglosar un escritorio en sus componentes internos (CPU, memoria, unidades de almacenamiento) para mantener la trazabilidad en el sistema de seguimiento de activos?",
+      "opciones": [
+        "a) Registrar cada componente como un activo independiente en el sistema.",
+        "b) Asignar un asset tag único a cada componente desglosado.",
+        "c) Eliminar el registro del escritorio original tras el desglose.",
+        "d) Actualizar la ubicación física de cada componente según su nueva asignación."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El sistema de seguimiento debe mantener el registro del escritorio original y vincular cada componente desglosado a él, no eliminarlo, para garantizar la trazabilidad completa del activo.",
+      "id": "p17-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una organización externaliza la destrucción de discos duros obsoletos, ¿qué documento debe exigirse al proveedor para garantizar el cumplimiento normativo?",
+      "opciones": [
+        "Certificado de destrucción (Certificate of Destruction).",
+        "Informe de inventario de activos.",
+        "Factura detallada de los servicios prestados.",
+        "Política de retención de datos de la organización."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El certificado de destrucción es el documento que confirma que los medios han sido destruidos de manera segura y cumple con normativas y estándares de seguridad.",
+      "id": "p17-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa recibe un lote de 50 servidores para actualizar su infraestructura de TI. Tras la entrega física, el departamento de TI debe realizar una serie de pasos antes de proceder a su instalación y asignación a usuarios. ¿Qué acción NO es parte del proceso de adquisición de activos en este escenario?",
+      "opciones": [
+        "Realizar un inventario físico de los servidores recibidos.",
+        "Registrar cada servidor en el sistema de seguimiento de activos.",
+        "Negociar con el proveedor un descuento por volumen.",
+        "Asignar un asset tag a cada servidor."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La negociación con el proveedor es un paso previo a la compra y entrega del activo, no posterior. El temario detalla que este paso ocurre antes de la compra y entrega.",
+      "id": "p17-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un empleado reporta la pérdida de su laptop etiquetada con un asset tag. Según el temario, ¿qué acción NO debería realizarse en este escenario?",
+      "opciones": [
+        "Generar un ticket de soporte en el sistema de seguimiento de activos.",
+        "Solicitar la destrucción física inmediata del disco duro.",
+        "Reportar el incidente al departamento de seguridad de la información.",
+        "Actualizar el estado del activo en el sistema de seguimiento como 'perdido'."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La destrucción física del disco duro no es una acción inmediata ni adecuada en este escenario. El temario indica que la destrucción física se realiza cuando el activo se desecha o recicla, no por pérdida.",
+      "id": "p17-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO debe realizarse al registrar un nuevo activo en un sistema de seguimiento de activos cuando este pertenece a un proyecto temporal con fecha de finalización definida?",
+      "opciones": [
+        "a) Asignar el activo a un usuario específico aunque sea temporalmente",
+        "b) Clasificarlo como 'activo temporal' en el sistema",
+        "c) Registrar la fecha de finalización estimada del proyecto en el campo de observaciones",
+        "d) Eliminar el activo del sistema inmediatamente después de la entrega física"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario no menciona la eliminación automática de activos temporales tras su entrega física; el registro debe mantenerse hasta su disposición final.",
+      "id": "p17-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción es obligatoria realizar en el sistema de seguimiento de activos al registrar un nuevo activo que incluye componentes internos desmontables (como CPU, memoria y unidades de almacenamiento)?",
+      "opciones": [
+        "a) Asignar una etiqueta única al activo principal y registrar cada componente interno como un activo independiente en el sistema.",
+        "b) Registrar solo el activo principal (ej. escritorio) sin desglosar sus componentes internos para simplificar el proceso.",
+        "c) Marcar los componentes internos como 'no rastreados' en el sistema para evitar duplicidad de registros.",
+        "d) Documentar los componentes internos en un archivo externo al sistema de seguimiento y solo registrar el activo principal."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario indica que se debe desglosar un activo como un escritorio en sus componentes internos (CPU, memoria, unidades de almacenamiento) para un seguimiento detallado, asignando a cada uno su propia identificación en el sistema.",
+      "id": "p17-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización recibe un certificado de destrucción de medios de almacenamiento. ¿Qué información DEBE incluirse en dicho certificado según el temario?",
+      "opciones": [
+        "a) El nombre del empleado que solicitó la destrucción",
+        "b) Identificación de los medios destruidos y método de destrucción utilizado",
+        "c) La ubicación física donde se almacenaban los medios antes de la destrucción",
+        "d) El costo asociado a la destrucción del medio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario especifica que el certificado de destrucción debe incluir la identificación de los medios y el método de destrucción, junto con fecha y responsable.",
+      "id": "p17-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión de activos, ¿qué concepto describe mejor el requisito de conservar correos electrónicos durante 5 años por obligación legal?",
+      "opciones": [
+        "a) Sanitización de medios",
+        "b) Retención de datos (Data Retention)",
+        "c) Clasificación de activos",
+        "d) Destrucción física"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la retención de datos como el proceso de conservar información durante un período determinado por obligación legal o normativa.",
+      "id": "p17-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción debe realizarse PRIMERO al registrar un nuevo activo en un sistema de seguimiento de activos cuando este incluye componentes internos desmontables (como CPU, memoria y unidades de almacenamiento)?",
+      "opciones": [
+        "a) Asignar un asset tag único al activo principal y registrarlo como unidad única en el sistema.",
+        "b) Desglosar el activo en sus componentes internos y registrar cada uno por separado en el sistema.",
+        "c) Verificar que todos los componentes internos estén instalados físicamente antes de registrar el activo.",
+        "d) Esperar a que el activo sea asignado a un usuario para luego registrarlo completo en el sistema."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario señala que al desglosar un activo en componentes internos, cada elemento debe registrarse por separado para mantener una trazabilidad detallada en el sistema de seguimiento.",
+      "id": "p17-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa externaliza la destrucción de discos duros obsoletos. ¿Qué acción NO debe realizarse al registrar el nuevo activo en el sistema de seguimiento de activos?",
+      "opciones": [
+        "a) Asignar el activo a un usuario o departamento responsable",
+        "b) Categorizar el activo por tipo (hardware/software) y naturaleza",
+        "c) Incluir datos confidenciales del usuario asignado en el registro",
+        "d) Desglosar el activo en sus componentes internos si aplica"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario no menciona incluir datos confidenciales del usuario en el registro; la clasificación debe ser por tipo y naturaleza, sin exponer información sensible.",
+      "id": "p17-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO debe realizarse al registrar un nuevo activo en un sistema de seguimiento de activos cuando este es un dispositivo móvil temporal asignado a un consultor externo por un proyecto de 3 meses?",
+      "opciones": [
+        "a) Asignar el activo al consultor externo con una etiqueta temporal visible.",
+        "b) Registrar el activo como 'hardware temporal' y vincularlo al proyecto específico.",
+        "c) Incluir el número de serie y datos de contacto del consultor en el registro.",
+        "d) Documentar la fecha exacta de finalización del proyecto como fecha de disposición final del activo."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario no menciona la inclusión de datos personales del consultor externo en el registro del activo, ya que estos datos podrían vulnerar políticas de privacidad y no son relevantes para la gestión del activo.",
+      "id": "p17-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre la clasificación de activos en un sistema de seguimiento es VERDADERA?",
+      "opciones": [
+        "a) Los activos solo pueden clasificarse como hardware o software, sin subcategorías",
+        "b) La clasificación es crucial para aspectos fiscales y contables, según el temario",
+        "c) La ubicación física del activo no forma parte de su clasificación",
+        "d) Los componentes internos de un escritorio no pueden clasificarse como activos independientes"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que la clasificación de activos por tipo y naturaleza es crucial para aspectos fiscales y contables.",
+      "id": "p17-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una organización debe conservar datos financieros durante 10 años por obligación legal, ¿qué concepto del temario describe mejor este requisito?",
+      "opciones": [
+        "a) Sanitización de medios",
+        "b) Retención de datos (Data Retention)",
+        "c) Etiquetado de activos (asset tag)",
+        "d) Degaussing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la retención de datos como el proceso de conservar información durante un período determinado por obligación legal, como en el caso de datos financieros.",
+      "id": "p17-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de seguimiento de activos que permite desglosar un servidor en sus componentes internos (CPU, memoria, unidades de almacenamiento). ¿Qué función del sistema describe mejor esta capacidad?",
+      "opciones": [
+        "a) Asignación de propiedad",
+        "b) Enumeración de componentes",
+        "c) Soporte técnico",
+        "d) Clasificación de activos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que la enumeración de componentes permite desglosar activos complejos (como servidores) en sus partes para un seguimiento detallado.",
+      "id": "p17-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué paso del proceso de adquisición de activos se realiza inmediatamente DESPUÉS de la negociación con proveedores?",
+      "opciones": [
+        "a) Análisis presupuestario",
+        "b) Aprobaciones formales",
+        "c) Compra y entrega",
+        "d) Registro en el sistema de seguimiento de activos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Tras la negociación con proveedores, el siguiente paso es la compra y entrega del activo, donde el proveedor emite una factura con términos de pago.",
+      "id": "p17-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un sistema de seguimiento de activos, ¿qué función NO cumple al desglosar un escritorio en sus componentes internos (CPU, memoria, unidades de almacenamiento)?",
+      "opciones": [
+        "a) Facilitar la asignación de propiedad por componente",
+        "b) Permitir la enumeración detallada para mantenimiento",
+        "c) Eliminar la necesidad de etiquetado físico de cada componente",
+        "d) Mejorar la trazabilidad en el ciclo de vida del activo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El desglose en componentes no elimina la necesidad de etiquetado físico, ya que cada parte debe mantener su identificación única para la trazabilidad.",
+      "id": "p17-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO debe realizarse al registrar un nuevo activo en un sistema de seguimiento de activos cuando este es un dispositivo móvil temporal asignado a un empleado por un proyecto de 6 meses?",
+      "opciones": [
+        "a) Asignar una etiqueta de activo (asset tag) temporal y vinculada a la duración del proyecto.",
+        "b) Registrar el dispositivo con una clasificación de activo temporal y una fecha de finalización definida.",
+        "c) Incluir en el registro los detalles del proveedor y el contrato de arrendamiento o préstamo.",
+        "d) Desglosar el dispositivo móvil en sus componentes internos (CPU, memoria, unidades de almacenamiento) para mantener la trazabilidad."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona la enumeración de componentes solo para activos como servidores o escritorios, no para dispositivos móviles temporales, donde no se requiere desglose.",
+      "id": "p17-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué información DEBE incluirse en el certificado de destrucción de medios de almacenamiento cuando un proveedor externalizado realiza este servicio?",
+      "opciones": [
+        "a) Identificación de los medios destruidos, método de destrucción, fecha y responsable.",
+        "b) Nombre del empleado que aprobó la destrucción y ubicación del proveedor.",
+        "c) Copia de la factura de compra del activo y número de serie del dispositivo.",
+        "d) Detalles del proceso de borrado seguro realizado antes de la destrucción física."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El certificado de destrucción debe incluir, como mínimo, la identificación de los medios, el método utilizado, la fecha y el responsable, para garantizar trazabilidad y cumplimiento normativo.",
+      "id": "p17-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción es obligatoria realizar en el sistema de seguimiento de activos al registrar un nuevo activo que incluye componentes internos desmontables como CPU, memoria y unidades de almacenamiento?",
+      "opciones": [
+        "a) Registrar cada componente desmontable como un activo independiente en el sistema",
+        "b) Agrupar todos los componentes internos bajo una única entrada genérica sin desglose",
+        "c) Etiquetar solo el activo principal y omitir los componentes internos",
+        "d) Exigir la destrucción física de todos los componentes antes de su registro"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que un activo como un escritorio (o servidor) puede desglosarse en sus componentes internos (CPU, memoria, unidades de almacenamiento) para un seguimiento más detallado, lo que implica registrar cada componente como un activo independiente.",
+      "id": "p17-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión de activos, ¿qué concepto describe mejor el requisito de conservar datos financieros durante 10 años por obligación legal?",
+      "opciones": [
+        "a) Sanitización de medios",
+        "b) Retención de datos (Data Retention)",
+        "c) Clasificación de activos",
+        "d) Destrucción física"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La retención de datos (Data Retention) abarca el proceso de conservar información durante un período determinado por obligación legal o normativa.",
+      "id": "p17-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre la etiqueta de activo (asset tag) en un dispositivo es VERDADERA según el temario?",
+      "opciones": [
+        "a) Su único propósito es cumplir con requisitos fiscales",
+        "b) Permite asociar el activo con un registro en el sistema de seguimiento y disuade su uso indebido",
+        "c) Debe contener información confidencial del dispositivo",
+        "d) Solo es necesaria para activos de alto valor económico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La etiqueta de activo cumple dos propósitos principales: identificación única en el sistema y disuasión de uso indebido por su visibilidad.",
+      "id": "p17-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa recibe un nuevo servidor para su departamento de TI. Según el temario, ¿qué acción debe realizarse ANTES de asignar el activo a un usuario?",
+      "opciones": [
+        "a) Realizar una copia de seguridad de los datos preinstalados",
+        "b) Registrar el activo en el sistema de seguimiento de activos",
+        "c) Instalar software adicional no incluido en el paquete original",
+        "d) Conectar el servidor a la red sin configuración previa"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Antes de asignar el activo a un usuario, es obligatorio registrarlo en el sistema de seguimiento de activos para mantener la trazabilidad y gestión del ciclo de vida.",
+      "id": "p17-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario aplicado, una organización detecta que un empleado ha perdido su laptop etiquetada con un asset tag. Según las buenas prácticas del temario, ¿qué acción NO debería realizarse en este caso?",
+      "opciones": [
+        "a) Reportar la pérdida al departamento de seguridad y TI",
+        "b) Iniciar un proceso de bloqueo remoto del dispositivo",
+        "c) Eliminar el registro del activo del sistema de seguimiento para evitar confusiones",
+        "d) Revisar cámaras de seguridad para identificar posibles responsables"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Eliminar el registro del activo del sistema de seguimiento antes de investigar la pérdida puede afectar la trazabilidad y el cumplimiento normativo; se debe mantener el registro hasta resolver el incidente.",
+      "id": "p17-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué función NO cumple un sistema de seguimiento de activos cuando se desglosan los componentes internos de un servidor (CPU, memoria, unidades de almacenamiento)?",
+      "opciones": [
+        "a) Facilitar la asignación de responsabilidad por componente",
+        "b) Permitir la enumeración detallada para mantenimiento preventivo",
+        "c) Automatizar la instalación de software en cada componente",
+        "d) Mejorar la precisión en inventarios y auditorías"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El sistema de seguimiento de activos no automatiza la instalación de software; su función es registrar, clasificar y gestionar los componentes para mantenimiento y auditorías.",
+      "id": "p17-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO debe realizarse al registrar un nuevo activo en un sistema de seguimiento de activos cuando este es un dispositivo móvil asignado a un empleado por un proyecto temporal con fecha de finalización definida?",
+      "opciones": [
+        "a) Asignar el dispositivo a un usuario específico en el sistema de seguimiento.",
+        "b) Registrar la fecha de finalización del proyecto temporal en el sistema.",
+        "c) Desglosar el dispositivo en sus componentes internos (CPU, memoria, almacenamiento) para seguimiento detallado.",
+        "d) Documentar que el activo es temporal y debe ser devuelto al finalizar el proyecto."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los dispositivos temporales no requieren desglosarse en componentes internos, ya que su seguimiento se centra en su uso temporal y no en detalles técnicos detallados.",
+      "id": "p17-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un propósito principal de una etiqueta de activo (asset tag) en un dispositivo según el temario?",
+      "opciones": [
+        "Facilitar la identificación única del activo en el sistema de seguimiento.",
+        "Disuadir el uso indebido del dispositivo si es perdido o robado.",
+        "Almacenar datos sensibles del usuario asignado al dispositivo.",
+        "Permitir la recuperación del dispositivo en caso de pérdida."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El asset tag cumple funciones de identificación y seguridad física, pero NO está diseñado para almacenar datos sensibles del usuario.",
+      "id": "p17-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un disco duro será reasignado a otro empleado dentro de la misma organización, ¿qué método de eliminación de datos NO es adecuado según el temario?",
+      "opciones": [
+        "Borrado seguro utilizando utilidades especializadas.",
+        "Destrucción física del disco duro.",
+        "Degaussing para borrar los datos.",
+        "Formateo rápido del disco."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El borrado seguro es adecuado para reutilización interna, pero el formateo rápido NO garantiza la eliminación segura de datos según el temario.",
+      "id": "p17-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización recibe un nuevo servidor para su departamento de TI. Según el temario, ¿qué acción debe realizarse ANTES de asignar el activo a un usuario?",
+      "opciones": [
+        "Registrar el activo en el sistema de seguimiento de activos.",
+        "Realizar un borrado seguro de todos los datos previos del servidor.",
+        "Firmar el certificado de destrucción de medios de almacenamiento.",
+        "Destruir físicamente los componentes internos del servidor."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Antes de asignar el activo a un usuario, es obligatorio registrarlo en el sistema de seguimiento de activos para garantizar su trazabilidad.",
+      "id": "p17-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué información DEBE incluirse en el certificado de destrucción de medios de almacenamiento según el temario?",
+      "opciones": [
+        "Nombre del empleado que solicitó la destrucción del medio.",
+        "Identificación de los medios destruidos, método de destrucción y fecha.",
+        "Firma del responsable de IT que aprobó la destrucción.",
+        "Número de serie del disco duro antes de su destrucción."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El certificado de destrucción debe incluir la identificación de los medios, el método utilizado y la fecha de destrucción para cumplir con normativas.",
+      "id": "p17-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO debe realizarse al registrar un nuevo activo en un sistema de seguimiento de activos cuando este es un dispositivo móvil asignado a un consultor externo por un proyecto de 4 meses?",
+      "opciones": [
+        "a) Asignar el dispositivo temporalmente al consultor externo en el sistema",
+        "b) Registrar el activo como propiedad temporal con fecha de finalización definida",
+        "c) Desglosar el dispositivo móvil en sus componentes internos (CPU, memoria, unidades de almacenamiento) para su seguimiento detallado",
+        "d) Incluir en el registro una nota sobre el uso temporal y la fecha de devolución prevista"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que el desglose de componentes internos es aplicable a activos como escritorios o servidores, pero no a dispositivos móviles, que suelen registrarse como unidades completas.",
+      "id": "p17-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué paso del proceso de adquisición de activos se realiza inmediatamente DESPUÉS de la aprobación formal por parte de los responsables (IT, compras y dirección)?",
+      "opciones": [
+        "a) Negociación con proveedores",
+        "b) Análisis presupuestario",
+        "c) Compra y entrega del activo",
+        "d) Emisión de la factura con términos de pago"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Tras la aprobación formal, el siguiente paso en el proceso de adquisición es la negociación con proveedores, donde se discuten precios, términos de licencia y detalles contractuales hasta llegar a un acuerdo.",
+      "id": "p17-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre la clasificación de activos en un sistema de seguimiento es VERDADERA según el temario?",
+      "opciones": [
+        "La clasificación de activos solo aplica a hardware, no a software.",
+        "Los activos se clasifican por tipo (ej. portátil, escritorio) y naturaleza (hardware/software).",
+        "La clasificación de activos es opcional y no afecta el cumplimiento normativo.",
+        "Todos los activos deben clasificarse como 'críticos' independientemente de su uso."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La clasificación de activos en el sistema de seguimiento incluye categorizarlos por tipo y naturaleza (hardware o software), lo que es crucial para aspectos fiscales y contables.",
+      "id": "p17-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización ha adquirido recientemente un lote de 20 servidores para su infraestructura de TI. Tras la entrega física y la verificación de que los equipos cumplen con las especificaciones técnicas contratadas, el departamento de TI debe registrar cada servidor en el sistema de seguimiento de activos. Sin embargo, al revisar la documentación técnica de los servidores, se observa que cada uno incluye componentes internos desmontables (CPU, memoria RAM, unidades de almacenamiento SSD y HDD). Según el temario, ¿qué acción debe realizarse PRIMERO en el sistema de seguimiento de activos para garantizar la trazabilidad y gestión adecuada de estos componentes?",
+      "opciones": [
+        "a) Registrar el servidor como un único activo sin desglosar sus componentes internos, ya que el temario no exige desglosar componentes en el registro inicial.",
+        "b) Registrar el servidor como un activo principal y, posteriormente, crear registros independientes para cada componente interno desmontable (CPU, memoria RAM, SSD, HDD) vinculándolos al activo principal.",
+        "c) Registrar solo los componentes internos desmontables (CPU, memoria RAM, SSD, HDD) como activos independientes, ignorando el servidor como unidad principal, para priorizar el seguimiento de hardware crítico.",
+        "d) Registrar el servidor como un activo principal y, en una segunda fase, desglosar sus componentes internos en el sistema solo si se detectan fallos técnicos durante su uso."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que un sistema de seguimiento de activos permite desglosar un activo principal (como un servidor) en sus componentes internos (CPU, memoria, unidades de almacenamiento) para un seguimiento detallado. Por ello, lo correcto es registrar primero el servidor como activo principal y luego crear registros independientes para cada componente vinculado a él.",
+      "id": "p17-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué función NO cumple un sistema de seguimiento de activos cuando se desglosan los componentes internos de un servidor (CPU, memoria, unidades de almacenamiento)?",
+      "opciones": [
+        "Permitir la asignación de cada componente a un usuario o departamento diferente.",
+        "Facilitar la enumeración detallada de componentes para mantenimiento o actualizaciones.",
+        "Garantizar que los datos almacenados en los componentes sean eliminados automáticamente.",
+        "Mejorar la trazabilidad y gestión de cada parte del servidor de manera individual."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El sistema de seguimiento de activos permite desglosar componentes para mejor gestión, pero NO garantiza la eliminación automática de datos almacenados en ellos.",
+      "id": "p17-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el proceso de adquisición de activos, ¿qué paso se realiza inmediatamente DESPUÉS de la aprobación formal por parte de los responsables (IT, compras y dirección)?",
+      "opciones": [
+        "a) Análisis presupuestario",
+        "b) Negociación con proveedores",
+        "c) Compra y entrega",
+        "d) Registro en el sistema de seguimiento de activos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el temario, tras la aprobación formal, el siguiente paso es la negociación con proveedores para discutir precios, términos y detalles contractuales.",
+      "id": "p17-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción es obligatoria realizar en el sistema de seguimiento de activos al registrar un nuevo activo que incluye componentes internos desmontables como CPU, memoria RAM y unidades de almacenamiento?",
+      "opciones": [
+        "a) Registrar cada componente interno como un activo independiente en el sistema",
+        "b) Asignar el activo principal (ej. servidor) al responsable y omitir los componentes internos para simplificar la gestión",
+        "c) Etiquetar solo el activo principal con el asset tag y no los componentes internos para evitar confusiones",
+        "d) Desglosar el activo en componentes internos pero no asignar responsables individuales a cada uno"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario indica que un sistema de seguimiento de activos permite desglosar un activo en sus componentes internos (como CPU o memoria RAM) para garantizar una gestión detallada y trazabilidad, por lo que cada componente debe registrarse de forma independiente.",
+      "id": "p17-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización debe conservar datos financieros durante 10 años por obligación legal. ¿Qué concepto del temario describe mejor este requisito?",
+      "opciones": [
+        "a) Sanitización de medios",
+        "b) Retención de datos",
+        "c) Clasificación de activos",
+        "d) Trazabilidad de componentes"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la retención de datos como el proceso de conservar información durante un período determinado por obligación legal o normativa.",
+      "id": "p17-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción es obligatoria realizar en el sistema de seguimiento de activos al registrar un nuevo activo que incluye componentes internos desmontables como CPU, RAM y unidades de almacenamiento?",
+      "opciones": [
+        "a) Asignar un número de serie único a cada componente interno para garantizar la trazabilidad individual.",
+        "b) Agrupar todos los componentes internos bajo un único registro para simplificar la gestión.",
+        "c) Eliminar cualquier referencia a los componentes internos, ya que no son relevantes para el seguimiento.",
+        "d) Registrar solo el activo completo sin desglosar sus componentes internos para evitar duplicidades."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que los sistemas de seguimiento de activos permiten desglosar un activo en sus componentes internos (CPU, RAM, unidades de almacenamiento) para garantizar una gestión detallada y trazable de cada elemento.",
+      "id": "p17-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado reporta la pérdida de su laptop etiquetada con un asset tag. Según las buenas prácticas del temario, ¿qué acción NO debería realizarse en este caso?",
+      "opciones": [
+        "a) Bloquear el dispositivo en el sistema de seguimiento de activos",
+        "b) Notificar al departamento de seguridad para investigar el incidente",
+        "c) Continuar utilizando el dispositivo sin registrar la pérdida",
+        "d) Actualizar el estado del activo como 'perdido' en la base de datos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario enfatiza la importancia de registrar la pérdida y tomar acciones inmediatas, no continuar usando el dispositivo sin registrar el incidente.",
+      "id": "p17-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción es obligatoria realizar en el sistema de seguimiento de activos al registrar un nuevo activo que incluye componentes internos desmontables como CPU y unidades de almacenamiento, pero que no será desglosado en el inventario?",
+      "opciones": [
+        "a) Registrar el activo como una unidad indivisible sin detallar sus componentes internos.",
+        "b) Registrar el activo como una unidad indivisible, pero incluir en el sistema los componentes internos desmontables como dependencias o accesorios asociados.",
+        "c) No registrar los componentes internos en el sistema, ya que no se desglosarán en el inventario.",
+        "d) Eliminar físicamente los componentes internos antes de registrar el activo para simplificar el proceso."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que, aunque el activo no se desglose en componentes individuales, los componentes internos desmontables deben registrarse como dependencias o accesorios asociados para mantener la trazabilidad y gestión adecuada.",
+      "id": "p17-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué propósito principal cumple la clasificación de activos en un sistema de seguimiento?",
+      "opciones": [
+        "a) Facilitar la identificación única de cada activo mediante etiquetas físicas.",
+        "b) Categorizar los activos por tipo (hardware/software) y naturaleza para aspectos fiscales y contables.",
+        "c) Permitir el desglose de componentes internos como CPU o memoria para un seguimiento detallado.",
+        "d) Garantizar que los datos almacenados en el activo sean eliminados de forma segura antes de su reasignación."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La clasificación de activos en un sistema de seguimiento permite categorizarlos por tipo (ej. portátil, escritorio) y naturaleza (hardware/software), lo que es esencial para aspectos fiscales, contables y de gestión.",
+      "id": "p17-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario aplicado, una organización detecta que un empleado ha perdido su laptop etiquetada con un asset tag. ¿Qué acción NO debería realizarse en este caso según las buenas prácticas del temario?",
+      "opciones": [
+        "a) Revocar el acceso remoto y credenciales asociadas al dispositivo",
+        "b) Registrar el incidente en el sistema de seguimiento de activos",
+        "c) Esperar a que el empleado reporte la pérdida para actuar",
+        "d) Notificar al departamento legal si el dispositivo contiene datos sensibles"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario recomienda actuar de inmediato al detectar la pérdida, no esperar a que el empleado la reporte.",
+      "id": "p17-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de desarrollo de software ha adquirido un lote de 15 servidores blade para su centro de datos. Tras la entrega, el equipo de TI verifica que cada servidor incluye componentes internos desmontables (CPU, memoria RAM, unidades SSD y HDD). Para garantizar la trazabilidad y cumplir con políticas internas de gestión de activos, ¿qué acción debe realizarse PRIMERO en el sistema de seguimiento de activos, según el temario?",
+      "opciones": [
+        "a) Registrar el servidor como un único activo en el sistema, vinculándolo al responsable de TI, sin desglosar componentes.",
+        "b) Desglosar el servidor en sus componentes internos (CPU, RAM, SSD, HDD) y registrar cada uno como activos independientes en el sistema, asignando un asset tag único a cada componente.",
+        "c) Registrar solo los componentes de almacenamiento (SSD y HDD) como activos separados, ya que son los que contienen datos sensibles, mientras que CPU y RAM se consideran parte integral del servidor.",
+        "d) Crear un registro genérico para el servidor en el sistema y adjuntar una lista manual de componentes en un archivo externo, sin vincularlos al sistema de seguimiento."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el temario, el sistema de seguimiento de activos permite desglosar un servidor en sus componentes internos (CPU, memoria, unidades de almacenamiento) para un seguimiento detallado y trazabilidad. Esto garantiza una gestión precisa de cada elemento durante su ciclo de vida.",
+      "id": "p17-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización recibe un lote de 50 servidores para actualizar su infraestructura de TI. Tras la entrega física, ¿qué acción NO es parte del proceso de adquisición de activos según el temario?",
+      "opciones": [
+        "a) Verificar que los servidores cumplen con las especificaciones técnicas contratadas",
+        "b) Registrar cada servidor en el sistema de seguimiento de activos",
+        "c) Destruir físicamente los discos duros de los servidores antes de su instalación",
+        "d) Asignar un asset tag a cada servidor para su identificación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario no menciona la destrucción física de discos duros como parte del proceso de adquisición; esto corresponde a la fase de disposición final del activo.",
+      "id": "p17-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el proceso de adquisición de activos, ¿qué paso se realiza inmediatamente DESPUÉES de la aprobación formal por parte de los responsables (IT, compras y dirección)?",
+      "opciones": [
+        "Negociación con proveedores para definir precios y términos contractuales.",
+        "Realizar un análisis presupuestario para verificar la viabilidad económica.",
+        "Registrar el activo en el sistema de seguimiento de activos antes de su entrega.",
+        "Firmar el contrato de compra y recibir la factura del proveedor."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, tras la aprobación formal, el siguiente paso es la negociación con proveedores para definir precios, términos de licencia y detalles contractuales.",
+      "id": "p17-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una función principal de un sistema de seguimiento de activos según el temario?",
+      "opciones": [
+        "Asignar propiedad de activos a usuarios o departamentos específicos.",
+        "Realizar auditorías periódicas para verificar la precisión de los registros.",
+        "Permitir el desglose de un activo en sus componentes internos (ej. CPU, memoria).",
+        "Automatizar la instalación de software en los dispositivos registrados."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario no menciona la automatización de instalación de software como función del sistema de seguimiento de activos.",
+      "id": "p17-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización recibe un nuevo servidor para su departamento de TI. Tras la entrega física y verificación técnica, ¿qué acción debe realizarse PRIMERO en el sistema de seguimiento de activos según el temario?",
+      "opciones": [
+        "Registrar el servidor como un único activo sin desglosar sus componentes.",
+        "Desglosar el servidor en sus componentes internos (CPU, memoria, unidades de almacenamiento) y registrar cada uno por separado.",
+        "Asignar el servidor a un usuario temporal hasta que se defina su uso final.",
+        "Solicitar la destrucción física del servidor para evitar riesgos de seguridad."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que un sistema de seguimiento de activos permite desglosar un activo en sus componentes internos para garantizar trazabilidad detallada.",
+      "id": "p17-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión de activos, ¿qué propósito cumple principalmente una etiqueta de activo (asset tag) según el temario?",
+      "opciones": [
+        "Permitir la identificación única del activo y asociarlo a un registro en el sistema de seguimiento.",
+        "Actuar como medida de seguridad física para evitar el robo del dispositivo.",
+        "Facilitar la conexión inalámbrica del dispositivo a la red corporativa.",
+        "Servir como recordatorio para el usuario sobre la política de uso del activo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario establece que la etiqueta de activo permite asociar el dispositivo con un registro único en el sistema de seguimiento, mejorando la trazabilidad.",
+      "id": "p17-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO forma parte del proceso de adquisición de activos cuando se trata de hardware con componentes desmontables como CPU, memoria RAM y unidades de almacenamiento?",
+      "opciones": [
+        "a) Registrar cada componente desmontable como activo independiente en el sistema de seguimiento.",
+        "b) Verificar que el proveedor incluya en la factura la descripción detallada de todos los componentes entregados.",
+        "c) Solicitar al proveedor un certificado de destrucción de los componentes antes de su entrega.",
+        "d) Realizar un análisis presupuestario para evaluar el costo total del activo, incluyendo componentes."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El proceso de adquisición no incluye solicitar la destrucción de componentes antes de su entrega, ya que estos son parte del activo final. La destrucción solo aplica al final del ciclo de vida.",
+      "id": "p17-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario aplicado, un empleado pierde su laptop etiquetada con un asset tag. Según las buenas prácticas del temario, ¿qué acción NO debería realizarse en este caso?",
+      "opciones": [
+        "Reportar la pérdida al departamento de seguridad de la información.",
+        "Iniciar un proceso de investigación para determinar las causas de la pérdida.",
+        "Reasignar inmediatamente el activo a otro empleado para evitar interrupciones.",
+        "Actualizar el sistema de seguimiento de activos para reflejar la pérdida."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario recomienda no reasignar el activo hasta que se determine su estado y se tomen medidas de seguridad adecuadas.",
+      "id": "p17-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción es obligatoria realizar en el sistema de seguimiento de activos al registrar un nuevo activo que incluye componentes internos desmontables como CPU y unidades de almacenamiento, pero que NO se desglosará en el inventario?",
+      "opciones": [
+        "a) Registrar el activo como una única unidad sin desglosar sus componentes internos.",
+        "b) Crear un registro independiente para cada componente interno desmontable en el inventario.",
+        "c) Excluir el activo del sistema de seguimiento por no ser relevante para la trazabilidad.",
+        "d) Asignar el activo a un usuario temporal sin incluir detalles de sus componentes."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario indica que, aunque un activo incluya componentes desmontables, si no se desglosan en el inventario, debe registrarse como una única unidad para mantener la trazabilidad sin complicar el sistema.",
+      "id": "p17-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización externaliza la destrucción de discos duros obsoletos. ¿Qué método de eliminación de datos NO es adecuado según el temario si los discos serán reasignados a otro empleado?",
+      "opciones": [
+        "Borrado seguro utilizando utilidades especializadas.",
+        "Destrucción física del disco duro.",
+        "Degaussing del disco duro.",
+        "Formateo rápido del disco duro."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que la destrucción física es adecuada solo si el dispositivo se desecha o recicla, no para reasignación.",
+      "id": "p17-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está migrando su infraestructura de servidores físicos a un entorno híbrido con servidores blade. Tras recibir un lote de 12 servidores blade con componentes internos desmontables (CPU, memoria RAM, unidades SSD y HDD), el equipo de TI debe registrarlos en el sistema de seguimiento de activos. Sin embargo, uno de los servidores presenta un fallo en la placa base durante la fase de verificación técnica post-entrega. Según el temario, ¿qué acción debe realizarse PRIMERO en el sistema de seguimiento de activos para este servidor defectuoso, garantizando la trazabilidad y cumpliendo con el proceso de adquisición?",
+      "opciones": [
+        "Registrar el servidor como 'en reparación' y vincularlo a un ticket de soporte técnico, asignando un estado temporal que impida su asignación a un usuario hasta su resolución.",
+        "Eliminar el registro del servidor en el sistema de seguimiento de activos para evitar confusiones, ya que no cumple con las especificaciones técnicas contratadas.",
+        "Registrar el servidor con una etiqueta de 'activo en garantía' y asignarlo directamente al proveedor para su sustitución, sin generar un ticket interno.",
+        "Desglosar el servidor en sus componentes internos (CPU, RAM, unidades) y registrarlos individualmente como activos independientes en el sistema de seguimiento."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, el sistema de seguimiento de activos debe reflejar el estado real del hardware, incluyendo activos en reparación o garantía. Esto permite mantener la trazabilidad y garantizar que no se asignen recursos defectuosos a usuarios.",
+      "id": "p17-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa de logística ha implementado un sistema de seguimiento de activos que permite desglosar un servidor blade en sus componentes internos (CPU, memoria RAM, unidades SSD y HDD) para gestionar su ciclo de vida. Durante una auditoría interna, se detecta que uno de estos servidores ha sido desmontado parcialmente para reparar una falla en la memoria RAM, pero los componentes extraídos no fueron registrados en el sistema. Según el temario, ¿qué consecuencia directa tendría esta omisión en el proceso de gestión de activos?",
+      "opciones": [
+        "a) Pérdida de trazabilidad de los componentes, lo que dificulta la asignación de responsabilidad en caso de fallos futuros o incumplimiento de garantías.",
+        "b) Imposibilidad de aplicar políticas de retención de datos a los componentes extraídos, ya que el sistema no los reconoce como parte del activo original.",
+        "c) Violación de políticas de seguridad física, al no poder vincular los componentes con el asset tag del servidor principal.",
+        "d) Incremento en los costos de mantenimiento, al no poder identificar los componentes para su reemplazo o actualización."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que el desglose de componentes en un sistema de seguimiento de activos es clave para mantener la trazabilidad, la asignación de responsabilidad y la gestión de garantías. La omisión de registrar los componentes extraídos impide asociarlos con el activo principal, generando pérdida de trazabilidad.",
+      "id": "p17-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de gestión de activos, ¿qué acción es obligatoria realizar en el sistema de seguimiento de activos al recibir un nuevo servidor que incluye componentes internos desmontables como CPU, memoria RAM y unidades de almacenamiento, pero que NO será desglosado en el inventario?",
+      "opciones": [
+        "a) Registrar el servidor como un único activo sin desglosar sus componentes internos.",
+        "b) Obligar al proveedor a desmontar los componentes antes de la entrega para evitar registrar partes separadas.",
+        "c) Documentar todos los componentes internos en un apartado de 'componentes no registrados' para futuras referencias.",
+        "d) Asignar una etiqueta única al servidor pero no registrar sus componentes en el sistema de seguimiento."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario establece que, aunque los componentes sean desmontables, si no se desglosan en el inventario, el servidor debe registrarse como un único activo en el sistema de seguimiento para mantener la trazabilidad.",
+      "id": "p17-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión de activos, ¿qué diferencia principal existe entre la 'sanitización de medios de almacenamiento' y la 'retención de datos' según el temario?",
+      "opciones": [
+        "a) La sanitización elimina datos para reutilizar el medio, mientras la retención conserva datos por obligación legal.",
+        "b) La sanitización aplica solo a discos duros, mientras la retención incluye cualquier tipo de dato.",
+        "c) La sanitización es obligatoria por ley, mientras la retención es opcional.",
+        "d) La sanitización destruye físicamente el medio, mientras la retención solo archiva datos en la nube."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define que la sanitización elimina datos para reutilizar el medio, mientras la retención conserva datos por plazos legales o normativos.",
+      "id": "p17-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización recibe un lote de 20 laptops para su departamento de TI. Tras la entrega física y verificación técnica, ¿qué acción debe realizarse PRIMERO en el sistema de seguimiento de activos según el temario?",
+      "opciones": [
+        "a) Asignar cada laptop a un usuario específico sin registrar componentes internos.",
+        "b) Registrar cada laptop como un activo único con su etiqueta (asset tag) y datos básicos.",
+        "c) Desmontar cada laptop para registrar sus componentes internos (CPU, RAM, almacenamiento).",
+        "d) Eliminar los datos de los discos duros antes de asignarlos a los usuarios."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que el primer paso es registrar el activo como un todo en el sistema de seguimiento, incluyendo su etiqueta y datos básicos, antes de cualquier acción adicional.",
+      "id": "p17-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un propósito principal de un sistema de seguimiento de activos según el temario?",
+      "opciones": [
+        "a) Realizar auditorías de seguridad en tiempo real.",
+        "b) Asignar la propiedad de los activos a usuarios o departamentos.",
+        "c) Permitir el desglose de activos en componentes internos para trazabilidad.",
+        "d) Gestionar el ciclo de vida completo del activo desde su adquisición."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario no menciona que los sistemas de seguimiento de activos realicen auditorías de seguridad en tiempo real, sino que se enfocan en gestión, asignación y trazabilidad.",
+      "id": "p17-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción NO debe realizarse al registrar un nuevo activo en un sistema de seguimiento de activos cuando este es un dispositivo móvil temporal asignado a un empleado externo por un proyecto de 3 meses?",
+      "opciones": [
+        "a. Asignar un código de barras o etiqueta única al dispositivo móvil temporal.",
+        "b. Vincular el activo a un usuario temporal en el sistema de seguimiento.",
+        "c. Desglosar los componentes internos (CPU, memoria RAM, almacenamiento) en el inventario para este dispositivo temporal.",
+        "d. Documentar la fecha de inicio y fin del préstamo del dispositivo en el sistema."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario no menciona la necesidad de desglosar componentes internos en activos temporales, ya que estos suelen gestionarse como unidades completas para simplificar el seguimiento durante su uso limitado.",
+      "id": "p17-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué información DEBE incluirse en el certificado de destrucción de medios de almacenamiento?",
+      "opciones": [
+        "a) Nombre del empleado que solicitó la destrucción.",
+        "b) Identificación de los medios destruidos, método utilizado y fecha de destrucción.",
+        "c) Copia de la factura de compra del medio de almacenamiento.",
+        "d) Detalle de los datos que contenía el medio antes de su destrucción."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario especifica que el certificado debe incluir identificación de los medios, método de destrucción y fecha, para cumplir con normativas.",
+      "id": "p17-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa debe conservar datos financieros durante 7 años por obligación fiscal. ¿Qué concepto del temario describe mejor este requisito?",
+      "opciones": [
+        "a) Sanitización de medios de almacenamiento.",
+        "b) Retención de datos (data retention).",
+        "c) Clasificación de activos.",
+        "d) Etiquetado de activos (asset tag)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la retención de datos como el proceso de conservar información por plazos legales o normativos, como en este caso.",
+      "id": "p17-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de activos, ¿qué acción es obligatoria realizar en el sistema de seguimiento de activos al recibir un nuevo dispositivo móvil temporal (ej. tablet) asignado a un consultor externo por un proyecto de 3 meses?",
+      "opciones": [
+        "a) Registrar el dispositivo como activo temporal con fecha de expiración y asignarlo al consultor externo en el sistema.",
+        "b) No registrar el dispositivo en el sistema de seguimiento, ya que es temporal y no pertenece a la organización.",
+        "c) Etiquetar el dispositivo con un asset tag permanente y vincularlo al departamento de TI.",
+        "d) Destruir físicamente el dispositivo al finalizar el proyecto para evitar fugas de información."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario indica que todos los activos, incluso los temporales, deben registrarse en el sistema de seguimiento para garantizar trazabilidad y control durante su uso.",
+      "id": "p17-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes métodos de eliminación de datos NO es adecuado para un disco duro que será reasignado a otro empleado según el temario?",
+      "opciones": [
+        "a) Borrado seguro con herramientas especializadas.",
+        "b) Degaussing para inutilizar el disco.",
+        "c) Formateo rápido del sistema de archivos.",
+        "d) Destrucción física del disco."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario señala que la destrucción física es inadecuada si el disco será reasignado, ya que lo inutiliza permanentemente.",
+      "id": "p17-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un servidor blade llega al final de su vida útil y la organización decide externalizar su destrucción. ¿Qué acción NO debe realizarse según el temario?",
+      "opciones": [
+        "a) Obtener un certificado de destrucción del proveedor.",
+        "b) Registrar el servidor como 'en proceso de destrucción' en el sistema de seguimiento.",
+        "c) Destruir el servidor sin documentar el método utilizado.",
+        "d) Verificar que el proveedor cumpla con normativas de destrucción."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario exige documentar el método de destrucción y obtener un certificado, no destruir sin registro.",
+      "id": "p17-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de gestión de activos, ¿qué acción NO es parte del proceso de registro inicial de un activo en el sistema de seguimiento cuando este es un dispositivo móvil temporal asignado a un empleado temporal por un proyecto de 3 meses?",
+      "opciones": [
+        "a) Asignar una etiqueta de activo (asset tag) temporal al dispositivo",
+        "b) Registrar el activo como propiedad del empleado temporal en el sistema",
+        "c) Documentar el período de asignación y el usuario responsable en el sistema",
+        "d) Vincular el activo a un departamento específico de la organización"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que los activos temporales deben registrarse en el sistema, pero no deben asignarse como propiedad de empleados temporales, sino como recursos de la organización. La propiedad debe mantenerse en el departamento o área correspondiente.",
+      "id": "p17-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción es obligatoria realizar en el sistema de seguimiento de activos al registrar un nuevo activo que incluye componentes internos desmontables como CPU, memoria y unidades de almacenamiento, pero que NO será desglosado en el inventario?",
+      "opciones": [
+        "a) Registrar solo el activo completo sin desglosar sus componentes internos.",
+        "b) Documentar todos los componentes internos desmontables en el sistema, aunque no se desglosen en el inventario.",
+        "c) Excluir el registro de componentes internos desmontables para simplificar el proceso.",
+        "d) Solicitar una aprobación adicional de la dirección antes de registrar los componentes."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el temario, aunque los componentes internos no se desglosen en el inventario, es obligatorio documentarlos en el sistema de seguimiento para garantizar la trazabilidad y cumplimiento de políticas internas.",
+      "id": "p17-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización recibe un nuevo servidor con componentes internos desmontables (CPU, memoria RAM, unidades de almacenamiento). Según el temario, ¿qué acción debe realizarse PRIMERO en el sistema de seguimiento de activos?",
+      "opciones": [
+        "Registrar el servidor como un único activo sin desglosar componentes",
+        "Desglosar el servidor en sus componentes internos para un seguimiento detallado",
+        "Asignar el servidor a un usuario o departamento responsable",
+        "Verificar la existencia de un asset tag en el servidor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Si el servidor no será desglosado en el inventario, se registra como un único activo en el sistema de seguimiento, según lo indicado en el temario.",
+      "id": "p17-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de gestión de activos, ¿qué acción NO debe realizarse al registrar un nuevo dispositivo móvil temporal (ej. tablet) asignado a un consultor externo por un proyecto de 3 meses en el sistema de seguimiento de activos?",
+      "opciones": [
+        "a) Asignar el dispositivo a un usuario temporal sin vincularlo a un departamento específico.",
+        "b) Registrar el activo como hardware desglosable en sus componentes internos (CPU, memoria, almacenamiento).",
+        "c) Documentar la fecha de inicio y fin del proyecto asociado al dispositivo.",
+        "d) Incluir la etiqueta de activo (asset tag) con un identificador único en el sistema."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que los dispositivos móviles temporales no deben registrarse como desglosables en componentes internos, ya que no se gestionarán individualmente. Solo se debe registrar el dispositivo completo con su etiqueta y datos básicos.",
+      "id": "p17-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia principal existe entre la 'sanitización de medios de almacenamiento' y la 'retención de datos' según el temario?",
+      "opciones": [
+        "La sanitización elimina datos para proteger la información sensible, mientras que la retención conserva datos por obligación legal o normativa",
+        "La sanitización se aplica solo a discos duros, mientras que la retención incluye todos los tipos de medios de almacenamiento",
+        "La sanitización es un proceso obligatorio para todos los activos, mientras que la retención es opcional",
+        "La sanitización se realiza al final del ciclo de vida del activo, mientras que la retención se aplica durante todo su ciclo de vida"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define la sanitización como el proceso de eliminar datos de forma segura, mientras que la retención consiste en conservar datos por requisitos legales o internos.",
+      "id": "p17-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización externaliza la destrucción de discos duros obsoletos. ¿Qué información DEBE incluirse en el certificado de destrucción según el temario?",
+      "opciones": [
+        "Identificación de los medios destruidos, método de destrucción utilizado, fecha y responsable",
+        "Nombre del proveedor que realiza la destrucción y coste del servicio",
+        "Detalles técnicos de los discos duros (modelo, capacidad, número de serie)",
+        "Firma del responsable de TI y del proveedor, pero sin incluir fechas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario especifica que el certificado de destrucción debe incluir identificación de los medios, método de destrucción, fecha y responsable para cumplir con normativas.",
+      "id": "p17-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión de activos, ¿qué método de eliminación de datos NO es adecuado para un disco duro que será reasignado a otro empleado?",
+      "opciones": [
+        "Degaussing",
+        "Borrado seguro con utilidades especializadas",
+        "Destrucción física del disco",
+        "Formateo rápido del disco"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Según el temario, la destrucción física inutiliza el disco, por lo que no es adecuada si el dispositivo será reasignado. Se recomienda usar borrado seguro o degaussing.",
+      "id": "p17-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa recibe un lote de 15 servidores blade para su centro de datos. Durante la verificación técnica post-entrega, se detecta que uno de los servidores tiene un fallo en la placa base. Según el temario, ¿qué acción debe realizarse PRIMERO en el sistema de seguimiento de activos para este servidor defectuoso?",
+      "opciones": [
+        "Registrar el servidor como 'defectuoso' y asignarle un estado de 'en reparación' en el sistema",
+        "Destruir físicamente el servidor para evitar su uso indebido",
+        "Desglosar el servidor en sus componentes internos para identificar el fallo",
+        "Suspender el acceso del servidor a la red y notificar al proveedor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario indica que el sistema de seguimiento de activos debe reflejar el estado del activo, por lo que se registra como 'defectuoso' y se asigna un estado de 'en reparación'.",
+      "id": "p17-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización ha adquirido un lote de 25 servidores blade para su centro de datos, cada uno con componentes internos desmontables (CPU, memoria RAM, unidades SSD y HDD). Durante la fase de verificación técnica post-entrega, se detecta que 3 de los servidores tienen fallos en sus unidades de almacenamiento SSD. Según el temario, ¿qué acción debe realizarse PRIMERO en el sistema de seguimiento de activos para estos servidores defectuosos, garantizando la trazabilidad y cumpliendo con el proceso de adquisición?",
+      "opciones": [
+        "a) Registrar los servidores en el sistema con un estado de 'en reparación' y adjuntar el número de serie de las SSD defectuosas para su seguimiento.",
+        "b) Etiquetar físicamente los servidores como 'defectuosos' y almacenarlos en un área segura hasta su reparación, sin registrar cambios en el sistema.",
+        "c) Eliminar inmediatamente los servidores del sistema de seguimiento de activos para evitar confusiones en el inventario.",
+        "d) Solicitar al proveedor la sustitución de los servidores por unidades funcionales sin registrar el incidente en el sistema."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, los activos deben registrarse en el sistema de seguimiento incluso durante fallos o reparaciones, asignando un estado específico (ej. 'en reparación') y vinculando componentes defectuosos para mantener la trazabilidad.",
+      "id": "p17-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un escenario aplicado, una organización detecta que un empleado ha perdido su laptop etiquetada con un asset tag. Tras reportar la pérdida, ¿qué acción NO debería realizarse según las buenas prácticas del temario?",
+      "opciones": [
+        "Iniciar un proceso de auditoría para verificar el cumplimiento de políticas de gestión de activos",
+        "Suspender el acceso del usuario a los sistemas de la organización de inmediato",
+        "Realizar un borrado seguro remoto de los datos almacenados en la laptop",
+        "Destruir el disco duro de la laptop sin realizar un análisis forense previo"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Según el temario, la destrucción física del disco duro sin análisis previo puede eliminar evidencia crítica en casos de pérdida o robo, por lo que no es una acción adecuada.",
+      "id": "p17-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Asset Management",
+      "youtubeId": "BJ2UMB4a04g"
+    }
+  ]
+}

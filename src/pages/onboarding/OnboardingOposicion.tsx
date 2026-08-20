@@ -1,8 +1,8 @@
 // src/pages/onboarding/OnboardingOposicion.tsx
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../../data/oposiciones'
-import { crearPerfil } from '../../services/supabase'
+import { crearPerfil, esOwner } from '../../services/supabase'
 import { setActiveSlug, setOposicionesLocales } from '../../services/storage'
 
 function Marca() {
@@ -32,7 +32,10 @@ export default function OnboardingOposicion() {
   const [seleccionadas, setSeleccionadas] = useState<string[]>([])
   const [cargando, setCargando] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [puedeVerPrivadas, setPuedeVerPrivadas] = useState(false)
   const navigate = useNavigate()
+  useEffect(() => { esOwner().then(setPuedeVerPrivadas) }, [])
+  const opciones = OPOSICIONES.filter(op => !op.privado || puedeVerPrivadas)
 
   function toggleOposicion(slug: string) {
     setSeleccionadas(prev =>
@@ -68,7 +71,7 @@ export default function OnboardingOposicion() {
           <p style={{ fontSize: 13.5, color: 'var(--ink)', fontWeight: 600, margin: '0 0 14px' }}>Selecciona a qué te presentas (puedes elegir varias)</p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
-            {OPOSICIONES.map(op => {
+            {opciones.map(op => {
               const sel = seleccionadas.includes(op.slug)
               return (
                 <button

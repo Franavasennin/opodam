@@ -1,0 +1,1408 @@
+{
+  "id": 16,
+  "titulo": "4.1 · Bastionado y líneas base seguras",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LÍNEAS BASE SEGURAS (SECURE BASELINES)\n\nCuando se despliega una aplicación, es fundamental considerar todos los aspectos de seguridad asociados a su uso. Esto incluye configuraciones de seguridad en sistemas operativos, dispositivos de red y prácticamente cualquier otro componente que utilice la aplicación. Para garantizar su protección, debemos aplicar las mejores prácticas de seguridad disponibles.\n\nPor ejemplo, puede ser necesario configurar reglas específicas en el firewall (cortafuegos) para asegurar que la aplicación esté lo más protegida posible. También es importante mantener actualizados los parches (patch levels) del sistema operativo y de la aplicación misma. Cada vez que se despliega una instancia de la aplicación, es crucial verificar que todas las líneas base de seguridad (security baselines) también se implementen correctamente.\n\nEs recomendable realizar auditorías periódicas para confirmar que estas líneas base siguen vigentes y protegiendo la aplicación. Si se detectan desviaciones, se debe elaborar un plan de acción para corregirlas lo antes posible. Afortunadamente, no es necesario crear estas líneas base desde cero, ya que muchos fabricantes proporcionan líneas base de seguridad predefinidas que pueden adaptarse a las necesidades de la organización.\n\nEstas líneas base pueden obtenerse directamente del desarrollador de la aplicación, quien suele proporcionar configuraciones de permisos en el sistema de archivos y ajustes específicos de la aplicación. También es posible obtenerlas del fabricante del sistema operativo, como Microsoft, que ofrece líneas base de seguridad para Windows y Windows Server. Incluso algunos dispositivos especializados incluyen configuraciones de seguridad recomendadas por sus fabricantes.\n\nAl comenzar a construir una línea base de seguridad, el número de configuraciones disponibles puede resultar abrumador. Por ejemplo, en Windows 10 existen más de 3,000 configuraciones de políticas de grupo (Group Policy). Sin embargo, solo un subconjunto de estas son relevantes para la seguridad. Microsoft proporciona herramientas como el Security Compliance Toolkit (SCT) para ayudar a implementar estas líneas base de manera eficiente.\n\nUna vez compilada la lista de configuraciones de seguridad, el siguiente paso es desplegarlas en todos los componentes asociados a la aplicación. Esto puede realizarse mediante consolas centrales como el Security Compliance Toolkit, políticas de grupo de Active Directory (AD) o soluciones de gestión de dispositivos móviles (MDM) para dispositivos móviles. Para líneas base complejas, es recomendable automatizar el proceso de despliegue, especialmente cuando se gestionan cientos o miles de dispositivos.\n\nAunque muchas líneas base de seguridad se basan en buenas prácticas y rara vez cambian, existen situaciones que requieren actualizaciones:\n\n- Descubrimiento de nuevas vulnerabilidades que afectan a la aplicación o al sistema operativo.\n- Actualizaciones de la aplicación que exigen cambios en la configuración.\n- Implementación de un nuevo sistema operativo que requiere una línea base completamente nueva.\n- Conflictos entre las líneas base recomendadas por diferentes fabricantes, lo que obliga a evaluar cuál es la más adecuada para el entorno específico.\n\nEn estos casos, puede ser necesario probar las líneas base antes de su despliegue y auditar su cumplimiento una vez implementadas.\n\n\nFORTIFICACIÓN DE OBJETIVOS (HARDENING TARGETS)\n\nLa configuración predeterminada de un sistema operativo rara vez es segura al instalarlo por primera vez. Es necesario aplicar configuraciones adicionales para mejorar su postura de seguridad. Identificar qué ajustes modificar puede ser un desafío, pero muchos fabricantes proporcionan guías de fortalecimiento (hardening guides) específicas para sus aplicaciones o sistemas operativos.\n\nSi no existe una guía oficial, se recomienda consultar al fabricante o buscar en foros especializados, donde terceros pueden haber creado guías de seguridad útiles para la comunidad. Los dispositivos móviles son un ejemplo claro de sistemas que requieren fortalecimiento. Los fabricantes suelen ofrecer guías detalladas para mantener estos dispositivos seguros.\n\nLas actualizaciones (patches) son esenciales para corregir vulnerabilidades. Muchos parches incluyen no solo correcciones de errores, sino también actualizaciones de seguridad. Al instalar un parche, se cierran posibles vías de ataque contra el dispositivo. Otra técnica común de fortalecimiento es la segmentación de datos en dispositivos móviles. Por ejemplo, en entornos empresariales, se suele separar los datos corporativos de los personales. Si un atacante compromete un segmento, no necesariamente tendrá acceso al resto de la información del dispositivo.\n\nPara gestionar grandes cantidades de dispositivos móviles, se utilizan soluciones de gestión de dispositivos móviles (MDM). Estas permiten monitorear los dispositivos, aplicar políticas de seguridad y distribuir actualizaciones de manera centralizada. No solo los dispositivos móviles requieren fortalecimiento; los equipos de trabajo (workstations) que ejecutan sistemas operativos como Windows, macOS o Linux también deben ser protegidos.\n\nEstos sistemas reciben actualizaciones periódicas que incluyen correcciones de errores, parches de seguridad para el sistema operativo, aplicaciones o firmware. Muchas empresas agrupan estas actualizaciones y las lanzan en un día específico del mes, lo que facilita su prueba y despliegue. Una buena práctica de seguridad es eliminar cualquier software no utilizado, ya que cada aplicación instalada representa un posible punto de entrada para vulnerabilidades.\n\nLa infraestructura de red también debe ser fortalecida. Dispositivos como switches (conmutadores), routers (enrutadores), firewalls (cortafuegos) y otros equipos de red suelen ejecutar sistemas operativos embebidos (embedded) diseñados específicamente para su función. Estos sistemas tienen acceso limitado y, en muchos casos, requieren cambiar las credenciales predeterminadas por defecto.\n\nEs recomendable configurar algún tipo de autenticación, ya sea local o vinculada a un servidor central. Dado que los fabricantes son los únicos que proporcionan parches para estos dispositivos, es importante verificar periódicamente si existen actualizaciones disponibles. Las actualizaciones en estos equipos suelen ser poco frecuentes, pero cuando se lanzan, son críticas para la seguridad.\n\nEn entornos basados en la nube, las estaciones de trabajo de gestión (cloud management workstations) tienen acceso completo a la infraestructura cloud. Estas estaciones deben ser especialmente seguras y configuradas bajo el principio de mínimo privilegio (least privilege), lo que significa otorgar solo los permisos necesarios para realizar su función. Además, es recomendable instalar soluciones de detección y respuesta de endpoints (EDR) para monitorear posibles ataques y mantener los sistemas actualizados con las últimas tecnologías antimalware.\n\nLos servidores también requieren fortalecimiento. Estos suelen ejecutar sistemas operativos como Windows o Linux y pueden recibir actualizaciones individuales o agrupadas en paquetes conocidos como service packs. Es fundamental instalar parches de seguridad para mantener el sistema operativo protegido. Además, se deben aplicar políticas de autenticación robustas, como longitud mínima de contraseñas y complejidad, así como configurar el mínimo privilegio para todas las cuentas.\n\nEn algunos casos, los servidores solo necesitan comunicarse con un número limitado de dispositivos. Para reducir riesgos, se pueden establecer políticas en el servidor o en los firewalls que limiten el acceso a estos equipos. También es recomendable instalar soluciones de seguridad como antivirus, antimalware o EDR en los servidores.\n\nLos sistemas de control industrial (ICS) y los sistemas de adquisición de datos y control supervisorio (SCADA) representan otro desafío en términos de fortalecimiento. Estos sistemas gestionan equipos industriales a gran escala, como generadores de energía o maquinaria de manufactura. Suelen estar aislados en redes dedicadas (air-gapped) y con acceso muy restringido para minimizar riesgos.\n\nLos sistemas embebidos (embedded systems) también presentan desafíos únicos. Estos dispositivos ejecutan sistemas operativos específicos dentro de hardware especializado, como smartwatches o electrodomésticos inteligentes. Las actualizaciones de seguridad son poco frecuentes y, cuando se lanzan, deben aplicarse de inmediato. Dada su limitada capacidad de actualización, es recomendable aislar estos dispositivos en redes segmentadas y protegerlos con firewalls.\n\nLos sistemas operativos en tiempo real (RTOS) son otro tipo de sistemas embebidos que requieren un enfoque especial. Estos sistemas son deterministas, lo que significa que cada proceso debe ejecutarse en un marco de tiempo específico. Son comunes en equipos industriales, militares o automotrices, donde las decisiones deben tomarse en fracciones de segundo. Para protegerlos, se recomienda:\n\n- Aislarlos de otras redes.\n- Ejecutar solo los servicios mínimos necesarios.\n- Utilizar firewalls separados o tecnologías de seguridad basadas en hosts para controlar su comunicación.\n\nLos dispositivos de Internet de las Cosas (IoT) también requieren atención especial. Aunque son convenientes para controlar sistemas como iluminación, calefacción o refrigeración, los fabricantes no siempre priorizan la seguridad. Por ello, es crucial:\n\n- Aplicar parches de seguridad tan pronto como estén disponibles.\n- Segmentar estos dispositivos en redes dedicadas para limitar el impacto de posibles exploits.\n\n\nSEGURIDAD EN DISPOSITIVOS INALÁMBRICOS Y MÓVILES\n\nCuando se instala o soluciona problemas en una red inalámbrica, es útil realizar un estudio de sitio (site survey). Este proceso permite entender mejor el rendimiento de la red y cómo otros puntos de acceso cercanos pueden afectar la señal. Un estudio de sitio incluye:\n\n- Identificar los puntos de acceso (access points) existentes, tanto propios como ajenos.\n- Analizar el espectro de frecuencias para determinar los canales más adecuados.\n- Utilizar herramientas de análisis inalámbrico para recopilar información detallada sobre las redes circundantes.\n\nLas herramientas de análisis pueden proporcionar datos como el identificador del conjunto de servicios básicos (BSSID), canales utilizados, bandas de frecuencia y otros detalles técnicos. Además, se pueden generar mapas de calor (heat maps) para visualizar la intensidad de la señal en diferentes áreas, lo que ayuda a identificar zonas con cobertura insuficiente o interferencias.\n\nLos sistemas operativos incluyen herramientas integradas para gestionar conexiones inalámbricas, y existen numerosas aplicaciones de terceros que ofrecen funcionalidades avanzadas. Por ejemplo, herramientas como NetSpot permiten detectar redes inalámbricas cercanas, medir la intensidad de la señal y analizar posibles interferencias.\n\nPara redes con alta densidad de dispositivos, puede ser útil invertir en un analizador de espectro. Este dispositivo muestra todas las señales en una frecuencia específica, independientemente de su origen, lo que ayuda a identificar fuentes de interferencia no deseadas.\n\n\nGESTIÓN DE DISPOSITIVOS MÓVILES\n\nLas organizaciones suelen gestionar dispositivos móviles mediante soluciones de gestión de dispositivos móviles (MDM). Estas herramientas son útiles tanto para dispositivos propiedad de la empresa como para dispositivos personales (BYOD, Bring Your Own Device). El MDM permite:\n\n- Implementar políticas de seguridad, como bloqueo automático de pantalla o requisitos de contraseña.\n- Configurar segmentación de datos, separando información corporativa de personal.\n- Forzar la instalación de aplicaciones específicas.\n- Desactivar funciones como la cámara en áreas sensibles.\n\nEl enfoque BYOD permite a los empleados usar sus dispositivos personales para trabajo, pero plantea desafíos de seguridad. Es crucial que estos dispositivos cumplan con los requisitos de la empresa para ser gestionados mediante el MDM. Además, se deben establecer políticas claras para gestionar cambios de dispositivos, como la eliminación segura de datos en dispositivos antiguos y la integración de nuevos dispositivos.\n\nOtra opción es el modelo COPE (Corporate Owned Personally Enabled), donde la empresa proporciona el dispositivo, pero permite su uso personal. Esto es similar a la gestión de computadoras portátiles, donde los datos corporativos y personales se mantienen separados. Algunas organizaciones ofrecen a los empleados la opción de elegir su dispositivo, conocido como CYOD (Choose Your Own Device).\n\nLos dispositivos móviles presentan desafíos únicos debido a su movilidad y la cantidad de datos que almacenan. Las redes celulares modernas, como 4G y 5G, dividen el territorio en celdas, lo que puede generar preocupaciones sobre el monitoreo del tráfico o la localización de usuarios. Para mitigar riesgos, es esencial:\n\n- Mantener los dispositivos actualizados con los últimos parches de seguridad.\n- Utilizar tecnologías de cifrado, como VPN, al conectarse a redes inseguras.\n- Ser cauteloso con las conexiones Bluetooth, ya que pueden ser explotadas si no se gestionan correctamente.\n\nLas redes Wi-Fi también presentan riesgos, especialmente en entornos públicos como cafeterías o hoteles. Siempre que sea posible, se debe usar cifrado para proteger los datos transmitidos. Los atacantes pueden interceptar el tráfico inalámbrico, realizar ataques de intermediario (on-path attacks) o incluso interferir con las señales para causar denegación de servicio (DoS).\n\nLa tecnología Bluetooth, aunque conveniente para conectar dispositivos a corta distancia, también puede ser explotada si no se configura correctamente. Siempre se debe usar el proceso de emparejamiento formal y evitar conexiones automáticas a dispositivos desconocidos.\n\n\nCONFIGURACIONES DE SEGURIDAD INALÁMBRICA\n\nLa principal preocupación en las redes inalámbricas es que todo el tráfico se transmite por el aire, lo que facilita la interceptación por parte de atacantes. Para mitigar este riesgo, es esencial:\n\n- Cifrar todo el tráfico en la red inalámbrica.\n- Implementar protocolos que garanticen la integridad de los mensajes, como los códigos de integridad de mensajes (MIC).\n\nHistóricamente, las redes Wi-Fi han utilizado el protocolo WPA2 para cifrar el tráfico. Sin embargo, WPA2 tiene una vulnerabilidad crítica en el proceso de autenticación inicial, conocido como el handshake de 4 vías. Los atacantes pueden capturar el hash del handshake y, utilizando técnicas de fuerza bruta, intentar descifrar la clave precompartida (PSK). Con el avance de tecnologías como el procesamiento en GPU o la computación en la nube, este proceso puede completarse en días.\n\nWPA3 introduce mejoras significativas para abordar estas vulnerabilidades. Incluye:\n\n- Un nuevo modo de cifrado llamado GCMP (Galois/Counter Mode Protocol), que utiliza AES para cifrado y proporciona integridad de mensajes.\n- Un proceso de autenticación mutua entre el cliente y el punto de acceso.\n- La generación de claves de sesión compartidas directamente en los dispositivos, eliminando la necesidad de enviar hashes a través de la red.\n\nEl método de intercambio de claves en WPA3 se conoce como SAE (Simultaneous Authentication of Equals), una derivación del intercambio de claves Diffie-Hellman. Esto garantiza que cada usuario en la red obtenga una clave de sesión única, incluso si todos usan la misma clave precompartida. Esto evita que los usuarios puedan ver el tráfico de otros en la red.\n\nWPA3 también introduce el estándar de autenticación conocido como dragonfly handshake. Además, ofrece dos métodos principales de autenticación:\n\n- Clave precompartida (PSK): común en redes domésticas, donde todos los usuarios comparten la misma contraseña.\n- Autenticación centralizada mediante 802.1X: utilizada en entornos empresariales, donde cada usuario tiene credenciales únicas.\n\nEn redes empresariales, 802.1X es el método preferido. Este protocolo, también conocido como NAC (Network Access Control), requiere que los usuarios proporcionen credenciales antes de acceder a la red. Las credenciales se validan en un servidor de autenticación centralizado, como un servidor RADIUS, LDAP o TACACS. Este servidor sigue el marco AAA (Autenticación, Autorización y Contabilidad):\n\n- Autenticación: verifica la identidad del usuario mediante credenciales como nombre de usuario y contraseña.\n- Autorización: determina qué recursos puede acceder el usuario una vez autenticado.\n- Contabilidad: registra métricas como el tiempo de conexión y el uso de datos.\n\nEl protocolo RADIUS es uno de los más utilizados para autenticación centralizada. Aunque su nombre incluye \"dial-in\", RADIUS se utiliza ampliamente en redes locales para autenticar accesos a routers, switches, servidores y VPN.\n\nEl proceso de autenticación 802.1X involucra tres componentes:\n\n- Suplicante: el dispositivo del usuario que intenta acceder a la red.\n- Autenticador: el dispositivo al que se conecta el suplicante, como un switch o punto de acceso.\n\n- Servidor de autenticación: un servidor AAA que valida las credenciales del suplicante.\n\nEl proceso comienza cuando el suplicante intenta conectarse a la red. El autenticador bloquea el acceso hasta que se proporcionen las credenciales. Estas credenciales se envían al servidor de autenticación mediante el protocolo EAP (Extensible Authentication Protocol), un marco flexible que permite diferentes métodos de autenticación. Una vez validadas, el servidor de autenticación autoriza el acceso y el suplicante puede utilizar la red.\n\n\nSEGURIDAD EN APLICACIONES\n\nLos profesionales de TI suelen instalar parches de seguridad para aplicaciones que presentan vulnerabilidades como desbordamientos de búfer (buffer overflow) o inyecciones SQL. El desarrollo de aplicaciones implica un equilibrio entre la velocidad de lanzamiento y la seguridad. Aunque los equipos de control de calidad (QA) realizan pruebas de funcionalidad y seguridad, algunas vulnerabilidades pueden pasar desapercibidas hasta que son explotadas por investigadores o atacantes.\n\nLos desarrolladores implementan validación de entrada (input validation) para garantizar que los datos ingresados en la aplicación cumplan con los formatos esperados. Por ejemplo, un campo para ingresar un código postal debe aceptar solo números y un formato específico. Si se ingresan datos que no cumplen con estos criterios, la aplicación debe rechazar la entrada y solicitar una corrección.\n\nLas pruebas automatizadas, conocidas como fuzzing, consisten en introducir datos aleatorios en los campos de entrada de la aplicación para identificar comportamientos inesperados. Si la aplicación falla durante estas pruebas, los desarrolladores deben revisar y mejorar la validación de entrada.\n\nLas cookies son pequeños archivos de datos almacenados en el navegador que ayudan a personalizar la experiencia del usuario o mantener sesiones activas. Aunque las cookies no son ejecutables ni contienen malware, pueden almacenar información sensible. Para proteger esta información, los navegadores utilizan cookies seguras, que solo se transmiten a través de conexiones HTTPS cifradas. Sin embargo, dado que cualquier dato en una cookie puede ser leído por el navegador, los desarrolladores deben evitar almacenar información confidencial en ellas.\n\nEl análisis estático de código (SAST, Static Application Security Testing) es una técnica utilizada para identificar vulnerabilidades en el código fuente de una aplicación. Herramientas de SAST analizan el código en busca de problemas como desbordamientos de búfer o inyecciones SQL. Sin embargo, este método no es infalible, ya que algunas vulnerabilidades, como las relacionadas con la implementación de criptografía, pueden pasar desapercibidas. Los desarrolladores deben revisar los resultados del análisis para filtrar falsos positivos y aplicar las correcciones necesarias.\n\nLa firma de código (code signing) es otra técnica de seguridad esencial. Permite verificar dos aspectos clave:\n\n- Si la aplicación ha sido modificada desde su distribución por el desarrollador.\n- Si la aplicación realmente proviene del desarrollador legítimo.\n\nPara implementar la firma de código, el desarrollador utiliza un certificado emitido por una autoridad de certificación (CA) para firmar digitalmente el código. Durante la instalación, el sistema operativo verifica la firma digital. Si la verificación falla, el sistema alerta al usuario sobre posibles alteraciones en la aplicación.\n\nEl sandboxing (aislamiento) es una técnica que limita el acceso de una aplicación a solo los recursos necesarios para su funcionamiento. Existen dos tipos principales de sandboxing:\n\n- Sandboxing durante el desarrollo: los desarrolladores trabajan en un entorno aislado para evitar afectar la red de producción.\n- Sandboxing en tiempo de ejecución: las aplicaciones se ejecutan en entornos aislados, como máquinas virtuales o contenedores, para limitar su acceso a otros recursos del sistema.\n\nEn dispositivos móviles, el sistema operativo implementa sandboxing para proteger los datos personales del usuario. Por ejemplo, una aplicación de navegador puede acceder a los marcadores del usuario, pero no a la galería de fotos, a menos que se le otorguen permisos explícitos.\n\nLos desarrolladores también incorporan monitoreo en sus aplicaciones para detectar actividades sospechosas, como intentos de inyección SQL o accesos no autorizados. Estos sistemas generan registros detallados que pueden analizarse para identificar vulnerabilidades desconocidas o ataques en curso. Si se detecta un comportamiento inusual, como transferencias de archivos anómalas, el monitoreo de seguridad lo reflejará y permitirá tomar medidas correctivas."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Líneas Base Seguras] --> B[Definición y propósito]\nA --> C[Despliegue y auditoría]\nA --> D[Herramientas y fuentes]\n\nE[Fortificación de Objetivos] --> F[Guías de fortalecimiento]\nE --> G[Actualizaciones y parches]\nE --> H[Segmentación de datos]\nE --> I[Dispositivos móviles y MDM]\nE --> J[Infraestructura de red]\nE --> K[Sistemas industriales y embebidos]\n\nL[Seguridad en dispositivos inalámbricos y móviles] --> M[Estudios de sitio]\nL --> N[Gestión de dispositivos móviles]\nL --> O[BYOD, COPE y CYOD]\nL --> P[Riesgos en redes celulares y Wi-Fi]\n\nQ[Configuraciones de seguridad inalámbrica] --> R[Cifrado y protocolos]\nQ --> S[WPA2 vs WPA3]\nQ --> T[Autenticación 802.1X y EAP]\nQ --> U[Servidores AAA y RADIUS]\n\nV[Seguridad en aplicaciones] --> W[Validación de entrada y fuzzing]\nV --> X[Cookies seguras]\nV --> Y[Análisis estático de código SAST]\nV --> Z[Aislamiento con sandboxing]\nV --> AA[Firma de código]\nV --> AB[Monitoreo de aplicaciones]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc16-01",
+      "pregunta": "¿Qué es una línea base de seguridad (secure baseline) y por qué es importante en el despliegue de aplicaciones?",
+      "respuesta": "Una línea base de seguridad es un conjunto de configuraciones y buenas prácticas de seguridad que deben implementarse en todos los componentes asociados a una aplicación (sistema operativo, dispositivos de red, etc.). Es importante porque garantiza que la aplicación esté protegida desde el momento de su despliegue y se mantenga segura durante su ciclo de vida."
+    },
+    {
+      "id": "fc16-02",
+      "pregunta": "¿Qué herramientas proporciona Microsoft para implementar líneas base de seguridad en sistemas Windows?",
+      "respuesta": "Microsoft ofrece el Security Compliance Toolkit (SCT), que incluye líneas base de seguridad predefinidas para Windows y Windows Server, así como herramientas para su despliegue y auditoría."
+    },
+    {
+      "id": "fc16-03",
+      "pregunta": "¿Qué es el fortalecimiento de objetivos (hardening) y cuál es su objetivo principal?",
+      "respuesta": "El fortalecimiento de objetivos es el proceso de aplicar configuraciones y ajustes de seguridad para reducir la superficie de ataque de un sistema. Su objetivo principal es mejorar la postura de seguridad de dispositivos, sistemas operativos y aplicaciones."
+    },
+    {
+      "id": "fc16-04",
+      "pregunta": "¿Qué es un sistema embebido (embedded system) y qué desafíos presenta en términos de seguridad?",
+      "respuesta": "Un sistema embebido es un dispositivo con hardware y software especializado diseñado para una función específica (ej. smartwatches, electrodomésticos). Los desafíos de seguridad incluyen actualizaciones poco frecuentes, acceso limitado al sistema operativo y la necesidad de aislarlos en redes segmentadas."
+    },
+    {
+      "id": "fc16-05",
+      "pregunta": "¿Qué es el principio de mínimo privilegio (least privilege) y cómo se aplica en servidores?",
+      "respuesta": "El principio de mínimo privilegio consiste en otorgar a los usuarios o aplicaciones solo los permisos necesarios para realizar su función. En servidores, se aplica configurando políticas de acceso, deshabilitando cuentas no utilizadas y limitando la comunicación a dispositivos específicos."
+    },
+    {
+      "id": "fc16-06",
+      "pregunta": "¿Qué es un estudio de sitio (site survey) en redes inalámbricas y qué información proporciona?",
+      "respuesta": "Un estudio de sitio es un proceso para analizar el rendimiento de una red inalámbrica y su entorno. Proporciona información sobre puntos de acceso existentes, interferencias, canales recomendados y mapas de calor para visualizar la intensidad de la señal."
+    },
+    {
+      "id": "fc16-07",
+      "pregunta": "¿Qué es el protocolo WPA3 y qué mejoras introduce frente a WPA2?",
+      "respuesta": "WPA3 es el estándar más reciente para seguridad en redes Wi-Fi. Introduce mejoras como el cifrado GCMP, autenticación mutua, generación de claves de sesión en los dispositivos y protección contra ataques de fuerza bruta en el handshake de 4 vías."
+    },
+    {
+      "id": "fc16-08",
+      "pregunta": "¿Qué es el protocolo 802.1X y cómo funciona en la autenticación de redes?",
+      "respuesta": "802.1X es un protocolo de control de acceso a redes que requiere autenticación antes de permitir el acceso. Funciona con tres componentes: suplicante (usuario), autenticador (dispositivo de red) y servidor de autenticación (AAA), utilizando protocolos como EAP y RADIUS."
+    },
+    {
+      "id": "fc16-09",
+      "pregunta": "¿Qué es el BYOD (Bring Your Own Device) y qué desafíos de seguridad plantea?",
+      "respuesta": "BYOD es un modelo donde los empleados usan sus dispositivos personales para trabajo. Los desafíos incluyen garantizar que los dispositivos cumplan con las políticas de seguridad de la empresa, proteger datos corporativos y personales por separado, y gestionar cambios de dispositivos."
+    },
+    {
+      "id": "fc16-10",
+      "pregunta": "¿Qué es el análisis estático de código (SAST) y qué limitaciones tiene?",
+      "respuesta": "SAST es una técnica para identificar vulnerabilidades en el código fuente de una aplicación mediante herramientas automatizadas. Sus limitaciones incluyen la incapacidad para detectar vulnerabilidades en la implementación de criptografía y la generación de falsos positivos que requieren revisión manual."
+    },
+    {
+      "id": "fc16-11",
+      "pregunta": "¿Qué es el sandboxing y cómo protege a los usuarios y sistemas?",
+      "respuesta": "El sandboxing es una técnica que aísla la ejecución de aplicaciones para limitar su acceso a recursos del sistema. Protege a los usuarios al evitar que las aplicaciones accedan a datos sensibles sin permiso, y protege los sistemas al contener posibles exploits dentro de un entorno controlado."
+    },
+    {
+      "id": "fc16-12",
+      "pregunta": "¿Qué es la validación de entrada (input validation) y por qué es crucial en el desarrollo de aplicaciones?",
+      "respuesta": "La validación de entrada es el proceso de verificar que los datos ingresados en una aplicación cumplan con los formatos y restricciones esperados. Es crucial porque evita que datos maliciosos o inesperados sean interpretados por la aplicación, previniendo vulnerabilidades como inyecciones SQL o desbordamientos de búfer."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un método común para implementar líneas base de seguridad en entornos empresariales?",
+      "opciones": [
+        "a) Políticas de grupo de Active Directory (AD)",
+        "b) Soluciones de gestión de dispositivos móviles (MDM)",
+        "c) Scripts manuales ejecutados localmente en cada equipo",
+        "d) Security Compliance Toolkit (SCT)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona el uso de consolas centrales como AD, MDM o SCT para desplegar líneas base, pero no menciona scripts manuales como método recomendado.",
+      "id": "p16-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando WPA2 y WPA3, ¿qué mejora introduce WPA3 en el proceso de autenticación inicial?",
+      "opciones": [
+        "a) Elimina por completo el uso de claves precompartidas (PSK)",
+        "b) Implementa el método SAE (Simultaneous Authentication of Equals) para generar claves de sesión únicas por usuario",
+        "c) Usa exclusivamente el protocolo RADIUS para autenticación",
+        "d) Permite que los puntos de acceso generen claves sin intervención del cliente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "WPA3 introduce el método SAE para autenticación mutua y generación de claves de sesión únicas, mejorando la seguridad frente a WPA2.",
+      "id": "p16-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de líneas base de seguridad, ¿qué herramienta proporciona Microsoft para ayudar a implementar configuraciones de seguridad en Windows?",
+      "opciones": [
+        "a) Windows Defender Firewall",
+        "b) Security Compliance Toolkit (SCT)",
+        "c) Windows Update",
+        "d) Group Policy Editor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona explícitamente el Security Compliance Toolkit (SCT) como herramienta para implementar líneas base de seguridad en Windows.",
+      "id": "p16-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red detecta que un servidor con sistema operativo embebido no ha recibido parches de seguridad en meses. ¿Qué acción prioritaria debe realizar según las mejores prácticas de fortalecimiento?",
+      "opciones": [
+        "a) Desconectar el servidor de la red inmediatamente",
+        "b) Verificar si el fabricante ha lanzado parches recientes y aplicarlos",
+        "c) Reemplazar el sistema operativo por uno más moderno",
+        "d) Aislar el servidor en una red segmentada sin aplicar parches"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario enfatiza la importancia de aplicar parches de seguridad en sistemas embebidos, ya que son críticos y las actualizaciones son poco frecuentes pero esenciales.",
+      "id": "p16-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un componente del marco AAA en autenticación centralizada 802.1X?",
+      "opciones": [
+        "a) Autenticación",
+        "b) Autorización",
+        "c) Auditoría",
+        "d) Contabilidad"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El marco AAA incluye Autenticación, Autorización y Contabilidad, no Auditoría, que es un concepto relacionado pero distinto.",
+      "id": "p16-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un desarrollador está implementando una aplicación que procesa datos sensibles de usuarios. ¿Qué técnica de seguridad debe aplicar para evitar almacenar información confidencial en cookies?",
+      "opciones": [
+        "a) Usar cookies seguras (Secure) y evitar almacenar datos sensibles",
+        "b) Cifrar todos los datos antes de almacenarlos en cookies",
+        "c) Eliminar el uso de cookies por completo",
+        "d) Almacenar solo metadatos en cookies y los datos sensibles en el servidor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda usar cookies seguras y evitar almacenar información sensible en ellas, ya que pueden ser leídas por el navegador.",
+      "id": "p16-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno BYOD, ¿qué política de gestión de dispositivos móviles (MDM) es esencial para mitigar riesgos de seguridad?",
+      "opciones": [
+        "a) Permitir que los usuarios instalen cualquier aplicación de su elección",
+        "b) Forzar la instalación de aplicaciones específicas y aplicar segmentación de datos",
+        "c) Desactivar la funcionalidad Bluetooth en todos los dispositivos",
+        "d) Eliminar la opción de usar redes Wi-Fi públicas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el MDM permite configurar segmentación de datos y forzar la instalación de aplicaciones específicas como medidas de seguridad en BYOD.",
+      "id": "p16-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un sistema de control industrial (ICS) opera en una red air-gapped. ¿Qué práctica de fortalecimiento adicional debe implementarse según el temario?",
+      "opciones": [
+        "a) Conectar el sistema a Internet para recibir actualizaciones automáticas",
+        "b) Aplicar parches de seguridad solo cuando sean absolutamente necesarios",
+        "c) Aislar el sistema en una red segmentada con acceso muy restringido",
+        "d) Desactivar el firewall para reducir la latencia en la comunicación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario recomienda aislar los sistemas ICS en redes dedicadas con acceso muy restringido para minimizar riesgos.",
+      "id": "p16-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de seguridad aplicaría un administrador para proteger un servidor que solo necesita comunicarse con un número limitado de dispositivos?",
+      "opciones": [
+        "a) Configurar políticas en el servidor o firewall para limitar el acceso a esos dispositivos específicos",
+        "b) Desactivar todos los servicios no esenciales y reiniciar el servidor semanalmente",
+        "c) Instalar un antivirus y desactivar el firewall para evitar conflictos",
+        "d) Segmentar la red en VLANs pero permitir acceso total entre ellas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario sugiere establecer políticas en el servidor o firewalls para limitar el acceso a dispositivos específicos, reduciendo así el riesgo de exposición.",
+      "id": "p16-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de TI está evaluando el despliegue de una línea base de seguridad para una nueva aplicación. ¿Qué paso inicial es crítico para evitar configuraciones abrumadoras como las mencionadas en el temario (ej. 3,000 políticas en Windows)?",
+      "opciones": [
+        "a) Aplicar todas las políticas de seguridad disponibles sin filtrar",
+        "b) Utilizar herramientas como el Security Compliance Toolkit (SCT) para seleccionar solo las políticas relevantes",
+        "c) Esperar a que los usuarios reporten problemas para ajustar la configuración",
+        "d) Delegar la configuración a cada usuario final para personalizarla"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que herramientas como el SCT ayudan a implementar líneas base de manera eficiente, seleccionando solo las configuraciones relevantes para la seguridad.",
+      "id": "p16-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué herramienta específica de Microsoft está diseñada para ayudar a implementar líneas base de seguridad en entornos Windows de manera eficiente?",
+      "opciones": [
+        "Microsoft Baseline Security Analyzer (MBSA)",
+        "Security Compliance Toolkit (SCT)",
+        "Windows Defender Firewall with Advanced Security",
+        "Group Policy Management Console (GPMC)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Security Compliance Toolkit (SCT) es la herramienta mencionada en el temario para implementar líneas base de seguridad en Windows de forma eficiente, especialmente ante la complejidad de más de 3,000 políticas de grupo.",
+      "id": "p16-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de fortalecimiento de sistemas embebidos, ¿qué acción prioritaria debe realizarse con los dispositivos que ejecutan sistemas operativos embebidos según las mejores prácticas?",
+      "opciones": [
+        "Aplicar parches de seguridad inmediatamente cuando estén disponibles",
+        "Conectarlos a redes inalámbricas para facilitar su actualización",
+        "Eliminar el software no utilizado para reducir superficies de ataque",
+        "Configurar firewalls para permitir tráfico bidireccional sin restricciones"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aplicar parches de seguridad tan pronto como estén disponibles para sistemas embebidos, ya que las actualizaciones son poco frecuentes pero críticas.",
+      "id": "p16-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un beneficio directo de implementar líneas base de seguridad predefinidas según el temario?",
+      "opciones": [
+        "Reducir el número de configuraciones de seguridad irrelevantes en el sistema",
+        "Garantizar que todas las políticas de seguridad cumplan con estándares internacionales",
+        "Ahorrar tiempo al evitar crear configuraciones desde cero",
+        "Facilitar la auditoría y el cumplimiento de normativas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las líneas base predefinidas ayudan a reducir configuraciones irrelevantes, ahorrar tiempo y facilitar auditorías, pero no garantizan automáticamente el cumplimiento de estándares internacionales.",
+      "id": "p16-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red detecta que un servidor en una red air-gapped opera con credenciales predeterminadas. ¿Qué acción debe priorizarse según el temario?",
+      "opciones": [
+        "Cambiar las credenciales predeterminadas por contraseñas complejas y únicas",
+        "Conectar el servidor a Internet para descargar actualizaciones automáticamente",
+        "Deshabilitar el firewall para mejorar el rendimiento de la red",
+        "Reemplazar el sistema operativo por una versión más reciente sin parches"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda cambiar las credenciales predeterminadas por defecto en dispositivos de red, incluyendo servidores en redes air-gapped, para reducir riesgos de acceso no autorizado.",
+      "id": "p16-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de fortalecimiento NO es aplicable a sistemas de control industrial (ICS) según las recomendaciones del temario?",
+      "opciones": [
+        "Segmentar la red para aislar los sistemas ICS",
+        "Implementar firewalls separados para controlar la comunicación",
+        "Aplicar parches de seguridad de forma inmediata sin pruebas previas",
+        "Utilizar firewalls basados en hosts para proteger cada dispositivo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario recomienda probar las líneas base de seguridad antes de su despliegue en sistemas críticos como ICS, por lo que aplicar parches sin pruebas previas no es una práctica adecuada.",
+      "id": "p16-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno BYOD, ¿qué política de gestión de dispositivos móviles (MDM) es esencial para mitigar riesgos de seguridad según el temario?",
+      "opciones": [
+        "Forzar la instalación de aplicaciones específicas mediante el MDM",
+        "Permitir que los usuarios instalen cualquier aplicación de terceros",
+        "Desactivar la segmentación de datos para simplificar la gestión",
+        "Eliminar la necesidad de autenticación en dispositivos personales"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que el MDM permite implementar políticas de seguridad como forzar la instalación de aplicaciones específicas, lo que ayuda a mitigar riesgos en entornos BYOD.",
+      "id": "p16-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando WPA2 y WPA3, ¿qué característica introduce WPA3 que mejora significativamente la seguridad en redes inalámbricas según el temario?",
+      "opciones": [
+        "Uso de claves de sesión únicas por usuario mediante SAE (Simultaneous Authentication of Equals)",
+        "Eliminación total del proceso de handshake de 4 vías",
+        "Soporte exclusivo para autenticación mediante certificados digitales",
+        "Reducción del ancho de banda necesario para la transmisión de datos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "WPA3 introduce el método SAE, que genera claves de sesión únicas para cada usuario, mejorando la seguridad frente a ataques como los que explotan el handshake de 4 vías en WPA2.",
+      "id": "p16-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un desarrollador está implementando una aplicación que procesa datos sensibles de usuarios. ¿Qué técnica de seguridad debe aplicar para evitar almacenar información confidencial en cookies según el temario?",
+      "opciones": [
+        "Utilizar cookies seguras y cifrar los datos almacenados en ellas",
+        "Evitar por completo el uso de cookies en la aplicación",
+        "Almacenar solo metadatos en las cookies y cifrar los datos en el servidor",
+        "Implementar autenticación basada en tokens JWT en lugar de cookies"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario recomienda evitar almacenar información confidencial en cookies y, en su lugar, almacenar solo metadatos, cifrando los datos sensibles en el servidor.",
+      "id": "p16-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de TI está evaluando el despliegue de una línea base de seguridad para una nueva aplicación en un entorno con 500 estaciones de trabajo. ¿Qué paso inicial es crítico para evitar configuraciones abrumadoras según el temario?",
+      "opciones": [
+        "Seleccionar y adaptar solo las configuraciones de seguridad relevantes para la aplicación",
+        "Implementar todas las 3,000 políticas de grupo disponibles en Windows para cubrir todos los escenarios",
+        "Deshabilitar el firewall en todas las estaciones para no interferir con la aplicación",
+        "Solicitar a los usuarios que configuren manualmente las políticas de seguridad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que, ante la complejidad de configuraciones como las 3,000 políticas de grupo en Windows, es crítico seleccionar solo las relevantes para la aplicación para evitar abrumar el entorno.",
+      "id": "p16-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un sistema de control industrial (ICS) que opera en una red air-gapped, ¿qué práctica de fortalecimiento adicional debe implementarse según el temario, considerando su naturaleza crítica?",
+      "opciones": [
+        "Aislar los dispositivos ICS en redes segmentadas y protegerlos con firewalls separados",
+        "Conectar el sistema ICS a Internet para recibir actualizaciones de seguridad en tiempo real",
+        "Deshabilitar todos los protocolos de comunicación para evitar cualquier riesgo",
+        "Permitir el acceso remoto sin autenticación para facilitar la gestión"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar sistemas ICS en redes dedicadas y segmentadas, y protegerlos con firewalls separados para minimizar riesgos de seguridad en entornos críticos.",
+      "id": "p16-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de fortalecimiento es MENOS efectiva para proteger un sistema de control industrial (ICS) en una red air-gapped según el temario?",
+      "opciones": [
+        "Aislar el sistema en una red segmentada sin acceso a internet.",
+        "Aplicar parches de seguridad solo cuando sean proporcionados por el fabricante.",
+        "Permitir conexiones remotas mediante VPN sin autenticación multifactor.",
+        "Utilizar firewalls para limitar el tráfico a los dispositivos críticos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario destaca que los sistemas ICS requieren aislamiento extremo y restringe conexiones remotas sin controles robustos como MFA.",
+      "id": "p16-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de líneas base de seguridad, ¿qué herramienta de Microsoft permite implementar configuraciones de seguridad en Windows de manera eficiente, evitando la sobrecarga de 3,000 políticas?",
+      "opciones": [
+        "Windows Defender Firewall",
+        "Security Compliance Toolkit (SCT)",
+        "Microsoft Intune",
+        "Active Directory Group Policy"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona explícitamente el Security Compliance Toolkit (SCT) como herramienta para implementar líneas base de seguridad en Windows de forma eficiente.",
+      "id": "p16-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué acción es prioritaria al implementar líneas base de seguridad en sistemas operativos embebidos según el temario?",
+      "opciones": [
+        "Aplicar parches de seguridad disponibles por el fabricante",
+        "Modificar la configuración predeterminada del sistema operativo",
+        "Desconectar el dispositivo de la red para evitar ataques",
+        "Eliminar todos los servicios no esenciales del dispositivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que las actualizaciones (patches) son esenciales para corregir vulnerabilidades en sistemas operativos embebidos, ya que estos dispositivos suelen tener acceso limitado y requieren cambios en credenciales predeterminadas.",
+      "id": "p16-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador detecta que un servidor embebido en una red crítica no ha recibido parches en meses. ¿Qué acción prioritaria debe realizar según las mejores prácticas de fortalecimiento?",
+      "opciones": [
+        "Aislar el servidor en una red air-gapped temporalmente.",
+        "Verificar si el fabricante proporciona parches y aplicarlos inmediatamente.",
+        "Reiniciar el servidor para aplicar configuraciones predeterminadas.",
+        "Desconectar el servidor de la red hasta que se actualice."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que los sistemas embebidos requieren aplicar parches de seguridad proporcionados por el fabricante de inmediato.",
+      "id": "p16-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando WPA2 y WPA3, ¿qué característica introduce WPA3 que mejora la seguridad en redes inalámbricas según el temario?",
+      "opciones": [
+        "Uso obligatorio de WEP para compatibilidad.",
+        "Autenticación mutua entre cliente y punto de acceso mediante SAE.",
+        "Eliminación completa del handshake de 4 vías.",
+        "Cifrado simétrico sin necesidad de claves precompartidas."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario explica que WPA3 introduce SAE (Simultaneous Authentication of Equals) para autenticación mutua y resistente a ataques de fuerza bruta.",
+      "id": "p16-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes acciones NO es una práctica recomendada al implementar líneas base de seguridad en sistemas operativos embebidos según el temario?",
+      "opciones": [
+        "Aplicar parches de seguridad tan pronto como estén disponibles",
+        "Segmentar redes para aislar los dispositivos embebidos",
+        "Eliminar todo el software no esencial, incluyendo servicios preinstalados",
+        "Configurar autenticación local en lugar de centralizada para simplificar la gestión"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario recomienda configurar autenticación centralizada (local o vinculada a un servidor) para dispositivos embebidos, no autenticación local exclusiva, ya que esta última reduce la seguridad al no permitir un control centralizado.",
+      "id": "p16-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifique el concepto aplicado cuando un desarrollador evita almacenar información sensible en cookies, utilizando solo datos no confidenciales.",
+      "opciones": [
+        "Validación de entrada (input validation).",
+        "Sandboxing en tiempo de ejecución.",
+        "Seguridad en cookies seguras (Secure Cookies).",
+        "Principio de mínimo privilegio (least privilege)."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que las cookies seguras (Secure Cookies) cifran la transmisión, pero advierte evitar almacenar datos sensibles en ellas.",
+      "id": "p16-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de líneas base seguras, ¿qué herramienta específica de Microsoft está diseñada para ayudar a implementar configuraciones de seguridad en Windows de manera eficiente?",
+      "opciones": [
+        "a) Windows Defender Firewall",
+        "b) Security Compliance Toolkit (SCT)",
+        "c) Active Directory Domain Services (AD DS)",
+        "d) Microsoft Intune"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Security Compliance Toolkit (SCT) es la herramienta proporcionada por Microsoft para implementar líneas base de seguridad en Windows de manera eficiente, evitando la sobrecarga de más de 3,000 políticas de grupo.",
+      "id": "p16-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un sistema de control industrial (ICS) opera en una red air-gapped. ¿Qué práctica de fortalecimiento adicional debe implementarse según el temario, considerando su naturaleza crítica?",
+      "opciones": [
+        "Habilitar acceso remoto mediante VPN sin autenticación.",
+        "Configurar firewalls para permitir todo el tráfico interno.",
+        "Aislar el sistema en una red segmentada y aplicar guías de fortalecimiento del fabricante.",
+        "Usar protocolos de cifrado débiles para compatibilidad con equipos antiguos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario recomienda aislar ICS en redes segmentadas y aplicar guías de fortalecimiento específicas del fabricante.",
+      "id": "p16-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué paso inicial es crítico para evitar configuraciones abrumadoras al desplegar una línea base de seguridad en un entorno con 500 estaciones de trabajo?",
+      "opciones": [
+        "Aplicar todas las 3,000 políticas de Windows por defecto.",
+        "Evaluar y seleccionar solo las políticas relevantes para seguridad.",
+        "Desactivar el firewall para reducir complejidad.",
+        "Ignorar las líneas base predefinidas y crear una desde cero."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario advierte sobre la sobrecarga de políticas y recomienda seleccionar solo las relevantes para seguridad.",
+      "id": "p16-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué herramienta específica de Microsoft permite implementar líneas base de seguridad en entornos Windows de manera eficiente, evitando la sobrecarga de políticas como las 3,000 disponibles en Windows 10?",
+      "opciones": [
+        "Microsoft Endpoint Configuration Manager (MECM)",
+        "Security Compliance Toolkit (SCT)",
+        "Windows Defender Firewall with Advanced Security",
+        "Microsoft Intune"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Security Compliance Toolkit (SCT) es la herramienta de Microsoft diseñada específicamente para implementar líneas base de seguridad en Windows de forma eficiente, permitiendo seleccionar solo las políticas relevantes.",
+      "id": "p16-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de líneas base de seguridad para sistemas operativos embebidos, ¿qué acción prioritaria debe realizarse con los dispositivos que ejecutan sistemas operativos embebidos según las mejores prácticas del temario?",
+      "opciones": [
+        "a) Aplicar parches de seguridad inmediatamente tras su lanzamiento, incluso si son poco frecuentes.",
+        "b) Configurar credenciales predeterminadas para facilitar la gestión remota.",
+        "c) Permitir acceso a redes inalámbricas para facilitar actualizaciones.",
+        "d) Desactivar firewalls para evitar conflictos con el rendimiento del dispositivo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, los sistemas embebidos requieren priorizar la aplicación inmediata de parches de seguridad debido a su limitada capacidad de actualización y alta criticidad.",
+      "id": "p16-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué herramienta específica de Microsoft está diseñada para ayudar a implementar líneas base de seguridad en entornos Windows de manera eficiente, evitando la sobrecarga de políticas como las 3,000 disponibles en Windows 10?",
+      "opciones": [
+        "a) Microsoft Endpoint Configuration Manager (ConfigMgr)",
+        "b) Windows Defender Security Center",
+        "c) Security Compliance Toolkit (SCT)",
+        "d) Active Directory Group Policy Management Console (GPMC)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El Security Compliance Toolkit (SCT) es la herramienta específica de Microsoft diseñada para implementar líneas base de seguridad de manera eficiente en entornos Windows, permitiendo gestionar configuraciones de seguridad predefinidas sin abrumarse con las más de 3,000 políticas disponibles.",
+      "id": "p16-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red detecta que un servidor embebido en una red crítica opera con credenciales predeterminadas. ¿Qué acción prioritaria debe realizar según el temario?",
+      "opciones": [
+        "Cambiar las credenciales predeterminadas por contraseñas robustas",
+        "Desconectar el servidor de la red hasta que se resuelva el problema",
+        "Aplicar un firewall con reglas restrictivas para bloquear todo el tráfico",
+        "Reiniciar el servidor para restaurar las credenciales originales"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cambio de credenciales predeterminadas por contraseñas robustas es una acción prioritaria para fortalecer dispositivos con sistemas operativos embebidos.",
+      "id": "p16-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción es prioritaria al implementar líneas base de seguridad en dispositivos IoT según las mejores prácticas?",
+      "opciones": [
+        "a) Aplicar parches de seguridad inmediatamente al estar disponibles",
+        "b) Configurar firewalls para limitar el acceso a redes externas",
+        "c) Segmentar los dispositivos en redes dedicadas para limitar el impacto de posibles exploits",
+        "d) Utilizar protocolos de autenticación avanzados como WPA3 de forma obligatoria"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario recomienda segmentar los dispositivos IoT en redes dedicadas para minimizar el riesgo de exploits, ya que los fabricantes no siempre priorizan la seguridad en estos dispositivos.",
+      "id": "p16-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de fortalecimiento de dispositivos embebidos (embedded systems), ¿qué práctica específica recomienda el temario para mitigar riesgos derivados de su limitada capacidad de actualización?",
+      "opciones": [
+        "a) Aplicar parches de seguridad solo cuando sean críticos para la funcionalidad del dispositivo.",
+        "b) Aislar estos dispositivos en redes segmentadas y protegerlos con firewalls.",
+        "c) Configurar autenticación local en lugar de centralizada para simplificar el acceso.",
+        "d) Deshabilitar completamente el acceso a redes externas para evitar cualquier riesgo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda aislar los dispositivos embebidos en redes segmentadas y protegerlos con firewalls debido a su limitada capacidad de actualización, lo que reduce la exposición a amenazas y minimiza posibles vectores de ataque.",
+      "id": "p16-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción es prioritaria al implementar líneas base de seguridad en dispositivos IoT según las mejores prácticas?",
+      "opciones": [
+        "a) Deshabilitar todas las funciones inalámbricas para evitar exposiciones innecesarias",
+        "b) Aplicar parches de seguridad tan pronto como estén disponibles y segmentar estos dispositivos en redes dedicadas",
+        "c) Eliminar todos los servicios de red preinstalados por el fabricante para reducir la superficie de ataque",
+        "d) Configurar firewalls perimetrales para bloquear todo el tráfico hacia y desde estos dispositivos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que los dispositivos IoT requieren atención especial debido a su limitada priorización de seguridad por parte de los fabricantes, por lo que aplicar parches y segmentarlos en redes dedicadas mitiga riesgos de exploits.",
+      "id": "p16-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de fortalecimiento de sistemas embebidos (embedded systems), ¿qué práctica específica recomienda el temario para mitigar riesgos derivados de su limitada capacidad de actualización?",
+      "opciones": [
+        "a) Aplicar parches de seguridad de forma inmediata sin probar su compatibilidad con el dispositivo.",
+        "b) Aislar estos dispositivos en redes segmentadas y protegerlos con firewalls.",
+        "c) Eliminar completamente el sistema operativo embebido para reducir la superficie de ataque.",
+        "d) Configurar credenciales predeterminadas en todos los dispositivos para facilitar la gestión."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda aislar dispositivos embebidos en redes segmentadas y protegerlos con firewalls debido a su limitada capacidad de actualización y acceso restringido a parches.",
+      "id": "p16-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de TI ha desplegado recientemente una línea base de seguridad en un entorno con 300 estaciones de trabajo Windows utilizando el Security Compliance Toolkit (SCT) de Microsoft. Tras una auditoría inicial, se detecta que el 15% de los equipos no cumplen con la línea base debido a configuraciones heredadas de políticas de grupo anteriores que priorizaban la compatibilidad con aplicaciones legacy. ¿Qué acción prioritaria debe realizarse según las mejores prácticas del temario para garantizar el cumplimiento uniforme sin afectar la operatividad de las aplicaciones críticas?",
+      "opciones": [
+        "a) Desplegar la nueva línea base solo en equipos que cumplan con los requisitos de hardware mínimo, desvinculando aquellos que no lo hagan para evitar conflictos.",
+        "b) Utilizar el Security Compliance Toolkit para implementar la línea base en modo 'simulación' en los equipos afectados, identificando políticas conflictivas y generando un informe de desviaciones específico para cada estación de trabajo.",
+        "c) Aislar temporalmente los equipos no conformes en una VLAN separada mientras se revisan manualmente las políticas de grupo heredadas, aplicando solo las configuraciones críticas de seguridad sin modificar las políticas de compatibilidad.",
+        "d) Implementar la línea base en todos los equipos mediante políticas de grupo, ignorando las desviaciones detectadas y confiando en que los usuarios reporten problemas de operatividad para ajustar las políticas manualmente."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda utilizar herramientas como el Security Compliance Toolkit para evaluar el impacto de las líneas base antes del despliegue masivo, permitiendo identificar políticas conflictivas y generar informes detallados que faciliten la resolución de desviaciones sin afectar la operatividad.",
+      "id": "p16-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador de TI ha desplegado una línea base de seguridad en un entorno empresarial utilizando el Security Compliance Toolkit (SCT) de Microsoft para Windows Server 2022. Tras aplicar la línea base 'DC Security Compliance baseline' propuesta por el CIS, se detecta que un grupo de servidores críticos con roles de Active Directory (AD) no cumplen con el 10% de las configuraciones debido a dependencias con aplicaciones legacy que requieren políticas de contraseñas menos restrictivas. ¿Qué acción prioritaria debe implementarse según las mejores prácticas del temario para garantizar la seguridad sin afectar la operatividad de las aplicaciones críticas?",
+      "opciones": [
+        "a) Aislar los servidores afectados en una red segmentada y aplicar la línea base solo a los controles no críticos, documentando las excepciones en un plan de riesgo excepcional.",
+        "b) Modificar manualmente las políticas de contraseñas en el GPO (Group Policy Object) de los servidores afectados para alinearlos con los requisitos de las aplicaciones legacy, priorizando la compatibilidad sobre la seguridad.",
+        "c) Implementar una línea base personalizada que combine las políticas de seguridad CIS con las excepciones necesarias para las aplicaciones legacy, utilizando el Security Compliance Toolkit para aplicar y auditar los cambios.",
+        "d) Desactivar temporalmente la línea base en los servidores afectados y aplicar parches de seguridad de forma manual hasta que las aplicaciones sean actualizadas o reemplazadas por versiones compatibles con las políticas de seguridad."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario recomienda adaptar líneas base predefinidas (como las del CIS) mediante herramientas como el Security Compliance Toolkit para crear configuraciones personalizadas que equilibren seguridad y compatibilidad, evitando desactivar controles críticos o reducir la postura de seguridad.",
+      "id": "p16-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué herramienta específica de Microsoft está diseñada para implementar líneas base de seguridad en entornos Windows de manera eficiente, evitando la sobrecarga de políticas como las 3,000 disponibles en Windows 10?",
+      "opciones": [
+        "a) Windows Defender ATP",
+        "b) Security Compliance Toolkit (SCT)",
+        "c) Microsoft Intune",
+        "d) Windows Server Update Services (WSUS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Security Compliance Toolkit (SCT) es la herramienta de Microsoft diseñada para implementar líneas base de seguridad en Windows de manera eficiente, permitiendo seleccionar solo las configuraciones relevantes entre las miles disponibles.",
+      "id": "p16-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de fortalecimiento específica recomienda implementar en dispositivos de red con sistemas operativos embebidos para mitigar riesgos derivados de su limitada capacidad de actualización?",
+      "opciones": [
+        "a) Aplicar parches de seguridad de forma inmediata en cuanto estén disponibles, independientemente del impacto en la operatividad.",
+        "b) Configurar credenciales predeterminadas únicas y cambiar las credenciales de fábrica por defecto.",
+        "c) Segmentar estos dispositivos en redes dedicadas y protegerlos con firewalls específicos para limitar su exposición.",
+        "d) Eliminar todas las aplicaciones no esenciales, incluso si son necesarias para la funcionalidad básica del dispositivo."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario recomienda aislar dispositivos embebidos en redes segmentadas y protegerlos con firewalls para reducir su exposición, dado que sus actualizaciones son poco frecuentes y críticas.",
+      "id": "p16-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica específica de fortalecimiento se recomienda aplicar en dispositivos de red con sistemas operativos embebidos que tienen limitada capacidad de actualización?",
+      "opciones": [
+        "Implementar segmentación de red mediante firewalls o VLANs para aislar el tráfico del dispositivo.",
+        "Desactivar todos los servicios no esenciales y configurar credenciales predeterminadas seguras.",
+        "Aplicar parches de seguridad de forma inmediata, incluso si requieren reinicios frecuentes.",
+        "Instalar un sistema de detección de intrusos (IDS) en el dispositivo para monitorear actividades sospechosas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar dispositivos con sistemas operativos embebidos en redes segmentadas mediante firewalls o VLANs, ya que su limitada capacidad de actualización dificulta la protección con parches frecuentes.",
+      "id": "p16-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de TI ha desplegado una línea base de seguridad en un entorno empresarial usando el Security Compliance Toolkit (SCT) para Windows Server 2022. Tras aplicar la línea base 'DC Security Compliance baseline' del CIS, se detecta que un grupo de servidores críticos con roles de Active Directory no cumplen con el 10% de las configuraciones debido a dependencias con aplicaciones legacy. ¿Qué acción prioritaria debe implementarse según el temario para garantizar la seguridad sin afectar la operatividad?",
+      "opciones": [
+        "a) Desactivar la línea base en esos servidores para evitar conflictos",
+        "b) Evaluar y ajustar la línea base para equilibrar seguridad y compatibilidad, priorizando las aplicaciones críticas",
+        "c) Reemplazar los servidores críticos por nuevos equipos con sistemas operativos actualizados",
+        "d) Implementar firewalls adicionales en esos servidores para compensar las configuraciones faltantes"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda evaluar y ajustar la línea base para equilibrar seguridad y compatibilidad con aplicaciones legacy, priorizando la operatividad de las aplicaciones críticas.",
+      "id": "p16-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué técnica específica de fortalecimiento se recomienda aplicar en dispositivos de red con sistemas operativos embebidos que ejecutan firmware antiguo y tienen limitada capacidad de actualización?",
+      "opciones": [
+        "Aplicar segmentación de red para aislar estos dispositivos en VLANs dedicadas.",
+        "Configurar credenciales predeterminadas para facilitar el acceso remoto en caso de emergencia.",
+        "Deshabilitar todos los servicios no esenciales y servicios de red innecesarios en el firmware.",
+        "Reemplazar inmediatamente el firmware por versiones más recientes sin evaluar compatibilidad."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar dispositivos con firmware antiguo en redes segmentadas (VLANs) para limitar el impacto de posibles vulnerabilidades, ya que la actualización de estos sistemas es limitada y crítica.",
+      "id": "p16-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica específica de fortalecimiento se recomienda aplicar en dispositivos embebidos (embedded systems) que ejecutan sistemas operativos con firmware antiguo y tienen limitada capacidad de actualización?",
+      "opciones": [
+        "Aplicar segmentación de red (network segmentation) para aislar el dispositivo en un segmento dedicado.",
+        "Deshabilitar todos los servicios no esenciales mediante configuraciones en el firmware del dispositivo.",
+        "Instalar parches de seguridad directamente en el firmware, aunque el proceso sea manual y lento.",
+        "Utilizar firewalls basados en host para filtrar el tráfico hacia y desde el dispositivo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar dispositivos embebidos con firmware antiguo en segmentos de red dedicados como técnica prioritaria para mitigar riesgos, dado que las actualizaciones de firmware son limitadas y poco frecuentes.",
+      "id": "p16-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción específica se recomienda para mitigar riesgos en dispositivos embebidos que ejecutan firmware antiguo y no pueden recibir actualizaciones de seguridad frecuentes?",
+      "opciones": [
+        "Aplicar segmentación de red para aislar el dispositivo y limitar su exposición a posibles ataques.",
+        "Deshabilitar completamente el dispositivo para evitar su uso en la red.",
+        "Reemplazar inmediatamente el firmware antiguo por una versión más reciente, aunque no esté oficialmente soportada.",
+        "Permitir solo conexiones entrantes desde redes confiables y bloquear todo el tráfico saliente como medida temporal."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar estos dispositivos en redes segmentadas y protegerlos con firewalls para reducir su exposición a amenazas, ya que las actualizaciones son limitadas y poco frecuentes.",
+      "id": "p16-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción específica se recomienda realizar PRIMERO al aplicar líneas base de seguridad en un nuevo sistema operativo Windows Server 2022 antes de ajustar configuraciones individuales?",
+      "opciones": [
+        "a) Eliminar todas las cuentas de usuario predeterminadas no esenciales",
+        "b) Desplegar la línea base de seguridad predefinida 'CIS Microsoft Windows Server 2022 Benchmark' usando el Security Compliance Toolkit (SCT) de Microsoft",
+        "c) Configurar manualmente cada política de grupo relevante para evitar conflictos con aplicaciones legacy",
+        "d) Instalar parches críticos y actualizaciones acumulativas antes de cualquier otro ajuste"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda utilizar líneas base predefinidas (como las del CIS) y herramientas como el Security Compliance Toolkit (SCT) para implementarlas de manera eficiente, evitando configuraciones abrumadoras o redundantes desde el inicio.",
+      "id": "p16-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización ha desplegado recientemente una línea base de seguridad en sus 200 servidores Windows Server 2022 utilizando el Security Compliance Toolkit (SCT) de Microsoft, basada en la línea base 'Server Security Compliance baseline' del CIS. Tras una auditoría, se detecta que el 22% de los servidores no cumplen con el 8% de las configuraciones críticas debido a que algunos servicios de rol específico (como SQL Server o IIS) requieren ajustes en políticas de red y permisos que no están alineados con las líneas base predefinidas. ¿Cuál es la acción prioritaria que debe implementarse según las mejores prácticas del temario para garantizar el cumplimiento de la línea base sin comprometer la operatividad de los servicios críticos?",
+      "opciones": [
+        "a) Modificar manualmente cada servidor afectado para deshabilitar las políticas no aplicables y documentar las excepciones justificadas, priorizando la continuidad del servicio sobre el cumplimiento estricto.",
+        "b) Implementar una línea base personalizada en el Security Compliance Toolkit (SCT) que excluya las políticas conflictivas, validar la nueva línea base en un entorno de prueba y desplegarla progresivamente con monitoreo continuo en producción.",
+        "c) Desplegar la línea base 'Server Security Compliance baseline' en todos los servidores y forzar su cumplimiento mediante políticas de grupo, ignorando las dependencias de los servicios críticos para garantizar un estándar uniforme de seguridad.",
+        "d) Solicitar a Microsoft una revisión oficial de la línea base 'Server Security Compliance baseline' para que incluya ajustes específicos para servicios como SQL Server e IIS, y posponer la implementación hasta recibir la actualización."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda adaptar las líneas base predefinidas a entornos específicos mediante herramientas como el SCT, creando líneas base personalizadas que equilibren seguridad y operatividad, validando los cambios en entornos controlados antes del despliegue masivo.",
+      "id": "p16-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización ha desplegado recientemente una línea base de seguridad en sus 150 estaciones de trabajo Windows 10 utilizando el Security Compliance Toolkit (SCT) de Microsoft, basada en la línea base 'Windows 10 Security baseline' del CIS. Durante una auditoría posterior, se detecta que el 30% de los equipos no cumplen con el 12% de las configuraciones críticas debido a que los usuarios finales han modificado manualmente políticas de grupo locales para instalar software no autorizado. ¿Qué acción prioritaria debe implementarse según las mejores prácticas del temario para garantizar el cumplimiento de la línea base sin afectar la operatividad de los usuarios?",
+      "opciones": [
+        "a) Desplegar la línea base mediante políticas de grupo de Active Directory (GPO) en lugar de políticas locales, ya que las GPO se aplican de manera centralizada y pueden ser bloqueadas contra modificaciones por usuarios no administrativos.",
+        "b) Eliminar los permisos de administración local de todos los usuarios finales para evitar cambios manuales en las políticas de seguridad, aunque esto podría afectar la productividad al requerir solicitudes de soporte para acciones como instalar software.",
+        "c) Implementar herramientas de gestión de configuración como Microsoft Intune o Windows Defender Application Control (WDAC) para evitar la ejecución de software no firmado y restringir cambios no autorizados en la configuración del sistema.",
+        "d) Configurar el firewall de Windows para bloquear todo el tráfico saliente excepto el necesario para las operaciones críticas, garantizando que los equipos no puedan descargar software no autorizado desde internet."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La opción correcta (c) recomienda el uso de herramientas como Microsoft Intune o WDAC para restringir la ejecución de software no firmado y limitar modificaciones no autorizadas en la configuración del sistema, alineándose con el principio de mínimo privilegio y el fortalecimiento de sistemas. Esto aborda el problema de usuarios modificando políticas locales sin afectar la operatividad general.",
+      "id": "p16-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes acciones NO forma parte de las prácticas recomendadas para fortalecer un sistema operativo embebido según el temario?",
+      "opciones": [
+        "Aislar el dispositivo en una red segmentada para limitar su exposición a tráfico no esencial.",
+        "Aplicar parches de seguridad solo cuando sea absolutamente necesario para evitar interrupciones en el servicio.",
+        "Eliminar servicios y aplicaciones no esenciales que no sean requeridos para la operación del dispositivo.",
+        "Configurar autenticación local o centralizada para restringir el acceso no autorizado al dispositivo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda aplicar parches de seguridad de manera periódica y oportuna, incluso en sistemas embebidos, debido a su limitada capacidad de actualización y alto riesgo de explotación.",
+      "id": "p16-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de líneas base de seguridad para Windows Server 2022, ¿qué herramienta específica de Microsoft permite implementar configuraciones predefinidas de manera eficiente, evitando la sobrecarga de las más de 3,000 políticas disponibles?",
+      "opciones": [
+        "Windows Defender Firewall",
+        "Security Compliance Toolkit (SCT)",
+        "Active Directory Administrative Center",
+        "Windows Server Update Services (WSUS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Security Compliance Toolkit (SCT) de Microsoft está diseñado para implementar líneas base de seguridad predefinidas en entornos Windows de manera eficiente, seleccionando solo las configuraciones relevantes.",
+      "id": "p16-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de fortalecimiento es MENOS efectiva para proteger un sistema de control industrial (ICS) en una red air-gapped según las recomendaciones del temario?",
+      "opciones": [
+        "Segmentar la red para aislar el ICS de otros sistemas críticos.",
+        "Implementar autenticación multifactor en el acceso a los dispositivos del ICS.",
+        "Aplicar parches de seguridad solo cuando se detecten vulnerabilidades críticas.",
+        "Utilizar firewalls para limitar el tráfico de red al mínimo necesario."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario enfatiza la importancia de aplicar parches de seguridad de manera periódica, incluso en sistemas air-gapped, debido a que las vulnerabilidades pueden ser explotadas sin necesidad de acceso a la red.",
+      "id": "p16-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de TI ha desplegado una línea base de seguridad en un entorno con 200 estaciones de trabajo Windows 11 utilizando el Security Compliance Toolkit (SCT) basado en la línea base 'Windows 11 Security baseline' del CIS. Durante una auditoría, se detecta que el 25% de los equipos no cumplen con el 10% de las configuraciones críticas porque los usuarios finales han modificado manualmente políticas de grupo locales para instalar software no autorizado. ¿Qué acción prioritaria debe implementarse según el temario para garantizar el cumplimiento de la línea base?",
+      "opciones": [
+        "Desactivar los permisos de usuario estándar para evitar modificaciones en las políticas de grupo.",
+        "Implementar políticas de grupo centralizadas mediante Active Directory para evitar cambios locales.",
+        "Eliminar el software no autorizado de los equipos afectados y aplicar la línea base nuevamente.",
+        "Revisar manualmente cada equipo y ajustar las políticas según las necesidades de los usuarios."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda centralizar la gestión de políticas mediante Active Directory para evitar que los usuarios modifiquen configuraciones locales, garantizando el cumplimiento uniforme de la línea base.",
+      "id": "p16-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de fortalecimiento específica recomienda el temario para mitigar riesgos en dispositivos IoT que ejecutan firmware antiguo y no pueden recibir actualizaciones de seguridad frecuentes?",
+      "opciones": [
+        "Aislar estos dispositivos en redes segmentadas para limitar su exposición a amenazas.",
+        "Aplicar parches de seguridad manualmente cada vez que el fabricante lance una actualización.",
+        "Reemplazar inmediatamente todos los dispositivos IoT con firmware antiguo por modelos nuevos.",
+        "Configurar firewalls para bloquear todo el tráfico de red hacia y desde estos dispositivos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar dispositivos IoT con firmware antiguo en redes segmentadas como medida de mitigación ante su limitada capacidad de actualización.",
+      "id": "p16-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción es prioritaria al implementar líneas base de seguridad en sistemas operativos embebidos que ejecutan firmware antiguo?",
+      "opciones": [
+        "Verificar periódicamente la disponibilidad de parches de seguridad y aplicarlos de inmediato.",
+        "Deshabilitar todas las funciones no esenciales del dispositivo para reducir su superficie de ataque.",
+        "Reemplazar el firmware antiguo por versiones más recientes compatibles con actualizaciones de seguridad.",
+        "Configurar autenticación local con credenciales complejas para restringir el acceso físico."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca la importancia de verificar y aplicar parches de seguridad de manera prioritaria en sistemas embebidos, incluso si el firmware es antiguo.",
+      "id": "p16-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción específica se recomienda PRIMERO para mitigar riesgos en sistemas embebidos que ejecutan firmware antiguo y no pueden recibir actualizaciones frecuentes?",
+      "opciones": [
+        "a) Aislar estos dispositivos en redes segmentadas y protegerlos con firewalls",
+        "b) Aplicar parches de seguridad inmediatamente al detectar una vulnerabilidad, sin importar el impacto en la operatividad",
+        "c) Eliminar todos los servicios no esenciales y configurar autenticación robusta en los dispositivos disponibles",
+        "d) Configurar políticas de contraseñas complejas y rotación frecuente en los sistemas embebidos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar dispositivos embebidos con firmware antiguo en redes segmentadas y protegerlos con firewalls como primera medida, ya que las actualizaciones son limitadas y la segmentación reduce el riesgo de propagación de compromisos.",
+      "id": "p16-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción específica se recomienda implementar PRIMERO al aplicar líneas base de seguridad en dispositivos de red con sistemas operativos embebidos que ejecutan firmware antiguo?",
+      "opciones": [
+        "a) Aislar estos dispositivos en segmentos de red dedicados para limitar el impacto de posibles ataques",
+        "b) Aplicar parches de seguridad aunque sean poco frecuentes para corregir vulnerabilidades críticas",
+        "c) Eliminar cualquier servicio o puerto no esencial en el firmware para reducir la superficie de ataque",
+        "d) Configurar autenticación robusta con credenciales únicas y complejas en el dispositivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar dispositivos con firmware antiguo en segmentos de red dedicados como primera acción prioritaria para mitigar riesgos, ya que su limitada capacidad de actualización dificulta la aplicación de parches.",
+      "id": "p16-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de seguridad en dispositivos inalámbricos, ¿qué característica introduce WPA3 que mejora significativamente la seguridad en redes inalámbricas según el temario?",
+      "opciones": [
+        "El uso de claves de sesión únicas por usuario mediante el método SAE (Simultaneous Authentication of Equals).",
+        "La eliminación de la necesidad de autenticación centralizada mediante 802.1X.",
+        "La reducción del número de canales de frecuencia disponibles para evitar interferencias.",
+        "El reemplazo del cifrado AES por protocolos más simples para mejorar el rendimiento."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que WPA3 introduce el método SAE, que genera claves de sesión únicas por usuario, mejorando la seguridad en redes inalámbricas.",
+      "id": "p16-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador de TI está configurando una línea base de seguridad para un entorno híbrido que incluye estaciones de trabajo Windows 11, servidores Linux y dispositivos IoT con firmware antiguo. Tras aplicar las líneas base predefinidas del CIS para cada plataforma, se detecta que los dispositivos IoT no cumplen con el 30% de las configuraciones críticas debido a limitaciones técnicas del hardware. ¿Qué acción prioritaria debe implementarse según el temario para garantizar la seguridad de estos dispositivos sin comprometer su funcionalidad operativa?",
+      "opciones": [
+        "a) Aislar los dispositivos IoT en una VLAN segmentada y aplicar reglas de firewall estrictas para limitar su comunicación solo a los servicios esenciales.",
+        "b) Forzar la actualización del firmware de los dispositivos IoT aunque esto implique detener temporalmente su operación, ya que las actualizaciones incluyen parches críticos.",
+        "c) Deshabilitar completamente los dispositivos IoT y reemplazarlos por alternativas con soporte de actualizaciones frecuentes, priorizando la seguridad sobre la funcionalidad.",
+        "d) Ignorar las desviaciones en las líneas base para estos dispositivos, ya que su naturaleza crítica no permite aplicar restricciones de seguridad sin afectar su rendimiento."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar dispositivos IoT con firmware antiguo en redes segmentadas y aplicar reglas de firewall restrictivas para limitar su exposición, ya que las actualizaciones de seguridad son poco frecuentes y su reemplazo inmediato puede no ser viable.",
+      "id": "p16-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción específica se recomienda realizar PRIMERO al implementar líneas base de seguridad en un dispositivo de red con sistema operativo embebido que ejecuta firmware antiguo y tiene capacidad limitada de actualización?",
+      "opciones": [
+        "Aplicar segmentación de red para aislar el dispositivo y limitar su exposición a amenazas.",
+        "Configurar credenciales de autenticación robustas y únicas para el dispositivo.",
+        "Eliminar todo el software no esencial instalado en el dispositivo para reducir vectores de ataque.",
+        "Verificar la disponibilidad de actualizaciones de firmware del fabricante y aplicarlas inmediatamente."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario destaca que los dispositivos embebidos con firmware antiguo deben priorizar la aplicación de parches de seguridad disponibles, ya que estos suelen corregir vulnerabilidades críticas que no pueden ser mitigadas con otras técnicas.",
+      "id": "p16-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción es prioritaria al implementar líneas base de seguridad en sistemas de control industrial (ICS) que operan en redes air-gapped según las mejores prácticas?",
+      "opciones": [
+        "a) Aplicar parches de seguridad de manera inmediata, aunque sean poco frecuentes, ya que son críticos para mitigar vulnerabilidades en firmware antiguo.",
+        "b) Segmentar la red con firewalls específicos para ICS y limitar el tráfico a solo los dispositivos necesarios, siguiendo el principio de mínimo privilegio.",
+        "c) Deshabilitar todos los servicios no esenciales en los dispositivos de red, incluyendo protocolos de comunicación heredados, para reducir la superficie de ataque.",
+        "d) Utilizar soluciones de detección y respuesta de endpoints (EDR) en cada dispositivo, ya que estos sistemas no pueden recibir actualizaciones frecuentes."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La segmentación de red y la limitación del tráfico son acciones críticas en ICS air-gapped para reducir riesgos, ya que estos sistemas suelen tener firmware antiguo y actualizaciones poco frecuentes.",
+      "id": "p16-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una acción recomendada para fortalecer un sistema operativo embebido según el temario?",
+      "opciones": [
+        "Cambiar las credenciales predeterminadas por defecto del dispositivo.",
+        "Configurar autenticación local o vinculada a un servidor central.",
+        "Aplicar parches de seguridad con la mayor frecuencia posible, incluso si el fabricante no los proporciona oficialmente.",
+        "Segmentar el dispositivo en una red dedicada y protegerlo con firewalls."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario enfatiza que los sistemas embebidos dependen de parches oficiales del fabricante, ya que las actualizaciones no oficiales pueden comprometer la estabilidad y seguridad del dispositivo.",
+      "id": "p16-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de TI ha desplegado una línea base de seguridad en 300 estaciones de trabajo Windows 11 usando el Security Compliance Toolkit (SCT) basado en la línea base 'Windows 11 Security baseline' del CIS. Durante una auditoría, se detecta que el 20% de los equipos no cumplen con el 15% de las configuraciones críticas porque los usuarios finales han modificado manualmente políticas de grupo locales para instalar software no autorizado. ¿Qué acción prioritaria debe implementarse según el temario para garantizar el cumplimiento de la línea base?",
+      "opciones": [
+        "Desplegar las líneas base mediante políticas de grupo de Active Directory (AD) en lugar de configuraciones locales.",
+        "Eliminar los permisos de usuario local para modificar políticas de grupo.",
+        "Aplicar un bloqueo de escritura en el registro de Windows para evitar cambios manuales.",
+        "Reinstalar Windows en todos los equipos afectados para eliminar configuraciones heredadas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda centralizar la gestión de líneas base mediante herramientas como AD o MDM para evitar modificaciones locales no autorizadas por usuarios finales.",
+      "id": "p16-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción específica se recomienda implementar PRIMERO al aplicar líneas base de seguridad en un sistema de control industrial (ICS) que opera en una red air-gapped?",
+      "opciones": [
+        "Segmentar la red en múltiples zonas de confianza (microsegmentación) para limitar el movimiento lateral en caso de compromiso.",
+        "Aplicar parches de seguridad críticos de inmediato, incluso si requieren reinicio, para cerrar vulnerabilidades conocidas.",
+        "Deshabilitar todos los servicios de red no esenciales, incluyendo protocolos como SMB, RDP y SNMP, para reducir la superficie de ataque.",
+        "Implementar autenticación multifactor (MFA) en todos los dispositivos de la red, incluso en sistemas embebidos con capacidades limitadas."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario destaca que en sistemas ICS, especialmente en redes air-gapped, la técnica prioritaria es deshabilitar servicios no esenciales para reducir la superficie de ataque, ya que la capacidad de aplicar parches o actualizaciones es limitada y la segmentación avanzada puede no ser factible en todos los casos.",
+      "id": "p16-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué técnica específica se recomienda aplicar PRIMERO en dispositivos de red con sistemas operativos embebidos que tienen capacidad limitada de actualización y ejecutan firmware antiguo?",
+      "opciones": [
+        "a) Aplicar parches de seguridad aunque sean escasos y poco frecuentes.",
+        "b) Segmentar la red para aislar el dispositivo y limitar su acceso a otros sistemas.",
+        "c) Cambiar las credenciales predeterminadas por contraseñas complejas y únicas.",
+        "d) Deshabilitar todos los servicios innecesarios y cerrar puertos no utilizados."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario enfatiza que los dispositivos embebidos con firmware antiguo y limitada capacidad de actualización deben priorizar el cambio de credenciales predeterminadas por defecto para evitar accesos no autorizados, ya que es una de las primeras líneas de defensa.",
+      "id": "p16-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción específica se recomienda PRIMERO para mitigar riesgos en dispositivos embebidos que ejecutan firmware antiguo y no pueden recibir actualizaciones frecuentes?",
+      "opciones": [
+        "Aplicar segmentación de red para aislar el dispositivo y limitar su exposición",
+        "Instalar soluciones de seguridad como EDR en el dispositivo embebido",
+        "Modificar manualmente el firmware para desactivar servicios innecesarios",
+        "Configurar autenticación multifactor (MFA) en el dispositivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar dispositivos embebidos en redes segmentadas como primera acción para mitigar riesgos, ya que su limitada capacidad de actualización dificulta la aplicación de parches de seguridad.",
+      "id": "p16-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué técnica específica se recomienda aplicar PRIMERO en dispositivos IoT que ejecutan firmware antiguo y tienen limitada capacidad de actualización?",
+      "opciones": [
+        "Segmentar estos dispositivos en una red dedicada e independiente.",
+        "Aplicar parches de seguridad directamente desde el fabricante aunque no sean oficiales.",
+        "Desconectar completamente los dispositivos de la red para evitar cualquier riesgo.",
+        "Configurar firewalls estrictos en el gateway de la red IoT sin aplicar parches."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar los dispositivos IoT en redes segmentadas como primera medida, ya que su limitada capacidad de actualización impide aplicar parches frecuentes y reduce el riesgo de propagación de vulnerabilidades.",
+      "id": "p16-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización ha desplegado una línea base de seguridad en sus servidores Linux que ejecutan servicios críticos de red (como DNS y DHCP) mediante el Security Compliance Toolkit (SCT) de Microsoft, basada en la línea base 'CIS Benchmark for Linux'. Durante una auditoría, se detecta que el 15% de los servidores no cumplen con el 18% de las configuraciones críticas debido a que las aplicaciones legacy requieren permisos de red más permisivos que los definidos en la línea base. ¿Qué acción prioritaria debe implementarse según el temario para garantizar la seguridad sin comprometer la operatividad de los servicios críticos?",
+      "opciones": [
+        "Aplicar las configuraciones de la línea base solo a los servicios que no dependen de aplicaciones legacy, dejando estos últimos sin restricciones para evitar fallos operativos.",
+        "Modificar manualmente las políticas de seguridad en los servidores afectados para ajustarlas a los requisitos de las aplicaciones legacy, documentando los cambios como excepciones temporales.",
+        "Utilizar herramientas como Ansible o Puppet para implementar configuraciones personalizadas en los servidores afectados, combinando las líneas base predefinidas con ajustes específicos para las aplicaciones legacy.",
+        "Desplegar la línea base en todos los servidores, pero permitir excepciones automáticas en los servicios críticos mediante un sistema de gestión de políticas basado en roles (RBAC) que evalúe riesgos en tiempo real."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario recomienda utilizar herramientas de automatización como Ansible o Puppet para implementar configuraciones personalizadas, combinando líneas base predefinidas con ajustes específicos para aplicaciones legacy sin comprometer la seguridad global. Esto permite mantener la consistencia en la mayoría del entorno mientras se adaptan las políticas críticas.",
+      "id": "p16-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de fortalecimiento específica recomienda aplicar en dispositivos de red con sistemas operativos embebidos que ejecutan firmware antiguo y tienen limitada capacidad de actualización?",
+      "opciones": [
+        "Aislar estos dispositivos en redes segmentadas y dedicadas.",
+        "Forzar actualizaciones manuales trimestrales del firmware por parte de los usuarios.",
+        "Instalar un firewall de última generación en cada dispositivo embebido.",
+        "Deshabilitar todas las funciones de conectividad inalámbrica del dispositivo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar dispositivos embebidos con firmware antiguo en redes segmentadas como técnica principal para mitigar riesgos derivados de su limitada capacidad de actualización.",
+      "id": "p16-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de fortalecimiento es RECOMENDADA PRIMERO para proteger dispositivos IoT que ejecutan firmware antiguo y no pueden recibir actualizaciones frecuentes?",
+      "opciones": [
+        "Segmentar estos dispositivos en redes dedicadas para limitar el impacto de posibles exploits.",
+        "Aplicar parches de seguridad tan pronto como estén disponibles, incluso si requieren reinicios frecuentes.",
+        "Eliminar todas las aplicaciones instaladas por defecto para reducir la superficie de ataque.",
+        "Configurar firewalls perimetrales con reglas estrictas para bloquear todo el tráfico excepto el necesario."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda segmentar dispositivos IoT en redes dedicadas como primera acción para mitigar riesgos en dispositivos con firmware antiguo y limitada capacidad de actualización.",
+      "id": "p16-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción específica se recomienda PRIMERO para mitigar riesgos en servidores Linux que ejecutan servicios críticos de red (como DNS o DHCP) y requieren ajustes personalizados en políticas de red?",
+      "opciones": [
+        "a) Aplicar parches de seguridad inmediatamente para cerrar vulnerabilidades conocidas.",
+        "b) Utilizar herramientas como Security Compliance Toolkit (SCT) para implementar líneas base predefinidas y luego ajustar manualmente las políticas críticas según las necesidades de los servicios.",
+        "c) Eliminar todos los servicios no esenciales para reducir la superficie de ataque, incluso si afecta la operatividad.",
+        "d) Segmentar la red completamente del resto de la infraestructura para aislar los servidores."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda primero implementar líneas base predefinidas (como las del CIS Benchmark) para establecer una base de seguridad sólida, y luego realizar ajustes manuales en políticas específicas para no comprometer la funcionalidad de servicios críticos.",
+      "id": "p16-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de TI está configurando una línea base de seguridad para 500 estaciones de trabajo Windows 11 usando el Security Compliance Toolkit (SCT). Tras aplicar la línea base 'Windows 11 Security baseline' del CIS, detecta que el 15% de los equipos no cumplen con el 10% de las configuraciones críticas porque los usuarios finales han modificado manualmente políticas de grupo locales. ¿Qué acción prioritaria debe implementarse según el temario para garantizar el cumplimiento?",
+      "opciones": [
+        "Implementar políticas de grupo (GPO) a nivel de Active Directory para anular las configuraciones locales y forzar el cumplimiento.",
+        "Eliminar los permisos de los usuarios finales para modificar políticas de grupo locales mediante ajustes en la línea base.",
+        "Desplegar la línea base nuevamente en todos los equipos, ignorando las configuraciones locales modificadas.",
+        "Reemplazar las estaciones de trabajo no conformes por nuevos equipos con configuraciones limpias."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda usar políticas de grupo (GPO) a nivel de Active Directory para centralizar y forzar el cumplimiento de configuraciones, evitando modificaciones locales no autorizadas.",
+      "id": "p16-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando WPA2 y WPA3, ¿qué característica específica introduce WPA3 que mejora la seguridad en redes inalámbricas según el temario?",
+      "opciones": [
+        "El uso del método de autenticación SAE (Simultaneous Authentication of Equals) para generar claves de sesión únicas por usuario.",
+        "La eliminación completa del handshake de 4 vías, reemplazándolo por un proceso de autenticación basado en tokens.",
+        "La implementación obligatoria de autenticación 802.1X en todas las redes inalámbricas, incluso domésticas.",
+        "El cifrado obligatorio de todo el tráfico usando el protocolo WEP para garantizar compatibilidad con dispositivos antiguos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que WPA3 introduce el método SAE, que genera claves de sesión únicas por usuario, eliminando vulnerabilidades del handshake de WPA2.",
+      "id": "p16-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué herramienta específica de Microsoft permite implementar líneas base de seguridad en entornos Windows de manera eficiente, evitando la sobrecarga de las más de 3,000 políticas disponibles?",
+      "opciones": [
+        "Security Compliance Toolkit (SCT)",
+        "Windows Defender Firewall con seguridad avanzada",
+        "Group Policy Management Console (GPMC)",
+        "Microsoft Endpoint Configuration Manager (MECM)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona explícitamente el Security Compliance Toolkit (SCT) como herramienta de Microsoft para implementar líneas base de seguridad de manera eficiente.",
+      "id": "p16-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción específica se recomienda PRIMERO para mitigar riesgos en dispositivos de red con sistemas operativos embebidos que ejecutan firmware antiguo y tienen capacidad limitada de actualización?",
+      "opciones": [
+        "Aplicar parches de seguridad de forma inmediata, incluso si son poco frecuentes.",
+        "Aislar estos dispositivos en redes segmentadas y protegerlos con firewalls.",
+        "Eliminar cualquier software no utilizado en el dispositivo.",
+        "Configurar autenticación local con credenciales robustas y cambiarlas periódicamente."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda aislar dispositivos con firmware antiguo en redes segmentadas y protegerlos con firewalls como medida prioritaria debido a su limitada capacidad de actualización.",
+      "id": "p16-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción específica se recomienda realizar PRIMERO al implementar líneas base de seguridad en dispositivos de red con sistemas operativos embebidos que ejecutan firmware antiguo y tienen capacidad limitada de actualización?",
+      "opciones": [
+        "Aplicar segmentación de red para aislar el dispositivo y limitar su exposición a posibles ataques.",
+        "Configurar credenciales únicas y complejas, reemplazando las predeterminadas del fabricante.",
+        "Verificar y aplicar manualmente todos los parches de seguridad disponibles para el firmware, incluso si son limitados.",
+        "Deshabilitar todos los servicios no esenciales y protocolos innecesarios en el dispositivo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La segmentación de red es la acción prioritaria para dispositivos con firmware antiguo, ya que reduce la superficie de ataque al limitar su visibilidad y accesibilidad en la red.",
+      "id": "p16-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de TI está evaluando el despliegue de una línea base de seguridad para una nueva aplicación en un entorno con 1,000 estaciones de trabajo. ¿Qué paso inicial es crítico para evitar configuraciones abrumadoras como las mencionadas en el temario (ej. 3,000 políticas en Windows)?",
+      "opciones": [
+        "Identificar y seleccionar solo las configuraciones de seguridad relevantes para la aplicación y el entorno específico.",
+        "Aplicar todas las 3,000 políticas disponibles en Windows para garantizar un nivel máximo de seguridad.",
+        "Desplegar la línea base sin realizar pruebas previas para ahorrar tiempo en el proceso.",
+        "Eliminar todas las políticas de grupo locales para evitar conflictos con las nuevas configuraciones."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda seleccionar solo las configuraciones relevantes para evitar la sobrecarga de políticas y facilitar la implementación.",
+      "id": "p16-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción específica se recomienda PRIMERO al implementar líneas base de seguridad en dispositivos de red con sistemas operativos embebidos que ejecutan firmware antiguo?",
+      "opciones": [
+        "Cambiar las credenciales predeterminadas por defecto del dispositivo por credenciales únicas y seguras.",
+        "Aplicar parches de seguridad inmediatamente, incluso si el dispositivo no es crítico para la operación.",
+        "Conectar el dispositivo a una red inalámbrica para facilitar la gestión remota de actualizaciones.",
+        "Deshabilitar completamente el acceso remoto al dispositivo para evitar posibles ataques."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que cambiar credenciales predeterminadas es una acción prioritaria en dispositivos embebidos para mejorar su postura de seguridad.",
+      "id": "p16-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto de líneas base seguras, ¿qué herramienta de Microsoft permite implementar configuraciones de seguridad en Windows de manera eficiente, evitando la sobrecarga de 3,000 políticas?",
+      "opciones": [
+        "Security Compliance Toolkit (SCT)",
+        "Windows Update for Business",
+        "Microsoft Intune",
+        "Windows Server Update Services (WSUS)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona el Security Compliance Toolkit (SCT) como la herramienta específica de Microsoft para implementar líneas base de seguridad en Windows de manera eficiente.",
+      "id": "p16-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de fortalecimiento es PRIMORDIAL aplicar en dispositivos embebidos con firmware antiguo y limitada capacidad de actualización para mitigar riesgos sin depender de parches frecuentes?",
+      "opciones": [
+        "Implementar segmentación de red mediante firewalls para aislar el dispositivo y limitar su exposición a ataques.",
+        "Deshabilitar todos los servicios no esenciales y configurar el principio de mínimo privilegio en el sistema operativo.",
+        "Aplicar líneas base de seguridad predefinidas como las del CIS Benchmark para Linux, incluso si no son compatibles con el firmware.",
+        "Reemplazar el dispositivo por uno con firmware actualizable para evitar riesgos de seguridad."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar dispositivos embebidos en redes segmentadas y protegerlos con firewalls como técnica prioritaria para mitigar riesgos en sistemas con capacidad limitada de actualización.",
+      "id": "p16-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué técnica específica se recomienda aplicar PRIMERO en sistemas embebidos que ejecutan firmware antiguo y no pueden recibir actualizaciones frecuentes para mitigar riesgos sin depender de parches?",
+      "opciones": [
+        "a) Segmentar el dispositivo en una red aislada y aplicar firewalls con reglas restrictivas de acceso.",
+        "b) Instalar un antivirus con firmas actualizadas para compensar la falta de parches.",
+        "c) Deshabilitar todos los servicios no esenciales y desactivar puertos de red innecesarios.",
+        "d) Utilizar soluciones de cifrado avanzado en el tráfico de red para proteger la comunicación."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar los sistemas embebidos con firmware antiguo en redes segmentadas y aplicar firewalls con reglas restrictivas como medida prioritaria para reducir superficies de ataque.",
+      "id": "p16-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué técnica específica se recomienda aplicar PRIMERO en dispositivos de red con sistemas operativos embebidos que ejecutan firmware antiguo y tienen capacidad limitada de actualización, pero que NO están aislados en una red air-gapped?",
+      "opciones": [
+        "a) Implementar reglas estrictas de firewall para limitar el tráfico de entrada y salida a puertos esenciales",
+        "b) Desactivar todos los servicios no críticos y protocolos de red innecesarios",
+        "c) Aplicar parches de seguridad manualmente mediante actualizaciones locales sin depender de actualizaciones automáticas",
+        "d) Segmentar la red donde se encuentre el dispositivo para reducir el riesgo de propagación de ataques"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda desactivar servicios no críticos y protocolos innecesarios como primer paso para reducir la superficie de ataque en dispositivos embebidos con firmware antiguo, independientemente de su ubicación en la red.",
+      "id": "p16-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador detecta que un servidor con sistema operativo embebido en una red crítica opera con credenciales predeterminadas. ¿Qué acción prioritaria debe realizar según el temario?",
+      "opciones": [
+        "Cambiar inmediatamente las credenciales predeterminadas por contraseñas robustas y únicas.",
+        "Desconectar el servidor de la red hasta que se actualice el firmware con credenciales seguras.",
+        "Aplicar una línea base de seguridad predefinida como la del CIS para sistemas embebidos.",
+        "Reemplazar el servidor por un dispositivo con firmware actualizable para evitar futuros riesgos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario enfatiza que cambiar credenciales predeterminadas es una acción prioritaria en dispositivos embebidos para evitar accesos no autorizados.",
+      "id": "p16-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué técnica específica se recomienda aplicar PRIMERO en dispositivos de red con sistemas operativos embebidos que ejecutan firmware antiguo y tienen capacidad limitada de actualización, pero que SÍ están aislados en una red air-gapped?",
+      "opciones": [
+        "Implementar autenticación multifactor (MFA) en los dispositivos embebidos.",
+        "Cambiar inmediatamente todas las credenciales predeterminadas por contraseñas complejas únicas.",
+        "Aplicar segmentación de red adicional para aislar los dispositivos embebidos en subredes dedicadas.",
+        "Desconectar físicamente los dispositivos de la red air-gapped como medida de último recurso."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que cambiar las credenciales predeterminadas por contraseñas complejas y únicas es una acción inicial crítica en dispositivos embebidos con firmware antiguo, incluso en redes air-gapped, para mitigar riesgos de acceso no autorizado.",
+      "id": "p16-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción específica es RECOMENDADA PRIMERO al implementar líneas base de seguridad en un sistema de control industrial (ICS) que opera en una red air-gapped?",
+      "opciones": [
+        "Aislar completamente el sistema en la red air-gapped y aplicar políticas de mínimo privilegio en todos los servicios.",
+        "Actualizar el firmware del sistema ICS con los últimos parches de seguridad disponibles.",
+        "Implementar un sistema de detección de intrusos (IDS) en la red air-gapped para monitorear tráfico anómalo.",
+        "Desplegar una línea base de seguridad predefinida como la del CIS Benchmark para ICS."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar sistemas ICS en redes air-gapped y aplicar mínimo privilegio como primera medida para reducir riesgos.",
+      "id": "p16-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una técnica recomendada para fortalecer dispositivos IoT según el temario?",
+      "opciones": [
+        "Aplicar parches de seguridad inmediatamente después de su lanzamiento, incluso si requieren reiniciar el dispositivo.",
+        "Segmentar dispositivos IoT en redes dedicadas para limitar el impacto de posibles exploits.",
+        "Configurar firewalls para bloquear todo el tráfico de salida de los dispositivos IoT, excepto el esencial.",
+        "Instalar software antivirus en dispositivos IoT para detectar y bloquear malware."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario no menciona la instalación de antivirus en dispositivos IoT como técnica recomendada, ya que estos dispositivos suelen tener recursos limitados y no son compatibles con soluciones tradicionales.",
+      "id": "p16-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de TI está desplegando una línea base de seguridad en 1,000 estaciones de trabajo Windows 11 usando el Security Compliance Toolkit (SCT). Tras aplicar la línea base 'Windows 11 Security baseline' del CIS, detectan que el 15% de los equipos no cumplen con el 10% de las configuraciones críticas porque los usuarios finales han modificado manualmente políticas de grupo locales. ¿Qué acción prioritaria debe implementarse según el temario para garantizar el cumplimiento?",
+      "opciones": [
+        "Implementar políticas de grupo (GPO) centralizadas en Active Directory para evitar modificaciones locales.",
+        "Deshabilitar completamente la capacidad de los usuarios para modificar políticas de grupo en los equipos.",
+        "Reemplazar las estaciones de trabajo por dispositivos con sistemas operativos más seguros.",
+        "Aplicar parches de seguridad urgentes para corregir las configuraciones no cumplidas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda usar políticas de grupo centralizadas en Active Directory para evitar modificaciones locales y garantizar el cumplimiento de líneas base en entornos con múltiples estaciones de trabajo.",
+      "id": "p16-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica específica de fortalecimiento se recomienda aplicar PRIMERO en dispositivos de red con sistemas operativos embebidos que ejecutan firmware antiguo y tienen capacidad limitada de actualización?",
+      "opciones": [
+        "Aislar el dispositivo en una red segmentada y aplicar firewalls para limitar su exposición.",
+        "Actualizar el firmware del dispositivo con los últimos parches de seguridad disponibles.",
+        "Deshabilitar todos los servicios no esenciales y configurar el mínimo privilegio en el sistema operativo.",
+        "Implementar líneas base de seguridad predefinidas como las del CIS Benchmark para sistemas embebidos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario prioriza el aislamiento en redes segmentadas y el uso de firewalls como técnica inicial para proteger dispositivos embebidos con firmware limitado.",
+      "id": "p16-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto de bastionado y líneas base seguras, ¿qué herramienta específica de Microsoft permite implementar configuraciones de seguridad en Windows de manera eficiente, evitando la sobrecarga de políticas como las 3,000 disponibles en Windows 10?",
+      "opciones": [
+        "Security Compliance Toolkit (SCT).",
+        "Windows Defender Firewall.",
+        "Microsoft Intune.",
+        "Windows Server Update Services (WSUS)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que el Security Compliance Toolkit (SCT) de Microsoft es la herramienta diseñada para implementar líneas base de seguridad en Windows de manera eficiente, evitando la sobrecarga de políticas.",
+      "id": "p16-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de fortalecimiento es PRIMORDIAL aplicar en dispositivos IoT que ejecutan firmware antiguo y no pueden recibir actualizaciones frecuentes?",
+      "opciones": [
+        "Segmentar estos dispositivos en redes dedicadas para limitar el impacto de posibles exploits.",
+        "Aplicar parches de seguridad tan pronto como estén disponibles, incluso si el firmware es antiguo.",
+        "Desconectar físicamente los dispositivos de cualquier red para evitar accesos no autorizados.",
+        "Instalar soluciones de detección y respuesta de endpoints (EDR) en cada dispositivo IoT."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda segmentar dispositivos IoT en redes dedicadas como técnica prioritaria para mitigar riesgos en dispositivos con firmware antiguo, ya que las actualizaciones son limitadas.",
+      "id": "p16-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una práctica recomendada para fortalecer servidores según el temario?",
+      "opciones": [
+        "Eliminar cualquier software no utilizado en el servidor.",
+        "Aplicar políticas de autenticación robustas, como longitud mínima de contraseñas y complejidad.",
+        "Instalar soluciones de seguridad como antivirus o EDR en los servidores.",
+        "Configurar credenciales predeterminadas para facilitar la administración remota."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario destaca que las credenciales predeterminadas deben cambiarse para evitar accesos no autorizados, por lo que configurarlas no es una práctica recomendada.",
+      "id": "p16-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando sistemas embebidos con sistemas operativos en tiempo real (RTOS), ¿qué característica diferencia principalmente a los RTOS según el temario?",
+      "opciones": [
+        "Los RTOS son deterministas, lo que significa que cada proceso debe ejecutarse en un marco de tiempo específico.",
+        "Los RTOS requieren actualizaciones de seguridad más frecuentes que los sistemas embebidos tradicionales.",
+        "Los RTOS no pueden ejecutarse en hardware especializado como smartwatches o electrodomésticos inteligentes.",
+        "Los RTOS no necesitan aislamiento de red debido a su diseño."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que los RTOS son deterministas, lo que los diferencia de otros sistemas embebidos al requerir ejecución en marcos de tiempo específicos.",
+      "id": "p16-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador detecta que un router en una red empresarial opera con credenciales predeterminadas. ¿Qué acción prioritaria debe realizar según el temario?",
+      "opciones": [
+        "Cambiar las credenciales predeterminadas por credenciales únicas y complejas.",
+        "Desconectar el router de la red hasta que se actualice el firmware.",
+        "Configurar el router para que solo acepte conexiones desde una IP específica.",
+        "Implementar un firewall entre el router y el resto de la red."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda cambiar credenciales predeterminadas en dispositivos de red como routers para evitar accesos no autorizados.",
+      "id": "p16-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué técnica específica se recomienda aplicar PRIMERO en dispositivos de red con sistemas operativos embebidos que ejecutan firmware antiguo y tienen capacidad limitada de actualización, pero que NO están aislados en una red air-gapped y NO ejecutan un sistema operativo en tiempo real (RTOS)?",
+      "opciones": [
+        "a) Deshabilitar todos los servicios no esenciales y cerrar todos los puertos no utilizados.",
+        "b) Aplicar parches de seguridad prioritarios proporcionados por el fabricante, incluso si son limitados.",
+        "c) Segmentar la red para aislar estos dispositivos y limitar su comunicación a solo los dispositivos necesarios.",
+        "d) Reemplazar el firmware antiguo por una versión actualizada, aunque implique tiempo de inactividad."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La segmentación de red es la técnica más efectiva inicialmente para dispositivos embebidos con firmware antiguo en entornos no air-gapped, ya que limita el impacto de posibles vulnerabilidades sin depender de actualizaciones frecuentes.",
+      "id": "p16-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de líneas base seguras, ¿qué acción específica se recomienda PRIMERO al implementar líneas base de seguridad en un sistema de control industrial (ICS) que opera en una red air-gapped?",
+      "opciones": [
+        "Aislar el sistema en una red air-gapped y aplicar políticas de mínimo privilegio.",
+        "Instalar soluciones de detección y respuesta de endpoints (EDR) en el ICS.",
+        "Aplicar parches de seguridad tan pronto como estén disponibles.",
+        "Configurar firewalls separados para controlar su comunicación."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar sistemas ICS en redes air-gapped y aplicar políticas de mínimo privilegio como primer paso para mitigar riesgos.",
+      "id": "p16-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario sobre bastionado y líneas base seguras, ¿qué acción específica se recomienda PRIMERO para mitigar riesgos en dispositivos de red con sistemas operativos embebidos que ejecutan firmware antiguo y no pueden recibir actualizaciones frecuentes?",
+      "opciones": [
+        "Aplicar políticas de mínimo privilegio en el firewall integrado del dispositivo",
+        "Cambiar inmediatamente las credenciales predeterminadas por defecto",
+        "Aislar el dispositivo en una red segmentada dedicada",
+        "Deshabilitar todos los servicios no esenciales mediante configuraciones manuales"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario enfatiza que cambiar credenciales predeterminadas es una acción prioritaria para dispositivos con firmware antiguo, ya que estas credenciales son un vector común de ataques.",
+      "id": "p16-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción específica se recomienda realizar PRIMERO al implementar líneas base de seguridad en dispositivos IoT que no pueden recibir actualizaciones frecuentes de firmware?",
+      "opciones": [
+        "a) Aislar estos dispositivos en redes segmentadas y protegerlos con firewalls.",
+        "b) Aplicar parches de seguridad tan pronto como se publiquen, independientemente de su frecuencia.",
+        "c) Eliminar cualquier software no utilizado en el dispositivo para reducir la superficie de ataque.",
+        "d) Configurar autenticación multifactor en el acceso a estos dispositivos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda aislar los dispositivos IoT en redes segmentadas y protegerlos con firewalls como primera medida, dado que las actualizaciones de firmware son limitadas y poco frecuentes.",
+      "id": "p16-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica específica se recomienda aplicar PRIMERO en dispositivos de red con sistemas operativos embebidos que ejecutan firmware antiguo y tienen capacidad limitada de actualización, pero que NO están aislados en una red air-gapped?",
+      "opciones": [
+        "Cambiar las credenciales predeterminadas por credenciales únicas y complejas.",
+        "Configurar firewalls separados para controlar su comunicación.",
+        "Aplicar parches de seguridad tan pronto como estén disponibles.",
+        "Desconectar físicamente los dispositivos de la red."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda cambiar credenciales predeterminadas como primer paso para fortalecer dispositivos embebidos con firmware antiguo, especialmente si no están aislados.",
+      "id": "p16-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización ha desplegado una línea base de seguridad en sus servidores Linux que ejecutan servicios críticos de red (como DNS y DHCP) mediante el Security Compliance Toolkit (SCT). Durante una auditoría, se detecta que el 15% de los servidores no cumplen con el 18% de las configuraciones críticas debido a que las aplicaciones legacy requieren permisos de red más permisivos. ¿Qué acción prioritaria debe implementarse según el temario para garantizar la seguridad sin comprometer la operatividad de los servicios críticos?",
+      "opciones": [
+        "Ajustar la línea base para permitir permisos específicos requeridos por las aplicaciones legacy, pero mantener el resto de las configuraciones críticas.",
+        "Desactivar las aplicaciones legacy para cumplir con la línea base de seguridad.",
+        "Ignorar las configuraciones no cumplidas y enfocarse en las aplicaciones críticas.",
+        "Reemplazar los servidores Linux con sistemas operativos más modernos que cumplan con la línea base."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario recomienda adaptar la línea base para permitir ajustes específicos en aplicaciones legacy, garantizando seguridad sin comprometer la operatividad.",
+      "id": "p16-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Secure Baselines",
+      "youtubeId": "BWPJD9Eb9iE"
+    },
+    {
+      "titulo": "Hardening Targets",
+      "youtubeId": "YQKbs0ug0XQ"
+    },
+    {
+      "titulo": "Securing Wireless and Mobile",
+      "youtubeId": "iAR6SgvtezY"
+    },
+    {
+      "titulo": "Wireless Security Settings",
+      "youtubeId": "KaqKoKNEKnE"
+    },
+    {
+      "titulo": "Application Security",
+      "youtubeId": "fFvXy3WkLpA"
+    }
+  ]
+}

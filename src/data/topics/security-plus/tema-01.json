@@ -1,0 +1,1392 @@
+{
+  "id": 1,
+  "titulo": "1.1 · Controles de seguridad",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "En el ámbito de la ciberseguridad, uno de los pilares fundamentales para proteger los activos de una organización son los controles de seguridad (security controls). Estos controles son mecanismos diseñados para prevenir, detectar, corregir o disuadir incidentes de seguridad, ya sea en el ámbito digital, físico o humano. Su objetivo no solo es proteger los datos, sino también los sistemas, edificios, personas y procesos dentro de una organización. A continuación, exploraremos las categorías principales de controles de seguridad, sus tipos y ejemplos concretos para entender cómo se implementan en la práctica.\n\n\nTIPOS DE CONTROLES DE SEGURIDAD\n\nLos controles de seguridad se clasifican en cuatro categorías principales, cada una con un enfoque distinto pero complementario. Estas categorías son: controles técnicos (technical controls), controles gerenciales (managerial controls), controles operativos (operational controls) y controles físicos (physical controls). Cada una de estas categorías agrupa diferentes tipos de controles según su naturaleza y el ámbito en el que se aplican.\n\n\nCONTROLES TÉCNICOS (TECHNICAL CONTROLS)\n\nLos controles técnicos son aquellos que se implementan mediante sistemas tecnológicos y soluciones automatizadas. Su objetivo es gestionar el acceso, proteger los datos y prevenir incidentes a través de herramientas como firewalls, antivirus, sistemas de autenticación multifactor (MFA, Multi-Factor Authentication) o políticas de seguridad configuradas en sistemas operativos. Por ejemplo, un administrador de seguridad puede configurar políticas en un sistema operativo para permitir o denegar funciones específicas a los usuarios, como el acceso a determinados archivos o la instalación de software. Otro ejemplo común son los firewalls, que filtran el tráfico de red para bloquear accesos no autorizados. Los controles técnicos también incluyen soluciones de cifrado, sistemas de detección de intrusos (IDS, Intrusion Detection Systems) y herramientas de prevención de pérdida de datos (DLP, Data Loss Prevention).\n\n\nCONTROLES GERENCIALES (MANAGERIAL CONTROLS)\n\nLos controles gerenciales se centran en la creación de políticas, procedimientos y directrices que definen cómo deben gestionarse los sistemas, los datos y los procesos de seguridad dentro de una organización. Estas políticas establecen las reglas que los empleados deben seguir para garantizar la seguridad de la información. Por ejemplo, una organización puede crear una política de contraseñas que exija a los empleados usar contraseñas complejas y cambiarlas periódicamente. Otra política común es la de acceso mínimo (least privilege), que limita los permisos de los usuarios a solo lo necesario para realizar sus funciones. También pueden incluir procedimientos de auditoría y revisión periódica de los sistemas para identificar posibles vulnerabilidades. Estos controles son esenciales para establecer un marco de referencia que guíe las acciones de los empleados y los procesos de la organización.\n\n\nCONTROLES OPERATIVOS (OPERATIONAL CONTROLS)\n\nLos controles operativos dependen de la intervención humana para su implementación y gestión. Su objetivo es concienciar, capacitar y supervisar a las personas dentro de la organización para que sigan las mejores prácticas de seguridad. Ejemplos de controles operativos incluyen la contratación de guardias de seguridad para supervisar el acceso a las instalaciones, la organización de sesiones de formación (lunch and learns) para educar a los empleados sobre ciberseguridad, o la colocación de carteles y señales que recuerden las buenas prácticas de seguridad. También pueden incluir programas de concienciación, como simulacros de phishing para evaluar la preparación de los empleados ante ataques de ingeniería social. Estos controles son clave para fomentar una cultura de seguridad dentro de la organización.\n\n\nCONTROLES FÍSICOS (PHYSICAL CONTROLS)\n\nLos controles físicos están diseñados para proteger los activos físicos de una organización, como edificios, salas de servidores o dispositivos. Su objetivo es limitar el acceso físico no autorizado a estas áreas. Ejemplos comunes incluyen vallas perimetrales, cerraduras electrónicas, lectores de tarjetas de acceso, guardias de seguridad en puntos de entrada y detectores de movimiento. También pueden incluir sistemas de control de acceso biométrico, como escáneres de huellas dactilares o reconocimiento facial. Estos controles son esenciales para proteger infraestructuras críticas y garantizar que solo el personal autorizado pueda acceder a áreas sensibles.\n\n\nTIPOS DE CONTROLES SEGÚN SU FUNCIÓN\n\nAdemás de las categorías mencionadas, los controles de seguridad también se clasifican según su función principal. Estas funciones incluyen controles preventivos, disuasorios, detectivos, correctivos, compensatorios y directivos. Cada tipo de control tiene un propósito específico y se implementa en diferentes etapas de un incidente de seguridad.\n\n\nCONTROLES PREVENTIVOS\n\nLos controles preventivos tienen como objetivo evitar que un incidente de seguridad ocurra en primer lugar. Su función es bloquear o limitar el acceso a recursos antes de que un atacante pueda explotar una vulnerabilidad. Ejemplos de controles preventivos incluyen reglas de firewall que bloquean el tráfico no autorizado, políticas de acceso mínimo que limitan los permisos de los usuarios, o cerraduras en las puertas de las salas de servidores. También pueden incluir soluciones de autenticación robustas, como la autenticación multifactor (MFA), que dificulta el acceso no autorizado a los sistemas. En el ámbito físico, un ejemplo claro es un guardián que verifica las identificaciones de las personas que ingresan a un edificio.\n\n\nCONTROLES DISUASORIOS\n\nLos controles disuasorios no evitan que un incidente ocurra, pero sí reducen la probabilidad de que un atacante intente explotar una vulnerabilidad al aumentar el riesgo percibido. Por ejemplo, un mensaje en la pantalla de inicio de una aplicación que advierte sobre las consecuencias legales de acceder a datos no autorizados puede disuadir a un usuario de intentar hacerlo. Otros ejemplos incluyen políticas que establecen sanciones disciplinarias, como despidos o degradaciones, por acceder a información sensible sin autorización. En el ámbito físico, carteles que advierten sobre la presencia de cámaras de seguridad o sistemas de alarma pueden disuadir a posibles intrusos. Estos controles funcionan como un recordatorio constante de las consecuencias de violar las políticas de seguridad.\n\n\nCONTROLES DETECTIVOS\n\nLos controles detectivos tienen como objetivo identificar y alertar sobre incidentes de seguridad que ya han ocurrido. Aunque no pueden prevenir el incidente, proporcionan información valiosa para tomar medidas correctivas. Ejemplos de controles detectivos incluyen la revisión de registros de acceso (logs) para identificar actividades sospechosas, la implementación de sistemas de monitoreo de red que alerten sobre tráfico inusual, o el uso de cámaras de seguridad para detectar intrusos en áreas restringidas. También pueden incluir revisiones periódicas de informes de inicio de sesión o la contratación de personal para patrullar las instalaciones y detectar comportamientos sospechosos. Estos controles son esenciales para la detección temprana de incidentes y la respuesta rápida.\n\n\nCONTROLES CORRECTIVOS\n\nLos controles correctivos se implementan después de que un incidente de seguridad ha sido detectado. Su objetivo es mitigar el impacto del incidente y restaurar la normalidad lo antes posible. Ejemplos de controles correctivos incluyen la restauración de sistemas a partir de copias de seguridad después de un ataque de ransomware, la aplicación de parches de seguridad para corregir vulnerabilidades, o la activación de protocolos de respuesta a incidentes para contener la brecha. En el ámbito físico, un ejemplo claro es el uso de extintores de incendios para controlar un incendio antes de que se propague. Estos controles son fundamentales para minimizar el daño y garantizar la continuidad del negocio.\n\n\nCONTROLES COMPENSATORIOS\n\nLos controles compensatorios se utilizan cuando no es posible implementar un control principal debido a limitaciones técnicas, de recursos o temporales. Su objetivo es proporcionar una protección alternativa hasta que se pueda implementar una solución definitiva. Por ejemplo, si una aplicación tiene una vulnerabilidad crítica y el desarrollador aún no ha lanzado un parche, se puede implementar una regla en el firewall para bloquear el tráfico hacia esa aplicación hasta que se aplique la corrección. Otros ejemplos incluyen la separación de funciones (separation of duties) para limitar el alcance de un posible incidente, o el uso de generadores de energía para compensar cortes de suministro eléctrico. Estos controles son temporales y deben ser reemplazados por soluciones más robustas a largo plazo.\n\n\nCONTROLES DIRECTIVOS\n\nLos controles directivos son los menos restrictivos y se basan en instrucciones o directrices para guiar el comportamiento de los usuarios. Su objetivo es orientar a las personas sobre cómo actuar de manera segura, pero no imponen restricciones técnicas. Ejemplos de controles directivos incluyen políticas que exigen a los empleados almacenar información sensible en carpetas cifradas, o carteles en las puertas que indiquen "
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Controles de Seguridad] --> B[Categorías]\nB --> C[Controles Técnicos]\nB --> D[Controles Gerenciales]\nB --> E[Controles Operativos]\nB --> F[Controles Físicos]\n\nA --> G[TIPOS DE CONTROLES]\nG --> H[Preventivos]\nG --> I[Disuasorios]\nG --> J[Detectivos]\nG --> K[Correctivos]\nG --> L[Compensatorios]\nG --> M[Directivos]\n\nC --> N[Firewalls]\nC --> O[Antivirus]\nC --> P[Políticas de SO]\n\nD --> Q[Políticas de contraseñas]\nD --> R[Acceso mínimo]\nD --> S[Auditorías]\n\nE --> T[Formación de empleados]\nE --> U[Simulacros de phishing]\nE --> V[Guardias de seguridad]\n\nF --> W[Vallas perimetrales]\nF --> X[Cerraduras electrónicas]\nF --> Y[Biometría]\n\nH --> Z[Reglas de firewall]\nI --> AA[Carteles de advertencia]\nJ --> AB[Revisión de logs]\nK --> AC[Restauración de backups]\nL --> AD[Separación de funciones]\nM --> AE[Políticas de almacenamiento cifrado]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc1-01",
+      "pregunta": "¿Qué son los controles de seguridad y cuál es su objetivo principal?",
+      "respuesta": "Los controles de seguridad son mecanismos diseñados para prevenir, detectar, corregir o disuadir incidentes de seguridad. Su objetivo principal es proteger los activos de una organización, incluyendo datos, sistemas, edificios y personas, minimizando el riesgo de incidentes y garantizando la continuidad del negocio."
+    },
+    {
+      "id": "fc1-02",
+      "pregunta": "Menciona las cuatro categorías principales de controles de seguridad y describe brevemente cada una.",
+      "respuesta": "Las cuatro categorías son: 1) Controles técnicos: implementados mediante sistemas tecnológicos como firewalls o antivirus. 2) Controles gerenciales: basados en políticas y procedimientos para gestionar la seguridad. 3) Controles operativos: dependen de la intervención humana, como formación o concienciación. 4) Controles físicos: protegen activos físicos mediante vallas, cerraduras o guardias."
+    },
+    {
+      "id": "fc1-03",
+      "pregunta": "¿Qué es un control preventivo y cuál es un ejemplo en el ámbito técnico?",
+      "respuesta": "Un control preventivo tiene como objetivo evitar que un incidente de seguridad ocurra. Un ejemplo en el ámbito técnico es una regla de firewall que bloquea el tráfico no autorizado hacia una red o sistema."
+    },
+    {
+      "id": "fc1-04",
+      "pregunta": "¿En qué se diferencia un control disuasorio de un control preventivo?",
+      "respuesta": "Un control disuasorio no evita que un incidente ocurra, pero reduce la probabilidad de que un atacante intente explotar una vulnerabilidad al aumentar el riesgo percibido. Un control preventivo, en cambio, bloquea o limita el acceso antes de que ocurra el incidente."
+    },
+    {
+      "id": "fc1-05",
+      "pregunta": "Proporciona dos ejemplos de controles detectivos y explica su función.",
+      "respuesta": "Dos ejemplos de controles detectivos son: 1) Revisión de registros de acceso (logs) para identificar actividades sospechosas, y 2) Cámaras de seguridad que detectan intrusos en áreas restringidas. Su función es identificar y alertar sobre incidentes de seguridad que ya han ocurrido."
+    },
+    {
+      "id": "fc1-06",
+      "pregunta": "¿Qué es un control correctivo y cuál es un ejemplo en el ámbito físico?",
+      "respuesta": "Un control correctivo se implementa después de que un incidente de seguridad ha sido detectado, con el objetivo de mitigar su impacto. Un ejemplo en el ámbito físico es el uso de extintores de incendios para controlar un incendio antes de que se propague."
+    },
+    {
+      "id": "fc1-07",
+      "pregunta": "¿Cuándo se utilizan los controles compensatorios y cuál es un ejemplo?",
+      "respuesta": "Los controles compensatorios se utilizan cuando no es posible implementar un control principal debido a limitaciones técnicas, de recursos o temporales. Un ejemplo es implementar una regla en el firewall para bloquear el tráfico hacia una aplicación vulnerable hasta que se aplique un parche."
+    },
+    {
+      "id": "fc1-08",
+      "pregunta": "¿Qué caracteriza a los controles directivos y cuál es un ejemplo?",
+      "respuesta": "Los controles directivos se basan en instrucciones o directrices para guiar el comportamiento de los usuarios, sin imponer restricciones técnicas. Un ejemplo es una política que exige a los empleados almacenar información sensible en carpetas cifradas."
+    },
+    {
+      "id": "fc1-09",
+      "pregunta": "¿Qué es el principio de acceso mínimo (least privilege) y en qué categoría de control se incluye?",
+      "respuesta": "El principio de acceso mínimo es una política que limita los permisos de los usuarios a solo lo necesario para realizar sus funciones. Se incluye en la categoría de controles gerenciales, ya que es una directriz definida en políticas y procedimientos."
+    },
+    {
+      "id": "fc1-10",
+      "pregunta": "Menciona dos ejemplos de controles operativos y explica su función.",
+      "respuesta": "Dos ejemplos de controles operativos son: 1) Sesiones de formación (lunch and learns) para educar a los empleados sobre ciberseguridad, y 2) Simulacros de phishing para evaluar la preparación de los empleados ante ataques de ingeniería social. Su función es concienciar y capacitar a las personas."
+    },
+    {
+      "id": "fc1-11",
+      "pregunta": "¿Qué es un SIEM y en qué categoría de control se incluiría?",
+      "respuesta": "Un SIEM (Security Information and Event Management) es una herramienta que recopila, analiza y correlaciona eventos de seguridad en tiempo real. Se incluiría en la categoría de controles técnicos, ya que es una solución tecnológica para detectar y responder a incidentes."
+    },
+    {
+      "id": "fc1-12",
+      "pregunta": "¿Por qué es importante combinar diferentes tipos y categorías de controles de seguridad?",
+      "respuesta": "Es importante combinar diferentes tipos y categorías de controles para crear un entorno de seguridad robusto que aborde tanto amenazas externas como internas. Cada tipo de control tiene un propósito específico, y su combinación garantiza una protección integral y reduce la probabilidad de que un incidente pase desapercibido."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos NO corresponde a un control técnico de seguridad?",
+      "opciones": [
+        "a) Un firewall que bloquea tráfico de red no autorizado",
+        "b) Un sistema de autenticación multifactor (MFA) para acceder a aplicaciones",
+        "c) Una política de contraseñas que exige caracteres especiales y cambios periódicos",
+        "d) Un sistema de detección de intrusos (IDS) que monitorea tráfico sospechoso"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las políticas de contraseñas son controles gerenciales, ya que establecen reglas administrativas en lugar de implementarse mediante tecnología.",
+      "id": "p1-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una organización, se implementa un control que muestra un mensaje en la pantalla de inicio advirtiendo sobre consecuencias legales por acceder a datos no autorizados. ¿Qué tipo de control es este según su función?",
+      "opciones": [
+        "a) Preventivo",
+        "b) Disuasorio",
+        "c) Detectivo",
+        "d) Correctivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles disuasorios reducen la probabilidad de que ocurra un incidente al aumentar el riesgo percibido, como en este caso.",
+      "id": "p1-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR la diferencia entre controles operativos y controles físicos?",
+      "opciones": [
+        "a) Los controles operativos dependen de tecnología, mientras que los físicos requieren intervención humana",
+        "b) Los controles operativos se enfocan en personas y procesos, mientras que los físicos protegen activos tangibles",
+        "c) Los controles operativos son siempre preventivos, mientras que los físicos son siempre detectivos",
+        "d) Los controles operativos son temporales, mientras que los físicos son permanentes"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles operativos (ej. formación) se centran en personas y procesos, mientras que los físicos (ej. cerraduras) protegen activos tangibles como edificios.",
+      "id": "p1-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un control que restaura sistemas desde copias de seguridad después de un ataque de ransomware. ¿Qué tipo de control es este según su función?",
+      "opciones": [
+        "a) Preventivo",
+        "b) Correctivo",
+        "c) Compensatorio",
+        "d) Directivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles correctivos se aplican después de un incidente para mitigar su impacto y restaurar la normalidad.",
+      "id": "p1-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un ejemplo de control gerencial?",
+      "opciones": [
+        "a) Una política de acceso mínimo (least privilege)",
+        "b) Un procedimiento de auditoría periódica de sistemas",
+        "c) Un firewall que bloquea tráfico no autorizado",
+        "d) Una directriz que exige el uso de contraseñas complejas"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los firewalls son controles técnicos, ya que se implementan mediante tecnología para gestionar el acceso.",
+      "id": "p1-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una aplicación tiene una vulnerabilidad crítica y no se ha lanzado un parche, se implementa una regla en el firewall para bloquear el tráfico hacia esa aplicación. ¿Qué tipo de control es este?",
+      "opciones": [
+        "a) Preventivo",
+        "b) Compensatorio",
+        "c) Disuasorio",
+        "d) Detectivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles compensatorios proporcionan protección alternativa temporal hasta que se implemente una solución definitiva.",
+      "id": "p1-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización coloca carteles en las puertas de las salas de servidores que indican 'Acceso restringido - Solo personal autorizado'. ¿Qué tipo de control es este según su función?",
+      "opciones": [
+        "a) Preventivo",
+        "b) Directivo",
+        "c) Detectivo",
+        "d) Correctivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles directivos guían el comportamiento mediante instrucciones o directrices, como los carteles en este caso.",
+      "id": "p1-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dado el siguiente escenario: Un atacante intenta acceder a un sistema sin autorización, pero el sistema requiere autenticación multifactor (MFA). ¿Qué tipo de control impidió exitosamente el acceso?",
+      "opciones": [
+        "a) Control disuasorio",
+        "b) Control preventivo",
+        "c) Control detectivo",
+        "d) Control correctivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El MFA es un control preventivo, ya que bloquea el acceso no autorizado antes de que ocurra el incidente.",
+      "id": "p1-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos corresponde a un control operativo?",
+      "opciones": [
+        "a) Un sistema de cámaras de seguridad que graba las entradas a un edificio",
+        "b) Una sesión de formación (lunch and learn) sobre phishing para empleados",
+        "c) Una política que limita el acceso a datos sensibles solo a ciertos departamentos",
+        "d) Un firewall que bloquea conexiones a sitios web maliciosos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las sesiones de formación son controles operativos, ya que dependen de la intervención humana para concienciar y capacitar.",
+      "id": "p1-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa un control que separa las funciones de desarrollo y operaciones para limitar el alcance de posibles incidentes. ¿Qué tipo de control es este según su función?",
+      "opciones": [
+        "a) Preventivo",
+        "b) Compensatorio",
+        "c) Correctivo",
+        "d) Directivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La separación de funciones es un control compensatorio, ya que proporciona protección alternativa temporal hasta implementar soluciones más robustas.",
+      "id": "p1-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de seguridad implementa un sistema de autenticación que requiere tanto una contraseña como un código enviado al teléfono móvil del usuario para acceder a los sistemas corporativos. ¿Qué tipo de control técnico se está utilizando?",
+      "opciones": [
+        "Autenticación multifactor (MFA)",
+        "Cifrado de datos en tránsito",
+        "Sistema de detección de intrusos (IDS)",
+        "Política de acceso mínimo (least privilege)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La autenticación multifactor (MFA) es un control técnico que combina múltiples métodos de autenticación para verificar la identidad del usuario, como se describe en el temario bajo 'Controles técnicos'.",
+      "id": "p1-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR la diferencia entre controles preventivos y controles disuasorios?",
+      "opciones": [
+        "Los controles preventivos evitan incidentes antes de que ocurran, mientras que los controles disuasorios reducen la probabilidad de que un atacante intente explotar una vulnerabilidad al aumentar el riesgo percibido.",
+        "Los controles preventivos actúan después de un incidente, mientras que los disuasorios evitan que ocurra.",
+        "Los controles preventivos son físicos, y los disuasorios son técnicos.",
+        "Los controles preventivos se aplican solo en el ámbito digital, y los disuasorios en el físico."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, los controles preventivos buscan evitar incidentes antes de que ocurran, mientras que los disuasorios reducen la probabilidad de que un atacante intente explotar una vulnerabilidad al aumentar el riesgo percibido.",
+      "id": "p1-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un control que consiste en separar las funciones de desarrollo y operaciones para evitar que un solo empleado pueda realizar cambios críticos sin supervisión. ¿Qué tipo de control es este según su función?",
+      "opciones": [
+        "Control correctivo",
+        "Control compensatorio",
+        "Control preventivo",
+        "Control directivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La separación de funciones (separation of duties) es un control compensatorio que se implementa cuando no es posible aplicar un control principal, como se menciona en el temario bajo 'Controles compensatorios'.",
+      "id": "p1-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cámaras de vigilancia en la entrada de sus oficinas para supervisar quién accede a las instalaciones. ¿Qué tipo de control de seguridad es este según su categoría principal?",
+      "opciones": [
+        "a) Control técnico",
+        "b) Control gerencial",
+        "c) Control operativo",
+        "d) Control físico"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Las cámaras de vigilancia son un ejemplo de control físico, ya que protegen activos físicos (como edificios) limitando el acceso no autorizado mediante medidas tangibles y tangibles.",
+      "id": "p1-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un empleado intenta acceder a un sistema sin autorización, pero el sistema registra la actividad sospechosa en los logs y envía una alerta al equipo de seguridad. ¿Qué tipo de control detectó este incidente?",
+      "opciones": [
+        "Control preventivo",
+        "Control detectivo",
+        "Control correctivo",
+        "Control disuasorio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles detectivos identifican y alertan sobre incidentes de seguridad que ya han ocurrido, como la revisión de logs, según el temario bajo 'Controles detectivos'.",
+      "id": "p1-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa coloca cámaras de seguridad en las entradas de sus instalaciones y muestra carteles que advierten sobre su presencia. ¿Qué tipo de control se está implementando según su función?",
+      "opciones": [
+        "Control preventivo",
+        "Control disuasorio",
+        "Control correctivo",
+        "Control compensatorio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles disuasorios reducen la probabilidad de que un atacante intente explotar una vulnerabilidad al aumentar el riesgo percibido, como los carteles que advierten sobre cámaras, según el temario.",
+      "id": "p1-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un control que consiste en separar las funciones de aprobación y ejecución de transacciones financieras entre distintos empleados para evitar fraudes. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo, ya que evita que un solo empleado pueda realizar acciones fraudulentas sin supervisión.",
+        "b) Control compensatorio, porque mitiga riesgos ante la imposibilidad de implementar un control gerencial ideal.",
+        "c) Control correctivo, ya que se aplica después de detectar una posible vulnerabilidad en el proceso.",
+        "d) Control disuasorio, porque reduce la motivación de los empleados para intentar cometer fraudes."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La separación de funciones (separation of duties) es un control preventivo, ya que su objetivo principal es evitar incidentes de seguridad antes de que ocurran, limitando el alcance de posibles acciones maliciosas.",
+      "id": "p1-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un control que consiste en restaurar sistemas desde copias de seguridad después de un ataque de ransomware. ¿Qué tipo de control es este según su función?",
+      "opciones": [
+        "Control preventivo",
+        "Control detectivo",
+        "Control correctivo",
+        "Control compensatorio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los controles correctivos se implementan después de que un incidente de seguridad ha sido detectado para mitigar su impacto, como la restauración de sistemas, según el temario.",
+      "id": "p1-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una aplicación tiene una vulnerabilidad crítica y el desarrollador aún no ha lanzado un parche, se implementa una regla en el firewall para bloquear el tráfico hacia esa aplicación. ¿Qué tipo de control es este?",
+      "opciones": [
+        "Control preventivo",
+        "Control compensatorio",
+        "Control directivo",
+        "Control gerencial"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La regla en el firewall actúa como un control compensatorio temporal hasta que se aplique el parche, según el temario bajo 'Controles compensatorios'.",
+      "id": "p1-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa un control que consiste en colocar carteles en las puertas de las salas de servidores que indican 'Acceso restringido - Solo personal autorizado'. ¿Qué tipo de control es este según su función?",
+      "opciones": [
+        "Control preventivo",
+        "Control disuasorio",
+        "Control detectivo",
+        "Control directivo"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los controles directivos son los menos restrictivos y se basan en instrucciones o directrices para guiar el comportamiento, como los carteles, según el temario.",
+      "id": "p1-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos corresponde a un control técnico de seguridad?",
+      "opciones": [
+        "Un firewall que bloquea tráfico malicioso en la red.",
+        "Una política que exige contraseñas complejas a los empleados.",
+        "Un cartel en la entrada de una sala de servidores que indica 'Acceso restringido'.",
+        "Un simulacro de phishing para concienciar a los empleados."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los firewalls son un ejemplo clásico de controles técnicos, ya que se implementan mediante sistemas tecnológicos para gestionar el acceso y proteger la red.",
+      "id": "p1-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una organización, se implementa un control que consiste en separar las funciones de aprobación y ejecución de transacciones financieras entre distintos empleados para evitar fraudes. ¿Qué tipo de control es este según su función principal?",
+      "opciones": [
+        "Control preventivo.",
+        "Control compensatorio.",
+        "Control correctivo.",
+        "Control disuasorio."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La separación de funciones (separation of duties) es un control preventivo, ya que busca evitar incidentes de seguridad limitando el alcance de acciones individuales.",
+      "id": "p1-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR la diferencia entre controles directivos y controles operativos?",
+      "opciones": [
+        "Los controles directivos se basan en instrucciones, mientras que los operativos dependen de la intervención humana para su gestión.",
+        "Los controles directivos son técnicos, mientras que los operativos son físicos.",
+        "Los controles directivos son preventivos, mientras que los operativos son correctivos.",
+        "Los controles directivos se aplican a sistemas, mientras que los operativos se aplican a personas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los controles directivos se basan en políticas o instrucciones, mientras que los operativos requieren acción humana, como formación o supervisión.",
+      "id": "p1-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un control que consiste en colocar cámaras de seguridad en las entradas de sus instalaciones y mostrar carteles que advierten sobre su presencia. ¿Qué tipo de control se está implementando según su función?",
+      "opciones": [
+        "Control disuasorio.",
+        "Control detectivo.",
+        "Control preventivo.",
+        "Control correctivo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los controles disuasorios reducen la probabilidad de un incidente al aumentar el riesgo percibido, como carteles que advierten sobre cámaras.",
+      "id": "p1-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un control que consiste en realizar auditorías periódicas a los sistemas para identificar vulnerabilidades y verificar el cumplimiento de las políticas de seguridad. ¿Qué tipo de control es este según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control detectivo",
+        "c) Control gerencial",
+        "d) Control correctivo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las auditorías periódicas son un ejemplo de controles gerenciales, ya que se centran en políticas y procedimientos para evaluar el cumplimiento y detectar vulnerabilidades, no en la prevención, detección o corrección directa de incidentes.",
+      "id": "p1-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante intenta acceder a un sistema sin autorización, pero el sistema registra la actividad sospechosa en los logs y envía una alerta al equipo de seguridad. ¿Qué tipo de control detectó este incidente?",
+      "opciones": [
+        "Control detectivo.",
+        "Control preventivo.",
+        "Control correctivo.",
+        "Control disuasorio."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los controles detectivos identifican incidentes ya ocurridos, como la revisión de logs que alertan sobre actividades sospechosas.",
+      "id": "p1-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que registra y limita el número de intentos fallidos de inicio de sesión en una cuenta, bloqueando temporalmente el acceso tras múltiples intentos incorrectos. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo, ya que evita accesos no autorizados antes de que ocurran",
+        "b) Control disuasorio, ya que aumenta el riesgo percibido de ser detectado",
+        "c) Control correctivo, ya que mitiga el impacto de un posible ataque",
+        "d) Control compensatorio, ya que no es un control principal pero mitiga una vulnerabilidad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este control técnico funciona como un mecanismo preventivo, ya que su objetivo principal es evitar accesos no autorizados bloqueando intentos fallidos antes de que un atacante pueda explotar una vulnerabilidad.",
+      "id": "p1-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos corresponde a un control físico de seguridad?",
+      "opciones": [
+        "Un lector de tarjetas de acceso en la puerta de una sala de servidores.",
+        "Una política que exige a los empleados cambiar sus contraseñas cada 90 días.",
+        "Un sistema de autenticación multifactor (MFA) para acceder a los sistemas corporativos.",
+        "Un simulacro de phishing para evaluar la preparación de los empleados."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los lectores de tarjetas de acceso son un ejemplo de controles físicos, ya que protegen activos físicos limitando el acceso a áreas sensibles.",
+      "id": "p1-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario aplicado, una organización detecta que un empleado intenta acceder a un sistema sin autorización. El sistema bloquea el acceso y envía una alerta al equipo de seguridad. ¿Qué tipo de control actuó en este caso?",
+      "opciones": [
+        "Control preventivo (bloqueo de acceso) y control detectivo (envío de alerta).",
+        "Control compensatorio (bloqueo de acceso) y control correctivo (envío de alerta).",
+        "Control disuasorio (bloqueo de acceso) y control gerencial (envío de alerta).",
+        "Control operativo (bloqueo de acceso) y control técnico (envío de alerta)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El bloqueo de acceso es un control preventivo (evita el acceso no autorizado), mientras que la alerta es un control detectivo (identifica el incidente).",
+      "id": "p1-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de seguridad implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por una aplicación móvil (como Google Authenticator) para acceder a los sistemas corporativos. Además, el sistema registra cada intento de autenticación fallido en un log centralizado y envía una alerta al administrador de seguridad si se detectan más de 5 intentos en menos de 10 minutos. ¿Qué combinación de tipos de controles técnicos y funciones de seguridad se está aplicando en este escenario?",
+      "opciones": [
+        "a) Control técnico preventivo (autenticación multifactor) y control técnico detectivo (registro de logs y alertas)",
+        "b) Control técnico correctivo (autenticación multifactor) y control técnico disuasorio (alertas al administrador)",
+        "c) Control técnico compensatorio (autenticación multifactor) y control técnico operativo (registro de logs)",
+        "d) Control gerencial directivo (políticas de autenticación) y control físico (alertas al administrador)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La autenticación multifactor actúa como un control técnico preventivo al dificultar el acceso no autorizado, mientras que el registro de logs y las alertas automatizadas son controles técnicos detectivos que monitorean y alertan sobre actividades sospechosas.",
+      "id": "p1-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos NO corresponde a un control gerencial?",
+      "opciones": [
+        "Una política que exige cambiar las contraseñas cada 90 días.",
+        "Un procedimiento de auditoría anual para revisar el cumplimiento de las políticas de seguridad.",
+        "Un firewall que bloquea el tráfico no autorizado en la red.",
+        "Una directriz que establece sanciones por acceder a información sensible sin autorización."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El firewall es un ejemplo de control técnico, no gerencial. Los controles gerenciales se centran en políticas y procedimientos, no en herramientas tecnológicas.",
+      "id": "p1-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un empleado intenta acceder a un sistema sin autorización, pero el sistema registra la actividad en los logs y envía una alerta al equipo de seguridad, ¿qué tipo de control detectó este incidente?",
+      "opciones": [
+        "Control preventivo",
+        "Control detectivo",
+        "Control correctivo",
+        "Control disuasorio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles detectivos identifican y alertan sobre incidentes de seguridad que ya han ocurrido, como el registro de actividad sospechosa en los logs.",
+      "id": "p1-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por un token físico (como un dispositivo RSA SecurID) para acceder a los sistemas corporativos. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control disuasorio",
+        "c) Control correctivo",
+        "d) Control compensatorio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este sistema de autenticación multifactor (MFA) con token físico actúa como un control preventivo, ya que su objetivo es evitar el acceso no autorizado a los sistemas al requerir múltiples factores de autenticación antes de conceder acceso.",
+      "id": "p1-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un control que consiste en separar las funciones de aprobación y ejecución de transacciones financieras entre distintos empleados para evitar fraudes. ¿Qué tipo de control es este según su función principal?",
+      "opciones": [
+        "Control preventivo",
+        "Control correctivo",
+        "Control compensatorio",
+        "Control disuasorio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La separación de funciones (separation of duties) es un control preventivo que busca evitar fraudes al limitar el alcance de las acciones de un solo empleado.",
+      "id": "p1-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un ejemplo de control técnico?",
+      "opciones": [
+        "Un sistema de autenticación multifactor (MFA) para acceder a los sistemas corporativos.",
+        "Una política que exige a los empleados usar contraseñas complejas.",
+        "Un firewall que filtra el tráfico de red no autorizado.",
+        "Un sistema de detección de intrusos (IDS) que alerta sobre actividades sospechosas."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las políticas de contraseñas son ejemplos de controles gerenciales, no técnicos, ya que no se implementan mediante herramientas tecnológicas.",
+      "id": "p1-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario aplicado, una organización detecta que un atacante intenta acceder a un sistema mediante fuerza bruta. El sistema bloquea temporalmente la cuenta tras 5 intentos fallidos y registra la actividad en los logs. ¿Qué combinación de tipos de controles técnicos y funciones de seguridad se está aplicando?",
+      "opciones": [
+        "Control preventivo (bloqueo de cuenta) y control detectivo (registro en logs).",
+        "Control correctivo (restauración del sistema) y control disuasorio (bloqueo de cuenta).",
+        "Control compensatorio (bloqueo de cuenta) y control gerencial (política de contraseñas).",
+        "Control operativo (formación de empleados) y control físico (cámaras de seguridad)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El bloqueo de cuenta es un control preventivo que evita accesos no autorizados, mientras que el registro en logs es un control detectivo que identifica el incidente.",
+      "id": "p1-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos corresponde a un control compensatorio?",
+      "opciones": [
+        "Un firewall que bloquea el tráfico hacia una aplicación con una vulnerabilidad crítica hasta que se aplique un parche.",
+        "Una política que exige a los empleados usar contraseñas complejas.",
+        "Un sistema de cámaras de vigilancia en las entradas de las oficinas.",
+        "Un mensaje en la pantalla de inicio que advierte sobre consecuencias legales por acceder a datos no autorizados."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un control compensatorio proporciona protección temporal cuando no es posible implementar un control principal, como bloquear tráfico hacia una aplicación vulnerable hasta que se aplique un parche.",
+      "id": "p1-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de control de acceso biométrico en la entrada de sus oficinas para permitir el acceso solo a empleados autorizados. ¿Qué tipo de control de seguridad, según su categoría principal, está utilizando esta organización?",
+      "opciones": [
+        "a) Control técnico",
+        "b) Control gerencial",
+        "c) Control operativo",
+        "d) Control físico"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El control de acceso biométrico es un ejemplo de control físico, ya que protege activos físicos (oficinas) limitando el acceso no autorizado mediante barreras físicas y tecnológicas integradas.",
+      "id": "p1-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de seguridad detecta que un empleado está intentando acceder a un sistema crítico fuera de su horario laboral habitual. El sistema, que ya cuenta con autenticación multifactor (MFA), implementa una política de tiempo de acceso que bloquea automáticamente cualquier intento de conexión fuera del horario autorizado para ese usuario. Además, el sistema registra el incidente en los logs y envía una alerta al administrador. ¿Qué combinación de tipos de controles técnicos y funciones de seguridad se está aplicando en este escenario?",
+      "opciones": [
+        "a) Control técnico preventivo (regla de tiempo de acceso) + control detectivo (logs y alertas)",
+        "b) Control técnico correctivo (bloqueo de acceso) + control operativo (política de horario laboral)",
+        "c) Control físico disuasorio (horario laboral) + control gerencial (política de acceso)",
+        "d) Control técnico compensatorio (MFA) + control correctivo (envío de alertas)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario describe un control técnico preventivo (regla de tiempo de acceso que bloquea conexiones fuera de horario) y un control detectivo (registros en logs y alertas al administrador), ambos implementados mediante soluciones automatizadas.",
+      "id": "p1-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización detecta que un empleado intenta acceder a un sistema crítico fuera de su horario laboral habitual. El sistema, que ya cuenta con autenticación multifactor (MFA), implementa una política de tiempo de acceso que bloquea automáticamente cualquier intento de conexión fuera del horario autorizado para ese usuario. Además, el sistema registra el incidente en los logs y envía una alerta al administrador de seguridad. ¿Qué combinación de tipos de controles según su función y categorías principales se está aplicando en este escenario?",
+      "opciones": [
+        "a) Control preventivo (técnico) + Control correctivo (operativo)",
+        "b) Control disuasorio (gerencial) + Control detectivo (técnico)",
+        "c) Control preventivo (técnico) + Control detectivo (técnico)",
+        "d) Control compensatorio (físico) + Control gerencial (operativo)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El bloqueo automático del acceso fuera de horario es un control preventivo técnico (evita el incidente), mientras que el registro en logs y la alerta al administrador son controles detectivos técnicos (identifican el intento). Ambos son controles técnicos según su categoría principal.",
+      "id": "p1-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un ejemplo de control técnico de seguridad?",
+      "opciones": [
+        "a) Un firewall que bloquea tráfico no autorizado en la red",
+        "b) Un sistema de autenticación multifactor (MFA) para acceder a sistemas corporativos",
+        "c) Una política que exige a los empleados usar contraseñas complejas y cambiarlas cada 90 días",
+        "d) Un sistema de detección de intrusos (IDS) que monitorea tráfico sospechoso en la red"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La opción 'c' corresponde a un control gerencial, ya que se trata de una política establecida por la organización, no de una solución tecnológica automatizada.",
+      "id": "p1-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante intenta acceder a un sistema mediante fuerza bruta, el sistema bloquea temporalmente la cuenta tras 5 intentos fallidos y registra la actividad en los logs. ¿Qué combinación de tipos de controles técnicos y funciones de seguridad se está aplicando?",
+      "opciones": [
+        "a) Control técnico preventivo y detective",
+        "b) Control físico disuasorio y correctivo",
+        "c) Control operativo detectivo y compensatorio",
+        "d) Control gerencial preventivo y disuasorio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El bloqueo de la cuenta tras intentos fallidos es un control técnico preventivo (evita accesos no autorizados), y el registro en logs es un control detective (identifica el incidente).",
+      "id": "p1-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen no solo una contraseña, sino también un código de verificación generado por un dispositivo hardware externo (como un token RSA SecurID). ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control de autenticación multifactor (MFA) por hardware",
+        "b) Control de cifrado de datos en tránsito",
+        "c) Control de detección de intrusos (IDS)",
+        "d) Control de prevención de pérdida de datos (DLP)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El token RSA SecurID es un dispositivo hardware que genera códigos de verificación únicos, complementando la contraseña para autenticar al usuario. Esto corresponde a un control técnico de autenticación multifactor (MFA) basado en hardware, según el temario.",
+      "id": "p1-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de control de acceso basado en roles (RBAC) que asigna permisos a los usuarios según sus funciones laborales, limitando su acceso a solo los recursos necesarios para realizar sus tareas. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control correctivo",
+        "c) Control compensatorio",
+        "d) Control disuasorio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El sistema RBAC actúa como un control preventivo, ya que su implementación limita el acceso a recursos antes de que un incidente de seguridad pueda ocurrir, siguiendo el principio de acceso mínimo (least privilege).",
+      "id": "p1-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos corresponde a un control técnico de seguridad según su categoría principal?",
+      "opciones": [
+        "a) Implementar una política de acceso mínimo (least privilege) en los sistemas operativos.",
+        "b) Configurar un firewall para bloquear tráfico malicioso hacia la red interna.",
+        "c) Colocar carteles en las salas de servidores que adviertan sobre el acceso restringido.",
+        "d) Realizar auditorías periódicas a los sistemas para identificar vulnerabilidades."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los firewalls son un ejemplo clásico de controles técnicos, ya que son soluciones tecnológicas automatizadas que filtran el tráfico de red para prevenir accesos no autorizados. Las políticas de acceso mínimo son controles gerenciales, los carteles son controles operativos y las auditorías son controles gerenciales.",
+      "id": "p1-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario aplicado, una organización detecta que un empleado intenta acceder a un sistema crítico fuera de su horario laboral habitual. El sistema, que ya cuenta con autenticación multifactor (MFA), implementa una política de tiempo de acceso que bloquea automáticamente cualquier intento de conexión fuera del horario autorizado. ¿Qué tipo de control es este según su función?",
+      "opciones": [
+        "a) Control técnico preventivo",
+        "b) Control gerencial correctivo",
+        "c) Control operativo detectivo",
+        "d) Control físico disuasorio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La política de tiempo de acceso es un control técnico preventivo, ya que bloquea accesos no autorizados antes de que ocurran.",
+      "id": "p1-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un ejemplo de control operativo?",
+      "opciones": [
+        "a) Un programa de formación en ciberseguridad para empleados",
+        "b) La contratación de guardias de seguridad para supervisar el acceso a las instalaciones",
+        "c) Un firewall que bloquea tráfico malicioso en la red",
+        "d) La colocación de carteles que recuerdan buenas prácticas de seguridad"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El firewall es un control técnico, no operativo, ya que depende de tecnología automatizada, no de intervención humana directa.",
+      "id": "p1-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por una aplicación móvil (como Google Authenticator) para acceder a los sistemas corporativos. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control disuasorio",
+        "c) Control detective",
+        "d) Control correctivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La autenticación multifactor (MFA) es un control técnico preventivo, ya que evita accesos no autorizados al requerir múltiples factores de autenticación.",
+      "id": "p1-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una aplicación tiene una vulnerabilidad crítica y el desarrollador aún no ha lanzado un parche, se implementa una regla en el firewall para bloquear el tráfico hacia esa aplicación. ¿Qué tipo de control es este según su función?",
+      "opciones": [
+        "a) Control técnico preventivo",
+        "b) Control gerencial correctivo",
+        "c) Control compensatorio",
+        "d) Control operativo detectivo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La regla en el firewall es un control compensatorio, ya que proporciona una protección temporal hasta que se aplique el parche definitivo.",
+      "id": "p1-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un control que consiste en restaurar sistemas desde copias de seguridad después de un ataque de ransomware. ¿Qué tipo de control es este según su función principal?",
+      "opciones": [
+        "a) Control técnico preventivo",
+        "b) Control gerencial correctivo",
+        "c) Control operativo detectivo",
+        "d) Control correctivo"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La restauración desde copias de seguridad es un control correctivo, ya que mitiga el impacto del incidente después de que ha ocurrido.",
+      "id": "p1-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de control de acceso basado en roles (RBAC) que asigna permisos a los usuarios según sus responsabilidades laborales, limitando su acceso solo a los recursos necesarios para desempeñar sus funciones. ¿Qué tipo de control técnico se está utilizando según su categoría principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control correctivo",
+        "c) Control compensatorio",
+        "d) Control disuasorio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El control RBAC es un mecanismo técnico que se implementa para prevenir accesos no autorizados al limitar los permisos de los usuarios según el principio de acceso mínimo (least privilege), por lo que corresponde a un control preventivo.",
+      "id": "p1-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un empleado intenta acceder a un sistema crítico fuera de su horario laboral habitual, el sistema bloquea automáticamente el acceso y registra el incidente en los logs. ¿Qué combinación de tipos de controles según su función y categorías principales se está aplicando?",
+      "opciones": [
+        "a) Control preventivo (técnico) + Control detectivo (técnico).",
+        "b) Control disuasorio (operativo) + Control correctivo (gerencial).",
+        "c) Control compensatorio (físico) + Control gerencial.",
+        "d) Control directivo (operativo) + Control técnico."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El bloqueo automático es un control preventivo técnico (evita el acceso no autorizado), y el registro en logs es un control detectivo técnico (identifica el incidente) (según el temario: 'controles preventivos' y 'controles detectivos' en la categoría técnica).",
+      "id": "p1-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos corresponde a un control técnico de seguridad según su función principal?",
+      "opciones": [
+        "a) Un firewall que bloquea tráfico no autorizado en la red",
+        "b) Una política que exige cambiar contraseñas cada 90 días",
+        "c) Un cartel en la entrada que advierte sobre la presencia de cámaras de seguridad",
+        "d) Un guardián que verifica identificaciones en la entrada de un edificio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El firewall es un ejemplo de control técnico, ya que se implementa mediante una solución tecnológica automatizada para gestionar el acceso y proteger la red.",
+      "id": "p1-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código generado por un token físico (como RSA SecurID). ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control compensatorio.",
+        "b) Control preventivo.",
+        "c) Control detectivo.",
+        "d) Control correctivo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La autenticación multifactor (MFA) es un control preventivo técnico, ya que su objetivo es evitar accesos no autorizados antes de que ocurran (según el temario: 'soluciones de autenticación robustas, como la autenticación multifactor (MFA)').",
+      "id": "p1-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación enviado por SMS a su teléfono móvil para acceder a los sistemas corporativos. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control de detección",
+        "b) Control preventivo",
+        "c) Control correctivo",
+        "d) Control compensatorio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este sistema de autenticación multifactor (MFA) actúa como un control preventivo al bloquear el acceso no autorizado antes de que ocurra, al requerir múltiples factores de verificación.",
+      "id": "p1-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario aplicado, una organización detecta que un atacante intenta acceder a un sistema mediante fuerza bruta. El sistema bloquea la cuenta tras 5 intentos fallidos, registra la actividad en los logs y envía una alerta al administrador. ¿Qué combinación de tipos de controles técnicos y funciones de seguridad se está aplicando?",
+      "opciones": [
+        "a) Control preventivo (bloqueo de cuenta) + Control detectivo (logs y alertas).",
+        "b) Control disuasorio (bloqueo de cuenta) + Control correctivo (envío de alerta).",
+        "c) Control compensatorio (bloqueo de cuenta) + Control gerencial (logs).",
+        "d) Control directivo (bloqueo de cuenta) + Control operativo (alertas)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El bloqueo de cuenta es un control preventivo técnico (evita accesos no autorizados), y los logs/alertas son controles detectivos técnicos (identifican y alertan sobre el incidente) (según el temario: 'controles preventivos' y 'controles detectivos').",
+      "id": "p1-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identifica el tipo de control de seguridad que se está implementando en el siguiente ejemplo: Una organización coloca carteles en las puertas de las salas de servidores que indican 'Acceso restringido - Solo personal autorizado'.",
+      "opciones": [
+        "a) Control técnico (preventivo).",
+        "b) Control gerencial (directivo).",
+        "c) Control operativo (disuasorio).",
+        "d) Control físico (preventivo)."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los carteles son un ejemplo de control operativo disuasorio, ya que su función es recordar a los empleados las políticas de seguridad y disuadir accesos no autorizados mediante instrucciones (según el temario: 'controles operativos' y 'controles disuasorios').",
+      "id": "p1-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema de cámaras de vigilancia en la entrada de sus oficinas y muestra carteles que advierten sobre su presencia. ¿Qué tipo de control de seguridad, según su categoría principal, está utilizando esta organización?",
+      "opciones": [
+        "a) Control técnico (preventivo).",
+        "b) Control físico (preventivo).",
+        "c) Control gerencial (directivo).",
+        "d) Control operativo (disuasorio)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las cámaras de vigilancia son un control físico preventivo, ya que su objetivo es limitar el acceso no autorizado a las instalaciones (según el temario: 'controles físicos' como 'cámaras de vigilancia').",
+      "id": "p1-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que combina contraseñas con un código de verificación generado por un token físico (como un dispositivo RSA SecurID) para acceder a los sistemas críticos. Además, el sistema registra cada intento de autenticación exitoso y fallido en un log centralizado y envía una alerta al administrador de seguridad si se detectan más de 3 intentos fallidos en menos de 5 minutos. ¿Qué combinación de tipos de controles técnicos según su función principal y categorías principales se está aplicando en este escenario?",
+      "opciones": [
+        "a) Control técnico preventivo (autenticación multifactor) + Control técnico detectivo (logs y alertas)",
+        "b) Control técnico disuasorio (token físico) + Control operativo (formación en seguridad)",
+        "c) Control gerencial (política de contraseñas) + Control físico (token biométrico)",
+        "d) Control compensatorio (token físico) + Control correctivo (envío de alertas)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario aplica un control técnico preventivo mediante autenticación multifactor (MFA) con token físico, y un control técnico detectivo al registrar intentos fallidos y enviar alertas. Ambos son controles técnicos con funciones preventiva y detectiva, respectivamente.",
+      "id": "p1-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña, un código de verificación generado por una aplicación móvil (TOTP) y un token biométrico (huella dactilar) para acceder a un sistema crítico. Además, el sistema registra cada intento de autenticación en un log centralizado y envía una alerta al administrador si se detectan más de 3 intentos fallidos en 5 minutos. ¿Qué combinación de tipos de controles técnicos según su función principal y categorías principales se está aplicando en este escenario?",
+      "opciones": [
+        "a) Control preventivo (técnico) + Control detectivo (técnico) + Control físico (biometría)",
+        "b) Control correctivo (técnico) + Control disuasorio (técnico) + Control gerencial (políticas)",
+        "c) Control compensatorio (técnico) + Control operativo (concienciación) + Control físico (lector de tarjetas)",
+        "d) Control preventivo (técnico) + Control operativo (formación) + Control gerencial (auditorías)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El sistema aplica un control preventivo técnico (autenticación multifactor) para evitar accesos no autorizados, un control detectivo técnico (logs y alertas) para identificar intentos sospechosos, y un control físico (biometría) como parte de la categoría de controles físicos para autenticación.",
+      "id": "p1-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos corresponde a un control gerencial según su categoría principal?",
+      "opciones": [
+        "a) Implementación de un firewall para bloquear tráfico malicioso en la red.",
+        "b) Creación de una política de contraseñas que exige a los empleados usar credenciales complejas y cambiarlas cada 90 días.",
+        "c) Instalación de cámaras de vigilancia en las entradas de las oficinas.",
+        "d) Configuración de autenticación multifactor (MFA) en los sistemas corporativos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles gerenciales se enfocan en políticas y procedimientos, como la creación de políticas de contraseñas, según el temario.",
+      "id": "p1-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante intenta acceder a un sistema mediante fuerza bruta, el sistema bloquea la cuenta tras 3 intentos fallidos y registra la actividad en los logs. ¿Qué combinación de tipos de controles técnicos y funciones de seguridad se está aplicando?",
+      "opciones": [
+        "a) Control técnico preventivo (bloqueo de cuenta) y control detectivo (registro en logs).",
+        "b) Control físico disuasorio (bloqueo de cuenta) y control operativo correctivo (registro en logs).",
+        "c) Control gerencial preventivo (bloqueo de cuenta) y control técnico disuasorio (registro en logs).",
+        "d) Control compensatorio preventivo (bloqueo de cuenta) y control gerencial detectivo (registro en logs)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El bloqueo de cuenta es un control técnico preventivo (evita accesos no autorizados) y el registro en logs es un control detectivo (identifica el incidente), según las definiciones del temario.",
+      "id": "p1-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que registra automáticamente las fechas y horas de los accesos exitosos y fallidos de los usuarios a sus cuentas, pero no bloquea ni alerta sobre actividades sospechosas. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control detectivo",
+        "c) Control correctivo",
+        "d) Control disuasorio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este sistema cumple con la función de identificar y registrar incidentes de seguridad ya ocurridos, sin actuar para prevenirlos o corregirlos, lo que corresponde a un control detectivo.",
+      "id": "p1-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por una aplicación móvil (TOTP) para acceder a los sistemas corporativos. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control compensatorio.",
+        "b) Control preventivo.",
+        "c) Control correctivo.",
+        "d) Control detectivo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La autenticación multifactor (MFA) es un control técnico preventivo, ya que evita accesos no autorizados al requerir múltiples factores de autenticación.",
+      "id": "p1-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos NO corresponde a un control operativo?",
+      "opciones": [
+        "a) Colocación de carteles que recuerdan buenas prácticas de seguridad en las oficinas.",
+        "b) Contratación de guardias de seguridad para supervisar el acceso a las instalaciones.",
+        "c) Implementación de políticas de acceso mínimo (least privilege) en los sistemas.",
+        "d) Organización de sesiones de formación (lunch and learns) para educar a los empleados sobre ciberseguridad."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las políticas de acceso mínimo son controles gerenciales, ya que se implementan mediante políticas y procedimientos, según el temario.",
+      "id": "p1-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen no solo una contraseña, sino también un código de verificación generado por un token físico (como un dispositivo RSA SecurID) para acceder a los sistemas corporativos. ¿Qué tipo de control técnico se está utilizando según su categoría principal?",
+      "opciones": [
+        "Autenticación multifactor (MFA) basada en hardware",
+        "Control de acceso basado en roles (RBAC)",
+        "Sistema de detección de intrusos (IDS)",
+        "Política de contraseñas complejas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El token físico RSA SecurID es un ejemplo de autenticación multifactor (MFA) basado en hardware, que combina algo que el usuario sabe (contraseña) con algo que el usuario tiene (token).",
+      "id": "p1-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por un token físico (como RSA SecurID) para acceder a los sistemas críticos. Además, el sistema registra cada intento de autenticación en un log centralizado. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control correctivo",
+        "c) Control detective",
+        "d) Control compensatorio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este sistema utiliza autenticación multifactor (MFA) con token físico, que actúa como un control preventivo al bloquear accesos no autorizados antes de que ocurran, registrando los intentos en logs es una función adicional para auditoría.",
+      "id": "p1-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema de control de acceso basado en roles (RBAC) que asigna permisos a los usuarios según sus funciones laborales, limitando su acceso a solo los recursos necesarios para realizar sus tareas. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo.",
+        "b) Control correctivo.",
+        "c) Control compensatorio.",
+        "d) Control detectivo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El RBAC es un control técnico preventivo, ya que limita los permisos de los usuarios para evitar accesos no autorizados, según el temario.",
+      "id": "p1-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una aplicación tiene una vulnerabilidad crítica y el desarrollador aún no ha lanzado un parche, se implementa una regla en el firewall para bloquear el tráfico hacia esa aplicación hasta que se aplique la corrección. ¿Qué tipo de control es este según su función?",
+      "opciones": [
+        "a) Control preventivo.",
+        "b) Control compensatorio.",
+        "c) Control correctivo.",
+        "d) Control disuasorio."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La regla en el firewall es un control compensatorio, ya que proporciona una protección temporal hasta que se aplique el parche, según el temario.",
+      "id": "p1-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por un token físico (como RSA SecurID). Además, el sistema registra cada intento de autenticación en un log centralizado y envía una alerta al administrador si se detectan más de 3 intentos fallidos en 5 minutos. ¿Qué combinación de tipos de controles técnicos según su función principal y categorías principales se está aplicando en este escenario?",
+      "opciones": [
+        "a) Control técnico preventivo (MFA) y control técnico detectivo (logs y alertas).",
+        "b) Control gerencial preventivo (MFA) y control operativo detectivo (logs y alertas).",
+        "c) Control físico preventivo (MFA) y control técnico correctivo (logs y alertas).",
+        "d) Control compensatorio preventivo (MFA) y control gerencial detectivo (logs y alertas)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La autenticación multifactor (MFA) es un control técnico preventivo, y los logs con alertas son controles técnicos detectivos, según las definiciones del temario.",
+      "id": "p1-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos corresponde a un control técnico según su categoría principal?",
+      "opciones": [
+        "a) Una política que exige a los empleados cambiar sus contraseñas cada 90 días.",
+        "b) Un firewall que bloquea el tráfico de red no autorizado hacia un servidor interno.",
+        "c) Un cartel en la entrada de una sala de servidores que indica 'Acceso restringido'.",
+        "d) Un guardián que verifica las identificaciones de las personas que ingresan a un edificio."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los controles técnicos se implementan mediante sistemas tecnológicos automatizados, como firewalls, que filtran tráfico de red para proteger sistemas.",
+      "id": "p1-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña, un código de verificación generado por una aplicación móvil (TOTP) y un reconocimiento facial para acceder a un área de servidores críticos. ¿Qué tipo de control técnico se está utilizando según su categoría principal?",
+      "opciones": [
+        "a) Control físico",
+        "b) Control gerencial",
+        "c) Control técnico",
+        "d) Control operativo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este sistema utiliza tecnología automatizada (autenticación multifactor con TOTP y biometría) para gestionar el acceso, lo que lo clasifica como un control técnico según su categoría principal.",
+      "id": "p1-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de monitoreo continuo que analiza el tráfico de red en tiempo real para identificar patrones inusuales, como conexiones a servidores externos en horarios no laborales. ¿Qué tipo de control de seguridad está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control detectivo",
+        "c) Control correctivo",
+        "d) Control disuasorio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este sistema analiza el tráfico en busca de actividades sospechosas una vez que han ocurrido, lo que corresponde a la función de un control detectivo, ya que su objetivo es identificar incidentes de seguridad en curso o pasados.",
+      "id": "p1-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario aplicado, una organización detecta que un empleado intenta acceder a un sistema crítico fuera de su horario laboral habitual. El sistema bloquea automáticamente el acceso y registra el incidente en los logs. ¿Qué combinación de tipos de controles según su función y categorías principales se está aplicando?",
+      "opciones": [
+        "a) Control técnico preventivo y control operativo detectivo.",
+        "b) Control físico preventivo y control gerencial disuasorio.",
+        "c) Control técnico correctivo y control físico detectivo.",
+        "d) Control gerencial preventivo y control operativo correctivo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El bloqueo automático es un control técnico preventivo, mientras que el registro en logs es un control operativo detectivo.",
+      "id": "p1-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por un token de hardware (como un dispositivo RSA SecurID), pero no bloquea ni registra los intentos fallidos. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control compensatorio",
+        "c) Control disuasorio",
+        "d) Control detective"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El sistema utiliza autenticación multifactor (MFA) como medida preventiva para bloquear accesos no autorizados antes de que ocurran, incluso si no registra los intentos fallidos.",
+      "id": "p1-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema que analiza el tráfico de red en tiempo real para identificar y bloquear automáticamente conexiones sospechosas hacia servidores internos, como intentos de escaneo de puertos o accesos no autorizados. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control correctivo",
+        "c) Control compensatorio",
+        "d) Control disuasorio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este sistema actúa antes de que un incidente ocurra, bloqueando el tráfico sospechoso, lo que lo clasifica como un control preventivo según su función principal.",
+      "id": "p1-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos corresponde a un control físico según su categoría principal?",
+      "opciones": [
+        "a) Un sistema de autenticación multifactor (MFA) para acceder a sistemas corporativos.",
+        "b) Una política que exige a los empleados almacenar información sensible en carpetas cifradas.",
+        "c) Un detector de movimiento en una sala de servidores para alertar sobre intrusos.",
+        "d) Un procedimiento de auditoría periódica para revisar el cumplimiento de políticas."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los controles físicos protegen activos físicos, como detectores de movimiento en salas de servidores.",
+      "id": "p1-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por un token de hardware (como un dispositivo RSA SecurID), pero no registra ni alerta sobre intentos fallidos. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control disuasorio",
+        "c) Control correctivo",
+        "d) Control detective"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este sistema actúa como un control preventivo, ya que su función principal es evitar el acceso no autorizado al requerir múltiples factores de autenticación antes de permitir el ingreso, sin importar si registra o no los intentos fallidos.",
+      "id": "p1-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una organización con alta rotación de personal, se implementa un sistema de control de acceso que requiere que los empleados utilicen un token biométrico (huella dactilar) para ingresar a las salas de servidores. Además, el sistema registra automáticamente cada intento de acceso exitoso y fallido en un log centralizado, pero no bloquea ni alerta sobre actividades sospechosas. Sin embargo, la política de seguridad de la empresa establece que, en caso de detectarse un patrón de intentos fallidos (más de 5 en 1 hora), el equipo de seguridad debe revisar manualmente el acceso y tomar medidas correctivas. ¿Qué combinación de tipos de controles técnicos según su función principal y categorías principales se está aplicando en este escenario?",
+      "opciones": [
+        "a) Control técnico preventivo (biometría) + control operativo correctivo (revisión manual de logs) + control gerencial (política de seguridad).",
+        "b) Control técnico detectivo (logs) + control físico preventivo (biometría) + control compensatorio (política manual).",
+        "c) Control técnico disuasorio (biometría) + control operativo detectivo (logs) + control gerencial (política de revisión).",
+        "d) Control técnico correctivo (biometría) + control físico preventivo (logs) + control operativo (política manual)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El token biométrico actúa como un control técnico preventivo al restringir el acceso físico a las salas de servidores. Los logs registrados son un control técnico detectivo que permite identificar patrones sospechosos. La política de revisión manual de accesos es un control gerencial que define un procedimiento correctivo para cuando se detectan incidentes, aunque no es un control técnico en sí mismo.",
+      "id": "p1-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un escenario aplicado, una organización detecta que un atacante intenta acceder a un sistema mediante fuerza bruta. El sistema bloquea la cuenta tras 3 intentos fallidos, registra la actividad en los logs y envía una alerta al administrador. ¿Qué combinación de tipos de controles técnicos y funciones de seguridad se está aplicando?",
+      "opciones": [
+        "a) Control preventivo (bloqueo) y control detectivo (logs y alertas).",
+        "b) Control disuasorio (bloqueo) y control correctivo (logs).",
+        "c) Control compensatorio (bloqueo) y control gerencial (alertas).",
+        "d) Control físico (bloqueo) y control operativo (logs)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El bloqueo es un control preventivo, mientras que los logs y alertas son controles detectivos que identifican y alertan sobre el incidente.",
+      "id": "p1-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que registra automáticamente los intentos de inicio de sesión, incluyendo fechas, horas y direcciones IP, pero no bloquea ni alerta sobre actividades sospechosas. ¿Qué tipo de control de seguridad es este según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control disuasorio",
+        "c) Control detectivo",
+        "d) Control correctivo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este control recopila información sobre incidentes ya ocurridos para identificarlos (función detectiva), aunque no bloquea ni corrige directamente el acceso no autorizado.",
+      "id": "p1-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por un token físico (como RSA SecurID) para acceder a los sistemas críticos. Además, el sistema registra cada intento de autenticación en un log centralizado y envía una alerta al administrador si se detectan más de 3 intentos fallidos en 5 minutos. ¿Qué combinación de tipos de controles técnicos según su función principal y categorías principales se está aplicando?",
+      "opciones": [
+        "Control técnico preventivo (autenticación multifactor) y control técnico detectivo (monitoreo de logs y alertas).",
+        "Control técnico correctivo (restauración de sistemas) y control operativo (formación de empleados).",
+        "Control gerencial (políticas de acceso) y control físico (lectores biométricos).",
+        "Control compensatorio (bloqueo de tráfico) y control disuasorio (carteles de advertencia)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El sistema aplica autenticación multifactor (control técnico preventivo) y monitorea logs con alertas (control técnico detectivo), según las categorías y funciones definidas en el temario.",
+      "id": "p1-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que registra automáticamente las fechas, horas y direcciones IP de los intentos de inicio de sesión exitosos y fallidos, pero no bloquea ni alerta sobre actividades sospechosas. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control detectivo",
+        "c) Control correctivo",
+        "d) Control disuasorio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este sistema registra y almacena información sobre actividades sospechosas, lo que permite su revisión posterior para identificar incidentes, cumpliendo así con la función de un control detectivo.",
+      "id": "p1-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario aplicado, una organización detecta que un empleado intenta acceder a un sistema crítico fuera de su horario laboral habitual. El sistema bloquea automáticamente el acceso, registra el incidente en los logs y envía una alerta al administrador de seguridad. ¿Qué combinación de tipos de controles según su función y categorías principales se está aplicando?",
+      "opciones": [
+        "Control técnico preventivo (bloqueo de acceso) y control técnico detectivo (monitoreo de logs y alertas).",
+        "Control operativo (formación de empleados) y control físico (cámaras de vigilancia).",
+        "Control gerencial (políticas de acceso) y control compensatorio (bloqueo temporal).",
+        "Control disuasorio (carteles de advertencia) y control correctivo (restauración de sistemas)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El bloqueo automático es un control técnico preventivo, mientras que el registro en logs y las alertas son controles técnicos detectivos, según las categorías y funciones del temario.",
+      "id": "p1-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por un dispositivo hardware externo (como un token RSA SecurID) para acceder a los sistemas críticos. Sin embargo, este sistema NO registra los intentos de autenticación fallidos ni envía alertas al administrador. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "Control preventivo",
+        "Control correctivo",
+        "Control detectivo",
+        "Control disuasorio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El sistema de autenticación multifactor (MFA) con token hardware es un ejemplo de control preventivo, ya que su función principal es evitar el acceso no autorizado bloqueando intentos antes de que ocurran.",
+      "id": "p1-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por una aplicación móvil (como Google Authenticator) para acceder a los sistemas corporativos. Sin embargo, este sistema NO registra los intentos de autenticación fallidos ni envía alertas al administrador. ¿Qué tipo de control técnico es este según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control correctivo",
+        "c) Control disuasorio",
+        "d) Control detectivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este control actúa antes de que ocurra un incidente, ya que evita el acceso no autorizado mediante autenticación multifactor (MFA), cumpliendo así con la función preventiva.",
+      "id": "p1-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos corresponde a un control físico de seguridad según su función principal?",
+      "opciones": [
+        "a) Un sistema de autenticación multifactor (MFA) que requiere contraseña y código SMS para acceder a los sistemas corporativos",
+        "b) Un firewall que bloquea tráfico no autorizado hacia una aplicación vulnerable",
+        "c) Una cerradura biométrica en la puerta de acceso a la sala de servidores que solo permite el ingreso a empleados autorizados",
+        "d) Una política escrita que exige cambiar las contraseñas cada 90 días"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Una cerradura biométrica es un ejemplo de control físico, ya que protege un activo físico (la sala de servidores) limitando el acceso a través de un mecanismo tangible (biometría).",
+      "id": "p1-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por un dispositivo hardware externo (como un token RSA SecurID), pero NO bloquea ni registra los intentos fallidos. ¿Qué tipo de control técnico es este según su función principal?",
+      "opciones": [
+        "a) Control compensatorio",
+        "b) Control preventivo",
+        "c) Control disuasorio",
+        "d) Control detectivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este control actúa como una medida alternativa temporal cuando no se pueden implementar soluciones más robustas, como bloqueo de cuentas o registro de logs, cumpliendo así la definición de un control compensatorio.",
+      "id": "p1-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización ha sufrido múltiples incidentes de seguridad debido a que empleados comparten credenciales de acceso a sistemas críticos. Para mitigar este riesgo, la empresa implementa un sistema que requiere autenticación multifactor (MFA) con un token físico (hardware token) y un código de verificación generado por una aplicación móvil (TOTP), además de registrar cada intento de autenticación en un log centralizado. Sin embargo, el sistema NO bloquea automáticamente las cuentas tras múltiples intentos fallidos ni envía alertas en tiempo real. ¿Qué combinación de tipos de controles técnicos según su función principal y categorías principales se está aplicando en este escenario?",
+      "opciones": [
+        "a) Control técnico preventivo (autenticación multifactor) + control técnico detectivo (registro de logs)",
+        "b) Control técnico disuasorio (token físico) + control técnico correctivo (registro de logs)",
+        "c) Control técnico compensatorio (TOTP) + control gerencial (políticas de credenciales)",
+        "d) Control técnico preventivo (MFA) + control operativo (registro de logs)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El sistema aplica un control técnico preventivo al implementar la autenticación multifactor (MFA) con token físico y TOTP, que reduce el riesgo de acceso no autorizado. Además, el registro centralizado de intentos de autenticación funciona como un control técnico detectivo al proporcionar registros para revisión posterior.",
+      "id": "p1-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de monitoreo continuo que analiza el tráfico de red en tiempo real para identificar patrones inusuales, como conexiones a servidores externos en horarios no laborales. Este sistema no bloquea automáticamente las conexiones sospechosas, pero genera alertas en tiempo real para que el equipo de seguridad las revise manualmente. ¿Qué combinación de tipos de controles según su función y categorías principales se está aplicando en este escenario?",
+      "opciones": [
+        "a) Control técnico detectivo y control gerencial (política de revisión manual).",
+        "b) Control técnico preventivo y control físico (cámaras de vigilancia).",
+        "c) Control operativo (formación de empleados) y control compensatorio (bloqueo temporal).",
+        "d) Control técnico correctivo y control gerencial (auditoría posterior)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El sistema de monitoreo continuo es un control técnico detectivo, ya que identifica y alerta sobre incidentes de seguridad en tiempo real. La política de revisión manual de alertas por parte del equipo de seguridad corresponde a un control gerencial, que establece el procedimiento para actuar ante las detecciones.",
+      "id": "p1-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de monitoreo continuo que analiza el tráfico de red en tiempo real para identificar patrones inusuales, como conexiones a servidores externos en horarios no laborales. Este sistema no bloquea automáticamente las conexiones sospechosas, pero genera alertas en tiempo real para que el equipo de seguridad las revise manualmente. ¿Qué tipo de control de seguridad, según su función principal, está aplicando esta organización?",
+      "opciones": [
+        "a) Control preventivo, ya que evita conexiones no autorizadas en tiempo real.",
+        "b) Control disuasorio, porque disuade a los atacantes de intentar conexiones sospechosas.",
+        "c) Control detective, ya que identifica y alerta sobre incidentes de seguridad ya ocurridos.",
+        "d) Control correctivo, porque mitiga el impacto de incidentes detectados."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este sistema identifica y alerta sobre actividades sospechosas sin bloquearlas, lo que lo clasifica como un control detective según su función principal.",
+      "id": "p1-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una organización, se implementa un sistema que requiere que los usuarios proporcionen una contraseña, un código generado por un token físico (como RSA SecurID) y un reconocimiento facial para acceder a un área de servidores críticos. ¿Qué tipo de control técnico se está utilizando según su categoría principal?",
+      "opciones": [
+        "a) Control físico.",
+        "b) Control gerencial.",
+        "c) Control técnico.",
+        "d) Control operativo."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este sistema utiliza soluciones tecnológicas automatizadas (contraseña, token físico y biometría) para gestionar el acceso, por lo que se clasifica como control técnico.",
+      "id": "p1-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR la diferencia entre controles preventivos y controles correctivos?",
+      "opciones": [
+        "a) Los controles preventivos evitan incidentes, mientras que los correctivos mitigan su impacto después de ocurrir.",
+        "b) Los controles preventivos se implementan por humanos, y los correctivos son automatizados.",
+        "c) Los controles preventivos son físicos, y los correctivos son técnicos.",
+        "d) Los controles preventivos y correctivos son lo mismo, pero aplicados en diferentes etapas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los controles preventivos actúan antes de que ocurra un incidente, mientras que los correctivos se implementan después para reducir su impacto.",
+      "id": "p1-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cámaras de vigilancia en la entrada de sus oficinas y muestra carteles que advierten sobre su presencia. ¿Qué tipo de control de seguridad, según su categoría principal, está utilizando esta organización?",
+      "opciones": [
+        "a) Control técnico.",
+        "b) Control gerencial.",
+        "c) Control operativo.",
+        "d) Control físico."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Las cámaras de vigilancia y los carteles son mecanismos físicos diseñados para proteger activos físicos y disuadir accesos no autorizados, por lo que se clasifican como controles físicos.",
+      "id": "p1-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por un token físico (como un dispositivo RSA SecurID) para acceder a los sistemas corporativos. Este sistema NO registra los intentos de autenticación fallidos ni envía alertas al administrador. ¿Qué tipo de control técnico se está utilizando según su función principal?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control disuasorio",
+        "c) Control correctivo",
+        "d) Control compensatorio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este sistema actúa como un control preventivo al requerir múltiples factores de autenticación, dificultando el acceso no autorizado. Aunque no registra intentos fallidos, su función principal es evitar incidentes de seguridad antes de que ocurran.",
+      "id": "p1-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos corresponde a un control técnico según su función principal de *detección*?",
+      "opciones": [
+        "a) Un sistema de cámaras de vigilancia que monitorea el acceso a las salas de servidores y envía alertas al personal de seguridad en tiempo real.",
+        "b) Un firewall que bloquea automáticamente el tráfico no autorizado hacia puertos específicos en la red.",
+        "c) Un log centralizado que registra todos los intentos de inicio de sesión, incluyendo éxitos y fallos, para su revisión posterior.",
+        "d) Un cartel en la entrada de la oficina que advierte sobre la presencia de cámaras de seguridad."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El log centralizado es un ejemplo de control técnico de detección, ya que su función principal es registrar actividades sospechosas para su posterior análisis. Los otros ejemplos corresponden a controles preventivos (b), físicos (a) o disuasorios (d).",
+      "id": "p1-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de cámaras de vigilancia en las entradas de sus instalaciones y coloca carteles que indican 'Zona vigilada. Grabación en curso' para disuadir el acceso no autorizado. ¿Qué tipo de control, según su función principal, está aplicando esta organización?",
+      "opciones": [
+        "a) Control preventivo",
+        "b) Control disuasorio",
+        "c) Control detective",
+        "d) Control correctivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El cartel y las cámaras actúan como un recordatorio constante del riesgo de ser grabado, reduciendo así la probabilidad de que alguien intente acceder sin autorización. Este enfoque no evita el acceso por sí mismo, pero disuade la acción.",
+      "id": "p1-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación que requiere que los usuarios proporcionen una contraseña y un código de verificación generado por una aplicación móvil (TOTP) para acceder a los sistemas corporativos. Además, el sistema registra cada intento de autenticación fallido en un log centralizado y envía una alerta al administrador si se detectan más de 5 intentos en menos de 10 minutos. ¿Qué combinación de tipos de controles técnicos según su función principal y categorías principales se está aplicando en este escenario?",
+      "opciones": [
+        "a) Control técnico preventivo (MFA) + control técnico detectivo (logs y alertas).",
+        "b) Control físico (biometría) + control gerencial (política de contraseñas).",
+        "c) Control operativo (formación) + control técnico correctivo (restauración).",
+        "d) Control compensatorio (firewall) + control disuasorio (carteles)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La autenticación multifactor (MFA) es un control técnico preventivo, mientras que los logs y alertas son controles técnicos detectivos que identifican actividades sospechosas.",
+      "id": "p1-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes ejemplos NO es un ejemplo de control gerencial?",
+      "opciones": [
+        "a) Una política que exige a los empleados almacenar información sensible en carpetas cifradas.",
+        "b) Un procedimiento de auditoría periódica para identificar vulnerabilidades en los sistemas.",
+        "c) Un sistema de autenticación que requiere contraseña y token físico para acceder a sistemas críticos.",
+        "d) Una directriz que establece sanciones disciplinarias por acceder a información sin autorización."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El sistema de autenticación es un control técnico, ya que se implementa mediante soluciones tecnológicas automatizadas, no mediante políticas o procedimientos humanos.",
+      "id": "p1-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un escenario aplicado, una organización detecta que un empleado intenta acceder a un sistema crítico fuera de su horario laboral habitual. El sistema bloquea automáticamente el acceso, registra el incidente en los logs y envía una alerta al administrador de seguridad. ¿Qué combinación de tipos de controles según su función y categorías principales se está aplicando en este escenario?",
+      "opciones": [
+        "a) Control técnico preventivo (bloqueo de acceso) + control técnico detectivo (logs y alertas).",
+        "b) Control físico (cámaras) + control operativo (formación de empleados).",
+        "c) Control gerencial (política de horario) + control compensatorio (firewall).",
+        "d) Control disuasorio (carteles) + control correctivo (restauración de sistemas)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El bloqueo de acceso es un control técnico preventivo (evita el acceso no autorizado), mientras que los logs y alertas son controles técnicos detectivos que identifican el incidente.",
+      "id": "p1-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Security Controls",
+      "youtubeId": "STM3EUvL7wg"
+    }
+  ]
+}

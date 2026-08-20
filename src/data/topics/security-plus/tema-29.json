@@ -1,0 +1,1396 @@
+{
+  "id": 29,
+  "titulo": "5.5 · Auditorías y pentesting",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LAS AUDITORÍAS Y EVALUACIONES EN CIBERSEGURIDAD\n\nEl término auditoría (audit) suele tener una connotación negativa, pero existen razones muy válidas para realizar auditorías, especialmente en el contexto de la seguridad informática. Una auditoría de ciberseguridad permite examinar múltiples aspectos del entorno informático de una organización. Por ejemplo, se puede analizar la infraestructura de TI, el software utilizado y todos los dispositivos que se emplean para comunicarse a través de la red. Además, es posible revisar las políticas y procedimientos existentes para asegurarse de que la organización está protegida contra las amenazas modernas.\n\nUna auditoría también puede descubrir vulnerabilidades en la red antes de que los atacantes lo hagan, lo que mejora significativamente la seguridad de la organización. Estas auditorías pueden realizarse de forma interna, pero en ocasiones es recomendable contratar a un tercero para obtener una visión más completa y objetiva.\n\n\nAUDITORÍAS VS. ATTESTATION (ATTESTACIÓN)\n\nCon frecuencia, los términos auditoría y attestation (atestación) se utilizan juntos. La attestation es una opinión de veracidad asociada a los resultados de una auditoría. Tras realizar una auditoría, se emite una attestation sobre sus conclusiones. No siempre es necesario contratar a un tercero para llevar a cabo una auditoría; estas pueden realizarse internamente dentro de la organización.\n\n\nAUDITORÍAS INTERNAS\n\nLas auditorías internas responden preguntas sobre el cumplimiento normativo y garantizan que todas las tareas de cumplimiento dentro de la organización se sigan correctamente. Muchas organizaciones cuentan con un comité de auditoría, un grupo responsable de gestionar los riesgos asociados a la organización. Este comité es quien inicia y finaliza las auditorías internas.\n\nLas auditorías internas suelen comenzar con una autoevaluación (self assessment), en la que la organización revisa sus procesos y procedimientos internos para determinar si cumplen con los requisitos establecidos. El comité de auditoría recopila estas autoevaluaciones para identificar áreas de mejora en materia de cumplimiento.\n\n\nAUDITORÍAS EXTERNAS\n\nAlgunas regulaciones exigen que una auditoría sea realizada por un tercero. En estos casos, se contrata a un grupo externo para llevar a cabo todas las funciones de supervisión. Los detalles sobre el tipo de auditoría y su frecuencia suelen basarse en los requisitos de la normativa aplicable. Esto implica que un auditor externo examine los registros de la organización y recopile información adicional sobre los aspectos específicos de la auditoría. Los resultados suelen mostrar el estado actual de cumplimiento de la empresa y las áreas en las que se puede mejorar en el futuro.\n\n\n\nPRUEBAS DE PENETRACIÓN (PENTESTING)\n\nLas pruebas de penetración (penetration testing) suelen asociarse con acciones realizadas a través de internet, pero también pueden incluir pruebas físicas (physical penetration testing). La seguridad física es crucial porque, si un atacante tiene acceso físico a un dispositivo, puede modificar el proceso de arranque, iniciar desde otro medio o reemplazar archivos del sistema operativo. Por este motivo, los servidores suelen almacenarse en centros de datos altamente seguros.\n\n\nROLES EN LAS PRUEBAS DE PENETRACIÓN\n\nLas pruebas de penetración tienen matices importantes. Aunque se perciben como un ataque ofensivo, existen dos enfoques principales: el equipo rojo (red team) y el equipo azul (blue team).\n\n- El equipo rojo (red team) es el encargado de atacar los sistemas, buscar vulnerabilidades y explotarlas.\n- El equipo azul (blue team) se encarga de identificar los ataques en tiempo real y bloquearlos.\n\nLa combinación ideal es integrar ambos equipos para crear un sistema que proporcione retroalimentación constante. El equipo rojo identifica vulnerabilidades y las comunica al equipo azul, que se encarga de parchearlas y mejorar los mecanismos de detección para futuros ataques.\n\n\nTIPOS DE ENTORNOS EN PRUEBAS DE PENETRACIÓN\n\nLos pentesters (profesionales que realizan pruebas de penetración) pueden recibir diferentes niveles de información sobre el entorno que van a atacar, lo que influye en las técnicas utilizadas:\n\n- ENTORNO TOTALMENTE CONOCIDO\n  En este caso, la organización proporciona al pentester toda la información sobre los sistemas que serán atacados. Esto permite una evaluación exhaustiva y dirigida.\n\n- ENTORNO PARCIALMENTE CONOCIDO\n  Aquí, solo se proporciona parte de la información al pentester. Este enfoque mezcla elementos de un entorno conocido y otro desconocido, y se utiliza cuando se desea que los pentesters se centren en sistemas específicos dentro del entorno.\n\n- ENTORNO DESCONOCIDO (BLIND TEST)\n  En este escenario, no se proporciona ninguna información al pentester, quien debe recopilar todos los datos por su cuenta. Este tipo de prueba simula un ataque real y permite evaluar la capacidad de detección y respuesta de la organización.\n\n\nRECONOCIMIENTO (RECONNAISSANCE)\n\nAntes de realizar cualquier ataque, los pentesters llevan a cabo un proceso de reconocimiento (reconnaissance) para recopilar la mayor cantidad de información posible sobre el entorno. Esto les permite entender qué herramientas de seguridad están implementadas, qué servidores están instalados y qué aplicaciones se ejecutan en ellos. Con esta información, pueden identificar los sistemas clave de la infraestructura y enfocar sus esfuerzos en acceder a esos dispositivos.\n\n\nTIPOS DE RECONOCIMIENTO\n\n- RECONOCIMIENTO PASIVO (PASSIVE RECONNAISSANCE)\n  En este tipo de reconocimiento, los pentesters recopilan información sin conectarse directamente a la red del cliente. Utilizan fuentes externas que no revelan su presencia. Algunos ejemplos incluyen:\n  - Buscar información en redes sociales sobre la infraestructura del cliente.\n  - Revisar el sitio web corporativo para obtener detalles sobre la empresa.\n  - Analizar formularios en línea o publicaciones en foros como Reddit.\n  - Realizar ingeniería social (social engineering) para obtener información de empleados.\n  - Hacer dumpster diving (buceo en contenedores de basura) para encontrar documentos desechados.\n  - Hablar con empresas terceras que trabajan con el cliente para conocer detalles sobre su infraestructura.\n\n- RECONOCIMIENTO ACTIVO (ACTIVE RECONNAISSANCE)\n  Este enfoque implica interactuar directamente con la red del cliente, lo que puede ser detectado fácilmente. Los pentesters envían paquetes a través de la red y, con frecuencia, las evidencias de su presencia quedan registradas en archivos de log de dispositivos como firewalls. Algunos ejemplos de reconocimiento activo incluyen:\n  - Escaneo de ping (ping scan) para identificar dispositivos activos en la red.\n  - Escaneo de puertos (port scan) para descubrir servicios abiertos.\n  - Consultas DNS (DNS query) al servidor DNS corporativo.\n  - Escaneo de sistemas operativos (operating system scans) o fingerprinting (huella digital del sistema operativo).\n  - Análisis de versiones de servicios individuales en un dispositivo.\n\n\nIMPORTANCIA DE LAS PRUEBAS DE PENETRACIÓN\n\nLas pruebas de penetración son una herramienta esencial en la ciberseguridad porque permiten identificar vulnerabilidades antes de que sean explotadas por atacantes reales. Al combinar diferentes enfoques, como el reconocimiento pasivo y activo, y al integrar equipos ofensivos y defensivos, las organizaciones pueden mejorar significativamente su postura de seguridad y reducir el riesgo de incidentes graves.\n\n\n\nDIFERENCIAS CLAVE ENTRE AUDITORÍAS Y PRUEBAS DE PENETRACIÓN\n\n- OBJETIVO PRINCIPAL\n  - Las auditorías se centran en evaluar el cumplimiento de normativas, políticas y procedimientos.\n  - Las pruebas de penetración buscan identificar y explotar vulnerabilidades para mejorar la seguridad.\n\n- ENFOQUE\n  - Las auditorías son generalmente pasivas y se basan en la revisión de registros y procesos.\n  - Las pruebas de penetración son activas y pueden incluir acciones ofensivas para simular ataques.\n\n- FRECUENCIA\n  - Las auditorías suelen realizarse de manera periódica según los requisitos normativos.\n  - Las pruebas de penetración pueden realizarse con mayor frecuencia, especialmente después de cambios significativos en la infraestructura.\n\n- RESULTADOS\n  - Las auditorías proporcionan una evaluación del cumplimiento y áreas de mejora.\n  - Las pruebas de penetración identifican vulnerabilidades específicas y ofrecen recomendaciones para mitigarlas.\n\n\nBENEFICIOS DE REALIZAR AUDITORÍAS Y PRUEBAS DE PENETRACIÓN\n\n- DETECCIÓN TEMPRANA DE VULNERABILIDADES\n  Tanto las auditorías como las pruebas de penetración permiten identificar debilidades en la seguridad antes de que sean explotadas por atacantes.\n\n- CUMPLIMIENTO NORMATIVO\n  Las auditorías ayudan a garantizar que la organización cumple con las regulaciones aplicables, evitando sanciones y multas.\n\n- MEJORA CONTINUA\n  Los resultados de estas evaluaciones proporcionan información valiosa para mejorar las políticas, procedimientos y controles de seguridad.\n\n- REDUCCIÓN DE RIESGOS\n  Al identificar y mitigar vulnerabilidades, se reduce el riesgo de incidentes de seguridad que puedan afectar la operatividad y reputación de la organización.\n\n- SIMULACIÓN DE ATAQUES REALES\n  Las pruebas de penetración permiten simular ataques reales, lo que ayuda a preparar al equipo de seguridad para responder de manera efectiva ante incidentes.\n\n\nCONCLUSIÓN\n\nLas auditorías y las pruebas de penetración son herramientas fundamentales en la gestión de la ciberseguridad. Mientras que las auditorías se enfocan en el cumplimiento y la evaluación de procesos, las pruebas de penetración buscan identificar y explotar vulnerabilidades para mejorar la seguridad de manera proactiva. Ambas son complementarias y, cuando se integran en una estrategia de seguridad robusta, permiten a las organizaciones mantenerse protegidas frente a las amenazas actuales y emergentes."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Ciberseguridad: Auditorías y Pruebas de Penetración] --> B[Auditorías]\nA --> C[Pruebas de Penetración]\n\nB --> B1[Objetivo: Cumplimiento normativo]\nB --> B2[Tipos: Internas y externas]\nB --> B3[Proceso: Autoevaluación y committees]\nB --> B4[Resultados: Estado de cumplimiento y mejoras]\n\nC --> C1[Objetivo: Identificar vulnerabilidades]\nC --> C2[Tipos: Físicas y digitales]\nC --> C3[Roles: Equipo rojo y equipo azul]\nC --> C4[Entornos: Conocido, parcialmente conocido, desconocido]\nC --> C5[Reconocimiento: Pasivo y activo]\n\nC3 --> C3A[Red team: Ataque ofensivo]\nC3 --> C3B[Blue team: Defensa y respuesta]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc29-01",
+      "pregunta": "¿Qué es una auditoría de ciberseguridad y qué aspectos puede examinar?",
+      "respuesta": "Una auditoría de ciberseguridad es un proceso que permite examinar aspectos como la infraestructura de TI, el software, los dispositivos de red, políticas y procedimientos para garantizar protección contra amenazas modernas y detectar vulnerabilidades antes que los atacantes."
+    },
+    {
+      "id": "fc29-02",
+      "pregunta": "¿Qué es la attestation (atestación) en el contexto de una auditoría?",
+      "respuesta": "La attestation es una opinión de veracidad asociada a los resultados de una auditoría. Tras realizar la auditoría, se emite una attestation sobre sus conclusiones para validar su precisión."
+    },
+    {
+      "id": "fc29-03",
+      "pregunta": "¿Qué es una autoevaluación (self assessment) en una auditoría interna?",
+      "respuesta": "Una autoevaluación es un proceso en el que la organización revisa sus procesos y procedimientos internos para determinar si cumplen con los requisitos establecidos, antes de que el comité de auditoría compile los resultados."
+    },
+    {
+      "id": "fc29-04",
+      "pregunta": "¿Cuándo es obligatorio contratar un tercero para realizar una auditoría?",
+      "respuesta": "Es obligatorio contratar un tercero cuando así lo exigen las regulaciones aplicables. El auditor externo examina los registros y recopila información adicional sobre aspectos específicos de la auditoría."
+    },
+    {
+      "id": "fc29-05",
+      "pregunta": "¿Por qué son importantes las pruebas de penetración físicas (physical penetration testing)?",
+      "respuesta": "Son importantes porque, si un atacante tiene acceso físico a un dispositivo, puede modificar el proceso de arranque, iniciar desde otro medio o reemplazar archivos del sistema operativo, lo que facilita el compromiso del sistema."
+    },
+    {
+      "id": "fc29-06",
+      "pregunta": "¿Qué es el equipo rojo (red team) en pruebas de penetración?",
+      "respuesta": "El equipo rojo es el grupo encargado de atacar los sistemas, buscar vulnerabilidades y explotarlas durante una prueba de penetración."
+    },
+    {
+      "id": "fc29-07",
+      "pregunta": "¿Qué es el equipo azul (blue team) en pruebas de penetración?",
+      "respuesta": "El equipo azul es el grupo encargado de identificar los ataques en tiempo real y bloquearlos durante una prueba de penetración."
+    },
+    {
+      "id": "fc29-08",
+      "pregunta": "¿Qué es un entorno desconocido (blind test) en pruebas de penetración?",
+      "respuesta": "Es un escenario en el que no se proporciona ninguna información al pentester, quien debe recopilar todos los datos por su cuenta, simulando un ataque real."
+    },
+    {
+      "id": "fc29-09",
+      "pregunta": "¿Qué es el reconocimiento pasivo (passive reconnaissance)?",
+      "respuesta": "Es un tipo de reconocimiento en el que los pentesters recopilan información sin conectarse directamente a la red del cliente, utilizando fuentes externas que no revelan su presencia."
+    },
+    {
+      "id": "fc29-10",
+      "pregunta": "¿Qué es el reconocimiento activo (active reconnaissance)?",
+      "respuesta": "Es un tipo de reconocimiento en el que los pentesters interactúan directamente con la red del cliente, enviando paquetes que pueden ser detectados y dejando evidencias en logs de dispositivos como firewalls."
+    },
+    {
+      "id": "fc29-11",
+      "pregunta": "¿Cuál es la diferencia principal entre auditorías y pruebas de penetración?",
+      "respuesta": "Las auditorías se centran en evaluar el cumplimiento de normativas y políticas, mientras que las pruebas de penetración buscan identificar y explotar vulnerabilidades para mejorar la seguridad de manera proactiva."
+    },
+    {
+      "id": "fc29-12",
+      "pregunta": "¿Qué beneficios aportan las auditorías y pruebas de penetración a una organización?",
+      "respuesta": "Detectan vulnerabilidades tempranas, garantizan cumplimiento normativo, mejoran políticas y procedimientos, reducen riesgos y permiten simular ataques reales para preparar al equipo de seguridad."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo principal de una auditoría de ciberseguridad?",
+      "opciones": [
+        "Evaluar el cumplimiento de normativas y políticas internas",
+        "Identificar vulnerabilidades para explotarlas directamente",
+        "Revisar la infraestructura de TI y dispositivos de red",
+        "Analizar los procedimientos existentes para detectar fallos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El objetivo principal de una auditoría es evaluar el cumplimiento y revisar procesos, no explotar vulnerabilidades (esto corresponde a pruebas de penetración).",
+      "id": "p29-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de auditorías, ¿qué diferencia existe entre 'auditoría interna' y 'auditoría externa'?",
+      "opciones": [
+        "La interna la realiza un comité de la organización; la externa, un tercero independiente",
+        "La interna se enfoca en vulnerabilidades; la externa solo en cumplimiento normativo",
+        "La interna requiere autoevaluación; la externa siempre usa entornos desconocidos",
+        "La interna es obligatoria por ley; la externa es opcional"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las auditorías internas son realizadas por un comité interno, mientras que las externas son llevadas a cabo por un tercero independiente, especialmente cuando lo exige la normativa.",
+      "id": "p29-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de entorno de prueba de penetración proporciona TODA la información sobre los sistemas a atacar al pentester?",
+      "opciones": [
+        "Entorno desconocido (blind test)",
+        "Entorno parcialmente conocido",
+        "Entorno totalmente conocido",
+        "Entorno físico"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En un entorno totalmente conocido, la organización proporciona al pentester toda la información sobre los sistemas, permitiendo una evaluación exhaustiva y dirigida.",
+      "id": "p29-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de seguridad realiza un escaneo de puertos en la red corporativa para identificar servicios abiertos. ¿Qué tipo de reconocimiento están aplicando?",
+      "opciones": [
+        "Reconocimiento pasivo",
+        "Reconocimiento activo",
+        "Auditoría interna",
+        "Attestation"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo de puertos es una técnica de reconocimiento activo, ya que implica interactuar directamente con la red y puede ser detectado.",
+      "id": "p29-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización contrata a un tercero para evaluar si sus políticas de seguridad cumplen con la normativa PCI DSS. ¿Qué tipo de evaluación está realizando?",
+      "opciones": [
+        "Prueba de penetración",
+        "Auditoría interna",
+        "Auditoría externa",
+        "Attestation sin auditoría"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Cuando una auditoría es realizada por un tercero independiente para evaluar el cumplimiento normativo, se denomina auditoría externa.",
+      "id": "p29-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un ejemplo de reconocimiento pasivo?",
+      "opciones": [
+        "Analizar publicaciones en foros públicos sobre la empresa",
+        "Realizar dumpster diving para encontrar documentos desechados",
+        "Enviar paquetes ICMP a los servidores de la empresa",
+        "Revisar el sitio web corporativo para obtener detalles de infraestructura"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Enviar paquetes ICMP (ping) es una técnica de reconocimiento activo, ya que implica interactuar directamente con la red.",
+      "id": "p29-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un pentester recibe información limitada sobre los sistemas a atacar, incluyendo solo los servidores críticos. ¿Qué tipo de entorno de prueba de penetración está utilizando?",
+      "opciones": [
+        "Entorno desconocido (blind test)",
+        "Entorno parcialmente conocido",
+        "Entorno totalmente conocido",
+        "Entorno físico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En un entorno parcialmente conocido, solo se proporciona parte de la información al pentester, enfocándose en sistemas específicos.",
+      "id": "p29-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa realiza una auditoría para verificar que sus empleados siguen correctamente los procedimientos de gestión de contraseñas. ¿Qué aspecto está evaluando principalmente?",
+      "opciones": [
+        "Cumplimiento normativo",
+        "Vulnerabilidades técnicas",
+        "Seguridad física",
+        "Riesgo de ingeniería social"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las auditorías internas evalúan el cumplimiento de políticas y procedimientos, como la gestión de contraseñas, para garantizar que se sigan correctamente.",
+      "id": "p29-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante logra acceder físicamente a un centro de datos y modifica el proceso de arranque de un servidor. ¿Qué tipo de prueba de penetración simula esta situación?",
+      "opciones": [
+        "Prueba de penetración física",
+        "Reconocimiento pasivo",
+        "Auditoría de cumplimiento",
+        "Escaneo de puertos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las pruebas de penetración física evalúan la seguridad de los dispositivos accesibles físicamente, como modificar el proceso de arranque o reemplazar archivos del sistema.",
+      "id": "p29-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema donde un equipo simula ataques (equipo rojo) y otro equipo defiende en tiempo real (equipo azul). ¿Qué enfoque de mejora de seguridad están utilizando?",
+      "opciones": [
+        "Integración de equipos rojo y azul para retroalimentación constante",
+        "Auditoría externa con attestation",
+        "Reconocimiento activo sin explotación",
+        "Autoevaluación interna de cumplimiento"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La combinación de equipos rojo (ofensivo) y azul (defensivo) permite identificar vulnerabilidades y mejorar los mecanismos de detección y respuesta de manera constante.",
+      "id": "p29-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo típico de una prueba de penetración?",
+      "opciones": [
+        "Identificar vulnerabilidades en sistemas y redes antes de que sean explotadas por atacantes reales",
+        "Evaluar el cumplimiento de políticas de seguridad internas según normativas como PCI DSS",
+        "Explotar vulnerabilidades para demostrar el impacto potencial de un ataque",
+        "Simular un ataque real para evaluar la capacidad de detección y respuesta del equipo de seguridad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La evaluación del cumplimiento de políticas es objetivo de una auditoría, no de una prueba de penetración, que se centra en identificar y explotar vulnerabilidades.",
+      "id": "p29-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una auditoría externa, ¿qué característica la diferencia claramente de una auditoría interna?",
+      "opciones": [
+        "Se realiza por un comité interno de la organización sin intervención externa",
+        "Requiere que el auditor sea un tercero independiente a la organización auditada",
+        "Se enfoca únicamente en vulnerabilidades técnicas sin revisar políticas",
+        "No puede realizarse si la organización ya tiene un comité de auditoría interno"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las auditorías externas son realizadas por un tercero independiente para garantizar objetividad y cumplimiento normativo.",
+      "id": "p29-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de entorno de prueba de penetración proporciona al pentester información limitada, pero suficiente para enfocarse en sistemas críticos?",
+      "opciones": [
+        "Entorno totalmente conocido",
+        "Entorno parcialmente conocido",
+        "Entorno desconocido (blind test)",
+        "Entorno de reconocimiento pasivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El entorno parcialmente conocido proporciona solo parte de la información, permitiendo al pentester enfocarse en sistemas específicos.",
+      "id": "p29-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes actividades NO corresponde a un reconocimiento pasivo en una prueba de penetración?",
+      "opciones": [
+        "Analizar publicaciones en foros públicos sobre la infraestructura de la organización",
+        "Realizar un escaneo de puertos en la red interna de la organización",
+        "Revisar documentos desechados en contenedores de basura (dumpster diving)",
+        "Obtener información mediante ingeniería social a empleados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo de puertos es un reconocimiento activo, ya que implica interacción directa con la red.",
+      "id": "p29-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización contrata a un equipo externo para evaluar si sus controles de acceso cumplen con la normativa ISO 27001. ¿Qué tipo de evaluación está realizando?",
+      "opciones": [
+        "Prueba de penetración",
+        "Auditoría de cumplimiento",
+        "Autoevaluación interna",
+        "Atestación de vulnerabilidades"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Una auditoría de cumplimiento evalúa si los controles implementados cumplen con normativas como ISO 27001.",
+      "id": "p29-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué enfoque de mejora de seguridad integra equipos ofensivos y defensivos trabajando en tiempo real para simular y responder a ataques?",
+      "opciones": [
+        "Equipo rojo y equipo azul (Red Team vs Blue Team)",
+        "Auditoría interna y externa combinadas",
+        "Reconocimiento pasivo y activo simultáneos",
+        "Entorno de prueba conocido y desconocido"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El enfoque de equipo rojo (ofensivo) y equipo azul (defensivo) permite una mejora continua mediante simulación y respuesta en tiempo real.",
+      "id": "p29-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de auditorías, ¿qué término describe la opinión de veracidad emitida sobre los resultados de una auditoría?",
+      "opciones": [
+        "Atestación (Attestation)",
+        "Reconocimiento (Reconnaissance)",
+        "Explotación (Exploitation)",
+        "Mitigación (Mitigation)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La atestación es la opinión de veracidad asociada a los resultados de una auditoría, emitida tras su realización.",
+      "id": "p29-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un pentester recibe acceso físico a un centro de datos y modifica el proceso de arranque de un servidor para instalar un rootkit. ¿Qué tipo de prueba de penetración está simulando?",
+      "opciones": [
+        "Prueba de seguridad física",
+        "Reconocimiento activo",
+        "Auditoría de cumplimiento",
+        "Entorno desconocido (blind test)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La prueba de seguridad física evalúa la resistencia de los controles físicos, como el acceso a centros de datos y modificación de procesos de arranque.",
+      "id": "p29-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de reconocimiento se caracteriza por NO interactuar directamente con la red del cliente y utilizar fuentes externas para obtener información?",
+      "opciones": [
+        "Reconocimiento pasivo",
+        "Reconocimiento activo",
+        "Escaneo de puertos",
+        "Fingerprinting de sistemas operativos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El reconocimiento pasivo recopila información sin conectarse directamente a la red, usando fuentes externas como redes sociales o sitios web.",
+      "id": "p29-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa realiza una auditoría para verificar que sus empleados siguen correctamente los procedimientos de gestión de contraseñas según su política interna. ¿Qué aspecto está evaluando principalmente?",
+      "opciones": [
+        "Cumplimiento de políticas internas",
+        "Identificación de vulnerabilidades técnicas",
+        "Simulación de un ataque real",
+        "Evaluación de controles físicos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las auditorías evalúan principalmente el cumplimiento de políticas y procedimientos internos, como la gestión de contraseñas.",
+      "id": "p29-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué término describe la opinión de veracidad emitida sobre los resultados de una auditoría, según el temario?",
+      "opciones": [
+        "a) Attestation (Atestación)",
+        "b) Self assessment (Autoevaluación)",
+        "c) Physical penetration testing (Prueba de penetración física)",
+        "d) Reconnaissance pasivo (Reconocimiento pasivo)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define *attestation* como la opinión de veracidad asociada a los resultados de una auditoría, emitida tras su realización.",
+      "id": "p29-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una prueba de penetración, ¿qué tipo de entorno proporciona al pentester información limitada pero suficiente para enfocarse en sistemas críticos?",
+      "opciones": [
+        "a) Entorno totalmente conocido",
+        "b) Entorno parcialmente conocido",
+        "c) Entorno desconocido (Blind Test)",
+        "d) Entorno físico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe el *entorno parcialmente conocido* como aquel donde se proporciona parte de la información al pentester para centrarlo en sistemas específicos.",
+      "id": "p29-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un ejemplo de reconocimiento pasivo según el temario?",
+      "opciones": [
+        "a) Analizar formularios en línea de la empresa objetivo",
+        "b) Escaneo de puertos en la red corporativa",
+        "c) Revisar publicaciones en foros como Reddit sobre la empresa",
+        "d) Realizar dumpster diving para encontrar documentos desechados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario clasifica el *escaneo de puertos* como reconocimiento activo, ya que implica interactuar directamente con la red del cliente.",
+      "id": "p29-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización contrata a un equipo externo para evaluar si sus controles de acceso cumplen con la normativa ISO 27001. ¿Qué tipo de auditoría está realizando?",
+      "opciones": [
+        "a) Auditoría interna",
+        "b) Auditoría externa",
+        "c) Autoevaluación (Self assessment)",
+        "d) Prueba de penetración"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que las auditorías externas son realizadas por terceros y suelen estar vinculadas a requisitos normativos como ISO 27001.",
+      "id": "p29-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué enfoque de mejora de seguridad integra equipos ofensivos (rojo) y defensivos (azul) trabajando en tiempo real para simular y responder a ataques?",
+      "opciones": [
+        "a) Prueba de penetración física",
+        "b) Purple Team",
+        "c) Attestation (Atestación)",
+        "d) Reconocimiento pasivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe el *Purple Team* como la integración de equipos rojo y azul para mejorar la seguridad mediante retroalimentación constante.",
+      "id": "p29-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de auditorías, ¿qué diferencia clave existe entre una *autoevaluación* y una *auditoría interna*?",
+      "opciones": [
+        "a) La autoevaluación es realizada por un tercero, mientras que la auditoría interna es interna",
+        "b) La autoevaluación es un proceso inicial de revisión interna, y la auditoría interna es gestionada por un comité de auditoría",
+        "c) La autoevaluación evalúa vulnerabilidades, mientras que la auditoría interna evalúa cumplimiento normativo",
+        "d) La autoevaluación es obligatoria por normativa, mientras que la auditoría interna es opcional"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario señala que la autoevaluación es el primer paso de una auditoría interna, realizada por la organización para identificar áreas de mejora.",
+      "id": "p29-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué término describe específicamente la opinión de veracidad emitida sobre los resultados de una auditoría de ciberseguridad según el temario?",
+      "opciones": [
+        "a) Autoevaluación",
+        "b) Attestation (Atestación)",
+        "c) Entorno parcialmente conocido",
+        "d) Reconocimiento pasivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La *attestation* es la opinión de veracidad asociada a los resultados de una auditoría, emitida tras evaluar su exactitud y cumplimiento.",
+      "id": "p29-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de entorno de prueba de penetración proporciona ALGUNA información al pentester, pero no toda?",
+      "opciones": [
+        "a) Entorno totalmente conocido",
+        "b) Entorno parcialmente conocido",
+        "c) Entorno desconocido (Blind Test)",
+        "d) Entorno físico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define el *entorno parcialmente conocido* como aquel donde se proporciona parte de la información al pentester para enfocarse en sistemas críticos.",
+      "id": "p29-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización contrata a un equipo de seguridad para realizar una prueba de penetración con el objetivo de evaluar la resistencia de sus controles físicos y lógicos. Durante la prueba, el equipo rojo descubre que puede acceder físicamente a un centro de datos y modificar el arranque de un servidor para cargar un sistema operativo malicioso. Sin embargo, el equipo azul detecta y bloquea esta acción en menos de 5 minutos. ¿Qué tipo de prueba de penetración se está simulando en este escenario?",
+      "opciones": [
+        "a) Prueba de penetración en entorno parcialmente conocido, enfocada en controles físicos y detección de intrusos.",
+        "b) Prueba de penetración en entorno desconocido (blind test) con enfoque en seguridad lógica y respuesta a incidentes.",
+        "c) Prueba de penetración en entorno totalmente conocido con simulación de ataques avanzados y evaluación de tiempos de respuesta.",
+        "d) Prueba de penetración híbrida (física y lógica) con integración de equipos rojo y azul para simular un ataque real y mejorar defensas."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El escenario describe una prueba de penetración que combina acceso físico (seguridad física) y modificaciones lógicas, integrando equipos rojo (ofensivo) y azul (defensivo) para simular un ataque real y evaluar la capacidad de detección y respuesta en tiempo real.",
+      "id": "p29-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Durante una auditoría externa de ciberseguridad, un equipo de consultores independientes detecta que la organización auditada ha implementado controles de acceso basados en roles (RBAC) sin documentar formalmente las asignaciones de permisos ni los procesos de revisión periódica. Sin embargo, al revisar los registros de acceso, confirman que los empleados solo pueden acceder a los recursos necesarios para su función. ¿Qué aspecto clave está evaluando el equipo auditor en este escenario?",
+      "opciones": [
+        "a) La efectividad operativa de los controles de acceso, pero no su cumplimiento normativo.",
+        "b) El cumplimiento de los controles de acceso con los requisitos de documentación de la normativa aplicable, independientemente de su efectividad operativa.",
+        "c) La capacidad de los empleados para eludir los controles de acceso mediante técnicas de ingeniería social.",
+        "d) La robustez de los mecanismos técnicos de autenticación multifactor implementados en el entorno."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La auditoría externa evalúa principalmente el cumplimiento normativo, incluyendo la documentación formal de los controles, incluso si estos funcionan correctamente en la práctica.",
+      "id": "p29-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de auditoría se realiza cuando un equipo interno de la organización evalúa el cumplimiento de sus propias políticas de seguridad sin intervención externa?",
+      "opciones": [
+        "Auditoría externa",
+        "Auditoría interna",
+        "Autoevaluación",
+        "Atestación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Una autoevaluación (self assessment) es un proceso interno donde la organización revisa sus propios procesos y procedimientos para determinar si cumplen con los requisitos establecidos.",
+      "id": "p29-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una prueba de penetración, ¿qué tipo de entorno proporciona al pentester información limitada pero suficiente para enfocarse en sistemas críticos, sin revelar toda la infraestructura?",
+      "opciones": [
+        "Entorno totalmente conocido",
+        "Entorno parcialmente conocido",
+        "Entorno desconocido (blind test)",
+        "Entorno de reconocimiento pasivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El entorno parcialmente conocido proporciona parte de la información al pentester, permitiéndole enfocarse en sistemas específicos dentro del entorno.",
+      "id": "p29-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de entorno de prueba de penetración se utiliza cuando el pentester NO recibe información previa sobre los sistemas, pero la organización no oculta pistas que puedan ser descubiertas mediante técnicas de reconocimiento pasivo?",
+      "opciones": [
+        "a) Entorno totalmente conocido",
+        "b) Entorno parcialmente conocido",
+        "c) Entorno desconocido (blind test)",
+        "d) Entorno de cero conocimiento con reconocimiento pasivo permitido"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En un entorno desconocido (blind test), el pentester no recibe información previa, pero la organización no elimina pistas accesibles mediante técnicas pasivas como revisar redes sociales o sitios web corporativos.",
+      "id": "p29-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de entorno de prueba de penetración se caracteriza por proporcionar al pentester información limitada, pero suficiente para enfocarse en sistemas críticos, sin revelar toda la infraestructura?",
+      "opciones": [
+        "a) Entorno totalmente conocido",
+        "b) Entorno parcialmente conocido",
+        "c) Entorno desconocido (blind test)",
+        "d) Entorno de atestación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El entorno parcialmente conocido (opción b) proporciona información limitada pero suficiente para que el pentester se centre en sistemas críticos, sin revelar toda la infraestructura. Este enfoque mezcla elementos de entornos conocidos y desconocidos.",
+      "id": "p29-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué término describe específicamente la opinión de veracidad emitida sobre los resultados de una auditoría de ciberseguridad?",
+      "opciones": [
+        "a) Autoevaluación",
+        "b) Attestación (Atestación)",
+        "c) Reconocimiento pasivo",
+        "d) Equipo rojo (Red team)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La attestation (atestación) es la opinión de veracidad asociada a los resultados de una auditoría, emitida tras evaluar los hallazgos obtenidos durante el proceso.",
+      "id": "p29-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Durante una auditoría externa, un equipo de consultores independientes detecta que la organización auditada ha implementado controles de acceso basados en roles (RBAC) sin documentar formalmente las asignaciones de permisos. Sin embargo, al revisar los registros de acceso, confirman que los empleados solo pueden acceder a los recursos necesarios para su función. ¿Qué aspecto clave está evaluando el equipo auditor en este escenario?",
+      "opciones": [
+        "Si los empleados siguen correctamente los procedimientos de gestión de contraseñas",
+        "Si los controles de acceso implementados son efectivos en la práctica",
+        "Si la organización cumple con la normativa PCI DSS",
+        "Si el equipo rojo puede explotar vulnerabilidades en los controles de acceso"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La auditoría evalúa la efectividad de los controles de acceso implementados, verificando si funcionan correctamente en la práctica, independientemente de su documentación formal.",
+      "id": "p29-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué término se utiliza para describir la opinión de veracidad emitida sobre los resultados de una auditoría de ciberseguridad?",
+      "opciones": [
+        "Attestation (Atestación)",
+        "Certificación",
+        "Acreditación",
+        "Evaluación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define 'attestation' como la opinión de veracidad asociada a los resultados de una auditoría, emitida tras su realización.",
+      "id": "p29-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de auditorías, ¿qué diferencia clave existe entre una auditoría interna y una auditoría externa?",
+      "opciones": [
+        "La auditoría interna siempre es realizada por un comité de auditoría interno, mientras que la externa siempre es realizada por un tercero independiente",
+        "La auditoría interna evalúa el cumplimiento normativo, mientras que la externa solo evalúa vulnerabilidades",
+        "La auditoría interna no requiere documentación, mientras que la externa sí",
+        "La auditoría interna siempre es obligatoria por ley, mientras que la externa es opcional"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La diferencia clave es que la auditoría interna es realizada por un comité interno de la organización, mientras que la externa es realizada por un tercero independiente.",
+      "id": "p29-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización desea evaluar la resistencia de sus controles físicos y lógicos frente a un atacante con conocimiento interno limitado. Para ello, contrata un equipo de pentesting que recibe información parcial sobre la infraestructura crítica (solo los servidores de bases de datos y sus direcciones IP), pero no conoce la topología de red completa ni los sistemas de seguridad implementados. Durante la prueba, el equipo rojo logra acceder físicamente a un centro de datos y modifica el proceso de arranque de un servidor para cargar un sistema operativo malicioso. Sin embargo, el equipo azul detecta la intrusión, aisló el servidor afectado y notificó al equipo rojo en menos de 10 minutos, evitando que el ataque tuviera éxito. ¿Qué tipo de entorno de prueba de penetración se está simulando en este escenario?",
+      "opciones": [
+        "a) Entorno totalmente conocido, ya que el equipo rojo recibió información parcial sobre los servidores críticos",
+        "b) Entorno parcialmente conocido, donde se proporciona información limitada pero suficiente para enfocarse en sistemas específicos",
+        "c) Entorno desconocido (blind test), porque no se reveló información sobre la topología de red ni los sistemas de seguridad",
+        "d) Reconocimiento pasivo, porque el equipo rojo solo recopiló información sin interactuar con los sistemas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este escenario describe un entorno parcialmente conocido, donde el pentester recibe información limitada pero suficiente para enfocarse en sistemas críticos (servidores de bases de datos), sin revelar toda la infraestructura o los sistemas de seguridad implementados.",
+      "id": "p29-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización contrata a un equipo de pentesting para evaluar la resistencia de sus controles físicos y lógicos. El equipo recibe información parcial sobre la infraestructura crítica: solo conoce las direcciones IP de los servidores de bases de datos y sus ubicaciones físicas en el centro de datos. Sin embargo, no tiene acceso a la topología de red, los sistemas de seguridad implementados ni los procedimientos de respuesta a incidentes. Durante la prueba, el equipo rojo logra acceder físicamente al centro de datos y modificar el proceso de arranque de un servidor para cargar un sistema operativo malicioso. El equipo azul detecta la intrusión, aísla el servidor afectado y notifica al equipo rojo en menos de 8 minutos, evitando que el ataque tenga éxito. ¿Qué tipo de entorno de prueba de penetración se está simulando en este escenario según el temario?",
+      "opciones": [
+        "Entorno totalmente conocido, ya que se proporcionó información parcial sobre los sistemas críticos.",
+        "Entorno parcialmente conocido, porque el pentester recibió datos limitados pero suficientes para enfocarse en sistemas específicos sin conocer toda la infraestructura.",
+        "Entorno desconocido (blind test), dado que no se proporcionó información sobre la topología de red ni los sistemas de seguridad.",
+        "Prueba de phishing físico combinada con acceso lógico, al simular un ataque que requiere tanto acceso físico como conocimiento parcial de la infraestructura."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este escenario corresponde a un *entorno parcialmente conocido*, donde el pentester recibe información limitada pero suficiente para enfocarse en sistemas críticos (servidores de bases de datos), sin revelar toda la infraestructura (topología de red, sistemas de seguridad).",
+      "id": "p29-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de entorno de prueba de penetración se caracteriza por NO proporcionar información previa al pentester, pero permitir que este descubra pistas mediante técnicas de reconocimiento pasivo como revisar el sitio web corporativo o analizar redes sociales?",
+      "opciones": [
+        "a) Entorno Totalmente Conocido",
+        "b) Entorno Parcialmente Conocido",
+        "c) Entorno Desconocido (Blind Test)",
+        "d) Entorno de Autoevaluación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El entorno desconocido (Blind Test) no proporciona información previa al pentester, quien debe recopilar datos mediante técnicas como reconocimiento pasivo para simular un ataque real.",
+      "id": "p29-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una auditoría interna, ¿qué grupo es responsable de gestionar los riesgos asociados a la organización e iniciar y finalizar las auditorías?",
+      "opciones": [
+        "El equipo rojo (red team)",
+        "El comité de auditoría",
+        "El equipo azul (blue team)",
+        "Los consultores externos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El comité de auditoría es el grupo responsable de gestionar los riesgos y supervisar las auditorías internas según el temario.",
+      "id": "p29-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un ejemplo de reconocimiento pasivo en una prueba de penetración?",
+      "opciones": [
+        "Analizar formularios en línea de la empresa en su sitio web corporativo",
+        "Realizar un escaneo de puertos en la red interna de la organización",
+        "Revisar publicaciones en foros como Reddit sobre la infraestructura de la empresa",
+        "Hacer dumpster diving para encontrar documentos desechados con información sensible"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo de puertos es un ejemplo de reconocimiento activo, ya que interactúa directamente con la red del cliente.",
+      "id": "p29-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización contrata a un equipo externo para evaluar si sus controles de acceso cumplen con la normativa ISO 27001. ¿Qué tipo de auditoría está realizando según el temario?",
+      "opciones": [
+        "Auditoría interna",
+        "Auditoría externa",
+        "Autoevaluación",
+        "Attestation"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Cuando una auditoría es realizada por un tercero debido a requisitos normativos, se considera una auditoría externa según el temario.",
+      "id": "p29-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de entorno de prueba de penetración proporciona al pentester información limitada, pero suficiente para enfocarse en sistemas críticos, sin revelar toda la infraestructura?",
+      "opciones": [
+        "Entorno totalmente conocido",
+        "Entorno parcialmente conocido",
+        "Entorno desconocido (Blind Test)",
+        "Entorno de autoevaluación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El entorno parcialmente conocido proporciona información limitada pero suficiente para enfocarse en sistemas críticos, sin revelar toda la infraestructura.",
+      "id": "p29-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia clave existe entre una auditoría interna y una auditoría externa según el temario?",
+      "opciones": [
+        "Las auditorías internas son realizadas por consultores externos, mientras que las externas son realizadas por el comité de auditoría",
+        "Las auditorías internas evalúan el cumplimiento normativo interno, mientras que las externas son obligatorias por regulaciones y realizadas por terceros",
+        "Las auditorías internas solo revisan políticas, mientras que las externas solo revisan infraestructura técnica",
+        "Las auditorías internas emiten una attestation, mientras que las externas no lo hacen"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las auditorías externas son obligatorias por regulaciones y realizadas por terceros, mientras que las internas son realizadas por el comité de auditoría y evalúan el cumplimiento normativo interno.",
+      "id": "p29-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de pruebas de penetración, ¿qué tipo de entorno se caracteriza por NO proporcionar información previa al pentester, pero sí permitir que este descubra pistas mediante técnicas de reconocimiento pasivo como revisar el sitio web corporativo o analizar redes sociales?",
+      "opciones": [
+        "a) Entorno Totalmente Conocido",
+        "b) Entorno Parcialmente Conocido",
+        "c) Entorno Desconocido (Blind Test)",
+        "d) Entorno de Reconocimiento Pasivo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El entorno desconocido (Blind Test) no proporciona información inicial al pentester, quien debe recopilar datos mediante técnicas pasivas como revisar fuentes públicas antes de realizar acciones activas.",
+      "id": "p29-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización realiza una auditoría para verificar que sus empleados siguen correctamente los procedimientos de gestión de contraseñas según su política interna. ¿Qué aspecto está evaluando principalmente?",
+      "opciones": [
+        "El cumplimiento normativo de la normativa PCI DSS",
+        "La efectividad de los controles de acceso físico",
+        "El cumplimiento de políticas y procedimientos internos",
+        "La resistencia de los controles lógicos frente a ataques externos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las auditorías internas evalúan principalmente el cumplimiento de políticas y procedimientos internos, como la gestión de contraseñas.",
+      "id": "p29-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una prueba de penetración, un pentester recibe información limitada sobre los sistemas a atacar, incluyendo solo los servidores críticos. Sin embargo, la organización no oculta pistas que puedan ser descubiertas mediante técnicas de reconocimiento pasivo. ¿Qué tipo de entorno de prueba de penetración se está simulando?",
+      "opciones": [
+        "Entorno totalmente conocido",
+        "Entorno parcialmente conocido",
+        "Entorno desconocido (Blind Test)",
+        "Autoevaluación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En un entorno desconocido (Blind Test), no se proporciona información al pentester, quien debe recopilar datos mediante reconocimiento pasivo o activo.",
+      "id": "p29-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de seguridad realiza una prueba de penetración donde el equipo rojo simula un ataque con acceso físico a un centro de datos y el equipo azul detecta y bloquea la intrusión en tiempo real. ¿Qué enfoque de mejora de seguridad están utilizando según el temario?",
+      "opciones": [
+        "Autoevaluación",
+        "Auditoría interna",
+        "Red Team vs. Blue Team (equipos ofensivo y defensivo)",
+        "Attestation"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La integración de equipos ofensivos (rojo) y defensivos (azul) trabajando en tiempo real simula y mejora la respuesta a ataques reales.",
+      "id": "p29-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de entorno de prueba de penetración se caracteriza por proporcionar al pentester información limitada sobre los sistemas críticos, pero donde la organización no oculta pistas que puedan descubrirse mediante técnicas de reconocimiento pasivo como revisar el sitio web corporativo o analizar redes sociales?",
+      "opciones": [
+        "a) Entorno completamente conocido",
+        "b) Entorno parcialmente conocido",
+        "c) Entorno desconocido (Blind Test)",
+        "d) Entorno de reconocimiento pasivo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Este escenario corresponde a un entorno desconocido (Blind Test), ya que no se proporciona información previa al pentester, pero la organización no oculta pistas que puedan descubrirse mediante técnicas de reconocimiento pasivo.",
+      "id": "p29-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un ejemplo válido de reconocimiento pasivo en una prueba de penetración según el temario?",
+      "opciones": [
+        "Revisar el sitio web corporativo para obtener detalles sobre la empresa",
+        "Realizar un escaneo de puertos en la red del cliente",
+        "Analizar formularios en línea publicados por la organización",
+        "Hacer dumpster diving para encontrar documentos desechados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo de puertos es un ejemplo de reconocimiento activo, ya que implica interactuar directamente con la red del cliente.",
+      "id": "p29-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de pruebas de penetración, ¿qué tipo de entorno se caracteriza por proporcionar al pentester información limitada sobre los sistemas críticos, pero donde la organización no oculta pistas que puedan descubrirse mediante técnicas de reconocimiento pasivo como revisar el sitio web corporativo o analizar redes sociales?",
+      "opciones": [
+        "a) Entorno totalmente conocido",
+        "b) Entorno parcialmente conocido",
+        "c) Entorno desconocido (blind test)",
+        "d) Autoevaluación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El entorno parcialmente conocido proporciona información limitada y enfocada en sistemas críticos, pero no oculta pistas que puedan descubrirse mediante técnicas de reconocimiento pasivo, como revisar el sitio web corporativo o analizar redes sociales.",
+      "id": "p29-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de pruebas de penetración, ¿qué tipo de entorno proporciona al pentester información limitada, pero suficiente para enfocarse en sistemas críticos, sin revelar toda la infraestructura?",
+      "opciones": [
+        "Entorno totalmente conocido",
+        "Entorno parcialmente conocido",
+        "Entorno desconocido (Blind Test)",
+        "Entorno de autoevaluación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define el entorno parcialmente conocido como aquel donde se proporciona parte de la información al pentester para enfocarse en sistemas específicos.",
+      "id": "p29-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de reconocimiento en una prueba de penetración implica interactuar directamente con la red del cliente y puede ser detectado fácilmente por sistemas de registro?",
+      "opciones": [
+        "a) Reconocimiento pasivo (Passive Reconnaissance)",
+        "b) Reconocimiento activo (Active Reconnaissance)",
+        "c) Reconocimiento ciego (Blind Reconnaissance)",
+        "d) Reconocimiento parcial (Partial Reconnaissance)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El reconocimiento activo implica interactuar directamente con la red del cliente, lo que puede ser detectado por firewalls, IDS/IPS o logs, a diferencia del reconocimiento pasivo que recopila información sin conexión directa.",
+      "id": "p29-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Durante una auditoría externa, un equipo de consultores independientes detecta que la organización auditada ha implementado controles de acceso basados en roles (RBAC) sin documentar formalmente las asignaciones de permisos. Sin embargo, al revisar los registros de acceso, confirman que los empleados solo acceden a recursos necesarios para su función. ¿Qué aspecto clave está evaluando el equipo auditor en este escenario?",
+      "opciones": [
+        "El cumplimiento normativo de la documentación de políticas",
+        "La efectividad operativa de los controles de acceso implementados",
+        "La frecuencia de las auditorías internas",
+        "La capacidad de detección de intrusiones del equipo azul"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que las auditorías evalúan el cumplimiento de políticas y procedimientos, pero también pueden verificar si los controles implementados funcionan correctamente en la práctica.",
+      "id": "p29-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de entorno de prueba de penetración se caracteriza por NO proporcionar información previa al pentester, pero permitir que este descubra pistas mediante técnicas de reconocimiento pasivo como revisar el sitio web corporativo o analizar redes sociales?",
+      "opciones": [
+        "Entorno totalmente conocido",
+        "Entorno parcialmente conocido",
+        "Entorno desconocido (Blind Test)",
+        "Entorno de attestation"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario define el entorno desconocido (Blind Test) como aquel donde no se proporciona información previa al pentester, quien debe recopilar datos por su cuenta.",
+      "id": "p29-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización desea evaluar la resistencia de sus controles físicos y lógicos frente a un atacante con conocimiento interno limitado. Para ello, contrata un equipo de pentesting que recibe información parcial sobre la infraestructura crítica (solo los servidores de bases de datos y sus direcciones IP). Durante la prueba, el equipo rojo logra acceder físicamente a un centro de datos y modifica el proceso de arranque de un servidor para cargar un sistema operativo malicioso. Sin embargo, el equipo azul detecta la intrusión y bloquea la acción en menos de 5 minutos. ¿Qué tipo de entorno de prueba de penetración se está simulando en este escenario?",
+      "opciones": [
+        "Entorno totalmente conocido",
+        "Entorno parcialmente conocido",
+        "Entorno desconocido (Blind Test)",
+        "Entorno de autoevaluación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que en el entorno parcialmente conocido se proporciona información limitada (como servidores críticos) para enfocar la prueba, pero no toda la infraestructura.",
+      "id": "p29-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo típico de una prueba de penetración según el temario?",
+      "opciones": [
+        "Identificar vulnerabilidades antes de que sean explotadas por atacantes reales",
+        "Evaluar el cumplimiento de normativas como ISO 27001 o PCI DSS",
+        "Simular ataques reales para preparar al equipo de seguridad",
+        "Explotar vulnerabilidades para demostrar su impacto"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario señala que el objetivo principal de las pruebas de penetración es identificar y explotar vulnerabilidades, no evaluar cumplimiento normativo (esto corresponde a auditorías).",
+      "id": "p29-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un pentester recibe acceso físico a un centro de datos y modifica el proceso de arranque de un servidor para instalar un rootkit. ¿Qué tipo de prueba de penetración está simulando según el temario?",
+      "opciones": [
+        "Prueba de penetración lógica (network-based)",
+        "Prueba de penetración física (physical penetration testing)",
+        "Auditoría interna de controles físicos",
+        "Reconocimiento pasivo en redes sociales"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las pruebas de penetración pueden incluir pruebas físicas, donde un atacante con acceso físico puede modificar procesos de arranque o reemplazar archivos del sistema operativo.",
+      "id": "p29-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de entorno en pruebas de penetración según el temario?",
+      "opciones": [
+        "a) Entorno Totalmente Conocido",
+        "b) Entorno Parcialmente Conocido",
+        "c) Entorno Desconocido (Blind Test)",
+        "d) Entorno Simulado (Simulated Environment)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona solo tres tipos de entornos en pruebas de penetración: Totalmente Conocido, Parcialmente Conocido y Desconocido (Blind Test).",
+      "id": "p29-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de entorno de prueba de penetración se caracteriza por NO proporcionar información previa al pentester, pero permitir que este descubra pistas mediante técnicas de reconocimiento pasivo como revisar el sitio web corporativo o analizar redes sociales, sin acceder directamente a la red del cliente?",
+      "opciones": [
+        "a) Entorno Totalmente Conocido",
+        "b) Entorno Parcialmente Conocido",
+        "c) Entorno Desconocido (Blind Test)",
+        "d) Entorno de Reconocimiento Activo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El entorno Desconocido (Blind Test) no proporciona información previa al pentester, quien debe descubrir pistas mediante técnicas pasivas como reconocimiento en redes sociales o análisis web, sin interactuar directamente con la red del cliente.",
+      "id": "p29-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia clave existe entre una auditoría y una attestation (atestación) según el temario?",
+      "opciones": [
+        "a) La auditoría evalúa vulnerabilidades y la attestation corrige las fallas detectadas",
+        "b) La auditoría examina procesos y la attestation es una opinión de veracidad sobre sus resultados",
+        "c) La auditoría es realizada por terceros y la attestation por equipos internos",
+        "d) La auditoría se enfoca en hardware y la attestation en software"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la attestation como una opinión de veracidad asociada a los resultados de una auditoría.",
+      "id": "p29-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un pentester realiza un reconocimiento sin interactuar directamente con la red del cliente, utilizando fuentes externas como redes sociales o el sitio web corporativo. ¿Qué tipo de reconocimiento está aplicando según el temario?",
+      "opciones": [
+        "a) Reconocimiento activo",
+        "b) Reconocimiento pasivo",
+        "c) Reconocimiento ciego",
+        "d) Reconocimiento ofensivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario clasifica el reconocimiento sin interacción directa con la red como reconocimiento pasivo.",
+      "id": "p29-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización contrata un equipo externo para evaluar si sus controles de acceso cumplen con la normativa ISO 27001. ¿Qué tipo de auditoría está realizando según el temario?",
+      "opciones": [
+        "a) Auditoría interna",
+        "b) Auditoría de cumplimiento normativo",
+        "c) Auditoría externa",
+        "d) Autoevaluación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que algunas regulaciones exigen auditorías realizadas por terceros para evaluar el cumplimiento normativo.",
+      "id": "p29-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un ejemplo válido de reconocimiento pasivo según el temario?",
+      "opciones": [
+        "a) Revisar el sitio web corporativo para obtener detalles de la infraestructura",
+        "b) Realizar un escaneo de puertos en la red del cliente",
+        "c) Analizar formularios en línea publicados por la empresa",
+        "d) Hacer dumpster diving para encontrar documentos desechados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escaneo de puertos es un ejemplo de reconocimiento activo, ya que implica interactuar directamente con la red.",
+      "id": "p29-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una prueba de penetración, el equipo rojo simula un ataque con acceso físico a un centro de datos, mientras que el equipo azul detecta y bloquea la intrusión en tiempo real. ¿Qué enfoque de mejora de seguridad están utilizando según el temario?",
+      "opciones": [
+        "a) Prueba de penetración ciega",
+        "b) Simulación de ataque real",
+        "c) Enfoque rojo-azul (red-blue team)",
+        "d) Auditoría de seguridad física"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario describe la integración de equipos ofensivos (rojo) y defensivos (azul) como un enfoque para simular y responder a ataques en tiempo real.",
+      "id": "p29-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización desea evaluar la resistencia de sus controles físicos y lógicos frente a un atacante con conocimiento interno limitado. Contrata un equipo de pentesting que recibe información parcial sobre la infraestructura crítica (solo servidores de bases de datos y sus direcciones IP). Durante la prueba, el equipo rojo accede físicamente al centro de datos y modifica el arranque de un servidor, pero el equipo azul detecta la intrusión y bloquea la acción en menos de 10 minutos. ¿Qué tipo de entorno de prueba de penetración se está simulando según el temario?",
+      "opciones": [
+        "a) Entorno Totalmente Conocido",
+        "b) Entorno Parcialmente Conocido",
+        "c) Entorno Desconocido (Blind Test)",
+        "d) Entorno de Reconocimiento Pasivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define el entorno parcialmente conocido como aquel donde se proporciona información limitada sobre sistemas críticos, pero no toda la infraestructura.",
+      "id": "p29-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización contrata un equipo de pentesting para evaluar la resistencia de sus controles físicos y lógicos frente a un atacante con conocimiento interno limitado. El equipo recibe información parcial: solo conoce las direcciones IP de los servidores críticos y sus ubicaciones físicas en el centro de datos. Durante la prueba, el equipo rojo accede físicamente a una sala de servidores, pero al intentar modificar el arranque de un servidor, activa un sistema de alerta temprana que notifica al equipo azul. Este último identifica la intrusión en menos de 3 minutos y activa los protocolos de respuesta, evitando que el ataque tenga éxito. Sin embargo, el equipo rojo logra obtener credenciales de un empleado mediante ingeniería social (sin acceso a la red corporativa) y accede a un sistema de monitoreo interno, exponiendo una vulnerabilidad en la autenticación multifactor. ¿Qué tipo de entorno de prueba de penetración se está simulando en este escenario según el temario?",
+      "opciones": [
+        "a) Entorno totalmente conocido, porque el equipo rojo conoce las direcciones IP de los servidores críticos.",
+        "b) Entorno parcialmente conocido, ya que el equipo rojo recibe información limitada pero suficiente para enfocarse en sistemas críticos, y la organización no oculta pistas accesibles mediante reconocimiento pasivo.",
+        "c) Entorno desconocido (blind test), porque el equipo rojo no recibió información previa y debe descubrir todo por sí mismo.",
+        "d) Entorno de caja negra avanzada, donde el equipo rojo tiene acceso físico pero no información técnica sobre la infraestructura."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escenario describe un entorno parcialmente conocido, ya que el equipo rojo recibe información limitada (direcciones IP y ubicaciones físicas) pero suficiente para enfocarse en sistemas críticos, y la organización no oculta pistas accesibles mediante técnicas de reconocimiento pasivo como la ingeniería social.",
+      "id": "p29-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización contrata un equipo de pentesting para evaluar la resistencia de sus controles de acceso frente a un atacante con conocimiento interno limitado. El equipo rojo recibe información parcial: solo conoce las direcciones IP de los servidores críticos y sus ubicaciones físicas en el centro de datos. Durante la simulación, el pentester accede físicamente a una sala de servidores y descubre que un empleado ha dejado un USB con credenciales de administrador en una mesa. Utilizando estas credenciales, logra acceder a un sistema de monitoreo interno y descubre que el equipo azul no ha aplicado parches en un servidor de bases de datos desde hace 6 meses. Sin embargo, al intentar explotar esta vulnerabilidad, el equipo azul detecta la actividad inusual y bloquea el acceso en menos de 2 minutos. ¿Qué tipo de entorno de prueba de penetración se está simulando en este escenario?",
+      "opciones": [
+        "a) Entorno totalmente conocido, porque el pentester recibió información parcial sobre los sistemas críticos.",
+        "b) Entorno parcialmente conocido, ya que el pentester recibió información limitada pero pudo descubrir pistas adicionales mediante técnicas de reconocimiento pasivo.",
+        "c) Entorno desconocido (blind test), porque el pentester no recibió información previa y solo descubrió detalles durante la prueba.",
+        "d) Entorno de pentesting físico, porque el ataque incluyó acceso físico a la sala de servidores."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escenario describe un entorno parcialmente conocido, donde el pentester recibe información limitada (direcciones IP y ubicaciones físicas de servidores críticos), pero descubre pistas adicionales mediante técnicas de reconocimiento pasivo como el análisis de credenciales dejadas en el entorno físico. Este tipo de entorno no oculta pistas que puedan ser descubiertas con métodos pasivos.",
+      "id": "p29-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de auditoría se realiza cuando un equipo interno de la organización evalúa el cumplimiento de sus propias políticas de seguridad sin intervención externa y sin emitir una opinión formal de veracidad?",
+      "opciones": [
+        "a) Auditoría interna con autoevaluación",
+        "b) Auditoría externa con attestation",
+        "c) Prueba de penetración con entorno parcialmente conocido",
+        "d) Reconocimiento pasivo para evaluación de vulnerabilidades"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define que una auditoría interna comienza con una autoevaluación donde la organización revisa internamente sus procesos sin necesidad de un tercero ni de emitir una attestation (atestación).",
+      "id": "p29-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En una prueba de penetración, un pentester recibe acceso a toda la información de la infraestructura, incluyendo diagramas de red, direcciones IP, configuraciones y políticas de seguridad. ¿Qué tipo de entorno está utilizando?",
+      "opciones": [
+        "a) Entorno Desconocido (Blind Test)",
+        "b) Entorno Parcialmente Conocido",
+        "c) Entorno Totalmente Conocido",
+        "d) Entorno de Reconocimiento Pasivo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario define el Entorno Totalmente Conocido como aquel donde la organización proporciona toda la información al pentester.",
+      "id": "p29-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de entorno de prueba de penetración se caracteriza por proporcionar al pentester acceso físico limitado a una sala de servidores, pero sin revelar la topología de red, los sistemas de seguridad implementados ni los procedimientos de respuesta a incidentes?",
+      "opciones": [
+        "a) Entorno totalmente conocido",
+        "b) Entorno parcialmente conocido",
+        "c) Entorno desconocido (Blind Test)",
+        "d) Entorno físico controlado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El entorno parcialmente conocido proporciona información limitada pero suficiente para enfocarse en sistemas críticos, sin revelar toda la infraestructura, como en este caso donde se permite acceso físico limitado a una sala de servidores.",
+      "id": "p29-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de entorno de prueba de penetración se caracteriza por proporcionar al pentester información limitada sobre la infraestructura crítica, incluyendo solo direcciones IP de servidores clave y sus ubicaciones físicas, pero ocultando detalles como la topología de red o los sistemas de seguridad implementados?",
+      "opciones": [
+        "a) Entorno totalmente conocido",
+        "b) Entorno parcialmente conocido",
+        "c) Entorno desconocido (blind test)",
+        "d) Entorno de caja negra"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El entorno parcialmente conocido (opción b) proporciona información limitada pero suficiente para enfocarse en sistemas críticos, sin revelar toda la infraestructura. Esto coincide con el escenario descrito, donde solo se comparten detalles parciales como direcciones IP y ubicaciones físicas.",
+      "id": "p29-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de entorno de prueba de penetración se caracteriza por proporcionar al pentester información limitada, incluyendo solo direcciones IP de servidores críticos y sus ubicaciones físicas, pero ocultando detalles como la topología de red o los sistemas de seguridad implementados, y permitiendo que el pentester descubra pistas mediante técnicas de reconocimiento pasivo como revisar redes sociales o el sitio web corporativo?",
+      "opciones": [
+        "a) Entorno totalmente conocido",
+        "b) Entorno parcialmente conocido",
+        "c) Entorno desconocido (Blind Test)",
+        "d) Entorno físico limitado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El entorno parcialmente conocido proporciona información limitada y específica, pero no toda, permitiendo que el pentester combine datos conocidos con técnicas de reconocimiento pasivo para descubrir más detalles.",
+      "id": "p29-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización contrata un equipo de pentesting para evaluar la resistencia de sus controles físicos y lógicos. El equipo recibe información parcial sobre la infraestructura crítica: solo conoce las direcciones IP de los servidores de bases de datos y sus ubicaciones físicas en el centro de datos. Sin embargo, no tiene acceso a la topología de red ni a los sistemas de seguridad implementados. ¿Qué tipo de entorno de prueba de penetración se está simulando?",
+      "opciones": [
+        "a) Entorno Totalmente Conocido",
+        "b) Entorno Parcialmente Conocido",
+        "c) Entorno Desconocido (Blind Test)",
+        "d) Entorno de Reconocimiento Activo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define el Entorno Parcialmente Conocido como aquel donde solo se proporciona parte de la información al pentester.",
+      "id": "p29-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de auditoría se realiza cuando un equipo interno de la organización evalúa el cumplimiento de sus propias políticas de seguridad sin intervención externa y emite una opinión formal de veracidad sobre los resultados?",
+      "opciones": [
+        "a) Auditoría interna con autoevaluación",
+        "b) Auditoría interna con attestation (atestación)",
+        "c) Auditoría externa con attestation (atestación)",
+        "d) Auditoría de cumplimiento normativo sin verificación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el temario, la attestation (atestación) es una opinión de veracidad asociada a los resultados de una auditoría, y puede realizarse internamente dentro de la organización.",
+      "id": "p29-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de reconocimiento en una prueba de penetración implica interactuar directamente con la red del cliente, pudiendo ser detectado por sistemas de registro como firewalls o IDS?",
+      "opciones": [
+        "a) Reconocimiento pasivo (Passive Reconnaissance)",
+        "b) Reconocimiento activo (Active Reconnaissance)",
+        "c) Reconocimiento físico (Physical Reconnaissance)",
+        "d) Reconocimiento social (Social Reconnaissance)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El reconocimiento activo implica interactuar directamente con la red del cliente mediante técnicas como escaneo de puertos o consultas DNS, lo que genera registros en logs de dispositivos de seguridad.",
+      "id": "p29-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización desea evaluar si sus controles de acceso cumplen con la normativa ISO 27001. Contrata un equipo externo para realizar la evaluación. ¿Qué tipo de auditoría está realizando según el temario?",
+      "opciones": [
+        "a) Auditoría Interna",
+        "b) Auditoría Externa",
+        "c) Attestation (Atestación)",
+        "d) Prueba de Penetración"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que las auditorías externas son realizadas por terceros independientes, especialmente cuando se requiere cumplimiento normativo.",
+      "id": "p29-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización contrata un equipo de pentesting para evaluar la resistencia de sus controles de acceso frente a un atacante con conocimiento interno limitado. El equipo rojo recibe información parcial: solo conoce las direcciones IP de los servidores críticos y sus ubicaciones físicas en el centro de datos. Durante la simulación, el pentester accede físicamente a una sala de servidores y observa que un empleado ha dejado un documento impreso con credenciales de administrador en una mesa. Utilizando estas credenciales, logra acceder a un sistema de monitoreo interno y descubre que el equipo azul no ha aplicado parches en un servidor de bases de datos desde hace 6 meses. Sin embargo, al intentar explotar esta vulnerabilidad mediante un ataque de fuerza bruta, el sistema de autenticación bloquea su acceso tras 3 intentos fallidos, activando una alerta en el equipo azul. ¿Qué tipo de entorno de prueba de penetración se está simulando en este escenario según el temario?",
+      "opciones": [
+        "a. Entorno desconocido (blind test), donde el pentester no recibe información previa y debe descubrir todo por sí mismo, incluyendo credenciales.",
+        "b. Entorno parcialmente conocido, donde el pentester recibe información limitada (direcciones IP y ubicaciones físicas) pero puede descubrir pistas adicionales mediante técnicas como reconocimiento pasivo o ingeniería social.",
+        "c. Entorno totalmente conocido, donde el pentester recibe toda la información necesaria para realizar la prueba, incluyendo credenciales y configuraciones de seguridad.",
+        "d. Entorno de reconocimiento activo, donde el pentester interactúa directamente con la red para descubrir vulnerabilidades sin recibir información previa."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escenario describe un entorno parcialmente conocido, ya que el pentester recibe información limitada (direcciones IP y ubicaciones físicas) pero puede descubrir pistas adicionales mediante técnicas como reconocimiento pasivo (documento impreso) o ingeniería social (credenciales).",
+      "id": "p29-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo principal de una auditoría de ciberseguridad según el temario?",
+      "opciones": [
+        "Evaluar el cumplimiento de normativas y políticas internas.",
+        "Identificar y explotar vulnerabilidades en sistemas para mejorar la seguridad.",
+        "Examinar la infraestructura de TI, software y dispositivos de red.",
+        "Garantizar que las tareas de cumplimiento se sigan correctamente dentro de la organización."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El objetivo principal de una auditoría es evaluar el cumplimiento, no explotar vulnerabilidades, lo cual corresponde a las pruebas de penetración.",
+      "id": "p29-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Cuál es la diferencia clave entre una auditoría interna y una auditoría externa según el temario?",
+      "opciones": [
+        "La auditoría interna la realiza un equipo interno sin emitir opinión formal, mientras que la externa la realiza un tercero y suele incluir una attestation.",
+        "La auditoría interna evalúa solo la infraestructura física, mientras que la externa se enfoca en políticas lógicas.",
+        "La auditoría interna es obligatoria por normativas, mientras que la externa es opcional.",
+        "La auditoría interna siempre incluye pruebas de penetración, mientras que la externa no."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las auditorías internas pueden ser realizadas por equipos internos sin intervención externa ni emisión formal de veracidad, mientras que las externas son realizadas por terceros y suelen incluir una attestation.",
+      "id": "p29-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de reconocimiento en una prueba de penetración implica interactuar directamente con la red del cliente y puede ser detectado por sistemas de registro como firewalls?",
+      "opciones": [
+        "Reconocimiento pasivo.",
+        "Reconocimiento activo.",
+        "Ataque de fuerza bruta.",
+        "Ingeniería social."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El reconocimiento activo implica interactuar directamente con la red, lo que puede ser detectado por dispositivos como firewalls o IDS.",
+      "id": "p29-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una organización contrata un equipo de pentesting para evaluar la resistencia de sus controles físicos y lógicos. El equipo recibe información parcial: solo conoce las direcciones IP de los servidores críticos y sus ubicaciones físicas. Durante la prueba, el pentester accede físicamente a una sala de servidores y descubre un documento impreso con credenciales de administrador abandonado en una mesa. Utilizando estas credenciales, logra acceder a un sistema de monitoreo interno y descubre que el equipo azul no ha aplicado parches en un servidor de bases de datos desde hace 6 meses. Sin embargo, al intentar explotar esta vulnerabilidad, el sistema de autenticación bloquea su acceso tras 3 intentos fallidos, activando una alerta en el equipo azul. ¿Qué tipo de entorno de prueba de penetración se está simulando?",
+      "opciones": [
+        "Entorno totalmente conocido.",
+        "Entorno parcialmente conocido.",
+        "Entorno desconocido (blind test).",
+        "Entorno híbrido."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El entorno parcialmente conocido proporciona información limitada (direcciones IP y ubicaciones físicas), pero no detalles como topología de red o sistemas de seguridad implementados.",
+      "id": "p29-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identificar el concepto: Un pentester realiza un reconocimiento sin interactuar directamente con la red del cliente, utilizando fuentes externas como redes sociales o el sitio web corporativo. ¿Qué tipo de reconocimiento está aplicando según el temario?",
+      "opciones": [
+        "Reconocimiento activo.",
+        "Reconocimiento pasivo.",
+        "Escaneo de puertos.",
+        "Ataque de fuerza bruta."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El reconocimiento pasivo recopila información sin conectarse directamente a la red del cliente, utilizando fuentes externas.",
+      "id": "p29-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué término describe la opinión de veracidad emitida sobre los resultados de una auditoría de ciberseguridad cuando es realizada por un tercero externo?",
+      "opciones": [
+        "a) Atestación (Attestation)",
+        "b) Autoevaluación (Self Assessment)",
+        "c) Informe de cumplimiento",
+        "d) Certificación de seguridad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La atestación (attestation) es la opinión de veracidad asociada a los resultados de una auditoría, emitida tras su realización, y puede ser realizada tanto internamente como por un tercero externo.",
+      "id": "p29-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una organización desea evaluar la resistencia de sus controles de acceso frente a un atacante con conocimiento interno limitado. El equipo rojo recibe información parcial: solo conoce las direcciones IP de los servidores críticos y sus ubicaciones físicas. Durante la simulación, el pentester accede físicamente a una sala de servidores y observa que un empleado ha dejado un documento impreso con credenciales de administrador en una mesa. Utilizando estas credenciales, logra acceder a un sistema de monitoreo interno y descubre que el equipo azul no ha aplicado parches en un servidor de bases de datos desde hace 6 meses. Sin embargo, al intentar explotar esta vulnerabilidad mediante un ataque de fuerza bruta, el sistema de autenticación bloquea su acceso tras 3 intentos fallidos, activando una alerta en el equipo azul. ¿Qué enfoque de mejora de seguridad están utilizando los equipos rojo y azul en este escenario?",
+      "opciones": [
+        "Auditoría interna sin attestation.",
+        "Prueba de penetración con entorno parcialmente conocido y enfoque de equipo rojo/azul.",
+        "Auditoría externa con attestation.",
+        "Simulación de phishing con entorno desconocido."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Se simula un entorno parcialmente conocido en una prueba de penetración, donde el equipo rojo (ofensivo) explora vulnerabilidades y el equipo azul (defensivo) detecta y bloquea los ataques en tiempo real.",
+      "id": "p29-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de auditoría se realiza cuando un equipo interno de la organización evalúa el cumplimiento de sus propias políticas de seguridad sin intervención externa y emite una opinión formal de veracidad sobre los resultados?",
+      "opciones": [
+        "Auditoría interna sin attestation.",
+        "Auditoría interna con attestation.",
+        "Auditoría externa.",
+        "Autoevaluación sin auditoría."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Una auditoría interna puede incluir la emisión de una attestation (opinión de veracidad) sobre los resultados, incluso si es realizada por un equipo interno.",
+      "id": "p29-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado (dificultad alta): Una organización contrata un equipo de pentesting para evaluar la resistencia de sus controles físicos y lógicos frente a un atacante con conocimiento interno limitado. El equipo recibe información parcial: solo conoce las direcciones IP de los servidores críticos y sus ubicaciones físicas en el centro de datos. Durante la prueba, el equipo rojo accede físicamente a una sala de servidores y descubre que un empleado ha dejado un USB con credenciales de administrador en una mesa. Utilizando estas credenciales, logra acceder a un sistema de monitoreo interno y descubre que el equipo azul no ha aplicado parches en un servidor de bases de datos desde hace 6 meses. Sin embargo, al intentar explotar esta vulnerabilidad, el equipo azul detecta la actividad inusual y bloquea el acceso en menos de 2 minutos. ¿Qué tipo de entorno de prueba de penetración se está simulando?",
+      "opciones": [
+        "Entorno totalmente conocido.",
+        "Entorno parcialmente conocido con enfoque de equipo rojo/azul.",
+        "Entorno desconocido (blind test).",
+        "Auditoría externa con attestation."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escenario describe un entorno parcialmente conocido en una prueba de penetración con enfoque de equipo rojo (ofensivo) y equipo azul (defensivo) trabajando en tiempo real.",
+      "id": "p29-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización contrata un equipo de pentesting para evaluar la resistencia de sus controles físicos y lógicos frente a un atacante con conocimiento interno limitado. El equipo recibe información parcial: solo conoce las direcciones IP de los servidores críticos y sus ubicaciones físicas en el centro de datos. Durante la simulación, el pentester accede físicamente a una sala de servidores y observa que un empleado ha dejado un documento impreso con credenciales de administrador en una mesa. Utilizando estas credenciales, logra acceder a un sistema de monitoreo interno y descubre que el equipo azul no ha aplicado parches en un servidor de bases de datos desde hace 6 meses. Sin embargo, al intentar explotar esta vulnerabilidad mediante un ataque de fuerza bruta, el sistema de autenticación bloquea su acceso tras 3 intentos fallidos, activando una alerta en el equipo azul. ¿Qué tipo de entorno de prueba de penetración se está simulando en este escenario según el temario?",
+      "opciones": [
+        "a) Entorno completamente conocido (Full Knowledge)",
+        "b) Entorno parcialmente conocido con reconocimiento pasivo (Partial Knowledge with Passive Reconnaissance)",
+        "c) Entorno desconocido (Blind Test)",
+        "d) Entorno parcialmente conocido sin reconocimiento pasivo (Partial Knowledge without Reconnaissance)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escenario describe un entorno parcialmente conocido, ya que el pentester recibe información limitada (direcciones IP y ubicaciones físicas), pero no toda la infraestructura. Además, se menciona el uso de técnicas de reconocimiento pasivo (como el hallazgo de credenciales en un documento impreso) para descubrir pistas adicionales.",
+      "id": "p29-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de entorno de prueba de penetración se caracteriza por proporcionar al pentester acceso físico limitado a una sala de servidores, pero sin revelar la topología de red, los sistemas de seguridad implementados ni los procedimientos de respuesta a incidentes?",
+      "opciones": [
+        "a) Entorno totalmente conocido",
+        "b) Entorno parcialmente conocido",
+        "c) Entorno desconocido (blind test)",
+        "d) Entorno de reconocimiento pasivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El entorno parcialmente conocido limita la información proporcionada al pentester, incluyendo solo detalles físicos como direcciones IP de servidores críticos y ubicaciones, pero oculta aspectos técnicos y de seguridad.",
+      "id": "p29-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Cuál es la diferencia clave entre reconocimiento pasivo y reconocimiento activo en pruebas de penetración según el temario?",
+      "opciones": [
+        "a) El reconocimiento pasivo interactúa con la red del cliente, mientras que el activo no",
+        "b) El reconocimiento pasivo recopila información sin conectarse a la red, mientras que el activo sí interactúa directamente con ella",
+        "c) El reconocimiento pasivo solo usa técnicas de ingeniería social, mientras que el activo usa escaneos de puertos",
+        "d) El reconocimiento pasivo es ilegal, mientras que el activo es legal"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define el reconocimiento pasivo como la recopilación de información sin conexión directa a la red del cliente, mientras que el reconocimiento activo implica interactuar directamente con la red, pudiendo ser detectado.",
+      "id": "p29-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de entorno de prueba de penetración se caracteriza por proporcionar al pentester acceso físico limitado a una sala de servidores, pero sin revelar detalles como la topología de red, los sistemas de seguridad implementados ni los procedimientos de respuesta a incidentes?",
+      "opciones": [
+        "a) Entorno totalmente conocido",
+        "b) Entorno parcialmente conocido",
+        "c) Blind test (entorno desconocido)",
+        "d) Entorno físico ciego"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este tipo de entorno proporciona información limitada pero suficiente para enfocarse en sistemas críticos, sin revelar toda la infraestructura, según se describe en el temario.",
+      "id": "p29-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué término describe la opinión de veracidad emitida sobre los resultados de una auditoría cuando es realizada por un equipo interno de la organización según el temario?",
+      "opciones": [
+        "a) Atestación",
+        "b) Autoevaluación",
+        "c) Auditoría interna",
+        "d) Auditoría externa"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define la 'attestation' (atestación) como una opinión de veracidad asociada a los resultados de una auditoría, que puede ser emitida tanto por equipos internos como externos.",
+      "id": "p29-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una organización contrata un equipo de pentesting para evaluar la resistencia de sus controles físicos y lógicos. El equipo recibe información parcial: solo conoce las direcciones IP de los servidores críticos y sus ubicaciones físicas. Durante la prueba, el pentester accede físicamente a una sala de servidores y observa que un empleado ha dejado un documento impreso con credenciales de administrador en una mesa. Utilizando estas credenciales, logra acceder a un sistema de monitoreo interno. ¿Qué tipo de reconocimiento está aplicando el pentester en este escenario según el temario?",
+      "opciones": [
+        "a) Reconocimiento pasivo",
+        "b) Reconocimiento activo",
+        "c) Ingeniería social",
+        "d) Dumpster diving"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario incluye la ingeniería social como parte del reconocimiento pasivo, donde se recopila información sin interactuar directamente con la red, pero sí con personas o documentos.",
+      "id": "p29-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué término describe la opinión de veracidad emitida sobre los resultados de una auditoría cuando es realizada por un equipo interno de la organización?",
+      "opciones": [
+        "a) Attestation (Atestación)",
+        "b) Self assessment (Autoevaluación)",
+        "c) Blind test (Prueba ciega)",
+        "d) Compliance report (Informe de cumplimiento)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La attestation es la opinión de veracidad sobre los resultados de una auditoría, y puede ser emitida tanto por equipos internos como externos según el temario.",
+      "id": "p29-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de entorno de prueba de penetración se caracteriza por proporcionar al pentester acceso físico limitado a un centro de datos, pero sin revelar detalles como la topología de red, los sistemas de seguridad implementados ni los procedimientos de respuesta a incidentes?",
+      "opciones": [
+        "a) Entorno totalmente conocido",
+        "b) Entorno parcialmente conocido",
+        "c) Entorno desconocido (blind test)",
+        "d) Entorno de reconocimiento pasivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El entorno parcialmente conocido proporciona información limitada pero suficiente para enfocarse en sistemas críticos, sin revelar toda la infraestructura ni detalles sensibles como la topología de red o procedimientos de respuesta.",
+      "id": "p29-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una organización contrata un equipo de pentesting para evaluar la resistencia de sus controles físicos y lógicos frente a un atacante con conocimiento interno limitado. El equipo recibe información parcial: solo conoce las direcciones IP de los servidores críticos y sus ubicaciones físicas. Durante la simulación, el pentester accede físicamente a una sala de servidores y descubre que un empleado ha dejado un USB con credenciales de administrador en una mesa. Utilizando estas credenciales, logra acceder a un sistema de monitoreo interno y descubre que el equipo azul no ha aplicado parches en un servidor de bases de datos desde hace 6 meses. Sin embargo, al intentar explotar esta vulnerabilidad, el equipo azul detecta la actividad inusual y bloquea el acceso en menos de 2 minutos. ¿Qué enfoque de mejora de seguridad están utilizando los equipos rojo y azul en este escenario según el temario?",
+      "opciones": [
+        "a) Auditoría interna",
+        "b) Prueba de penetración con entorno parcialmente conocido",
+        "c) Simulación de equipo rojo y azul (red team/blue team)",
+        "d) Atestación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario describe que la combinación ideal es integrar equipos rojo (ofensivo) y azul (defensivo) para proporcionar retroalimentación constante y mejorar la seguridad.",
+      "id": "p29-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de entorno de prueba de penetración se caracteriza por proporcionar al pentester información limitada, incluyendo solo direcciones IP de servidores críticos y sus ubicaciones físicas, pero ocultando detalles como la topología de red o los sistemas de seguridad implementados?",
+      "opciones": [
+        "a) Entorno Totalmente Conocido",
+        "b) Entorno Parcialmente Conocido",
+        "c) Entorno Desconocido (Blind Test)",
+        "d) Entorno de Atestación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define el 'Entorno Parcialmente Conocido' como aquel en el que solo se proporciona parte de la información al pentester, como direcciones IP y ubicaciones físicas, ocultando otros detalles.",
+      "id": "p29-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Dificultad alta: Una organización desea evaluar la resistencia de sus controles de acceso frente a un atacante con conocimiento interno limitado. El equipo rojo recibe información parcial: solo conoce las direcciones IP de los servidores críticos y sus ubicaciones físicas. Durante la simulación, el pentester accede físicamente a una sala de servidores y observa que un empleado ha dejado un documento impreso con credenciales de administrador en una mesa. Utilizando estas credenciales, logra acceder a un sistema de monitoreo interno y descubre que el equipo azul no ha aplicado parches en un servidor de bases de datos desde hace 6 meses. Sin embargo, al intentar explotar esta vulnerabilidad mediante un ataque de fuerza bruta, el sistema de autenticación bloquea su acceso tras 3 intentos fallidos, activando una alerta en el equipo azul. ¿Qué tipo de entorno de prueba de penetración se está simulando en este escenario según el temario?",
+      "opciones": [
+        "a) Entorno Totalmente Conocido",
+        "b) Entorno Parcialmente Conocido",
+        "c) Entorno Desconocido (Blind Test)",
+        "d) Entorno de Reconocimiento Pasivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escenario describe un entorno donde el pentester recibe información limitada (direcciones IP y ubicaciones físicas), pero puede descubrir más detalles mediante técnicas de reconocimiento pasivo, lo que coincide con el 'Entorno Parcialmente Conocido' del temario.",
+      "id": "p29-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Audits and Assessments",
+      "youtubeId": "uo2Yw720mv4"
+    },
+    {
+      "titulo": "Penetration Tests",
+      "youtubeId": "wEMzVfwBiWY"
+    }
+  ]
+}

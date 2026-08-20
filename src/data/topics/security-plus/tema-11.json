@@ -1,0 +1,1400 @@
+{
+  "id": 11,
+  "titulo": "2.5 · Mitigación y hardening",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "SEGMENTACIÓN Y CONTROL DE ACCESO\n\nLa segmentación (segmentation) es una técnica fundamental para limitar el alcance de incidentes de seguridad y mejorar el rendimiento de la red. Existen tres enfoques principales para implementarla: segmentación física, lógica y virtual.\n\nLa segmentación física implica separar dispositivos de manera física, como conectar equipos críticos a redes aisladas. Por ejemplo, un servidor de bases de datos podría estar en una red independiente del resto de la infraestructura. La segmentación lógica se logra mediante tecnologías como las VLANs (Virtual Local Area Networks), que dividen una red física en múltiples redes lógicas. Este método es común en entornos empresariales y permite aislar tráfico entre departamentos o funciones. La segmentación virtual es típica en entornos cloud o con máquinas virtuales, donde se crean redes aisladas dentro de un mismo hardware físico.\n\nLa segmentación también puede ser estratégica, diseñada específicamente para mejorar la seguridad. Un ejemplo clásico es evitar que los usuarios accedan directamente a servidores de bases de datos. En su lugar, los usuarios interactúan con una aplicación intermedia, que a su vez se comunica con la base de datos. Esto reduce la exposición de datos sensibles y limita los puntos de entrada para posibles atacantes. Además, la segmentación puede ser obligatoria por normativas como PCI DSS (Payment Card Industry Data Security Standard), que exige aislar los datos de tarjetas de crédito del resto de la red.\n\nPara implementar estas restricciones, se utilizan listas de control de acceso o ACLs (Access Control Lists). Las ACLs permiten definir reglas específicas para permitir o denegar tráfico en función de múltiples criterios, como direcciones IP de origen o destino, números de puerto, horarios o usuarios. Por ejemplo, una regla podría permitir que solo los usuarios administradores accedan a un servidor de bases de datos, mientras que el resto de empleados solo puedan interactuar con la aplicación web. Las ACLs no solo se aplican en dispositivos de red, sino también en sistemas operativos, donde se gestionan permisos de archivos y carpetas.\n\nOtra forma de segmentación se basa en aplicaciones. Los sistemas operativos modernos permiten crear listas de permisos (allow lists) y listas de denegación (deny lists) para aplicaciones. Una allow list solo permite ejecutar aplicaciones previamente aprobadas, mientras que una deny list bloquea aplicaciones específicas consideradas maliciosas. Windows, por ejemplo, ofrece múltiples métodos para gestionar estas listas, como:\n\n- Hash de aplicaciones: identifica una aplicación por su hash criptográfico único. Si el archivo cambia, el hash ya no coincidirá y la regla dejará de aplicarse.\n- Firma digital: permite permitir o bloquear aplicaciones en función de su certificado digital. Por ejemplo, solo se ejecutarán aplicaciones firmadas por Microsoft o Adobe.\n- Ubicación del archivo: se pueden bloquear aplicaciones que se ejecuten desde directorios no autorizados.\n- Zonas de red: se aplican reglas diferentes según si el equipo está en una red privada o pública.\n\n\nMITIGACIÓN DE INCIDENTES DE SEGURIDAD\n\nLa mitigación (mitigation) consiste en reducir el impacto de un incidente de seguridad antes, durante o después de que ocurra. Una de las técnicas más efectivas es la aplicación de parches (patching) para corregir vulnerabilidades conocidas. Los fabricantes como Microsoft publican parches mensualmente para sistemas operativos y aplicaciones. En entornos empresariales, estos parches suelen probarse en un entorno controlado antes de implementarse en toda la organización. En casos de vulnerabilidades críticas, como las explotadas activamente por atacantes, pueden lanzarse parches de emergencia.\n\nOtra estrategia de mitigación es limitar la cantidad de datos accesibles para un atacante. Los sistemas de archivos modernos incluyen cifrado integrado, como el EFS (Encrypting File System) en Windows, que permite cifrar archivos o carpetas específicos. Para dispositivos que salen de las instalaciones, se recomienda el cifrado de disco completo o FDE (Full Disk Encryption), como BitLocker en Windows o FileVault en macOS. Algunas aplicaciones también cifran datos internamente, garantizando protección adicional independientemente del cifrado del sistema.\n\nLa monitorización constante y el registro de eventos son esenciales para detectar incidentes. Los dispositivos de red como switches, routers y firewalls generan logs automáticamente. Para centralizar esta información, se utilizan soluciones como SIEM (Security Information and Event Management), que consolidan logs de múltiples fuentes y generan informes. Esto facilita la identificación de patrones sospechosos y la respuesta rápida a incidentes.\n\nEl principio de menor privilegio (least privilege) es otra técnica clave de mitigación. Consiste en asignar a los usuarios solo los permisos necesarios para realizar sus tareas, evitando el uso de cuentas con privilegios administrativos innecesarios. Por ejemplo, un empleado del departamento de ventas no debería tener acceso a servidores de bases de datos. Si un atacante compromete una cuenta con privilegios limitados, el daño potencial se reduce significativamente. Este principio también se aplica temporalmente: los usuarios pueden elevar sus permisos solo cuando sea necesario y revertirlos después.\n\nLa evaluación de postura (posture assessment) es un proceso que verifica el cumplimiento de políticas de seguridad antes de permitir el acceso a la red. Durante el login, se comprueba si el dispositivo tiene el sistema operativo actualizado, parches instalados, antivirus al día y otras configuraciones de seguridad. Si el equipo no cumple los requisitos, puede ser puesto en cuarentena o en una VLAN aislada hasta que se corrijan las deficiencias. Este proceso ayuda a prevenir la propagación de malware y garantiza que solo dispositivos seguros se conecten a la red.\n\nFinalmente, la desincorporación segura de equipos (secure decommissioning) es crucial para evitar fugas de datos. Antes de desechar un dispositivo, se deben eliminar todos los datos de sus unidades de almacenamiento. En el caso de discos SSD o HDD (Hard Disk Drive), se recomienda destruirlos físicamente si contienen información sensible. Si el disco se reutilizará internamente, se debe formatearlo adecuadamente para eliminar datos residuales.\n\n\nTECNICAS DE HARDENING\n\nEl hardening (endurecimiento) consiste en aplicar configuraciones y medidas de seguridad para reducir la superficie de ataque de un sistema. Se aplica tanto a servidores como a dispositivos de usuario final, y abarca múltiples capas de seguridad.\n\nEn servidores, el hardening comienza con la aplicación de actualizaciones de seguridad. Los sistemas operativos como Windows, Linux o macOS publican parches regularmente para corregir vulnerabilidades. Además, es fundamental gestionar las cuentas de usuario con políticas de contraseñas robustas, como longitud mínima, complejidad (combinación de mayúsculas, minúsculas, números y caracteres especiales) y caducidad periódica. También se recomienda limitar el acceso a los servidores mediante rangos de IP autorizados, evitando que cualquier dispositivo pueda intentar conectarse.\n\nEl cifrado es otra técnica esencial de hardening. Se puede cifrar archivos o carpetas individuales con herramientas como EFS en Windows, o cifrar discos completos con FDE (BitLocker, FileVault). Para comunicaciones en red, se recomienda el uso de VPNs (Virtual Private Networks) para cifrar todo el tráfico. Las aplicaciones también pueden incluir cifrado integrado, como HTTPS en navegadores web.\n\nLos dispositivos de usuario final, como computadoras de escritorio, portátiles, tablets y teléfonos móviles, también requieren hardening. Estos dispositivos están expuestos a ataques directos desde internet y pueden ser usados como punto de partida para comprometer otros sistemas. La seguridad debe adaptarse a cada plataforma y sistema operativo. No existe una solución única, sino que se aplica defensa en profundidad (defense-in-depth), combinando múltiples herramientas y capas de seguridad.\n\nEl EDR (Endpoint Detection and Response) es una tecnología clave para proteger endpoints. A diferencia de los antivirus tradicionales, que se basan en firmas de malware conocidas, el EDR utiliza análisis de comportamiento, aprendizaje automático y monitoreo de procesos para detectar amenazas desconocidas. Puede identificar actividades sospechosas, como procesos recién creados o cambios en el registro de Windows, y tomar medidas automáticas como aislar el sistema o revertir configuraciones. El EDR también puede realizar análisis de causa raíz para determinar el origen de una amenaza y reportar la información a una consola central de gestión.\n\nLos firewalls basados en host (host-based firewalls) son otra herramienta esencial. Estos firewalls software se ejecutan en cada dispositivo y monitorizan todo el tráfico entrante y saliente, incluso después del cifrado. Pueden bloquear procesos desconocidos o sospechosos y notificar al usuario antes de permitir el tráfico. Estos firewalls pueden gestionarse de forma centralizada, lo que facilita su administración en entornos con múltiples dispositivos.\n\nLos sistemas de prevención de intrusiones basados en host (HIPS, Host-based Intrusion Prevention Systems) complementan al EDR y los firewalls. Los HIPS monitorizan el tráfico de red entrante, las configuraciones de aplicaciones y del sistema operativo, y buscan patrones asociados a ataques conocidos o comportamientos anómalos. Por ejemplo, pueden detectar desbordamientos de búfer, cambios en el registro o modificaciones en carpetas críticas del sistema operativo. Al igual que el EDR, los HIPS pueden tomar medidas automáticas para bloquear amenazas.\n\nLa gestión de puertos abiertos es otra técnica crítica de hardening. Cada puerto abierto en un sistema es una posible puerta de entrada para atacantes. Se recomienda cerrar todos los puertos no esenciales y utilizar firewalls de próxima generación (NGFW, Next-Generation Firewall) para un control más granular. Es importante revisar periódicamente los puertos abiertos, ya que algunas aplicaciones pueden abrirlos automáticamente durante la instalación sin el conocimiento del usuario. Herramientas como Nmap permiten escanear puertos y identificar posibles vulnerabilidades.\n\nLa configuración segura de dispositivos es fundamental. Muchos dispositivos, como routers, switches, firewalls y puntos de acceso, vienen con credenciales predeterminadas que son conocidas por los atacantes. Es esencial cambiar estas credenciales por contraseñas robustas y, si es posible, habilitar la autenticación multifactor (MFA, Multi-Factor Authentication) o la autenticación centralizada. Además, se deben eliminar aplicaciones no utilizadas, ya que cada aplicación instalada aumenta la superficie de ataque y requiere mantenimiento de parches.\n\n\nEJEMPLO PRÁCTICO: HARDENING DE UN SERVIDOR WEB\n\nImaginemos un servidor web que aloja una aplicación crítica para una empresa. Para endurecerlo, seguiríamos estos pasos:\n\nPrimero, aplicaríamos todas las actualizaciones de seguridad disponibles para el sistema operativo y el servidor web. Luego, configuraríamos una política de contraseñas robusta para las cuentas de usuario, asegurándonos de que no existan cuentas con privilegios innecesarios. El servidor solo permitiría conexiones desde rangos de IP específicos, como las oficinas de la empresa, bloqueando todo el tráfico externo no autorizado.\n\nHabilitaríamos el cifrado de disco completo con BitLocker y configuraríamos el servidor web para usar HTTPS con certificados válidos. Instalaríamos un EDR para monitorizar actividades sospechosas y un firewall basado en host para bloquear tráfico no autorizado. También cerraríamos todos los puertos no esenciales, dejando solo el puerto 443 (HTTPS) abierto.\n\nFinalmente, eliminaríamos cualquier aplicación no utilizada y revisaríamos los logs del servidor regularmente para detectar actividades anómalas. Con estas medidas, el servidor estaría significativamente más protegido contra ataques comunes."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Mitigación y Hardening] --> B[Segmentación y Control de Acceso]\nA --> C[Mitigación de Incidentes]\nA --> D[Hardening de Sistemas]\n\nB --> B1[Segmentación física]\nB --> B2[Segmentación lógica VLANs]\nB --> B3[Segmentación virtual Cloud/VM]\nB --> B4[Listas de Control de Acceso ACLs]\nB --> B5[Listas de permisos de aplicaciones]\n\nC --> C1[Aplicación de parches patching]\nC --> C2[Cifrado de datos EFS/FDE]\nC --> C3[Monitorización y logs SIEM]\nC --> C4[Principio de menor privilegio]\nC --> C5[Evaluación de postura posture assessment]\nC --> C6[Desincorporación segura de equipos]\n\nD --> D1[Actualizaciones de seguridad]\nD --> D2[Gestión de cuentas y contraseñas]\nD --> D3[Cifrado de datos y comunicaciones]\nD --> D4[Protección de endpoints EDR]\nD --> D5[Firewalls basados en host]\nD --> D6[Sistemas HIPS]\nD --> D7[Gestión de puertos abiertos]\nD --> D8[Configuración segura de dispositivos]\nD --> D9[Eliminación de aplicaciones no usadas]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc11-01",
+      "pregunta": "¿Qué es la segmentación de red y cuáles son sus tres tipos principales?",
+      "respuesta": "La segmentación de red divide una red en partes más pequeñas para mejorar seguridad y rendimiento. Los tres tipos principales son: segmentación física (separación física de dispositivos), segmentación lógica (usando VLANs) y segmentación virtual (en entornos cloud o máquinas virtuales)."
+    },
+    {
+      "id": "fc11-02",
+      "pregunta": "¿Qué son las ACLs y para qué se utilizan en seguridad?",
+      "respuesta": "Las ACLs (Access Control Lists) son listas de control de acceso que definen reglas para permitir o denegar tráfico en redes o sistemas. Se utilizan para restringir el acceso a recursos basándose en criterios como direcciones IP, puertos, horarios o usuarios."
+    },
+    {
+      "id": "fc11-03",
+      "pregunta": "¿Qué diferencia hay entre una allow list y una deny list para aplicaciones?",
+      "respuesta": "Una allow list solo permite ejecutar aplicaciones previamente aprobadas, mientras que una deny list bloquea aplicaciones específicas consideradas maliciosas. La allow list es más restrictiva y la deny list permite todo excepto lo bloqueado."
+    },
+    {
+      "id": "fc11-04",
+      "pregunta": "¿Qué es la mitigación en ciberseguridad y cuál es un ejemplo clave?",
+      "respuesta": "La mitigación consiste en reducir el impacto de un incidente de seguridad. Un ejemplo clave es la aplicación de parches (patching) para corregir vulnerabilidades conocidas antes de que sean explotadas por atacantes."
+    },
+    {
+      "id": "fc11-05",
+      "pregunta": "¿Qué es el principio de menor privilegio (least privilege) y por qué es importante?",
+      "respuesta": "El principio de menor privilegio asigna a los usuarios solo los permisos necesarios para realizar sus tareas, evitando el uso de cuentas con privilegios administrativos innecesarios. Es importante porque limita el daño potencial si una cuenta es comprometida."
+    },
+    {
+      "id": "fc11-06",
+      "pregunta": "¿Qué es la evaluación de postura (posture assessment) y qué se verifica en este proceso?",
+      "respuesta": "La evaluación de postura es un proceso que verifica el cumplimiento de políticas de seguridad antes de permitir el acceso a la red. Se comprueba si el dispositivo tiene el sistema operativo actualizado, parches instalados, antivirus al día y otras configuraciones de seguridad."
+    },
+    {
+      "id": "fc11-07",
+      "pregunta": "¿Qué es el EDR y en qué se diferencia de un antivirus tradicional?",
+      "respuesta": "El EDR (Endpoint Detection and Response) es una tecnología que detecta amenazas usando análisis de comportamiento, aprendizaje automático y monitoreo de procesos, no solo firmas de malware como los antivirus tradicionales. Puede tomar medidas automáticas como aislar sistemas o revertir configuraciones."
+    },
+    {
+      "id": "fc11-08",
+      "pregunta": "¿Qué es un firewall basado en host y qué ventajas ofrece?",
+      "respuesta": "Un firewall basado en host es un firewall software que se ejecuta en cada dispositivo y monitoriza todo el tráfico entrante y saliente, incluso después del cifrado. Ofrece visibilidad completa y puede bloquear procesos desconocidos o sospechosos, gestionándose de forma centralizada."
+    },
+    {
+      "id": "fc11-09",
+      "pregunta": "¿Por qué es importante cerrar puertos no esenciales en un sistema?",
+      "respuesta": "Cada puerto abierto es una posible puerta de entrada para atacantes. Cerrar puertos no esenciales reduce la superficie de ataque y minimiza las oportunidades para explotar vulnerabilidades en servicios innecesarios."
+    },
+    {
+      "id": "fc11-10",
+      "pregunta": "¿Qué es el cifrado de disco completo (FDE) y qué herramientas lo implementan?",
+      "respuesta": "El FDE (Full Disk Encryption) cifra todo el contenido de un disco, incluyendo el sistema operativo y los archivos de usuario. Herramientas como BitLocker en Windows o FileVault en macOS implementan esta técnica para proteger datos en dispositivos que salen de las instalaciones."
+    },
+    {
+      "id": "fc11-11",
+      "pregunta": "¿Qué son las credenciales predeterminadas y por qué representan un riesgo de seguridad?",
+      "respuesta": "Las credenciales predeterminadas son nombres de usuario y contraseñas establecidos por el fabricante que son conocidos por los atacantes. Representan un riesgo porque, si no se cambian, permiten acceso no autorizado a dispositivos como routers, switches o firewalls."
+    },
+    {
+      "id": "fc11-12",
+      "pregunta": "¿Qué es el hardening y qué técnicas incluye?",
+      "respuesta": "El hardening (endurecimiento) consiste en aplicar configuraciones y medidas de seguridad para reducir la superficie de ataque de un sistema. Incluye técnicas como aplicar actualizaciones, gestionar cuentas con políticas de contraseñas robustas, cifrar datos, usar EDR y firewalls basados en host, y cerrar puertos no esenciales."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un enfoque válido para implementar segmentación en redes según el temario?",
+      "opciones": [
+        "Segmentación física mediante redes aisladas para equipos críticos",
+        "Segmentación lógica mediante VLANs que dividen una red física en múltiples redes lógicas",
+        "Segmentación virtual exclusivamente en entornos cloud sin considerar hardware físico",
+        "Segmentación estratégica para aislar servidores de bases de datos de usuarios finales"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La segmentación virtual no excluye el hardware físico, sino que crea redes aisladas dentro de él, como en entornos con máquinas virtuales.",
+      "id": "p11-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de listas de control de acceso (ACLs), ¿qué criterio NO se menciona como posible en el temario para definir reglas de tráfico?",
+      "opciones": [
+        "Direcciones IP de origen o destino",
+        "Números de puerto",
+        "Horarios específicos",
+        "Tipo de archivo transferido"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona direcciones IP, puertos y horarios como criterios para ACLs, pero no el tipo de archivo transferido.",
+      "id": "p11-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear procesos desconocidos o sospechosos?",
+      "opciones": [
+        "Gestión de puertos abiertos",
+        "Uso de EDR (Endpoint Detection and Response)",
+        "Configuración de listas de control de acceso (ACLs)",
+        "Implementación de firmas digitales en aplicaciones"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El EDR monitoriza actividades sospechosas y puede tomar medidas automáticas como bloquear procesos, complementando al firewall basado en host.",
+      "id": "p11-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura una regla en una ACL para permitir solo el tráfico HTTP desde la red interna hacia un servidor web. ¿Qué principio de seguridad está aplicando principalmente?",
+      "opciones": [
+        "Principio de menor privilegio",
+        "Segmentación estratégica",
+        "Mitigación de incidentes",
+        "Desincorporación segura"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El principio de menor privilegio limita el acceso solo a lo necesario, en este caso restringiendo el tráfico HTTP desde la red interna.",
+      "id": "p11-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe correctamente la diferencia entre una allow list y una deny list en el contexto de aplicaciones?",
+      "opciones": [
+        "Una allow list permite ejecutar aplicaciones aprobadas, mientras que una deny list bloquea aplicaciones específicas consideradas maliciosas",
+        "Una allow list bloquea aplicaciones no autorizadas, y una deny list permite solo las aplicaciones en una lista blanca",
+        "Ambas listas funcionan igual, pero una allow list usa hashes criptográficos y una deny list usa firmas digitales",
+        "Una allow list se aplica a usuarios, y una deny list se aplica a dispositivos de red"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define allow list como lista de aplicaciones permitidas y deny list como lista de aplicaciones bloqueadas.",
+      "id": "p11-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de TI implementa un proceso de evaluación de postura (posture assessment) que verifica si los dispositivos tienen parches instalados y antivirus actualizado antes de permitir el acceso a la red. ¿Qué acción se tomaría si un dispositivo no cumple los requisitos?",
+      "opciones": [
+        "Conectar el dispositivo a una VLAN aislada o ponerlo en cuarentena",
+        "Forzar la instalación de los parches y actualizaciones automáticamente",
+        "Permitir el acceso pero registrar una advertencia en los logs",
+        "Bloquear permanentemente el dispositivo en la red"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario indica que dispositivos que no cumplen requisitos pueden ser puestos en cuarentena o en una VLAN aislada hasta su corrección.",
+      "id": "p11-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un servidor web, se decide cerrar todos los puertos excepto el 443 (HTTPS) y aplicar cifrado de disco completo. ¿Qué técnica de hardening se está aplicando principalmente?",
+      "opciones": [
+        "Gestión de puertos abiertos y cifrado",
+        "Segmentación virtual y listas de control de acceso",
+        "Principio de menor privilegio y EDR",
+        "Desincorporación segura y postura de evaluación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Cerrar puertos no esenciales y aplicar cifrado de disco completo son técnicas específicas de hardening mencionadas en el temario.",
+      "id": "p11-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué herramienta o método NO se menciona en el temario como parte de las técnicas de hardening para endpoints?",
+      "opciones": [
+        "Firewalls basados en host",
+        "Sistemas de prevención de intrusiones basados en host (HIPS)",
+        "Soluciones de cifrado de red como IPsec",
+        "EDR (Endpoint Detection and Response)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona firewalls basados en host, HIPS y EDR como técnicas de hardening para endpoints, pero no IPsec.",
+      "id": "p11-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante explota una vulnerabilidad en un servidor que no ha aplicado parches en meses. ¿Qué técnica de mitigación habría evitado o reducido el impacto de este incidente?",
+      "opciones": [
+        "Aplicación de parches (patching) de forma regular",
+        "Segmentación física del servidor",
+        "Uso de listas de permisos (allow lists) en el sistema operativo",
+        "Implementación de un firewall de próxima generación (NGFW)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La aplicación de parches corrige vulnerabilidades conocidas, reduciendo la superficie de ataque y el impacto de incidentes.",
+      "id": "p11-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador configura un servidor web para que solo acepte conexiones desde rangos de IP específicos de las oficinas de la empresa. Además, habilita HTTPS con certificados válidos y elimina aplicaciones no utilizadas. ¿Qué principios de seguridad está aplicando principalmente?",
+      "opciones": [
+        "Principio de menor privilegio, hardening y segmentación estratégica",
+        "Mitigación de incidentes, cifrado y postura de evaluación",
+        "Segmentación lógica, ACLs y desincorporación segura",
+        "EDR, HIPS y gestión de puertos abiertos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Restringir IPs, habilitar HTTPS y eliminar aplicaciones no utilizadas son técnicas de hardening y segmentación estratégica, alineadas con el principio de menor privilegio.",
+      "id": "p11-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR la diferencia entre la segmentación física y la segmentación lógica en redes?",
+      "opciones": [
+        "La segmentación física separa redes mediante hardware dedicado, mientras que la segmentación lógica lo hace mediante configuraciones de software como VLANs.",
+        "La segmentación física es más costosa y compleja de implementar que la segmentación lógica, que solo requiere cambios en switches.",
+        "La segmentación física solo se aplica en entornos cloud, mientras que la segmentación lógica es exclusiva de redes locales.",
+        "La segmentación física y lógica son lo mismo, pero se aplican en diferentes capas del modelo OSI."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, la segmentación física implica separación mediante hardware (ej. redes aisladas), mientras que la lógica usa tecnologías como VLANs para dividir redes lógicamente.",
+      "id": "p11-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall basado en host para bloquear cualquier proceso que intente acceder a Internet sin autorización previa. ¿Qué técnica de hardening está aplicando principalmente?",
+      "opciones": [
+        "Control de aplicaciones mediante allow lists",
+        "Segmentación de red por rangos de IP",
+        "Cifrado de disco completo (FDE)",
+        "Monitorización con SIEM"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear procesos desconocidos o sospechosos, lo que se alinea con el control de aplicaciones mediante allow lists.",
+      "id": "p11-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué principio de seguridad se viola si un usuario tiene permisos de administrador en su estación de trabajo para tareas cotidianas como navegar por internet o usar aplicaciones ofimáticas?",
+      "opciones": [
+        "Principio de menor privilegio (least privilege)",
+        "Defensa en profundidad (defense-in-depth)",
+        "Segmentación de red",
+        "Cifrado de datos en tránsito"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define el principio de menor privilegio como asignar solo los permisos necesarios; usar cuentas administrativas para tareas cotidianas viola este principio.",
+      "id": "p11-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de hardening de endpoints, ¿qué herramienta NO se menciona en el temario como parte de las técnicas de mitigación?",
+      "opciones": [
+        "Sistemas de prevención de intrusiones basados en host (HIPS)",
+        "Firewalls basados en host",
+        "Antivirus tradicionales basados en firmas",
+        "Endpoint Detection and Response (EDR)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona EDR, HIPS y firewalls basados en host como técnicas de hardening, pero no menciona antivirus tradicionales basados en firmas como parte de estas técnicas.",
+      "id": "p11-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante explota una vulnerabilidad en un servidor web que no ha aplicado parches en 6 meses. ¿Qué técnica de mitigación habría reducido significativamente el riesgo de este incidente?",
+      "opciones": [
+        "Aplicación regular de parches (patching)",
+        "Segmentación de red por VLANs",
+        "Cifrado de disco completo (FDE)",
+        "Uso de listas de denegación (deny lists) en el firewall"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca la aplicación de parches como una de las técnicas más efectivas para mitigar vulnerabilidades conocidas antes de que sean explotadas.",
+      "id": "p11-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué criterio NO se menciona en el temario como posible para definir reglas en listas de control de acceso (ACLs)?",
+      "opciones": [
+        "Número de puerto de origen",
+        "Tipo de archivo transferido",
+        "Dirección IP de destino",
+        "Usuario o grupo de usuarios"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario lista criterios como direcciones IP, puertos, horarios y usuarios, pero no menciona el tipo de archivo transferido como posible criterio en ACLs.",
+      "id": "p11-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de TI implementa una política donde solo se permiten ejecutar aplicaciones firmadas digitalmente por el fabricante del sistema operativo. ¿Qué técnica de hardening se está aplicando?",
+      "opciones": [
+        "Control de aplicaciones mediante firma digital",
+        "Segmentación de red por rangos de IP",
+        "Cifrado de datos en reposo",
+        "Monitorización con HIPS"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario describe que las allow lists pueden basarse en firmas digitales para permitir solo aplicaciones autorizadas, como las firmadas por el fabricante.",
+      "id": "p11-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno empresarial, un administrador configura un servidor para que solo acepte conexiones desde la red interna de la empresa y cierre todos los puertos excepto el 80 (HTTP) y 443 (HTTPS). ¿Qué técnica de hardening está aplicando principalmente?",
+      "opciones": [
+        "Gestión de puertos abiertos y restricción por rangos de IP",
+        "Aplicación de parches de seguridad",
+        "Cifrado de disco completo (FDE)",
+        "Uso de listas de denegación (deny lists) en el firewall"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que la gestión de puertos abiertos (cerrar puertos no esenciales) y restringir conexiones por rangos de IP son técnicas clave de hardening en servidores.",
+      "id": "p11-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante intenta acceder a un servidor de bases de datos desde una red externa no autorizada. La ACL del firewall está configurada para permitir solo tráfico desde la red interna (192.168.1.0/24) y bloquear todo lo demás. ¿Qué principio de seguridad está aplicando principalmente esta configuración?",
+      "opciones": [
+        "Segmentación de red y control de acceso basado en reglas",
+        "Principio de menor privilegio en cuentas de usuario",
+        "Cifrado de datos en tránsito",
+        "Defensa en profundidad con múltiples capas de firewall"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario describe que las ACLs permiten definir reglas para permitir o denegar tráfico basado en criterios como rangos de IP, lo que se alinea con la segmentación de red y control de acceso.",
+      "id": "p11-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador configura un endpoint para que solo permita ejecutar aplicaciones almacenadas en una carpeta específica del sistema (ej. C:\\Aplicaciones_Autorizadas\\). ¿Qué técnica de hardening se está aplicando?",
+      "opciones": [
+        "Control de aplicaciones por ubicación del archivo",
+        "Segmentación de red por VLANs",
+        "Cifrado de disco completo (FDE)",
+        "Aplicación de parches de seguridad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que las allow lists pueden basarse en la ubicación del archivo para permitir solo aplicaciones desde directorios autorizados, reduciendo la superficie de ataque.",
+      "id": "p11-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes criterios NO se menciona en el temario como posible para definir reglas en listas de control de acceso (ACLs)?",
+      "opciones": [
+        "a) Direcciones MAC de origen o destino",
+        "b) Números de puerto TCP/UDP",
+        "c) Horarios específicos de acceso",
+        "d) Firmas digitales de aplicaciones"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona como criterios para ACLs direcciones IP, puertos, horarios y usuarios, pero no direcciones MAC.",
+      "id": "p11-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear procesos que intentan acceder a Internet sin autorización, incluso si el tráfico está cifrado?",
+      "opciones": [
+        "a) Uso de listas de control de acceso (ACLs) en el firewall de red",
+        "b) Implementación de listas de bloqueo de aplicaciones (deny lists) basadas en firmas digitales",
+        "c) Configuración de un firewall basado en host con control de procesos y aplicaciones",
+        "d) Aplicación de cifrado de disco completo (FDE) en el endpoint"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear procesos desconocidos o sospechosos, incluso después del cifrado, monitorizando el tráfico entrante y saliente a nivel de proceso.",
+      "id": "p11-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico excepto el tráfico cifrado hacia puertos específicos (ej. 443 HTTPS) y se eliminan aplicaciones no utilizadas en un servidor?",
+      "opciones": [
+        "a) Aplicación de parches de seguridad y cifrado de disco completo",
+        "b) Segmentación de red y listas de control de acceso (ACLs)",
+        "c) Cierre de puertos no esenciales y deshabilitación de servicios innecesarios",
+        "d) Uso de listas de permisos (allow lists) para aplicaciones firmadas digitalmente"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Esta técnica se centra en reducir la superficie de ataque cerrando puertos innecesarios y eliminando servicios no utilizados, lo que limita las posibles vías de entrada para atacantes.",
+      "id": "p11-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de mitigación habría reducido significativamente el riesgo de un ataque que explota una vulnerabilidad en un servidor web sin parches en 6 meses?",
+      "opciones": [
+        "a) Implementar un sistema de cifrado de disco completo (FDE)",
+        "b) Aplicar parches de seguridad (patching)",
+        "c) Configurar un firewall basado en host",
+        "d) Usar listas de denegación (deny lists) para aplicaciones"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario señala que la aplicación de parches es una de las técnicas más efectivas para corregir vulnerabilidades conocidas.",
+      "id": "p11-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de hardening se aplica cuando se configura un sistema operativo para permitir solo la ejecución de aplicaciones firmadas digitalmente por fuentes confiables (ej. Microsoft, Adobe), bloqueando cualquier otra aplicación no autorizada?",
+      "opciones": [
+        "a) Listas de control de acceso (ACLs) basadas en ubicaciones de archivos",
+        "b) Configuración de listas de permisos (allow lists) mediante firmas digitales",
+        "c) Segmentación lógica mediante VLANs",
+        "d) Aplicación de parches de seguridad críticos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las firmas digitales permiten permitir o bloquear aplicaciones en función de su certificado digital, siendo una técnica de hardening basada en allow lists.",
+      "id": "p11-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR la diferencia entre segmentación física y segmentación lógica en redes?",
+      "opciones": [
+        "a) La segmentación física usa hardware dedicado, mientras que la lógica usa software como VLANs",
+        "b) La segmentación física es más costosa pero menos segura que la lógica",
+        "c) La segmentación física requiere redes aisladas, mientras que la lógica divide redes virtualmente",
+        "d) La segmentación física solo se usa en entornos cloud, mientras que la lógica es para redes locales"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario define la segmentación física como separación física de dispositivos y la lógica como división mediante tecnologías como VLANs.",
+      "id": "p11-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico saliente no autorizado, incluso si proviene de procesos aparentemente legítimos pero que intentan comunicarse con servidores externos sospechosos?",
+      "opciones": [
+        "Aplicar una política de allow list basada en la firma digital de aplicaciones autorizadas",
+        "Configurar el firewall para bloquear tráfico saliente a IPs conocidas como maliciosas o en listas negras (deny list)",
+        "Deshabilitar todos los puertos excepto el 80 (HTTP) y 443 (HTTPS) en el firewall basado en host",
+        "Implementar cifrado de disco completo (FDE) para proteger los datos en caso de compromiso"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona el uso de listas de denegación (deny lists) para bloquear tráfico o aplicaciones específicas, como IPs conocidas por ser maliciosas, como parte de las técnicas de hardening en firewalls basados en host.",
+      "id": "p11-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como DNS (puerto 53) o HTTP (puerto 80) sin autorización expresa?",
+      "opciones": [
+        "a) Segmentación lógica mediante VLANs",
+        "b) Aplicación del principio de menor privilegio en permisos de red",
+        "c) Uso de listas de control de acceso (ACLs) en el firewall basado en host",
+        "d) Implementación de cifrado de disco completo (FDE)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los firewalls basados en host monitorizan todo el tráfico entrante y saliente, incluyendo protocolos específicos como DNS o HTTP, y pueden bloquear procesos no autorizados. Las ACLs son reglas que definen qué tráfico se permite o deniega, aplicándose tanto en dispositivos de red como en firewalls basados en host.",
+      "id": "p11-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de seguridad configura un firewall basado en host en un servidor crítico para bloquear todo el tráfico saliente no autorizado, incluso si proviene de procesos legítimos como el servicio de actualizaciones automáticas. ¿Qué técnica de hardening está aplicando principalmente, y qué principio de seguridad fundamental se refuerza con esta configuración?",
+      "opciones": [
+        "a) Aplicar listas de control de acceso (ACLs) en el firewall basado en host para permitir solo tráfico entrante desde rangos de IP autorizados, reforzando el principio de menor privilegio.",
+        "b) Configurar el firewall para bloquear tráfico saliente no autorizado, incluso de procesos legítimos, mediante listas de denegación basadas en firmas digitales de aplicaciones, reforzando el principio de defensa en profundidad.",
+        "c) Implementar un firewall basado en host que bloquee todo el tráfico saliente no explícitamente permitido, incluyendo procesos que intenten comunicarse con servidores externos sospechosos, reforzando el principio de menor superficie de ataque.",
+        "d) Utilizar un firewall basado en host para segmentar la red lógicamente en VLANs, reforzando el principio de segmentación física y lógica."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La configuración descrita aplica un firewall basado en host para bloquear todo el tráfico saliente no autorizado, lo que reduce la superficie de ataque al limitar las posibles vías de comunicación del servidor. Esto refuerza el principio de menor superficie de ataque (attack surface), ya que solo se permite lo esencial, minimizando riesgos.",
+      "id": "p11-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa utiliza firewalls basados en host con capacidades de bloqueo de procesos para proteger sus endpoints. El equipo de seguridad configura una regla que bloquea cualquier proceso que intente comunicarse con servidores externos en los puertos 3389 (RDP) o 5900 (VNC) sin autorización previa. Además, se implementa una política de allow list que solo permite ejecutar aplicaciones firmadas digitalmente por Microsoft y Adobe. Sin embargo, un atacante logra comprometer un endpoint mediante un exploit en una aplicación legítima que no está en la allow list pero que fue firmada por un tercero de confianza. ¿Qué técnica de hardening adicional, mencionada en el temario, habría mitigado este riesgo de manera más efectiva?",
+      "opciones": [
+        "Configurar un firewall basado en host para bloquear todo el tráfico saliente excepto el permitido por una allow list de puertos y direcciones IP específicas.",
+        "Implementar una deny list que bloquee aplicaciones firmadas por terceros no verificados, independientemente de su origen.",
+        "Aplicar cifrado de disco completo (FDE) en todos los endpoints para proteger los datos en caso de compromiso.",
+        "Utilizar un sistema de prevención de intrusiones basado en host (HIPS) para detectar y bloquear comportamientos anómalos en aplicaciones firmadas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden configurarse para restringir el tráfico saliente a puertos y direcciones IP específicas, lo que limita la capacidad de un atacante para exfiltrar datos o establecer comunicación con servidores de comando y control (C2). Esta técnica refuerza el principio de menor privilegio y reduce la superficie de ataque.",
+      "id": "p11-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear procesos que intentan acceder a Internet sin autorización, incluso si el tráfico está cifrado?",
+      "opciones": [
+        "a) Segmentación física",
+        "b) Allow list de aplicaciones",
+        "c) Firewall basado en host con control de procesos",
+        "d) Evaluación de postura (posture assessment)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los firewalls basados en host monitorizan todo el tráfico, incluso cifrado, y pueden bloquear procesos desconocidos o sospechosos. Esta técnica reduce la superficie de ataque.",
+      "id": "p11-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como SMB (puerto 445) o RDP (puerto 3389) sin autorización expresa?",
+      "opciones": [
+        "a) Segmentación física de la red",
+        "b) Aplicación de listas de control de acceso (ACLs) en el firewall basado en host",
+        "c) Cifrado de disco completo (FDE) en el endpoint",
+        "d) Uso de listas de denegación (deny lists) para aplicaciones"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los firewalls basados en host monitorizan todo el tráfico entrante y saliente, incluyendo puertos específicos como SMB (445) o RDP (3389), y pueden bloquear procesos no autorizados. Las ACLs en el firewall basado en host permiten definir reglas para permitir o denegar tráfico según puertos y procesos.",
+      "id": "p11-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un servidor web para que solo acepte conexiones desde rangos de IP específicos de las oficinas de la empresa y habilita HTTPS con certificados válidos. ¿Qué técnicas de hardening está aplicando principalmente?",
+      "opciones": [
+        "a) Segmentación física y cifrado de disco",
+        "b) Segmentación lógica y cifrado de comunicaciones",
+        "c) Allow list de aplicaciones y EDR",
+        "d) Evaluación de postura y parches de emergencia"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La segmentación lógica (restricción por IP) y el cifrado de comunicaciones (HTTPS) son técnicas de hardening mencionadas en el temario para reducir la superficie de ataque.",
+      "id": "p11-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico saliente excepto el tráfico DNS (puerto 53) y HTTPS (puerto 443), evitando así que procesos maliciosos se comuniquen con servidores de control remoto?",
+      "opciones": [
+        "a) Aplicación de la política de menor privilegio en el tráfico de red",
+        "b) Segmentación lógica mediante VLANs",
+        "c) Uso de listas de control de acceso (ACLs) en el firewall basado en host",
+        "d) Implementación de cifrado de disco completo (FDE)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear todo el tráfico saliente no autorizado, incluso si proviene de procesos legítimos, limitando la comunicación a puertos específicos como DNS (53) y HTTPS (443) para reducir la superficie de ataque.",
+      "id": "p11-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué principio de seguridad se aplica cuando un administrador configura un sistema operativo para permitir solo la ejecución de aplicaciones firmadas digitalmente por fuentes confiables como Microsoft o Adobe?",
+      "opciones": [
+        "a) Menor privilegio",
+        "b) Allow list de aplicaciones",
+        "c) Segmentación lógica",
+        "d) Evaluación de postura"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe que las allow lists basadas en firma digital son una técnica de hardening que aplica el principio de menor privilegio al restringir la ejecución de aplicaciones.",
+      "id": "p11-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como SMB (puerto 445) o NFS (puerto 2049) sin autorización expresa?",
+      "opciones": [
+        "a) Filtrado de tráfico por dirección IP",
+        "b) Bloqueo de protocolos específicos por puerto",
+        "c) Segmentación física de la red",
+        "d) Aplicación de parches de seguridad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear tráfico no autorizado, incluyendo protocolos específicos como SMB (puerto 445) o NFS (puerto 2049), como parte de las técnicas de hardening para endpoints.",
+      "id": "p11-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR la diferencia entre segmentación física y segmentación lógica en redes según el temario?",
+      "opciones": [
+        "a) La segmentación física separa dispositivos físicamente, mientras que la lógica lo hace mediante tecnologías como VLANs",
+        "b) La segmentación física usa firewalls, mientras que la lógica usa ACLs",
+        "c) La segmentación física solo se aplica en entornos cloud, mientras que la lógica es para redes locales",
+        "d) La segmentación física bloquea tráfico, mientras que la lógica lo permite"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define que la segmentación física implica separación física de dispositivos, mientras que la lógica usa tecnologías como VLANs para dividir redes lógicamente.",
+      "id": "p11-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de TI implementa una política donde solo se permiten ejecutar aplicaciones firmadas digitalmente por el fabricante del sistema operativo. Sin embargo, un atacante logra comprometer un endpoint mediante un exploit en una aplicación legítima firmada por un tercero de confianza. ¿Qué técnica de hardening adicional, mencionada en el temario, habría mitigado este riesgo de manera más efectiva?",
+      "opciones": [
+        "a) Aplicar parches de emergencia",
+        "b) Usar una allow list basada en hash de aplicaciones",
+        "c) Implementar un firewall basado en host",
+        "d) Cifrar el disco completo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las allow lists basadas en hash de aplicaciones son más estrictas que las basadas en firma digital, ya que detectan cambios en el archivo incluso si la firma sigue siendo válida.",
+      "id": "p11-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un servidor para que solo acepte conexiones desde la red interna de la empresa y cierre todos los puertos excepto el 80 (HTTP) y 443 (HTTPS). ¿Qué técnica de hardening está aplicando principalmente?",
+      "opciones": [
+        "a) Segmentación física y gestión de puertos abiertos",
+        "b) Segmentación lógica y gestión de puertos abiertos",
+        "c) Allow list de aplicaciones y EDR",
+        "d) Evaluación de postura y parches"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La segmentación lógica (restricción por red interna) y la gestión de puertos abiertos (cerrar puertos no esenciales) son técnicas de hardening mencionadas en el temario.",
+      "id": "p11-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un administrador de seguridad configura un firewall basado en host en un entorno empresarial para proteger endpoints críticos. La política implementada incluye reglas que bloquean todo el tráfico saliente no autorizado, incluso si proviene de procesos legítimos como actualizaciones automáticas o servicios del sistema. Además, se aplica una allow list que solo permite ejecutar aplicaciones firmadas digitalmente por Microsoft y Adobe. Sin embargo, tras un análisis forense, se detecta que un atacante logró exfiltrar datos mediante un exploit en una aplicación legítima firmada por un proveedor externo de confianza pero no incluido en la allow list. ¿Qué técnica de hardening adicional, mencionada en el temario, habría mitigado este riesgo de manera más efectiva y por qué?",
+      "opciones": [
+        "a) Implementar una allow list basada en hash criptográfico de las aplicaciones autorizadas, ya que los hashes son únicos y cualquier cambio en el archivo invalida la regla, reduciendo el riesgo de ejecución de aplicaciones modificadas o maliciosas.",
+        "b) Configurar un firewall basado en host para bloquear todo el tráfico saliente excepto el tráfico a puertos específicos como 53 (DNS) y 443 (HTTPS), evitando así cualquier comunicación no autorizada con servidores externos.",
+        "c) Aplicar el principio de menor privilegio a los servicios del sistema, limitando sus permisos de red y restringiendo su capacidad para comunicarse con servidores externos sin autorización expresa.",
+        "d) Utilizar listas de denegación (deny lists) para bloquear aplicaciones firmadas por proveedores externos no autorizados, complementando la allow list existente con un enfoque de denegación por defecto."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La allow list basada en hash criptográfico (opción a) es más efectiva porque los hashes son únicos para cada versión de un archivo, lo que impide que aplicaciones modificadas o maliciosas, incluso si están firmadas por un proveedor externo, puedan ejecutarse. Esto reduce significativamente el riesgo de ejecución de aplicaciones no autorizadas o comprometidas.",
+      "id": "p11-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como FTP (puerto 21) sin autorización expresa?",
+      "opciones": [
+        "a) Segmentación física en la red",
+        "b) Denegación de tráfico basado en puertos específicos no autorizados",
+        "c) Aplicación de parches de seguridad en el sistema operativo",
+        "d) Uso de listas de denegación (deny lists) para aplicaciones"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El firewall basado en host bloquea tráfico no autorizado en puertos específicos como el 21 (FTP), siguiendo el principio de permitir solo lo esencial. Esta técnica forma parte de la gestión de puertos abiertos y el control de tráfico en el hardening de endpoints.",
+      "id": "p11-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall basado en host para bloquear todo el tráfico saliente excepto el tráfico DNS (puerto 53) y HTTPS (puerto 443). ¿Qué técnica de hardening está aplicando principalmente?",
+      "opciones": [
+        "Segmentación física",
+        "Cifrado de disco completo",
+        "Gestión de puertos abiertos",
+        "Principio de menor privilegio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Esta configuración reduce la superficie de ataque al limitar los puertos abiertos a los estrictamente necesarios, lo que se alinea con la técnica de gestión de puertos abiertos en hardening.",
+      "id": "p11-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como ICMP (ping) sin autorización expresa?",
+      "opciones": [
+        "a) Configurar una allow list basada en firmas digitales de aplicaciones permitidas",
+        "b) Cerrar todos los puertos excepto aquellos necesarios para el funcionamiento del sistema operativo",
+        "c) Bloquear tráfico ICMP (ping) en el firewall basado en host para evitar escaneos de red y técnicas de reconocimiento",
+        "d) Implementar cifrado de disco completo (FDE) para proteger los datos en caso de compromiso"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear procesos que intentan acceder a Internet sin autorización, incluyendo protocolos como ICMP (usado en ping), como parte de las técnicas de hardening para reducir la superficie de ataque.",
+      "id": "p11-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto del hardening de endpoints, ¿qué herramienta NO se menciona en el temario como parte de las técnicas de mitigación?",
+      "opciones": [
+        "EDR (Endpoint Detection and Response)",
+        "HIPS (Host-based Intrusion Prevention Systems)",
+        "SIEM (Security Information and Event Management)",
+        "Firewall basado en host"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona EDR, firewalls basados en host y SIEM como herramientas de hardening, pero no incluye HIPS como técnica de mitigación en este contexto.",
+      "id": "p11-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como Telnet (puerto 23) sin autorización expresa?",
+      "opciones": [
+        "a) Bloquear todo el tráfico saliente excepto el tráfico DNS (puerto 53) y HTTPS (puerto 443).",
+        "b) Permitir solo el tráfico saliente hacia puertos específicos como 80 (HTTP) y 443 (HTTPS) mientras se bloquean otros protocolos no esenciales.",
+        "c) Configurar el firewall para bloquear procesos que intenten acceder a Internet mediante protocolos como Telnet (puerto 23) sin autorización, incluso si el tráfico está cifrado.",
+        "d) Aplicar una allow list que solo permita ejecutar aplicaciones firmadas digitalmente por fuentes confiables como Microsoft o Adobe."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona explícitamente que los firewalls basados en host pueden bloquear procesos que intentan acceder a Internet mediante protocolos específicos como Telnet (puerto 23) sin autorización, incluso si el tráfico está cifrado.",
+      "id": "p11-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como SMTP (puerto 25) sin autorización expresa?",
+      "opciones": [
+        "a) Aplicar una deny list de aplicaciones en el sistema operativo",
+        "b) Configurar reglas en el firewall basado en host para bloquear tráfico SMTP saliente no autorizado",
+        "c) Implementar una allow list que solo permita aplicaciones firmadas digitalmente por el fabricante del sistema operativo",
+        "d) Utilizar cifrado de disco completo (FDE) para proteger los datos del endpoint"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona explícitamente que los firewalls basados en host pueden configurarse para bloquear procesos o tráfico no autorizado, incluyendo protocolos específicos como SMTP (puerto 25), incluso si provienen de procesos legítimos.",
+      "id": "p11-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante el protocolo ICMP (ping) sin autorización expresa?",
+      "opciones": [
+        "a) Bloquear el tráfico ICMP en el firewall basado en host para prevenir escaneos de red y ataques de reconocimiento.",
+        "b) Permitir todo el tráfico ICMP para garantizar la conectividad básica de la red.",
+        "c) Configurar el firewall para bloquear solo el tráfico ICMP de entrada, pero permitir el de salida.",
+        "d) Deshabilitar completamente el protocolo ICMP en el sistema operativo del endpoint."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona el bloqueo de protocolos específicos como técnica de hardening, y ICMP se utiliza comúnmente en ataques de reconocimiento. Bloquear este tráfico reduce la superficie de ataque.",
+      "id": "p11-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico entrante y saliente excepto el tráfico hacia puertos específicos como 53 (DNS) y 443 (HTTPS)?",
+      "opciones": [
+        "a) Segmentación lógica mediante VLANs",
+        "b) Aplicación del principio de menor privilegio",
+        "c) Gestión de puertos abiertos y restricción de tráfico",
+        "d) Evaluación de postura (posture assessment)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Esta configuración reduce la superficie de ataque al permitir solo puertos esenciales, cerrando los no necesarios. Se menciona explícitamente en el temario como técnica de hardening para servidores y endpoints.",
+      "id": "p11-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de seguridad configura un firewall basado en host en un servidor crítico para la empresa. La política implementada incluye reglas que bloquean todo el tráfico saliente no autorizado, incluso el procedente de procesos legítimos como actualizaciones automáticas. Además, se aplica una allow list que solo permite ejecutar aplicaciones firmadas digitalmente por Microsoft, Google y Adobe. Sin embargo, tras un incidente, se detecta que un atacante logró comprometer el servidor mediante un exploit en una aplicación legítima firmada por un proveedor externo de confianza pero no incluido en la allow list. ¿Qué técnica de hardening adicional, mencionada en el temario, habría mitigado este riesgo de manera más efectiva y por qué?",
+      "opciones": [
+        "a) Implementar una deny list para bloquear aplicaciones firmadas por proveedores no autorizados, complementando la allow list.",
+        "b) Configurar el firewall para bloquear todo el tráfico entrante y saliente excepto hacia puertos específicos como 53 (DNS) y 443 (HTTPS).",
+        "c) Aplicar un sistema de prevención de intrusiones basado en host (HIPS) que monitoree cambios en el registro y deshaga configuraciones maliciosas automáticamente.",
+        "d) Utilizar un sistema de archivos cifrado (EFS) para proteger los datos del servidor y evitar acceso no autorizado a archivos críticos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La técnica más efectiva sería implementar una deny list para bloquear aplicaciones firmadas por proveedores no autorizados, ya que complementa la allow list al evitar que aplicaciones legítimas pero no confiables (aunque firmadas) ejecuten código potencialmente malicioso, como se menciona en el temario sobre allow lists y deny lists.",
+      "id": "p11-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de TI implementa una política de evaluación de postura (posture assessment) que verifica si los dispositivos tienen parches instalados y antivirus actualizado antes de permitir el acceso a la red. ¿Qué acción se tomaría si un dispositivo no cumple los requisitos?",
+      "opciones": [
+        "Permitir el acceso pero registrar el evento en logs",
+        "Poner el dispositivo en cuarentena o en una VLAN aislada",
+        "Aplicar parches automáticamente sin notificar al usuario",
+        "Bloquear el acceso a Internet pero permitir el acceso a la red local"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que los dispositivos que no cumplen los requisitos pueden ser puestos en cuarentena o en una VLAN aislada hasta corregir las deficiencias.",
+      "id": "p11-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como SMB (puerto 445) o NFS (puerto 2049) sin autorización expresa?",
+      "opciones": [
+        "Aplicación de la política de menor privilegio en cuentas de usuario",
+        "Configuración de una allow list de aplicaciones firmadas digitalmente",
+        "Bloqueo de tráfico no autorizado en puertos específicos mediante firewall basado en host",
+        "Implementación de cifrado de disco completo (FDE)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los firewalls basados en host monitorizan y bloquean tráfico no autorizado, incluso en puertos específicos como 445 (SMB) o 2049 (NFS), como parte del hardening de endpoints.",
+      "id": "p11-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de segmentación, ¿cuál de las siguientes afirmaciones describe MEJOR la diferencia entre segmentación física y segmentación lógica?",
+      "opciones": [
+        "La segmentación física requiere hardware dedicado, mientras que la lógica se basa en configuraciones de software como VLANs",
+        "La segmentación física es más costosa pero más segura, mientras que la lógica es más flexible pero menos segura",
+        "La segmentación física solo se usa en entornos cloud, mientras que la lógica es exclusiva de redes locales",
+        "La segmentación física y lógica son técnicas idénticas, pero con nombres distintos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define la segmentación física como el uso de hardware dedicado (ej. redes aisladas) y la lógica como configuraciones de software como VLANs para dividir redes.",
+      "id": "p11-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como LDAP (puerto 389) sin autorización expresa?",
+      "opciones": [
+        "a) Bloquear tráfico saliente en puertos no esenciales como 389 para evitar fugas de información de autenticación.",
+        "b) Permitir tráfico LDAP solo desde redes internas autorizadas mediante ACLs en el firewall basado en host.",
+        "c) Aplicar cifrado de disco completo (FDE) en el endpoint para proteger credenciales almacenadas localmente.",
+        "d) Configurar una allow list para aplicaciones que utilicen protocolos como LDAP, permitiendo solo las firmadas por fuentes confiables."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear procesos que intentan acceder a Internet sin autorización, incluyendo protocolos específicos como LDAP (puerto 389), para evitar fugas de información sensible como credenciales de autenticación.",
+      "id": "p11-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante explota una vulnerabilidad crítica en un servidor web que no ha aplicado parches en 6 meses. ¿Qué técnica de mitigación habría reducido significativamente el riesgo de este incidente?",
+      "opciones": [
+        "Implementación de cifrado de disco completo (FDE)",
+        "Aplicación de parches de seguridad (patching)",
+        "Configuración de un firewall basado en host",
+        "Segmentación de la red con VLANs"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca la aplicación de parches (patching) como técnica clave de mitigación para corregir vulnerabilidades conocidas antes de que sean explotadas.",
+      "id": "p11-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un criterio válido para definir reglas en una lista de control de acceso (ACL) según el temario?",
+      "opciones": [
+        "Dirección IP de origen o destino",
+        "Número de puerto",
+        "Firma digital de la aplicación",
+        "Usuario o grupo de usuarios"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario enumera criterios como direcciones IP, puertos y usuarios para ACLs, pero no menciona firmas digitales como criterio en este contexto.",
+      "id": "p11-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como SNMP (puerto 161) sin autorización expresa?",
+      "opciones": [
+        "a) Aplicar parches de seguridad para corregir vulnerabilidades conocidas en el sistema operativo.",
+        "b) Configurar una allow list que solo permita ejecutar aplicaciones firmadas digitalmente por fuentes confiables.",
+        "c) Bloquear el tráfico saliente en puertos específicos como 161 (SNMP) mediante reglas en el firewall basado en host.",
+        "d) Implementar cifrado de disco completo (FDE) para proteger los datos almacenados en el dispositivo."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear tráfico saliente no autorizado, incluyendo protocolos específicos como SNMP (puerto 161), como parte de las técnicas de hardening para reducir la superficie de ataque.",
+      "id": "p11-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante el protocolo LDAP (puerto 389) sin autorización expresa?",
+      "opciones": [
+        "a) Segmentación lógica mediante VLANs para aislar el tráfico LDAP.",
+        "b) Aplicación del principio de menor privilegio restringiendo el acceso a puertos específicos.",
+        "c) Blocking de procesos no autorizados en puertos como 389 (LDAP) mediante reglas en el firewall basado en host.",
+        "d) Implementación de listas de denegación (deny lists) para bloquear aplicaciones que utilicen LDAP."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear procesos que intentan acceder a Internet sin autorización, incluyendo protocolos específicos como LDAP (puerto 389), como parte de las técnicas de hardening para reducir la superficie de ataque.",
+      "id": "p11-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico saliente excepto el tráfico hacia puertos específicos como 22 (SSH) y 443 (HTTPS)?",
+      "opciones": [
+        "a) Bloqueo de puertos no autorizados para reducir la superficie de ataque",
+        "b) Segmentación física para aislar el servidor de la red interna",
+        "c) Evaluación de postura (posture assessment) para verificar parches en el dispositivo",
+        "d) Desincorporación segura de equipos para evitar fugas de datos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Esta configuración reduce la superficie de ataque al permitir solo puertos esenciales (SSH y HTTPS), bloqueando todo el tráfico no autorizado, lo cual es una técnica de hardening mediante gestión de puertos abiertos.",
+      "id": "p11-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa firewalls basados en host en sus endpoints con la siguiente configuración: bloquea todo el tráfico saliente excepto hacia puertos específicos como 53 (DNS) y 443 (HTTPS). Sin embargo, un atacante logra comprometer un endpoint mediante un exploit en una aplicación legítima firmada por un proveedor externo de confianza, que intenta comunicarse con un servidor de comando y control (C2) en el puerto 443 (HTTPS). ¿Qué técnica de hardening adicional, mencionada en el temario, habría mitigado este riesgo de manera más efectiva y por qué?",
+      "opciones": [
+        "a) Configurar una allow list que solo permita ejecutar aplicaciones firmadas digitalmente por fuentes confiables como Microsoft, Google y Adobe, ya que el temario menciona que los firewalls basados en host pueden bloquear procesos no autorizados incluso si el tráfico está cifrado.",
+        "b) Implementar un sistema de prevención de intrusiones basado en host (HIPS) para detectar y bloquear comportamientos anómalos en el tráfico cifrado hacia puertos como el 443, ya que los HIPS monitorizan patrones asociados a ataques conocidos.",
+        "c) Aplicar cifrado de disco completo (FDE) en todos los endpoints para evitar que el atacante acceda a datos sensibles, ya que el temario destaca el cifrado como técnica esencial de hardening.",
+        "d) Configurar un firewall basado en host para bloquear todo el tráfico saliente excepto hacia puertos específicos como 80 (HTTP) y 443 (HTTPS), ya que el temario menciona que los firewalls basados en host son herramientas esenciales para proteger endpoints."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La técnica de configurar una allow list que solo permita ejecutar aplicaciones firmadas digitalmente por fuentes confiables (como Microsoft o Adobe) habría mitigado el riesgo, ya que el temario menciona explícitamente que los firewalls basados en host pueden bloquear procesos desconocidos o sospechosos, incluso si el tráfico está cifrado, y las allow lists son una herramienta clave para restringir la ejecución de aplicaciones no autorizadas.",
+      "id": "p11-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa firewalls basados en host en sus endpoints con una política de allow list que solo permite ejecutar aplicaciones firmadas digitalmente por Microsoft y Adobe. Sin embargo, un atacante logra comprometer un endpoint mediante un exploit en una aplicación legítima firmada por un proveedor externo de confianza (ej. un software de gestión de proyectos), que intenta comunicarse con un servidor de comando y control (C2) en el puerto 443 (HTTPS). ¿Qué técnica de hardening adicional, NO mencionada en la política actual pero incluida en el temario, habría mitigado este riesgo de manera más efectiva y por qué?",
+      "opciones": [
+        "a) Implementar un firewall basado en host con reglas de bloqueo de procesos que intenten acceder a Internet mediante protocolos no autorizados, incluso si están cifrados.",
+        "b) Configurar una deny list para bloquear todas las aplicaciones firmadas por proveedores externos de confianza.",
+        "c) Aplicar una política de segmentación física para aislar los endpoints críticos en una red independiente.",
+        "d) Utilizar un sistema de prevención de intrusiones basado en host (HIPS) para monitorizar y bloquear cambios en el registro de Windows asociados a exploits."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La opción a) es correcta porque los firewalls basados en host pueden bloquear procesos específicos que intenten acceder a Internet mediante protocolos no autorizados, incluso si el tráfico está cifrado (ej. HTTPS), lo que habría impedido la comunicación con el servidor C2. El temario menciona esta técnica como parte del hardening de endpoints.",
+      "id": "p11-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante el protocolo SSH (puerto 22) sin autorización expresa?",
+      "opciones": [
+        "a) Bloquear todo el tráfico saliente excepto el tráfico hacia puertos específicos como DNS (53) y HTTPS (443)",
+        "b) Configurar una allow list que solo permita ejecutar aplicaciones firmadas digitalmente por fuentes confiables como Microsoft o Adobe",
+        "c) Cerrar el puerto 22 en el firewall basado en host para evitar cualquier comunicación saliente por SSH",
+        "d) Habilitar el cifrado de disco completo en el sistema operativo para proteger los datos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear procesos que intentan acceder a Internet sin autorización, incluso mediante protocolos específicos como SSH (puerto 22). Cerrar el puerto 22 directamente es una técnica de hardening que evita la comunicación no autorizada por ese protocolo.",
+      "id": "p11-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones NO es un criterio válido para definir reglas en una lista de control de acceso (ACL) según el temario?",
+      "opciones": [
+        "a) Direcciones IP de origen o destino",
+        "b) Números de puerto",
+        "c) Horarios específicos",
+        "d) Tipo de archivo ejecutable"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario especifica que las ACLs permiten definir reglas basadas en direcciones IP, puertos y horarios, pero no menciona el tipo de archivo ejecutable como criterio.",
+      "id": "p11-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica al configurar un sistema operativo para deshabilitar servicios no utilizados y protocolos innecesarios, como NetBIOS o Telnet, en un servidor crítico?",
+      "opciones": [
+        "a) Aplicar parches de seguridad de forma automática",
+        "b) Eliminar aplicaciones y servicios no esenciales para reducir la superficie de ataque",
+        "c) Configurar firewalls basados en host para bloquear tráfico saliente no autorizado",
+        "d) Implementar cifrado de disco completo (FDE) en el sistema"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que eliminar aplicaciones y servicios no esenciales reduce la superficie de ataque, ya que cada servicio instalado puede ser una posible puerta de entrada para atacantes.",
+      "id": "p11-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear el tráfico de red saliente que no esté explícitamente autorizado, incluso si proviene de procesos legítimos como actualizaciones del sistema o servicios internos?",
+      "opciones": [
+        "a) Aplicación de least privilege en cuentas de usuario",
+        "b) Implementación de una política de allow list para aplicaciones",
+        "c) Configuración de un firewall basado en host con reglas de bloqueo predeterminado (deny by default)",
+        "d) Habilitación de cifrado de disco completo (FDE) en el endpoint"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La técnica de hardening mencionada implica configurar un firewall basado en host para bloquear todo el tráfico no autorizado por defecto (deny by default), lo que reduce la superficie de ataque al no confiar en procesos internos sin verificación explícita.",
+      "id": "p11-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno empresarial, un administrador configura un firewall basado en host en un servidor crítico para bloquear todo el tráfico saliente no autorizado, incluso el procedente de procesos legítimos como actualizaciones automáticas. ¿Qué técnica de hardening está aplicando principalmente?",
+      "opciones": [
+        "a) Segmentación física",
+        "b) Firewall basado en host con control granular",
+        "c) Evaluación de postura (posture assessment)",
+        "d) Cifrado de disco completo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe que los firewalls basados en host pueden bloquear tráfico saliente no autorizado, incluso de procesos legítimos, como técnica de hardening para reducir la superficie de ataque.",
+      "id": "p11-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico entrante excepto el tráfico hacia puertos específicos como 22 (SSH) y 443 (HTTPS), y se deshabilitan servicios no utilizados como Telnet o FTP?",
+      "opciones": [
+        "a) Segmentación lógica mediante VLANs y aplicación de parches críticos.",
+        "b) Hardening mediante configuración de firewall basado en host y eliminación de servicios innecesarios.",
+        "c) Mitigación de incidentes mediante evaluación de postura (posture assessment) y uso de EDR.",
+        "d) Aplicación del principio de menor privilegio (least privilege) en cuentas de usuario."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El enunciado describe técnicas de hardening, como configurar un firewall basado en host para restringir tráfico a puertos específicos y deshabilitar servicios innecesarios, lo que reduce la superficie de ataque del sistema.",
+      "id": "p11-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica al configurar un sistema operativo para deshabilitar servicios en desuso como NetBIOS o Telnet en un servidor crítico?",
+      "opciones": [
+        "a) Cifrado de disco completo (FDE)",
+        "b) Gestión de puertos abiertos y cierre de servicios innecesarios",
+        "c) Implementación de listas de control de acceso (ACLs) en el firewall",
+        "d) Uso de allow lists para aplicaciones"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que la gestión de puertos abiertos y el cierre de servicios innecesarios es una técnica clave de hardening, ya que cada puerto o servicio abierto aumenta la superficie de ataque.",
+      "id": "p11-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia clave existe entre la segmentación física y la segmentación lógica según el temario?",
+      "opciones": [
+        "a) La segmentación física requiere hardware dedicado, mientras que la lógica se implementa mediante software como VLANs",
+        "b) La segmentación física es más costosa pero menos segura que la lógica",
+        "c) La segmentación lógica solo se aplica en entornos cloud",
+        "d) La segmentación física no permite aislar tráfico entre departamentos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define que la segmentación física implica separar dispositivos físicamente, mientras que la lógica se logra mediante tecnologías como VLANs que dividen redes lógicamente.",
+      "id": "p11-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa ha implementado firewalls basados en host en sus endpoints con una política de allow list que solo permite ejecutar aplicaciones firmadas digitalmente por Microsoft y Adobe. Durante una auditoría, se detecta que un atacante logró comprometer un endpoint mediante un exploit en una aplicación legítima firmada por un proveedor externo de confianza (ej. un software de gestión de proyectos), que intenta comunicarse con un servidor de comando y control (C2) en el puerto 443 (HTTPS). Según el temario de CompTIA Security+, ¿qué técnica de hardening adicional, NO mencionada en la política actual pero incluida en el temario, habría mitigado este riesgo de manera más efectiva y por qué?",
+      "opciones": [
+        "a) Configurar el firewall basado en host para bloquear todo el tráfico saliente excepto hacia puertos específicos como 53 (DNS) y 443 (HTTPS), combinado con la aplicación de una allow list que incluya solo aplicaciones firmadas por proveedores de confianza preaprobados (ej. Microsoft, Adobe y proveedores críticos para la empresa).",
+        "b) Implementar un sistema de detección y respuesta de endpoints (EDR) que monitorice el comportamiento de las aplicaciones en tiempo real y bloquee procesos que realicen conexiones sospechosas, incluso si están firmadas digitalmente.",
+        "c) Aplicar una política de segmentación de red que aisle los endpoints críticos en una VLAN separada y restrinja el tráfico saliente a la red interna de la empresa.",
+        "d) Utilizar un firewall de próxima generación (NGFW) en la red perimetral para bloquear el tráfico de salida hacia servidores de C2 conocidos, independientemente del puerto o protocolo utilizado."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La técnica de EDR (Endpoint Detection and Response) complementa la allow list al analizar el comportamiento de las aplicaciones en tiempo real, detectando actividades sospechosas como intentos de comunicación con servidores de C2, incluso si la aplicación está firmada digitalmente. El temario destaca que el EDR identifica amenazas desconocidas mediante análisis de comportamiento y monitoreo de procesos, mitigando riesgos que una allow list por sí sola no puede evitar.",
+      "id": "p11-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa firewalls basados en host en sus endpoints con una política que bloquea todo el tráfico saliente excepto hacia puertos específicos como 53 (DNS) y 443 (HTTPS). Sin embargo, un atacante logra comprometer un endpoint mediante un exploit en una aplicación legítima firmada por un proveedor externo de confianza, que intenta comunicarse con un servidor de comando y control (C2) en el puerto 443 (HTTPS). ¿Qué técnica de hardening adicional, mencionada en el temario, habría mitigado este riesgo de manera más efectiva y por qué?",
+      "opciones": [
+        "a) Segmentación física",
+        "b) Allow list de aplicaciones basada en firmas digitales y hash de archivos",
+        "c) Cifrado de disco completo",
+        "d) Evaluación de postura (posture assessment)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe que las allow lists basadas en firmas digitales y hash de archivos son técnicas de hardening que limitan la ejecución de aplicaciones a fuentes confiables, mitigando riesgos de exploits en aplicaciones no autorizadas.",
+      "id": "p11-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico saliente excepto hacia puertos específicos como 53 (DNS) y 443 (HTTPS)?",
+      "opciones": [
+        "a) Segmentación física",
+        "b) Segmentación lógica mediante VLANs",
+        "c) Gestión de puertos abiertos y control de tráfico",
+        "d) Aplicación de parches de seguridad"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Esta técnica reduce la superficie de ataque al limitar los puertos abiertos y el tráfico permitido, como se menciona en el apartado de 'Gestión de puertos abiertos' dentro de las técnicas de hardening.",
+      "id": "p11-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear todo el tráfico entrante excepto el tráfico hacia puertos específicos como 22 (SSH) y 443 (HTTPS), y deshabilitar servicios no utilizados como Telnet o FTP?",
+      "opciones": [
+        "a) Segmentación física de la red",
+        "b) Implementación de una allow list de aplicaciones",
+        "c) Cierre de puertos no esenciales y deshabilitación de servicios innecesarios",
+        "d) Uso de un sistema de detección de intrusos (IDS)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Esta técnica corresponde al hardening de servidores y endpoints, donde se minimiza la superficie de ataque cerrando puertos innecesarios y deshabilitando servicios no utilizados, como Telnet o FTP, que son conocidos por ser vectores de ataque.",
+      "id": "p11-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico entrante y saliente excepto el tráfico hacia puertos específicos como 22 (SSH) y 443 (HTTPS), y se deshabilitan servicios no utilizados como Telnet o FTP?",
+      "opciones": [
+        "a) Segmentación lógica mediante VLANs",
+        "b) Aplicación de parches de seguridad (patching)",
+        "c) Configuración de un firewall basado en host con reglas estrictas y deshabilitación de servicios innecesarios",
+        "d) Implementación de un sistema de prevención de intrusiones basado en host (HIPS)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La técnica descrita combina el uso de un firewall basado en host con reglas estrictas que limitan el tráfico a puertos específicos (SSH y HTTPS) y la deshabilitación de servicios innecesarios como Telnet o FTP, lo que reduce la superficie de ataque del sistema.",
+      "id": "p11-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante el protocolo ICMP (ping) sin autorización expresa?",
+      "opciones": [
+        "a) Aplicación de la técnica de allow list para bloquear procesos no autorizados.",
+        "b) Configuración de un firewall basado en host para restringir el tráfico ICMP no autorizado.",
+        "c) Implementación de segmentación física para aislar el tráfico ICMP.",
+        "d) Uso de listas de control de acceso (ACLs) en el firewall de red para bloquear el protocolo ICMP."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear procesos que intentan acceder a Internet sin autorización, incluyendo protocolos específicos como ICMP (ping). Esta técnica refuerza la seguridad al limitar el tráfico no autorizado a nivel de endpoint.",
+      "id": "p11-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico entrante y saliente excepto el tráfico hacia puertos específicos como 25 (SMTP) y 465 (SMTPS), y se deshabilitan servicios no utilizados como FTP o Telnet?",
+      "opciones": [
+        "a) Segmentación física de la red",
+        "b) Hardening mediante firewall basado en host con reglas estrictas de puertos y servicios",
+        "c) Aplicación de parches de seguridad en el sistema operativo",
+        "d) Uso de cifrado de disco completo (FDE)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los firewalls basados en host permiten bloquear todo el tráfico no autorizado y deshabilitar servicios innecesarios como parte del hardening. Esta configuración reduce la superficie de ataque al limitar las conexiones permitidas.",
+      "id": "p11-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante el protocolo SNMP (puerto 161) sin autorización expresa?",
+      "opciones": [
+        "a) Aplicar el principio de menor privilegio en la configuración del firewall.",
+        "b) Configurar el firewall para bloquear todo el tráfico saliente excepto hacia puertos específicos como DNS (53) y HTTPS (443).",
+        "c) Deshabilitar el servicio SNMP si no es esencial para el funcionamiento del sistema.",
+        "d) Implementar una allow list que solo permita ejecutar aplicaciones firmadas digitalmente por fuentes confiables."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que deshabilitar servicios no utilizados, como SNMP en este caso, es una técnica de hardening que reduce la superficie de ataque al eliminar posibles puntos de entrada innecesarios.",
+      "id": "p11-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico entrante y saliente excepto el tráfico hacia puertos específicos como 80 (HTTP) y 443 (HTTPS), y se eliminan aplicaciones no utilizadas en un servidor?",
+      "opciones": [
+        "a) Segmentación física",
+        "b) Aplicación de parches de seguridad",
+        "c) Cierre de puertos no esenciales y allow list de aplicaciones",
+        "d) Uso de listas de denegación (deny lists) para bloquear tráfico por IP"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Esta configuración aplica hardening mediante el cierre de puertos no esenciales (reduciendo la superficie de ataque) y la eliminación de aplicaciones no utilizadas (eliminando vectores potenciales de vulnerabilidades).",
+      "id": "p11-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema operativo para deshabilitar servicios en desuso como NetBIOS o Telnet en un servidor crítico. ¿Qué técnica de hardening está aplicando?",
+      "opciones": [
+        "a) Segmentación física",
+        "b) Configuración segura de dispositivos",
+        "c) Aplicación de parches",
+        "d) Cifrado de disco"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Deshabilitar servicios innecesarios es parte de la 'Configuración segura de dispositivos', una técnica de hardening que reduce la superficie de ataque.",
+      "id": "p11-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa firewalls basados en host en sus endpoints con una política de allow list que solo permite ejecutar aplicaciones firmadas digitalmente por Microsoft y Adobe. Sin embargo, un atacante logra comprometer un endpoint mediante un exploit en una aplicación legítima firmada por un proveedor externo de confianza. ¿Qué técnica de hardening adicional, mencionada en el temario, habría mitigado este riesgo de manera más efectiva?",
+      "opciones": [
+        "a) Aplicar parches de seguridad al sistema operativo",
+        "b) Implementar una política de deny list para aplicaciones no autorizadas",
+        "c) Configurar un firewall basado en host para bloquear todo el tráfico saliente no autorizado",
+        "d) Utilizar EDR (Endpoint Detection and Response) para detectar comportamientos anómalos"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Un firewall basado en host que bloquee todo el tráfico saliente no autorizado, incluso de procesos legítimos, habría limitado la capacidad del atacante para exfiltrar datos o comunicarse con servidores externos (técnica mencionada en 'Firewalls basados en host').",
+      "id": "p11-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa ha implementado firewalls basados en host con una política de allow list que solo permite ejecutar aplicaciones firmadas digitalmente por Microsoft y Adobe. Durante una auditoría de seguridad, se detecta que un atacante logró comprometer un endpoint mediante un exploit en una aplicación legítima firmada por un proveedor externo de confianza (ej. un software de gestión de proyectos), que intenta comunicarse con un servidor de comando y control (C2) en el puerto 443 (HTTPS). Según el temario de CompTIA Security+, ¿qué técnica de hardening adicional, NO mencionada en la política actual pero incluida en el temario, habría mitigado este riesgo de manera más efectiva?",
+      "opciones": [
+        "Implementar un sistema de prevención de intrusiones basado en host (HIPS) que bloquee tráfico sospechoso hacia puertos como 443, incluso si proviene de aplicaciones legítimas pero no autorizadas en la allow list.",
+        "Configurar una segmentación física aislada para el endpoint comprometido, evitando la propagación del ataque a otros sistemas de la red.",
+        "Aplicar el principio de menor privilegio (least privilege) a los usuarios del endpoint, limitando los permisos de ejecución de aplicaciones no críticas.",
+        "Utilizar listas de denegación (deny lists) en lugar de allow lists para bloquear aplicaciones firmadas por proveedores externos no confiables."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que los sistemas de prevención de intrusiones basados en host (HIPS) monitorizan el tráfico de red y configuraciones del sistema para detectar patrones anómalos, como comunicaciones sospechosas hacia servidores de C2, incluso si provienen de procesos aparentemente legítimos.",
+      "id": "p11-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico saliente excepto el tráfico DNS (puerto 53) y HTTPS (puerto 443)?",
+      "opciones": [
+        "Segmentación física de la red",
+        "Aplicación del principio de menor privilegio",
+        "Restricción de puertos abiertos mediante firewall basado en host",
+        "Uso de listas de denegación (deny lists) para aplicaciones"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Esta configuración reduce la superficie de ataque al permitir solo tráfico esencial, aplicando el hardening mediante restricción de puertos en el firewall basado en host.",
+      "id": "p11-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como LDAPS (puerto 636) sin autorización expresa?",
+      "opciones": [
+        "a) Configurar una allow list que solo permita aplicaciones firmadas digitalmente por Microsoft.",
+        "b) Bloquear todo el tráfico saliente excepto el tráfico hacia puertos específicos autorizados.",
+        "c) Deshabilitar servicios no utilizados como NetBIOS o Telnet en el sistema operativo.",
+        "d) Implementar un proceso de evaluación de postura (posture assessment) para verificar el cumplimiento de políticas."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear todo el tráfico saliente no autorizado, incluso si proviene de procesos legítimos, como técnica de hardening para reducir la superficie de ataque.",
+      "id": "p11-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico saliente excepto hacia puertos específicos como 25 (SMTP) y 465 (SMTPS), y se deshabilitan servicios no utilizados como FTP o Telnet?",
+      "opciones": [
+        "a) Segmentación lógica mediante VLANs",
+        "b) Configuración de una allow list para aplicaciones firmadas digitalmente",
+        "c) Reducción de la superficie de ataque mediante cierre de puertos y deshabilitación de servicios innecesarios",
+        "d) Implementación de cifrado de disco completo (FDE)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Esta técnica consiste en aplicar configuraciones de hardening para reducir la superficie de ataque, cerrando puertos no esenciales (como FTP o Telnet) y limitando el tráfico saliente a puertos autorizados (SMTP y SMTPS), lo que minimiza las posibles vías de explotación.",
+      "id": "p11-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR la diferencia entre segmentación física y segmentación lógica según el temario?",
+      "opciones": [
+        "La segmentación física usa hardware dedicado, mientras que la lógica usa software como VLANs",
+        "La segmentación física solo aplica a redes inalámbricas, y la lógica a redes cableadas",
+        "La segmentación física requiere firewalls, y la lógica requiere cifrado",
+        "La segmentación física es temporal, y la lógica es permanente"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define la segmentación física como separación física de dispositivos y la lógica como uso de tecnologías como VLANs para dividir redes lógicamente.",
+      "id": "p11-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como RPC (puerto 135) sin autorización expresa?",
+      "opciones": [
+        "a) Aplicar una política de allow list que solo permita ejecutar aplicaciones firmadas digitalmente por fuentes confiables.",
+        "b) Bloquear todo el tráfico saliente excepto hacia puertos específicos autorizados, como DNS y HTTPS.",
+        "c) Deshabilitar servicios en desuso como NetBIOS o Telnet en el sistema operativo.",
+        "d) Cerrar todos los puertos no esenciales y configurar el cifrado de disco completo (FDE)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que la técnica de bloquear todo el tráfico saliente no autorizado, incluso de procesos legítimos, es una práctica clave de hardening mediante firewalls basados en host. RPC (puerto 135) es un protocolo que puede ser explotado si no está debidamente controlado.",
+      "id": "p11-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como SMB (puerto 445) sin autorización expresa. ¿Qué técnica de hardening está aplicando?",
+      "opciones": [
+        "Segmentación física de la red",
+        "Restricción de tráfico por protocolo mediante firewall basado en host",
+        "Aplicación de listas de denegación (deny lists) para aplicaciones",
+        "Uso de evaluación de postura (posture assessment)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El firewall basado en host monitoriza y bloquea tráfico no autorizado por protocolo, aplicando hardening mediante control granular del tráfico de red.",
+      "id": "p11-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe MEJOR una técnica de hardening que se aplica al configurar un firewall basado en host para bloquear todo el tráfico saliente excepto hacia puertos específicos como 22 (SSH) y 443 (HTTPS)?",
+      "opciones": [
+        "a) Permitir solo tráfico saliente hacia puertos no estándar para evitar detección",
+        "b) Bloquear todo el tráfico saliente no autorizado, incluso el procedente de procesos legítimos, y cerrar todos los puertos excepto los esenciales",
+        "c) Configurar el firewall para permitir tráfico saliente hacia cualquier puerto, pero bloquear el tráfico entrante no autorizado",
+        "d) Aplicar una allow list que solo permita ejecutar aplicaciones firmadas digitalmente por Microsoft, pero no restringir puertos de red"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Esta configuración aplica el principio de menor privilegio en el tráfico de red, bloqueando todo el tráfico saliente no explícitamente autorizado y cerrando puertos innecesarios, lo que reduce la superficie de ataque.",
+      "id": "p11-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico entrante y saliente excepto el tráfico hacia puertos específicos como 22 (SSH) y 443 (HTTPS)?",
+      "opciones": [
+        "Segmentación virtual mediante VLANs",
+        "Gestión de puertos abiertos y restricción de tráfico",
+        "Aplicación de listas de control de acceso (ACLs) en el sistema operativo",
+        "Uso de cifrado de disco completo (FDE)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Esta configuración del firewall basado en host reduce la superficie de ataque al permitir solo puertos esenciales, aplicando el hardening mediante gestión de puertos abiertos.",
+      "id": "p11-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un firewall basado en host en sus endpoints con una política que bloquea todo el tráfico saliente excepto hacia puertos específicos como 53 (DNS) y 443 (HTTPS). Además, se aplica una allow list que solo permite ejecutar aplicaciones firmadas digitalmente por Microsoft y Adobe. Sin embargo, durante una auditoría, se detecta que un atacante logró exfiltrar datos mediante un exploit en una aplicación legítima firmada por un proveedor externo de confianza (ej. un software de gestión de proyectos), que intenta comunicarse con un servidor de comando y control (C2) en el puerto 443 (HTTPS). Según el temario de CompTIA Security+, ¿qué técnica de hardening adicional, NO mencionada en la política actual pero incluida en el temario, habría mitigado este riesgo de manera más efectiva y por qué?",
+      "opciones": [
+        "Implementar una deny list que bloquee aplicaciones firmadas por proveedores externos no autorizados por la empresa, junto con reglas en el firewall basado en host que limiten el tráfico saliente a puertos específicos y rangos de IP predefinidos.",
+        "Configurar un sistema de cifrado de disco completo (FDE) en los endpoints para proteger los datos exfiltrados, ya que el cifrado evitaría que los datos sean legibles incluso si son interceptados.",
+        "Aplicar el principio de menor privilegio (least privilege) en las cuentas de usuario del endpoint, restringiendo permisos para evitar que procesos maliciosos accedan a datos sensibles.",
+        "Implementar un proceso de evaluación de postura (posture assessment) que verifique el cumplimiento de políticas de seguridad antes de permitir el acceso a la red, aislando dispositivos no conformes en una VLAN de cuarentena."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La técnica más efectiva sería implementar una deny list que bloquee aplicaciones firmadas por proveedores externos no autorizados, ya que el temario menciona que las allow lists pueden ser eludidas por aplicaciones legítimas firmadas por terceros de confianza. Combinado con reglas restrictivas en el firewall basado en host, se reduce significativamente la superficie de ataque.",
+      "id": "p11-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa firewalls basados en host en sus endpoints con una política de allow list que solo permite ejecutar aplicaciones firmadas digitalmente por Microsoft, Google y Adobe. Durante un análisis forense, se detecta que un atacante logró comprometer un endpoint mediante un exploit en una aplicación legítima firmada por un proveedor externo de confianza (ej. un software de gestión de proyectos), que intenta comunicarse con un servidor de comando y control (C2) en el puerto 443 (HTTPS) mediante tráfico cifrado. Según el temario de CompTIA Security+, ¿qué técnica de hardening adicional, NO mencionada en la política actual pero incluida en el temario, habría mitigado este riesgo de manera más efectiva y por qué?",
+      "opciones": [
+        "a) Configurar el firewall basado en host para bloquear todo el tráfico saliente excepto hacia puertos específicos como 53 (DNS) y 443 (HTTPS), y aplicar una política de denegación por defecto (deny all) para cualquier otro tráfico, incluyendo el cifrado.",
+        "b) Implementar un sistema de detección y respuesta en endpoints (EDR) con capacidades de análisis de comportamiento para identificar procesos legítimos que se comuniquen con servidores externos no autorizados, incluso si el tráfico está cifrado.",
+        "c) Configurar el firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como SMB (puerto 445) o RPC (puerto 135) sin autorización expresa, independientemente de si el tráfico está cifrado.",
+        "d) Aplicar una política de evaluación de postura (posture assessment) que verifique el cumplimiento de parches y antivirus antes de permitir el acceso a la red, y poner en cuarentena dispositivos que no cumplan los requisitos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El EDR con análisis de comportamiento detectaría procesos legítimos que se comuniquen con servidores externos no autorizados mediante tráfico cifrado, algo que un firewall basado en host o una allow list por sí solos no pueden identificar fácilmente. El temario menciona que el EDR utiliza aprendizaje automático y monitoreo de procesos para detectar amenazas desconocidas, incluyendo comportamientos anómalos en aplicaciones firmadas.",
+      "id": "p11-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica al configurar un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante el protocolo RDP (puerto 3389) sin autorización expresa?",
+      "opciones": [
+        "a) Bloqueo de tráfico basado en puertos",
+        "b) Bloqueo de tráfico basado en firmas de aplicaciones",
+        "c) Bloqueo de procesos específicos mediante listas de control de acceso basadas en procesos",
+        "d) Deshabilitación de servicios innecesarios"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear procesos específicos que intenten acceder a Internet sin autorización, incluso si el tráfico está cifrado. Esto se aplica a protocolos como RDP (puerto 3389) mediante configuraciones que monitorizan y restringen el comportamiento de los procesos.",
+      "id": "p11-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un firewall basado en host para bloquear todo el tráfico saliente excepto hacia puertos específicos como 53 (DNS) y 443 (HTTPS). ¿Qué técnica de hardening está aplicando principalmente?",
+      "opciones": [
+        "a) Segmentación física",
+        "b) Gestión de puertos abiertos",
+        "c) Cifrado de disco completo",
+        "d) Evaluación de postura"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La técnica aplicada es la gestión de puertos abiertos, ya que se cierran todos los puertos no esenciales y solo se permiten los necesarios (53 y 443).",
+      "id": "p11-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno empresarial, un administrador configura un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como SMB (puerto 445) sin autorización expresa. ¿Qué técnica de hardening está aplicando?",
+      "opciones": [
+        "a) Deshabilitar servicios no utilizados",
+        "b) Firewall basado en host",
+        "c) Allow list de aplicaciones",
+        "d) Segmentación lógica"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El bloqueo de procesos que intentan acceder mediante protocolos específicos como SMB se enmarca en la técnica de deshabilitar servicios no utilizados, ya que SMB es un servicio innecesario para la mayoría de endpoints.",
+      "id": "p11-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica cuando se configura un sistema operativo para deshabilitar servicios en desuso como NetBIOS o Telnet en un servidor crítico?",
+      "opciones": [
+        "a) Gestión de puertos abiertos",
+        "b) Deshabilitar servicios no utilizados",
+        "c) Cifrado de disco completo",
+        "d) Evaluación de postura"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La técnica aplicada es la deshabilitación de servicios no utilizados, ya que NetBIOS y Telnet son servicios obsoletos y potencialmente inseguros que se eliminan para reducir la superficie de ataque.",
+      "id": "p11-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear todo el tráfico entrante y saliente excepto el tráfico hacia puertos específicos como 25 (SMTP) y 587 (SMTP con TLS), y se deshabilitan servicios no utilizados como POP3 o IMAP?",
+      "opciones": [
+        "a) Hardening mediante segmentación física de puertos",
+        "b) Hardening mediante configuración de allow list de aplicaciones",
+        "c) Hardening mediante aplicación de reglas de firewall basado en host y deshabilitación de servicios innecesarios",
+        "d) Hardening mediante cifrado de disco completo (FDE)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que el hardening incluye configurar firewalls basados en host para bloquear tráfico no autorizado y deshabilitar servicios innecesarios como POP3 o IMAP, reduciendo así la superficie de ataque.",
+      "id": "p11-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante protocolos como ICMP (ping) sin autorización expresa?",
+      "opciones": [
+        "a) Firewall basado en host",
+        "b) Segmentación lógica",
+        "c) Deshabilitar servicios no utilizados",
+        "d) Cifrado de disco completo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La técnica aplicada es el uso de firewalls basados en host, que permiten bloquear procesos específicos que intentan acceder mediante protocolos como ICMP sin autorización.",
+      "id": "p11-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema operativo para permitir solo la ejecución de aplicaciones firmadas digitalmente por fuentes confiables como Microsoft o Adobe. ¿Qué principio de seguridad se está aplicando principalmente?",
+      "opciones": [
+        "a) Principio de menor privilegio",
+        "b) Defensa en profundidad",
+        "c) Allow list de aplicaciones",
+        "d) Segmentación física"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La técnica aplicada es la allow list de aplicaciones, que solo permite ejecutar aplicaciones previamente autorizadas mediante su firma digital.",
+      "id": "p11-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de hardening se aplica cuando se configura un firewall basado en host para bloquear procesos que intentan acceder a Internet mediante el protocolo FTP (puerto 21) sin autorización expresa?",
+      "opciones": [
+        "a) Configurar una allow list para bloquear aplicaciones no autorizadas",
+        "b) Bloquear todo el tráfico saliente excepto hacia puertos específicos como 53 (DNS) y 443 (HTTPS)",
+        "c) Deshabilitar servicios en desuso como NetBIOS o Telnet en el sistema operativo",
+        "d) Aplicar el principio de menor privilegio en las cuentas de usuario del servidor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los firewalls basados en host pueden bloquear tráfico no autorizado incluso si está cifrado, incluyendo protocolos específicos como FTP (puerto 21), para evitar que procesos maliciosos se comuniquen con servidores externos.",
+      "id": "p11-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un servidor web, un administrador configura el firewall basado en host para bloquear todo el tráfico saliente excepto hacia puertos específicos como 22 (SSH) y 443 (HTTPS), y deshabilita servicios no utilizados como Telnet o FTP. ¿Qué técnicas de hardening está aplicando principalmente?",
+      "opciones": [
+        "a) Gestión de puertos abiertos y deshabilitar servicios no utilizados",
+        "b) Segmentación física y cifrado de disco",
+        "c) Allow list de aplicaciones y evaluación de postura",
+        "d) Principio de menor privilegio y defensa en profundidad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las técnicas aplicadas son la gestión de puertos abiertos (bloquear puertos no esenciales) y la deshabilitación de servicios no utilizados (Telnet, FTP), ambas mencionadas en el temario como técnicas de hardening.",
+      "id": "p11-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa firewalls basados en host en sus endpoints con una política de allow list que solo permite ejecutar aplicaciones firmadas digitalmente por Microsoft y Adobe. Durante una auditoría, se detecta que un atacante logró comprometer un endpoint mediante un exploit en una aplicación legítima firmada por un proveedor externo de confianza (ej. un software de gestión de proyectos), que intenta comunicarse con un servidor de comando y control (C2) en el puerto 443 (HTTPS). Según el temario de CompTIA Security+, ¿qué técnica de hardening adicional, NO mencionada en la política actual pero incluida en el temario, habría mitigado este riesgo de manera más efectiva y por qué?",
+      "opciones": [
+        "a) Implementar un firewall basado en host con reglas que bloqueen todo el tráfico saliente excepto hacia puertos específicos como 53 (DNS) y 443 (HTTPS), reduciendo así la superficie de ataque.",
+        "b) Configurar una allow list basada en hash de archivos en lugar de firmas digitales, ya que los hashes son únicos para cada versión de archivo y no dependen del proveedor de la firma.",
+        "c) Aplicar una política de segmentación física en la red, aislando los endpoints críticos en una VLAN independiente para limitar el movimiento lateral del atacante.",
+        "d) Utilizar listas de denegación (deny lists) para bloquear aplicaciones específicas consideradas de alto riesgo, en lugar de permitir solo aplicaciones autorizadas."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La técnica de hardening basada en hash de archivos (opción b) habría mitigado el riesgo porque los hashes son únicos para cada versión de un archivo, a diferencia de las firmas digitales que pueden ser compartidas por proveedores de confianza. Esto evita que aplicaciones legítimas pero no autorizadas (como el software de gestión de proyectos) puedan ejecutarse, incluso si están firmadas por un tercero.",
+      "id": "p11-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Segmentation and Access Control",
+      "youtubeId": "yDeDGCh_PDs"
+    },
+    {
+      "titulo": "Mitigation Techniques",
+      "youtubeId": "Fc8ZJfmapbI"
+    },
+    {
+      "titulo": "Hardening Techniques",
+      "youtubeId": "wXoC46Qr_9Q"
+    }
+  ]
+}

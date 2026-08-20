@@ -1,0 +1,1404 @@
+{
+  "id": 12,
+  "titulo": "3.1 · Arquitectura e infraestructura",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LA SEGURIDAD EN ARQUITECTURAS E INFRAESTRUCTURAS EN LA NUBE Y ENTORNOS HÍBRIDOS\n\nLa computación en la nube ha revolucionado la forma en que las organizaciones implementan y gestionan sus infraestructuras tecnológicas. Sin embargo, uno de los aspectos más críticos —y a menudo malinterpretados— es la distribución de responsabilidades de seguridad entre el proveedor de servicios en la nube y el cliente. Cada modelo de servicio en la nube (SaaS, PaaS, IaaS) tiene un nivel distinto de control y gestión por parte del proveedor y del usuario final.\n\n\nMODELOS DE SERVICIO EN LA NUBE Y RESPONSABILIDADES DE SEGURIDAD\n\nEn el modelo Software as a Service (SaaS), el proveedor de la nube es responsable de casi todos los aspectos de la seguridad, incluyendo el sistema operativo, la plataforma de ejecución y la aplicación misma. Por ejemplo, en un servicio como Microsoft 365, el proveedor gestiona la seguridad del hipervisor, la red física y la infraestructura subyacente, mientras que el cliente solo controla los datos, las identidades de los usuarios y la configuración de acceso.\n\nEn el modelo Platform as a Service (PaaS), el proveedor sigue siendo responsable de la infraestructura física y el sistema operativo, pero el cliente asume la responsabilidad de las aplicaciones que despliega y su configuración de seguridad. Un ejemplo común es un desarrollador que despliega una aplicación web en Google App Engine; el proveedor gestiona el servidor y el entorno de ejecución, pero el cliente debe asegurar que la aplicación no tenga vulnerabilidades y que las credenciales de acceso sean seguras.\n\nEl modelo Infrastructure as a Service (IaaS) traslada una mayor parte de la responsabilidad al cliente. Aquí, el proveedor gestiona la infraestructura física, la virtualización y, en algunos casos, la red básica, pero el cliente es responsable de todo lo que se ejecuta sobre esa infraestructura: sistemas operativos, middleware, aplicaciones y datos. Un ejemplo es un cliente que despliega máquinas virtuales en Amazon Web Services (AWS); el proveedor asegura la red física y los hipervisores, pero el cliente debe configurar firewalls, parches de seguridad y políticas de acceso.\n\nEn entornos on-premises (locales), la responsabilidad total recae en la organización. Esto incluye la gestión de hardware, software, redes, seguridad física y lógica. Aunque esto da un control total, también implica una mayor carga operativa y de costos.\n\n\nLA MATRIZ DE RESPONSABILIDADES EN LA NUBE\n\nLos proveedores de servicios en la nube suelen proporcionar una matriz de responsabilidades que detalla quién gestiona cada componente de seguridad. Esta matriz varía según el proveedor y el modelo de servicio. Por ejemplo, en AWS, la responsabilidad del cliente aumenta a medida que se desplaza desde SaaS hacia IaaS. En Azure, Microsoft proporciona una matriz similar que muestra claramente las áreas de responsabilidad compartida.\n\nEs fundamental que las organizaciones revisen y comprendan esta matriz antes de implementar cualquier servicio en la nube. Además, los contratos con los proveedores pueden modificar estas responsabilidades por defecto para adaptarse a necesidades específicas. Por ejemplo, un cliente puede negociar que el proveedor gestione también la configuración de seguridad de las aplicaciones desplegadas en PaaS.\n\n\nHÍBRIDOS Y MULTINUBE: GESTIÓN DE LA COMPLEJIDAD\n\nMuchas organizaciones adoptan un enfoque híbrido, combinando servicios en la nube con infraestructuras locales. Esto permite aprovechar lo mejor de ambos mundos: la escalabilidad y flexibilidad de la nube, junto con el control y la personalización de los entornos locales. Sin embargo, la gestión de la seguridad en entornos híbridos es más compleja debido a la falta de integración nativa entre proveedores.\n\nEn un entorno multinube, donde se utilizan servicios de múltiples proveedores, la complejidad aumenta aún más. Cada proveedor tiene sus propias herramientas, formatos de logs y mecanismos de seguridad. Esto puede llevar a inconsistencias en la configuración de seguridad, como políticas de firewall mal sincronizadas o configuraciones de autenticación incompatibles entre proveedores.\n\nPara mitigar estos riesgos, las organizaciones deben implementar políticas de gestión de riesgos de terceros y establecer procesos claros de respuesta a incidentes que incluyan a todos los proveedores involucrados. Además, es esencial centralizar la monitorización y el análisis de logs para obtener una visión unificada de la seguridad en todos los entornos.\n\n\nTERCEROS Y SEGURIDAD EN LA NUBE\n\nAdemás de los proveedores de servicios en la nube, las organizaciones suelen integrar soluciones de seguridad de terceros, como firewalls, sistemas de detección de intrusiones (IDS) o herramientas de prevención de pérdida de datos (DLP). Estas soluciones pueden ser críticas para proteger aplicaciones específicas o datos sensibles.\n\nEs recomendable implementar una política de gestión de riesgos de terceros que incluya evaluaciones periódicas de la seguridad de estos proveedores. También es importante integrar estos sistemas en los procesos de respuesta a incidentes de la organización, asegurando que puedan participar activamente en la mitigación de amenazas.\n\n\nINFRAESTRUCTURA COMO CÓDIGO (INFRASTRUCTURE AS CODE)\n\nLa infraestructura como código (IaC) es una práctica esencial en entornos en la nube que permite definir y gestionar la infraestructura mediante archivos de configuración en lugar de configuraciones manuales. Esto no solo automatiza el despliegue de recursos, sino que también garantiza la consistencia y repetibilidad de las configuraciones.\n\nCon IaC, los equipos pueden definir hosts, servidores web, bases de datos y otros componentes en archivos de texto (por ejemplo, usando Terraform o AWS CloudFormation). Estos archivos pueden versionarse en sistemas de control de código fuente como Git, lo que facilita el seguimiento de cambios y la colaboración entre equipos.\n\nUno de los mayores beneficios de IaC es la capacidad de recrear rápidamente una infraestructura completa en cualquier proveedor de nube. Por ejemplo, si una aplicación se despliega en AWS usando IaC, el mismo código puede usarse para recrear esa infraestructura en Azure o Google Cloud Platform sin necesidad de reconfigurar manualmente cada componente.\n\n\nARQUITECTURAS SIN SERVIDOR (SERVERLESS)\n\nLas arquitecturas sin servidor (serverless) representan un cambio radical en la forma de desplegar aplicaciones. En lugar de ejecutar aplicaciones completas en servidores, las aplicaciones sin servidor se componen de funciones individuales que se activan en respuesta a eventos. Estas funciones son efímeras y solo se ejecutan cuando son necesarias, lo que reduce costos y mejora la escalabilidad.\n\nPor ejemplo, una aplicación que procesa imágenes puede tener una función que se activa cada vez que se sube una imagen a un bucket de almacenamiento en la nube. Esta función procesa la imagen y luego se detiene, liberando recursos. Desde la perspectiva de seguridad, el enfoque en arquitecturas sin servidor se centra en proteger las funciones individuales y los permisos asociados, ya que el sistema operativo subyacente es gestionado por el proveedor de la nube.\n\n\nMICROSERVICIOS Y APIS\n\nLos microservicios son una evolución de las arquitecturas monolíticas tradicionales. En lugar de tener una sola aplicación monolítica que maneja todas las funcionalidades, las aplicaciones modernas se dividen en servicios más pequeños e independientes, cada uno con una función específica. Estos servicios se comunican entre sí a través de APIs (interfaces de programación de aplicaciones).\n\nPor ejemplo, una aplicación de comercio electrónico puede tener microservicios separados para el carrito de compras, el catálogo de productos, el procesamiento de pagos y la gestión de usuarios. Cada microservicio puede escalarse independientemente según la demanda, lo que mejora la eficiencia y la resiliencia. Desde la perspectiva de seguridad, cada microservicio puede tener su propia política de seguridad, lo que permite aplicar controles específicos según la función que desempeña.\n\n\nAISLAMIENTO FÍSICO Y VIRTUAL (AIR GAP Y VLANS)\n\nEl aislamiento físico (air gap) es una técnica de seguridad que implica separar físicamente los dispositivos de red para evitar que se comuniquen entre sí sin una conexión intencional. Por ejemplo, en un centro de datos, los servidores web pueden estar en un rack aislado de los servidores de bases de datos. Esto evita que un atacante que comprometa un servidor web pueda moverse lateralmente hacia los servidores de bases de datos.\n\nSin embargo, el aislamiento físico no es escalable en entornos con muchos dispositivos. Para abordar esto, se utilizan VLANs (Virtual Local Area Networks), que permiten segmentar la red virtualmente dentro de un mismo switch físico. Las VLANs evitan que los dispositivos en una VLAN se comuniquen directamente con dispositivos en otra VLAN, incluso si están conectados al mismo switch. Esto simplifica la gestión de la red y reduce la necesidad de hardware adicional.\n\n\nPLANOS DE OPERACIÓN EN DISPOSITIVOS DE RED (SDN)\n\nLos dispositivos de red tradicionales, como switches y routers, operan en tres planos distintos: el plano de datos, el plano de control y el plano de gestión. Esta separación permite una mayor flexibilidad y automatización, especialmente en entornos de redes definidas por software (SDN).\n\nEl plano de datos es responsable de la transferencia real de paquetes de red. Por ejemplo, cuando un switch recibe un paquete en una interfaz y lo reenvía a otra interfaz, está operando en el plano de datos. Este plano también maneja funciones como el NAT (Network Address Translation) y el cifrado.\n\nEl plano de control gestiona las tablas de enrutamiento, las actualizaciones de rutas dinámicas y otras decisiones de alto nivel que determinan cómo se debe reenviar el tráfico. Por ejemplo, un router utiliza el plano de control para mantener una tabla de enrutamiento actualizada que le permita decidir a qué interfaz enviar un paquete.\n\nEl plano de gestión es donde se realizan las configuraciones y cambios en el dispositivo. Esto incluye la configuración de políticas de seguridad, la actualización de firmware y la monitorización del estado del dispositivo. Las conexiones SSH, SNMP y las APIs se utilizan para interactuar con el plano de gestión.\n\n\nSEGURIDAD EN ENTORNOS ON-PREMISES VS. NUBE\n\nLa decisión de alojar datos y aplicaciones en entornos on-premises o en la nube depende de varios factores, incluyendo costos, control, escalabilidad y requisitos de seguridad. En entornos on-premises, las organizaciones tienen un control total sobre la seguridad, pero también asumen la responsabilidad total de mantener y actualizar la infraestructura. Esto incluye la gestión de hardware, software, redes y seguridad física.\n\nEn la nube, la seguridad está centralizada y gestionada por el proveedor, lo que puede reducir la carga operativa. Sin embargo, las organizaciones deben confiar en que el proveedor implementa controles de seguridad adecuados. Además, la nube ofrece ventajas como la escalabilidad automática y la redundancia geográfica, que pueden mejorar la disponibilidad y la resiliencia.\n\nDesde la perspectiva de un atacante, no importa dónde esté alojada la seguridad; su objetivo es eludir los controles para acceder a los datos. Por lo tanto, independientemente del entorno, las organizaciones deben implementar capas múltiples de seguridad, incluyendo firewalls, sistemas de detección de intrusiones (IDS/IPS), cifrado y autenticación multifactor (MFA).\n\n\nCONSOLIDACIÓN DE LA GESTIÓN DE SEGURIDAD\n\nEn entornos complejos con múltiples ubicaciones, proveedores de nube y sistemas operativos, gestionar la seguridad puede ser un desafío. Para abordar esto, muchas organizaciones implementan una vista consolidada de gestión de seguridad desde una sola consola. Esta consola centralizada permite monitorizar usuarios, dispositivos, aplicaciones y otros activos críticos desde un único punto.\n\nLas ventajas de una consola centralizada incluyen la capacidad de recibir alertas consolidadas, analizar logs de manera unificada y aplicar políticas de seguridad de manera consistente en toda la organización. Sin embargo, esta centralización también introduce un único punto de fallo: si la consola falla, la visibilidad de la seguridad se pierde.\n\nAdemás, a medida que la organización crece, la consola puede requerir más recursos para manejar el aumento de logs, alertas y procesos de monitorización. Por lo tanto, es importante planificar la escalabilidad de estas soluciones.\n\n\nVIRTUALIZACIÓN Y CONTAINERIZACIÓN\n\nLa virtualización permite ejecutar múltiples sistemas operativos en un solo servidor físico, utilizando un hipervisor para gestionar los recursos entre las máquinas virtuales. Cada máquina virtual tiene su propio sistema operativo invitado y aplicaciones, lo que proporciona aislamiento y flexibilidad.\n\nSin embargo, la virtualización tiene ineficiencias, como la necesidad de ejecutar múltiples instancias del mismo sistema operativo invitado. Para abordar esto, se utiliza la containerización, donde múltiples aplicaciones se ejecutan en un solo sistema operativo host, compartiendo recursos pero manteniendo el aislamiento. Los contenedores incluyen todo lo necesario para ejecutar una aplicación, excepto el sistema operativo, que es gestionado por el software de containerización (por ejemplo, Docker).\n\nLa containerización es más eficiente que la virtualización en términos de uso de recursos y permite un despliegue más rápido de aplicaciones. Además, los contenedores son portátiles y pueden ejecutarse en cualquier entorno que soporte el software de containerización.\n\n\nINTERNET DE LAS COSAS (IOT) Y SEGURIDAD\n\nEl Internet de las Cosas (IoT) incluye dispositivos como termostatos inteligentes, cámaras de seguridad, wearables y sistemas de automatización del hogar o la oficina. Estos dispositivos ofrecen comodidad y automatización, pero también introducen riesgos de seguridad significativos.\n\nMuchos dispositivos IoT son diseñados por fabricantes que priorizan la funcionalidad sobre la seguridad. Esto puede resultar en dispositivos con contraseñas predeterminadas, falta de actualizaciones de seguridad o vulnerabilidades conocidas sin parches. Un solo dispositivo IoT comprometido puede servir como punto de entrada para un atacante en la red.\n\nPara mitigar estos riesgos, las organizaciones deben implementar políticas estrictas de segmentación de red para los dispositivos IoT, asegurarse de que estén en VLANs aisladas y aplicar firewalls y sistemas de detección de intrusiones para monitorizar su tráfico. Además, es importante cambiar las contraseñas predeterminadas y mantener los dispositivos actualizados con los últimos parches de seguridad.\n\n\nSISTEMAS SCADA E INDUSTRIALES\n\nLos sistemas SCADA (Supervisory Control and Data Acquisition) se utilizan en entornos industriales para monitorizar y controlar equipos críticos, como plantas de energía, refinerías y sistemas de manufactura. Estos sistemas son esenciales para la operación segura y eficiente de infraestructuras críticas.\n\nLa seguridad de los sistemas SCADA es de suma importancia, ya que un compromiso podría tener consecuencias catastróficas. Por esta razón, estos sistemas suelen estar completamente aislados de redes externas y se implementan con controles de seguridad físicos y lógicos robustos. Además, se utilizan protocolos de comunicación seguros y sistemas de autenticación estrictos.\n\n\nSISTEMAS OPERATIVOS DETERMINISTAS Y EMBEBIDOS\n\nLos sistemas operativos deterministas están diseñados para aplicaciones donde la latencia y la prioridad de procesos son críticas, como en sistemas de control de vehículos, equipos médicos o maquinaria industrial. Estos sistemas garantizan que los procesos críticos se ejecuten sin interrupciones, incluso en situaciones de alta carga.\n\nLos sistemas embebidos son dispositivos autónomos diseñados para una función específica, como semáforos, relojes digitales o equipos médicos. Estos sistemas suelen tener hardware y software integrados y no están diseñados para ejecutar aplicaciones adicionales. La seguridad en sistemas embebidos se centra en proteger el dispositivo físico y evitar el acceso no autorizado al sistema operativo subyacente.\n\n\nALTA DISPONIBILIDAD (HA) Y REDUNDANCIA\n\nLa alta disponibilidad (HA) es una estrategia para garantizar que los sistemas críticos estén siempre operativos, incluso en caso de fallos. A diferencia de la redundancia, que simplemente proporciona copias de seguridad de los sistemas, la alta disponibilidad implica configuraciones donde los sistemas están activos y listos para asumir la carga en caso de fallo de un componente.\n\nPor ejemplo, un par de firewalls en configuración HA pueden estar activos simultáneamente, con uno asumiendo el tráfico si el otro falla. Esto minimiza el tiempo de inactividad y garantiza una transición fluida. Sin embargo, implementar alta disponibilidad aumenta los costos, ya que requiere hardware adicional, conexiones de red redundantes y sistemas de alimentación de respaldo.\n\n\nDISPONIBILIDAD, MTTR Y RESPONSIVIDAD\n\nLa disponibilidad es un pilar fundamental de la seguridad y la operación de sistemas. Se refiere a la capacidad de los sistemas para estar operativos y accesibles cuando se necesitan. La disponibilidad se mide comúnmente como un porcentaje de tiempo de actividad, como el 99.999% (cinco nueves), que implica solo 5.26 minutos de inactividad por año.\n\nEl tiempo medio de reparación (MTTR) es una métrica clave que mide cuánto tarda un equipo en recuperar un sistema después de un fallo. Un MTTR bajo es esencial para minimizar el impacto de los incidentes de seguridad. Por ejemplo, si un servidor falla debido a un fallo de hardware, el MTTR incluye el tiempo para reemplazar el hardware, restaurar el sistema desde una copia de seguridad y volver a ponerlo en línea.\n\nLa responsividad se refiere a la velocidad con la que un sistema responde a las solicitudes de los usuarios. En aplicaciones interactivas, como sitios web o aplicaciones móviles, una baja responsividad puede afectar la experiencia del usuario y la productividad. La responsividad depende de múltiples factores, incluyendo la carga del servidor, la latencia de la red y la eficiencia del código de la aplicación.\n\n\nELASTICIDAD Y ESCALABILIDAD\n\nLa elasticidad es la capacidad de un sistema para escalar automáticamente hacia arriba o hacia abajo según la demanda. Esto es especialmente útil en entornos en la nube, donde los recursos pueden ajustarse dinámicamente para manejar picos de tráfico o cargas de trabajo variables.\n\nPor ejemplo, una aplicación de comercio electrónico puede escalar automáticamente durante la temporada navideña para manejar un aumento en el tráfico y luego reducir los recursos durante períodos de menor actividad. Esto optimiza los costos y garantiza que la aplicación siga siendo responsiva incluso bajo alta carga.\n\nDesde la perspectiva de seguridad, la elasticidad requiere que las herramientas de monitorización y protección se escalen junto con la aplicación. Por ejemplo, un sistema de detección de intrusiones debe poder manejar el aumento de tráfico sin perder eficacia.\n\n\nSEGURO CIBERNÉTICO Y GESTIÓN DE RIESGOS\n\nEl seguro cibernético es una herramienta para transferir parte del riesgo asociado con incidentes de seguridad a una tercera parte. Aunque no evita que ocurran incidentes, puede ayudar a mitigar las pérdidas financieras resultantes de un ataque, como el pago de rescates en ransomware o los costos legales asociados con violaciones de datos.\n\nEl seguro cibernético puede cubrir una variedad de escenarios, incluyendo la interrupción del negocio, la pérdida de ingresos y los costos de respuesta a incidentes. Sin embargo, las pólizas suelen tener exclusiones y límites, por lo que es importante revisar cuidadosamente los términos y condiciones.\n\n\nPROCESOS DE RECUPERACIÓN Y PARCHEO\n\nLa recuperación de sistemas después de un incidente es un proceso crítico que debe planificarse con anticipación. Las mejores prácticas incluyen la creación de imágenes de sistemas (snapshots) que permitan restaurar rápidamente un sistema a un estado conocido y seguro. Por ejemplo, si un servidor se infecta con malware, la recuperación puede implicar restaurar el sistema desde una imagen limpia en lugar de intentar limpiar el malware manualmente.\n\nEl parcheo regular de sistemas y aplicaciones es esencial para corregir vulnerabilidades conocidas y mejorar la seguridad. Las organizaciones deben implementar procesos para probar y desplegar parches de manera oportuna. Sin embargo, algunos sistemas, como los embebidos o los dispositivos IoT, pueden no recibir parches regulares debido a limitaciones técnicas o de diseño. En estos casos, es importante implementar controles de seguridad compensatorios, como firewalls o segmentación de red.\n\n\nINFRAESTRUCTURA DE ENERGÍA Y DISPONIBILIDAD\n\nLa infraestructura de energía es un componente crítico pero a menudo pasado por alto en la planificación de la seguridad y la disponibilidad. Sin electricidad, ningún sistema tecnológico puede operar. Las organizaciones deben considerar la implementación de sistemas de respaldo, como UPS (Uninterruptible Power Supply) o generadores, para garantizar la continuidad del servicio en caso de cortes de energía.\n\nEn entornos críticos, como centros de datos, la planificación de la energía debe incluir evaluaciones de carga, redundancia y escalabilidad. Un electricista licenciado puede ayudar a diseñar una infraestructura de energía adecuada para las necesidades específicas de la organización.\n\n\nCOMPONENTES DE COMPUTO EN LA NUBE\n\nEn entornos en la nube, los recursos de cómputo se dividen en componentes más pequeños y especializados. El componente de cómputo es responsable de procesar datos y ejecutar aplicaciones. En la nube, esto puede ser un motor de cómputo (compute engine) que proporciona potencia de procesamiento escalable según las necesidades de la aplicación.\n\nPor ejemplo, en AWS, el servicio EC2 proporciona instancias de cómputo virtualizadas que pueden escalarse según la demanda. En Azure, el servicio Virtual Machines ofrece capacidades similares. Estos componentes permiten a las organizaciones ajustar sus recursos de cómputo de manera dinámica, optimizando costos y rendimiento.\n\n\n\nCONSIDERACIONES FINALES\n\nLa arquitectura e infraestructura de seguridad en entornos modernos requiere un enfoque holístico que abarque múltiples capas de protección. Desde la segmentación de red y la gestión de identidades hasta la monitorización centralizada y la planificación de la recuperación ante desastres, cada aspecto debe ser cuidadosamente considerado y implementado.\n\nLas organizaciones deben adoptar un enfoque basado en riesgos, priorizando la protección de los activos más críticos y asegurando que los controles de seguridad sean proporcionales a las amenazas. Además, la formación continua del personal y la actualización de políticas y procedimientos son esenciales para mantener una postura de seguridad robusta en un panorama de amenazas en constante evolución."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Arquitectura e Infraestructura de Seguridad] --> B[Modelos de Servicio en la Nube]\nA --> C[Infraestructura Híbrida y Multinube]\nA --> D[Seguridad en Terceros]\nA --> E[Infraestructura como Código]\nA --> F[Arquitecturas Serverless]\nA --> G[Microservicios y APIs]\nA --> H[Segmentación de Red]\nA --> I[SDN y Planos de Operación]\nA --> J[On-Premises vs Nube]\nA --> K[Gestión Centralizada de Seguridad]\nA --> L[Virtualización y Containerización]\nA --> M[IoT y Sistemas Industriales]\nA --> N[Alta Disponibilidad y Redundancia]\nA --> O[Disponibilidad y MTTR]\nA --> P[Elasticidad y Escalabilidad]\nA --> Q[Seguro Cibernético]\nA --> R[Recuperación y Parcheo]\nA --> S[Infraestructura de Energía]\nA --> T[Componentes de Cómputo en la Nube]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc12-01",
+      "pregunta": "¿Qué es la matriz de responsabilidades en la nube y por qué es importante?",
+      "respuesta": "La matriz de responsabilidades en la nube es un documento proporcionado por el proveedor que detalla quién gestiona cada aspecto de seguridad en los diferentes modelos de servicio (SaaS, PaaS, IaaS). Es importante porque clarifica las obligaciones de seguridad del proveedor y del cliente, evitando malentendidos y garantizando una implementación segura."
+    },
+    {
+      "id": "fc12-02",
+      "pregunta": "¿Cuál es la diferencia entre redundancia y alta disponibilidad (HA)?",
+      "respuesta": "La redundancia implica tener copias de seguridad de sistemas que pueden activarse en caso de fallo, pero no garantiza que estén siempre disponibles. La alta disponibilidad (HA) configura sistemas activos que asumen la carga inmediatamente si un componente falla, minimizando el tiempo de inactividad."
+    },
+    {
+      "id": "fc12-03",
+      "pregunta": "¿Qué es la infraestructura como código (IaC) y cuáles son sus beneficios?",
+      "respuesta": "La infraestructura como código (IaC) es la práctica de definir y gestionar infraestructuras mediante archivos de configuración en lugar de configuraciones manuales. Sus beneficios incluyen automatización, consistencia, repetibilidad y la capacidad de recrear infraestructuras en cualquier proveedor de nube."
+    },
+    {
+      "id": "fc12-04",
+      "pregunta": "¿Qué son las arquitecturas sin servidor (serverless) y cómo mejoran la seguridad?",
+      "respuesta": "Las arquitecturas sin servidor ejecutan funciones individuales en respuesta a eventos, sin necesidad de gestionar servidores. Mejoran la seguridad al reducir la superficie de ataque, ya que el proveedor gestiona el sistema operativo y solo se ejecutan funciones específicas cuando son necesarias."
+    },
+    {
+      "id": "fc12-05",
+      "pregunta": "¿Qué son los microservicios y cómo se relacionan con las APIs?",
+      "respuesta": "Los microservicios dividen una aplicación en servicios más pequeños e independientes que se comunican mediante APIs. Esto mejora la escalabilidad, resiliencia y permite aplicar controles de seguridad específicos a cada servicio."
+    },
+    {
+      "id": "fc12-06",
+      "pregunta": "¿Qué es un air gap y cuándo se utiliza?",
+      "respuesta": "Un air gap es un aislamiento físico que separa dispositivos de red para evitar comunicaciones no intencionales. Se utiliza en entornos de alta seguridad, como centros de datos, para evitar que un atacante comprometa un sistema y se mueva lateralmente a otros sistemas."
+    },
+    {
+      "id": "fc12-07",
+      "pregunta": "¿Qué son los planos de operación en dispositivos de red y por qué son importantes en SDN?",
+      "respuesta": "Los planos de operación en dispositivos de red son el plano de datos (transferencia de paquetes), el plano de control (gestión de rutas) y el plano de gestión (configuraciones). En SDN, esta separación permite automatizar y gestionar redes mediante software, mejorando la flexibilidad y escalabilidad."
+    },
+    {
+      "id": "fc12-08",
+      "pregunta": "¿Qué riesgos de seguridad introducen los dispositivos IoT y cómo mitigarlos?",
+      "respuesta": "Los dispositivos IoT suelen tener vulnerabilidades de seguridad debido a diseños que priorizan la funcionalidad sobre la seguridad. Para mitigarlos, se recomienda segmentar la red, cambiar contraseñas predeterminadas, aplicar firewalls y mantener los dispositivos actualizados con parches de seguridad."
+    },
+    {
+      "id": "fc12-09",
+      "pregunta": "¿Qué es el MTTR y por qué es una métrica importante en seguridad?",
+      "respuesta": "El MTTR (Mean Time To Repair) mide el tiempo que tarda un equipo en recuperar un sistema después de un fallo. Es importante porque un MTTR bajo minimiza el impacto de los incidentes de seguridad y garantiza una recuperación rápida y eficiente."
+    },
+    {
+      "id": "fc12-10",
+      "pregunta": "¿Qué es la elasticidad en entornos en la nube y cómo se relaciona con la seguridad?",
+      "respuesta": "La elasticidad es la capacidad de un sistema para escalar automáticamente según la demanda. En seguridad, requiere que las herramientas de monitorización y protección (como IDS/IPS) se escalen junto con la aplicación para mantener su eficacia bajo carga."
+    },
+    {
+      "id": "fc12-11",
+      "pregunta": "¿Qué es el seguro cibernético y qué cubre típicamente?",
+      "respuesta": "El seguro cibernético es una póliza que transfiere parte del riesgo financiero asociado con incidentes de seguridad a una tercera parte. Cubre pérdidas por interrupción del negocio, pago de rescates en ransomware, costos legales y otros gastos relacionados con incidentes de seguridad."
+    },
+    {
+      "id": "fc12-12",
+      "pregunta": "¿Qué es la segmentación de red y cómo se implementa con VLANs?",
+      "respuesta": "La segmentación de red divide la red en segmentos aislados para limitar el movimiento lateral de atacantes. Las VLANs (Virtual Local Area Networks) permiten esta segmentación virtualmente dentro de un mismo switch físico, evitando que dispositivos en diferentes VLANs se comuniquen directamente."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "En el modelo SaaS, ¿qué responsabilidad de seguridad recae exclusivamente en el cliente?",
+      "opciones": [
+        "Configuración de firewalls y parches del sistema operativo",
+        "Gestión de la red física subyacente",
+        "Control de los datos y configuración de acceso de usuarios",
+        "Mantenimiento del hipervisor y la infraestructura de virtualización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En SaaS, el proveedor gestiona la infraestructura (hipervisor, red física) y el cliente solo controla los datos, identidades de usuarios y configuración de acceso (según el temario).",
+      "id": "p12-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un beneficio típico de la infraestructura como código (IaC)?",
+      "opciones": [
+        "Automatización del despliegue de recursos en la nube",
+        "Consistencia y repetibilidad en las configuraciones",
+        "Reducción de la necesidad de firewalls y segmentación de red",
+        "Posibilidad de versionar configuraciones en sistemas de control de código fuente"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "IaC no elimina la necesidad de firewalls o segmentación de red; solo automatiza y estandariza su configuración (según el temario).",
+      "id": "p12-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno híbrido con servicios en AWS y Azure, ¿qué desafío de seguridad es más probable que surja?",
+      "opciones": [
+        "Falta de compatibilidad entre políticas de firewall de diferentes proveedores",
+        "Incapacidad para implementar autenticación multifactor (MFA)",
+        "Imposibilidad de centralizar logs en una sola consola",
+        "Eliminación automática de máquinas virtuales sin parches de seguridad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En entornos multinube/híbridos, la inconsistencia en políticas de firewall entre proveedores es un riesgo común (según el temario).",
+      "id": "p12-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia clave existe entre virtualización y containerización en términos de seguridad?",
+      "opciones": [
+        "La virtualización aísla completamente cada sistema operativo invitado, mientras que la containerización comparte el mismo kernel del host",
+        "La containerización requiere hardware físico dedicado por contenedor, mientras que la virtualización no",
+        "La virtualización es más eficiente en recursos que la containerización",
+        "La containerización no permite la ejecución de aplicaciones en diferentes sistemas operativos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La virtualización usa hipervisores para aislar sistemas operativos invitados completos, mientras que los contenedores comparten el kernel del host (según el temario).",
+      "id": "p12-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante compromete un termostato inteligente IoT en una red corporativa. ¿Qué medida de mitigación sería MENOS efectiva para limitar el movimiento lateral?",
+      "opciones": [
+        "Implementar una VLAN aislada exclusiva para dispositivos IoT",
+        "Aplicar firewalls con reglas estrictas en el tráfico de entrada/salida de la VLAN IoT",
+        "Desactivar el puerto USB del termostato para evitar acceso físico",
+        "Centralizar todos los logs de dispositivos IoT en una consola única"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Centralizar logs no previene el movimiento lateral; la segmentación (VLANs) y firewalls sí lo limitan (según el temario).",
+      "id": "p12-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el modelo IaaS, ¿qué componente de seguridad es responsabilidad exclusiva del cliente?",
+      "opciones": [
+        "Hipervisor y virtualización de recursos",
+        "Firewalls y políticas de acceso a las máquinas virtuales",
+        "Red física subyacente y switches",
+        "Sistema de detección de intrusiones (IDS) en la red del proveedor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En IaaS, el cliente gestiona firewalls, parches de SO, políticas de acceso y aplicaciones desplegadas (según el temario).",
+      "id": "p12-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema SCADA para controlar una planta de energía. ¿Qué práctica de seguridad es CRÍTICA pero a menudo pasada por alto?",
+      "opciones": [
+        "Conectar el sistema SCADA a Internet para acceso remoto",
+        "Aislar físicamente el sistema de redes externas y usar protocolos seguros",
+        "Implementar autenticación multifactor en terminales de operadores",
+        "Desplegar contenedores para aislar procesos críticos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los sistemas SCADA deben estar aislados físicamente y usar protocolos seguros para evitar compromisos catastróficos (según el temario).",
+      "id": "p12-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué afirmación describe MEJOR la relación entre alta disponibilidad (HA) y redundancia?",
+      "opciones": [
+        "La HA garantiza que los sistemas críticos estén operativos incluso ante fallos, mientras que la redundancia solo proporciona copias de seguridad pasivas",
+        "La redundancia es un requisito técnico de la HA, pero no garantiza la disponibilidad",
+        "La HA y la redundancia son sinónimos en entornos de seguridad",
+        "La redundancia elimina la necesidad de HA en sistemas críticos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La HA implica sistemas activos listos para asumir carga en caso de fallo, mientras que la redundancia solo ofrece copias de seguridad (según el temario).",
+      "id": "p12-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa despliega una aplicación serverless en AWS Lambda. ¿Qué aspecto de seguridad debe priorizarse en este modelo?",
+      "opciones": [
+        "Proteger el sistema operativo subyacente del hipervisor",
+        "Configurar permisos granulares para cada función Lambda y sus recursos asociados",
+        "Implementar firewalls en el plano de datos de la red",
+        "Aislar físicamente los servidores donde se ejecutan las funciones"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En arquitecturas serverless, el enfoque de seguridad se centra en los permisos de las funciones individuales y sus recursos (según el temario).",
+      "id": "p12-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un equipo de TI configura un par de firewalls en modo alta disponibilidad (HA). ¿Qué escenario describe CORRECTAMENTE cómo opera este sistema?",
+      "opciones": [
+        "Ambos firewalls procesan el tráfico simultáneamente, dividiendo la carga para mejorar el rendimiento",
+        "Uno de los firewalls está activo y el otro en modo pasivo, asumiendo el tráfico solo si el primero falla",
+        "Los firewalls se reinician automáticamente cada 24 horas para aplicar parches de seguridad",
+        "El tráfico se enruta a través de un único firewall, mientras el segundo actúa como backup estático"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En HA, un firewall asume el tráfico si el activo falla, minimizando el tiempo de inactividad (según el temario).",
+      "id": "p12-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un entorno multinube con servicios en AWS, Azure y Google Cloud, ¿qué práctica es CRÍTICA para garantizar la consistencia en la aplicación de políticas de seguridad?",
+      "opciones": [
+        "Implementar un sistema de gestión de identidad y acceso (IAM) unificado para todos los proveedores",
+        "Configurar firewalls idénticos en cada proveedor para evitar inconsistencias",
+        "Utilizar herramientas de orquestación como Kubernetes para estandarizar los despliegues",
+        "Centralizar la monitorización de logs y alertas en una sola consola de seguridad"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La centralización de logs y alertas permite obtener una visión unificada de la seguridad en entornos multinube, evitando inconsistencias en políticas como se menciona en el temario sobre gestión de complejidad en híbridos y multinube.",
+      "id": "p12-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia clave existe entre los modelos PaaS e IaaS en términos de responsabilidad de seguridad del cliente?",
+      "opciones": [
+        "En PaaS, el cliente gestiona el sistema operativo; en IaaS, el proveedor lo gestiona",
+        "En PaaS, el cliente gestiona las aplicaciones desplegadas; en IaaS, gestiona el sistema operativo y middleware",
+        "En PaaS, el proveedor gestiona los datos; en IaaS, el cliente gestiona todo excepto la infraestructura física",
+        "En PaaS, el cliente gestiona la red básica; en IaaS, el proveedor gestiona la red básica"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En PaaS, el cliente es responsable de las aplicaciones y su configuración, mientras que en IaaS también gestiona el sistema operativo y middleware, según la matriz de responsabilidades en la nube del temario.",
+      "id": "p12-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización despliega una aplicación serverless en AWS Lambda que procesa datos sensibles. ¿Qué aspecto de seguridad debe priorizarse MENOS en este modelo?",
+      "opciones": [
+        "Configurar permisos granulares para las funciones Lambda",
+        "Implementar cifrado en tránsito y en reposo para los datos",
+        "Gestionar parches de seguridad en el sistema operativo subyacente",
+        "Aplicar autenticación multifactor (MFA) para acceder a la función"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En arquitecturas serverless, el sistema operativo es gestionado por el proveedor (AWS), por lo que el cliente no debe preocuparse por parches de seguridad en el SO, según el temario sobre serverless.",
+      "id": "p12-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un beneficio típico de la virtualización en entornos de seguridad?",
+      "opciones": [
+        "Aislamiento de máquinas virtuales para limitar el movimiento lateral de ataques",
+        "Reducción de la superficie de ataque al consolidar múltiples sistemas en un solo servidor",
+        "Eliminación total del riesgo de vulnerabilidades en el hipervisor",
+        "Facilidad para implementar snapshots y revertir sistemas a estados conocidos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La virtualización reduce la superficie de ataque al consolidar sistemas, pero no elimina el riesgo de vulnerabilidades en el hipervisor, que sigue siendo un componente crítico de seguridad.",
+      "id": "p12-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de TI configura una VLAN para aislar el tráfico de cámaras de seguridad IoT en una red corporativa. ¿Qué medida adicional es CRÍTICA para mitigar riesgos asociados a estos dispositivos?",
+      "opciones": [
+        "Deshabilitar el acceso remoto a las cámaras",
+        "Aplicar firewalls perimetrales para bloquear todo el tráfico de la VLAN",
+        "Cambiar las contraseñas predeterminadas y deshabilitar servicios innecesarios",
+        "Implementar un sistema de detección de intrusiones (IDS) en la VLAN"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Cambiar contraseñas predeterminadas y deshabilitar servicios innecesarios es una práctica fundamental para dispositivos IoT, como se destaca en el temario sobre seguridad en IoT.",
+      "id": "p12-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un sistema SCADA para una planta de energía, ¿qué práctica de seguridad es CRÍTICA pero a menudo pasada por alto según el temario?",
+      "opciones": [
+        "Implementar autenticación multifactor (MFA) para acceso a la consola SCADA",
+        "Aislar físicamente el sistema SCADA de redes externas y sistemas IT",
+        "Aplicar parches de seguridad en tiempo real a los controladores lógicos programables (PLC)",
+        "Configurar firewalls para bloquear todo el tráfico entrante al sistema SCADA"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El aislamiento físico es una práctica crítica para sistemas SCADA, pero a menudo se pasa por alto al priorizar controles lógicos, según el temario sobre sistemas SCADA.",
+      "id": "p12-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante compromete un dispositivo IoT en una red corporativa y logra moverse lateralmente hacia un servidor de bases de datos. ¿Qué medida de mitigación habría sido MENOS efectiva para limitar este movimiento lateral?",
+      "opciones": [
+        "Implementar segmentación de red con VLANs para aislar el dispositivo IoT",
+        "Configurar firewalls para bloquear todo el tráfico entre la VLAN del IoT y la VLAN de bases de datos",
+        "Aplicar políticas de control de acceso basado en roles (RBAC) en el servidor de bases de datos",
+        "Desconectar físicamente el dispositivo IoT de la red"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las políticas RBAC en el servidor de bases de datos no limitan el movimiento lateral si el atacante ya ha comprometido un dispositivo en la misma red, según los principios de segmentación del temario.",
+      "id": "p12-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué componente de seguridad es responsabilidad exclusiva del cliente en el modelo de servicio PaaS (Platform as a Service) según la matriz de responsabilidades de la nube?",
+      "opciones": [
+        "a) Configuración de firewalls de red",
+        "b) Gestión del hipervisor y la virtualización",
+        "c) Actualización y parcheo del sistema operativo",
+        "d) Aseguramiento de las aplicaciones desplegadas y sus credenciales de acceso"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "En el modelo PaaS, el proveedor gestiona el sistema operativo y el hipervisor, mientras que el cliente es responsable de la seguridad de las aplicaciones que despliega y de sus configuraciones de acceso, incluyendo credenciales y políticas de autenticación.",
+      "id": "p12-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un par de firewalls en modo alta disponibilidad (HA). ¿Qué escenario describe CORRECTAMENTE cómo opera este sistema?",
+      "opciones": [
+        "Ambos firewalls procesan el tráfico simultáneamente, duplicando el rendimiento",
+        "Uno de los firewalls está activo y el otro en standby, asumiendo el tráfico si el primero falla",
+        "Los firewalls se alternan en intervalos fijos para distribuir la carga",
+        "El tráfico se divide entre ambos firewalls usando un balanceador de carga externo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En configuración HA, un firewall está activo y el otro en standby, asumiendo el tráfico si el primero falla, minimizando el tiempo de inactividad según el temario sobre alta disponibilidad.",
+      "id": "p12-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué componente de seguridad en un entorno IaaS es responsabilidad EXCLUSIVA del cliente según la matriz de responsabilidades del temario?",
+      "opciones": [
+        "Configuración de firewalls de red básica",
+        "Gestión del hipervisor y la virtualización",
+        "Protección física de los servidores",
+        "Implementación de políticas de acceso a los datos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En IaaS, el cliente es responsable de la configuración de firewalls de red básica, mientras que el proveedor gestiona el hipervisor y la virtualización, según la matriz de responsabilidades en la nube.",
+      "id": "p12-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué modelo de servicio en la nube transfiere la responsabilidad de seguridad del sistema operativo y la aplicación al cliente, mientras el proveedor gestiona la infraestructura física y la virtualización?",
+      "opciones": [
+        "a) SaaS",
+        "b) PaaS",
+        "c) IaaS",
+        "d) On-premises"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En el modelo IaaS, el cliente es responsable de los sistemas operativos, middleware, aplicaciones y datos, mientras el proveedor gestiona la infraestructura física y la virtualización (según la matriz de responsabilidades en la nube).",
+      "id": "p12-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de infraestructura como código (IaC), ¿qué práctica es esencial para garantizar que las configuraciones de seguridad se apliquen de manera consistente en todos los despliegues?",
+      "opciones": [
+        "a) Ejecutar scripts manuales en cada entorno para aplicar políticas de seguridad",
+        "b) Utilizar plantillas verificadas y versionadas en sistemas de control de código fuente como Git",
+        "c) Configurar firewalls físicos en cada servidor desplegado",
+        "d) Delegar la aplicación de políticas de seguridad al proveedor de nube"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La infraestructura como código (IaC) depende de plantillas estandarizadas y versionadas para asegurar consistencia, evitando configuraciones manuales que puedan introducir errores de seguridad.",
+      "id": "p12-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué afirmación describe MEJOR la diferencia entre virtualización y containerización en términos de seguridad?",
+      "opciones": [
+        "a) La virtualización proporciona un aislamiento más fuerte que la containerización",
+        "b) La containerización requiere un hipervisor para ejecutarse",
+        "c) La virtualización consume menos recursos que la containerización",
+        "d) La containerización no permite aislar aplicaciones entre sí"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La virtualización ejecuta múltiples sistemas operativos invitados en un hipervisor, lo que proporciona un aislamiento más fuerte que la containerización, donde los contenedores comparten el mismo sistema operativo host (según el temario sobre virtualización y containerización).",
+      "id": "p12-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un componente típico de la matriz de responsabilidades en la nube?",
+      "opciones": [
+        "a) Gestión de parches del sistema operativo invitado",
+        "b) Configuración de firewalls en la red virtual",
+        "c) Protección física de los centros de datos",
+        "d) Autenticación de usuarios en aplicaciones SaaS"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La gestión de parches del sistema operativo invitado es responsabilidad del cliente en modelos como IaaS o PaaS, no un componente típico de la matriz de responsabilidades gestionado por el proveedor (según el temario sobre la matriz de responsabilidades en la nube).",
+      "id": "p12-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización despliega una aplicación serverless en AWS Lambda que procesa datos sensibles. ¿Qué aspecto de seguridad debe priorizarse MÁS en este modelo?",
+      "opciones": [
+        "a) Configuración de firewalls en la red virtual",
+        "b) Gestión de permisos y roles (IAM) para las funciones",
+        "c) Actualización del hipervisor del proveedor",
+        "d) Segmentación física de los servidores"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En arquitecturas serverless, la seguridad se centra en proteger las funciones individuales y los permisos asociados (IAM), ya que el sistema operativo y la infraestructura son gestionados por el proveedor (según el temario sobre arquitecturas sin servidor).",
+      "id": "p12-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad exclusiva del proveedor en el modelo IaaS (Infrastructure as a Service)?",
+      "opciones": [
+        "a) Configuración de firewalls en la red virtual",
+        "b) Gestión del hipervisor y la virtualización",
+        "c) Actualización de los sistemas operativos invitados",
+        "d) Protección de los datos almacenados por el cliente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En el modelo IaaS, el proveedor es responsable de la infraestructura física, la virtualización (incluyendo el hipervisor) y, en algunos casos, la red básica, mientras que el cliente gestiona todo lo que se ejecuta sobre esa infraestructura.",
+      "id": "p12-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa configura una VLAN para aislar el tráfico de cámaras de seguridad IoT en una red corporativa. ¿Qué medida adicional es CRÍTICA para mitigar riesgos asociados a estos dispositivos?",
+      "opciones": [
+        "a) Desactivar el acceso remoto a las cámaras",
+        "b) Implementar un firewall entre la VLAN IoT y el resto de la red",
+        "c) Usar contraseñas predeterminadas para simplificar el acceso",
+        "d) Conectar las cámaras directamente a Internet"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un firewall entre la VLAN IoT y el resto de la red es crítico para limitar el movimiento lateral si un dispositivo IoT es comprometido (según el temario sobre IoT y seguridad).",
+      "id": "p12-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad exclusiva del proveedor en el modelo SaaS (Software as a Service)?",
+      "opciones": [
+        "a) Configuración de firewalls en la red del cliente",
+        "b) Gestión del hipervisor y la infraestructura física subyacente",
+        "c) Parches y actualizaciones del sistema operativo invitado",
+        "d) Configuración de políticas de acceso de usuarios finales"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En el modelo SaaS, el proveedor gestiona la infraestructura física, el hipervisor y la red subyacente, mientras que el cliente solo controla datos, identidades de usuarios y configuración de acceso.",
+      "id": "p12-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario: Una organización implementa un par de firewalls en modo alta disponibilidad (HA) para proteger su red. ¿Qué escenario describe CORRECTAMENTE cómo opera este sistema?",
+      "opciones": [
+        "a) Ambos firewalls procesan el tráfico simultáneamente, duplicando el ancho de banda",
+        "b) Un firewall está activo y el otro en standby, asumiendo el tráfico si el primero falla",
+        "c) Los firewalls se sincronizan para aplicar las mismas reglas de seguridad, pero solo uno procesa tráfico",
+        "d) Los firewalls alternan roles cada 24 horas para equilibrar la carga"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En configuración HA, los firewalls sincronizan reglas y configuraciones, pero solo uno procesa tráfico activamente; el otro asume el rol si el primero falla (según el temario sobre alta disponibilidad).",
+      "id": "p12-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante compromete un dispositivo IoT en una red corporativa y logra moverse lateralmente hacia un servidor de bases de datos. ¿Qué medida de mitigación habría sido MENOS efectiva para limitar este movimiento lateral?",
+      "opciones": [
+        "a) Segmentar el tráfico IoT en una VLAN aislada",
+        "b) Implementar un firewall entre la VLAN IoT y el servidor de bases de datos",
+        "c) Desplegar el dispositivo IoT en la misma subred que el servidor de bases de datos",
+        "d) Aplicar autenticación multifactor (MFA) para acceder al servidor de bases de datos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Desplegar el dispositivo IoT en la misma subred que el servidor de bases de datos elimina el aislamiento de red, facilitando el movimiento lateral (según el temario sobre IoT y seguridad). Las otras opciones son medidas efectivas de mitigación.",
+      "id": "p12-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes componentes de seguridad es responsabilidad EXCLUSIVA del cliente en el modelo IaaS según la matriz de responsabilidades del temario?",
+      "opciones": [
+        "Configuración de firewalls en la red virtual",
+        "Gestión del hipervisor y la virtualización",
+        "Protección física de los servidores en el data center del proveedor",
+        "Actualización de firmware de los dispositivos de red del proveedor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En el modelo IaaS, el cliente es responsable de la configuración de seguridad de los recursos desplegados, incluyendo firewalls en la red virtual, mientras que el proveedor gestiona el hipervisor y la infraestructura física.",
+      "id": "p12-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno multinube con servicios en AWS, Azure y Google Cloud, ¿qué práctica es CRÍTICA para garantizar la consistencia en la aplicación de políticas de seguridad según el temario?",
+      "opciones": [
+        "Implementar un sistema de gestión de identidades centralizado (IAM) con sincronización entre proveedores",
+        "Desplegar firewalls físicos en cada data center de los proveedores",
+        "Usar solo servicios serverless para evitar complejidad en la gestión de seguridad",
+        "Configurar VLANs estáticas en cada proveedor sin integración"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La centralización de políticas de seguridad mediante un sistema IAM con sincronización entre proveedores es esencial para evitar inconsistencias en entornos multinube.",
+      "id": "p12-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia clave existe entre la virtualización y la containerización en términos de seguridad según el temario?",
+      "opciones": [
+        "La virtualización aísla completamente cada máquina virtual con su propio sistema operativo, mientras que la containerización comparte el kernel del sistema operativo host pero aísla aplicaciones.",
+        "La containerización requiere más recursos que la virtualización para ejecutar aplicaciones.",
+        "La virtualización no permite la portabilidad de aplicaciones entre entornos, a diferencia de la containerización.",
+        "La containerización es más segura que la virtualización porque no depende de hipervisores."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La virtualización usa hipervisores para aislar máquinas virtuales con sistemas operativos completos, mientras que la containerización comparte el kernel del host pero aísla aplicaciones mediante contenedores.",
+      "id": "p12-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un beneficio típico de la infraestructura como código (IaC) según el temario?",
+      "opciones": [
+        "Permite recrear infraestructuras rápidamente en diferentes proveedores de nube usando el mismo código.",
+        "Facilita la documentación automática de la infraestructura mediante control de versiones.",
+        "Reduce la necesidad de parches de seguridad en los sistemas operativos invitados.",
+        "Garantiza consistencia y repetibilidad en las configuraciones de seguridad."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "IaC no reduce la necesidad de parches de seguridad en sistemas operativos invitados; estos siguen siendo responsabilidad del cliente en modelos como IaaS.",
+      "id": "p12-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario: Una organización despliega una aplicación serverless en AWS Lambda que procesa datos sensibles. ¿Qué aspecto de seguridad debe priorizarse MÁS en este modelo según el temario?",
+      "opciones": [
+        "Configuración de permisos granulares (IAM) para cada función Lambda",
+        "Implementación de firewalls físicos en el data center de AWS",
+        "Uso de VLANs para aislar el tráfico de las funciones Lambda",
+        "Actualización manual del hipervisor en los servidores host"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En arquitecturas serverless, la seguridad se centra en los permisos de IAM y la configuración de acceso, ya que el proveedor gestiona el sistema operativo y la infraestructura subyacente.",
+      "id": "p12-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué componente de seguridad es responsabilidad EXCLUSIVA del proveedor en el modelo SaaS según la matriz de responsabilidades del temario?",
+      "opciones": [
+        "Protección del hipervisor y la infraestructura física",
+        "Configuración de firewalls en la red virtual",
+        "Gestión de identidades de usuarios finales",
+        "Actualización de parches en aplicaciones desplegadas por el cliente"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En el modelo SaaS, el proveedor es responsable de la seguridad de la infraestructura física, hipervisores y red, mientras que el cliente gestiona datos y configuraciones de acceso.",
+      "id": "p12-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de infraestructura como código (IaC), ¿qué archivo de configuración es el más adecuado para definir políticas de seguridad específicas como reglas de firewall o configuraciones de cifrado?",
+      "opciones": [
+        "a) Un archivo de manifiesto de Kubernetes (YAML/JSON) para orquestar contenedores.",
+        "b) Un archivo de plantilla de Terraform (HCL) que incluya recursos de seguridad como AWS Security Groups.",
+        "c) Un script de Bash para automatizar parches de seguridad en máquinas virtuales.",
+        "d) Un archivo de configuración de Docker Compose para definir servicios y puertos expuestos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Terraform permite definir recursos de seguridad como grupos de seguridad (Security Groups) en AWS, lo que facilita la aplicación consistente de políticas de firewall mediante IaC. Los otros archivos mencionados no están diseñados para gestionar políticas de seguridad a nivel de infraestructura.",
+      "id": "p12-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué afirmación describe MEJOR la relación entre alta disponibilidad (HA) y redundancia según el temario?",
+      "opciones": [
+        "La alta disponibilidad implica configuraciones donde los sistemas activos asumen la carga en caso de fallo, mientras que la redundancia solo proporciona copias de seguridad estáticas.",
+        "La redundancia es un requisito para la alta disponibilidad, pero esta última no requiere redundancia.",
+        "La alta disponibilidad y la redundancia son conceptos idénticos en entornos de seguridad.",
+        "La redundancia garantiza alta disponibilidad sin necesidad de configuraciones adicionales."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La alta disponibilidad va más allá de la redundancia al mantener sistemas activos y listos para asumir carga, minimizando el tiempo de inactividad.",
+      "id": "p12-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Escenario aplicado. Una organización implementa un par de firewalls en modo alta disponibilidad (HA) para proteger su red. Tras un fallo en uno de los firewalls, el tráfico se redirige automáticamente al firewall secundario sin interrupción. ¿Qué componente de seguridad es CRÍTICO para que este mecanismo funcione correctamente según el temario?",
+      "opciones": [
+        "Sincronización en tiempo real de las reglas de firewall y estado de las conexiones entre ambos dispositivos",
+        "Uso de VLANs separadas para el tráfico de gestión de los firewalls",
+        "Implementación de un sistema de detección de intrusiones (IDS) en ambos firewalls",
+        "Configuración de firewalls físicos en lugar de virtuales para evitar dependencias de software"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La sincronización en tiempo real de reglas y estado de conexiones es esencial para que los firewalls en HA operen sin pérdida de tráfico o seguridad durante la conmutación.",
+      "id": "p12-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué medida de mitigación sería MENOS efectiva para limitar el movimiento lateral desde un dispositivo IoT comprometido en una red corporativa según el temario?",
+      "opciones": [
+        "Implementar un firewall perimetral que filtre todo el tráfico de la red corporativa",
+        "Segmentar el tráfico IoT en una VLAN aislada con políticas de acceso restrictivas",
+        "Aplicar parches de seguridad en el dispositivo IoT si está dentro del ciclo de soporte del fabricante",
+        "Monitorear el tráfico del dispositivo IoT con un sistema de detección de intrusiones (IDS)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un firewall perimetral que filtre todo el tráfico de la red corporativa no limita el movimiento lateral dentro de la red; la segmentación en VLANs y el monitoreo son medidas más efectivas.",
+      "id": "p12-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué modelo de servicio en la nube transfiere la responsabilidad de seguridad del sistema operativo, middleware y aplicaciones al cliente, mientras el proveedor gestiona la infraestructura física y la virtualización?",
+      "opciones": [
+        "a) SaaS (Software as a Service)",
+        "b) PaaS (Platform as a Service)",
+        "c) IaaS (Infrastructure as a Service)",
+        "d) On-premises"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En el modelo IaaS, el proveedor gestiona la infraestructura física y la virtualización, mientras el cliente es responsable de los sistemas operativos, middleware, aplicaciones y datos (según la matriz de responsabilidades en la nube).",
+      "id": "p12-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué práctica es CRÍTICA pero a menudo pasada por alto en la configuración de firewalls en entornos de virtualización?",
+      "opciones": [
+        "a) Aplicar reglas de firewall basadas en direcciones IP estáticas en lugar de etiquetas de seguridad dinámicas.",
+        "b) Configurar reglas de firewall que permitan todo el tráfico entre máquinas virtuales en el mismo hipervisor por defecto.",
+        "c) Implementar políticas de firewall que restrinjan el tráfico entre zonas de confianza y no confianza, incluso dentro del mismo hipervisor.",
+        "d) Priorizar la optimización del rendimiento del firewall sobre la precisión de las reglas de seguridad."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La opción 'c' destaca la necesidad de segmentar el tráfico entre zonas de confianza y no confianza, incluso dentro de entornos virtualizados, lo que es una práctica crítica pero frecuentemente ignorada al asumir que el aislamiento del hipervisor es suficiente.",
+      "id": "p12-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad EXCLUSIVA del cliente en el modelo PaaS (Platform as a Service)?",
+      "opciones": [
+        "a) Gestión del hipervisor y la virtualización",
+        "b) Configuración y seguridad de las aplicaciones desplegadas",
+        "c) Protección de la infraestructura física subyacente",
+        "d) Mantenimiento del sistema operativo del host"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En el modelo PaaS, el cliente es responsable de asegurar las aplicaciones que despliega y su configuración, mientras que el proveedor gestiona la infraestructura física, el sistema operativo y la plataforma de ejecución.",
+      "id": "p12-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, en la configuración de alta disponibilidad (HA) para firewalls, ¿qué componente es CRÍTICO para garantizar que el tráfico se redirija automáticamente al firewall secundario en caso de fallo del primario?",
+      "opciones": [
+        "a) El protocolo de sincronización de estado (stateful synchronization protocol)",
+        "b) La implementación de un balanceador de carga (load balancer)",
+        "c) El uso exclusivo de conexiones inalámbricas para redundancia",
+        "d) La configuración de VLANs para aislar el tráfico entre firewalls"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El protocolo de sincronización de estado (como stateful synchronization en firewalls) es esencial para mantener la coherencia de las sesiones activas entre el firewall primario y secundario, permitiendo una transición sin interrupciones.",
+      "id": "p12-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario: Una organización implementa un par de firewalls en modo alta disponibilidad (HA) para proteger su red. Tras un fallo en uno de los firewalls, el tráfico se redirige automáticamente al firewall secundario sin interrupción. ¿Qué componente de seguridad es CRÍTICO para que este mecanismo funcione correctamente según el temario?",
+      "opciones": [
+        "a) Un protocolo de sincronización de estado (stateful synchronization) entre ambos firewalls",
+        "b) Un sistema de detección de intrusiones (IDS) en línea",
+        "c) Un balanceador de carga dedicado",
+        "d) Un firewall de terceros como solución de respaldo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La alta disponibilidad (HA) en firewalls requiere sincronización de estado para garantizar que el firewall secundario tome el control sin perder conexiones activas.",
+      "id": "p12-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué componente de seguridad es responsabilidad exclusiva del proveedor en el modelo SaaS (Software as a Service) según la matriz de responsabilidades del temario?",
+      "opciones": [
+        "a) Configuración de acceso de usuarios finales",
+        "b) Gestión del hipervisor y la infraestructura física",
+        "c) Parches de seguridad en aplicaciones desplegadas por el cliente",
+        "d) Cifrado de datos en reposo en los dispositivos del cliente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En el modelo SaaS, el proveedor es responsable de la infraestructura física, el hipervisor y la red subyacente, mientras que el cliente gestiona los datos y la configuración de acceso.",
+      "id": "p12-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué componente de seguridad es responsabilidad exclusiva del cliente en el modelo Platform as a Service (PaaS) según la matriz de responsabilidades de seguridad en la nube?",
+      "opciones": [
+        "a) Sistema operativo",
+        "b) Aplicaciones desplegadas",
+        "c) Infraestructura física",
+        "d) Hipervisor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En el modelo PaaS, el cliente es responsable de asegurar las aplicaciones desplegadas y su configuración de seguridad, mientras que el proveedor gestiona el sistema operativo, la infraestructura física y el hipervisor.",
+      "id": "p12-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Escenario aplicado. Un atacante compromete un termostato inteligente IoT en una red corporativa y logra moverse lateralmente hacia un servidor de bases de datos. ¿Qué medida de mitigación habría sido MENOS efectiva para limitar este movimiento lateral?",
+      "opciones": [
+        "a) Implementar microsegmentación con firewalls internos",
+        "b) Configurar el termostato con una contraseña predeterminada compleja",
+        "c) Aislar el tráfico IoT en una VLAN dedicada sin acceso a otros segmentos",
+        "d) Aplicar parches de seguridad al termostato (si son compatibles)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Cambiar la contraseña de un dispositivo IoT no limita el movimiento lateral si el dispositivo ya está comprometido; la segmentación y aislamiento son medidas más efectivas.",
+      "id": "p12-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema de control industrial (ICS) basado en SCADA para gestionar una planta química. Para cumplir con los requisitos de seguridad más estrictos, el equipo de TI decide aplicar un modelo de aislamiento de red que combine técnicas de *air gap* físico con segmentación lógica avanzada. Sin embargo, tras una auditoría de seguridad, se detecta que uno de los servidores SCADA en la red interna puede comunicarse con un sistema de gestión de inventarios en una VLAN diferente. ¿Qué componente de seguridad, según el temario, es CRÍTICO para evitar este tipo de comunicaciones no autorizadas entre segmentos de red en un entorno ICS/SCADA?",
+      "opciones": [
+        "a) Implementar un firewall de nueva generación (NGFW) con inspección profunda de paquetes (DPI) entre las VLANs para bloquear tráfico no autorizado basado en políticas de aplicaciones y puertos específicos.",
+        "b) Aplicar un sistema de prevención de intrusiones (IPS) en línea para detectar y bloquear intentos de comunicación entre segmentos no autorizados.",
+        "c) Configurar políticas estrictas de *role-based access control* (RBAC) en los servidores SCADA para restringir accesos a sistemas externos.",
+        "d) Utilizar un *zero trust network access* (ZTNA) para autenticar y autorizar cada intento de comunicación entre segmentos de red, incluso dentro de la misma VLAN."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En entornos ICS/SCADA, donde el aislamiento físico (air gap) no es absoluto, un firewall de nueva generación con DPI es esencial para bloquear tráfico no autorizado entre segmentos de red, incluso cuando estos están lógicamente aislados mediante VLANs. Esta medida mitiga riesgos de movimiento lateral y acceso no deseado a sistemas críticos.",
+      "id": "p12-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema SCADA para gestionar una planta química y decide aplicar un modelo de aislamiento de red que combine *air gap* físico con segmentación lógica avanzada. Sin embargo, tras una auditoría, se detecta que un servidor SCADA en la red interna puede establecer comunicaciones no autorizadas con un sistema de gestión de inventarios ubicado en una VLAN diferente. Según el temario, ¿qué componente de seguridad es CRÍTICO para evitar este tipo de comunicaciones no autorizadas entre segmentos de red en un entorno ICS/SCADA?",
+      "opciones": [
+        "a) Implementar un firewall de nueva generación (NGFW) con políticas de control de aplicaciones en el tráfico entre VLANs",
+        "b) Configurar un sistema de prevención de intrusiones (IPS) que monitoree el tráfico entre segmentos de red",
+        "c) Utilizar un *gateway* de aplicaciones seguras (SAG) para filtrar y validar el tráfico entre la red SCADA y otros segmentos",
+        "d) Aplicar listas de control de acceso (ACL) en los switches que conectan las VLANs para bloquear el tráfico no autorizado"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En entornos ICS/SCADA, un *gateway* de aplicaciones seguras (SAG) es crítico para filtrar y validar el tráfico entre segmentos de red, especialmente cuando se requiere aislamiento estricto. Este componente actúa como un punto de control único para garantizar que solo el tráfico aprobado y seguro pueda cruzar los límites de segmentación.",
+      "id": "p12-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué modelo de servicio en la nube transfiere la responsabilidad de seguridad del sistema operativo, middleware y aplicaciones al cliente, mientras el proveedor gestiona la infraestructura física y la virtualización?",
+      "opciones": [
+        "a) SaaS (Software as a Service)",
+        "b) PaaS (Platform as a Service)",
+        "c) IaaS (Infrastructure as a Service)",
+        "d) On-premises"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En el modelo IaaS, el cliente asume la responsabilidad de los sistemas operativos, middleware, aplicaciones y datos, mientras el proveedor gestiona la infraestructura física y la virtualización.",
+      "id": "p12-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes componentes de seguridad es responsabilidad EXCLUSIVA del cliente en el modelo PaaS según la matriz de responsabilidades del temario?",
+      "opciones": [
+        "a) Hipervisor",
+        "b) Sistema operativo",
+        "c) Aplicaciones desplegadas",
+        "d) Red física"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En PaaS, el cliente es responsable de las aplicaciones que despliega y su configuración de seguridad, mientras el proveedor gestiona el sistema operativo y la infraestructura.",
+      "id": "p12-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad EXCLUSIVA del cliente en el modelo IaaS (Infrastructure as a Service) cuando se despliega una máquina virtual en AWS?",
+      "opciones": [
+        "a) Gestión del hipervisor y la infraestructura física",
+        "b) Configuración de firewalls en la máquina virtual",
+        "c) Actualización del firmware del servidor físico",
+        "d) Mantenimiento de la red física subyacente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En el modelo IaaS, el cliente es responsable de la configuración de seguridad de los sistemas operativos, firewalls y aplicaciones desplegadas, mientras que el proveedor gestiona el hipervisor y la infraestructura física.",
+      "id": "p12-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el modelo de servicio en la nube IaaS, ¿qué componente de seguridad es responsabilidad EXCLUSIVA del proveedor según la matriz de responsabilidades del temario?",
+      "opciones": [
+        "Configuración de firewalls en la máquina virtual del cliente",
+        "Gestión del hipervisor y la virtualización",
+        "Actualización de parches del sistema operativo invitado",
+        "Configuración de políticas de acceso a aplicaciones desplegadas por el cliente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En el modelo IaaS, el proveedor es responsable de la infraestructura física, la virtualización y el hipervisor, mientras que el cliente gestiona los sistemas operativos invitados y las aplicaciones.",
+      "id": "p12-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad exclusiva del cliente en el modelo Infrastructure as a Service (IaaS) cuando se despliega una máquina virtual en AWS?",
+      "opciones": [
+        "a) Configuración de firewalls en la máquina virtual",
+        "b) Gestión del hipervisor y la virtualización",
+        "c) Seguridad física del centro de datos",
+        "d) Mantenimiento de la red física subyacente"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En el modelo IaaS, el cliente es responsable de todo lo que se ejecuta sobre la infraestructura proporcionada, incluyendo la configuración de firewalls en las máquinas virtuales, ya que el proveedor solo gestiona la infraestructura física y el hipervisor.",
+      "id": "p12-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la virtualización, ¿qué componente es responsable de gestionar y asignar los recursos físicos (CPU, memoria, almacenamiento) entre las máquinas virtuales?",
+      "opciones": [
+        "a) El sistema operativo invitado de cada máquina virtual",
+        "b) El hipervisor (hipervisor de tipo 1 o tipo 2)",
+        "c) El firmware del hardware físico",
+        "d) El kernel del sistema operativo host"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El hipervisor es el componente clave en la virtualización que gestiona y asigna los recursos físicos entre las máquinas virtuales, actuando como intermediario entre el hardware y los sistemas operativos invitados.",
+      "id": "p12-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad EXCLUSIVA del cliente en un entorno de virtualización cuando se despliega una máquina virtual en un hipervisor gestionado por el proveedor?",
+      "opciones": [
+        "a) Gestión del hipervisor y recursos físicos",
+        "b) Configuración del sistema operativo invitado y aplicaciones dentro de la máquina virtual",
+        "c) Mantenimiento del hardware físico del servidor host",
+        "d) Actualización del firmware del hipervisor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En la virtualización, el proveedor gestiona el hipervisor y los recursos físicos (opción a y c), mientras que el cliente es responsable de todo lo que se ejecuta dentro de la máquina virtual, incluyendo el sistema operativo invitado y las aplicaciones (opción b).",
+      "id": "p12-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de virtualización, ¿qué componente es responsable de gestionar y asignar los recursos físicos (CPU, memoria, almacenamiento) entre las máquinas virtuales?",
+      "opciones": [
+        "a) Hipervisor",
+        "b) Contenedor",
+        "c) Firewall de red",
+        "d) Balanceador de carga"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El hipervisor es el componente encargado de gestionar y asignar los recursos físicos entre las máquinas virtuales, permitiendo su ejecución aislada y eficiente.",
+      "id": "p12-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una organización implementa un sistema SCADA para gestionar una planta química y decide aplicar un modelo de aislamiento de red que combine *air gap* físico con segmentación lógica avanzada. Sin embargo, tras una auditoría, se detecta que un servidor SCADA en la red interna puede establecer comunicaciones no autorizadas con un sistema de gestión de inventarios ubicado en una VLAN diferente. ¿Qué componente de seguridad es CRÍTICO para evitar este tipo de comunicaciones no autorizadas entre segmentos de red en un entorno ICS/SCADA?",
+      "opciones": [
+        "a) Firewall de nueva generación (NGFW) con inspección profunda de paquetes",
+        "b) Segmentación estricta mediante VLANs y ACLs (Access Control Lists)",
+        "c) Sistema de detección de intrusos (IDS) en la red",
+        "d) Cifrado de datos en tránsito entre segmentos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La segmentación estricta mediante VLANs y ACLs es esencial para evitar comunicaciones no autorizadas entre segmentos de red en entornos ICS/SCADA.",
+      "id": "p12-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema SCADA para gestionar una planta de energía y decide aplicar un modelo de aislamiento de red que combine *air gap* físico con segmentación lógica avanzada usando VLANs. Sin embargo, durante una auditoría de seguridad, se detecta que un servidor SCADA en la red interna puede establecer comunicaciones no autorizadas con un sistema de gestión de inventarios ubicado en una VLAN diferente. ¿Qué componente de seguridad, según el temario, es CRÍTICO para evitar este tipo de comunicaciones no autorizadas entre segmentos de red en este entorno ICS/SCADA?",
+      "opciones": [
+        "a) Implementar un firewall de nueva generación (NGFW) con inspección profunda de paquetes entre VLANs para bloquear tráfico no autorizado.",
+        "b) Configurar un *firewall interno* o *firewall de segmento* (segment firewall) que aplique reglas estrictas de denegación por defecto entre las VLANs involucradas.",
+        "c) Aplicar un *Access Control List* (ACL) en los switches que permita solo tráfico específico entre VLANs, pero sin filtrado de aplicaciones.",
+        "d) Utilizar un *Network Intrusion Prevention System* (NIPS) para detectar y bloquear tráfico no autorizado entre segmentos, pero sin capacidad de bloqueo automático."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que en entornos ICS/SCADA, un *firewall interno* o *firewall de segmento* es crítico para aplicar reglas estrictas de denegación por defecto entre VLANs, evitando así comunicaciones no autorizadas. Aunque los NGFW, ACLs y NIPS son útiles, el firewall de segmento es el componente diseñado específicamente para este aislamiento lógico.",
+      "id": "p12-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué modelo de servicio en la nube transfiere la responsabilidad de seguridad de la aplicación y los datos al cliente, mientras el proveedor gestiona la infraestructura física, la virtualización y el sistema operativo?",
+      "opciones": [
+        "a) SaaS (Software as a Service)",
+        "b) PaaS (Platform as a Service)",
+        "c) IaaS (Infrastructure as a Service)",
+        "d) On-premises"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En el modelo IaaS, el cliente es responsable de la seguridad de los datos, aplicaciones y sistemas operativos desplegados, mientras el proveedor gestiona la infraestructura física y la virtualización según la matriz de responsabilidades en la nube.",
+      "id": "p12-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes componentes de seguridad es responsabilidad EXCLUSIVA del proveedor en el modelo SaaS según la matriz de responsabilidades del temario?",
+      "opciones": [
+        "a) Configuración de acceso de usuarios",
+        "b) Gestión de identidades",
+        "c) Seguridad del hipervisor",
+        "d) Datos almacenados por el cliente"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En el modelo SaaS, el proveedor es responsable de la seguridad del hipervisor, la red física y la infraestructura subyacente, mientras el cliente gestiona los datos y las identidades.",
+      "id": "p12-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad exclusiva del proveedor en el modelo Platform as a Service (PaaS) cuando un desarrollador despliega una aplicación en Google App Engine?",
+      "opciones": [
+        "a) Configuración de la aplicación desplegada",
+        "b) Gestión del sistema operativo subyacente",
+        "c) Parches de seguridad en las aplicaciones del cliente",
+        "d) Configuración de firewalls en la red del proveedor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En el modelo PaaS, el proveedor es responsable de gestionar el sistema operativo subyacente, mientras que el cliente controla la configuración y seguridad de la aplicación desplegada.",
+      "id": "p12-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué afirmación describe MEJOR la diferencia entre virtualización y containerización en términos de seguridad según el temario?",
+      "opciones": [
+        "a) La virtualización aísla completamente cada máquina virtual con su propio sistema operativo, mientras la containerización comparte el sistema operativo host pero aísla aplicaciones mediante contenedores.",
+        "b) La containerización requiere más recursos que la virtualización porque ejecuta múltiples sistemas operativos.",
+        "c) La virtualización es más portátil que la containerización.",
+        "d) La containerización no permite la ejecución de aplicaciones en entornos aislados."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La virtualización aísla cada máquina virtual con su propio sistema operativo, mientras la containerización comparte el sistema operativo host pero aísla aplicaciones mediante contenedores, lo que la hace más eficiente en recursos.",
+      "id": "p12-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario: Una organización implementa un sistema SCADA para gestionar una planta química y decide aplicar un modelo de aislamiento de red que combine *air gap* físico con segmentación lógica avanzada. Sin embargo, tras una auditoría, se detecta que un servidor SCADA en la red interna puede establecer comunicaciones no autorizadas con un sistema de gestión de inventarios ubicado en una VLAN diferente. ¿Qué componente de seguridad es CRÍTICO para evitar este tipo de comunicaciones no autorizadas entre segmentos de red en este entorno ICS/SCADA?",
+      "opciones": [
+        "a) Implementar un firewall entre las VLANs para filtrar el tráfico no autorizado",
+        "b) Aplicar parches de seguridad en los servidores SCADA",
+        "c) Usar autenticación multifactor (MFA) para acceder a los servidores",
+        "d) Segmentar físicamente los servidores SCADA y de inventarios"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La implementación de firewalls entre VLANs permite filtrar y bloquear el tráfico no autorizado entre segmentos de red, mitigando el riesgo de comunicaciones no deseadas en entornos ICS/SCADA.",
+      "id": "p12-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad EXCLUSIVA del cliente en un entorno de infraestructura como código (IaC) cuando se despliega una configuración de red en AWS usando Terraform?",
+      "opciones": [
+        "a) La definición de las reglas de firewall en el archivo de configuración de Terraform.",
+        "b) La gestión del hipervisor subyacente en el proveedor de nube.",
+        "c) La actualización de firmware de los dispositivos de red físicos.",
+        "d) La configuración del aislamiento físico (*air gap*) entre segmentos de red."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En IaC, el cliente es responsable de definir las reglas de seguridad en los archivos de configuración (ej. Terraform), ya que el proveedor solo gestiona la infraestructura física y virtual subyacente.",
+      "id": "p12-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué componente de seguridad es responsabilidad exclusiva del proveedor en el modelo Infrastructure as a Service (IaaS) cuando un cliente despliega una máquina virtual en un hipervisor gestionado por el proveedor según la matriz de responsabilidades del temario?",
+      "opciones": [
+        "a) Configuración de firewalls y grupos de seguridad",
+        "b) Gestión del hipervisor y aislamiento entre máquinas virtuales",
+        "c) Actualización de parches del sistema operativo invitado",
+        "d) Configuración de políticas de acceso a aplicaciones desplegadas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En el modelo IaaS, el proveedor es responsable exclusivo de gestionar el hipervisor (incluyendo el aislamiento entre máquinas virtuales) y la infraestructura subyacente, mientras que el cliente gestiona los sistemas operativos invitados y aplicaciones.",
+      "id": "p12-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Escenario aplicado. Una organización implementa un par de firewalls en modo alta disponibilidad (HA) para proteger su red. Tras un fallo en uno de los firewalls, el tráfico se redirige automáticamente al firewall secundario sin interrupción. ¿Qué componente de sincronización es CRÍTICO para que este mecanismo funcione correctamente según el temario?",
+      "opciones": [
+        "a) El protocolo de sincronización de estado (stateful synchronization) entre ambos firewalls",
+        "b) La configuración de reglas de firewall idénticas en ambos dispositivos",
+        "c) El uso de un balanceador de carga para distribuir el tráfico",
+        "d) La aplicación de parches de seguridad en ambos firewalls"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El protocolo de sincronización de estado (stateful synchronization) permite que el firewall secundario mantenga una réplica exacta del estado de las conexiones activas del firewall primario, asegurando una transición sin interrupciones.",
+      "id": "p12-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización despliega un sistema de contenedores en Kubernetes dentro de un entorno IaaS en AWS, utilizando un clúster gestionado por el proveedor (EKS). Para cumplir con los requisitos de seguridad de la industria, el equipo de TI implementa políticas de red mediante NetworkPolicies en Kubernetes y regula el acceso a los pods mediante ServiceAccounts con roles y permisos específicos. Sin embargo, durante una auditoría de seguridad, se detecta que un pod con privilegios elevados en el namespace 'production' puede comunicarse con un pod en el namespace 'development', violando el principio de mínimo privilegio. ¿Qué componente de seguridad, según el temario, es CRÍTICO para evitar este tipo de comunicaciones no autorizadas entre namespaces o pods en un entorno de containerización?",
+      "opciones": [
+        "a) Configurar firewalls en el hipervisor del proveedor (AWS Nitro) para bloquear el tráfico entre namespaces.",
+        "b) Implementar un controlador de políticas de red (NetworkPolicy) que defina explícitamente las reglas de comunicación permitidas entre pods y namespaces.",
+        "c) Aislar los namespaces físicamente mediante VLANs dedicadas y *air gap* entre ellos.",
+        "d) Utilizar un hipervisor seguro (SEV-SNP de AMD) para aislar los recursos asignados a cada pod."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los NetworkPolicies en Kubernetes permiten definir reglas de comunicación a nivel de red entre pods y namespaces, asegurando que solo se permita el tráfico autorizado según el principio de mínimo privilegio.",
+      "id": "p12-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un entorno híbrido con servicios en AWS (IaaS) y Azure (PaaS), utilizando IaC con Terraform para gestionar la infraestructura. Durante una auditoría de seguridad, se detecta que las políticas de firewall definidas en Terraform para los grupos de seguridad de AWS no se sincronizan correctamente con las reglas de Azure Network Security Groups (NSG) en el mismo entorno híbrido, generando brechas de seguridad. ¿Qué práctica de seguridad, según el temario, es CRÍTICA para garantizar la consistencia de las políticas de firewall entre proveedores en un entorno multinube?",
+      "opciones": [
+        "a) Implementar un orquestador de políticas de firewall centralizado que unifique la aplicación de reglas en todos los proveedores de nube.",
+        "b) Aplicar segmentación de red estática en cada proveedor sin coordinación entre ellos para evitar dependencias cruzadas.",
+        "c) Utilizar firewalls de terceros con capacidades de sincronización automática entre proveedores de nube.",
+        "d) Configurar manualmente las políticas de firewall en cada proveedor cada vez que se realiza un cambio en IaC."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, en entornos multinube, la inconsistencia en políticas de firewall entre proveedores es un riesgo crítico. La implementación de un orquestador de políticas centralizado (como herramientas de gestión de seguridad multicloud) garantiza la aplicación coherente de reglas de firewall en todos los entornos.",
+      "id": "p12-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad EXCLUSIVA del cliente en el modelo SaaS (Software as a Service)?",
+      "opciones": [
+        "Configuración de acceso y gestión de identidades de usuarios",
+        "Seguridad del hipervisor y la infraestructura física",
+        "Gestión de parches del sistema operativo subyacente",
+        "Protección de la red física del proveedor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En el modelo SaaS, el cliente es responsable exclusivo de la configuración de acceso y gestión de identidades de usuarios, mientras el proveedor gestiona el resto de componentes de seguridad.",
+      "id": "p12-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de virtualización gestionado por un proveedor de nube (IaaS), ¿qué responsabilidad de seguridad recae exclusivamente en el cliente según la matriz de responsabilidades del temario?",
+      "opciones": [
+        "a) Configuración y mantenimiento del hipervisor",
+        "b) Gestión de la red física subyacente",
+        "c) Implementación de políticas de firewall en la máquina virtual",
+        "d) Actualización del firmware del servidor físico"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En el modelo IaaS, el proveedor gestiona el hipervisor y la infraestructura física, mientras que el cliente es responsable de la configuración de seguridad en las máquinas virtuales, incluyendo políticas de firewall.",
+      "id": "p12-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de containerización con Kubernetes, ¿qué componente es responsable de gestionar los recursos físicos (CPU, memoria, almacenamiento) entre los contenedores?",
+      "opciones": [
+        "El hipervisor del proveedor de la nube",
+        "El sistema operativo host del servidor",
+        "El motor de containerización (ej. Docker)",
+        "El orquestador de contenedores (ej. Kubernetes)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En la containerización, el motor de containerización (como Docker) gestiona los recursos físicos compartidos entre los contenedores, mientras Kubernetes actúa como orquestador.",
+      "id": "p12-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué práctica de seguridad es CRÍTICA pero a menudo pasada por alto en sistemas SCADA según el temario?",
+      "opciones": [
+        "Implementar firewalls entre la red SCADA y otras redes",
+        "Cambiar contraseñas predeterminadas en dispositivos industriales",
+        "Aplicar parches de seguridad al sistema operativo de los servidores SCADA",
+        "Segmentar la red SCADA en VLANs aisladas"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La segmentación de la red SCADA en VLANs aisladas es una práctica crítica pero a menudo pasada por alto para evitar movimientos laterales en entornos ICS.",
+      "id": "p12-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una organización despliega una aplicación serverless en AWS Lambda que procesa datos sensibles. ¿Qué aspecto de seguridad debe priorizarse MENOS en este modelo según el temario?",
+      "opciones": [
+        "Gestión de permisos y roles de las funciones Lambda",
+        "Configuración de firewalls en la red subyacente",
+        "Protección de los datos en tránsito y en reposo",
+        "Autenticación y autorización de las llamadas a las funciones"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En arquitecturas serverless, el proveedor gestiona la infraestructura subyacente, incluyendo firewalls, por lo que el cliente no debe priorizar su configuración.",
+      "id": "p12-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad EXCLUSIVA del proveedor en el modelo PaaS (Platform as a Service)?",
+      "opciones": [
+        "Gestión del sistema operativo de la plataforma",
+        "Configuración de seguridad de las aplicaciones desplegadas",
+        "Protección de los datos almacenados por el cliente",
+        "Autenticación de usuarios finales"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En el modelo PaaS, el proveedor es responsable exclusivo de la gestión del sistema operativo de la plataforma, mientras el cliente gestiona la seguridad de las aplicaciones desplegadas.",
+      "id": "p12-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de virtualización, ¿qué componente es responsable de aislar los recursos entre máquinas virtuales y garantizar que el tráfico entre ellas no comprometa la seguridad de otras VMs?",
+      "opciones": [
+        "a) El hipervisor",
+        "b) El sistema operativo host",
+        "c) El firewall de red",
+        "d) El proveedor de servicios en la nube"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El hipervisor gestiona y aísla los recursos entre las máquinas virtuales, asegurando que el tráfico entre ellas no afecte la seguridad de otras VMs, ya que es el componente clave en la separación de entornos virtualizados.",
+      "id": "p12-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno híbrido con servicios en AWS (IaaS) y Azure (PaaS), ¿qué práctica es CRÍTICA para garantizar la consistencia de las políticas de firewall entre proveedores según el temario?",
+      "opciones": [
+        "Centralizar la gestión de políticas de firewall en una consola única",
+        "Implementar IaC con herramientas como Terraform para definir políticas",
+        "Aplicar MFA en todos los accesos a los entornos cloud",
+        "Usar un hipervisor común en ambos proveedores"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La infraestructura como código (IaC) con herramientas como Terraform permite definir políticas de firewall de manera consistente y repetible en entornos multinube.",
+      "id": "p12-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una organización implementa un par de firewalls en modo alta disponibilidad (HA). Tras un fallo en uno de los firewalls, el tráfico se redirige automáticamente al firewall secundario sin interrupción. ¿Qué componente de sincronización es CRÍTICO para que este mecanismo funcione correctamente según el temario?",
+      "opciones": [
+        "Sincronización de tablas de enrutamiento entre firewalls",
+        "Sincronización de estados de conexiones activas (stateful synchronization)",
+        "Sincronización de firmwares de los firewalls",
+        "Sincronización de políticas de firewall mediante IaC"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En configuraciones HA de firewalls, la sincronización de estados de conexiones activas (stateful synchronization) es crítica para garantizar una transición fluida sin pérdida de sesiones.",
+      "id": "p12-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización despliega un sistema SCADA para gestionar una planta química y utiliza un hipervisor en un entorno IaaS para virtualizar los servidores de control. Durante una auditoría de seguridad, se detecta que un atacante podría aprovechar una vulnerabilidad en el hipervisor para acceder a otros servidores virtuales en el mismo host, comprometiendo así operaciones críticas. Según el temario, ¿qué componente de seguridad es CRÍTICO para evitar este tipo de ataques entre máquinas virtuales en un entorno SCADA/IaaS?",
+      "opciones": [
+        "a) Aplicar políticas estrictas de aislamiento de red mediante VLANs dedicadas para cada servidor SCADA",
+        "b) Implementar un hipervisor de tipo 1 (bare-metal) con soporte para aislamiento de memoria y gestión de recursos segura",
+        "c) Configurar firewalls entre cada máquina virtual para filtrar tráfico no autorizado entre ellas",
+        "d) Segmentar físicamente los servidores SCADA en racks independientes para evitar comunicación entre hosts"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El hipervisor de tipo 1 (bare-metal) gestiona directamente el hardware y proporciona aislamiento de memoria entre máquinas virtuales, reduciendo el riesgo de que un atacante comprometa un servidor SCADA y acceda a otros en el mismo host.",
+      "id": "p12-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad EXCLUSIVA del cliente en el modelo Platform as a Service (PaaS) cuando un desarrollador despliega una aplicación en Google App Engine?",
+      "opciones": [
+        "Configuración de firewalls de red física",
+        "Gestión del sistema operativo subyacente",
+        "Protección de credenciales de acceso y configuración de aplicaciones",
+        "Mantenimiento de la infraestructura física del centro de datos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En el modelo PaaS, el cliente es responsable de la seguridad de las aplicaciones desplegadas y su configuración, incluyendo credenciales y políticas de acceso, mientras el proveedor gestiona el sistema operativo y la infraestructura.",
+      "id": "p12-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, en un entorno de virtualización gestionado por un hipervisor, ¿qué componente es responsable de aislar los recursos entre máquinas virtuales y garantizar que el tráfico entre ellas no comprometa la seguridad de otras VMs?",
+      "opciones": [
+        "a) El hipervisor, mediante el aislamiento de recursos y control de acceso entre VMs",
+        "b) El sistema operativo invitado de cada máquina virtual",
+        "c) El firewall de red física que protege el host",
+        "d) El proveedor de servicios en la nube que gestiona el hipervisor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El hipervisor es el componente encargado de gestionar y aislar los recursos entre máquinas virtuales, garantizando que el tráfico y los procesos de una VM no afecten a otras, lo que es crítico para la seguridad en entornos virtualizados.",
+      "id": "p12-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad EXCLUSIVA del cliente en el modelo de servicio en la nube Infrastructure as a Service (IaaS) cuando se despliega una máquina virtual en un hipervisor gestionado por el proveedor?",
+      "opciones": [
+        "a) Gestión del hipervisor y la virtualización",
+        "b) Configuración de firewalls y políticas de red en la máquina virtual",
+        "c) Mantenimiento del hardware físico del servidor",
+        "d) Actualización del firmware del hipervisor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En el modelo IaaS, el cliente es responsable de configurar y gestionar la seguridad de los sistemas operativos, aplicaciones y políticas de red dentro de sus máquinas virtuales, incluyendo firewalls y reglas de acceso.",
+      "id": "p12-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad EXCLUSIVA del cliente en un entorno de containerización con Kubernetes cuando se configuran políticas de red mediante NetworkPolicies?",
+      "opciones": [
+        "a) Configuración del hipervisor subyacente",
+        "b) Definición de políticas de red entre pods y namespaces",
+        "c) Gestión del sistema operativo host",
+        "d) Actualización del firmware del nodo físico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En Kubernetes, las políticas de red (NetworkPolicies) permiten controlar el tráfico entre pods y namespaces, y su configuración es responsabilidad exclusiva del cliente, ya que el proveedor gestiona el entorno subyacente.",
+      "id": "p12-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno híbrido con servicios en AWS (IaaS) y Azure (PaaS), ¿qué archivo de configuración es el más adecuado para definir políticas de seguridad específicas como reglas de firewall o configuraciones de cifrado?",
+      "opciones": [
+        "Un archivo de configuración YAML de Kubernetes",
+        "Un archivo Terraform con módulos de seguridad",
+        "Un script de PowerShell para automatizar parches",
+        "Un archivo JSON de logs de auditoría de AWS CloudTrail"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Terraform permite definir infraestructura y políticas de seguridad como código, incluyendo reglas de firewall y configuraciones de cifrado, de manera consistente en entornos híbridos.",
+      "id": "p12-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una organización despliega un sistema SCADA para gestionar una planta química y utiliza un hipervisor en un entorno IaaS para virtualizar los servidores de control. Durante una auditoría, se detecta que un atacante podría aprovechar una vulnerabilidad en el hipervisor para acceder a otros servidores virtuales en el mismo host. ¿Qué componente de seguridad es CRÍTICO para evitar este tipo de ataques entre máquinas virtuales según el temario?",
+      "opciones": [
+        "Implementación de NetworkPolicies en Kubernetes",
+        "Uso de un hipervisor con aislamiento de recursos y sandboxing",
+        "Configuración de firewalls entre VLANs de la red SCADA",
+        "Aplicación de parches de seguridad en el sistema operativo invitado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un hipervisor con aislamiento de recursos y sandboxing es crítico para evitar que una vulnerabilidad en una VM comprometa otras VMs en el mismo host, especialmente en entornos SCADA/IaaS.",
+      "id": "p12-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad EXCLUSIVA del proveedor en el modelo Infrastructure as a Service (IaaS) cuando un cliente despliega una máquina virtual en un hipervisor gestionado por el proveedor?",
+      "opciones": [
+        "La configuración de firewalls en la red virtual del cliente",
+        "La seguridad física de los centros de datos donde se alojan los hipervisores",
+        "La gestión de parches de seguridad en el sistema operativo invitado de la máquina virtual",
+        "La configuración de políticas de acceso a los recursos de almacenamiento asignados a la máquina virtual"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La seguridad física de los centros de datos es responsabilidad exclusiva del proveedor en el modelo IaaS, ya que incluye la protección de la infraestructura subyacente como centros de datos, hardware físico y redes físicas.",
+      "id": "p12-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de virtualización gestionado por un hipervisor, ¿qué componente es responsable de gestionar el acceso de las máquinas virtuales (VM) a los recursos físicos (CPU, RAM, almacenamiento) y garantizar el aislamiento entre ellas?",
+      "opciones": [
+        "a) El sistema operativo invitado en cada VM",
+        "b) El hipervisor o *hypervisor*",
+        "c) El firewall de red del host",
+        "d) El sistema de gestión de la nube (como AWS EC2 o Azure VMs)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El hipervisor es el componente que gestiona los recursos físicos y garantiza el aislamiento entre las máquinas virtuales, actuando como capa intermedia entre el hardware y los sistemas operativos invitados.",
+      "id": "p12-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización despliega un sistema SCADA para gestionar una planta de producción química, utilizando un entorno híbrido con servidores virtualizados en AWS (IaaS) y un sistema de control industrial aislado físicamente (*air gap*). Durante una auditoría, se detecta que un atacante podría explotar una vulnerabilidad en el hipervisor de AWS para moverse lateralmente hacia los servidores SCADA en la red aislada, comprometiendo así los sistemas críticos. Según el temario, ¿qué técnica de mitigación sería MENOS efectiva para evitar este movimiento lateral en este escenario específico?",
+      "opciones": [
+        "a) Implementar políticas estrictas de *network segmentation* entre las VLANs de AWS y la red SCADA, incluso si están físicamente aisladas, para evitar cualquier comunicación no autorizada.",
+        "b) Aplicar *microsegmentación* en el hipervisor de AWS para restringir el tráfico entre máquinas virtuales, limitando el acceso a solo los puertos y protocolos necesarios para las operaciones.",
+        "c) Configurar firewalls perimetrales en la red SCADA para bloquear todo el tráfico entrante desde la red de AWS, asumiendo que el *air gap* físico es suficiente para prevenir cualquier conexión.",
+        "d) Utilizar *software-defined perimeters* (SDP) en AWS para crear túneles cifrados y autenticados que solo permitan el acceso a los servidores SCADA bajo condiciones estrictas de autenticación y autorización."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El *air gap* físico no garantiza aislamiento absoluto si existe una vulnerabilidad en el hipervisor que permita el movimiento lateral. Bloquear todo el tráfico entrante en los firewalls perimetrales de la red SCADA no mitiga el riesgo de explotación del hipervisor, ya que el ataque ya habría ocurrido dentro de la infraestructura de AWS.",
+      "id": "p12-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización despliega un sistema SCADA para gestionar una planta de producción química utilizando un entorno híbrido con servidores virtualizados en AWS (IaaS) y un sistema de control industrial aislado físicamente (*air gap*). Durante una auditoría de seguridad, se detecta que un atacante podría explotar una vulnerabilidad en el hipervisor de AWS para moverse lateralmente hacia los servidores SCADA en la red aislada, comprometiendo así los sistemas críticos. Según el temario, ¿qué técnica de mitigación sería MENOS efectiva para evitar este movimiento lateral en este escenario específico?",
+      "opciones": [
+        "Implementar un firewall de nueva generación (NGFW) en el límite entre la red virtualizada en AWS y la red aislada SCADA, con reglas estrictas de denegación por defecto.",
+        "Aplicar una segmentación lógica avanzada mediante VLANs estrictamente aisladas entre los servidores virtualizados en AWS y los sistemas SCADA, sin conexión física directa.",
+        "Utilizar un sistema de detección y prevención de intrusiones (IDPS) en la red virtualizada de AWS para monitorear y bloquear tráfico anómalo hacia la red SCADA.",
+        "Depender exclusivamente de la segmentación física (*air gap*) sin implementar controles adicionales en la virtualización de AWS, asumiendo que el aislamiento físico es suficiente."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La segmentación física (*air gap*) por sí sola no es suficiente en entornos híbridos, ya que vulnerabilidades en el hipervisor de AWS podrían permitir el movimiento lateral. Los controles adicionales como firewalls, segmentación lógica y IDPS son esenciales para mitigar riesgos en capas.",
+      "id": "p12-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué modelo de servicio en la nube transfiere la responsabilidad de seguridad de la aplicación, los datos y la configuración de acceso al cliente, mientras el proveedor gestiona el sistema operativo, el middleware y la infraestructura física?",
+      "opciones": [
+        "a) SaaS (Software as a Service)",
+        "b) PaaS (Platform as a Service)",
+        "c) IaaS (Infrastructure as a Service)",
+        "d) On-premises"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En el modelo PaaS, el proveedor gestiona la infraestructura física, el sistema operativo y el middleware, mientras el cliente es responsable de la aplicación, los datos y la configuración de acceso.",
+      "id": "p12-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una responsabilidad exclusiva del proveedor en el modelo IaaS según la matriz de responsabilidades?",
+      "opciones": [
+        "a) Gestión de la infraestructura física",
+        "b) Configuración de firewalls de red básica",
+        "c) Mantenimiento del hipervisor",
+        "d) Parches de seguridad del sistema operativo invitado"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "En IaaS, el cliente es responsable de parches de seguridad del sistema operativo invitado, mientras que el proveedor gestiona la infraestructura física, el hipervisor y la configuración básica de red.",
+      "id": "p12-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización despliega una aplicación en un entorno serverless en AWS Lambda que procesa datos financieros sensibles. ¿Qué aspecto de seguridad debe priorizarse MÁS en este modelo?",
+      "opciones": [
+        "a) Gestión de parches del sistema operativo subyacente",
+        "b) Configuración de firewalls en la red virtual",
+        "c) Gestión de permisos y roles de las funciones Lambda",
+        "d) Monitoreo del tráfico entre contenedores"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En arquitecturas serverless, el enfoque de seguridad se centra en proteger las funciones individuales y sus permisos, ya que el sistema operativo y la infraestructura son gestionados por el proveedor.",
+      "id": "p12-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de infraestructura como código (IaC), ¿qué archivo de configuración es el más adecuado para definir políticas de seguridad específicas como reglas de firewall o configuraciones de cifrado en un despliegue en AWS?",
+      "opciones": [
+        "a) Dockerfile",
+        "b) Terraform (*.tf)",
+        "c) requirements.txt",
+        "d) web.config"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Terraform es una herramienta de IaC que permite definir infraestructura y políticas de seguridad como reglas de firewall (Security Groups) o configuraciones de cifrado (KMS) en archivos de configuración (*.tf), mientras que los otros archivos mencionados no están diseñados para este propósito.",
+      "id": "p12-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema SCADA para gestionar una planta química y decide aplicar un modelo de aislamiento de red que combine *air gap* físico con segmentación lógica avanzada. Sin embargo, tras una auditoría, se detecta que un servidor SCADA en la red interna puede comunicarse con un sistema de gestión de inventarios en una VLAN diferente. ¿Qué componente de seguridad es CRÍTICO para evitar este tipo de comunicaciones no autorizadas?",
+      "opciones": [
+        "a) Firewall de red",
+        "b) Lista de control de acceso (ACL) en el switch",
+        "c) Sistema de prevención de intrusiones (IPS)",
+        "d) Segmentación de red mediante VLANs con ACLs estrictas"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La segmentación de red mediante VLANs con ACLs estrictas es crítica para evitar comunicaciones no autorizadas entre segmentos de red en entornos SCADA.",
+      "id": "p12-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una organización despliega un sistema de control industrial (ICS) basado en SCADA en un entorno híbrido con servidores virtualizados en AWS (IaaS) y un sistema aislado físicamente (*air gap*). Durante una auditoría, se detecta que un atacante podría explotar una vulnerabilidad en el hipervisor de AWS para moverse lateralmente hacia los servidores SCADA en la red aislada. ¿Qué técnica de mitigación sería MENOS efectiva para evitar este movimiento lateral en este escenario?",
+      "opciones": [
+        "a) Implementar un firewall de nueva generación (NGFW) entre la red de AWS y la red SCADA",
+        "b) Aplicar políticas de red estrictas en el hipervisor de AWS para aislar las VMs críticas",
+        "c) Segmentar la red SCADA en VLANs aisladas con ACLs restrictivas",
+        "d) Desactivar completamente el acceso a internet en los servidores SCADA"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un firewall de nueva generación entre redes no evitaría un movimiento lateral explotando una vulnerabilidad en el hipervisor, ya que el tráfico malicioso ya estaría dentro del entorno de virtualización.",
+      "id": "p12-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de infraestructura como código (IaC) utilizando Terraform, ¿qué archivo de configuración es el más adecuado para definir políticas de seguridad específicas como reglas de firewall o configuraciones de cifrado en un despliegue en AWS?",
+      "opciones": [
+        "a) main.tf",
+        "b) variables.tf",
+        "c) outputs.tf",
+        "d) security.tf"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El archivo 'security.tf' es el más adecuado para definir políticas de seguridad específicas, como reglas de firewall o configuraciones de cifrado, ya que permite organizar y separar claramente las configuraciones de seguridad del resto de la infraestructura.",
+      "id": "p12-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué componente de seguridad es responsabilidad EXCLUSIVA del cliente en el modelo Platform as a Service (PaaS) cuando un desarrollador despliega una aplicación en Azure App Service?",
+      "opciones": [
+        "a) Configuración del hipervisor y la infraestructura física",
+        "b) Gestión de parches y actualizaciones del sistema operativo",
+        "c) Configuración de seguridad de la aplicación desplegada y credenciales de acceso",
+        "d) Seguridad de la red física y virtualización subyacente"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "En el modelo PaaS, el proveedor gestiona el sistema operativo, el hipervisor y la infraestructura física, mientras el cliente es responsable de la configuración de seguridad de la aplicación y el control de acceso.",
+      "id": "p12-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de virtualización gestionado por un hipervisor, ¿qué componente es responsable de aislar los recursos entre máquinas virtuales y garantizar que el tráfico entre ellas no comprometa la seguridad de otras VMs?",
+      "opciones": [
+        "a) El hipervisor",
+        "b) El sistema operativo invitado",
+        "c) El firewall de red",
+        "d) El plano de control de la red"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El hipervisor es responsable de aislar los recursos entre máquinas virtuales y garantizar que el tráfico entre ellas no comprometa la seguridad de otras VMs.",
+      "id": "p12-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización despliega un sistema SCADA en una planta química utilizando un entorno híbrido con servidores virtualizados en AWS (IaaS) y un sistema de control industrial aislado físicamente (*air gap*). Durante una auditoría, se detecta que el tráfico entre la red virtualizada en AWS y la red SCADA aislada podría estar siendo enrutado incorrectamente debido a una mala configuración de rutas estáticas en los routers de borde. ¿Qué componente de seguridad, según el temario, es CRÍTICO para evitar este tipo de fugas de tráfico no autorizado entre segmentos de red en este entorno híbrido?",
+      "opciones": [
+        "a) Implementar firewalls de nueva generación (NGFW) con inspección profunda de paquetes en los routers de borde para validar el tráfico entre segmentos.",
+        "b) Configurar políticas de *routing* dinámico (como OSPF o BGP) para evitar enrutamiento incorrecto y garantizar que el tráfico entre AWS y SCADA solo se permita mediante túneles cifrados VPN.",
+        "c) Aplicar segmentación de red mediante VLANs estrictas en el switch físico donde se conectan los servidores SCADA, aislando completamente el tráfico de control industrial.",
+        "d) Utilizar un sistema de detección de intrusiones basada en red (NIDS) para monitorizar y bloquear cualquier tráfico no autorizado entre los segmentos de red."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que en entornos híbridos, la configuración incorrecta de rutas estáticas es una causa común de fugas de tráfico. Usar protocolos de *routing* dinámico (como OSPF o BGP) permite validar y controlar el enrutamiento entre segmentos de red, evitando accesos no autorizados.",
+      "id": "p12-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Cloud Infrastructures",
+      "youtubeId": "8qpQ8Q6xxiU"
+    },
+    {
+      "titulo": "Network Infrastructure Concepts",
+      "youtubeId": "jd001Hj7XWM"
+    },
+    {
+      "titulo": "Other Infrastructure Concepts",
+      "youtubeId": "HDiNPPrGhzE"
+    },
+    {
+      "titulo": "Infrastructure Considerations",
+      "youtubeId": "Ap3Z_0ZdqpQ"
+    }
+  ]
+}

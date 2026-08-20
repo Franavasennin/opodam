@@ -1,0 +1,1392 @@
+{
+  "id": 5,
+  "titulo": "2.1 · Actores de amenaza",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Un actor de amenaza (threat actor) es una entidad que origina un evento que afecta la seguridad de otros. Estos actores suelen denominarse actores maliciosos (malicious actors) porque sus acciones tienen un impacto negativo en la seguridad de terceros. Para caracterizarlos, se utilizan una serie de atributos que ayudan a entender su comportamiento y motivaciones durante un ataque. Conocer al actor de amenaza detrás de un incidente permite comprender mejor por qué ocurrió el ataque y cuál era su objetivo final.\n\n\nLOS ACTORES DE AMENAZA PUEDEN PROVENIR DE CUALQUIER LUGAR\n\nUn actor de amenaza puede estar dentro de la organización, como un empleado, o fuera de ella, intentando acceder a través de recursos públicos. La disponibilidad de recursos financieros es clave para definir su capacidad de ataque. Por ejemplo, un actor con pocos recursos tendrá acceso limitado a herramientas o infraestructura avanzada, mientras que uno con fondos abundantes podrá ejecutar ataques más sofisticados y sostenidos.\n\n\nLA SOFISTICACIÓN DE LOS ACTORES DE AMENAZA\n\nLa sofisticación varía desde actores no cualificados que ejecutan scripts sin entender su funcionamiento, hasta grupos altamente especializados que desarrollan sus propias herramientas. Un actor no cualificado puede tener éxito si el script funciona, pero no sabrá cómo modificarlo si falla. En cambio, un actor sofisticado puede crear exploits personalizados o adaptar técnicas avanzadas para evadir controles de seguridad.\n\n\nLAS MOTIVACIONES DE LOS ACTORES DE AMENAZA\n\nLas motivaciones son diversas y dependen del contexto, el atacante y la víctima. Algunas razones comunes incluyen:\n\n- Exfiltración de datos (data exfiltration): robar información sensible de la organización.\n- Espionaje industrial: obtener datos de competidores para beneficio propio.\n- Sabotaje: interrumpir servicios para causar problemas a clientes o la organización.\n- Motivaciones políticas o filosóficas: como en el caso de los hacktivistas.\n- Guerra o conflictos geopolíticos: donde los Estados buscan debilitar a otros gobiernos.\n- Venganza o beneficio económico: en el caso de amenazas internas (insider threats).\n\n\nTIPOS DE ACTORES DE AMENAZA\n\nLos actores de amenaza se clasifican según su origen, recursos, sofisticación y motivaciones. A continuación, se detallan los principales tipos:\n\n\nNACIONES-ESTADO (NATION-STATES)\n\nLas naciones-estado son gobiernos o agencias de inteligencia que realizan ataques con fines estratégicos. Sus motivaciones pueden ser:\n\n- Exfiltración de datos sensibles.\n- Interrupción de servicios críticos.\n- Influencia política o desestabilización de gobiernos.\n- Preparación para conflictos armados.\n\nEstos actores disponen de recursos ilimitados, incluyendo equipos de desarrollo avanzados y acceso a infraestructuras de ataque distribuidas. Un ejemplo destacado es el gusano Stuxnet, desarrollado conjuntamente por Estados Unidos e Israel para sabotear centrifugadoras nucleares iraníes. Los ataques de naciones-estado suelen ser persistentes y de larga duración, conocidos como APTs (Advanced Persistent Threats).\n\n\nACTORES NO CUALIFICADOS (UNSKILLED ATTACKERS)\n\nEstos actores carecen de conocimientos técnicos y dependen de scripts preexistentes para realizar ataques. Su motivación suele ser disruptiva o basada en la curiosidad. Aunque sus recursos son limitados, pueden causar daños si logran ejecutar un script exitoso. No tienen capacidad para modificar herramientas ni entender el impacto de sus acciones. A veces, estos actores operan desde dentro de la organización, aprovechando el acceso no autorizado.\n\n\nHACKTIVISTAS (HACKTIVISTS)\n\nLos hacktivistas son individuos o grupos motivados por causas políticas, sociales o filosóficas. Su objetivo es llamar la atención sobre una causa mediante ataques como:\n\n- Denegación de servicio (DoS) para interrumpir servicios.\n- Defacement de sitios web para difundir mensajes.\n- Filtración de documentos internos para exponer prácticas cuestionables.\n\nAunque su sofisticación varía, suelen ser más avanzados que los actores no cualificados. Carecen de recursos financieros significativos, pero algunos grupos organizan recaudaciones para financiar sus actividades. Un hacktivista puede infiltrarse en una organización para convertirse en una amenaza interna.\n\n\nAMENAZAS INTERNAS (INSIDER THREATS)\n\nUna amenaza interna es un empleado, contratista o socio con acceso legítimo a los sistemas que abusa de ese acceso para causar daño. Las motivaciones incluyen:\n\n- Venganza por conflictos laborales.\n- Beneficio económico mediante robo de datos o fraude.\n- Satisfacción personal o ideológica.\n\nEstos actores conocen la infraestructura de la organización y pueden eludir controles de seguridad con facilidad. Su sofisticación suele ser media-alta, ya que aprovechan el conocimiento interno para identificar vulnerabilidades y datos críticos. Prevenir estas amenazas requiere procesos rigurosos de contratación, monitoreo continuo y políticas de acceso mínimo (least privilege).\n\n\nCRIMEN ORGANIZADO (ORGANIZED CRIME)\n\nEl crimen organizado en el ciberespacio opera con una estructura similar a una empresa, donde cada miembro tiene un rol específico:\n\n- Hackers que ejecutan los ataques.\n- Desarrolladores que crean exploits personalizados.\n- Vendedores que comercializan datos robados.\n- Soporte técnico para gestionar víctimas de ransomware.\n\nSu motivación principal es el beneficio económico, ya sea mediante extorsión, venta de datos en mercados clandestinos o fraude financiero. Estos grupos disponen de recursos significativos y utilizan tácticas avanzadas para maximizar sus ganancias. Ejemplos incluyen campañas de ransomware dirigidas a empresas o ataques a instituciones financieras.\n\n\nSHADOW IT\n\nEl Shadow IT (TI en la sombra) se refiere a departamentos o grupos dentro de una organización que implementan sus propias soluciones tecnológicas sin el conocimiento ni la aprobación del departamento de TI. Esto incluye:\n\n- Uso de servicios en la nube no autorizados.\n- Instalación de aplicaciones sin pasar por los controles de seguridad.\n- Creación de infraestructuras paralelas.\n\nEstos grupos suelen carecer de conocimientos en seguridad y pueden introducir riesgos significativos, como:\n\n- Falta de backups adecuados.\n- Configuraciones inseguras que exponen datos sensibles.\n- Incumplimiento de normativas de cumplimiento (compliance).\n\nAunque su sofisticación técnica es variable, el riesgo radica en que operan fuera de los controles corporativos, lo que dificulta su detección y mitigación.\n\n\nRESUMEN DE CARACTERÍSTICAS POR ACTOR DE AMENAZA\n\nPara comparar los diferentes actores de amenaza, se pueden analizar las siguientes características:\n\n- Origen: interno o externo a la organización.\n- Recursos: desde limitados hasta ilimitados.\n- Sofisticación: desde baja hasta muy alta.\n- Motivaciones: económicas, políticas, disruptivas o personales.\n\n\n- Nación-estado: externo, recursos ilimitados, sofisticación muy alta, motivaciones geopolíticas.\n- Actor no cualificado: externo o interno, recursos limitados, sofisticación baja, motivaciones disruptivas.\n- Hacktivista: externo o interno, recursos limitados, sofisticación media, motivaciones ideológicas.\n- Amenaza interna: interno, recursos internos, sofisticación media-alta, motivaciones personales o económicas.\n- Crimen organizado: externo, recursos significativos, sofisticación alta, motivaciones económicas.\n- Shadow IT: interno, recursos variables, sofisticación baja-media, motivaciones operativas.\n\n\nIMPORTANCIA DE IDENTIFICAR ACTORES DE AMENAZA\n\nComprender el perfil de un actor de amenaza permite a las organizaciones adaptar sus estrategias de seguridad. Por ejemplo:\n\n- Si se identifica una amenaza interna, se deben reforzar los controles de acceso y monitorear actividades sospechosas.\n- Ante un ataque de nación-estado, es crucial implementar defensas avanzadas como SIEM (Security Information and Event Management) y EDR (Endpoint Detection and Response).\n- Para actores no cualificados, la educación en ciberseguridad y la segmentación de redes pueden reducir el impacto.\n- En el caso del crimen organizado, es clave contar con planes de respuesta a incidentes y backups aislados para mitigar ransomware.\n\nLa seguridad proactiva requiere no solo tecnología, sino también inteligencia sobre las amenazas y sus actores."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Actores de amenaza] --> B[Nación-estado]\nA --> C[Actor no cualificado]\nA --> D[Hacktivista]\nA --> E[Amenaza interna]\nA --> F[Crimen organizado]\nA --> G[Shadow IT]\nB --> B1[Recursos ilimitados]\nB --> B2[Sofisticación muy alta]\nB --> B3[Motivaciones geopolíticas]\nC --> C1[Recursos limitados]\nC --> C2[Sofisticación baja]\nC --> C3[Motivaciones disruptivas]\nD --> D1[Recursos limitados]\nD --> D2[Sofisticación media]\nD --> D3[Motivaciones ideológicas]\nE --> E1[Recursos internos]\nE --> E2[Sofisticación media-alta]\nE --> E3[Motivaciones personales]\nF --> F1[Recursos significativos]\nF --> F2[Sofisticación alta]\nF --> F3[Motivaciones económicas]\nG --> G1[Recursos variables]\nG --> G2[Sofisticación baja-media]\nG --> G3[Motivaciones operativas]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc5-01",
+      "pregunta": "¿Qué es un actor de amenaza (threat actor) en ciberseguridad?",
+      "respuesta": "Es una entidad que origina un evento que afecta la seguridad de otros, generalmente con intenciones maliciosas."
+    },
+    {
+      "id": "fc5-02",
+      "pregunta": "¿Qué caracteriza a un actor de amenaza no cualificado (unskilled attacker)?",
+      "respuesta": "Carece de conocimientos técnicos y depende de scripts preexistentes para realizar ataques, sin entender su funcionamiento."
+    },
+    {
+      "id": "fc5-03",
+      "pregunta": "¿Qué es un APT (Advanced Persistent Threat)?",
+      "respuesta": "Un ataque avanzado y persistente, generalmente asociado a naciones-estado, que se mantiene en el tiempo con objetivos estratégicos."
+    },
+    {
+      "id": "fc5-04",
+      "pregunta": "¿Cuál es la principal motivación de un hacktivista?",
+      "respuesta": "Causas políticas, sociales o filosóficas, como llamar la atención sobre una causa mediante ataques disruptivos."
+    },
+    {
+      "id": "fc5-05",
+      "pregunta": "¿Qué es una amenaza interna (insider threat)?",
+      "respuesta": "Un empleado o contratista con acceso legítimo que abusa de ese acceso para causar daño a la organización."
+    },
+    {
+      "id": "fc5-06",
+      "pregunta": "¿Qué estructura organizativa tiene el crimen organizado en el ciberespacio?",
+      "respuesta": "Similar a una empresa, con roles específicos como hackers, desarrolladores de exploits, vendedores de datos y soporte técnico."
+    },
+    {
+      "id": "fc5-07",
+      "pregunta": "¿Qué es el Shadow IT?",
+      "respuesta": "Departamentos o grupos dentro de una organización que implementan soluciones tecnológicas sin aprobación del área de TI."
+    },
+    {
+      "id": "fc5-08",
+      "pregunta": "¿Qué motivación suele tener el crimen organizado en sus ataques?",
+      "respuesta": "Beneficio económico, como extorsión, venta de datos robados o fraude financiero."
+    },
+    {
+      "id": "fc5-09",
+      "pregunta": "¿Qué recurso clave diferencia a un actor de amenaza con alta sofisticación?",
+      "respuesta": "La capacidad de desarrollar herramientas personalizadas o adaptar técnicas avanzadas para evadir controles de seguridad."
+    },
+    {
+      "id": "fc5-10",
+      "pregunta": "¿Qué tipo de actor de amenaza suele tener recursos ilimitados?",
+      "respuesta": "Las naciones-estado, que disponen de fondos y equipos de desarrollo avanzados para sus ataques."
+    },
+    {
+      "id": "fc5-11",
+      "pregunta": "¿Qué es la exfiltración de datos (data exfiltration)?",
+      "respuesta": "El robo de información sensible de una organización para su uso malicioso o venta."
+    },
+    {
+      "id": "fc5-12",
+      "pregunta": "¿Por qué es importante identificar el actor de amenaza detrás de un ataque?",
+      "respuesta": "Para adaptar las estrategias de seguridad según sus motivaciones, recursos y sofisticación, mejorando la protección de la organización."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes tipos de actores de amenaza se caracteriza por tener motivaciones puramente económicas y una estructura organizacional similar a una empresa?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Crimen organizado",
+        "c) Hacktivista",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El crimen organizado utiliza tácticas como ransomware y phishing para obtener beneficios económicos, operando con roles especializados y recursos significativos, según el temario.",
+      "id": "p5-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado descontento que copia y vende información confidencial de su empresa antes de renunciar, ¿qué tipo de actor de amenaza representa?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Amenaza interna",
+        "c) Atacante no cualificado",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las amenazas internas provienen de personas con acceso legítimo a los sistemas de la organización y pueden actuar por venganza o beneficio económico, como describe el temario.",
+      "id": "p5-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué atributo clave diferencia principalmente a un actor de amenaza de tipo 'Estado-nación' de uno de tipo 'Atacante no cualificado'?",
+      "opciones": [
+        "a) Origen",
+        "b) Recursos",
+        "c) Sofisticación",
+        "d) Motivación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La sofisticación es un atributo clave que distingue a los actores de amenaza: los Estados-nación tienen sofisticación muy alta, mientras que los atacantes no cualificados tienen baja sofisticación.",
+      "id": "p5-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una motivación típica de los actores de amenaza?",
+      "opciones": [
+        "a) Exfiltración de datos",
+        "b) Interrupción de servicios",
+        "c) Desarrollo de software de código abierto",
+        "d) Beneficio económico"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El desarrollo de software de código abierto no es una motivación típica de actores de amenaza, ya que no busca perjudicar la seguridad de otros, según el temario.",
+      "id": "p5-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante utiliza herramientas automatizadas como Metasploit sin entender su funcionamiento interno para explotar vulnerabilidades en sistemas. ¿Qué tipo de actor de amenaza es?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Atacante no cualificado",
+        "c) Hacktivista",
+        "d) Crimen organizado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los atacantes no cualificados, también llamados *script kiddies*, dependen de herramientas automatizadas o scripts preescritos sin entender su funcionamiento, como se menciona en el temario.",
+      "id": "p5-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un grupo de atacantes lanza un ataque de denegación de servicio (DDoS) contra un sitio web gubernamental para protestar contra políticas públicas. ¿Qué tipo de actor de amenaza representa este grupo?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Hacktivista",
+        "c) Amenaza interna",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los hacktivistas promueven causas políticas, sociales o filosóficas mediante ataques como DDoS o defacement de sitios web, según el temario.",
+      "id": "p5-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una organización detecta un ataque prolongado y sigiloso diseñado para mantener el acceso a sus sistemas durante meses, ¿qué tipo de actor de amenaza es más probable que esté detrás?",
+      "opciones": [
+        "a) Atacante no cualificado",
+        "b) Amenaza interna",
+        "c) Estado-nación",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los Estados-nación suelen ejecutar amenazas persistentes avanzadas (APTs), que son ataques prolongados y sigilosos diseñados para mantener el acceso a los sistemas, como se detalla en el temario.",
+      "id": "p5-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se asocia principalmente con el uso de servicios en la nube no autorizados por parte de empleados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Crimen organizado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a departamentos o empleados que implementan soluciones tecnológicas sin aprobación del departamento de TI, como el uso de servicios en la nube no autorizados.",
+      "id": "p5-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un actor de amenaza con recursos ilimitados y motivaciones estratégicas, como el espionaje industrial, ¿qué tipo de actor es más probable que sea?",
+      "opciones": [
+        "a) Atacante no cualificado",
+        "b) Estado-nación",
+        "c) Amenaza interna",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los Estados-nación tienen recursos ilimitados y motivaciones estratégicas como el espionaje industrial, según el temario.",
+      "id": "p5-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización recibe un correo electrónico con un enlace malicioso que, al hacer clic, instala ransomware en sus sistemas. Tras investigar, se descubre que el ataque fue ejecutado por un grupo con estructura empresarial y motivación económica. ¿Qué tipo de actor de amenaza es más probable que esté detrás?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Crimen organizado",
+        "c) Hacktivista",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El crimen organizado utiliza tácticas como phishing y ransomware con motivaciones económicas, operando con una estructura similar a una empresa, como se describe en el temario.",
+      "id": "p5-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes atributos es MÁS probable que comparta un actor de amenaza de tipo 'Estado-nación' con uno de tipo 'Crimen organizado'?",
+      "opciones": [
+        "a) Motivación principal basada en el beneficio económico",
+        "b) Sofisticación técnica muy alta y recursos significativos",
+        "c) Origen exclusivamente externo a la organización",
+        "d) Uso de herramientas automatizadas sin entender su funcionamiento"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Ambos tipos de actores de amenaza poseen sofisticación técnica alta y recursos significativos, aunque sus motivaciones difieren (estrategia vs. económico). Según el temario, el Estado-nación tiene recursos ilimitados y el crimen organizado, altos.",
+      "id": "p5-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado que instala una aplicación de almacenamiento en la nube no autorizada para compartir archivos de la empresa con un cliente externo, ¿qué tipo de actor de amenaza representa?",
+      "opciones": [
+        "a) Amenaza interna",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Atacante no cualificado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El uso de servicios tecnológicos no autorizados por empleados se clasifica como Shadow IT, según el temario, ya que su motivación no es maliciosa pero representa un riesgo de seguridad.",
+      "id": "p5-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por ejecutar ataques prolongados y sigilosos con el objetivo de mantener acceso no detectado durante meses o años?",
+      "opciones": [
+        "a) Atacante no cualificado",
+        "b) Amenaza interna",
+        "c) Estado-nación",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los ataques prolongados y sigilosos son típicos de las Amenazas Persistentes Avanzadas (APTs), asociadas principalmente a actores de tipo Estado-nación según el temario.",
+      "id": "p5-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una motivación típica de los actores de amenaza según el temario?",
+      "opciones": [
+        "a) Espionaje industrial para obtener ventaja competitiva",
+        "b) Interrupción de servicios para dañar la reputación de una organización",
+        "c) Desarrollo de software de código abierto para beneficio comunitario",
+        "d) Exfiltración de datos para venderlos en mercados clandestinos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El desarrollo de software de código abierto no es una motivación maliciosa, sino una práctica colaborativa, según el temario que enumera motivaciones como espionaje, interrupción de servicios, exfiltración de datos, etc.",
+      "id": "p5-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un grupo de atacantes lanza un ataque de denegación de servicio (DDoS) contra un sitio web gubernamental para protestar contra políticas públicas. Tras analizar el ataque, se observa que los atacantes utilizaron herramientas automatizadas sin conocimiento técnico profundo. ¿Qué tipo de actor de amenaza es MÁS probable que esté detrás?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Atacante no cualificado",
+        "c) Hacktivista con financiación externa",
+        "d) Crimen organizado"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La combinación de motivación política (activismo) y uso de herramientas automatizadas sin sofisticación técnica sugiere un hacktivista, aunque con recursos limitados según el temario.",
+      "id": "p5-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una organización detecta que un empleado con acceso privilegiado ha estado copiando y filtrando información confidencial durante meses sin ser detectado, ¿qué tipo de actor de amenaza es MÁS probable que esté involucrado?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Amenaza interna",
+        "c) Crimen organizado",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un empleado con acceso legítimo que realiza acciones maliciosas se clasifica como amenaza interna, según el temario, que destaca su conocimiento de la infraestructura y facilidad para evadir controles.",
+      "id": "p5-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se asocia principalmente con el uso de phishing, malware y ransomware para extorsionar a víctimas con fines económicos?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Hacktivista",
+        "c) Crimen organizado",
+        "d) Atacante no cualificado"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El crimen organizado utiliza tácticas como phishing, malware y ransomware con motivaciones económicas, según el temario que lo describe como una estructura empresarial dedicada al cibercrimen.",
+      "id": "p5-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante utiliza herramientas como Metasploit para explotar vulnerabilidades en sistemas sin entender su funcionamiento interno. ¿Qué tipo de actor de amenaza representa?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Atacante no cualificado",
+        "c) Amenaza interna",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El uso de herramientas automatizadas sin conocimiento técnico profundo caracteriza a los atacantes no cualificados (script kiddies), según el temario.",
+      "id": "p5-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dado el siguiente escenario: Una organización recibe un correo electrónico con un enlace malicioso que instala ransomware en sus sistemas. Tras investigar, se descubre que el ataque fue ejecutado por un grupo con estructura empresarial, recursos altos y motivación económica. ¿Qué tipo de actor de amenaza es MÁS probable que esté detrás?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Hacktivista",
+        "c) Crimen organizado",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La combinación de estructura empresarial, recursos altos y motivación económica apunta al crimen organizado, según el temario que lo describe como una organización con roles especializados.",
+      "id": "p5-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se diferencia de los demás por tener acceso legítimo a los sistemas de una organización y, por tanto, puede evadir controles de seguridad con mayor facilidad?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Amenaza interna",
+        "c) Hacktivista",
+        "d) Crimen organizado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las amenazas internas provienen de personas con acceso legítimo, lo que les permite evadir controles de seguridad con mayor facilidad, según el temario.",
+      "id": "p5-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes tipos de actores de amenaza se diferencia principalmente por su capacidad para mantener acceso prolongado y sigiloso en los sistemas de una organización?",
+      "opciones": [
+        "a) Hacktivistas",
+        "b) Amenazas internas",
+        "c) Estado-nación",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los actores de tipo Estado-nación se asocian con amenazas persistentes avanzadas (APTs), diseñadas para mantener acceso no detectado durante meses o años, según el temario.",
+      "id": "p5-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un grupo de atacantes lanza un ataque de denegación de servicio (DDoS) contra una plataforma de comercio electrónico para exigir el pago de un rescate. ¿Qué tipo de actor de amenaza representa este grupo?",
+      "opciones": [
+        "a) Hacktivistas",
+        "b) Crimen organizado",
+        "c) Estado-nación",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El crimen organizado busca beneficio económico y utiliza tácticas como el ransomware o extorsión, como se describe en el temario.",
+      "id": "p5-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es una motivación típica asociada a los actores de amenaza según el temario?",
+      "opciones": [
+        "a) Espionaje industrial",
+        "b) Interrupción de servicios",
+        "c) Innovación tecnológica",
+        "d) Venganza o satisfacción personal"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario no menciona la innovación tecnológica como motivación de actores de amenaza; las motivaciones listadas son espionaje, interrupción de servicios, beneficio económico, etc.",
+      "id": "p5-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado con acceso privilegiado copia información confidencial de la empresa para venderla a un competidor antes de renunciar. ¿Qué tipo de actor de amenaza representa?",
+      "opciones": [
+        "a) Shadow IT",
+        "b) Amenaza interna",
+        "c) Atacante no cualificado",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las amenazas internas provienen de personas con acceso legítimo que buscan beneficio económico o venganza, como se detalla en el temario.",
+      "id": "p5-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué atributo clave comparten los actores de amenaza de tipo 'Crimen organizado' y 'Estado-nación' según el temario?",
+      "opciones": [
+        "a) Recursos ilimitados",
+        "b) Motivación puramente económica",
+        "c) Sofisticación técnica muy alta",
+        "d) Origen interno en la organización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Ambos tipos de actores poseen sofisticación técnica muy alta, aunque difieren en motivaciones y recursos, según la tabla del temario.",
+      "id": "p5-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante utiliza herramientas como Metasploit sin entender su funcionamiento interno para explotar una vulnerabilidad en un servidor web, ¿qué tipo de actor de amenaza es?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Atacante no cualificado",
+        "c) Hacktivista",
+        "d) Crimen organizado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los atacantes no cualificados dependen de herramientas automatizadas sin conocimiento técnico profundo, como se menciona en el temario.",
+      "id": "p5-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un grupo de atacantes lanza un ataque contra un sitio web gubernamental para protestar contra políticas públicas, utilizando herramientas automatizadas sin conocimiento técnico avanzado. ¿Qué tipo de actor de amenaza es MÁS probable que esté detrás?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Hacktivistas",
+        "c) Atacantes no cualificados",
+        "d) Crimen organizado"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los hacktivistas promueven causas políticas o filosóficas y pueden usar herramientas automatizadas, aunque su sofisticación varía según el temario.",
+      "id": "p5-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas sin aprobación del departamento de TI, aunque su motivación no sea maliciosa?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Crimen organizado",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere al uso de tecnologías no autorizadas por empleados o departamentos, sin intención maliciosa pero generando riesgos de seguridad.",
+      "id": "p5-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante con recursos ilimitados y motivaciones estratégicas, como el espionaje industrial, ¿qué tipo de actor de amenaza es más probable que sea?",
+      "opciones": [
+        "a) Hacktivista",
+        "b) Estado-nación",
+        "c) Atacante no cualificado",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los Estados-nación tienen recursos ilimitados y motivaciones estratégicas como el espionaje industrial, como se describe en el temario.",
+      "id": "p5-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Dado el siguiente escenario: Una organización detecta un ataque prolongado y sigiloso diseñado para mantener el acceso a sus sistemas durante meses, con el objetivo de exfiltrar datos confidenciales. ¿Qué tipo de actor de amenaza es MÁS probable que esté detrás?",
+      "opciones": [
+        "a) Atacante no cualificado",
+        "b) Hacktivista",
+        "c) Estado-nación",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los ataques prolongados y sigilosos con exfiltración de datos son característicos de amenazas persistentes avanzadas (APTs) asociadas a Estados-nación, según el temario.",
+      "id": "p5-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes tipos de actores de amenaza se diferencia principalmente por su capacidad para mantener acceso prolongado y sigiloso en los sistemas de una organización, incluso durante meses o años?",
+      "opciones": [
+        "a) Atacante no cualificado (Script kiddies)",
+        "b) Estado-nación",
+        "c) Shadow IT",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los actores de tipo Estado-nación se asocian con amenazas persistentes avanzadas (APTs), diseñadas para mantener acceso no detectado durante largos períodos. (Temario: 'Estados-nación' y 'amenazas persistentes avanzadas').",
+      "id": "p5-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado que instala una aplicación de almacenamiento en la nube no autorizada para compartir archivos de la empresa con un cliente externo, sin intención maliciosa pero violando políticas de TI, ¿qué tipo de actor de amenaza representa?",
+      "opciones": [
+        "a) Crimen organizado",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Estado-nación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a soluciones tecnológicas implementadas sin aprobación del departamento de TI, aunque su motivación no sea maliciosa. (Temario: 'Shadow IT').",
+      "id": "p5-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas sin aprobación del departamento de TI, aunque su motivación no sea maliciosa?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Amenaza interna",
+        "d) Atacante no cualificado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a empleados o departamentos que usan soluciones tecnológicas sin autorización del área de TI, generalmente buscando mayor productividad, aunque esto genere riesgos de seguridad.",
+      "id": "p5-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un grupo de atacantes lanza un ataque de denegación de servicio (DDoS) contra una plataforma de comercio electrónico para exigir el pago de un rescate. Tras analizar el ataque, se observa que los atacantes utilizaron herramientas automatizadas sin conocimiento técnico avanzado. ¿Qué tipo de actor de amenaza es MÁS probable que esté detrás?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Crimen organizado",
+        "c) Atacante no cualificado (Script kiddies)",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los atacantes no cualificados (script kiddies) dependen de herramientas automatizadas sin entender su funcionamiento, lo que coincide con el escenario descrito. (Temario: 'Atacantes no cualificados').",
+      "id": "p5-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por tener una estructura organizacional similar a una empresa, con roles especializados como hackers, vendedores de datos y equipos de soporte técnico?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Crimen organizado",
+        "c) Hacktivista",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El crimen organizado opera con una estructura empresarial y roles especializados para maximizar beneficios económicos. (Temario: 'Crimen organizado').",
+      "id": "p5-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se diferencia principalmente por implementar soluciones tecnológicas sin aprobación del departamento de TI, aunque su motivación no sea maliciosa?",
+      "opciones": [
+        "Amenaza interna (Insider threats)",
+        "Shadow IT",
+        "Hacktivista",
+        "Atacante no cualificado (Unskilled attacker)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a la implementación de soluciones tecnológicas sin aprobación del departamento de TI, aunque su motivación no sea maliciosa, lo que representa un riesgo de seguridad.",
+      "id": "p5-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué atributo clave diferencia principalmente a un actor de amenaza de tipo 'Hacktivista' de uno de tipo 'Estado-nación'?",
+      "opciones": [
+        "a) Motivación principal",
+        "b) Recursos disponibles",
+        "c) Sofisticación técnica",
+        "d) Origen (interno/externo)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los hacktivistas suelen tener recursos limitados, mientras que los Estados-nación disponen de recursos ilimitados. (Temario: 'Atributos clave' y tabla comparativa).",
+      "id": "p5-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas no autorizadas por el departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad por falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a la implementación de soluciones tecnológicas sin aprobación del departamento de TI, lo que expone a la organización a riesgos de seguridad por sistemas no gestionados, aunque su motivación no sea maliciosa.",
+      "id": "p5-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta que un atacante ha estado utilizando credenciales robadas de un empleado con acceso privilegiado para moverse lateralmente por la red, exfiltrando datos sensibles durante seis meses sin ser detectado. Tras la investigación, se determina que el atacante no desarrolló herramientas propias, sino que utilizó frameworks de código abierto ampliamente disponibles, y que su motivación era obtener beneficios económicos mediante la venta de los datos robados. ¿Qué combinación de atributos describe MÁS probablemente a este actor de amenaza según el temario?",
+      "opciones": [
+        "a) Origen externo, recursos altos, sofisticación media, motivación económica",
+        "b) Origen interno, recursos limitados, sofisticación baja, motivación de venganza",
+        "c) Origen interno, recursos altos, sofisticación media, motivación económica",
+        "d) Origen externo, recursos altos, sofisticación alta, motivación política"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario describe un actor con origen externo (credenciales robadas de un empleado, pero el atacante es externo), recursos altos (capacidad de mantener acceso prolongado y exfiltrar datos sin detección), sofisticación media (usa herramientas preexistentes como frameworks de código abierto, no desarrolla sus propias herramientas), y motivación económica (venta de datos robados).",
+      "id": "p5-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes tipos de actores de amenaza se asocia principalmente con el uso de phishing, malware y ransomware para extorsionar a víctimas con fines económicos?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Crimen organizado",
+        "c) Hacktivista",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El crimen organizado emplea tácticas como phishing, malware y ransomware para obtener beneficios económicos. (Temario: 'Crimen organizado').",
+      "id": "p5-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se diferencia principalmente por tener acceso legítimo a los sistemas de una organización y, por tanto, puede evadir controles de seguridad con mayor facilidad?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Amenaza interna",
+        "c) Hacktivista",
+        "d) Crimen organizado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las amenazas internas provienen de personas con acceso legítimo a los sistemas, lo que les permite evadir controles de seguridad con mayor facilidad según el temario.",
+      "id": "p5-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas sin aprobación del departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad por falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a soluciones tecnológicas implementadas por empleados o departamentos sin aprobación de TI, lo que genera riesgos de seguridad por la falta de controles adecuados.",
+      "id": "p5-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas sin aprobación del departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad por la falta de controles adecuados?",
+      "opciones": [
+        "a) Amenaza interna",
+        "b) Shadow IT",
+        "c) Atacante no cualificado",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a soluciones tecnológicas implementadas sin aprobación del departamento de TI, lo que genera riesgos de seguridad al carecer de controles adecuados, aunque su motivación no sea maliciosa.",
+      "id": "p5-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas no autorizadas por el departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Atacante no cualificado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a soluciones tecnológicas implementadas sin aprobación de TI, lo que genera riesgos de seguridad por falta de controles, aunque la motivación no sea maliciosa.",
+      "id": "p5-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas no autorizadas por el departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define el 'Shadow IT' como el uso de soluciones tecnológicas sin aprobación del departamento de TI, lo que genera riesgos de seguridad por falta de controles, aunque no sea su motivación maliciosa.",
+      "id": "p5-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se diferencia principalmente por implementar soluciones tecnológicas no autorizadas por el departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a soluciones tecnológicas implementadas sin aprobación del departamento de TI, lo que genera riesgos de seguridad por la ausencia de controles adecuados, aunque la motivación no sea maliciosa.",
+      "id": "p5-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas no autorizadas por el departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados y al uso de servicios en la nube no gestionados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Amenaza interna",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El actor de amenaza 'Shadow IT' se refiere a empleados o departamentos que implementan soluciones tecnológicas sin aprobación del área de TI, lo que genera riesgos de seguridad por falta de controles, como el uso de servicios en la nube no gestionados.",
+      "id": "p5-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué atributo clave diferencia principalmente a un actor de amenaza de tipo 'Crimen organizado' de uno de tipo 'Estado-nación'?",
+      "opciones": [
+        "a) Motivación principal",
+        "b) Recursos disponibles",
+        "c) Sofisticación técnica",
+        "d) Origen (interno/externo)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La motivación principal del crimen organizado es el beneficio económico, mientras que los Estados-nación tienen motivaciones estratégicas como el espionaje o sabotaje, según el temario.",
+      "id": "p5-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dado el siguiente escenario: Una organización detecta que un atacante ha estado utilizando credenciales robadas de un empleado con acceso privilegiado para moverse lateralmente por la red, exfiltrando datos sensibles durante seis meses sin ser detectado. Tras la investigación, se determina que el atacante no desarrolló herramientas propias, sino que utilizó frameworks de código abierto ampliamente disponibles, y que su motivación era obtener beneficios económicos mediante la venta de los datos robados. ¿Qué combinación de atributos describe MÁS probablemente a este actor de amenaza según el temario?",
+      "opciones": [
+        "a) Recursos limitados, sofisticación media, motivación económica",
+        "b) Recursos ilimitados, sofisticación alta, motivación estratégica",
+        "c) Recursos altos, sofisticación baja, motivación política",
+        "d) Recursos limitados, sofisticación alta, motivación de venganza"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este escenario describe un actor con recursos limitados (usa frameworks de código abierto), sofisticación media (usa credenciales robadas y movimiento lateral) y motivación económica (venta de datos), según los atributos del temario.",
+      "id": "p5-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización detecta un ataque avanzado contra su infraestructura crítica donde los atacantes no solo exfiltraban datos sensibles durante meses, sino que también modificaban registros de auditoría para evitar su detección. Durante la investigación, se determina que los atacantes utilizaron herramientas de código abierto disponibles públicamente, pero con una adaptación personalizada para evadir soluciones de seguridad. Además, se identifica que el ataque fue financiado por una entidad con recursos ilimitados y motivación estratégica. ¿Qué combinación de atributos describe MÁS probablemente a este actor de amenaza según el temario?",
+      "opciones": [
+        "a) Actor de tipo Estado-nación con recursos ilimitados, motivación estratégica, sofisticación alta y adaptación de herramientas.",
+        "b) Actor de crimen organizado con recursos altos, motivación económica, sofisticación media y uso de herramientas automatizadas.",
+        "c) Actor de amenaza interna con acceso privilegiado, motivación de venganza, sofisticación media y conocimiento de la infraestructura.",
+        "d) Actor de tipo Shadow IT con motivación no maliciosa, recursos limitados, sofisticación baja y uso de servicios no autorizados."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un actor de tipo Estado-nación se caracteriza por recursos ilimitados, motivación estratégica (como espionaje o sabotaje), sofisticación alta y la capacidad de mantener acceso prolongado y sigiloso, incluso adaptando herramientas existentes para evadir controles.",
+      "id": "p5-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes tipos de actores de amenaza se caracteriza por implementar soluciones tecnológicas no autorizadas por el departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a empleados o departamentos que implementan soluciones tecnológicas sin aprobación del departamento de TI, lo que genera riesgos de seguridad por falta de controles básicos (párrafo 6 del temario).",
+      "id": "p5-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se diferencia principalmente por implementar soluciones tecnológicas no autorizadas por el departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados y al uso de servicios en la nube no gestionados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Atacante no cualificado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a soluciones tecnológicas implementadas por empleados o departamentos sin aprobación del área de TI, lo que genera riesgos de seguridad por falta de controles y servicios en la nube no gestionados.",
+      "id": "p5-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por utilizar servicios en la nube no autorizados por el departamento de TI, aunque su motivación principal no sea maliciosa, pero que representa un riesgo de seguridad por falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a empleados o departamentos que implementan soluciones tecnológicas sin aprobación del área de TI, lo que genera riesgos de seguridad por falta de controles, aunque su motivación no sea maliciosa.",
+      "id": "p5-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas no autorizadas por el departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados y al uso de servicios en la nube no gestionados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El término Shadow IT se refiere específicamente a la implementación de soluciones tecnológicas no autorizadas por el departamento de TI, incluyendo servicios en la nube no gestionados, lo que representa un riesgo de seguridad por la falta de controles adecuados.",
+      "id": "p5-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas sin aprobación del departamento de TI, aunque su motivación no sea maliciosa, y que representa un riesgo de seguridad debido a la falta de controles adecuados y al uso de servicios en la nube no gestionados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Atacante no cualificado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a empleados o departamentos que utilizan servicios tecnológicos no autorizados, como almacenamiento en la nube no gestionado, lo que expone a la organización a riesgos de seguridad por falta de controles.",
+      "id": "p5-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Qué atributo clave diferencia principalmente a un actor de amenaza de tipo 'Crimen organizado' de uno de tipo 'Estado-nación' según el temario?",
+      "opciones": [
+        "a) Recursos financieros",
+        "b) Motivación principal",
+        "c) Sofisticación de los ataques",
+        "d) Origen (interno/externo)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Aunque ambos tienen recursos altos y sofisticación, la diferencia clave es que los actores de tipo 'Estado-nación' tienen recursos ilimitados, mientras que el crimen organizado tiene recursos altos pero limitados (tabla de atributos).",
+      "id": "p5-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una organización detecta que un atacante ha estado utilizando credenciales robadas de un empleado con acceso privilegiado para moverse lateralmente por la red, exfiltrando datos sensibles durante seis meses sin ser detectado. Tras la investigación, se determina que el atacante no desarrolló herramientas propias, sino que utilizó frameworks de código abierto ampliamente disponibles, y que su motivación era obtener beneficios económicos mediante la venta de los datos robados. ¿Qué combinación de atributos describe MÁS probablemente a este actor de amenaza según el temario?",
+      "opciones": [
+        "a) Externo, recursos limitados, sofisticación media, motivación económica",
+        "b) Interno, recursos ilimitados, sofisticación alta, motivación estratégica",
+        "c) Externo, recursos altos, sofisticación media-alta, motivación económica",
+        "d) Interno, recursos limitados, sofisticación baja, motivación de venganza"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario describe un actor externo (no se menciona acceso legítimo) que utiliza herramientas preexistentes (sofisticación media), con motivación económica y recursos limitados (párrafos 3 y 5 del temario).",
+      "id": "p5-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identificar el concepto: Un grupo de atacantes lanza un ataque de denegación de servicio (DDoS) contra una plataforma de comercio electrónico para exigir el pago de un rescate. ¿Qué tipo de actor de amenaza representa este grupo?",
+      "opciones": [
+        "a) Hacktivista",
+        "b) Crimen organizado",
+        "c) Estado-nación",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El crimen organizado utiliza tácticas como el ransomware y extorsión económica, como se describe en el párrafo 5 del temario.",
+      "id": "p5-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una organización detecta un ataque avanzado contra su infraestructura crítica donde los atacantes no solo exfiltraron datos sensibles durante meses, sino que también modificaron registros de auditoría para evitar su detección. Durante la investigación, se determina que los atacantes utilizaron herramientas de código abierto disponibles públicamente, pero con una adaptación personalizada para evadir soluciones de seguridad. Además, se identifica que el ataque fue financiado por una entidad con recursos ilimitados y motivación estratégica. ¿Qué combinación de atributos describe MÁS probablemente a este actor de amenaza según el temario?",
+      "opciones": [
+        "a) Externo, recursos ilimitados, sofisticación muy alta, motivación estratégica",
+        "b) Interno, recursos altos, sofisticación media, motivación económica",
+        "c) Externo, recursos limitados, sofisticación baja, motivación política",
+        "d) Interno, recursos ilimitados, sofisticación alta, motivación de venganza"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este escenario describe un actor de tipo 'Estado-nación' por su sofisticación extrema (modificación de registros de auditoría), recursos ilimitados, motivación estratégica y uso de herramientas adaptadas (párrafo 1 del temario).",
+      "id": "p5-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización detecta que un atacante ha estado utilizando credenciales robadas de un empleado con acceso privilegiado para moverse lateralmente por la red, exfiltrando datos sensibles durante seis meses sin ser detectado. Tras la investigación, se determina que el atacante no desarrolló herramientas propias, sino que utilizó frameworks de código abierto ampliamente disponibles como Cobalt Strike o Sliver, y que su motivación era obtener beneficios económicos mediante la venta de los datos robados en mercados clandestinos. Además, se identifica que el atacante tiene acceso a servidores proxy anónimos y criptomonedas para recibir pagos. ¿Qué combinación de atributos describe MÁS probablemente a este actor de amenaza según el temario?",
+      "opciones": [
+        "a) Actor de amenaza de tipo 'Crimen organizado' con recursos altos, sofisticación media-alta y motivación económica, utilizando herramientas automatizadas y servicios de anonimato.",
+        "b) Actor de amenaza de tipo 'Estado-nación' con recursos ilimitados y sofisticación muy alta, usando herramientas propias y técnicas avanzadas de evasión.",
+        "c) Actor de amenaza de tipo 'Amenaza interna' con accesos legítimos pero sin recursos financieros, usando herramientas básicas y motivado por venganza.",
+        "d) Actor de amenaza de tipo 'Hacktivista' con recursos limitados pero motivación política, usando herramientas automatizadas y filtrando datos públicamente."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario describe un actor con motivación económica, uso de herramientas automatizadas de código abierto, acceso a recursos financieros (criptomonedas) y servicios de anonimato, lo que coincide con las características del 'Crimen organizado' según el temario.",
+      "id": "p5-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se diferencia principalmente por implementar soluciones tecnológicas no autorizadas por el departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Crimen organizado",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a soluciones tecnológicas implementadas por empleados o departamentos sin aprobación de TI, lo que genera riesgos de seguridad por falta de controles, aunque su motivación no sea maliciosa.",
+      "id": "p5-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante lanza un ataque de denegación de servicio (DDoS) contra una plataforma de comercio electrónico para exigir el pago de un rescate. Tras analizar el ataque, se observa que el atacante utilizó herramientas automatizadas como LOIC (Low Orbit Ion Cannon) sin conocimiento técnico avanzado. ¿Qué tipo de actor de amenaza es MÁS probable que esté detrás según el temario?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Atacante no cualificado",
+        "c) Crimen organizado",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El crimen organizado suele utilizar herramientas automatizadas y scripts preexistentes para ataques de extorsión como ransomware o DDoS, sin necesidad de sofisticación técnica avanzada.",
+      "id": "p5-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas no autorizadas por el departamento de TI, aunque su motivación principal no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados y al uso de servicios en la nube no gestionados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Crimen organizado",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a empleados o departamentos que utilizan soluciones tecnológicas sin aprobación, como servicios en la nube no gestionados, lo que genera riesgos de seguridad por falta de controles, aunque su motivación no sea maliciosa.",
+      "id": "p5-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta que un empleado con acceso privilegiado ha estado copiando y filtrando información confidencial durante meses sin ser detectado. ¿Qué tipo de actor de amenaza es MÁS probable que esté involucrado?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Amenaza interna",
+        "c) Shadow IT",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las amenazas internas provienen de personas con acceso legítimo a los sistemas, como empleados, y pueden evadir controles de seguridad con mayor facilidad.",
+      "id": "p5-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Qué atributo clave diferencia principalmente a un actor de amenaza de tipo 'Hacktivista' de uno de tipo 'Estado-nación' según el temario?",
+      "opciones": [
+        "a) Recursos disponibles",
+        "b) Motivación principal",
+        "c) Origen (interno/externo)",
+        "d) Sofisticación técnica"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los Estados-nación tienen recursos ilimitados, mientras que los hacktivistas suelen tener recursos limitados, aunque su sofisticación técnica puede ser alta.",
+      "id": "p5-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por ejecutar ataques prolongados y sigilosos con el objetivo de mantener acceso no detectado durante meses o años, utilizando herramientas de código abierto adaptadas para evadir soluciones de seguridad?",
+      "opciones": [
+        "a) Atacante no cualificado",
+        "b) Amenaza interna",
+        "c) Estado-nación",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los Estados-nación son conocidos por ejecutar amenazas persistentes avanzadas (APTs), que incluyen ataques prolongados y sigilosos con herramientas adaptadas para evadir detección.",
+      "id": "p5-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una organización detecta que un atacante ha estado utilizando credenciales robadas de un empleado con acceso privilegiado para moverse lateralmente por la red, exfiltrando datos sensibles durante seis meses sin ser detectado. El atacante no desarrolló herramientas propias, sino que utilizó frameworks de código abierto como Cobalt Strike, y su motivación era obtener beneficios económicos mediante la venta de los datos robados en mercados clandestinos. ¿Qué combinación de atributos describe MÁS probablemente a este actor de amenaza según el temario?",
+      "opciones": [
+        "a) Recursos altos, sofisticación media-alta, motivación económica",
+        "b) Recursos ilimitados, sofisticación muy alta, motivación estratégica",
+        "c) Recursos limitados, sofisticación baja, motivación de activismo",
+        "d) Recursos medios, sofisticación alta, motivación de venganza"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este escenario describe al crimen organizado, que combina recursos altos, sofisticación media-alta (uso de herramientas como Cobalt Strike) y motivación económica.",
+      "id": "p5-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se asocia principalmente con el uso de phishing, malware y ransomware para extorsionar a víctimas con fines económicos, según el temario?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Crimen organizado",
+        "c) Hacktivista",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El crimen organizado utiliza tácticas como phishing, malware y ransomware para extorsionar a víctimas con fines económicos, aprovechando su estructura empresarial.",
+      "id": "p5-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes tipos de actores de amenaza se caracteriza por tener una estructura organizacional similar a una empresa, con roles especializados como hackers, vendedores de datos y equipos de soporte técnico?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Crimen organizado",
+        "c) Hacktivista",
+        "d) Shadow IT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El crimen organizado opera con una estructura similar a una empresa, con roles especializados y motivación puramente económica.",
+      "id": "p5-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización detecta que un atacante ha estado utilizando credenciales robadas de un empleado con acceso privilegiado para moverse lateralmente por la red, exfiltrando datos sensibles durante seis meses sin ser detectado. Durante la investigación, se determina que: 1) El atacante no desarrolló herramientas propias, sino que utilizó frameworks de código abierto como Cobalt Strike adaptados para evadir soluciones de seguridad; 2) El ataque fue financiado por una entidad con recursos ilimitados; 3) Los datos robados fueron vendidos en mercados clandestinos en criptomonedas; 4) El atacante implementó soluciones de anonimato como servidores proxy y VPN. Según el temario, ¿qué combinación de tipos de actores de amenaza describe MÁS probablemente este escenario?",
+      "opciones": [
+        "a) Estado-nación + Crimen organizado (motivación económica)",
+        "b) Crimen organizado + Shadow IT (uso de frameworks públicos)",
+        "c) Estado-nación + Hacktivista (motivación política)",
+        "d) Amenaza interna + Atacante no cualificado (uso de herramientas automatizadas)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La combinación de recursos ilimitados (atributo de Estado-nación), motivación económica (atributo de Crimen organizado) y el uso de herramientas avanzadas adaptadas (sofisticación alta) encaja con ambas categorías. El temario destaca que el crimen organizado puede adoptar tácticas de Estado-nación cuando cuenta con recursos suficientes.",
+      "id": "p5-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se diferencia principalmente por tener acceso legítimo a los sistemas de una organización y, por tanto, puede evadir controles de seguridad con mayor facilidad?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Amenaza interna",
+        "c) Crimen organizado",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las amenazas internas provienen de personas con acceso legítimo (ej.: empleados), lo que les permite evadir controles de seguridad con mayor facilidad, según el temario.",
+      "id": "p5-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza principalmente por implementar soluciones tecnológicas no autorizadas en la nube por parte de empleados, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Crimen organizado",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El *Shadow IT* se refiere al uso de tecnologías no autorizadas por empleados, como servicios en la nube no gestionados, lo que expone a la organización a riesgos de seguridad sin intención maliciosa.",
+      "id": "p5-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se caracteriza principalmente por implementar soluciones tecnológicas no autorizadas por el departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados y al uso de servicios en la nube no gestionados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Crimen organizado",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a empleados o departamentos que implementan soluciones tecnológicas sin aprobación del área de TI, incluyendo servicios en la nube no gestionados, lo que genera riesgos de seguridad por falta de controles.",
+      "id": "p5-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Qué atributo clave diferencia principalmente a un actor de amenaza de tipo 'Estado-nación' de uno de tipo 'Crimen organizado'?",
+      "opciones": [
+        "a) Recursos disponibles",
+        "b) Motivación principal",
+        "c) Sofisticación técnica",
+        "d) Origen (interno/externo)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los Estados-nación tienen recursos ilimitados, mientras que el crimen organizado tiene recursos altos pero limitados, según la tabla del temario.",
+      "id": "p5-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se diferencia principalmente por implementar soluciones tecnológicas no autorizadas en la nube por parte de empleados, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Atacante no cualificado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a empleados que usan servicios en la nube no autorizados sin intención maliciosa, pero que generan riesgos de seguridad por la falta de controles adecuados en dichos servicios.",
+      "id": "p5-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una organización detecta que un atacante ha estado utilizando credenciales robadas de un empleado con acceso privilegiado para moverse lateralmente por la red, exfiltrando datos sensibles durante seis meses sin ser detectado. ¿Qué tipo de actor de amenaza es MÁS probable que esté involucrado?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Amenaza interna",
+        "c) Crimen organizado",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El uso de credenciales robadas de un empleado con acceso privilegiado sugiere una amenaza interna, según el temario.",
+      "id": "p5-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas no autorizadas en la nube por parte de empleados, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere a empleados que implementan soluciones tecnológicas sin aprobación del departamento de TI, como servicios en la nube no autorizados, lo que crea riesgos de seguridad por falta de controles aunque su motivación no sea maliciosa.",
+      "id": "p5-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Un atacante lanza un ataque avanzado contra una infraestructura crítica donde no solo exfiltró datos sensibles durante meses, sino que también modificó registros de auditoría para evitar su detección. Los atacantes utilizaron herramientas de código abierto adaptadas para evadir soluciones de seguridad y el ataque fue financiado por una entidad con recursos ilimitados. ¿Qué combinación de atributos describe MÁS probablemente a este actor de amenaza?",
+      "opciones": [
+        "a) Estado-nación + Amenaza interna",
+        "b) Estado-nación + Crimen organizado",
+        "c) Crimen organizado + Shadow IT",
+        "d) Hacktivista + Shadow IT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque avanzado, con recursos ilimitados y adaptación de herramientas, sugiere un Estado-nación, pero también podría involucrar al crimen organizado por su sofisticación y motivación económica.",
+      "id": "p5-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Identificar el concepto: Un empleado instala una aplicación de almacenamiento en la nube no autorizada para compartir archivos de la empresa con un cliente externo. ¿Qué tipo de actor de amenaza representa?",
+      "opciones": [
+        "a) Amenaza interna",
+        "b) Shadow IT",
+        "c) Estado-nación",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El uso de soluciones tecnológicas no autorizadas por el departamento de TI se clasifica como Shadow IT, según el temario.",
+      "id": "p5-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se diferencia principalmente por su capacidad para mantener acceso prolongado y sigiloso en los sistemas de una organización, incluso durante meses o años?",
+      "opciones": [
+        "a) Atacante no cualificado",
+        "b) Amenaza interna",
+        "c) Estado-nación",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los Estados-nación ejecutan amenazas persistentes avanzadas (APTs), diseñadas para mantener acceso sigiloso durante meses o años, según el temario.",
+      "id": "p5-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas no autorizadas en la nube por parte de empleados, aunque su motivación principal no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El 'Shadow IT' se refiere a empleados que utilizan servicios en la nube no autorizados sin intención maliciosa, pero que generan riesgos de seguridad por la falta de controles de TI.",
+      "id": "p5-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se diferencia principalmente por implementar soluciones tecnológicas no autorizadas en la nube por parte de empleados, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Amenaza interna",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define a Shadow IT como la implementación de soluciones tecnológicas no autorizadas por empleados, incluyendo servicios en la nube, lo que representa un riesgo de seguridad por falta de controles, aunque su motivación no sea maliciosa.",
+      "id": "p5-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un grupo de atacantes lanza un ataque de denegación de servicio (DDoS) contra una plataforma de comercio electrónico para exigir el pago de un rescate. Tras analizar el ataque, se observa que los atacantes utilizaron herramientas automatizadas como LOIC sin conocimiento técnico avanzado. ¿Qué tipo de actor de amenaza es MÁS probable que esté detrás?",
+      "opciones": [
+        "Estado-nación",
+        "Atacante no cualificado",
+        "Hacktivista",
+        "Crimen organizado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los atacantes no cualificados (script kiddies) suelen usar herramientas automatizadas sin entender su funcionamiento, como LOIC, según el temario.",
+      "id": "p5-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Qué atributo clave diferencia principalmente a un actor de amenaza de tipo 'Shadow IT' de uno de tipo 'Amenaza interna'?",
+      "opciones": [
+        "El origen (interno vs. interno con acceso legítimo)",
+        "La motivación (maliciosa vs. no maliciosa)",
+        "El uso de herramientas no autorizadas (sí vs. no)",
+        "El riesgo de seguridad que representa (alto vs. bajo)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Shadow IT se caracteriza por implementar soluciones tecnológicas no autorizadas sin intención maliciosa, mientras que las amenazas internas tienen motivaciones como venganza o beneficio económico, según el temario.",
+      "id": "p5-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado utiliza una aplicación de mensajería no autorizada para compartir información confidencial de la empresa con un cliente externo, sin intención maliciosa pero violando las políticas de TI. ¿Qué tipo de actor de amenaza representa según el temario?",
+      "opciones": [
+        "a) Shadow IT",
+        "b) Amenaza interna",
+        "c) Hacktivista",
+        "d) Crimen organizado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El Shadow IT se refiere a la implementación de soluciones tecnológicas no autorizadas por el departamento de TI, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad por falta de controles adecuados.",
+      "id": "p5-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una organización detecta que un atacante ha estado utilizando credenciales robadas de un empleado con acceso privilegiado para moverse lateralmente por la red, exfiltrando datos sensibles durante seis meses sin ser detectado. El atacante no desarrolló herramientas propias, sino que utilizó frameworks de código abierto como Cobalt Strike, y su motivación era obtener beneficios económicos mediante la venta de los datos robados en mercados clandestinos. ¿Qué combinación de atributos describe MÁS probablemente a este actor de amenaza?",
+      "opciones": [
+        "Crimen organizado con recursos altos y sofisticación media-alta",
+        "Estado-nación con motivación estratégica",
+        "Hacktivista con recursos limitados",
+        "Shadow IT con motivación no maliciosa"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Este escenario combina características del crimen organizado (beneficio económico, uso de herramientas como Cobalt Strike, venta de datos) con recursos altos y sofisticación media-alta, según el temario.",
+      "id": "p5-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas no autorizadas en servicios en la nube por parte de empleados, aunque su motivación principal no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados y al uso de servicios no gestionados por TI?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Amenaza interna",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se refiere al uso de servicios tecnológicos no autorizados por el departamento de TI, como aplicaciones en la nube no gestionadas, que aunque no tengan motivación maliciosa, generan riesgos de seguridad por falta de controles.",
+      "id": "p5-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas no autorizadas en la nube por parte de empleados, aunque su motivación principal no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados y al uso de servicios no gestionados por TI?",
+      "opciones": [
+        "a) Amenaza interna",
+        "b) Shadow IT",
+        "c) Estado-nación",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El término 'Shadow IT' se refiere específicamente a la implementación de soluciones tecnológicas no autorizadas por empleados, incluyendo servicios en la nube no gestionados, aunque su motivación no sea maliciosa, pero que genera riesgos de seguridad.",
+      "id": "p5-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta que un atacante ha estado utilizando credenciales robadas de un empleado con acceso privilegiado para moverse lateralmente por la red durante seis meses, exfiltrando datos sensibles sin ser detectado. Durante la investigación, se determina que: 1) El atacante no desarrolló herramientas propias, sino que utilizó frameworks de código abierto como Cobalt Strike adaptados para evadir soluciones de seguridad; 2) El ataque fue financiado por una entidad con recursos ilimitados; 3) Los datos robados fueron vendidos en mercados clandestinos mediante criptomonedas; 4) El atacante implementó soluciones de anonimato como servidores proxy y VPN. ¿Qué combinación de tipos de actores de amenaza describe MÁS probablemente este escenario según el temario?",
+      "opciones": [
+        "a) Estado-nación (por recursos ilimitados, sofisticación avanzada y motivación estratégica de espionaje o exfiltración de datos)",
+        "b) Crimen organizado (por estructura empresarial, motivación económica, uso de herramientas adaptadas y venta de datos en mercados clandestinos)",
+        "c) Amenaza interna (por acceso privilegiado de un empleado, aunque no explica recursos ilimitados ni venta en mercados clandestinos)",
+        "d) Hacktivista (por motivación política o filosófica, aunque no coincide con recursos ilimitados ni venta de datos) "
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este escenario combina atributos típicos del crimen organizado (motivación económica, estructura empresarial, uso de herramientas adaptadas y venta de datos en mercados clandestinos) con elementos de sofisticación avanzada que podrían sugerir colaboración con actores más organizados, pero no necesariamente un actor de Estado-nación.",
+      "id": "p5-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización detecta que un atacante ha estado utilizando credenciales robadas de un empleado con acceso privilegiado para moverse lateralmente por la red durante seis meses, exfiltrando datos sensibles sin ser detectado. Durante la investigación, se determina que: 1) El atacante no desarrolló herramientas propias, sino que utilizó frameworks de código abierto como Cobalt Strike adaptados para evadir soluciones de seguridad; 2) El ataque fue financiado por una entidad con recursos ilimitados; 3) Los datos robados fueron vendidos en mercados clandestinos mediante criptomonedas; 4) El atacante implementó soluciones de anonimato como servidores proxy y VPN. Según el temario, ¿qué combinación de tipos de actores de amenaza describe MÁS probablemente este escenario?",
+      "opciones": [
+        "a) Estado-nación + Crimen organizado",
+        "b) Hacktivista + Shadow IT",
+        "c) Amenaza interna + Crimen organizado",
+        "d) Estado-nación + Atacante no cualificado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario combina recursos ilimitados y motivaciones estratégicas (típicos de Estado-nación) con herramientas de código abierto adaptadas para evasión (técnicas de Crimen organizado) y venta de datos en mercados clandestinos (motivación económica del Crimen organizado).",
+      "id": "p5-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se diferencia principalmente por implementar soluciones tecnológicas no autorizadas en la nube por parte de empleados, aunque su motivación principal no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados y al uso de servicios no gestionados por TI?",
+      "opciones": [
+        "a) Shadow IT",
+        "b) Amenaza interna",
+        "c) Atacante no cualificado",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define Shadow IT como la implementación de soluciones tecnológicas no autorizadas por el departamento de TI, incluyendo servicios en la nube no gestionados, lo que genera riesgos de seguridad por falta de controles.",
+      "id": "p5-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparación: ¿Qué atributo clave diferencia principalmente a un actor de amenaza de tipo 'Estado-nación' de uno de tipo 'Crimen organizado' según el temario?",
+      "opciones": [
+        "a) Motivación principal",
+        "b) Sofisticación técnica",
+        "c) Recursos disponibles",
+        "d) Origen (interno/externo)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los Estados-nación tienen recursos ilimitados, mientras que el crimen organizado tiene recursos altos pero limitados (según la tabla del temario).",
+      "id": "p5-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se diferencia principalmente por implementar soluciones tecnológicas no autorizadas en servicios en la nube por parte de empleados, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados y al uso de servicios no gestionados por TI?",
+      "opciones": [
+        "a) Amenaza interna",
+        "b) Shadow IT",
+        "c) Hacktivista",
+        "d) Crimen organizado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Shadow IT se caracteriza por el uso de tecnologías no autorizadas por el departamento de TI, como servicios en la nube no gestionados, lo que representa un riesgo de seguridad por la falta de controles adecuados, aunque su motivación no sea maliciosa.",
+      "id": "p5-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Escenario aplicado: Una organización detecta que un empleado con acceso privilegiado ha estado copiando y filtrando información confidencial durante meses sin ser detectado. ¿Qué tipo de actor de amenaza es MÁS probable que esté involucrado?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Amenaza interna",
+        "c) Shadow IT",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las amenazas internas provienen de personas con acceso legítimo a los sistemas, lo que les permite evadir controles y filtrar datos sin ser detectados (según el temario).",
+      "id": "p5-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de actor de amenaza se diferencia principalmente por implementar soluciones tecnológicas no autorizadas en servicios en la nube por empleados, aunque su motivación no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados y al uso de servicios no gestionados por TI?",
+      "opciones": [
+        "a) Crimen organizado",
+        "b) Shadow IT",
+        "c) Estado-nación",
+        "d) Amenaza interna"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define Shadow IT como la implementación de soluciones tecnológicas sin aprobación del departamento de TI, aunque su motivación no sea maliciosa, lo que genera riesgos por falta de controles y servicios no gestionados.",
+      "id": "p5-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Dificultad alta: Una organización detecta un ataque avanzado contra su infraestructura crítica donde los atacantes no solo exfiltraron datos sensibles durante meses, sino que también modificaron registros de auditoría para evitar su detección. Los atacantes utilizaron herramientas de código abierto adaptadas para evadir soluciones de seguridad y el ataque fue financiado por una entidad con recursos ilimitados. ¿Qué combinación de atributos describe MÁS probablemente a este actor de amenaza?",
+      "opciones": [
+        "a) Estado-nación + Crimen organizado",
+        "b) Estado-nación + Amenaza interna",
+        "c) Crimen organizado + Shadow IT",
+        "d) Hacktivista + Atacante no cualificado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los Estados-nación tienen recursos ilimitados y ejecutan APTs (amenazas persistentes avanzadas) con herramientas adaptadas, mientras que el crimen organizado podría colaborar en la exfiltración de datos (según el temario).",
+      "id": "p5-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se caracteriza por implementar soluciones tecnológicas no autorizadas en servicios en la nube por parte de empleados, aunque su motivación principal no sea maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados?",
+      "opciones": [
+        "a) Estado-nación",
+        "b) Shadow IT",
+        "c) Amenaza interna",
+        "d) Crimen organizado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El tipo de actor de amenaza que corresponde es el **Shadow IT**, ya que se refiere a empleados que utilizan servicios en la nube no autorizados sin intención maliciosa, pero generando riesgos de seguridad por la falta de controles.",
+      "id": "p5-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de actor de amenaza se diferencia principalmente por su motivación no maliciosa, pero que representa un riesgo de seguridad debido a la falta de controles adecuados y al uso de servicios en la nube no gestionados por el departamento de TI?",
+      "opciones": [
+        "a) Shadow IT",
+        "b) Amenaza interna",
+        "c) Hacktivista",
+        "d) Estado-nación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El Shadow IT se refiere a la implementación de soluciones tecnológicas no autorizadas por empleados o departamentos, sin intención maliciosa, pero que genera riesgos de seguridad por la falta de controles y el uso de servicios en la nube no gestionados.",
+      "id": "p5-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta que un empleado con acceso privilegiado ha estado utilizando credenciales robadas de otro empleado para acceder a sistemas críticos, exfiltrando datos sensibles durante meses sin ser detectado. Durante la investigación, se determina que: 1) El atacante no desarrolló herramientas propias, sino que utilizó frameworks de código abierto como Cobalt Strike adaptados para evadir soluciones de seguridad; 2) El ataque fue financiado por una entidad con recursos ilimitados; 3) Los datos robados fueron vendidos en mercados clandestinos mediante criptomonedas; 4) El atacante implementó soluciones de anonimato como servidores proxy y VPN. Además, se identifica que el atacante tiene conocimientos técnicos avanzados para personalizar herramientas y evadir detecciones. ¿Qué combinación de tipos de actores de amenaza describe MÁS probablemente este escenario según el temario?",
+      "opciones": [
+        "a) Amenaza interna + Crimen organizado (por su estructura empresarial y motivación económica)",
+        "b) Estado-nación + Amenaza interna (por recursos ilimitados y acceso legítimo)",
+        "c) Crimen organizado + Atacante no cualificado (por uso de herramientas automatizadas y motivación económica)",
+        "d) Hacktivista + Amenaza interna (por motivación política y acceso legítimo)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La combinación de recursos ilimitados, motivación económica, acceso legítimo (por ser un empleado) y sofisticación técnica avanzada (personalización de herramientas y evasión de detecciones) sugiere una sinergia entre un actor de Estado-nación (por recursos y objetivos estratégicos) y una Amenaza interna (por acceso legítimo y conocimientos internos).",
+      "id": "p5-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Dificultad alta: Una organización detecta que un atacante ha estado utilizando credenciales robadas de un empleado con acceso privilegiado para moverse lateralmente por la red durante seis meses, exfiltrando datos sensibles sin ser detectado. Durante la investigación, se determina que: 1) El atacante no desarrolló herramientas propias, sino que utilizó frameworks de código abierto como Cobalt Strike adaptados para evadir soluciones de seguridad; 2) El ataque fue financiado por una entidad con recursos ilimitados; 3) Los datos robados fueron vendidos en mercados clandestinos mediante criptomonedas; 4) El atacante implementó soluciones de anonimato como servidores proxy y VPN. ¿Qué combinación de tipos de actores de amenaza describe MÁS probablemente este escenario según el temario?",
+      "opciones": [
+        "a) Estado-nación + Crimen organizado",
+        "b) Amenaza interna + Crimen organizado",
+        "c) Shadow IT + Hacktivista",
+        "d) Estado-nación + Shadow IT"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los Estados-nación tienen recursos ilimitados y ejecutan APTs, mientras que el crimen organizado se encarga de la venta de datos robados en mercados clandestinos (según el temario).",
+      "id": "p5-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Threat Actors",
+      "youtubeId": "6xUH0t6ugIM"
+    }
+  ]
+}

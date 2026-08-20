@@ -1,0 +1,1407 @@
+{
+  "id": 15,
+  "titulo": "3.4 · Resiliencia y recuperación",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LA RESILIENCIA Y RECUPERACIÓN EN CIBERSEGURIDAD: ESTRATEGIAS PARA GARANTIZAR LA DISPONIBILIDAD Y CONTINUIDAD DE SERVICIOS\n\n\nLA ALTA DISPONIBILIDAD (HIGH AVAILABILITY, HA) Y SU IMPORTANCIA\n\nLa alta disponibilidad es una estrategia clave para garantizar que los sistemas permanezcan operativos incluso ante fallos. A diferencia de un enfoque tradicional donde se reemplazan componentes manualmente tras una falla, la HA implica mantener múltiples sistemas activos simultáneamente. Cuando un componente falla, otro asume su carga sin interrupción perceptible para los usuarios. Esto no solo mejora la resiliencia, sino que también introduce costos adicionales, ya que se requiere hardware duplicado, energía incrementada y componentes de mayor calidad. La HA no solo se limita a servidores; también puede aplicarse a redes, almacenamiento y aplicaciones.\n\n\nCLUSTERING DE SERVIDORES (SERVER CLUSTERING)\n\nEl clustering de servidores agrupa múltiples servidores para que funcionen como una sola unidad lógica. Desde la perspectiva del usuario, solo existe un único servidor, lo que simplifica la gestión y mejora la escalabilidad. Los servidores en un clúster suelen ejecutar sistemas operativos idénticos para garantizar la interoperabilidad. Un diseño común incluye un almacenamiento compartido al que todos los servidores acceden, asegurando que los datos estén siempre actualizados. Este enfoque permite añadir o eliminar servidores en tiempo real, ajustando la capacidad según la demanda. La sincronización entre servidores es crítica para evitar inconsistencias en los datos.\n\n\nBALANCEO DE CARGA (LOAD BALANCING)\n\nEl balanceo de carga distribuye el tráfico entre múltiples servidores mediante un dispositivo central llamado balanceador de carga. A diferencia del clustering, donde los servidores conocen la existencia de otros nodos, en el balanceo de carga cada servidor opera de manera independiente. El balanceador gestiona qué solicitudes se envían a cada servidor, lo que permite escalar horizontalmente añadiendo más servidores cuando sea necesario. Si un servidor falla, el balanceador lo detecta y redirige el tráfico a los servidores restantes, minimizando el impacto en los usuarios. Esta técnica es especialmente útil para aplicaciones web y servicios en la nube.\n\n\nRESILIENCIA EN SITIOS FÍSICOS (SITE RESILIENCY)\n\nLa resiliencia en sitios físicos implica tener un sitio de recuperación preparado para activarse en caso de desastre. Existen tres tipos principales de sitios de recuperación:\n\n\nHOT SITE\n\nUn hot site es una réplica exacta del centro de datos principal, con hardware, aplicaciones y datos sincronizados en tiempo real. Esto permite una transición casi inmediata en caso de fallo. Sin embargo, mantener un hot site es costoso, ya que requiere duplicar toda la infraestructura y actualizarla constantemente.\n\n\nWARM SITE\n\nUn warm site es una opción intermedia entre un hot site y un cold site. Contiene parte del hardware y algunos datos preconfigurados, pero requiere la instalación de equipos adicionales y la restauración de datos faltantes antes de operar. Es una solución más económica que un hot site, pero ofrece un tiempo de recuperación más rápido que un cold site.\n\n\nCOLD SITE\n\nUn cold site es un espacio vacío con infraestructura básica como energía y conectividad, pero sin equipos ni datos. Requiere llevar todo el hardware, software y datos necesarios para restaurar los servicios. Es la opción más económica, pero también la que implica un mayor tiempo de recuperación, ya que todo debe configurarse desde cero.\n\n\nDISPERSIÓN GEOGRÁFICA (GEOGRAPHICAL DISPERSION)\n\nLa dispersión geográfica de los sitios de recuperación es esencial para proteger contra desastres naturales o regionales. Por ejemplo, un huracán que afecte una zona no impactará necesariamente a un sitio de recuperación ubicado en otro estado. Sin embargo, gestionar sitios geográficamente dispersos presenta desafíos logísticos, como la movilización de empleados y equipos tras un desastre. La planificación debe incluir protocolos para el transporte de personal y la logística de recuperación.\n\n\nDIVERSIDAD DE PLATAFORMAS (PLATFORM DIVERSITY)\n\nLa diversidad de plataformas minimiza el riesgo de que una vulnerabilidad afecte a todos los sistemas. Por ejemplo, si un exploit afecta a Windows, los sistemas Linux o macOS no se verán comprometidos. Esta estrategia puede aplicarse tanto a servidores como a dispositivos cliente. Al distribuir los servicios entre diferentes sistemas operativos, se reduce la superficie de ataque y se limita el impacto de una vulnerabilidad específica.\n\n\nRESILIENCIA EN LA NUBE (CLOUD RESILIENCY)\n\nLa nube ofrece múltiples opciones para mejorar la resiliencia. Las organizaciones pueden distribuir servicios entre diferentes proveedores de nube (por ejemplo, Amazon Web Services, Microsoft Azure y Google Cloud) para evitar depender de un solo proveedor. Si un proveedor experimenta una interrupción, los servicios pueden redirigirse a otro. Además, la nube permite escalar recursos rápidamente según la demanda, lo que facilita la adaptación a cambios en la carga de trabajo. Desde una perspectiva de seguridad, usar múltiples proveedores reduce el riesgo de que un fallo o vulnerabilidad afecte a todos los servicios simultáneamente.\n\n\nPLANIFICACIÓN DE LA CONTINUIDAD DE OPERACIONES (CONTINUITY OF OPERATIONS PLANNING, COOP)\n\nLa planificación de la continuidad de operaciones (COOP) se activa cuando no hay tecnologías alternativas disponibles para mantener los servicios. En estos casos, se implementan procesos manuales para garantizar la continuidad del negocio. Por ejemplo, en un sistema de punto de venta (POS), si el software falla, los empleados pueden registrar transacciones manualmente y emitir recibos en papel. Si los pagos con tarjeta no funcionan, se puede recurrir a llamadas telefónicas para obtener aprobaciones. Estos procedimientos deben diseñarse y documentarse con anticipación para que, en caso de emergencia, el personal sepa exactamente qué hacer.\n\n\n\nPLANIFICACIÓN DE CAPACIDAD (CAPACITY PLANNING)\n\nLa planificación de capacidad es un proceso continuo que busca equilibrar la oferta y la demanda de recursos tecnológicos. Si la infraestructura no tiene suficiente capacidad, los servicios pueden ralentizarse o incluso fallar. Si, por el contrario, se sobredimensiona, los costos se incrementan innecesariamente. Este equilibrio debe considerar varios factores:\n\n\n- Número de usuarios y sus necesidades.\n- Tecnologías adecuadas para escalar según la demanda.\n- Infraestructura necesaria para soportar la carga.\n- Recursos humanos, como empleados en un centro de llamadas, que también deben ajustarse a la demanda.\n\n\nEn entornos físicos, añadir capacidad puede ser lento y costoso, ya que requiere adquirir, configurar e instalar nuevo hardware. En la nube, en cambio, escalar es más ágil: basta con hacer clic en un botón para desplegar nuevos recursos. Sin embargo, el uso de recursos en la nube tiene un costo asociado, por lo que es importante optimizar la infraestructura para evitar gastos innecesarios.\n\n\n\nPRUEBAS DE RECUPERACIÓN (RECOVERY TESTING)\n\nLas pruebas de recuperación son esenciales para garantizar que los planes de recuperación de desastres funcionen correctamente. Estas pruebas deben realizarse periódicamente para que el personal esté familiarizado con los procedimientos. Existen varios tipos de pruebas:\n\n\nEJERCICIOS EN MESA (TABLETOP EXERCISES)\n\nLos ejercicios en mesa son simulaciones de recuperación que se realizan en un entorno controlado, como una sala de reuniones. Los participantes revisan los pasos del plan de recuperación sin activar infraestructuras reales. Esto permite identificar lagunas en los procedimientos y coordinar con otros departamentos. Aunque no es una prueba real, es una forma económica de validar la efectividad del plan.\n\n\nPRUEBAS DE FALLO (FAILOVER TESTS)\n\nLas pruebas de fallo evalúan la capacidad de los sistemas redundantes para asumir la carga en caso de fallo. Idealmente, el fallo debe ser transparente para los usuarios, con redirección automática a sistemas de respaldo. Estas pruebas pueden incluir dispositivos como routers, firewalls y switches con funcionalidad de failover integrada. También pueden usarse protocolos o procesos para gestionar el fallo, como múltiples conexiones a Internet desde diferentes proveedores.\n\n\nSIMULACIONES DE SEGURIDAD (SECURITY SIMULATIONS)\n\nLas simulaciones de seguridad, como pruebas de phishing o intentos de extracción de datos, ayudan a evaluar la preparación de la organización. Por ejemplo, una simulación de phishing envía correos electrónicos falsos a los empleados para medir su capacidad de identificar amenazas. Estas pruebas permiten identificar áreas de mejora en la formación de los usuarios y en los sistemas de detección automática.\n\n\nPROCESAMIENTO PARALELO (PARALLEL PROCESSING)\n\nEl procesamiento paralelo distribuye tareas entre múltiples CPUs o sistemas para mejorar la eficiencia y la resiliencia. Si un procesador falla, las tareas pueden redistribuirse entre los restantes. Esto es especialmente útil para transacciones complejas o aplicaciones que requieren alta disponibilidad. El procesamiento paralelo puede implementarse en un solo dispositivo con múltiples núcleos o en una infraestructura distribuida con múltiples computadoras.\n\n\n\nCOPIAS DE SEGURIDAD (BACKUPS)\n\nLas copias de seguridad son fundamentales para la recuperación de datos. Sin embargo, su implementación requiere planificación cuidadosa. Algunos aspectos clave incluyen:\n\n\nTIPOS DE COPIAS DE SEGURIDAD\n\n- Copias completas (full backups): respaldan todos los datos en un momento dado.\n- Copias incrementales: respaldan solo los cambios realizados desde la última copia.\n- Copias diferenciales: respaldan los cambios desde la última copia completa.\n- Instantáneas (snapshots): capturas del estado de un sistema en un momento específico, comunes en entornos virtuales.\n\n\nUBICACIÓN DE LAS COPIAS\n\n- Copias locales (onsite): almacenadas en el mismo lugar que los datos originales. Son rápidas de restaurar pero vulnerables a desastres locales.\n- Copias remotas (offsite): almacenadas en una ubicación diferente, accesibles a través de la red. Protegen contra desastres que afecten la ubicación principal.\n- Copias en la nube: almacenadas en servicios de nube, como Amazon S3 o Azure Blob Storage. Ofrecen escalabilidad y accesibilidad, pero requieren cifrado para proteger la confidencialidad de los datos.\n\n\nFRECUENCIA Y PLANIFICACIÓN\n\nLa frecuencia de las copias depende de la criticidad de los datos y la tasa de cambio. Por ejemplo:\n- Copias cada hora para datos críticos.\n- Copias diarias para datos que cambian con frecuencia.\n- Copias semanales o mensuales para datos estáticos.\n\n\nSEGURIDAD DE LAS COPIAS\n\nLas copias de seguridad pueden contener información sensible, por lo que es crucial protegerlas. El cifrado es esencial, especialmente para copias almacenadas en la nube o transportadas fuera de las instalaciones. Además, las claves de cifrado deben gestionarse cuidadosamente para garantizar que puedan recuperarse en caso de necesidad.\n\n\nPRUEBAS DE RESTAURACIÓN\n\nEs vital probar periódicamente las copias de seguridad para asegurarse de que los datos puedan restaurarse correctamente. Muchas organizaciones asumen que sus copias funcionan, pero solo descubren que no es así cuando necesitan recuperarse de un desastre. Las pruebas deben incluir no solo la restauración de datos, sino también la verificación de que las aplicaciones puedan utilizar esos datos correctamente.\n\n\nREPLICACIÓN DE DATOS (REPLICATION)\n\nLa replicación copia datos en tiempo casi real a múltiples ubicaciones. Si los datos originales se modifican, los cambios se propagan a las réplicas en segundos o minutos. Esto permite disponer de una copia actualizada en otro sitio, lista para usarse en caso de desastre. La replicación es especialmente útil para hot sites, donde los datos se mantienen sincronizados constantemente.\n\n\nREGISTRO DE ACTIVIDADES (JOURNALING)\n\nEl journaling es una técnica para evitar la corrupción de datos durante fallos de energía. En lugar de escribir directamente en la base de datos, los cambios se registran primero en un journal. Si ocurre un fallo de energía, el sistema puede usar el journal para restaurar los datos perdidos. Esto reduce el riesgo de corrupción y acelera la recuperación.\n\n\n\nRESILIENCIA ELÉCTRICA (POWER RESILIENCY)\n\nLa energía eléctrica es el recurso fundamental que sustenta todos los sistemas tecnológicos. Sin energía, incluso los sistemas más resilientes fallan. Por ello, es crucial implementar estrategias para garantizar un suministro eléctrico continuo:\n\n\nFUENTES DE ENERGÍA DE RESPALDO\n\n- SAI (UPS, UNINTERRUPTIBLE POWER SUPPLY): dispositivos que proporcionan energía temporal durante cortes. Existen tres tipos principales:\n  - SAI en espera (standby UPS): cambia a batería solo cuando falla la energía principal.\n  - SAI interactivo en línea (line-interactive UPS): ajusta gradualmente el voltaje para evitar fluctuaciones.\n  - SAI en línea (online UPS o double conversion UPS): siempre opera con batería, proporcionando energía estable y protegiendo contra fluctuaciones.\n\n- GENERADORES: proporcionan energía a largo plazo, siempre que haya combustible disponible. Los generadores pueden alimentar edificios enteros o áreas específicas. Las organizaciones suelen combinar SAIs y generadores para cubrir el tiempo de arranque del generador durante un corte.\n\n\nPROTECCIÓN CONTRA FLUCTUACIONES\n\nAdemás de cortes totales, las fluctuaciones de voltaje (como bajones o subidas) pueden dañar equipos. Los SAIs avanzados incluyen características como supresión de sobretensiones y gestión inteligente de la batería, que alerta al sistema para apagarse de manera segura antes de que la batería se agote.\n\n\n\nCONCLUSIÓN\n\nLa resiliencia y recuperación son pilares fundamentales de la ciberseguridad moderna. Implementar estrategias como alta disponibilidad, clustering, balanceo de carga y diversidad de plataformas reduce el riesgo de interrupciones. La planificación de sitios de recuperación, pruebas de fallo y copias de seguridad bien diseñadas garantizan que, ante un desastre, los servicios puedan restaurarse rápidamente. Además, la resiliencia eléctrica y la planificación de capacidad aseguran que la infraestructura pueda soportar tanto fallos técnicos como eventos externos. La clave del éxito radica en la preparación continua, las pruebas regulares y la adaptación a las necesidades cambiantes de la organización."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Resiliencia y Recuperación] --> B[Alta Disponibilidad (HA)]\nA --> C[Clustering de Servidores]\nA --> D[Balanceo de Carga]\nA --> E[Resiliencia en Sitios Físicos]\nA --> F[Diversidad de Plataformas]\nA --> G[Resiliencia en la Nube]\nA --> H[Planificación de Continuidad de Operaciones (COOP)]\n\nB --> B1[Múltiples sistemas activos]\nB --> B2[Reducción de tiempos de inactividad]\n\nC --> C1[Servidores funcionan como uno]\nC --> C2[Almacenamiento compartido]\nC --> C3[Escalabilidad en tiempo real]\n\nD --> D1[Distribución de tráfico]\nD --> D2[Fallo automático de servidores]\n\nE --> E1[Hot Site]\nE --> E2[Warm Site]\nE --> E3[Cold Site]\nE --> E4[Dispersión geográfica]\n\nF --> F1[Distribución de sistemas operativos]\nF --> F2[Reducción de superficie de ataque]\n\nG --> G1[Multiples proveedores de nube]\nG --> G2[Escalabilidad rápida]\n\nH --> H1[Procesos manuales]\nH --> H2[Documentación previa]\n\nA --> I[Planificación de Capacidad]\nI --> I1[Equilibrio oferta-demanda]\nI --> I2[Escalabilidad en la nube]\n\nA --> J[Pruebas de Recuperación]\nJ --> J1[Ejercicios en mesa]\nJ --> J2[Pruebas de fallo]\nJ --> J3[Simulaciones de seguridad]\nJ --> J4[Procesamiento paralelo]\n\nA --> K[Copias de Seguridad]\nK --> K1[Tipos: completas, incrementales, diferenciales]\nK --> K2[Ubicaciones: local, remota, nube]\nK --> K3[Frecuencia y planificación]\nK --> K4[Cifrado y seguridad]\nK --> K5[Pruebas de restauración]\nK --> K6[Replicación de datos]\nK --> K7[Journaling]\n\nA --> L[Resiliencia Eléctrica]\nL --> L1[SAI: standby, interactivo, en línea]\nL --> L2[Generadores]\nL --> L3[Protección contra fluctuaciones]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc15-01",
+      "pregunta": "¿Qué es la alta disponibilidad (HA) y cómo mejora la resiliencia de los sistemas?",
+      "respuesta": "La alta disponibilidad (HA) es una estrategia que mantiene múltiples sistemas activos simultáneamente para que, ante un fallo, otro sistema asuma la carga sin interrupción. Mejora la resiliencia al reducir el tiempo de inactividad y garantizar la continuidad del servicio."
+    },
+    {
+      "id": "fc15-02",
+      "pregunta": "¿Qué es un cluster de servidores y cuáles son sus ventajas?",
+      "respuesta": "Un cluster de servidores agrupa múltiples servidores para que funcionen como una sola unidad lógica. Sus ventajas incluyen escalabilidad en tiempo real, gestión simplificada y alta disponibilidad, ya que los servidores trabajan juntos y comparten recursos como almacenamiento."
+    },
+    {
+      "id": "fc15-03",
+      "pregunta": "¿Cómo funciona el balanceo de carga (load balancing) y qué beneficios aporta?",
+      "respuesta": "El balanceo de carga distribuye el tráfico entre múltiples servidores mediante un dispositivo central llamado balanceador de carga. Beneficios: escalabilidad horizontal, tolerancia a fallos (redirección automática si un servidor falla) y mejora del rendimiento al evitar la saturación de un solo servidor."
+    },
+    {
+      "id": "fc15-04",
+      "pregunta": "¿Cuáles son los tres tipos principales de sitios de recuperación (site resiliency) y en qué se diferencian?",
+      "respuesta": "Hot site: réplica exacta del centro de datos principal con datos sincronizados en tiempo real. Warm site: contiene parte del hardware y datos preconfigurados, pero requiere instalación adicional. Cold site: espacio vacío con infraestructura básica, sin equipos ni datos, que debe configurarse desde cero."
+    },
+    {
+      "id": "fc15-05",
+      "pregunta": "¿Por qué es importante la dispersión geográfica en los sitios de recuperación?",
+      "respuesta": "La dispersión geográfica protege contra desastres regionales o naturales que podrían afectar tanto al sitio principal como a un sitio de recuperación cercano. Por ejemplo, un huracán no impactará necesariamente a un sitio ubicado en otro estado."
+    },
+    {
+      "id": "fc15-06",
+      "respuesta": "La diversidad de plataformas distribuye servicios entre diferentes sistemas operativos (Windows, Linux, macOS) para minimizar el riesgo de que una vulnerabilidad afecte a todos los sistemas. Reduce la superficie de ataque y limita el impacto de exploits específicos."
+    },
+    {
+      "id": "fc15-07",
+      "pregunta": "¿Cómo mejora la resiliencia el uso de múltiples proveedores de nube?",
+      "respuesta": "Distribuir servicios entre proveedores como Amazon Web Services, Microsoft Azure y Google Cloud evita depender de un solo proveedor. Si uno falla, los servicios pueden redirigirse a otro, reduciendo el riesgo de interrupciones y mejorando la disponibilidad."
+    },
+    {
+      "id": "fc15-08",
+      "pregunta": "¿Qué es la planificación de continuidad de operaciones (COOP) y en qué situaciones se activa?",
+      "respuesta": "La COOP implementa procesos manuales para garantizar la continuidad del negocio cuando no hay tecnologías alternativas disponibles. Por ejemplo, registrar transacciones manualmente en un sistema de punto de venta si el software falla."
+    },
+    {
+      "id": "fc15-09",
+      "pregunta": "¿Qué factores deben considerarse en la planificación de capacidad (capacity planning)?",
+      "respuesta": "Factores clave: número de usuarios y sus necesidades, tecnologías escalables, infraestructura adecuada, recursos humanos (como empleados en un centro de llamadas) y equilibrio entre oferta y demanda para evitar costos innecesarios o fallos por saturación."
+    },
+    {
+      "id": "fc15-10",
+      "pregunta": "¿Qué son los ejercicios en mesa (tabletop exercises) y qué ventajas ofrecen?",
+      "respuesta": "Los ejercicios en mesa son simulaciones de recuperación realizadas en un entorno controlado, como una sala de reuniones. Ventajas: identifican lagunas en los planes de recuperación, coordinan con otros departamentos y son una forma económica de validar procedimientos sin activar infraestructuras reales."
+    },
+    {
+      "id": "fc15-11",
+      "pregunta": "¿Qué es una prueba de fallo (failover test) y qué sistemas pueden incluirse en ella?",
+      "respuesta": "Una prueba de fallo evalúa la capacidad de los sistemas redundantes para asumir la carga en caso de fallo. Puede incluir dispositivos como routers, firewalls, switches con funcionalidad de failover integrada, o múltiples conexiones a Internet desde diferentes proveedores."
+    },
+    {
+      "id": "fc15-12",
+      "pregunta": "¿Qué es el journaling y cómo ayuda a prevenir la corrupción de datos?",
+      "respuesta": "El journaling registra cambios en un journal antes de escribirlos en la base de datos. Si ocurre un fallo de energía, el sistema puede usar el journal para restaurar los datos perdidos, evitando corrupción y acelerando la recuperación."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de las siguientes estrategias de resiliencia NO implica redundancia activa de sistemas?",
+      "opciones": [
+        "Alta disponibilidad (High Availability, HA)",
+        "Balanceo de carga (Load Balancing)",
+        "Clustering de servidores",
+        "Planificación de continuidad de operaciones (COOP)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La COOP se activa cuando no hay tecnologías alternativas disponibles y se implementan procesos manuales, sin redundancia activa de sistemas.",
+      "id": "p15-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un centro de datos principal sufre un fallo eléctrico prolongado, ¿qué combinación de estrategias garantizaría la continuidad del servicio con el menor tiempo de recuperación?",
+      "opciones": [
+        "Hot site + Generador eléctrico + Replicación de datos",
+        "Warm site + SAI interactivo en línea + Copias incrementales",
+        "Cold site + Generador eléctrico + Copias completas",
+        "Hot site + SAI en espera + Copias diferenciales"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un hot site permite transición inmediata, el generador proporciona energía a largo plazo y la replicación sincroniza datos en tiempo real.",
+      "id": "p15-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de copia de seguridad solo respalda los cambios realizados desde la última copia completa?",
+      "opciones": [
+        "Copia completa (Full backup)",
+        "Copia incremental",
+        "Copia diferencial",
+        "Instantánea (Snapshot)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las copias diferenciales almacenan los cambios desde la última copia completa, a diferencia de las incrementales que usan la última copia de cualquier tipo.",
+      "id": "p15-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de clustering de servidores, ¿qué elemento es crítico para evitar inconsistencias en los datos?",
+      "opciones": [
+        "Balanceador de carga",
+        "Almacenamiento compartido",
+        "SAI en línea",
+        "Generador eléctrico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El almacenamiento compartido permite que todos los servidores accedan a los mismos datos actualizados, evitando inconsistencias.",
+      "id": "p15-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre la diversidad de plataformas es INCORRECTA?",
+      "opciones": [
+        "Reduce la superficie de ataque al distribuir servicios entre diferentes sistemas operativos",
+        "Minimiza el impacto de una vulnerabilidad específica que afecte a un sistema operativo",
+        "Es una estrategia que solo aplica a servidores, no a dispositivos cliente",
+        "Puede incluir la combinación de sistemas como Windows, Linux y macOS"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La diversidad de plataformas se aplica tanto a servidores como a dispositivos cliente, no solo a servidores.",
+      "id": "p15-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de TI detecta que, tras un corte de energía, algunos archivos de la base de datos están corruptos. ¿Qué técnica implementada en el sistema podría haber evitado esta corrupción?",
+      "opciones": [
+        "Balanceo de carga",
+        "Journaling",
+        "Copias incrementales",
+        "Replicación de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El journaling registra cambios antes de aplicarlos a la base de datos, permitiendo restaurar datos perdidos tras un fallo.",
+      "id": "p15-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando un warm site con un cold site, ¿qué característica los diferencia principalmente?",
+      "opciones": [
+        "Un warm site tiene hardware preconfigurado y algunos datos, mientras que un cold site carece de ambos",
+        "Un warm site requiere un tiempo de recuperación de menos de 1 hora, mientras que un cold site puede tardar días",
+        "Un warm site es más económico que un cold site",
+        "Un warm site solo se usa para desastres naturales, mientras que un cold site es para fallos técnicos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La principal diferencia es que un warm site contiene parte del hardware y datos preconfigurados, mientras que un cold site está vacío.",
+      "id": "p15-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de prueba de recuperación evalúa la capacidad de los sistemas redundantes para asumir la carga sin activar infraestructuras reales?",
+      "opciones": [
+        "Ejercicios en mesa (Tabletop exercises)",
+        "Pruebas de fallo (Failover tests)",
+        "Simulaciones de seguridad",
+        "Pruebas de restauración"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las pruebas de fallo evalúan la redirección automática de carga a sistemas de respaldo, idealmente de forma transparente para los usuarios.",
+      "id": "p15-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de nube, una organización distribuye sus servicios entre AWS, Azure y Google Cloud. ¿Qué estrategia de resiliencia está aplicando?",
+      "opciones": [
+        "Diversidad de plataformas",
+        "Dispersión geográfica",
+        "Resiliencia eléctrica",
+        "Alta disponibilidad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La dispersión geográfica implica distribuir servicios entre ubicaciones geográficamente separadas para proteger contra desastres regionales.",
+      "id": "p15-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un sistema de punto de venta (POS) falla y los empleados deben registrar transacciones manualmente en papel. ¿Qué estrategia de resiliencia se está aplicando en este escenario?",
+      "opciones": [
+        "Balanceo de carga",
+        "Planificación de continuidad de operaciones (COOP)",
+        "Clustering de servidores",
+        "Replicación de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La COOP implementa procesos manuales para garantizar la continuidad del negocio cuando no hay tecnologías alternativas disponibles.",
+      "id": "p15-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué estrategia de resiliencia se caracteriza por mantener múltiples sistemas activos simultáneamente para asumir la carga de un componente fallido sin interrupción perceptible para los usuarios?",
+      "opciones": [
+        "Alta disponibilidad (High Availability, HA)",
+        "Balanceo de carga (Load Balancing)",
+        "Clustering de servidores",
+        "Diversidad de plataformas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La alta disponibilidad implica mantener múltiples sistemas activos simultáneamente para garantizar que, ante un fallo, otro asuma la carga sin interrupción. (Tema: La alta disponibilidad y su importancia)",
+      "id": "p15-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de clustering de servidores, ¿qué elemento es esencial para garantizar que todos los servidores accedan a los mismos datos actualizados?",
+      "opciones": [
+        "Un balanceador de carga",
+        "Un almacenamiento compartido",
+        "Un sistema de journaling",
+        "Un generador de energía"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "En un clúster, el almacenamiento compartido permite que todos los servidores accedan a los mismos datos actualizados, evitando inconsistencias. (Tema: Clustering de servidores)",
+      "id": "p15-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de copia de seguridad NO incluye los datos modificados desde la última copia completa?",
+      "opciones": [
+        "Copia incremental",
+        "Copia diferencial",
+        "Copia completa",
+        "Instantánea (snapshot)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La copia completa respalda todos los datos en un momento dado, sin basarse en cambios previos. (Tema: Copias de seguridad)",
+      "id": "p15-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre un hot site es INCORRECTA?",
+      "opciones": [
+        "Requiere hardware, aplicaciones y datos sincronizados en tiempo real",
+        "Permite una transición casi inmediata en caso de fallo",
+        "Es la opción más económica para la resiliencia en sitios físicos",
+        "Es una réplica exacta del centro de datos principal"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un hot site es la opción más costosa, no la más económica, debido a la duplicación de infraestructura. (Tema: Resiliencia en sitios físicos)",
+      "id": "p15-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador configura un sistema para que, ante un fallo de energía, los cambios en la base de datos se registren primero en un journal antes de aplicarse. ¿Qué técnica está implementando?",
+      "opciones": [
+        "Replicación de datos",
+        "Journaling",
+        "Balanceo de carga",
+        "Alta disponibilidad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El journaling registra cambios en un journal antes de aplicarlos, evitando corrupción de datos durante fallos de energía. (Tema: Registro de actividades)",
+      "id": "p15-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una organización distribuye sus servicios entre AWS, Azure y Google Cloud para evitar depender de un solo proveedor, ¿qué estrategia de resiliencia está aplicando?",
+      "opciones": [
+        "Diversidad de plataformas",
+        "Resiliencia en la nube",
+        "Alta disponibilidad",
+        "Balanceo de carga"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Distribuir servicios entre múltiples proveedores de nube es una estrategia de resiliencia en la nube para evitar dependencias únicas. (Tema: Resiliencia en la nube)",
+      "id": "p15-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando un SAI (UPS) en línea con uno en espera, ¿qué característica los diferencia principalmente?",
+      "opciones": [
+        "El SAI en línea siempre opera con batería, mientras que el en espera solo usa batería al fallar la energía principal",
+        "El SAI en espera proporciona energía a largo plazo, mientras que el en línea no",
+        "El SAI en línea no protege contra fluctuaciones de voltaje",
+        "El SAI en espera requiere combustible para funcionar"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El SAI en línea opera siempre con batería, mientras que el en espera solo usa batería al fallar la energía principal. (Tema: Resiliencia eléctrica)",
+      "id": "p15-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un plan de continuidad de operaciones (COOP) donde, ante un fallo del sistema de punto de venta (POS), los empleados registran transacciones manualmente en papel. ¿Qué tipo de prueba de recuperación NO se está simulando en este escenario?",
+      "opciones": [
+        "Ejercicio en mesa (tabletop exercise)",
+        "Prueba de restauración de copias de seguridad",
+        "Procesamiento manual de transacciones",
+        "Planificación de capacidad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El escenario describe un procedimiento manual de COOP, no una prueba de restauración de copias de seguridad. (Tema: Planificación de la continuidad de operaciones)",
+      "id": "p15-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de balanceo de carga, si un servidor falla, ¿qué mecanismo redirige automáticamente el tráfico a los servidores restantes?",
+      "opciones": [
+        "Un firewall con failover integrado",
+        "Un balanceador de carga",
+        "Un sistema de journaling",
+        "Un generador de energía"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El balanceador de carga detecta fallos y redirige el tráfico a servidores activos para minimizar el impacto en los usuarios. (Tema: Balanceo de carga)",
+      "id": "p15-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa replicación de datos entre dos ubicaciones geográficas distantes. Si los datos originales se modifican en la ubicación principal, ¿qué tipo de sitio de recuperación permitiría activar rápidamente los servicios en la ubicación secundaria?",
+      "opciones": [
+        "Cold site",
+        "Warm site",
+        "Hot site",
+        "Diversidad de plataformas"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un hot site requiere hardware, aplicaciones y datos sincronizados en tiempo real, ideal para activación inmediata tras un fallo. (Tema: Resiliencia en sitios físicos)",
+      "id": "p15-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué estrategia de resiliencia se implementa cuando un sistema distribuye automáticamente el tráfico entre múltiples servidores para evitar puntos únicos de fallo?",
+      "opciones": [
+        "Balanceo de carga (Load Balancing)",
+        "Clustering de servidores",
+        "Alta disponibilidad (High Availability)",
+        "Replicación de datos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El balanceo de carga distribuye el tráfico entre servidores independientes mediante un dispositivo central, evitando que un solo servidor sea un punto único de fallo.",
+      "id": "p15-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando un SAI en línea (online UPS) con un SAI en espera (standby UPS), ¿qué característica los diferencia principalmente?",
+      "opciones": [
+        "El SAI en línea siempre opera con batería, mientras que el SAI en espera solo usa batería ante un fallo de energía.",
+        "El SAI en espera proporciona energía más estable que el SAI en línea.",
+        "El SAI en línea requiere más mantenimiento que el SAI en espera.",
+        "El SAI en espera es más económico pero menos eficiente en cortes prolongados."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El SAI en línea (double conversion) siempre opera con batería, mientras que el SAI en espera solo activa la batería ante un fallo de energía principal.",
+      "id": "p15-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en bases de datos registra primero los cambios en un archivo de registro (journal) antes de aplicarlos a la base de datos principal, permitiendo restaurar los datos en caso de fallo de energía?",
+      "opciones": [
+        "a) Clustering de servidores",
+        "b) Replicación de datos",
+        "c) Journaling",
+        "d) Balanceo de carga"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El journaling registra los cambios en un archivo de registro (journal) antes de aplicarlos a la base de datos, evitando corrupción de datos durante fallos de energía y acelerando la recuperación.",
+      "id": "p15-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia eléctrica garantiza que un sistema reciba energía estable y continua, incluso durante fluctuaciones de voltaje, al operar siempre con batería?",
+      "opciones": [
+        "a) SAI en espera (standby UPS)",
+        "b) SAI interactivo en línea (line-interactive UPS)",
+        "c) SAI en línea (online UPS)",
+        "d) Generador diésel"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El SAI en línea (online UPS) opera siempre con batería, proporcionando energía estable y protegiendo contra fluctuaciones de voltaje, a diferencia de otros tipos que solo activan la batería ante fallos o ajustan gradualmente el voltaje.",
+      "id": "p15-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de sitio de recuperación en la resiliencia de sitios físicos?",
+      "opciones": [
+        "Site de replicación",
+        "Hot site",
+        "Warm site",
+        "Cold site"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los tipos principales de sitios de recuperación son hot site, warm site y cold site; 'site de replicación' no es un término estándar en el temario.",
+      "id": "p15-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué estrategia de resiliencia eléctrica garantiza que un sistema reciba energía estable y continua al operar siempre con batería, protegiendo contra fluctuaciones de voltaje mediante conversión doble de energía?",
+      "opciones": [
+        "a) SAI en espera (standby UPS)",
+        "b) SAI interactivo en línea (line-interactive UPS)",
+        "c) SAI en línea (online UPS o double conversion UPS)",
+        "d) Generador diésel"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El SAI en línea (online UPS) opera siempre con batería, proporcionando energía estable y protegiendo contra fluctuaciones de voltaje mediante conversión doble de energía, a diferencia de los otros tipos que tienen diferentes mecanismos de actuación.",
+      "id": "p15-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que todos los nodos accedan a los mismos datos actualizados de manera consistente?",
+      "opciones": [
+        "a) Balanceo de carga automático",
+        "b) Almacenamiento compartido con sincronización en tiempo real",
+        "c) Replicación de datos asíncrona entre nodos",
+        "d) Copias de seguridad diferenciales programadas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El almacenamiento compartido con sincronización en tiempo real es esencial en clustering para que todos los servidores accedan a los mismos datos actualizados, evitando inconsistencias.",
+      "id": "p15-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en entornos de balanceo de carga garantiza que el tráfico se distribuya automáticamente entre servidores activos, incluso si uno de ellos falla, sin requerir intervención manual?",
+      "opciones": [
+        "a) Replicación síncrona de datos",
+        "b) Failover automático mediante balanceador de carga",
+        "c) Clustering de servidores con almacenamiento compartido",
+        "d) Uso de copias de seguridad incrementales"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El failover automático mediante balanceador de carga redirige el tráfico a servidores activos cuando detecta un fallo, asegurando continuidad sin intervención manual, según lo descrito en el temario sobre balanceo de carga.",
+      "id": "p15-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un plan de continuidad de operaciones (COOP) donde, ante un fallo del sistema de punto de venta (POS), los empleados registran transacciones manualmente en papel. ¿Qué tipo de estrategia de resiliencia NO está aplicando en este escenario?",
+      "opciones": [
+        "Alta disponibilidad (High Availability)",
+        "Planificación de continuidad de operaciones (COOP)",
+        "Resiliencia eléctrica",
+        "Diversidad de plataformas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El COOP aplica procesos manuales cuando no hay tecnologías alternativas disponibles, como en este caso; la alta disponibilidad implica sistemas redundantes activos.",
+      "id": "p15-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de balanceo de carga con tres servidores web en un clúster activo-activo. Durante una prueba de recuperación, se simula el fallo de uno de los servidores. Sin embargo, al activar el balanceador, los usuarios reportan lentitud en las respuestas y errores intermitentes en las transacciones. Tras analizar los logs, se descubre que el servidor fallido dejó conexiones TCP abiertas sin cerrar correctamente, consumiendo recursos en el balanceador. ¿Qué técnica de resiliencia, específica para entornos de balanceo de carga, podría haber mitigado este problema?",
+      "opciones": [
+        "a) Implementar un mecanismo de *keepalive* en el balanceador para detectar y cerrar conexiones abandonadas automáticamente.",
+        "b) Configurar replicación síncrona entre los servidores del clúster para evitar inconsistencias en los datos.",
+        "c) Utilizar un *hot site* con hardware idéntico para asumir la carga del servidor fallido de inmediato.",
+        "d) Aplicar journaling en la base de datos para restaurar los datos corruptos tras el fallo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El mecanismo de *keepalive* permite al balanceador detectar y cerrar conexiones TCP abandonadas, liberando recursos y evitando la saturación. Esta técnica es específica para entornos de balanceo de carga y complementa el failover automático.",
+      "id": "p15-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué característica principal diferencia a un Sistema de Alimentación Ininterrumpida (SAI) en línea (online UPS) de un SAI interactivo en línea (line-interactive UPS) según el temario?",
+      "opciones": [
+        "a) El SAI en línea siempre opera con batería, proporcionando energía estable y protección contra fluctuaciones, mientras que el interactivo en línea ajusta gradualmente el voltaje sin usar batería de forma continua",
+        "b) El SAI interactivo en línea cambia a batería solo cuando falla la energía principal, mientras que el SAI en línea opera con batería de forma intermitente",
+        "c) El SAI en línea requiere más mantenimiento que el interactivo en línea y su tiempo de respuesta es más lento",
+        "d) El SAI interactivo en línea protege contra sobretensiones pero no contra bajones de voltaje, mientras que el SAI en línea no ofrece protección contra fluctuaciones"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, el SAI en línea (online UPS) opera siempre con batería, ofreciendo energía estable y protección contra fluctuaciones, mientras que el SAI interactivo en línea ajusta el voltaje gradualmente sin depender de batería de forma continua.",
+      "id": "p15-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre la diversidad de plataformas es CORRECTA?",
+      "opciones": [
+        "a) Reduce la superficie de ataque al distribuir servicios entre diferentes sistemas operativos",
+        "b) Aumenta la complejidad de gestión pero reduce costos",
+        "c) Solo es aplicable a servidores, no a dispositivos cliente",
+        "d) Requiere hardware idéntico en todos los sistemas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La diversidad de plataformas minimiza el riesgo de que una vulnerabilidad afecte a todos los sistemas (temario: Diversidad de plataformas).",
+      "id": "p15-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un centro de datos sufre un fallo de red prolongado, ¿qué combinación de estrategias garantizaría la continuidad del servicio con el menor tiempo de recuperación?",
+      "opciones": [
+        "a) Hot site + balanceo de carga",
+        "b) Cold site + copias incrementales",
+        "c) Warm site + replicación de datos",
+        "d) Hot site + copias diferenciales"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un hot site permite transición casi inmediata y el balanceo de carga distribuye el tráfico entre servidores activos (temario: Resiliencia en sitios físicos y Balanceo de carga).",
+      "id": "p15-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos accedan a los mismos datos actualizados de manera consistente, incluso en un escenario de fallo parcial de uno de los servidores?",
+      "opciones": [
+        "a) Replicación de datos asíncrona",
+        "b) Almacenamiento compartido con sincronización en tiempo real",
+        "c) Balanceo de carga con distribución de tráfico",
+        "d) Copias de seguridad incrementales programadas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El almacenamiento compartido con sincronización en tiempo real permite que todos los nodos del clúster accedan a los mismos datos actualizados de forma simultánea, evitando inconsistencias incluso ante fallos parciales.",
+      "id": "p15-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando un SAI en espera (standby UPS) con un SAI en línea (online UPS), ¿qué característica los diferencia principalmente?",
+      "opciones": [
+        "a) El SAI en espera opera siempre con batería, mientras que el en línea usa batería solo en fallos",
+        "b) El SAI en línea proporciona energía estable y continua, protegiendo contra fluctuaciones",
+        "c) El SAI en espera es más económico pero menos eficiente",
+        "d) Ambos requieren generadores para funcionar"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El SAI en línea (double conversion) siempre opera con batería, ofreciendo protección contra fluctuaciones (temario: Resiliencia eléctrica).",
+      "id": "p15-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de balanceo de carga con tres servidores web. Durante una prueba, se simula el fallo de uno de los servidores. Sin embargo, los usuarios reportan lentitud y errores intermitentes. ¿Qué técnica de resiliencia, específica para entornos de balanceo de carga, podría haber mitigado este problema?",
+      "opciones": [
+        "a) Replicación síncrona",
+        "b) Sesiones persistentes (sticky sessions)",
+        "c) Copias de seguridad incrementales",
+        "d) Journaling en la base de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las sesiones persistentes garantizan que las solicitudes de un mismo usuario se dirijan al mismo servidor, evitando pérdida de estado (temario: Balanceo de carga).",
+      "id": "p15-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos accedan a los mismos datos actualizados de manera consistente, incluso cuando uno de los servidores experimenta un fallo parcial que afecta su capacidad de procesamiento?",
+      "opciones": [
+        "a) Replicación síncrona con almacenamiento compartido",
+        "b) Balanceo de carga con algoritmo round-robin",
+        "c) Copias de seguridad incrementales en tiempo real",
+        "d) Journaling en la base de datos principal"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La replicación síncrona con almacenamiento compartido garantiza que todos los nodos en el clúster accedan a los mismos datos actualizados en tiempo real, incluso ante fallos parciales, ya que los cambios se aplican simultáneamente en todos los nodos vinculados al mismo almacenamiento.",
+      "id": "p15-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en bases de datos registra primero los cambios en un archivo de registro (journal) antes de aplicarlos a la base de datos principal?",
+      "opciones": [
+        "a) Replicación síncrona",
+        "b) Journaling",
+        "c) Balanceo de carga",
+        "d) Almacenamiento compartido"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El journaling evita corrupción de datos al registrar cambios antes de aplicarlos (temario: Journaling).",
+      "id": "p15-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de clustering de servidores con balanceo de carga, se implementa un mecanismo de *keepalive* para detectar fallos en los nodos. Sin embargo, tras un corte de energía en uno de los servidores, los logs del balanceador muestran que el nodo afectado no se marcó como inactivo correctamente durante 15 minutos, causando latencia en las respuestas y errores en las transacciones. ¿Qué técnica de resiliencia, específica para entornos de clustering y balanceo de carga, podría haber mitigado este retraso en la detección del fallo y evitado la degradación del servicio?",
+      "opciones": [
+        "a) Implementar un protocolo de *heartbeat* con intervalos de verificación más cortos y umbrales de tiempo ajustados para marcar nodos como fallidos.",
+        "b) Configurar un Sistema de Alimentación Ininterrumpida (SAI) en modo en línea (online UPS) en todos los nodos del clúster para evitar cortes de energía.",
+        "c) Utilizar copias de seguridad diferenciales cada hora para restaurar rápidamente los datos del nodo afectado.",
+        "d) Aplicar replicación síncrona de datos entre nodos para garantizar que todos los servidores accedan a la misma versión de los datos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El protocolo *heartbeat* es una técnica clave en clustering y balanceo de carga para detectar fallos en tiempo real. Al ajustar los intervalos de verificación y los umbrales, se reduce el tiempo de detección de nodos inactivos, mitigando problemas de latencia y errores en las transacciones.",
+      "id": "p15-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa un plan de continuidad de operaciones (COOP) donde, ante un fallo del sistema de punto de venta (POS), los empleados registran transacciones manualmente en papel. ¿Qué tipo de estrategia de resiliencia NO está aplicando en este escenario?",
+      "opciones": [
+        "a) Alta disponibilidad",
+        "b) Procesamiento manual",
+        "c) Copias de seguridad",
+        "d) Balanceo de carga"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El COOP con procesos manuales no implica balanceo de carga, que requiere infraestructura tecnológica activa (temario: Planificación de la continuidad de operaciones).",
+      "id": "p15-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que todos los nodos accedan a los mismos datos actualizados de manera consistente, incluso cuando uno de los servidores experimenta un fallo parcial?",
+      "opciones": [
+        "Balanceo de carga (load balancing)",
+        "Almacenamiento compartido (shared storage)",
+        "Replicación de datos (data replication)",
+        "Journaling en bases de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El almacenamiento compartido es crítico en clustering para que todos los servidores accedan a los mismos datos actualizados, evitando inconsistencias incluso ante fallos parciales (temario: Clustering de servidores).",
+      "id": "p15-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos accedan a los datos actualizados de manera consistente, incluso cuando uno de ellos experimenta un fallo parcial que afecta únicamente a su capacidad de procesamiento, pero no a su conexión con el almacenamiento compartido?",
+      "opciones": [
+        "a) Replicación sincrónica",
+        "b) Balanceo de carga",
+        "c) Instantáneas (snapshots)",
+        "d) Journaling"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La replicación sincrónica mantiene todos los nodos del clúster con los mismos datos actualizados en tiempo real, asegurando consistencia incluso ante fallos parciales en nodos individuales.",
+      "id": "p15-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre las copias de seguridad diferenciales es CORRECTA?",
+      "opciones": [
+        "Respalda todos los datos modificados desde la última copia completa.",
+        "Respalda solo los cambios realizados desde la última copia, ya sea completa o incremental.",
+        "Respalda todos los datos en un momento dado, sin importar cambios previos.",
+        "Respalda los cambios realizados desde la última copia completa, incluyendo datos modificados en copias incrementales."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las copias diferenciales respaldan los cambios desde la última copia completa, no desde la última copia en general (temario: Copias de seguridad).",
+      "id": "p15-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de balanceo de carga, si un servidor falla y el balanceador no detecta el fallo durante 10 minutos, ¿qué técnica de resiliencia específica podría haber mitigado este retraso en la detección?",
+      "opciones": [
+        "Implementación de un mecanismo de *keepalive* con intervalos de verificación más cortos.",
+        "Uso de un SAI en línea para garantizar energía estable al balanceador.",
+        "Configuración de replicación de datos en tiempo real entre servidores.",
+        "Aplicación de journaling en las bases de datos de los servidores."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un mecanismo de *keepalive* con intervalos de verificación más cortos permite detectar fallos más rápidamente, reduciendo el tiempo de respuesta (temario: Balanceo de carga y clustering).",
+      "id": "p15-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de sitio de recuperación requiere llevar todo el hardware, software y datos necesarios para restaurar los servicios desde cero?",
+      "opciones": [
+        "Hot site",
+        "Warm site",
+        "Cold site",
+        "Dispersión geográfica"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Un cold site es un espacio vacío sin equipos ni datos, que requiere configuración completa desde cero (temario: Resiliencia en sitios físicos).",
+      "id": "p15-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué estrategia de resiliencia se implementa cuando una organización distribuye sus servicios entre múltiples proveedores de nube como AWS, Azure y Google Cloud?",
+      "opciones": [
+        "Diversidad de plataformas",
+        "Dispersión geográfica",
+        "Alta disponibilidad (HA)",
+        "Resiliencia en la nube"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La distribución de servicios entre múltiples proveedores de nube es un ejemplo de resiliencia en la nube (temario: Resiliencia en la nube).",
+      "id": "p15-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos accedan a los mismos datos actualizados de manera consistente, incluso cuando uno de los servidores experimenta un fallo parcial que afecta únicamente a su capacidad de procesamiento, pero no a su conexión con el almacenamiento compartido?",
+      "opciones": [
+        "a) Replicación síncrona de datos entre nodos",
+        "b) Sincronización mediante journaling en el almacenamiento compartido",
+        "c) Balanceo de carga activo-activo con conexión directa a la base de datos",
+        "d) Uso de SAI en línea para mantener la conexión con el almacenamiento compartido"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La sincronización mediante journaling en el almacenamiento compartido registra los cambios en un archivo de registro antes de aplicarlos, asegurando consistencia incluso ante fallos parciales en nodos, siempre que la conexión al almacenamiento se mantenga.",
+      "id": "p15-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una organización implementa un plan de continuidad de operaciones (COOP) con procesos manuales como registrar transacciones en papel ante un fallo del sistema POS, ¿qué tipo de estrategia de resiliencia NO está aplicando?",
+      "opciones": [
+        "Diversidad de plataformas",
+        "Planificación de continuidad de operaciones (COOP)",
+        "Alta disponibilidad (HA)",
+        "Resiliencia en la nube"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La alta disponibilidad implica sistemas redundantes activos, no procesos manuales como el COOP (temario: Alta disponibilidad y COOP).",
+      "id": "p15-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de balanceo de carga con servidores web distribuidos geográficamente, donde cada ubicación tiene un balanceador de carga independiente. Durante un fallo de red en una de las ubicaciones, el tráfico se redirige correctamente, pero los usuarios reportan errores intermitentes en las transacciones debido a que algunas sesiones persistentes se mantienen activas en el servidor fallido. ¿Qué técnica de resiliencia específica para entornos de balanceo de carga podría haber mitigado este problema al garantizar que las sesiones se gestionen correctamente incluso ante fallos de red?",
+      "opciones": [
+        "Implementar *session affinity* (sticky sessions) para mantener las sesiones en un solo servidor.",
+        "Configurar un mecanismo de *heartbeat* entre balanceadores para detectar fallos de red más rápido.",
+        "Utilizar un protocolo de comunicación como *TCP keepalive* para cerrar conexiones inactivas de manera proactiva.",
+        "Habilitar la replicación síncrona de sesiones entre balanceadores para mantener la consistencia."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La replicación síncrona de sesiones entre balanceadores garantiza que las sesiones se gestionen de manera consistente en todos los servidores, evitando errores intermitentes al redirigir el tráfico. Las otras opciones no abordan directamente la gestión de sesiones en fallos de red.",
+      "id": "p15-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa replicación de datos entre dos ubicaciones geográficas distantes. Si los datos originales se modifican en la ubicación principal, ¿qué tipo de sitio de recuperación permitiría activar rápidamente los servicios en la ubicación secundaria?",
+      "opciones": [
+        "Hot site",
+        "Warm site",
+        "Cold site",
+        "Dispersión geográfica"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un hot site es una réplica exacta con datos sincronizados en tiempo real, permitiendo activación casi inmediata (temario: Resiliencia en sitios físicos).",
+      "id": "p15-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos accedan a los mismos datos actualizados de manera consistente, incluso cuando uno de los servidores experimenta un fallo parcial que afecta únicamente a su capacidad de procesamiento?",
+      "opciones": [
+        "Balanceo de carga (load balancing)",
+        "Sincronización de datos en tiempo real (real-time data synchronization)",
+        "Replicación de datos asíncrona",
+        "Registro de actividades (journaling)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El clustering de servidores requiere que todos los nodos accedan a los mismos datos actualizados para evitar inconsistencias, lo que se logra mediante sincronización en tiempo real según el temario.",
+      "id": "p15-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando un SAI (UPS) en espera con un SAI en línea, ¿qué característica los diferencia principalmente?",
+      "opciones": [
+        "El SAI en espera proporciona energía estable en todo momento, mientras que el SAI en línea solo actúa ante fallos de energía.",
+        "El SAI en espera cambia a batería solo cuando falla la energía principal, mientras que el SAI en línea opera siempre con batería.",
+        "El SAI en línea no protege contra fluctuaciones de voltaje, mientras que el SAI en espera sí lo hace.",
+        "El SAI en espera requiere conexión a red para funcionar, mientras que el SAI en línea no."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el temario, el SAI en espera (standby UPS) solo activa la batería ante fallos de energía, mientras que el SAI en línea (online UPS) opera constantemente con batería para proporcionar energía estable.",
+      "id": "p15-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos accedan a los mismos datos actualizados de manera consistente, incluso cuando uno de los servidores experimenta un fallo parcial que afecta únicamente a su conexión con el almacenamiento compartido, pero no a su capacidad de procesamiento?",
+      "opciones": [
+        "a) Replicación síncrona de datos entre nodos",
+        "b) Sincronización de caché distribuida",
+        "c) Journaling en almacenamiento compartido",
+        "d) Balanceo de carga activo-pasivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La replicación síncrona de datos garantiza que todos los nodos accedan a los mismos datos actualizados en tiempo real, incluso si un servidor falla parcialmente, ya que los cambios se propagan inmediatamente a todos los nodos participantes.",
+      "id": "p15-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema donde los cambios en la base de datos se registran primero en un journal antes de aplicarse a la base de datos principal. Si ocurre un fallo de energía, el sistema usa el journal para restaurar los datos perdidos. ¿Qué técnica de resiliencia está aplicando?",
+      "opciones": [
+        "Replicación de datos",
+        "Registro de actividades (journaling)",
+        "Balanceo de carga",
+        "Clustering de servidores"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El journaling es una técnica que registra cambios en un archivo de registro antes de aplicarlos a la base de datos principal, permitiendo restaurar datos en caso de fallo según el temario.",
+      "id": "p15-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos accedan a los datos actualizados de manera consistente, incluso cuando uno de ellos experimenta un fallo parcial que afecta únicamente a su conexión con el almacenamiento compartido, pero no a su capacidad de procesamiento?",
+      "opciones": [
+        "a) Replicación síncrona",
+        "b) Procesamiento paralelo distribuido",
+        "c) Balanceo de carga automático",
+        "d) Copias de seguridad diferenciales"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La replicación síncrona garantiza que todos los nodos en un clúster accedan a los mismos datos actualizados en tiempo real, incluso si un nodo pierde temporalmente la conexión con el almacenamiento compartido, ya que los cambios se propagan inmediatamente a las réplicas.",
+      "id": "p15-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos accedan a los mismos datos actualizados de manera consistente, incluso cuando uno de los servidores experimenta un fallo parcial que afecta únicamente a su capacidad de procesamiento, pero no a su conexión con el almacenamiento compartido ni a su estado de sincronización?",
+      "opciones": [
+        "a) Replicación síncrona de datos",
+        "b) Balanceo de carga distribuido",
+        "c) Journaling en almacenamiento compartido",
+        "d) Sincronización de estado mediante algoritmos de consenso como Raft o Paxos"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los algoritmos de consenso como Raft o Paxos garantizan que todos los nodos en un clúster mantengan un estado consistente incluso ante fallos parciales, asegurando que la capacidad de procesamiento no afecte la integridad de los datos.",
+      "id": "p15-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de copia de seguridad respalda los cambios realizados desde la última copia completa?",
+      "opciones": [
+        "Copia completa (full backup)",
+        "Copia incremental",
+        "Copia diferencial",
+        "Instantánea (snapshot)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las copias incrementales respaldan solo los cambios realizados desde la última copia completa, según la clasificación del temario.",
+      "id": "p15-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos accedan a los mismos datos actualizados de manera consistente, incluso cuando uno de los servidores experimenta un fallo parcial que afecta únicamente a su conexión con el almacenamiento compartido, pero no a su capacidad de procesamiento ni a su estado de sincronización?",
+      "opciones": [
+        "a) Replicación de datos en tiempo real entre nodos",
+        "b) Uso de un Sistema de Archivos Distribuido (DFS) con sincronización automática",
+        "c) Implementación de un mecanismo de *keepalive* con detección de fallos en 3 segundos",
+        "d) Configuración de un journaling en la base de datos para registrar cambios antes de aplicarlos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un Sistema de Archivos Distribuido (DFS) con sincronización automática garantiza que todos los nodos accedan a los mismos datos actualizados, incluso si uno pierde temporalmente su conexión con el almacenamiento compartido, siempre que el fallo no afecte su capacidad de procesamiento ni su sincronización.",
+      "id": "p15-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando un SAI interactivo en línea con un SAI en línea (online UPS), ¿qué característica los diferencia principalmente?",
+      "opciones": [
+        "El SAI interactivo en línea ajusta gradualmente el voltaje para evitar fluctuaciones, mientras que el SAI en línea opera siempre con batería.",
+        "El SAI en línea no protege contra fluctuaciones de voltaje, mientras que el SAI interactivo en línea sí lo hace.",
+        "El SAI interactivo en línea requiere conexión a red para funcionar, mientras que el SAI en línea no.",
+        "El SAI en línea proporciona energía estable en todo momento, mientras que el SAI interactivo en línea solo actúa ante fallos de energía."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, el SAI interactivo en línea ajusta gradualmente el voltaje para evitar fluctuaciones, mientras que el SAI en línea opera siempre con batería para proporcionar energía estable.",
+      "id": "p15-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un escenario donde una organización implementa replicación de datos entre dos ubicaciones geográficas distantes, ¿qué tipo de sitio de recuperación permitiría activar rápidamente los servicios en la ubicación secundaria si los datos originales se modifican en la ubicación principal?",
+      "opciones": [
+        "Hot site",
+        "Warm site",
+        "Cold site",
+        "Mirror site"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un hot site es una réplica exacta del centro de datos principal con datos sincronizados en tiempo real, lo que permite una transición casi inmediata ante fallos según el temario.",
+      "id": "p15-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos mantengan la consistencia de datos incluso cuando uno de ellos experimenta un fallo parcial que afecta únicamente a su conexión con el almacenamiento compartido, pero no a su capacidad de procesamiento ni a su sincronización con otros nodos?",
+      "opciones": [
+        "a) Sincronización en tiempo real mediante protocolos como NFS o iSCSI",
+        "b) Replicación asíncrona de datos entre nodos",
+        "c) Uso de almacenamiento compartido con caché distribuida",
+        "d) Implementación de journaling en cada nodo"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El almacenamiento compartido con caché distribuida permite que los nodos accedan a los mismos datos actualizados incluso si uno pierde temporalmente la conexión con el almacenamiento principal, manteniendo la consistencia gracias a la replicación de caché en memoria.",
+      "id": "p15-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia eléctrica proporciona energía estable y continua a los sistemas, protegiéndolos contra fluctuaciones de voltaje y cortes de energía mediante conversión doble (double conversion)?",
+      "opciones": [
+        "a) SAI en espera (standby UPS)",
+        "b) SAI interactivo en línea (line-interactive UPS)",
+        "c) SAI en línea (online UPS)",
+        "d) Generador eléctrico"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El SAI en línea (online UPS) opera siempre con batería, proporcionando energía estable al convertir la corriente alterna a continua y viceversa, lo que lo hace ideal para proteger contra fluctuaciones y cortes sin interrupciones.",
+      "id": "p15-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de copia de seguridad según el temario?",
+      "opciones": [
+        "Copia incremental",
+        "Copia diferencial",
+        "Copia fragmentada",
+        "Instantánea (snapshot)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona copias completas, incrementales, diferenciales e instantáneas, pero no existe el concepto de 'copia fragmentada' como tipo de copia de seguridad.",
+      "id": "p15-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos mantengan la consistencia de datos incluso cuando uno de ellos experimenta un fallo parcial que afecta únicamente a su capacidad de procesamiento, pero no a su conexión con el almacenamiento compartido ni a su sincronización con otros nodos?",
+      "opciones": [
+        "a) Replicación síncrona",
+        "b) Balanceo de carga distribuido",
+        "c) Copias de seguridad diferenciales",
+        "d) Planificación de capacidad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La replicación síncrona garantiza que los cambios en los datos se propaguen a todos los nodos del clúster de manera inmediata y consistente, incluso ante fallos parciales en la capacidad de procesamiento de un nodo, siempre que la conexión con el almacenamiento compartido esté operativa.",
+      "id": "p15-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde una organización distribuye sus servicios entre múltiples proveedores de nube como AWS, Azure y Google Cloud, ¿qué estrategia de resiliencia está aplicando?",
+      "opciones": [
+        "Diversidad de plataformas (Platform Diversity)",
+        "Resiliencia en la nube (Cloud Resiliency)",
+        "Alta disponibilidad (High Availability, HA)",
+        "Balanceo de carga (Load Balancing)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La resiliencia en la nube implica distribuir servicios entre diferentes proveedores para evitar depender de un solo proveedor y reducir el riesgo de interrupciones simultáneas.",
+      "id": "p15-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia eléctrica proporciona energía estable y continua a los sistemas mediante conversión doble (double conversion), protegiéndolos contra fluctuaciones de voltaje y cortes de energía?",
+      "opciones": [
+        "a) SAI en espera (standby UPS)",
+        "b) SAI interactivo en línea (line-interactive UPS)",
+        "c) SAI en línea (online UPS)",
+        "d) Generador eléctrico"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El SAI en línea (online UPS) opera siempre con batería mediante conversión doble, proporcionando energía estable y protegiendo contra fluctuaciones y cortes, a diferencia de los otros tipos que tienen modos de espera o ajustes graduales.",
+      "id": "p15-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de clustering de servidores, ¿qué técnica garantiza que todos los nodos accedan a los mismos datos actualizados de manera consistente?",
+      "opciones": [
+        "Almacenamiento compartido con sincronización",
+        "Balanceo de carga",
+        "Diversidad de plataformas",
+        "Journaling en la base de datos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "En un clúster de servidores, el almacenamiento compartido al que todos los nodos acceden garantiza que los datos estén siempre actualizados y consistentes entre los servidores.",
+      "id": "p15-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia eléctrica se caracteriza por proporcionar energía estable y continua mediante conversión doble (double conversion), protegiendo los sistemas contra fluctuaciones de voltaje y cortes de energía?",
+      "opciones": [
+        "a) SAI en espera (standby UPS)",
+        "b) SAI interactivo en línea (line-interactive UPS)",
+        "c) SAI en línea (online UPS)",
+        "d) Generador eléctrico"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El SAI en línea (online UPS) opera siempre con batería mediante conversión doble, garantizando energía estable y protección contra fluctuaciones, a diferencia de los otros tipos que tienen modos de espera o ajustes progresivos.",
+      "id": "p15-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización ha implementado un sistema de replicación de datos entre dos ubicaciones geográficas distantes (ubicación A y B) con un tiempo de latencia de 500 ms. Durante un fallo en la ubicación A, los servicios se activan en B, pero se observa que algunos datos transaccionales recientes (registrados en A durante los últimos 2 minutos) no están disponibles en B. ¿Qué técnica de resiliencia, específica para entornos de replicación de datos, podría haber mitigado este problema al garantizar que los datos transaccionales críticos se sincronizaran correctamente incluso ante fallos?",
+      "opciones": [
+        "a) Implementar un sistema de journaling en ambas ubicaciones para registrar cambios antes de aplicarlos a la base de datos principal.",
+        "b) Utilizar replicación síncrona en lugar de asíncrona para garantizar que los datos se escriban en ambas ubicaciones simultáneamente.",
+        "c) Configurar un warm site en la ubicación B con hardware preinstalado pero sin datos, para activar servicios rápidamente.",
+        "d) Aplicar balanceo de carga entre ambas ubicaciones para distribuir el tráfico y reducir la carga en la ubicación A."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La replicación síncrona garantiza que los datos se escriban en ambas ubicaciones simultáneamente, evitando pérdida de datos transaccionales recientes durante fallos, a diferencia de la replicación asíncrona donde los datos pueden no estar sincronizados al momento del fallo.",
+      "id": "p15-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de balanceo de carga con tres servidores web (A, B y C) en un clúster geográficamente distribuido. Cada servidor mantiene sesiones activas con clientes mediante cookies persistentes almacenadas en una base de datos compartida. Durante un fallo de red en la ubicación del servidor A, el balanceador redirige el tráfico a B y C, pero múltiples usuarios reportan que sus sesiones se reinician y deben volver a autenticarse. ¿Qué técnica de resiliencia específica para entornos de balanceo de carga, combinada con el clúster de servidores, habría mitigado este problema al garantizar que las sesiones se gestionen correctamente incluso ante fallos de red?",
+      "opciones": [
+        "Implementar almacenamiento compartido con replicación síncrona entre las tres ubicaciones para asegurar que las cookies persistentes estén siempre disponibles en todos los servidores",
+        "Configurar un balanceador de carga con algoritmo de persistencia de sesión (sticky sessions) basado en el ID de usuario en lugar de en la cookie, evitando depender de datos almacenados en la base de datos compartida",
+        "Duplicar la base de datos compartida en cada ubicación y sincronizarla mediante replicación asíncrona para reducir la latencia en la disponibilidad de datos",
+        "Utilizar un Sistema de Alimentación Ininterrumpida (SAI) en cada servidor para garantizar que los datos de sesión en memoria no se pierdan durante fallos de red temporales"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La replicación síncrona de almacenamiento compartido garantiza que los datos de sesión (como cookies persistentes) estén disponibles en todos los servidores del clúster, incluso si uno falla. Esto evita que los usuarios deban reiniciar sus sesiones, ya que la información crítica se replica en tiempo real.",
+      "id": "p15-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que todos los nodos accedan a los mismos datos actualizados de manera consistente, incluso ante fallos parciales de uno o varios servidores?",
+      "opciones": [
+        "a) Balanceo de carga",
+        "b) Replicación de datos",
+        "c) Sincronización de almacenamiento compartido",
+        "d) Journaling"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La sincronización de almacenamiento compartido en clustering permite que todos los nodos accedan a los mismos datos actualizados en tiempo real, evitando inconsistencias incluso con fallos parciales (según el temario: 'un almacenamiento compartido al que todos los servidores acceden, asegurando que los datos estén siempre actualizados').",
+      "id": "p15-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando un SAI en línea (online UPS) con un SAI interactivo en línea (line-interactive UPS), ¿qué característica los diferencia principalmente?",
+      "opciones": [
+        "a) El SAI en línea opera siempre con batería, mientras que el interactivo ajusta gradualmente el voltaje",
+        "b) El SAI interactivo proporciona energía estable mediante conversión doble, mientras que el en línea no",
+        "c) El SAI en línea requiere generadores para funcionar, mientras que el interactivo no",
+        "d) Ambos tipos de SAI protegen contra fluctuaciones, pero solo el interactivo resiste cortes prolongados"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El SAI en línea (online UPS) opera siempre con batería (conversión doble), mientras que el interactivo ajusta el voltaje gradualmente para evitar fluctuaciones (según el temario: 'SAI en línea (online UPS): siempre opera con batería, proporcionando energía estable' vs. 'SAI interactivo en línea (line-interactive UPS): ajusta gradualmente el voltaje').",
+      "id": "p15-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de copia de seguridad según el temario de CompTIA Security+ SY0-701?",
+      "opciones": [
+        "a) Copia completa (full backup)",
+        "b) Copia incremental",
+        "c) Copia diferencial",
+        "d) Copia secuencial"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona solo copias completas, incrementales, diferenciales e instantáneas (snapshots) como tipos válidos de copias de seguridad (según el temario: 'Copias completas', 'Copias incrementales', 'Copias diferenciales', 'Instantáneas').",
+      "id": "p15-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema donde los datos se replican en tiempo real entre dos ubicaciones geográficas distantes. Si ocurre un fallo en la ubicación principal, los servicios se activan automáticamente en la secundaria sin pérdida de datos. ¿Qué tipo de sitio de recuperación está utilizando esta organización?",
+      "opciones": [
+        "a) Hot site",
+        "b) Warm site",
+        "c) Cold site",
+        "d) Site de recuperación asíncrona"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un hot site es una réplica exacta con datos sincronizados en tiempo real, permitiendo transición casi inmediata (según el temario: 'Un hot site es una réplica exacta del centro de datos principal, con hardware, aplicaciones y datos sincronizados en tiempo real').",
+      "id": "p15-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de balanceo de carga, si un servidor falla y el balanceador redirige el tráfico a los servidores restantes, ¿qué mecanismo específico del balanceador garantiza que el tráfico se distribuya automáticamente sin intervención manual?",
+      "opciones": [
+        "a) Failover automático",
+        "b) Replicación de sesiones",
+        "c) Sincronización de almacenamiento",
+        "d) Journaling de transacciones"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El failover automático es el mecanismo que redirige el tráfico a servidores activos cuando uno falla, minimizando el impacto en los usuarios (según el temario: 'Si un servidor falla, el balanceador lo detecta y redirige el tráfico a los servidores restantes').",
+      "id": "p15-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia eléctrica proporciona energía estable y continua mediante conversión doble (double conversion), protegiendo los sistemas contra fluctuaciones de voltaje y cortes de energía?",
+      "opciones": [
+        "a) SAI en espera (standby UPS)",
+        "b) SAI interactivo en línea (line-interactive UPS)",
+        "c) SAI en línea (online UPS)",
+        "d) Generador diésel"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El SAI en línea (online UPS) opera siempre con batería mediante conversión doble, proporcionando energía estable y protegiendo contra fluctuaciones (según el temario: 'SAI en línea (online UPS o double conversion UPS): siempre opera con batería, proporcionando energía estable y protegiendo contra fluctuaciones').",
+      "id": "p15-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un plan de continuidad de operaciones (COOP) donde, ante un fallo del sistema principal, los empleados registran transacciones manualmente en papel. ¿Qué tipo de estrategia de resiliencia está aplicando en este escenario?",
+      "opciones": [
+        "a) Alta disponibilidad (HA)",
+        "b) Planificación manual de contingencia",
+        "c) Replicación de datos",
+        "d) Balanceo de carga"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La planificación de continuidad de operaciones (COOP) implica procesos manuales cuando no hay tecnologías alternativas disponibles (según el temario: 'La planificación de la continuidad de operaciones (COOP) se activa cuando no hay tecnologías alternativas disponibles para mantener los servicios').",
+      "id": "p15-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de resiliencia en clustering de servidores garantiza que los nodos mantengan la consistencia de datos incluso cuando uno de ellos experimenta un fallo parcial que afecta únicamente a su capacidad de procesamiento, pero no a su conexión con el almacenamiento compartido ni a su sincronización con otros nodos?",
+      "opciones": [
+        "a) Balanceo de carga automático",
+        "b) Procesamiento paralelo distribuido",
+        "c) Registro de actividades (journaling)",
+        "d) Sincronización de estado distribuido con quorum"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El quorum en clustering garantiza consistencia de datos al requerir aprobación de la mayoría de nodos antes de aplicar cambios, incluso si alguno falla parcialmente sin afectar el almacenamiento ni la sincronización.",
+      "id": "p15-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de balanceo de carga con servidores web distribuidos geográficamente. Durante un fallo de red en una ubicación, el tráfico se redirige correctamente, pero los usuarios reportan errores intermitentes en las transacciones debido a que algunas sesiones persistentes se mantienen activas en el servidor fallido. ¿Qué técnica de resiliencia específica para entornos de balanceo de carga podría haber mitigado este problema?",
+      "opciones": [
+        "a) Replicación de sesiones",
+        "b) Failover automático",
+        "c) Sincronización de almacenamiento",
+        "d) Journaling de transacciones"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La replicación de sesiones garantiza que las sesiones de los usuarios se gestionen correctamente incluso ante fallos, evitando errores intermitentes (según el temario: 'Cada servidor mantiene sesiones activas con clientes mediante cookies persistentes almacenadas en una base de datos compartida' — implica necesidad de replicación para consistencia).",
+      "id": "p15-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos mantengan la consistencia de datos incluso cuando uno de ellos experimenta un fallo parcial que afecta únicamente a su conexión con el almacenamiento compartido, pero no a su capacidad de procesamiento?",
+      "opciones": [
+        "a) Replicación de datos",
+        "b) Sincronización de almacenamiento compartido",
+        "c) Journaling",
+        "d) Failover automático"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La sincronización de almacenamiento compartido asegura que los datos estén actualizados y accesibles para todos los nodos, incluso si uno pierde conexión temporalmente (según el temario: 'un almacenamiento compartido al que todos los servidores acceden, asegurando que los datos estén siempre actualizados').",
+      "id": "p15-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de resiliencia eléctrica proporciona energía estable y continua a los sistemas mediante conversión doble (double conversion), protegiéndolos contra fluctuaciones de voltaje y cortes de energía?",
+      "opciones": [
+        "a) SAI en espera (standby UPS)",
+        "b) SAI interactivo en línea (line-interactive UPS)",
+        "c) SAI en línea (online UPS o double conversion UPS)",
+        "d) Generador diésel"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El SAI en línea (online UPS o double conversion UPS) opera siempre con batería, proporcionando energía estable y continua mediante conversión doble, lo que protege contra fluctuaciones y cortes. Los otros tipos no garantizan este rendimiento constante.",
+      "id": "p15-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Comparando un SAI en espera (standby UPS) con un SAI en línea (online UPS), ¿qué característica los diferencia principalmente según el temario?",
+      "opciones": [
+        "a) El SAI en espera opera siempre con batería, mientras que el SAI en línea usa la red eléctrica hasta un fallo",
+        "b) El SAI en espera cambia a batería solo al fallar la energía principal, mientras que el SAI en línea siempre opera con batería",
+        "c) El SAI en línea no protege contra fluctuaciones de voltaje, solo contra cortes totales",
+        "d) El SAI en espera proporciona energía a largo plazo, mientras que el SAI en línea es temporal"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El SAI en espera (standby UPS) usa la red eléctrica y solo activa la batería al fallar la energía principal, mientras que el SAI en línea (online UPS) siempre opera con batería, proporcionando energía estable y protegiendo contra fluctuaciones.",
+      "id": "p15-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de sitio de recuperación según el temario?",
+      "opciones": [
+        "a) Hot site",
+        "b) Warm site",
+        "c) Cold site",
+        "d) Mirror site"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Según el temario, los tipos principales de sitios de recuperación son hot site, warm site y cold site. 'Mirror site' no es mencionado como un tipo de sitio de recuperación.",
+      "id": "p15-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema donde los datos se replican en tiempo real entre dos ubicaciones geográficas distantes. Si ocurre un fallo en la ubicación principal, los servicios se activan automáticamente en la secundaria sin pérdida de datos. ¿Qué tipo de técnica de resiliencia está utilizando esta organización?",
+      "opciones": [
+        "a) Balanceo de carga con failover automático",
+        "b) Replicación de datos en tiempo real",
+        "c) Clustering de servidores con almacenamiento compartido",
+        "d) Planificación de continuidad de operaciones (COOP)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La replicación de datos en tiempo real (opción b) permite que los datos se sincronicen constantemente entre ubicaciones, garantizando que, ante un fallo, la secundaria tenga datos actualizados sin pérdida.",
+      "id": "p15-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de balanceo de carga con servidores web distribuidos geográficamente, ¿qué técnica específica garantiza que las sesiones de los usuarios no se reinicien al fallar un servidor, evitando que deban volver a autenticarse?",
+      "opciones": [
+        "a) Balanceo de carga con sesiones persistentes almacenadas en una base de datos compartida",
+        "b) Clustering de servidores con almacenamiento compartido",
+        "c) Replicación de datos en tiempo real",
+        "d) Journaling para evitar corrupción de datos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El balanceo de carga con sesiones persistentes (opción a) almacena las sesiones en una base de datos compartida, permitiendo que otros servidores recuperen el estado de la sesión al redirigir el tráfico.",
+      "id": "p15-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos accedan a los mismos datos actualizados de manera consistente, incluso cuando uno de ellos experimenta un fallo parcial que afecta únicamente a su sincronización con otros nodos, pero no a su proceso de almacenamiento ni a su conexión con el almacenamiento compartido?",
+      "opciones": [
+        "a) Replicación síncrona",
+        "b) Journaling",
+        "c) Procesamiento paralelo",
+        "d) Dispersión geográfica"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La replicación síncrona garantiza que todos los nodos en un clúster accedan a los mismos datos actualizados en tiempo real, incluso ante fallos parciales que afecten la sincronización entre nodos. El journaling protege contra corrupción de datos, el procesamiento paralelo distribuye tareas y la dispersión geográfica se refiere a la ubicación de sitios de recuperación.",
+      "id": "p15-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos mantengan la consistencia de datos incluso cuando uno de ellos experimenta un fallo parcial que afecta únicamente a su sincronización con otros nodos, pero no a su proceso de almacenamiento ni a su conexión con el almacenamiento compartido?",
+      "opciones": [
+        "a) Replicación síncrona",
+        "b) Journaling",
+        "c) Procesamiento paralelo",
+        "d) Balanceo de carga geográfico"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La replicación síncrona garantiza que los datos se actualicen simultáneamente en todos los nodos del clúster, manteniendo la consistencia incluso ante fallos parciales en la sincronización.",
+      "id": "p15-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia en clustering de servidores garantiza que los nodos accedan a los mismos datos actualizados de manera consistente, incluso cuando uno de ellos experimenta un fallo parcial que afecta únicamente a su conexión con el almacenamiento compartido, pero no a su capacidad de procesamiento?",
+      "opciones": [
+        "a) Journaling",
+        "b) Replicación de datos en tiempo real",
+        "c) Balanceo de carga con sesiones persistentes",
+        "d) Procesamiento paralelo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La replicación de datos en tiempo real (opción b) garantiza que los nodos mantengan datos consistentes, ya que los cambios se propagan constantemente entre nodos, incluso ante fallos en la conexión al almacenamiento compartido.",
+      "id": "p15-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de balanceo de carga con servidores web distribuidos en tres ubicaciones geográficas (A, B y C). Cada servidor mantiene sesiones activas con clientes mediante cookies persistentes almacenadas en una base de datos compartida. Durante un fallo de red en la ubicación B, el balanceador redirige el tráfico a A y C, pero múltiples usuarios reportan que sus sesiones se reinician y deben volver a autenticarse, a pesar de que los datos de las cookies siguen disponibles en la base de datos compartida. ¿Qué técnica de resiliencia específica para entornos de balanceo de carga, combinada con el clúster de servidores, habría mitigado este problema al garantizar que las sesiones se gestionen correctamente incluso ante fallos de red?",
+      "opciones": [
+        "a) Implementar un algoritmo de balanceo de carga basado en el estado de las sesiones (session affinity o 'sticky sessions') en el balanceador, que garantice que las solicitudes de un mismo cliente siempre se dirijan al mismo servidor activo, evitando la necesidad de autenticación repetida.",
+        "b) Configurar una replicación síncrona de las cookies de sesión entre los servidores A y C, para que los datos de autenticación estén disponibles en ambos servidores y no dependan de la base de datos compartida.",
+        "c) Utilizar un sistema de balanceo de carga con capacidad de failover automático a un hot site ubicado en una cuarta ubicación geográfica, para garantizar que el tráfico se redirija a un sitio completamente funcional sin interrupciones.",
+        "d) Implementar un mecanismo de journaling en la base de datos compartida para registrar todas las modificaciones en las cookies de sesión, permitiendo la restauración de los datos de sesión en caso de fallo de red."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La opción correcta es implementar un algoritmo de balanceo de carga basado en el estado de las sesiones (session affinity o 'sticky sessions'), ya que esta técnica garantiza que las solicitudes de un mismo cliente se dirijan siempre al mismo servidor activo, evitando la necesidad de autenticación repetida y manteniendo la continuidad de las sesiones.",
+      "id": "p15-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de balanceo de carga con tres servidores web (A, B y C) en un clúster geográficamente distribuido. Cada servidor mantiene sesiones activas con clientes mediante cookies persistentes almacenadas en una base de datos compartida. Durante un fallo de red en la ubicación del servidor A, el balanceador redirige el tráfico a B y C, pero múltiples usuarios reportan que sus sesiones se reinician y deben volver a autenticarse. ¿Qué técnica de resiliencia específica para entornos de balanceo de carga habría mitigado este problema?",
+      "opciones": [
+        "a) Balanceo de carga con sesiones persistentes almacenadas en caché local",
+        "b) Clustering de servidores con almacenamiento compartido",
+        "c) Replicación de datos en tiempo real",
+        "d) Journaling para evitar corrupción de datos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El balanceo de carga con sesiones persistentes almacenadas en caché local (opción a) evita que las sesiones se reinicien al fallar un servidor, ya que los datos de sesión se mantienen en caché en cada servidor y no dependen exclusivamente de una base de datos compartida.",
+      "id": "p15-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+ SY0-701, ¿qué tipo de prueba de recuperación evalúa la capacidad de los sistemas redundantes para asumir la carga en caso de fallo, idealmente de manera transparente para los usuarios?",
+      "opciones": [
+        "a) Ejercicios en mesa (tabletop exercises)",
+        "b) Pruebas de fallo (failover tests)",
+        "c) Simulaciones de seguridad (security simulations)",
+        "d) Procesamiento paralelo (parallel processing)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las pruebas de fallo (failover tests) evalúan la capacidad de los sistemas redundantes para asumir la carga automáticamente tras un fallo, garantizando continuidad sin interrupción percibida por los usuarios.",
+      "id": "p15-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia eléctrica garantiza que los sistemas reciban energía estable y continua mediante conversión doble, protegiéndolos contra fluctuaciones de voltaje y cortes de energía, incluso cuando la energía principal está disponible?",
+      "opciones": [
+        "a) SAI en espera (standby UPS)",
+        "b) SAI interactivo en línea (line-interactive UPS)",
+        "c) SAI en línea (online UPS o double conversion UPS)",
+        "d) Generador diésel"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El SAI en línea (online UPS) opera constantemente con batería mediante conversión doble, lo que garantiza energía estable y protección contra fluctuaciones, a diferencia de otros tipos que solo activan la batería ante fallos.",
+      "id": "p15-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre la diversidad de plataformas es INCORRECTA según el temario?",
+      "opciones": [
+        "a) Minimiza el riesgo de que una vulnerabilidad afecte a todos los sistemas",
+        "b) Se aplica únicamente a servidores, no a dispositivos cliente",
+        "c) Reduce la superficie de ataque al distribuir servicios entre diferentes sistemas operativos",
+        "d) Puede incluir la distribución de servicios entre proveedores de nube como AWS, Azure y Google Cloud"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La diversidad de plataformas se aplica tanto a servidores como a dispositivos cliente, no solo a servidores.",
+      "id": "p15-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de resiliencia eléctrica proporciona energía estable y continua mediante conversión doble (double conversion), protegiendo los sistemas contra fluctuaciones de voltaje y cortes de energía, incluso cuando la energía principal está disponible?",
+      "opciones": [
+        "a) SAI en espera (standby UPS)",
+        "b) SAI interactivo en línea (line-interactive UPS)",
+        "c) SAI en línea (online UPS o double conversion UPS)",
+        "d) Generador eléctrico"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El SAI en línea (online UPS o double conversion UPS) opera siempre con batería, convirtiendo la corriente alterna en continua y nuevamente en alterna, lo que garantiza energía estable y protección contra fluctuaciones en todo momento.",
+      "id": "p15-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+ SY0-701, ¿qué técnica de resiliencia eléctrica proporciona energía estable y continua mediante conversión doble (double conversion), protegiendo los sistemas contra fluctuaciones de voltaje y cortes de energía, incluso cuando la energía principal está disponible?",
+      "opciones": [
+        "a) SAI en espera (standby UPS)",
+        "b) SAI interactivo en línea (line-interactive UPS)",
+        "c) SAI en línea (online UPS o double conversion UPS)",
+        "d) Generador eléctrico"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El SAI en línea (online UPS o double conversion UPS) opera siempre con batería, proporcionando energía estable y protegiendo contra fluctuaciones de voltaje incluso cuando la energía principal está disponible.",
+      "id": "p15-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+ SY0-701, ¿qué técnica de resiliencia garantiza que los datos se mantengan consistentes entre múltiples ubicaciones geográficas incluso cuando ocurre un fallo en una de ellas, mediante la replicación en tiempo real?",
+      "opciones": [
+        "a) Copia incremental",
+        "b) Replicación síncrona",
+        "c) Balanceo de carga geográfico",
+        "d) Instantánea (snapshot)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La replicación síncrona mantiene los datos actualizados en tiempo real entre ubicaciones geográficas, asegurando consistencia incluso ante fallos en una de ellas.",
+      "id": "p15-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+ SY0-701, ¿qué técnica de resiliencia en balanceo de carga garantiza que las sesiones de los usuarios no se reinicien al fallar un servidor, evitando que deban volver a autenticarse?",
+      "opciones": [
+        "a) Replicación de sesiones (Session Replication)",
+        "b) Instantáneas (Snapshots)",
+        "c) Copias incrementales",
+        "d) Journaling"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La replicación de sesiones (Session Replication) permite mantener las sesiones activas en otros servidores del clúster al fallar uno, evitando la reautenticación. Las demás opciones no están relacionadas con la gestión de sesiones en balanceo de carga.",
+      "id": "p15-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+ SY0-701, ¿qué técnica de resiliencia en clustering de servidores garantiza que los nodos mantengan la consistencia de datos incluso cuando uno de ellos experimenta un fallo parcial que afecta únicamente a su capacidad de procesamiento, pero no a su conexión con el almacenamiento compartido ni a su sincronización con otros nodos?",
+      "opciones": [
+        "a) Replicación síncrona",
+        "b) Procesamiento paralelo",
+        "c) Journaling",
+        "d) Balanceo de carga"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La replicación síncrona garantiza que los datos se mantengan consistentes entre nodos, ya que las actualizaciones se propagan de manera inmediata y bloquean el sistema hasta que todos los nodos confirman la escritura.",
+      "id": "p15-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización distribuye sus servicios entre múltiples proveedores de nube como AWS, Azure y Google Cloud. ¿Qué estrategia de resiliencia está aplicando?",
+      "opciones": [
+        "a) Diversidad de plataformas",
+        "b) Dispersión geográfica",
+        "c) Resiliencia en la nube",
+        "d) Planificación de capacidad"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La resiliencia en la nube implica distribuir servicios entre diferentes proveedores para evitar depender de un solo proveedor y reducir el riesgo de fallos simultáneos.",
+      "id": "p15-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un entorno de clustering de servidores, ¿qué técnica garantiza que los nodos mantengan la consistencia de datos incluso cuando uno de ellos experimenta un fallo parcial que afecta únicamente a su sincronización con otros nodos, pero no a su proceso de almacenamiento ni a su conexión con el almacenamiento compartido?",
+      "opciones": [
+        "a) Replicación asíncrona",
+        "b) Journaling",
+        "c) Balanceo de carga",
+        "d) Procesamiento paralelo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El journaling registra los cambios en un journal antes de aplicarlos a la base de datos, permitiendo restaurar la consistencia de datos incluso ante fallos en la sincronización entre nodos.",
+      "id": "p15-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Resiliency",
+      "youtubeId": "sb0dRaQbuBA"
+    },
+    {
+      "titulo": "Capacity Planning",
+      "youtubeId": "WGlT6-gNwqY"
+    },
+    {
+      "titulo": "Recovery Testing",
+      "youtubeId": "IhT7Odu4xHc"
+    },
+    {
+      "titulo": "Backups",
+      "youtubeId": "8mGSwRScqIM"
+    },
+    {
+      "titulo": "Power Resiliency",
+      "youtubeId": "-EY45MimSBM"
+    }
+  ]
+}

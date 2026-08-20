@@ -9,6 +9,12 @@ export interface Oposicion {
   /** Segmentos de sección a ocultar para esta oposición (p. ej. 'psicotecnicos'). */
   ocultar?: string[]
   /**
+   * Oculta esta entrada de landing/selector público/sitemap; solo visible para
+   * rol='owner'|'beta'. Uso: contenido derivado de terceros para estudio personal
+   * (ej. certificaciones), no para comercializar junto a las oposiciones públicas.
+   */
+  privado?: boolean
+  /**
    * Fracción de un acierto que se resta por cada error en la nota (0 = no penaliza).
    * Ej.: 1/3 → tres errores anulan un acierto. Default 1/3 si se omite.
    * ⚠️ Confirmar con las bases reales de cada convocatoria.
@@ -73,5 +79,15 @@ export const OPOSICIONES: Oposicion[] = [
     numTemas: 31,
     ocultar: ['psicotecnicos', 'entrevista', 'personalidad'],
     penalizacionPorError: 1 / 3,
+  },
+  {
+    slug: 'security-plus',
+    nombre: 'CompTIA Security+ (SY0-701)',
+    descripcion: 'Certificación profesional — estudio personal, no oposición',
+    disponible: true,
+    color: '#dc2626',
+    numTemas: 30,
+    ocultar: ['psicotecnicos', 'supuestos', 'entrevista', 'personalidad'],
+    privado: true,
   },
 ]

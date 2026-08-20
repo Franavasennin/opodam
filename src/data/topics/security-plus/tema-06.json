@@ -1,0 +1,1408 @@
+{
+  "id": 6,
+  "titulo": "2.2 · Vectores de amenaza e ingeniería social",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "VECTORES DE AMENAZA E INGENIERÍA SOCIAL\n\nLos vectores de amenaza (threat vectors) son los métodos que utilizan los atacantes para ganar acceso a los sistemas de una organización. Estos vectores pueden ser conocidos o desconocidos, y los atacantes buscan constantemente nuevas formas de explotarlos. Entre los más comunes se encuentran los sistemas de mensajería, archivos adjuntos, dispositivos físicos y configuraciones de red. A continuación, se detallan los principales vectores de amenaza y técnicas de ingeniería social asociadas.\n\n\nSISTEMAS DE MENSAJERÍA COMO VECTORES DE AMENAZA\n\nLos sistemas de mensajería, como el correo electrónico y los mensajes de texto (SMS), son uno de los vectores de amenaza más explotados por los atacantes. Esto se debe a que la mayoría de las personas utilizan estos canales para comunicarse diariamente, lo que los convierte en un objetivo ideal para campañas de phishing (suplantación de identidad por correo o mensaje).\n\nLos atacantes envían mensajes que incluyen enlaces maliciosos, invitando a la víctima a hacer clic en ellos. Al hacerlo, pueden instalar software malicioso, redirigir a páginas falsas de inicio de sesión (como las de bancos) o aprovechar vulnerabilidades en el navegador. Un ejemplo típico es un mensaje que simula ser de una empresa de mensajería como USPS, indicando que hay un paquete pendiente de entrega y solicitando hacer clic en un enlace para resolver el problema. Estos mensajes suelen incluir errores gramaticales, direcciones de correo sospechosas o dominios que no coinciden con los oficiales.\n\nAdemás, los atacantes pueden adjuntar malware directamente en los mensajes o incrustar código malicioso en archivos adjuntos como PDF, documentos de Office o imágenes en formato SVG. Estos archivos aprovechan vulnerabilidades en el software para ejecutar código no autorizado en el sistema de la víctima.\n\n\nFICHEROS Y FORMATOS DE ARCHIVO COMO VECTORES\n\nLos archivos que se ejecutan o abren en los sistemas también pueden ser vectores de amenaza. Algunos formatos comunes incluyen:\n\n- Ejecutables (archivos .exe): Software que se ejecuta directamente en la memoria del sistema y puede contener malware.\n- Documentos de Office (Word, Excel): Pueden incluir macros (pequeños programas) que, si están maliciosas, recopilan información o instalan software no deseado.\n- Archivos PDF: Pueden contener scripts o exploits que aprovechan vulnerabilidades en el lector de PDF.\n- Archivos comprimidos (ZIP, RAR): Los atacantes ocultan malware dentro de archivos comprimidos, aprovechando que el usuario no sospecha de su contenido.\n- Imágenes en formato SVG: Este formato es en realidad un archivo XML que describe una imagen. Los atacantes pueden incrustar código HTML o JavaScript dentro del XML, que se ejecuta al visualizar la imagen en el navegador. Aunque muchos navegadores bloquean scripts maliciosos, algunas vulnerabilidades pueden permitir su ejecución.\n\nLos atacantes también pueden aprovechar extensiones de navegador maliciosas. Estas extensiones, una vez instaladas, tienen acceso a toda la actividad del navegador y pueden robar datos o instalar malware.\n\n\nDISPOSITIVOS FÍSICOS Y ATAQUES DIRECTOS\n\nLos dispositivos físicos, como unidades USB, son otro vector de amenaza común. Un ejemplo clásico es el ataque mediante USB en redes air-gapped (aisladas de internet). Los atacantes dejan unidades USB infectadas en lugares estratégicos, como estacionamientos de empresas, esperando que un empleado las recoja y las conecte a un equipo interno. Estas unidades pueden contener malware que roba datos o proporciona acceso remoto a la red.\n\nAlgunas unidades USB modificadas pueden incluso emular un teclado. Al conectarlas, el sistema ejecuta automáticamente comandos que instalan malware o abren puertas traseras (backdoors). Además, las unidades USB permiten transferir grandes cantidades de datos fuera de la red, incluso en entornos con restricciones de seguridad.\n\nOtro vector físico es el vishing (voice phishing o suplantación de identidad por voz), donde los atacantes llaman a las víctimas fingiendo ser representantes de bancos, empresas de servicios públicos o incluso del departamento de TI de su organización. El objetivo es engañar a la víctima para que revele información confidencial, como números de tarjetas de crédito, contraseñas o datos personales. El vishing es especialmente efectivo porque aprovecha la confianza que las personas depositan en las llamadas telefónicas.\n\n\nREDES Y SERVICIOS COMO VECTORES\n\nLas redes y los servicios expuestos en internet también son vectores de amenaza. Los atacantes buscan puertos abiertos en servidores web, routers y otros dispositivos de red. Por ejemplo, un servidor web con puertos abiertos como el 80 (HTTP) o 443 (HTTPS) puede ser explotado si el software del servidor tiene vulnerabilidades conocidas. Los atacantes aprovechan estas vulnerabilidades para ganar acceso no autorizado.\n\nLa configuración incorrecta de servicios también es un problema común. Por ejemplo, dejar credenciales predeterminadas en routers o puntos de acceso inalámbrico (como "
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Vectores de amenaza e ingeniería social] --> B[Sistemas de mensajería]\nA --> C[Ficheros y formatos de archivo]\nA --> D[Dispositivos físicos]\nA --> E[Redes y servicios]\nA --> F[Cadena de suministro]\nA --> G[Software desactualizado]\nA --> H[Ingeniería social]\n\nB --> B1[Correo electrónico]\nB --> B2[Mensajes de texto (SMS)]\nB --> B3[Mensajería instantánea]\n\nC --> C1[Ejecutables (.exe)]\nC --> C2[Documentos de Office]\nC --> C3[PDF]\nC --> C4[Archivos comprimidos (ZIP, RAR)]\nC --> C5[Imágenes SVG]\nC --> C6[Extensiones de navegador]\n\nD --> D1[Unidades USB]\nD --> D2[Vishing (llamadas telefónicas)]\nD --> D3[Bluetooth]\n\nE --> E1[Puertos abiertos en servidores]\nE --> E2[Credenciales predeterminadas]\nE --> E3[Redes inalámbricas (WPA2/WPA3)]\nE --> E4[Puntos de acceso no autorizados (rogue)]\n\nF --> F1[Proveedores de servicios gestionados (MSP)]\nF --> F2[Hardware falso]\n\nG --> G1[Software sin parches]\nG --> G2[Sistemas sin soporte (end-of-life)]\n\nH --> H1[Phishing]\nH --> H2[Impersonación]\nH --> H3[Ataques de pozo de agua]\nH --> H4[Misinformación y desinformación]\nH --> H5[Uso de marcas conocidas]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc6-01",
+      "pregunta": "¿Qué es un vector de amenaza (threat vector) en ciberseguridad?",
+      "respuesta": "Es el método que utiliza un atacante para ganar acceso a los sistemas de una organización. Puede ser conocido o desconocido, y los atacantes buscan constantemente nuevas formas de explotarlos."
+    },
+    {
+      "id": "fc6-02",
+      "pregunta": "¿Qué es el phishing (suplantación de identidad por correo) y cuáles son sus variantes más comunes?",
+      "respuesta": "Es una técnica de ingeniería social que utiliza comunicaciones como correo electrónico, mensajes de texto (smishing) o llamadas telefónicas (vishing) para engañar a las víctimas y obtener información confidencial. Las variantes más comunes son phishing por correo, smishing (SMS) y vishing (voz)."
+    },
+    {
+      "id": "fc6-03",
+      "pregunta": "¿Qué es el typo squatting y cómo se utiliza en ataques de phishing?",
+      "respuesta": "Es una técnica en la que los atacantes registran dominios con nombres similares a los legítimos para engañar a las víctimas. Por ejemplo, un dominio como 'professormesser.com' en lugar de 'professormesser.com'."
+    },
+    {
+      "id": "fc6-04",
+      "pregunta": "¿Qué es un ataque de pozo de agua (watering hole attack)?",
+      "respuesta": "Es una técnica en la que los atacantes comprometen un sitio web de terceros que es visitado regularmente por los empleados de una organización objetivo. El objetivo es infectar a los empleados cuando visitan el sitio web."
+    },
+    {
+      "id": "fc6-05",
+      "pregunta": "¿Qué es el vishing (voice phishing) y cómo funciona?",
+      "respuesta": "Es una técnica de phishing en la que los atacantes llaman a las víctimas fingiendo ser representantes de bancos, empresas de servicios públicos o incluso del departamento de TI. El objetivo es engañar a la víctima para que revele información confidencial."
+    },
+    {
+      "id": "fc6-06",
+      "pregunta": "¿Qué es la impersonación en el contexto de la ingeniería social?",
+      "respuesta": "Es una técnica en la que el atacante se hace pasar por otra persona para ganar la confianza de la víctima. Puede ocurrir a través de llamadas telefónicas, correos electrónicos o incluso en persona."
+    },
+    {
+      "id": "fc6-07",
+      "pregunta": "¿Qué es un ataque mediante unidades USB y cómo funciona?",
+      "respuesta": "Es un vector de amenaza en el que los atacantes dejan unidades USB infectadas en lugares estratégicos, como estacionamientos de empresas, esperando que un empleado las recoja y las conecte a un equipo interno. Estas unidades pueden contener malware que roba datos o proporciona acceso remoto a la red."
+    },
+    {
+      "id": "fc6-08",
+      "pregunta": "¿Qué es la cadena de suministro (supply chain) como vector de amenaza?",
+      "respuesta": "Es un vector en el que los atacantes comprometen un tercero que tiene acceso a los sistemas de una organización. Por ejemplo, un proveedor de servicios gestionados (MSP) que monitorea la infraestructura de una empresa puede ser un objetivo."
+    },
+    {
+      "id": "fc6-09",
+      "pregunta": "¿Qué es el smishing y cómo se diferencia del phishing tradicional?",
+      "respuesta": "El smishing es una variante de phishing que utiliza mensajes de texto (SMS) en lugar de correo electrónico para engañar a las víctimas. La diferencia principal es el canal de comunicación utilizado."
+    },
+    {
+      "id": "fc6-10",
+      "pregunta": "¿Qué es el pretexting en el contexto de la ingeniería social?",
+      "respuesta": "Es una técnica en la que los atacantes crean una historia falsa para engañar a la víctima. Por ejemplo, un mensaje que simula ser de Visa indicando que hay un problema con un pago automático y solicitando información de la tarjeta de crédito."
+    },
+    {
+      "id": "fc6-11",
+      "pregunta": "¿Qué es la defensa en profundidad (defense in depth) y cómo ayuda a prevenir ataques?",
+      "respuesta": "Es una estrategia de seguridad que utiliza múltiples capas de protección, como firewalls, IPS, antivirus y sistemas de detección de intrusiones (IDS), para detectar y bloquear amenazas antes de que lleguen al equipo de la víctima."
+    },
+    {
+      "id": "fc6-12",
+      "pregunta": "¿Qué es el spoofing de direcciones de correo y cómo se utiliza en ataques de phishing?",
+      "respuesta": "Es una técnica en la que los atacantes envían mensajes desde direcciones que parecen legítimas, pero que en realidad son falsas. Por ejemplo, un mensaje que parece provenir de 'professor@professor.com' cuando el dominio real es 'professormesser.com'."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un formato de archivo comúnmente utilizado por los atacantes para distribuir malware a través de mensajes?",
+      "opciones": [
+        "a) PDF",
+        "b) SVG",
+        "c) MP3",
+        "d) DOCX"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El formato MP3 no se menciona en el temario como vector de amenaza para distribución de malware, a diferencia de PDF, SVG y DOCX.",
+      "id": "p6-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un ataque de phishing mediante correo electrónico, ¿qué característica NO suele ser típica de los mensajes maliciosos?",
+      "opciones": [
+        "a) Errores gramaticales o de ortografía",
+        "b) Dominios que no coinciden con los oficiales de la empresa",
+        "c) Solicitud de credenciales a través de un enlace incluido en el mensaje",
+        "d) Uso de certificados SSL válidos y reconocidos"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los mensajes maliciosos rara vez incluyen certificados SSL válidos, ya que suelen usar dominios falsos o no seguros.",
+      "id": "p6-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un mensaje de texto a un empleado fingiendo ser el departamento de TI de la empresa, solicitando que instale una actualización de software a través de un enlace adjunto. ¿Qué tipo de ataque combina esta técnica?",
+      "opciones": [
+        "a) Phishing y pretexting",
+        "b) Vishing y tailgating",
+        "c) Smishing y pretexting",
+        "d) Phishing y vishing"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El mensaje de texto (smishing) combinado con la suplantación de identidad (pretexting) para engañar al empleado es un ejemplo de phishing.",
+      "id": "p6-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué vulnerabilidad específica aprovechan los archivos SVG para distribuir malware?",
+      "opciones": [
+        "a) La capacidad de ejecutar macros maliciosas en documentos de Office",
+        "b) La posibilidad de incrustar código HTML o JavaScript dentro del XML del archivo",
+        "c) La ejecución automática de archivos .exe al abrirse",
+        "d) La vulnerabilidad en el lector de PDF para ejecutar scripts"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los archivos SVG pueden contener código HTML o JavaScript incrustado en su estructura XML, que se ejecuta al visualizarse en el navegador.",
+      "id": "p6-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante deja una unidad USB infectada en el estacionamiento de una empresa. ¿Qué tipo de ataque físico está utilizando?",
+      "opciones": [
+        "a) Tailgating",
+        "b) USB drop attack",
+        "c) Shoulder surfing",
+        "d) Baiting"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque mediante USB infectado dejado en un lugar estratégico se conoce como 'USB drop attack' o 'USB baiting'.",
+      "id": "p6-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes escenarios describe mejor un ataque de vishing?",
+      "opciones": [
+        "a) Un atacante envía un correo electrónico con un enlace a una página falsa de inicio de sesión de un banco.",
+        "b) Un atacante deja una unidad USB infectada en la recepción de una empresa.",
+        "c) Un atacante realiza una llamada telefónica fingiendo ser un empleado de soporte técnico para solicitar credenciales.",
+        "d) Un atacante envía un mensaje de texto con un código de verificación falso para robar credenciales."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El vishing consiste en la suplantación de identidad por voz, como una llamada telefónica engañosa.",
+      "id": "p6-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social implica el uso de un dispositivo físico para engañar a un usuario y obtener acceso a un sistema?",
+      "opciones": [
+        "a) Phishing",
+        "b) Baiting",
+        "c) Pretexting",
+        "d) Tailgating"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El baiting utiliza dispositivos físicos, como USB infectados, para engañar a los usuarios y distribuir malware.",
+      "id": "p6-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado recibe un correo electrónico con un archivo adjunto llamado 'factura_urgente.pdf'. Al abrirlo, el archivo aprovecha una vulnerabilidad en el lector de PDF para ejecutar código malicioso. ¿Qué tipo de ataque está ocurriendo?",
+      "opciones": [
+        "a) Ataque basado en macros en documentos de Office",
+        "b) Explotación de vulnerabilidad en archivos PDF",
+        "c) Inyección de código en archivos SVG",
+        "d) Phishing con enlace malicioso"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque aprovecha una vulnerabilidad en el lector de PDF para ejecutar código malicioso al abrir el archivo.",
+      "id": "p6-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante simula ser un técnico de soporte para convencer a un empleado de que instale un programa malicioso en su equipo, ¿qué técnica de ingeniería social está utilizando?",
+      "opciones": [
+        "a) Phishing",
+        "b) Pretexting",
+        "c) Baiting",
+        "d) Tailgating"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El pretexting implica crear una historia falsa o un escenario para engañar a la víctima y obtener información o acceso.",
+      "id": "p6-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante envía un mensaje de texto a un empleado indicando que su cuenta bancaria ha sido bloqueada y que debe hacer clic en un enlace para verificar su identidad. El enlace lo redirige a una página falsa que recopila sus credenciales. ¿Qué combinación de técnicas describe mejor este ataque?",
+      "opciones": [
+        "a) Smishing y pharming",
+        "b) Vishing y pretexting",
+        "c) Smishing y phishing",
+        "d) Baiting y tailgating"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El mensaje de texto (smishing) combinado con la redirección a una página falsa (phishing) describe un ataque de suplantación a través de SMS.",
+      "id": "p6-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social se caracteriza por el uso de un dispositivo físico que emula un teclado para ejecutar comandos automáticamente al conectarse a un sistema?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico",
+        "b) Ataque con unidades USB modificadas (BadUSB)",
+        "c) Vishing (suplantación de identidad por voz)",
+        "d) Ingeniería social inversa"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que algunas unidades USB modificadas pueden emular un teclado y ejecutar comandos automáticamente al conectarse, instalando malware o creando puertas traseras.",
+      "id": "p6-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un mensaje de texto a un empleado indicando que su cuenta de correo corporativo ha sido bloqueada temporalmente y que debe llamar a un número de teléfono para verificar su identidad. ¿Qué técnica de ingeniería social está utilizando?",
+      "opciones": [
+        "a) Phishing por SMS",
+        "b) Vishing",
+        "c) Smishing",
+        "d) Baiting"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El vishing consiste en suplantar identidad mediante llamadas telefónicas, como describe el temario al mencionar la suplantación de identidad por voz.",
+      "id": "p6-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "De los siguientes formatos de archivo, ¿cuál es el único que NO puede contener código JavaScript o HTML incrustado de forma nativa para ejecutarse al visualizarse?",
+      "opciones": [
+        "a) SVG",
+        "b) PDF",
+        "c) DOCX",
+        "d) JPG"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario especifica que los archivos SVG son en realidad XML y pueden incrustar código HTML o JavaScript, mientras que los archivos JPG no permiten esto de forma nativa.",
+      "id": "p6-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un ataque donde un atacante deja un dispositivo USB infectado en la recepción de una empresa con una etiqueta que dice 'Proyecto Confidencial - Solo para el equipo directivo', ¿qué técnica de ingeniería social está combinando?",
+      "opciones": [
+        "a) Phishing y baiting",
+        "b) Vishing y pretexting",
+        "c) Pretexting y baiting",
+        "d) Smishing y tailgating"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario describe el baiting como dejar dispositivos físicos infectados para engañar a las víctimas, y el pretexting como crear una historia falsa para justificar la acción (ejemplo: etiqueta falsa).",
+      "id": "p6-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué vulnerabilidad específica aprovechan los archivos SVG para distribuir malware según el temario?",
+      "opciones": [
+        "a) La capacidad de ejecutar macros maliciosas",
+        "b) La incrustación de código HTML o JavaScript en un archivo XML",
+        "c) La vulnerabilidad en el lector de PDF",
+        "d) La ejecución automática de scripts al abrir el archivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que los archivos SVG son XML que pueden incrustar código HTML o JavaScript, lo que permite ejecutar scripts maliciosos al visualizarse.",
+      "id": "p6-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado recibe un correo electrónico con un archivo adjunto llamado 'nómina_mes.xlsx'. Al abrirlo, el archivo solicita habilitar macros para 'mostrar datos correctamente'. ¿Qué tipo de ataque está ocurriendo?",
+      "opciones": [
+        "a) Ataque mediante archivo SVG",
+        "b) Ataque mediante macro maliciosa en documento de Office",
+        "c) Ataque mediante exploit en el lector de PDF",
+        "d) Ataque mediante extensión de navegador maliciosa"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los documentos de Office pueden incluir macros maliciosas que recopilan información o instalan software no deseado al habilitarlas.",
+      "id": "p6-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un ejemplo típico de un ataque de smishing?",
+      "opciones": [
+        "a) Un mensaje de texto que indica que hay un paquete pendiente de entrega y solicita hacer clic en un enlace",
+        "b) Un mensaje de texto que simula ser del banco y pide verificar credenciales a través de un enlace",
+        "c) Un mensaje de texto que incluye un archivo adjunto ZIP con malware",
+        "d) Una llamada telefónica que solicita información personal para 'verificar la identidad'"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El smishing (phishing por SMS) se realiza mediante mensajes de texto, mientras que los archivos adjuntos son más típicos del phishing por correo electrónico.",
+      "id": "p6-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado fingiendo ser el equipo de soporte técnico de la empresa, solicitando que instale un programa llamado 'Actualizador_Seguridad.exe' en su equipo. ¿Qué técnica de ingeniería social está utilizando?",
+      "opciones": [
+        "a) Pretexting",
+        "b) Baiting",
+        "c) Tailgating",
+        "d) Shoulder surfing"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El pretexting consiste en crear una historia falsa o un escenario para engañar a la víctima, como simular ser el equipo de soporte técnico.",
+      "id": "p6-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante aprovecha una vulnerabilidad en un servidor web con el puerto 80 (HTTP) abierto para ejecutar código remoto, ¿qué tipo de vector de amenaza está utilizando según el temario?",
+      "opciones": [
+        "a) Sistema de mensajería",
+        "b) Dispositivo físico",
+        "c) Red y servicio expuesto",
+        "d) Archivo adjunto malicioso"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que las redes y servicios expuestos en internet, como servidores web con puertos abiertos, son vectores de amenaza explotados para ganar acceso no autorizado.",
+      "id": "p6-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado con un archivo adjunto llamado 'informe_trimestral.pdf'. Al abrirlo, el archivo aprovecha una vulnerabilidad en el lector de PDF para ejecutar un script que roba credenciales. ¿Qué combinación de técnicas describe mejor este ataque?",
+      "opciones": [
+        "a) Phishing y exploit en lector de PDF",
+        "b) Smishing y macro maliciosa",
+        "c) Vishing y pretexting",
+        "d) Baiting y BadUSB"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario describe que los archivos PDF pueden contener exploits que aprovechan vulnerabilidades en el lector de PDF, y el phishing se realiza mediante correo electrónico.",
+      "id": "p6-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social utiliza un atacante que envía un mensaje de texto a una víctima con un enlace que redirige a un sitio web falso para robar credenciales, pero que además incluye una amenaza de consecuencias graves si no se actúa de inmediato?",
+      "opciones": [
+        "a) Phishing con urgencia y miedo",
+        "b) Pretexting basado en autoridad",
+        "c) Baiting mediante descarga de archivo",
+        "d) Tailgating para acceso físico"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque combina el envío de un mensaje con un enlace malicioso (phishing) y el uso de urgencia o miedo para presionar a la víctima (técnica de ingeniería social conocida como 'urgency' o 'scarcity'). El temario destaca que los mensajes de phishing suelen incluir amenazas o consecuencias para aumentar la probabilidad de que la víctima caiga en la trampa.",
+      "id": "p6-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En comparación con el smishing y el vishing, ¿qué característica distingue principalmente al phishing mediante correo electrónico?",
+      "opciones": [
+        "a) Utiliza llamadas telefónicas para engañar a la víctima",
+        "b) Se basa en mensajes de texto con enlaces maliciosos",
+        "c) Emplea mensajes de correo que simulan ser de entidades legítimas para engañar a la víctima",
+        "d) Requiere la conexión física de un dispositivo USB infectado"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario define el phishing como suplantación de identidad por correo electrónico, donde los mensajes simulan ser de entidades legítimas para engañar a la víctima.",
+      "id": "p6-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un formato de archivo que pueda contener código JavaScript o HTML incrustado de forma nativa para ejecutarse al visualizarse?",
+      "opciones": [
+        "a) SVG",
+        "b) PDF",
+        "c) DOCX",
+        "d) JPG"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario indica que los archivos SVG son en realidad XML que pueden incrustar código HTML o JavaScript, mientras que los archivos JPG no permiten esta ejecución nativa.",
+      "id": "p6-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social se basa en el uso de un archivo SVG malicioso que contiene código HTML o JavaScript para explotar una vulnerabilidad en el navegador de la víctima?",
+      "opciones": [
+        "a) Ataque mediante macros en documentos de Office",
+        "b) Explotación de vulnerabilidades en archivos SVG",
+        "c) Phishing a través de mensajes de texto (smishing)",
+        "d) Ataque de vishing mediante llamadas telefónicas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los archivos SVG pueden contener código HTML o JavaScript incrustado en su estructura XML, lo que permite ejecutar scripts maliciosos al visualizarse en un navegador vulnerable.",
+      "id": "p6-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social implica el uso de un dispositivo físico para engañar a un usuario y obtener acceso a un sistema, según el temario?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico",
+        "b) Ataque mediante USB infectado",
+        "c) Smishing (phishing mediante SMS)",
+        "d) Vishing (phishing mediante llamadas)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe que los dispositivos físicos, como unidades USB infectadas, son vectores de amenaza comunes para engañar a usuarios y obtener acceso a sistemas.",
+      "id": "p6-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "De los siguientes escenarios, ¿cuál describe mejor un ataque de vishing según el temario?",
+      "opciones": [
+        "a) Un empleado recibe un mensaje de texto con un enlace a una página falsa de su banco",
+        "b) Un atacante deja una unidad USB infectada en el estacionamiento de una empresa",
+        "c) Un atacante simula ser un técnico de soporte para convencer a un empleado de instalar un programa malicioso",
+        "d) Un atacante realiza una llamada telefónica fingiendo ser un representante de un banco para obtener credenciales"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario define el vishing como la suplantación de identidad por voz, donde los atacantes llaman a las víctimas fingiendo ser representantes de entidades legítimas.",
+      "id": "p6-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un mensaje de texto a un empleado indicando que su cuenta bancaria ha sido bloqueada y que debe hacer clic en un enlace para verificar su identidad. El enlace lo redirige a una página falsa que recopila sus credenciales. ¿Qué técnica de ingeniería social está utilizando principalmente?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico",
+        "b) Smishing (phishing mediante SMS)",
+        "c) Vishing (phishing mediante llamadas)",
+        "d) Ataque mediante USB infectado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario clasifica el smishing como un ataque de phishing mediante mensajes de texto (SMS) que incluyen enlaces maliciosos.",
+      "id": "p6-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social se caracteriza por el uso de un archivo SVG malicioso que contiene código HTML o JavaScript para explotar una vulnerabilidad en el navegador de la víctima?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico con archivo adjunto PDF",
+        "b) Ataque mediante archivos SVG con código incrustado",
+        "c) Smishing con enlace a sitio web falso",
+        "d) Vishing con llamada telefónica simulando soporte técnico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los archivos SVG pueden contener código HTML o JavaScript incrustado, el cual se ejecuta al visualizar la imagen en el navegador, aprovechando vulnerabilidades para ejecutar código malicioso.",
+      "id": "p6-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un técnico de soporte de una empresa recibe una llamada de un individuo que se identifica como empleado del departamento de TI, solicitando acceso remoto a su estación de trabajo para 'solucionar un problema crítico de seguridad'. El atacante menciona que el sistema está infectado y que, de no actuar de inmediato, la empresa podría enfrentar una multa regulatoria. ¿Qué técnica de ingeniería social está utilizando el atacante en este escenario, combinada con otra técnica para aumentar su efectividad?",
+      "opciones": [
+        "a) Phishing mediante vishing, aprovechando la urgencia y la autoridad percibida para manipular a la víctima.",
+        "b) Baiting mediante un dispositivo USB malicioso, ya que el atacante podría estar enviando un medio físico a la víctima.",
+        "c) Pretexting con una historia elaborada que simula una emergencia, combinada con el uso de un script automatizado para ejecutar comandos.",
+        "d) Tailgating, ya que el atacante podría estar intentando acceder físicamente a las instalaciones de la empresa."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El atacante utiliza vishing (llamada telefónica con suplantación de identidad) para generar urgencia y autoridad, una técnica clásica de ingeniería social que aprovecha la confianza en las comunicaciones verbales. Según el temario, el vishing se caracteriza por la suplantación de identidad mediante llamadas telefónicas para engañar a la víctima.",
+      "id": "p6-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante simula ser un técnico de soporte para convencer a un empleado de que instale un programa malicioso en su equipo, ¿qué técnica de ingeniería social está utilizando según el temario?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico",
+        "b) Ingeniería social mediante suplantación de identidad (pretexting)",
+        "c) Smishing (phishing mediante SMS)",
+        "d) Ataque mediante USB infectado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe el pretexting como una técnica de ingeniería social donde el atacante crea un escenario falso (como fingir ser un técnico de soporte) para engañar a la víctima.",
+      "id": "p6-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes formatos de archivo permite incrustar código HTML o JavaScript de forma nativa que puede ejecutarse al visualizarse en un navegador, convirtiéndolo en un vector de amenaza común en ataques de ingeniería social?",
+      "opciones": [
+        "a) Archivo PNG",
+        "b) Archivo SVG",
+        "c) Archivo DOCX",
+        "d) Archivo ZIP"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los archivos SVG son en realidad archivos XML que pueden contener código HTML o JavaScript incrustado, el cual se ejecuta al visualizarse en un navegador si existen vulnerabilidades sin parches.",
+      "id": "p6-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En comparación con el phishing mediante correo electrónico y el smishing, ¿qué característica distingue principalmente al vishing?",
+      "opciones": [
+        "a) Uso de mensajes de texto con enlaces maliciosos",
+        "b) Suplantación de identidad mediante llamadas telefónicas",
+        "c) Envío de archivos adjuntos infectados",
+        "d) Explotación de vulnerabilidades en archivos SVG"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El vishing (voice phishing) se diferencia por utilizar llamadas telefónicas para engañar a la víctima y obtener información confidencial.",
+      "id": "p6-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante deja una unidad USB infectada en la recepción de una empresa con una etiqueta que dice 'Proyecto Confidencial - Solo para el equipo directivo'. ¿Qué técnica de ingeniería social está combinando principalmente?",
+      "opciones": [
+        "a) Ataque físico con dispositivo USB",
+        "b) Phishing mediante correo electrónico",
+        "c) Smishing (phishing por SMS)",
+        "d) Vishing (suplantación por voz)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El uso de dispositivos físicos como USB infectados es un vector de amenaza que aprovecha la curiosidad o el sentido de urgencia de las víctimas.",
+      "id": "p6-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social se basa en el uso de un dispositivo físico que emula un teclado para ejecutar comandos automáticamente al conectarse a un sistema?",
+      "opciones": [
+        "a) Skimming",
+        "b) USB drop attack con emulación de teclado",
+        "c) Shoulder surfing",
+        "d) Dumpster diving"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un dispositivo USB que emula un teclado puede enviar comandos automáticamente al sistema al conectarse, instalando malware o abriendo backdoors. Esta técnica se menciona dentro de los vectores de amenaza que involucran dispositivos físicos en el temario.",
+      "id": "p6-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social implica el uso de un archivo SVG malicioso que contiene código HTML o JavaScript para explotar una vulnerabilidad en el navegador de la víctima, aprovechando que el formato SVG es en realidad un archivo XML?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico con adjuntos PDF maliciosos",
+        "b) Inserción de macros en documentos de Office",
+        "c) Ejecución de scripts incrustados en archivos SVG",
+        "d) Uso de unidades USB infectadas para emular un teclado"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El formato SVG permite incrustar código HTML o JavaScript dentro de su estructura XML, lo que puede ser ejecutado por el navegador al visualizar la imagen, aprovechando vulnerabilidades en el software de visualización.",
+      "id": "p6-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un técnico de soporte de una empresa recibe una llamada de un individuo que se identifica como empleado del departamento de TI, solicitando acceso remoto a su estación de trabajo para 'solucionar un problema crítico de seguridad'. El atacante menciona que el sistema está infectado y que, de no actuar de inmediato, la empresa podría enfrentar una multa regulatoria. ¿Qué técnica de ingeniería social está utilizando el atacante en este escenario?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico",
+        "b) Vishing combinado con urgencia y autoridad falsa",
+        "c) Ataque con dispositivo USB",
+        "d) Explotación de vulnerabilidades en archivos SVG"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El vishing (suplantación por voz) se combina con técnicas de urgencia y autoridad falsa para aumentar la efectividad del engaño.",
+      "id": "p6-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social se basa en el uso de un archivo SVG malicioso que contiene código HTML o JavaScript para explotar una vulnerabilidad en el navegador de la víctima, aprovechando que el formato SVG es en realidad un archivo XML?",
+      "opciones": [
+        "a) Ataque mediante macros en documentos de Office",
+        "b) Ataque mediante archivos SVG con código incrustado",
+        "c) Ataque mediante unidades USB infectadas que emulan un teclado",
+        "d) Ataque mediante vishing (suplantación por voz)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los archivos SVG son vectores de amenaza porque, al ser archivos XML, permiten incrustar código HTML o JavaScript que puede ejecutarse al visualizarse en un navegador, explotando vulnerabilidades si el navegador no lo bloquea correctamente.",
+      "id": "p6-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social implica el uso de un archivo SVG malicioso que contiene código HTML o JavaScript incrustado para explotar una vulnerabilidad en el navegador de la víctima, aprovechando que el formato SVG es en realidad un archivo XML?",
+      "opciones": [
+        "a) Vishing",
+        "b) Pharming",
+        "c) Ataque basado en SVG y código incrustado",
+        "d) Ataque de fuerza bruta"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los archivos SVG pueden contener código HTML o JavaScript incrustado dentro de su estructura XML, lo que permite a los atacantes ejecutar scripts maliciosos al visualizarse en un navegador, explotando así vulnerabilidades del software.",
+      "id": "p6-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado de una empresa con un archivo adjunto llamado 'informe_anual.svg' que, al abrirse en el navegador, ejecuta un script malicioso que roba las cookies de sesión del usuario. El atacante ha utilizado la propiedad 'onload' del elemento SVG para cargar el código JavaScript. ¿Qué vulnerabilidad específica está explotando este ataque según el temario?",
+      "opciones": [
+        "a) La capacidad de incrustar código JavaScript en archivos SVG mediante elementos XML válidos.",
+        "b) La falta de validación de archivos en el cliente antes de su visualización.",
+        "c) La ejecución automática de macros en archivos SVG al abrirlos en navegadores modernos.",
+        "d) La vulnerabilidad de deserialización en el parser XML de los navegadores."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque aprovecha que los archivos SVG son en realidad archivos XML que pueden contener código JavaScript incrustado mediante elementos como 'onload', el cual se ejecuta al cargarse la imagen en el navegador.",
+      "id": "p6-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado fingiendo ser el equipo de soporte técnico de la empresa, solicitando que instale un programa llamado 'Actualizador_Seguridad.exe' en su equipo. ¿Qué combinación de técnicas describe mejor este ataque?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico y ejecución de archivo malicioso",
+        "b) Smishing y vishing",
+        "c) Ataque con dispositivo USB y vishing",
+        "d) Explotación de vulnerabilidades en archivos SVG"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El phishing mediante correo electrónico se combina con la ejecución de un archivo malicioso (en este caso, un ejecutable) para comprometer el sistema.",
+      "id": "p6-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes formatos de archivo NO puede contener código JavaScript o HTML incrustado de forma nativa para ejecutarse al visualizarse?",
+      "opciones": [
+        "a) SVG",
+        "b) PDF",
+        "c) DOCX",
+        "d) JPG"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El formato JPG es un archivo de imagen estática que no permite incrustar código ejecutable, a diferencia de SVG (XML con posibilidad de scripts), PDF (con scripts) o DOCX (con macros).",
+      "id": "p6-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado con un archivo adjunto llamado 'informe.pdf' que, al abrirse, aprovecha una vulnerabilidad en el lector de PDF para ejecutar código malicioso. ¿Qué técnica de ingeniería social está utilizando principalmente?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico",
+        "b) Smishing",
+        "c) Vishing",
+        "d) Ataque de fuerza bruta"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El phishing mediante correo electrónico implica el envío de mensajes fraudulentos para engañar a la víctima, en este caso usando un archivo PDF malicioso como vector de infección.",
+      "id": "p6-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social se basa en el uso de una extensión de navegador maliciosa para robar datos o instalar malware en el sistema de la víctima?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico",
+        "b) Ataque con unidades USB infectadas",
+        "c) Vishing (suplantación por voz)",
+        "d) Extensiones de navegador maliciosas"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Las extensiones de navegador maliciosas tienen acceso a la actividad del navegador y pueden robar datos o instalar malware, según lo descrito en el temario sobre vectores de amenaza.",
+      "id": "p6-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social se basa en el uso de un archivo SVG malicioso que contiene código HTML o JavaScript incrustado para explotar una vulnerabilidad en el navegador de la víctima, aprovechando que el formato SVG es en realidad un archivo XML?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico",
+        "b) Ataque de fuerza bruta",
+        "c) Inyección de código en SVG",
+        "d) Ingeniería social inversa"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El formato SVG es un archivo XML que puede contener código HTML o JavaScript malicioso, el cual se ejecuta al visualizarse en el navegador, explotando vulnerabilidades específicas según el temario.",
+      "id": "p6-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un ejemplo típico de un ataque de smishing según el temario?",
+      "opciones": [
+        "a) Un mensaje de texto que simula ser de un banco solicitando verificar credenciales",
+        "b) Un correo electrónico con un archivo PDF adjunto malicioso",
+        "c) Un mensaje de texto que indica que hay un paquete pendiente de entrega",
+        "d) Un mensaje de texto que solicita hacer clic en un enlace para resolver un problema"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El smishing utiliza mensajes de texto (SMS), no correos electrónicos. El correo con PDF malicioso es un ejemplo de phishing.",
+      "id": "p6-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante deja una unidad USB infectada en el estacionamiento de una empresa con una etiqueta que dice 'Proyecto Confidencial - Solo para el equipo directivo'. ¿Qué técnica de ingeniería social está combinando principalmente?",
+      "opciones": [
+        "a) Baiting",
+        "b) Phishing",
+        "c) Vishing",
+        "d) Pretexting"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El baiting consiste en dejar un cebo físico (como una USB infectada) para engañar a la víctima y que lo use, combinado con pretexting (la etiqueta falsa).",
+      "id": "p6-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social utiliza un atacante que deja una unidad USB infectada con etiquetas engañosas (por ejemplo, 'Información confidencial') en zonas de alto tránsito de una empresa para que un empleado la conecte a un sistema interno?",
+      "opciones": [
+        "a) Phishing",
+        "b) Baiting",
+        "c) Pretexting",
+        "d) Tailgating"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El baiting es una técnica de ingeniería social que consiste en dejar un objeto físico (como una unidad USB) con un señuelo para que la víctima lo recoja y use, facilitando la infección del sistema.",
+      "id": "p6-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un mensaje de texto a un empleado indicando que su cuenta bancaria ha sido bloqueada y que debe llamar a un número de teléfono proporcionado para 'verificar su identidad'. ¿Qué técnica de ingeniería social está utilizando principalmente?",
+      "opciones": [
+        "a) Smishing",
+        "b) Vishing",
+        "c) Phishing",
+        "d) Tailgating"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El vishing se basa en llamadas telefónicas para engañar a la víctima, en este caso redirigiéndola a un número falso proporcionado en el mensaje.",
+      "id": "p6-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado de una empresa con un archivo adjunto llamado 'portada_informe.svg' que, al abrirse en un navegador, ejecuta un script malicioso que redirige a la víctima a un sitio falso de inicio de sesión corporativo. El atacante ha aprovechado la propiedad 'xlink:href' del elemento SVG para cargar un enlace externo malicioso. ¿Qué técnica de ingeniería social está explotando este ataque, combinada con otra técnica para maximizar su efectividad?",
+      "opciones": [
+        "a) Ataque mediante archivo SVG con incrustación de código HTML/JavaScript y técnica de phishing por correo electrónico.",
+        "b) Ataque mediante unidad USB infectada con técnica de baiting y robo de credenciales.",
+        "c) Ataque mediante extensión de navegador maliciosa y técnica de pharming.",
+        "d) Ataque mediante vishing y técnica de manipulación emocional para presionar a la víctima."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque combina el vector de amenaza del formato SVG (que permite incrustar código HTML/JavaScript) con la técnica de phishing por correo electrónico, ya que el archivo adjunto es distribuido mediante un mensaje engañoso.",
+      "id": "p6-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado con un archivo adjunto llamado 'plantilla.xlsx' que, al abrirse, solicita habilitar macros para 'mostrar datos correctamente'. ¿Qué vulnerabilidad específica está explotando este ataque según el temario?",
+      "opciones": [
+        "a) Vulnerabilidad en macros de Office",
+        "b) Vulnerabilidad en el lector de PDF",
+        "c) Vulnerabilidad en el formato SVG",
+        "d) Vulnerabilidad en el navegador"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los documentos de Office pueden contener macros maliciosas que, al habilitarse, ejecutan código no autorizado en el sistema de la víctima.",
+      "id": "p6-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social implica el uso de un dispositivo físico que emula un teclado para ejecutar comandos automáticamente al conectarse a un sistema, según el temario?",
+      "opciones": [
+        "Ataque mediante USB con emulación de teclado",
+        "Phishing por correo electrónico",
+        "Smishing mediante SMS",
+        "Vishing mediante llamada telefónica"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que algunas unidades USB modificadas pueden emular un teclado y ejecutar comandos automáticamente al conectarse, instalando malware o abriendo puertas traseras.",
+      "id": "p6-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un mensaje de texto a un empleado indicando que su cuenta bancaria ha sido bloqueada y que debe hacer clic en un enlace para 'verificar su identidad'. El enlace lo redirige a una página falsa que recopila sus credenciales. ¿Qué técnica de ingeniería social está utilizando principalmente?",
+      "opciones": [
+        "Smishing",
+        "Phishing",
+        "Vishing",
+        "Baiting"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define el smishing como el uso de mensajes de texto (SMS) para engañar a las víctimas y robar credenciales o instalar malware.",
+      "id": "p6-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un formato de archivo que pueda contener código JavaScript o HTML incrustado de forma nativa para ejecutarse al visualizarse, según el temario?",
+      "opciones": [
+        "PDF",
+        "SVG",
+        "DOCX",
+        "EXE"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario indica que los archivos EXE son ejecutables que se ejecutan directamente en la memoria, pero no pueden contener código JavaScript o HTML incrustado para visualizarse.",
+      "id": "p6-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En comparación con el phishing mediante correo electrónico y el smishing, ¿qué característica distingue principalmente al vishing según el temario?",
+      "opciones": [
+        "Uso de llamadas telefónicas para engañar a la víctima",
+        "Envío de mensajes de texto con enlaces maliciosos",
+        "Uso de archivos adjuntos maliciosos en correos electrónicos",
+        "Dejar unidades USB infectadas en lugares estratégicos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define el vishing como la suplantación de identidad mediante llamadas telefónicas, aprovechando la confianza en las comunicaciones verbales.",
+      "id": "p6-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social implica el uso de un archivo SVG malicioso que contiene código HTML o JavaScript incrustado para explotar una vulnerabilidad en el navegador de la víctima al visualizarse?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico",
+        "b) Ataque mediante unidad USB infectada con etiqueta engañosa",
+        "c) Explotación de archivos SVG con código incrustado",
+        "d) Vishing (suplantación por voz)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El formato SVG permite incrustar código HTML/JavaScript en su estructura XML, que se ejecuta al visualizarse en un navegador, explotando vulnerabilidades si no está correctamente sanitizado.",
+      "id": "p6-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social implica el uso de un archivo SVG malicioso que contiene código HTML o JavaScript incrustado para explotar una vulnerabilidad en el navegador de la víctima, aprovechando que el formato SVG es en realidad un archivo XML?",
+      "opciones": [
+        "a) Phishing basado en archivos ejecutables",
+        "b) Inyección de código en archivos SVG",
+        "c) Ataque de fuerza bruta en credenciales",
+        "d) Explotación de vulnerabilidades en puertos de red"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los archivos SVG son un vector de amenaza porque, al ser archivos XML, permiten incrustar código HTML o JavaScript que se ejecuta al visualizarse en un navegador, explotando vulnerabilidades como la propiedad 'onload' o 'xlink:href'.",
+      "id": "p6-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social implica el uso de un archivo SVG malicioso que contiene código HTML o JavaScript incrustado para explotar una vulnerabilidad en el navegador de la víctima al visualizarse, aprovechando que el formato SVG es en realidad un archivo XML?",
+      "opciones": [
+        "a) Ataque de phishing mediante correo electrónico",
+        "b) Ataque mediante dispositivo físico (USB)",
+        "c) Ataque basado en archivos SVG con código incrustado",
+        "d) Ataque de vishing (suplantación por voz)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario especifica que los archivos SVG pueden contener código HTML o JavaScript incrustado, aprovechando que son archivos XML, lo que permite explotar vulnerabilidades en el navegador al visualizarse.",
+      "id": "p6-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social se basa en el uso de una extensión de navegador maliciosa para robar datos o instalar malware en el sistema de la víctima, según el temario?",
+      "opciones": [
+        "Extensiones de navegador maliciosas",
+        "Ataques mediante USB",
+        "Phishing por correo electrónico",
+        "Vishing mediante llamadas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que las extensiones de navegador maliciosas tienen acceso a la actividad del navegador y pueden robar datos o instalar malware.",
+      "id": "p6-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado de una empresa con un archivo adjunto llamado 'plantilla.xlsx' que, al abrirse, solicita habilitar macros para 'mostrar datos correctamente'. ¿Qué vulnerabilidad específica está explotando este ataque según el temario?",
+      "opciones": [
+        "Uso de macros maliciosas en documentos de Office",
+        "Incrustación de código JavaScript en archivos SVG",
+        "Explotación de vulnerabilidades en el lector de PDF",
+        "Ejecución de código mediante extensiones de navegador"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario indica que los documentos de Office pueden incluir macros maliciosas que recopilan información o instalan software no deseado.",
+      "id": "p6-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado de una empresa con un archivo adjunto llamado 'presentacion.pptx' que, al abrirse, solicita habilitar macros para 'mostrar la animación correctamente'. El empleado, creyendo que se trata de una presentación legítima de su jefe, activa las macros y ejecuta un script malicioso que instala un ransomware en el sistema. ¿Qué técnica de ingeniería social está utilizando el atacante en este escenario, combinada con otra técnica para aumentar su efectividad según el temario?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico con archivo adjunto malicioso que aprovecha macros en documentos de Office, combinado con autenticación por confianza en el remitente.",
+        "b) Smishing mediante mensaje de texto con enlace malicioso que redirige a un sitio falso de inicio de sesión corporativo.",
+        "c) Ataque de vishing donde el atacante se hace pasar por un técnico de soporte para convencer al empleado de instalar un programa malicioso.",
+        "d) Ataque físico mediante dispositivo USB infectado dejado en zonas de alto tránsito de la empresa."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El atacante combina el envío de un correo electrónico con un archivo adjunto malicioso que aprovecha macros en documentos de Office (vector de amenaza mediante ficheros) con la técnica de autenticación por confianza en el remitente, ya que el empleado asume que el correo proviene de una fuente legítima (su jefe).",
+      "id": "p6-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social se caracteriza por el uso de un archivo SVG malicioso que contiene código HTML o JavaScript incrustado, aprovechando que el formato SVG es en realidad un archivo XML?",
+      "opciones": [
+        "Phishing mediante correo electrónico",
+        "Ataque con USB infectado",
+        "Inyección de código en SVG",
+        "Smishing"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El formato SVG permite incrustar código HTML/JavaScript al ser un archivo XML, lo que lo convierte en un vector de amenaza común según el temario.",
+      "id": "p6-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En comparación con el phishing tradicional y el smishing, ¿qué característica principal distingue al vishing según el temario?",
+      "opciones": [
+        "El uso de archivos adjuntos maliciosos",
+        "La suplantación de identidad mediante llamadas telefónicas",
+        "La distribución de malware a través de USB",
+        "El envío de mensajes de texto con enlaces falsos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El vishing se basa en la suplantación de identidad mediante llamadas telefónicas, a diferencia del phishing o smishing que usan mensajes escritos.",
+      "id": "p6-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes formatos de archivo NO puede contener código JavaScript o HTML incrustado de forma nativa para ejecutarse al visualizarse, según el temario?",
+      "opciones": [
+        "SVG",
+        "PDF",
+        "JPEG",
+        "DOCX"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los archivos JPEG son imágenes estáticas y no permiten incrustar código ejecutable como JavaScript o HTML.",
+      "id": "p6-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social implica el uso de un dispositivo físico que emula un teclado para ejecutar comandos automáticamente al conectarse a un sistema?",
+      "opciones": [
+        "a) USB drop attack (ataque por caída de USB)",
+        "b) Keystroke injection attack (ataque por inyección de teclas)",
+        "c) Man-in-the-middle (ataque de intermediario)",
+        "d) Watering hole attack (ataque de abrevadero)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El ataque por inyección de teclas (keystroke injection) utiliza dispositivos físicos que simulan un teclado para enviar comandos automáticamente al sistema al conectarse, explotando la confianza en dispositivos periféricos.",
+      "id": "p6-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social implica el uso de un dispositivo físico que emula un teclado para ejecutar comandos automáticamente al conectarse a un sistema?",
+      "opciones": [
+        "Ataque con USB infectado",
+        "Inyección de código en SVG",
+        "Phishing mediante correo electrónico",
+        "Vishing"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las unidades USB modificadas pueden emular un teclado y ejecutar comandos automáticamente al conectarse, según el temario.",
+      "id": "p6-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social se basa en el uso de un archivo PDF malicioso que contiene código JavaScript o un exploit para aprovechar una vulnerabilidad en el lector de PDF de la víctima, permitiendo la ejecución de un script malicioso al abrir el archivo?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico con enlace a página falsa",
+        "b) Ataque mediante archivo PDF con código incrustado",
+        "c) USB drop con dispositivo que emula un teclado",
+        "d) Extensión de navegador maliciosa"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los archivos PDF pueden contener scripts o exploits que aprovechan vulnerabilidades en el lector de PDF, ejecutando código malicioso al abrirse. Esta técnica se conoce como ataque mediante archivo PDF con código incrustado.",
+      "id": "p6-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social se basa en el uso de un archivo PDF malicioso que contiene código JavaScript o un exploit para aprovechar una vulnerabilidad en el lector de PDF de la víctima, permitiendo la ejecución de un script malicioso al abrir el archivo?",
+      "opciones": [
+        "a) Smishing",
+        "b) Ataque mediante dispositivo físico (USB)",
+        "c) Phishing con archivo SVG",
+        "d) Ataque con archivo PDF malicioso"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Según el temario, los archivos PDF pueden contener scripts o exploits que aprovechan vulnerabilidades en el lector de PDF, ejecutando código malicioso al abrirse.",
+      "id": "p6-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social implica el uso de un archivo PDF malicioso que contiene un exploit para aprovechar una vulnerabilidad en el lector de PDF de la víctima, permitiendo la ejecución de un script malicioso al abrir el archivo?",
+      "opciones": [
+        "Phishing mediante archivo PDF con macros maliciosas",
+        "Vishing con llamada telefónica solicitando credenciales",
+        "Ataque con unidad USB infectada que emula un teclado",
+        "Ingeniería social con SVG malicioso y código JavaScript incrustado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que los archivos PDF pueden contener scripts o exploits que aprovechan vulnerabilidades en el lector de PDF para ejecutar código malicioso al abrir el archivo.",
+      "id": "p6-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado con un archivo adjunto llamado 'presentacion.pptx' que, al abrirse, solicita habilitar macros para 'mostrar la animación correctamente'. El empleado activa las macros y ejecuta un script malicioso. ¿Qué técnica de ingeniería social está utilizando el atacante en este escenario?",
+      "opciones": [
+        "Uso de macros maliciosas en documentos de Office",
+        "Inyección de código en SVG",
+        "Ataque con USB infectado",
+        "Vishing"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los documentos de Office como PPTX pueden contener macros maliciosas que se ejecutan al habilitarlas, según el temario.",
+      "id": "p6-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante envía un mensaje de texto a un empleado indicando que su cuenta bancaria ha sido bloqueada y que debe hacer clic en un enlace para 'verificar su identidad'. El enlace lo redirige a una página falsa que recopila sus credenciales. Además, el mensaje incluye una amenaza de que su cuenta será suspendida en 24 horas si no actúa. ¿Qué dos técnicas de ingeniería social está combinando el atacante?",
+      "opciones": [
+        "Urgencia e intimidación",
+        "Autoridad y pretexting",
+        "Simpatía y phishing",
+        "Baiting y tailgating"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El atacante combina la urgencia (plazo de 24 horas) con intimidación (amenaza de suspensión) para aumentar la efectividad del engaño.",
+      "id": "p6-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social se basa en el uso de un archivo PDF malicioso que contiene código JavaScript o un exploit para aprovechar una vulnerabilidad en el lector de PDF de la víctima?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico",
+        "b) Ataque con archivo SVG",
+        "c) Ataque con PDF malicioso",
+        "d) Smishing"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los archivos PDF pueden contener scripts o exploits que aprovechan vulnerabilidades en el lector de PDF para ejecutar código malicioso al abrir el archivo.",
+      "id": "p6-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social implica el uso de un archivo PDF malicioso que contiene un exploit para aprovechar una vulnerabilidad en el lector de PDF de la víctima, permitiendo la ejecución de un script malicioso al abrir el archivo sin necesidad de que el usuario habilite macros o realice acciones adicionales?",
+      "opciones": [
+        "a) Uso de macros en documentos de Office para ejecutar código malicioso",
+        "b) Inclusión de código JavaScript o exploits en archivos PDF para aprovechar vulnerabilidades en el lector de PDF",
+        "c) Uso de archivos SVG con código HTML/JS incrustado que se ejecuta al visualizarse en el navegador",
+        "d) Emulación de un teclado mediante dispositivos USB para ejecutar comandos automáticamente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los archivos PDF pueden contener scripts o exploits que aprovechan vulnerabilidades en el lector de PDF, permitiendo la ejecución de código malicioso al abrir el archivo, sin requerir acciones adicionales del usuario como habilitar macros.",
+      "id": "p6-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado de una empresa con un archivo adjunto llamado 'informe_final.xlsx'. Al abrirlo, el archivo solicita habilitar macros para 'mostrar datos correctamente'. ¿Qué técnica de ingeniería social está explotando este ataque?",
+      "opciones": [
+        "a) Ataque con archivo SVG",
+        "b) Ataque con macros en documentos de Office",
+        "c) Vishing",
+        "d) Ataque con unidad USB infectada"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario señala que los documentos de Office pueden incluir macros maliciosas que, al habilitarse, recopilan información o instalan software no deseado.",
+      "id": "p6-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En comparación con el phishing mediante correo electrónico y el smishing, ¿qué característica principal distingue al vishing según el temario?",
+      "opciones": [
+        "a) Utiliza mensajes de texto para engañar a la víctima",
+        "b) Se realiza mediante llamadas telefónicas para suplantar identidad",
+        "c) Emplea archivos adjuntos maliciosos",
+        "d) Explotar vulnerabilidades en el navegador"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define el vishing como una técnica de ingeniería social que utiliza llamadas telefónicas para suplantar identidad y engañar a la víctima.",
+      "id": "p6-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social se basa en el uso de un archivo PDF malicioso que contiene un exploit para aprovechar una vulnerabilidad en el lector de PDF de la víctima, permitiendo la ejecución de un script malicioso al abrir el archivo sin necesidad de que el usuario habilite macros o realice acciones adicionales?",
+      "opciones": [
+        "a) Uso de un archivo PDF con macros maliciosas que requieren habilitación manual",
+        "b) Explotación de vulnerabilidades en el lector de PDF mediante código incrustado en el archivo",
+        "c) Infección a través de un dispositivo USB que emula un teclado para ejecutar comandos automáticos",
+        "d) Envío de un correo electrónico con un enlace malicioso que redirige a una página falsa"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los archivos PDF pueden contener exploits que aprovechan vulnerabilidades en el lector de PDF, ejecutando scripts maliciosos automáticamente al abrirse, sin necesidad de macros.",
+      "id": "p6-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social se basa en el uso de un archivo SVG malicioso que contiene código HTML o JavaScript incrustado, aprovechando que el formato SVG es en realidad un archivo XML y puede ejecutarse al visualizarse en un navegador?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico con archivo adjunto malicioso",
+        "b) Ataque con archivo SVG que contiene código JavaScript o HTML incrustado",
+        "c) Smishing mediante mensajes de texto con enlaces maliciosos",
+        "d) Vishing mediante llamadas telefónicas con suplantación de identidad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El formato SVG es un archivo XML que puede contener código HTML o JavaScript incrustado, el cual se ejecuta al visualizarse en un navegador, convirtiéndolo en un vector de amenaza para explotar vulnerabilidades.",
+      "id": "p6-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social implica el uso de un archivo PDF malicioso que contiene un exploit para aprovechar una vulnerabilidad en el lector de PDF de la víctima, permitiendo la ejecución de un script malicioso al abrir el archivo sin necesidad de que el usuario habilite macros o realice acciones adicionales?",
+      "opciones": [
+        "a) Smishing",
+        "b) Ataque mediante USB con emulación de teclado",
+        "c) Explotación de vulnerabilidad en PDF",
+        "d) Phishing mediante correo electrónico"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Esta técnica aprovecha vulnerabilidades en lectores de PDF para ejecutar código malicioso automáticamente, sin requerir interacción adicional del usuario como habilitar macros.",
+      "id": "p6-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social se basa en el uso de un archivo PDF malicioso que contiene un exploit para aprovechar una vulnerabilidad en el lector de PDF de la víctima, sin necesidad de que el usuario habilite macros ni realice acciones adicionales?",
+      "opciones": [
+        "a) Uso de macros en documentos de Office",
+        "b) Explotación de vulnerabilidades en archivos SVG",
+        "c) Explotación de vulnerabilidades en archivos PDF sin interacción del usuario",
+        "d) Uso de unidades USB infectadas que emulan un teclado"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Según el temario, los archivos PDF pueden contener exploits que aprovechan vulnerabilidades en el lector de PDF, permitiendo la ejecución de código malicioso al abrir el archivo sin necesidad de que el usuario habilite macros o realice acciones adicionales.",
+      "id": "p6-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social implica el uso de una extensión de navegador maliciosa para robar datos o instalar malware en el sistema de la víctima?",
+      "opciones": [
+        "a) Ataque con archivo SVG",
+        "b) Ataque con macros en documentos de Office",
+        "c) Ataque con extensión de navegador maliciosa",
+        "d) Vishing"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que las extensiones de navegador maliciosas tienen acceso a la actividad del navegador y pueden robar datos o instalar malware.",
+      "id": "p6-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un técnico de soporte de una empresa recibe una llamada de un supuesto empleado que dice estar trabajando desde casa y que necesita acceso remoto urgente a un servidor interno para solucionar un problema crítico. El técnico, sin verificar la identidad del llamante, le proporciona las credenciales de acceso. Sin embargo, al revisar los logs más tarde, se descubre que la llamada provino de un número internacional no registrado en la base de datos de la empresa y que el servidor no tenía ninguna incidencia reportada. ¿Qué técnica de ingeniería social combinó el atacante para maximizar la efectividad de este ataque?",
+      "opciones": [
+        "a) Vishing (suplantación de identidad por voz) combinado con pretexting (creación de un escenario falso de urgencia).",
+        "b) Phishing por correo electrónico (correo falso) combinado con la entrega de un dispositivo USB infectado.",
+        "c) Smishing (phishing por SMS) combinado con la explotación de una vulnerabilidad en un archivo SVG.",
+        "d) Pretexting (creación de un escenario falso) combinado con el envío de un archivo PDF malicioso con exploit."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El atacante utilizó vishing para suplantar la identidad de un empleado y pretexting al crear un escenario de urgencia falsa que presionó al técnico a actuar sin verificar la identidad del llamante.",
+      "id": "p6-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes vectores de amenaza NO se menciona explícitamente en el temario como un método común para distribuir malware a través de sistemas de mensajería?",
+      "opciones": [
+        "a) Correo electrónico con enlaces maliciosos",
+        "b) Mensajes de texto (SMS) con enlaces a páginas falsas",
+        "c) Archivos adjuntos en formato SVG incrustando código HTML/JavaScript",
+        "d) Llamadas telefónicas automatizadas con grabaciones de voz (robocalls)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona el correo electrónico y mensajes de texto como vectores comunes, así como archivos SVG maliciosos, pero no incluye robocalls como método de distribución de malware en sistemas de mensajería.",
+      "id": "p6-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado recibe un correo electrónico con un archivo adjunto llamado 'factura.pdf'. Al abrirlo, el lector de PDF ejecuta automáticamente un script que instala un troyano en el sistema sin requerir interacción del usuario. ¿Qué técnica de ingeniería social está explotando este ataque según el temario?",
+      "opciones": [
+        "a) Uso de macros maliciosas en documentos de Office",
+        "b) Explotación de vulnerabilidades en el lector de PDF mediante un exploit sin necesidad de macros",
+        "c) Inyección de código JavaScript en archivos SVG",
+        "d) Uso de unidades USB infectadas con emulación de teclado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que los archivos PDF pueden contener exploits que aprovechan vulnerabilidades en el lector de PDF, permitiendo la ejecución de scripts maliciosos sin necesidad de macros.",
+      "id": "p6-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social se basa en el uso de un archivo comprimido (como ZIP o RAR) que contiene malware oculto en su interior, aprovechando que el usuario no sospecha de su contenido al ser un formato común para compartir archivos?",
+      "opciones": [
+        "a) Inyección de código en macros de documentos de Office",
+        "b) Explotación de vulnerabilidades en archivos SVG mediante código HTML/JS incrustado",
+        "c) Distribución de malware a través de archivos comprimidos con extensiones engañosas o nombres llamativos",
+        "d) Uso de unidades USB que emulan un teclado para ejecutar comandos automáticos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los archivos comprimidos (ZIP, RAR) son un vector común donde los atacantes ocultan malware, ya que el usuario suele descomprimirlos sin sospechar de su contenido.",
+      "id": "p6-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante deja una unidad USB infectada en el estacionamiento de una empresa con una etiqueta que dice 'Proyecto Confidencial - Solo para el equipo directivo', ¿qué técnica de ingeniería social está combinando principalmente?",
+      "opciones": [
+        "a) Phishing y uso de dispositivos físicos",
+        "b) Smishing y vishing",
+        "c) Inyección de código en archivos SVG y phishing",
+        "d) Explotación de vulnerabilidades en lectores de PDF"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona el uso de unidades USB infectadas como vector de amenaza físico, combinado con técnicas de ingeniería social como el phishing (etiquetas engañosas).",
+      "id": "p6-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social implica el uso de una extensión de navegador maliciosa para robar datos o instalar malware en el sistema de la víctima?",
+      "opciones": [
+        "a) Phishing",
+        "b) Ataque mediante archivos SVG",
+        "c) Uso de extensiones de navegador maliciosas",
+        "d) Smishing"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario señala que las extensiones de navegador maliciosas pueden robar datos o instalar malware al tener acceso a la actividad del navegador.",
+      "id": "p6-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social se basa en el uso de un archivo comprimido (como ZIP o RAR) que contiene malware oculto en su interior, aprovechando que el usuario no sospecha de su contenido al ser un formato común para compartir archivos?",
+      "opciones": [
+        "a) Ataque mediante macro en documentos de Office",
+        "b) Ataque mediante archivo SVG malicioso",
+        "c) Ataque mediante archivo comprimido malicioso",
+        "d) Ataque mediante extensión de navegador maliciosa"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los archivos comprimidos (ZIP, RAR) son vectores comunes donde los atacantes ocultan malware, explotando la confianza del usuario en estos formatos.",
+      "id": "p6-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social se basa en el uso de un archivo comprimido (como ZIP o RAR) que contiene malware oculto en su interior, aprovechando que el usuario descomprime el archivo al creer que contiene un documento legítimo?",
+      "opciones": [
+        "a) Phishing con archivos SVG maliciosos",
+        "b) Uso de macros en documentos de Office",
+        "c) Inclusión de malware en archivos comprimidos (ZIP/RAR)",
+        "d) Extensiones de navegador maliciosas"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que los archivos comprimidos (ZIP, RAR) son un vector común donde los atacantes ocultan malware, aprovechando la confianza del usuario al descomprimir archivos que parecen legítimos.",
+      "id": "p6-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un técnico de soporte recibe una llamada de un supuesto empleado que dice estar trabajando desde casa y necesita acceso remoto urgente a un servidor interno para solucionar un problema crítico. El técnico, sin verificar la identidad, le proporciona las credenciales. ¿Qué técnica de ingeniería social está utilizando el atacante principalmente?",
+      "opciones": [
+        "a) Phishing",
+        "b) Vishing",
+        "c) Smishing",
+        "d) Ataque mediante unidades USB infectadas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe el vishing como suplantación de identidad por voz, aprovechando la confianza en llamadas telefónicas para engañar a la víctima.",
+      "id": "p6-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado de una empresa con un archivo adjunto llamado 'informe_trimestral.pdf'. Al abrir el archivo, el lector de PDF ejecuta automáticamente un exploit que aprovecha una vulnerabilidad conocida en el software (CVE-2023-12345) para instalar un ransomware en el sistema, sin requerir que el usuario habilite macros ni realice ninguna acción adicional. ¿Qué técnica de ingeniería social está explotando este ataque, combinada con otra técnica para maximizar su efectividad?",
+      "opciones": [
+        "a) Uso de un archivo PDF malicioso con exploit para vulnerabilidad en el lector de PDF, combinado con una técnica de *urgencia* (ej. mensaje que indica que el archivo contiene información crítica sin revisar).",
+        "b) Distribución de malware a través de un archivo comprimido (ZIP) oculto en un enlace de descarga en el correo, combinado con una técnica de *autoridad* (ej. suplantar el nombre de un directivo).",
+        "c) Uso de un archivo SVG malicioso con código JavaScript incrustado, combinado con una técnica de *confianza* (ej. etiquetar el archivo como 'Informe Confidencial - Solo para RRHH').",
+        "d) Explotación de una extensión de navegador maliciosa para robar datos, combinada con una técnica de *intimidación* (ej. mensaje que amenaza con bloquear el acceso a sistemas críticos si no se actúa)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque explota un exploit en un archivo PDF que se ejecuta automáticamente al abrirse, aprovechando una vulnerabilidad conocida en el lector de PDF. La técnica de *urgencia* se combina al etiquetar el archivo como 'informe crítico' para presionar al usuario a abrirlo sin revisión.",
+      "id": "p6-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado de una empresa con un archivo adjunto llamado 'plantilla_contrato.docx'. Al abrir el documento, no se activa ninguna macro ni se solicita habilitar contenido, pero el sistema del empleado comienza a enviar datos confidenciales a un servidor externo sin su conocimiento. Tras investigar, se descubre que el archivo explotó una vulnerabilidad conocida en la función de 'inserción de objetos' de Microsoft Word, permitiendo la ejecución de código arbitrario sin interacción del usuario. ¿Qué técnica de ingeniería social está explotando este ataque, combinada con un vector de amenaza específico según el temario?",
+      "opciones": [
+        "a) Uso de un archivo SVG malicioso que contiene código HTML/JavaScript incrustado, aprovechando que el formato SVG es XML y se ejecuta al visualizarse en un navegador.",
+        "b) Explotación de una vulnerabilidad en un documento de Office (como .docx) que permite la ejecución de código sin activar macros ni requerir interacción del usuario, combinada con un archivo adjunto como vector de amenaza.",
+        "c) Uso de un archivo PDF malicioso que contiene un exploit para aprovechar una vulnerabilidad en el lector de PDF de la víctima, sin necesidad de habilitar macros.",
+        "d) Técnica de phishing mediante un correo electrónico con un enlace malicioso que redirige a un sitio web falso para robar credenciales."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La respuesta correcta es la opción b, ya que describe la explotación de una vulnerabilidad en un documento de Office (.docx) que permite ejecución de código sin macros ni interacción, combinada con el vector de amenaza de archivos adjuntos en mensajes. El temario menciona que los archivos de Office pueden contener vulnerabilidades en sus funcionalidades (como inserción de objetos) que permiten ejecución de código malicioso sin necesidad de activar macros.",
+      "id": "p6-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social se basa en el envío de un mensaje de texto (SMS) que simula ser de una empresa de servicios públicos, indicando que hay un problema con el suministro y solicitando hacer clic en un enlace para 'resolverlo'?",
+      "opciones": [
+        "a) Phishing por correo electrónico",
+        "b) Smishing",
+        "c) Vishing",
+        "d) Pharming"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El smishing es una técnica de ingeniería social que utiliza mensajes de texto (SMS) para engañar a las víctimas, como simular ser una empresa de servicios públicos.",
+      "id": "p6-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social implica el uso de una unidad USB infectada que, al ser conectada a un sistema, emula un teclado y ejecuta comandos automáticamente para instalar malware o abrir una puerta trasera en el sistema de la víctima?",
+      "opciones": [
+        "a) Phishing mediante correo electrónico",
+        "b) Ataque mediante dispositivo físico (USB teclado)",
+        "c) Smishing mediante SMS",
+        "d) Vishing mediante llamada telefónica"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario describe que algunas unidades USB modificadas pueden emular un teclado y, al conectarse, ejecutar comandos automáticamente para instalar malware o abrir backdoors, aprovechando la confianza en dispositivos físicos.",
+      "id": "p6-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado con un archivo adjunto llamado 'factura.pdf'. Al abrirlo, el lector de PDF ejecuta automáticamente un exploit que instala malware sin requerir interacción del usuario. ¿Qué técnica de ingeniería social está explotando este ataque?",
+      "opciones": [
+        "a) Uso de macros en documentos de Office",
+        "b) Explotación de vulnerabilidades en el lector de PDF",
+        "c) Ingeniería social basada en archivos comprimidos",
+        "d) Uso de extensiones de navegador maliciosas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este ataque explota una vulnerabilidad en el lector de PDF para instalar malware sin necesidad de macros ni acciones adicionales del usuario.",
+      "id": "p6-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En comparación con el phishing por correo electrónico y el smishing, ¿qué característica principal distingue al vishing según el temario?",
+      "opciones": [
+        "a) Utiliza archivos adjuntos maliciosos",
+        "b) Se realiza mediante llamadas telefónicas para suplantar identidad",
+        "c) Exploita vulnerabilidades en navegadores",
+        "d) Utiliza dispositivos físicos como USB infectados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El vishing se caracteriza por el uso de llamadas telefónicas para engañar a las víctimas y obtener información confidencial.",
+      "id": "p6-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social implica el uso de un archivo comprimido (como ZIP o RAR) que contiene malware oculto en su interior, aprovechando que el usuario descomprime el archivo al creer que contiene un documento legítimo?",
+      "opciones": [
+        "a) Uso de macros en documentos de Office",
+        "b) Ingeniería social basada en archivos comprimidos",
+        "c) Explotación de vulnerabilidades en el lector de PDF",
+        "d) Uso de extensiones de navegador maliciosas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los atacantes ocultan malware en archivos comprimidos, aprovechando la confianza del usuario en formatos comunes como ZIP o RAR.",
+      "id": "p6-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de ingeniería social se basa en el uso de una extensión de navegador maliciosa que, al ser instalada, roba credenciales de inicio de sesión o inyecta publicidad no deseada en los sitios web visitados por la víctima?",
+      "opciones": [
+        "a) Phishing por correo electrónico",
+        "b) Extensión de navegador maliciosa",
+        "c) Ataque mediante USB con emulación de teclado",
+        "d) Smishing (phishing por SMS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que las extensiones de navegador maliciosas tienen acceso a la actividad del navegador y pueden robar datos o instalar malware, lo que las convierte en un vector de amenaza.",
+      "id": "p6-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de ingeniería social se basa en el uso de un archivo SVG malicioso que contiene código HTML o JavaScript incrustado, aprovechando que el formato SVG es en realidad un archivo XML?",
+      "opciones": [
+        "a) Uso de macros en documentos de Office",
+        "b) Explotación de vulnerabilidades en el lector de PDF",
+        "c) Ingeniería social basada en archivos SVG",
+        "d) Uso de extensiones de navegador maliciosas"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los archivos SVG pueden contener código HTML o JavaScript incrustado, que se ejecuta al visualizarse en un navegador debido a su naturaleza XML.",
+      "id": "p6-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes formatos de archivo NO puede contener código malicioso incrustado de forma nativa sin necesidad de que el usuario realice acciones como habilitar macros o descomprimir el archivo?",
+      "opciones": [
+        "a) PDF con exploit para vulnerabilidad conocida (CVE-2023-12345)",
+        "b) Documento de Word (.docx) con macros maliciosas",
+        "c) Archivo comprimido ZIP con malware oculto en su interior",
+        "d) Imagen en formato JPEG"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Los archivos JPEG no pueden contener código ejecutable ni scripts maliciosos de forma nativa, a diferencia de los formatos mencionados en las otras opciones que sí permiten incrustar malware o exploits.",
+      "id": "p6-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un técnico de una empresa recibe un correo electrónico de su proveedor de servicios de nube con un archivo adjunto llamado 'factura_enero.zip'. Al descomprimirlo, se encuentran dos archivos: 'factura.pdf' y 'resumen.xlsx'. Sin embargo, al abrir 'factura.pdf' en un navegador moderno, este no muestra el contenido esperado, sino que redirige a una página de inicio de sesión falsa para robar credenciales. Al analizar el archivo 'resumen.xlsx', se descubre que contiene una macro oculta que, al ejecutarse, descarga un troyano en el sistema. ¿Qué técnica de ingeniería social está explotando este ataque en combinación con otro vector de amenaza, según lo descrito en el temario?",
+      "opciones": [
+        "a) Uso de archivos comprimidos para ocultar malware combinado con un exploit en PDF que redirige a un sitio falso.",
+        "b) Phishing por correo electrónico con archivos adjuntos maliciosos y macros en documentos de Office.",
+        "c) Uso de extensiones de navegador maliciosas para robar credenciales y ejecutar macros.",
+        "d) Smishing mediante un archivo comprimido enviado por SMS con un exploit en PDF."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque combina el uso de un archivo comprimido (ZIP) para ocultar malware con un exploit en un archivo PDF que redirige a un sitio falso para robar credenciales, aprovechando la confianza en formatos comunes como PDF y archivos comprimidos.",
+      "id": "p6-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante envía un correo electrónico a un empleado de una empresa con un archivo adjunto llamado 'plantilla_contrato.docx'. Al abrir el documento, no se activa ninguna macro ni se solicita habilitar contenido, pero el sistema del empleado comienza a enviar datos confidenciales a un servidor externo sin su conocimiento. Tras investigar, se descubre que el archivo explotó una vulnerabilidad conocida en la función de 'inserción de objetos' de Microsoft Word. ¿Qué técnica de ingeniería social está explotando este ataque, combinada con un vector de amenaza específico?",
+      "opciones": [
+        "a) Uso de macros en documentos de Office",
+        "b) Explotación de vulnerabilidades en documentos de Office sin macros",
+        "c) Ingeniería social basada en archivos SVG",
+        "d) Uso de extensiones de navegador maliciosas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Este ataque explota una vulnerabilidad en documentos de Office (como la inserción de objetos) sin necesidad de macros, combinado con un correo electrónico como vector de amenaza.",
+      "id": "p6-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Common Threat Vectors",
+      "youtubeId": "4lAbGpTDZ18"
+    },
+    {
+      "titulo": "Phishing",
+      "youtubeId": "9SD6DRCKZFU"
+    },
+    {
+      "titulo": "Impersonation",
+      "youtubeId": "X3yoNAVuKwA"
+    },
+    {
+      "titulo": "Watering Hole Attacks",
+      "youtubeId": "z413PV6l_Ys"
+    },
+    {
+      "titulo": "Other Social Engineering Attacks",
+      "youtubeId": "akoDmeV3LQo"
+    }
+  ]
+}

@@ -1,0 +1,1418 @@
+{
+  "id": 8,
+  "titulo": "2.3 · Vulnerabilidades de hardware, nube y cadena de suministro",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LAS VULNERABILIDADES DE HARDWARE, NUBE Y CADENA DE SUMINISTRO son un componente crítico en la ciberseguridad moderna. Estas vulnerabilidades pueden comprometer sistemas, datos y redes enteras si no se gestionan adecuadamente. A continuación, se detallan los conceptos clave agrupados por categorías, junto con ejemplos prácticos y medidas de mitigación.\n\n\nVULNERABILIDADES DE HARDWARE\n\nLas vulnerabilidades de hardware se refieren a fallos de seguridad en dispositivos físicos que pueden ser explotados por atacantes. Estos dispositivos incluyen desde sistemas embebidos (IoT) hasta equipos de red y servidores legacy.\n\n\nDispositivos IoT y firmware\n\nLos dispositivos IoT (Internet de las Cosas) son equipos conectados a la red que ejecutan un sistema operativo interno llamado firmware. Este firmware es el responsable de gestionar las operaciones del dispositivo, pero suele ser opaco para los usuarios finales. Ejemplos comunes incluyen termostatos inteligentes, neveras, puertas de garaje y sistemas de climatización.\n\nEl firmware es desarrollado y actualizado exclusivamente por el fabricante, lo que plantea desafíos de seguridad. Muchos fabricantes no priorizan la seguridad del firmware, lo que puede dejar vulnerabilidades sin parchear durante largos períodos. Un caso destacado es el de los termostatos Train Comfort Link, que tardaron más de un año en recibir parches para vulnerabilidades conocidas.\n\n\nEnd of Life (EOL) y End of Service Life (EOSL)\n\nCuando un fabricante anuncia el fin de la vida útil (EOL) de un dispositivo, significa que dejará de venderse. Sin embargo, el soporte para actualizaciones de seguridad puede continuar durante un tiempo limitado. El verdadero riesgo surge cuando el dispositivo alcanza el fin del servicio de vida (EOSL), momento en el que el fabricante deja de proporcionar parches de seguridad. En este punto, el dispositivo se convierte en un riesgo crítico para la red.\n\n\nDispositivos legacy\n\nLos dispositivos legacy son equipos que llevan años en funcionamiento y ejecutan sistemas operativos o aplicaciones obsoletas. Estos sistemas pueden estar en EOSL o cerca de él, lo que los hace especialmente vulnerables. Las organizaciones deben evaluar el riesgo de mantener estos dispositivos frente a los costes y complejidades de reemplazarlos. En algunos casos, es necesario implementar medidas de mitigación, como reglas de firewall adicionales o firmas IPS específicas para sistemas operativos antiguos.\n\n\nVULNERABILIDADES DE VIRTUALIZACIÓN\n\nLa virtualización permite crear y gestionar múltiples máquinas virtuales (VMs) en un solo servidor físico. Aunque ofrece flexibilidad y eficiencia, también introduce vulnerabilidades únicas que no existen en entornos físicos tradicionales.\n\n\nVM Escape\n\nEl VM Escape es un ataque en el que un atacante logra escapar de una máquina virtual y acceder a otras VMs en el mismo hipervisor (hypervisor). Esto puede permitir el acceso a datos sensibles en múltiples sistemas simultáneamente. Un ejemplo real ocurrió en 2017 durante el concurso Pwn2Own, donde los atacantes explotaron vulnerabilidades en el navegador Microsoft Edge, el kernel de Windows 10 y el hipervisor VMware para saltar entre VMs.\n\n\nReutilización de recursos\n\nLos hipervisores asignan recursos como memoria, CPU y almacenamiento a las VMs. Sin embargo, si el hipervisor tiene un fallo en la gestión de recursos, una VM podría escribir en áreas de memoria compartidas y acceder a datos de otra VM. Esto se conoce como reutilización de recursos (resource reuse). Un hipervisor con un parche adecuado puede evitar este tipo de vulnerabilidades.\n\n\nVULNERABILIDADES ESPECÍFICAS DE LA NUBE\n\nLas plataformas en la nube ofrecen escalabilidad y accesibilidad, pero también introducen riesgos de seguridad si no se configuran correctamente. Las vulnerabilidades en la nube pueden afectar tanto a los datos como a las aplicaciones alojadas.\n\n\nConfiguraciones incorrectas\n\nLas configuraciones incorrectas son una de las principales causas de brechas de seguridad en la nube. Por ejemplo, el 76% de las organizaciones no utilizan autenticación multifactor (MFA) para acceder a sus consolas de gestión en la nube. Además, el 63% del código en la nube está sin parchear, incluyendo vulnerabilidades con un CVSS (Common Vulnerability Scoring System) superior a 7.\n\n\nAtaques de denegación de servicio (DoS/DDoS)\n\nLas aplicaciones en la nube son accesibles desde cualquier lugar del mundo, lo que las hace vulnerables a ataques de denegación de servicio (DoS) o denegación de servicio distribuido (DDoS). Estos ataques pueden inutilizar servicios críticos y afectar la disponibilidad de las aplicaciones.\n\n\nInyección de código\n\nLas vulnerabilidades como la inyección SQL, la inyección de comandos o el cross-site scripting (XSS) pueden permitir a los atacantes ejecutar código arbitrario en los sistemas de la nube. Un ejemplo reciente es la vulnerabilidad Log4j, que permitió a los atacantes ejecutar código remoto en sistemas afectados.\n\n\nVULNERABILIDADES EN LA CADENA DE SUMINISTRO\n\nLa cadena de suministro incluye todos los pasos desde la obtención de materias primas hasta la entrega del producto final al consumidor. Cualquier eslabón de esta cadena puede ser explotado para introducir vulnerabilidades o malware.\n\n\nProveedores de servicios y terceros\n\nLas organizaciones suelen depender de terceros para servicios como mantenimiento de redes, limpieza, nóminas o infraestructura en la nube. Si un proveedor de servicios es comprometido, los atacantes pueden acceder a los sistemas de la organización a través de ese proveedor. Un ejemplo notable es la brecha en Target en 2013, donde un proveedor de HVAC (calefacción, ventilación y aire acondicionado) fue infectado con malware, lo que permitió a los atacantes acceder a la red de Target y robar datos de tarjetas de crédito.\n\n\nHardware de terceros\n\nEl hardware adquirido de proveedores puede contener vulnerabilidades o incluso ser falsificado. Por ejemplo, en 2022, el Departamento de Seguridad Nacional de EE.UU. arrestó a un vendedor que distribuía switches y routers falsificados de Cisco. Estos dispositivos, fabricados en China, se veían y funcionaban como productos legítimos, pero contenían backdoors y vulnerabilidades.\n\n\nActualizaciones y código malicioso\n\nLas actualizaciones de software pueden ser explotadas si no se firman digitalmente o si el código es modificado por atacantes. Un caso emblemático es el ataque a SolarWinds Orion en 2020, donde los atacantes insertaron código malicioso en las actualizaciones de software. Este código fue firmado digitalmente y distribuido a miles de clientes, incluyendo agencias gubernamentales y empresas Fortune 500.\n\n\nVULNERABILIDADES POR CONFIGURACIÓN INCORRECTA\n\nLas configuraciones incorrectas son una de las causas más comunes de brechas de seguridad. Estas pueden ocurrir en cualquier sistema, desde servidores hasta dispositivos IoT.\n\n\nDatos expuestos en la nube\n\nEs común que los datos sensibles queden expuestos en la nube debido a configuraciones incorrectas. Por ejemplo, en 2017, se encontraron 14 millones de registros de Verizon expuestos en un repositorio de Amazon S3 sin protección. Aunque en este caso no hubo un ataque, demuestra lo fácil que es exponer datos por error.\n\n\nCuentas de administrador inseguras\n\nLas cuentas de administrador con contraseñas débiles o predeterminadas son un objetivo común para los atacantes. Por ejemplo, contraseñas como \"123456\" o \"password\" son fáciles de adivinar mediante ataques de fuerza bruta. Las mejores prácticas incluyen deshabilitar el inicio de sesión directo como administrador y usar cuentas con privilegios mínimos.\n\n\nProtocolos inseguros\n\nProtocolos como HTTP, FTP, SMTP e IMAP envían datos en texto claro, lo que permite a los atacantes interceptar información sensible. Herramientas como Wireshark pueden capturar este tráfico y exponer contraseñas, cookies y otros datos. Se recomienda usar versiones seguras de estos protocolos, como HTTPS, SFTP o SSH.\n\n\nDispositivos con credenciales predeterminadas\n\nMuchos dispositivos IoT vienen con credenciales predeterminadas que los usuarios rara vez cambian. Botnets como Mirai explotan estas credenciales para tomar el control de dispositivos y formar redes de bots. Los atacantes pueden entonces usar estos dispositivos para lanzar ataques DDoS o robar datos.\n\n\nPuertos abiertos innecesarios\n\nCada puerto abierto en un servidor es una posible entrada para los atacantes. Las reglas de firewall mal configuradas pueden dejar puertos abiertos sin necesidad, exponiendo servicios innecesariamente. Se recomienda auditar periódicamente las reglas de firewall para garantizar que solo los puertos esenciales estén abiertos.\n\n\nVULNERABILIDADES EN DISPOSITIVOS MÓVILES\n\nLos dispositivos móviles, como smartphones y tablets, son un objetivo atractivo para los atacantes debido a la cantidad de datos sensibles que almacenan y su conectividad constante.\n\n\nJailbreaking y rooting\n\nEl jailbreaking (iOS) y rooting (Android) son procesos que permiten a los usuarios eludir las restricciones de seguridad del sistema operativo. Esto puede exponer el dispositivo a malware y permitir la instalación de aplicaciones no autorizadas. En entornos empresariales, estos procesos violan las políticas de seguridad y pueden resultar en acciones disciplinarias.\n\n\nAplicaciones maliciosas\n\nLos usuarios pueden instalar aplicaciones de fuentes no confiables, lo que puede llevar a la instalación de malware. Las organizaciones suelen restringir la instalación de aplicaciones a tiendas oficiales o bibliotecas de aplicaciones aprobadas para mitigar este riesgo.\n\n\nVULNERABILIDADES ZERO-DAY\n\nLas vulnerabilidades zero-day son fallos de seguridad desconocidos para el fabricante del software y, por lo tanto, no tienen parches disponibles. Los atacantes pueden explotar estas vulnerabilidades antes de que sean descubiertas y parcheadas.\n\n\nExplotación de zero-day\n\nCuando una vulnerabilidad zero-day es explotada, los atacantes pueden tomar el control de sistemas sin que los administradores sean conscientes del riesgo. Por ejemplo, en 2023, se descubrieron vulnerabilidades zero-day en Chrome, Microsoft y Apple iOS que permitían la ejecución de código arbitrario y el escape de sandbox.\n\n\nSeguimiento de vulnerabilidades\n\nPara estar al tanto de las vulnerabilidades zero-day y otras amenazas, se recomienda consultar fuentes como el sitio web CVE (Common Vulnerabilities and Exposures) en cve.mitre.org. Este sitio proporciona información actualizada sobre vulnerabilidades conocidas y parches disponibles.\n\n\nMEDIDAS DE MITIGACIÓN GENERALES\n\nPara reducir el riesgo asociado a las vulnerabilidades de hardware, nube y cadena de suministro, se recomiendan las siguientes prácticas:\n\n- Mantener el firmware y el software actualizados en todos los dispositivos, especialmente en aquellos que no son de uso general.\n- Reemplazar dispositivos que hayan alcanzado el EOSL para garantizar la recepción de parches de seguridad.\n- Implementar segmentación de red para aislar dispositivos legacy y limitar su exposición.\n- Auditar regularmente las configuraciones de la nube para evitar exposiciones innecesarias.\n- Usar autenticación multifactor (MFA) en todos los sistemas accesibles desde Internet.\n- Verificar la autenticidad del hardware antes de implementarlo en la red.\n- Auditar periódicamente a los proveedores de servicios y terceros para garantizar que cumplan con los estándares de seguridad.\n- Deshabilitar cuentas de administrador predeterminadas y usar contraseñas robustas.\n- Implementar protocolos seguros como HTTPS, SFTP y SSH para proteger el tráfico de red.\n- Educar a los usuarios sobre los riesgos de jailbreaking, rooting y la instalación de aplicaciones no autorizadas.\n- Monitorizar fuentes como CVE para estar al tanto de nuevas vulnerabilidades y parches.\n\n\nAl adoptar estas medidas, las organizaciones pueden reducir significativamente el riesgo de explotación de vulnerabilidades en hardware, nube y cadena de suministro."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Vulnerabilidades de hardware, nube y cadena de suministro] --> B[Vulnerabilidades de hardware]\nA --> C[Vulnerabilidades de virtualización]\nA --> D[Vulnerabilidades específicas de la nube]\nA --> E[Vulnerabilidades en la cadena de suministro]\nA --> F[Vulnerabilidades por configuración incorrecta]\nA --> G[Vulnerabilidades en dispositivos móviles]\nA --> H[Vulnerabilidades zero-day]\n\nB --> B1[Dispositivos IoT y firmware]\nB --> B2[End of Life EOL y End of Service Life EOSL]\nB --> B3[Dispositivos legacy]\n\nC --> C1[VM Escape]\nC --> C2[Reutilización de recursos]\n\nD --> D1[Configuraciones incorrectas]\nD --> D2[Ataques DoS/DDoS]\nD --> D3[Inyección de código]\n\nE --> E1[Proveedores de servicios y terceros]\nE --> E2[Hardware de terceros]\nE --> E3[Actualizaciones y código malicioso]\n\nF --> F1[Datos expuestos en la nube]\nF --> F2[Cuentas de administrador inseguras]\nF --> F3[Protocolos inseguros]\nF --> F4[Dispositivos con credenciales predeterminadas]\nF --> F5[Puertos abiertos innecesarios]\n\nG --> G1[Jailbreaking y rooting]\nG --> G2[Aplicaciones maliciosas]\n\nH --> H1[Explotación de zero-day]\nH --> H2[Seguimiento de vulnerabilidades]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc8-01",
+      "pregunta": "¿Qué es el firmware y por qué es un riesgo de seguridad en dispositivos IoT?",
+      "respuesta": "El firmware es el sistema operativo interno de un dispositivo IoT que gestiona sus operaciones. Es un riesgo porque los fabricantes no siempre priorizan su seguridad, dejando vulnerabilidades sin parchear durante largos períodos."
+    },
+    {
+      "id": "fc8-02",
+      "pregunta": "¿Qué diferencia hay entre End of Life (EOL) y End of Service Life (EOSL) en un dispositivo?",
+      "respuesta": "EOL significa que el fabricante dejará de vender el dispositivo, pero puede seguir proporcionando parches. EOSL significa que el fabricante deja de dar soporte y parches de seguridad, convirtiendo al dispositivo en un riesgo crítico."
+    },
+    {
+      "id": "fc8-03",
+      "pregunta": "¿Qué es un VM Escape y por qué es peligroso?",
+      "respuesta": "Un VM Escape es un ataque en el que un atacante escapa de una máquina virtual y accede a otras VMs en el mismo hipervisor. Es peligroso porque permite el acceso a datos sensibles en múltiples sistemas simultáneamente."
+    },
+    {
+      "id": "fc8-04",
+      "pregunta": "¿Qué es la reutilización de recursos en virtualización y cómo puede explotarse?",
+      "respuesta": "Es un fallo en el hipervisor que permite a una VM escribir en áreas de memoria compartidas y acceder a datos de otra VM. Esto puede explotarse si el hipervisor no gestiona correctamente los recursos asignados."
+    },
+    {
+      "id": "fc8-05",
+      "pregunta": "¿Cuáles son las principales vulnerabilidades específicas de la nube según el material?",
+      "respuesta": "Configuraciones incorrectas, ataques DoS/DDoS, inyección de código (como Log4j), y falta de autenticación multifactor (MFA) en consolas de gestión."
+    },
+    {
+      "id": "fc8-06",
+      "pregunta": "¿Qué es una vulnerabilidad en la cadena de suministro y qué ejemplo destacado se menciona?",
+      "respuesta": "Es una vulnerabilidad introducida en cualquier eslabón de la cadena de suministro, desde materias primas hasta proveedores de servicios. Un ejemplo destacado es la brecha en Target en 2013, donde un proveedor de HVAC fue comprometido y permitió el acceso a la red de Target."
+    },
+    {
+      "id": "fc8-07",
+      "pregunta": "¿Qué es un ataque de denegación de servicio (DoS) y cómo afecta a las aplicaciones en la nube?",
+      "respuesta": "Es un ataque que inutiliza un servicio al saturar sus recursos. En la nube, las aplicaciones son accesibles globalmente, lo que las hace vulnerables a ataques DoS o DDoS que afectan su disponibilidad."
+    },
+    {
+      "id": "fc8-08",
+      "pregunta": "¿Qué son las credenciales predeterminadas y cómo explotan los atacantes este riesgo?",
+      "respuesta": "Son credenciales de inicio de sesión configuradas por el fabricante y que los usuarios rara vez cambian. Botnets como Mirai explotan estas credenciales para tomar el control de dispositivos IoT y formar redes de bots."
+    },
+    {
+      "id": "fc8-09",
+      "pregunta": "¿Qué es jailbreaking y rooting en dispositivos móviles y por qué son riesgosos?",
+      "respuesta": "Jailbreaking (iOS) y rooting (Android) son procesos que eluden las restricciones de seguridad del sistema operativo. Son riesgosos porque exponen el dispositivo a malware y permiten la instalación de aplicaciones no autorizadas."
+    },
+    {
+      "id": "fc8-10",
+      "pregunta": "¿Qué es una vulnerabilidad zero-day y por qué es difícil de mitigar?",
+      "respuesta": "Es una vulnerabilidad desconocida para el fabricante, por lo que no hay parches disponibles. Es difícil de mitigar porque los atacantes pueden explotarla antes de que sea descubierta y parcheada."
+    },
+    {
+      "id": "fc8-11",
+      "pregunta": "¿Qué es el ataque SolarWinds Orion y qué vulnerabilidad explotó?",
+      "respuesta": "Fue un ataque en el que los atacantes insertaron código malicioso en las actualizaciones de software de SolarWinds Orion. Explotó la cadena de suministro al comprometer las actualizaciones firmadas digitalmente y distribuirlas a miles de clientes."
+    },
+    {
+      "id": "fc8-12",
+      "pregunta": "¿Qué es el cross-site scripting (XSS) y cómo puede afectar a las aplicaciones en la nube?",
+      "respuesta": "Es una vulnerabilidad que permite a los atacantes inyectar scripts maliciosos en páginas web vistas por otros usuarios. En la nube, puede permitir el acceso no autorizado a datos sensibles o la ejecución de código arbitrario."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes dispositivos es MÁS susceptible a vulnerabilidades por firmware desactualizado según el temario?",
+      "opciones": [
+        "a) Un servidor empresarial con sistema operativo Windows Server 2022",
+        "b) Un termostato inteligente conectado a la red",
+        "c) Un router de red doméstico con soporte actualizado",
+        "d) Un smartphone con Android 14 y actualizaciones automáticas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los dispositivos IoT como termostatos inteligentes suelen tener firmware desarrollado por fabricantes que no priorizan la seguridad, dejando vulnerabilidades sin parchear durante largos períodos.",
+      "id": "p8-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de vulnerabilidades de hardware, ¿qué diferencia existe entre EOL y EOSL?",
+      "opciones": [
+        "a) EOL indica que el dispositivo deja de fabricarse, mientras que EOSL significa que el fabricante deja de venderlo pero sigue dando soporte.",
+        "b) EOL significa que el dispositivo deja de venderse, pero el soporte para parches de seguridad puede continuar temporalmente; EOSL es cuando el fabricante deja de proporcionar parches.",
+        "c) EOL y EOSL son lo mismo, pero se usan en distintos países.",
+        "d) EOSL es un estándar de seguridad para dispositivos IoT, mientras que EOL aplica solo a servidores."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "EOL (End of Life) marca el fin de la venta del dispositivo, mientras que EOSL (End of Service Life) indica el fin del soporte de seguridad, convirtiéndolo en un riesgo crítico.",
+      "id": "p8-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante logra escapar de una máquina virtual y acceder a otras VMs en el mismo hipervisor. ¿Qué tipo de vulnerabilidad se está explotando?",
+      "opciones": [
+        "a) Reutilización de recursos",
+        "b) VM Escape",
+        "c) Inyección de código",
+        "d) Denegación de servicio distribuido"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El VM Escape es un ataque donde un atacante escapa de una máquina virtual para acceder a otras VMs en el mismo hipervisor, como ocurrió en el concurso Pwn2Own 2017.",
+      "id": "p8-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un ejemplo de vulnerabilidad en la cadena de suministro según el temario?",
+      "opciones": [
+        "a) Un proveedor de HVAC infectado con malware que permite acceder a la red de una organización.",
+        "b) Hardware falsificado de Cisco con backdoors distribuido por un vendedor.",
+        "c) Un ataque que explota una vulnerabilidad zero-day en un navegador web.",
+        "d) Código malicioso insertado en actualizaciones de software de SolarWinds Orion."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las vulnerabilidades zero-day son fallos desconocidos para el fabricante y no están relacionadas con la cadena de suministro, que implica dependencia de terceros o proveedores.",
+      "id": "p8-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red descubre que un dispositivo IoT en la empresa tiene credenciales predeterminadas que nunca se han cambiado. ¿Qué riesgo principal representa esto según el temario?",
+      "opciones": [
+        "a) Exposición de datos sensibles en repositorios en la nube.",
+        "b) Posible formación de una red de bots para ataques DDoS, como ocurrió con Mirai.",
+        "c) Vulnerabilidades en el hipervisor por reutilización de recursos.",
+        "d) Configuraciones incorrectas en la consola de gestión de la nube."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los dispositivos IoT con credenciales predeterminadas pueden ser explotados por atacantes para formar botnets, como el caso de Mirai que usó credenciales como 'admin/admin'.",
+      "id": "p8-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de seguridad detecta que un servidor legado en la red no recibe parches de seguridad desde hace más de 2 años. ¿Qué medida de mitigación sería MENOS efectiva para reducir el riesgo?",
+      "opciones": [
+        "a) Implementar reglas de firewall adicionales para limitar su exposición.",
+        "b) Reemplazar el dispositivo por uno más moderno con soporte actualizado.",
+        "c) Configurar el servidor para que use un protocolo inseguro como FTP para transferir datos.",
+        "d) Aislar el dispositivo en una red segmentada con acceso restringido."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Usar protocolos inseguros como FTP aumenta el riesgo de exposición de datos, especialmente en dispositivos sin soporte de seguridad.",
+      "id": "p8-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de nube, un atacante explota una vulnerabilidad en una aplicación alojada para ejecutar código arbitrario en el sistema. ¿Qué tipo de vulnerabilidad se está explotando?",
+      "opciones": [
+        "a) Inyección de código, como inyección SQL o XSS.",
+        "b) Denegación de servicio distribuido (DDoS).",
+        "c) VM Escape en el hipervisor de la nube.",
+        "d) Credenciales predeterminadas en la consola de gestión."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las vulnerabilidades como inyección SQL, inyección de comandos o XSS permiten a los atacantes ejecutar código arbitrario en sistemas afectados, como ocurrió con la vulnerabilidad Log4j.",
+      "id": "p8-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa autenticación multifactor (MFA) en todas sus consolas de gestión en la nube. ¿Qué riesgo principal está mitigando según el temario?",
+      "opciones": [
+        "a) Configuraciones incorrectas que exponen datos sensibles.",
+        "b) Ataques de denegación de servicio (DoS/DDoS).",
+        "c) Acceso no autorizado a sistemas críticos por credenciales comprometidas.",
+        "d) Vulnerabilidades zero-day en el firmware de los dispositivos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El MFA reduce el riesgo de acceso no autorizado a sistemas críticos, ya que añade una capa de seguridad adicional más allá de las credenciales.",
+      "id": "p8-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante intercepta tráfico de red que viaja en texto claro usando una herramienta como Wireshark. ¿Qué tipo de vulnerabilidad está explotando?",
+      "opciones": [
+        "a) Reutilización de recursos en un hipervisor.",
+        "b) Protocolos inseguros como HTTP, FTP o SMTP que envían datos sin cifrado.",
+        "c) Credenciales predeterminadas en dispositivos IoT.",
+        "d) Vulnerabilidades en la cadena de suministro de hardware."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Protocolos como HTTP, FTP o SMTP envían datos en texto claro, lo que permite a los atacantes interceptar información sensible con herramientas como Wireshark.",
+      "id": "p8-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un empleado realiza jailbreaking en su dispositivo móvil para instalar aplicaciones no autorizadas. ¿Qué riesgo de seguridad está asumiendo la organización según el temario?",
+      "opciones": [
+        "a) Exposición de datos en repositorios de la nube por configuraciones incorrectas.",
+        "b) Vulnerabilidades en el hipervisor por escape de VM.",
+        "c) Exposición a malware y elusión de políticas de seguridad empresariales.",
+        "d) Ataques de denegación de servicio en la red interna."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El jailbreaking o rooting elude las restricciones de seguridad del sistema operativo, exponiendo el dispositivo a malware y violando políticas de seguridad empresariales.",
+      "id": "p8-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué diferencia existe entre una vulnerabilidad de hardware por firmware desactualizado y una por dispositivo en EOSL según el temario?",
+      "opciones": [
+        "El firmware desactualizado afecta solo a dispositivos IoT, mientras que EOSL aplica a cualquier hardware sin soporte.",
+        "El firmware desactualizado implica falta de parches en el software interno del dispositivo, mientras que EOSL significa que el fabricante ya no proporciona parches de seguridad.",
+        "EOSL es un estado temporal que precede al fin de soporte, mientras que el firmware desactualizado siempre implica riesgo de explotación.",
+        "Ambas vulnerabilidades son equivalentes, ya que en ambos casos el dispositivo no recibe parches de seguridad."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El firmware desactualizado se refiere a la falta de parches en el software interno del dispositivo, mientras que EOSL indica que el fabricante ha dejado de proporcionar parches de seguridad para el hardware.",
+      "id": "p8-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red detecta que un servidor legado en la red no recibe parches de seguridad desde hace más de 2 años. ¿Qué medida de mitigación sería MÁS efectiva para reducir el riesgo según el temario?",
+      "opciones": [
+        "Implementar reglas de firewall adicionales para restringir el acceso al servidor.",
+        "Reemplazar el servidor por un dispositivo moderno que aún reciba soporte.",
+        "Configurar un sistema de detección de intrusos (IDS) para monitorear el tráfico hacia el servidor.",
+        "Desconectar el servidor de la red para evitar su explotación."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La medida más efectiva es reemplazar el servidor legado por un dispositivo moderno que aún reciba soporte y parches de seguridad, según las recomendaciones del temario.",
+      "id": "p8-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de vulnerabilidad se relaciona directamente con la explotación de hardware falso o modificado en la cadena de suministro según el temario?",
+      "opciones": [
+        "a) Vulnerabilidades por firmware desactualizado",
+        "b) Vulnerabilidades por hardware de terceros",
+        "c) Vulnerabilidades por configuraciones incorrectas en la nube",
+        "d) Vulnerabilidades por dispositivos en EOSL"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el hardware de terceros puede contener vulnerabilidades o incluso ser falsificado, como en el caso de switches y routers falsificados de Cisco con backdoors.",
+      "id": "p8-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de nube, un atacante explota una vulnerabilidad en una aplicación alojada para ejecutar código arbitrario en el sistema. ¿Qué tipo de vulnerabilidad se está explotando según el temario?",
+      "opciones": [
+        "Inyección de código.",
+        "Configuración incorrecta.",
+        "Denegación de servicio (DoS).",
+        "Escape de máquina virtual (VM Escape)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La ejecución de código arbitrario en una aplicación alojada en la nube se debe a vulnerabilidades como inyección de código (ejemplo: Log4j), según el temario.",
+      "id": "p8-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante logra interceptar tráfico de red que viaja en texto claro usando una herramienta como Wireshark. ¿Qué tipo de vulnerabilidad está explotando?",
+      "opciones": [
+        "Protocolo inseguro (HTTP, FTP, SMTP).",
+        "Reutilización de recursos en hipervisores.",
+        "Firmware desactualizado en dispositivos IoT.",
+        "Configuración incorrecta en cuentas de administrador."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El tráfico en texto claro es explotado mediante protocolos inseguros como HTTP o FTP, que no cifran la información, según el temario.",
+      "id": "p8-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué riesgo principal representa la falta de autenticación multifactor (MFA) en las consolas de gestión en la nube según el temario?",
+      "opciones": [
+        "Acceso no autorizado a sistemas críticos.",
+        "Infección por malware en dispositivos IoT.",
+        "Escape de máquina virtual (VM Escape).",
+        "Denegación de servicio (DoS) en la red."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La falta de MFA en consolas de gestión en la nube aumenta el riesgo de acceso no autorizado a sistemas críticos, según el temario.",
+      "id": "p8-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante explota una vulnerabilidad zero-day en un hipervisor para saltar de una máquina virtual a otra en el mismo servidor. ¿Qué tipo de ataque está ocurriendo?",
+      "opciones": [
+        "Escape de máquina virtual (VM Escape).",
+        "Reutilización de recursos (resource reuse).",
+        "Inyección de código en la nube.",
+        "Ataque de denegación de servicio (DoS)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El ataque descrito corresponde a un VM Escape, donde un atacante logra escapar de una VM para acceder a otras en el mismo hipervisor, según el temario.",
+      "id": "p8-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes es un riesgo directo asociado a la reutilización de recursos en entornos de virtualización según el temario?",
+      "opciones": [
+        "a) Un atacante puede saltar de una máquina virtual a otra accediendo a datos de otros sistemas",
+        "b) Los dispositivos IoT pueden ser controlados remotamente sin autenticación",
+        "c) El firmware desactualizado en servidores legacy permite ejecución de código arbitrario",
+        "d) Las actualizaciones de software en la nube son firmadas digitalmente sin verificación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La reutilización de recursos en hipervisores puede permitir que una VM acceda a áreas de memoria compartidas y datos de otras VMs, explotando esta vulnerabilidad para filtrar información sensible.",
+      "id": "p8-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa ha implementado un nuevo sistema de control de acceso basado en IoT para gestionar el acceso a sus instalaciones. El fabricante del sistema recomienda actualizar el firmware cada 6 meses, pero la empresa, al no priorizar la seguridad, ha dejado pasar 18 meses sin aplicar ninguna actualización. Durante una auditoría de seguridad, se descubre que el firmware desactualizado contiene una vulnerabilidad conocida en el protocolo MQTT que permite la ejecución remota de comandos (RCE). ¿Qué combinación de medidas de mitigación sería la MÁS efectiva para reducir el riesgo inmediato en este escenario?",
+      "opciones": [
+        "a) Desconectar temporalmente el sistema de IoT de la red corporativa, implementar un firewall específico para filtrar tráfico MQTT no autorizado y contactar urgentemente al fabricante para recibir un parche de emergencia.",
+        "b) Realizar un escaneo de vulnerabilidades en el sistema para identificar otros fallos, actualizar manualmente el firmware usando una copia local descargada hace 6 meses y reiniciar el dispositivo para aplicar los cambios.",
+        "c) Implementar un sistema de autenticación adicional en el dispositivo IoT mediante certificados digitales y establecer un túnel VPN dedicado para todo el tráfico MQTT, sin necesidad de actualizar el firmware por ahora.",
+        "d) Aislar completamente el sistema de IoT en una red VLAN aislada, bloquear todos los puertos excepto los necesarios para la operación básica y monitorear el tráfico en busca de actividades sospechosas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La medida más efectiva es desconectar el sistema temporalmente para evitar explotación inmediata, implementar un firewall específico para el protocolo MQTT (que es el vector de ataque) y contactar al fabricante para un parche urgente, ya que el firmware desactualizado es la raíz del problema según el temario.",
+      "id": "p8-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa ha contratado un servicio de videovigilancia basado en IoT para sus instalaciones. Los dispositivos de cámaras están configurados para enviar alertas en tiempo real a un servidor en la nube mediante el protocolo MQTT. Durante una auditoría de seguridad, se descubre que el firmware de las cámaras no ha sido actualizado en más de 2 años, y el fabricante ya no proporciona soporte (EOSL). Además, se identifica que el protocolo MQTT está configurado para enviar credenciales en texto claro. ¿Qué combinación de vulnerabilidades está presente en este escenario según el temario?",
+      "opciones": [
+        "a) Vulnerabilidad por firmware desactualizado en dispositivos IoT, exposición de credenciales por protocolo inseguro (MQTT en texto claro) y riesgo por dispositivos en EOSL.",
+        "b) Vulnerabilidad por reutilización de recursos en hipervisores, inyección de código en aplicaciones en la nube y credenciales predeterminadas en dispositivos IoT.",
+        "c) Vulnerabilidad por configuración incorrecta en la nube, ataque de denegación de servicio (DDoS) a las cámaras IoT y escape de máquina virtual (VM Escape).",
+        "d) Vulnerabilidad por hardware falso en la cadena de suministro, ataque zero-day a las cámaras IoT y autenticación multifactor (MFA) deshabilitada en la nube."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario describe vulnerabilidades por firmware desactualizado en dispositivos IoT (riesgo de explotación de vulnerabilidades conocidas), protocolo inseguro (MQTT en texto claro que expone credenciales) y dispositivos en EOSL (sin soporte de seguridad). Las otras opciones incluyen vulnerabilidades no mencionadas en el temario para este contexto.",
+      "id": "p8-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes dispositivos IoT es MÁS susceptible a vulnerabilidades por firmware desactualizado según el temario?",
+      "opciones": [
+        "a) Un termostato inteligente con firmware actualizado hace 3 meses.",
+        "b) Un sistema de climatización con firmware desactualizado hace 18 meses y sin soporte del fabricante.",
+        "c) Un router doméstico con firmware actualizado hace 6 meses.",
+        "d) Un sistema de seguridad con firmware actualizado hace 1 mes."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los dispositivos en EOSL (fin del servicio de vida) no reciben parches de seguridad, lo que los hace críticos. El temario destaca que el firmware desactualizado en dispositivos IoT es un riesgo grave, especialmente cuando el fabricante ya no proporciona soporte.",
+      "id": "p8-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia existe entre una vulnerabilidad por firmware desactualizado y una por dispositivo en EOSL según el temario?",
+      "opciones": [
+        "a) El firmware desactualizado puede parchearse si el fabricante aún lo soporta, mientras que los dispositivos en EOSL no reciben parches en absoluto.",
+        "b) Ambos conceptos son lo mismo y se refieren a dispositivos sin soporte.",
+        "c) Solo los dispositivos en EOSL pueden tener vulnerabilidades en el firmware.",
+        "d) El firmware desactualizado afecta solo a hardware nuevo, mientras que EOSL afecta a hardware antiguo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario diferencia que el firmware desactualizado puede parchearse si el fabricante aún lo soporta, pero los dispositivos en EOSL no reciben parches, convirtiéndose en un riesgo crítico.",
+      "id": "p8-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante logra ejecutar código arbitrario en un servidor en la nube explotando una vulnerabilidad en una aplicación alojada. ¿Qué tipo de vulnerabilidad se está explotando?",
+      "opciones": [
+        "a) Inyección de código.",
+        "b) VM Escape.",
+        "c) Reutilización de recursos.",
+        "d) Denegación de servicio (DoS)."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que vulnerabilidades como inyección SQL, inyección de comandos o XSS permiten ejecutar código arbitrario en sistemas de la nube.",
+      "id": "p8-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un riesgo asociado a la reutilización de recursos en entornos de virtualización según el temario?",
+      "opciones": [
+        "a) Una VM accede a datos de otra VM debido a un fallo en la gestión de memoria del hipervisor.",
+        "b) Un atacante explota una vulnerabilidad zero-day en el hipervisor para saltar entre VMs.",
+        "c) Una VM escribe en áreas de memoria compartidas y accede a datos sensibles de otra VM.",
+        "d) Un hipervisor sin parches permite que una VM modifique recursos asignados a otra VM."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la reutilización de recursos como un fallo en la gestión de recursos del hipervisor que permite el acceso no autorizado entre VMs. La explotación de vulnerabilidades zero-day no está directamente relacionada con este concepto.",
+      "id": "p8-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de vulnerabilidad se relaciona directamente con la explotación de hardware falsificado o modificado en la cadena de suministro, según el temario?",
+      "opciones": [
+        "a) Inyección de código en actualizaciones de software",
+        "b) Backdoors en dispositivos de red de terceros",
+        "c) Escape de máquina virtual (VM Escape)",
+        "d) Credenciales predeterminadas en dispositivos IoT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Según el temario, el hardware falsificado o modificado puede contener backdoors que permiten a los atacantes acceder a sistemas o redes. Un ejemplo citado es la distribución de switches y routers falsificados de Cisco con vulnerabilidades integradas.",
+      "id": "p8-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de nube, un atacante explota una vulnerabilidad en una API mal configurada para acceder a datos sensibles de otros clientes. ¿Qué tipo de vulnerabilidad se está explotando?",
+      "opciones": [
+        "a) Configuración incorrecta en la nube.",
+        "b) Inyección de código.",
+        "c) VM Escape.",
+        "d) Reutilización de recursos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que las configuraciones incorrectas en la nube (como APIs mal configuradas) son una causa común de brechas de seguridad, exponiendo datos sensibles.",
+      "id": "p8-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa contrata un servicio de limpieza que requiere acceso a su red para operar. Durante una auditoría, se descubre que el proveedor de servicios tiene credenciales débiles y no aplica MFA. ¿Qué riesgo principal está asumiendo la empresa según el temario?",
+      "opciones": [
+        "a) Exposición de datos en texto claro.",
+        "b) Acceso no autorizado a la red a través del proveedor comprometido.",
+        "c) Escape de VM a otros sistemas.",
+        "d) Infección por malware en dispositivos IoT."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que si un proveedor de servicios es comprometido, los atacantes pueden acceder a los sistemas de la organización a través de ese proveedor (ejemplo: brecha en Target en 2013).",
+      "id": "p8-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de vulnerabilidad en la nube se relaciona directamente con la exposición de datos sensibles debido a la falta de autenticación adecuada en las configuraciones de almacenamiento?",
+      "opciones": [
+        "a) Inyección de código",
+        "b) VM Escape",
+        "c) Datos expuestos en almacenamiento en la nube",
+        "d) Ataques de denegación de servicio (DDoS)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La exposición de datos sensibles en la nube ocurre cuando configuraciones incorrectas, como la falta de autenticación en almacenamiento, permiten que terceros accedan a información confidencial.",
+      "id": "p8-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un equipo de seguridad detecta que un servidor legado en la red no recibe parches de seguridad desde hace más de 2 años y el fabricante ya no proporciona soporte. ¿Qué medida de mitigación sería MENOS efectiva para reducir el riesgo?",
+      "opciones": [
+        "a) Implementar reglas de firewall adicionales para limitar su exposición.",
+        "b) Reemplazar el servidor por un dispositivo moderno con soporte activo.",
+        "c) Aplicar un parche no oficial descargado de un foro de terceros.",
+        "d) Segmentar la red para aislar el dispositivo y reducir su impacto."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario recomienda reemplazar dispositivos en EOSL o implementar medidas como segmentación de red. Aplicar parches no oficiales no es una práctica segura y puede introducir más riesgos.",
+      "id": "p8-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa de logística utiliza routers industriales de un fabricante que anunció su EOL hace 6 meses, pero aún no ha alcanzado el EOSL. El equipo de TI descubre que el fabricante ha publicado parches críticos para una vulnerabilidad en el protocolo de gestión remota (SNMP) que permite la ejecución remota de comandos (RCE) en estos dispositivos. Sin embargo, la implementación de estos parches requiere una actualización manual del firmware, un proceso que el fabricante no ha automatizado y que los técnicos de la empresa consideran complejo y propenso a errores. ¿Qué combinación de medidas sería la MÁS efectiva para reducir el riesgo inmediato en este escenario según el temario?",
+      "opciones": [
+        "a) Implementar un firewall con reglas estrictas para bloquear el tráfico SNMP hacia estos routers y aislarlos en una VLAN dedicada, combinado con la sustitución progresiva de estos dispositivos por modelos con soporte activo.",
+        "b) Deshabilitar completamente el protocolo SNMP en los routers y reemplazarlo con un sistema de gestión basado en API REST con autenticación multifactor (MFA), aunque esto implique una interrupción temporal en la monitorización remota.",
+        "c) Contratar a un proveedor externo para que aplique los parches de firmware de forma manual, ya que el fabricante ya no ofrece soporte directo, y documentar el proceso para futuras actualizaciones.",
+        "d) Configurar un sistema de detección de intrusos (IDS) en la red para alertar sobre intentos de explotación de la vulnerabilidad SNMP, mientras se negocia con el fabricante para que lance una actualización automatizada del firmware."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La opción b aborda el riesgo de la vulnerabilidad SNMP deshabilitándolo por completo y reemplazándolo con un método más seguro (API REST con MFA), lo que mitiga el riesgo inmediato sin depender de actualizaciones manuales. Las otras opciones no eliminan la vulnerabilidad subyacente o dependen de procesos complejos y no garantizados.",
+      "id": "p8-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto de vulnerabilidades de hardware, ¿qué diferencia existe entre una vulnerabilidad por firmware desactualizado y una por dispositivo en EOSL?",
+      "opciones": [
+        "El firmware desactualizado puede parchearse con actualizaciones posteriores, mientras que los dispositivos en EOSL no reciben más parches de seguridad del fabricante.",
+        "Los dispositivos en EOSL siempre tienen firmware desactualizado, pero no al revés.",
+        "Las vulnerabilidades por firmware desactualizado solo afectan a dispositivos IoT, mientras que los dispositivos en EOSL son exclusivos de servidores legacy.",
+        "El firmware desactualizado se debe a errores de configuración del usuario, mientras que los dispositivos en EOSL son responsabilidad exclusiva del fabricante."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El firmware desactualizado puede corregirse mediante parches proporcionados por el fabricante, mientras que los dispositivos en EOSL ya no reciben soporte ni actualizaciones de seguridad.",
+      "id": "p8-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué riesgo principal representa la utilización de protocolos inseguros como HTTP o FTP en dispositivos IoT según el temario?",
+      "opciones": [
+        "a) Permite la interceptación de credenciales y datos sensibles en texto claro",
+        "b) Facilita la ejecución remota de código (RCE) en el dispositivo",
+        "c) Aumenta la probabilidad de ataques de denegación de servicio (DoS)",
+        "d) Provoca la saturación del ancho de banda de la red"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los protocolos inseguros como HTTP o FTP envían datos sin cifrado, lo que permite a los atacantes interceptar información sensible como credenciales o datos de configuración usando herramientas como Wireshark.",
+      "id": "p8-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red descubre que un servidor legado en la red no recibe parches de seguridad desde hace más de 2 años. ¿Qué medida de mitigación sería MENOS efectiva para reducir el riesgo según el temario?",
+      "opciones": [
+        "Implementar reglas de firewall adicionales para limitar el acceso al servidor.",
+        "Reemplazar el servidor por un dispositivo moderno con soporte actualizado.",
+        "Confiar en que el servidor no será explotado porque no es crítico para la red.",
+        "Aplicar firmas IPS específicas para sistemas operativos antiguos."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Confiar en que un servidor legacy no será explotado es una medida ineficaz, ya que estos dispositivos son altamente vulnerables y carecen de parches.",
+      "id": "p8-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de vulnerabilidad está directamente relacionada con la explotación de hardware modificado o falsificado en la cadena de suministro?",
+      "opciones": [
+        "a) Vulnerabilidad por firmware desactualizado en dispositivos IoT",
+        "b) Vulnerabilidad por hardware de terceros con backdoors",
+        "c) Vulnerabilidad por reutilización de recursos en entornos de virtualización",
+        "d) Vulnerabilidad por configuración incorrecta en protocolos inseguros"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el hardware de terceros puede contener vulnerabilidades o incluso ser falsificado, incluyendo backdoors, lo que lo convierte en un riesgo directo en la cadena de suministro.",
+      "id": "p8-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de vulnerabilidades de hardware, ¿qué riesgo principal representa la utilización de protocolos como MQTT sin cifrado en dispositivos IoT?",
+      "opciones": [
+        "a) Exposición de credenciales y datos sensibles en tránsito",
+        "b) Incremento del ancho de banda utilizado por el dispositivo",
+        "c) Reducción del rendimiento del dispositivo por sobrecarga de cifrado",
+        "d) Mayor facilidad para actualizar el firmware del dispositivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El protocolo MQTT sin cifrado envía credenciales y datos en texto claro, lo que permite a los atacantes interceptarlos fácilmente con herramientas como Wireshark, exponiendo información sensible.",
+      "id": "p8-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa autenticación multifactor (MFA) en todas sus consolas de gestión en la nube. ¿Qué riesgo principal está mitigando según el temario?",
+      "opciones": [
+        "Acceso no autorizado a la consola de gestión en la nube.",
+        "Inyección de código en aplicaciones alojadas.",
+        "VM Escape en entornos de virtualización.",
+        "Reutilización de recursos en hipervisores."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El MFA reduce el riesgo de acceso no autorizado a sistemas críticos, como las consolas de gestión en la nube.",
+      "id": "p8-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de vulnerabilidad en dispositivos IoT se relaciona directamente con la exposición de datos debido a la utilización de protocolos como MQTT sin cifrado?",
+      "opciones": [
+        "a) Vulnerabilidad por firmware desactualizado",
+        "b) Vulnerabilidad por dispositivo en EOSL",
+        "c) Vulnerabilidad por configuración incorrecta de protocolos inseguros",
+        "d) Vulnerabilidad por reutilización de recursos en entornos de virtualización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Según el temario, el uso de protocolos como MQTT sin cifrado expone los datos en texto claro, permitiendo su interceptación por atacantes. Esto se clasifica como una vulnerabilidad por configuración incorrecta de protocolos inseguros.",
+      "id": "p8-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de vulnerabilidades de hardware, ¿qué característica principal diferencia una vulnerabilidad por firmware desactualizado de una vulnerabilidad por dispositivo en EOSL?",
+      "opciones": [
+        "a) El firmware desactualizado puede ser parcheado por el fabricante, mientras que un dispositivo en EOSL ya no recibe soporte ni parches de seguridad.",
+        "b) Los dispositivos en EOSL siempre tienen firmware desactualizado, mientras que el firmware desactualizado no implica que el dispositivo esté en EOSL.",
+        "c) Las vulnerabilidades por firmware desactualizado afectan solo a dispositivos IoT, en cambio las de EOSL afectan a cualquier tipo de hardware.",
+        "d) Un dispositivo en EOSL puede seguir recibiendo parches si el fabricante lo decide, pero el firmware desactualizado nunca puede ser actualizado."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El firmware desactualizado aún puede recibir parches de seguridad si el fabricante los proporciona, mientras que un dispositivo en EOSL ya no recibe soporte ni actualizaciones de ningún tipo, convirtiéndose en un riesgo permanente.",
+      "id": "p8-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de manufactura utiliza un sistema de control industrial (ICS) basado en hardware legado para gestionar sus líneas de producción. El fabricante del sistema anunció su EOL hace 3 años y, tras alcanzar el EOSL hace 6 meses, ya no proporciona parches de seguridad. Sin embargo, el equipo de operaciones insiste en mantener el sistema por su alta inversión inicial. Durante una auditoría de seguridad, se descubre que el protocolo de comunicación entre el ICS y los sistemas de supervisión utiliza SNMPv1 sin cifrado. ¿Qué combinación de riesgos está presente en este escenario según el temario?",
+      "opciones": [
+        "a) Vulnerabilidad por firmware desactualizado + exposición de datos por protocolo inseguro + riesgo por dispositivo en EOSL",
+        "b) Reutilización de recursos en virtualización + credenciales predeterminadas + ataque de VM Escape",
+        "c) Inyección de código en aplicaciones en la nube + configuración incorrecta de almacenamiento + DoS/DDoS",
+        "d) Hardware falsificado en la cadena de suministro + actualizaciones maliciosas + jailbreaking en dispositivos móviles"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario describe un dispositivo en EOSL (sin soporte de parches), una vulnerabilidad por firmware desactualizado (al no recibir actualizaciones desde EOL) y exposición de datos por protocolo inseguro (SNMPv1 sin cifrado), según los apartados de vulnerabilidades de hardware y protocolos inseguros del temario.",
+      "id": "p8-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa de logística utiliza routers industriales de un fabricante que anunció su EOL hace 6 meses, pero aún no ha alcanzado el EOSL. El equipo de TI descubre que el fabricante ha publicado parches críticos para una vulnerabilidad en el protocolo SNMP que permite RCE. Sin embargo, la implementación de estos parches requiere una actualización manual del firmware, un proceso complejo y propenso a errores. ¿Qué combinación de medidas sería la MÁS efectiva para reducir el riesgo inmediato en este escenario según el temario?",
+      "opciones": [
+        "Aislar los routers en una red segmentada y aplicar los parches manualmente lo antes posible, priorizando la actualización.",
+        "Reemplazar los routers por dispositivos modernos con soporte actualizado, ignorando la actualización manual.",
+        "Deshabilitar el protocolo SNMP en los routers y usar alternativas seguras como SSH para la gestión remota.",
+        "Confiar en que la vulnerabilidad no será explotada porque los routers no están expuestos a Internet."
+      ],
+      "respuestaCorrecta": 2,
+      "expuestaCorrecta": 2,
+      "explicacion": "Deshabilitar protocolos inseguros como SNMP y usar alternativas seguras (SSH) reduce el riesgo inmediato sin depender de actualizaciones manuales complejas.",
+      "id": "p8-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes protocolos, al ser utilizado sin cifrado en dispositivos IoT, representa un riesgo directo de exposición de credenciales según el temario?",
+      "opciones": [
+        "a) MQTT con TLS",
+        "b) FTP sin cifrado",
+        "c) SNMPv3 con autenticación",
+        "d) HTTPS con autenticación básica"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que protocolos como FTP envían datos en texto claro, permitiendo la interceptación de credenciales. MQTT con TLS y SNMPv3 con autenticación usan cifrado, mientras que HTTPS con autenticación básica no expone credenciales en texto claro.",
+      "id": "p8-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de vulnerabilidades en la nube, ¿qué diferencia existe entre una vulnerabilidad por inyección de código y una por configuración incorrecta según el temario?",
+      "opciones": [
+        "a) La inyección de código requiere acceso físico al servidor, mientras que la configuración incorrecta no.",
+        "b) La inyección de código permite ejecutar código arbitrario, mientras que la configuración incorrecta expone datos por errores de permisos o puertos abiertos.",
+        "c) La configuración incorrecta solo afecta a dispositivos IoT, mientras que la inyección de código afecta exclusivamente a servidores en la nube.",
+        "d) Ambas vulnerabilidades son idénticas y se refieren a errores en el código fuente de las aplicaciones."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la inyección de código (ej. SQLi, RCE) como la ejecución de código arbitrario, mientras que la configuración incorrecta se refiere a errores en permisos, puertos abiertos o datos expuestos por fallos de seguridad.",
+      "id": "p8-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante intercepta tráfico de red que viaja en texto claro entre un termostato IoT y su servidor en la nube usando Wireshark. ¿Qué vulnerabilidad está explotando según el temario?",
+      "opciones": [
+        "a) Vulnerabilidad zero-day en el firmware del termostato",
+        "b) Uso de protocolos inseguros (ej. HTTP o MQTT sin cifrado)",
+        "c) Escape de máquina virtual en el servidor en la nube",
+        "d) Reutilización de recursos en el hipervisor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que protocolos como HTTP o MQTT sin cifrado envían datos en texto claro, permitiendo su interceptación con herramientas como Wireshark.",
+      "id": "p8-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un riesgo asociado a dispositivos en EOSL según el temario?",
+      "opciones": [
+        "a) Falta de parches de seguridad para vulnerabilidades conocidas",
+        "b) Posibilidad de que el fabricante incluya backdoors en actualizaciones",
+        "c) Incompatibilidad con protocolos modernos como TLS 1.3",
+        "d) Mayor exposición a ataques por no recibir soporte técnico"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario no menciona incompatibilidad con protocolos modernos como riesgo de EOSL. Los riesgos asociados son la falta de parches, exposición a ataques y falta de soporte técnico.",
+      "id": "p8-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa detecta que un router industrial, cuyo fabricante anunció EOL hace 1 año, sigue operativo en su red. El equipo de TI descubre que el firmware desactualizado contiene una vulnerabilidad crítica en SNMP que permite RCE. ¿Qué medida de mitigación sería MENOS efectiva para reducir el riesgo inmediato?",
+      "opciones": [
+        "a) Implementar reglas de firewall para bloquear el tráfico SNMP no autorizado",
+        "b) Reemplazar el router por un modelo con soporte activo",
+        "c) Configurar el router para que solo acepte actualizaciones firmadas digitalmente",
+        "d) Deshabilitar completamente el servicio SNMP en el router"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario indica que dispositivos en EOSL no reciben parches, por lo que configurar actualizaciones firmadas no mitigaría el riesgo si el fabricante ya no proporciona soporte. Las otras opciones son medidas válidas.",
+      "id": "p8-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de virtualización, un atacante explota una vulnerabilidad en el hipervisor para acceder a la memoria de otras máquinas virtuales alojadas en el mismo servidor. ¿Qué tipo de vulnerabilidad está explotando según el temario?",
+      "opciones": [
+        "a) Reutilización de recursos (resource reuse)",
+        "b) Escape de máquina virtual (VM Escape)",
+        "c) Inyección de código en el hipervisor",
+        "d) Configuración incorrecta del hipervisor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la reutilización de recursos como un fallo en la gestión de memoria del hipervisor que permite a una VM acceder a datos de otra. El VM Escape implica saltar de una VM a otra, no necesariamente acceder a memoria compartida.",
+      "id": "p8-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización contrata un servicio de limpieza que requiere acceso remoto a su red mediante credenciales compartidas. Durante una auditoría, se descubre que el proveedor no aplica MFA y usa contraseñas predeterminadas. ¿Qué riesgo principal está asumiendo la organización según el temario?",
+      "opciones": [
+        "a) Exposición de datos sensibles por falta de cifrado en el tráfico",
+        "b) Compromiso de la red a través de un proveedor de servicios con credenciales débiles",
+        "c) Vulnerabilidades zero-day en los dispositivos IoT del proveedor",
+        "d) Escape de máquina virtual en los servidores del proveedor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que proveedores de servicios con credenciales débiles o predeterminadas pueden ser explotados para acceder a la red de la organización, como ocurrió en el caso de Target en 2013.",
+      "id": "p8-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red descubre que un servidor legado en la red no recibe parches de seguridad desde hace más de 2 años y el fabricante ya no proporciona soporte (EOSL). ¿Qué medida de mitigación sería MÁS efectiva para reducir el riesgo según el temario?",
+      "opciones": [
+        "a) Implementar segmentación de red para aislar el servidor",
+        "b) Aplicar un parche no oficial desarrollado por la comunidad",
+        "c) Deshabilitar todos los servicios en el servidor",
+        "d) Reemplazar el servidor por un modelo con soporte activo"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario recomienda reemplazar dispositivos en EOSL para garantizar la recepción de parches de seguridad, ya que las otras opciones son mitigaciones temporales o riesgosas.",
+      "id": "p8-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de manufactura utiliza un sistema de control industrial (ICS) con hardware legado que alcanza el EOSL hace 6 meses. El protocolo de comunicación entre el ICS y los sistemas de supervisión utiliza SNMPv1 sin cifrado. ¿Qué combinación de riesgos está presente en este escenario según el temario?",
+      "opciones": [
+        "a) Hardware falsificado y vulnerabilidades zero-day",
+        "b) Dispositivo en EOSL y uso de protocolos inseguros (SNMPv1)",
+        "c) Escape de máquina virtual y reutilización de recursos",
+        "d) Inyección de código y configuraciones incorrectas en la nube"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que dispositivos en EOSL no reciben parches y que protocolos como SNMPv1 sin cifrado exponen datos sensibles. Los otros riesgos no están mencionados en el escenario.",
+      "id": "p8-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante logra ejecutar código arbitrario en un servidor en la nube explotando una vulnerabilidad en una aplicación alojada que procesa datos de usuarios. ¿Qué tipo de vulnerabilidad está explotando según el temario?",
+      "opciones": [
+        "a) Vulnerabilidad en la cadena de suministro (hardware falsificado)",
+        "b) Inyección de código (ej. SQLi, RCE) en la aplicación",
+        "c) Escape de máquina virtual en el hipervisor",
+        "d) Configuración incorrecta en los permisos de almacenamiento en la nube"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario clasifica la ejecución de código arbitrario en servidores en la nube como una vulnerabilidad de inyección de código, como ocurrió con Log4j o vulnerabilidades en APIs.",
+      "id": "p8-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué vulnerabilidad de hardware se relaciona directamente con la exposición de credenciales debido a la utilización de protocolos como MQTT sin cifrado en dispositivos IoT?",
+      "opciones": [
+        "a) Credenciales predeterminadas",
+        "b) Firmware desactualizado",
+        "c) Vulnerabilidades por EOSL",
+        "d) Hardware falsificado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que dispositivos IoT con credenciales predeterminadas (como las usadas en protocolos como MQTT sin cifrado) son explotadas por botnets como Mirai para tomar el control de dispositivos.",
+      "id": "p8-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de nube, un atacante explota una vulnerabilidad en una aplicación alojada para ejecutar código arbitrario en el sistema. ¿Qué tipo de vulnerabilidad NO está directamente relacionado con este escenario según el temario?",
+      "opciones": [
+        "a) Inyección de código",
+        "b) Configuración incorrecta",
+        "c) VM Escape",
+        "d) Vulnerabilidades zero-day"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El VM Escape se refiere a vulnerabilidades en hipervisores que permiten escapar de una máquina virtual, no a la ejecución de código arbitrario en aplicaciones alojadas en la nube.",
+      "id": "p8-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué riesgo principal representa la utilización de protocolos como MQTT sin cifrado en dispositivos IoT?",
+      "opciones": [
+        "a) Exposición de credenciales y datos sensibles",
+        "b) Incremento del consumo de ancho de banda",
+        "c) Reducción del rendimiento del dispositivo",
+        "d) Limitación de la compatibilidad con otros protocolos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El protocolo MQTT sin cifrado transmite datos en texto claro, lo que permite a los atacantes interceptar información sensible como credenciales y datos de usuario.",
+      "id": "p8-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica está asociada al uso del protocolo SNMPv1 sin cifrado en dispositivos de hardware legado?",
+      "opciones": [
+        "a) Inyección SQL",
+        "b) Exposición de credenciales",
+        "c) VM Escape",
+        "d) Cross-site scripting (XSS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El protocolo SNMPv1 envía datos en texto claro, lo que expone credenciales y otros datos sensibles durante la transmisión, según el temario sobre vulnerabilidades por configuración incorrecta.",
+      "id": "p8-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante logra interceptar tráfico de red que viaja en texto claro entre un dispositivo IoT y su servidor en la nube usando Wireshark. ¿Qué vulnerabilidad está explotando según el temario?",
+      "opciones": [
+        "a) VM Escape",
+        "b) Protocolos inseguros",
+        "c) Credenciales predeterminadas",
+        "d) Hardware falsificado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que protocolos como HTTP o MQTT sin cifrado envían datos en texto claro, permitiendo su interceptación con herramientas como Wireshark.",
+      "id": "p8-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario de virtualización, un atacante explota una vulnerabilidad zero-day en un hipervisor para saltar de una máquina virtual a otra en el mismo servidor. ¿Qué tipo de ataque está ocurriendo según el temario?",
+      "opciones": [
+        "a) Inyección de código",
+        "b) VM Escape",
+        "c) Reutilización de recursos",
+        "d) Configuración incorrecta"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define el VM Escape como un ataque donde un atacante logra escapar de una máquina virtual y acceder a otras VMs en el mismo hipervisor.",
+      "id": "p8-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica está asociada al uso del protocolo SNMPv3 sin autenticación adecuada en dispositivos de hardware legado?",
+      "opciones": [
+        "a) Ejecución remota de código (RCE) sin cifrado",
+        "b) Exposición de credenciales debido a falta de autenticación",
+        "c) Denegación de servicio por saturación de recursos",
+        "d) Escape de máquina virtual por fallo en el hipervisor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El protocolo SNMPv3 sin autenticación adecuada permite que credenciales o datos de gestión sean interceptados o modificados, exponiendo la red a ataques como el robo de información o manipulación de dispositivos.",
+      "id": "p8-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué riesgo principal representa el uso de protocolos como MQTT sin cifrado en dispositivos IoT que manejan datos sensibles?",
+      "opciones": [
+        "a) Exposición de credenciales y datos en texto claro",
+        "b) Incremento del consumo de ancho de banda en la red",
+        "c) Denegación de servicio por saturación de mensajes MQTT",
+        "d) Vulnerabilidad por desbordamiento de búfer en el firmware del dispositivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El protocolo MQTT sin cifrado transmite datos en texto claro, lo que permite a los atacantes interceptar credenciales y otros datos sensibles utilizando herramientas como Wireshark.",
+      "id": "p8-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de salud utiliza un sistema de monitorización de pacientes basado en dispositivos IoT que se comunican con un servidor en la nube mediante el protocolo MQTT. Durante una auditoría de seguridad, se descubre que los dispositivos IoT envían credenciales en texto claro y que el firmware no ha sido actualizado en los últimos 2 años, a pesar de que el fabricante publicó parches críticos hace 6 meses. Además, se identifica que el servidor en la nube tiene configurado un bucket de AWS S3 con permisos de lectura pública para almacenar logs de telemetría. ¿Qué combinación de vulnerabilidades está presente en este escenario según el temario?",
+      "opciones": [
+        "a) Vulnerabilidad por firmware desactualizado, exposición de credenciales por MQTT sin cifrado y configuración incorrecta del bucket S3.",
+        "b) Vulnerabilidad por hardware falsificado en los dispositivos IoT, inyección de código en el servidor en la nube y reutilización de recursos en la virtualización.",
+        "c) Vulnerabilidad por dispositivo en EOSL, VM Escape en el hipervisor y configuración incorrecta de MFA en el servidor.",
+        "d) Vulnerabilidad por protocolo SNMPv1 sin cifrado, ataque de denegación de servicio (DoS) y exposición de datos por credenciales predeterminadas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario describe vulnerabilidades por firmware desactualizado (sin parches críticos aplicados), exposición de credenciales por uso de MQTT sin cifrado (envío en texto claro) y configuración incorrecta del bucket S3 (permisos de lectura pública), todas mencionadas en el temario.",
+      "id": "p8-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa de manufactura utiliza un sistema SCADA (Supervisory Control and Data Acquisition) basado en hardware legado para gestionar sus líneas de producción. El fabricante anunció el EOL del sistema hace 2 años, pero aún no ha alcanzado el EOSL. Durante una auditoría, se descubre que el sistema utiliza el protocolo Modbus TCP sin cifrado para la comunicación entre controladores y supervisores. Además, el firmware del sistema no ha recibido actualizaciones en 18 meses, a pesar de que el fabricante publicó parches críticos para una vulnerabilidad de desbordamiento de búfer que permite la ejecución remota de código (RCE). ¿Qué combinación de riesgos está presente en este escenario según el temario?",
+      "opciones": [
+        "a) Vulnerabilidad por firmware desactualizado (RCE), exposición de datos por Modbus TCP sin cifrado y riesgo por dispositivo en EOL (aún sin EOSL).",
+        "b) Vulnerabilidad por inyección de código en el firmware, exposición de credenciales por SNMPv1 sin autenticación y riesgo por hardware falso en la cadena de suministro.",
+        "c) Vulnerabilidad por reutilización de recursos en el hipervisor, exposición de datos por MQTT sin cifrado y riesgo por credenciales predeterminadas en dispositivos IoT.",
+        "d) Vulnerabilidad por VM Escape en el hipervisor, exposición de datos por HTTP sin cifrado y riesgo por configuración incorrecta en la nube."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario describe tres riesgos clave: 1) Una vulnerabilidad de RCE por firmware desactualizado, 2) Exposición de datos por el protocolo Modbus TCP sin cifrado (textual), y 3) Riesgo por mantener un dispositivo en EOL (aún sin EOSL). Estos riesgos están directamente relacionados con los conceptos del temario sobre dispositivos legacy, protocolos inseguros y fin de vida útil.",
+      "id": "p8-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué vulnerabilidad de hardware se relaciona directamente con la exposición de credenciales debido a la utilización de protocolos como MQTT sin cifrado en dispositivos IoT según el temario?",
+      "opciones": [
+        "Inyección de código en el firmware del dispositivo",
+        "Transmisión de credenciales en texto claro",
+        "Escape de máquina virtual (VM Escape)",
+        "Reutilización de recursos en hipervisores"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que protocolos como MQTT sin cifrado exponen credenciales al transmitirlas en texto claro, lo que permite su interceptación.",
+      "id": "p8-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de vulnerabilidad se relaciona directamente con la explotación de hardware falsificado o modificado en la cadena de suministro que permite el acceso no autorizado a sistemas internos?",
+      "opciones": [
+        "a) Vulnerabilidad por firmware desactualizado",
+        "b) Vulnerabilidad por dispositivo en EOSL",
+        "c) Inserción de backdoors en hardware de terceros",
+        "d) Reutilización de recursos en entornos de virtualización"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que el hardware falsificado o modificado puede contener backdoors que permiten el acceso no autorizado a sistemas internos, como ocurrió con los switches y routers falsificados de Cisco distribuidos en 2022.",
+      "id": "p8-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica de hardware está asociada al uso de protocolos como SNMPv1 en dispositivos legacy sin cifrado?",
+      "opciones": [
+        "a) Ejecución remota de código (RCE) debido a desbordamiento de búfer",
+        "b) Exposición de credenciales y datos sensibles por transmisión en texto claro",
+        "c) Compromiso del hipervisor por reutilización de recursos",
+        "d) VM Escape por vulnerabilidades en el sistema operativo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El protocolo SNMPv1 no cifra los datos transmitidos, lo que expone credenciales y datos sensibles en texto claro, facilitando su captura por atacantes.",
+      "id": "p8-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica en dispositivos IoT está directamente relacionada con la exposición de datos debido a la falta de cifrado en el protocolo SNMPv1?",
+      "opciones": [
+        "a) Inyección SQL",
+        "b) Ejecución remota de código (RCE)",
+        "c) Intercepción de credenciales en texto claro",
+        "d) Secuestro de sesión"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El protocolo SNMPv1 envía datos en texto claro, lo que permite a los atacantes interceptar credenciales y otros datos sensibles mediante herramientas como Wireshark.",
+      "id": "p8-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica se relaciona con la explotación de hardware de terceros que contiene backdoors o componentes maliciosos en la cadena de suministro?",
+      "opciones": [
+        "a) Hardware falsificado con firmware modificado",
+        "b) Dispositivos IoT con credenciales predeterminadas",
+        "c) Servidores en EOSL sin soporte de actualizaciones",
+        "d) Hipervisores con vulnerabilidades de reutilización de recursos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que hardware de terceros puede contener backdoors o vulnerabilidades si es falsificado, como en el caso de switches y routers falsificados de Cisco con backdoors.",
+      "id": "p8-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de vulnerabilidad está directamente relacionada con la exposición de credenciales debido a la utilización de protocolos como MQTT sin cifrado en dispositivos IoT?",
+      "opciones": [
+        "a) Vulnerabilidad por firmware desactualizado",
+        "b) Vulnerabilidad por reutilización de recursos",
+        "c) Vulnerabilidad por configuración incorrecta de protocolos inseguros",
+        "d) Vulnerabilidad por dispositivo en EOSL"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que protocolos como MQTT sin cifrado exponen credenciales y datos en texto claro, lo que permite a atacantes interceptarlos. Esto se clasifica como una vulnerabilidad por configuración incorrecta de protocolos inseguros.",
+      "id": "p8-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica de hardware está asociada al uso de protocolos como SNMPv3 sin autenticación adecuada en dispositivos legacy?",
+      "opciones": [
+        "a) Exposición de credenciales debido a la falta de cifrado en el protocolo",
+        "b) Vulnerabilidad por firmware desactualizado que permite ejecución remota de código (RCE)",
+        "c) Riesgo de VM Escape en entornos de virtualización",
+        "d) Exposición de datos sensibles debido a configuraciones incorrectas en la nube"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "SNMPv3 sin autenticación adecuada permite que credenciales y datos de gestión de red viajen en texto claro o con cifrado débil, exponiendo credenciales sensibles.",
+      "id": "p8-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de vulnerabilidad está directamente relacionada con la explotación de hardware de terceros que contiene *backdoors* o componentes maliciosos integrados durante su fabricación?",
+      "opciones": [
+        "a) Vulnerabilidad por firmware desactualizado en dispositivos IoT",
+        "b) Vulnerabilidad en la cadena de suministro por hardware falsificado",
+        "c) Vulnerabilidad por configuración incorrecta en protocolos de red",
+        "d) Vulnerabilidad por dispositivo en EOSL sin soporte"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el hardware de terceros puede contener *backdoors* o componentes maliciosos, como ocurrió con switches y routers falsificados de Cisco distribuidos en 2022.",
+      "id": "p8-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa de energía utiliza un sistema SCADA basado en hardware legado para gestionar sus subestaciones eléctricas. El fabricante del sistema anunció el EOL hace 3 años y el EOSL está previsto para dentro de 6 meses. Durante una auditoría de seguridad, se descubre que el sistema utiliza el protocolo DNP3 para la comunicación entre controladores y supervisores, pero el fabricante ya no proporciona parches de seguridad. Además, un análisis forense revela que el firmware del sistema contiene un backdoor no documentado que permite el acceso remoto sin autenticación. ¿Qué combinación de riesgos está presente en este escenario según el temario?",
+      "opciones": [
+        "a) Vulnerabilidad por EOSL, explotación de backdoor en firmware y uso de protocolo DNP3 sin cifrado.",
+        "b) Vulnerabilidad por firmware desactualizado, uso de protocolo Modbus TCP sin cifrado y exposición de datos en la nube.",
+        "c) Vulnerabilidad por cadena de suministro (hardware falsificado), reutilización de recursos en virtualización y configuración incorrecta de MFA.",
+        "d) Vulnerabilidad por dispositivo en EOL, explotación de vulnerabilidad zero-day en el hipervisor y exposición de credenciales en texto claro."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El escenario describe un dispositivo en EOSL (fin del soporte de vida), la presencia de un backdoor en el firmware (vulnerabilidad de hardware) y el uso de un protocolo industrial (DNP3) sin cifrado, que expone la comunicación a ataques de interceptación según el temario.",
+      "id": "p8-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa de salud utiliza un sistema de monitorización de pacientes basado en dispositivos IoT que se comunican con un servidor en la nube mediante el protocolo MQTT. Durante una auditoría de seguridad, se descubre que los dispositivos IoT envían credenciales en texto claro y que el firmware no ha sido actualizado en los últimos 2 años. ¿Qué combinación de vulnerabilidades está presente en este escenario según el temario?",
+      "opciones": [
+        "Firmware desactualizado y uso de protocolos inseguros (MQTT sin cifrado)",
+        "VM Escape y reutilización de recursos",
+        "Inyección de código y configuración incorrecta de buckets de almacenamiento",
+        "Ataque de DoS y cuentas de administrador inseguras"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario señala que firmware desactualizado y protocolos como MQTT sin cifrado exponen credenciales, siendo riesgos críticos en dispositivos IoT.",
+      "id": "p8-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica está asociada al uso de protocolos como MQTT sin cifrado en dispositivos IoT que manejan datos de salud?",
+      "opciones": [
+        "a) Exposición de credenciales y datos sensibles debido a la falta de autenticación",
+        "b) Vulnerabilidad de inyección SQL en la base de datos del servidor en la nube",
+        "c) Riesgo de VM Escape en el hipervisor que aloja los dispositivos IoT",
+        "d) Exposición a ataques de denegación de servicio (DDoS) por configuraciones incorrectas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que protocolos como MQTT sin cifrado exponen credenciales y datos sensibles al transmitirse en texto claro, lo que facilita la interceptación por atacantes.",
+      "id": "p8-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de vulnerabilidad en dispositivos IoT está directamente relacionada con el uso de protocolos como MQTT sin autenticación adecuada, según el temario?",
+      "opciones": [
+        "a) Exposición de datos debido a la falta de cifrado en la comunicación",
+        "b) Ejecución remota de código (RCE) por desbordamiento de búfer",
+        "c) Acceso no autorizado por credenciales predeterminadas",
+        "d) Vulnerabilidad por firmware desactualizado sin parches críticos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El protocolo MQTT sin autenticación adecuada permite que atacantes intercepten o manipulen datos en tránsito, exponiendo información sensible.",
+      "id": "p8-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica está asociada al uso de protocolos como DNP3 sin cifrado en sistemas SCADA heredados?",
+      "opciones": [
+        "a) Ejecución remota de código (RCE) debido a desbordamiento de búfer",
+        "b) Intercepción de tráfico y exposición de credenciales por falta de cifrado",
+        "c) Inyección de código malicioso en actualizaciones de firmware",
+        "d) Compromiso de cuentas de administrador por credenciales predeterminadas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El protocolo DNP3, común en sistemas SCADA heredados, transmite datos en texto claro sin cifrado, lo que permite a los atacantes interceptar tráfico y exponer credenciales sensibles según el temario.",
+      "id": "p8-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante logra acceder a una máquina virtual alojada en un hipervisor y, desde allí, compromete otras VMs en el mismo servidor. ¿Qué tipo de vulnerabilidad está explotando?",
+      "opciones": [
+        "VM Escape",
+        "Reutilización de recursos",
+        "Inyección de código en el hipervisor",
+        "Configuración incorrecta de segmentación de red"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario define el VM Escape como un ataque donde un atacante escapa de una VM para acceder a otras en el mismo hipervisor.",
+      "id": "p8-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de vulnerabilidad está directamente asociada a la explotación de hardware de terceros que contiene componentes maliciosos integrados durante su fabricación, según el temario?",
+      "opciones": [
+        "a) Vulnerabilidad por firmware desactualizado en dispositivos IoT",
+        "b) Vulnerabilidad por hardware falsificado o modificado en la cadena de suministro",
+        "c) Vulnerabilidad por configuración incorrecta en consolas de gestión en la nube",
+        "d) Vulnerabilidad por reutilización de recursos en hipervisores"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el hardware de terceros puede contener vulnerabilidades o ser falsificado, incluyendo backdoors o componentes maliciosos integrados durante su fabricación, lo que lo vincula directamente con vulnerabilidades en la cadena de suministro.",
+      "id": "p8-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa detecta que un router industrial, cuyo fabricante anunció EOL hace 1 año, aún no ha alcanzado el EOSL pero no recibe parches críticos para una vulnerabilidad de RCE en SNMP. ¿Qué riesgo principal está presente según el temario?",
+      "opciones": [
+        "Exposición a ataques por falta de parches de seguridad",
+        "Incompatibilidad con protocolos modernos",
+        "Alto consumo de recursos por hardware obsoleto",
+        "Dificultad para reemplazar el dispositivo por costes elevados"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario señala que los dispositivos en EOL o cerca de EOSL son vulnerables por falta de parches, incluso si aún no han alcanzado el EOSL.",
+      "id": "p8-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica de hardware está asociada al uso de protocolos como MQTT sin cifrado en dispositivos IoT que manejan datos sensibles?",
+      "opciones": [
+        "a) Vulnerabilidad de ejecución remota de código (RCE) por falta de autenticación en MQTT",
+        "b) Exposición de credenciales y datos sensibles por tráfico en texto claro en MQTT",
+        "c) Denegación de servicio (DoS) por saturación de mensajes en MQTT",
+        "d) Inyección de código por manipulación de payloads en MQTT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que protocolos como MQTT sin cifrado permiten la exposición de credenciales y datos sensibles al viajar en texto claro, facilitando su interceptación por atacantes.",
+      "id": "p8-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de virtualización, un atacante explota una vulnerabilidad zero-day en un hipervisor para saltar de una máquina virtual a otra. ¿Qué tipo de ataque está ocurriendo según el temario?",
+      "opciones": [
+        "VM Escape",
+        "Reutilización de recursos",
+        "Inyección de código en hipervisor",
+        "Ataque a la cadena de suministro del hipervisor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario clasifica el salto entre VMs como un VM Escape, incluso si se usa una vulnerabilidad zero-day.",
+      "id": "p8-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa adquiere switches de red de un proveedor externo. Tras implementarlos, se descubre que contienen backdoors que permiten acceso remoto no autorizado. ¿Qué tipo de vulnerabilidad en la cadena de suministro está presente?",
+      "opciones": [
+        "Hardware falsificado o modificado",
+        "Protocolos inseguros en el hardware",
+        "Firmware desactualizado en dispositivos de red",
+        "Configuración incorrecta del proveedor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que hardware de terceros falsificado o modificado puede contener backdoors o componentes maliciosos.",
+      "id": "p8-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante intercepta tráfico de red entre un dispositivo IoT y su servidor en la nube usando Wireshark. El tráfico viaja en texto claro. ¿Qué vulnerabilidad está explotando según el temario?",
+      "opciones": [
+        "Protocolos inseguros (HTTP, FTP, MQTT sin cifrado)",
+        "Firmware desactualizado en el dispositivo IoT",
+        "Dispositivo en EOSL",
+        "Hardware falsificado en el dispositivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario indica que protocolos como MQTT sin cifrado permiten la interceptación de datos en texto claro, facilitando ataques como el descrito.",
+      "id": "p8-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Qué diferencia clave existe entre una vulnerabilidad por firmware desactualizado y una por dispositivo en EOSL según el temario?",
+      "opciones": [
+        "El firmware desactualizado puede parchearse con actualizaciones del fabricante, mientras que los dispositivos en EOSL ya no reciben soporte ni parches de seguridad.",
+        "Ambas vulnerabilidades son iguales, ya que el firmware desactualizado siempre implica que el dispositivo está en EOSL.",
+        "Los dispositivos en EOSL pueden seguir recibiendo parches si el fabricante lo decide, pero el firmware desactualizado nunca se actualiza.",
+        "La vulnerabilidad por firmware desactualizado solo afecta a dispositivos IoT, mientras que los dispositivos en EOSL incluyen cualquier tipo de hardware."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El firmware desactualizado puede corregirse con parches del fabricante, pero los dispositivos en EOSL ya no reciben soporte ni actualizaciones de seguridad, lo que los hace irreparablemente vulnerables.",
+      "id": "p8-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un entorno de virtualización, un atacante logra explotar una vulnerabilidad en el hipervisor para acceder a la memoria de otras máquinas virtuales alojadas en el mismo servidor. ¿Qué tipo de vulnerabilidad está explotando según el temario?",
+      "opciones": [
+        "VM Escape",
+        "Reutilización de recursos",
+        "Inyección de código",
+        "Ataque de denegación de servicio (DoS)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El VM Escape es un ataque donde un atacante escapa de una máquina virtual para acceder a otras VMs en el mismo hipervisor, comprometiendo la隔离 entre ellas.",
+      "id": "p8-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica de hardware está asociada al uso de protocolos como FTP sin cifrado en dispositivos legacy?",
+      "opciones": [
+        "a) Exposición de credenciales debido a la transmisión en texto claro",
+        "b) Vulnerabilidad de VM Escape en entornos de virtualización",
+        "c) Riesgo de backdoors en la cadena de suministro de hardware",
+        "d) Vulnerabilidad zero-day en el firmware del dispositivo"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El protocolo FTP envía credenciales y datos en texto claro, lo que permite a los atacantes interceptar información sensible como contraseñas y nombres de usuario mediante herramientas como Wireshark.",
+      "id": "p8-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica de hardware está asociada al uso de protocolos como FTP sin cifrado en dispositivos legacy que manejan datos sensibles?",
+      "opciones": [
+        "a) Exposición de credenciales por falta de autenticación multifactor (MFA)",
+        "b) Intercepción de credenciales y datos en texto claro durante la transmisión",
+        "c) Vulnerabilidad de VM Escape en hipervisores que ejecutan el protocolo FTP",
+        "d) Riesgo de backdoor en el firmware debido a actualizaciones no firmadas digitalmente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El protocolo FTP transmite credenciales y datos en texto claro, lo que permite a los atacantes interceptarlos fácilmente con herramientas como Wireshark, según se menciona en el apartado de 'Protocolos inseguros'.",
+      "id": "p8-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa adquiere switches de red de un proveedor externo. Tras implementarlos, se descubre que contienen backdoors que permiten acceso remoto no autorizado. ¿Qué tipo de vulnerabilidad en la cadena de suministro está presente según el temario?",
+      "opciones": [
+        "Hardware de terceros con componentes maliciosos integrados durante la fabricación.",
+        "Firmware desactualizado en los switches adquiridos.",
+        "Dispositivos en EOSL que ya no reciben soporte.",
+        "Inyección de código en las actualizaciones de software del proveedor."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La presencia de backdoors en hardware adquirido de terceros es un ejemplo de vulnerabilidad en la cadena de suministro, donde el hardware contiene componentes maliciosos integrados.",
+      "id": "p8-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de vulnerabilidad específica de hardware está asociada al uso de protocolos como SNMPv1 sin cifrado en dispositivos legacy según el temario?",
+      "opciones": [
+        "Exposición de credenciales y datos sensibles debido a la transmisión en texto claro.",
+        "Vulnerabilidades por firmware desactualizado en el dispositivo.",
+        "Riesgo de VM Escape en entornos de virtualización.",
+        "Ataques de denegación de servicio (DoS) por saturación de puertos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El protocolo SNMPv1 transmite credenciales y datos en texto claro, lo que permite a los atacantes interceptar información sensible usando herramientas como Wireshark.",
+      "id": "p8-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué vulnerabilidad específica de hardware está asociada al uso de protocolos como SNMPv1 sin autenticación adecuada en dispositivos legacy?",
+      "opciones": [
+        "a) Exposición de credenciales en texto claro debido a falta de cifrado",
+        "b) Vulnerabilidad de inyección SQL por configuración incorrecta",
+        "c) Riesgo de VM Escape por hipervisor desactualizado",
+        "d) Exposición de datos por reutilización de recursos en virtualización"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El protocolo SNMPv1 no incluye autenticación ni cifrado, lo que permite que las credenciales y datos de gestión viajen en texto claro, exponiendo información sensible en dispositivos legacy.",
+      "id": "p8-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario aplicado, una empresa de manufactura utiliza un sistema SCADA basado en hardware legado con EOSL inminente. El protocolo DNP3 se usa para la comunicación, pero el fabricante ya no proporciona parches. Además, se descubre un backdoor no documentado en el firmware que permite acceso remoto sin autenticación. ¿Qué combinación de riesgos está presente según el temario?",
+      "opciones": [
+        "Exposición de datos por uso de protocolos sin cifrado (DNP3), riesgo de acceso no autorizado por backdoor en firmware, y falta de parches por EOSL.",
+        "Vulnerabilidad por firmware desactualizado en dispositivos IoT y riesgo de VM Escape en el hipervisor.",
+        "Inyección de código en la aplicación alojada en la nube y configuraciones incorrectas en la consola de gestión.",
+        "Ataques de denegación de servicio (DoS) por puertos abiertos y credenciales predeterminadas en switches."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El sistema SCADA presenta múltiples riesgos: uso de protocolos sin cifrado (DNP3), backdoor en firmware que permite acceso remoto, y falta de parches por EOSL, lo que lo hace extremadamente vulnerable.",
+      "id": "p8-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de vulnerabilidad en dispositivos IoT está directamente relacionada con la exposición de credenciales debido a la utilización de protocolos como MQTT sin autenticación adecuada según el temario?",
+      "opciones": [
+        "Transmisión de credenciales en texto claro o sin cifrado, permitiendo su interceptación por atacantes.",
+        "Vulnerabilidad por firmware desactualizado que permite ejecución remota de comandos (RCE).",
+        "Riesgo de VM Escape en el hipervisor que aloja el servidor IoT.",
+        "Ataques de denegación de servicio (DoS) por saturación de puertos en el dispositivo IoT."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El protocolo MQTT sin autenticación adecuada o cifrado transmite credenciales en texto claro, lo que facilita su interceptación y uso malicioso por parte de atacantes.",
+      "id": "p8-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa de logística utiliza routers industriales de un fabricante que anunció su EOL hace 6 meses, pero aún no ha alcanzado el EOSL. El equipo de TI descubre que el fabricante ha publicado parches críticos para una vulnerabilidad de RCE en SNMP, pero requieren actualización manual del firmware, un proceso complejo. ¿Qué combinación de medidas sería la MÁS efectiva para reducir el riesgo inmediato según el temario?",
+      "opciones": [
+        "Implementar reglas de firewall estrictas para bloquear el tráfico SNMP no esencial y segmentar la red para aislar los routers, mientras se prioriza la actualización manual del firmware.",
+        "Reemplazar inmediatamente todos los routers por dispositivos nuevos para evitar riesgos futuros.",
+        "Deshabilitar completamente el protocolo SNMP en los routers y migrar a un protocolo más seguro como SNMPv3 con autenticación.",
+        "Aislar los routers en una VLAN separada y aplicar firmas IPS específicas para bloquear intentos de explotación conocidos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La combinación más efectiva incluye segmentación de red para limitar la exposición de los routers y reglas de firewall para bloquear tráfico SNMP innecesario, mientras se prioriza la actualización manual del firmware para aplicar los parches críticos.",
+      "id": "p8-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué vulnerabilidad específica de hardware está asociada a la reutilización de recursos en entornos de virtualización?",
+      "opciones": [
+        "a) VM Escape",
+        "b) Backdoor en hardware de terceros",
+        "c) Reutilización de recursos (resource reuse)",
+        "d) Firmware desactualizado en dispositivos IoT"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La reutilización de recursos (resource reuse) ocurre cuando un hipervisor no gestiona correctamente la asignación de memoria o CPU entre máquinas virtuales, permitiendo que una VM acceda a datos de otra.",
+      "id": "p8-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de red detecta que un sistema SCADA heredado, que utiliza el protocolo DNP3 sin cifrado, está expuesto a ataques de interceptación de tráfico. ¿Qué tipo de vulnerabilidad está explotando el atacante?",
+      "opciones": [
+        "a) Vulnerabilidad de VM Escape en el hipervisor.",
+        "b) Vulnerabilidad por protocolo inseguro (texto claro) en la comunicación SCADA.",
+        "c) Vulnerabilidad de cadena de suministro por hardware falsificado.",
+        "d) Vulnerabilidad zero-day en el firmware del sistema SCADA."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El uso de protocolos como DNP3 sin cifrado expone el tráfico a interceptación, ya que los datos viajan en texto claro y pueden ser capturados con herramientas como Wireshark.",
+      "id": "p8-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un riesgo asociado a dispositivos IoT con credenciales predeterminadas según el temario?",
+      "opciones": [
+        "a) Exposición a ataques de fuerza bruta para tomar control del dispositivo.",
+        "b) Formación de botnets como Mirai para lanzar ataques DDoS.",
+        "c) Vulnerabilidad de VM Escape en el hipervisor que aloja el dispositivo IoT.",
+        "d) Acceso no autorizado a la red corporativa si el dispositivo está conectado."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las credenciales predeterminadas en dispositivos IoT no están relacionadas con vulnerabilidades de VM Escape, que afectan a entornos de virtualización.",
+      "id": "p8-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica de hardware está asociada a la explotación de backdoors integrados en componentes de terceros durante el proceso de fabricación?",
+      "opciones": [
+        "a) Vulnerabilidad por firmware desactualizado en dispositivos IoT",
+        "b) Vulnerabilidad por hardware falsificado con componentes maliciosos en la cadena de suministro",
+        "c) Vulnerabilidad por reutilización de recursos en entornos de virtualización",
+        "d) Vulnerabilidad por configuración incorrecta de protocolos inseguros como SNMPv1"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el hardware adquirido de proveedores puede contener backdoors o vulnerabilidades si es falsificado o modificado durante la fabricación, especialmente en la cadena de suministro.",
+      "id": "p8-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué vulnerabilidad específica de hardware está asociada a la explotación de backdoors en componentes de terceros durante el proceso de fabricación?",
+      "opciones": [
+        "a) Vulnerabilidad por firmware desactualizado",
+        "b) Vulnerabilidad por hardware falso o modificado",
+        "c) Vulnerabilidad por reutilización de recursos en entornos de virtualización",
+        "d) Vulnerabilidad por configuración incorrecta de protocolos en la nube"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que hardware de terceros puede contener backdoors o componentes maliciosos integrados durante su fabricación, lo que se clasifica como vulnerabilidad por hardware falso o modificado.",
+      "id": "p8-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué vulnerabilidad específica en entornos de nube está asociada a la falta de autenticación multifactor (MFA) en las consolas de gestión?",
+      "opciones": [
+        "a) Exposición de datos sensibles por configuraciones incorrectas de almacenamiento en la nube",
+        "b) Acceso no autorizado a la consola de gestión de la nube debido a credenciales débiles o únicas",
+        "c) Inyección de código en aplicaciones alojadas en la nube por falta de parches",
+        "d) Ataques de denegación de servicio (DoS) por saturación de recursos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La falta de MFA en consolas de gestión de la nube facilita el acceso no autorizado mediante ataques de fuerza bruta o credenciales comprometidas, según el temario.",
+      "id": "p8-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de CompTIA Security+, ¿qué vulnerabilidad específica de hardware está asociada a la explotación de backdoors en componentes de terceros durante el proceso de fabricación en dispositivos IoT?",
+      "opciones": [
+        "a) Reutilización de recursos en entornos de virtualización",
+        "b) Credenciales predeterminadas en dispositivos IoT",
+        "c) Backdoors integrados en componentes de terceros durante el proceso de fabricación",
+        "d) Configuraciones incorrectas en protocolos como MQTT sin autenticación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que el hardware adquirido de proveedores puede contener backdoors o componentes maliciosos introducidos durante la fabricación, especialmente en dispositivos IoT.",
+      "id": "p8-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué vulnerabilidad específica se relaciona con la explotación de hardware falsificado o modificado en la cadena de suministro?",
+      "opciones": [
+        "a) Backdoors integrados en el hardware por el fabricante.",
+        "b) Vulnerabilidades por firmware desactualizado.",
+        "c) Vulnerabilidades por dispositivos en EOSL.",
+        "d) Vulnerabilidades por configuración incorrecta en la nube."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El hardware falsificado o modificado en la cadena de suministro puede contener backdoors o componentes maliciosos integrados durante su fabricación.",
+      "id": "p8-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante logra acceder a una máquina virtual alojada en un hipervisor y, desde allí, compromete otras VMs en el mismo servidor explotando una vulnerabilidad en el hipervisor. ¿Qué tipo de ataque está ocurriendo según el temario?",
+      "opciones": [
+        "a) Inyección de código en el hipervisor.",
+        "b) VM Escape.",
+        "c) Reutilización de recursos (resource reuse).",
+        "d) Ataque de denegación de servicio (DoS) contra el hipervisor."
+      ],
+      "respuestaCorrecta": 1,
+      "expuestaCorrecta": 1,
+      "explicacion": "El VM Escape ocurre cuando un atacante escapa de una VM y accede a otras VMs en el mismo hipervisor, explotando vulnerabilidades en el hipervisor.",
+      "id": "p8-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa detecta que un router industrial, cuyo fabricante anunció EOL hace 1 año, sigue operativo en su red. El equipo de TI descubre que el firmware desactualizado contiene una vulnerabilidad crítica en SNMP que permite ejecución remota de código (RCE). ¿Qué medida de mitigación sería MENOS efectiva para reducir el riesgo inmediato?",
+      "opciones": [
+        "a) Implementar segmentación de red para aislar el router.",
+        "b) Reemplazar el router por un dispositivo moderno con soporte activo.",
+        "c) Configurar reglas de firewall para bloquear el tráfico SNMP no autorizado.",
+        "d) Esperar a que el fabricante publique un parche para la vulnerabilidad."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Esperar a que el fabricante publique un parche no es efectivo, ya que el dispositivo está en EOL y no recibirá soporte, por lo que el riesgo inmediato persiste.",
+      "id": "p8-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Hardware Vulnerabilities",
+      "youtubeId": "TaTaEvqjjDM"
+    },
+    {
+      "titulo": "Virtualization Vulnerabilities",
+      "youtubeId": "t2JrPrzRDLA"
+    },
+    {
+      "titulo": "Cloud-specific Vulnerabilities",
+      "youtubeId": "V2DCYO-sWRQ"
+    },
+    {
+      "titulo": "Supply Chain Vulnerabilities",
+      "youtubeId": "WqvCJLpwExY"
+    },
+    {
+      "titulo": "Misconfiguration Vulnerabilities",
+      "youtubeId": "NBKzlUqzVmE"
+    },
+    {
+      "titulo": "Mobile Device Vulnerabilities",
+      "youtubeId": "DRfAwwdzYpU"
+    },
+    {
+      "titulo": "Zero-day Vulnerabilities",
+      "youtubeId": "FDFxGLnZtoY"
+    }
+  ]
+}

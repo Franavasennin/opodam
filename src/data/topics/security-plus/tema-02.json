@@ -1,0 +1,1416 @@
+{
+  "id": 2,
+  "titulo": "1.2 · Conceptos fundamentales de seguridad",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LA TRIADA CIA (CONFIDENCIALIDAD, INTEGRIDAD Y DISPONIBILIDAD)\n\nLa triada CIA (Confidentiality, Integrity and Availability) es un modelo fundamental en ciberseguridad que ayuda a recordar los principios básicos de protección de la información. Aunque a veces se denomina triada AIC (Availability, Integrity, Confidentiality) para evitar confusiones con la agencia de inteligencia estadounidense CIA, el término más reconocido sigue siendo CIA por su facilidad de memorización. Este modelo no tiene relación alguna con la Central Intelligence Agency.\n\nLa C en CIA representa la confidencialidad (confidentiality), que busca evitar que personas no autorizadas accedan a información privada. Por ejemplo, al enviar datos sensibles, se debe garantizar que solo los destinatarios autorizados puedan visualizarlos. Un método común para lograr esto es mediante el cifrado (encryption), donde los datos se transforman en un formato ilegible para cualquier persona que no posea la clave de descifrado. Incluso si un atacante intercepta la información cifrada, no podrá interpretarla sin la clave correspondiente.\n\nLa I en CIA corresponde a la integridad (integrity), que asegura que los datos recibidos sean exactamente los mismos que se enviaron, sin modificaciones no autorizadas durante su transmisión. Para verificar esto, se utilizan técnicas como el hashing (creación de un resumen único de los datos) o las firmas digitales (digital signatures). El hashing genera un valor único llamado hash o huella digital que cambia si los datos originales se alteran. Por ejemplo, si se envía un archivo de 8.1 MB y se modifica un solo carácter, el hash resultante será completamente diferente, lo que permite detectar la alteración.\n\nLa A en CIA significa disponibilidad (availability), que garantiza que los sistemas y datos estén accesibles cuando sean necesarios. Esto implica diseñar sistemas con tolerancia a fallos (fault tolerance), donde componentes redundantes asumen el control si uno falla, y mantener los sistemas actualizados mediante parches (patching) para evitar vulnerabilidades que puedan afectar su funcionamiento.\n\n\nNO REPUDIO (NON-REPUDIATION)\n\nEl no repudio (non-repudiation) es un concepto clave en criptografía que proporciona pruebas de que una transacción o comunicación fue realizada por una parte específica y que los datos no han sido alterados. Esto es similar a firmar un contrato en papel: la firma prueba que la persona aceptó los términos. En el ámbito digital, se logra mediante firmas digitales (digital signatures), que combinan hashing y cifrado asimétrico.\n\nPara entender cómo funciona una firma digital, consideremos el ejemplo de Alice enviando un mensaje a Bob que dice \"Eres contratado, Bob\". Alice primero genera un hash del mensaje. Luego, cifra ese hash con su clave privada (solo ella tiene acceso a esta clave). El mensaje original, junto con la firma digital, se envía a Bob. Bob, al recibirlo, usa la clave pública de Alice para descifrar la firma y obtener el hash original. Luego, Bob genera su propio hash del mensaje recibido y compara ambos hashes. Si coinciden, Bob tiene la certeza de que el mensaje no fue alterado y que proviene de Alice. Este proceso garantiza tanto la integridad como el origen de los datos.\n\n\nAUTENTICACIÓN, AUTORIZACIÓN Y CONTABILIDAD (AAA FRAMEWORK)\n\nEl marco AAA (Authentication, Authorization, Accounting) es esencial para gestionar el acceso a los sistemas y recursos. Este proceso comienza con la identificación (identification), donde el usuario reclama ser una identidad específica, generalmente mediante un nombre de usuario. La autenticación (authentication) verifica que el usuario es quien dice ser, utilizando factores como contraseñas, tokens o certificados. Por ejemplo, al iniciar sesión en un servidor VPN, se proporcionan credenciales que son validadas por un servidor AAA centralizado.\n\nUna vez autenticado, el usuario requiere autorización (authorization) para acceder a recursos específicos. Esto se gestiona mediante modelos de autorización que definen qué permisos tiene cada usuario o grupo. Un método común es el control de acceso basado en roles (RBAC, Role-Based Access Control), donde los usuarios se asignan a roles y estos roles tienen permisos predefinidos. Por ejemplo, un empleado del departamento de envíos podría tener acceso a sistemas de seguimiento de paquetes, pero no a información financiera.\n\nLa contabilidad (accounting) registra todas las acciones realizadas por el usuario, como horarios de inicio y cierre de sesión, datos transferidos y recursos accedidos. Esto es crucial para auditorías y detección de actividades sospechosas. En un entorno empresarial, el marco AAA se implementa mediante servidores centrales que gestionan las credenciales, permisos y registros de actividad.\n\n\nANÁLISIS DE BRECHAS (GAP ANALYSIS)\n\nEl análisis de brechas (gap analysis) es un proceso que compara el estado actual de la seguridad de una organización con los objetivos o estándares deseados. Su objetivo es identificar las diferencias (brechas) y planificar las acciones necesarias para alcanzarlos. Este análisis es complejo y puede tomar semanas o meses, involucrando a múltiples partes interesadas y recopilando datos de diversos sistemas y ubicaciones.\n\nPara realizar un análisis de brechas efectivo, es útil establecer una línea base (baseline) que sirva como referencia. Las líneas base pueden provenir de estándares reconocidos como el NIST SP 800-171 (para información no clasificada controlada) o la norma ISO/IEC 27001 (para sistemas de gestión de seguridad de la información). Estas líneas base evalúan aspectos como la experiencia del personal en seguridad, la capacitación recibida, el cumplimiento de políticas y la configuración de los sistemas.\n\nEl proceso comienza con la recolección de datos sobre los sistemas actuales, identificando vulnerabilidades y comparándolas con los controles de seguridad recomendados. Por ejemplo, si la línea base exige que solo usuarios autorizados accedan a ciertos sistemas, el análisis verificará si se están aplicando controles de acceso adecuados. Los resultados se documentan en un informe detallado que incluye las brechas identificadas, su impacto potencial y las recomendaciones para cerrarlas. Este informe puede incluir tablas que categoricen las ubicaciones o sistemas según su nivel de cumplimiento (por ejemplo, verde para cumplimiento cercano, amarillo para brechas moderadas y rojo para brechas críticas).\n\n\nMODELO DE CONFIANZA CERO (ZERO TRUST)\n\nEl modelo de confianza cero (zero trust) es un enfoque de seguridad que asume que ninguna entidad, ya sea un usuario, dispositivo o proceso, debe ser confiable por defecto, incluso si está dentro de la red corporativa. En lugar de confiar en la ubicación de la red, se verifica cada solicitud de acceso como si proviniera de una red no confiable.\n\nEn un entorno de confianza cero, la autenticación es continua y adaptativa. Por ejemplo, se pueden aplicar factores adicionales de autenticación (MFA, Multi-Factor Authentication) basados en el contexto, como la ubicación geográfica del usuario, el dispositivo utilizado o el comportamiento típico. Si un usuario intenta acceder a recursos desde una IP ubicada en un país diferente al habitual, el sistema puede requerir autenticación adicional para confirmar su identidad.\n\nEste modelo también implica segmentar la red en zonas de seguridad (security zones) con políticas de acceso estrictas. Por ejemplo, se puede denegar automáticamente el acceso desde una zona no confiable a una zona interna. Para implementar confianza cero, se utilizan puntos de aplicación de políticas (policy enforcement points) que evalúan cada solicitud de acceso y puntos de decisión de políticas (policy decision points) que determinan si se permite o deniega el acceso basado en políticas predefinidas.\n\n\nSEGURIDAD FÍSICA\n\nLa seguridad física es un componente crítico de la ciberseguridad, ya que protege los activos físicos y evita accesos no autorizados a instalaciones donde se encuentran sistemas y datos sensibles. Un método común es el uso de barreras físicas como bolardos (ballards) o barricadas que canalizan el tráfico hacia puntos de acceso controlados. Estas barreras pueden ser de concreto, agua o incluso diseñadas para evitar el paso de vehículos.\n\nLos vestíbulos de control de acceso (access control vestibules) son áreas diseñadas para gestionar el flujo de personas. Estas áreas pueden tener configuraciones de una o dos puertas, donde una puerta debe cerrarse antes de que la otra pueda abrirse, evitando el acceso simultáneo de múltiples personas. Los vestíbulos también pueden incluir lectores de tarjetas o biometría para autenticar a los usuarios antes de permitirles el acceso al resto de las instalaciones.\n\nLas vallas (fences) son otro elemento común de seguridad física. Deben ser robustas y, en áreas de alta seguridad, pueden incluir alambre de púas o sistemas de detección de intrusos. Las cámaras de vigilancia (CCTV, Closed Circuit Television) son esenciales para monitorear áreas críticas. Estas cámaras pueden incluir tecnologías avanzadas como detección de movimiento, reconocimiento facial o lectura de matrículas. Las grabaciones de las cámaras se almacenan centralmente para su revisión y análisis.\n\nLos guardias de seguridad proporcionan un nivel adicional de protección física. Pueden verificar identificaciones, controlar el acceso a áreas restringidas y responder a incidentes. En muchas organizaciones, los guardias trabajan en parejas para garantizar la integridad y evitar que un solo individuo eluda las políticas de seguridad.\n\nLos identificadores (badges) son obligatorios en la mayoría de las organizaciones. Estos identificadores, que pueden incluir fotografía, nombre y otros detalles, deben ser visibles en todo momento y están integrados con sistemas de control de acceso electrónico para registrar cada entrada y salida.\n\nLa iluminación adecuada es crucial para disuadir actividades sospechosas. Áreas bien iluminadas reducen la capacidad de alguien para moverse sin ser detectado. Las tecnologías como la iluminación infrarroja o los sensores de presión y movimiento también se utilizan para detectar intrusos en áreas oscuras o extensas. Los sensores de microondas y ultrasonido pueden cubrir áreas más grandes y detectar movimientos incluso en condiciones de poca visibilidad.\n\n\nENGANO Y DISRUPCIÓN (DECEPTION AND DISRUPTION)\n\nComo profesional de la seguridad, no solo se busca prevenir ataques, sino también engañar y desorientar a los atacantes para proteger mejor los sistemas. Una técnica común es el uso de honeypots, que son sistemas diseñados para parecer vulnerables y atractivos para los atacantes. Los honeypots pueden ser servidores, estaciones de trabajo o incluso archivos individuales que contienen información falsa o aparentemente sensible. Cuando un atacante interactúa con un honeypot, los administradores de seguridad pueden estudiar sus técnicas y herramientas, obteniendo información valiosa sobre las tácticas utilizadas.\n\nLos honeypots pueden escalarse a infraestructuras más grandes llamadas honey nets, que incluyen múltiples dispositivos como routers, firewalls y servidores para simular un entorno de producción completo. Esto hace que el entorno sea más creíble y mantenga a los atacantes ocupados durante más tiempo.\n\nEn el nivel de archivos, se pueden crear honey files que contienen información falsa pero atractiva, como un archivo llamado \"passwords.txt\" que en realidad no contiene credenciales reales. Si un atacante accede a este archivo, se pueden generar alertas para notificar a los administradores de seguridad.\n\nLos honey tokens son otro método de engaño. Estos son datos rastreables que se colocan en áreas accesibles para los atacantes. Por ejemplo, se pueden crear credenciales de API falsas en un almacenamiento en la nube público. Si estas credenciales son utilizadas, se puede rastrear su origen y obtener información sobre el atacante. Los honey tokens también pueden incluir direcciones de correo electrónico falsas que, al ser publicadas en internet, revelan la fuente de la filtración.\n\n\nTIPOS DE ACTORES DE AMENAZA\n\nLos actores de amenaza pueden clasificarse según sus motivaciones, recursos y capacidades. Los actores más comunes incluyen:\n\n- HACKERS INDIVIDUALES (SCRIPT KIDDIES): Personas con conocimientos técnicos limitados que utilizan herramientas automatizadas para realizar ataques. Suelen carecer de motivaciones específicas más allá del desafío o la notoriedad.\n\n- ORGANIZACIONES CRIMINALES (CYBERCRIMINALS): Grupos organizados que buscan beneficios económicos mediante actividades como el robo de datos, el fraude o el secuestro de sistemas (ransomware). Utilizan recursos significativos y técnicas avanzadas.\n\n- ACTORES ESTATALES (STATE ACTORS): Grupos respaldados por gobiernos que buscan obtener información sensible, sabotear infraestructuras críticas o influir en eventos geopolíticos. Estos actores tienen recursos casi ilimitados y capacidades técnicas avanzadas.\n\n- ACTORES INTERNOS (INSIDERS): Empleados, contratistas o socios que tienen acceso legítimo a los sistemas pero abusan de ese acceso para robar información, sabotear operaciones o filtrar datos. Pueden actuar por motivaciones financieras, venganza o ideológicas.\n\n- ACTORES CON PATROCINIO (HACKTIVISTS): Grupos o individuos que realizan ataques para promover causas políticas, sociales o ideológicas. Sus motivaciones son principalmente ideológicas y buscan llamar la atención sobre sus causas.\n\n- COMPETIDORES: Empresas que buscan obtener una ventaja competitiva mediante el espionaje industrial, el robo de propiedad intelectual o la interrupción de servicios.\n\n\nFUNCIONES DE SEGURIDAD FÍSICA\n\nLas funciones de seguridad física se dividen en tres categorías principales:\n\n- DETERRENCIA: Medidas diseñadas para disuadir a los atacantes de intentar acceder a las instalaciones. Ejemplos incluyen vallas visibles, iluminación adecuada y letreros que indiquen la presencia de vigilancia.\n\n- DETECCIÓN: Sistemas que alertan sobre actividades sospechosas. Esto incluye cámaras de vigilancia, sensores de movimiento, sensores de presión y guardias de seguridad.\n\n- RETRASO: Medidas que ralentizan el avance de un atacante una vez que ha superado las barreras iniciales. Ejemplos incluyen puertas reforzadas, laberintos de acceso y sistemas de bloqueo automático.\n\n\nPRINCIPIOS DE DISEÑO DE SEGURIDAD FÍSICA\n\nPara diseñar un sistema de seguridad física efectivo, se deben considerar los siguientes principios:\n\n- DEFENSA EN PROFUNDIDAD (DEFENSE IN DEPTH): Implementar múltiples capas de seguridad para que, si una capa falla, otras puedan compensar. Por ejemplo, combinar vallas, cámaras, guardias y sistemas de control de acceso.\n\n- SEPARACIÓN DE FUNCIONES (SEPARATION OF DUTIES): Dividir las responsabilidades entre múltiples personas para evitar que un solo individuo tenga control total sobre un proceso crítico. Por ejemplo, requerir que dos guardias autoricen el acceso a un área de alta seguridad.\n\n- PRINCIPIO DE MÍNIMO PRIVILEGIO: Otorgar solo los permisos necesarios para realizar una tarea específica. Por ejemplo, un empleado del departamento de envíos no debería tener acceso a información financiera.\n\n- ROTACIÓN DE TAREAS (JOB ROTATION): Rotar al personal entre diferentes roles y ubicaciones para reducir el riesgo de fraude o colusión.\n\n- CONTROLES DE ACCESO FÍSICO: Implementar sistemas como tarjetas de identificación, biometría, llaves electrónicas y cerraduras biométricas para gestionar quién puede acceder a qué áreas.\n\n\nESTÁNDARES Y MARCOS DE REFERENCIA\n\nLos estándares y marcos de referencia proporcionan directrices para implementar prácticas de seguridad efectivas. Algunos de los más relevantes incluyen:\n\n- NIST (NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY): Publica marcos como el NIST Cybersecurity Framework, que proporciona directrices para gestionar riesgos de ciberseguridad.\n\n- ISO/IEC 27001: Estándar internacional para sistemas de gestión de seguridad de la información (SGSI). Proporciona un enfoque estructurado para gestionar la seguridad de la información.\n\n- CIS (CENTER FOR INTERNET SECURITY) CRITICAL SECURITY CONTROLS: Conjunto de controles de seguridad que ayudan a las organizaciones a protegerse contra ataques comunes.\n\n- PCI DSS (PAYMENT CARD INDUSTRY DATA SECURITY STANDARD): Estándar de seguridad para organizaciones que procesan pagos con tarjetas de crédito.\n\n\nBENEFICIOS DEL MODELO DE CONFIANZA CERO\n\nImplementar un modelo de confianza cero ofrece varios beneficios:\n\n- REDUCCIÓN DE LA SUPERFICIE DE ATAQUE: Al verificar cada solicitud de acceso, se minimiza el riesgo de que un atacante explote una vulnerabilidad no parcheada.\n\n- MEJOR GESTIÓN DE ACCESOS: Permite aplicar políticas de acceso más granulares y adaptativas, basadas en el contexto y el riesgo.\n\n- DETECCIÓN TEMPRANA DE ACTIVIDADES SOSPECHOSAS: Al requerir autenticación continua, se pueden detectar y responder rápidamente a comportamientos anómalos.\n\n- CUMPLIMIENTO DE NORMATIVAS: Muchos estándares y regulaciones, como el GDPR o el HIPAA, exigen controles de acceso estrictos que pueden cumplirse más fácilmente con un modelo de confianza cero.\n\n\nHERRAMIENTAS PARA IMPLEMENTAR CONFIANZA CERO\n\nPara implementar un modelo de confianza cero, se pueden utilizar varias herramientas y tecnologías:\n\n- AUTENTICACIÓN MULTIFACTOR (MFA): Requiere múltiples formas de verificación, como una contraseña y un token generado por una aplicación.\n\n- MICROSEGMENTACIÓN: Divide la red en segmentos más pequeños y aislados, cada uno con sus propias políticas de seguridad.\n\n- GESTIÓN DE IDENTIDADES Y ACCESOS (IAM, IDENTITY AND ACCESS MANAGEMENT): Sistemas que centralizan la gestión de identidades y permisos, como Active Directory o Okta.\n\n- FIREWALLS DE NUEVA GENERACIÓN (NGFW): Firewalls que incluyen capacidades avanzadas como inspección profunda de paquetes, control de aplicaciones y prevención de intrusiones.\n\n- SISTEMAS DE DETECCIÓN Y PREVENCIÓN DE INTRUSOS (IDS/IPS): Herramientas que monitorean el tráfico de red en busca de actividades sospechosas y bloquean ataques en tiempo real.\n\n\nSEGURIDAD FÍSICA EN ENTORNOS DIGITALES\n\nLa seguridad física también es crucial en entornos digitales, especialmente en centros de datos y salas de servidores. Algunas medidas incluyen:\n\n- SALAS DE SERVIDORES CON CONTROL DE ACCESO: Áreas con cerraduras electrónicas, biometría o tarjetas de acceso para restringir el acceso solo al personal autorizado.\n\n- SISTEMAS DE MONITOREO AMBIENTAL: Sensores que detectan cambios en temperatura, humedad o presencia de humo, y activan alertas o sistemas de extinción de incendios.\n\n- ALIMENTACIÓN ELÉCTRICA DE RESPALDO: Sistemas como UPS (Uninterruptible Power Supply) y generadores que garantizan el funcionamiento continuo de los equipos en caso de fallos eléctricos.\n\n- CABLEADO SEGURO: Protección de cables y conexiones para evitar sabotajes o interceptaciones.\n\n\nBUENAS PRÁCTICAS EN SEGURIDAD FÍSICA\n\nPara garantizar una seguridad física efectiva, se recomienda seguir estas buenas prácticas:\n\n- REALIZAR AUDITORÍAS REGULARES: Revisar periódicamente los sistemas de seguridad física para identificar vulnerabilidades y áreas de mejora.\n\n- CAPACITAR AL PERSONAL: Asegurar que el personal esté consciente de las políticas de seguridad física y sepa cómo responder a incidentes.\n\n- DOCUMENTAR PROCEDIMIENTOS: Mantener registros detallados de los sistemas de seguridad, incidentes y respuestas.\n\n- PROBAR SISTEMAS DE SEGURIDAD: Realizar simulacros y pruebas de penetración para evaluar la efectividad de las medidas de seguridad física.\n\n- ACTUALIZAR TECNOLOGÍAS: Adoptar nuevas tecnologías y métodos para mantenerse al día con las tácticas de los atacantes.\n\n\nCONCLUSIÓN\n\nLa seguridad de la información es un campo multifacético que abarca aspectos técnicos, humanos y físicos. La triada CIA proporciona un marco fundamental para proteger la confidencialidad, integridad y disponibilidad de los datos. El no repudio garantiza que las transacciones sean verificables y que los datos no sean alterados. El marco AAA asegura que solo los usuarios autorizados accedan a los recursos y que todas las acciones sean registradas. El análisis de brechas ayuda a identificar y cerrar las diferencias entre el estado actual y los objetivos de seguridad. El modelo de confianza cero redefine la seguridad al asumir que ninguna entidad es confiable por defecto. La seguridad física protege los activos físicos y evita accesos no autorizados. Finalmente, técnicas como el engaño y la disrupción permiten a los profesionales de seguridad estudiar y desorientar a los atacantes, mejorando la postura general de seguridad de la organización."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\n  A[Conceptos Fundamentales de Seguridad] --> B[Triada CIA]\n  A --> C[No Repudio]\n  A --> D[AAA: Autenticación, Autorización, Contabilidad]\n  A --> E[Análisis de Brechas]\n  A --> F[Confianza Cero]\n  A --> G[Seguridad Física]\n  A --> H[Engaño y Disrupción]\n  \n  B --> B1[Confidencialidad]\n  B --> B2[Integridad]\n  B --> B3[Disponibilidad]\n  B --> B4[Cifrado]\n  B --> B5[Hashing]\n  B --> B6[Firmas Digitales]\n  \n  C --> C1[Prueba de Integridad]\n  C --> C2[Prueba de Origen]\n  C --> C3[Firmas Digitales]\n  \n  D --> D1[Identificación]\n  D --> D2[Autenticación]\n  D --> D3[Autorización]\n  D --> D4[Contabilidad]\n  D --> D5[Certificados Digitales]\n  D --> D6[RBAC]\n  \n  E --> E1[Línea Base]\n  E --> E2[Comparación de Controles]\n  E --> E3[Informe de Brechas]\n  \n  F --> F1[Autenticación Adaptativa]\n  F --> F2[Zonas de Seguridad]\n  F --> F3[Puntos de Aplicación de Políticas]\n  F --> F4[Puntos de Decisión de Políticas]\n  \n  G --> G1[Barreras Físicas]\n  G --> G2[Vestíbulos de Control de Acceso]\n  G --> G3[Vallas y Cámaras]\n  G --> G4[Guardias de Seguridad]\n  G --> G5[Iluminación y Sensores]\n  G --> G6[Identificadores]\n  \n  H --> H1[Honeypots]\n  H --> H2[Honey Nets]\n  H --> H3[Honey Files]\n  H --> H4[Honey Tokens]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc2-01",
+      "pregunta": "¿Qué significa la triada CIA en ciberseguridad y cuáles son sus tres componentes?",
+      "respuesta": "La triada CIA (Confidentiality, Integrity, Availability) es un modelo fundamental que define los objetivos principales de la seguridad de la información. Sus tres componentes son: Confidencialidad (evitar acceso no autorizado a datos), Integridad (asegurar que los datos no sean alterados sin permiso) y Disponibilidad (garantizar que los sistemas y datos estén accesibles cuando se necesiten)."
+    },
+    {
+      "id": "fc2-02",
+      "pregunta": "¿Qué técnica se utiliza para garantizar la integridad de los datos durante su transmisión?",
+      "respuesta": "Para garantizar la integridad de los datos, se utilizan técnicas como el hashing (creación de un resumen único de los datos) y las firmas digitales (digital signatures). El hashing genera un valor único que cambia si los datos son alterados, mientras que las firmas digitales combinan hashing y cifrado asimétrico para verificar tanto la integridad como el origen de los datos."
+    },
+    {
+      "id": "fc2-03",
+      "pregunta": "¿Qué es el no repudio (non-repudiation) y cómo se logra en entornos digitales?",
+      "respuesta": "El no repudio es un concepto que proporciona pruebas de que una transacción o comunicación fue realizada por una parte específica y que los datos no han sido alterados. En entornos digitales, se logra mediante firmas digitales, que combinan hashing y cifrado asimétrico para garantizar tanto la integridad como el origen de los datos."
+    },
+    {
+      "id": "fc2-04",
+      "pregunta": "¿Qué es el marco AAA y cuáles son sus tres componentes?",
+      "respuesta": "El marco AAA (Authentication, Authorization, Accounting) es un proceso esencial para gestionar el acceso a los sistemas y recursos. Sus tres componentes son: Autenticación (verificar la identidad del usuario), Autorización (determinar qué recursos puede acceder el usuario) y Contabilidad (registrar las acciones realizadas por el usuario)."
+    },
+    {
+      "id": "fc2-05",
+      "pregunta": "¿Qué es un honeypot y cuál es su propósito en ciberseguridad?",
+      "respuesta": "Un honeypot es un sistema diseñado para parecer vulnerable y atractivo a los atacantes. Su propósito es engañar a los atacantes para que interactúen con él, permitiendo a los administradores de seguridad estudiar sus técnicas y herramientas sin poner en riesgo los sistemas de producción."
+    },
+    {
+      "id": "fc2-06",
+      "pregunta": "¿Qué es el modelo de confianza cero (zero trust) y cuál es su principio fundamental?",
+      "respuesta": "El modelo de confianza cero es un enfoque de seguridad que asume que ninguna entidad, ya sea un usuario, dispositivo o proceso, debe ser confiable por defecto, incluso si está dentro de la red corporativa. Su principio fundamental es verificar cada solicitud de acceso como si proviniera de una red no confiable."
+    },
+    {
+      "id": "fc2-07",
+      "pregunta": "¿Qué son los honey tokens y cómo se utilizan en ciberseguridad?",
+      "respuesta": "Los honey tokens son datos rastreables que se colocan en áreas accesibles para los atacantes. Su propósito es detectar y rastrear actividades sospechosas. Por ejemplo, se pueden crear credenciales de API falsas en un almacenamiento en la nube público. Si estas credenciales son utilizadas, se puede rastrear su origen y obtener información sobre el atacante."
+    },
+    {
+      "id": "fc2-08",
+      "pregunta": "¿Qué es un análisis de brechas (gap analysis) y cuál es su objetivo?",
+      "respuesta": "Un análisis de brechas es un proceso que compara el estado actual de la seguridad de una organización con los objetivos o estándares deseados. Su objetivo es identificar las diferencias (brechas) y planificar las acciones necesarias para alcanzarlos, ayudando a mejorar la postura de seguridad de la organización."
+    },
+    {
+      "id": "fc2-09",
+      "pregunta": "¿Qué son las zonas de seguridad (security zones) en el contexto del modelo de confianza cero?",
+      "respuesta": "Las zonas de seguridad son segmentos de la red con políticas de acceso específicas. En el contexto del modelo de confianza cero, estas zonas permiten aplicar políticas de acceso más granulares y adaptativas, basadas en el contexto y el riesgo. Por ejemplo, se puede denegar automáticamente el acceso desde una zona no confiable a una zona interna."
+    },
+    {
+      "id": "fc2-10",
+      "pregunta": "¿Qué es un vestíbulo de control de acceso (access control vestibule) y cuál es su propósito?",
+      "respuesta": "Un vestíbulo de control de acceso es un área diseñada para gestionar el flujo de personas hacia áreas restringidas. Su propósito es evitar el acceso simultáneo de múltiples personas y garantizar que solo los usuarios autorizados puedan ingresar. Estas áreas pueden incluir configuraciones de una o dos puertas y sistemas de autenticación como lectores de tarjetas o biometría."
+    },
+    {
+      "id": "fc2-11",
+      "pregunta": "¿Qué es la defensa en profundidad (defense in depth) en seguridad física?",
+      "respuesta": "La defensa en profundidad es un principio de diseño de seguridad física que implica implementar múltiples capas de seguridad para que, si una capa falla, otras puedan compensar. Por ejemplo, combinar vallas, cámaras, guardias y sistemas de control de acceso para proteger una instalación."
+    },
+    {
+      "id": "fc2-12",
+      "pregunta": "¿Qué es el RBAC (Role-Based Access Control) y cómo se utiliza en la autorización?",
+      "respuesta": "El RBAC (Role-Based Access Control) es un modelo de autorización que asigna permisos a usuarios basados en sus roles dentro de una organización. En lugar de asignar permisos individualmente a cada usuario, se definen roles con conjuntos específicos de permisos, y los usuarios se asignan a estos roles. Esto simplifica la gestión de permisos y permite escalar fácilmente en organizaciones con muchos usuarios."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un principio de la triada CIA en ciberseguridad?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) Disponibilidad",
+        "d) Autenticación"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La triada CIA se compone de Confidencialidad, Integridad y Disponibilidad. La autenticación es parte del marco AAA, no de la triada CIA.",
+      "id": "p2-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante intercepta un archivo cifrado enviado entre dos usuarios. Sin embargo, no puede interpretarlo porque no posee la clave de descifrado. ¿Qué principio de la triada CIA se está protegiendo principalmente?",
+      "opciones": [
+        "a) Integridad",
+        "b) Disponibilidad",
+        "c) Confidencialidad",
+        "d) No repudio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El cifrado protege la confidencialidad al garantizar que solo los destinatarios autorizados puedan acceder a la información, incluso si es interceptada.",
+      "id": "p2-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un sistema de control de acceso basado en roles (RBAC), un empleado del departamento de logística puede acceder a los registros de envíos pero no a los datos financieros. ¿Qué principio de seguridad se está aplicando?",
+      "opciones": [
+        "a) Separación de funciones",
+        "b) Mínimo privilegio",
+        "c) Defensa en profundidad",
+        "d) Rotación de tareas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El principio de mínimo privilegio garantiza que los usuarios solo tengan los permisos necesarios para realizar sus tareas específicas.",
+      "id": "p2-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema que registra todas las acciones de los usuarios, como horarios de inicio de sesión y recursos accedidos. ¿Qué componente del marco AAA se está utilizando?",
+      "opciones": [
+        "a) Autenticación",
+        "b) Autorización",
+        "c) Contabilidad",
+        "d) Identificación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La contabilidad (accounting) registra las acciones de los usuarios para auditorías y detección de actividades sospechosas.",
+      "id": "p2-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante intenta acceder a un sistema desde una IP ubicada en un país diferente al habitual del usuario legítimo. El sistema requiere autenticación adicional para confirmar la identidad. ¿Qué modelo de seguridad se está aplicando?",
+      "opciones": [
+        "a) Modelo de confianza cero",
+        "b) Triada CIA",
+        "c) Análisis de brechas",
+        "d) No repudio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El modelo de confianza cero verifica cada solicitud de acceso como si proviniera de una red no confiable, incluso dentro de la red corporativa.",
+      "id": "p2-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de actor de amenaza según el temario?",
+      "opciones": [
+        "a) Hackers individuales",
+        "b) Actores estatales",
+        "c) Firewalls",
+        "d) Competidores"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los firewalls son herramientas de seguridad, no actores de amenaza. Los actores de amenaza incluyen hackers individuales, actores estatales, competidores, etc.",
+      "id": "p2-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un archivo llamado 'contrato_final.pdf' contiene información falsa pero atractiva para un atacante. Si este archivo es accedido, se genera una alerta para notificar a los administradores. ¿Qué técnica de seguridad se está utilizando?",
+      "opciones": [
+        "a) Honeypot",
+        "b) Firma digital",
+        "c) Hashing",
+        "d) Microsegmentación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un honeypot es un sistema diseñado para parecer vulnerable y atraer a los atacantes, permitiendo estudiar sus técnicas.",
+      "id": "p2-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa compara su estado actual de seguridad con el estándar NIST SP 800-171 para identificar diferencias y planificar mejoras. ¿Qué proceso está realizando?",
+      "opciones": [
+        "a) Análisis de brechas",
+        "b) No repudio",
+        "c) Autenticación multifactor",
+        "d) Defensa en profundidad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El análisis de brechas (gap analysis) compara el estado actual con estándares o objetivos para identificar y cerrar diferencias.",
+      "id": "p2-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado con acceso legítimo a los sistemas de la empresa roba información confidencial y la filtra a un competidor. ¿Qué tipo de actor de amenaza representa este empleado?",
+      "opciones": [
+        "a) Hacker individual",
+        "b) Actor interno",
+        "c) Actor estatal",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un actor interno (insider) es un empleado o contratista que abusa de su acceso legítimo para robar información o sabotear operaciones.",
+      "id": "p2-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa barreras físicas, cámaras de vigilancia y guardias de seguridad para proteger sus instalaciones. ¿Qué función principal de seguridad física NO está siendo cubierta?",
+      "opciones": [
+        "a) Deterrencia",
+        "b) Detección",
+        "c) Retraso",
+        "d) No repudio"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Las funciones de seguridad física incluyen deterrencia, detección y retraso. El no repudio es un concepto de criptografía, no de seguridad física.",
+      "id": "p2-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes principios NO está directamente relacionado con garantizar que los datos lleguen a su destino sin alteraciones durante la transmisión?",
+      "opciones": [
+        "a) Integridad",
+        "b) Disponibilidad",
+        "c) No repudio",
+        "d) Confidencialidad"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La confidencialidad (opción d) protege que solo usuarios autorizados accedan a los datos, mientras que la integridad (opción a) asegura que los datos no sean alterados durante la transmisión. La disponibilidad (opción b) garantiza el acceso a los datos, y el no repudio (opción c) prueba el origen y autenticidad de los datos.",
+      "id": "p2-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante logra acceder a un servidor interno de la empresa mediante un exploit en una aplicación web desactualizada. Sin embargo, el sistema de archivos del servidor está cifrado y el atacante no puede leer los datos almacenados. ¿Qué principio de la triada CIA se está protegiendo principalmente en este escenario?",
+      "opciones": [
+        "a) Integridad, porque los datos no pueden ser modificados sin la clave de cifrado",
+        "b) Disponibilidad, porque el servidor sigue funcionando a pesar del ataque",
+        "c) Confidencialidad, porque los datos están protegidos contra accesos no autorizados",
+        "d) No repudio, porque el atacante no puede alterar los registros de acceso"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El cifrado protege la confidencialidad de los datos, asegurando que solo usuarios con la clave puedan acceder a ellos, incluso si el atacante compromete el sistema.",
+      "id": "p2-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el marco AAA, ¿qué fase se encarga de registrar y monitorear las acciones de un usuario después de que este ha sido autenticado y autorizado?",
+      "opciones": [
+        "a) Identificación",
+        "b) Autenticación",
+        "c) Autorización",
+        "d) Contabilidad"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La contabilidad (accounting) registra todas las acciones del usuario, como horarios de acceso y recursos utilizados, para auditorías y detección de actividades sospechosas.",
+      "id": "p2-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un beneficio directo del modelo de confianza cero (Zero Trust)?",
+      "opciones": [
+        "a) Reduce la superficie de ataque al verificar cada solicitud de acceso",
+        "b) Permite confiar en usuarios internos sin autenticación adicional",
+        "c) Facilita la detección temprana de actividades anómalas",
+        "d) Ayuda a cumplir con normativas que exigen controles de acceso estrictos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El modelo de confianza cero (Zero Trust) asume que ninguna entidad es confiable por defecto, incluso dentro de la red corporativa, por lo que no permite confiar en usuarios internos sin autenticación adicional (opción b).",
+      "id": "p2-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema que genera alertas cuando un empleado accede a archivos fuera de su horario laboral habitual. ¿Qué principio de diseño de seguridad física se está aplicando?",
+      "opciones": [
+        "a) Defensa en profundidad",
+        "b) Separación de funciones",
+        "c) Principio de mínimo privilegio",
+        "d) Rotación de tareas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La defensa en profundidad (defense in depth) implica implementar múltiples capas de seguridad, como monitoreo de acceso y alertas, para detectar y responder a comportamientos anómalos.",
+      "id": "p2-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante accede a un archivo llamado 'plan_estrategico_2024.pdf' que contiene información falsa pero diseñada para parecer valiosa. Al abrirlo, el sistema envía una alerta a los administradores. ¿Qué técnica de engaño está utilizando esta organización?",
+      "opciones": [
+        "a) Honeypot",
+        "b) Honey file",
+        "c) Honey token",
+        "d) Honey net"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un *honey file* es un archivo diseñado para parecer atractivo y contener información falsa, que al ser accedido, alerta a los administradores sobre la actividad del atacante.",
+      "id": "p2-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un sistema de control de acceso basado en atributos (ABAC), un usuario recibe permisos según su rol, ubicación geográfica y dispositivo utilizado. ¿Qué modelo de seguridad está implementando este sistema?",
+      "opciones": [
+        "a) Modelo de confianza cero (Zero Trust)",
+        "b) Control de acceso basado en roles (RBAC)",
+        "c) Control de acceso basado en reglas (Rule-Based Access Control)",
+        "d) Control de acceso basado en atributos (ABAC)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El control de acceso basado en atributos (ABAC) evalúa múltiples factores, como rol, ubicación y dispositivo, para determinar los permisos de acceso.",
+      "id": "p2-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa detecta que un empleado ha estado accediendo a bases de datos financieras sin autorización durante los últimos tres meses. Tras la investigación, se descubre que el empleado actuó por venganza tras ser despedido. ¿Qué tipo de actor de amenaza representa este empleado?",
+      "opciones": [
+        "a) Hacker individual (Script Kiddie)",
+        "b) Actor interno (Insider)",
+        "c) Actor estatal (State Actor)",
+        "d) Competidor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un actor interno (insider) es un empleado o contratista con acceso legítimo que abusa de ese acceso, como en este caso por motivaciones de venganza.",
+      "id": "p2-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes funciones de seguridad física está diseñada para ralentizar el avance de un atacante una vez que ha superado las barreras iniciales?",
+      "opciones": [
+        "a) Deterrencia",
+        "b) Detección",
+        "c) Retraso",
+        "d) Separación de funciones"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La función de retraso (delay) incluye medidas como puertas reforzadas o laberintos de acceso que ralentizan al atacante para dar tiempo a responder al incidente.",
+      "id": "p2-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización compara su política de contraseñas actual con el estándar NIST SP 800-63B para identificar si cumple con las recomendaciones sobre longitud mínima y complejidad. ¿Qué proceso está realizando?",
+      "opciones": [
+        "a) Análisis de brechas (Gap Analysis)",
+        "b) Definición de una línea base (Baseline)",
+        "c) Implementación de un modelo de confianza cero",
+        "d) Aplicación del principio de mínimo privilegio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El análisis de brechas (gap analysis) compara el estado actual de seguridad con estándares o objetivos para identificar diferencias y planificar mejoras.",
+      "id": "p2-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes principios de la triada CIA garantiza que los datos no sean modificados durante su transmisión o almacenamiento?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) Disponibilidad",
+        "d) Autenticación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La integridad (I en CIA) asegura que los datos no sean alterados sin autorización, utilizando técnicas como hashing o firmas digitales para detectar modificaciones.",
+      "id": "p2-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En comparación con el cifrado asimétrico, ¿qué característica define principalmente al cifrado simétrico en el contexto de la confidencialidad?",
+      "opciones": [
+        "a) Usa una sola clave para cifrar y descifrar",
+        "b) Requiere dos claves diferentes (pública y privada)",
+        "c) No puede cifrar grandes volúmenes de datos",
+        "d) Es más lento pero más seguro"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado simétrico utiliza una sola clave para cifrar y descifrar, lo que lo hace eficiente para proteger la confidencialidad de datos en tránsito o almacenamiento.",
+      "id": "p2-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un sistema de control de acceso basado en atributos (ABAC) evalúa permisos según el rol, ubicación geográfica y dispositivo del usuario. ¿Qué principio de diseño de seguridad se está aplicando?",
+      "opciones": [
+        "a) Defensa en profundidad",
+        "b) Principio de mínimo privilegio",
+        "c) Separación de funciones",
+        "d) Rotación de tareas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El principio de mínimo privilegio (least privilege) limita los permisos a lo estrictamente necesario, como en ABAC donde los accesos se otorgan según atributos específicos.",
+      "id": "p2-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes métodos NO se utiliza para garantizar la integridad de los datos en la triada CIA?",
+      "opciones": [
+        "a) Uso de funciones hash (hashing)",
+        "b) Implementación de firmas digitales",
+        "c) Cifrado simétrico de los datos",
+        "d) Comparación de hashes después de la transmisión"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El cifrado simétrico (opción c) protege la confidencialidad de los datos, no su integridad. La integridad se garantiza mediante hashing, firmas digitales o comparación de hashes.",
+      "id": "p2-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante accede a un archivo llamado 'backup_2023.zip' que contiene información falsa pero diseñada para parecer valiosa. Al abrirlo, el sistema envía una alerta a los administradores. ¿Qué técnica de engaño está utilizando esta organización?",
+      "opciones": [
+        "a) Honeypot",
+        "b) Honey file",
+        "c) Honey token",
+        "d) Decepción de red (network deception)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un honey file es un archivo falso diseñado para atraer atacantes y generar alertas al ser accedido, como en este escenario.",
+      "id": "p2-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema que registra todas las acciones de los usuarios, como horarios de inicio de sesión y recursos accedidos, pero NO verifica si esos recursos están autorizados. ¿Qué componente del marco AAA está siendo utilizado?",
+      "opciones": [
+        "a) Autenticación",
+        "b) Autorización",
+        "c) Contabilidad",
+        "d) Identificación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La contabilidad (accounting) registra acciones realizadas por usuarios, como inicios de sesión o acceso a recursos, sin evaluar permisos (autorización).",
+      "id": "p2-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario de alta seguridad, una organización implementa un vestíbulo de control de acceso con dos puertas que no pueden abrirse simultáneamente. ¿Qué principio de diseño de seguridad física se está aplicando?",
+      "opciones": [
+        "a) Defensa en profundidad",
+        "b) Separación de funciones",
+        "c) Control de acceso físico",
+        "d) Principio de mínimo privilegio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La defensa en profundidad (defense in depth) combina múltiples capas de seguridad, como el vestíbulo de control de acceso, para ralentizar o disuadir atacantes.",
+      "id": "p2-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un empleado con acceso legítimo a los sistemas de la empresa roba información confidencial y la filtra a un competidor. Tras la investigación, se descubre que actuó por venganza tras ser despedido. ¿Qué tipo de actor de amenaza representa este empleado?",
+      "opciones": [
+        "a) Hacker individual (Script Kiddie)",
+        "b) Actor interno (Insider)",
+        "c) Competidor",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un actor interno (insider) es un empleado o contratista con acceso legítimo que abusa de sus privilegios, como en este caso por motivos de venganza.",
+      "id": "p2-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa compara su política de contraseñas actual con el estándar NIST SP 800-63B para identificar si cumple con recomendaciones sobre longitud mínima y complejidad. ¿Qué proceso está realizando?",
+      "opciones": [
+        "a) Análisis de brechas (Gap Analysis)",
+        "b) Auditoría de seguridad",
+        "c) Prueba de penetración",
+        "d) Línea base de seguridad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El análisis de brechas (gap analysis) compara el estado actual de seguridad con estándares como NIST SP 800-63B para identificar diferencias y planificar mejoras.",
+      "id": "p2-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un atacante logra acceder a un servidor interno mediante un exploit en una aplicación web desactualizada, pero el sistema de archivos está cifrado y no puede leer los datos almacenados. ¿Qué principio de la triada CIA se está protegiendo principalmente en este escenario?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) Disponibilidad",
+        "d) No repudio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La confidencialidad (C en CIA) se protege mediante cifrado, evitando que el atacante acceda a datos legibles, incluso si logra entrar al sistema.",
+      "id": "p2-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes principios de la triada CIA se enfoca en garantizar que los datos no sean alterados durante su transmisión o almacenamiento?",
+      "opciones": [
+        "Confidencialidad",
+        "Integridad",
+        "Disponibilidad",
+        "No repudio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La integridad (I en CIA) asegura que los datos no sean modificados de forma no autorizada durante su transmisión o almacenamiento, utilizando técnicas como hashing o firmas digitales.",
+      "id": "p2-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En comparación con el cifrado simétrico, ¿qué característica define principalmente al cifrado asimétrico en el contexto de la confidencialidad?",
+      "opciones": [
+        "Usa la misma clave para cifrar y descifrar",
+        "Requiere menos recursos computacionales",
+        "Utiliza un par de claves públicas y privadas",
+        "Es más rápido en el procesamiento de datos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El cifrado asimétrico utiliza un par de claves (pública y privada) para garantizar confidencialidad, donde la clave pública cifra y la privada descifra, o viceversa.",
+      "id": "p2-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes métodos NO se utiliza para garantizar la confidencialidad de los datos en la triada CIA?",
+      "opciones": [
+        "a) Cifrado simétrico",
+        "b) Cifrado asimétrico",
+        "c) Hashing",
+        "d) Control de acceso basado en roles"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El hashing se utiliza principalmente para garantizar la integridad de los datos (creando una huella única que detecta alteraciones), no para garantizar la confidencialidad.",
+      "id": "p2-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes métodos NO se utiliza para garantizar la disponibilidad (Availability) en la triada CIA?",
+      "opciones": [
+        "a) Implementar redundancia en los servidores críticos",
+        "b) Aplicar parches de seguridad para evitar vulnerabilidades que afecten el funcionamiento",
+        "c) Usar hashing para detectar modificaciones no autorizadas en los datos",
+        "d) Realizar copias de seguridad (backups) de los datos críticos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El hashing se utiliza para garantizar la integridad de los datos, no su disponibilidad. Las opciones 'a', 'b' y 'd' son medidas directas para asegurar que los sistemas y datos estén accesibles cuando sean necesarios.",
+      "id": "p2-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué método se utiliza principalmente para garantizar la confidencialidad de los datos?",
+      "opciones": [
+        "a) Hashing",
+        "b) Cifrado (encryption)",
+        "c) Firmas digitales",
+        "d) Copias de seguridad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El cifrado transforma los datos en un formato ilegible sin la clave de descifrado, protegiendo su confidencialidad. El hashing y las firmas digitales están relacionados con la integridad, y las copias de seguridad no garantizan confidencialidad.",
+      "id": "p2-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un sistema de control de acceso basado en atributos (ABAC), un usuario recibe permisos según su rol, ubicación geográfica y dispositivo utilizado. ¿Qué principio de diseño de seguridad se está aplicando?",
+      "opciones": [
+        "Defensa en profundidad",
+        "Principio de mínimo privilegio",
+        "Separación de funciones",
+        "Control de acceso basado en contexto"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El ABAC evalúa múltiples atributos (rol, ubicación, dispositivo) para conceder permisos, lo que se alinea con el principio de control de acceso basado en contexto.",
+      "id": "p2-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué método se utiliza principalmente para garantizar la integridad de los datos?",
+      "opciones": [
+        "a) Cifrado simétrico",
+        "b) Firmas digitales",
+        "c) Control de acceso basado en roles (RBAC)",
+        "d) Balanceo de carga"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las firmas digitales combinan hashing y cifrado asimétrico para garantizar que los datos no han sido alterados y que provienen de una fuente legítima, protegiendo así la integridad.",
+      "id": "p2-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué método se utiliza principalmente para garantizar la disponibilidad de los datos en la triada CIA?",
+      "opciones": [
+        "a) Cifrado asimétrico",
+        "b) Tolerancia a fallos (fault tolerance)",
+        "c) Firmas digitales",
+        "d) Hashing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La disponibilidad (A en CIA) se garantiza mediante técnicas como la tolerancia a fallos, que aseguran que los sistemas y datos estén accesibles incluso ante fallos individuales.",
+      "id": "p2-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un vestíbulo de control de acceso con dos puertas que no pueden abrirse simultáneamente. ¿Qué principio de diseño de seguridad física se está aplicando?",
+      "opciones": [
+        "Defensa en profundidad",
+        "Separación de funciones",
+        "Retraso (Delay)",
+        "Deterrencia"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Los vestíbulos de control de acceso con puertas secuenciales (una debe cerrarse antes de abrir la otra) aplican el principio de separación de funciones para evitar accesos no autorizados.",
+      "id": "p2-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de almacenamiento distribuido donde los datos se dividen en fragmentos y se distribuyen en múltiples ubicaciones geográficas. Cada fragmento está cifrado individualmente y se requiere una combinación de claves privadas de al menos tres de los cinco custodios autorizados para reconstruir la información original. ¿Qué principio de la triada CIA se está protegiendo principalmente con este mecanismo?",
+      "opciones": [
+        "a) Confidencialidad, ya que solo los custodios autorizados pueden descifrar los fragmentos.",
+        "b) Integridad, porque la división en fragmentos garantiza que los datos no sean modificados sin detección.",
+        "c) Disponibilidad, al distribuir los datos en múltiples ubicaciones para evitar pérdida de acceso.",
+        "d) No repudio, ya que la combinación de claves privadas prueba la participación de los custodios."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La confidencialidad se protege al cifrar los fragmentos y requerir múltiples claves privadas para acceder a la información, asegurando que solo los custodios autorizados puedan reconstruir los datos originales.",
+      "id": "p2-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes métodos NO se utiliza para garantizar la confidencialidad de los datos según la triada CIA?",
+      "opciones": [
+        "a) Cifrado simétrico",
+        "b) Cifrado asimétrico",
+        "c) Hashing",
+        "d) Control de acceso basado en roles"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El hashing se utiliza principalmente para garantizar la integridad de los datos, no la confidencialidad. La confidencialidad se logra mediante cifrado (simétrico o asimétrico) y control de acceso.",
+      "id": "p2-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el modelo de confianza cero (Zero Trust), ¿qué principio fundamental garantiza que cada solicitud de acceso sea evaluada de manera continua y contextual?",
+      "opciones": [
+        "a) Verificación estática basada en ubicación de red",
+        "b) Autenticación basada en el contexto (como ubicación geográfica o dispositivo)",
+        "c) Confianza implícita en usuarios internos",
+        "d) Uso exclusivo de contraseñas como factor de autenticación"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El modelo de confianza cero asume que ninguna entidad es confiable por defecto y requiere autenticación continua y adaptativa, evaluando factores como ubicación geográfica, dispositivo o comportamiento del usuario.",
+      "id": "p2-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué técnica se utiliza principalmente para garantizar la disponibilidad de los datos?",
+      "opciones": [
+        "a) Cifrado de datos en reposo y en tránsito",
+        "b) Implementación de redundancia y tolerancia a fallos",
+        "c) Uso de firmas digitales para verificar la autenticidad",
+        "d) Aplicación de hashing para detectar alteraciones"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La disponibilidad (Availability) en la triada CIA se garantiza principalmente mediante la implementación de redundancia y tolerancia a fallos, asegurando que los sistemas y datos estén accesibles incluso ante fallos individuales.",
+      "id": "p2-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes métodos se utiliza principalmente para garantizar el no repudio (non-repudiation) en comunicaciones digitales según el temario?",
+      "opciones": [
+        "a) Uso de hashes para verificar integridad",
+        "b) Implementación de contraseñas complejas",
+        "c) Aplicación de firmas digitales combinadas con cifrado asimétrico",
+        "d) Segmentación de red en zonas de seguridad"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El no repudio garantiza que una transacción o comunicación no pueda ser negada por su origen, lo que se logra mediante firmas digitales que combinan hashing y cifrado asimétrico para validar tanto la integridad como el origen.",
+      "id": "p2-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el modelo de la triada CIA, ¿qué principio se enfoca en garantizar que los datos sean accesibles para los usuarios autorizados en el momento requerido?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) Disponibilidad",
+        "d) No repudio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La disponibilidad (Availability) en la triada CIA garantiza que los sistemas y datos estén accesibles cuando sean necesarios, mediante tolerancia a fallos y mantenimiento de sistemas.",
+      "id": "p2-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué método se utiliza principalmente para garantizar la integridad de los datos durante su transmisión?",
+      "opciones": [
+        "a) Cifrado simétrico",
+        "b) Firmas digitales",
+        "c) Control de acceso basado en roles (RBAC)",
+        "d) Segmentación de red"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las firmas digitales combinan hashing y cifrado asimétrico para verificar que los datos no han sido alterados durante la transmisión, garantizando su integridad.",
+      "id": "p2-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes métodos NO se utiliza para garantizar la integridad de los datos según la triada CIA?",
+      "opciones": [
+        "a) Hashing (creación de huellas digitales únicas)",
+        "b) Firmas digitales (digital signatures)",
+        "c) Cifrado simétrico (symmetric encryption)",
+        "d) Funciones de resumen criptográfico (como SHA-256)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El cifrado simétrico se utiliza principalmente para garantizar la confidencialidad de los datos, no la integridad. La integridad se asegura mediante técnicas como hashing, firmas digitales o funciones de resumen criptográfico.",
+      "id": "p2-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué método se utiliza principalmente para garantizar la integridad de los datos en la triada CIA?",
+      "opciones": [
+        "a) Cifrado simétrico",
+        "b) Hashing",
+        "c) Control de acceso basado en roles",
+        "d) Autenticación multifactor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El hashing genera un resumen único de los datos que permite detectar cualquier alteración, garantizando así la integridad de los datos.",
+      "id": "p2-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante intercepta un mensaje cifrado pero no puede descifrarlo sin la clave, ¿qué principio de la triada CIA se está protegiendo principalmente?",
+      "opciones": [
+        "a) Integridad",
+        "b) Disponibilidad",
+        "c) Confidencialidad",
+        "d) No repudio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El cifrado protege la confidencialidad al garantizar que solo los destinatarios autorizados puedan acceder a la información, incluso si el mensaje es interceptado.",
+      "id": "p2-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa compara su política de contraseñas actual con el estándar NIST SP 800-63B para identificar si cumple con las recomendaciones sobre longitud mínima y complejidad. ¿Qué proceso está realizando?",
+      "opciones": [
+        "a) Análisis de brechas (Gap Analysis)",
+        "b) Implementación de confianza cero",
+        "c) Segmentación de red",
+        "d) Autenticación multifactor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El análisis de brechas compara el estado actual de seguridad con estándares como NIST SP 800-63B para identificar diferencias y planificar mejoras.",
+      "id": "p2-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué técnica se utiliza principalmente para garantizar que los datos sean accesibles solo para usuarios autorizados?",
+      "opciones": [
+        "a) Cifrado simétrico",
+        "b) Hashing",
+        "c) Cifrado asimétrico",
+        "d) Control de acceso"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El control de acceso es un método clave para garantizar la confidencialidad, ya que restringe el acceso a los datos solo a usuarios autorizados mediante políticas y mecanismos de autenticación y autorización.",
+      "id": "p2-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el marco AAA, ¿qué fase registra y monitorea las acciones de un usuario después de ser autenticado y autorizado?",
+      "opciones": [
+        "a) Identificación",
+        "b) Autenticación",
+        "c) Autorización",
+        "d) Contabilidad"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La contabilidad (Accounting) registra todas las acciones del usuario tras la autenticación y autorización, según el marco AAA.",
+      "id": "p2-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué principio de la triada CIA se está protegiendo principalmente cuando una organización implementa un sistema de almacenamiento distribuido con cifrado individual de fragmentos y requerimiento de múltiples claves para reconstruir la información?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) Disponibilidad",
+        "d) No repudio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado individual de fragmentos y la necesidad de múltiples claves protegen principalmente la confidencialidad, evitando que actores no autorizados accedan a los datos.",
+      "id": "p2-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante accede a un archivo llamado 'backup_2023.zip' que contiene información falsa diseñada para parecer valiosa. Al abrirlo, el sistema envía una alerta a los administradores. ¿Qué técnica de engaño está utilizando esta organización?",
+      "opciones": [
+        "a) Honeypot",
+        "b) Honey file",
+        "c) Honey token",
+        "d) Honey net"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un 'honey file' es un archivo individual diseñado para parecer atractivo y contener información falsa, generando alertas al ser accedido (según el temario de engaño y disrupción).",
+      "id": "p2-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes métodos NO se utiliza para garantizar la disponibilidad de los datos según la triada CIA?",
+      "opciones": [
+        "a) Implementación de sistemas con tolerancia a fallos (fault tolerance)",
+        "b) Realización de copias de seguridad (backups) periódicas",
+        "c) Uso de cifrado asimétrico para proteger datos en tránsito",
+        "d) Aplicación de parches (patching) para corregir vulnerabilidades"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El cifrado asimétrico garantiza confidencialidad e integridad, pero no disponibilidad. Esta última se asegura con tolerancia a fallos, backups y parches (opciones a, b y d).",
+      "id": "p2-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes métodos se utiliza principalmente para garantizar la confidencialidad de los datos en la triada CIA según el temario?",
+      "opciones": [
+        "a) Firmas digitales",
+        "b) Hashing",
+        "c) Cifrado",
+        "d) Copias de seguridad"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El cifrado (encryption) transforma los datos en un formato ilegible para cualquier persona que no posea la clave de descifrado, protegiendo así su confidencialidad.",
+      "id": "p2-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué método se utiliza principalmente para garantizar que los datos no sean alterados durante su almacenamiento?",
+      "opciones": [
+        "a) Cifrado (encryption)",
+        "b) Hashing (creación de huellas digitales)",
+        "c) Autenticación multifactor (MFA)",
+        "d) Control de acceso basado en roles (RBAC)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El hashing genera una 'huella digital' única de los datos que cambia si estos son alterados, permitiendo detectar modificaciones no autorizadas durante el almacenamiento.",
+      "id": "p2-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué método se utiliza principalmente para garantizar el no repudio en comunicaciones digitales según el temario?",
+      "opciones": [
+        "a) Cifrado simétrico",
+        "b) Firmas digitales",
+        "c) Hashing",
+        "d) Autenticación multifactor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las firmas digitales combinan hashing y cifrado asimétrico para proporcionar pruebas irrefutables del origen y la integridad de los datos (no repudio).",
+      "id": "p2-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema de respaldo distribuido donde los datos se dividen en fragmentos y se almacenan en cinco ubicaciones geográficas distintas. Cada fragmento está cifrado con una clave única, y para reconstruir la información completa se requiere la combinación de al menos tres claves privadas de cinco custodios autorizados. Además, el sistema genera un hash único para cada fragmento que se verifica periódicamente para detectar cualquier alteración. ¿Qué principio de la triada CIA se está protegiendo principalmente con este mecanismo?",
+      "opciones": [
+        "a) Confidencialidad, ya que el cifrado individual de fragmentos asegura que solo los custodios autorizados puedan acceder a los datos.",
+        "b) Integridad, porque el uso de hashes detecta alteraciones en los fragmentos durante el almacenamiento.",
+        "c) Disponibilidad, ya que la distribución en múltiples ubicaciones garantiza que los datos estén accesibles incluso si falla una ubicación.",
+        "d) No repudio, porque la combinación de claves y la verificación de hashes aseguran que solo los custodios legítimos puedan reconstruir la información."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado individual de fragmentos asegura que los datos no puedan ser interpretados por actores no autorizados, protegiendo principalmente la confidencialidad. La distribución y el requisito de múltiples claves refuerzan este principio.",
+      "id": "p2-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema de control de acceso físico donde los empleados deben pasar por un vestíbulo con dos puertas que operan en secuencia (una debe cerrarse antes de que la otra pueda abrirse), y además se requiere autenticación biométrica en ambas puertas. Si un empleado intenta acceder sin completar el proceso, el sistema activa una alarma y notifica al personal de seguridad. ¿Qué principio de diseño de seguridad física se está aplicando con este mecanismo?",
+      "opciones": [
+        "a) Defensa en profundidad, ya que combina múltiples capas de control de acceso.",
+        "b) Separación de funciones, al dividir el acceso en pasos secuenciales que requieren autenticación independiente.",
+        "c) Principio de mínimo privilegio, al restringir el acceso solo a empleados autorizados.",
+        "d) Retraso, porque las puertas secuenciales ralentizan el avance de un posible intruso."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El mecanismo descrito aplica el principio de separación de funciones, ya que divide el proceso de acceso en pasos secuenciales que requieren autenticación independiente en cada etapa, evitando que un solo error o compromiso permita el acceso no autorizado.",
+      "id": "p2-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de la triada CIA se utiliza principalmente para garantizar que los datos no sean accesibles para personas no autorizadas?",
+      "opciones": [
+        "a) Cifrado (encryption)",
+        "b) Hashing",
+        "c) Firma digital",
+        "d) Autenticación multifactor (MFA)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado (encryption) transforma los datos en un formato ilegible para cualquier persona que no posea la clave de descifrado, garantizando así la confidencialidad según la triada CIA.",
+      "id": "p2-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un sistema donde se implementa el principio de defensa en profundidad para la seguridad física, ¿qué combinación de medidas sería la más adecuada según el temario?",
+      "opciones": [
+        "a) Vallas, cámaras de vigilancia y guardias de seguridad",
+        "b) Cifrado de datos, firmas digitales y autenticación multifactor",
+        "c) Firewalls, IDS/IPS y segmentación de red",
+        "d) Control de acceso basado en roles, auditorías y rotación de tareas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La defensa en profundidad en seguridad física implica múltiples capas de seguridad, como vallas (deterrencia), cámaras (detección) y guardias (respuesta), para proteger los activos físicos.",
+      "id": "p2-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante accede a un archivo llamado 'contrato_confidencial.pdf' que contiene información falsa pero diseñada para parecer valiosa. Al abrirlo, el sistema genera una alerta inmediata para notificar a los administradores. ¿Qué técnica de engaño está utilizando esta organización?",
+      "opciones": [
+        "a) Honeyfile",
+        "b) Honeypot",
+        "c) Honey token",
+        "d) Decepción dinámica"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un honeyfile es un archivo diseñado para parecer atractivo y contener información falsa, utilizado para detectar accesos no autorizados y alertar a los administradores.",
+      "id": "p2-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el marco AAA, ¿qué fase se encarga de registrar y monitorear las acciones de un usuario después de que este ha sido autenticado y autorizado?",
+      "opciones": [
+        "a) Autenticación",
+        "b) Autorización",
+        "c) Contabilidad",
+        "d) Identificación"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La contabilidad (accounting) registra y monitorea todas las acciones realizadas por un usuario una vez autenticado y autorizado, como horarios de acceso y recursos utilizados.",
+      "id": "p2-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes principios de la triada CIA se está protegiendo principalmente cuando una organización implementa un sistema de almacenamiento distribuido con cifrado individual de fragmentos y requerimiento de múltiples claves para reconstruir la información?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) Disponibilidad",
+        "d) No repudio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado individual de fragmentos y la necesidad de múltiples claves para reconstruir la información garantizan que solo usuarios autorizados puedan acceder a los datos, protegiendo su confidencialidad.",
+      "id": "p2-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué técnica se utiliza principalmente para garantizar la confidencialidad de los datos?",
+      "opciones": [
+        "a) Cifrado simétrico o asimétrico",
+        "b) Uso de firewalls de nueva generación",
+        "c) Implementación de firmas digitales",
+        "d) Hashing de datos sensibles"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona explícitamente que el cifrado (simétrico o asimétrico) es el método principal para garantizar la confidencialidad, ya que transforma los datos en un formato ilegible para personas no autorizadas.",
+      "id": "p2-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto del modelo de confianza cero, ¿qué principio fundamental garantiza que cada solicitud de acceso sea evaluada de manera continua y contextual?",
+      "opciones": [
+        "a) Autenticación multifactor (MFA)",
+        "b) Microsegmentación de red",
+        "c) Verificación continua y adaptativa",
+        "d) Control de acceso basado en roles (RBAC)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El modelo de confianza cero asume que ninguna entidad es confiable por defecto y requiere una verificación continua y adaptativa de cada solicitud de acceso basada en el contexto.",
+      "id": "p2-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de respaldo distribuido donde los datos se dividen en fragmentos y se almacenan en cinco ubicaciones geográficas distintas. Cada fragmento está cifrado con una clave única, y para reconstruir la información completa se requiere la combinación de al menos tres claves privadas de cinco custodios autorizados. Además, el sistema genera un hash único para cada fragmento que se verifica periódicamente para detectar cualquier alteración. ¿Qué principio de la triada CIA se está protegiendo principalmente con este mecanismo?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) Disponibilidad",
+        "d) No repudio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La distribución de fragmentos y la redundancia geográfica garantizan que los datos estén accesibles incluso si algunos fragmentos o ubicaciones fallan, protegiendo la disponibilidad.",
+      "id": "p2-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de almacenamiento distribuido donde los datos se dividen en fragmentos y se distribuyen en múltiples ubicaciones geográficas. Cada fragmento está cifrado individualmente y se requiere una combinación de claves privadas de al menos tres de los cinco custodios autorizados para reconstruir la información original. Además, el sistema genera un hash único para cada fragmento y realiza verificaciones periódicas para detectar cualquier alteración en dichos hashes. ¿Qué combinación de principios de la triada CIA y del no repudio se está protegiendo principalmente con este mecanismo?",
+      "opciones": [
+        "a) Confidencialidad (solo), Integridad (solo) y No repudio (solo)",
+        "b) Confidencialidad, Integridad y No repudio (todos simultáneamente)",
+        "c) Disponibilidad, Integridad y No repudio (solo)",
+        "d) Confidencialidad, Disponibilidad y No repudio (solo)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El cifrado individual de fragmentos protege la confidencialidad, los hashes y verificaciones periódicas garantizan la integridad, y las claves privadas combinadas con la verificación de origen (no repudio) aseguran que solo los custodios autorizados puedan reconstruir los datos y que las alteraciones sean detectables.",
+      "id": "p2-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un empleado con acceso legítimo a los sistemas de la empresa roba información confidencial y la filtra a un competidor. ¿Qué tipo de actor de amenaza representa este empleado según el temario?",
+      "opciones": [
+        "a) Hacker individual (Script Kiddie)",
+        "b) Actor interno (Insider)",
+        "c) Actor estatal (State Actor)",
+        "d) Competidor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un actor interno (Insider) es un empleado o contratista con acceso legítimo que abusa de ese acceso para robar información o filtrar datos a terceros.",
+      "id": "p2-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes técnicas NO se utiliza para garantizar la confidencialidad de los datos según la triada CIA?",
+      "opciones": [
+        "a) Cifrado simétrico",
+        "b) Cifrado asimétrico",
+        "c) Hashing",
+        "d) Control de acceso basado en roles (RBAC)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El hashing se utiliza principalmente para garantizar la integridad de los datos, no la confidencialidad. La confidencialidad se logra mediante cifrado (simétrico o asimétrico) y controles de acceso.",
+      "id": "p2-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué método se utiliza principalmente para garantizar la confidencialidad de los datos durante su transmisión?",
+      "opciones": [
+        "a) Uso de firmas digitales",
+        "b) Implementación de sistemas de tolerancia a fallos",
+        "c) Aplicación de cifrado simétrico o asimétrico",
+        "d) Realización de análisis de brechas"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El cifrado (simétrico o asimétrico) transforma los datos en un formato ilegible para personas no autorizadas, garantizando su confidencialidad durante la transmisión.",
+      "id": "p2-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante accede a un archivo llamado 'empleados_confidenciales.xlsx' que contiene información falsa pero diseñada para parecer valiosa. Al abrirlo, el sistema genera una alerta inmediata para notificar a los administradores. ¿Qué técnica de engaño está utilizando esta organización?",
+      "opciones": [
+        "a) Honey pot",
+        "b) Honey file",
+        "c) Honey token",
+        "d) Honeynet"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un honey file es un archivo individual diseñado para parecer valioso o sensible, pero que en realidad contiene información falsa, utilizado para detectar accesos no autorizados.",
+      "id": "p2-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué principio de la triada CIA se está protegiendo principalmente cuando una organización implementa un sistema de almacenamiento distribuido con cifrado individual de fragmentos y requerimiento de múltiples claves para reconstruir la información?",
+      "opciones": [
+        "a) Confidencialidad",
+        "b) Integridad",
+        "c) Disponibilidad",
+        "d) No repudio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado individual de fragmentos garantiza que solo usuarios autorizados (con las claves adecuadas) puedan acceder a la información, protegiendo principalmente la confidencialidad.",
+      "id": "p2-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica se utiliza principalmente en el engaño y la disrupción para simular un entorno de producción completo y mantener a los atacantes ocupados durante un ataque?",
+      "opciones": [
+        "a) Honey files",
+        "b) Honey tokens",
+        "c) Honey nets",
+        "d) Honeypots"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las honey nets son infraestructuras más grandes que incluyen múltiples dispositivos como routers, firewalls y servidores para simular un entorno de producción completo, engañando y retrasando a los atacantes.",
+      "id": "p2-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué técnica de la triada CIA se utiliza principalmente para garantizar que los datos no sean accesibles para personas no autorizadas durante su almacenamiento?",
+      "opciones": [
+        "a) Cifrado (encryption)",
+        "b) Hashing (huella digital)",
+        "c) Firmas digitales (digital signatures)",
+        "d) Controles de acceso (access controls)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado (encryption) transforma los datos en un formato ilegible sin la clave correspondiente, garantizando que solo personas autorizadas puedan acceder a ellos durante su almacenamiento.",
+      "id": "p2-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema donde los datos se dividen en fragmentos y se almacenan en cinco ubicaciones geográficas distintas. Cada fragmento está cifrado con una clave única, y para reconstruir la información completa se requiere la combinación de al menos tres claves privadas de cinco custodios autorizados. Además, el sistema genera un hash único para cada fragmento y realiza verificaciones periódicas para detectar alteraciones. ¿Qué combinación de principios de la triada CIA y del no repudio se está protegiendo principalmente con este mecanismo?",
+      "opciones": [
+        "a) Confidencialidad e integridad",
+        "b) Integridad y no repudio",
+        "c) Confidencialidad y disponibilidad",
+        "d) Disponibilidad y no repudio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado protege la confidencialidad, mientras que los hashes y verificaciones periódicas garantizan la integridad de los datos. El no repudio no se menciona en este escenario.",
+      "id": "p2-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué técnica se utiliza principalmente para garantizar la integridad de los datos durante su almacenamiento?",
+      "opciones": [
+        "a) Cifrado simétrico",
+        "b) Hashing (creación de huellas digitales)",
+        "c) Autenticación multifactor",
+        "d) Control de acceso basado en roles"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El hashing genera un resumen único de los datos que cambia si estos son alterados, permitiendo detectar modificaciones no autorizadas en el almacenamiento.",
+      "id": "p2-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de almacenamiento distribuido donde los datos se dividen en fragmentos y se distribuyen en múltiples ubicaciones geográficas. Cada fragmento está cifrado individualmente, y para reconstruir la información original se requiere una combinación de claves privadas de al menos tres de los cinco custodios autorizados. Además, el sistema registra y almacena de manera inmutable cada acceso o modificación a los fragmentos, incluyendo la identidad del custodio que realizó la acción, la hora exacta y el hash del fragmento antes y después de la operación. ¿Qué combinación de principios de la triada CIA y del no repudio se está protegiendo principalmente con este mecanismo?",
+      "opciones": [
+        "a) Confidencialidad (para evitar acceso no autorizado a los datos) e Integridad (para asegurar que los datos no sean alterados sin detección).",
+        "b) Confidencialidad (para evitar acceso no autorizado a los datos), Integridad (para asegurar que los datos no sean alterados sin detección) y No repudio (para garantizar que las acciones sean atribuibles a un custodio específico).",
+        "c) Disponibilidad (para asegurar que los datos estén siempre accesibles) y No repudio (para garantizar que las acciones sean atribuibles a un custodio específico).",
+        "d) Integridad (para asegurar que los datos no sean alterados sin detección) y Disponibilidad (para asegurar que los datos estén siempre accesibles)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El sistema protege principalmente la confidencialidad al cifrar los fragmentos y requerir múltiples claves para acceder a la información, la integridad al verificar hashes y detectar alteraciones, y el no repudio al registrar inmutablemente las acciones con identificación de los custodios.",
+      "id": "p2-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un empleado con acceso legítimo a los sistemas de la empresa roba información confidencial y la filtra a un competidor. Tras la investigación, se descubre que actuó por venganza tras ser despedido. ¿Qué tipo de actor de amenaza representa este empleado según el temario?",
+      "opciones": [
+        "a) Hacker individual (Script Kiddie)",
+        "b) Actor interno (Insider)",
+        "c) Competidor",
+        "d) Hacktivista"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un actor interno (Insider) es un empleado o contratista con acceso legítimo que abusa de su privilegio para robar o filtrar información, como en este caso por motivos de venganza.",
+      "id": "p2-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el contexto de la triada CIA, ¿qué principio se enfoca en garantizar que los datos puedan ser accedidos por usuarios autorizados cuando sea necesario?",
+      "opciones": [
+        "Confidencialidad",
+        "Integridad",
+        "Disponibilidad",
+        "No repudio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La disponibilidad (Availability) garantiza que los sistemas y datos estén accesibles cuando sean necesarios, incluso en caso de fallos o ataques.",
+      "id": "p2-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes métodos NO se utiliza para garantizar la integridad de los datos según el temario de la triada CIA?",
+      "opciones": [
+        "Hashing",
+        "Firmas digitales",
+        "Cifrado simétrico",
+        "Verificación de hashes"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El cifrado simétrico se utiliza principalmente para la confidencialidad, no para garantizar la integridad de los datos.",
+      "id": "p2-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante accede a un archivo llamado 'salarios_2024.xlsx' que contiene información falsa pero diseñada para parecer valiosa. Al abrirlo, el sistema genera una alerta inmediata para notificar a los administradores. ¿Qué técnica de engaño está utilizando esta organización?",
+      "opciones": [
+        "Honeypot",
+        "Honey file",
+        "Honey token",
+        "Honey net"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un honey file es un archivo diseñado para parecer atractivo y contener información falsa, utilizado para detectar accesos no autorizados.",
+      "id": "p2-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué técnica se utiliza principalmente para garantizar la disponibilidad de los datos en un sistema?",
+      "opciones": [
+        "a) Cifrado de datos en reposo y en tránsito",
+        "b) Implementación de sistemas con tolerancia a fallos y redundancia",
+        "c) Uso de firmas digitales para validar el origen de los datos",
+        "d) Generación de hashes periódicos para detectar alteraciones"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La disponibilidad se garantiza principalmente mediante sistemas con tolerancia a fallos (como redundancia o balanceo de carga) y mantenimiento de actualizaciones para evitar interrupciones.",
+      "id": "p2-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En un escenario donde un atacante intercepta un mensaje cifrado con AES-256 pero no puede descifrarlo, ¿qué principio de la triada CIA se está protegiendo principalmente?",
+      "opciones": [
+        "Confidencialidad",
+        "Integridad",
+        "Disponibilidad",
+        "No repudio"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado AES-256 protege la confidencialidad, ya que solo los destinatarios con la clave pueden acceder al mensaje original.",
+      "id": "p2-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema donde los datos se dividen en fragmentos y se almacenan en cinco ubicaciones geográficas distintas. Cada fragmento está cifrado con una clave única, y para reconstruir la información completa se requiere la combinación de al menos tres claves privadas de cinco custodios autorizados. Además, el sistema genera un hash único para cada fragmento y realiza verificaciones periódicas para detectar alteraciones. ¿Qué combinación de principios de la triada CIA y del no repudio se está protegiendo principalmente con este mecanismo?",
+      "opciones": [
+        "Confidencialidad y no repudio",
+        "Integridad y no repudio",
+        "Disponibilidad y no repudio",
+        "Confidencialidad e integridad"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El cifrado protege la confidencialidad, mientras que los hashes y verificaciones periódicas garantizan la integridad de los datos.",
+      "id": "p2-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué técnica de seguridad física está diseñada para ralentizar el avance de un atacante una vez que ha superado las barreras iniciales, como puertas reforzadas o laberintos de acceso?",
+      "opciones": [
+        "Deterrencia",
+        "Detección",
+        "Retraso",
+        "Control de acceso"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La función de retraso (Delay) en seguridad física busca ralentizar el avance de un atacante para dar tiempo a que las medidas de detección y respuesta actúen.",
+      "id": "p2-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué principio se garantiza principalmente cuando una organización implementa un sistema de respaldo distribuido con fragmentación de datos, cifrado individual de cada fragmento y almacenamiento en múltiples ubicaciones geográficas?",
+      "opciones": [
+        "a) Confidencialidad, ya que el cifrado individual de cada fragmento evita que personas no autorizadas accedan a la información completa.",
+        "b) Integridad, porque la fragmentación y el almacenamiento en múltiples ubicaciones reducen el riesgo de pérdida o corrupción de datos.",
+        "c) Disponibilidad, al distribuir los datos en diferentes ubicaciones para evitar fallos únicos en el sistema.",
+        "d) No repudio, al requerir claves privadas para acceder a los fragmentos y garantizar la trazabilidad de los custodios."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La confidencialidad se protege mediante el cifrado individual de cada fragmento, asegurando que solo quienes posean las claves correspondientes puedan acceder a la información completa.",
+      "id": "p2-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante ha logrado infiltrarse en una red corporativa y accede a un archivo llamado 'proyectos_futuro.xlsx' almacenado en un servidor interno. Al abrir el archivo, el sistema detecta la intrusión y genera una alerta inmediata a los administradores, además de registrar la acción en un sistema de auditoría inmutable. Sin embargo, el atacante no puede acceder a los datos reales del archivo, ya que este contiene información falsa diseñada específicamente para engañarlo. ¿Qué combinación de principios de la triada CIA y del no repudio se está protegiendo principalmente con este mecanismo?",
+      "opciones": [
+        "a) Confidencialidad (evitando acceso no autorizado) y No repudio (garantizando que la acción sea trazable e irrefutable)",
+        "b) Integridad (asegurando que los datos no sean alterados) y Disponibilidad (manteniendo el sistema operativo)",
+        "c) Disponibilidad (garantizando el acceso a los datos) y Confidencialidad (protegiendo la información real)",
+        "d) Integridad (verificando que los datos sean originales) y No repudio (confirmando el origen de la acción)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El mecanismo describe un *honey file* (archivo de engaño) que protege la confidencialidad al evitar que el atacante acceda a datos reales, y el no repudio al registrar la acción de manera inmutable en el sistema de auditoría.",
+      "id": "p2-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "En el modelo de confianza cero, ¿qué principio fundamental garantiza que cada solicitud de acceso sea evaluada de manera continua y contextual, incluso si proviene de dentro de la red corporativa?",
+      "opciones": [
+        "Defensa en profundidad",
+        "Principio de mínimo privilegio",
+        "Nunca confíes, siempre verifica",
+        "Separación de funciones"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El principio 'Nunca confíes, siempre verifica' (Never trust, always verify) es la base del modelo de confianza cero, donde cada solicitud de acceso se evalúa de manera continua y contextual.",
+      "id": "p2-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué principio de la triada CIA se garantiza principalmente cuando una organización implementa un sistema de respaldo distribuido con fragmentación de datos, cifrado individual de cada fragmento y almacenamiento en múltiples ubicaciones geográficas?",
+      "opciones": [
+        "Confidencialidad",
+        "Integridad",
+        "Disponibilidad",
+        "No repudio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La disponibilidad (A) se garantiza al distribuir los datos en múltiples ubicaciones y con redundancia, asegurando que los datos estén accesibles incluso ante fallos en una ubicación.",
+      "id": "p2-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un método utilizado para garantizar la integridad de los datos según el temario de la triada CIA?",
+      "opciones": [
+        "Cifrado asimétrico",
+        "Hashing",
+        "Firmas digitales",
+        "Control de versiones"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El control de versiones no es un método para garantizar la integridad de los datos en la triada CIA; los métodos mencionados son hashing, firmas digitales y cifrado asimétrico (este último forma parte del proceso de firmas digitales).",
+      "id": "p2-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un atacante accede a un archivo llamado 'clientes_2024.xlsx' que contiene información falsa pero diseñada para parecer valiosa. Al abrirlo, el sistema genera una alerta inmediata a los administradores. ¿Qué técnica de engaño está utilizando esta organización?",
+      "opciones": [
+        "Honeypot",
+        "Honey file",
+        "Honey token",
+        "Honey net"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Un honey file es un archivo diseñado para parecer sensible o valioso, pero que contiene información falsa o rastreable, utilizado para detectar accesos no autorizados.",
+      "id": "p2-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué técnica se utiliza principalmente para garantizar la disponibilidad de los sistemas en un entorno empresarial?",
+      "opciones": [
+        "a) Implementación de sistemas con tolerancia a fallos (fault tolerance) mediante componentes redundantes",
+        "b) Uso de cifrado AES-256 para proteger los datos en tránsito",
+        "c) Aplicación de firmas digitales para verificar la autenticidad de los mensajes",
+        "d) Generación de hashes únicos para detectar alteraciones en los datos almacenados"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La disponibilidad (A en CIA) se garantiza principalmente mediante sistemas con tolerancia a fallos, como componentes redundantes que asumen el control si uno falla, asegurando que los sistemas sigan operativos.",
+      "id": "p2-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué técnica se utiliza principalmente para garantizar la confidencialidad de los datos durante su transmisión?",
+      "opciones": [
+        "a) Hashing",
+        "b) Cifrado (encryption)",
+        "c) Firmas digitales",
+        "d) Redundancia de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El cifrado (encryption) transforma los datos en un formato ilegible para cualquier persona que no posea la clave de descifrado, garantizando así su confidencialidad durante la transmisión.",
+      "id": "p2-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa implementa un sistema donde los datos se dividen en fragmentos y se almacenan en cinco ubicaciones geográficas distintas. Cada fragmento está cifrado con una clave única, y para reconstruir la información completa se requiere la combinación de al menos tres claves privadas de cinco custodios autorizados. ¿Qué combinación de principios de la triada CIA y del no repudio se está protegiendo principalmente con este mecanismo?",
+      "opciones": [
+        "Confidencialidad y no repudio",
+        "Integridad y disponibilidad",
+        "Disponibilidad y no repudio",
+        "Confidencialidad e integridad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El cifrado individual de fragmentos garantiza la confidencialidad, mientras que el requisito de múltiples claves y la combinación de custodios aseguran el no repudio (non-repudiation) al registrar quién accede a los datos.",
+      "id": "p2-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué técnica se utiliza principalmente para garantizar la integridad de los datos durante su transmisión?",
+      "opciones": [
+        "a) Cifrado asimétrico (RSA)",
+        "b) Hashing (creación de resúmenes únicos como SHA-256)",
+        "c) Autenticación multifactor (MFA)",
+        "d) Segmentación de red (microsegmentación)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El hashing genera un valor único (hash) para los datos transmitidos, que permite detectar cualquier alteración durante la transmisión, garantizando así su integridad.",
+      "id": "p2-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario de la triada CIA, ¿qué técnica se utiliza principalmente para garantizar la confidencialidad de los datos durante su almacenamiento en discos duros o servidores?",
+      "opciones": [
+        "a) Hashing (creación de resúmenes únicos)",
+        "b) Cifrado (encryption)",
+        "c) Firmas digitales (digital signatures)",
+        "d) Autenticación multifactor (MFA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El cifrado (encryption) transforma los datos en un formato ilegible para personas no autorizadas, garantizando su confidencialidad durante el almacenamiento.",
+      "id": "p2-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un administrador de seguridad configura un sistema de almacenamiento distribuido donde los datos se dividen en fragmentos y se distribuyen en múltiples ubicaciones geográficas. Cada fragmento se cifra individualmente con AES-256 y se almacena junto con un hash generado mediante SHA-256. Para acceder a los datos originales, se requiere la combinación de al menos tres claves privadas de cinco custodios autorizados. Además, el sistema registra cada acceso o modificación a los fragmentos en un libro mayor inmutable (blockchain privada), incluyendo la identidad del custodio, la hora exacta, el hash del fragmento antes y después de la operación, y una firma digital que vincula la acción con el custodio. ¿Qué combinación de principios de la triada CIA y del no repudio se está protegiendo principalmente con este mecanismo?",
+      "opciones": [
+        "a) Confidencialidad, Integridad, Disponibilidad y No repudio",
+        "b) Confidencialidad, Integridad y No repudio (solo estos tres)",
+        "c) Confidencialidad y Disponibilidad",
+        "d) Integridad y No repudio (solo estos dos)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El cifrado individual de fragmentos (AES-256) protege la confidencialidad, los hashes (SHA-256) y las verificaciones periódicas garantizan la integridad, y las firmas digitales junto con el libro mayor inmutable aseguran el no repudio. La disponibilidad no es el foco principal aquí, ya que el mecanismo no aborda redundancia o tolerancia a fallos directamente.",
+      "id": "p2-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización implementa un sistema de autenticación adaptativa donde los usuarios deben proporcionar credenciales adicionales (como un código enviado a su dispositivo móvil) cada vez que acceden a recursos críticos desde una ubicación geográfica no reconocida. Además, el sistema registra en tiempo real todas las acciones del usuario, incluyendo consultas a bases de datos, transferencias de archivos y cambios en configuraciones. Si un usuario legítimo intenta acceder desde una nueva ubicación, el sistema no solo requiere autenticación adicional, sino que también genera una alerta inmediata para el equipo de seguridad, quien debe aprobar manualmente la sesión antes de que se permita el acceso. ¿Qué combinación de principios de la triada CIA y del modelo AAA se está implementando principalmente con este mecanismo?",
+      "opciones": [
+        "a) Confidencialidad (encriptación de datos) + Contabilidad (accounting) + Autenticación (authentication)",
+        "b) Integridad (hashing de datos) + Autorización (authorization) + No repudio (non-repudiation)",
+        "c) Disponibilidad (tolerancia a fallos) + Autenticación (authentication) + Contabilidad (accounting)",
+        "d) Confidencialidad (control de acceso) + Autorización (authorization) + No repudio (non-repudiation)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El mecanismo implementa principalmente confidencialidad al proteger el acceso a datos sensibles mediante autenticación adaptativa, contabilidad al registrar todas las acciones del usuario en tiempo real (AAA), y autenticación al requerir credenciales adicionales para verificar la identidad en contextos de riesgo.",
+      "id": "p2-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "The CIA Triad",
+      "youtubeId": "SBcDGb9l6yo"
+    },
+    {
+      "titulo": "Non-repudiation",
+      "youtubeId": "XxnCxPEllMg"
+    },
+    {
+      "titulo": "Authentication, Authorization, and Accounting",
+      "youtubeId": "AhaZtj5P2a8"
+    },
+    {
+      "titulo": "Gap Analysis",
+      "youtubeId": "cuTVyyS5C7M"
+    },
+    {
+      "titulo": "Zero Trust",
+      "youtubeId": "zC_Pndpg8-c"
+    },
+    {
+      "titulo": "Physical Security - CompTIA SY0-701 Security+ - 1.2",
+      "youtubeId": "YtT8q2mUM9c"
+    },
+    {
+      "titulo": "Deception and Disruption - CompTIA Security+SY0-701 - 1.2",
+      "youtubeId": "X_qfMVty4ts"
+    }
+  ]
+}

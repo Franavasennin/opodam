@@ -8,12 +8,13 @@ import { EsquemasTab } from '../components/tema/EsquemasTab'
 import { MapaMentalTab } from '../components/tema/MapaMentalTab'
 import { emparejarSeccion } from '../components/tema/emparejarSeccion'
 import { FlashcardsTab } from '../components/tema/FlashcardsTab'
+import { VideosTab } from '../components/tema/VideosTab'
 import { BotonTutor } from '../components/tutor/BotonTutor'
 import { TutorPanel } from '../components/tutor/TutorPanel'
 import type { Tema } from '../types'
 
-const TABS = ["Teoria", "Esquemas", "Mapa Mental", "Flashcards"] as const
-type Tab = typeof TABS[number]
+const TABS_BASE = ["Teoria", "Esquemas", "Mapa Mental", "Flashcards"] as const
+type Tab = typeof TABS_BASE[number] | "Vídeos"
 
 export function TemaDetalle() {
   const { id, slug } = useParams<{ id: string; slug: string }>()
@@ -83,7 +84,7 @@ export function TemaDetalle() {
 
       <div className="px-4 shrink-0" style={{ borderBottom: '1px solid var(--border-soft)', background: 'var(--bg)' }}>
         <div className="max-w-2xl mx-auto flex overflow-x-auto" style={{ gap: 4 }}>
-          {TABS.map(t => (
+          {(tema.videos?.length ? [...TABS_BASE, "Vídeos" as const] : TABS_BASE).map(t => (
             <button key={t} onClick={() => setTab(t)}
               style={{
                 padding: '11px 10px', fontSize: 13, fontWeight: 600, flexShrink: 0, background: 'none', border: 0,
@@ -109,6 +110,7 @@ export function TemaDetalle() {
           />
         )}
         {tab === "Flashcards"  && <FlashcardsTab tema={tema} onVueltaCompleta={() => marcarVueltaCompleta(temaId)} />}
+        {tab === "Vídeos"      && <VideosTab tema={tema} />}
       </div>
 
       {pomodoroAbierto && <Pomodoro onCerrar={() => setPomodoroAbierto(false)} />}

@@ -1,0 +1,1396 @@
+{
+  "id": 27,
+  "titulo": "5.3 · Riesgo de terceros",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "LA GESTIÓN DEL RIESGO DE TERCEROS es un proceso crítico en ciberseguridad que evalúa los peligros asociados a las relaciones con proveedores, socios o cualquier entidad externa que maneje datos o sistemas de una organización. Este riesgo surge porque, al compartir información sensible con terceros, se delega parte del control sobre la seguridad de esos datos a una organización ajena. Por ejemplo, si una empresa externaliza los servicios de nómina, está confiando en que ese proveedor proteja adecuadamente los datos financieros y personales de sus empleados. Por ello, es esencial realizar evaluaciones de riesgo antes de formalizar cualquier acuerdo y durante toda la relación contractual.\n\n\n\nLA EVALUACIÓN DE RIESGOS DE TERCEROS implica analizar cómo un proveedor gestiona la seguridad de la información que se le comparte. Este proceso puede incluir pruebas técnicas como pruebas de penetración (penetration testing), que simulan ataques reales para identificar vulnerabilidades en los sistemas del proveedor. Estas pruebas deben estar claramente definidas en un documento llamado reglas de compromiso (rules of engagement), que establece los límites del test, como el alcance, los horarios, los dispositivos en prueba y los contactos de emergencia. Por ejemplo, las reglas pueden especificar si el test se realizará en las instalaciones físicas de la empresa, de forma remota o durante horas laborales. Además, es común que estas pruebas se realicen por un tercero especializado, lo que garantiza objetividad y evita conflictos de interés.\n\n\n\nLA AUDITORÍA DE TERCEROS es otro componente clave para mitigar riesgos. Consiste en verificar periódicamente que los controles de seguridad del proveedor cumplen con los estándares acordados. Estas auditorías pueden ser internas o realizadas por un tercero independiente, y suelen incluirse en el contrato mediante una cláusula de derecho a auditoría (right to audit). Durante la auditoría, se revisan aspectos como la gestión de accesos, los procesos de desactivación de cuentas, las políticas de contraseñas y los controles de acceso a redes privadas virtuales (VPN). El objetivo es identificar oportunidades de mejora y documentar los hallazgos para ajustar los controles de seguridad. Por ejemplo, si se descubre que un proveedor no aplica autenticación multifactor (MFA) en sus sistemas, se puede exigir su implementación como condición para continuar la relación.\n\n\n\nEL ANÁLISIS DE LA CADENA DE SUMINISTRO (supply chain) es fundamental para entender los riesgos asociados a los proveedores indirectos. Una cadena de suministro incluye todos los pasos desde la obtención de materias primas hasta la entrega del producto final, y cada etapa puede introducir vulnerabilidades. Por ejemplo, en 2020, la empresa SolarWinds sufrió un ciberataque en el que los atacantes insertaron malware en una actualización de software legítima. Este malware se distribuyó a miles de clientes, incluyendo grandes corporaciones y agencias gubernamentales, demostrando cómo un fallo en un eslabón de la cadena puede comprometer a múltiples organizaciones. Un análisis de la cadena de suministro ayuda a identificar estos riesgos y a establecer controles para mitigarlos, como verificar la integridad del código antes de su despliegue.\n\n\n\nLAS EVALUACIONES INDEPENDIENTES ofrecen una perspectiva externa valiosa para identificar riesgos que podrían pasar desapercibidos desde dentro de la organización. Un tercero con experiencia en ciberseguridad puede analizar los procesos del proveedor y detectar debilidades que los equipos internos no han considerado. Por ejemplo, un consultor externo podría descubrir que un proveedor no cifra los datos en tránsito o que no tiene un plan de respuesta ante incidentes. Estas evaluaciones son especialmente útiles cuando la organización carece de recursos o expertise en áreas específicas de seguridad.\n\n\n\nLA DILIGENCIA DEBIDA (due diligence) es el proceso de investigar a un proveedor antes de establecer una relación comercial. Incluye verificar la información proporcionada por el proveedor, como sus estados financieros, historial de cumplimiento normativo o referencias de otros clientes. También puede implicar realizar verificaciones de antecedentes o entrevistas con empleados clave del proveedor. Por ejemplo, si un proveedor afirma tener certificaciones de seguridad como ISO 27001, la diligencia debida confirmaría que estas certificaciones están vigentes y son auténticas. Este proceso reduce el riesgo de asociarse con un proveedor que no cumple con los estándares requeridos.\n\n\n\nLOS CONFLICTOS DE INTERÉS pueden surgir en cualquier relación con terceros y deben identificarse y gestionarse adecuadamente. Un conflicto de interés ocurre cuando una situación compromete el juicio imparcial de una de las partes. Por ejemplo, si un proveedor también trabaja con un competidor directo de la organización, podría priorizar los intereses de ese competidor. Otros ejemplos incluyen la contratación de familiares de ejecutivos de la empresa o la recepción de regalos por parte del proveedor para influir en la firma del contrato. Estos conflictos deben documentarse y, en algunos casos, pueden llevar a la terminación de la relación comercial.\n\n\n\nEL MONITOREO CONTINUO DE PROVEEDORES es esencial para detectar cambios en su situación que puedan afectar la seguridad. Este monitoreo puede incluir revisiones financieras, evaluaciones de seguridad periódicas y seguimiento de noticias o publicaciones en redes sociales del proveedor. Por ejemplo, si un proveedor sufre una brecha de datos o una caída en su solvencia financiera, es crucial evaluar cómo esto impacta en la seguridad de los datos compartidos. El monitoreo puede ser cuantitativo, basado en métricas como el tiempo de actividad (uptime) o el número de incidentes de seguridad, o cualitativo, mediante cuestionarios o entrevistas con el proveedor.\n\n\n\nLOS CUESTIONARIOS PARA PROVEEDORES son una herramienta sencilla pero efectiva para recopilar información sobre sus prácticas de seguridad. Estos cuestionarios pueden incluir preguntas sobre sus procesos de diligencia debida, planes de recuperación ante desastres (disaster recovery), métodos de almacenamiento de datos y controles de acceso. Por ejemplo, una organización puede preguntar cómo el proveedor protege los datos almacenados en la nube o qué medidas tiene para evitar fugas de información. Las respuestas se integran en la evaluación de riesgos del proveedor y se actualizan periódicamente para reflejar cambios en sus procesos.\n\n\n\nLOS TIPOS DE ACUERDOS CON TERCEROS definen el marco legal y operativo de la relación comercial. Cada tipo de acuerdo tiene un propósito específico y varía en su nivel de formalidad y obligatoriedad legal.\n\n\n\nACUERDO DE NIVEL DE SERVICIO (SLA o Service Level Agreement) establece los requisitos mínimos de disponibilidad y rendimiento que el proveedor debe cumplir. Por ejemplo, un SLA con un proveedor de servicios de internet puede especificar que el tiempo de inactividad no supere las 4 horas al mes y que se envíe un técnico en caso de fallo. Este acuerdo garantiza que el proveedor mantenga un nivel de servicio aceptable y define las consecuencias en caso de incumplimiento, como compensaciones económicas.\n\n\n\nMEMORÁNDUM DE ENTENDIMIENTO (MOU o Memorandum of Understanding) es un documento informal que describe los objetivos generales de la colaboración entre dos organizaciones. Suele incluir cláusulas de confidencialidad para proteger la información compartida durante las negociaciones. Aunque no es un contrato vinculante, sienta las bases para futuros acuerdos más detallados.\n\n\n\nMEMORÁNDUM DE ACUERDO (MOA o Memorandum of Agreement) es un paso intermedio entre el MOU y un contrato formal. Proporciona más detalles sobre la relación entre las organizaciones, incluyendo aspectos legales no vinculantes. A diferencia del MOU, el MOA puede incluir disposiciones que, aunque no sean exigibles legalmente, reflejan el compromiso de las partes.\n\n\n\nACUERDO MAESTRO DE SERVICIOS (MSA o Master Service Agreement) es un contrato legal que establece los términos generales de la relación entre las organizaciones. Sirve como base para futuros trabajos y define aspectos como la facturación, los plazos de pago y los términos de servicio. El MSA no cubre tareas específicas, sino que proporciona un marco para futuros acuerdos.\n\n\n\nORDEN DE TRABAJO O DECLARACIÓN DE TRABAJO (SOW o Statement of Work) detalla las tareas específicas que el proveedor realizará bajo el MSA. Incluye el alcance del trabajo, la ubicación, el calendario de entregables y las expectativas. Por ejemplo, una SOW puede especificar que un proveedor instale y configure un nuevo sistema de gestión de identidades (IAM) en un plazo de 30 días. Este documento es útil para resolver disputas sobre si una tarea fue completada según lo acordado.\n\n\n\nACUERDO DE CONFIDENCIALIDAD (NDA o Non-Disclosure Agreement) protege la información sensible compartida entre las organizaciones. Puede ser unilateral, si solo una parte está obligada a mantener la confidencialidad, o bilateral/multilateral, si todas las partes involucradas deben cumplir con esta obligación. El NDA es un contrato formal que debe ser firmado antes de compartir información confidencial, como secretos comerciales o estrategias de negocio.\n\n\n\nACUERDO DE SOCIOS COMERCIALES (BPA o Business Partners Agreement) define los detalles financieros y operativos de una asociación comercial. Incluye aspectos como la participación en la propiedad, la toma de decisiones y los procedimientos en caso de problemas financieros o desastres. Por ejemplo, el BPA puede especificar cómo se repartirán las pérdidas en caso de una brecha de seguridad que afecte a ambas partes. Este acuerdo es especialmente útil en joint ventures o alianzas estratégicas.\n\n\n\nLA GESTIÓN EFECTIVA DEL RIESGO DE TERCEROS requiere un enfoque estructurado que combine evaluaciones de riesgo, auditorías, monitoreo continuo y acuerdos contractuales claros. Al implementar estos procesos, las organizaciones pueden reducir significativamente la exposición a amenazas externas y garantizar que sus datos y sistemas estén protegidos, incluso cuando son gestionados por terceros. La clave está en tratar la relación con los proveedores como una extensión de la propia organización, aplicando los mismos estándares de seguridad y supervisión."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Gestión del riesgo de terceros] --> B[Evaluación de riesgos de terceros]\nA --> C[Auditoría de terceros]\nA --> D[Análisis de la cadena de suministro]\nA --> E[Evaluaciones independientes]\nA --> F[Diligencia debida]\nA --> G[Monitoreo continuo de proveedores]\nA --> H[Tipos de acuerdos con terceros]\n\nB --> B1[Pruebas de penetración]\nB --> B2[Reglas de compromiso]\n\nC --> C1[Derecho a auditoría]\nC --> C2[Revisión de controles de seguridad]\n\nD --> D1[Riesgos en la cadena de suministro]\nD --> D2[Ejemplo: Ataque a SolarWinds]\n\nE --> E1[Perspectiva externa]\n\nF --> F1[Verificación de información]\nF --> F2[Antecedentes y referencias]\n\nG --> G1[Cuestionarios para proveedores]\nG --> G2[Seguimiento de noticias y redes sociales]\n\nH --> H1[SLA]\nH --> H2[MOU]\nH --> H3[MOA]\nH --> H4[MSA]\nH --> H5[SOW]\nH --> H6[NDA]\nH --> H7[BPA]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc27-01",
+      "pregunta": "¿Qué es el riesgo de terceros en ciberseguridad y por qué es importante?",
+      "respuesta": "El riesgo de terceros se refiere a los peligros asociados a compartir datos o sistemas con entidades externas (proveedores, socios, etc.). Es importante porque al delegar el manejo de información sensible a terceros, se pierde parte del control sobre su seguridad, lo que puede exponer a la organización a brechas o incidentes."
+    },
+    {
+      "id": "fc27-02",
+      "pregunta": "¿Qué es una prueba de penetración (penetration testing) y cómo ayuda a evaluar el riesgo de un proveedor?",
+      "respuesta": "Una prueba de penetración simula ataques reales para identificar vulnerabilidades en los sistemas de un proveedor. Ayuda a evaluar el riesgo porque detecta fallos de seguridad que podrían ser explotados por atacantes, permitiendo al proveedor corregirlos antes de que causen daños."
+    },
+    {
+      "id": "fc27-03",
+      "pregunta": "¿Qué son las reglas de compromiso (rules of engagement) en una prueba de penetración?",
+      "respuesta": "Las reglas de compromiso son un documento que define los límites de una prueba de penetración, incluyendo el alcance, horarios, dispositivos en prueba, contactos de emergencia y parámetros técnicos como rangos de IP. Su objetivo es garantizar que la prueba se realice de manera controlada y segura."
+    },
+    {
+      "id": "fc27-04",
+      "pregunta": "¿Qué es el derecho a auditoría (right to audit) y por qué se incluye en los contratos con proveedores?",
+      "respuesta": "El derecho a auditoría es una cláusula contractual que permite a una organización auditar periódicamente los controles de seguridad de un proveedor. Se incluye para verificar que el proveedor cumple con los estándares acordados y para identificar oportunidades de mejora en la seguridad."
+    },
+    {
+      "id": "fc27-05",
+      "pregunta": "¿Qué es el análisis de la cadena de suministro (supply chain) y qué riesgo ilustra el ejemplo de SolarWinds?",
+      "respuesta": "El análisis de la cadena de suministro evalúa los riesgos en cada etapa del proceso de creación de un producto o servicio. El ejemplo de SolarWinds (2020) ilustra cómo un ataque a un proveedor puede comprometer a miles de clientes al insertar malware en una actualización legítima de software."
+    },
+    {
+      "id": "fc27-06",
+      "pregunta": "¿Qué beneficios aportan las evaluaciones independientes en la gestión del riesgo de terceros?",
+      "respuesta": "Las evaluaciones independientes ofrecen una perspectiva externa que puede identificar riesgos no detectados internamente. Un tercero con experiencia en ciberseguridad puede analizar los procesos del proveedor y detectar debilidades, como falta de cifrado o planes de respuesta ante incidentes inadecuados."
+    },
+    {
+      "id": "fc27-07",
+      "pregunta": "¿Qué es la diligencia debida (due diligence) y qué aspectos incluye?",
+      "respuesta": "La diligencia debida es el proceso de investigar a un proveedor antes de establecer una relación comercial. Incluye verificar información proporcionada (como certificaciones o estados financieros), realizar verificaciones de antecedentes y entrevistar empleados clave para confirmar su cumplimiento con los estándares requeridos."
+    },
+    {
+      "id": "fc27-08",
+      "pregunta": "¿Qué es un conflicto de interés en el contexto de terceros y qué ejemplos comunes existen?",
+      "respuesta": "Un conflicto de interés ocurre cuando una situación compromete el juicio imparcial de una de las partes. Ejemplos comunes incluyen un proveedor que trabaja con un competidor directo, la contratación de familiares de ejecutivos de la empresa o la recepción de regalos para influir en la firma de un contrato."
+    },
+    {
+      "id": "fc27-09",
+      "pregunta": "¿Qué tipos de monitoreo se pueden aplicar a los proveedores y qué incluye cada uno?",
+      "respuesta": "El monitoreo puede ser cuantitativo (basado en métricas como tiempo de actividad o número de incidentes) o cualitativo (mediante cuestionarios o entrevistas). También incluye revisiones financieras y seguimiento de noticias o redes sociales del proveedor para detectar cambios que afecten la seguridad."
+    },
+    {
+      "id": "fc27-10",
+      "pregunta": "¿Qué información suelen incluir los cuestionarios para proveedores y cómo se utilizan?",
+      "respuesta": "Los cuestionarios para proveedores incluyen preguntas sobre procesos de diligencia debida, planes de recuperación ante desastres, métodos de almacenamiento de datos y controles de acceso. Las respuestas se integran en la evaluación de riesgos del proveedor y se actualizan periódicamente para reflejar cambios en sus procesos."
+    },
+    {
+      "id": "fc27-11",
+      "pregunta": "¿Qué diferencia hay entre un SLA, un MOU, un MOA y un MSA?",
+      "respuesta": "Un SLA (Service Level Agreement) establece requisitos de disponibilidad y rendimiento; un MOU (Memorandum of Understanding) es informal y describe objetivos generales; un MOA (Memorandum of Agreement) detalla más la relación pero no es vinculante; y un MSA (Master Service Agreement) es un contrato legal que establece términos generales para futuros trabajos."
+    },
+    {
+      "id": "fc27-12",
+      "pregunta": "¿Qué es un NDA y en qué se diferencia un NDA unilateral de uno bilateral?",
+      "respuesta": "Un NDA (Non-Disclosure Agreement) protege información sensible compartida entre organizaciones. Un NDA unilateral obliga solo a una parte a mantener confidencialidad, mientras que un NDA bilateral (o multilateral) obliga a todas las partes involucradas. Es un contrato formal que debe firmarse antes de compartir información confidencial."
+    }
+  ],
+  "preguntas": [
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de acuerdo contractual que se utiliza comúnmente para gestionar el riesgo de terceros?",
+      "opciones": [
+        "a) Acuerdo de Nivel de Servicio (SLA)",
+        "b) Memorándum de Entendimiento (MOU)",
+        "c) Certificado de Cumplimiento Normativo (CCN)",
+        "d) Acuerdo de Socios Comerciales (BPA)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario no menciona el 'Certificado de Cumplimiento Normativo (CCN)' como un tipo de acuerdo contractual para gestionar riesgos de terceros.",
+      "id": "p27-01",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está evaluando a un proveedor de servicios en la nube y descubre que este no aplica autenticación multifactor (MFA) en sus sistemas. Según el temario, ¿qué acción sería más adecuada para mitigar este riesgo?",
+      "opciones": [
+        "a) Terminar inmediatamente la relación con el proveedor sin más acciones.",
+        "b) Exigir la implementación de MFA como condición para continuar la relación, documentando este hallazgo en la auditoría.",
+        "c) Ignorar el hallazgo, ya que el proveedor es reconocido en el mercado.",
+        "d) Realizar un cuestionario adicional al proveedor para confirmar si el MFA es realmente necesario."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que, durante las auditorías de terceros, si se descubre que un proveedor no aplica MFA, se puede exigir su implementación como condición para continuar la relación.",
+      "id": "p27-02",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué concepto del temario se refiere a un documento que establece los límites de una prueba técnica como un 'penetration testing'?",
+      "opciones": [
+        "a) Due diligence",
+        "b) Reglas de compromiso (rules of engagement)",
+        "c) Acuerdo de Nivel de Servicio (SLA)",
+        "d) Memorándum de Acuerdo (MOA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define las 'reglas de compromiso' como el documento que establece los límites de pruebas técnicas como el 'penetration testing'.",
+      "id": "p27-03",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión del riesgo de terceros, ¿cuál de las siguientes opciones describe mejor el proceso de 'due diligence'?",
+      "opciones": [
+        "a) Verificar periódicamente que los controles de seguridad del proveedor cumplen con los estándares acordados.",
+        "b) Investigar a un proveedor antes de establecer una relación comercial, incluyendo verificar su historial de cumplimiento normativo.",
+        "c) Realizar pruebas técnicas para identificar vulnerabilidades en los sistemas del proveedor.",
+        "d) Establecer los requisitos mínimos de disponibilidad y rendimiento en un contrato."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la 'due diligence' como el proceso de investigar a un proveedor antes de establecer una relación comercial, incluyendo verificaciones de cumplimiento normativo.",
+      "id": "p27-04",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa externaliza el servicio de nómina a un proveedor. Según el temario, ¿qué tipo de riesgo principal está asumiendo la empresa al delegar este servicio?",
+      "opciones": [
+        "a) Riesgo financiero por posibles pérdidas económicas directas.",
+        "b) Riesgo de delegar parte del control sobre la seguridad de los datos sensibles de los empleados.",
+        "c) Riesgo de incumplimiento de plazos de pago a los empleados.",
+        "d) Riesgo de perder la propiedad intelectual de la empresa."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que al externalizar servicios como nómina, la empresa delega parte del control sobre la seguridad de los datos sensibles de los empleados.",
+      "id": "p27-05",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo principal de las evaluaciones independientes de terceros?",
+      "opciones": [
+        "a) Identificar riesgos que podrían pasar desapercibidos desde dentro de la organización.",
+        "b) Garantizar que el proveedor cumpla con los estándares de seguridad acordados en el contrato.",
+        "c) Proporcionar una perspectiva externa valiosa para detectar debilidades en los procesos del proveedor.",
+        "d) Reducir la necesidad de realizar auditorías internas en la organización."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario no menciona que las evaluaciones independientes reduzcan la necesidad de auditorías internas; su objetivo es identificar riesgos desde una perspectiva externa.",
+      "id": "p27-06",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Un proveedor sufre una brecha de datos y, como consecuencia, su solvencia financiera se ve afectada. Según el temario, ¿qué acción sería más adecuada para gestionar este riesgo?",
+      "opciones": [
+        "a) Continuar la relación comercial sin cambios, ya que la brecha no afecta la seguridad de los datos compartidos.",
+        "b) Realizar un monitoreo continuo del proveedor para evaluar cómo este cambio impacta en la seguridad de los datos compartidos.",
+        "c) Terminar inmediatamente la relación comercial sin evaluar el impacto.",
+        "d) Solicitar al proveedor que pague una compensación económica por la brecha."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que el monitoreo continuo de proveedores incluye evaluar cambios como brechas de datos o caídas en solvencia financiera para determinar su impacto en la seguridad.",
+      "id": "p27-07",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué tipo de acuerdo contractual se utiliza para definir tareas específicas bajo un Acuerdo Maestro de Servicios (MSA)?",
+      "opciones": [
+        "a) Memorándum de Entendimiento (MOU)",
+        "b) Orden de Trabajo o Declaración de Trabajo (SOW)",
+        "c) Acuerdo de Confidencialidad (NDA)",
+        "d) Memorándum de Acuerdo (MOA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la 'Orden de Trabajo o Declaración de Trabajo (SOW)' como el documento que detalla tareas específicas bajo un MSA.",
+      "id": "p27-08",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está considerando asociarse con un proveedor que afirma tener la certificación ISO 27001. Según el temario, ¿qué proceso debe realizar la organización para confirmar la autenticidad de esta certificación?",
+      "opciones": [
+        "a) Realizar una auditoría interna en las instalaciones del proveedor.",
+        "b) Realizar la diligencia debida para verificar que la certificación está vigente y es auténtica.",
+        "c) Firmar un Acuerdo de Nivel de Servicio (SLA) que incluya la verificación de la certificación.",
+        "d) Solicitar al proveedor que realice un 'penetration testing' para confirmar su seguridad."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que la 'diligencia debida' incluye verificar información proporcionada por el proveedor, como certificaciones de seguridad como ISO 27001.",
+      "id": "p27-D01",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa detecta que uno de sus proveedores indirectos en la cadena de suministro ha sido comprometido por un ciberataque similar al de SolarWinds en 2020. Según el temario, ¿qué acción sería la más adecuada para mitigar el riesgo en este escenario?",
+      "opciones": [
+        "a) Ignorar el incidente, ya que el proveedor indirecto no maneja datos directos de la empresa.",
+        "b) Realizar un análisis de la cadena de suministro para identificar riesgos asociados a proveedores indirectos y establecer controles para mitigarlos, como verificar la integridad del código antes de su despliegue.",
+        "c) Terminar inmediatamente la relación con el proveedor indirecto sin evaluar el impacto.",
+        "d) Solicitar al proveedor directo que asuma toda la responsabilidad por el incidente."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que un análisis de la cadena de suministro ayuda a identificar riesgos como este y a establecer controles para mitigarlos, como verificar la integridad del código.",
+      "id": "p27-D02",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento establece los límites, alcance y condiciones de una prueba de penetración (penetration testing) realizada a un proveedor?",
+      "opciones": [
+        "Reglas de compromiso (rules of engagement)",
+        "Acuerdo de Nivel de Servicio (SLA)",
+        "Memorándum de Entendimiento (MOU)",
+        "Orden de Trabajo (SOW)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El documento que define los límites de una prueba técnica como el penetration testing es el llamado 'reglas de compromiso' (rules of engagement), según se menciona en el temario.",
+      "id": "p27-09",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de las siguientes opciones describe mejor el proceso de 'due diligence' en la gestión del riesgo de terceros?",
+      "opciones": [
+        "Verificar la autenticidad de certificaciones de seguridad como ISO 27001 antes de formalizar un acuerdo.",
+        "Realizar pruebas de penetración en los sistemas del proveedor para identificar vulnerabilidades.",
+        "Establecer cláusulas de derecho a auditoría en el contrato con el proveedor.",
+        "Monitorear continuamente el rendimiento financiero del proveedor mediante métricas cuantitativas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La 'due diligence' consiste en investigar y verificar información proporcionada por el proveedor antes de establecer una relación comercial, incluyendo la autenticidad de certificaciones.",
+      "id": "p27-10",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización descubre que uno de sus proveedores indirectos en la cadena de suministro fue comprometido mediante un ataque similar al de SolarWinds en 2020. Según el temario, ¿qué acción sería la más adecuada para mitigar el riesgo en este escenario?",
+      "opciones": [
+        "Revisar y fortalecer los controles de integridad del código en las actualizaciones de software recibidas del proveedor.",
+        "Exigir al proveedor la implementación de autenticación multifactor (MFA) en todos sus sistemas.",
+        "Solicitar una auditoría interna inmediata para evaluar la seguridad de los sistemas de la organización.",
+        "Terminar la relación contractual con el proveedor sin realizar más acciones."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que un análisis de la cadena de suministro ayuda a identificar riesgos como el compromiso de proveedores indirectos, y sugiere establecer controles para mitigar estos riesgos, como verificar la integridad del código.",
+      "id": "p27-11",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de documento contractual se utiliza para establecer los términos generales de una relación entre organizaciones, sirviendo como base para futuros acuerdos específicos?",
+      "opciones": [
+        "a) Memorándum de Entendimiento (MOU)",
+        "b) Acuerdo Maestro de Servicios (MSA)",
+        "c) Orden de Trabajo (SOW)",
+        "d) Acuerdo de Confidencialidad (NDA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Acuerdo Maestro de Servicios (MSA) establece los términos generales de la relación entre las organizaciones, actuando como marco para futuros acuerdos como la Orden de Trabajo (SOW).",
+      "id": "p27-12",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión del riesgo de terceros, ¿cuál de los siguientes NO es un objetivo principal de las evaluaciones independientes de terceros?",
+      "opciones": [
+        "Identificar vulnerabilidades en los sistemas del proveedor mediante pruebas técnicas como penetration testing.",
+        "Garantizar que los controles de seguridad del proveedor cumplan con los estándares acordados.",
+        "Proporcionar una perspectiva externa para detectar riesgos no identificados internamente.",
+        "Establecer los límites de una prueba técnica mediante un documento formal."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Establecer los límites de una prueba técnica es función de las 'reglas de compromiso', no un objetivo de las evaluaciones independientes de terceros.",
+      "id": "p27-13",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento contractual se utiliza para definir los objetivos generales y no vinculantes de colaboración entre dos organizaciones antes de formalizar un acuerdo más detallado?",
+      "opciones": [
+        "a) Acuerdo de Nivel de Servicio (SLA)",
+        "b) Memorándum de Entendimiento (MOU)",
+        "c) Acuerdo Maestro de Servicios (MSA)",
+        "d) Orden de Trabajo (SOW)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Memorándum de Entendimiento (MOU) describe los objetivos generales de colaboración de manera informal y no vinculante, sentando las bases para futuros acuerdos más detallados.",
+      "id": "p27-14",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de acuerdo contractual comúnmente utilizado para gestionar el riesgo de terceros?",
+      "opciones": [
+        "Reglas de compromiso (rules of engagement)",
+        "Acuerdo de Nivel de Servicio (SLA)",
+        "Acuerdo de Confidencialidad (NDA)",
+        "Acuerdo Maestro de Servicios (MSA)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las 'reglas de compromiso' son un documento que define los límites de una prueba técnica, no un tipo de acuerdo contractual.",
+      "id": "p27-15",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de acuerdo contractual se utiliza para definir los términos generales de una relación entre organizaciones, sirviendo como marco legal base para futuros acuerdos específicos?",
+      "opciones": [
+        "a) Orden de Trabajo (SOW)",
+        "b) Acuerdo Maestro de Servicios (MSA)",
+        "c) Memorándum de Entendimiento (MOU)",
+        "d) Acuerdo de Nivel de Servicio (SLA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El MSA establece los términos generales y legales que sirven como base para futuros acuerdos específicos, mientras que los otros documentos se enfocan en aspectos más concretos o no son vinculantes legalmente.",
+      "id": "p27-16",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión del riesgo de terceros, ¿qué concepto se refiere a un documento que establece los límites de una prueba técnica como un 'penetration testing'?",
+      "opciones": [
+        "Reglas de compromiso (rules of engagement)",
+        "Acuerdo de Nivel de Servicio (SLA)",
+        "Memorándum de Entendimiento (MOU)",
+        "Orden de Trabajo (SOW)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las 'reglas de compromiso' son el documento que define los límites, alcance y condiciones de una prueba técnica como el penetration testing.",
+      "id": "p27-D03",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa detecta que uno de sus proveedores sufre una brecha de datos y, como consecuencia, su solvencia financiera se ve afectada. Según el temario, ¿qué acción sería la más adecuada para gestionar este riesgo?",
+      "opciones": [
+        "Evaluar cómo el impacto financiero del proveedor afecta la seguridad de los datos compartidos y ajustar los controles.",
+        "Terminar inmediatamente la relación contractual con el proveedor sin realizar más acciones.",
+        "Solicitar una compensación económica al proveedor por los daños causados.",
+        "Ignorar el incidente si no hay evidencia de que los datos de la empresa hayan sido comprometidos."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que el monitoreo continuo de proveedores incluye evaluar cambios en su situación financiera y cómo estos impactan en la seguridad de los datos compartidos.",
+      "id": "p27-D04",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de documento contractual se utiliza para establecer los objetivos generales y no vinculantes de colaboración entre dos organizaciones antes de formalizar un acuerdo más detallado?",
+      "opciones": [
+        "Memorándum de Entendimiento (MOU)",
+        "Acuerdo Maestro de Servicios (MSA)",
+        "Orden de Trabajo (SOW)",
+        "Acuerdo de Nivel de Servicio (SLA)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El MOU describe objetivos generales y no vinculantes, sentando las bases para futuros acuerdos más detallados según el temario.",
+      "id": "p27-17",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo principal de las evaluaciones independientes de terceros según el temario?",
+      "opciones": [
+        "Identificar vulnerabilidades que los equipos internos no han detectado",
+        "Garantizar que el proveedor cumpla con los estándares de seguridad acordados",
+        "Reducir la necesidad de realizar auditorías internas posteriores",
+        "Proporcionar una perspectiva externa objetiva sobre los controles de seguridad del proveedor"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las evaluaciones independientes no buscan reducir auditorías internas, sino complementarlas con una visión externa según el temario.",
+      "id": "p27-18",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está evaluando a un proveedor que afirma tener la certificación ISO 27001. Según el temario, ¿qué proceso debe realizar la organización para confirmar la autenticidad de esta certificación?",
+      "opciones": [
+        "Realizar diligencia debida (due diligence)",
+        "Solicitar una auditoría de terceros independiente",
+        "Revisar el Acuerdo Maestro de Servicios (MSA)",
+        "Verificar el Memorándum de Entendimiento (MOU)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La diligencia debida incluye verificar certificaciones como ISO 27001 para confirmar su autenticidad según el temario.",
+      "id": "p27-19",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué concepto del temario se refiere a un documento que establece los límites, alcance y condiciones de una prueba de penetración (penetration testing) realizada a un proveedor?",
+      "opciones": [
+        "Reglas de compromiso (rules of engagement)",
+        "Acuerdo de Nivel de Servicio (SLA)",
+        "Memorándum de Acuerdo (MOA)",
+        "Orden de Trabajo (SOW)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las reglas de compromiso definen límites y alcance de pruebas técnicas como penetration testing según el temario.",
+      "id": "p27-20",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión del riesgo de terceros, ¿qué proceso implica investigar la información financiera, historial de cumplimiento y referencias de un proveedor antes de establecer una relación comercial?",
+      "opciones": [
+        "Due diligence (diligencia debida)",
+        "Auditoría de terceros",
+        "Monitoreo continuo",
+        "Evaluación de riesgos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La due diligence es el proceso de investigar proveedores antes de formalizar acuerdos según el temario.",
+      "id": "p27-21",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de documento contractual se utiliza para proteger la información confidencial compartida entre organizaciones antes de formalizar un acuerdo más detallado?",
+      "opciones": [
+        "a) Acuerdo Maestro de Servicios (MSA)",
+        "b) Memorándum de Entendimiento (MOU)",
+        "c) Acuerdo de Confidencialidad (NDA)",
+        "d) Orden de Trabajo (SOW)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El Acuerdo de Confidencialidad (NDA) es el documento contractual diseñado específicamente para proteger la información sensible compartida entre organizaciones, ya sea de forma unilateral o bilateral/multilateral.",
+      "id": "p27-22",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de acuerdo contractual comúnmente utilizado para gestionar el riesgo de terceros según el temario?",
+      "opciones": [
+        "Acuerdo de Confidencialidad (NDA)",
+        "Memorándum de Entendimiento (MOU)",
+        "Acuerdo de Socios Comerciales (BPA)",
+        "Plan de Recuperación ante Desastres (DRP)"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El DRP no es un acuerdo contractual para gestionar riesgos de terceros, sino un proceso interno según el temario.",
+      "id": "p27-23",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización detecta que uno de sus proveedores indirectos en la cadena de suministro fue comprometido mediante un ataque similar al de SolarWinds en 2020. Según el temario, ¿qué acción sería la más adecuada para mitigar el riesgo en este escenario?",
+      "opciones": [
+        "Realizar un análisis de la cadena de suministro para identificar otros eslabones vulnerables",
+        "Terminar inmediatamente la relación con el proveedor sin evaluación adicional",
+        "Solicitar al proveedor que implemente autenticación multifactor (MFA)",
+        "Ignorar el incidente si no afecta directamente a los sistemas de la organización"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El análisis de la cadena de suministro ayuda a identificar riesgos en proveedores indirectos según el temario.",
+      "id": "p27-24",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de documento contractual se utiliza para definir los términos generales de una relación entre organizaciones, sirviendo como marco legal base para futuros acuerdos específicos?",
+      "opciones": [
+        "Acuerdo Maestro de Servicios (MSA)",
+        "Orden de Trabajo (SOW)",
+        "Memorándum de Acuerdo (MOA)",
+        "Acuerdo de Nivel de Servicio (SLA)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El MSA establece términos generales como marco legal base para futuros acuerdos según el temario.",
+      "id": "p27-D05",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Un proveedor sufre una brecha de datos y, como consecuencia, su solvencia financiera se ve afectada. Según el temario, ¿qué acción sería la más adecuada para gestionar este riesgo?",
+      "opciones": [
+        "Realizar monitoreo continuo del proveedor para evaluar el impacto en la seguridad de los datos compartidos",
+        "Terminar la relación inmediatamente sin evaluación adicional",
+        "Solicitar una compensación económica al proveedor sin revisar sus controles de seguridad",
+        "Ignorar el incidente si no hay evidencia de acceso a datos de la organización"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El monitoreo continuo permite detectar cambios en la situación del proveedor que afecten la seguridad según el temario.",
+      "id": "p27-D06",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un objetivo principal de las reglas de compromiso (rules of engagement) en una prueba de penetración a un proveedor?",
+      "opciones": [
+        "a) Definir el alcance técnico de la prueba, incluyendo sistemas y redes a evaluar.",
+        "b) Establecer los horarios y ventanas de tiempo permitidas para realizar el test.",
+        "c) Garantizar que el proveedor no pueda ser auditado durante la prueba para evitar conflictos.",
+        "d) Especificar los contactos de emergencia en caso de que la prueba genere un impacto no deseado."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las reglas de compromiso NO buscan evitar auditorías al proveedor, sino definir límites claros para la prueba técnica, incluyendo aspectos como alcance y contactos de emergencia (temario: 'reglas de compromiso').",
+      "id": "p27-25",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento contractual se utiliza para establecer los términos generales de una relación entre organizaciones y sirve como base para futuros acuerdos específicos, pero NO define tareas concretas?",
+      "opciones": [
+        "a) Orden de Trabajo (SOW)",
+        "b) Acuerdo Maestro de Servicios (MSA)",
+        "c) Memorándum de Entendimiento (MOU)",
+        "d) Acuerdo de Nivel de Servicio (SLA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El MSA (Master Service Agreement) establece los términos generales y marco legal de la relación, mientras que el SOW define tareas específicas, el MOU es informal y el SLA se centra en niveles de servicio.",
+      "id": "p27-26",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de documento contractual se utiliza para definir los objetivos generales y no vinculantes de colaboración entre dos organizaciones antes de formalizar un acuerdo más detallado, pero incluye cláusulas de confidencialidad?",
+      "opciones": [
+        "a) Acuerdo de Nivel de Servicio (SLA)",
+        "b) Memorándum de Entendimiento (MOU)",
+        "c) Memorándum de Acuerdo (MOA)",
+        "d) Orden de Trabajo (SOW)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El MOU describe objetivos generales y suele incluir cláusulas de confidencialidad para proteger la información durante las negociaciones, aunque no es un contrato vinculante.",
+      "id": "p27-27",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de acuerdo contractual se utiliza para definir los objetivos generales de colaboración entre dos organizaciones, suele incluir cláusulas de confidencialidad y NO es vinculante legalmente?",
+      "opciones": [
+        "a) Acuerdo de Nivel de Servicio (SLA)",
+        "b) Memorándum de Entendimiento (MOU)",
+        "c) Acuerdo Maestro de Servicios (MSA)",
+        "d) Orden de Trabajo (SOW)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Memorándum de Entendimiento (MOU) describe objetivos generales de colaboración, incluye cláusulas de confidencialidad y no es un contrato vinculante, según el temario.",
+      "id": "p27-28",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de documento contractual se utiliza para establecer los términos específicos de un proyecto bajo un Acuerdo Maestro de Servicios (MSA), incluyendo alcance, plazos y entregables?",
+      "opciones": [
+        "a) Memorándum de Entendimiento (MOU)",
+        "b) Orden de Trabajo o Declaración de Trabajo (SOW)",
+        "c) Acuerdo de Confidencialidad (NDA)",
+        "d) Acuerdo de Socios Comerciales (BPA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Orden de Trabajo o Declaración de Trabajo (SOW) detalla las tareas específicas, alcance, plazos y entregables bajo un Acuerdo Maestro de Servicios (MSA), a diferencia de otros documentos que establecen términos generales o de confidencialidad.",
+      "id": "p27-29",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Qué diferencia existe entre un Memorándum de Entendimiento (MOU) y un Acuerdo Maestro de Servicios (MSA) según el temario?",
+      "opciones": [
+        "a) El MOU es un documento vinculante, mientras que el MSA no lo es.",
+        "b) El MOU es informal y no vinculante, mientras que el MSA es un contrato legal que establece términos generales.",
+        "c) El MOU detalla tareas específicas, mientras que el MSA define objetivos generales.",
+        "d) El MOU se usa para proteger información confidencial, mientras que el MSA regula pagos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El MOU es informal y no vinculante, mientras que el MSA es un contrato legal que establece términos generales (temario: 'tipos de acuerdos').",
+      "id": "p27-30",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de acuerdo contractual se utiliza para definir los términos específicos de un proyecto bajo un Acuerdo Maestro de Servicios (MSA), incluyendo alcance, plazos y entregables?",
+      "opciones": [
+        "a) Memorándum de Entendimiento (MOU)",
+        "b) Orden de Trabajo o Declaración de Trabajo (SOW)",
+        "c) Acuerdo de Confidencialidad (NDA)",
+        "d) Acuerdo de Socios Comerciales (BPA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Orden de Trabajo o Declaración de Trabajo (SOW) detalla las tareas específicas bajo un MSA, incluyendo alcance, plazos y entregables. Este documento es clave para definir y medir el cumplimiento de los trabajos acordados.",
+      "id": "p27-31",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de acuerdo contractual se utiliza principalmente para establecer los términos específicos de un proyecto concreto bajo un Acuerdo Maestro de Servicios (MSA), incluyendo alcance, plazos, entregables y responsabilidades detalladas?",
+      "opciones": [
+        "a) Memorándum de Entendimiento (MOU)",
+        "b) Orden de Trabajo o Declaración de Trabajo (SOW)",
+        "c) Acuerdo de Confidencialidad (NDA)",
+        "d) Memorándum de Acuerdo (MOA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El SOW (Statement of Work) detalla las tareas específicas, alcance, plazos y entregables bajo un MSA, mientras que los otros acuerdos mencionados tienen propósitos distintos según el temario.",
+      "id": "p27-32",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está evaluando a un proveedor que no aplica autenticación multifactor (MFA) en sus sistemas. Según el temario, ¿qué acción sería más adecuada para mitigar este riesgo?",
+      "opciones": [
+        "a) Exigir al proveedor la implementación de MFA como condición para continuar la relación, documentado en el contrato.",
+        "b) Ignorar el riesgo, ya que el MFA es un control opcional según los estándares de seguridad.",
+        "c) Solicitar al proveedor que firme un Memorándum de Entendimiento (MOU) para evitar futuros reclamos.",
+        "d) Realizar una auditoría interna en las instalaciones del proveedor para verificar su seguridad."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La auditoría de terceros puede exigir la implementación de controles como MFA como condición contractual (temario: 'auditoría de terceros').",
+      "id": "p27-D07",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento contractual se utiliza para definir los términos generales de una relación entre organizaciones, sirviendo como marco legal base para futuros acuerdos específicos?",
+      "opciones": [
+        "a) Orden de Trabajo (SOW).",
+        "b) Acuerdo Maestro de Servicios (MSA).",
+        "c) Memorándum de Acuerdo (MOA).",
+        "d) Acuerdo de Nivel de Servicio (SLA)."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El MSA establece términos generales y sirve como marco legal base para futuros acuerdos (temario: 'tipos de acuerdos').",
+      "id": "p27-D08",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso implica investigar la información financiera, historial de cumplimiento y referencias de un proveedor antes de establecer una relación comercial?",
+      "opciones": [
+        "a) Auditoría de terceros",
+        "b) Due diligence",
+        "c) Monitoreo continuo de proveedores",
+        "d) Evaluación independiente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario define la 'due diligence' como el proceso de investigar a un proveedor antes de establecer una relación comercial, incluyendo verificación de información financiera, cumplimiento normativo y referencias.",
+      "id": "p27-33",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de documento contractual se utiliza para establecer los términos específicos de un proyecto concreto bajo un Acuerdo Maestro de Servicios (MSA), incluyendo alcance, plazos, entregables y responsabilidades detalladas?",
+      "opciones": [
+        "a) Orden de Trabajo (SOW)",
+        "b) Memorándum de Entendimiento (MOU)",
+        "c) Acuerdo de Nivel de Servicio (SLA)",
+        "d) Acuerdo de Confidencialidad (NDA)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El Orden de Trabajo (SOW) detalla las tareas específicas, alcance, plazos y responsabilidades bajo un MSA, mientras que los demás documentos tienen propósitos distintos como establecer términos generales (MOU), niveles de servicio (SLA) o proteger información confidencial (NDA).",
+      "id": "p27-34",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para verificar periódicamente que los controles de seguridad de un proveedor cumplen con los estándares acordados en el contrato?",
+      "opciones": [
+        "a) Diligencia debida (due diligence)",
+        "b) Auditoría de terceros",
+        "c) Reglas de compromiso (rules of engagement)",
+        "d) Monitoreo continuo de proveedores"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las auditorías de terceros consisten en verificar periódicamente que los controles de seguridad del proveedor cumplen con los estándares acordados, generalmente mediante cláusulas de derecho a auditoría en el contrato.",
+      "id": "p27-35",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento contractual se utiliza para definir los términos específicos de un proyecto concreto bajo un Acuerdo Maestro de Servicios (MSA), incluyendo alcance, plazos, entregables y responsabilidades detalladas?",
+      "opciones": [
+        "a) Memorándum de Entendimiento (MOU)",
+        "b) Orden de Trabajo o Declaración de Trabajo (SOW)",
+        "c) Acuerdo de Confidencialidad (NDA)",
+        "d) Acuerdo de Socios Comerciales (BPA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que la SOW (Statement of Work) detalla las tareas específicas bajo un MSA, incluyendo alcance, plazos, entregables y responsabilidades.",
+      "id": "p27-36",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de documento contractual se utiliza para definir los términos específicos de un proyecto concreto bajo un Acuerdo Maestro de Servicios (MSA), incluyendo alcance, plazos, entregables y responsabilidades detalladas, pero NO establece los términos generales de la relación entre las organizaciones?",
+      "opciones": [
+        "a) Memorándum de Entendimiento (MOU)",
+        "b) Orden de Trabajo o Declaración de Trabajo (SOW)",
+        "c) Acuerdo Maestro de Servicios (MSA)",
+        "d) Memorándum de Acuerdo (MOA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Orden de Trabajo o Declaración de Trabajo (SOW) detalla las tareas específicas a realizar bajo un Acuerdo Maestro de Servicios (MSA), incluyendo alcance, plazos y responsabilidades, sin definir los términos generales de la relación entre las organizaciones.",
+      "id": "p27-37",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento contractual se utiliza para definir los objetivos generales de colaboración entre dos organizaciones, suele incluir cláusulas de confidencialidad y NO es vinculante legalmente?",
+      "opciones": [
+        "a) Acuerdo de Nivel de Servicio (SLA)",
+        "b) Memorándum de Entendimiento (MOU)",
+        "c) Orden de Trabajo (SOW)",
+        "d) Acuerdo Maestro de Servicios (MSA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Memorándum de Entendimiento (MOU) describe objetivos generales de colaboración entre organizaciones, incluye cláusulas de confidencialidad y, a diferencia de los acuerdos vinculantes, no es legalmente exigible.",
+      "id": "p27-38",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso debe realizar una organización para confirmar la autenticidad de una certificación ISO 27001 que afirma tener un proveedor?",
+      "opciones": [
+        "a) Realizar una auditoría interna al proveedor",
+        "b) Verificar la autenticidad de la certificación mediante la organización certificadora",
+        "c) Solicitar una evaluación independiente de terceros",
+        "d) Exigir al proveedor que realice un penetration testing"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario señala que en la due diligence se debe confirmar la autenticidad de certificaciones como ISO 27001 verificando su vigencia y validez con la organización certificadora.",
+      "id": "p27-39",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de acuerdo contractual se utiliza principalmente para establecer los términos de confidencialidad entre dos organizaciones antes de compartir información sensible, pero NO define tareas específicas ni objetivos de colaboración?",
+      "opciones": [
+        "a) Acuerdo Maestro de Servicios (MSA)",
+        "b) Acuerdo de Nivel de Servicio (SLA)",
+        "c) Acuerdo de Confidencialidad (NDA)",
+        "d) Memorándum de Entendimiento (MOU)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El Acuerdo de Confidencialidad (NDA) protege información sensible compartida entre organizaciones y puede ser unilateral o bilateral, pero no aborda tareas específicas ni objetivos de colaboración.",
+      "id": "p27-40",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización está considerando asociarse con un proveedor que no aplica autenticación multifactor (MFA) en sus sistemas. Según el temario, ¿qué acción sería más adecuada para mitigar este riesgo?",
+      "opciones": [
+        "a) Terminar inmediatamente la relación con el proveedor",
+        "b) Exigir la implementación de MFA como condición para continuar la relación",
+        "c) Solicitar una auditoría interna al proveedor",
+        "d) Reducir la cantidad de datos compartidos con el proveedor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que durante una auditoría de terceros, si se descubre que un proveedor no aplica MFA, se puede exigir su implementación como condición para continuar la relación.",
+      "id": "p27-D09",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento contractual se utiliza para proteger la información confidencial compartida entre organizaciones antes de formalizar un acuerdo más detallado?",
+      "opciones": [
+        "a) Acuerdo Maestro de Servicios (MSA)",
+        "b) Memorándum de Entendimiento (MOU)",
+        "c) Acuerdo de Confidencialidad (NDA)",
+        "d) Orden de Trabajo (SOW)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario define el NDA (Non-Disclosure Agreement) como el documento contractual que protege la información confidencial compartida entre organizaciones.",
+      "id": "p27-D10",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso implica investigar la información financiera, historial de cumplimiento normativo y referencias de un proveedor antes de establecer una relación comercial?",
+      "opciones": [
+        "a) Auditoría de terceros",
+        "b) Due diligence",
+        "c) Reglas de compromiso",
+        "d) Análisis de la cadena de suministro"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El proceso descrito corresponde a la 'due diligence', que consiste en verificar la información proporcionada por el proveedor antes de formalizar una relación comercial.",
+      "id": "p27-41",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de documento contractual se utiliza para definir los términos específicos de un proyecto concreto bajo un Acuerdo Maestro de Servicios (MSA), incluyendo alcance, plazos, entregables y responsabilidades detalladas?",
+      "opciones": [
+        "a) Orden de Trabajo o Declaración de Trabajo (SOW)",
+        "b) Memorándum de Entendimiento (MOU)",
+        "c) Acuerdo de Nivel de Servicio (SLA)",
+        "d) Acuerdo de Confidencialidad (NDA)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El SOW (Statement of Work) detalla las tareas específicas, alcance, plazos y responsabilidades bajo un MSA, a diferencia de otros acuerdos que son más generales o se enfocan en confidencialidad o niveles de servicio.",
+      "id": "p27-42",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento contractual se utiliza para establecer los términos de confidencialidad entre dos organizaciones antes de compartir información sensible, pero NO incluye objetivos de colaboración ni tareas específicas?",
+      "opciones": [
+        "a) Memorándum de Entendimiento (MOU)",
+        "b) Acuerdo Maestro de Servicios (MSA)",
+        "c) Acuerdo de Confidencialidad (NDA)",
+        "d) Orden de Trabajo (SOW)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El Acuerdo de Confidencialidad (NDA) protege la información sensible compartida entre organizaciones sin definir objetivos de colaboración ni tareas específicas, a diferencia de otros acuerdos que incluyen estos elementos.",
+      "id": "p27-43",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento contractual se utiliza para definir los términos específicos de un proyecto concreto bajo un Acuerdo Maestro de Servicios (MSA), incluyendo alcance, plazos y entregables?",
+      "opciones": [
+        "a) Memorándum de Entendimiento (MOU)",
+        "b) Orden de Trabajo o Declaración de Trabajo (SOW)",
+        "c) Acuerdo de Confidencialidad (NDA)",
+        "d) Acuerdo de Socios Comerciales (BPA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La Orden de Trabajo o Declaración de Trabajo (SOW) detalla las tareas específicas bajo un MSA, incluyendo alcance, plazos y entregables.",
+      "id": "p27-44",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para definir los términos y límites de una prueba de penetración (penetration testing) aplicada a un proveedor, incluyendo alcance, horarios y contactos de emergencia?",
+      "opciones": [
+        "a) Due diligence",
+        "b) Reglas de compromiso (rules of engagement)",
+        "c) Acuerdo de Nivel de Servicio (SLA)",
+        "d) Memorándum de Entendimiento (MOU)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las reglas de compromiso (rules of engagement) son el documento que establece los límites, alcance, horarios y otros detalles operativos de una prueba de penetración para garantizar que se realice de manera controlada y segura.",
+      "id": "p27-45",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de documento contractual se utiliza para definir los términos generales de una relación entre organizaciones, sirviendo como marco legal base para futuros acuerdos específicos, pero NO establece tareas concretas ni plazos?",
+      "opciones": [
+        "a) Orden de Trabajo (SOW)",
+        "b) Acuerdo Maestro de Servicios (MSA)",
+        "c) Memorándum de Entendimiento (MOU)",
+        "d) Acuerdo de Nivel de Servicio (SLA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El Acuerdo Maestro de Servicios (MSA) establece los términos generales de la relación entre las organizaciones y sirve como base para futuros acuerdos, pero no define tareas específicas ni plazos, a diferencia de otros documentos como la Orden de Trabajo (SOW) o el SLA.",
+      "id": "p27-46",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de acuerdo contractual se utiliza principalmente para establecer los términos específicos de un proyecto concreto bajo un Acuerdo Maestro de Servicios (MSA), incluyendo alcance, plazos, entregables y responsabilidades detalladas, pero NO define los términos generales de la relación entre las organizaciones?",
+      "opciones": [
+        "a) Memorándum de Entendimiento (MOU)",
+        "b) Orden de Trabajo o Declaración de Trabajo (SOW)",
+        "c) Acuerdo de Confidencialidad (NDA)",
+        "d) Acuerdo Maestro de Servicios (MSA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La SOW (Statement of Work) detalla tareas específicas bajo un MSA, incluyendo alcance, plazos y responsabilidades, pero no establece los términos generales de la relación entre las organizaciones.",
+      "id": "p27-47",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión del riesgo de terceros, ¿qué concepto se refiere a un documento que establece los límites, alcance y condiciones de una prueba de penetración (penetration testing) realizada a un proveedor?",
+      "opciones": [
+        "a) Due diligence",
+        "b) Reglas de compromiso (rules of engagement)",
+        "c) Auditoría de terceros",
+        "d) Análisis de la cadena de suministro"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las 'reglas de compromiso' son un documento que establece los límites, alcance y condiciones de una prueba de penetración, como horarios, dispositivos y contactos de emergencia.",
+      "id": "p27-48",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización ha externalizado el desarrollo de una aplicación crítica a un proveedor en otro país. Durante una auditoría rutinaria, se descubre que el proveedor subcontrata parte del desarrollo a un tercer país con regulaciones de protección de datos menos estrictas que las de la organización. Según el temario, ¿qué acción sería la más adecuada para mitigar este riesgo en la cadena de suministro?",
+      "opciones": [
+        "a) Exigir al proveedor que elimine la subcontratación para evitar riesgos legales y de seguridad.",
+        "b) Evaluar los controles de seguridad del subproveedor mediante un cuestionario de diligencia debida y incluir cláusulas en el contrato que obliguen al proveedor a validar los estándares de seguridad de sus subproveedores.",
+        "c) Terminar inmediatamente la relación con el proveedor sin realizar más evaluaciones para evitar responsabilidades legales.",
+        "d) Reducir el alcance del proyecto para minimizar la exposición, pero mantener la relación con el proveedor sin realizar cambios en los controles."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que el análisis de la cadena de suministro debe incluir la evaluación de subproveedores, y que los contratos deben incorporar cláusulas para que el proveedor garantice los estándares de seguridad de sus socios.",
+      "id": "p27-D11",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa de software ha externalizado el desarrollo de una aplicación crítica a un proveedor en un país con regulaciones de protección de datos menos estrictas que las de la UE. Durante una auditoría, se descubre que el proveedor subcontrata parte del desarrollo a un tercer país sin controles de seguridad equivalentes. Según el temario, ¿qué acción sería la más adecuada para mitigar este riesgo en la cadena de suministro?",
+      "opciones": [
+        "a) Exigir al proveedor que elimine la subcontratación y desarrolle internamente todas las fases del proyecto.",
+        "b) Realizar una evaluación de riesgos específica para los subproveedores del proveedor y establecer cláusulas contractuales que exijan controles de seguridad equivalentes en la cadena de suministro.",
+        "c) Cancelar inmediatamente el contrato con el proveedor sin tomar medidas adicionales para evitar futuros riesgos.",
+        "d) Solicitar al proveedor que notifique cualquier cambio en la cadena de suministro, pero sin incluir requisitos de seguridad en los contratos con subproveedores."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca la importancia del análisis de la cadena de suministro para identificar riesgos en proveedores indirectos. La opción b) alinea con la necesidad de evaluar y mitigar riesgos en toda la cadena, incluyendo subproveedores.",
+      "id": "p27-D12",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso debe realizar una organización para verificar que un proveedor cumple con los controles de seguridad acordados en el contrato durante la vigencia de la relación comercial?",
+      "opciones": [
+        "a) Realizar pruebas de penetración (penetration testing) periódicas al proveedor.",
+        "b) Implementar un derecho a auditoría (right to audit) en el contrato y realizar auditorías periódicas.",
+        "c) Solicitar al proveedor que envíe certificados de seguridad actualizados cada trimestre.",
+        "d) Exigir al proveedor que contrate un seguro de ciberseguridad como condición para mantener el acuerdo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que la auditoría de terceros, incluida mediante una cláusula de derecho a auditoría en el contrato, es el proceso clave para verificar periódicamente que los controles de seguridad del proveedor cumplen con los estándares acordados.",
+      "id": "p27-49",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción es más adecuada para mitigar el riesgo cuando un proveedor no implementa autenticación multifactor (MFA) en sus sistemas críticos, a pesar de ser un requisito contractual?",
+      "opciones": [
+        "a) Terminar inmediatamente la relación comercial con el proveedor para evitar riesgos de seguridad.",
+        "b) Exigir al proveedor la implementación de MFA como condición para continuar la relación, documentando este requisito en un plan de acción correctiva.",
+        "c) Reducir el volumen de datos sensibles compartidos con el proveedor hasta que implemente MFA, sin formalizar acuerdos adicionales.",
+        "d) Realizar auditorías más frecuentes al proveedor para verificar sus controles de seguridad, pero sin modificar los acuerdos contractuales existentes."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que, ante el incumplimiento de controles de seguridad como el MFA, se debe exigir su implementación mediante un plan de acción correctiva documentado, en lugar de terminar la relación o reducir unilateralmente los datos compartidos.",
+      "id": "p27-50",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización externaliza el desarrollo de una aplicación crítica a un proveedor en un país con regulaciones de protección de datos menos estrictas. Según el temario, ¿qué acción sería la más adecuada para mitigar el riesgo asociado a la subcontratación del proveedor?",
+      "opciones": [
+        "Exigir al proveedor que implemente controles de seguridad equivalentes a los de la organización",
+        "Terminar inmediatamente la relación contractual con el proveedor",
+        "Ignorar el riesgo, ya que el proveedor es responsable de cumplir con las leyes locales",
+        "Solicitar una compensación económica por posibles brechas de datos futuras"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El análisis de la cadena de suministro recomienda establecer controles para mitigar riesgos, como exigir controles de seguridad equivalentes en proveedores subcontratados.",
+      "id": "p27-51",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para investigar la autenticidad de una certificación de seguridad como ISO 27001 que afirma tener un proveedor antes de formalizar un acuerdo con él?",
+      "opciones": [
+        "a) Realizar una auditoría interna de los controles de seguridad del proveedor",
+        "b) Verificar directamente en el registro oficial del organismo certificador que emitió la certificación",
+        "c) Solicitar al proveedor que realice un 'penetration testing' para confirmar sus controles",
+        "d) Incluir una cláusula en el contrato que obligue al proveedor a renovar la certificación periódicamente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que, para confirmar la autenticidad de certificaciones como ISO 27001, se debe verificar directamente en el registro del organismo certificador, ya que este documento oficial valida la legitimidad de la certificación.",
+      "id": "p27-52",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa descubre que uno de sus proveedores indirectos en la cadena de suministro fue comprometido mediante un ataque similar al de SolarWinds en 2020. Según el temario, ¿qué acción sería la más adecuada para mitigar el riesgo en este escenario?",
+      "opciones": [
+        "Realizar un análisis de la cadena de suministro para identificar otros eslabones vulnerables",
+        "Exigir al proveedor directo que asuma toda la responsabilidad legal",
+        "Cancelar todos los servicios con proveedores en ese país",
+        "Implementar un firewall adicional en los sistemas de la organización"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El análisis de la cadena de suministro ayuda a identificar riesgos en eslabones indirectos y establecer controles para mitigarlos.",
+      "id": "p27-53",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué acción es más adecuada para mitigar el riesgo cuando un proveedor no implementa controles de cifrado en sus sistemas de almacenamiento de datos, a pesar de ser un requisito contractual?",
+      "opciones": [
+        "a) Exigir la implementación de cifrado mediante una cláusula en el contrato y realizar auditorías periódicas para verificar su cumplimiento",
+        "b) Reducir el volumen de datos compartidos con el proveedor para minimizar la exposición al riesgo",
+        "c) Solicitar al proveedor que subcontrate los servicios de almacenamiento a un tercero con controles de cifrado adecuados",
+        "d) Finalizar la relación comercial de inmediato sin realizar evaluaciones adicionales"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La opción correcta se basa en el temario, que destaca la importancia de incluir requisitos de seguridad como el cifrado en los contratos y verificar su cumplimiento mediante auditorías periódicas o evaluaciones independientes.",
+      "id": "p27-54",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para verificar que un proveedor cumple con los controles de seguridad acordados en el contrato durante la vigencia de la relación comercial?",
+      "opciones": [
+        "a) Due diligence",
+        "b) Auditoría de terceros",
+        "c) Reglas de compromiso (Rules of Engagement)",
+        "d) Memorándum de Entendimiento (MOU)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que la auditoría de terceros consiste en verificar periódicamente que los controles de seguridad del proveedor cumplen con los estándares acordados, incluyendo cláusulas como el derecho a auditoría.",
+      "id": "p27-55",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para verificar si un proveedor cumple con las certificaciones de seguridad declaradas, como la autenticidad de una certificación ISO 27001 antes de establecer una relación contractual?",
+      "opciones": [
+        "a) Due diligence",
+        "b) Auditoría de terceros",
+        "c) Evaluación de riesgos",
+        "d) Monitoreo continuo de proveedores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La diligencia debida (due diligence) incluye verificar la autenticidad de certificaciones como ISO 27001 antes de formalizar un acuerdo, asegurando que las declaraciones del proveedor sean válidas.",
+      "id": "p27-56",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización contrata a un proveedor de servicios en la nube para alojar datos sensibles de clientes. Durante una auditoría de seguridad anual, se descubre que el proveedor no ha actualizado sus sistemas desde hace 18 meses y no aplica parches críticos de seguridad. Según el temario, ¿qué acción sería la MÁS adecuada para mitigar este riesgo en la relación con el proveedor?",
+      "opciones": [
+        "Exigir al proveedor la implementación de un Acuerdo de Nivel de Servicio (SLA) que incluya cláusulas de actualización obligatoria de sistemas y parches de seguridad, con sanciones por incumplimiento",
+        "Solicitar que el proveedor firme un nuevo Memorándum de Entendimiento (MOU) que establezca objetivos generales de colaboración, pero sin incluir requisitos técnicos vinculantes",
+        "Reducir el alcance de datos sensibles compartidos con el proveedor hasta que demuestre cumplir con los estándares de seguridad mínimos requeridos",
+        "Contratar un tercero independiente para realizar pruebas de penetración (penetration testing) en los sistemas del proveedor, sin incluir en el contrato cláusulas de derecho a auditoría (right to audit)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El SLA es el documento contractual que permite establecer requisitos técnicos vinculantes como la obligación de actualizar sistemas y aplicar parches, con consecuencias legales por incumplimiento, como sanciones económicas o terminación del contrato.",
+      "id": "p27-D13",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización externaliza el servicio de nómina a un proveedor. Según el temario, ¿qué tipo de riesgo principal está asumiendo la organización al delegar este servicio?",
+      "opciones": [
+        "Riesgo de pérdida de control sobre la seguridad de los datos financieros y personales",
+        "Riesgo de aumento de costos operativos",
+        "Riesgo de incumplimiento de regulaciones internas",
+        "Riesgo de reducción de la productividad del equipo interno"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Al externalizar servicios como nómina, la organización delega parte del control sobre la seguridad de los datos a un tercero, asumiendo el riesgo de pérdida de control.",
+      "id": "p27-D14",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para verificar que un proveedor cumple con los controles de seguridad acordados en el contrato, pero NO se enfoca en la autenticidad de certificaciones como ISO 27001?",
+      "opciones": [
+        "a) Auditoría de terceros",
+        "b) Due diligence",
+        "c) Reglas de compromiso (rules of engagement)",
+        "d) Evaluación independiente de terceros"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La auditoría de terceros verifica periódicamente que los controles de seguridad del proveedor cumplan con los estándares acordados, a diferencia de la due diligence, que se centra en investigar antecedentes y certificaciones antes de formalizar la relación.",
+      "id": "p27-57",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "¿Cuál de los siguientes NO es un tipo de acuerdo contractual que se utiliza comúnmente para gestionar el riesgo de terceros según el temario?",
+      "opciones": [
+        "a) Memorándum de Entendimiento (MOU)",
+        "b) Acuerdo de Nivel de Servicio (SLA)",
+        "c) Reglamento interno de la organización",
+        "d) Orden de Trabajo (SOW)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El reglamento interno de la organización no es un acuerdo contractual con terceros, sino un documento interno que regula el funcionamiento de la propia empresa.",
+      "id": "p27-58",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué documento contractual se utiliza principalmente para establecer los términos específicos de un proyecto concreto bajo un Acuerdo Maestro de Servicios (MSA), incluyendo alcance, plazos, entregables y responsabilidades detalladas, pero que NO define los términos generales de la relación entre las organizaciones?",
+      "opciones": [
+        "a) Memorándum de Entendimiento (MOU)",
+        "b) Orden de Trabajo o Declaración de Trabajo (SOW)",
+        "c) Acuerdo de Confidencialidad (NDA)",
+        "d) Memorándum de Acuerdo (MOA)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La SOW (Statement of Work) detalla tareas específicas bajo un MSA, incluyendo alcance, plazos y entregables, pero no aborda los términos generales de la relación entre las organizaciones.",
+      "id": "p27-59",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para investigar la autenticidad y vigencia de una certificación de seguridad declarada por un proveedor, como ISO 27001, antes de formalizar un acuerdo con él?",
+      "opciones": [
+        "a) Auditoría de terceros",
+        "b) Diligencia debida (due diligence)",
+        "c) Reglas de compromiso (rules of engagement)",
+        "d) Monitoreo continuo de proveedores"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La diligencia debida (due diligence) incluye verificar la autenticidad y vigencia de certificaciones como ISO 27001, asegurando que la información proporcionada por el proveedor sea veraz y actualizada.",
+      "id": "p27-60",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para verificar que un proveedor cumple con los controles de seguridad acordados en el contrato, pero NO se enfoca en la autenticidad de certificaciones como ISO 27001 ni en auditorías técnicas detalladas?",
+      "opciones": [
+        "a) Due diligence financiera",
+        "b) Monitoreo continuo de proveedores",
+        "c) Evaluación de riesgos de terceros",
+        "d) Auditoría de terceros independiente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El monitoreo continuo de proveedores consiste en revisar periódicamente aspectos como el tiempo de actividad, incidentes de seguridad o cambios en la solvencia financiera del proveedor, sin profundizar en certificaciones o auditorías técnicas detalladas.",
+      "id": "p27-61",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para identificar y registrar posibles conflictos de interés en una relación con un proveedor antes de formalizar un acuerdo contractual?",
+      "opciones": [
+        "a) Auditoría de terceros",
+        "b) Due diligence",
+        "c) Monitoreo continuo de proveedores",
+        "d) Evaluación de riesgos de terceros"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La due diligence incluye la investigación previa a la contratación, donde se identifican conflictos de interés mediante verificación de antecedentes, estados financieros y referencias del proveedor.",
+      "id": "p27-62",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para evaluar periódicamente si un proveedor cumple con los controles de seguridad acordados en el contrato, pero sin incluir auditorías técnicas detalladas ni verificación de certificaciones como ISO 27001?",
+      "opciones": [
+        "a) Monitoreo continuo de proveedores",
+        "b) Due diligence",
+        "c) Reglas de compromiso",
+        "d) Evaluación de conflictos de interés"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El monitoreo continuo de proveedores consiste en revisar métricas como el tiempo de actividad (uptime) o el número de incidentes de seguridad, sin profundizar en auditorías técnicas detalladas ni verificación de certificaciones.",
+      "id": "p27-63",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para verificar periódicamente que un proveedor cumple con los controles de seguridad acordados en el contrato, pero sin incluir la revisión de certificaciones como ISO 27001 ni auditorías técnicas detalladas?",
+      "opciones": [
+        "a) Due diligence inicial",
+        "b) Derecho a auditoría (right to audit)",
+        "c) Monitoreo continuo de proveedores",
+        "d) Evaluación de riesgos de terceros"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El monitoreo continuo de proveedores permite verificar de manera periódica el cumplimiento de controles de seguridad sin enfocarse en certificaciones o auditorías técnicas detalladas, como parte del seguimiento regular de la relación contractual.",
+      "id": "p27-64",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión del riesgo de terceros, ¿qué proceso implica investigar la información financiera, historial de cumplimiento normativo y referencias de un proveedor antes de establecer una relación comercial?",
+      "opciones": [
+        "a) Auditoría de terceros",
+        "b) Due diligence",
+        "c) Monitoreo continuo",
+        "d) Pruebas de penetración"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La due diligence es el proceso de investigar la información financiera, historial de cumplimiento y referencias de un proveedor antes de formalizar una relación comercial.",
+      "id": "p27-D15",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización contrata a un proveedor de servicios en la nube para alojar datos sensibles de clientes. Durante una auditoría de seguridad anual, se descubre que el proveedor no ha actualizado sus sistemas desde hace 18 meses y no aplica parches críticos de seguridad. Según el temario, ¿qué acción sería la MÁS adecuada para mitigar este riesgo en la relación con el proveedor, considerando que el contrato incluye una cláusula de 'derecho a auditoría' y un SLA que exige parches de seguridad cada trimestre?",
+      "opciones": [
+        "a) Exigir al proveedor la implementación inmediata de un plan de parches forzados y monitorear su cumplimiento mediante auditorías trimestrales adicionales, incluyendo pruebas de penetración para verificar la efectividad de los parches.",
+        "b) Reducir el volumen de datos sensibles transferidos al proveedor hasta que demuestre cumplimiento con los parches, mientras se negocia un nuevo SLA con penalizaciones por incumplimiento.",
+        "c) Solicitar una evaluación independiente de terceros para validar la gravedad de las vulnerabilidades y, en paralelo, contratar un servicio de supervisión continua de seguridad (continuous monitoring) para detectar posibles exploits en tiempo real.",
+        "d) Terminación inmediata del contrato con el proveedor y migración de los datos a otro proveedor certificado, sin esperar a que cumpla con los parches, para evitar cualquier riesgo de brecha."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La opción 'a' es la más adecuada porque combina la exigencia contractual (SLA) con acciones proactivas: implementar parches forzados y auditorías adicionales, incluyendo pruebas técnicas como penetration testing, tal como se describe en el temario sobre auditorías de terceros y monitoreo continuo.",
+      "id": "p27-D16",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para verificar la autenticidad y vigencia de una certificación de seguridad declarada por un proveedor, como ISO 27001, antes de formalizar un acuerdo con él?",
+      "opciones": [
+        "a) Due diligence",
+        "b) Monitoreo continuo",
+        "c) Auditoría de terceros",
+        "d) Análisis de la cadena de suministro"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La *due diligence* (diligencia debida) incluye verificar la autenticidad de certificaciones como ISO 27001, asegurando que sean vigentes y auténticas antes de establecer una relación comercial con el proveedor.",
+      "id": "p27-65",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para evaluar periódicamente si un proveedor cumple con los controles de seguridad acordados en el contrato, pero sin incluir la revisión de certificaciones como ISO 27001 ni auditorías técnicas detalladas?",
+      "opciones": [
+        "a) Análisis de la cadena de suministro",
+        "b) Monitoreo continuo de proveedores",
+        "c) Evaluación de riesgos de terceros",
+        "d) Cuestionarios para proveedores"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El monitoreo continuo de proveedores permite evaluar periódicamente su cumplimiento con los controles de seguridad acordados sin requerir certificaciones o auditorías técnicas detalladas, enfocándose en métricas operativas y cambios en su situación.",
+      "id": "p27-66",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para verificar que un proveedor cumple con los controles de seguridad acordados en el contrato, pero sin incluir la revisión de certificaciones como ISO 27001 ni auditorías técnicas detalladas?",
+      "opciones": [
+        "a) Evaluación de cumplimiento contractual",
+        "b) Verificación de reglas de compromiso (rules of engagement)",
+        "c) Análisis de la cadena de suministro",
+        "d) Monitoreo continuo de proveedores"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La evaluación de cumplimiento contractual se enfoca en verificar que el proveedor cumpla con los controles de seguridad establecidos en el contrato, sin necesidad de revisar certificaciones o realizar auditorías técnicas detalladas.",
+      "id": "p27-67",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué tipo de acuerdo contractual se utiliza para definir los términos específicos de un proyecto concreto bajo un Acuerdo Maestro de Servicios (MSA), incluyendo alcance, plazos y entregables?",
+      "opciones": [
+        "Orden de Trabajo o Declaración de Trabajo (SOW)",
+        "Memorándum de Entendimiento (MOU)",
+        "Acuerdo de Nivel de Servicio (SLA)",
+        "Acuerdo de Socios Comerciales (BPA)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La Orden de Trabajo o Declaración de Trabajo (SOW) detalla las tareas específicas bajo un MSA, incluyendo alcance, plazos y entregables.",
+      "id": "p27-68",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso implica realizar pruebas técnicas en los sistemas de un proveedor para identificar vulnerabilidades, simulando ataques reales bajo un marco definido por reglas de compromiso?",
+      "opciones": [
+        "a) Auditoría de terceros",
+        "b) Evaluación de riesgos de terceros mediante pruebas de penetración (penetration testing)",
+        "c) Diligencia debida (due diligence)",
+        "d) Monitoreo continuo de proveedores"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La evaluación de riesgos de terceros mediante pruebas de penetración simula ataques reales para identificar vulnerabilidades, y se rige por reglas de compromiso que definen alcance y límites.",
+      "id": "p27-69",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para evaluar la gestión de riesgos de un proveedor mediante pruebas técnicas que simulan ataques reales, pero que NO incluye la revisión de certificaciones como ISO 27001 ni auditorías de cumplimiento formal?",
+      "opciones": [
+        "a) Auditoría de terceros",
+        "b) Evaluación de diligencia debida",
+        "c) Pruebas de penetración (penetration testing)",
+        "d) Monitoreo continuo de proveedores"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las pruebas de penetración simulan ataques reales para identificar vulnerabilidades en los sistemas del proveedor, pero no verifican certificaciones como ISO 27001 ni cumplen con auditorías formales.",
+      "id": "p27-70",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para evaluar el riesgo de un proveedor mediante pruebas técnicas que simulan ataques reales, pero que NO implica la revisión de certificaciones como ISO 27001 ni auditorías formales de cumplimiento?",
+      "opciones": [
+        "a) Pruebas de penetración (penetration testing)",
+        "b) Análisis de la cadena de suministro (supply chain analysis)",
+        "c) Memorándum de Entendimiento (MOU)",
+        "d) Due diligence financiera"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las pruebas de penetración (penetration testing) son pruebas técnicas que simulan ataques reales para identificar vulnerabilidades en los sistemas del proveedor, y se rigen por las reglas de compromiso, pero no evalúan certificaciones como ISO 27001 ni auditorías formales de cumplimiento.",
+      "id": "p27-71",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para identificar y registrar posibles conflictos de interés en una relación con un proveedor antes de formalizar un acuerdo contractual, pero que no implica evaluaciones técnicas ni auditorías formales?",
+      "opciones": [
+        "a) Pruebas de penetración (penetration testing) con reglas de compromiso",
+        "b) Diligencia debida (due diligence)",
+        "c) Cuestionarios para proveedores sobre prácticas de seguridad",
+        "d) Monitoreo continuo de métricas financieras del proveedor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La diligencia debida (due diligence) incluye investigar información financiera, historial de cumplimiento y referencias, así como identificar posibles conflictos de interés antes de formalizar un acuerdo. No se enfoca en evaluaciones técnicas ni auditorías formales.",
+      "id": "p27-72",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una empresa detecta que uno de sus proveedores indirectos en la cadena de suministro ha sido comprometido por un ciberataque similar al de SolarWinds en 2020. Según el temario, ¿qué acción sería la más adecuada para gestionar este riesgo?",
+      "opciones": [
+        "Realizar un análisis de la cadena de suministro para identificar y mitigar riesgos en todos los eslabones",
+        "Cancelar inmediatamente todos los contratos con proveedores indirectos",
+        "Ignorar el riesgo, ya que los proveedores indirectos no afectan directamente a la organización",
+        "Solicitar al proveedor directo que asuma toda la responsabilidad legal"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Un análisis de la cadena de suministro ayuda a identificar y mitigar riesgos en todos los eslabones, incluyendo proveedores indirectos.",
+      "id": "p27-D17",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una empresa de salud externaliza el desarrollo de una aplicación móvil para gestionar historiales médicos a un proveedor especializado en desarrollo de software. Durante la fase de pruebas, un equipo de seguridad interno realiza un *penetration testing* controlado en los sistemas del proveedor, simulando un ataque de *phishing* dirigido a empleados para robar credenciales. Sin embargo, el proveedor no ha sido informado previamente de esta prueba y reacciona bloqueando el acceso de los auditores a sus sistemas, alegando falta de coordinación. Según el temario, ¿qué aspecto crítico NO se cumplió en este escenario que podría invalidar los resultados de la prueba y generar un conflicto con el proveedor?",
+      "opciones": [
+        "a) No se estableció un Acuerdo de Nivel de Servicio (SLA) con el proveedor antes de realizar las pruebas.",
+        "b) No se definieron las *reglas de compromiso* (rules of engagement) con el proveedor antes de ejecutar el *penetration testing*.",
+        "c) No se incluyó una cláusula de 'derecho a auditoría' en el contrato con el proveedor.",
+        "d) No se realizó una evaluación de riesgos previa (due diligence) al proveedor antes de externalizar el desarrollo."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las *reglas de compromiso* deben definirse y acordarse con el proveedor antes de realizar pruebas de penetración para evitar malentendidos, conflictos o interrupciones en sus operaciones. Este documento establece los límites, alcance y procedimientos de emergencia de la prueba.",
+      "id": "p27-D18",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para investigar la información financiera, el historial de cumplimiento normativo y las referencias de un proveedor antes de establecer una relación comercial?",
+      "opciones": [
+        "Auditoría de terceros",
+        "Diligencia debida",
+        "Evaluación de riesgos de terceros",
+        "Monitoreo continuo de proveedores"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La diligencia debida (due diligence) es el proceso que incluye verificar información financiera, cumplimiento normativo y referencias antes de formalizar un acuerdo con un proveedor.",
+      "id": "p27-73",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para evaluar la capacidad financiera de un proveedor y su historial de cumplimiento normativo antes de establecer una relación comercial con él?",
+      "opciones": [
+        "a) Auditoría de terceros",
+        "b) Diligencia debida (due diligence)",
+        "c) Pruebas de penetración (penetration testing)",
+        "d) Monitoreo continuo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La diligencia debida (due diligence) incluye investigar la información financiera y el historial de cumplimiento normativo del proveedor antes de formalizar un acuerdo.",
+      "id": "p27-74",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización contrata a un proveedor de servicios en la nube para alojar datos sensibles. Durante una auditoría de seguridad anual, se descubre que el proveedor no ha actualizado sus sistemas desde hace 18 meses y no aplica parches críticos de seguridad. Según el temario, ¿qué acción sería la MÁS adecuada para mitigar este riesgo en la relación con el proveedor?",
+      "opciones": [
+        "Solicitar una evaluación independiente de seguridad al proveedor",
+        "Exigir la implementación de MFA en los sistemas del proveedor",
+        "Revisar el Acuerdo de Nivel de Servicio (SLA) para verificar cláusulas de actualización de sistemas",
+        "Terminar inmediatamente el contrato sin evaluación adicional"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Exigir la implementación de MFA (autenticación multifactor) es una acción directa para mitigar riesgos de seguridad, pero en este caso, el problema principal es la falta de actualizaciones y parches, por lo que revisar el SLA para exigir cumplimiento es la acción más adecuada.",
+      "id": "p27-75",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para evaluar periódicamente si un proveedor cumple con los controles de seguridad acordados en el contrato, pero que NO incluye la revisión de certificaciones como ISO 27001 ni auditorías técnicas detalladas?",
+      "opciones": [
+        "a) Diligencia debida (due diligence)",
+        "b) Monitoreo continuo de proveedores",
+        "c) Pruebas de penetración (penetration testing)",
+        "d) Análisis de la cadena de suministro"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El monitoreo continuo de proveedores es un proceso periódico que evalúa el cumplimiento de los controles de seguridad acordados, sin enfocarse en certificaciones o auditorías técnicas detalladas.",
+      "id": "p27-76",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "En el contexto de la gestión del riesgo de terceros, ¿qué proceso implica realizar pruebas técnicas en los sistemas de un proveedor para identificar vulnerabilidades, simulando ataques reales bajo un marco definido por reglas de compromiso?",
+      "opciones": [
+        "Auditoría de terceros",
+        "Evaluación de riesgos de terceros",
+        "Prueba de penetración (penetration testing)",
+        "Diligencia debida"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La prueba de penetración (penetration testing) implica simular ataques reales para identificar vulnerabilidades en los sistemas del proveedor, siguiendo reglas de compromiso (rules of engagement).",
+      "id": "p27-77",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para identificar y registrar posibles conflictos de interés en una relación con un proveedor antes de formalizar un acuerdo contractual, pero que incluye la revisión de métricas financieras y de cumplimiento normativo del proveedor?",
+      "opciones": [
+        "a) Auditoría de terceros",
+        "b) Diligencia debida (due diligence)",
+        "c) Pruebas de penetración (penetration testing)",
+        "d) Análisis de la cadena de suministro"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La diligencia debida (due diligence) incluye investigar la información financiera, historial de cumplimiento normativo y referencias de un proveedor antes de establecer una relación comercial, además de identificar posibles conflictos de interés.",
+      "id": "p27-78",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para evaluar la gestión de riesgos de un proveedor mediante pruebas técnicas que simulan ataques reales, pero que NO incluye la revisión de certificaciones como ISO 27001 ni auditorías formales de cumplimiento?",
+      "opciones": [
+        "a) Penetration testing con reglas de compromiso (rules of engagement)",
+        "b) Auditoría de cumplimiento normativo",
+        "c) Análisis de la cadena de suministro",
+        "d) Diligencia debida (due diligence)"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El *penetration testing* con reglas de compromiso simula ataques reales para identificar vulnerabilidades en los sistemas del proveedor, pero no evalúa certificaciones ni cumple con auditorías formales de cumplimiento. Este proceso se centra en la identificación técnica de riesgos.",
+      "id": "p27-79",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Según el temario, ¿qué proceso se utiliza para evaluar la capacidad de un proveedor para recuperarse de incidentes de seguridad, como fallos en sus sistemas o brechas de datos, antes de formalizar un acuerdo con él?",
+      "opciones": [
+        "a) Análisis de la cadena de suministro",
+        "b) Evaluación de planes de recuperación ante desastres (disaster recovery)",
+        "c) Pruebas de penetración (penetration testing)",
+        "d) Diligencia debida financiera"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los cuestionarios para proveedores pueden incluir preguntas sobre sus planes de recuperación ante desastres, lo que permite evaluar su capacidad para responder a incidentes.",
+      "id": "p27-80",
+      "dificultad": "normal"
+    },
+    {
+      "enunciado": "Una organización contrata a un proveedor de servicios en la nube para alojar datos sensibles de clientes. Durante una auditoría de seguridad anual, se descubre que el proveedor ha externalizado parte de sus operaciones a un subproveedor sin notificarlo previamente a la organización principal. Según el temario, ¿qué proceso o mecanismo contractual debería haber incluido la organización principal en el acuerdo con el proveedor para prevenir este tipo de riesgos y garantizar transparencia en la cadena de suministro?",
+      "opciones": [
+        "a) Cláusula de 'derecho a auditoría' que permita verificar no solo al proveedor directo, sino también a sus subproveedores.",
+        "b) Acuerdo de Nivel de Servicio (SLA) con penalizaciones por incumplimiento de transparencia en la cadena de suministro.",
+        "c) Memorándum de Entendimiento (MOU) que establezca objetivos generales de colaboración, incluyendo la gestión de subproveedores.",
+        "d) Acuerdo de Confidencialidad (NDA) bilateral que obligue al proveedor a no compartir información con terceros sin consentimiento."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La cláusula de 'derecho a auditoría' es el mecanismo contractual más adecuado para garantizar que la organización principal pueda verificar no solo al proveedor directo, sino también a sus subproveedores, asegurando transparencia en toda la cadena de suministro según lo establecido en el temario sobre auditorías de terceros.",
+      "id": "p27-D19",
+      "dificultad": "dificil"
+    },
+    {
+      "enunciado": "Una organización del sector financiero contrata a un proveedor externo para gestionar sus sistemas de autenticación biométrica. Durante una auditoría de cumplimiento anual, se descubre que el proveedor ha estado utilizando un algoritmo de huella dactilar obsoleto y vulnerable a ataques de réplica (spoofing), a pesar de que el contrato incluye una cláusula que exige el cumplimiento de estándares como NIST SP 800-76 para biometría. Según el temario, ¿qué acción sería la MÁS adecuada para mitigar este riesgo en la relación con el proveedor, considerando que este alega que la actualización del algoritmo implicaría un costo adicional y retrasos en el servicio?",
+      "opciones": [
+        "Exigir al proveedor que implemente el algoritmo actualizado según los estándares NIST SP 800-76 sin excepciones, ya que la cláusula contractual es vinculante y prioriza la seguridad sobre costos o plazos, incluso si esto implica revisar los términos del SLA para incluir compensaciones por incumplimiento.",
+        "Iniciar un proceso de arbitraje para negociar una solución intermedia, como una actualización progresiva del algoritmo en un plazo de 12 meses, manteniendo el servicio activo mientras tanto, ya que el temario no especifica que las cláusulas de seguridad sean absolutas y prohíban negociaciones.",
+        "Suspender inmediatamente el servicio del proveedor y notificar a los reguladores financieros sobre el incumplimiento, ya que la vulnerabilidad en un algoritmo biométrico podría exponer datos sensibles de clientes y violar normativas como PCI DSS o GDPR.",
+        "Realizar una evaluación de impacto en la que se analice el riesgo real de los ataques de spoofing en este contexto específico antes de tomar medidas, ya que el temario enfatiza que la gestión del riesgo debe ser proporcional y basada en evidencia."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que los acuerdos contractuales, como los incluidos en el SLA, establecen requisitos de seguridad vinculantes que deben cumplirse. La priorización de la seguridad sobre costos o plazos es un principio clave en la gestión del riesgo de terceros, especialmente en sectores regulados como el financiero.",
+      "id": "p27-D20",
+      "dificultad": "dificil"
+    }
+  ],
+  "videos": [
+    {
+      "titulo": "Third-party Risk Assessment",
+      "youtubeId": "13KNjPexnEI"
+    },
+    {
+      "titulo": "Agreement Types",
+      "youtubeId": "HSZxjj1YAh8"
+    }
+  ]
+}
