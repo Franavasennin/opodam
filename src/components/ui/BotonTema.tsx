@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Icon } from './Icon'
 
 const CLAVE = 'opodam.tema'
 
@@ -6,9 +7,21 @@ function aplicar(noche: boolean) {
   document.documentElement.classList.toggle('dark', noche)
 }
 
+/**
+ * Conmutador de tema día/noche.
+ *
+ * El estado inicial replica la misma regla que el script anti-parpadeo de
+ * index.html: preferencia guardada si existe y, si no, la del sistema. Antes
+ * arrancaba siempre en "día" e ignoraba `prefers-color-scheme`, así que a quien
+ * tuviera el sistema en oscuro le aparecía la app en claro en cada visita.
+ */
 export function BotonTema() {
   const [noche, setNoche] = useState<boolean>(() => {
-    try { return localStorage.getItem(CLAVE) === 'noche' } catch { return false }
+    try {
+      const guardado = localStorage.getItem(CLAVE)
+      if (guardado) return guardado === 'noche'
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+    } catch { return false }
   })
 
   useEffect(() => {
@@ -18,17 +31,14 @@ export function BotonTema() {
 
   return (
     <button
+      type="button"
       onClick={() => setNoche(v => !v)}
+      aria-pressed={noche}
       aria-label={noche ? 'Cambiar a modo día' : 'Cambiar a modo noche'}
       title={noche ? 'Modo día' : 'Modo noche'}
-      className="fixed bottom-40 right-4 z-50 w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-xl"
-      style={{
-        background: 'var(--surface)',
-        color: 'var(--ink)',
-        border: '1px solid var(--border)',
-      }}
+      className="fab fab--2"
     >
-      {noche ? '☀️' : '🌙'}
+      <Icon nombre={noche ? 'sol' : 'luna'} size={20} />
     </button>
   )
 }

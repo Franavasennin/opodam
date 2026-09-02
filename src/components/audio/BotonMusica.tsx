@@ -1,17 +1,18 @@
 import { useMusica } from '../../hooks/useMusica'
+import { Icon } from '../ui/Icon'
 
 export function BotonMusica() {
   const { activa, alternar } = useMusica()
   return (
     <button
+      type="button"
       onClick={alternar}
-      aria-label={activa ? 'Desactivar musica' : 'Activar musica de concentracion'}
-      title={activa ? 'Desactivar musica' : 'Activar musica de concentracion'}
-      className={`fixed bottom-24 right-4 z-50 w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-xl transition-colors ${
-        activa ? 'bg-marca-600 text-white' : 'bg-white text-slate-500 border border-slate-200'
-      }`}
+      aria-pressed={activa}
+      aria-label={activa ? 'Desactivar música de concentración' : 'Activar música de concentración'}
+      title={activa ? 'Desactivar música' : 'Activar música de concentración'}
+      className={`fab fab--1${activa ? ' fab--activo' : ''}`}
     >
-      {activa ? '♫' : '♪'}
+      <Icon nombre="nota" size={20} />
     </button>
   )
 }
