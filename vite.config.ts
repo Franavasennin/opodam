@@ -48,6 +48,9 @@ export default defineConfig({
     setupFiles: ['./tests/setup.ts'],
     // Los .cjs de netlify/functions son pruebas para Node, no para Vitest.
     // e2e/ son specs de Playwright (otro runner), no de Vitest.
-    exclude: ['**/node_modules/**', '**/dist/**', 'netlify/**', 'e2e/**'],
+    // Los worktrees de agentes contienen una copia entera del repo: sin
+    // excluirlos, Vitest duplica toda la suite y además recoge los specs de
+    // Playwright de su e2e/ (el patrón 'e2e/**' solo casa en la raíz).
+    exclude: ['**/node_modules/**', '**/dist/**', 'netlify/**', 'e2e/**', '**/.claude/worktrees/**'],
   },
 })

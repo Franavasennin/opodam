@@ -13,6 +13,7 @@ const OUT = 'public/search'
 const CHUNK = 600
 const MAX_CHUNKS_TEMA = 45
 const MODELO = 'Xenova/multilingual-e5-small'
+const FORZAR = process.argv.includes('--force')
 
 fs.mkdirSync(OUT, { recursive: true })
 
@@ -50,10 +51,29 @@ function cuantizar(vec) {
   return bytes.toString('base64')
 }
 
-const extractor = await pipeline('feature-extraction', MODELO)
+// El modelo se carga bajo demanda. Antes se creaba en el top level, así que
+// cada `npm run dev` descargaba y cargaba el extractor aunque no hubiera nada
+// que recalcular: era lo que hacía eterno el arranque.
+let extractor = null
 async function embed(texto) {
+  extractor ??= await pipeline('feature-extraction', MODELO)
   const out = await extractor('passage: ' + texto, { pooling: 'mean', normalize: true })
   return Array.from(out.data)
+}
+
+/**
+ * ¿Están los índices de este slug al día?
+ * Lo están si existen los dos ficheros de salida y ningún tema-NN.json se ha
+ * tocado después. En un checkout limpio (CI/Netlify) no existen, así que
+ * siempre se regeneran; `--force` lo fuerza en local.
+ */
+function estaAlDia(slug, dir, files) {
+  if (FORZAR) return false
+  const salidas = [path.join(OUT, `${slug}.json`), path.join(OUT, `${slug}.vectors.json`)]
+  if (!salidas.every(p => fs.existsSync(p))) return false
+  const salidaMasAntigua = Math.min(...salidas.map(p => fs.statSync(p).mtimeMs))
+  const fuenteMasReciente = Math.max(...files.map(f => fs.statSync(path.join(dir, f)).mtimeMs))
+  return salidaMasAntigua >= fuenteMasReciente
 }
 
 let total = 0
@@ -61,6 +81,12 @@ for (const slug of SLUGS) {
   const dir = path.join(TOPICS, slug)
   if (!fs.existsSync(dir)) { console.log('SKIP (sin dir):', slug); continue }
   const files = fs.readdirSync(dir).filter(f => /^tema-\d+\.json$/.test(f)).sort()
+  if (files.length && estaAlDia(slug, dir, files)) {
+    const cacheados = JSON.parse(fs.readFileSync(path.join(OUT, `${slug}.json`), 'utf8')).chunks.length
+    console.log(`AL DÍA ${slug}: ${cacheados} fragmentos (usa --force para regenerar)`)
+    total += cacheados
+    continue
+  }
   const chunks = []
   for (const f of files) {
     const tema = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))
