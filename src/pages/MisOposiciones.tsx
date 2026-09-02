@@ -5,14 +5,15 @@ import { OPOSICIONES } from '../data/oposiciones'
 import { setActiveSlug } from '../services/storage'
 import { activarTrial, esOwner } from '../services/supabase'
 import { BannerNutriplan } from '../components/promo/BannerNutriplan'
+import { Icon, type NombreIcono } from '../components/ui/Icon'
 
-const GLYPH: Record<string, string> = {
-  'cgpc': '🛡️',
-  'policia-local': '👮',
-  'aux-enfermeria': '🏥',
-  'aux-judicial': '⚖️',
-  'tramitacion-judicial': '📋',
-  'security-plus': '🔐',
+const GLYPH: Record<string, NombreIcono> = {
+  'cgpc': 'escudo',
+  'policia-local': 'policia',
+  'aux-enfermeria': 'salud',
+  'aux-judicial': 'justicia',
+  'tramitacion-judicial': 'supuestos',
+  'security-plus': 'candado',
 }
 
 export default function MisOposiciones() {
@@ -84,10 +85,10 @@ export default function MisOposiciones() {
               <div style={{ display: 'flex', alignItems: 'stretch' }}>
                 <div style={{
                   width: 76, flexShrink: 0, background: 'var(--surface-2)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 26,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--ink-soft)',
                   borderRight: '1px solid var(--border-soft)', position: 'relative',
                 }}>
-                  {GLYPH[op.slug] ?? '📚'}
+                  <Icon nombre={GLYPH[op.slug] ?? 'temario'} size={26} />
                   <div style={{
                     position: 'absolute', bottom: 8, left: 0, right: 0, textAlign: 'center',
                     fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: 'var(--mute)', letterSpacing: '0.06em',
@@ -119,7 +120,7 @@ export default function MisOposiciones() {
             <div className="grid grid-cols-2 gap-3">
               {proximamente.map(op => (
                 <div key={op.slug} className="card" style={{ padding: 14, background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, opacity: 0.7 }}>
-                  <span style={{ fontSize: 20 }}>{GLYPH[op.slug] ?? '📚'}</span>
+                  <span style={{ display: 'inline-flex', color: 'var(--ink-soft)' }}><Icon nombre={GLYPH[op.slug] ?? 'temario'} size={20} /></span>
                   <div style={{ fontWeight: 600, fontSize: 12.5, color: 'var(--ink-soft)', marginTop: 6 }}>{op.nombre}</div>
                   <div style={{ fontSize: 11, color: 'var(--mute)' }}>{op.descripcion}</div>
                 </div>
@@ -134,7 +135,7 @@ export default function MisOposiciones() {
             onClick={() => navigate('/equivalencias')}
             className="card" style={{ display: 'flex', alignItems: 'center', gap: 12, padding: 16, textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16 }}
           >
-            <span style={{ fontSize: 22 }}>🔀</span>
+            <span style={{ display: 'inline-flex', color: 'var(--accent)' }}><Icon nombre="mezcla" size={22} /></span>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)' }}>Equivalencias entre temarios</div>
               <div style={{ fontSize: 12.5, color: 'var(--mute)' }}>Cruce CGPC ↔ Policía Local para estudiar lo común una sola vez</div>
@@ -146,7 +147,7 @@ export default function MisOposiciones() {
             onClick={() => navigate('/procoach')}
             style={{ display: 'flex', alignItems: 'center', gap: 12, padding: 16, textAlign: 'left', cursor: 'pointer', background: 'var(--accent-soft)', color: 'var(--accent)', border: 0, borderRadius: 16 }}
           >
-            <div style={{ width: 30, height: 30, borderRadius: 8, background: 'var(--accent)', color: 'var(--accent-ink)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 16 }}>💪</div>
+            <div style={{ width: 30, height: 30, borderRadius: 8, background: 'var(--accent)', color: 'var(--accent-ink)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}><Icon nombre="fisico" size={17} /></div>
             <div style={{ flex: 1, fontSize: 13 }}>
               <div style={{ fontWeight: 600 }}>ProCoach AI</div>
               <div style={{ opacity: 0.85 }}>Entrenador IA para oposiciones físicas</div>

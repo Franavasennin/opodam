@@ -10,6 +10,7 @@ import { cargarBancoActivo, fusionarBanco } from '../services/banco'
 import { seleccionarPreguntasTest, PREGUNTAS_POR_TEST, type ModoDificultad } from '../services/seleccionTest'
 import { getPenalizacion, describirPenalizacion, consejoEstrategia } from '../services/nota'
 import { obtenerTopics } from '../data/topics'
+import { Icon } from '../components/ui/Icon'
 import type { Tema, Pregunta, Confianza } from '../types'
 import { getPreguntaCorrecta } from '../types'
 
@@ -72,7 +73,7 @@ export function Tests() {
         .catch(() => ({ temaId: id, preguntas: [] as Pregunta[] })))
     )
     const pool = barajar(intercalarPreguntas(grupos, 15)) as PreguntaExt[]
-    setTema({ id: ID_MEZCLA, titulo: '🔀 Mezcla inteligente', bloque: '', secciones: [], esquemas: [], mapaMental: { nodos: [] }, flashcards: [], preguntas: pool } as unknown as Tema)
+    setTema({ id: ID_MEZCLA, titulo: 'Mezcla inteligente', bloque: '', secciones: [], esquemas: [], mapaMental: { nodos: [] }, flashcards: [], preguntas: pool } as unknown as Tema)
     setRespuestas(new Array(pool.length).fill(null))
     setConfianza(new Array(pool.length).fill(null))
     setEnviado(false)
@@ -95,7 +96,7 @@ export function Tests() {
         <button onClick={() => navigate(`/oposicion/${slug}/tests/simulacro`)} className="hero" style={{ width: '100%', textAlign: 'left', border: 0, cursor: 'pointer', marginBottom: 18 }}>
           <div className="hero-grain" />
           <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 14 }}>
-            <span style={{ fontSize: 26 }}>🎯</span>
+            <span style={{ display: 'inline-flex' }}><Icon nombre="diana" size={26} /></span>
             <div style={{ flex: 1 }}>
               <div className="display" style={{ fontSize: 20 }}>Simulacro completo</div>
               <div style={{ fontSize: 12.5, color: 'rgba(255,255,255,0.7)', marginTop: 2 }}>Examen cronometrado con preguntas de todos los temas</div>
@@ -106,7 +107,7 @@ export function Tests() {
         {temasEstudiados >= 2 && (
           <button onClick={iniciarMezcla} className="card"
             style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '13px 14px', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--accent)', borderRadius: 14, marginBottom: 18 }}>
-            <span style={{ fontSize: 22 }}>🔀</span>
+            <span style={{ display: 'inline-flex', color: 'var(--accent)' }}><Icon nombre="mezcla" size={22} /></span>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--ink)' }}>Mezcla inteligente</div>
               <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 2 }}>15 preguntas de varios temas (débil · en riesgo · dominado) — como el examen real</div>
@@ -117,7 +118,7 @@ export function Tests() {
         {nErrores > 0 && (
           <button onClick={() => navigate(`/oposicion/${slug}/repaso-errores`)} className="card"
             style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '13px 14px', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--warn)', borderRadius: 14, marginBottom: 18 }}>
-            <span style={{ fontSize: 22 }}>🩹</span>
+            <span style={{ display: 'inline-flex', color: 'var(--warn)' }}><Icon nombre="tirita" size={22} /></span>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--ink)' }}>Repasar mis fallos</div>
               <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 2 }}>{nErrores} {nErrores === 1 ? 'pregunta pendiente' : 'preguntas pendientes'} · acierta 2 veces para graduarla</div>
@@ -157,7 +158,7 @@ export function Tests() {
         <button onClick={() => elegirModo('normal')} className="card"
           style={{ width: '100%', textAlign: 'left', padding: '20px 20px', borderRadius: 18, border: '1px solid var(--border)', background: 'var(--surface)', cursor: 'pointer' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-            <span style={{ fontSize: 32 }}>📝</span>
+            <span style={{ display: 'inline-flex', color: 'var(--ink-soft)' }}><Icon nombre="tests" size={30} /></span>
             <div>
               <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--ink)' }}>Normal</div>
               <div style={{ fontSize: 13, color: 'var(--mute)', marginTop: 3 }}>Preguntas directas sobre el temario. Ideal para primera y segunda vuelta.</div>
@@ -169,7 +170,7 @@ export function Tests() {
         <button onClick={() => elegirModo('dificil')} className="card"
           style={{ width: '100%', textAlign: 'left', padding: '20px 20px', borderRadius: 18, border: '2px solid var(--warn)', background: 'color-mix(in srgb, var(--warn) 8%, var(--surface))', cursor: 'pointer' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-            <span style={{ fontSize: 32 }}>🔥</span>
+            <span style={{ display: 'inline-flex', color: 'var(--warn)' }}><Icon nombre="dificil" size={30} /></span>
             <div>
               <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--ink)' }}>Super Difícil</div>
               <div style={{ fontSize: 13, color: 'var(--mute)', marginTop: 3 }}>60% preguntas trampa (distractores muy parecidos, plazos, nº de artículo, matices). Como el examen real.</div>
@@ -230,26 +231,33 @@ export function Tests() {
             {calcularPuntuacionTest(aciertos, errores, preguntasActivas.length, pen).toFixed(2)}
           </div>
           <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>sobre 10 · {describirPenalizacion(pen)}</div>
-          <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {aciertos} aciertos · ❌ {errores} errores</div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>
+            <Icon nombre="acierto" size={15} /> {aciertos} aciertos
+            <span style={{ color: 'var(--mute)' }}>·</span>
+            <Icon nombre="fallo" size={15} /> {errores} errores
+          </div>
         </div>
         {errores > 0 && (
-          <div className="card" style={{ background: 'var(--accent-soft)', border: '1px solid var(--accent)', borderRadius: 14, padding: '12px 14px', fontSize: 12.5, color: 'var(--accent)' }}>
-            💡 {consejoEstrategia(pen)}
+          <div className="card" style={{ display: 'flex', alignItems: 'flex-start', gap: 8, background: 'var(--accent-soft)', border: '1px solid var(--accent)', borderRadius: 14, padding: '12px 14px', fontSize: 12.5, color: 'var(--accent)' }}>
+            <span style={{ display: 'inline-flex', flexShrink: 0 }}><Icon nombre="idea" size={15} /></span>
+            <span>{consejoEstrategia(pen)}</span>
           </div>
         )}
         {seguroFallo > 0 && (
-          <div className="card" style={{ background: 'var(--warn-soft)', border: '1px solid var(--warn)', borderRadius: 14, padding: '12px 14px', fontSize: 12.5, color: 'var(--warn)' }}>
-            ⚠️ <strong>Ilusión de saber:</strong> {seguroFallo} {seguroFallo === 1 ? 'pregunta que marcaste "Seguro" y fallaste' : 'preguntas que marcaste "Seguro" y fallaste'}. Son las más peligrosas en el examen — entran al cuaderno con prioridad.
+          <div className="card" style={{ display: 'flex', alignItems: 'flex-start', gap: 8, background: 'var(--warn-soft)', border: '1px solid var(--warn)', borderRadius: 14, padding: '12px 14px', fontSize: 12.5, color: 'var(--warn)' }}>
+            <span style={{ display: 'inline-flex', flexShrink: 0 }}><Icon nombre="alerta" size={15} /></span>
+            <span><strong>Ilusión de saber:</strong> {seguroFallo} {seguroFallo === 1 ? 'pregunta que marcaste "Seguro" y fallaste' : 'preguntas que marcaste "Seguro" y fallaste'}. Son las más peligrosas en el examen — entran al cuaderno con prioridad.</span>
           </div>
         )}
         {conConfianza > 0 && seguroFallo === 0 && (
-          <div className="card" style={{ background: 'var(--accent-soft)', border: '1px solid var(--accent)', borderRadius: 14, padding: '12px 14px', fontSize: 12.5, color: 'var(--accent)' }}>
-            ✅ Buena calibración: no fallaste ninguna de las que marcaste "Seguro".
+          <div className="card" style={{ display: 'flex', alignItems: 'flex-start', gap: 8, background: 'var(--accent-soft)', border: '1px solid var(--accent)', borderRadius: 14, padding: '12px 14px', fontSize: 12.5, color: 'var(--accent)' }}>
+            <span style={{ display: 'inline-flex', flexShrink: 0 }}><Icon nombre="acierto" size={15} /></span>
+            <span>Buena calibración: no fallaste ninguna de las que marcaste "Seguro".</span>
           </div>
         )}
         {modo === 'dificil' && (
-          <div style={{ background: 'color-mix(in srgb, var(--warn) 10%, var(--surface))', border: '1px solid var(--warn)', borderRadius: 12, padding: '8px 14px', fontSize: 12.5, color: 'var(--warn)', fontWeight: 600 }}>
-            🔥 Modo Super Difícil
+          <div style={{ display: 'flex', alignItems: 'center', gap: 7, background: 'color-mix(in srgb, var(--warn) 10%, var(--surface))', border: '1px solid var(--warn)', borderRadius: 12, padding: '8px 14px', fontSize: 12.5, color: 'var(--warn)', fontWeight: 600 }}>
+            <Icon nombre="dificil" size={15} /> Modo Super Difícil
           </div>
         )}
         {preguntasActivas.map((p, i) => {
@@ -264,7 +272,7 @@ export function Tests() {
         })}
         {errores > 0 && (
           <button onClick={() => navigate(`/oposicion/${slug}/repaso-errores`)} className="btn-editorial btn-acc" style={{ width: '100%' }}>
-            🩹 Repasar mis fallos ahora
+            <Icon nombre="tirita" size={17} /> Repasar mis fallos ahora
           </button>
         )}
         <button onClick={() => { setModo(null); setPreguntasDelTest([]); setEnviado(false) }} className="btn-editorial btn-sec" style={{ width: '100%' }}>
@@ -281,8 +289,9 @@ export function Tests() {
       <TestTopbar
         title={
           <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600, fontSize: 13.5, letterSpacing: '-0.01em', overflow: 'hidden' }}>
-            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{esMezcla ? '🔀 Mezcla inteligente' : tema.titulo}</span>
-            {modo === 'dificil' && <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, background: 'var(--warn)', color: '#fff', borderRadius: 6, padding: '1px 7px' }}>🔥 DIFÍCIL</span>}
+            {esMezcla && <span style={{ display: 'inline-flex', flexShrink: 0 }}><Icon nombre="mezcla" size={15} /></span>}
+            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{esMezcla ? 'Mezcla inteligente' : tema.titulo}</span>
+            {modo === 'dificil' && <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, flexShrink: 0, fontSize: 11, fontWeight: 700, background: 'var(--warn)', color: '#fff', borderRadius: 6, padding: '1px 7px' }}><Icon nombre="dificil" size={11} /> DIFÍCIL</span>}
           </span>
         }
         onBack={() => esMezcla ? setTemaId(null) : setModo(null)}
@@ -313,8 +322,9 @@ export function Tests() {
                   const color = c === 'seguro' ? 'var(--accent)' : '#a07a2c'
                   return (
                     <button key={c} type="button" onClick={() => setConfianza(prev => { const n = [...prev]; n[i] = c; return n })}
-                      style={{ fontSize: 11.5, fontWeight: 600, cursor: 'pointer', borderRadius: 999, padding: '3px 12px', border: `1px solid ${activo ? color : 'var(--border)'}`, color: activo ? color : 'var(--mute)', background: activo ? 'color-mix(in srgb, ' + color + ' 12%, transparent)' : 'transparent' }}>
-                      {c === 'seguro' ? '✔️ Seguro' : '🤔 Dudo'}
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 11.5, fontWeight: 600, cursor: 'pointer', borderRadius: 999, padding: '3px 12px', border: `1px solid ${activo ? color : 'var(--border)'}`, color: activo ? color : 'var(--mute)', background: activo ? 'color-mix(in srgb, ' + color + ' 12%, transparent)' : 'transparent' }}>
+                      <Icon nombre={c === 'seguro' ? 'check' : 'duda'} size={13} />
+                      {c === 'seguro' ? 'Seguro' : 'Dudo'}
                     </button>
                   )
                 })}

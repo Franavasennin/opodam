@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { exportarProgreso, importarProgreso } from '../services/storage'
 import { enviarMagicLink, cerrarSesion, obtenerUsuario } from '../services/supabase'
 import { sincronizar } from '../services/sync'
+import { Icon } from '../components/ui/Icon'
 import type { User } from '@supabase/supabase-js'
 
 const topbar: React.CSSProperties = {
@@ -9,12 +10,19 @@ const topbar: React.CSSProperties = {
   background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
 }
 
+/**
+ * El aviso lleva el tipo aparte del texto: antes el emoji de estado iba dentro
+ * de la propia cadena, así que el banner no podía teñirse distinto según fuese
+ * error o confirmación y el lector de pantalla lo verbalizaba.
+ */
+type Aviso = { tipo: 'ok' | 'error' | 'info'; texto: string }
+
 export function Perfil() {
   const [usuario, setUsuario] = useState<User | null>(null)
   const [email, setEmail] = useState('')
   const [enviando, setEnviando] = useState(false)
   const [syncing, setSyncing] = useState(false)
-  const [mensaje, setMensaje] = useState<string | null>(null)
+  const [mensaje, setMensaje] = useState<Aviso | null>(null)
   const [ultimoSync, setUltimoSync] = useState<string | null>(null)
 
   useEffect(() => {
@@ -22,11 +30,13 @@ export function Perfil() {
   }, [])
 
   async function handleMagicLink() {
-    if (!email.includes('@')) { setMensaje('Introduce un email válido'); return }
+    if (!email.includes('@')) { setMensaje({ tipo: 'error', texto: 'Introduce un email válido' }); return }
     setEnviando(true)
     const { error } = await enviarMagicLink(email)
     setEnviando(false)
-    setMensaje(error ? `Error: ${error}` : '✅ Email enviado. Revisa tu bandeja de entrada.')
+    setMensaje(error
+      ? { tipo: 'error', texto: `Error: ${error}` }
+      : { tipo: 'ok', texto: 'Email enviado. Revisa tu bandeja de entrada.' })
   }
 
   async function handleSync() {
@@ -34,13 +44,13 @@ export function Perfil() {
     await sincronizar()
     setUltimoSync(new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }))
     setSyncing(false)
-    setMensaje('✅ Sincronizado correctamente')
+    setMensaje({ tipo: 'ok', texto: 'Sincronizado correctamente' })
   }
 
   async function handleCerrarSesion() {
     await cerrarSesion()
     setUsuario(null)
-    setMensaje('Sesión cerrada.')
+    setMensaje({ tipo: 'info', texto: 'Sesión cerrada.' })
   }
 
   function handleExportar() {
@@ -61,9 +71,9 @@ export function Perfil() {
     reader.onload = ev => {
       try {
         importarProgreso(ev.target!.result as string)
-        setMensaje('✅ Progreso importado correctamente.')
+        setMensaje({ tipo: 'ok', texto: 'Progreso importado correctamente.' })
       } catch {
-        setMensaje('❌ Fichero inválido.')
+        setMensaje({ tipo: 'error', texto: 'Fichero inválido.' })
       }
     }
     reader.readAsText(file)
@@ -88,7 +98,18 @@ export function Perfil() {
         </div>
 
         {mensaje && (
-          <div className="rounded-xl px-4 py-2" style={{ fontSize: 13, background: 'var(--accent-soft)', color: 'var(--accent)' }}>{mensaje}</div>
+          <div className="rounded-xl px-4 py-2" role="status" style={{
+            display: 'flex', alignItems: 'center', gap: 8, fontSize: 13,
+            background: mensaje.tipo === 'error' ? 'var(--warn-soft)' : 'var(--accent-soft)',
+            color: mensaje.tipo === 'error' ? 'var(--warn)' : 'var(--accent)',
+          }}>
+            {mensaje.tipo !== 'info' && (
+              <span style={{ display: 'inline-flex', flexShrink: 0 }}>
+                <Icon nombre={mensaje.tipo === 'ok' ? 'acierto' : 'fallo'} size={15} />
+              </span>
+            )}
+            <span>{mensaje.texto}</span>
+          </div>
         )}
 
         <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
@@ -109,24 +130,24 @@ export function Perfil() {
             <>
               <div className="flex items-center justify-between">
                 <div>
-                  <p style={{ margin: 0, fontSize: 13.5, fontWeight: 600, color: 'var(--accent)' }}>✅ {usuario.email}</p>
-                  {ultimoSync && <p className="num-display" style={{ margin: '2px 0 0', fontSize: 11.5, color: 'var(--mute)' }}>🔄 Último sync: {ultimoSync}</p>}
+                  <p style={{ display: 'flex', alignItems: 'center', gap: 6, margin: 0, fontSize: 13.5, fontWeight: 600, color: 'var(--accent)' }}><Icon nombre="acierto" size={15} /> {usuario.email}</p>
+                  {ultimoSync && <p className="num-display" style={{ display: 'flex', alignItems: 'center', gap: 5, margin: '2px 0 0', fontSize: 11.5, color: 'var(--mute)' }}><Icon nombre="repetir" size={13} /> Último sync: {ultimoSync}</p>}
                 </div>
                 <button onClick={handleCerrarSesion} style={{ background: 'none', border: 0, cursor: 'pointer', fontSize: 12, color: 'var(--mute)', textDecoration: 'underline' }}>Cerrar sesión</button>
               </div>
               <button onClick={handleSync} disabled={syncing} className="btn-editorial btn-acc" style={{ width: '100%', marginTop: 14, opacity: syncing ? 0.5 : 1 }}>
-                {syncing ? 'Sincronizando…' : '🔄 Sincronizar ahora'}
+                {syncing ? 'Sincronizando…' : <><Icon nombre="repetir" size={17} /> Sincronizar ahora</>}
               </button>
             </>
           )}
         </div>
 
         <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
-          <div className="eyebrow" style={{ marginBottom: 12 }}>💾 Copia de seguridad</div>
+          <div className="eyebrow" style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 12 }}><Icon nombre="copia" size={14} /> Copia de seguridad</div>
           <div className="flex gap-2">
-            <button onClick={handleExportar} className="btn-editorial btn-sec" style={{ flex: 1 }}>⬇ Exportar</button>
+            <button onClick={handleExportar} className="btn-editorial btn-sec" style={{ flex: 1 }}><Icon nombre="descargar" size={17} /> Exportar</button>
             <label className="btn-editorial btn-sec" style={{ flex: 1, textAlign: 'center', cursor: 'pointer' }}>
-              ⬆ Importar
+              <Icon nombre="subir" size={17} /> Importar
               <input type="file" accept=".json" onChange={handleImportar} className="hidden" />
             </label>
           </div>

@@ -1,4 +1,5 @@
 import type { ExamenResultado, ProgresoTema } from '../types'
+import type { NombreIcono } from '../components/ui/Icon'
 import { diasEntre } from './dominio'
 
 // ── P2.3 Dashboard de rendimiento con predicción honesta ─────
@@ -105,7 +106,7 @@ export function calcularPrediccion(
 // ── Plan de la semana (3 acciones por reglas, sin IA) ────────
 
 export interface AccionSemana {
-  icono: string
+  icono: NombreIcono
   texto: string
   ruta?: string          // ruta relativa dentro de /oposicion/:slug si aplica
 }
@@ -123,27 +124,27 @@ export function planSemana(ctx: ContextoSemana): AccionSemana[] {
 
   if (ctx.peorTema) {
     acciones.push({
-      icono: '🎯',
+      icono: 'diana',
       texto: `Refuerza tu tema más flojo: T${ctx.peorTema.id} — ${ctx.peorTema.titulo}`,
       ruta: 'temario',
     })
   } else if (ctx.coberturaPct < 100) {
-    acciones.push({ icono: '📖', texto: 'Empieza un tema nuevo del temario', ruta: 'temario' })
+    acciones.push({ icono: 'temario', texto: 'Empieza un tema nuevo del temario', ruta: 'temario' })
   }
 
   if (ctx.flashcardsPendientes > 0) {
     acciones.push({
-      icono: '🃏',
+      icono: 'flashcards',
       texto: `Repasa ${ctx.flashcardsPendientes} flashcard${ctx.flashcardsPendientes === 1 ? '' : 's'} pendiente${ctx.flashcardsPendientes === 1 ? '' : 's'}`,
       ruta: 'flashcards',
     })
   }
 
   if (ctx.diasDesdeUltimoSimulacro === null) {
-    acciones.push({ icono: '📝', texto: 'Haz tu primer simulacro completo', ruta: 'examen' })
+    acciones.push({ icono: 'tests', texto: 'Haz tu primer simulacro completo', ruta: 'examen' })
   } else if (ctx.diasDesdeUltimoSimulacro >= 7) {
     acciones.push({
-      icono: '📝',
+      icono: 'tests',
       texto: `Hace ${ctx.diasDesdeUltimoSimulacro} días de tu último simulacro — toca otro`,
       ruta: 'examen',
     })

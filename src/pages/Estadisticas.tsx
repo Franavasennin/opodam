@@ -10,6 +10,7 @@ import {
   diasDesdeUltimoSimulacro, type Semaforo,
 } from '../services/prediccion'
 import { puntosTiempoAcierto, temasRelecturaPasiva } from '../services/tiempo'
+import { Icon } from '../components/ui/Icon'
 
 const topbar: React.CSSProperties = {
   height: 52, borderBottom: '1px solid var(--border-soft)',
@@ -83,7 +84,7 @@ export function Estadisticas() {
         {prediccion.fiable && (
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
             <div className="flex items-center justify-between" style={{ marginBottom: 4 }}>
-              <div className="eyebrow">🔮 Nota proyectada</div>
+              <div className="eyebrow" style={{ display: 'flex', alignItems: 'center', gap: 7 }}><Icon nombre="tendencia" size={14} /> Nota proyectada</div>
               <span style={{ fontSize: 11, color: SEM_COLOR[prediccion.semaforo] }}>●</span>
             </div>
             <div className="flex items-baseline gap-2">
@@ -127,7 +128,7 @@ export function Estadisticas() {
 
         {acciones.length > 0 && (
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
-            <div className="eyebrow" style={{ marginBottom: 12 }}>📅 Tu plan de esta semana</div>
+            <div className="eyebrow" style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 12 }}><Icon nombre="calendario" size={14} /> Tu plan de esta semana</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {acciones.map((a, i) => (
                 <button
@@ -139,7 +140,7 @@ export function Estadisticas() {
                     padding: '11px 13px', cursor: a.ruta ? 'pointer' : 'default', color: 'var(--ink)', fontSize: 13,
                   }}
                 >
-                  <span style={{ fontSize: 17, flexShrink: 0 }}>{a.icono}</span>
+                  <span style={{ display: 'inline-flex', flexShrink: 0, color: 'var(--mute)' }}><Icon nombre={a.icono} size={17} /></span>
                   <span style={{ flex: 1 }}>{a.texto}</span>
                   {a.ruta && <span style={{ color: 'var(--mute)', flexShrink: 0 }}>→</span>}
                 </button>
@@ -150,7 +151,7 @@ export function Estadisticas() {
 
         {puntosTiempo.length > 0 && (
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
-            <div className="eyebrow" style={{ marginBottom: 12 }}>⏱️ Tiempo vs acierto por tema</div>
+            <div className="eyebrow" style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 12 }}><Icon nombre="tiempo" size={14} /> Tiempo vs acierto por tema</div>
             <svg viewBox="0 0 300 160" style={{ width: '100%', height: 160, display: 'block' }}>
               {/* ejes */}
               <line x1="30" y1="6" x2="30" y2="138" stroke="var(--border)" strokeWidth="1" />
@@ -171,8 +172,9 @@ export function Estadisticas() {
               <text x="280" y="150" fontSize="8" fill="var(--mute)">min</text>
             </svg>
             {relecturaPasiva.length > 0 ? (
-              <p style={{ fontSize: 11.5, color: 'var(--warn)', margin: '8px 0 0' }}>
-                ⚠️ {relecturaPasiva.length === 1 ? 'El tema' : 'Los temas'} <b>{relecturaPasiva.map(p => `T${p.id}`).join(', ')}</b>: mucho tiempo y poco acierto. Cambia de método — haz test ANTES de releer.
+              <p style={{ display: 'flex', alignItems: 'flex-start', gap: 6, fontSize: 11.5, color: 'var(--warn)', margin: '8px 0 0' }}>
+                <span style={{ display: 'inline-flex', flexShrink: 0 }}><Icon nombre="alerta" size={13} /></span>
+                <span>{relecturaPasiva.length === 1 ? 'El tema' : 'Los temas'} <b>{relecturaPasiva.map(p => `T${p.id}`).join(', ')}</b>: mucho tiempo y poco acierto. Cambia de método — haz test ANTES de releer.</span>
               </p>
             ) : (
               <p style={{ fontSize: 11.5, color: 'var(--mute)', margin: '8px 0 0' }}>
@@ -200,7 +202,7 @@ export function Estadisticas() {
         {retencion > 0 && (
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
             <div className="flex items-center justify-between" style={{ marginBottom: 10 }}>
-              <div className="eyebrow">🧠 Retención media</div>
+              <div className="eyebrow" style={{ display: 'flex', alignItems: 'center', gap: 7 }}><Icon nombre="psicotecnicos" size={14} /> Retención media</div>
               <span className="num-display" style={{ fontSize: 22, color: retencion >= 70 ? 'var(--accent)' : retencion >= 40 ? '#a07a2c' : 'var(--warn)' }}>{retencion}%</span>
             </div>
             <div className="bar"><div className="bar-fill" style={{ width: `${retencion}%`, background: retencion >= 70 ? 'var(--accent)' : retencion >= 40 ? '#a07a2c' : 'var(--warn)' }} /></div>
@@ -213,14 +215,14 @@ export function Estadisticas() {
         {totalConfianza(cal) >= 5 && (
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
             <div className="flex items-center justify-between" style={{ marginBottom: 10 }}>
-              <div className="eyebrow">🎯 Calibración</div>
+              <div className="eyebrow" style={{ display: 'flex', alignItems: 'center', gap: 7 }}><Icon nombre="diana" size={14} /> Calibración</div>
               <span className="num-display" style={{ fontSize: 22, color: falsosSeguros > 20 ? 'var(--warn)' : falsosSeguros > 0 ? '#a07a2c' : 'var(--accent)' }}>{falsosSeguros}%</span>
             </div>
             <div className="grid grid-cols-2 gap-2" style={{ fontSize: 11.5 }}>
-              <div style={{ color: 'var(--warn)' }}>⚠️ Seguro + fallo: <b>{cal.seguroFallo}</b></div>
-              <div style={{ color: 'var(--accent)' }}>✔️ Seguro + acierto: <b>{cal.seguroAcierto}</b></div>
-              <div style={{ color: 'var(--mute)' }}>🤔 Dudo + fallo: <b>{cal.dudoFallo}</b></div>
-              <div style={{ color: 'var(--mute)' }}>🤔 Dudo + acierto: <b>{cal.dudoAcierto}</b></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: 'var(--warn)' }}><Icon nombre="alerta" size={13} /> Seguro + fallo: <b>{cal.seguroFallo}</b></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: 'var(--accent)' }}><Icon nombre="check" size={13} /> Seguro + acierto: <b>{cal.seguroAcierto}</b></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: 'var(--mute)' }}><Icon nombre="duda" size={13} /> Dudo + fallo: <b>{cal.dudoFallo}</b></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: 'var(--mute)' }}><Icon nombre="duda" size={13} /> Dudo + acierto: <b>{cal.dudoAcierto}</b></div>
             </div>
             <p style={{ fontSize: 11.5, color: 'var(--mute)', margin: '10px 0 0' }}>
               "Falsos seguros" = preguntas que creías dominar y fallaste. Cuanto más baja la cifra, mejor te conoces.
@@ -240,7 +242,9 @@ export function Estadisticas() {
                     <div key={t.id}>
                       <div className="flex justify-between" style={{ fontSize: 12, color: 'var(--mute)', marginBottom: 5 }}>
                         <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginRight: 8 }}>T{t.id} — {t.titulo.slice(0, 28)}</span>
-                        <span className="num-display" style={{ flexShrink: 0 }}>🔄×{t.vueltas} · 🎯{t.aciertos}%</span>
+                        <span className="num-display" style={{ display: 'inline-flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
+                          <Icon nombre="repetir" size={12} />×{t.vueltas} · <Icon nombre="diana" size={12} />{t.aciertos}%
+                        </span>
                       </div>
                       <div className="bar"><div className="bar-fill" style={{ width: `${t.aciertos}%`, background: color }} /></div>
                     </div>

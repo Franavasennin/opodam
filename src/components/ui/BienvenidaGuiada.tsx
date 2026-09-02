@@ -1,30 +1,31 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { Icon, type NombreIcono } from './Icon'
 
-const PASOS = [
+const PASOS: { icono: NombreIcono; titulo: string; desc: string; path: string; cta: string }[] = [
   {
-    icon: '📚',
+    icono: 'temario',
     titulo: 'Empieza por el Temario',
     desc: 'Lee el tema 1, escucha la lectura en voz alta y repasa el esquema. 20 minutos te bastan para empezar.',
     path: 'temario',
     cta: 'Ir al Temario →',
   },
   {
-    icon: '📝',
+    icono: 'tests',
     titulo: 'Haz tu primer test',
     desc: 'Después de leer un tema, refuérzalo con preguntas tipo examen. Cada error tiene su explicación.',
     path: 'tests',
     cta: 'Hacer un test →',
   },
   {
-    icon: '🤖',
+    icono: 'tutor',
     titulo: 'Pregunta al Tutor IA',
     desc: 'Si algo no queda claro, el tutor responde con citas exactas del temario. Es gratis, úsalo.',
     path: 'tutor',
     cta: 'Hablar con el Tutor →',
   },
   {
-    icon: '🧠',
+    icono: 'psicotecnicos',
     titulo: 'Conoce tu perfil psicológico',
     desc: 'Haz los psicotécnicos y el test de personalidad. Al terminar obtienes un informe de idoneidad.',
     path: 'psicotecnicos',
@@ -69,7 +70,7 @@ export function BienvenidaGuiada({ esNuevo }: Props) {
         ))}
       </div>
 
-      <div style={{ fontSize: 28, marginBottom: 8 }}>{p.icon}</div>
+      <div style={{ display: 'flex', color: 'var(--accent)', marginBottom: 8 }}><Icon nombre={p.icono} size={28} /></div>
       <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>{p.titulo}</div>
       <p style={{ fontSize: 13.5, color: 'var(--ink-soft)', lineHeight: 1.5, margin: '0 0 16px' }}>{p.desc}</p>
 
