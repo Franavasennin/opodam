@@ -4,6 +4,7 @@ import { useProgress } from '../hooks/useProgress'
 import { flashcardsPendientesHoy, responderFlashcard, ordenarPorFragilidad } from '../services/spaced-repetition'
 import { obtenerTopics } from '../data/topics'
 import { ttsDisponible, hablar, pararTTS, textoFlashcard } from '../services/tts'
+import { Icon } from '../components/ui/Icon'
 import type { Flashcard } from '../types'
 import { getFlashcardFront, getFlashcardBack } from '../types'
 
@@ -71,7 +72,7 @@ export function FlashcardsGlobal() {
 
   if (!pendientes.length) return (
     <div className="min-h-screen fade-up flex flex-col items-center justify-center text-center px-4" style={{ background: 'var(--bg)' }}>
-      <div style={{ fontSize: 52, marginBottom: 12 }}>✅</div>
+      <div style={{ marginBottom: 12, color: 'var(--accent)' }}><Icon nombre="acierto" size={52} /></div>
       <p className="display" style={{ margin: 0, fontSize: 26 }}>¡Todo al día!</p>
       <p style={{ color: 'var(--mute)', fontSize: 13.5, marginTop: 6 }}>Sin flashcards pendientes hoy.</p>
       <button onClick={() => navigate(`/oposicion/${slug}`)} className="btn-editorial btn-sec" style={{ marginTop: 20 }}>← Volver</button>
@@ -80,7 +81,7 @@ export function FlashcardsGlobal() {
 
   if (indice >= pendientes.length) return (
     <div className="min-h-screen fade-up flex flex-col items-center justify-center text-center px-4" style={{ background: 'var(--bg)' }}>
-      <div style={{ fontSize: 52, marginBottom: 12 }}>🎉</div>
+      <div style={{ marginBottom: 12, color: 'var(--accent)' }}><Icon nombre="celebracion" size={52} /></div>
       <p className="display" style={{ margin: 0, fontSize: 26 }}>¡Sesión completada!</p>
       <p style={{ color: 'var(--mute)', fontSize: 13.5, marginTop: 6 }}>{pendientes.length} flashcards repasadas hoy.</p>
       <button onClick={() => navigate(`/oposicion/${slug}`)} className="btn-editorial btn-acc" style={{ marginTop: 20 }}>← Volver</button>
@@ -99,14 +100,16 @@ export function FlashcardsGlobal() {
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
         <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
-        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>🃏 Flashcards</span>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>
+          <Icon nombre="flashcards" size={16} /> Flashcards
+        </span>
         {ttsDisponible() && (
           <button
             onClick={() => setAudio(a => { if (a) pararTTS(); return !a })}
             title={audio ? 'Desactivar audio' : 'Leer en voz alta'}
             aria-pressed={audio}
-            style={{ marginLeft: 'auto', background: 'none', border: 0, cursor: 'pointer', fontSize: 18, opacity: audio ? 1 : 0.5 }}>
-            {audio ? '🔊' : '🔇'}
+            style={{ marginLeft: 'auto', display: 'inline-flex', background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', opacity: audio ? 1 : 0.5 }}>
+            <Icon nombre={audio ? 'sonido' : 'silencio'} size={18} />
           </button>
         )}
         <span className="num-display" style={{ marginLeft: ttsDisponible() ? 8 : 'auto', fontSize: 12, color: 'var(--mute)' }}>{indice + 1}/{pendientes.length}</span>
@@ -126,8 +129,9 @@ export function FlashcardsGlobal() {
               const color = cal === 'dificil' ? 'var(--warn)' : cal === 'dudoso' ? '#a07a2c' : 'var(--accent)'
               return (
                 <button key={cal} onClick={() => responder(cal)}
-                  style={{ padding: '10px 0', borderRadius: 12, fontSize: 13, fontWeight: 600, cursor: 'pointer', border: `1px solid ${color}`, color, background: 'transparent' }}>
-                  {cal === 'dificil' ? '😓 Difícil' : cal === 'dudoso' ? '🤔 Dudoso' : '😊 Fácil'}
+                  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '10px 0', borderRadius: 12, fontSize: 13, fontWeight: 600, cursor: 'pointer', border: `1px solid ${color}`, color, background: 'transparent' }}>
+                  <Icon nombre={cal === 'dificil' ? 'triste' : cal === 'dudoso' ? 'duda' : 'contento'} size={15} />
+                  {cal === 'dificil' ? 'Difícil' : cal === 'dudoso' ? 'Dudoso' : 'Fácil'}
                 </button>
               )
             })}

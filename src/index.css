@@ -7,22 +7,40 @@
    Tema "forest": papel cálido + acento verde bosque + oro.
    ───────────────────────────────────────────────────────────── */
 :root {
-  /* Tema "clay" (día) — papel cálido + acento terracota + oro */
+  /* Tema "clay" (día) — papel cálido + acento terracota + oro.
+     Los tonos de texto están calculados para cumplir WCAG AA (≥4.5:1) sobre
+     --bg, --surface y --surface-2. */
   --bg: #f6f4ed;
   --surface: #fbfaf5;
   --surface-2: #efece1;
   --ink: #1a1815;
   --ink-soft: #3a3631;
-  --mute: #7b756b;
-  --mute-soft: #b3aea3;
+  --mute: #6d675e;          /* antes #7b756b → 4.15:1 sobre --bg, fallaba AA */
+  --mute-soft: #b3aea3;     /* SOLO decorativo (separadores, iconos apagados). Nunca texto. */
   --border: #e1ddcf;
   --border-soft: #ece8dc;
-  --accent: #b8492f;
+  --accent: #b8492f;        /* identidad: rellenos, bordes, barras */
+  --accent-strong: #ae452d; /* texto/iconos sobre --accent-soft y sobre papel (AA) */
   --accent-ink: #fbfaf5;
   --accent-soft: #f3e2d9;
   --warn: #8a3922;
   --warn-soft: #f3e2d9;
-  --gold: #a07a2c;
+  --gold: #826324;          /* antes #a07a2c → 3.59:1, fallaba AA */
+  --gold-soft: #f1e7cf;
+
+  /* Escala de espaciado (base 4px) */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-7: 32px; --sp-8: 48px;
+
+  /* Radios */
+  --r-sm: 8px; --r-md: 12px; --r-lg: 16px; --r-xl: 22px; --r-full: 999px;
+
+  /* Capas — antes había z-index sueltos (20, 30, 50) sin escala */
+  --z-nav: 20; --z-fab: 30; --z-overlay: 40; --z-modal: 50;
+
+  /* Altura que reserva la barra de pestañas móvil */
+  --tabbar-h: 62px;
+
   color-scheme: light;
 }
 
@@ -33,16 +51,18 @@ html.dark {
   --surface-2: #1c2420;
   --ink: #ecede6;
   --ink-soft: #cfd2c8;
-  --mute: #818879;
-  --mute-soft: #535851;
+  --mute: #8b9287;          /* antes #818879 → 4.33:1 sobre --surface-2 */
+  --mute-soft: #535851;     /* SOLO decorativo. Nunca texto. */
   --border: #232b25;
   --border-soft: #1b2220;
   --accent: #6fb091;
+  --accent-strong: #6fb091; /* en noche el acento ya cumple AA sobre --accent-soft */
   --accent-ink: #0d1310;
   --accent-soft: #1c3128;
   --warn: #d77a5e;
   --warn-soft: #2e2017;
   --gold: #c4a25a;
+  --gold-soft: #2a2314;     /* antes .pill-gold tenía el fondo #f1e7cf fijo: 1.97:1 en noche */
   color-scheme: dark;
 }
 /* En noche, el hero "tinta" se eleva a superficie en vez de bloque claro */
@@ -57,16 +77,33 @@ html.dark .hero .hero-grain { background-image: radial-gradient(rgba(255,255,255
     background: var(--bg);
     color: var(--ink);
     font-family: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    font-size: 15px;
-    line-height: 1.45;
+    /* 16px: mínimo legible en móvil y, en iOS Safari, el umbral por debajo del
+       cual el navegador hace zoom automático al enfocar un input. */
+    font-size: 16px;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
+  /* Deja hueco a la barra de pestañas móvil para que nunca tape contenido. */
+  @media (max-width: 1023px) {
+    body { padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px)); }
+  }
   :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-strong);
     outline-offset: 2px;
+    border-radius: var(--r-sm);
   }
 }
+
+/* ── Salto al contenido (primer tabulador de la página) ─────── */
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: var(--z-modal);
+  background: var(--accent); color: var(--accent-ink);
+  padding: 10px 16px; border-radius: var(--r-md);
+  font-size: 14px; font-weight: 600;
+  transition: top 140ms ease;
+}
+.skip-link:focus-visible { top: 12px; }
 
 /* ── Tipografía display ─────────────────────────────────────── */
 .display {
@@ -87,8 +124,10 @@ html.dark .hero .hero-grain { background-image: radial-gradient(rgba(255,255,255
 
 /* ── Eyebrow / etiquetas ────────────────────────────────────── */
 .eyebrow {
-  font-size: 10.5px;
-  letter-spacing: 0.14em;
+  /* 10.5px era ilegible incluso con buen contraste; 12px es el suelo razonable
+     para versalitas con tracking amplio. */
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--mute);
   font-weight: 600;
@@ -100,14 +139,18 @@ html.dark .hero .hero-grain { background-image: radial-gradient(rgba(255,255,255
 /* ── Pills ──────────────────────────────────────────────────── */
 .pill {
   display: inline-flex; align-items: center; gap: 5px;
-  height: 22px; padding: 0 9px; border-radius: 999px;
+  height: 24px; padding: 0 10px; border-radius: var(--r-full);
   background: var(--surface-2); color: var(--ink-soft);
-  font-size: 11.5px; font-weight: 500; letter-spacing: -0.005em;
+  font-size: 12px; font-weight: 500; letter-spacing: -0.005em;
   border: 1px solid var(--border); white-space: nowrap;
 }
-.pill-accent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+/* --accent-strong (no --accent): sobre --accent-soft el acento puro daba 4.14:1 */
+.pill-accent { background: var(--accent-soft); color: var(--accent-strong); border-color: transparent; }
 .pill-warn   { background: var(--warn-soft); color: var(--warn); border-color: transparent; }
-.pill-gold   { background: #f1e7cf; color: var(--gold); border-color: transparent; }
+/* El fondo era #f1e7cf fijo → en tema noche quedaba a 1.97:1. Ahora es token. */
+.pill-gold   { background: var(--gold-soft); color: var(--gold); border-color: transparent; }
+/* Si una pill es interactiva, necesita área táctil real (WCAG 2.5.8). */
+a.pill, button.pill { min-height: 32px; padding-inline: 12px; }
 
 /* ── Botón píldora ──────────────────────────────────────────── */
 .btn-editorial {
@@ -151,8 +194,10 @@ html.dark .hero .hero-grain { background-image: radial-gradient(rgba(255,255,255
   transition: border-color 120ms ease, background 120ms ease, transform 80ms ease;
 }
 .opt:hover { border-color: var(--ink-soft); }
-.opt[data-state="correct"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
-.opt[data-state="wrong"]   { background: var(--warn-soft); border-color: var(--warn); color: var(--warn); }
+/* El resultado de una pregunta no puede depender solo del color (WCAG 1.4.1):
+   además del tinte, el borde engrosa y el estado se anuncia en el marcado. */
+.opt[data-state="correct"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-strong); border-width: 2px; padding: 13px 15px; }
+.opt[data-state="wrong"]   { background: var(--warn-soft); border-color: var(--warn); color: var(--warn); border-width: 2px; padding: 13px 15px; }
 
 /* ── Lectura editorial (temas) ──────────────────────────────── */
 .editorial p { margin: 0 0 14px; }
@@ -196,7 +241,149 @@ html.dark .hero .hero-grain { background-image: radial-gradient(rgba(255,255,255
 .text-slate-900, .text-gray-900 { color: var(--ink) !important; }
 .text-slate-800, .text-slate-700, .text-gray-800, .text-gray-700 { color: var(--ink-soft) !important; }
 .text-slate-600, .text-slate-500, .text-gray-600, .text-gray-500 { color: var(--mute) !important; }
-.text-slate-400, .text-slate-300, .text-gray-400, .text-gray-300 { color: var(--mute-soft) !important; }
+/* Antes apuntaban a --mute-soft (2.01:1 en día, 2.57:1 en noche): texto ilegible.
+   No existe un tercer gris de texto que cumpla AA sobre papel cálido, así que
+   se colapsan en --mute. --mute-soft queda reservado a uso decorativo. */
+.text-slate-400, .text-slate-300, .text-gray-400, .text-gray-300 { color: var(--mute) !important; }
 
 .border-slate-100, .border-slate-200, .border-slate-300,
 .border-gray-100, .border-gray-200 { border-color: var(--border) !important; }
+
+/* Los mapeos de arriba usan !important, así que ganaban también en :hover y
+   dejaban los hovers de Tailwind sin efecto. Se remapean explícitamente. */
+.hover\:bg-slate-50:hover, .hover\:bg-gray-50:hover,
+.hover\:bg-slate-100:hover, .hover\:bg-gray-100:hover { background-color: var(--surface-2) !important; }
+.hover\:text-slate-600:hover, .hover\:text-gray-600:hover { color: var(--ink-soft) !important; }
+
+/* ─────────────────────────────────────────────────────────────
+   Chrome de la app: navegación táctil (<1024px) y barra lateral.
+   Vive aquí, y no en `style={{}}` dentro de los componentes, para
+   que existan estados :hover/:focus-visible reales — los estilos
+   en línea no pueden expresarlos.
+   ───────────────────────────────────────────────────────────── */
+
+/* ── Botón de icono ─────────────────────────────────────────── */
+.icon-btn {
+  display: inline-grid; place-items: center;
+  width: 44px; height: 44px; flex: none;
+  background: transparent; border: 1px solid transparent;
+  border-radius: var(--r-md); color: var(--mute); cursor: pointer;
+  transition: color 120ms ease, background-color 120ms ease;
+}
+.icon-btn:hover { color: var(--ink); background: var(--surface-2); }
+
+/* ── Barra de pestañas móvil ────────────────────────────────── */
+.tabbar {
+  position: fixed; inset: auto 0 0 0; z-index: var(--z-nav);
+  display: flex; align-items: stretch;
+  height: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.tabbar__item {
+  flex: 1 1 0; min-width: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 3px; padding: 6px 2px;
+  background: none; border: 0; cursor: pointer;
+  color: var(--mute); font-size: 11px; font-weight: 500; line-height: 1.1;
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+.tabbar__item:hover { color: var(--ink-soft); }
+.tabbar__item.is-active { color: var(--accent-strong); font-weight: 600; }
+/* El estado activo no se señala solo con color (WCAG 1.4.1): también hay
+   una marca superior y el peso tipográfico cambia. */
+.tabbar__item.is-active::before {
+  content: ''; position: absolute; margin-top: -6px;
+  width: 22px; height: 2px; border-radius: var(--r-full); background: var(--accent);
+}
+.tabbar__item { position: relative; }
+.tabbar__label { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ── Hoja inferior ("Más") ──────────────────────────────────── */
+.sheet-backdrop {
+  position: fixed; inset: 0; z-index: var(--z-overlay);
+  background: rgba(12, 10, 8, 0.45);
+  display: flex; align-items: flex-end;
+  animation: sheetFade 160ms ease both;
+}
+.sheet {
+  width: 100%; max-height: 82vh; overflow-y: auto;
+  background: var(--surface);
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  border-top: 1px solid var(--border);
+  padding: var(--sp-2) var(--sp-4) calc(var(--sp-6) + env(safe-area-inset-bottom, 0px));
+  animation: sheetUp 200ms cubic-bezier(.2,.7,.2,1) both;
+}
+.sheet__grip {
+  width: 38px; height: 4px; margin: var(--sp-2) auto var(--sp-3);
+  border-radius: var(--r-full); background: var(--border);
+}
+.sheet__head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--sp-3); margin-bottom: var(--sp-2);
+}
+.sheet__list { list-style: none; margin: 0; padding: 0; }
+.sheet__link {
+  width: 100%; min-height: 52px;
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-3); border: 0; border-radius: var(--r-md);
+  background: transparent; color: var(--ink); cursor: pointer;
+  font-size: 15px; font-weight: 500; text-align: left; text-decoration: none;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+.sheet__link:hover { background: var(--surface-2); }
+.sheet__link.is-active { background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; }
+.sheet__icon { display: inline-grid; place-items: center; width: 22px; flex: none; color: var(--mute); }
+.sheet__link.is-active .sheet__icon { color: var(--accent-strong); }
+.sheet__texto { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.sheet__sep { margin: var(--sp-5) 0 var(--sp-2); padding-top: var(--sp-4); border-top: 1px solid var(--border-soft); }
+
+@keyframes sheetUp { from { transform: translateY(14%); } to { transform: none; } }
+@keyframes sheetFade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── Barra lateral (≥1024px) ────────────────────────────────── */
+.navside__link {
+  display: flex; align-items: center; gap: 11px;
+  min-height: 40px; padding: 8px 12px;
+  border: 0; border-left: 2px solid transparent; border-radius: var(--r-sm);
+  background: transparent; color: var(--ink-soft); cursor: pointer;
+  font-size: 14px; font-weight: 500; text-align: left; text-decoration: none;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+.navside__link:hover { background: var(--surface-2); color: var(--ink); }
+.navside__link.is-active {
+  background: var(--accent-soft); color: var(--accent-strong);
+  border-left-color: var(--accent); font-weight: 600;
+}
+.navside__icon { display: inline-grid; place-items: center; width: 20px; flex: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet, .sheet-backdrop { animation: none; }
+}
+
+/* ── Botones flotantes (música / tema) ──────────────────────── */
+/* Antes iban a `bottom-24` / `bottom-40` fijos y quedaban por debajo de la
+   nueva barra de pestañas. Ahora se apilan siempre por encima de ella. */
+.fab {
+  position: fixed; right: 16px; z-index: var(--z-fab);
+  width: 48px; height: 48px; border-radius: var(--r-full);
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 18px -8px rgba(0,0,0,0.35);
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.fab:hover { background: var(--surface-2); }
+/* Solo para acciones que quedan "encendidas" (música). El conmutador de tema no
+   lo usa: ya se distingue por el icono y teñirlo lo volvería ruido permanente. */
+.fab--activo { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+.fab--activo:hover { background: var(--accent-strong); }
+.fab--1 { bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px) + 12px); }
+.fab--2 { bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px) + 68px); }
+@media (min-width: 1024px) {
+  .fab--1 { bottom: 16px; }
+  .fab--2 { bottom: 72px; }
+}

@@ -6,6 +6,7 @@ import { responderFlashcard, flashcardsPendientesHoy } from '../services/spaced-
 import { obtenerSesionHoy, completarSesionDiaria, calcularDebilidades } from '../services/adaptativo'
 import { actualizarRendimientoTema } from '../services/examen'
 import { registrarLote } from '../services/errores'
+import { Icon } from '../components/ui/Icon'
 import type { Flashcard, PreguntaExt } from '../types'
 import { getPreguntaCorrecta, getFlashcardFront, getFlashcardBack } from '../types'
 
@@ -127,7 +128,7 @@ export function SesionDiaria() {
     const restantes = flashcardsPendientesHoy(progreso.flashcards).length
     return (
       <div className="min-h-screen fade-up flex flex-col items-center justify-center text-center px-4" style={{ background: 'var(--bg)' }}>
-        <div style={{ fontSize: 60 }}>🎉</div>
+        <div style={{ color: 'var(--accent)' }}><Icon nombre="celebracion" size={60} /></div>
         <h1 className="display" style={{ margin: '12px 0 8px', fontSize: 30 }}>¡Sesión <span className="display-italic" style={{ color: 'var(--accent)' }}>completada!</span></h1>
         {preguntas.length > 0 && (
           <p style={{ fontSize: 14, color: 'var(--ink-soft)', margin: '0 0 4px' }}>
@@ -135,7 +136,7 @@ export function SesionDiaria() {
           </p>
         )}
         <p style={{ fontSize: 13.5, color: 'var(--mute)', margin: 0 }}>
-          Racha: <span className="num-display" style={{ fontWeight: 600, color: 'var(--accent)' }}>{progreso.racha.dias} días 🔥</span>
+          Racha: <span className="num-display" style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontWeight: 600, color: 'var(--accent)' }}>{progreso.racha.dias} días <Icon nombre="racha" size={14} /></span>
         </p>
         <p style={{ fontSize: 11.5, color: 'var(--mute)', margin: '8px 0 20px' }}>Vuelve mañana para la siguiente sesión</p>
         {restantes > 0 && (
@@ -154,7 +155,9 @@ export function SesionDiaria() {
     return (
       <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
         <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-          <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>⚡ Sesión de hoy</span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>
+            <Icon nombre="rayo" size={16} /> Sesión de hoy
+          </span>
           <span className="num-display" style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--mute)' }}>FC {fcIndice + 1}/{flashcards.length}</span>
         </header>
         <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -172,8 +175,9 @@ export function SesionDiaria() {
                 const color = cal === 'dificil' ? 'var(--warn)' : cal === 'dudoso' ? '#a07a2c' : 'var(--accent)'
                 return (
                   <button key={cal} onClick={() => responderFC(cal)}
-                    style={{ padding: '10px 0', borderRadius: 12, fontSize: 13, fontWeight: 600, cursor: 'pointer', border: `1px solid ${color}`, color, background: 'transparent' }}>
-                    {cal === 'dificil' ? '😓 Difícil' : cal === 'dudoso' ? '🤔 Dudoso' : '😊 Fácil'}
+                    style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '10px 0', borderRadius: 12, fontSize: 13, fontWeight: 600, cursor: 'pointer', border: `1px solid ${color}`, color, background: 'transparent' }}>
+                    <Icon nombre={cal === 'dificil' ? 'triste' : cal === 'dudoso' ? 'duda' : 'contento'} size={15} />
+                    {cal === 'dificil' ? 'Difícil' : cal === 'dudoso' ? 'Dudoso' : 'Fácil'}
                   </button>
                 )
               })}
@@ -195,7 +199,9 @@ export function SesionDiaria() {
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>⚡ Mini-test</span>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>
+          <Icon nombre="rayo" size={16} /> Mini-test
+        </span>
         <span className="num-display" style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--mute)' }}>{pIndice + 1}/{preguntas.length}</span>
       </header>
       <main className="max-w-2xl mx-auto px-4 pt-4 pb-12">

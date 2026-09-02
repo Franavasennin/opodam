@@ -6,6 +6,7 @@
   "scripts": {
     "predev": "node scripts/gen-search-index.mjs",
     "dev": "vite",
+    "dev:fast": "vite",
     "gen:search": "node scripts/gen-search-index.mjs",
     "prebuild": "node scripts/gen-search-index.mjs && node scripts/gen-public-pages.mjs && node scripts/gen-sitemap.mjs",
     "gen:sitemap": "node scripts/gen-sitemap.mjs",

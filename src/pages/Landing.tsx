@@ -1,24 +1,25 @@
 import { useNavigate } from 'react-router-dom'
 import { useSeo } from '../hooks/useSeo'
+import { Icon, type NombreIcono } from '../components/ui/Icon'
 
-const OPOSICIONES = [
-  { emoji: '👮', nombre: 'Policía Canaria (CGPC)', temas: 45 },
-  { emoji: '🚔', nombre: 'Policía Local', temas: 37 },
-  { emoji: '⚔️', nombre: 'Guardia Civil', temas: 25 },
-  { emoji: '⚖️', nombre: 'Auxiliar Judicial', temas: 29 },
-  { emoji: '📋', nombre: 'Tramitación Judicial', temas: 31 },
-  { emoji: '🏥', nombre: 'Aux. Enfermería (SCS)', temas: 24 },
+const OPOSICIONES: { icono: NombreIcono; nombre: string; temas: number }[] = [
+  { icono: 'escudo',    nombre: 'Policía Canaria (CGPC)', temas: 45 },
+  { icono: 'policia',   nombre: 'Policía Local', temas: 37 },
+  { icono: 'espadas',   nombre: 'Guardia Civil', temas: 25 },
+  { icono: 'justicia',  nombre: 'Auxiliar Judicial', temas: 29 },
+  { icono: 'supuestos', nombre: 'Tramitación Judicial', temas: 31 },
+  { icono: 'salud',     nombre: 'Aux. Enfermería (SCS)', temas: 24 },
 ]
 
-const FUNCIONALIDADES = [
-  { icon: '📚', titulo: 'Temario completo', desc: 'Estructurado por secciones, esquemas y mapas mentales. No más PDFs.' },
-  { icon: '🤖', titulo: 'Tutor IA con RAG', desc: 'Pregunta cualquier duda. Responde con citas exactas del temario.' },
-  { icon: '📝', titulo: 'Tests y simulacros', desc: 'Preguntas tipo examen con nota, revisión y explicación por opción.' },
-  { icon: '🎤', titulo: 'Entrevista personal', desc: 'Simula la entrevista con IA. Recibe feedback inmediato.' },
-  { icon: '🧠', titulo: 'Módulo psicológico', desc: 'Psicotécnicos, personalidad, biodata e informe de idoneidad.' },
-  { icon: '📋', titulo: 'Supuestos prácticos', desc: 'Casos tipo examen resueltos con base legal.' },
-  { icon: '🃏', titulo: 'Flashcards', desc: 'Repaso espaciado para memorizar sin esfuerzo.' },
-  { icon: '💪', titulo: 'ProCoach físico', desc: 'Plan de entrenamiento adaptado a las pruebas físicas de cada cuerpo.' },
+const FUNCIONALIDADES: { icono: NombreIcono; titulo: string; desc: string }[] = [
+  { icono: 'temario',       titulo: 'Temario completo', desc: 'Estructurado por secciones, esquemas y mapas mentales. No más PDFs.' },
+  { icono: 'tutor',         titulo: 'Tutor IA con RAG', desc: 'Pregunta cualquier duda. Responde con citas exactas del temario.' },
+  { icono: 'tests',         titulo: 'Tests y simulacros', desc: 'Preguntas tipo examen con nota, revisión y explicación por opción.' },
+  { icono: 'entrevista',    titulo: 'Entrevista personal', desc: 'Simula la entrevista con IA. Recibe feedback inmediato.' },
+  { icono: 'psicotecnicos', titulo: 'Módulo psicológico', desc: 'Psicotécnicos, personalidad, biodata e informe de idoneidad.' },
+  { icono: 'supuestos',     titulo: 'Supuestos prácticos', desc: 'Casos tipo examen resueltos con base legal.' },
+  { icono: 'flashcards',    titulo: 'Flashcards', desc: 'Repaso espaciado para memorizar sin esfuerzo.' },
+  { icono: 'fisico',        titulo: 'ProCoach físico', desc: 'Plan de entrenamiento adaptado a las pruebas físicas de cada cuerpo.' },
 ]
 
 export default function Landing() {
@@ -73,7 +74,7 @@ export default function Landing() {
           {OPOSICIONES.map(op => (
             <div key={op.nombre} className="card"
               style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 12 }}>
-              <span style={{ fontSize: 24, flexShrink: 0 }}>{op.emoji}</span>
+              <span style={{ flexShrink: 0, display: 'inline-flex', color: 'var(--accent)' }}><Icon nombre={op.icono} size={24} /></span>
               <div>
                 <div style={{ fontSize: 13.5, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.3 }}>{op.nombre}</div>
                 <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 2 }}>{op.temas} temas</div>
@@ -95,7 +96,7 @@ export default function Landing() {
             {FUNCIONALIDADES.map(f => (
               <div key={f.titulo} className="card"
                 style={{ background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
-                <div style={{ fontSize: 26, marginBottom: 10 }}>{f.icon}</div>
+                <div style={{ display: 'flex', color: 'var(--accent)', marginBottom: 10 }}><Icon nombre={f.icono} size={26} /></div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>{f.titulo}</div>
                 <div style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 1.5 }}>{f.desc}</div>
               </div>

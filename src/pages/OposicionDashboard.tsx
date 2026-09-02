@@ -13,20 +13,21 @@ import { BannerTrial } from '../components/ui/BannerTrial'
 import { BannerPaywall } from '../components/promo/BannerPaywall'
 import { BienvenidaGuiada } from '../components/ui/BienvenidaGuiada'
 import { pedirPermiso, comprobarRacha } from '../services/notificaciones'
+import { Icon, type NombreIcono } from '../components/ui/Icon'
 import type { Perfil } from '../types'
 
-const MENU = [
-  { icon: '📚', label: 'Temario', sub: 'Estudia los temas', path: 'temario' },
-  { icon: '🃏', label: 'Flashcards', sub: 'Repaso rápido', path: 'flashcards' },
-  { icon: '📝', label: 'Tests y simulacros', sub: 'Practica preguntas', path: 'tests' },
-  { icon: '👨‍🏫', label: 'Tutor', sub: 'Pregunta sobre todo el temario', path: 'tutor' },
-  { icon: '🧠', label: 'Psicotécnicos', sub: 'Aptitudes y razonamiento', path: 'psicotecnicos' },
-  { icon: '📋', label: 'Supuestos prácticos', sub: 'Casos tipo examen', path: 'supuestos' },
-  { icon: '🎤', label: 'Entrevista', sub: 'Entrena la entrevista personal', path: 'entrevista' },
-  { icon: '🧩', label: 'Test de personalidad', sub: 'Conoce tu perfil', path: 'personalidad' },
-  { icon: '📝', label: 'Biodata', sub: 'Cuestionario de perfil personal', path: 'biodata', soloSlugs: ['guardia-civil', 'cgpc', 'policia-local'] },
-  { icon: '🗂️', label: 'Informe psicológico', sub: 'Veredicto de idoneidad', path: 'informe-psicologico', soloSlugs: ['guardia-civil', 'cgpc', 'policia-local'] },
-  { icon: '📊', label: 'Estadísticas', sub: 'Ver mi progreso', path: 'estadisticas' },
+const MENU: { icono: NombreIcono; label: string; sub: string; path: string; soloSlugs?: string[] }[] = [
+  { icono: 'temario',       label: 'Temario', sub: 'Estudia los temas', path: 'temario' },
+  { icono: 'flashcards',    label: 'Flashcards', sub: 'Repaso rápido', path: 'flashcards' },
+  { icono: 'tests',         label: 'Tests y simulacros', sub: 'Practica preguntas', path: 'tests' },
+  { icono: 'tutor',         label: 'Tutor', sub: 'Pregunta sobre todo el temario', path: 'tutor' },
+  { icono: 'psicotecnicos', label: 'Psicotécnicos', sub: 'Aptitudes y razonamiento', path: 'psicotecnicos' },
+  { icono: 'supuestos',     label: 'Supuestos prácticos', sub: 'Casos tipo examen', path: 'supuestos' },
+  { icono: 'entrevista',    label: 'Entrevista', sub: 'Entrena la entrevista personal', path: 'entrevista' },
+  { icono: 'personalidad',  label: 'Test de personalidad', sub: 'Conoce tu perfil', path: 'personalidad' },
+  { icono: 'biodata',       label: 'Biodata', sub: 'Cuestionario de perfil personal', path: 'biodata', soloSlugs: ['guardia-civil', 'cgpc', 'policia-local'] },
+  { icono: 'informe',       label: 'Informe psicológico', sub: 'Veredicto de idoneidad', path: 'informe-psicologico', soloSlugs: ['guardia-civil', 'cgpc', 'policia-local'] },
+  { icono: 'estadisticas',  label: 'Estadísticas', sub: 'Ver mi progreso', path: 'estadisticas' },
 ]
 
 function saludo(): string {
@@ -137,7 +138,7 @@ export default function OposicionDashboard() {
             {MENU.filter(item => !(oposicion.ocultar ?? []).includes(item.path) && (!item.soloSlugs || item.soloSlugs.includes(slug ?? ''))).map(item => (
               <button key={item.path} onClick={() => ir(item.path)} className="card"
                 style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16 }}>
-                <span style={{ width: 44, height: 44, borderRadius: 12, background: 'var(--surface-2)', border: '1px solid var(--border-soft)', fontSize: 20, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.icon}</span>
+                <span style={{ width: 44, height: 44, borderRadius: 12, background: 'var(--surface-2)', border: '1px solid var(--border-soft)', color: 'var(--mute)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><Icon nombre={item.icono} size={22} /></span>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)', letterSpacing: '-0.01em' }}>{item.label}</div>
                   <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 2 }}>{item.sub}</div>
@@ -158,7 +159,7 @@ export default function OposicionDashboard() {
             <span style={{ color: 'var(--ink-soft)', fontWeight: 600 }}>{oposicion.slug.toUpperCase()} · Resumen</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            {racha > 0 && <span className="pill pill-accent">🔥 {racha} días</span>}
+            {racha > 0 && <span className="pill pill-accent"><Icon nombre="racha" size={13} /> {racha} días</span>}
             <button onClick={() => ir('sesion-diaria')} className="btn-editorial btn-acc" style={{ height: 40 }}>Iniciar sesión diaria</button>
           </div>
         </header>

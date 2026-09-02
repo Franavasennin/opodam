@@ -12,6 +12,7 @@ import {
 } from '../services/examen'
 import { registrarLote } from '../services/errores'
 import { getPenalizacion, describirPenalizacion } from '../services/nota'
+import { Icon } from '../components/ui/Icon'
 
 type Fase = 'inicio' | 'en-curso' | 'confirmacion' | 'resultados' | 'revision'
 type Modo = 'completo' | 'mini'
@@ -161,7 +162,7 @@ export function Examen() {
                 {progreso.historialExamenes.map(h => (
                   <div key={h.id} className="flex items-center justify-between" style={{ fontSize: 13 }}>
                     <span className="num-display" style={{ color: 'var(--mute)' }}>{h.fecha} · {h.modo}</span>
-                    <span className="num-display" style={{ fontWeight: 600, color: h.aprobado ? 'var(--accent)' : 'var(--warn)' }}>{h.nota.toFixed(2)} {h.aprobado ? '✅' : '❌'}</span>
+                    <span className="num-display" style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontWeight: 600, color: h.aprobado ? 'var(--accent)' : 'var(--warn)' }}>{h.nota.toFixed(2)} <Icon nombre={h.aprobado ? 'acierto' : 'fallo'} size={14} /></span>
                   </div>
                 ))}
               </div>
@@ -184,7 +185,7 @@ export function Examen() {
           title={<span className="num-display" style={{ fontSize: 13.5, color: 'var(--ink-soft)' }}>{indice + 1}/{preguntas.length}</span>}
           rightContent={
             <div className="flex items-center gap-4">
-              <span className="num-display" style={{ fontWeight: 600, fontSize: 15, color: tiempo < 300 ? 'var(--warn)' : 'var(--accent)' }}>⏱ {mins}:{segs}</span>
+              <span className="num-display" style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontWeight: 600, fontSize: 15, color: tiempo < 300 ? 'var(--warn)' : 'var(--accent)' }}><Icon nombre="tiempo" size={15} /> {mins}:{segs}</span>
               <button onClick={() => setFase('confirmacion')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--mute)', fontSize: 12, textDecoration: 'underline' }}>Entregar</button>
             </div>
           }
@@ -202,7 +203,7 @@ export function Examen() {
         )}
         <main className="max-w-2xl mx-auto px-4 pt-4 pb-12 w-full">
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
-            {marcadas.has(p.id) && <p style={{ margin: '0 0 8px', fontSize: 11.5, fontWeight: 600, color: 'var(--warn)' }}>📌 Marcada para revisar</p>}
+            {marcadas.has(p.id) && <p style={{ display: 'flex', alignItems: 'center', gap: 5, margin: '0 0 8px', fontSize: 11.5, fontWeight: 600, color: 'var(--warn)' }}><Icon nombre="marcador" size={13} /> Marcada para revisar</p>}
             <p style={{ margin: '0 0 12px', fontSize: 14.5, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.4 }}>{p.enunciado}</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {p.opciones.map((op, j) => {
@@ -221,7 +222,7 @@ export function Examen() {
             <button onClick={() => setMarcadas(m => {
               const next = new Set(m); if (next.has(p.id)) { next.delete(p.id) } else { next.add(p.id) }; return next
             })} className="btn-editorial btn-sec" style={{ paddingLeft: 14, paddingRight: 14, color: 'var(--warn)' }}>
-              {marcadas.has(p.id) ? '📌 Marcada' : '📌 Marcar'}
+              <Icon nombre="marcador" size={15} /> {marcadas.has(p.id) ? 'Marcada' : 'Marcar'}
             </button>
             {indice > 0 && <button onClick={() => setIndice(i => i - 1)} className="btn-editorial btn-sec" style={{ flex: 1 }}>← Anterior</button>}
             {indice < preguntas.length - 1
@@ -264,13 +265,24 @@ export function Examen() {
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, textAlign: 'center' }}>
             <div className="eyebrow" style={{ marginBottom: 6 }}>Nota</div>
             <div className="num-display" style={{ fontSize: 56, lineHeight: 1, color: resultado.aprobado ? 'var(--accent)' : 'var(--warn)' }}>{resultado.nota.toFixed(2)}</div>
-            <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>{resultado.aprobado ? '✅ APROBADO' : '❌ SUSPENSO'} · mínimo 5,00</div>
-            <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {resultado.aciertos} · ❌ {resultado.errores} · ⬜ {resultado.enBlanco}</div>
-            <div className="num-display" style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>⏱ {mins}:{segs} empleados · {describirPenalizacion(pen)}</div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>
+              <Icon nombre={resultado.aprobado ? 'acierto' : 'fallo'} size={13} />
+              {resultado.aprobado ? 'APROBADO' : 'SUSPENSO'} · mínimo 5,00
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>
+              <Icon nombre="acierto" size={15} /> {resultado.aciertos}
+              <span style={{ color: 'var(--mute)' }}>·</span>
+              <Icon nombre="fallo" size={15} /> {resultado.errores}
+              <span style={{ color: 'var(--mute)' }}>·</span>
+              <Icon nombre="blanco" size={15} /> {resultado.enBlanco}
+            </div>
+            <div className="num-display" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>
+              <Icon nombre="tiempo" size={13} /> {mins}:{segs} empleados · {describirPenalizacion(pen)}
+            </div>
           </div>
           {resultado.errores > 0 && (
             <button onClick={() => navigate(`/oposicion/${slug}/repaso-errores`)} className="btn-editorial btn-acc" style={{ width: '100%' }}>
-              🩹 Repasar las {resultado.errores} falladas ahora
+              <Icon nombre="tirita" size={17} /> Repasar las {resultado.errores} falladas ahora
             </button>
           )}
           {topErrores.length > 0 && (
