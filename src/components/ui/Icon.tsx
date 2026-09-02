@@ -15,6 +15,7 @@ export type NombreIcono =
   | 'resumen' | 'temario' | 'flashcards' | 'tests' | 'tutor'
   | 'psicotecnicos' | 'supuestos' | 'entrevista' | 'personalidad'
   | 'estadisticas' | 'procoach' | 'perfil' | 'escudo'
+  | 'biodata' | 'informe' | 'racha'
   | 'menu' | 'cerrar' | 'chevron' | 'check' | 'mas'
   | 'sol' | 'luna' | 'nota'
 
@@ -32,6 +33,9 @@ const TRAZOS: Record<NombreIcono, string> = {
   procoach:      '<path d="m12 3 1.9 5.3L19 10l-5.1 1.7L12 17l-1.9-5.3L5 10l5.1-1.7Z"/><path d="M18.5 15.5 19 17l1.5.5L19 18l-.5 1.5-.5-1.5L16.5 17l1.5-.5Z"/>',
   perfil:        '<circle cx="12" cy="8" r="3.6"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>',
   escudo:        '<path d="M12 3.2 5 6v5.6c0 4.2 2.9 7.4 7 9.2 4.1-1.8 7-5 7-9.2V6Z"/>',
+  biodata:       '<rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="9.5" cy="9" r="2.2"/><path d="M6 17c.6-1.9 1.9-2.8 3.5-2.8s2.9.9 3.5 2.8"/><path d="M15 8.5h3M15 12h3"/>',
+  informe:       '<path d="M6 3h8l4 4v14H6Z"/><path d="M14 3v4h4"/><path d="M9.5 17v-3M12 17v-5M14.5 17v-2"/>',
+  racha:         '<path d="M12 3s4.5 3.4 4.5 7.5A4.5 4.5 0 0 1 12 15a4.5 4.5 0 0 1-4.5-4.5C7.5 6.4 12 3 12 3Z"/><path d="M9 15.5c0 2.5 1.3 4.5 3 4.5s3-2 3-4.5"/>',
   menu:          '<path d="M4 7h16M4 12h16M4 17h16"/>',
   cerrar:        '<path d="M6 6l12 12M18 6 6 18"/>',
   chevron:       '<path d="m9 5 7 7-7 7"/>',
