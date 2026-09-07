@@ -1,0 +1,354 @@
+{
+  "id": 10,
+  "titulo": "4.2 · Estrategias de autorización",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Segunda mitad del dominio de IAM: una vez la identidad está autenticada, este task statement decide qué puede hacer.\n\nMODELOS DE CONTROL DE ACCESO: ABAC FRENTE A RBAC\n\nEl control de acceso basado en roles (RBAC) concede permisos a un rol fijo que representa una función (por ejemplo, \"administrador de bases de datos\"): sencillo, pero cada combinación nueva de acceso exige un rol nuevo. El control de acceso basado en atributos (ABAC) concede permisos dinámicamente según etiquetas (tags) del recurso y de la identidad — una única política puede expresar \"un usuario solo puede administrar recursos cuya etiqueta proyecto coincida con la etiqueta proyecto de su propio rol\", sin crear un rol por proyecto. ABAC escala mejor en organizaciones grandes con muchos equipos y recursos; es el patrón que el examen espera cuando el enunciado describe decenas de equipos con necesidades de acceso similares pero aisladas entre sí.\n\nDISEÑO DE POLÍTICAS IAM SEGÚN MÍNIMO PRIVILEGIO\n\nUn permission boundary es una política gestionada que define el techo máximo de permisos que una política de identidad puede conceder a un usuario o rol concreto — a diferencia de una SCP (que actúa sobre toda una cuenta u OU), el boundary se aplica a una identidad individual, típicamente para permitir que un equipo cree sus propios roles sin poder escalar privilegios por encima de ese techo. Una session policy limita aún más los permisos solo durante una sesión concreta al asumir un rol, sin modificar la política del rol en sí — útil para conceder acceso puntual y más restringido que el rol permite por defecto.\n\nACCESO A RECURSOS: PATHS, ROLES ANYWHERE Y POLÍTICAS DE RECURSO\n\nLos IAM paths organizan usuarios y roles en una jerarquía tipo directorio dentro de una cuenta, útil sobre todo para expresar permission boundaries y políticas que se aplican por prefijo. IAM Roles Anywhere permite que cargas de trabajo que se ejecutan fuera de AWS (on-premises, otro proveedor cloud) obtengan credenciales temporales de IAM usando un certificado X.509, sin necesidad de credenciales de larga duración incrustadas fuera de AWS. Las políticas basadas en recurso (resource-based policies) se adjuntan al recurso — un bucket S3, una clave KMS, una cola SQS — y son el mecanismo que habilita acceso cross-account sin que la cuenta que accede tenga que asumir un rol de la cuenta propietaria.\n\nAMAZON VERIFIED PERMISSIONS\n\nServicio de autorización desacoplado de la aplicación: centraliza la lógica de \"quién puede hacer qué\" usando el lenguaje de políticas Cedar, para aplicaciones que necesitan decisiones de autorización finas (a nivel de registro individual, no solo de API) sin implementar esa lógica dentro del propio código de la aplicación.\n\nDIAGNÓSTICO DE FALLOS DE AUTORIZACIÓN\n\nIAM Policy Simulator evalúa, sin ejecutar la acción realmente, si una identidad tendría permiso para una acción concreta sobre un recurso concreto — la herramienta de \"por qué esta llamada a la API fallaría\" antes de intentarla en producción. IAM Access Analyzer cumple dos funciones: detecta accesos externos no intencionados a un recurso (por ejemplo, un bucket S3 accesible desde fuera de la organización sin que nadie lo pretendiera) y valida políticas nuevas contra las mejores prácticas de IAM antes de aplicarlas."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Autorizacion] --> B[Amazon Verified Permissions]\nA --> C[IAM paths]\nA --> D[IAM Roles Anywhere]\nA --> E[Politicas basadas en recurso]\nA --> F[ABAC]\nA --> G[RBAC]\nA --> H[Diseno de politicas IAM]\nH --> H1[Permission boundaries]\nH --> H2[Session policies]\nA --> I[Analisis de fallos]\nI --> I1[IAM Policy Simulator]\nI --> I2[IAM Access Analyzer]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc10-01",
+      "pregunta": "¿Qué diferencia clave existe entre RBAC y ABAC en IAM?",
+      "respuesta": "RBAC asigna permisos a roles fijos (ej. 'administrador de bases de datos'), mientras ABAC los concede dinámicamente según atributos/etiquetas de identidad y recurso, escalando mejor en entornos complejos."
+    },
+    {
+      "id": "fc10-02",
+      "pregunta": "¿Qué es un *permission boundary* en IAM?",
+      "respuesta": "Política gestionada que define el límite máximo de permisos que una identidad (usuario/rol) puede asumir, evitando que roles internos escalen privilegios más allá de ese techo."
+    },
+    {
+      "id": "fc10-03",
+      "pregunta": "¿Para qué sirve una *session policy* en AWS IAM?",
+      "respuesta": "Restringe permisos **solo durante una sesión** al asumir un rol, sin modificar la política permanente del rol, ideal para acceso temporal y más restrictivo."
+    },
+    {
+      "id": "fc10-04",
+      "pregunta": "¿Qué son los *IAM Paths* y su uso principal?",
+      "respuesta": "Jerarquía tipo directorio dentro de una cuenta AWS para organizar identidades/roles y aplicar políticas basadas en prefijos (ej. para *permission boundaries* o jerarquías lógicas)."
+    },
+    {
+      "id": "fc10-05",
+      "pregunta": "¿Qué permite *IAM Roles Anywhere*?",
+      "respuesta": "Otorgar credenciales temporales de IAM a cargas de trabajo fuera de AWS (on-premises/otros clouds) usando certificados X.509, sin credenciales de larga duración externas."
+    },
+    {
+      "id": "fc10-06",
+      "pregunta": "¿Cómo habilitan las *políticas basadas en recurso* el acceso *cross-account*?",
+      "respuesta": "Se adjuntan directamente al recurso (S3, KMS, SQS) y permiten que cuentas externas accedan sin asumir roles de la cuenta propietaria, usando permisos delegados."
+    },
+    {
+      "id": "fc10-07",
+      "pregunta": "¿Qué ofrece *Amazon Verified Permissions*?",
+      "respuesta": "Servicio desacoplado para gestionar lógica de autorización fina (a nivel de registro, no solo API) usando el lenguaje **Cedar**, sin implementar código en la aplicación."
+    },
+    {
+      "id": "fc10-08",
+      "pregunta": "¿Qué herramientas de AWS ayudan a diagnosticar fallos de autorización?",
+      "respuesta": "**IAM Policy Simulator** (simula permisos sin ejecutar) y **IAM Access Analyzer** (detecta accesos no intencionados y valida políticas contra mejores prácticas)."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p10-01",
+      "enunciado": "¿Qué mecanismo de AWS permite a un equipo crear roles internos sin riesgo de que escalen privilegios más allá de un límite predeterminado?",
+      "opciones": [
+        "a) AWS Organizations SCPs (Service Control Policies)",
+        "b) Permission Boundaries en IAM",
+        "c) IAM Roles Anywhere",
+        "d) Amazon Verified Permissions"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los **Permission Boundaries** son políticas gestionadas que definen un techo máximo de permisos para una identidad concreta (usuario o rol), evitando que roles creados por equipos superen ese límite. Esto contrasta con las SCPs, que aplican restricciones a nivel de cuenta u OU, y no a identidades individuales."
+    },
+    {
+      "id": "p10-02",
+      "enunciado": "Un desarrollador necesita acceder a un bucket S3 desde una aplicación que se ejecuta en un entorno on-premises. ¿Qué servicio de AWS le permite obtener credenciales temporales sin almacenar credenciales de larga duración fuera de AWS?",
+      "opciones": [
+        "a) IAM Paths",
+        "b) IAM Roles Anywhere",
+        "c) Amazon Verified Permissions",
+        "d) IAM Access Analyzer"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**IAM Roles Anywhere** permite a cargas de trabajo externas (como entornos on-premises) obtener credenciales temporales de IAM mediante certificados X.509, sin necesidad de credenciales estáticas fuera de AWS. Esto evita el uso de claves de acceso de larga duración en entornos no gestionados por AWS."
+    },
+    {
+      "id": "p10-03",
+      "enunciado": "¿Cuál de estos mecanismos de autorización es útil para validar si un usuario tiene permisos sobre un recurso específico SIN ejecutar la acción real?",
+      "opciones": [
+        "a) IAM Policy Simulator",
+        "b) Amazon Verified Permissions",
+        "c) IAM Access Analyzer (modo de validación de políticas)",
+        "d) Permission Boundaries"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**IAM Policy Simulator** evalúa *in silico* (sin ejecución real) si una identidad tiene permisos para una acción sobre un recurso concreto, simulando el resultado antes de intentarlo en producción. Es una herramienta clave para depurar fallos de autorización."
+    },
+    {
+      "id": "p10-04",
+      "enunciado": "En una organización con 50 equipos independientes que gestionan proyectos aislados, cada uno con necesidades de acceso similares pero distintas, ¿qué modelo de control de acceso es más adecuado según el temario?",
+      "opciones": [
+        "a) RBAC (Role-Based Access Control) con roles por proyecto",
+        "b) ABAC (Attribute-Based Access Control) con etiquetas dinámicas",
+        "c) SCPs (Service Control Policies) por cuenta",
+        "d) Permission Boundaries globales"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**ABAC (Attribute-Based Access Control)** es el modelo recomendado para escenarios con múltiples equipos aislados y necesidades de acceso dinámicas. Permite definir políticas que evalúan atributos (como etiquetas de proyecto) en tiempo real, evitando la creación de roles redundantes por cada combinación de acceso, como ocurriría con RBAC."
+    },
+    {
+      "id": "p10-05",
+      "enunciado": "¿Qué servicio de AWS detecta automáticamente recursos públicos no intencionales (como buckets S3 accesibles desde fuera de la organización) y alerta sobre ellos?",
+      "opciones": [
+        "a) IAM Policy Simulator",
+        "b) IAM Access Analyzer",
+        "c) Amazon Verified Permissions",
+        "d) AWS Organizations SCPs"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**IAM Access Analyzer** incluye una funcionalidad para identificar accesos externos no autorizados a recursos (como buckets S3) que podrían haber sido expuestos por error. Este servicio escanea políticas y detecta permisos que permiten acceso desde cuentas o entornos no previstos."
+    },
+    {
+      "id": "p10-06",
+      "enunciado": "Un equipo desea conceder acceso temporal y restringido a un rol de administrador de bases de datos durante una sesión específica, sin modificar la política permanente del rol. ¿Qué mecanismo de IAM debe usar?",
+      "opciones": [
+        "a) Permission Boundary",
+        "b) Session Policy",
+        "c) IAM Paths",
+        "d) Resource-Based Policy"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Session Policy** permite limitar los permisos de una sesión concreta al asumir un rol, sin alterar la política permanente del rol. Es ideal para casos como el descrito, donde se necesita acceso temporal con menos privilegios que los definidos por defecto en el rol."
+    },
+    {
+      "id": "p10-07",
+      "enunciado": "¿Qué servicio de AWS centraliza la lógica de autorización compleja (a nivel de registros individuales) en un lenguaje de políticas propio, desacoplado de la aplicación?",
+      "opciones": [
+        "a) IAM Roles Anywhere",
+        "b) Amazon Verified Permissions",
+        "c) IAM Access Analyzer",
+        "d) AWS Organizations SCPs"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon Verified Permissions** es un servicio desacoplado que implementa la lógica de autorización (usando el lenguaje **Cedar**) fuera de la aplicación. Permite decisiones de acceso finas, como validar permisos a nivel de registro en una base de datos, sin que la aplicación deba gestionar esa lógica internamente."
+    },
+    {
+      "id": "p10-08",
+      "enunciado": "Al diseñar políticas de IAM para cumplir el principio de mínimo privilegio, ¿qué herramienta ayuda a validar que las políticas nuevas no violan las mejores prácticas antes de aplicarlas?",
+      "opciones": [
+        "a) IAM Policy Simulator",
+        "b) IAM Access Analyzer (modo de validación)",
+        "c) Permission Boundaries",
+        "d) IAM Roles Anywhere"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**IAM Access Analyzer** (en su modo de validación de políticas) analiza políticas nuevas contra las mejores prácticas de IAM, detectando riesgos como permisos excesivos o redundantes antes de que se apliquen. Esto ayuda a garantizar que las políticas cumplan con el principio de mínimo privilegio."
+    },
+    {
+      "id": "p10-09",
+      "enunciado": "En una organización que utiliza ABAC, ¿qué característica permite que una única política de IAM autorice a un usuario a administrar recursos de múltiples proyectos sin necesidad de crear roles específicos por proyecto?",
+      "opciones": [
+        "a) Asignar al usuario múltiples roles con permisos predefinidos por proyecto.",
+        "b) Utilizar etiquetas (*tags*) en los recursos y en el rol del usuario para evaluar dinámicamente los permisos según la coincidencia de etiquetas como 'proyecto'.",
+        "c) Configurar políticas de recurso (*resource-based policies*) que restrinjan el acceso a un solo proyecto por defecto.",
+        "d) Delegar la autorización a un servicio externo de gestión de identidades que valide el acceso por proyecto."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que **ABAC concede permisos dinámicamente según etiquetas (*tags*) del recurso y de la identidad**, permitiendo expresar reglas como 'un usuario solo puede administrar recursos cuya etiqueta *proyecto* coincida con la etiqueta *proyecto* de su rol'. Esto evita la necesidad de crear roles por proyecto."
+    },
+    {
+      "id": "p10-10",
+      "enunciado": "¿Qué diferencia clave existe entre un *permission boundary* y una *Service Control Policy (SCP)* en el contexto de límites de permisos en AWS?",
+      "opciones": [
+        "a) Las SCP se aplican a cuentas enteras o unidades organizativas (OU), mientras que los *permission boundaries* se limitan a identidades individuales (usuarios/roles).",
+        "b) Los *permission boundaries* son más restrictivos que las SCP y no permiten excepciones, mientras que las SCP sí admiten excepciones mediante *deny* explícitos.",
+        "c) Las SCP son políticas gestionadas por IAM, mientras que los *permission boundaries* son políticas de recurso (*resource-based policies*).",
+        "d) Ambos mecanismos permiten conceder permisos adicionales más allá del límite predeterminado, pero las SCP son más fáciles de auditar."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario especifica que **un *permission boundary* define el techo máximo de permisos para una identidad individual**, mientras que una **SCP actúa sobre toda una cuenta u OU**. Esto diferencia su ámbito de aplicación."
+    },
+    {
+      "id": "p10-11",
+      "enunciado": "Un equipo quiere conceder acceso temporal a un rol de IAM desde una aplicación on-premises sin almacenar credenciales de larga duración fuera de AWS. ¿Qué servicio de AWS permite obtener credenciales temporales en este escenario?",
+      "opciones": [
+        "a) **IAM Roles Anywhere**, que usa certificados X.509 para emitir credenciales temporales sin necesidad de credenciales de larga duración incrustadas.",
+        "b) **AWS STS (Security Token Service)**, que genera credenciales temporales basadas en credenciales de acceso de usuario/rol, pero requiere almacenar estas credenciales en el entorno on-premises.",
+        "c) **AWS Secrets Manager**, que almacena y rota credenciales temporales para aplicaciones externas, pero no integra con IAM.",
+        "d) **AWS KMS**, que permite cifrar credenciales temporales, pero no autenticar cargas de trabajo externas para obtenerlas."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**IAM Roles Anywhere** es el servicio mencionado en el temario que permite a cargas de trabajo fuera de AWS (como entornos on-premises) obtener credenciales temporales de IAM usando certificados X.509, sin almacenar credenciales de larga duración fuera de AWS."
+    },
+    {
+      "id": "p10-12",
+      "enunciado": "En un escenario donde múltiples equipos en una organización necesitan acceder a recursos compartidos (como un bucket S3) pero con permisos granulares por equipo, ¿qué tipo de política de IAM es la más adecuada para definir estos accesos sin modificar manualmente cada permiso?",
+      "opciones": [
+        "a) **Políticas basadas en identidad (*identity-based policies*)** adjuntas al rol/usuario de cada equipo, con condiciones que filtren por etiquetas o atributos específicos del equipo.",
+        "b) **Políticas basadas en recurso (*resource-based policies*)** adjuntas al bucket S3, que usan condiciones como `aws:PrincipalArn` para restringir el acceso a roles/usuarios de equipos concretos.",
+        "c) **Service Control Policies (SCP)** aplicadas a la cuenta raíz para limitar todos los accesos a S3 a un conjunto de roles predefinidos.",
+        "d) **Permission boundaries** que actúan como límite superior para todos los roles de los equipos, independientemente del recurso al que accedan."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Políticas basadas en recurso (*resource-based policies*)** son las mencionadas en el temario para habilitar acceso *cross-account* o granular por equipo, adjuntándose directamente al recurso (como un bucket S3) y usando condiciones para restringir el acceso a identidades específicas."
+    },
+    {
+      "id": "p10-13",
+      "enunciado": "En una organización que usa **IAM paths**, ¿qué ventaja principal ofrece este mecanismo para la gestión de *permission boundaries* y políticas de acceso?",
+      "opciones": [
+        "a) Permite organizar usuarios y roles en una jerarquía tipo directorio dentro de una cuenta, facilitando la aplicación de *permission boundaries* por prefijo (ej.: `/equipos/proyectoX/`).",
+        "b) Reduce la latencia al autenticar usuarios al centralizar la gestión de credenciales en un único servicio.",
+        "c) Automatiza la rotación de credenciales para todos los usuarios bajo un mismo *path*.",
+        "d) Elimina la necesidad de usar políticas basadas en recurso (*resource-based policies*) para acceder a servicios como S3."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**IAM paths** organizan usuarios y roles en una jerarquía dentro de una cuenta, lo que facilita expresar *permission boundaries* o políticas que se apliquen por prefijo (ej.: `/equipos/proyectoX/roles/admin`), como menciona el temario."
+    },
+    {
+      "id": "p10-14",
+      "enunciado": "En un entorno con múltiples equipos que gestionan proyectos independientes, un administrador desea implementar un sistema donde los permisos se asignen dinámicamente según etiquetas asociadas tanto al usuario como al recurso. ¿Qué modelo de control de acceso es el más adecuado según el temario?",
+      "opciones": [
+        "a) RBAC (Role-Based Access Control)",
+        "b) DAC (Discretionary Access Control)",
+        "c) ABAC (Attribute-Based Access Control)",
+        "d) MAC (Mandatory Access Control)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El modelo **ABAC (Attribute-Based Access Control)** permite conceder permisos dinámicamente según atributos (etiquetas) del usuario y del recurso, como el proyecto al que pertenece. Es el patrón recomendado en el temario para organizaciones con múltiples equipos y necesidades de acceso granulares y escalables, evitando la creación manual de roles por cada combinación de acceso."
+    },
+    {
+      "id": "p10-15",
+      "enunciado": "Un desarrollador necesita validar si un usuario tiene permiso para realizar una acción específica sobre un recurso en AWS **sin ejecutar dicha acción**. ¿Qué herramienta de IAM permite realizar esta simulación de permisos?",
+      "opciones": [
+        "a) IAM Access Analyzer",
+        "b) IAM Policy Simulator",
+        "c) AWS Config Rules",
+        "d) AWS Trusted Advisor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El **IAM Policy Simulator** evalúa *in silico* si una identidad tiene permisos para una acción concreta sobre un recurso, sin necesidad de ejecutarla. Es útil para depurar políticas antes de aplicarlas en producción, como menciona el temario."
+    },
+    {
+      "id": "p10-16",
+      "enunciado": "En una organización que utiliza **IAM paths**, ¿qué ventaja clave ofrece este mecanismo para la gestión de *permission boundaries* en comparación con no usarlos?",
+      "opciones": [
+        "a) Permite asignar permisos a usuarios individuales sin roles, ignorando la jerarquía de paths",
+        "b) Facilita la aplicación de *permission boundaries* a grupos de usuarios/roles mediante prefijos en los paths, simplificando políticas heredadas",
+        "c) Elimina la necesidad de usar políticas basadas en recursos (resource-based policies)",
+        "d) Reduce automáticamente los permisos de todos los roles en una cuenta a nivel global"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los **IAM paths** organizan usuarios/roles en una jerarquía tipo directorio, lo que permite aplicar *permission boundaries* o políticas a grupos mediante prefijos en los paths (ej: `org/equipoX/`). Esto simplifica la gestión de límites de permisos para equipos grandes, como indica el temario."
+    },
+    {
+      "id": "p10-17",
+      "enunciado": "¿Qué diferencia fundamental existe entre un *permission boundary* y una *Service Control Policy (SCP)* en AWS, según el temario?",
+      "opciones": [
+        "a) Las SCP actúan sobre cuentas u OUs enteras, mientras que los *permission boundaries* se aplican solo a identidades individuales (usuarios/roles) dentro de una cuenta",
+        "b) Los *permission boundaries* son más restrictivos que las SCP y no permiten excepciones",
+        "c) Las SCP permiten asignar roles cross-account, mientras que los *permission boundaries* no",
+        "d) Ambos mecanismos funcionan igual, pero las SCP son gestionadas por AWS y los *permission boundaries* por el cliente"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario explica que una **SCP** actúa sobre cuentas u Organizational Units (OUs) completas, limitando los permisos *máximos* que pueden tener las identidades dentro de ellas. En cambio, un *permission boundary* es una política gestionada que define el **techo máximo de permisos** para una **identidad específica** (usuario/rol), permitiendo a equipos crear sus propios roles sin escalar privilegios más allá de ese límite."
+    },
+    {
+      "id": "p10-18",
+      "enunciado": "Un equipo desea definir permisos granulares para múltiples equipos que acceden a un **bucket S3 compartido**, donde cada equipo solo debe tener acceso a los objetos etiquetados con su proyecto. Según el temario, ¿qué tipo de política es la más adecuada para implementar esto?",
+      "opciones": [
+        "a) Política de identidad (identity-based policy) con condiciones basadas en etiquetas de recursos",
+        "b) Política basada en recurso (resource-based policy) adjunta al bucket S3 con condiciones ABAC",
+        "c) SCP aplicada a la cuenta que alberga el bucket",
+        "d) Permission boundary asignado a cada equipo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Para casos donde el acceso debe restringirse **a nivel de recurso** (como un bucket S3) según atributos dinámicos (etiquetas de proyecto), el temario recomienda usar **políticas basadas en recurso (resource-based policies)**. Estas se adjuntan al bucket y permiten condiciones como `aws:ResourceTag/project = ${aws:PrincipalTag/project}`, validando el acceso según etiquetas del recurso y del solicitante."
+    },
+    {
+      "id": "p10-19",
+      "enunciado": "Un desarrollador necesita implementar una lógica de autorización compleja en su aplicación que evalúe permisos **a nivel de registros individuales** (no solo de API), sin duplicar esa lógica en el código. Según el temario, ¿qué servicio de AWS es el adecuado para centralizar esta lógica?",
+      "opciones": [
+        "a) AWS Lambda con permisos IAM",
+        "b) Amazon Verified Permissions",
+        "c) AWS Cognito Identity Pools",
+        "d) AWS Step Functions"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon Verified Permissions** es el servicio que centraliza la lógica de autorización compleja (incluso a nivel de registros individuales) usando el lenguaje **Cedar**, desacoplándola de la aplicación. Permite decisiones de autorización finas sin implementar esa lógica en el código, como describe el temario."
+    },
+    {
+      "id": "p10-20",
+      "enunciado": "En una organización que utiliza **IAM Roles Anywhere**, ¿qué tipo de credenciales se generan para permitir que una aplicación on-premises asuma un rol de IAM sin almacenar credenciales de larga duración fuera de AWS?",
+      "opciones": [
+        "a) Credenciales temporales basadas en tokens JWT firmados por una instancia EC2.",
+        "b) Credenciales temporales generadas mediante un certificado X.509 presentado por la aplicación on-premises.",
+        "c) Credenciales permanentes de usuario IAM vinculadas a una clave de acceso secreta.",
+        "d) Credenciales basadas en políticas de recurso (resource-based policies) aplicadas directamente a la aplicación."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio **IAM Roles Anywhere** permite obtener credenciales temporales mediante la presentación de un certificado X.509 por parte de la carga de trabajo on-premises, evitando así almacenar credenciales de larga duración fuera de AWS. Esto se menciona en el apartado *ACCESO A RECURSOS: PATHS, ROLES ANYWHERE Y POLÍTICAS DE RECURSO*."
+    },
+    {
+      "id": "p10-21",
+      "enunciado": "¿Qué ventaja clave ofrece el uso de **IAM paths** al definir *permission boundaries* en una cuenta de AWS, según el temario?",
+      "opciones": [
+        "a) Permite aplicar límites de permisos a nivel de organización (OUs) en lugar de a identidades individuales.",
+        "b) Facilita la organización jerárquica de usuarios y roles en una estructura tipo directorio, lo que simplifica la aplicación de *permission boundaries* por prefijo.",
+        "c) Elimina la necesidad de usar políticas basadas en recurso (resource-based policies) para roles compartidos entre cuentas.",
+        "d) Reduce automáticamente los permisos de un rol si este se asume desde una cuenta externa."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los **IAM paths** organizan usuarios y roles en una jerarquía que permite aplicar *permission boundaries* de manera más estructurada, usando prefijos para limitar los permisos. Esto se detalla en el apartado *ACCESO A RECURSOS: PATHS, ROLES ANYWHERE Y POLÍTICAS DE RECURSO*."
+    },
+    {
+      "id": "p10-22",
+      "enunciado": "Un equipo necesita conceder acceso temporal a un rol de IAM desde una aplicación que se ejecuta en un entorno on-premises, pero **sin almacenar credenciales de larga duración fuera de AWS**. Según el temario, ¿qué servicio debe usarse para obtener las credenciales necesarias?",
+      "opciones": [
+        "a) AWS STS (Security Token Service) con políticas de sesión (session policies).",
+        "b) **IAM Roles Anywhere**, que genera credenciales temporales mediante un certificado X.509.",
+        "c) AWS Secrets Manager para almacenar y rotar credenciales de forma segura.",
+        "d) AWS KMS para cifrar las credenciales antes de transmitirlas a la aplicación on-premises."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio **IAM Roles Anywhere** es el indicado para este escenario, ya que permite obtener credenciales temporales sin almacenar credenciales de larga duración fuera de AWS, usando un certificado X.509. Esto se aborda en el apartado *ACCESO A RECURSOS: PATHS, ROLES ANYWHERE Y POLÍTICAS DE RECURSO*."
+    },
+    {
+      "id": "p10-23",
+      "enunciado": "En una organización con 30 equipos independientes que gestionan proyectos aislados, cada uno con necesidades de acceso similares pero distintas (ej: cada equipo solo debe administrar recursos etiquetados con su propio código de proyecto), ¿qué modelo de control de acceso es el más adecuado según el temario para evitar crear roles por proyecto y mantener permisos dinámicos?",
+      "opciones": [
+        "a) RBAC (Role-Based Access Control) con roles específicos por equipo y proyecto.",
+        "b) ABAC (Attribute-Based Access Control) que evalúa etiquetas como `proyecto` en el usuario y el recurso.",
+        "c) Permissions boundaries aplicados a cada rol de equipo para limitar su alcance.",
+        "d) Session policies temporales que se asignan manualmente durante cada sesión de acceso."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que **ABAC** es el modelo escalable para organizaciones con múltiples equipos y recursos aislados, ya que permite autorizar dinámicamente según atributos (etiquetas) como el código de proyecto, sin necesidad de crear roles por cada combinación. Esto evita la fragmentación típica de RBAC y cumple con el principio de mínimo privilegio al restringir el acceso a recursos específicos."
+    },
+    {
+      "id": "p10-24",
+      "enunciado": "Un desarrollador necesita implementar una lógica de autorización compleja en su aplicación que decida, por ejemplo, si un usuario puede editar un registro específico de una tabla en DynamoDB **basándose en reglas personalizadas** (como horarios, roles internos o condiciones de negocio), sin duplicar esa lógica en el código de la aplicación. Según el temario, ¿qué servicio de AWS debería usar?",
+      "opciones": [
+        "a) IAM Policy Simulator, para simular permisos antes de ejecutar acciones.",
+        "b) IAM Access Analyzer, para validar políticas contra mejores prácticas.",
+        "c) Amazon Verified Permissions, que centraliza la lógica de autorización en Cedar y se integra con la aplicación.",
+        "d) Service Control Policies (SCPs), para limitar permisos a nivel de organización."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El servicio **Amazon Verified Permissions** es el mencionado en el temario para centralizar lógica de autorización avanzada (a nivel de registros individuales) en un lenguaje propio (**Cedar**), desacoplado de la aplicación. Permite evaluar permisos finos sin implementar la lógica en el código, ideal para casos como el descrito."
+    }
+  ]
+}

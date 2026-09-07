@@ -1,0 +1,234 @@
+{
+  "id": 16,
+  "titulo": "6.3 · Evaluación de cumplimiento",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Último task statement de la guía: cómo demostrar, con evidencia, que la organización cumple sus propios estándares y los de un auditor externo.\n\nDETECCIÓN Y REMEDIACIÓN DE RECURSOS NO CONFORMES\n\nAWS Config evalúa continuamente los recursos de una cuenta contra reglas de cumplimiento (Config Rules) — por ejemplo, marcar automáticamente como no conforme cualquier bucket S3 sin cifrado o cualquier Security Group con el puerto 22 abierto a 0.0.0.0/0. Config puede agregar estos hallazgos a nivel de organización completa y disparar notificaciones o remediación automática cuando detecta una desviación. AWS Security Hub complementa esto agregando también hallazgos de otros servicios de seguridad (no solo de configuración) y exponiendo una puntuación de cumplimiento consolidada contra estándares como CIS AWS Foundations Benchmark o PCI DSS.\n\nRECOPILACIÓN DE EVIDENCIA DE AUDITORÍA\n\nAWS Audit Manager automatiza la recopilación continua de evidencia de cumplimiento (capturas de configuración, políticas, logs relevantes) mapeada directamente contra los controles de un marco normativo concreto (SOC 2, PCI DSS, HIPAA), generando un informe listo para un auditor en vez de reunir la evidencia manualmente cada vez que toca una auditoría. AWS Artifact es un servicio distinto y más simple: un portal de autoservicio para descargar bajo demanda los informes de cumplimiento y certificaciones que AWS ya ha obtenido como proveedor (ISO 27001, SOC 1/2/3, PCI DSS) — evidencia de la parte de AWS en el modelo de responsabilidad compartida, no de la configuración propia del cliente, que es justamente lo que cubre Audit Manager.\n\nEVALUACIÓN DE ARQUITECTURA CONTRA BUENAS PRÁCTICAS\n\nAWS Well-Architected Tool guía una revisión estructurada de una carga de trabajo contra los pilares del AWS Well-Architected Framework (seguridad, fiabilidad, excelencia operativa, eficiencia de rendimiento, optimización de costes, sostenibilidad), señalando brechas de diseño antes de que se conviertan en un hallazgo de auditoría o, peor, en un incidente. Es la herramienta de evaluación proactiva de arquitectura, frente a Config/Security Hub, que evalúan el estado ya desplegado de recursos concretos."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Cumplimiento] --> B[AWS Config]\nB --> B1[Reglas de deteccion]\nB --> B2[Remediacion automatica]\nA --> C[AWS Security Hub]\nA --> D[AWS Audit Manager]\nA --> E[AWS Artifact]\nA --> F[AWS Well-Architected Tool]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc16-01",
+      "pregunta": "¿Qué servicio de AWS permite detectar automáticamente recursos no conformes, como buckets S3 sin cifrado?",
+      "respuesta": "AWS Config, mediante reglas de cumplimiento (*Config Rules*) que evalúan recursos en tiempo real y marcan desviaciones."
+    },
+    {
+      "id": "fc16-02",
+      "pregunta": "¿Cómo ayuda AWS Config a la remediación de recursos no conformes?",
+      "respuesta": "Puede agregar hallazgos a nivel de organización, disparar notificaciones y aplicar remediación automática ante desviaciones detectadas."
+    },
+    {
+      "id": "fc16-03",
+      "pregunta": "¿Qué servicio complementa AWS Config al integrar hallazgos de seguridad de múltiples servicios y mostrar una puntuación consolidada?",
+      "respuesta": "AWS Security Hub, que expone métricas de cumplimiento contra estándares como *CIS AWS Foundations Benchmark* o *PCI DSS*."
+    },
+    {
+      "id": "fc16-04",
+      "pregunta": "¿Cuál es la función principal de AWS Audit Manager en la evaluación de cumplimiento?",
+      "respuesta": "Automatizar la recopilación continua de evidencia de auditoría (configuraciones, logs, políticas) mapeada a controles normativos (*SOC 2*, *PCI DSS*, *HIPAA*), generando informes listos para auditores."
+    },
+    {
+      "id": "fc16-05",
+      "pregunta": "¿Qué diferencia hay entre AWS Audit Manager y AWS Artifact en términos de evidencia de cumplimiento?",
+      "respuesta": "Audit Manager recopila evidencia *del cliente* (configuración propia) para auditorías; Artifact ofrece informes de cumplimiento *de AWS* (ej. *ISO 27001*, *SOC 1/2/3*) como proveedor, bajo el modelo de responsabilidad compartida."
+    },
+    {
+      "id": "fc16-06",
+      "pregunta": "¿Qué servicio evalúa la arquitectura de una carga de trabajo contra los pilares del *AWS Well-Architected Framework*?",
+      "respuesta": "AWS Well-Architected Tool, que identifica brechas de diseño *proactivamente* antes de que afecten auditorías o incidentes."
+    },
+    {
+      "id": "fc16-07",
+      "pregunta": "¿Qué tipo de hallazgos analiza AWS Security Hub que AWS Config no cubre?",
+      "respuesta": "Hallazgos de seguridad provenientes de *todos los servicios de AWS* (no solo configuración), no limitados a recursos específicos como Config."
+    },
+    {
+      "id": "fc16-08",
+      "pregunta": "¿Qué marco normativo puede evaluar AWS Well-Architected Tool en sus pilares de revisión?",
+      "respuesta": "Los *6 pilares del AWS Well-Architected Framework*: seguridad, fiabilidad, excelencia operativa, rendimiento, costes y sostenibilidad."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p16-01",
+      "enunciado": "¿Qué servicio de AWS permite a un auditor externo validar automáticamente si los recursos de una cuenta cumplen con reglas específicas de configuración, como la ausencia de puertos abiertos innecesarios, y genera alertas en tiempo real?",
+      "opciones": [
+        "a) AWS Artifact",
+        "b) AWS Config",
+        "c) AWS Security Hub",
+        "d) AWS Well-Architected Tool"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio **AWS Config** evalúa recursos en tiempo real contra reglas de cumplimiento definidas (Config Rules) y alerta sobre desviaciones, como puertos abiertos no autorizados, según el temario. Security Hub complementa con hallazgos de otros servicios, pero no es el encargado de la evaluación continua de configuración."
+    },
+    {
+      "id": "p16-02",
+      "enunciado": "Si un cliente necesita demostrar a un auditor que su infraestructura cumple con el estándar **PCI DSS**, ¿qué servicio de AWS está diseñado específicamente para recopilar evidencia mapeada automáticamente contra este marco normativo?",
+      "opciones": [
+        "a) AWS Security Hub",
+        "b) AWS Audit Manager",
+        "c) AWS Artifact",
+        "d) AWS Config"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Audit Manager** automatiza la recopilación de evidencia de cumplimiento (logs, configuraciones, políticas) vinculada a controles específicos de marcos como **PCI DSS**, generando informes listos para auditoría, según el temario. Artifact solo ofrece certificaciones de AWS, no evidencia del cliente."
+    },
+    {
+      "id": "p16-03",
+      "enunciado": "Un equipo de seguridad quiere implementar **remediación automática** cuando AWS Config detecta un recurso no conforme (ej.: bucket S3 sin cifrado). ¿Qué mecanismo de AWS permite configurar esta acción automática?",
+      "opciones": [
+        "a) AWS Lambda integrado con Config Rules",
+        "b) AWS Trusted Advisor",
+        "c) AWS Inspector",
+        "d) AWS GuardDuty"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "AWS Config permite **disparar acciones automáticas** (como ejecutar scripts o invocar APIs) mediante **Config Rules** cuando detecta no conformidades, usando servicios como **AWS Lambda** para la remediación, según el temario. Los otros servicios no están vinculados a esta funcionalidad."
+    },
+    {
+      "id": "p16-04",
+      "enunciado": "¿Cuál de estos servicios NO proporciona evidencia directa sobre el cumplimiento de los controles de seguridad implementados por el cliente en su propia infraestructura AWS?",
+      "opciones": [
+        "a) AWS Audit Manager",
+        "b) AWS Artifact",
+        "c) AWS Config",
+        "d) AWS Security Hub"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Artifact** solo ofrece informes de cumplimiento y certificaciones **obtenidas por AWS como proveedor** (ej.: ISO 27001), no evidencia de la configuración o controles del cliente. Los demás servicios sí recopilan o evalúan evidencia del cliente (Audit Manager, Config, Security Hub)."
+    },
+    {
+      "id": "p16-05",
+      "enunciado": "Un auditor externo solicita pruebas de que los **Security Groups** de una cuenta AWS no permiten conexiones SSH (puerto 22) desde Internet. ¿Qué servicio de AWS puede generar un informe automático con esta evidencia?",
+      "opciones": [
+        "a) AWS Well-Architected Tool",
+        "b) AWS Config con reglas personalizadas",
+        "c) AWS Trusted Advisor",
+        "d) AWS Organizations SCPs"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Config** puede definir reglas personalizadas para detectar Security Groups con puertos abiertos no autorizados (como el 22) y registrar estos hallazgos como evidencia de no conformidad, según el temario. Well-Architected evalúa diseño, no configuración en tiempo real."
+    },
+    {
+      "id": "p16-06",
+      "enunciado": "¿Qué servicio de AWS asigna una **puntuación de cumplimiento consolidada** contra estándares como **CIS AWS Foundations Benchmark**, integrando hallazgos de múltiples servicios de seguridad (no solo Config)?",
+      "opciones": [
+        "a) AWS Config",
+        "b) AWS Security Hub",
+        "c) AWS Inspector",
+        "d) AWS Systems Manager"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Security Hub** centraliza hallazgos de seguridad (incluyendo Config, GuardDuty, etc.) y calcula una puntuación de cumplimiento unificada contra benchmarks como **CIS**, según el temario. Config solo evalúa recursos contra reglas específicas."
+    },
+    {
+      "id": "p16-07",
+      "enunciado": "Un cliente necesita descargar un informe oficial de AWS que demuestre el cumplimiento de **SOC 2 Type II** para su auditoría. ¿Qué servicio debe usar?",
+      "opciones": [
+        "a) AWS Audit Manager",
+        "b) AWS Artifact",
+        "c) AWS Config",
+        "d) AWS Security Hub"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Artifact** es un portal de autoservicio que permite descargar **informes de cumplimiento y certificaciones oficiales de AWS** (como SOC 2, ISO 27001), según el temario. Audit Manager recopila evidencia del cliente, no de AWS."
+    },
+    {
+      "id": "p16-08",
+      "enunciado": "El **AWS Well-Architected Tool** se diferencia de AWS Config en que este último evalúa recursos ya desplegados, mientras que Well-Architected se enfoca en:",
+      "opciones": [
+        "a) Detectar vulnerabilidades en tiempo real mediante escaneos de red",
+        "b) Evaluar el diseño de la arquitectura contra buenas prácticas antes de implementar",
+        "c) Generar informes de cumplimiento para auditorías externas",
+        "d) Aplicar políticas de seguridad a nivel de organización con AWS Organizations"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Well-Architected Tool** realiza una **evaluación proactiva de arquitectura** contra los pilares del framework (seguridad, fiabilidad, etc.), identificando brechas de diseño **antes** de la implementación, según el temario. Config evalúa recursos ya existentes."
+    },
+    {
+      "id": "p16-09",
+      "enunciado": "Un auditor externo requiere evidencia de que todos los **IAM Roles** en la cuenta AWS tienen una duración de sesión limitada (máximo 1 hora) para reducir el riesgo de exposición prolongada. ¿Qué servicio de AWS permite generar automáticamente un informe con esta evidencia, vinculando cada rol a su configuración de duración de sesión?",
+      "opciones": [
+        "AWS Config con reglas personalizadas y AWS Config Rules",
+        "AWS Security Hub con hallazgos de IAM Policy Scanner",
+        "AWS Audit Manager mapeado al control SOC 2 A-AP-01-001",
+        "AWS Artifact con certificados de cumplimiento de AWS"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "AWS **Audit Manager** recopila evidencia mapeada automáticamente contra controles específicos de marcos normativos (como SOC 2), incluyendo la verificación de configuraciones de IAM como la duración de sesión de roles. Este servicio genera informes listos para auditoría con pruebas directas de cumplimiento, a diferencia de AWS Config (que detecta desviaciones) o AWS Artifact (que solo ofrece certificaciones de AWS)."
+    },
+    {
+      "id": "p16-10",
+      "enunciado": "Para demostrar a un auditor que los **EC2 con roles de instancia asignados** no permiten la ejecución de comandos remotos sin autenticación adicional (ej.: SSH sin clave), ¿qué servicio debe usarse para validar que las políticas de los roles de instancia restringen explícitamente acciones como `ssm:SendCommand` o `ec2-instance-connect:SendSSHPublicKey`?",
+      "opciones": [
+        "AWS Config Rules con una regla personalizada que valide políticas IAM",
+        "AWS Security Hub con hallazgos de IAM Access Analyzer",
+        "AWS Audit Manager con un marco normativo personalizado basado en CIS",
+        "AWS Trusted Advisor con recomendaciones de seguridad"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "AWS **Config Rules** permite crear reglas personalizadas para evaluar si las políticas de los roles de instancia cumplen con restricciones específicas (como prohibir `ssm:SendCommand` sin autenticación). Aunque AWS Audit Manager también podría usarse con un marco personalizado, **Config Rules** es el mecanismo directo para validar configuraciones de IAM en tiempo real y generar hallazgos automatizados. Trusted Advisor y Security Hub no ofrecen esta granularidad para roles de instancia."
+    },
+    {
+      "id": "p16-11",
+      "enunciado": "Un equipo de DevOps necesita automatizar la **corrección inmediata** de buckets S3 que tengan el bloqueo de eliminación desactivado (un riesgo crítico para auditorías). ¿Qué combinación de servicios de AWS permite lograr esto sin intervención manual, integrando la detección con la acción correctiva?",
+      "opciones": [
+        "AWS Config Rules + AWS Lambda para ejecutar `s3:PutBucketVersioning`",
+        "AWS Security Hub + AWS Systems Manager para aplicar políticas de remediación",
+        "AWS Config Rules + AWS Systems Manager Run Command para habilitar `BlockPublicAcls`",
+        "AWS Config Rules + AWS Config Remediation Configurations para activar `s3:PutPublicAccessBlock`"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "**AWS Config Remediation Configurations** (integrado con AWS Config Rules) permite definir acciones automáticas para corregir desviaciones, como habilitar el bloqueo de eliminación en buckets S3. La opción correcta combina **Config Rules** (para detectar el recurso no conforme) con **Remediation Configurations** (para aplicar la corrección, en este caso `s3:PutPublicAccessBlock`). Otras opciones no cubren la acción de remediación específica para este control."
+    },
+    {
+      "id": "p16-12",
+      "enunciado": "Un cliente requiere un informe que demuestre que **todas las cuentas de la organización AWS** han implementado el principio de **mínimo privilegio** en sus políticas IAM, incluyendo la revisión de permisos innecesarios en roles y usuarios. ¿Qué servicio es el único capaz de generar este informe a nivel de organización, integrando hallazgos de múltiples cuentas y servicios?",
+      "opciones": [
+        "AWS Config con reglas de organización y AWS Organizations SCPs",
+        "AWS Security Hub con agregación de hallazgos de IAM Policy Scanner",
+        "AWS Audit Manager con marco normativo PCI DSS",
+        "AWS IAM Access Analyzer con informes de permisos redundantes"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Security Hub** centraliza hallazgos de múltiples servicios (incluyendo IAM Policy Scanner) y permite evaluar el cumplimiento del principio de mínimo privilegio **a nivel de organización**, mostrando permisos innecesarios o excesivos en roles/usuarios. Aunque AWS Config también puede detectar desviaciones, Security Hub es el único que **agrega y consolida** estos hallazgos en un dashboard unificado para auditorías. Audit Manager se enfoca en marcos normativos específicos, y Access Analyzer no cubre la agregación organizacional."
+    },
+    {
+      "id": "p16-13",
+      "enunciado": "Durante una auditoría, el auditor solicita evidencia de que **ningún recurso EC2 en la cuenta** tiene asociado un **Security Group** que permita tráfico entrante en el puerto **3389** (RDP) desde Internet. ¿Qué servicio puede generar automáticamente un informe con esta evidencia, incluyendo capturas de los Security Groups afectados y sus reglas de seguridad?",
+      "opciones": [
+        "AWS Config Rules con una regla que valide Security Groups y genera un informe de desviaciones",
+        "AWS Security Hub con hallazgos de Network Firewall integrados",
+        "AWS Audit Manager con un marco normativo personalizado basado en NIST",
+        "AWS Trusted Advisor con recomendaciones de seguridad de red"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**AWS Audit Manager** permite definir marcos normativos personalizados (como uno basado en NIST) para recopilar evidencia específica, incluyendo la verificación de que **ningún Security Group** permita tráfico RDP (puerto 3389) desde 0.0.0.0/0. Genera informes con pruebas directas (como capturas de las reglas de seguridad) listos para auditoría. Aunque AWS Config Rules podría detectar la desviación, **Audit Manager** es el único que proporciona la evidencia estructurada y mapeada a controles normativos requeridos por el auditor."
+    },
+    {
+      "id": "p16-14",
+      "enunciado": "Un cliente desea validar que **todos los recursos de su organización AWS** (EC2, RDS, Lambda, etc.) cumplan con el estándar **CIS AWS Foundations Benchmark v1.2.0**, incluyendo controles como la activación de cifrado en tránsito para bases de datos RDS. ¿Qué servicio debe usarse para obtener una **puntuación de cumplimiento consolidada** que integre hallazgos de Config, Security Hub y otros servicios, además de permitir la exportación de la evidencia para auditoría?",
+      "opciones": [
+        "AWS Config con reglas predefinidas para CIS Benchmark",
+        "AWS Security Hub con integración de hallazgos de Config y otros servicios",
+        "AWS Audit Manager con marco normativo CIS AWS Foundations",
+        "AWS Well-Architected Tool con evaluación de pilares de seguridad"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Security Hub** es el servicio que **consolida hallazgos de múltiples fuentes** (AWS Config, IAM Access Analyzer, GuardDuty, etc.) y asigna una puntuación de cumplimiento contra estándares como **CIS AWS Foundations Benchmark**. Además, permite exportar la evidencia completa para auditorías, a diferencia de AWS Config (que solo evalúa configuración) o AWS Audit Manager (que se centra en marcos normativos específicos como SOC 2). El Well-Architected Tool evalúa diseño, no configuración desplegada."
+    }
+  ]
+}

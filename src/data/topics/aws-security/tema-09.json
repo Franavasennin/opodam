@@ -1,0 +1,234 @@
+{
+  "id": 9,
+  "titulo": "4.1 · Estrategias de autenticación",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "El dominio de IAM (el de mayor peso del examen, 20%) se divide en dos: autenticación (\"quién eres\") y autorización (\"qué puedes hacer\"), que se examinan por separado. Este primer task statement cubre solo autenticación.\n\nIDENTIDAD PARA HUMANOS: IAM IDENTITY CENTER Y FEDERACIÓN\n\nAWS IAM Identity Center (antes AWS SSO) es el servicio recomendado para dar acceso a personas a múltiples cuentas de AWS Organizations desde un único inicio de sesión, federando con un proveedor de identidad externo (IdP) vía SAML u OIDC — Active Directory, Okta, Entra ID. El patrón preferido a escala es siempre federar contra un IdP corporativo existente en vez de crear usuarios de IAM individuales por persona, que no escala ni se audita bien. AWS Directory Service ofrece un Active Directory gestionado por AWS (o una pasarela hacia uno on-premises) cuando la organización necesita directorio propio dentro de la nube, no solo federación.\n\nIDENTIDAD PARA APLICACIONES: AMAZON COGNITO\n\nCognito resuelve un problema distinto: autenticación de usuarios finales de una aplicación (no empleados internos) — un registro público, un login social, o usuarios de un móvil. Sus dos piezas son el user pool (directorio de usuarios de la aplicación, con registro, login y MFA propios) y el identity pool (que cambia un token de usuario autenticado por credenciales temporales de AWS con permisos limitados). La distinción de examen: IAM Identity Center es para el personal que administra o usa la cuenta de AWS; Cognito es para los usuarios finales de una aplicación que la organización construye sobre AWS.\n\nMULTI-FACTOR AUTHENTICATION (MFA)\n\nMFA se puede exigir a nivel de usuario de IAM, de IAM Identity Center o de Cognito, y es el control mínimo esperado en cualquier escenario de examen que involucre una cuenta root o un rol con privilegios elevados — su ausencia suele ser justo el fallo que el enunciado pide identificar.\n\nCREDENCIALES TEMPORALES\n\nAWS STS (Security Token Service) emite credenciales de corta duración cuando una identidad asume un rol, en vez de usar claves de acceso permanentes — es el mecanismo subyacente detrás de cada \"assume role\" del examen. Las URL prefirmadas (presigned URLs) de S3 permiten conceder acceso temporal y con alcance limitado a un objeto concreto de un bucket privado, sin hacer público el bucket ni compartir credenciales — típico para permitir que un usuario externo suba o descargue un único fichero durante una ventana de tiempo definida.\n\nTROUBLESHOOTING DE AUTENTICACIÓN\n\nCuando la autenticación falla, CloudTrail registra el intento y el motivo del rechazo a nivel de API; los permission sets de IAM Identity Center son la unidad que vincula un grupo de usuarios federados con un rol de IAM en una cuenta concreta — un fallo de acceso \"correcto pero sin permisos\" en un entorno federado casi siempre se rastrea hasta un permission set mal asignado, no hasta la autenticación en sí."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Autenticacion] --> B[IAM Identity Center]\nA --> C[Amazon Cognito]\nA --> D[MFA]\nA --> E[Integracion con IdP]\nA --> F[Credenciales temporales]\nF --> F1[AWS STS]\nF --> F2[S3 presigned URLs]\nA --> G[Troubleshooting]\nG --> G1[CloudTrail]\nG --> G2[Cognito]\nG --> G3[Permission sets de Identity Center]\nG --> G4[AWS Directory Service]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc9-01",
+      "pregunta": "¿Qué servicio de AWS se recomienda para gestionar el acceso de empleados a múltiples cuentas de AWS Organizations desde un único inicio de sesión?",
+      "respuesta": "AWS IAM Identity Center (antes AWS SSO), federando con un proveedor de identidad externo (IdP) vía SAML u OIDC."
+    },
+    {
+      "id": "fc9-02",
+      "pregunta": "¿Cuál es el patrón preferido para escalar la gestión de identidades en AWS según el temario?",
+      "respuesta": "Federar contra un proveedor de identidad corporativo existente (IdP) en lugar de crear usuarios de IAM individuales."
+    },
+    {
+      "id": "fc9-03",
+      "pregunta": "¿Qué servicio de AWS permite gestionar un directorio Active Directory en la nube o conectarse a uno on-premises?",
+      "respuesta": "AWS Directory Service."
+    },
+    {
+      "id": "fc9-04",
+      "pregunta": "¿Qué servicio de AWS se utiliza para autenticar usuarios finales de una aplicación (ej. registro público o login social)?",
+      "respuesta": "Amazon Cognito, con *user pool* para gestión de usuarios y *identity pool* para credenciales temporales de AWS."
+    },
+    {
+      "id": "fc9-05",
+      "pregunta": "¿Cuál es la diferencia clave entre IAM Identity Center y Amazon Cognito en términos de autenticación?",
+      "respuesta": "IAM Identity Center es para empleados/administradores de cuentas AWS; Cognito es para usuarios finales de aplicaciones externas."
+    },
+    {
+      "id": "fc9-06",
+      "pregunta": "¿Qué control de seguridad es obligatorio en escenarios críticos (ej. cuentas root o roles con privilegios elevados)?",
+      "respuesta": "MFA (Multi-Factor Authentication), exigido a nivel de usuario en IAM, IAM Identity Center o Cognito."
+    },
+    {
+      "id": "fc9-07",
+      "pregunta": "¿Qué servicio de AWS emite credenciales temporales al asumir un rol, evitando el uso de claves permanentes?",
+      "respuesta": "AWS STS (Security Token Service), mecanismo subyacente de *assume role*."
+    },
+    {
+      "id": "fc9-08",
+      "pregunta": "¿Qué herramienta permite acceder temporalmente a un objeto de S3 privado sin compartir credenciales ni exponer el bucket?",
+      "respuesta": "URLs prefirmadas (*presigned URLs*) de S3, con alcance y tiempo de validez definidos."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p9-01",
+      "enunciado": "¿Qué servicio de AWS permite a una organización federar usuarios de Active Directory on-premises con cuentas de AWS Organizations mediante una pasarela directa?",
+      "opciones": [
+        "AWS IAM Identity Center",
+        "AWS Directory Service",
+        "Amazon Cognito",
+        "AWS STS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS Directory Service ofrece una pasarela hacia un Active Directory on-premises, permitiendo la federación de usuarios corporativos existentes sin necesidad de crear usuarios individuales en IAM."
+    },
+    {
+      "id": "p9-02",
+      "enunciado": "Si una aplicación web necesita autenticar usuarios finales con registro público y login social, ¿qué servicio de AWS es el adecuado para gestionar los usuarios y sus credenciales?",
+      "opciones": [
+        "AWS IAM Identity Center",
+        "AWS STS",
+        "Amazon Cognito (User Pool)",
+        "AWS Secrets Manager"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Amazon Cognito User Pool es el servicio diseñado para manejar la autenticación de usuarios finales de aplicaciones, incluyendo registro público y login social, mientras que IAM Identity Center está orientado a empleados internos."
+    },
+    {
+      "id": "p9-03",
+      "enunciado": "¿Cuál de estos servicios NO es recomendado para escalar la gestión de usuarios en una organización con cientos de empleados que acceden a múltiples cuentas de AWS?",
+      "opciones": [
+        "Crear usuarios individuales en IAM para cada empleado",
+        "Federar usuarios con un IdP corporativo usando AWS IAM Identity Center",
+        "Usar AWS Directory Service para un Active Directory gestionado",
+        "Asignar roles temporales con AWS STS"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario destaca que **crear usuarios individuales en IAM no escala ni se audita bien**, mientras que federar con un IdP corporativo (opción 1) o usar un directorio gestionado (opción 2) son patrones recomendados. STS (opción 3) es para credenciales temporales, no para gestión de usuarios."
+    },
+    {
+      "id": "p9-04",
+      "enunciado": "Un cliente quiere compartir un archivo privado de S3 con un tercero externo durante 24 horas sin revelar las credenciales de acceso. ¿Qué mecanismo de AWS cumple este requisito?",
+      "opciones": [
+        "URLs presigned de S3",
+        "AWS STS para asumir roles",
+        "IAM Identity Center para federación",
+        "Amazon Cognito para autenticación de usuarios"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las **URLs presigned de S3** permiten acceso temporal y limitado a objetos sin compartir credenciales, mientras que STS (opción 2) es para credenciales temporales de IAM, y las otras opciones no están relacionadas con este escenario."
+    },
+    {
+      "id": "p9-05",
+      "enunciado": "¿Qué control de seguridad es obligatorio en un examen de IAM cuando se trata de cuentas root o roles con privilegios elevados?",
+      "opciones": [
+        "Usar claves de acceso permanentes",
+        "Exigir MFA (Multi-Factor Authentication)",
+        "Deshabilitar la autenticación SAML",
+        "Limitar el acceso solo a IPs internas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario especifica que **MFA es el control mínimo esperado** para cuentas root o roles con privilegios elevados, y su ausencia suele ser un fallo común en escenarios de examen."
+    },
+    {
+      "id": "p9-06",
+      "enunciado": "Un desarrollador necesita que una aplicación asuma un rol de IAM con permisos limitados para interactuar con servicios de AWS. ¿Qué servicio proporciona las credenciales temporales necesarias para este propósito?",
+      "opciones": [
+        "AWS IAM Identity Center",
+        "Amazon Cognito Identity Pool",
+        "AWS STS (Security Token Service)",
+        "AWS Secrets Manager"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "AWS **STS** emite credenciales temporales al asumir un rol, mientras que IAM Identity Center (opción 1) es para federación de usuarios humanos y Cognito Identity Pool (opción 2) convierte tokens de usuario en credenciales temporales de AWS, pero no es el servicio subyacente para asumir roles."
+    },
+    {
+      "id": "p9-07",
+      "enunciado": "En un entorno federado con AWS IAM Identity Center, si un usuario recibe un error de 'correcto pero sin permisos', ¿qué elemento es el más probable que esté mal configurado?",
+      "opciones": [
+        "El IdP externo (SAML/OIDC)",
+        "El permission set de IAM Identity Center",
+        "La clave de acceso permanente del usuario",
+        "El rol de IAM asociado al permission set"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que un error de 'correcto pero sin permisos' en entornos federados suele deberse a un **permission set mal asignado** en IAM Identity Center, no a fallos en la autenticación en sí."
+    },
+    {
+      "id": "p9-08",
+      "enunciado": "¿Qué servicio de AWS permite a una organización construir un directorio propio en la nube (sin depender de un IdP externo) para gestionar usuarios y grupos internos?",
+      "opciones": [
+        "AWS STS",
+        "Amazon Cognito",
+        "AWS Directory Service (Active Directory gestionado)",
+        "AWS IAM Identity Center"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "AWS **Directory Service** ofrece un Active Directory gestionado por AWS, útil cuando la organización necesita un directorio propio dentro de la nube, a diferencia de IAM Identity Center (opción 4), que requiere federación con un IdP externo."
+    },
+    {
+      "id": "p9-09",
+      "enunciado": "Un cliente desea implementar un sistema de autenticación para sus empleados que permita iniciar sesión desde múltiples cuentas de AWS Organizations usando su Active Directory corporativo. ¿Qué servicio de AWS debe configurar para lograr esto sin crear usuarios individuales en IAM?",
+      "opciones": [
+        "AWS Directory Service para Active Directory gestionado por AWS",
+        "Amazon Cognito User Pool",
+        "AWS IAM Identity Center con federación SAML/OIDC",
+        "AWS STS para generar credenciales temporales"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El servicio adecuado es **AWS IAM Identity Center** (antes AWS SSO), que permite federar usuarios de un IdP externo como Active Directory mediante SAML u OIDC, evitando la creación manual de usuarios en IAM y escalando la gestión de acceso a múltiples cuentas de AWS Organizations."
+    },
+    {
+      "id": "p9-10",
+      "enunciado": "Una aplicación móvil desarrollada por un tercero necesita autenticar usuarios finales con opciones como inicio de sesión con Google o Facebook. ¿Qué servicio de AWS es el más adecuado para gestionar los flujos de registro y autenticación social de estos usuarios?",
+      "opciones": [
+        "AWS IAM Identity Center",
+        "Amazon Cognito User Pool",
+        "AWS STS para credenciales temporales",
+        "AWS Directory Service para Active Directory"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio indicado es **Amazon Cognito User Pool**, diseñado específicamente para autenticar usuarios finales de aplicaciones (como móviles o web) con opciones de registro público y login social, mientras gestiona credenciales y MFA."
+    },
+    {
+      "id": "p9-11",
+      "enunciado": "Un administrador de AWS quiere implementar MFA obligatorio para todos los usuarios que acceden a cuentas de AWS mediante IAM Identity Center. ¿En qué nivel debe configurarse este requisito para garantizar su aplicación a todos los usuarios federados?",
+      "opciones": [
+        "A nivel de rol de IAM en cada cuenta de destino",
+        "A nivel de permission set en IAM Identity Center",
+        "A nivel de usuario individual en el IdP externo (ej. Active Directory)",
+        "A nivel de AWS STS al generar credenciales temporales"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El MFA debe configurarse a nivel de **permission set en IAM Identity Center**, ya que estos definen las políticas de acceso y requisitos (como MFA) para grupos de usuarios federados antes de asignarles roles en cuentas de AWS."
+    },
+    {
+      "id": "p9-12",
+      "enunciado": "Una empresa necesita compartir un archivo sensible de S3 con un proveedor externo durante 24 horas, sin revelar las credenciales de acceso de su bucket. ¿Qué mecanismo de AWS permite lograr esto de manera segura y temporal?",
+      "opciones": [
+        "Generar credenciales temporales con AWS STS para el proveedor",
+        "Crear un bucket público con políticas de CORS restrictivas",
+        "Usar una URL prefirmada (presigned URL) de S3 con un tiempo de expiración",
+        "Asignar un rol de IAM con permisos limitados al proveedor en su cuenta"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El mecanismo correcto es **una URL prefirmada (presigned URL) de S3**, que otorga acceso temporal y limitado a un objeto específico sin exponer credenciales, ideal para compartir archivos sensibles por tiempo definido."
+    },
+    {
+      "id": "p9-13",
+      "enunciado": "Un desarrollador necesita que su aplicación asuma un rol de IAM con permisos específicos para interactuar con DynamoDB, pero sin almacenar claves de acceso permanentes. ¿Qué servicio de AWS debe usar para obtener credenciales temporales válidas por un corto período?",
+      "opciones": [
+        "AWS IAM Identity Center para federación de usuarios",
+        "Amazon Cognito Identity Pool para tokens de usuario",
+        "AWS STS (Security Token Service) para asumir roles",
+        "AWS Directory Service para autenticación de directorio"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**AWS STS (Security Token Service)** es el servicio subyacente que emite credenciales temporales (Access Key ID, Secret Access Key y Token de Sesión) cuando una identidad asume un rol de IAM, evitando el uso de claves permanentes."
+    },
+    {
+      "id": "p9-14",
+      "enunciado": "Una organización quiere implementar un directorio propio en la nube para gestionar usuarios y grupos internos, sin depender de un proveedor de identidad externo (IdP). ¿Qué servicio de AWS permite crear y administrar este directorio de manera nativa?",
+      "opciones": [
+        "AWS IAM Identity Center con federación SAML",
+        "Amazon Cognito User Pool para usuarios finales",
+        "AWS STS para credenciales temporales",
+        "AWS Directory Service para Active Directory gestionado por AWS"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "**AWS Directory Service** ofrece un Active Directory gestionado por AWS (o una pasarela a uno on-premises), permitiendo a la organización crear y administrar un directorio propio en la nube sin depender de un IdP externo."
+    }
+  ]
+}

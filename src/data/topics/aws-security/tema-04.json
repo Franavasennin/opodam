@@ -1,0 +1,282 @@
+{
+  "id": 4,
+  "titulo": "2.1 · Diseño y prueba del plan de respuesta",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Este task statement es sobre preparación: diseñar el plan de respuesta y demostrar que funciona, antes de que ocurra un incidente real. El siguiente tema (2.2) cubre la respuesta en caliente.\n\nRUNBOOKS Y CENTROS DE OPERACIONES\n\nAWS Systems Manager OpsCenter centraliza los \"OpsItems\" — incidentes operativos y de seguridad — permitiendo asociar runbooks (documentos de Automation) que ejecutan la respuesta paso a paso, con contexto y trazabilidad de quién hizo qué. Para incidentes que requieren análisis de datos más complejo antes de decidir la respuesta (por ejemplo, examinar grandes volúmenes de logs con modelos propios), los notebooks de Amazon SageMaker AI ofrecen un entorno de análisis ad hoc dentro del propio ecosistema AWS, sin exportar datos sensibles a un portátil de analista.\n\nPREPARAR LOS SERVICIOS ANTES DEL INCIDENTE\n\n\"Minimizar el blast radius\" es el mandato central del dominio: significa diseñar de antemano cómo aislar un recurso comprometido sin apagar todo el entorno — segmentación de red, roles con permisos mínimos que limiten lo que un recurso comprometido puede alcanzar, y una cuenta forense aislada donde copiar snapshots de evidencia sin contaminar producción. AWS Shield Advanced se configura antes del ataque, no durante: sus protecciones (mitigación de capa 3/4, acceso al equipo DRT, protección de coste ante escalado forzado) solo están disponibles si el recurso ya estaba suscrito cuando llega el DDoS.\n\nPROBAR Y VALIDAR EL PLAN\n\nUn plan de respuesta que nunca se ha probado es una suposición, no un plan. AWS Fault Injection Service (FIS) inyecta fallos controlados (terminar una instancia, saturar CPU, simular latencia de red) en un entorno para validar que las alarmas y los runbooks reaccionan como se espera — es la herramienta de \"caos controlado\" para IR, análoga a un simulacro de incendio. AWS Resilience Hub evalúa la resiliencia de una aplicación completa contra un objetivo de recuperación definido (RTO/RPO) y señala brechas antes de que un incidente real las exponga.\n\nREMEDIACIÓN AUTOMÁTICA\n\nEl patrón preferido por AWS es que la remediación no dependa de que un humano esté despierto y disponible. El Automated Forensics Orchestrator for Amazon EC2 es una solución de referencia de AWS que, ante un hallazgo de GuardDuty sobre una instancia EC2, aísla automáticamente la instancia, captura una imagen forense (snapshot de disco y memoria) y la traslada a una cuenta forense aislada, todo sin intervención manual. AWS Step Functions orquesta flujos de remediación multi-paso más complejos que una única función Lambda (por ejemplo: aislar → notificar → esperar aprobación → limpiar). Amazon Application Recovery Controller gestiona el failover automático de aplicaciones críticas entre regiones o zonas cuando un incidente afecta a la disponibilidad, no solo a la seguridad."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Preparacion IR] --> B[Runbooks]\nB --> B1[Systems Manager OpsCenter]\nB --> B2[SageMaker AI notebooks]\nA --> C[Preparar servicios]\nC --> C1[Minimizar blast radius]\nC --> C2[Shield Advanced]\nA --> D[Probar el plan]\nD --> D1[AWS Fault Injection Service]\nD --> D2[AWS Resilience Hub]\nA --> E[Remediacion automatica]\nE --> E1[Forensics Orchestrator EC2]\nE --> E2[Step Functions]\nE --> E3[Application Recovery Controller]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc4-01",
+      "pregunta": "¿Qué es un OpsItem en AWS Systems Manager?",
+      "respuesta": "Un incidente operativo o de seguridad registrado en OpsCenter, asociable a runbooks para respuesta estructurada."
+    },
+    {
+      "id": "fc4-02",
+      "pregunta": "¿Qué herramienta de AWS permite análisis ad hoc de logs complejos sin exportar datos?",
+      "respuesta": "Amazon SageMaker Notebooks, integrado en el ecosistema AWS para análisis seguro."
+    },
+    {
+      "id": "fc4-03",
+      "pregunta": "¿Qué significa 'minimizar el blast radius' en un plan de respuesta?",
+      "respuesta": "Diseñar aislamiento de recursos comprometidos (segmentación, permisos mínimos, cuentas forenses) para evitar afectar todo el entorno."
+    },
+    {
+      "id": "fc4-04",
+      "pregunta": "¿Qué protección de AWS requiere configuración previa a un ataque DDoS?",
+      "respuesta": "AWS Shield Advanced, con mitigación en capas 3/4, acceso al DRT y protección de costes ante escalado forzado."
+    },
+    {
+      "id": "fc4-05",
+      "pregunta": "¿Qué herramienta simula fallos controlados para probar planes de respuesta?",
+      "respuesta": "AWS Fault Injection Service (FIS), permite inyectar fallos como saturación de CPU o latencia de red."
+    },
+    {
+      "id": "fc4-06",
+      "pregunta": "¿Qué servicio evalúa la resiliencia de una aplicación contra objetivos RTO/RPO?",
+      "respuesta": "AWS Resilience Hub, identifica brechas antes de incidentes reales mediante pruebas de resiliencia."
+    },
+    {
+      "id": "fc4-07",
+      "pregunta": "¿Qué solución automatiza el aislamiento de instancias EC2 ante alertas de GuardDuty?",
+      "respuesta": "Automated Forensics Orchestrator for Amazon EC2, captura snapshots forenses en cuenta aislada sin intervención humana."
+    },
+    {
+      "id": "fc4-08",
+      "pregunta": "¿Qué servicio orquesta flujos de remediación multi-paso más allá de Lambda?",
+      "respuesta": "AWS Step Functions, coordina pasos como aislamiento, notificación y limpieza con aprobación manual."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p4-01",
+      "enunciado": "¿Qué servicio de AWS permite simular fallos controlados en un entorno para probar la efectividad de alarmas y runbooks antes de un incidente real?",
+      "opciones": [
+        "a) AWS Systems Manager OpsCenter",
+        "b) AWS Fault Injection Service (FIS)",
+        "c) Amazon SageMaker Notebooks",
+        "d) AWS Shield Advanced"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El **AWS Fault Injection Service (FIS)** es la herramienta de *caos controlado* diseñada para inyectar fallos simulados (como saturación de CPU o latencia de red) y validar la respuesta del plan de incidentes, según el temario sobre *probar y validar el plan*."
+    },
+    {
+      "id": "p4-02",
+      "enunciado": "¿Cuál de estos servicios NO forma parte de la estrategia de *minimizar el blast radius* al diseñar un plan de respuesta?",
+      "opciones": [
+        "a) Segmentación de red para aislar recursos comprometidos",
+        "b) Uso de roles IAM con permisos mínimos para instancias",
+        "c) Configuración de AWS Shield Advanced durante el ataque",
+        "d) Cuenta forense aislada para snapshots de evidencia"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "AWS **Shield Advanced** debe configurarse *antes* del ataque (no durante), pero su activación no es parte directa de la estrategia de *aislamiento* o *segmentación* que define *minimizar el blast radius*. El resto sí: segmentación, permisos mínimos y cuentas forenses son medidas proactivas citadas en el temario."
+    },
+    {
+      "id": "p4-03",
+      "enunciado": "¿Qué entorno de AWS permite analizar grandes volúmenes de logs con modelos personalizados *sin exportar datos a un entorno externo*?",
+      "opciones": [
+        "a) AWS Systems Manager OpsCenter",
+        "b) Amazon SageMaker Notebooks",
+        "c) AWS Resilience Hub",
+        "d) AWS Step Functions"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon SageMaker Notebooks** ofrece un entorno de análisis ad hoc dentro de AWS, ideal para examinar logs complejos con modelos propios *sin riesgo de fuga de datos*, según el temario sobre *runbooks y centros de operaciones*."
+    },
+    {
+      "id": "p4-04",
+      "enunciado": "¿Qué servicio de AWS evalúa la resiliencia de una aplicación completa contra objetivos de recuperación (RTO/RPO) antes de un incidente?",
+      "opciones": [
+        "a) AWS Fault Injection Service (FIS)",
+        "b) AWS Resilience Hub",
+        "c) AWS Systems Manager OpsCenter",
+        "d) Amazon Application Recovery Controller"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Resilience Hub** analiza la resiliencia de aplicaciones completas y detecta brechas en RTO/RPO *antes* de que ocurra un incidente, según el apartado de *probar y validar el plan*."
+    },
+    {
+      "id": "p4-05",
+      "enunciado": "¿Qué patrón de remediación automática de AWS aísla una instancia EC2 comprometida y captura su imagen forense *sin intervención humana*?",
+      "opciones": [
+        "a) AWS Step Functions",
+        "b) Automated Forensics Orchestrator for Amazon EC2",
+        "c) Amazon Application Recovery Controller",
+        "d) AWS Shield Advanced"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Automated Forensics Orchestrator for Amazon EC2** es la solución de referencia de AWS que, al detectar una amenaza (ej. alerta de GuardDuty), *aisla automáticamente la instancia*, captura snapshots forenses y los traslada a una cuenta aislada, según el temario sobre *remediación automática*."
+    },
+    {
+      "id": "p4-06",
+      "enunciado": "¿Qué servicio de AWS permite orquestar flujos de remediación multi-paso que requieren aprobación manual en algún paso?",
+      "opciones": [
+        "a) AWS Systems Manager OpsCenter",
+        "b) AWS Step Functions",
+        "c) Amazon Application Recovery Controller",
+        "d) AWS Fault Injection Service (FIS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Step Functions** gestiona flujos complejos de remediación que pueden incluir pasos como aislar → notificar → *esperar aprobación* → limpiar, según el temario sobre *remediación automática* (aunque con escalabilidad más allá de una sola Lambda)."
+    },
+    {
+      "id": "p4-07",
+      "enunciado": "¿Qué protección de AWS contra DDoS *debe configurarse antes del ataque* para activar mitigación de capa 3/4 y acceso al equipo DRT?",
+      "opciones": [
+        "a) AWS Shield Standard",
+        "b) AWS Shield Advanced",
+        "c) AWS WAF",
+        "d) AWS Network Firewall"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Shield Advanced** requiere suscripción *previa* al ataque para activar protecciones como mitigación de capa 3/4, acceso al equipo DRT (Disaster Recovery Team) y protección contra escalado forzado de costes, según el apartado de *preparar los servicios antes del incidente*."
+    },
+    {
+      "id": "p4-08",
+      "enunciado": "¿Qué servicio de AWS gestiona el failover automático de aplicaciones críticas entre regiones o zonas afectadas por un incidente de disponibilidad?",
+      "opciones": [
+        "a) AWS Systems Manager OpsCenter",
+        "b) Amazon Application Recovery Controller",
+        "c) AWS Fault Injection Service (FIS)",
+        "d) AWS Step Functions"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon Application Recovery Controller** automatiza el failover de aplicaciones críticas entre regiones/zonas cuando un incidente afecta a la *disponibilidad* (no solo seguridad), según el temario sobre *remediación automática*."
+    },
+    {
+      "id": "p4-09",
+      "enunciado": "¿Qué servicio de AWS permite validar la efectividad de las alarmas y runbooks mediante la simulación de fallos como interrupciones de red o saturación de CPU en un entorno de prueba aislado?",
+      "opciones": [
+        "AWS CloudWatch Alarms",
+        "AWS Fault Injection Service (FIS)",
+        "AWS Trusted Advisor",
+        "AWS Config Rules"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS Fault Injection Service (FIS) es el mecanismo diseñado para probar la resiliencia del plan de respuesta mediante fallos controlados, como se menciona en el apartado de *probar y validar el plan*. Los otros servicios no permiten simular incidentes para validar procesos de respuesta."
+    },
+    {
+      "id": "p4-10",
+      "enunciado": "¿Qué servicio de AWS permite ejecutar análisis avanzados de logs con modelos personalizados *dentro del ecosistema AWS* para incidentes que requieren decisiones basadas en datos antes de aplicar remediaciones?",
+      "opciones": [
+        "AWS CloudTrail Lake",
+        "Amazon SageMaker Notebooks",
+        "AWS Athena",
+        "AWS Kinesis Data Firehose"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Amazon SageMaker Notebooks es el entorno citado en el temario para realizar análisis ad hoc con modelos personalizados *sin exportar datos fuera de AWS*, ideal para incidentes que necesitan evaluación de logs compleja antes de actuar."
+    },
+    {
+      "id": "p4-11",
+      "enunciado": "¿Qué patrón de remediación automática de AWS permite aislar una instancia EC2 comprometida, capturar su imagen forense y transferirla a una cuenta aislada *sin intervención humana*, según el temario?",
+      "opciones": [
+        "AWS Lambda + GuardDuty",
+        "Automated Forensics Orchestrator for Amazon EC2",
+        "AWS Systems Manager Run Command",
+        "AWS Backup + AWS Config"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El *Automated Forensics Orchestrator for Amazon EC2* es la solución de referencia de AWS para remediación automática de incidentes de seguridad en EC2, que incluye aislamiento, captura forense y traslado a un entorno aislado, como se detalla en el apartado de *remediación automática*."
+    },
+    {
+      "id": "p4-12",
+      "enunciado": "¿Qué servicio de AWS permite orquestar flujos de remediación multi-paso que incluyen pasos como aislar un recurso, notificar al equipo y esperar aprobación manual antes de continuar?",
+      "opciones": [
+        "AWS Step Functions",
+        "AWS EventBridge Pipes",
+        "AWS Lambda",
+        "AWS CodePipeline"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "AWS Step Functions es el servicio mencionado para orquestar flujos complejos de remediación que requieren pasos secuenciales, incluyendo aprobar manualmente acciones críticas, según el temario sobre *remediación automática*."
+    },
+    {
+      "id": "p4-13",
+      "enunciado": "¿Qué servicio de AWS permite centralizar incidentes operativos y de seguridad en un único panel, asociando cada uno a runbooks con contexto y trazabilidad de acciones realizadas por el equipo?",
+      "opciones": [
+        "AWS CloudTrail",
+        "AWS Systems Manager OpsCenter",
+        "AWS Security Hub",
+        "AWS Config"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS Systems Manager OpsCenter es el servicio que centraliza *OpsItems* (incidentes) y permite vincular runbooks con automatización, contexto y trazabilidad, como se explica en el apartado de *runbooks y centros de operaciones*."
+    },
+    {
+      "id": "p4-14",
+      "enunciado": "¿Qué servicio de AWS permite validar la efectividad de las alarmas de CloudWatch al simular fallos como interrupciones de EBS o fallos de almacenamiento distribuido (EFS) en un entorno aislado y reproducible?",
+      "opciones": [
+        "AWS CloudTrail",
+        "AWS Fault Injection Service (FIS)",
+        "AWS Config",
+        "AWS Trusted Advisor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El **AWS Fault Injection Service (FIS)** permite inyectar fallos controlados (como interrupciones de EBS o EFS) en un entorno de prueba aislado, validando así la respuesta de las alarmas y runbooks antes de un incidente real. Este servicio es clave para probar escenarios de *blast radius* y resiliencia, según el temario."
+    },
+    {
+      "id": "p4-15",
+      "enunciado": "¿Qué mecanismo de AWS garantiza que un recurso comprometido no pueda escalar recursos adicionales (como instancias EC2 o almacenamiento) durante un ataque, reduciendo así el impacto en la factura y la infraestructura?",
+      "opciones": [
+        "AWS Shield Advanced",
+        "AWS WAF",
+        "AWS Budgets",
+        "AWS Cost Explorer"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**AWS Shield Advanced** incluye protección contra escalado forzado de recursos (como instancias EC2 o almacenamiento) durante un ataque DDoS, mitigando tanto el impacto en la disponibilidad como en los costes. Este servicio debe configurarse *antes* del ataque para activar estas protecciones, según el temario."
+    },
+    {
+      "id": "p4-16",
+      "enunciado": "¿Qué servicio de AWS permite analizar logs de seguridad en tiempo real con modelos personalizados (como detección de anomalías en patrones de acceso) *sin requerir exportación de datos a un entorno externo*?",
+      "opciones": [
+        "Amazon Athena",
+        "Amazon SageMaker Notebooks",
+        "AWS CloudHSM",
+        "AWS Glue"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon SageMaker Notebooks** ofrece un entorno de análisis ad hoc dentro del ecosistema AWS para examinar logs con modelos personalizados (ej.: detección de anomalías en logs de seguridad). Esto evita la exportación de datos sensibles, cumpliendo con el principio de *minimizar el blast radius* al mantener el contexto en un entorno controlado, según el temario."
+    },
+    {
+      "id": "p4-17",
+      "enunciado": "¿Qué servicio de AWS permite centralizar incidentes operativos y de seguridad en un único panel, asociando cada uno a *runbooks con contexto histórico* (quién realizó qué acción y cuándo) y facilitando la trazabilidad durante la respuesta?",
+      "opciones": [
+        "AWS CloudWatch Logs",
+        "AWS Systems Manager OpsCenter",
+        "AWS Security Hub",
+        "AWS EventBridge"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Systems Manager OpsCenter** centraliza los *OpsItems* (incidentes operativos/seguridad) y permite asociarles *runbooks de Automation* con contexto detallado (acciones realizadas, responsables, timestamps). Esto mejora la trazabilidad y consistencia en la respuesta, según el temario."
+    },
+    {
+      "id": "p4-18",
+      "enunciado": "¿Qué servicio de AWS permite validar la efectividad de las alarmas y runbooks al simular fallos específicos como interrupciones de red o saturación de CPU en un entorno aislado y reproducible, antes de que ocurra un incidente real?",
+      "opciones": [
+        "a) AWS Systems Manager OpsCenter",
+        "b) AWS Fault Injection Service (FIS)",
+        "c) Amazon SageMaker Notebooks",
+        "d) AWS Resilience Hub"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El **AWS Fault Injection Service (FIS)** es la herramienta de *caos controlado* que permite inyectar fallos controlados (como interrupciones de red o saturación de CPU) en un entorno aislado para probar la efectividad de alarmas y runbooks, según el temario. Los otros servicios no ofrecen esta funcionalidad de simulación de fallos para validar planes de respuesta."
+    }
+  ]
+}

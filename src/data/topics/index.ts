@@ -6,6 +6,7 @@ import * as guardiaCivil from './guardia-civil/index'
 import * as tramitacionJudicial from './tramitacion-judicial/index'
 import * as auxJudicial from './aux-judicial/index'
 import * as securityPlus from './security-plus/index'
+import * as awsSecurity from './aws-security/index'
 
 export interface ModuloTopics {
   TEMAS_META: ReadonlyArray<{ id: number; titulo: string; bloque: string }>
@@ -21,6 +22,7 @@ const MODULOS: Record<string, ModuloTopics> = {
   'tramitacion-judicial': tramitacionJudicial,
   'aux-judicial': auxJudicial,
   'security-plus': securityPlus,
+  'aws-security': awsSecurity,
 }
 
 export function obtenerTopics(slug: string): ModuloTopics {

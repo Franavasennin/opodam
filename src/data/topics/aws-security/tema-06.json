@@ -1,0 +1,282 @@
+{
+  "id": 6,
+  "titulo": "3.1 · Seguridad de servicios de borde (edge)",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "El primer task statement del dominio de Infraestructura cubre la capa más externa: lo primero que toca el tráfico de un cliente antes de llegar a la carga de trabajo.\n\nESTRATEGIA Y AMENAZAS OWASP TOP 10\n\nElegir la estrategia de borde correcta empieza por el tipo de amenaza anticipada: inyección SQL y cross-site scripting (cubiertos por el OWASP Top 10) se mitigan con reglas gestionadas de AWS WAF sobre CloudFront, un Application Load Balancer o API Gateway; volumétricos de capa 3/4 se mitigan con Shield; abuso de API por volumen se mitiga con rate limiting. Distinguir cuál amenaza corresponde a cuál control es el tipo de pregunta más repetido de este task statement.\n\nCLOUDFRONT, HEADERS Y CORS\n\nLos headers de seguridad de CloudFront (por ejemplo, forzar HTTPS con una política de respuesta, o añadir cabeceras como Strict-Transport-Security) se configuran a nivel de distribución y se aplican automáticamente a todo el tráfico servido por esa distribución, sin tocar el origen. Cross-Origin Resource Sharing (CORS) en un bucket S3 controla desde qué dominios un navegador puede hacer peticiones al bucket directamente — un bucket sin CORS configurado bloqueará peticiones legítimas desde una aplicación web en otro dominio, un error de configuración habitual que el examen plantea como escenario.\n\nWAF, SHIELD ADVANCED Y REGLAS AVANZADAS\n\nAWS WAF filtra HTTP/HTTPS de capa 7 con reglas administradas o personalizadas. Shield Standard protege gratis contra los DDoS volumétricos más comunes; Shield Advanced añade mitigación avanzada, acceso al equipo DRT y protección de coste, con la salvedad de que solo cubre recursos que ya estaban protegidos antes del ataque. Las reglas edge avanzadas permiten filtrar por geografía o geolocalización (bloquear tráfico de países completos), aplicar rate limiting por IP para frenar fuerza bruta o scraping, y usar client fingerprinting (huellas de JavaScript/TLS del cliente) para distinguir bots sofisticados de usuarios reales cuando la IP de origen no es suficiente señal.\n\nIOT Y CORS PARA IOT CORE, E INTEGRACIÓN DE TERCEROS\n\nAWS IoT Core usa sus propias políticas (IoT policies) para controlar qué acciones MQTT puede realizar un dispositivo conectado — un modelo de autorización distinto al de IAM tradicional, pensado para millones de dispositivos de bajo consumo. Para integrar hallazgos de borde con herramientas externas, los datos pueden ingerirse en formato OCSF (el mismo estándar que usa Security Lake) y es posible incorporar reglas de WAF gestionadas por proveedores de terceros junto con las reglas gestionadas por AWS en el mismo WebACL."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Edge security] --> B[AWS WAF]\nA --> C[Shield / Shield Advanced]\nA --> D[CloudFront]\nD --> D1[Headers de seguridad]\nA --> E[S3 CORS]\nA --> F[AWS IoT policies]\nA --> G[Reglas edge]\nG --> G1[Geografia / geolocalizacion]\nG --> G2[Rate limiting]\nG --> G3[Client fingerprinting]\nA --> H[Integraciones]\nH --> H1[Formato OCSF]\nH --> H2[Reglas WAF de terceros]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc6-01",
+      "pregunta": "¿Qué servicio de AWS protege contra inyección SQL y XSS en aplicaciones web?",
+      "respuesta": "AWS WAF aplicado sobre CloudFront, Application Load Balancer o API Gateway con reglas gestionadas de OWASP Top 10."
+    },
+    {
+      "id": "fc6-02",
+      "pregunta": "¿Qué servicio de AWS mitiga ataques DDoS volumétricos de capa 3/4?",
+      "respuesta": "AWS Shield Standard (gratis) o Shield Advanced (protección avanzada y soporte DRT)."
+    },
+    {
+      "id": "fc6-03",
+      "pregunta": "¿Cómo se configuran los headers de seguridad en CloudFront?",
+      "respuesta": "A nivel de distribución, aplicando políticas de respuesta (ej: `Strict-Transport-Security`, redirección HTTPS)."
+    },
+    {
+      "id": "fc6-04",
+      "pregunta": "¿Qué problema causa un bucket S3 sin configuración CORS?",
+      "respuesta": "Bloquea peticiones legítimas desde dominios externos en navegadores, impidiendo acceso a recursos estáticos."
+    },
+    {
+      "id": "fc6-05",
+      "pregunta": "¿Qué permite filtrar una regla edge avanzada de AWS WAF?",
+      "respuesta": "Geolocalización (bloquear países), rate limiting por IP o client fingerprinting para diferenciar bots de usuarios."
+    },
+    {
+      "id": "fc6-06",
+      "pregunta": "¿Qué diferencia a Shield Advanced sobre Shield Standard?",
+      "respuesta": "Protección avanzada contra DDoS, acceso al equipo DRT y cobertura de costes, pero solo para recursos preexistentes."
+    },
+    {
+      "id": "fc6-07",
+      "pregunta": "¿Qué estándar usa AWS IoT Core para autorización de dispositivos?",
+      "respuesta": "Políticas IoT (IoT policies), distintas a IAM, diseñadas para millones de dispositivos de bajo consumo."
+    },
+    {
+      "id": "fc6-08",
+      "pregunta": "¿Cómo se integran hallazgos de seguridad de borde con herramientas externas?",
+      "respuesta": "Ingresando datos en formato **OCSF** (compatible con Security Lake) o usando reglas WAF gestionadas por terceros en WebACL."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p6-01",
+      "enunciado": "¿Qué servicio de AWS permite aplicar reglas de seguridad para mitigar ataques de fuerza bruta en APIs públicas, basándose en la huella digital del cliente (client fingerprinting) y sin depender únicamente de la dirección IP?",
+      "opciones": [
+        "a) AWS Shield Standard",
+        "b) AWS WAF con reglas edge avanzadas",
+        "c) AWS CloudFront con políticas de respuesta personalizadas",
+        "d) AWS API Gateway con autenticación JWT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio que permite aplicar **client fingerprinting** junto con **rate limiting** y filtrado por geolocalización es **AWS WAF con reglas edge avanzadas**, según el temario que menciona la capacidad de distinguir bots sofisticados de usuarios reales mediante huellas de JavaScript/TLS."
+    },
+    {
+      "id": "p6-02",
+      "enunciado": "Un desarrollador configura un bucket S3 para servir recursos estáticos de una aplicación web alojada en otro dominio. Tras implementar la configuración, los usuarios reportan errores de tipo CORS al acceder a los recursos. ¿Qué acción debe revisar el desarrollador para resolver el problema?",
+      "opciones": [
+        "a) Verificar que el bucket S3 tenga una política de bucket que permita acceso público a los objetos",
+        "b) Configurar las reglas CORS en el bucket S3 para incluir el dominio de origen de la aplicación web",
+        "c) Añadir la cabecera `X-Content-Type-Options: nosniff` en las respuestas del bucket",
+        "d) Activar el servicio AWS CloudFront para servir los recursos y redirigir el tráfico desde el bucket"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El problema descrito se resuelve configurando **CORS en el bucket S3**, ya que sin esta configuración, los navegadores bloquean peticiones cruzadas de origen (cross-origin requests) hacia el bucket, incluso si el acceso es público. El temario destaca que los errores de CORS son comunes en este escenario."
+    },
+    {
+      "id": "p6-03",
+      "enunciado": "¿Cuál de los siguientes servicios NO forma parte de la estrategia de mitigación de amenazas volumétricas de capa 3/4 en AWS, según el temario?",
+      "opciones": [
+        "a) AWS Shield Standard",
+        "b) AWS WAF con reglas gestionadas",
+        "c) AWS Shield Advanced",
+        "d) AWS CloudFront con políticas de respuesta"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las amenazas **volumétricas de capa 3/4** se mitigan con **AWS Shield Standard o Advanced**, pero **no con AWS WAF**, que se enfoca en amenazas de capa 7 (HTTP/HTTPS) como inyecciones o XSS. El temario especifica claramente esta distinción."
+    },
+    {
+      "id": "p6-04",
+      "enunciado": "Un cliente requiere proteger sus recursos de DDoS avanzados, incluyendo acceso al equipo de respuesta a incidentes (DRT) y cobertura de costes en caso de ataque. ¿Qué servicio debe contratar para cumplir estos requisitos?",
+      "opciones": [
+        "a) AWS Shield Standard (gratuito)",
+        "b) AWS WAF con reglas personalizadas",
+        "c) AWS Shield Advanced",
+        "d) AWS CloudFront con protección DDoS integrada"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**AWS Shield Advanced** incluye mitigación avanzada contra DDoS, acceso al equipo DRT y protección de costes, siempre que los recursos ya estuvieran protegidos antes del ataque. El temario destaca estas características como diferencial frente a Shield Standard."
+    },
+    {
+      "id": "p6-05",
+      "enunciado": "¿Qué mecanismo permite a CloudFront aplicar automáticamente cabeceras de seguridad como `Strict-Transport-Security` (HSTS) a todas las respuestas servidas por una distribución, sin modificar el origen?",
+      "opciones": [
+        "a) Configuración de políticas de seguridad en el origen (S3/EC2)",
+        "b) Añadir reglas personalizadas en AWS WAF asociado a CloudFront",
+        "c) Configurar políticas de respuesta en CloudFront a nivel de distribución",
+        "d) Usar AWS IAM para restringir accesos a los buckets de origen"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las **políticas de respuesta en CloudFront** permiten configurar cabeceras de seguridad como HSTS o forzar HTTPS, aplicándose automáticamente a todo el tráfico servido por la distribución. El temario menciona que esto se gestiona **sin tocar el origen**."
+    },
+    {
+      "id": "p6-06",
+      "enunciado": "Un dispositivo IoT conectado a AWS IoT Core necesita enviar datos a un servicio externo mediante MQTT. ¿Qué tipo de política debe configurarse para autorizar esta acción, y qué servicio de AWS permite integrar reglas de seguridad de terceros junto con las propias de AWS para filtrar el tráfico?",
+      "opciones": [
+        "a) Política IAM tradicional + AWS WAF con reglas gestionadas por AWS",
+        "b) Política IoT (IoT Policy) + AWS WAF con reglas gestionadas por terceros en el mismo WebACL",
+        "c) Política de bucket S3 + AWS Shield Advanced",
+        "d) Política de seguridad de CloudFront + AWS KMS para cifrado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Para dispositivos IoT, se usan **políticas IoT (IoT Policy)** para autorizar acciones MQTT. Además, el temario menciona que es posible integrar **reglas de WAF gestionadas por terceros** junto con las de AWS en el mismo **WebACL**, permitiendo filtrado unificado."
+    },
+    {
+      "id": "p6-07",
+      "enunciado": "¿Qué limitación clave tiene AWS Shield Advanced respecto a la protección contra ataques DDoS, según el temario?",
+      "opciones": [
+        "a) Solo protege recursos en AWS, no en servicios de terceros",
+        "b) No cubre ataques de capa 7 (HTTP/HTTPS)",
+        "c) Solo protege recursos que ya estaban protegidos antes del ataque",
+        "d) Requiere configuración manual de reglas en AWS WAF para activarse"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario especifica que **AWS Shield Advanced** solo cubre recursos que **ya estaban protegidos antes del ataque**, lo que limita su efectividad en escenarios donde el ataque ocurre durante la configuración inicial."
+    },
+    {
+      "id": "p6-08",
+      "enunciado": "Un equipo de desarrollo quiere implementar un sistema de rate limiting para limitar el número de peticiones por IP en una API pública expuesta a través de API Gateway. ¿Qué servicio de AWS, combinado con API Gateway, permite configurar este límite de forma efectiva?",
+      "opciones": [
+        "a) AWS WAF con reglas edge avanzadas",
+        "b) AWS Shield Standard para protección DDoS",
+        "c) AWS CloudFront con políticas de caché",
+        "d) AWS IAM para controlar accesos basados en roles"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**AWS WAF con reglas edge avanzadas** permite aplicar **rate limiting por IP** para frenar abuso de APIs, como menciona el temario. API Gateway puede integrarse con WAF para implementar esta protección de capa 7."
+    },
+    {
+      "id": "p6-09",
+      "enunciado": "¿Qué servicio de AWS permite aplicar reglas de seguridad basadas en la geolocalización del cliente para bloquear tráfico procedente de países específicos, sin necesidad de configurar reglas personalizadas complejas?",
+      "opciones": [
+        "a) AWS Shield Standard",
+        "b) AWS WAF con reglas edge avanzadas",
+        "c) AWS CloudFront con políticas de respuesta",
+        "d) AWS API Gateway con autorización JWT"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio que permite aplicar reglas de seguridad basadas en geolocalización es **AWS WAF con reglas edge avanzadas**, según el temario. Estas reglas permiten filtrar tráfico por país de origen, bloqueando automáticamente conexiones de regiones específicas sin necesidad de configuraciones adicionales."
+    },
+    {
+      "id": "p6-10",
+      "enunciado": "Un desarrollador configura un Application Load Balancer (ALB) para proteger una aplicación web expuesta a ataques de inyección SQL. ¿Qué servicio debe combinar con el ALB para implementar reglas de seguridad específicas contra estas amenazas?",
+      "opciones": [
+        "a) AWS Shield Advanced",
+        "b) AWS WAF con reglas gestionadas OWASP Top 10",
+        "c) AWS CloudFront con políticas de cache",
+        "d) AWS IAM para control de acceso a recursos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Para mitigar ataques de inyección SQL en un **Application Load Balancer**, se debe usar **AWS WAF con reglas gestionadas del OWASP Top 10**. Estas reglas filtran automáticamente patrones maliciosos en los headers y cuerpos de las solicitudes HTTP/HTTPS."
+    },
+    {
+      "id": "p6-11",
+      "enunciado": "¿Qué característica de AWS Shield Advanced distingue su protección contra ataques DDoS de la versión estándar, según el temario?",
+      "opciones": [
+        "a) Protege automáticamente todos los recursos de AWS sin configuración previa",
+        "b) Incluye acceso al equipo de respuesta a incidentes (DRT) y cobertura de costes durante ataques",
+        "c) Bloquea tráfico por geolocalización sin necesidad de WAF",
+        "d) Permite configurar rate limiting por IP en API Gateway"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La diferencia clave entre **AWS Shield Advanced** y la versión estándar es que **Shield Advanced** ofrece **acceso al equipo de respuesta a incidentes (DRT)** y **cobertura de costes** en caso de ataque, según el temario. Además, solo protege recursos que ya estaban cubiertos antes del ataque."
+    },
+    {
+      "id": "p6-12",
+      "enunciado": "Un cliente desea implementar un sistema de rate limiting para evitar el abuso de una API pública expuesta a través de API Gateway. ¿Qué servicio debe usarse en combinación con API Gateway para aplicar este límite de forma efectiva?",
+      "opciones": [
+        "a) AWS WAF con reglas edge avanzadas",
+        "b) AWS CloudFront con políticas de cache",
+        "c) AWS Lambda para validación personalizada",
+        "d) AWS IAM para restricciones de acceso"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Para implementar **rate limiting** en una API pública expuesta a través de **API Gateway**, se recomienda combinarlo con **AWS WAF y reglas edge avanzadas**. Estas reglas permiten limitar el número de solicitudes por IP, mitigando ataques de abuso volumétrico de APIs."
+    },
+    {
+      "id": "p6-13",
+      "enunciado": "¿Qué estándar de formato permite a AWS IoT Core integrar datos de seguridad generados en el borde con herramientas externas, como Security Lake, según el temario?",
+      "opciones": [
+        "a) JSON Web Tokens (JWT)",
+        "b) Open Cybersecurity Schema Framework (OCSF)",
+        "c) Simple Object Access Protocol (SOAP)",
+        "d) Extensible Markup Language (XML)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El estándar que permite a **AWS IoT Core** integrar datos de seguridad con herramientas externas es el **Open Cybersecurity Schema Framework (OCSF)**. Este formato es compatible con **Security Lake** y facilita la ingerencia de hallazgos de borde en sistemas de análisis de seguridad."
+    },
+    {
+      "id": "p6-14",
+      "enunciado": "Un equipo de desarrollo quiere proteger una aplicación web alojada en un Application Load Balancer (ALB) contra ataques de fuerza bruta en formularios de inicio de sesión. ¿Qué combinación de servicios de AWS es la más adecuada para implementar esta protección?",
+      "opciones": [
+        "a) AWS WAF con reglas de rate limiting + AWS Shield Standard",
+        "b) AWS CloudFront con políticas de cache + AWS IAM",
+        "c) AWS WAF con reglas edge avanzadas (client fingerprinting) + AWS Shield Advanced",
+        "d) AWS Lambda para validación personalizada + AWS KMS para cifrado"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Para proteger contra ataques de **fuerza bruta en formularios de inicio de sesión** en un **ALB**, la combinación más adecuada es **AWS WAF con reglas edge avanzadas (client fingerprinting)** para distinguir bots sofisticados de usuarios reales, junto con **AWS Shield Advanced** para mitigar ataques volumétricos de capa 3/4. El *client fingerprinting* ayuda a detectar patrones maliciosos más allá de la IP."
+    },
+    {
+      "id": "p6-15",
+      "enunciado": "Un cliente desea implementar un sistema de protección contra ataques de *scraping* masivo en su sitio web expuesto a través de CloudFront. ¿Qué tipo de regla en AWS WAF debe configurarse para mitigar este tipo de amenaza, según el temario?",
+      "opciones": [
+        "a) Regla de bloqueo por país basada en geolocalización.",
+        "b) Regla de *rate limiting* por IP para limitar peticiones por segundo.",
+        "c) Regla de *client fingerprinting* para distinguir bots avanzados de usuarios reales.",
+        "d) Regla de *SQL injection* para filtrar consultas maliciosas en parámetros de consulta."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El *rate limiting* por IP (opción b) es la estrategia recomendada en el temario para mitigar ataques de *scraping* volumétrico, ya que limita el número de peticiones por dirección IP, reduciendo la carga y evitando el abuso del servicio. Aunque el *client fingerprinting* (opción c) ayuda contra bots sofisticados, no es específico para *scraping* masivo."
+    },
+    {
+      "id": "p6-16",
+      "enunciado": "¿Qué servicio de AWS permite aplicar automáticamente cabeceras de seguridad como `X-Content-Type-Options` o `X-Frame-Options` a todas las respuestas servidas por una distribución de CloudFront, sin necesidad de modificar el origen?",
+      "opciones": [
+        "a) AWS Shield Advanced.",
+        "b) AWS WAF con reglas personalizadas.",
+        "c) Configuración de *response headers* en la distribución de CloudFront.",
+        "d) AWS IoT Core mediante políticas de seguridad integradas."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las cabeceras de seguridad en CloudFront (como `X-Content-Type-Options` o `X-Frame-Options`) se configuran directamente en la distribución mediante la pestaña *Response Headers* del panel de control o mediante la API/CLI. El temario destaca que estas reglas se aplican automáticamente a todo el tráfico servido por la distribución, sin afectar al origen."
+    },
+    {
+      "id": "p6-17",
+      "enunciado": "Un cliente requiere integrar reglas de seguridad de un proveedor externo (ej: un servicio de inteligencia de amenazas) junto con las reglas gestionadas por AWS para filtrar tráfico en el borde. Según el temario, ¿qué servicio permite esta integración?",
+      "opciones": [
+        "a) AWS IoT Core con políticas IoT.",
+        "b) AWS WAF con *WebACL* que soporta reglas de terceros en formato OCSF.",
+        "c) AWS Shield Advanced con acceso al equipo DRT.",
+        "d) CloudFront con *Lambda@Edge* para lógica personalizada."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que **AWS WAF** permite incorporar reglas de seguridad de terceros (como las de proveedores externos) junto con las reglas gestionadas por AWS en un mismo *WebACL*, usando el estándar **OCSF** para la integración. Las opciones a, c y d no ofrecen esta funcionalidad específica de integración con reglas externas."
+    },
+    {
+      "id": "p6-18",
+      "enunciado": "Un cliente desea implementar una protección contra ataques de *credential stuffing* en su aplicación web expuesta a través de un Application Load Balancer (ALB). Según el temario, ¿qué servicio de AWS debe combinarse con el ALB para aplicar reglas de seguridad específicas que detecten patrones de credenciales robadas en las peticiones de inicio de sesión?",
+      "opciones": [
+        "a) AWS Shield Advanced",
+        "b) AWS WAF con reglas gestionadas de AWS para inyección SQL y XSS",
+        "c) AWS Security Lake para análisis de logs de borde",
+        "d) AWS CloudFront con políticas de respuesta personalizadas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que las amenazas como inyección SQL y *cross-site scripting* (XSS) —incluyendo patrones de *credential stuffing*— se mitigan con **reglas gestionadas de AWS WAF aplicadas sobre CloudFront, ALB o API Gateway**. Shield Advanced protege contra DDoS volumétricos, Security Lake es para análisis de datos de seguridad (no mitigación en tiempo real) y CloudFront no ofrece reglas de seguridad avanzadas para este tipo de amenazas de capa 7."
+    }
+  ]
+}

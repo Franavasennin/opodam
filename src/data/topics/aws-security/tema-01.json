@@ -1,0 +1,330 @@
+{
+  "id": 1,
+  "titulo": "1.1 · Monitorización y alertas",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Este task statement cubre el diseño de monitorización y alertas para una cuenta o una organización completa — el \"qué observar y cómo agregarlo\", distinto de \"dónde se guarda el log\" (eso es el siguiente tema, 1.2).\n\nANÁLISIS DE CARGA DE TRABAJO Y HEALTH CHECKS\n\nAntes de activar cualquier servicio hay que determinar qué merece monitorización: un examen de escenario típico presenta una carga de trabajo (una API pública, una base de datos interna, un pipeline de datos) y pide identificar los requisitos de monitorización correctos para ella. Los health checks de recursos (por ejemplo, los de Route 53 o los de un Auto Scaling Group) son la pieza básica: determinan si un recurso está sano antes de que un servicio de detección de amenazas entre en juego.\n\nAGREGACIÓN DE EVENTOS: GUARDDUTY, SECURITY HUB, MACIE, SECURITY LAKE\n\nGuardDuty analiza de forma continua CloudTrail, VPC Flow Logs y DNS Query Logs con machine learning, sin agentes, y puede activarse a nivel de organización completa vía un administrador delegado. Macie hace lo mismo pero centrado en descubrir datos sensibles (PII) en S3 mediante ML, generando hallazgos de exposición. Security Hub no genera hallazgos propios: agrega y normaliza los de GuardDuty, Inspector, Macie, Firewall Manager y herramientas de terceros en un formato común, y además evalúa la cuenta contra estándares (CIS AWS Foundations Benchmark, PCI DSS, AWS Foundational Security Best Practices) exponiendo una puntuación de cumplimiento.\n\nAmazon Security Lake es el nivel por encima de todo esto: centraliza logs y hallazgos de seguridad de toda la organización en un data lake en formato abierto OCSF (Open Cybersecurity Schema Framework), pensado para que herramientas de terceros (SIEM, motores de correlación) consuman los datos sin transformación previa. La distinción de examen: Security Hub agrega hallazgos para actuar sobre ellos dentro de AWS; Security Lake centraliza los datos crudos para análisis a largo plazo o herramientas externas.\n\nMÉTRICAS, ALERTAS Y DASHBOARDS\n\nCloudWatch es la base de métricas y alarmas: un hallazgo de GuardDuty o un cambio de estado de Security Hub puede disparar una métrica personalizada y una alarma de CloudWatch, que a su vez notifica vía SNS. Los dashboards de CloudWatch (o Amazon Managed Grafana para visualización más rica) permiten detectar datos y eventos anómalos de un vistazo, en vez de revisar hallazgo por hallazgo.\n\nAUTOMATIZACIÓN DE EVALUACIONES REGULARES\n\nMás allá de la alerta puntual, el examen pide diseñar automatizaciones que evalúen la cuenta de forma recurrente: los conformance packs de AWS Config agrupan varias Config Rules relacionadas (por ejemplo, todas las que verifican cifrado en S3) y las despliegan como una unidad reutilizable en múltiples cuentas. AWS Systems Manager State Manager mantiene configuraciones deseadas en instancias EC2 de forma continua (por ejemplo, que un agente de seguridad esté siempre instalado y activo), corrigiendo la deriva automáticamente sin intervención manual."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Monitorizacion] --> B[GuardDuty]\nA --> C[Security Hub]\nA --> D[Amazon Macie]\nA --> E[Amazon Security Lake]\nB --> B1[ML sobre CloudTrail, VPC Flow Logs, DNS]\nC --> C1[Agrega hallazgos + puntuacion CIS/PCI]\nE --> E1[Data lake OCSF, terceros]\nA --> F[Automatizacion]\nF --> F1[Config conformance packs]\nF --> F2[Systems Manager State Manager]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc1-01",
+      "pregunta": "¿Qué servicio de AWS permite analizar tráfico de red y consultas DNS en busca de amenazas usando machine learning?",
+      "respuesta": "Amazon GuardDuty"
+    },
+    {
+      "id": "fc1-02",
+      "pregunta": "¿Qué servicio detecta datos sensibles (PII) en S3 mediante análisis de machine learning?",
+      "respuesta": "Amazon Macie"
+    },
+    {
+      "id": "fc1-03",
+      "pregunta": "¿Qué servicio centraliza hallazgos de seguridad de múltiples herramientas (GuardDuty, Inspector, etc.) y evalúa cumplimiento con benchmarks?",
+      "respuesta": "Amazon Security Hub"
+    },
+    {
+      "id": "fc1-04",
+      "pregunta": "¿Qué servicio almacena datos de seguridad crudos en formato abierto (OCSF) para análisis externo o herramientas de terceros?",
+      "respuesta": "Amazon Security Lake"
+    },
+    {
+      "id": "fc1-05",
+      "pregunta": "¿Qué servicio de AWS permite crear alarmas basadas en métricas personalizadas (ej: hallazgos de GuardDuty) y notificarlas vía SNS?",
+      "respuesta": "Amazon CloudWatch"
+    },
+    {
+      "id": "fc1-06",
+      "pregunta": "¿Qué herramienta de AWS permite mantener configuraciones deseadas en instancias EC2 (ej: agentes de seguridad) y corregir deriva automáticamente?",
+      "respuesta": "AWS Systems Manager State Manager"
+    },
+    {
+      "id": "fc1-07",
+      "pregunta": "¿Qué recurso de AWS realiza *health checks* para determinar si un recurso (ej: Auto Scaling Group) está operativo antes de activar alertas?",
+      "respuesta": "Health checks de Route 53 o Auto Scaling Groups"
+    },
+    {
+      "id": "fc1-08",
+      "pregunta": "¿Qué permite agrupar reglas de AWS Config relacionadas (ej: cifrado en S3) para despliegue reutilizable en múltiples cuentas?",
+      "respuesta": "Conformance Packs de AWS Config"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p1-01",
+      "enunciado": "¿Qué servicio de AWS permite detectar automáticamente datos sensibles (como información personal identificable, PII) almacenados en buckets de S3 mediante análisis con machine learning?",
+      "opciones": [
+        "a) Amazon GuardDuty",
+        "b) AWS Security Hub",
+        "c) AWS Macie",
+        "d) AWS Config"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "AWS Macie utiliza machine learning para analizar los datos en S3 y detectar información sensible (PII), generando hallazgos sobre posibles exposiciones. Según el temario, es el servicio especializado en esta tarea."
+    },
+    {
+      "id": "p1-02",
+      "enunciado": "Si desea centralizar los logs y hallazgos de seguridad de toda su organización en un formato abierto para análisis a largo plazo, ¿qué servicio de AWS debe utilizar?",
+      "opciones": [
+        "a) AWS Security Hub",
+        "b) Amazon GuardDuty",
+        "c) AWS Security Lake",
+        "d) AWS Config"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "AWS Security Lake centraliza los datos de seguridad en un *data lake* usando el formato abierto **OCSF**, permitiendo análisis avanzado y consumo por herramientas externas (SIEM, motores de correlación). Security Hub, en cambio, agrega hallazgos para actuar dentro de AWS."
+    },
+    {
+      "id": "p1-03",
+      "enunciado": "¿Cuál de estos servicios NO genera hallazgos de seguridad propios, sino que los agrega y normaliza desde múltiples fuentes (incluyendo GuardDuty, Inspector y Macie)?",
+      "opciones": [
+        "a) Amazon GuardDuty",
+        "b) AWS Security Hub",
+        "c) AWS Macie",
+        "d) AWS Config"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS Security Hub **no genera hallazgos por sí mismo**, sino que los recopila de otros servicios (como GuardDuty o Macie) y los normaliza para facilitar la gestión y evaluación de cumplimiento dentro de AWS."
+    },
+    {
+      "id": "p1-04",
+      "enunciado": "Un administrador delegado de una organización AWS quiere activar **Amazon GuardDuty** para analizar eventos de seguridad a nivel completo de la organización. ¿Qué requisito previo debe cumplir?",
+      "opciones": [
+        "a) Configurar manualmente cada cuenta de la organización",
+        "b) Activar GuardDuty en la cuenta de administración y delegar su gestión",
+        "c) Usar AWS Config para habilitarlo en todas las cuentas",
+        "d) Instalar agentes en cada recurso monitorizado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "GuardDuty puede activarse a nivel de **organización completa** mediante un administrador delegado, analizando CloudTrail, VPC Flow Logs y DNS Query Logs sin necesidad de agentes. El temario destaca que esto se hace desde la cuenta de administración."
+    },
+    {
+      "id": "p1-05",
+      "enunciado": "¿Qué servicio de AWS permite mantener configuraciones deseadas en instancias EC2 (como la instalación de un agente de seguridad) y corregir automáticamente la deriva configuracional sin intervención manual?",
+      "opciones": [
+        "a) AWS Config",
+        "b) AWS Systems Manager State Manager",
+        "c) AWS Security Hub",
+        "d) Amazon GuardDuty"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Systems Manager State Manager** asegura que las instancias EC2 mantengan configuraciones específicas (ej.: agentes de seguridad activos) mediante evaluaciones continuas y correcciones automáticas. Es clave para evitar deriva configuracional."
+    },
+    {
+      "id": "p1-06",
+      "enunciado": "Un equipo de DevOps necesita visualizar métricas de salud de sus recursos (CPU, latencia de APIs, etc.) en tiempo real. ¿Qué combinación de servicios de AWS sería la más adecuada para lograrlo?",
+      "opciones": [
+        "a) CloudWatch + Dashboards de CloudWatch",
+        "b) GuardDuty + Security Hub",
+        "c) Macie + Security Lake",
+        "d) AWS Config + Systems Manager"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**CloudWatch** es el servicio base para métricas y alarmas, mientras que sus **Dashboards** permiten visualizar datos anómalos de forma centralizada. El temario enfatiza su uso para detectar patrones en métricas clave sin revisar hallazgos individualmente."
+    },
+    {
+      "id": "p1-07",
+      "enunciado": "¿Qué diferencia clave existe entre **Security Hub** y **Security Lake** en cuanto a su enfoque de datos de seguridad?",
+      "opciones": [
+        "a) Security Hub almacena logs crudos; Security Lake los procesa en tiempo real",
+        "b) Security Hub centraliza hallazgos para actuar en AWS; Security Lake almacena datos crudos en formato abierto para análisis externo",
+        "c) Security Lake genera alertas automáticas; Security Hub requiere configuración manual",
+        "d) Security Hub usa machine learning; Security Lake depende de reglas estáticas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Security Hub** agrega y normaliza *hallazgos* (ej.: de GuardDuty) para **actuar dentro de AWS** (ej.: disparar alarmas). **Security Lake**, en cambio, centraliza los datos **crudos** en formato **OCSF** para análisis a largo plazo o consumo por herramientas externas (SIEM, etc.)."
+    },
+    {
+      "id": "p1-08",
+      "enunciado": "Un examen de escenario típico pide diseñar la monitorización para un **pipeline de datos** en AWS. ¿Qué aspecto NO debería incluirse en los requisitos de monitorización para este recurso?",
+      "opciones": [
+        "a) Latencia y éxito de las operaciones del pipeline",
+        "b) Uso de CPU en las instancias EC2 que lo ejecutan",
+        "c) Integridad y disponibilidad de los datos procesados",
+        "d) Detección de cambios no autorizados en permisos de S3 asociados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario subraya que la monitorización debe enfocarse en el **escenario típico** (ej.: API, base de datos, pipeline). **El uso de CPU en instancias EC2** es una métrica de infraestructura, no específica del pipeline como recurso. Lo relevante sería monitorear métricas del pipeline (latencia, éxito) y su integridad, además de permisos críticos en S3."
+    },
+    {
+      "id": "p1-09",
+      "enunciado": "Un administrador de seguridad quiere implementar una solución que evalúe periódicamente el cumplimiento de estándares como **AWS Foundational Security Best Practices** en todas las cuentas de una organización AWS. ¿Qué servicio debe configurar para lograrlo de manera centralizada y con puntuación de cumplimiento?",
+      "opciones": [
+        "a) Amazon GuardDuty",
+        "b) AWS Security Hub",
+        "c) Amazon Macie",
+        "d) AWS Config"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS Security Hub evalúa automáticamente las cuentas contra estándares como **AWS Foundational Security Best Practices** y **CIS AWS Foundations Benchmark**, proporcionando una puntuación de cumplimiento consolidada. GuardDuty se centra en detección de amenazas, Macie en datos sensibles, y AWS Config solo valida reglas individuales sin puntuación global."
+    },
+    {
+      "id": "p1-10",
+      "enunciado": "¿Qué servicio de AWS permite detectar automáticamente si una instancia EC2 ha sido configurada incorrectamente (ej.: sin parches de seguridad aplicados) y corregirla automáticamente sin intervención manual, incluso si la configuración deriva con el tiempo?",
+      "opciones": [
+        "a) AWS Systems Manager State Manager",
+        "b) AWS Config Conformance Packs",
+        "c) Amazon GuardDuty",
+        "d) Amazon Inspector"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**AWS Systems Manager State Manager** mantiene configuraciones deseadas en instancias EC2 (como la instalación de agentes de seguridad) y corrige automáticamente la deriva configuracional mediante políticas de estado. Config Conformance Packs agrupan reglas de AWS Config pero no aplican correcciones automáticas, GuardDuty detecta amenazas y Inspector evalúa vulnerabilidades sin corregir."
+    },
+    {
+      "id": "p1-11",
+      "enunciado": "Un equipo de DevOps necesita alertas en tiempo real cuando un **Auto Scaling Group** deje de cumplir con los umbrales de salud definidos (ej.: instancias no respondiendo al health check). ¿Qué servicio de AWS debe configurar para recibir estas alertas?",
+      "opciones": [
+        "a) Amazon CloudWatch Alarms",
+        "b) AWS Security Hub",
+        "c) Amazon GuardDuty",
+        "d) AWS Config Rules"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**Amazon CloudWatch Alarms** monitorea métricas de salud de recursos como Auto Scaling Groups y dispara alertas cuando los umbrales (ej.: estado `UNHEALTHY`) se violan. Security Hub se usa para hallazgos de seguridad, GuardDuty para amenazas, y AWS Config Rules para evaluar configuraciones, pero no para alertas de salud operativa."
+    },
+    {
+      "id": "p1-12",
+      "enunciado": "¿Qué servicio de AWS permite a un equipo de DevOps visualizar métricas de rendimiento (como latencia de APIs o uso de CPU) en dashboards interactivos con gráficos avanzados, integrados directamente con CloudWatch?",
+      "opciones": [
+        "a) Amazon Managed Grafana",
+        "b) AWS CloudTrail Lake",
+        "c) Amazon QuickSight",
+        "d) AWS X-Ray"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**Amazon Managed Grafana** es un servicio gestionado que permite crear dashboards interactivos con gráficos avanzados para visualizar métricas de **CloudWatch** (o de otras fuentes). QuickSight es para análisis de datos empresariales, X-Ray para trazas de aplicaciones, y CloudTrail Lake para almacenar logs de auditoría, no para visualización de métricas."
+    },
+    {
+      "id": "p1-13",
+      "enunciado": "Un equipo de seguridad necesita automatizar la evaluación recurrente de que **todas las cuentas de una organización AWS** cumplan con el estándar **CIS AWS Foundations Benchmark**. ¿Qué combinación de servicios debe usar para lograrlo?",
+      "opciones": [
+        "a) AWS Config + AWS Security Hub",
+        "b) Amazon GuardDuty + AWS Config",
+        "c) Amazon Macie + AWS Organizations",
+        "d) AWS Systems Manager + AWS IAM"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**AWS Config** evalúa reglas individuales contra estándares como **CIS AWS Foundations Benchmark**, pero para hacerlo **a nivel de organización** y obtener una puntuación consolidada, se integra con **AWS Security Hub**, que agrega los resultados y asigna una puntuación de cumplimiento global. GuardDuty no evalúa estándares, Macie se centra en datos sensibles, y Systems Manager/IAM no cubren evaluaciones de benchmark."
+    },
+    {
+      "id": "p1-14",
+      "enunciado": "¿Qué servicio de AWS permite a un administrador definir un conjunto de reglas de configuración relacionadas (ej.: todas las reglas de cifrado en S3) y aplicarlas de forma centralizada a múltiples cuentas de una organización, reutilizando el mismo paquete?",
+      "opciones": [
+        "a) AWS Config Conformance Packs",
+        "b) AWS Systems Manager Documentos",
+        "c) Amazon GuardDuty Findings Filters",
+        "d) AWS IAM Policies"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**AWS Config Conformance Packs** agrupa múltiples **Config Rules** relacionadas (como todas las reglas de cifrado en S3) en un solo paquete reutilizable, que puede desplegarse en múltiples cuentas de una organización. Systems Manager Documentos define automatizaciones, GuardDuty Findings Filters filtra hallazgos, e IAM Policies gestiona permisos, pero no agrupan reglas de configuración para evaluaciones centralizadas."
+    },
+    {
+      "id": "p1-15",
+      "enunciado": "Un administrador de seguridad quiere implementar un sistema que detecte automáticamente si una **base de datos RDS** ha sido expuesta públicamente sin intención (ej.: configuración incorrecta de seguridad groups). ¿Qué servicio de AWS debe configurar para recibir alertas sobre este tipo de hallazgos?",
+      "opciones": [
+        "a) Amazon GuardDuty",
+        "b) AWS Config",
+        "c) AWS Trusted Advisor",
+        "d) Amazon Inspector"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El servicio **Amazon GuardDuty** analiza eventos de seguridad en tiempo real, incluyendo configuraciones incorrectas de recursos como bases de datos RDS expuestas públicamente, mediante el análisis de logs de CloudTrail y VPC Flow Logs con machine learning. AWS Config, por su parte, verifica configuraciones mediante reglas específicas, pero no detecta automáticamente exposiciones no intencionales sin una regla manual predefinida."
+    },
+    {
+      "id": "p1-16",
+      "enunciado": "¿Qué servicio de AWS permite a un equipo de DevOps **corregir automáticamente** la deriva configuracional en instancias EC2 (ej.: reinstalar un agente de seguridad si se elimina) sin necesidad de intervención manual, incluso si la configuración cambia tras un reinicio?",
+      "opciones": [
+        "a) AWS Systems Manager State Manager",
+        "b) AWS Config Rules",
+        "c) Amazon GuardDuty",
+        "d) AWS Lambda"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**AWS Systems Manager State Manager** mantiene las configuraciones deseadas en instancias EC2 y corrige automáticamente la deriva (ej.: reinstala un agente de seguridad si se elimina) mediante políticas de configuración aplicadas de forma recurrente. AWS Config Rules solo alerta sobre desviaciones, pero no corrige; GuardDuty se enfoca en amenazas; Lambda requiere desarrollo personalizado."
+    },
+    {
+      "id": "p1-17",
+      "enunciado": "Un equipo de seguridad necesita **centralizar los logs de auditoría de IAM** (ej.: cambios en políticas de usuarios) junto con logs de otros servicios de seguridad (como GuardDuty o Macie) para análisis forense. ¿Qué servicio de AWS es el adecuado para almacenar estos datos en un formato abierto y escalable?",
+      "opciones": [
+        "a) Amazon Security Hub",
+        "b) Amazon Security Lake",
+        "c) AWS CloudTrail Lake",
+        "d) Amazon S3 con cifrado KMS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon Security Lake** centraliza logs de seguridad (incluyendo CloudTrail, GuardDuty, Macie) en un **data lake** con formato **OCSF**, optimizado para análisis a largo plazo y herramientas externas como SIEMs. Security Hub agrega hallazgos normalizados pero no almacena los datos crudos en este formato; CloudTrail Lake es específico para logs de auditoría de AWS, no para integración con otros servicios de seguridad."
+    },
+    {
+      "id": "p1-18",
+      "enunciado": "¿Cuál es la diferencia clave entre **Security Hub** y **Security Lake** en cuanto a su capacidad para **evaluar el cumplimiento** de estándares como *AWS Foundational Security Best Practices*?",
+      "opciones": [
+        "a) Security Hub evalúa el cumplimiento con puntuación; Security Lake solo almacena datos sin análisis",
+        "b) Security Lake evalúa el cumplimiento con puntuación; Security Hub no lo hace",
+        "c) Ambos evalúan el cumplimiento de la misma manera, pero Security Lake es más rápido",
+        "d) Ninguno de los dos evalúa cumplimiento; requiere herramientas externas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**Security Hub** evalúa el cumplimiento de estándares (como *AWS Foundational Security Best Practices*) y asigna una **puntuación de cumplimiento** basada en hallazgos normalizados de múltiples servicios (GuardDuty, Config, etc.). **Security Lake**, en cambio, solo centraliza los datos crudos en formato OCSF para análisis posterior, sin realizar evaluaciones automáticas de cumplimiento."
+    },
+    {
+      "id": "p1-19",
+      "enunciado": "Un equipo de DevOps necesita monitorear el **estado de salud de un Auto Scaling Group** (ASG) y recibir alertas cuando más del 20% de sus instancias fallen en los *health checks*. ¿Qué combinación de servicios de AWS debe usar para lograr esto?",
+      "opciones": [
+        "a) CloudWatch Alarms + ASG Health Checks",
+        "b) Amazon GuardDuty + AWS Config",
+        "c) AWS Systems Manager + Amazon Inspector",
+        "d) Security Hub + CloudTrail"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los **Auto Scaling Groups** de AWS ya incluyen *health checks* integrados que monitorean el estado de las instancias. Para recibir alertas cuando el porcentaje de instancias no saludables supere un umbral (ej.: 20%), se debe configurar una **CloudWatch Alarm** basada en la métrica `GroupDesiredCapacity` y `GroupHealthy`. GuardDuty, Config o Inspector no son los servicios adecuados para este caso específico."
+    },
+    {
+      "id": "p1-20",
+      "enunciado": "Un administrador de seguridad quiere implementar un sistema que **evalúe periódicamente** si todas las cuentas de una organización AWS cumplen con el estándar *CIS AWS Foundations Benchmark*. ¿Qué servicio debe configurar para obtener una puntuación de cumplimiento automática y centralizada?",
+      "opciones": [
+        "a) Amazon Security Lake",
+        "b) AWS Config + Security Hub",
+        "c) Amazon GuardDuty",
+        "d) AWS Trusted Advisor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Config** verifica el cumplimiento de estándares como *CIS AWS Foundations Benchmark* mediante reglas de configuración, mientras que **Security Hub** agrega estos hallazgos y asigna una **puntuación de cumplimiento** a nivel de organización. Security Lake solo centraliza datos; GuardDuty se enfoca en amenazas; Trusted Advisor ofrece recomendaciones genéricas, no evaluaciones estructuradas de cumplimiento."
+    },
+    {
+      "id": "p1-21",
+      "enunciado": "Un equipo de DevOps está diseñando la monitorización para un **pipeline de datos en AWS** que procesa logs de múltiples servicios. Según el temario, ¿qué aspecto **NO** debería incluirse como requisito de monitorización para este recurso?",
+      "opciones": [
+        "Monitorizar el estado de salud de los recursos EC2 que ejecutan las etapas del pipeline (CPU, memoria, latencia de APIs internas).",
+        "Configurar alertas en CloudWatch para detectar fallos recurrentes en los *health checks* de los servicios Lambda utilizados en el pipeline.",
+        "Evaluar periódicamente si las políticas de seguridad de IAM asociadas al pipeline cumplen con el estándar *AWS Foundational Security Best Practices* mediante Security Hub.",
+        "Centralizar los logs de auditoría de IAM relacionados con el pipeline en **Amazon Security Lake** para análisis forense futuro."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario especifica que la monitorización debe enfocarse en el **qué observar y cómo agregarlo**, no en **dónde se guarda el log** (eso corresponde al tema 1.2). Aunque Security Lake es útil para análisis a largo plazo, su configuración no es un requisito de monitorización del pipeline en sí, sino una decisión posterior de almacenamiento de datos. Las opciones 1, 2 y 3 son válidas según el análisis de carga de trabajo y evaluaciones recurrentes del temario."
+    },
+    {
+      "id": "p1-22",
+      "enunciado": "Un administrador de seguridad quiere implementar un sistema que **automatice la corrección de deriva configuracional** en instancias EC2 que ejecutan un agente de seguridad crítico (ej.: AWS Systems Manager Agent). Según el temario, ¿qué servicio debe configurar para lograr esto sin intervención manual?",
+      "opciones": [
+        "AWS Config con *Config Rules* personalizadas para reinstalar el agente cada vez que se detecte su ausencia.",
+        "Amazon GuardDuty, ya que analiza automáticamente la configuración de las instancias y corrige anomalías.",
+        "AWS Systems Manager State Manager, que mantiene las configuraciones deseadas y corrige la deriva reinstalando el agente si se elimina o detiene.",
+        "Security Hub, porque evalúa el cumplimiento y dispara alarmas en CloudWatch para notificar al equipo de DevOps."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario menciona que **AWS Systems Manager State Manager** es el servicio encargado de mantener configuraciones deseadas en instancias EC2 (como la instalación de un agente de seguridad) y corregir automáticamente la deriva configuracional sin intervención manual. Las opciones 1 y 4 son incorrectas porque Config Rules y Security Hub no realizan correcciones automáticas, y GuardDuty (opción 2) solo detecta amenazas, no corrige configuraciones."
+    }
+  ]
+}
