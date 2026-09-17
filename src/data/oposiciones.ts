@@ -90,4 +90,14 @@ export const OPOSICIONES: Oposicion[] = [
     ocultar: ['psicotecnicos', 'supuestos', 'entrevista', 'personalidad'],
     privado: true,
   },
+  {
+    slug: 'aws-security',
+    nombre: 'AWS Certified Security – Specialty (SCS-C03)',
+    descripcion: 'Certificación profesional — estudio personal, no oposición',
+    disponible: true,
+    color: '#f97316',
+    numTemas: 16,
+    ocultar: ['psicotecnicos', 'supuestos', 'entrevista', 'personalidad'],
+    privado: true,
+  },
 ]

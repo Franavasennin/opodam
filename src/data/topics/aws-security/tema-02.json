@@ -1,0 +1,354 @@
+{
+  "id": 2,
+  "titulo": "1.2 · Diseño de soluciones de logging",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Si el tema anterior era \"qué observar\", este es \"de dónde saco el dato, dónde lo guardo y cómo lo interrogo\" — un tercio completo del dominio de Detección y, con frecuencia, el más denso en nombres de servicio del examen.\n\nFUENTES DE LOG SEGÚN DISEÑO DE RED Y AMENAZA\n\nLa elección de fuente depende del vector que se quiera cubrir. VPC Flow Logs capturan metadatos de tráfico IP a nivel de VPC, subred o interfaz de red concreta. Cuando el tráfico cruza un AWS Transit Gateway entre varias VPC, los transit gateway flow logs son la fuente correcta — VPC Flow Logs no ven ese tráfico inter-VPC centralizado. Los logs de Amazon Route 53 Resolver (y en particular Route 53 Resolver DNS Firewall) registran las consultas DNS salientes de una VPC: es la fuente que detecta un intento de exfiltración de datos vía túnel DNS o comunicación con un dominio de mando y control, algo que ni Flow Logs ni CloudTrail capturan.\n\nCONFIGURACIÓN DE CLOUDTRAIL Y CLOUDWATCH A ESCALA DE ORGANIZACIÓN\n\nUn trail de CloudTrail configurado a nivel de organización (organization trail) captura eventos de gestión y de datos de todas las cuentas miembro automáticamente, sin que cada cuenta tenga que configurar el suyo — y una cuenta miembro no puede desactivarlo. El patrón recomendado es centralizar el destino en una cuenta dedicada de logging (log archive account) dentro de AWS Organizations, separada de las cuentas de carga de trabajo, para que un atacante que comprometa una cuenta de producción no pueda alterar ni borrar la evidencia. El agente de CloudWatch Logs se configura en instancias EC2 para enviar logs de sistema operativo y de aplicación que, de otro modo, nunca saldrían de la instancia.\n\nALMACENAMIENTO: DATA LAKES Y TERCEROS\n\nPara retención a largo plazo y análisis masivo, los logs se envían a S3 (barato, con políticas de ciclo de vida) o a Amazon Security Lake, que normaliza automáticamente los logs de servicios de AWS al formato OCSF y facilita la integración con SIEM de terceros sin necesidad de escribir un conector propio para cada fuente.\n\nANÁLISIS, NORMALIZACIÓN Y CORRELACIÓN\n\nPara consultas puntuales sobre logs ya en CloudWatch, CloudWatch Logs Insights ofrece un lenguaje de consulta rápido sin infraestructura adicional. Para consultas SQL sobre grandes volúmenes de logs en S3, Amazon Athena es la herramienta correcta — el escenario típico es \"¿cómo consultas eficientemente varios meses de VPC Flow Logs almacenados en S3?\" → Athena, no CloudWatch Logs Insights (que opera sobre CloudWatch, no sobre S3 directamente). Cuando se necesita normalizar, parsear y correlacionar eventos de múltiples formatos y fuentes en un pipeline propio, Amazon OpenSearch Service ofrece búsqueda e indexación a gran escala, funciones Lambda ejecutan la transformación puntual, y Amazon Managed Grafana visualiza los resultados combinando varias fuentes de datos en un solo dashboard."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Logging] --> B[CloudTrail]\nA --> C[CloudWatch Logs]\nA --> D[VPC / TGW Flow Logs]\nA --> E[Route 53 Resolver logs]\nB --> B1[Trail de organizacion]\nC --> C1[Cuenta dedicada de logging]\nA --> F[Almacenamiento]\nF --> F1[Security Lake / S3]\nA --> G[Analisis]\nG --> G1[CloudWatch Logs Insights]\nG --> G2[Athena]\nG --> G3[OpenSearch / Managed Grafana]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc2-01",
+      "pregunta": "¿Qué servicio captura metadatos de tráfico IP dentro de una VPC o subred?",
+      "respuesta": "VPC Flow Logs"
+    },
+    {
+      "id": "fc2-02",
+      "pregunta": "¿Qué logs detectan intentos de exfiltración de datos mediante consultas DNS salientes?",
+      "respuesta": "Amazon Route 53 Resolver Logs (especialmente con Route 53 Resolver DNS Firewall)"
+    },
+    {
+      "id": "fc2-03",
+      "pregunta": "¿Qué tipo de trail de CloudTrail captura eventos de todas las cuentas miembro de una organización sin configuración individual?",
+      "respuesta": "Organization Trail"
+    },
+    {
+      "id": "fc2-04",
+      "pregunta": "¿Cuál es la cuenta recomendada para centralizar logs de CloudTrail en AWS Organizations?",
+      "respuesta": "Cuenta dedicada de logging (log archive account)"
+    },
+    {
+      "id": "fc2-05",
+      "pregunta": "¿Qué servicio envía logs de sistema operativo y aplicaciones desde instancias EC2?",
+      "respuesta": "Agente de CloudWatch Logs"
+    },
+    {
+      "id": "fc2-06",
+      "pregunta": "¿Qué servicio de AWS es ideal para retención a largo plazo y análisis masivo de logs?",
+      "respuesta": "Amazon S3 (con políticas de ciclo de vida) o Amazon Security Lake"
+    },
+    {
+      "id": "fc2-07",
+      "pregunta": "¿Qué herramienta permite consultas SQL sobre logs almacenados en S3?",
+      "respuesta": "Amazon Athena"
+    },
+    {
+      "id": "fc2-08",
+      "pregunta": "¿Qué servicio facilita la normalización automática de logs de AWS al formato OCSF?",
+      "respuesta": "Amazon Security Lake"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p2-01",
+      "enunciado": "¿Qué servicio de AWS permite capturar metadatos de tráfico IP entre VPC conectadas mediante un AWS Transit Gateway, algo que VPC Flow Logs no logra por sí solo?",
+      "opciones": [
+        "Amazon CloudWatch Logs",
+        "AWS Transit Gateway Flow Logs",
+        "Amazon Route 53 Resolver Logs",
+        "AWS CloudTrail"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio correcto es **AWS Transit Gateway Flow Logs**, ya que captura tráfico inter-VPC centralizado a través de un Transit Gateway, mientras que VPC Flow Logs solo registra tráfico dentro de una VPC o subred específica."
+    },
+    {
+      "id": "p2-02",
+      "enunciado": "Si desea registrar consultas DNS salientes de una VPC para detectar posibles exfiltraciones de datos mediante túneles DNS, ¿qué fuente de logs debe configurar?",
+      "opciones": [
+        "VPC Flow Logs",
+        "AWS CloudTrail",
+        "Amazon Route 53 Resolver Logs (con DNS Firewall activado)",
+        "Amazon Security Lake"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La opción correcta es **Amazon Route 53 Resolver Logs**, especialmente cuando se activa el **Route 53 Resolver DNS Firewall**, ya que registra consultas DNS salientes, algo que ni VPC Flow Logs ni CloudTrail capturan."
+    },
+    {
+      "id": "p2-03",
+      "enunciado": "¿Cuál es el patrón recomendado para centralizar los logs de CloudTrail en una organización AWS, evitando que una cuenta comprometida los modifique o elimine?",
+      "opciones": [
+        "Configurar un trail de CloudTrail en cada cuenta miembro y enviar los logs a S3 compartido.",
+        "Crear un **organization trail** en una cuenta dedicada de logging (log archive account) dentro de AWS Organizations, con destino centralizado.",
+        "Usar Amazon Security Lake para normalizar los logs y luego distribuirlos a las cuentas afectadas.",
+        "Depender de CloudWatch Logs Insights para consultar los eventos en tiempo real."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El patrón recomendado es configurar un **organization trail** en una **cuenta dedicada de logging (log archive account)** dentro de AWS Organizations, donde el destino centralizado (como S3 o Security Lake) no puede ser alterado por cuentas miembro, incluso si están comprometidas."
+    },
+    {
+      "id": "p2-04",
+      "enunciado": "¿Qué servicio de AWS permite enviar logs de sistema operativo y aplicaciones desde instancias EC2 a un destino centralizado, cuando estos logs no se generan automáticamente en otro lugar?",
+      "opciones": [
+        "AWS CloudTrail",
+        "Amazon Kinesis Data Firehose",
+        "El **agente de CloudWatch Logs** configurado en la instancia EC2",
+        "Amazon OpenSearch Service"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El servicio correcto es el **agente de CloudWatch Logs**, que se instala en instancias EC2 para recolectar y enviar logs de sistema y aplicaciones a CloudWatch Logs o destinos externos como S3."
+    },
+    {
+      "id": "p2-05",
+      "enunciado": "Si necesita almacenar logs a largo plazo (ej. meses o años) para análisis masivo y consultas SQL, ¿qué servicio de AWS es el más adecuado para almacenar los logs en formato estructurado?",
+      "opciones": [
+        "Amazon CloudWatch Logs",
+        "Amazon S3 con políticas de ciclo de vida",
+        "Amazon OpenSearch Service",
+        "AWS CloudTrail (solo eventos de gestión)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon S3** es el servicio ideal para retención a largo plazo y análisis masivo, especialmente combinado con políticas de ciclo de vida. Los logs se pueden almacenar en S3 y luego consultar con **Amazon Athena** (SQL) o integrar con herramientas de terceros."
+    },
+    {
+      "id": "p2-06",
+      "enunciado": "¿Qué servicio de AWS normaliza automáticamente los logs de servicios de AWS al formato **OCSF** (Open Cybersecurity Schema Framework), facilitando su integración con SIEM de terceros?",
+      "opciones": [
+        "Amazon CloudWatch Logs Insights",
+        "Amazon Athena",
+        "Amazon Security Lake",
+        "AWS CloudTrail"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**Amazon Security Lake** es el servicio que normaliza logs de AWS al formato **OCSF**, eliminando la necesidad de escribir conectores personalizados para cada fuente y permitiendo una integración sencilla con SIEM externos."
+    },
+    {
+      "id": "p2-07",
+      "enunciado": "Si requiere realizar consultas SQL sobre grandes volúmenes de logs almacenados en S3 (ej. VPC Flow Logs de varios meses), ¿qué herramienta de AWS es la más eficiente para este propósito?",
+      "opciones": [
+        "CloudWatch Logs Insights",
+        "Amazon Athena",
+        "Amazon OpenSearch Service",
+        "AWS Glue"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon Athena** es la herramienta correcta para consultas SQL sobre logs en S3, ya que permite analizar datos sin necesidad de preparar un Data Lake o procesamiento previo. CloudWatch Logs Insights, en cambio, solo opera sobre logs en CloudWatch, no en S3."
+    },
+    {
+      "id": "p2-08",
+      "enunciado": "¿Qué combinación de servicios de AWS permite normalizar, parsear y correlacionar eventos de múltiples formatos y fuentes en un pipeline propio, además de visualizarlos en dashboards unificados?",
+      "opciones": [
+        "CloudWatch Logs + CloudWatch Logs Insights",
+        "Amazon Kinesis Data Streams + AWS Lambda",
+        "**Amazon OpenSearch Service + AWS Lambda + Amazon Managed Grafana**",
+        "Amazon Security Lake + Athena"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**Amazon OpenSearch Service** (para indexación y búsqueda), **AWS Lambda** (para transformaciones puntuales) y **Amazon Managed Grafana** (para visualización) forman la combinación ideal para normalizar, correlacionar y mostrar datos de múltiples fuentes en un solo dashboard."
+    },
+    {
+      "id": "p2-09",
+      "enunciado": "Si desea monitorear el tráfico de red entre dos VPC conectadas mediante un **AWS Direct Connect**, ¿qué servicio de AWS debe configurar para capturar metadatos de ese tráfico?",
+      "opciones": [
+        "a) VPC Flow Logs",
+        "b) AWS Network Firewall",
+        "c) AWS Transit Gateway Flow Logs",
+        "d) AWS Shield Advanced"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "VPC Flow Logs es el servicio adecuado para capturar metadatos de tráfico IP a nivel de interfaz de red, incluyendo conexiones **AWS Direct Connect**. Aunque AWS Transit Gateway Flow Logs es útil para tráfico inter-VPC centralizado, no aplica en este caso. (Fuente: *FUENTES DE LOG SEGÚN DISEÑO DE RED Y AMENAZA*)"
+    },
+    {
+      "id": "p2-10",
+      "enunciado": "¿Qué servicio de AWS permite detectar consultas DNS internas a dominios maliciosos dentro de una VPC, incluso si el tráfico DNS está encriptado con DNS-over-TLS?",
+      "opciones": [
+        "a) Amazon Route 53 Resolver Logs",
+        "b) AWS GuardDuty",
+        "c) AWS Config Rules",
+        "d) VPC Flow Logs"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Amazon Route 53 Resolver Logs registra todas las consultas DNS salientes de una VPC, incluyendo las encriptadas, lo que permite identificar comunicaciones con dominios de mando y control. Ni VPC Flow Logs ni GuardDuty capturan este tipo de tráfico DNS. (Fuente: *FUENTES DE LOG SEGÚN DISEÑO DE RED Y AMENAZA*)"
+    },
+    {
+      "id": "p2-11",
+      "enunciado": "En un entorno con múltiples cuentas de AWS bajo una organización, ¿qué cuenta debe configurarse como destino centralizado para los logs de CloudTrail de organización, según el patrón recomendado para evitar manipulación por parte de cuentas comprometidas?",
+      "opciones": [
+        "a) Cualquier cuenta miembro con permisos administrativos",
+        "b) Una cuenta de **log archive account** dentro de AWS Organizations",
+        "c) La cuenta de facturación de la organización",
+        "d) Una cuenta dedicada en una región diferente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El patrón recomendado es centralizar los logs de CloudTrail en una **log archive account** dentro de AWS Organizations, separada de las cuentas de producción, para evitar que un atacante comprometa la evidencia. (Fuente: *CONFIGURACIÓN DE CLOUDTRAIL Y CLOUDWATCH A ESCALA DE ORGANIZACIÓN*)"
+    },
+    {
+      "id": "p2-12",
+      "enunciado": "Si necesita enviar logs de **aplicaciones personalizadas** ejecutadas en una instancia EC2 a un destino centralizado (como CloudWatch Logs o S3), ¿qué componente debe instalarse en la instancia para lograrlo?",
+      "opciones": [
+        "a) AWS Systems Manager Agent",
+        "b) **Agente de CloudWatch Logs**",
+        "c) Amazon CloudWatch Embedded Agent",
+        "d) AWS Config Agent"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El **Agente de CloudWatch Logs** se configura en instancias EC2 para enviar logs de sistema operativo y aplicaciones que, de otro modo, no se generan automáticamente en otro lugar. (Fuente: *CONFIGURACIÓN DE CLOUDTRAIL Y CLOUDWATCH A ESCALA DE ORGANIZACIÓN*)"
+    },
+    {
+      "id": "p2-13",
+      "enunciado": "¿Qué servicio de AWS es el más adecuado para almacenar logs estructurados a largo plazo (ej. años) con bajo costo y políticas de retención automatizadas, sin necesidad de procesamiento previo?",
+      "opciones": [
+        "a) Amazon OpenSearch Service",
+        "b) **Amazon S3**",
+        "c) Amazon CloudWatch Logs",
+        "d) Amazon Security Lake"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Amazon S3 es ideal para almacenar logs a largo plazo con políticas de ciclo de vida y bajo costo. Aunque Security Lake también almacena logs, su enfoque es la normalización y no el almacenamiento puro. (Fuente: *ALMACENAMIENTO: DATA LAKES Y TERCEROS*)"
+    },
+    {
+      "id": "p2-14",
+      "enunciado": "Si desea realizar consultas SQL sobre logs de **VPC Flow Logs** almacenados en S3 durante los últimos 12 meses, ¿qué herramienta de AWS debe usar para evitar procesar los datos manualmente?",
+      "opciones": [
+        "a) CloudWatch Logs Insights",
+        "b) **Amazon Athena**",
+        "c) AWS Glue DataBrew",
+        "d) AWS Lambda"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Amazon Athena permite consultar datos en S3 con SQL, incluyendo logs como VPC Flow Logs, sin necesidad de preparar un data lake. CloudWatch Logs Insights solo opera sobre logs en CloudWatch, no en S3. (Fuente: *ANÁLISIS, NORMALIZACIÓN Y CORRELACIÓN*)"
+    },
+    {
+      "id": "p2-15",
+      "enunciado": "Para crear un **dashboard unificado** que combine métricas de CloudWatch, logs de Security Lake y alertas de GuardDuty en una sola vista, ¿qué servicio de AWS debe usarse junto con OpenSearch Service?",
+      "opciones": [
+        "a) AWS CloudFormation",
+        "b) **Amazon Managed Grafana**",
+        "c) AWS Systems Manager Dashboard",
+        "d) AWS DevOps Guru"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Amazon Managed Grafana permite visualizar datos de múltiples fuentes (como OpenSearch Service o Security Lake) en dashboards unificados, complementando la indexación y correlación de eventos. (Fuente: *ANÁLISIS, NORMALIZACIÓN Y CORRELACIÓN*)"
+    },
+    {
+      "id": "p2-16",
+      "enunciado": "Si necesita enviar logs de **CloudWatch Logs Insights** a un destino externo (como un SIEM de terceros) para análisis avanzado, ¿qué servicio de AWS debe configurar como intermediario para normalizar los logs al formato **OCSF** antes de su envío?",
+      "opciones": [
+        "a) AWS Kinesis Data Firehose",
+        "b) Amazon Security Lake",
+        "c) AWS Lambda",
+        "d) Amazon OpenSearch Service"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon Security Lake** es el servicio que normaliza automáticamente logs de AWS (incluyendo CloudWatch Logs) al formato **OCSF**, facilitando su integración con SIEM de terceros. Kinesis Firehose puede transportar los logs, pero no los normaliza automáticamente."
+    },
+    {
+      "id": "p2-17",
+      "enunciado": "¿Qué herramienta de AWS permite realizar consultas SQL sobre logs de **Amazon GuardDuty** almacenados en S3, sin necesidad de procesar los datos manualmente ni usar herramientas externas?",
+      "opciones": [
+        "a) CloudWatch Logs Insights",
+        "b) Amazon Athena",
+        "c) AWS Glue",
+        "d) Amazon QuickSight"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon Athena** es la herramienta correcta para consultar logs en S3 (como los de GuardDuty) con SQL. CloudWatch Logs Insights solo opera sobre logs en CloudWatch, no en S3, y AWS Glue requiere configuración adicional para procesamiento ETL."
+    },
+    {
+      "id": "p2-18",
+      "enunciado": "Si desea monitorear consultas DNS **internas** (no salientes) dentro de una VPC para detectar acceso a dominios maliciosos, ¿qué servicio de AWS debe configurar para capturar estos registros?",
+      "opciones": [
+        "a) Amazon Route 53 Resolver Logs",
+        "b) AWS Network Firewall",
+        "c) AWS GuardDuty",
+        "d) Amazon VPC Flow Logs"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**Amazon Route 53 Resolver Logs** captura consultas DNS **internas** en una VPC, incluyendo las que no son salientes. GuardDuty puede detectar patrones maliciosos, pero no captura los logs DNS internos directamente. VPC Flow Logs y Network Firewall no registran tráfico DNS."
+    },
+    {
+      "id": "p2-19",
+      "enunciado": "En un entorno con múltiples cuentas bajo **AWS Organizations**, ¿qué cuenta debe configurarse como destino centralizado para los logs de **CloudTrail de organización** (organization trail) para evitar que una cuenta comprometida los modifique o elimine?",
+      "opciones": [
+        "a) Una cuenta de producción cualquiera",
+        "b) La cuenta de la raíz de la organización",
+        "c) Una cuenta dedicada de *log archive account* fuera de las cuentas de trabajo",
+        "d) La cuenta que ejecuta el servicio de AWS Config"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El patrón recomendado es usar una **cuenta dedicada de *log archive account*** dentro de AWS Organizations, separada de las cuentas de carga de trabajo. Esto garantiza que un atacante que comprometa una cuenta de producción no pueda alterar los logs de CloudTrail centralizados."
+    },
+    {
+      "id": "p2-20",
+      "enunciado": "¿Qué servicio de AWS permite **visualizar en un solo dashboard** métricas de CloudWatch, logs de Security Lake y alertas de GuardDuty, combinando datos de múltiples fuentes en tiempo real?",
+      "opciones": [
+        "a) Amazon QuickSight",
+        "b) AWS CloudTrail Lake",
+        "c) Amazon Managed Grafana",
+        "d) AWS CloudFormation"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**Amazon Managed Grafana** es el servicio que permite crear dashboards unificados con datos de múltiples fuentes (como CloudWatch, Security Lake y GuardDuty). QuickSight es útil para visualización, pero no integra directamente logs de Security Lake sin procesamiento previo."
+    },
+    {
+      "id": "p2-21",
+      "enunciado": "¿Qué servicio de AWS permite **normalizar automáticamente** logs de servicios de AWS (como CloudTrail, GuardDuty o VPC Flow Logs) al formato **OCSF**, facilitando su integración con SIEM de terceros?",
+      "opciones": [
+        "a) AWS CloudTrail Lake",
+        "b) **Amazon Security Lake**",
+        "c) Amazon OpenSearch Service",
+        "d) AWS Athena"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon Security Lake** es el servicio que normaliza logs de AWS al formato **OCSF**, eliminando la necesidad de procesamiento manual y permitiendo su integración directa con herramientas SIEM externas."
+    },
+    {
+      "id": "p2-22",
+      "enunciado": "Si desea capturar metadatos de tráfico IP entre múltiples VPC conectadas mediante un **AWS Transit Gateway**, ¿qué servicio de AWS debe configurar como fuente de logs?",
+      "opciones": [
+        "a) VPC Flow Logs",
+        "b) Transit Gateway Flow Logs",
+        "c) CloudTrail",
+        "d) Amazon Route 53 Resolver Logs"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio correcto es **Transit Gateway Flow Logs**, ya que VPC Flow Logs no capturan tráfico inter-VPC centralizado a través de un AWS Transit Gateway, según el temario."
+    },
+    {
+      "id": "p2-23",
+      "enunciado": "Para almacenar logs de **CloudTrail de organización** de manera segura y evitar que una cuenta comprometida los modifique, ¿qué patrón de configuración se recomienda en AWS Organizations?",
+      "opciones": [
+        "a) Centralizar el destino en una cuenta de producción compartida por todas las cuentas miembro.",
+        "b) Configurar un trail de CloudTrail en cada cuenta miembro y enviar los logs a S3 con políticas de retención automática.",
+        "c) Usar una **cuenta dedicada de logging (log archive account)** dentro de AWS Organizations como destino centralizado.",
+        "d) Guardar los logs en CloudWatch Logs con permisos de escritura en todas las cuentas miembro."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El patrón recomendado es centralizar los logs en una **cuenta dedicada de logging (log archive account)** dentro de AWS Organizations, separada de las cuentas de carga de trabajo, para evitar manipulación por parte de cuentas comprometidas."
+    },
+    {
+      "id": "p2-24",
+      "enunciado": "Si desea capturar metadatos de tráfico entre instancias EC2 en subredes privadas dentro de una misma VPC, pero **excluyendo** el tráfico inter-VPC gestionado por un AWS Transit Gateway, ¿qué servicio de logging debe configurar como fuente principal?",
+      "opciones": [
+        "a) AWS CloudTrail",
+        "b) Amazon VPC Flow Logs",
+        "c) AWS Transit Gateway Flow Logs",
+        "d) Amazon Route 53 Resolver Logs"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio adecuado es **Amazon VPC Flow Logs**, ya que captura metadatos de tráfico IP a nivel de VPC, subred o interfaz de red concreta. Según el temario, **VPC Flow Logs no registra tráfico inter-VPC gestionado por AWS Transit Gateway**, por lo que no es válido para ese caso. Para tráfico entre VPC a través de Transit Gateway, se usaría Transit Gateway Flow Logs, pero la pregunta excluye explícitamente ese escenario."
+    }
+  ]
+}

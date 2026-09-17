@@ -16,7 +16,7 @@ export type NombreIcono =
   | 'psicotecnicos' | 'supuestos' | 'entrevista' | 'personalidad'
   | 'estadisticas' | 'procoach' | 'perfil' | 'escudo'
   | 'biodata' | 'informe' | 'racha'
-  | 'fisico' | 'policia' | 'espadas' | 'justicia' | 'salud' | 'candado'
+  | 'fisico' | 'policia' | 'espadas' | 'justicia' | 'salud' | 'candado' | 'nube'
   | 'acierto' | 'fallo' | 'blanco' | 'alerta' | 'duda'
   | 'triste' | 'contento' | 'celebracion'
   | 'mezcla' | 'diana' | 'tirita' | 'dificil' | 'idea' | 'rayo'
@@ -49,6 +49,7 @@ const TRAZOS: Record<NombreIcono, string> = {
   justicia:      '<path d="M12 3.5v17M7.5 20.5h9"/><path d="m4.5 7 7.5-1.6L19.5 7"/><path d="M7.5 7 4.5 14a3 3 0 0 0 6 0Z"/><path d="M16.5 7 13.5 14a3 3 0 0 0 6 0Z"/>',
   salud:         '<rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M12 8v8M8 12h8"/>',
   candado:       '<rect x="4" y="10" width="16" height="10.5" rx="2.5"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10"/><path d="M12 14v2.6"/>',
+  nube:          '<path d="M7 18.5a4.2 4.2 0 0 1-.6-8.35A5.2 5.2 0 0 1 16.4 8.1 4.2 4.2 0 0 1 17.8 18.5Z"/>',
 
   // Estado: resultado, aviso y calibracion
   acierto:       '<circle cx="12" cy="12" r="8.5"/><path d="m8.2 12.3 2.6 2.6 5-5.2"/>',

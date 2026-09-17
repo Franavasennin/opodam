@@ -1,0 +1,186 @@
+{
+  "id": 3,
+  "titulo": "1.3 · Troubleshooting de monitorización y logging",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "El tercer task statement del dominio de Detección es puramente diagnóstico: dado un servicio que debería estar generando logs o alertas y no lo está haciendo, identificar la causa. Es un tipo de pregunta muy propio del examen — \"un ingeniero configura X pero no ve logs en Y, ¿cuál es la causa más probable?\".\n\nANÁLISIS DE FUNCIONALIDAD, PERMISOS Y CONFIGURACIÓN\n\nLa causa más común de \"no veo logs\" es un problema de permisos IAM, no de configuración: una función Lambda necesita el permiso de ejecución (execution role) con acceso a CloudWatch Logs para poder escribir su propio log group; sin ese permiso, la función se ejecuta con normalidad pero no deja rastro. Amazon API Gateway requiere que se le asigne explícitamente un rol de IAM con permisos de CloudWatch Logs a nivel de cuenta antes de que el logging de acceso o de ejecución funcione, incluso si el logging está \"activado\" en la configuración del API. Amazon CloudFront necesita que el bucket S3 de destino tenga una política de bucket que permita escritura al servicio de logging de CloudFront (un problema distinto: no es IAM del recurso que genera el log, sino permisos del destino). Los health checks mal configurados (por ejemplo, apuntando al puerto o ruta incorrectos) generan falsos positivos de \"recurso no saludable\" que en realidad son un problema de configuración del propio check, no del recurso monitorizado.\n\nREMEDIACIÓN DE ERRORES COMUNES\n\nCuando el CloudWatch Agent está instalado en una instancia EC2 pero no envía métricas o logs, las causas típicas son: el rol de instancia (instance profile) no tiene el permiso CloudWatchAgentServerPolicy o equivalente; el archivo de configuración del agente referencia una ruta de log que no existe en el sistema de archivos; o el agente no se reinició tras cambiar la configuración. Para logs ausentes en general, el proceso de troubleshooting sistemático es: primero confirmar que el servicio origen tiene habilitado el logging; segundo, confirmar que el rol/política de IAM asociado permite escribir al destino; tercero, confirmar que el destino (bucket S3, log group) existe y su política de recursos no bloquea la escritura. El examen valora que el candidato distinga estas tres capas en vez de \"reiniciar y probar otra vez\"."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Troubleshooting] --> B[Analizar funcionalidad]\nB --> B1[Lambda logging]\nB --> B2[API Gateway logging]\nB --> B3[CloudFront logging]\nB --> B4[Health checks]\nA --> C[Remediar]\nC --> C1[CloudWatch Agent mal configurado]\nC --> C2[Logs ausentes]\nC --> C3[Permisos IAM insuficientes]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc3-01",
+      "pregunta": "¿Por qué una función Lambda no genera logs en CloudWatch aunque se ejecute correctamente?",
+      "respuesta": "Falta el permiso de ejecución en el *execution role* de IAM para acceder y escribir en CloudWatch Logs."
+    },
+    {
+      "id": "fc3-02",
+      "pregunta": "¿Qué rol de IAM debe tener API Gateway para que funcione el logging de acceso?",
+      "respuesta": "Un rol de IAM con permisos explícitos de CloudWatch Logs a nivel de cuenta, asignado al recurso API Gateway."
+    },
+    {
+      "id": "fc3-03",
+      "pregunta": "¿Qué política de bucket S3 debe configurarse para que CloudFront pueda escribir logs?",
+      "respuesta": "Permisos en el bucket S3 que autoricen escritura al servicio de logging de CloudFront (no es IAM del recurso origen)."
+    },
+    {
+      "id": "fc3-04",
+      "pregunta": "¿Qué causa un *health check* falso positivo en CloudWatch?",
+      "respuesta": "Configuración incorrecta del *health check* (ej.: puerto o ruta inexistente), no un problema del recurso monitorizado."
+    },
+    {
+      "id": "fc3-05",
+      "pregunta": "¿Qué permiso IAM falta si el CloudWatch Agent no envía métricas desde una instancia EC2?",
+      "respuesta": "El *instance profile* no incluye la política `CloudWatchAgentServerPolicy` (o equivalente)."
+    },
+    {
+      "id": "fc3-06",
+      "pregunta": "¿Qué verificar primero si un servicio no genera logs en CloudWatch?",
+      "respuesta": "Confirmar que el servicio origen tiene el *logging habilitado* en su configuración."
+    },
+    {
+      "id": "fc3-07",
+      "pregunta": "¿Qué capa de troubleshooting priorizar si un servicio no escribe en un *log group* de CloudWatch?",
+      "respuesta": "Verificar los permisos de IAM del rol asociado al servicio (antes que la existencia del *log group*)."
+    },
+    {
+      "id": "fc3-08",
+      "pregunta": "¿Qué acción es clave tras modificar la configuración del CloudWatch Agent?",
+      "respuesta": "Reiniciar el agente para aplicar los cambios de configuración."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p3-01",
+      "enunciado": "Un servicio en AWS Lambda está ejecutándose correctamente pero no se generan logs en CloudWatch Logs. ¿Cuál es la causa más probable según el temario?",
+      "opciones": [
+        "El rol de ejecución de la función Lambda no tiene permisos para acceder a CloudWatch Logs.",
+        "La configuración de CloudWatch Logs está deshabilitada en la función Lambda.",
+        "El agente CloudWatch instalado en la instancia EC2 no está funcionando correctamente.",
+        "El grupo de logs en CloudWatch no existe y por eso no se pueden escribir logs."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Según el temario, la causa más común de falta de logs en Lambda es un problema de permisos IAM en el rol de ejecución, específicamente la falta de acceso a CloudWatch Logs, aunque la función se ejecute correctamente."
+    },
+    {
+      "id": "p3-02",
+      "enunciado": "Un API Gateway está configurado para enviar logs de acceso a CloudWatch Logs, pero no se generan. ¿Qué configuración adicional es necesaria según el temario?",
+      "opciones": [
+        "Asignar un rol de IAM con permisos de CloudWatch Logs a nivel de recurso en el API Gateway.",
+        "Habilitar explícitamente el logging en la configuración de CloudWatch Logs.",
+        "Asegurarse de que el CloudWatch Agent esté instalado en el servidor que ejecuta el API Gateway.",
+        "Verificar que el grupo de logs en CloudWatch tenga permisos de escritura para el API Gateway."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El temario menciona que Amazon API Gateway requiere un rol de IAM con permisos de CloudWatch Logs asignado explícitamente a nivel de cuenta para que el logging funcione, incluso si está activado en la configuración del API."
+    },
+    {
+      "id": "p3-03",
+      "enunciado": "Un bucket S3 está configurado como destino para los logs de CloudFront, pero estos no se guardan correctamente. ¿Qué problema de permisos podría estar causando esto según el temario?",
+      "opciones": [
+        "El rol de IAM del origen de los logs (como Lambda) no tiene permisos para escribir en CloudWatch Logs.",
+        "La política del bucket S3 no permite escritura al servicio de logging de CloudFront.",
+        "El CloudWatch Agent no tiene permisos para enviar métricas al bucket S3.",
+        "El grupo de logs en CloudWatch no tiene permisos para leer los logs del bucket S3."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario indica que CloudFront necesita que el bucket S3 de destino tenga una política que permita escritura al servicio de logging de CloudFront, lo que diferencia este problema de permisos del destino, no del origen."
+    },
+    {
+      "id": "p3-04",
+      "enunciado": "Un health check configurado en AWS CloudWatch para una instancia EC2 marca el recurso como 'no saludable', pero al revisar la instancia, todo funciona correctamente. ¿Qué podría estar causando este falso positivo según el temario?",
+      "opciones": [
+        "El rol de IAM de la instancia EC2 no tiene permisos para enviar métricas a CloudWatch.",
+        "El health check está configurado para verificar un puerto o ruta incorrecta en la instancia.",
+        "El CloudWatch Agent no está instalado correctamente en la instancia EC2.",
+        "El grupo de logs en CloudWatch no tiene permisos para leer las métricas de la instancia."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que los *health checks* mal configurados (por ejemplo, apuntando a un puerto o ruta incorrecta) generan falsos positivos de 'recurso no saludable', sin que haya un problema real en el recurso monitorizado."
+    },
+    {
+      "id": "p3-05",
+      "enunciado": "El CloudWatch Agent está instalado en una instancia EC2 pero no envía métricas ni logs. ¿Cuál de las siguientes NO es una causa típica según el temario?",
+      "opciones": [
+        "El rol de instancia (instance profile) no tiene el permiso CloudWatchAgentServerPolicy.",
+        "El archivo de configuración del agente referencia una ruta de log inexistente en el sistema.",
+        "El agente no se reinició tras modificar la configuración del archivo de logs.",
+        "El grupo de logs en CloudWatch está configurado con un nombre incorrecto."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario enumera como causas típicas la falta de permisos en el *instance profile*, rutas de log incorrectas o falta de reinicio del agente tras cambios, pero no menciona errores en el nombre del grupo de logs como causa directa de fallo del agente."
+    },
+    {
+      "id": "p3-06",
+      "enunciado": "Para diagnosticar por qué un servicio en AWS no genera logs en su destino esperado, el temario recomienda un orden sistemático de verificación. ¿Cuál de estas NO es una de las tres capas prioritarias según el temario?",
+      "opciones": [
+        "Confirmar que el servicio origen tiene habilitado el logging en su configuración.",
+        "Verificar que el rol/política de IAM asociado al servicio permita escribir al destino.",
+        "Asegurarse de que el destino (bucket S3/log group) exista y su política no bloquee escrituras.",
+        "Revisar que el CloudWatch Agent esté instalado y funcionando en el servidor que ejecuta el servicio."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario destaca tres capas clave para el *troubleshooting*: origen (habilitación del logging), IAM (permisos) y destino (existencia y permisos). La instalación del CloudWatch Agent no es una capa prioritaria en este contexto, sino un paso adicional para servicios específicos como EC2."
+    },
+    {
+      "id": "p3-07",
+      "enunciado": "Un cliente reporta que los logs de una función Lambda se envían a un grupo incorrecto en CloudWatch Logs. ¿Qué configuración incorrecta en el rol de IAM podría estar causando esto según el temario?",
+      "opciones": [
+        "El rol de ejecución de Lambda tiene permisos para escribir en múltiples grupos de logs, pero el agente prioriza uno incorrecto.",
+        "El rol de ejecución de Lambda no tiene permisos para escribir en ningún grupo de logs, por lo que no se generan logs.",
+        "El rol de ejecución de Lambda tiene permisos para escribir en el grupo incorrecto debido a una política mal configurada.",
+        "El CloudWatch Agent está redirigiendo los logs de Lambda a otro grupo por defecto."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Aunque el temario no menciona explícitamente redirecciones por el agente, la causa más probable según el contexto es que el rol de IAM tenga permisos mal configurados (política incorrecta) que permiten escribir en un grupo de logs distinto al esperado, lo que es un problema de permisos IAM."
+    },
+    {
+      "id": "p3-08",
+      "enunciado": "Al revisar los logs de CloudFront, se observa que los archivos no se guardan en el bucket S3 configurado como destino. ¿Qué acción inmediata debería verificarse según el temario?",
+      "opciones": [
+        "Revisar los permisos IAM del rol asociado al origen de los logs (como una función Lambda).",
+        "Asegurarse de que la política del bucket S3 permita escritura al servicio de logging de CloudFront.",
+        "Verificar que el CloudWatch Agent esté configurado para enviar logs de CloudFront al bucket.",
+        "Comprobar que el grupo de logs en CloudWatch tenga permisos para leer los logs de CloudFront."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario especifica que CloudFront requiere permisos en el *bucket S3* (política de bucket) para permitir escritura al servicio de logging, no en el origen ni en CloudWatch, lo que diferencia este escenario de otros problemas de permisos."
+    },
+    {
+      "id": "p3-09",
+      "enunciado": "Un cliente ha configurado un **CloudWatch Metric Filter** para enviar logs de errores específicos de una aplicación a un **SNS Topic** para notificaciones en tiempo real. Sin embargo, las notificaciones no se generan. Según el temario, ¿qué capa de verificación debe revisarse PRIMERO para identificar la causa?",
+      "opciones": [
+        "Verificar si el **CloudWatch Agent** está correctamente instalado y configurado en la instancia EC2 que genera los logs.",
+        "Confirmar que el **rol de IAM** asociado al recurso origen (EC2, Lambda, etc.) tenga permisos explícitos para publicar en el SNS Topic.",
+        "Revisar si el **SNS Topic** existe y su política de suscripción permite recibir mensajes de CloudWatch Logs.",
+        "Asegurarse de que el **log group** asociado al recurso origen tenga el filtro activado y la expresión de patrón correcta."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario enfatiza un **orden sistemático de verificación** para logs ausentes: primero confirmar que el servicio origen tiene el logging habilitado (en este caso, el **CloudWatch Metric Filter** en el log group). Solo después se revisan permisos (IAM/SNS) o el destino. La opción correcta (d) corresponde a la **primera capa** (funcionalidad del origen)."
+    },
+    {
+      "id": "p3-10",
+      "enunciado": "Un ingeniero configura un **CloudWatch Alarm** para alertar cuando el promedio de latencia de una API en **API Gateway** supere 1 segundo, pero la alarma nunca se dispara. Según el temario, ¿qué problema de configuración es más probable que esté causando esto?",
+      "opciones": [
+        "El **API Gateway** no está configurado para enviar métricas a CloudWatch (logging desactivado).",
+        "El **rol de IAM** asociado al API Gateway no tiene permisos para publicar métricas en CloudWatch.",
+        "La **expresión de la alarma** usa una métrica incorrecta (ej.: `Latency` en lugar de `IntegratedLatency`).",
+        "El **bucket S3** de logs de acceso no tiene permisos para recibir logs de CloudFront (aunque no afecta a las métricas)."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario destaca que **API Gateway requiere permisos IAM específicos** para enviar métricas a CloudWatch (opción b es válida, pero no la más probable en este contexto). Sin embargo, la causa más común de alarmas que no disparan es un **error en la métrica seleccionada** (opción c). Por ejemplo, confundir `Latency` (latencia de la API) con `Count` (número de llamadas). La opción a también es plausible, pero el temario prioriza **problemas de configuración del servicio origen** (métricas) sobre permisos o destinos de logs."
+    }
+  ]
+}

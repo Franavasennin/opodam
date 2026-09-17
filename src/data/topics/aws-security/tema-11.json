@@ -1,0 +1,234 @@
+{
+  "id": 11,
+  "titulo": "5.1 · Datos en tránsito",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Primer task statement del dominio de Protección de Datos: cómo proteger datos mientras viajan entre cliente y servicio, o entre dos servicios de AWS.\n\nFORZAR CIFRADO EN LA CONEXIÓN\n\nLas políticas de seguridad (security policies) de Elastic Load Balancing definen qué versiones de TLS y qué conjuntos de cifrado acepta un balanceador — seleccionar una política que exija TLS 1.2 o superior y rechace protocolos obsoletos es la forma de forzar cifrado en tránsito a nivel de balanceador sin tocar cada aplicación backend. Complementariamente, una política de bucket S3 puede exigir aws:SecureTransport para rechazar cualquier petición que no use HTTPS.\n\nACCESO PRIVADO SIN SALIR A INTERNET\n\nAWS PrivateLink permite exponer un servicio dentro de una VPC (propio o de un tercero) a otra VPC sin que el tráfico atraviese internet público, usando un VPC endpoint de tipo interface. Los VPC endpoints de tipo gateway (para S3 y DynamoDB) cumplen la misma función sin coste adicional por hora, restringida a esos dos servicios. AWS Client VPN da a usuarios remotos acceso privado a recursos de una VPC mediante un cliente OpenVPN gestionado. AWS Verified Access, visto ya en el dominio de Infraestructura, resuelve el mismo problema de acceso privado a aplicaciones pero con un modelo de confianza cero basado en identidad, en vez de un túnel de red tradicional — la distinción de examen: Client VPN da acceso de red completo a la VPC; Verified Access da acceso aplicación por aplicación tras validar identidad y postura del dispositivo.\n\nCIFRADO ENTRE RECURSOS (INTER-NODE)\n\nCuando el tráfico viaja entre nodos de un mismo clúster, no entre cliente y servicio, hace falta cifrado inter-recurso específico de cada tecnología: Amazon EMR soporta cifrado en tránsito entre los nodos del clúster Hadoop/Spark; Amazon EKS puede cifrar el tráfico entre pods mediante un service mesh o políticas de red compatibles; los notebooks y trabajos de entrenamiento de SageMaker AI soportan cifrado de tráfico entre instancias de entrenamiento distribuido. A nivel de infraestructura subyacente, el sistema Nitro de AWS cifra automáticamente el tráfico entre instancias EC2 en instancias basadas en Nitro, sin configuración adicional — un dato que el examen usa para descartar opciones que proponen añadir cifrado manual donde Nitro ya lo ofrece por defecto."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Datos en transito] --> B[Forzar cifrado]\nB --> B1[Politicas de seguridad ELB]\nB --> B2[TLS obligatorio]\nA --> C[Acceso privado]\nC --> C1[AWS PrivateLink]\nC --> C2[VPC endpoints]\nC --> C3[AWS Client VPN]\nC --> C4[AWS Verified Access]\nA --> D[Cifrado inter-recurso]\nD --> D1[Amazon EMR]\nD --> D2[Amazon EKS]\nD --> D3[SageMaker AI]\nD --> D4[Cifrado Nitro]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc11-01",
+      "pregunta": "¿Qué servicio de AWS permite exponer un servicio dentro de una VPC a otra VPC sin que el tráfico pase por Internet público?",
+      "respuesta": "AWS PrivateLink, usando un VPC endpoint de tipo *interface*. También se pueden usar VPC endpoints de tipo *gateway* para S3 y DynamoDB."
+    },
+    {
+      "id": "fc11-02",
+      "pregunta": "¿Cómo se fuerza el cifrado TLS 1.2+ en un balanceador de carga de AWS sin modificar las aplicaciones backend?",
+      "respuesta": "Configurando las *security policies* de Elastic Load Balancing para rechazar protocolos obsoletos (como TLS 1.0/1.1) y exigir TLS 1.2 o superior."
+    },
+    {
+      "id": "fc11-03",
+      "pregunta": "¿Qué política de bucket S3 rechaza conexiones que no usen HTTPS?",
+      "respuesta": "La política que incluye la condición `aws:SecureTransport` para exigir transporte seguro."
+    },
+    {
+      "id": "fc11-04",
+      "pregunta": "¿Qué servicio permite a usuarios remotos acceder a recursos de una VPC de forma privada mediante un cliente OpenVPN gestionado?",
+      "respuesta": "AWS Client VPN."
+    },
+    {
+      "id": "fc11-05",
+      "pregunta": "¿Cuál es la diferencia clave entre AWS Client VPN y AWS Verified Access?",
+      "respuesta": "Client VPN proporciona *acceso completo a la red de la VPC* mediante túnel VPN; Verified Access aplica un modelo de *confianza cero* y da acceso *aplicación por aplicación* tras validar identidad y postura del dispositivo."
+    },
+    {
+      "id": "fc11-06",
+      "pregunta": "¿Qué servicio de AWS cifra automáticamente el tráfico entre instancias EC2 basadas en el sistema Nitro?",
+      "respuesta": "El sistema Nitro de AWS lo hace *automáticamente sin configuración adicional* para instancias EC2 compatibles."
+    },
+    {
+      "id": "fc11-07",
+      "pregunta": "¿Cómo se implementa el cifrado en tránsito entre pods en un clúster Amazon EKS?",
+      "respuesta": "Usando un *service mesh* o políticas de red compatibles para cifrar el tráfico entre pods."
+    },
+    {
+      "id": "fc11-08",
+      "pregunta": "¿Qué servicio de AWS soporta cifrado en tránsito entre nodos de un clúster Hadoop/Spark?",
+      "respuesta": "Amazon EMR (Elastic MapReduce)."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p11-01",
+      "enunciado": "¿Qué servicio de AWS permite exponer un endpoint de un servicio interno (como un API Gateway o un servicio en una VPC) a otra VPC sin que el tráfico pase por Internet público, usando un endpoint de tipo *interface*?",
+      "opciones": [
+        "a) AWS Direct Connect",
+        "b) AWS PrivateLink",
+        "c) AWS CloudFront",
+        "d) AWS Transit Gateway"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS PrivateLink permite exponer servicios internos entre VPCs mediante un VPC endpoint de tipo *interface*, evitando que el tráfico salga a Internet. Este servicio es clave para el acceso privado sin salir a Internet, como se describe en el temario."
+    },
+    {
+      "id": "p11-02",
+      "enunciado": "Si desea cifrar el tráfico entre pods en un clúster Amazon EKS, ¿qué mecanismo debe configurar para lograrlo?",
+      "opciones": [
+        "a) AWS KMS con políticas de cifrado manual en cada pod",
+        "b) Un *service mesh* compatible o políticas de red en EKS",
+        "c) AWS Shield para proteger el tráfico de DDoS",
+        "d) AWS Certificate Manager para generar certificados TLS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Amazon EKS soporta el cifrado en tránsito entre pods mediante un *service mesh* (como Istio o Linkerd) o políticas de red compatibles, según el temario sobre cifrado inter-recurso en clústeres."
+    },
+    {
+      "id": "p11-03",
+      "enunciado": "¿Cuál de estos servicios NO requiere configuración adicional para cifrar automáticamente el tráfico entre instancias EC2 en un mismo clúster?",
+      "opciones": [
+        "a) Amazon EMR (para clústeres Hadoop/Spark)",
+        "b) Instancias EC2 basadas en el sistema Nitro de AWS",
+        "c) Amazon EKS (con service mesh)",
+        "d) Amazon SageMaker (para trabajos de entrenamiento distribuido)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El sistema Nitro de AWS cifra automáticamente el tráfico entre instancias EC2 basadas en él, sin necesidad de configuración adicional, como se menciona en el temario sobre cifrado inter-node."
+    },
+    {
+      "id": "p11-04",
+      "enunciado": "Un cliente necesita acceder a recursos en una VPC de AWS desde su oficina remota, pero solo quiere autenticación basada en identidad y postura del dispositivo, sin establecer un túnel VPN tradicional. ¿Qué servicio debe usar?",
+      "opciones": [
+        "a) AWS Client VPN",
+        "b) AWS Verified Access",
+        "c) AWS Site-to-Site VPN",
+        "d) AWS Direct Connect"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS Verified Access proporciona acceso privado a aplicaciones en una VPC basado en identidad y postura del dispositivo (modelo *zero trust*), sin usar un túnel VPN tradicional como AWS Client VPN, según el temario."
+    },
+    {
+      "id": "p11-05",
+      "enunciado": "¿Qué política de seguridad en un *Elastic Load Balancer* (ELB) garantiza que solo se acepte tráfico cifrado con TLS 1.2 o superior, rechazando protocolos obsoletos como TLS 1.0?",
+      "opciones": [
+        "a) Configurar una política de bucket S3 con `aws:SecureTransport`",
+        "b) Seleccionar una *security policy* de ELB que requiera TLS 1.2+",
+        "c) Usar AWS Certificate Manager para generar certificados TLS",
+        "d) Habilitar AWS Shield Advanced para proteger el balanceador"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las *security policies* de ELB permiten definir qué versiones de TLS y conjuntos de cifrado son aceptados, forzando TLS 1.2 o superior para garantizar cifrado en la conexión, como se explica en el temario."
+    },
+    {
+      "id": "p11-06",
+      "enunciado": "Un desarrollador quiere asegurar que todas las peticiones a un bucket de S3 usen HTTPS y rechace cualquier conexión no cifrada. ¿Qué configuración debe aplicar en la política del bucket?",
+      "opciones": [
+        "a) Añadir una condición `aws:SecureTransport` con valor `true`",
+        "b) Configurar una *security policy* de ELB para el bucket",
+        "c) Usar AWS KMS para cifrar los datos en reposo",
+        "d) Habilitar AWS WAF para bloquear peticiones HTTP"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La política del bucket S3 puede incluir la condición `aws:SecureTransport: true` para exigir que todas las peticiones usen HTTPS, rechazando conexiones no cifradas, como se detalla en el temario sobre cifrado en la conexión."
+    },
+    {
+      "id": "p11-07",
+      "enunciado": "¿Qué tipo de VPC endpoint de AWS permite acceder a servicios como S3 o DynamoDB desde una VPC sin incurrir en costes adicionales por hora, pero solo para esos dos servicios?",
+      "opciones": [
+        "a) VPC endpoint de tipo *interface*",
+        "b) VPC endpoint de tipo *gateway*",
+        "c) VPC endpoint de tipo *private DNS*",
+        "d) VPC endpoint de tipo *NAT gateway*"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los VPC endpoints de tipo *gateway* permiten acceder a S3 y DynamoDB sin salir a Internet y sin coste adicional por hora, según el temario sobre acceso privado sin salir a Internet."
+    },
+    {
+      "id": "p11-08",
+      "enunciado": "Un equipo de datos usa Amazon SageMaker para entrenar modelos distribuidos en múltiples instancias. ¿Qué mecanismo debe activar para cifrar el tráfico entre esas instancias durante el entrenamiento?",
+      "opciones": [
+        "a) Configurar cifrado en AWS KMS para los notebooks",
+        "b) Habilitar el cifrado de tráfico entre instancias de entrenamiento en SageMaker",
+        "c) Usar AWS Shield para proteger las comunicaciones",
+        "d) Implementar un service mesh en el clúster de SageMaker"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Amazon SageMaker soporta el cifrado del tráfico entre instancias de entrenamiento distribuido, como se menciona en el temario sobre cifrado inter-recurso en tecnologías específicas."
+    },
+    {
+      "id": "p11-09",
+      "enunciado": "Un equipo desea asegurar que todas las comunicaciones entre los nodos de un clúster **Amazon EMR** (Hadoop/Spark) estén cifradas en tránsito. ¿Qué mecanismo debe configurar para lograrlo?",
+      "opciones": [
+        "Configurar un *Service Mesh* como Istio en el clúster EMR",
+        "Activar el cifrado automático mediante el sistema Nitro de AWS en las instancias EC2 del clúster",
+        "Aplicar políticas de red en el *Security Group* asociado al clúster para forzar TLS 1.2",
+        "Usar la opción de cifrado en tránsito nativa de Amazon EMR para nodos Hadoop/Spark"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario menciona que **Amazon EMR soporta cifrado en tránsito entre los nodos del clúster Hadoop/Spark** como mecanismo específico para proteger datos en movimiento dentro del clúster, sin depender de soluciones externas como *Service Mesh* o Nitro (este último aplica solo a instancias EC2 individuales, no al tráfico inter-nodo)."
+    },
+    {
+      "id": "p11-10",
+      "enunciado": "¿Qué servicio de AWS permite a un cliente acceder a un servicio interno (como una API privada) desde su red corporativa **sin exponerlo a Internet público**, pero usando un modelo de autenticación basado en identidad y postura del dispositivo (sin configurar un túnel VPN tradicional)?",
+      "opciones": [
+        "AWS Client VPN",
+        "AWS PrivateLink con VPC Endpoint de tipo *interface*",
+        "AWS Direct Connect",
+        "AWS Verified Access"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "**AWS Verified Access** (mencionado en el temario como alternativa a Client VPN) valida la identidad y postura del dispositivo para dar acceso *aplicación por aplicación* sin establecer un túnel VPN tradicional. A diferencia de Client VPN, no proporciona acceso completo a la VPC, sino control granular basado en confianza cero."
+    },
+    {
+      "id": "p11-11",
+      "enunciado": "Un desarrollador quiere desplegar un servicio en una VPC de AWS que solo sea accesible desde otra VPC del mismo cliente, evitando que el tráfico pase por Internet. ¿Qué tipo de *VPC Endpoint* debe crear para este escenario?",
+      "opciones": [
+        "VPC Endpoint de tipo *Gateway* (para servicios como S3 o DynamoDB)",
+        "VPC Endpoint de tipo *Interface* (para servicios privados como API Gateway)",
+        "VPC Endpoint de tipo *NAT Gateway* (para permitir tráfico saliente cifrado)",
+        "VPC Endpoint de tipo *Public* (para exponer el servicio a Internet con cifrado TLS)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS PrivateLink** usa *VPC Endpoints de tipo *interface*** para exponer servicios internos (como API Gateway o servicios en VPC) a otra VPC **sin que el tráfico atraviese Internet**, cumpliendo con el requisito de privacidad. Los endpoints de tipo *Gateway* están limitados a S3 y DynamoDB, y los *Public* exponen servicios a Internet."
+    },
+    {
+      "id": "p11-12",
+      "enunciado": "¿Cuál de estas opciones describe correctamente cómo **Amazon SageMaker** protege el tráfico entre instancias durante el entrenamiento distribuido de modelos?",
+      "opciones": [
+        "Usa políticas de *Security Group* para forzar TLS 1.2 entre instancias",
+        "Activa cifrado automático mediante el sistema Nitro de AWS en las instancias EC2 subyacentes",
+        "Implementa un *Service Mesh* como Istio para gestionar el cifrado inter-pod",
+        "Soporta cifrado en tránsito entre instancias de entrenamiento mediante configuración nativa del servicio"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El temario indica que **SageMaker soporta cifrado de tráfico entre instancias de entrenamiento distribuido** como parte de su configuración nativa, sin requerir soluciones externas como Nitro (que aplica a EC2 genérica) o *Service Mesh* (no mencionado para SageMaker)."
+    },
+    {
+      "id": "p11-13",
+      "enunciado": "Un equipo necesita cifrar el tráfico entre pods en un clúster **Amazon EKS**, pero no quiere depender de soluciones externas como Istio. ¿Qué mecanismo nativo de AWS puede configurar para lograrlo?",
+      "opciones": [
+        "Aplicar políticas de red en el *Security Group* del clúster para forzar TLS 1.2",
+        "Usar el sistema Nitro de AWS en las instancias EC2 del clúster para cifrar automáticamente el tráfico",
+        "Configurar un *Service Mesh* como Linkerd o Istio dentro del clúster EKS",
+        "Activar políticas de red compatibles o un *Service Mesh* nativo de EKS para cifrar el tráfico entre pods"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "**Amazon EKS puede cifrar el tráfico entre pods mediante un *Service Mesh* o políticas de red compatibles** (como Calico o AWS VPC CNI con cifrado), según lo descrito en el temario. El sistema Nitro no aplica a pods, y las opciones de *Security Group* o cifrado automático no son suficientes para este escenario inter-pod."
+    },
+    {
+      "id": "p11-14",
+      "enunciado": "¿Qué diferencia clave existe entre **AWS Client VPN** y **AWS Verified Access** para acceder a recursos en una VPC desde fuera?",
+      "opciones": [
+        "Client VPN usa autenticación basada en certificados; Verified Access usa contraseñas",
+        "Client VPN proporciona acceso completo a la VPC; Verified Access limita el acceso a aplicaciones específicas tras validar identidad y postura",
+        "Client VPN requiere configurar un *Security Group* personalizado; Verified Access no",
+        "Client VPN cifra el tráfico con TLS 1.3; Verified Access usa TLS 1.2 obligatoriamente"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Client VPN** da acceso de red completo a la VPC mediante un túnel OpenVPN gestionado, mientras que **AWS Verified Access** aplica un modelo de *trust zero* para acceso *aplicación por aplicación*, validando identidad y postura del dispositivo sin exponer toda la VPC. Esta distinción es clave en el temario."
+    }
+  ]
+}

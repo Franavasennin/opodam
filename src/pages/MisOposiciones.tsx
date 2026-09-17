@@ -14,6 +14,7 @@ const GLYPH: Record<string, NombreIcono> = {
   'aux-judicial': 'justicia',
   'tramitacion-judicial': 'supuestos',
   'security-plus': 'candado',
+  'aws-security': 'nube',
 }
 
 export default function MisOposiciones() {

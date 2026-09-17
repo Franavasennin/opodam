@@ -1,0 +1,450 @@
+{
+  "id": 7,
+  "titulo": "3.2 · Seguridad de cargas de trabajo (compute)",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Este es el task statement más extenso de la guía (siete habilidades) y cubre cómo asegurar el cómputo — EC2, contenedores y funciones — de principio a fin: desde la imagen hasta el runtime.\n\nIMÁGENES ENDURECIDAS Y GESTIÓN DE CONFIGURACIÓN\n\nEC2 Image Builder automatiza la creación de AMIs e imágenes de contenedor endurecidas (con parches aplicados, agentes de seguridad preinstalados, configuración de base conforme a un estándar) de forma repetible, en vez de partir cada vez de una imagen base sin auditar. AWS Systems Manager complementa esto en tiempo de ejecución, aplicando y verificando configuración deseada sobre instancias ya desplegadas.\n\nAUTORIZACIÓN DE CARGAS DE TRABAJO\n\nUn instance profile es el contenedor que adjunta un rol de IAM a una instancia EC2, permitiéndole obtener credenciales temporales sin que nadie incruste claves de acceso en el sistema operativo. Un service role es el rol que un servicio de AWS asume para actuar en nombre del usuario (por ejemplo, el rol que usa AWS Backup para acceder a los recursos que respalda). Un execution role es específico de cómputo sin servidor: el rol que una función Lambda asume al ejecutarse, definiendo qué puede tocar esa función y nada más. Distinguir estos tres términos —muy parecidos en el enunciado— es un punto de examen recurrente.\n\nESCANEO DE VULNERABILIDADES\n\nAmazon Inspector escanea de forma continua (no bajo demanda) imágenes de contenedor en ECR, funciones Lambda y instancias EC2 en busca de CVE conocidas y de exposición de red no intencionada. GuardDuty complementa esto en el runtime: mientras Inspector busca vulnerabilidades en el software desplegado, GuardDuty monitoriza el comportamiento del proceso en ejecución (por ejemplo, un contenedor que intenta escalar privilegios o acceder al metadata de la instancia de forma anómala).\n\nPARCHEO Y ACCESO ADMINISTRATIVO SEGURO\n\nAWS Systems Manager Patch Manager automatiza el despliegue de parches en una flota de instancias según una ventana de mantenimiento y una línea base de cumplimiento, integrándose con Inspector para validar que el parcheo realmente cerró la vulnerabilidad detectada. Para acceso administrativo, Systems Manager Session Manager permite abrir una sesión de shell en una instancia sin abrir el puerto 22 ni gestionar claves SSH, quedando toda la sesión auditada en CloudTrail; EC2 Instance Connect ofrece un mecanismo similar pero basado en claves SSH efímeras de un solo uso inyectadas por IAM. Ambos sustituyen al patrón tradicional de bastion host con SSH persistente.\n\nSEGURIDAD EN EL PIPELINE Y GUARDARRAÍLES PARA GENAI\n\nAmazon CodeGuru Security y Amazon Q Developer analizan código fuente en el pipeline de CI/CD para detectar vulnerabilidades antes del despliegue, desplazando la detección \"a la izquierda\" respecto al escaneo post-despliegue de Inspector. Contenido añadido en esta revisión del examen: implementar protecciones para aplicaciones de IA generativa siguiendo el marco OWASP Top 10 for LLM Applications (inyección de prompt, fuga de datos de entrenamiento, salida no validada del modelo) — la primera vez que el examen de Security Specialty incorpora amenazas específicas de aplicaciones con modelos de lenguaje."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Compute security] --> B[Imagenes endurecidas]\nB --> B1[EC2 Image Builder]\nB --> B2[Systems Manager]\nA --> C[Autorizacion]\nC --> C1[Instance profiles]\nC --> C2[Service roles]\nC --> C3[Execution roles]\nA --> D[Escaneo de vulnerabilidades]\nD --> D1[Amazon Inspector]\nD --> D2[GuardDuty runtime]\nA --> E[Parcheo]\nE --> E1[Patch Manager]\nA --> F[Acceso administrativo]\nF --> F1[Session Manager]\nF --> F2[EC2 Instance Connect]\nA --> G[Pipeline]\nG --> G1[Q Developer / CodeGuru Security]\nA --> H[GenAI OWASP Top 10 LLM]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc7-01",
+      "pregunta": "¿Qué servicio de AWS automatiza la creación de AMIs y imágenes de contenedor endurecidas con parches y configuración de seguridad?",
+      "respuesta": "EC2 Image Builder"
+    },
+    {
+      "id": "fc7-02",
+      "pregunta": "¿Qué rol de IAM se adjunta a una instancia EC2 para otorgarle credenciales temporales sin almacenar claves de acceso?",
+      "respuesta": "Instance Profile"
+    },
+    {
+      "id": "fc7-03",
+      "pregunta": "¿Qué rol permite que un servicio de AWS actúe en nombre del usuario, como AWS Backup?",
+      "respuesta": "Service Role"
+    },
+    {
+      "id": "fc7-04",
+      "pregunta": "¿Qué rol define las permisos de una función Lambda durante su ejecución?",
+      "respuesta": "Execution Role"
+    },
+    {
+      "id": "fc7-05",
+      "pregunta": "¿Qué servicio escanea imágenes de contenedor, funciones Lambda e instancias EC2 en busca de vulnerabilidades conocidas?",
+      "respuesta": "Amazon Inspector"
+    },
+    {
+      "id": "fc7-06",
+      "pregunta": "¿Qué servicio monitorea el comportamiento anómalo en tiempo de ejecución, como intentos de escalar privilegios en contenedores?",
+      "respuesta": "Amazon GuardDuty"
+    },
+    {
+      "id": "fc7-07",
+      "pregunta": "¿Qué herramienta permite abrir una sesión de shell en una instancia EC2 sin exponer el puerto 22 ni usar claves SSH persistentes?",
+      "respuesta": "AWS Systems Manager Session Manager"
+    },
+    {
+      "id": "fc7-08",
+      "pregunta": "¿Qué herramientas de AWS ayudan a detectar vulnerabilidades en el código fuente durante el pipeline de CI/CD?",
+      "respuesta": "Amazon CodeGuru Security y Amazon Q Developer"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p7-01",
+      "enunciado": "¿Qué servicio de AWS permite validar que los parches aplicados en una flota de instancias EC2 han cerrado efectivamente las vulnerabilidades detectadas por Amazon Inspector?",
+      "opciones": [
+        "a) AWS Systems Manager Session Manager",
+        "b) AWS Systems Manager Patch Manager",
+        "c) Amazon GuardDuty",
+        "d) AWS CodeGuru Security"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS Systems Manager **Patch Manager** integra con Amazon Inspector para verificar que los parches aplicados en las instancias han mitigado las vulnerabilidades detectadas, asegurando que el cumplimiento de la línea base se mantenga tras el despliegue de parches."
+    },
+    {
+      "id": "p7-02",
+      "enunciado": "Un contenedor en ejecución en ECS intenta acceder al endpoint de metadata de la instancia EC2 de forma recurrente y con patrones sospechosos. ¿Qué servicio de AWS está diseñado para detectar este tipo de comportamiento anómalo en tiempo real?",
+      "opciones": [
+        "a) Amazon Inspector",
+        "b) AWS Systems Manager Session Manager",
+        "c) Amazon GuardDuty",
+        "d) AWS CodeGuru Security"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**Amazon GuardDuty** monitoriza el comportamiento de procesos en ejecución (como contenedores o instancias EC2) para identificar actividades anómalas, incluyendo accesos no autorizados a endpoints internos como el servicio de metadata de EC2."
+    },
+    {
+      "id": "p7-03",
+      "enunciado": "¿Cuál de estos servicios NO es responsable de analizar vulnerabilidades en el código fuente durante el pipeline de CI/CD, sino que se centra en amenazas específicas de aplicaciones de IA generativa?",
+      "opciones": [
+        "a) Amazon Inspector",
+        "b) Amazon CodeGuru Security",
+        "c) Amazon Q Developer",
+        "d) AWS Systems Manager Patch Manager"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "**Amazon CodeGuru Security** y **Amazon Q Developer** analizan vulnerabilidades en el código fuente, pero **Amazon Q Developer** incluye análisis específico para amenazas en aplicaciones de IA generativa (ej. inyección de prompt, fuga de datos), alineado con el marco OWASP Top 10 for LLM Applications. El resto no cubre este ámbito."
+    },
+    {
+      "id": "p7-04",
+      "enunciado": "Al desplegar una función Lambda que procesa datos sensibles, ¿qué rol de IAM debe configurarse para definir los permisos mínimos que la función tendrá durante su ejecución?",
+      "opciones": [
+        "a) Instance Profile",
+        "b) Service Role",
+        "c) Execution Role",
+        "d) Resource Policy"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**Execution Role** es el rol específico de cómputo sin servidor que asume una función Lambda al ejecutarse, limitando sus permisos a lo estrictamente necesario (principio de menor privilegio). Los *Instance Profile* son para EC2 y los *Service Role* para servicios de AWS como AWS Backup."
+    },
+    {
+      "id": "p7-05",
+      "enunciado": "¿Qué mecanismo de AWS permite abrir una sesión administrativa en una instancia EC2 sin exponer el puerto 22 (SSH) ni requerir gestión manual de claves SSH persistentes?",
+      "opciones": [
+        "a) EC2 Instance Connect",
+        "b) AWS Systems Manager Session Manager",
+        "c) AWS Key Management Service (KMS)",
+        "d) AWS Shield Advanced"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Systems Manager Session Manager** proporciona sesiones de shell en instancias EC2 mediante una conexión gestionada por IAM, sin abrir puertos ni usar claves SSH estáticas. Las sesiones quedan auditadas en CloudTrail, eliminando la necesidad de bastion hosts tradicionales."
+    },
+    {
+      "id": "p7-06",
+      "enunciado": "Al crear imágenes de contenedor endurecidas para ECR, ¿qué servicio de AWS automatiza la aplicación de parches de seguridad y la instalación de agentes de seguridad preconfigurados en la imagen base?",
+      "opciones": [
+        "a) Amazon Inspector",
+        "b) AWS Systems Manager",
+        "c) EC2 Image Builder",
+        "d) AWS CodeBuild"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**EC2 Image Builder** automatiza la creación de imágenes de contenedor endurecidas (y AMIs) aplicando parches, instalando agentes de seguridad y configurando la imagen según estándares predefinidos, garantizando consistencia y cumplimiento desde el inicio del ciclo de vida de la imagen."
+    },
+    {
+      "id": "p7-07",
+      "enunciado": "Un equipo de desarrollo quiere implementar protecciones contra la fuga de datos de entrenamiento en modelos de lenguaje generativo. ¿Qué marco de seguridad específico debería seguir según el temario?",
+      "opciones": [
+        "a) OWASP Top 10 para aplicaciones web",
+        "b) OWASP Top 10 para APIs",
+        "c) OWASP Top 10 for LLM Applications",
+        "d) NIST SP 800-53"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**OWASP Top 10 for LLM Applications** es el marco mencionado en el temario para abordar amenazas específicas en aplicaciones de IA generativa, incluyendo riesgos como la fuga de datos de entrenamiento o salidas no validadas del modelo, que no están cubiertos por los estándares tradicionales de OWASP para aplicaciones web o APIs."
+    },
+    {
+      "id": "p7-08",
+      "enunciado": "¿Qué servicio de AWS permite validar que una instancia EC2 cumple con una configuración de seguridad deseada (ej. desactivar servicios innecesarios) incluso después de su despliegue inicial?",
+      "opciones": [
+        "a) Amazon Inspector",
+        "b) AWS Systems Manager",
+        "c) AWS Config",
+        "d) AWS Trusted Advisor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Systems Manager** (específicamente su módulo de *Configuration Manager* o *State Manager*) aplica y verifica configuraciones de seguridad en instancias EC2 en tiempo de ejecución, asegurando que cumplan con estándares predefinidos tras su despliegue inicial, incluso si se modifican después."
+    },
+    {
+      "id": "p7-09",
+      "enunciado": "¿Qué servicio de AWS permite validar que una AMI creada con EC2 Image Builder cumple con los estándares de configuración de seguridad definidos antes de su despliegue en una flota de instancias?",
+      "opciones": [
+        "a) AWS Systems Manager Configuration Compliance",
+        "b) Amazon Inspector",
+        "c) AWS Config",
+        "d) AWS Trusted Advisor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "AWS Systems Manager **Configuration Compliance** verifica que las instancias (incluidas las creadas a partir de AMIs generadas por EC2 Image Builder) cumplen con las reglas de configuración deseadas, como la presencia de agentes de seguridad o parches aplicados. Este servicio se integra con EC2 Image Builder para garantizar que las imágenes endurecidas mantengan su conformidad tras su despliegue."
+    },
+    {
+      "id": "p7-10",
+      "enunciado": "Un equipo desea desplegar funciones Lambda que procesen datos sensibles utilizando un rol de IAM con permisos mínimos. ¿Qué tipo de rol debe configurarse para este escenario?",
+      "opciones": [
+        "a) Rol de instancia (Instance Profile)",
+        "b) Rol de servicio (Service Role)",
+        "c) Rol de ejecución (Execution Role)",
+        "d) Rol de usuario (User Role)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El **rol de ejecución (Execution Role)** es el específico para funciones Lambda, definiendo los permisos que la función tendrá **exclusivamente durante su ejecución**. A diferencia del *instance profile* (para EC2) o el *service role* (para servicios como AWS Backup), este rol limita el acceso a los recursos necesarios para la función, reduciendo la superficie de ataque."
+    },
+    {
+      "id": "p7-11",
+      "enunciado": "¿Qué servicio de AWS detecta patrones de comportamiento anómalo en tiempo real, como un contenedor en ECS que intenta escalar privilegios mediante llamadas al endpoint de metadata de la instancia EC2?",
+      "opciones": [
+        "a) Amazon GuardDuty",
+        "b) AWS WAF",
+        "c) AWS Shield",
+        "d) Amazon Inspector"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**Amazon GuardDuty** monitoriza el tráfico de red y las actividades en tiempo real (runtime) para detectar comportamientos sospechosos, como accesos no autorizados al endpoint de metadata de EC2 o intentos de escalar privilegios en contenedores. A diferencia de *Inspector* (que analiza vulnerabilidades estáticas en el software), GuardDuty se centra en la **detección de amenazas en ejecución**."
+    },
+    {
+      "id": "p7-12",
+      "enunciado": "Al crear imágenes de contenedor endurecidas para ECR, ¿qué servicio de AWS garantiza que los parches de seguridad críticos se apliquen automáticamente en la imagen base antes de su uso en un pipeline de CI/CD?",
+      "opciones": [
+        "a) AWS CodeBuild con integración de Patch Manager",
+        "b) EC2 Image Builder",
+        "c) AWS Systems Manager Fleet Manager",
+        "d) Amazon ECR Image Scanning"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**EC2 Image Builder** automatiza la creación de imágenes de contenedor endurecidas, incluyendo la aplicación de parches de seguridad y la instalación de agentes de seguridad en la imagen base. Este servicio se integra con ECR para generar imágenes preconfiguradas y seguras desde el principio, evitando la necesidad de parchear manualmente en el pipeline."
+    },
+    {
+      "id": "p7-13",
+      "enunciado": "Un modelo de lenguaje generativo desarrollado en SageMaker necesita protecciones contra la fuga de datos de entrenamiento. Según el temario, ¿qué marco de seguridad específico debe implementarse para mitigar este riesgo?",
+      "opciones": [
+        "a) NIST SP 800-53",
+        "b) OWASP Top 10 for LLM Applications",
+        "c) ISO/IEC 27001",
+        "d) CIS Benchmarks for Containers"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**OWASP Top 10 for LLM Applications** es el marco específico mencionado en el temario para abordar amenazas en aplicaciones de IA generativa, incluyendo la **fuga de datos de entrenamiento**. Este marco proporciona guías para proteger modelos contra riesgos como inyección de prompts o salidas no validadas, clave para aplicaciones en SageMaker o Lambda con modelos integrados."
+    },
+    {
+      "id": "p7-14",
+      "enunciado": "¿Qué servicio de AWS escanea de forma continua (no bajo demanda) imágenes de contenedor almacenadas en ECR para detectar vulnerabilidades conocidas (CVE) y configuraciones de red expuestas?",
+      "opciones": [
+        "a) Amazon Inspector",
+        "b) AWS ECR Image Scanning",
+        "c) AWS CodeGuru Security",
+        "d) AWS Security Hub"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**Amazon Inspector** realiza escaneos **continuos** (no bajo demanda) de imágenes de contenedor en ECR, funciones Lambda y instancias EC2 para identificar vulnerabilidades (CVE) y exposiciones de red no intencionadas. A diferencia de *ECR Image Scanning* (que solo alerta sobre vulnerabilidades en el momento del push), Inspector ofrece un análisis **proactivo y recurrente** de las imágenes."
+    },
+    {
+      "id": "p7-15",
+      "enunciado": "Al desplegar una flota de instancias EC2 con AWS Systems Manager, ¿qué componente garantiza que las configuraciones de seguridad (como la desactivación de servicios innecesarios) se apliquen y verifiquen automáticamente en todas las instancias, incluso después de reinicios?",
+      "opciones": [
+        "a) AWS Config Rules",
+        "b) AWS Systems Manager Patch Manager",
+        "c) AWS Systems Manager State Manager",
+        "d) AWS Systems Manager Maintenance Windows"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**AWS Systems Manager State Manager** aplica y verifica configuraciones de seguridad definidas (como reglas de cumplimiento) en instancias EC2 de forma **automática y recurrente**, incluso tras reinicios. Este servicio se integra con **Configuration Compliance** para asegurar que las instancias mantengan su conformidad con los estándares de seguridad establecidos, superando a herramientas como *Patch Manager* (que solo gestiona parches)."
+    },
+    {
+      "id": "p7-16",
+      "enunciado": "Al crear imágenes de contenedor en ECR, ¿qué servicio de AWS garantiza que las vulnerabilidades conocidas (CVE) sean detectadas automáticamente y reportadas en tiempo real, sin necesidad de escanear manualmente?",
+      "opciones": [
+        "a) Amazon GuardDuty",
+        "b) AWS Inspector",
+        "c) AWS CodeGuru Security",
+        "d) AWS Lambda Layers"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon Inspector** escanea de forma continua (no bajo demanda) imágenes de contenedor en **ECR**, funciones Lambda y instancias EC2 para detectar **CVE conocidas y configuraciones de red expuestas**. Es el servicio específico mencionado en el temario para este propósito."
+    },
+    {
+      "id": "p7-17",
+      "enunciado": "¿Qué servicio de AWS automatiza la aplicación de parches de seguridad en una flota de instancias EC2 según una ventana de mantenimiento y valida que los parches hayan cerrado las vulnerabilidades detectadas por otro servicio?",
+      "opciones": [
+        "a) AWS Inspector",
+        "b) AWS Systems Manager Patch Manager",
+        "c) AWS CodeGuru Security",
+        "d) AWS Config"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Systems Manager Patch Manager** automatiza el despliegue de parches en instancias EC2 según una ventana de mantenimiento y se integra con **Amazon Inspector** para validar que los parches hayan cerrado efectivamente las vulnerabilidades detectadas."
+    },
+    {
+      "id": "p7-18",
+      "enunciado": "Un contenedor en ECS realiza llamadas recurrentes al endpoint de metadata de la instancia EC2 con patrones sospechosos (ej. intento de escalar privilegios). ¿Qué servicio de AWS está diseñado para detectar este tipo de comportamiento anómalo en tiempo real?",
+      "opciones": [
+        "a) Amazon Inspector",
+        "b) AWS GuardDuty",
+        "c) AWS WAF",
+        "d) AWS Network Firewall"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS GuardDuty** monitoriza el comportamiento de procesos en ejecución (runtime) para detectar actividades anómalas, como un contenedor en ECS que intenta escalar privilegios mediante llamadas al endpoint de metadata de la instancia EC2. A diferencia de **Inspector**, que analiza vulnerabilidades en el software, GuardDuty se enfoca en el comportamiento en tiempo real."
+    },
+    {
+      "id": "p7-19",
+      "enunciado": "Al crear imágenes de contenedor endurecidas para ECR, ¿qué servicio de AWS garantiza que los agentes de seguridad preconfigurados (como EDR o monitoreo de integridad) estén instalados automáticamente en la imagen base?",
+      "opciones": [
+        "a) AWS Inspector",
+        "b) AWS Systems Manager",
+        "c) EC2 Image Builder",
+        "d) AWS CodeBuild"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**EC2 Image Builder** automatiza la creación de imágenes de contenedor endurecidas (para ECR) aplicando parches, instalando agentes de seguridad preconfigurados y asegurando que la configuración base cumpla con estándares de seguridad definidos. Es el servicio clave para este propósito según el temario."
+    },
+    {
+      "id": "p7-20",
+      "enunciado": "Un equipo utiliza **EC2 Image Builder** para crear imágenes personalizadas con agentes de seguridad preinstalados (como EDR o monitoreo de integridad). ¿Qué servicio de AWS escanea automáticamente estas imágenes en ECR para detectar vulnerabilidades conocidas (CVE) antes de su uso en un pipeline de CI/CD?",
+      "opciones": [
+        "a) Amazon GuardDuty",
+        "b) AWS Systems Manager Patch Manager",
+        "c) Amazon Inspector",
+        "d) AWS Config"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**Amazon Inspector** realiza escaneos **continuos** (no bajo demanda) de imágenes en ECR, identificando CVEs y configuraciones expuestas. Aunque Image Builder puede incluir agentes de seguridad, Inspector es el servicio encargado de **validar la integridad de la imagen** antes de su despliegue, integrándose con pipelines de CI/CD para bloquear imágenes vulnerables."
+    },
+    {
+      "id": "p7-21",
+      "enunciado": "Al configurar un rol de IAM para una función Lambda que procesa datos sensibles, ¿qué tipo de rol debe usarse para garantizar que la función tenga **solo los permisos mínimos necesarios** durante su ejecución, sin acceso a recursos no relacionados con su función?",
+      "opciones": [
+        "a) Rol de **instance profile** para EC2",
+        "b) Rol de **service role** para AWS Backup",
+        "c) Rol de **execution role** para Lambda",
+        "d) Rol de **resource policy** para S3"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**Execution Role** es el rol específico para funciones Lambda, diseñado para asignar **permisos granulares** durante la ejecución (ej: acceso a una tabla DynamoDB o un bucket S3). A diferencia de los *instance profiles* (para EC2) o *service roles* (para otros servicios), este rol sigue el principio de **mínimo privilegio** y se revoca automáticamente al finalizar la ejecución."
+    },
+    {
+      "id": "p7-22",
+      "enunciado": "Al crear una AMI con EC2 Image Builder, ¿qué servicio de AWS garantiza que la imagen resultante cumpla con un estándar de configuración de seguridad definido (como desactivar servicios innecesarios) antes de su despliegue?",
+      "opciones": [
+        "a) AWS Systems Manager",
+        "b) Amazon Inspector",
+        "c) AWS Config",
+        "d) AWS Trusted Advisor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "AWS Systems Manager, específicamente en combinación con EC2 Image Builder, permite definir y aplicar configuraciones de seguridad deseadas (como desactivar servicios innecesarios) durante la creación de la AMI, asegurando que la imagen cumpla con los estándares antes de su despliegue. EC2 Image Builder automatiza este proceso de endurecimiento."
+    },
+    {
+      "id": "p7-23",
+      "enunciado": "Un equipo utiliza **AWS Systems Manager** para aplicar parches de seguridad en una flota de instancias EC2. ¿Qué servicio debe integrarse con Systems Manager para validar que los parches aplicados hayan cerrado efectivamente las vulnerabilidades detectadas por Amazon Inspector?",
+      "opciones": [
+        "a) Amazon GuardDuty",
+        "b) AWS Config",
+        "c) Amazon Inspector",
+        "d) AWS Security Hub"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Amazon Inspector es el servicio que detecta vulnerabilidades (CVE) en instancias EC2, imágenes de contenedor o funciones Lambda. Systems Manager Patch Manager se integra con Inspector para validar que los parches aplicados hayan cerrado las vulnerabilidades detectadas, asegurando un cumplimiento efectivo."
+    },
+    {
+      "id": "p7-24",
+      "enunciado": "¿Qué servicio de AWS permite detectar en tiempo real comportamientos anómalos en el runtime de una instancia EC2, como un proceso que intenta escalar privilegios mediante llamadas al endpoint de metadata de la instancia?",
+      "opciones": [
+        "a) Amazon Inspector",
+        "b) AWS Systems Manager",
+        "c) Amazon GuardDuty",
+        "d) AWS Config"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Amazon GuardDuty es el servicio diseñado para monitorear el comportamiento de las cargas de trabajo en tiempo real (runtime), detectando actividades sospechosas como intentos de escalar privilegios o accesos anómalos al endpoint de metadata de la instancia EC2."
+    },
+    {
+      "id": "p7-25",
+      "enunciado": "Al desplegar una función Lambda que procesa datos sensibles, ¿qué tipo de rol de IAM debe configurarse para garantizar que la función tenga acceso **exclusivamente** a los recursos necesarios para su ejecución y nada más?",
+      "opciones": [
+        "a) Rol de servicio (Service Role)",
+        "b) Rol de instancia (Instance Profile)",
+        "c) Rol de ejecución (Execution Role)",
+        "d) Rol de usuario (User Role)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El **rol de ejecución (Execution Role)** es el rol de IAM específico para funciones Lambda, que define los permisos mínimos que la función tendrá durante su ejecución. Este rol garantiza el principio de menor privilegio, evitando que la función acceda a recursos no relacionados con su función."
+    },
+    {
+      "id": "p7-26",
+      "enunciado": "Al crear una imagen de contenedor en **Amazon ECR** a partir de una AMI generada por **EC2 Image Builder**, ¿qué servicio de AWS garantiza que la imagen resultante no contenga vulnerabilidades conocidas (CVE) antes de su uso en un pipeline de CI/CD?",
+      "opciones": [
+        "a) AWS CodeGuru Security",
+        "b) Amazon Inspector",
+        "c) AWS GuardDuty",
+        "d) AWS Security Hub"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon Inspector** escanea de forma continua las imágenes de contenedor en **ECR** para detectar vulnerabilidades conocidas (CVE) y configuraciones de red expuestas. Este escaneo se activa automáticamente al subir la imagen, asegurando que cumpla con los estándares de seguridad antes de su despliegue en el pipeline."
+    },
+    {
+      "id": "p7-27",
+      "enunciado": "Al configurar un acceso administrativo seguro a una instancia EC2 sin exponer el puerto 22 (SSH), ¿qué servicio de AWS permite abrir una sesión de shell auditada sin gestionar claves SSH persistentes?",
+      "opciones": [
+        "a) EC2 Instance Connect",
+        "b) AWS Systems Manager Session Manager",
+        "c) AWS Key Management Service (KMS)",
+        "d) AWS Secrets Manager"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Systems Manager Session Manager** permite abrir sesiones administrativas en instancias EC2 sin abrir el puerto 22 ni requerir claves SSH persistentes. Las sesiones son auditadas automáticamente en **CloudTrail**, eliminando la necesidad de bastion hosts o gestión manual de claves."
+    },
+    {
+      "id": "p7-28",
+      "enunciado": "Un equipo utiliza **EC2 Image Builder** para crear imágenes personalizadas con agentes de seguridad como **Amazon GuardDuty Agent** preinstalados. ¿Qué servicio de AWS garantiza que estas imágenes cumplan con los estándares de configuración de seguridad definidos (por ejemplo, desactivar servicios innecesarios) **antes de su despliegue** en una flota de instancias?",
+      "opciones": [
+        "a) AWS Systems Manager Compliance",
+        "b) Amazon Inspector",
+        "c) AWS Config",
+        "d) AWS Trusted Advisor"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El servicio **AWS Systems Manager Compliance** (integrado con EC2 Image Builder) valida que las imágenes generadas cumplan con los estándares de configuración de seguridad definidos mediante reglas de cumplimiento (como desactivar servicios innecesarios) **durante la creación de la AMI**, no solo en tiempo de ejecución. *Temario: IMÁGENES ENDURECIDAS Y GESTIÓN DE CONFIGURACIÓN*"
+    },
+    {
+      "id": "p7-29",
+      "enunciado": "Al configurar un rol de IAM para una función **AWS Fargate** (parte de ECS) que procesa datos sensibles, ¿qué tipo de rol debe usarse para asegurar que la tarea tenga **acceso mínimo** a recursos externos, similar a cómo se hace con Lambda?",
+      "opciones": [
+        "a) Instance Profile",
+        "b) Service Role",
+        "c) Execution Role",
+        "d) Resource Policy"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Fargate utiliza un **execution role** (rol de ejecución) para definir los permisos mínimos que la tarea de contenedor necesita durante su ejecución, igual que Lambda. Los *instance profiles* son para EC2, los *service roles* para servicios de AWS que actúan en nombre de otros, y las *resource policies* controlan acceso a recursos específicos (no roles). *Temario: AUTORIZACIÓN DE CARGAS DE TRABAJO*"
+    },
+    {
+      "id": "p7-30",
+      "enunciado": "Un modelo de **SageMaker** entrenado con datos confidenciales requiere protecciones contra la **fuga de datos de entrenamiento** durante la inferencia. Según el temario, ¿qué marco de seguridad específico debe implementarse para mitigar este riesgo, además de las medidas técnicas como cifrado?",
+      "opciones": [
+        "a) ISO 27001",
+        "b) OWASP Top 10 for LLM Applications",
+        "c) NIST SP 800-53",
+        "d) PCI DSS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona explícitamente el **OWASP Top 10 for LLM Applications** como marco de referencia para proteger aplicaciones de IA generativa, incluyendo riesgos como la fuga de datos de entrenamiento. Los otros marcos (ISO, NIST, PCI) no abordan específicamente amenazas de modelos de lenguaje. *Temario: SEGURIDAD EN EL PIPELINE Y GUARDRAÍLES PARA GENAI*"
+    },
+    {
+      "id": "p7-31",
+      "enunciado": "Al desplegar una flota de instancias EC2 con **AWS Systems Manager**, ¿qué componente asegura que las configuraciones de seguridad (como la desactivación de servicios innecesarios) se apliquen **no solo al inicio**, sino también tras reinicios o actualizaciones del sistema operativo?",
+      "opciones": [
+        "a) AWS Config Rules",
+        "b) AWS Systems Manager State Manager",
+        "c) Amazon Inspector",
+        "d) AWS Trusted Advisor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Systems Manager State Manager** permite definir y aplicar configuraciones de seguridad de forma recurrente en instancias EC2, incluso tras reinicios o cambios en el SO, garantizando que las reglas (como desactivar servicios innecesarios) se mantengan actualizadas. *Temario: IMÁGENES ENDURECIDAS Y GESTIÓN DE CONFIGURACIÓN*"
+    },
+    {
+      "id": "p7-32",
+      "enunciado": "Un equipo utiliza **Amazon ECR** para almacenar imágenes de contenedor y quiere automatizar la detección de vulnerabilidades conocidas (**CVE**) en tiempo real, sin necesidad de escanear manualmente. ¿Qué servicio de AWS cumple este requisito al integrarse directamente con ECR?",
+      "opciones": [
+        "a) AWS Inspector",
+        "b) Amazon GuardDuty",
+        "c) AWS Security Hub",
+        "d) AWS CodeGuru Security"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**Amazon Inspector** escanea **continuamente** (no bajo demanda) las imágenes en ECR para detectar CVE conocidas y configuraciones de red expuestas, integrándose nativamente con el repositorio. GuardDuty se enfoca en el runtime, Security Hub agrega hallazgos de múltiples servicios, y CodeGuru Security analiza código fuente, no imágenes de contenedor. *Temario: ESCANEO DE VULNERABILIDADES*"
+    }
+  ]
+}

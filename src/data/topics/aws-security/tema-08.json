@@ -1,0 +1,330 @@
+{
+  "id": 8,
+  "titulo": "3.3 · Controles de seguridad de red",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "El tercer task statement de Infraestructura cierra el dominio con los controles de red propiamente dichos, dentro y fuera de la VPC.\n\nFILTRADO POR CAPAS: SG, NACL Y NETWORK FIREWALL\n\nLos Security Groups son firewalls con estado a nivel de instancia: solo reglas ALLOW, y el tráfico de respuesta se permite automáticamente. Las Network ACLs son sin estado y operan a nivel de subred, afectando a todas las instancias dentro de ella; admiten reglas DENY explícitas, algo que un Security Group no puede hacer. AWS Network Firewall añade una capa que ninguno de los dos cubre: inspección de tráfico con estado y reglas basadas en dominio o firma a nivel de VPC completa, útil para inspeccionar tráfico de salida hacia internet o entre VPC antes de que llegue a cualquier subred — es la respuesta correcta cuando el enunciado pide bloquear un dominio malicioso conocido para toda una VPC, algo que ni SG ni NACL pueden expresar directamente.\n\nCONECTIVIDAD HÍBRIDA Y MULTI-NUBE\n\nAWS Site-to-Site VPN cifra el tráfico entre un centro de datos on-premises y una VPC sobre internet público, con configuración rápida pero throughput variable. AWS Direct Connect establece una conexión de red dedicada y privada (no cifrada por defecto) con mayor ancho de banda garantizado; para cumplir requisitos de cifrado sobre Direct Connect se añade MACsec (MAC Security), que cifra a nivel de capa 2 sin la sobrecarga de un túnel VPN. El escenario de examen típico combina ambos: Direct Connect para el rendimiento, MACsec para el cifrado exigido por cumplimiento.\n\nAWS VERIFIED ACCESS\n\nVerified Access implementa un modelo de acceso de confianza cero (zero trust) para aplicaciones corporativas: evalúa cada solicitud contra señales de identidad y postura del dispositivo antes de conceder acceso, sin necesidad de una VPN tradicional. Es el servicio designado para \"acceso seguro a aplicaciones internas sin exponer una VPN completa a toda la red corporativa\".\n\nSEGMENTACIÓN Y DETECCIÓN DE ACCESO INNECESARIO\n\nLa segmentación se diseña en dos ejes: norte-sur (tráfico entre la VPC e internet o un cliente externo) y este-oeste (tráfico entre cargas de trabajo dentro de la misma VPC o entre VPC). Subredes aisladas sin ruta a internet limitan el movimiento lateral de un atacante que comprometa un solo recurso. Para verificar que la segmentación diseñada realmente restringe lo que se pretende, Network Access Analyzer modela rutas de red posibles entre dos puntos y señala si existe una ruta no intencionada; los hallazgos de alcance de red (network reachability) de Amazon Inspector hacen lo mismo pero centrados en instancias EC2 concretas expuestas a internet de forma no prevista."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Network security] --> B[Security Groups]\nA --> C[Network ACLs]\nA --> D[AWS Network Firewall]\nA --> E[Conectividad hibrida]\nE --> E1[Site-to-Site VPN]\nE --> E2[Direct Connect]\nE --> E3[MACsec]\nA --> F[AWS Verified Access]\nA --> G[Segmentacion]\nG --> G1[Norte-sur]\nG --> G2[Este-oeste]\nA --> H[Detectar acceso innecesario]\nH --> H1[Network Access Analyzer]\nH --> H2[Inspector network reachability]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc8-01",
+      "pregunta": "¿Qué son los Security Groups y qué tipo de reglas permiten?",
+      "respuesta": "Firewalls con estado a nivel de instancia que solo permiten reglas **ALLOW**. El tráfico de respuesta se autoriza automáticamente."
+    },
+    {
+      "id": "fc8-02",
+      "pregunta": "¿Qué diferencia clave existe entre Security Groups y Network ACLs?",
+      "respuesta": "Las **Network ACLs** son **sin estado**, operan a nivel de subred, admiten reglas **DENY** explícitas y afectan a todas las instancias dentro de ella."
+    },
+    {
+      "id": "fc8-03",
+      "pregunta": "¿Qué función adicional ofrece AWS Network Firewall que no cubren SG ni NACL?",
+      "respuesta": "Inspección de tráfico **con estado** y reglas basadas en **dominio o firma** a nivel de VPC completa, útil para bloquear dominios maliciosos."
+    },
+    {
+      "id": "fc8-04",
+      "pregunta": "¿Qué servicio de AWS permite cifrar tráfico entre un centro de datos on-premises y una VPC usando internet público?",
+      "respuesta": "**AWS Site-to-Site VPN** (túnel cifrado, configuración rápida pero throughput variable)."
+    },
+    {
+      "id": "fc8-05",
+      "pregunta": "¿Qué solución garantiza mayor ancho de banda y conexión privada entre on-premises y AWS?",
+      "respuesta": "**AWS Direct Connect** (conexión dedicada y privada, sin cifrado por defecto). Para cifrado, se usa **MACsec** (cifrado capa 2)."
+    },
+    {
+      "id": "fc8-06",
+      "pregunta": "¿Qué servicio implementa un modelo de **acceso de confianza cero (Zero Trust)** para aplicaciones corporativas?",
+      "respuesta": "**AWS Verified Access** (evalúa identidad y postura del dispositivo antes de conceder acceso, sin VPN tradicional)."
+    },
+    {
+      "id": "fc8-07",
+      "pregunta": "¿Qué tipo de tráfico aborda la segmentación **norte-sur** en una VPC?",
+      "respuesta": "Tráfico entre la **VPC e internet** o un cliente externo (ej.: acceso a servicios públicos)."
+    },
+    {
+      "id": "fc8-08",
+      "pregunta": "¿Qué herramienta analiza rutas de red no intencionadas entre subredes o instancias en AWS?",
+      "respuesta": "**Network Access Analyzer** (modela rutas posibles y detecta accesos innecesarios) o **Amazon Inspector** (para instancias EC2 expuestas a internet)."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p8-01",
+      "enunciado": "¿Qué servicio de AWS permite bloquear el acceso a un dominio malicioso conocido para TODA una VPC, incluyendo tráfico de salida hacia internet?",
+      "opciones": [
+        "a) Security Groups",
+        "b) Network ACLs",
+        "c) AWS Network Firewall",
+        "d) AWS Direct Connect"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "AWS Network Firewall permite inspección de tráfico con reglas basadas en dominio o firma a nivel de VPC completa, cubriendo casos como bloquear dominios maliciosos que ni Security Groups ni Network ACLs pueden gestionar directamente."
+    },
+    {
+      "id": "p8-02",
+      "enunciado": "Si necesita cifrar el tráfico entre su centro de datos on-premises y una VPC de AWS, pero prioriza ancho de banda garantizado sobre cifrado por defecto, ¿qué servicio debe usar?",
+      "opciones": [
+        "a) AWS Site-to-Site VPN",
+        "b) AWS Direct Connect con MACsec",
+        "c) AWS Verified Access",
+        "d) Network ACLs"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS Direct Connect proporciona una conexión dedicada y privada con mayor ancho de banda garantizado. Para cumplir con requisitos de cifrado, se añade MACsec a nivel de capa 2, evitando la sobrecarga de un túnel VPN."
+    },
+    {
+      "id": "p8-03",
+      "enunciado": "¿Cuál de estos servicios NO permite reglas explícitas de DENY para bloquear tráfico en una red?",
+      "opciones": [
+        "a) Security Groups",
+        "b) Network ACLs",
+        "c) AWS Network Firewall",
+        "d) AWS Direct Connect"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Los Security Groups solo admiten reglas ALLOW y no permiten reglas DENY explícitas, a diferencia de las Network ACLs o AWS Network Firewall."
+    },
+    {
+      "id": "p8-04",
+      "enunciado": "¿Qué servicio de AWS evalúa la postura del dispositivo y la identidad del usuario antes de conceder acceso a aplicaciones corporativas, sin necesidad de una VPN tradicional?",
+      "opciones": [
+        "a) AWS Site-to-Site VPN",
+        "b) AWS Direct Connect",
+        "c) AWS Verified Access",
+        "d) Network Access Analyzer"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "AWS Verified Access implementa un modelo de confianza cero (zero trust) para aplicaciones corporativas, evaluando señales de identidad y postura del dispositivo antes de permitir el acceso."
+    },
+    {
+      "id": "p8-05",
+      "enunciado": "Si un atacante compromete una instancia EC2 en su VPC, ¿qué mecanismo ayuda a identificar rutas no intencionadas de movimiento lateral dentro de la misma VPC?",
+      "opciones": [
+        "a) Security Groups",
+        "b) Network Access Analyzer",
+        "c) AWS Network Firewall",
+        "d) AWS Direct Connect"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Network Access Analyzer modela rutas de red posibles entre puntos dentro de la VPC y detecta rutas no intencionadas, ayudando a evaluar la efectividad de la segmentación este-oeste."
+    },
+    {
+      "id": "p8-06",
+      "enunciado": "¿Qué servicio permite inspeccionar tráfico de salida hacia internet desde una VPC completa, incluyendo reglas basadas en firmas o dominios, pero NO opera a nivel de instancia?",
+      "opciones": [
+        "a) Security Groups",
+        "b) Network ACLs",
+        "c) AWS Network Firewall",
+        "d) AWS Direct Connect"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "AWS Network Firewall opera a nivel de VPC completa e inspecciona tráfico con estado, incluyendo reglas basadas en firmas o dominios, a diferencia de Security Groups (instancia) o Network ACLs (subred)."
+    },
+    {
+      "id": "p8-07",
+      "enunciado": "Si desea limitar el tráfico este-oeste dentro de una VPC para reducir el movimiento lateral de un atacante, ¿qué acción es más efectiva según el temario?",
+      "opciones": [
+        "a) Crear Security Groups con reglas DENY",
+        "b) Configurar subredes aisladas sin ruta a internet",
+        "c) Usar AWS Direct Connect para cifrar el tráfico",
+        "d) Aplicar reglas de Network ACLs con prioridad alta"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La segmentación este-oeste se logra aislando subredes dentro de la VPC y eliminando rutas a internet, limitando así el movimiento lateral de un atacante que comprometa un recurso."
+    },
+    {
+      "id": "p8-08",
+      "enunciado": "¿Qué servicio de AWS detecta instancias EC2 expuestas a internet de forma no prevista, analizando su configuración de seguridad?",
+      "opciones": [
+        "a) Network Access Analyzer",
+        "b) Amazon Inspector",
+        "c) AWS Network Firewall",
+        "d) AWS Verified Access"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Amazon Inspector analiza instancias EC2 concretas y detecta accesos no intencionados a internet, ayudando a validar la segmentación norte-sur y la exposición de recursos."
+    },
+    {
+      "id": "p8-09",
+      "enunciado": "¿Qué mecanismo permite bloquear tráfico entrante a un puerto específico (ej. 22 para SSH) en todas las instancias de una subred, incluso si un Security Group lo permite explícitamente?",
+      "opciones": [
+        "a) Security Group con regla DENY para el puerto 22",
+        "b) Network ACL con regla DENY para el puerto 22",
+        "c) AWS Network Firewall con regla de inspección por puerto",
+        "d) AWS Direct Connect con cifrado MACsec"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las **Network ACLs** son las únicas que admiten reglas **DENY explícitas** a nivel de subred, afectando a todas las instancias dentro de ella, mientras que los Security Groups solo permiten reglas **ALLOW** y no soportan DENY. AWS Network Firewall no opera a nivel de puerto como una ACL, y MACsec se usa para cifrar conexiones dedicadas."
+    },
+    {
+      "id": "p8-10",
+      "enunciado": "Si desea implementar un firewall que inspeccione el tráfico de salida hacia internet desde una VPC completa, incluyendo reglas basadas en dominios maliciosos (ej. bloquear acceso a un sitio de phishing), ¿qué servicio debe configurar?",
+      "opciones": [
+        "a) Security Group con reglas de salida",
+        "b) Network ACL con reglas de salida",
+        "c) AWS Network Firewall con reglas de inspección de tráfico",
+        "d) AWS Direct Connect con cifrado MACsec"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**AWS Network Firewall** es el único servicio capaz de inspeccionar tráfico a nivel de VPC completa (incluyendo salida a internet) con reglas basadas en dominios o firmas, algo que ni los Security Groups ni las Network ACLs pueden hacer directamente."
+    },
+    {
+      "id": "p8-11",
+      "enunciado": "¿Cuál de estos servicios NO puede ser usado para limitar el tráfico entre instancias dentro de la misma VPC (tráfico este-oeste) sin afectar el tráfico norte-sur?",
+      "opciones": [
+        "a) Security Groups con reglas restrictivas",
+        "b) Network ACLs con reglas DENY entre subredes",
+        "c) AWS Network Firewall con reglas de inspección este-oeste",
+        "d) Subredes privadas sin rutas a internet"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Las **subredes privadas sin rutas a internet** solo afectan al tráfico **norte-sur** (VPC-internet), no al **este-oeste** (instancia-instancia). Los Security Groups, Network ACLs y AWS Network Firewall sí permiten segmentar tráfico este-oeste mediante reglas explícitas."
+    },
+    {
+      "id": "p8-12",
+      "enunciado": "Un cliente necesita conectar su centro de datos on-premises a AWS con una conexión privada y dedicada, priorizando ancho de banda garantizado sobre cifrado por defecto. Además, requiere cumplir con normativas que exigen cifrado en la capa 2. ¿Qué combinación de servicios debe usar?",
+      "opciones": [
+        "a) AWS Site-to-Site VPN + cifrado TLS en la aplicación",
+        "b) AWS Direct Connect + cifrado MACsec",
+        "c) AWS Network Firewall + AWS Direct Connect",
+        "d) Security Groups + Network ACLs para filtrar tráfico"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Direct Connect** proporciona una conexión privada y dedicada con alto ancho de banda, mientras que **MACsec** (MAC Security) añade cifrado a nivel de capa 2 sin sobrecargar el túnel VPN. Esto cumple con requisitos de cumplimiento sin sacrificar rendimiento."
+    },
+    {
+      "id": "p8-13",
+      "enunciado": "¿Qué servicio de AWS analiza las rutas de red posibles entre dos puntos dentro de una VPC o entre VPC, identificando rutas no intencionadas que podrían permitir movimiento lateral de un atacante?",
+      "opciones": [
+        "a) AWS Network Firewall",
+        "b) AWS Direct Connect",
+        "c) Network Access Analyzer",
+        "d) Amazon Inspector"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**Network Access Analyzer** modela rutas de red entre cualquier par de puntos (instancias, subredes o VPC) y detecta conexiones no previstas, ayudando a validar la efectividad de la segmentación. Amazon Inspector se centra en instancias EC2 expuestas, no en rutas."
+    },
+    {
+      "id": "p8-14",
+      "enunciado": "Un equipo de desarrollo necesita acceder a una base de datos interna sin exponer una VPN corporativa completa. El acceso debe basarse en la identidad del usuario y la postura del dispositivo, sin depender de una conexión VPN tradicional. ¿Qué servicio de AWS debe implementarse?",
+      "opciones": [
+        "a) AWS Site-to-Site VPN",
+        "b) AWS Direct Connect",
+        "c) AWS Verified Access",
+        "d) AWS Network Firewall"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**AWS Verified Access** implementa un modelo **zero trust** para aplicaciones internas, evaluando identidad y postura del dispositivo antes de conceder acceso, sin requerir una VPN tradicional. Es ideal para escenarios de acceso seguro a aplicaciones sin exponer toda la red."
+    },
+    {
+      "id": "p8-15",
+      "enunciado": "¿Qué diferencia clave existe entre un Security Group y una Network ACL al definir reglas para bloquear tráfico entrante a un puerto específico?",
+      "opciones": [
+        "a) Los Security Groups permiten reglas DENY; las Network ACLs no",
+        "b) Las Network ACLs permiten reglas DENY; los Security Groups no",
+        "c) Ambos permiten reglas DENY, pero las Network ACLs afectan solo a instancias específicas",
+        "d) Solo las Network ACLs pueden bloquear tráfico de salida, no de entrada"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Las Network ACLs** son las únicas que admiten reglas **DENY explícitas** (incluyendo bloqueo de puertos), mientras que los **Security Groups** solo permiten reglas **ALLOW** y no soportan DENY. Además, las ACLs operan a nivel de subred, afectando a todas las instancias dentro de ella."
+    },
+    {
+      "id": "p8-16",
+      "enunciado": "Un analista de seguridad detecta que una instancia EC2 en una subred pública tiene puertos abiertos no previstos (ej. puerto 3389 para RDP). ¿Qué servicio de AWS puede identificar automáticamente este tipo de configuraciones no seguras?",
+      "opciones": [
+        "a) Network Access Analyzer",
+        "b) AWS Network Firewall",
+        "c) Amazon Inspector",
+        "d) AWS Direct Connect"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**Amazon Inspector** analiza instancias EC2 concretas y detecta puertos expuestos no previstos (como RDP en 3389), mientras que **Network Access Analyzer** se enfoca en rutas de red entre puntos, no en configuraciones de instancias individuales."
+    },
+    {
+      "id": "p8-17",
+      "enunciado": "Un administrador de red desea implementar un firewall que permita reglas de bloqueo explícitas (DENY) para todo el tráfico entrante a una subred específica, afectando a todas las instancias dentro de ella. ¿Qué mecanismo debe configurar?",
+      "opciones": [
+        "a) Security Group asociado a las instancias",
+        "b) Network ACL vinculada a la subred",
+        "c) AWS Network Firewall en la VPC",
+        "d) AWS Direct Connect con cifrado MACsec"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las **Network ACLs** son el mecanismo que permite reglas DENY explícitas a nivel de subred, afectando a todas las instancias dentro de ella. A diferencia de los Security Groups, que solo admiten reglas ALLOW y operan a nivel de instancia, las NACLs son sin estado y permiten bloquear tráfico de forma granular por subred."
+    },
+    {
+      "id": "p8-18",
+      "enunciado": "¿Qué servicio de AWS permite analizar si una instancia EC2 en una subred pública tiene puertos abiertos no previstos (ej. 3389 para RDP) y reportar configuraciones de seguridad no seguras?",
+      "opciones": [
+        "a) AWS Network Firewall",
+        "b) Amazon Inspector con análisis de *network reachability*",
+        "c) AWS Config para auditoría de Security Groups",
+        "d) AWS Verified Access para evaluación de postura de dispositivo"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El módulo de **Amazon Inspector** que analiza *network reachability* detecta instancias EC2 expuestas a internet con puertos no previstos, como RDP (3389), y genera informes sobre configuraciones inseguras. Este servicio se centra en la exposición no intencionada de recursos, no en la inspección de tráfico en tiempo real."
+    },
+    {
+      "id": "p8-19",
+      "enunciado": "Un equipo de seguridad necesita bloquear el tráfico de salida hacia un dominio malicioso conocido (ej. `phishing.example.com`) para **todas las instancias de una VPC**, incluyendo tráfico generado por instancias en subredes privadas. ¿Qué servicio debe configurarse?",
+      "opciones": [
+        "a) Security Group con reglas de bloqueo por IP",
+        "b) Network ACL con reglas DENY por dominio",
+        "c) AWS Network Firewall con reglas basadas en dominio",
+        "d) AWS Direct Connect con cifrado MACsec"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**AWS Network Firewall** es el único servicio capaz de inspeccionar el tráfico de salida a nivel de VPC completa y aplicar reglas basadas en dominios (o firmas), bloqueando acceso a dominios maliciosos como `phishing.example.com`. Ni los Security Groups ni las Network ACLs soportan este tipo de filtros por dominio."
+    },
+    {
+      "id": "p8-20",
+      "enunciado": "¿Cuál es la principal diferencia entre un **Security Group** y una **Network ACL** al definir reglas para bloquear tráfico saliente desde una instancia?",
+      "opciones": [
+        "a) Los Security Groups permiten reglas DENY; las Network ACLs no",
+        "b) Las Network ACLs aplican reglas a nivel de subred; los Security Groups a nivel de instancia",
+        "c) Solo las Network ACLs pueden bloquear tráfico hacia internet",
+        "d) Los Security Groups son sin estado; las Network ACLs tienen estado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las **Network ACLs** operan a nivel de **subred** y afectan a todas las instancias dentro de ella, mientras que los **Security Groups** se asocian a instancias individuales. Ambas permiten reglas DENY (solo las ACLs), pero las ACLs no tienen estado (son sin estado), a diferencia de los Security Groups, que son *stateful* (permiten tráfico de respuesta automáticamente)."
+    },
+    {
+      "id": "p8-21",
+      "enunciado": "Un analista de seguridad quiere verificar si existe una ruta no intencionada entre dos subredes dentro de la misma VPC que permita movimiento lateral de un atacante. ¿Qué servicio de AWS puede modelar estas rutas y detectar posibles vulnerabilidades?",
+      "opciones": [
+        "a) AWS Network Firewall",
+        "b) Amazon Inspector con análisis de *network reachability*",
+        "c) AWS Network Access Analyzer",
+        "d) AWS Config para auditoría de Security Groups"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**AWS Network Access Analyzer** modela las rutas de red posibles entre puntos dentro de una VPC (o entre VPC) y identifica rutas no intencionadas que podrían permitir movimiento lateral. A diferencia de Amazon Inspector (que se centra en instancias expuestas), este servicio analiza la **topología de rutas** en tiempo real para validar la segmentación diseñada."
+    },
+    {
+      "id": "p8-22",
+      "enunciado": "Un administrador de seguridad desea implementar un mecanismo que permita bloquear tráfico entrante a un puerto específico (por ejemplo, el puerto 8080) para TODAS las instancias de una subred, incluso si dichas instancias tienen un Security Group que permita explícitamente ese puerto. ¿Qué servicio de AWS debe configurarse para lograr este objetivo?",
+      "opciones": [
+        "a) Security Group asociado a las instancias",
+        "b) Network ACL asociada a la subred",
+        "c) AWS Network Firewall aplicado a la VPC",
+        "d) AWS Shield Advanced para protección DDoS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La **Network ACL** es el mecanismo adecuado para bloquear tráfico entrante a un puerto específico en todas las instancias de una subred, incluso si un **Security Group** permite ese puerto. A diferencia de los Security Groups (que son *stateful* y solo permiten reglas *ALLOW*), las Network ACLs son *stateless* y operan a nivel de subred, admitiendo reglas explícitas de **DENY**. Este servicio cubre el requisito de filtrado a nivel de capa 3/4 sin depender del estado de la conexión."
+    }
+  ]
+}

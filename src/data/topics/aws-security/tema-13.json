@@ -1,0 +1,330 @@
+{
+  "id": 13,
+  "titulo": "5.3 · Secretos, credenciales y claves",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Tercer y último task statement de Protección de Datos: la gestión operativa de secretos, credenciales y material criptográfico — el nivel más práctico y detallado del examen.\n\nROTACIÓN DE CREDENCIALES CON SECRETS MANAGER\n\nAWS Secrets Manager almacena credenciales cifradas con KMS y las rota automáticamente mediante una función Lambda asociada — por ejemplo, cambiando la contraseña de una base de datos RDS cada 30 días sin intervención humana, reduciendo la ventana de utilidad de una credencial filtrada. Se diferencia de Systems Manager Parameter Store, que no rota secretos automáticamente y está pensado para configuración general, no para credenciales sensibles con ciclo de vida propio.\n\nMATERIAL DE CLAVE: IMPORTADO FRENTE A GENERADO POR AWS\n\nUna clave de KMS puede usar material de clave generado por AWS (el caso por defecto, donde AWS genera y gestiona el material criptográfico de principio a fin) o material de clave importado (bring your own key), donde la organización genera el material fuera de AWS y lo importa a una clave KMS que actúa como contenedor. La diferencia práctica: con material importado, la organización controla la rotación y puede eliminar el material para invalidar la clave instantáneamente en cualquier momento, pero pierde la rotación automática nativa de KMS y es responsable de gestionar su disponibilidad. External key stores llevan esto un paso más allá: la clave nunca reside dentro de KMS en absoluto, sino en un gestor de claves externo (por ejemplo, un HSM on-premises), y KMS actúa solo como proxy de las operaciones criptográficas — la opción cuando el cumplimiento exige que el material nunca toque infraestructura de AWS, ni siquiera de forma importada.\n\nENMASCARADO DE DATOS SENSIBLES\n\nLas políticas de protección de datos de CloudWatch Logs detectan y enmascaran automáticamente patrones de datos sensibles (números de tarjeta, credenciales, información personal) dentro de los logs antes de que un operador con acceso de solo lectura pueda verlos en texto plano, sin necesidad de modificar la aplicación que genera el log. La protección de datos de mensajes de Amazon SNS aplica el mismo principio a mensajes en tránsito por el servicio de notificaciones, enmascarando o bloqueando la publicación de mensajes que contengan datos sensibles según la política definida.\n\nGESTIÓN DE CLAVES Y CERTIFICADOS MULTI-REGIÓN\n\nLas claves gestionadas por el cliente (customer managed keys) de KMS pueden replicarse como claves multi-región, permitiendo que una aplicación distribuida en varias regiones cifre y descifre con la misma clave lógica sin transferir el material criptográfico fuera de KMS en cada región. AWS Private Certificate Authority emite certificados privados (no de confianza pública) para autenticación interna entre servicios y dispositivos dentro de la organización, con la misma renovación automática que ACM ofrece para certificados públicos."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Secretos y claves] --> B[AWS Secrets Manager]\nB --> B1[Rotacion automatica]\nA --> C[Material de clave]\nC --> C1[Importado vs generado por AWS]\nC --> C2[External key stores]\nA --> D[Enmascarado de datos]\nD --> D1[CloudWatch Logs data protection]\nD --> D2[Amazon SNS message protection]\nA --> E[Gestion multi-region]\nE --> E1[KMS customer managed keys]\nE --> E2[AWS Private CA]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc13-01",
+      "pregunta": "¿Qué servicio de AWS rota automáticamente credenciales como contraseñas de bases de datos?",
+      "respuesta": "AWS Secrets Manager, mediante funciones Lambda asociadas, rotando credenciales sin intervención humana."
+    },
+    {
+      "id": "fc13-02",
+      "pregunta": "¿Cuál es la diferencia clave entre Secrets Manager y Systems Manager Parameter Store?",
+      "respuesta": "Secrets Manager rota credenciales automáticamente; Parameter Store no lo hace y está diseñado para configuración general."
+    },
+    {
+      "id": "fc13-03",
+      "pregunta": "¿Qué significa 'bring your own key' (BYOK) en AWS KMS?",
+      "respuesta": "Importar material de clave generado externamente a AWS, permitiendo control total sobre rotación e inactivación instantánea."
+    },
+    {
+      "id": "fc13-04",
+      "pregunta": "¿Qué es un *external key store* en AWS KMS?",
+      "respuesta": "Almacenamiento de claves externo (ej. HSM on-premises) donde el material criptográfico nunca reside en AWS; KMS actúa como proxy."
+    },
+    {
+      "id": "fc13-05",
+      "pregunta": "¿Cómo protege CloudWatch Logs los datos sensibles en logs?",
+      "respuesta": "Detecta y enmascara automáticamente patrones sensibles (ej. tarjetas, credenciales) antes de su visualización, sin modificar la aplicación."
+    },
+    {
+      "id": "fc13-06",
+      "pregunta": "¿Qué servicio enmascara mensajes en tránsito por Amazon SNS?",
+      "respuesta": "Protección de datos de mensajes de Amazon SNS, aplicando políticas para enmascarar o bloquear datos sensibles en notificaciones."
+    },
+    {
+      "id": "fc13-07",
+      "pregunta": "¿Qué permite replicar KMS para claves gestionadas por el cliente?",
+      "respuesta": "Claves multi-región: una misma clave lógica para cifrado/descifrado en múltiples regiones sin transferir material criptográfico."
+    },
+    {
+      "id": "fc13-08",
+      "pregunta": "¿Qué servicio emite certificados privados para autenticación interna en AWS?",
+      "respuesta": "AWS Private Certificate Authority (PCA), con renovación automática y sin depender de certificados públicos."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p13-01",
+      "enunciado": "¿Qué servicio de AWS permite enmascarar automáticamente datos sensibles en mensajes de notificación antes de su envío, sin necesidad de modificar la aplicación que los genera?",
+      "opciones": [
+        "a) AWS CloudTrail",
+        "b) Amazon SNS con protección de datos",
+        "c) AWS Config",
+        "d) AWS Secrets Manager"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La protección de datos de mensajes de **Amazon SNS** aplica enmascaramiento automático a datos sensibles en mensajes en tránsito, según políticas definidas, evitando que se publiquen en texto plano. Esto se menciona en el contexto de enmascarado de datos sensibles."
+    },
+    {
+      "id": "p13-02",
+      "enunciado": "Si una organización requiere que el material criptográfico de sus claves nunca resida en AWS, ¿qué opción de AWS KMS debe configurarse?",
+      "opciones": [
+        "a) Clave con material generado por AWS",
+        "b) Clave con material importado (BYOK)",
+        "c) External key store con HSM externo",
+        "d) Clave de AWS gestionada (AWS managed key)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El **external key store** permite que el material criptográfico se gestione en un **HSM on-premises** externo, evitando que toque infraestructura de AWS. KMS actúa como proxy de operaciones criptográficas, cumpliendo requisitos de cumplimiento estrictos."
+    },
+    {
+      "id": "p13-03",
+      "enunciado": "¿Qué servicio de AWS permite replicar una clave de cifrado gestionada por el cliente a múltiples regiones sin transferir el material criptográfico fuera de KMS?",
+      "opciones": [
+        "a) AWS Secrets Manager",
+        "b) Claves KMS multi-región (customer managed keys)",
+        "c) AWS Certificate Manager (ACM)",
+        "d) AWS Systems Manager Parameter Store"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las **claves KMS gestionadas por el cliente (customer managed keys)** pueden configurarse como **multi-región**, replicando su clave lógica a varias regiones sin exponer el material criptográfico, permitiendo cifrado/descifrado consistente en todo el entorno distribuido."
+    },
+    {
+      "id": "p13-04",
+      "enunciado": "¿Cuál es la principal diferencia entre AWS Secrets Manager y AWS Systems Manager Parameter Store en el contexto de la rotación de credenciales?",
+      "opciones": [
+        "a) Parameter Store soporta rotación automática de credenciales, mientras que Secrets Manager no",
+        "b) Secrets Manager rota automáticamente credenciales sensibles (ej. bases de datos) mediante Lambda, mientras que Parameter Store no lo hace",
+        "c) Ambos servicios usan el mismo mecanismo de cifrado con KMS",
+        "d) Parameter Store es más seguro para almacenar credenciales que Secrets Manager"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Secrets Manager** rota automáticamente credenciales sensibles (como contraseñas de bases de datos RDS) mediante funciones **Lambda**, reduciendo la ventana de exposición. **Systems Manager Parameter Store**, en cambio, no ofrece rotación automática y está diseñado para configuración general, no para credenciales con ciclo de vida crítico."
+    },
+    {
+      "id": "p13-05",
+      "enunciado": "Si una aplicación necesita cifrar datos con una clave gestionada por AWS Private Certificate Authority (PCA), ¿qué tipo de certificados emite PCA y para qué propósito?",
+      "opciones": [
+        "a) Certificados públicos de confianza global (ej. para dominios web)",
+        "b) Certificados privados para autenticación interna entre servicios y dispositivos de la organización",
+        "c) Certificados para firmar código de aplicaciones en AWS",
+        "d) Certificados de identidad para usuarios finales (ej. clientes)"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Private Certificate Authority (PCA)** emite **certificados privados** (no de confianza pública) para autenticación interna entre servicios y dispositivos dentro de la organización, con renovación automática similar a ACM pero sin exposición a la red pública."
+    },
+    {
+      "id": "p13-06",
+      "enunciado": "¿Qué servicio de AWS permite detectar y enmascarar automáticamente patrones de datos sensibles (como números de tarjeta o credenciales) en logs antes de que sean visualizados por operadores?",
+      "opciones": [
+        "a) AWS CloudTrail",
+        "b) AWS CloudWatch Logs con protección de datos",
+        "c) AWS X-Ray",
+        "d) AWS Config Rules"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**CloudWatch Logs con protección de datos** detecta y enmascara automáticamente patrones sensibles en logs (ej. credenciales, datos PII) antes de que sean accesibles en texto plano para operadores con permisos de solo lectura, sin modificar la aplicación generadora."
+    },
+    {
+      "id": "p13-07",
+      "enunciado": "Al importar material de clave a AWS KMS (BYOK), ¿qué responsabilidad adicional asume la organización frente a usar material generado por AWS?",
+      "opciones": [
+        "a) AWS se encarga de la rotación automática de la clave",
+        "b) La organización debe gestionar manualmente la rotación y disponibilidad del material, perdiendo la rotación automática nativa de KMS",
+        "c) KMS asume el control total de la clave, invalidando cualquier gestión externa",
+        "d) El material importado no puede ser eliminado, solo rotado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Con **material de clave importado (BYOK)**, la organización **controla la rotación y disponibilidad** del material, lo que implica gestionar manualmente estos procesos. A diferencia del material generado por AWS, **pierde la rotación automática nativa de KMS** y debe asegurar su disponibilidad para evitar interrupciones."
+    },
+    {
+      "id": "p13-08",
+      "enunciado": "¿Qué servicio de AWS permite almacenar credenciales cifradas con KMS y rotarlas automáticamente mediante una función Lambda asociada, reduciendo la ventana de exposición en caso de filtración?",
+      "opciones": [
+        "a) AWS Systems Manager Parameter Store",
+        "b) AWS Secrets Manager",
+        "c) AWS Certificate Manager (ACM)",
+        "d) AWS IAM Roles"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Secrets Manager** almacena credenciales cifradas con **KMS** y las rota automáticamente mediante **funciones Lambda** (ej. cambiar contraseñas de bases de datos RDS cada 30 días), reduciendo la ventana de utilidad de una credencial filtrada. Esto contrasta con Parameter Store, que no ofrece rotación automática."
+    },
+    {
+      "id": "p13-09",
+      "enunciado": "¿Qué servicio de AWS permite almacenar credenciales de bases de datos con rotación automática, pero no ofrece protección contra acceso no autorizado en el almacenamiento en sí mismo?",
+      "opciones": [
+        "AWS Systems Manager Parameter Store con cifrado KMS",
+        "AWS Secrets Manager con rotación Lambda",
+        "AWS Database Migration Service con credenciales temporales",
+        "AWS CloudHSM para almacenamiento de claves físicas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "AWS Systems Manager Parameter Store permite almacenar credenciales cifradas con KMS, pero **no incluye rotación automática de credenciales** (según el temario, esta es la diferencia clave frente a Secrets Manager). La rotación requiere configuración manual o integración con Lambda, algo que Secrets Manager gestiona nativamente."
+    },
+    {
+      "id": "p13-10",
+      "enunciado": "Un equipo de cumplimiento exige que el material criptográfico de una clave de KMS **nunca** sea generado ni almacenado por AWS, incluso temporalmente. ¿Qué opción de KMS debe usarse?",
+      "opciones": [
+        "Claves de tipo 'Symmetric' con material importado",
+        "External Key Store con un HSM on-premises",
+        "Claves gestionadas por AWS (AWS-managed keys)",
+        "Claves multi-región con replicación automática"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El **External Key Store** permite que el material criptográfico resida en un **HSM externo (on-premises o en un proveedor de confianza)** y que KMS actúe como proxy para operaciones criptográficas, evitando que el material toque cualquier infraestructura de AWS (incluido el caso de importación)."
+    },
+    {
+      "id": "p13-11",
+      "enunciado": "¿Qué servicio de AWS puede enmascarar automáticamente **números de tarjeta de crédito** en logs de CloudWatch antes de que sean visualizados por un operador, sin requerir cambios en la aplicación que genera los logs?",
+      "opciones": [
+        "AWS GuardDuty con reglas de detección de patrones",
+        "AWS CloudTrail con filtros de eventos sensibles",
+        "Protección de datos de CloudWatch Logs con patrones regulados",
+        "AWS Config con reglas de cumplimiento de PCI-DSS"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La **protección de datos de CloudWatch Logs** detecta y enmascara patrones sensibles (como números de tarjeta) **automáticamente** en los logs, aplicando políticas de enmascarado sin modificar la aplicación. Esto se basa en el mecanismo descrito para logs y SNS en el temario."
+    },
+    {
+      "id": "p13-12",
+      "enunciado": "Al configurar una clave de KMS de tipo 'Asymmetric' para firmar documentos, ¿qué tipo de material criptográfico **no** puede ser gestionado por AWS en ningún caso?",
+      "opciones": [
+        "Par de claves RSA generado por AWS KMS",
+        "Par de claves ECC importado por el cliente",
+        "Material de clave almacenado en un HSM externo vía External Key Store",
+        "Clave simétrica derivada del material asimétrico para cifrado rápido"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El **External Key Store** exige que el material criptográfico (incluido el de claves asimétricas) **nunca resida en AWS**, ni siquiera temporalmente. AWS KMS actúa como intermediario para operaciones de firma/descifrado, pero el material real permanece fuera de la infraestructura de AWS (ej: en un HSM on-premises)."
+    },
+    {
+      "id": "p13-13",
+      "enunciado": "¿Qué ventaja ofrece usar **claves multi-región en KMS** frente a replicar manualmente una clave en cada región?",
+      "opciones": [
+        "Permite cifrar datos con el mismo material criptográfico en todas las regiones sin configuración adicional",
+        "Reduce el costo de almacenamiento al centralizar el material en una sola región",
+        "Elimina la necesidad de sincronizar manualmente la rotación de claves entre regiones",
+        "Acelera las operaciones de cifrado/descifrado al evitar la latencia de réplicas asincrónicas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las **claves multi-región en KMS** permiten que una **misma clave lógica** (no el material criptográfico) se replique automáticamente en múltiples regiones, permitiendo cifrar/descifrar con **consistencia de clave** sin transferir el material fuera de KMS. Esto evita la necesidad de gestionar réplicas manuales o sincronizar rotaciones."
+    },
+    {
+      "id": "p13-14",
+      "enunciado": "Si una organización importa material de clave a AWS KMS (BYOK), ¿qué responsabilidad adicional asume al compararla con una clave generada por AWS?",
+      "opciones": [
+        "Gestionar la rotación automática del material criptográfico cada 30 días",
+        "Asumir la responsabilidad de la **disponibilidad y seguridad del material** fuera de AWS",
+        "Pagar un costo adicional por cada operación de cifrado/descifrado",
+        "Configurar manualmente políticas de acceso para cada región donde se use la clave"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Al importar material de clave (BYOK), la organización **asume la responsabilidad total** de su **disponibilidad y seguridad**, incluyendo su almacenamiento fuera de AWS (ej: en un HSM) y su gestión de rotación (si no se usa External Key Store). AWS no gestiona ni rota este material, a diferencia de las claves generadas por AWS."
+    },
+    {
+      "id": "p13-15",
+      "enunciado": "¿Qué servicio de AWS puede enmascarar automáticamente **contraseñas de bases de datos** en mensajes de notificación de SNS antes de que sean enviados a un equipo de soporte?",
+      "opciones": [
+        "AWS Lambda con una función personalizada de filtrado",
+        "Protección de datos de Amazon SNS con políticas de enmascarado",
+        "AWS CloudFormation con macros para reemplazar valores sensibles",
+        "AWS Config Rules para validar la ausencia de credenciales en los mensajes"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La **protección de datos de Amazon SNS** permite definir políticas que detectan y enmascaran patrones sensibles (como contraseñas) en mensajes antes de su envío, **sin modificar la aplicación que genera el mensaje**. Esto se alinea con el mecanismo descrito para logs y SNS en el temario."
+    },
+    {
+      "id": "p13-16",
+      "enunciado": "¿Qué servicio de AWS permite almacenar credenciales de servicios externos (como APIs o SaaS) y rotarlas automáticamente mediante integración con funciones Lambda, pero **no** ofrece protección contra acceso no autorizado en el almacenamiento en sí mismo?",
+      "opciones": [
+        "AWS Systems Manager Parameter Store con tipo 'SecureString'",
+        "AWS Secrets Manager con rotación programada",
+        "AWS Config Rules para validar políticas de secreto",
+        "AWS CloudTrail para auditar acceso a credenciales"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS Secrets Manager gestiona credenciales sensibles con rotación automática mediante Lambda, pero la protección contra acceso no autorizado depende de la configuración de IAM y KMS asociada al almacenamiento. Systems Manager Parameter Store no rota automáticamente y no está diseñado para credenciales con ciclo de vida dinámico."
+    },
+    {
+      "id": "p13-17",
+      "enunciado": "Al configurar una clave de KMS de tipo 'Symmetric' para cifrar datos en reposo, ¿qué **no** es responsabilidad de AWS según el modelo de responsabilidad compartida?",
+      "opciones": [
+        "Generar el material criptográfico inicial de la clave",
+        "Proteger el material criptográfico contra accesos no autorizados internos",
+        "Rotar el material criptográfico según políticas de seguridad",
+        "Garantizar la disponibilidad del servicio KMS para operaciones criptográficas"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "AWS **no** rota automáticamente el material criptográfico de claves *symmetric* gestionadas por el cliente (customer-managed keys) a menos que se configure una rotación manual. La rotación es responsabilidad del cliente cuando usa material importado o claves *symmetric* con BYOK."
+    },
+    {
+      "id": "p13-18",
+      "enunciado": "Si una organización usa **AWS KMS con External Key Store** para cumplir con requisitos de cumplimiento, ¿qué operación criptográfica **no** puede realizarse directamente en AWS KMS?",
+      "opciones": [
+        "Firmar documentos con una clave asimétrica gestionada externamente",
+        "Descifrar datos cifrados con una clave asimétrica externa",
+        "Generar material criptográfico para una nueva clave KMS",
+        "Verificar la firma digital de un documento usando una clave pública externa"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "Con **External Key Store**, el material criptográfico reside en un gestor externo (ej. HSM on-premises), y KMS actúa como proxy. La generación de material criptográfico **nunca** ocurre en AWS KMS en este escenario, ya que todo el proceso depende del sistema externo."
+    },
+    {
+      "id": "p13-19",
+      "enunciado": "¿Qué diferencia clave existe entre usar una clave de KMS de tipo *Asymmetric* con material importado y una clave *Asymmetric* generada por AWS, en términos de control sobre el material criptográfico?",
+      "opciones": [
+        "Las claves asimétricas generadas por AWS permiten rotar automáticamente la clave privada, mientras que las importadas no",
+        "Las claves importadas permiten eliminar el material criptográfico externo para invalidar la clave, algo imposible con claves generadas por AWS",
+        "Las claves generadas por AWS incluyen renovación automática de certificados asociados, mientras que las importadas no",
+        "Las claves importadas requieren configurar manualmente políticas de IAM, a diferencia de las generadas por AWS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Al importar material asimétrico (ej. pares de claves RSA/ECC), la organización **controla la clave privada** y puede eliminarla del sistema externo para invalidar la clave en KMS. AWS **no** gestiona ni rota la clave privada en claves *Asymmetric* importadas, a diferencia de claves *Symmetric* donde el material puede rotarse manualmente."
+    },
+    {
+      "id": "p13-20",
+      "enunciado": "¿Qué servicio de AWS permite **bloquear la publicación de mensajes en SNS** si estos contienen datos sensibles (como contraseñas o tokens API) según una política de protección de datos predefinida?",
+      "opciones": [
+        "AWS Shield Advanced para filtrar tráfico malicioso",
+        "Protección de datos de Amazon SNS con reglas de enmascarado",
+        "AWS WAF para bloquear patrones en mensajes entrantes",
+        "AWS Config para auditar configuraciones de SNS"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La **protección de datos de Amazon SNS** permite definir políticas que **bloquean** la publicación de mensajes si contienen patrones sensibles (ej. contraseñas, tokens), además de enmascararlos. Esto evita que datos críticos se distribuyan accidentalmente."
+    },
+    {
+      "id": "p13-21",
+      "enunciado": "Al migrar una clave de KMS de tipo *Symmetric* gestionada por AWS a una clave con material importado (BYOK), ¿qué riesgo adicional asume la organización respecto a la disponibilidad del servicio?",
+      "opciones": [
+        "AWS no garantiza la disponibilidad de la clave si el material externo no está accesible",
+        "La clave importada no puede replicarse en múltiples regiones sin transferir material",
+        "AWS rotará automáticamente el material cada 90 días, independientemente de la configuración",
+        "El servicio KMS dejará de cifrar datos si el material externo se elimina sin notificación"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Con **BYOK (Bring Your Own Key)**, la organización es responsable de la **disponibilidad y accesibilidad del material criptográfico externo**. Si el sistema externo (ej. HSM) falla o el material se pierde, la clave en KMS **dejará de funcionar**, ya que AWS no gestiona ni replica el material importado."
+    },
+    {
+      "id": "p13-22",
+      "enunciado": "Una organización necesita almacenar credenciales de acceso a un servicio externo (como una API de terceros) que requieren rotación periódica cada 90 días. Además, exige que, en caso de filtración, la ventana de exposición sea mínima. ¿Qué servicio de AWS, combinado con una función Lambda, permite cumplir estos requisitos de forma automática y segura?",
+      "opciones": [
+        "a) AWS Systems Manager Parameter Store con rotación manual mediante una función Lambda personalizada.",
+        "b) AWS Secrets Manager con rotación automática configurada mediante una función Lambda asociada.",
+        "c) AWS Systems Manager Session Manager para gestión de credenciales temporales.",
+        "d) AWS IAM para almacenar credenciales con políticas de rotación definidas en políticas de acceso."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS **Secrets Manager** es el servicio que permite almacenar credenciales sensibles (como credenciales de APIs o SaaS) y rotarlas automáticamente mediante una función Lambda asociada, reduciendo la ventana de exposición en caso de filtración. A diferencia de **Systems Manager Parameter Store**, Secrets Manager está diseñado específicamente para secretos con ciclos de vida dinámicos, como contraseñas o tokens que requieren rotación periódica (ejemplo: cada 90 días). La función Lambda se encarga de generar y actualizar las credenciales según un cronograma predefinido, garantizando que las credenciales filtradas pierdan validez rápidamente."
+    }
+  ]
+}

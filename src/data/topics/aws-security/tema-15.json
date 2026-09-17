@@ -1,0 +1,282 @@
+{
+  "id": 15,
+  "titulo": "6.2 · Despliegue seguro y consistente",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Segundo task statement de Gobernanza: cómo desplegar recursos de forma segura y repetible en lugar de manual y ad hoc, cuenta a cuenta.\n\nINFRAESTRUCTURA COMO CÓDIGO A ESCALA DE ORGANIZACIÓN\n\nLos StackSets de CloudFormation despliegan la misma plantilla en múltiples cuentas y regiones de AWS Organizations desde un único punto de administración, garantizando que un control de seguridad definido una vez (por ejemplo, una configuración base de VPC segura) se aplique de forma idéntica en todas las cuentas, incluidas las que se creen en el futuro si se combina con Control Tower. Antes de desplegar, CloudFormation Guard valida una plantilla contra reglas de política como código (por ejemplo, \"ningún bucket S3 puede desplegarse sin cifrado\"), bloqueando el despliegue si la plantilla viola la regla. cfn-lint valida sintaxis y buenas prácticas de la plantilla en sí (no de política de seguridad), detectando errores antes de que lleguen siquiera a intentar desplegarse.\n\nETIQUETADO PARA GOBERNANZA\n\nLas etiquetas (tags) organizan recursos en grupos lógicos — por departamento, centro de coste o entorno (producción/desarrollo)— que después se usan como base para SCP, RCP y políticas de ABAC (ver tema 4.2): sin una estrategia de etiquetado consistente, ninguno de esos controles puede aplicarse de forma fiable a escala.\n\nAPLICACIÓN CENTRALIZADA DE POLÍTICAS\n\nAWS Firewall Manager aplica políticas de seguridad de red (reglas de WAF, protecciones de Shield Advanced, reglas de Network Firewall) desde una cuenta central hacia todas las cuentas del alcance definido, de forma automática también sobre cuentas y recursos que se creen después — evitando que cada equipo configure su propio WAF de forma inconsistente o lo olvide directamente.\n\nCOMPARTICIÓN SEGURA DE RECURSOS ENTRE CUENTAS\n\nAWS Service Catalog permite publicar productos preaprobados (plantillas de CloudFormation ya validadas y con controles de seguridad incluidos) para que otros equipos los desplieguen sin necesidad de permisos amplios de creación de infraestructura — el equipo despliega el producto del catálogo, no infraestructura libre. AWS Resource Access Manager (RAM) comparte recursos concretos ya existentes (una subred, una regla de Transit Gateway, un recurso de Route 53) entre cuentas de la organización sin duplicarlos ni recrearlos en cada cuenta."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Despliegue] --> B[Infraestructura como codigo]\nB --> B1[CloudFormation StackSets]\nB --> B2[CloudFormation Guard]\nB --> B3[cfn-lint]\nA --> C[Etiquetado]\nC --> C1[Departamento / centro de coste / entorno]\nA --> D[Politicas centralizadas]\nD --> D1[AWS Firewall Manager]\nA --> E[Compartir recursos]\nE --> E1[AWS Service Catalog]\nE --> E2[AWS Resource Access Manager]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc15-01",
+      "pregunta": "¿Qué servicio permite desplegar la misma plantilla CloudFormation en múltiples cuentas y regiones de AWS Organizations desde un único punto?",
+      "respuesta": "StackSets de CloudFormation"
+    },
+    {
+      "id": "fc15-02",
+      "pregunta": "¿Qué herramienta valida una plantilla CloudFormation contra reglas de política de seguridad antes del despliegue?",
+      "respuesta": "CloudFormation Guard"
+    },
+    {
+      "id": "fc15-03",
+      "pregunta": "¿Qué herramienta verifica la sintaxis y buenas prácticas de una plantilla CloudFormation antes de su despliegue?",
+      "respuesta": "cfn-lint"
+    },
+    {
+      "id": "fc15-04",
+      "pregunta": "¿Qué servicio aplica políticas de seguridad de red (como reglas de WAF o Shield Advanced) de forma centralizada en múltiples cuentas?",
+      "respuesta": "AWS Firewall Manager"
+    },
+    {
+      "id": "fc15-05",
+      "pregunta": "¿Qué servicio permite publicar plantillas de CloudFormation preaprobadas para despliegue controlado por equipos sin permisos amplios?",
+      "respuesta": "AWS Service Catalog"
+    },
+    {
+      "id": "fc15-06",
+      "pregunta": "¿Qué servicio facilita compartir recursos existentes (como subredes o reglas de Transit Gateway) entre cuentas sin duplicarlos?",
+      "respuesta": "AWS Resource Access Manager (RAM)"
+    },
+    {
+      "id": "fc15-07",
+      "pregunta": "¿Qué estrategia de gobernanza depende de etiquetas (tags) para aplicar controles como SCP o RCP de forma consistente?",
+      "respuesta": "Etiquetado para gobernanza"
+    },
+    {
+      "id": "fc15-08",
+      "pregunta": "¿Qué combinación de servicios garantiza que una configuración base de seguridad (ej. VPC) se aplique en todas las cuentas, incluso las futuras?",
+      "respuesta": "StackSets + AWS Control Tower"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p15-01",
+      "enunciado": "¿Qué servicio de AWS permite validar una plantilla de CloudFormation contra reglas de política de seguridad antes de su despliegue, bloqueando el proceso si hay incumplimientos?",
+      "opciones": [
+        "a) AWS Config",
+        "b) CloudFormation Guard",
+        "c) AWS Trusted Advisor",
+        "d) cfn-lint"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio **CloudFormation Guard** valida una plantilla contra reglas de política como código (ej: 'ningún bucket S3 sin cifrado'), bloqueando el despliegue si hay violaciones. *Temario: 'CloudFormation Guard valida una plantilla contra reglas de política...'*."
+    },
+    {
+      "id": "p15-02",
+      "enunciado": "Si necesitas desplegar una configuración base de VPC segura en múltiples cuentas y regiones de AWS Organizations de forma centralizada, ¿qué herramienta es la más adecuada?",
+      "opciones": [
+        "a) AWS Organizations Service Control Policies (SCPs)",
+        "b) AWS CloudFormation StackSets",
+        "c) AWS Systems Manager Parameter Store",
+        "d) AWS Config Rules"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**StackSets de CloudFormation** permiten desplegar la misma plantilla en múltiples cuentas y regiones desde un único punto, garantizando consistencia incluso en cuentas futuras al combinarse con AWS Control Tower. *Temario: 'StackSets despliegan la misma plantilla en múltiples cuentas...'*."
+    },
+    {
+      "id": "p15-03",
+      "enunciado": "¿Qué herramienta de AWS ayuda a detectar errores de sintaxis o buenas prácticas en una plantilla de CloudFormation *antes* de intentar desplegarla, pero **no** valida políticas de seguridad?",
+      "opciones": [
+        "a) AWS Config Conformance Packs",
+        "b) CloudFormation Guard",
+        "c) cfn-lint",
+        "d) AWS Trusted Advisor"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**cfn-lint** analiza la sintaxis y buenas prácticas de la plantilla (ej: estructura, recursos mal definidos), pero *no* valida políticas de seguridad. *Temario: 'cfn-lint valida sintaxis y buenas prácticas...'*."
+    },
+    {
+      "id": "p15-04",
+      "enunciado": "Un equipo de DevOps quiere evitar que otros desplieguen infraestructura sin controles de seguridad predefinidos. ¿Qué servicio les permite publicar plantillas ya validadas como 'productos' para su uso controlado?",
+      "opciones": [
+        "a) AWS Resource Access Manager (RAM)",
+        "b) AWS Service Catalog",
+        "c) AWS Organizations SCPs",
+        "d) AWS Config"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Service Catalog** permite publicar *productos* (plantillas de CloudFormation preaprobadas con controles integrados) para que equipos sin permisos amplios los desplieguen de forma segura. *Temario: 'AWS Service Catalog permite publicar productos preaprobados...'*."
+    },
+    {
+      "id": "p15-05",
+      "enunciado": "¿Qué servicio de AWS facilita compartir recursos existentes (como una subred o regla de Transit Gateway) entre cuentas de la organización *sin duplicarlos*?",
+      "opciones": [
+        "a) AWS Organizations SCPs",
+        "b) AWS Resource Access Manager (RAM)",
+        "c) AWS Control Tower",
+        "d) AWS Config"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Resource Access Manager (RAM)** permite compartir recursos concretos (ej: subredes, reglas de Transit Gateway) entre cuentas *sin recrearlos*, evitando redundancia. *Temario: 'RAM comparte recursos... sin duplicarlos'*."
+    },
+    {
+      "id": "p15-06",
+      "enunciado": "Para aplicar políticas de seguridad de red (como reglas de WAF o protecciones de Shield Advanced) de forma automática y consistente en todas las cuentas de una organización, incluyendo las creadas en el futuro, ¿qué herramienta es la más adecuada?",
+      "opciones": [
+        "a) AWS Config Rules",
+        "b) AWS Firewall Manager",
+        "c) AWS Organizations SCPs",
+        "d) AWS Trusted Advisor"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Firewall Manager** aplica políticas de seguridad de red (WAF, Shield Advanced, Network Firewall) desde una cuenta central a todas las cuentas del alcance, incluso las creadas después. *Temario: 'Firewall Manager aplica políticas... automáticamente sobre cuentas futuras'*."
+    },
+    {
+      "id": "p15-07",
+      "enunciado": "Si las etiquetas (tags) en los recursos de AWS no son consistentes, ¿qué tipo de controles de gobernanza podrían fallar al aplicarse a escala?",
+      "opciones": [
+        "a) AWS Config Rules",
+        "b) Service Control Policies (SCPs), Resource Control Policies (RCPs) y políticas de ABAC",
+        "c) AWS Trusted Advisor recomendaciones",
+        "d) AWS CloudTrail logs"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Sin una estrategia de etiquetado consistente**, los controles como *SCPs*, *RCPs* o políticas de *ABAC* (basadas en etiquetas) no podrían aplicarse de forma fiable a gran escala. *Temario: 'sin etiquetas consistentes, ninguno de esos controles puede aplicarse de forma fiable'*."
+    },
+    {
+      "id": "p15-08",
+      "enunciado": "¿Qué combinación de servicios de AWS garantiza que una configuración base de seguridad (ej: VPC) se aplique automáticamente en todas las cuentas nuevas de una organización, incluso si son creadas después del despliegue inicial?",
+      "opciones": [
+        "a) AWS Organizations + AWS Config",
+        "b) AWS Control Tower + CloudFormation StackSets",
+        "c) AWS Service Catalog + RAM",
+        "d) AWS Firewall Manager + SCPs"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Control Tower** (para gestionar cuentas) + **CloudFormation StackSets** (para desplegar plantillas en múltiples cuentas) aseguran que configuraciones como VPC se apliquen en cuentas nuevas, incluso futuras. *Temario: 'StackSets... combinado con Control Tower'*."
+    },
+    {
+      "id": "p15-09",
+      "enunciado": "Un equipo de DevOps quiere asegurar que todas las cuentas de su organización AWS implementen automáticamente un **bucket S3 con cifrado activado** y **versiones habilitadas**, incluso en cuentas creadas después del despliegue inicial. ¿Qué servicio de AWS es el más adecuado para lograr esto sin depender de permisos manuales por cuenta?",
+      "opciones": [
+        "a) AWS Config con reglas personalizadas",
+        "b) AWS Firewall Manager",
+        "c) AWS Control Tower con StackSets de CloudFormation",
+        "d) AWS Trusted Advisor"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La combinación de **AWS Control Tower** (para gestionar la organización y cuentas) con **StackSets de CloudFormation** permite desplegar plantillas de infraestructura como código en múltiples cuentas y regiones de forma centralizada, incluso en cuentas creadas posteriormente. Esto garantiza que políticas como el cifrado S3 y versiones se apliquen de manera consistente en toda la organización."
+    },
+    {
+      "id": "p15-10",
+      "enunciado": "Si un equipo desea **evitar que recursos de AWS como EC2 o RDS se desplieguen sin una etiqueta específica** (ej: `Departamento=Finanzas`), ¿qué mecanismo de gobernanza se vería afectado si las etiquetas no son consistentes?",
+      "opciones": [
+        "a) AWS Organizations Service Control Policies (SCPs)",
+        "b) AWS IAM Roles con políticas de permisos condicionales",
+        "c) AWS Resource Groups y Tag Editor",
+        "d) AWS Config con reglas de compliance basadas en etiquetas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las **Service Control Policies (SCPs)** de AWS Organizations aplican restricciones a nivel de cuenta o organización, y suelen depender de **etiquetas (tags)** para segmentar recursos (ej: `!tag:Departamento:Finanzas`). Sin etiquetado consistente, las SCP no podrán aplicar los controles de forma precisa, como bloquear recursos sin la etiqueta requerida."
+    },
+    {
+      "id": "p15-11",
+      "enunciado": "¿Qué servicio de AWS permite **validar automáticamente una plantilla de CloudFormation** antes de su despliegue, detectando tanto errores de sintaxis como **violaciones de políticas de seguridad definidas como código** (ej: 'prohibido crear buckets S3 sin cifrado')?",
+      "opciones": [
+        "a) cfn-lint",
+        "b) AWS CloudFormation Guard",
+        "c) AWS Trusted Advisor",
+        "d) AWS Config Rules"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS CloudFormation Guard** valida plantillas contra reglas de política como código (ej: prohibir buckets S3 sin cifrado), mientras que **cfn-lint** solo revisa sintaxis y buenas prácticas. Guard bloquea el despliegue si hay incumplimientos, a diferencia de Config Rules, que solo monitorea recursos ya existentes."
+    },
+    {
+      "id": "p15-12",
+      "enunciado": "Un equipo necesita compartir un **recurso de Route 53 (ej: un dominio público)** entre múltiples cuentas de su organización AWS sin duplicarlo. ¿Qué servicio de AWS facilita esto de manera segura y centralizada?",
+      "opciones": [
+        "a) AWS Service Catalog",
+        "b) AWS Resource Access Manager (RAM)",
+        "c) AWS Organizations con SCPs",
+        "d) AWS IAM con políticas de permisos cruzados"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Resource Access Manager (RAM)** permite compartir recursos existentes (como dominios de Route 53, subredes o reglas de Transit Gateway) entre cuentas de la organización **sin duplicarlos**, evitando la necesidad de recrearlos en cada cuenta. Es la solución para compartir recursos compartidos de forma centralizada."
+    },
+    {
+      "id": "p15-13",
+      "enunciado": "Para garantizar que todas las cuentas de una organización AWS implementen **reglas de WAF para proteger aplicaciones web** de forma automática —incluyendo cuentas creadas en el futuro—, ¿qué servicio es el más adecuado si se quiere evitar la configuración manual por equipo?",
+      "opciones": [
+        "a) AWS Config con reglas de WAF",
+        "b) AWS Firewall Manager",
+        "c) AWS Shield Advanced",
+        "d) AWS Security Hub"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS Firewall Manager** aplica políticas de seguridad de red (como reglas de WAF o protecciones de Shield Advanced) de forma centralizada desde una cuenta administradora a **todas las cuentas de la organización**, incluso las creadas después, evitando inconsistencias por configuraciones manuales."
+    },
+    {
+      "id": "p15-14",
+      "enunciado": "Un equipo de DevOps quiere **publicar una plantilla de CloudFormation prevalidada** (con controles de seguridad integrados) para que otros equipos la desplieguen sin necesidad de permisos amplios de creación de infraestructura. ¿Qué servicio de AWS cumple este requisito?",
+      "opciones": [
+        "a) AWS Organizations con SCPs",
+        "b) AWS Resource Access Manager (RAM)",
+        "c) AWS Service Catalog",
+        "d) AWS CloudFormation StackSets"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**AWS Service Catalog** permite publicar 'productos' (plantillas de CloudFormation ya validadas y con controles de seguridad) que otros equipos pueden desplegar como un servicio gestionado, sin otorgarles permisos directos para crear infraestructura libremente. Esto centraliza el control sobre los despliegues."
+    },
+    {
+      "id": "p15-15",
+      "enunciado": "Si una organización AWS quiere aplicar **políticas de cifrado obligatorio para todos los buckets S3** en todas sus cuentas, incluyendo las creadas en el futuro, pero solo para recursos etiquetados con `Entorno=Producción`, ¿qué combinación de servicios sería la más adecuada?",
+      "opciones": [
+        "a) AWS Config Rules + AWS Organizations SCPs",
+        "b) AWS Firewall Manager + AWS IAM Policies",
+        "c) AWS CloudFormation Guard + AWS Resource Groups",
+        "d) AWS Organizations SCPs + AWS Tag Policies"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Para aplicar políticas de cifrado **basadas en etiquetas** (`Entorno=Producción`) y a **todas las cuentas** (incluidas futuras), se necesita combinar **AWS Organizations SCPs** (para bloquear recursos sin cifrado) con **AWS Config Rules** (para auditar el cumplimiento). Las etiquetas actúan como filtro en las SCP para segmentar recursos."
+    },
+    {
+      "id": "p15-16",
+      "enunciado": "Un equipo necesita desplegar una **configuración base de VPC segura** (con subredes, grupos de seguridad y NAT Gateway) en **todas las cuentas de su organización**, incluyendo las creadas después del despliegue inicial. ¿Qué servicio de AWS, combinado con AWS Control Tower, garantiza esto de forma automática y consistente?",
+      "opciones": [
+        "a) AWS Config Conformance Packs",
+        "b) AWS CloudFormation StackSets",
+        "c) AWS Trusted Advisor",
+        "d) AWS Systems Manager State Manager"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS CloudFormation StackSets**, cuando se usa junto con **AWS Control Tower**, permite desplegar plantillas de infraestructura (como una VPC segura) en **todas las cuentas de la organización**, incluyendo las creadas posteriormente. StackSets garantiza la consistencia y repetibilidad a escala de organización."
+    },
+    {
+      "id": "p15-17",
+      "enunciado": "Un equipo de DevOps necesita asegurar que todas las cuentas de su organización AWS implementen automáticamente un **grupo de seguridad (Security Group) con reglas estrictas de tráfico** (ej: solo permitir tráfico SSH desde una IP específica y bloquear todo el tráfico entrante por defecto), incluso en cuentas creadas después del despliegue inicial. ¿Qué servicio de AWS, combinado con AWS Organizations, permite lograr esto sin depender de configuraciones manuales por cuenta?",
+      "opciones": [
+        "a) AWS Config con reglas personalizadas",
+        "b) AWS Firewall Manager",
+        "c) AWS Trusted Advisor",
+        "d) AWS CloudTrail"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio **AWS Firewall Manager** permite aplicar políticas de seguridad de red (como reglas de Security Groups, WAF o Shield Advanced) de forma centralizada y automática en todas las cuentas de una organización AWS, incluyendo las creadas en el futuro. Esto garantiza consistencia y evita configuraciones ad hoc por cuenta, alineándose con el objetivo de gobernanza escalable descrito en el temario."
+    },
+    {
+      "id": "p15-18",
+      "enunciado": "Si una organización AWS quiere **garantizar que todos los recursos EC2 desplegados en cuentas de producción** (identificadas mediante la etiqueta `Entorno=Producción`) cumplan con un **mínimo de 4 vCPUs y 8 GiB de memoria**, pero no afectar a cuentas de desarrollo, ¿qué mecanismo de gobernanza debe usarse para aplicar esta restricción de forma automática y consistente?",
+      "opciones": [
+        "a) AWS Service Control Policies (SCPs) con condiciones basadas en etiquetas",
+        "b) AWS IAM con políticas de permisos condicionales",
+        "c) AWS Config con reglas de cumplimiento",
+        "d) AWS Trusted Advisor con alertas personalizadas"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las **AWS Service Control Policies (SCPs)** permiten definir restricciones a nivel de organización (o OU) que se aplican automáticamente a todas las cuentas dentro del alcance, incluyendo condiciones basadas en etiquetas (como `Entorno=Producción`). Esto asegura que los recursos EC2 en cuentas etiquetadas como producción cumplan con los requisitos de capacidad, alineándose con la necesidad de gobernanza escalable y consistente mencionada en el temario."
+    }
+  ]
+}

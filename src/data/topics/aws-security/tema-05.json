@@ -1,0 +1,330 @@
+{
+  "id": 5,
+  "titulo": "2.2 · Respuesta a eventos de seguridad",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Con el plan ya diseñado (tema anterior), este task statement es la ejecución: qué hacer mientras el incidente está ocurriendo, en el orden correcto.\n\nCAPTURA DE EVIDENCIA FORENSE\n\nAntes de tocar nada, hay que preservar el estado del recurso afectado tal como está: un snapshot de EBS de la instancia comprometida, una copia de sus logs de sistema y aplicación, y metadatos de red asociados (qué Security Group tenía en el momento del incidente). Esta captura debe ir a una cuenta o ubicación aislada de producción, para que la investigación no dependa de recursos que el propio atacante podría seguir controlando.\n\nBÚSQUEDA Y CORRELACIÓN ENTRE SERVICIOS\n\nUn incidente real casi nunca aparece en un único servicio: un hallazgo de GuardDuty sobre tráfico anómalo se correlaciona con los VPC Flow Logs de esa misma ventana temporal y con los eventos de CloudTrail que muestran qué credencial actuó justo antes. El examen espera que el candidato sepa cruzar estas tres fuentes mentalmente, no solo nombrarlas por separado.\n\nVALIDACIÓN DE HALLAZGOS: ALCANCE E IMPACTO\n\nNo todo hallazgo de un servicio de seguridad es un incidente confirmado — puede ser un falso positivo o una prueba autorizada. Antes de escalar, hay que validar el hallazgo contra el contexto real: ¿la instancia señalada realmente existe y está en producción? ¿el patrón de tráfico coincide con una tarea programada legítima? Esta validación determina si se activa contención completa o solo se documenta y monitoriza.\n\nCONTENCIÓN, ERRADICACIÓN Y RECUPERACIÓN\n\nLa contención de red es la acción reversible más rápida: cambiar el Security Group de una instancia comprometida a uno \"sin salida\" (sin reglas de egress) la aísla del resto de la red sin apagarla, preservando el estado para forense. La erradicación elimina la causa (revocar credenciales robadas, eliminar una puerta trasera, aplicar el parche que faltaba). La recuperación restaura el servicio, habitualmente desde una copia de seguridad conocida como limpia (AWS Backup, snapshots previos al incidente) en vez de \"limpiar\" el recurso comprometido in situ, que nunca da garantías completas.\n\nANÁLISIS DE CAUSA RAÍZ\n\nAmazon Detective es la herramienta designada para esta fase: ingiere automáticamente VPC Flow Logs, CloudTrail y hallazgos de GuardDuty, y construye un grafo de comportamiento que visualiza qué entidad hizo qué, cuándo y hacia dónde — permitiendo responder no solo \"qué pasó\" (eso lo dice GuardDuty) sino \"cómo se propagó y por qué pudo pasar\"."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Respuesta en caliente] --> B[Capturar evidencia]\nB --> B1[Logs de sistema y aplicacion]\nA --> C[Buscar y correlacionar]\nC --> C1[Multiples servicios AWS]\nA --> D[Validar hallazgos]\nD --> D1[Alcance e impacto real]\nA --> E[Contener y recuperar]\nE --> E1[Contencion de red]\nE --> E2[Restaurar backups]\nA --> F[Causa raiz]\nF --> F1[Amazon Detective]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc5-01",
+      "pregunta": "¿Qué se debe hacer primero al detectar un incidente en AWS antes de tocar cualquier recurso?",
+      "respuesta": "Preservar el estado del recurso afectado mediante un *snapshot de EBS*, copia de logs de sistema/aplicación y metadatos de red (Security Group), almacenándolos en una cuenta aislada de producción."
+    },
+    {
+      "id": "fc5-02",
+      "pregunta": "¿Qué tres fuentes de datos se deben correlacionar para analizar un incidente en AWS?",
+      "respuesta": "GuardDuty (tráfico anómalo), VPC Flow Logs y eventos de CloudTrail (acciones de credenciales)."
+    },
+    {
+      "id": "fc5-03",
+      "pregunta": "¿Qué herramienta de AWS permite visualizar la propagación de un incidente mediante un grafo de comportamiento?",
+      "respuesta": "Amazon Detective (integra VPC Flow Logs, CloudTrail y GuardDuty)."
+    },
+    {
+      "id": "fc5-04",
+      "pregunta": "¿Qué acción de contención es reversible y permite aislar una instancia sin apagarla?",
+      "respuesta": "Cambiar el *Security Group* de la instancia a uno sin reglas de *egress* (salida)."
+    },
+    {
+      "id": "fc5-05",
+      "pregunta": "¿Qué herramienta de AWS se usa para restaurar un servicio afectado desde una copia de seguridad limpia?",
+      "respuesta": "AWS Backup o *snapshots* previos al incidente (evitar limpieza *in situ*)."
+    },
+    {
+      "id": "fc5-06",
+      "pregunta": "¿Qué fase determina si un hallazgo de seguridad es un falso positivo o un incidente real?",
+      "respuesta": "Validación de hallazgos: verificar contexto real (existencia de la instancia, patrones de tráfico legítimos)."
+    },
+    {
+      "id": "fc5-07",
+      "pregunta": "¿Qué acción elimina la causa raíz de un incidente en AWS (ej: credenciales robadas)?",
+      "respuesta": "Erradicación: revocar credenciales, eliminar puertas traseras o aplicar parches faltantes."
+    },
+    {
+      "id": "fc5-08",
+      "pregunta": "¿Qué logs de red en AWS registran flujos de tráfico para correlacionar con otros hallazgos?",
+      "respuesta": "VPC Flow Logs (junto a CloudTrail y GuardDuty)."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p5-01",
+      "enunciado": "¿Qué servicio de AWS permite visualizar la propagación de un incidente entre recursos mediante un grafo de comportamiento basado en logs de red, auditoría y alertas de seguridad?",
+      "opciones": [
+        "a) AWS Config",
+        "b) Amazon Detective",
+        "c) AWS CloudHSM",
+        "d) AWS GuardDuty"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Amazon Detective es el servicio que ingiere VPC Flow Logs, CloudTrail y hallazgos de GuardDuty para construir un grafo de relaciones que ayuda a identificar cómo se propagó el incidente y las causas raíz, según el análisis de causa raíz del temario."
+    },
+    {
+      "id": "p5-02",
+      "enunciado": "Al responder a un incidente, ¿qué acción se recomienda realizar PRIMERO para preservar el estado de una instancia comprometida antes de manipularla?",
+      "opciones": [
+        "a) Revocar las credenciales asociadas al usuario afectado",
+        "b) Crear un snapshot de EBS y copiar logs a una ubicación aislada",
+        "c) Cambiar el Security Group para aislar la instancia de la red",
+        "d) Restaurar el servicio desde una copia de seguridad conocida"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La captura de evidencia forense exige tomar un snapshot de EBS y copiar logs y metadatos a una ubicación aislada de producción antes de tocar cualquier recurso, según el apartado de captura de evidencia del temario."
+    },
+    {
+      "id": "p5-03",
+      "enunciado": "Si un servicio de seguridad detecta un patrón de tráfico sospechoso, pero al validar se confirma que corresponde a una tarea programada legítima, ¿qué acción debe tomarse según el temario?",
+      "opciones": [
+        "a) Escalar inmediatamente a contención total y erradicación",
+        "b) Documentar el hallazgo y monitorizarlo sin activar contención",
+        "c) Eliminar el recurso asociado al patrón como medida preventiva",
+        "d) Notificar al equipo de desarrollo para que revise el código"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La validación de hallazgos exige contrastar el patrón con el contexto real; si es un falso positivo o acción legítima, se documenta y monitoriza sin escalar, según el apartado de validación de hallazgos."
+    },
+    {
+      "id": "p5-04",
+      "enunciado": "¿Qué mecanismo permite aislar una instancia comprometida de la red sin apagarla, preservando su estado para análisis forense?",
+      "opciones": [
+        "a) Modificar el Security Group para eliminar todas las reglas de inbound",
+        "b) Cambiar el Security Group a uno configurado con reglas de egress vacías (sin salida)",
+        "c) Asignar una nueva IP privada y desvincularla del subred actual",
+        "d) Apagar la instancia y restaurarla desde un snapshot limpio"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La contención de red se logra modificando el Security Group para eliminar reglas de *egress* (salida), aislando la instancia sin apagarla, según el apartado de contención, erradicación y recuperación."
+    },
+    {
+      "id": "p5-05",
+      "enunciado": "Al correlacionar datos entre servicios durante un incidente, ¿qué tres fuentes de información menciona el temario como esenciales para entender el contexto completo?",
+      "opciones": [
+        "a) CloudTrail, VPC Flow Logs y AWS Config",
+        "b) GuardDuty, CloudTrail y AWS Backup",
+        "c) GuardDuty, VPC Flow Logs y CloudTrail",
+        "d) AWS Config, VPC Flow Logs y AWS KMS"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario destaca la correlación entre *GuardDuty* (alertas de seguridad), *VPC Flow Logs* (tráfico de red) y *CloudTrail* (actividades de auditoría) para analizar incidentes en su contexto temporal y de servicios."
+    },
+    {
+      "id": "p5-06",
+      "enunciado": "¿Por qué es recomendable restaurar un servicio afectado desde una copia de seguridad conocida (como un snapshot de AWS Backup) en lugar de intentar 'limpiar' el recurso comprometido in situ?",
+      "opciones": [
+        "a) Porque las copias de seguridad garantizan siempre que no haya malware residual",
+        "b) Porque limpiar in situ puede introducir nuevos riesgos de corrupción de datos",
+        "c) Porque AWS Backup no permite restaurar servicios críticos rápidamente",
+        "d) Porque los snapshots no incluyen metadatos de red esenciales para la forense"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario advierte que restaurar desde una copia de seguridad limpia (AWS Backup/snapshots) es más seguro que intentar 'limpiar' el recurso in situ, ya que este método no ofrece garantías de eliminación completa de amenazas residuales."
+    },
+    {
+      "id": "p5-07",
+      "enunciado": "Si durante un incidente se detecta que una credencial ha sido robada, ¿qué acción forma parte de la fase de **erradicación** según el temario?",
+      "opciones": [
+        "a) Aislar la instancia afectada mediante cambios en el Security Group",
+        "b) Revocar la credencial robada y aplicar parches pendientes",
+        "c) Crear un snapshot forense de la instancia comprometida",
+        "d) Notificar al equipo de DevOps para que revise los logs de CloudTrail"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La erradicación implica eliminar la causa del incidente, como revocar credenciales robadas o aplicar parches, según el apartado de contención, erradicación y recuperación del temario."
+    },
+    {
+      "id": "p5-08",
+      "enunciado": "¿Qué tipo de logs deben copiarse a una ubicación aislada durante la captura de evidencia forense, además del snapshot de EBS y los metadatos de red?",
+      "opciones": [
+        "a) Solo los logs de CloudTrail de la cuenta afectada",
+        "b) Los logs de sistema y aplicación de la instancia comprometida",
+        "c) Los logs de AWS Config de los recursos relacionados",
+        "d) Los logs de AWS KMS para auditoría de cifrado"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario especifica que, además del snapshot de EBS y metadatos de red, deben copiarse los *logs de sistema y aplicación* de la instancia afectada a una ubicación aislada para preservar evidencia forense."
+    },
+    {
+      "id": "p5-09",
+      "enunciado": "Durante la fase de contención de un incidente en AWS, ¿qué acción se recomienda realizar para evitar que un atacante acceda a nuevos recursos desde la instancia comprometida mientras se preserva su estado para análisis forense?",
+      "opciones": [
+        "a) Eliminar la instancia comprometida inmediatamente para evitar más daños.",
+        "b) Modificar el Security Group de la instancia para eliminar todas las reglas de entrada (ingress) y salida (egress).",
+        "c) Apagar la instancia y crear un snapshot de su volumen EBS desde el estado apagado.",
+        "d) Cambiar la clave de seguridad (Security Group) de la instancia para que solo permita tráfico SSH desde una IP específica."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La acción correcta es **d)**, cambiar el Security Group para aislar la instancia de la red sin apagarla, preservando su estado para análisis forense. Según el temario, la contención de red se logra modificando el Security Group para restringir el tráfico de salida (*egress*), no eliminando reglas de entrada (*ingress*) ni apagando la instancia."
+    },
+    {
+      "id": "p5-10",
+      "enunciado": "Al investigar un incidente, se detecta que un usuario malintencionado ha utilizado credenciales robadas para ejecutar comandos en una instancia. Según el temario, ¿qué fase del proceso de respuesta a incidentes incluye la revocación de esas credenciales?",
+      "opciones": [
+        "a) Captura de evidencia forense.",
+        "b) Validación de hallazgos.",
+        "c) Contención, erradicación y recuperación.",
+        "d) Análisis de causa raíz."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La revocación de credenciales robadas corresponde a la fase de **erradicación** dentro de *Contención, erradicación y recuperación*. Esta fase busca eliminar la causa del incidente, como en este caso, las credenciales comprometidas."
+    },
+    {
+      "id": "p5-11",
+      "enunciado": "Si durante un incidente se confirma que una instancia afectada no es crítica para la operación y su restauración desde copia de seguridad tardaría más de 24 horas, ¿qué enfoque recomienda el temario para garantizar la integridad de la evidencia forense mientras se mitiga el riesgo?",
+      "opciones": [
+        "a) Eliminar la instancia comprometida y restaurar desde backup en una nueva instancia, descartando cualquier análisis posterior.",
+        "b) Crear un snapshot de EBS de la instancia comprometida y copiar todos sus logs a una ubicación aislada antes de proceder con la contención.",
+        "c) Aplicar parches manuales a la instancia para 'limpiar' el malware detectado y luego restaurar desde backup como medida preventiva.",
+        "d) Desconectar la instancia del VPC y conectarla a una red aislada para análisis, sin modificar su configuración de seguridad."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La opción correcta es **b)**, ya que el temario enfatiza **preservar el estado del recurso afectado** (snapshot de EBS + logs) en una ubicación aislada antes de cualquier acción. Esto garantiza que la evidencia forense sea válida y no alterada."
+    },
+    {
+      "id": "p5-12",
+      "enunciado": "Un servicio de seguridad como GuardDuty detecta un patrón de tráfico sospechoso hacia una instancia, pero al validar los logs de CloudTrail se observa que el tráfico coincide con una tarea automatizada programada (ej: backup diario). Según el temario, ¿qué decisión se toma en esta situación?",
+      "opciones": [
+        "a) Escalar el incidente a equipos de emergencia y aplicar contención inmediata a todos los recursos relacionados.",
+        "b) Documentar el hallazgo como falso positivo y activar alertas para monitorizar comportamientos similares en el futuro.",
+        "c) Restaurar la instancia desde una copia de seguridad anterior para eliminar cualquier posible puerta trasera.",
+        "d) Revisar manualmente cada evento de CloudTrail asociado al tráfico sospechoso para descartar actividad maliciosa oculta."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La opción correcta es **b)**, ya que el temario indica que, tras validar que el hallazgo es un **falso positivo** (ej: tarea legítima), se debe **documentar y monitorizar**, no escalar ni tomar acciones drásticas como contención o restauración."
+    },
+    {
+      "id": "p5-13",
+      "enunciado": "Durante el análisis de causa raíz de un incidente, Amazon Detective genera un grafo que muestra la propagación del ataque entre recursos. Según el temario, ¿qué tipo de datos NO se incluyen automáticamente en este grafo?",
+      "opciones": [
+        "a) Eventos de CloudTrail que registran acciones en AWS Management Console.",
+        "b) Logs de seguridad de AWS Shield para análisis de DDoS.",
+        "c) Hallazgos de GuardDuty sobre comportamientos anómalos.",
+        "d) Flujos de red (VPC Flow Logs) que detallan tráfico entre instancias."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La opción correcta es **b)**, ya que Amazon Detective **no integra logs de AWS Shield** (protección contra DDoS) en su grafo. Según el temario, solo procesa **VPC Flow Logs, CloudTrail y hallazgos de GuardDuty**."
+    },
+    {
+      "id": "p5-14",
+      "enunciado": "Un equipo de respuesta a incidentes debe correlacionar datos entre servicios para entender el alcance de un ataque. Según el temario, ¿qué combinación de fuentes de información es esencial para este análisis?",
+      "opciones": [
+        "a) Logs de CloudWatch + métricas de AWS Config + alertas de AWS Health.",
+        "b) VPC Flow Logs + eventos de CloudTrail + hallazgos de GuardDuty.",
+        "c) Logs de seguridad de AWS KMS + registros de IAM + snapshots de EBS.",
+        "d) Alertas de AWS WAF + logs de API Gateway + métricas de Amazon CloudFront."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La opción correcta es **b)**, ya que el temario destaca que la correlación debe incluir **VPC Flow Logs** (tráfico de red), **eventos de CloudTrail** (acciones en AWS) y **hallazgos de GuardDuty** (comportamientos anómalos) para contextualizar el incidente."
+    },
+    {
+      "id": "p5-15",
+      "enunciado": "Tras aislar una instancia comprometida mediante la modificación de su Security Group, ¿qué acción adicional recomienda el temario para asegurar que la evidencia forense no sea alterada por un atacante que aún podría tener acceso residual?",
+      "opciones": [
+        "a) Apagar la instancia y crear un snapshot de su volumen EBS desde el estado apagado.",
+        "b) Copiar los logs de sistema y aplicación de la instancia a una ubicación aislada (ej: S3 en otra cuenta).",
+        "c) Eliminar todas las reglas de entrada (ingress) del Security Group para bloquear cualquier conexión entrante.",
+        "d) Cambiar la clave de acceso (IAM) asociada a la instancia para revocar permisos inmediatos."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La opción correcta es **b)**, ya que el temario subraya que, tras la contención, es crítico **copiar los logs a una ubicación aislada** (ej: S3 en otra cuenta) para preservar la evidencia sin depender de recursos controlados por el atacante. El snapshot de EBS ya se menciona como paso previo."
+    },
+    {
+      "id": "p5-16",
+      "enunciado": "Al validar un hallazgo de GuardDuty que indica tráfico anómalo hacia una instancia, ¿qué acción se recomienda realizar PRIMERO según el temario para confirmar si es un incidente real?",
+      "opciones": [
+        "a) Revisar los VPC Flow Logs de la misma ventana temporal para comparar patrones de tráfico.",
+        "b) Verificar si la instancia señalada existe y está activa en producción mediante CloudTrail.",
+        "c) Contactar al equipo de seguridad para escalar el incidente sin validación adicional.",
+        "d) Aplicar automáticamente la contención de red mediante modificación del Security Group."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario destaca que la **validación de hallazgos** requiere confirmar el contexto real, incluyendo verificar si la instancia existe y está en producción (usando CloudTrail o herramientas como AWS Resource Explorer)."
+    },
+    {
+      "id": "p5-17",
+      "enunciado": "Durante la fase de erradicación de un incidente, si se detecta que un atacante ha implantado una puerta trasera en una instancia, ¿qué acción NO forma parte de este proceso según el temario?",
+      "opciones": [
+        "a) Eliminar la puerta trasera mediante herramientas de seguridad como AWS Systems Manager.",
+        "b) Restaurar la instancia desde un snapshot de AWS Backup pre-incidente.",
+        "c) Revisar y revocar credenciales robadas asociadas al acceso inicial.",
+        "d) Aplicar parches de seguridad pendientes en el sistema operativo o aplicaciones vulnerables."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La **erradicación** incluye eliminar la causa (puertas traseras, credenciales robadas o parches faltantes), pero **no** implica restaurar el recurso desde copia de seguridad (eso es parte de la recuperación)."
+    },
+    {
+      "id": "p5-18",
+      "enunciado": "Al correlacionar datos entre servicios durante un incidente, el temario menciona que es esencial examinar tres fuentes de información. ¿Cuál de las siguientes NO es una de ellas?",
+      "opciones": [
+        "a) VPC Flow Logs para analizar tráfico de red asociado al incidente.",
+        "b) Logs de CloudTrail que registran acciones realizadas con credenciales sospechosas.",
+        "c) Alertas de AWS Config sobre cambios no autorizados en recursos de red.",
+        "d) Hallazgos de GuardDuty sobre patrones de comportamiento anómalo."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El temario cita **VPC Flow Logs, CloudTrail y hallazgos de GuardDuty** como fuentes clave para correlación. **AWS Config** no se menciona como parte esencial de esta correlación en el contexto del temario."
+    },
+    {
+      "id": "p5-19",
+      "enunciado": "Si durante un incidente se decide restaurar un servicio afectado desde una copia de seguridad conocida (como un snapshot de AWS Backup), ¿qué ventaja principal ofrece este enfoque según el temario frente a intentar 'limpiar' el recurso in situ?",
+      "opciones": [
+        "a) Garantiza que el recurso esté completamente libre de malware residual sin necesidad de análisis forense adicional.",
+        "b) Preserva el estado exacto del recurso en el momento del incidente para análisis posterior.",
+        "c) Reduce el tiempo de inactividad al evitar la creación de un snapshot forense previo.",
+        "d) Evita la necesidad de revisar logs de sistema y aplicación, ya que la copia de seguridad los incluye automáticamente."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario recomienda restaurar desde copia de seguridad para **evitar riesgos de limpieza incompleta** (como malware residual) y garantizar un estado conocido y limpio, sin depender de la integridad del recurso original."
+    },
+    {
+      "id": "p5-20",
+      "enunciado": "Según el temario, ¿qué herramienta de AWS es designada específicamente para el análisis de causa raíz de un incidente, generando un grafo que visualiza la propagación del ataque entre recursos?",
+      "opciones": [
+        "a) AWS Config.",
+        "b) Amazon Detective.",
+        "c) AWS GuardDuty.",
+        "d) AWS CloudTrail Lake."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El temario menciona que **Amazon Detective** es la herramienta designada para el análisis de causa raíz, al integrar VPC Flow Logs, CloudTrail y hallazgos de GuardDuty en un grafo de comportamiento."
+    },
+    {
+      "id": "p5-21",
+      "enunciado": "Según el temario, al detectar un hallazgo de seguridad en una instancia que podría ser un falso positivo, ¿qué acción debe realizarse **antes** de tomar medidas de contención o escalar el incidente?",
+      "opciones": [
+        "a) Revisar los VPC Flow Logs y CloudTrail para confirmar la existencia de la instancia en producción y descartar patrones de tráfico legítimos.",
+        "b) Aplicar inmediatamente un Security Group sin reglas de egress para aislar la instancia.",
+        "c) Eliminar la instancia comprometida sin preservar evidencia forense.",
+        "d) Restaurar la instancia desde un snapshot de AWS Backup sin analizar el hallazgo."
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "La validación de hallazgos es clave según el temario. Antes de actuar, se debe verificar el contexto real (existencia en producción y coincidencia con tareas legítimas) mediante **VPC Flow Logs y CloudTrail**, evitando escalar falsos positivos o pruebas autorizadas."
+    },
+    {
+      "id": "p5-22",
+      "enunciado": "Durante la fase de **contención** de un incidente en AWS, si se decide aislar una instancia comprometida mediante la modificación de su *Security Group*, ¿qué acción adicional debe realizarse **inmediatamente después** para garantizar que la evidencia forense no sea alterada por un atacante que aún pueda tener acceso residual al sistema operativo o aplicaciones internas de la instancia?",
+      "opciones": [
+        "a) Apagar la instancia para evitar cualquier actividad adicional y tomar un nuevo snapshot de EBS.",
+        "b) Configurar una regla de *Security Group* que permita solo tráfico de salida a una IP de confianza para la recolección de logs en tiempo real.",
+        "c) Copiar los logs de sistema y aplicación a una ubicación aislada (como S3 en una cuenta separada) y deshabilitar temporalmente los servicios de red como *SSH* o *RDP* mediante *Network ACLs*.",
+        "d) Restaurar la instancia desde un *snapshot* de seguridad conocido anterior al incidente para eliminar cualquier posible puerta trasera."
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Según el temario, **la captura de evidencia forense debe realizarse antes de manipular el recurso afectado**. Tras aislar la instancia mediante el *Security Group*, es esencial copiar los logs de sistema y aplicación a una ubicación aislada (como S3 en una cuenta separada) y deshabilitar servicios críticos (SSH/RDP) mediante *Network ACLs* para evitar que el atacante altere la evidencia. Esto se alinea con el principio de preservar el estado del recurso tal cual estaba durante el incidente."
+    }
+  ]
+}

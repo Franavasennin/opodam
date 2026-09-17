@@ -1,0 +1,330 @@
+{
+  "id": 14,
+  "titulo": "6.1 · Gestión centralizada de cuentas",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Primer task statement del dominio de Fundamentos de Seguridad y Gobernanza: cómo estructurar y controlar cientos de cuentas de AWS desde un punto central.\n\nAWS ORGANIZATIONS Y CONTROL TOWER\n\nAWS Organizations agrupa cuentas en una jerarquía de unidades organizativas (OU), permitiendo aplicar políticas y facturación consolidada desde una cuenta de gestión. AWS Control Tower construye sobre Organizations una Landing Zone automatizada: una estructura multi-cuenta segura por defecto, con guardrails preventivos (que impiden ciertas acciones mediante SCP) y detectivos (que señalan desviaciones mediante Config Rules) aplicados desde el primer día a cada cuenta nueva, además de soportar controles opcionales y personalizados más allá de los que trae por defecto.\n\nPOLÍTICAS DE ORGANIZACIÓN: SCP, RCP Y MÁS ALLÁ\n\nLas Service Control Policies (SCP) definen el techo máximo de permisos de todas las identidades de las cuentas afectadas — nunca conceden permisos, solo los restringen. Las Resource Control Policies (RCP) son contenido nuevo de esta revisión del examen: a diferencia de las SCP, que actúan sobre identidades (quién puede actuar), las RCP actúan sobre recursos (quién puede acceder a un recurso concreto, incluso si la identidad que accede pertenece a una cuenta externa) — es la pieza que faltaba para controlar de forma centralizada el acceso a recursos como buckets S3 o claves KMS desde fuera de la organización, sin depender de que cada cuenta configure su propia política de recurso correctamente. Las políticas de exclusión de servicios de IA (AI service opt-out policies) permiten prohibir de forma centralizada que ciertos servicios de machine learning usen los datos de la organización para entrenar sus modelos. Las declarative policies fijan una configuración de servicio deseada (por ejemplo, que las instantáneas de EBS nunca sean públicas) a nivel de toda la organización, de forma que ninguna cuenta pueda desviarse de ella ni siquiera con permisos de administrador completo.\n\nGESTIÓN CENTRALIZADA DE SERVICIOS DE SEGURIDAD\n\nEl patrón de administrador delegado (delegated administrator) permite designar una cuenta miembro (no la cuenta de gestión) como responsable de administrar un servicio de seguridad concreto —GuardDuty, Security Hub, Macie— para toda la organización, manteniendo la cuenta de gestión con el mínimo privilegio operativo posible, conforme al principio de que la cuenta de gestión debe usarse lo menos posible.\n\nGESTIÓN DEL USUARIO ROOT\n\nEl usuario root de cada cuenta miembro representa el mayor riesgo si se compromete, porque sus permisos no se pueden restringir con IAM. AWS Organizations permite centralizar el acceso root de las cuentas miembro desde la cuenta de gestión, eliminando la necesidad de gestionar credenciales root dispersas. La gestión de MFA para root debe ser obligatoria y auditada, y un procedimiento de break-glass define el acceso de emergencia (con aprobación y registro posterior) para los casos excepcionales en que el acceso root resulte imprescindible."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Gestion de cuentas] --> B[AWS Organizations]\nA --> C[AWS Control Tower]\nA --> D[Politicas de organizacion]\nD --> D1[SCPs]\nD --> D2[RCPs]\nD --> D3[AI service opt-out]\nD --> D4[Declarative policies]\nA --> E[Delegated administrator]\nA --> F[Root user]\nF --> F1[MFA centralizado]\nF --> F2[Break-glass]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc14-01",
+      "pregunta": "¿Qué es AWS Organizations?",
+      "respuesta": "Servicio que agrupa cuentas en una jerarquía de unidades organizativas (OU) para aplicar políticas y facturación consolidada desde una cuenta de gestión."
+    },
+    {
+      "id": "fc14-02",
+      "pregunta": "¿Qué es AWS Control Tower?",
+      "respuesta": "Landing Zone automatizada basada en AWS Organizations que proporciona guardrails preventivos (SCP) y detectivos (Config Rules) por defecto para cuentas nuevas."
+    },
+    {
+      "id": "fc14-03",
+      "pregunta": "¿Qué función tienen las Service Control Policies (SCP)?",
+      "respuesta": "Restringen los permisos máximos de identidades en cuentas afectadas, pero nunca conceden permisos."
+    },
+    {
+      "id": "fc14-04",
+      "pregunta": "¿En qué se diferencia una Resource Control Policy (RCP) de una SCP?",
+      "respuesta": "Las RCP controlan el acceso a recursos específicos (ej. buckets S3) incluso desde cuentas externas, mientras que las SCP actúan sobre identidades."
+    },
+    {
+      "id": "fc14-05",
+      "pregunta": "¿Qué son las declarative policies?",
+      "respuesta": "Políticas que imponen una configuración deseada de servicios (ej. instantáneas de EBS no públicas) a nivel organizacional, aplicables incluso a administradores completos."
+    },
+    {
+      "id": "fc14-06",
+      "pregunta": "¿Qué es el patrón de administrador delegado?",
+      "respuesta": "Designar una cuenta miembro para administrar servicios de seguridad (ej. GuardDuty) en toda la organización, reduciendo privilegios en la cuenta de gestión."
+    },
+    {
+      "id": "fc14-07",
+      "pregunta": "¿Cómo centraliza AWS Organizations el acceso al usuario root?",
+      "respuesta": "Permite gestionar el acceso root de cuentas miembro desde la cuenta de gestión, eliminando la necesidad de credenciales dispersas y exigiendo MFA obligatorio."
+    },
+    {
+      "id": "fc14-08",
+      "pregunta": "¿Qué son las AI service opt-out policies?",
+      "respuesta": "Políticas que prohíben centralizadamente el uso de servicios de machine learning para entrenar modelos con datos de la organización."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p14-01",
+      "enunciado": "¿Qué tipo de política permite a una organización AWS restringir el acceso a un bucket S3 específico desde cuentas externas, incluso si dichas cuentas tienen permisos explícitos sobre el recurso?",
+      "opciones": [
+        "a) Service Control Policy (SCP)",
+        "b) Resource Control Policy (RCP)",
+        "c) Declarative Policy",
+        "d) Identity and Access Management (IAM) Policy"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las **Resource Control Policies (RCP)** son el mecanismo que permite controlar el acceso a recursos específicos (como buckets S3) desde cuentas externas, actuando directamente sobre el recurso y no sobre las identidades. Las SCP solo restringen permisos de identidades dentro de la organización, mientras que las RCP cierran la brecha para recursos compartidos con cuentas ajenas."
+    },
+    {
+      "id": "p14-02",
+      "enunciado": "En AWS Organizations, ¿qué función cumple un *guardrail preventivo* implementado mediante AWS Control Tower?",
+      "opciones": [
+        "a) Permite a las cuentas miembro crear recursos sin restricciones adicionales",
+        "b) Bloquea automáticamente acciones específicas (como habilitar servicios no autorizados) mediante Service Control Policies (SCP)",
+        "c) Genera alertas cuando se detectan desviaciones en la configuración de recursos, pero no impide la acción",
+        "d) Reduce el costo de los servicios usados en las cuentas miembro"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Los *guardrails preventivos* de **AWS Control Tower** se basan en **Service Control Policies (SCP)** para **bloquear acciones** (como habilitar servicios no autorizados) desde el primer día en todas las cuentas de la organización, garantizando una Landing Zone segura por defecto."
+    },
+    {
+      "id": "p14-03",
+      "enunciado": "Si una organización AWS quiere prohibir que los servicios de *machine learning* (como SageMaker) usen datos sensibles de la organización para entrenar modelos externos, ¿qué tipo de política debe configurarse?",
+      "opciones": [
+        "a) Declarative Policy para SageMaker",
+        "b) AI Service Opt-Out Policy",
+        "c) Resource Control Policy en los buckets de datos",
+        "d) Service Control Policy para restringir permisos de IAM"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las **AI Service Opt-Out Policies** permiten **prohibir centralizadamente** que servicios de *machine learning* (como SageMaker) accedan a datos de la organización para entrenar modelos externos, actuando como una capa de protección adicional en AWS Organizations."
+    },
+    {
+      "id": "p14-04",
+      "enunciado": "¿Qué patrón de diseño recomienda AWS para que la cuenta de gestión tenga el mínimo privilegio operativo posible, delegando la administración de servicios de seguridad (como GuardDuty) a una cuenta miembro?",
+      "opciones": [
+        "a) Patrón de *administrador centralizado*",
+        "b) Patrón de *administrador delegado* (*delegated administrator*)",
+        "c) Patrón de *políticas de exclusión*",
+        "d) Patrón de *unidad organizativa raíz*"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El patrón de **administrador delegado** (*delegated administrator*) asigna a una **cuenta miembro** (no a la cuenta de gestión) la responsabilidad de administrar servicios como **GuardDuty** o **Security Hub**, reduciendo así la exposición de la cuenta de gestión y aplicando el principio de *mínimo privilegio*."
+    },
+    {
+      "id": "p14-05",
+      "enunciado": "En AWS Organizations, ¿qué mecanismo permite centralizar el acceso al usuario *root* de todas las cuentas miembro desde una única cuenta de gestión?",
+      "opciones": [
+        "a) AWS IAM Roles con permisos administrativos",
+        "b) AWS Organizations *SCP* para restringir el acceso root",
+        "c) **AWS Organizations *Service Control Policies (SCP)* combinadas con procedimientos de *break-glass***",
+        "d) AWS Secrets Manager para gestionar credenciales root"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "AWS Organizations **no permite restringir directamente el acceso root** mediante SCP (ya que estos permisos no pueden limitarse), pero **centraliza su gestión** mediante políticas de acceso y procedimientos como *break-glass* (acceso de emergencia con aprobación), evitando la dispersión de credenciales root en múltiples cuentas."
+    },
+    {
+      "id": "p14-06",
+      "enunciado": "¿Qué diferencia clave existe entre una *Service Control Policy (SCP)* y una *Resource Control Policy (RCP)* en AWS Organizations?",
+      "opciones": [
+        "a) Las SCP actúan sobre recursos específicos, mientras que las RCP actúan sobre identidades",
+        "b) Las SCP permiten conceder permisos, mientras que las RCP solo los restringen",
+        "c) Las SCP restringen permisos de identidades **dentro de la organización**, mientras que las RCP restringen acceso a recursos **desde cuentas externas**",
+        "d) Las RCP son heredables entre cuentas, mientras que las SCP no lo son"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las **SCP** restringen permisos de **identidades** (quién puede hacer qué) **dentro de la organización**, mientras que las **RCP** actúan sobre **recursos específicos** (como buckets S3 o claves KMS) para controlar acceso **desde cuentas externas**, cerrando una brecha crítica en la gobernanza centralizada."
+    },
+    {
+      "id": "p14-07",
+      "enunciado": "Si una organización AWS quiere asegurar que todas las instantáneas de EBS (*Elastic Block Store*) creadas en cualquier cuenta miembro sean **privadas por defecto**, ¿qué tipo de política debe implementarse?",
+      "opciones": [
+        "a) Service Control Policy (SCP) para restringir permisos de IAM",
+        "b) Declarative Policy para EBS",
+        "c) Resource Control Policy (RCP) en los volúmenes EBS",
+        "d) AWS Config Rule para auditar configuraciones"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las **Declarative Policies** permiten **fijar una configuración deseada** (como que las instantáneas de EBS **no sean públicas**) a nivel de toda la organización, aplicando el principio de *gobernanza declarativa* y evitando que ninguna cuenta miembro pueda desviarse de esta norma, incluso con permisos administrativos."
+    },
+    {
+      "id": "p14-08",
+      "enunciado": "En el contexto de AWS Organizations, ¿qué procedimiento define cómo acceder al usuario *root* de una cuenta miembro en situaciones de emergencia (ej.: bloqueo de MFA), con registro posterior de la acción?",
+      "opciones": [
+        "a) AWS IAM *Password Policy*",
+        "b) **Procedimiento de *break-glass***",
+        "c) AWS Organizations *SCP* para acceso root",
+        "d) AWS CloudTrail para auditoría de eventos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El procedimiento de ***break-glass*** define un **flujo de acceso de emergencia** para el usuario *root* en casos excepcionales (como fallo de MFA), con **aprobación previa** y **registro obligatorio** posterior, garantizando trazabilidad sin comprometer la seguridad en situaciones críticas."
+    },
+    {
+      "id": "p14-09",
+      "enunciado": "En AWS Organizations, ¿qué tipo de política se utiliza para garantizar que todas las cuentas miembro de una organización no puedan crear recursos en regiones específicas, como 'us-east-1' o 'eu-west-1', independientemente de los permisos IAM asignados?",
+      "opciones": [
+        "a) Declarative Policy",
+        "b) Service Control Policy (SCP) con restricción de región",
+        "c) Resource Control Policy (RCP) para bloquear regiones",
+        "d) AWS Config Rule para monitorear regiones no permitidas"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Se debe usar una **Service Control Policy (SCP)** para restringir la creación de recursos en regiones específicas. Las SCP actúan como un límite máximo de permisos para todas las identidades en las cuentas afectadas, incluyendo la restricción de regiones. Las RCP no son adecuadas para este caso, ya que actúan sobre recursos, no sobre acciones de creación."
+    },
+    {
+      "id": "p14-10",
+      "enunciado": "Si una organización AWS quiere asegurar que ninguna cuenta miembro pueda modificar la configuración de seguridad de un servicio como AWS Shield Advanced (por ejemplo, desactivar alertas de protección DDoS), ¿qué mecanismo centralizado debe implementarse?",
+      "opciones": [
+        "a) Declarative Policy para configuración de servicios",
+        "b) SCP que bloquee acciones específicas en Shield Advanced",
+        "c) AWS Config Rule para auditar cambios no autorizados",
+        "d) Permisos IAM granulares en la cuenta de gestión"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Una **Service Control Policy (SCP)** es el mecanismo adecuado para bloquear acciones concretas en servicios como AWS Shield Advanced. Las SCP permiten definir un límite máximo de permisos para todas las identidades en las cuentas afectadas, incluyendo la prohibición de modificar configuraciones críticas de seguridad."
+    },
+    {
+      "id": "p14-11",
+      "enunciado": "En el contexto de AWS Organizations, ¿qué permite hacer una **Resource Control Policy (RCP)** que no puede lograr una SCP, en relación con el acceso a recursos compartidos entre cuentas?",
+      "opciones": [
+        "a) Restringir permisos de IAM a nivel de identidad",
+        "b) Prohibir que cuentas externas accedan a un bucket S3 específico, incluso si tienen permisos explícitos sobre él",
+        "c) Bloquear la creación de recursos en regiones no autorizadas",
+        "d) Auditar cambios en políticas de seguridad mediante AWS Config"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las **Resource Control Policies (RCP)** permiten controlar el acceso a recursos específicos (como buckets S3 o claves KMS) **independientemente de la cuenta que posea la identidad que accede**. A diferencia de las SCP, que actúan sobre identidades, las RCP actúan directamente sobre el recurso, evitando que cuentas externas accedan a él aunque tengan permisos explícitos."
+    },
+    {
+      "id": "p14-12",
+      "enunciado": "¿Qué tipo de política se debe configurar en AWS Organizations para asegurar que, en todas las cuentas miembro, las políticas de IAM no puedan asignar permisos de administrador completo (*AdministratorAccess*) a usuarios o roles, incluso si la cuenta tiene permisos de administrador?",
+      "opciones": [
+        "a) Declarative Policy para configuración de IAM",
+        "b) SCP que restrinja la creación de políticas de tipo *AdministratorAccess*",
+        "c) AWS Config Rule para auditar políticas de IAM",
+        "d) Resource Control Policy (RCP) para buckets de IAM"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Para evitar que se asignen permisos de *AdministratorAccess* en cuentas miembro, se debe usar una **Service Control Policy (SCP)**. Las SCP actúan como un límite máximo de permisos para todas las identidades en las cuentas afectadas, incluyendo la prohibición de crear o modificar políticas que otorguen permisos tan amplios."
+    },
+    {
+      "id": "p14-13",
+      "enunciado": "En AWS Control Tower, ¿qué tipo de guardrail **no preventivo** se utiliza para detectar desviaciones en la configuración de servicios, como la creación de buckets S3 públicos en cuentas miembro?",
+      "opciones": [
+        "a) Guardrail preventivo basado en SCP",
+        "b) Guardrail detectivo basado en AWS Config Rules",
+        "c) Declarative Policy para configuración de recursos",
+        "d) Permiso IAM explícito para auditar buckets"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS Control Tower incluye **guardrails detectivos** basados en **AWS Config Rules**, que monitorean la configuración de los recursos y alertan sobre desviaciones (como buckets S3 públicos) sin bloquear la acción. Los guardrails preventivos, en cambio, usan SCP para bloquear acciones directamente."
+    },
+    {
+      "id": "p14-14",
+      "enunciado": "Si una organización AWS quiere centralizar la administración de **AWS Macie** para toda la organización, evitando que la cuenta de gestión tenga permisos directos sobre el servicio, ¿qué patrón de diseño debe implementarse?",
+      "opciones": [
+        "a) Delegated Administrator para Macie en una cuenta miembro",
+        "b) SCP que permita solo a la cuenta de gestión administrar Macie",
+        "c) Resource Control Policy (RCP) para restringir acceso a datos de Macie",
+        "d) Configurar políticas de IAM en cada cuenta miembro por separado"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "El patrón de **administrador delegado (*Delegated Administrator*)** permite designar una cuenta miembro (no la cuenta de gestión) como responsable de administrar servicios de seguridad como AWS Macie. Esto mantiene la cuenta de gestión con el mínimo privilegio operativo posible, alineado con el principio de seguridad de no otorgar permisos innecesarios."
+    },
+    {
+      "id": "p14-15",
+      "enunciado": "En AWS Organizations, ¿qué mecanismo permite a la cuenta de gestión revocar automáticamente el acceso root de una cuenta miembro si esta es suspendida o eliminada del *Organizational Unit (OU)* al que pertenecía?",
+      "opciones": [
+        "a) SCP que bloquee el acceso root en cuentas suspendidas",
+        "b) Configuración de **Centralized Root Access Management** en AWS Organizations",
+        "c) AWS Config Rule para auditar cuentas suspendidas",
+        "d) Permisos IAM en la cuenta de gestión para revocar credenciales"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "AWS Organizations ofrece **Centralized Root Access Management**, que permite gestionar el acceso root de las cuentas miembro desde la cuenta de gestión. Este mecanismo centraliza la administración y puede revocar automáticamente el acceso root si la cuenta es suspendida o eliminada de su *OU*, reduciendo riesgos de acceso no autorizado."
+    },
+    {
+      "id": "p14-16",
+      "enunciado": "¿Qué característica de las **Declarative Policies** en AWS Organizations permite asegurar que, en todas las cuentas miembro, las políticas de seguridad de AWS Systems Manager (como *Parameter Store*) no puedan ser modificadas para exponer datos sensibles?",
+      "opciones": [
+        "a) Restricción mediante SCP de acciones en Systems Manager",
+        "b) Configuración de **Declarative Policies** para imponer configuraciones deseadas en Systems Manager",
+        "c) Uso de Resource Control Policy (RCP) para proteger parámetros sensibles",
+        "d) AWS Config Rule para auditar cambios en Parameter Store"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las **Declarative Policies** permiten definir una configuración deseada de servicios (como Systems Manager) a nivel de organización. En este caso, se pueden usar para asegurar que las políticas de seguridad en *Parameter Store* no puedan modificarse para exponer datos sensibles, aplicándose automáticamente en todas las cuentas miembro y superando incluso permisos de administrador completo."
+    },
+    {
+      "id": "p14-17",
+      "enunciado": "En AWS Organizations, ¿qué tipo de política permite a una organización centralizar y restringir que las cuentas miembro creen buckets S3 con configuración de bloqueo de acceso público desactivado, incluso si dichas cuentas tienen permisos de administrador completo?",
+      "opciones": [
+        "a) Declarative Policy para AWS S3",
+        "b) Service Control Policy (SCP) con restricción de permisos de S3",
+        "c) Resource Control Policy (RCP) aplicada al recurso S3",
+        "d) Config Rule en AWS Config para buckets S3"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "Las **Declarative Policies** permiten fijar una configuración deseada a nivel de organización, como exigir que los buckets S3 tengan bloqueo de acceso público activado por defecto. Esto se aplica incluso a cuentas con permisos de administrador completo, ya que las declarative policies son inmutables para esos casos. *Fuente: Declarative Policies en el temario.*"
+    },
+    {
+      "id": "p14-18",
+      "enunciado": "Si una organización AWS quiere evitar que las cuentas miembro utilicen servicios de IA como **Amazon Rekognition** para procesar datos sensibles de la organización, ¿qué mecanismo centralizado debe implementarse para prohibirlo?",
+      "opciones": [
+        "a) Service Control Policy (SCP) que bloquea permisos de Rekognition en todas las cuentas",
+        "b) Resource Control Policy (RCP) aplicada a los recursos de Rekognition",
+        "c) **AI service opt-out policy** para Rekognition en AWS Organizations",
+        "d) Config Rule en AWS Config para monitorear uso de Rekognition"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "Las **AI service opt-out policies** permiten prohibir centralizadamente que servicios de machine learning (como Rekognition) usen datos de la organización para entrenar modelos externos. Este mecanismo es específico para servicios de IA y se gestiona directamente en AWS Organizations. *Fuente: Políticas de exclusión de servicios de IA en el temario.*"
+    },
+    {
+      "id": "p14-19",
+      "enunciado": "En el contexto de AWS Organizations, ¿qué diferencia clave existe entre una **Declarative Policy** y una **Service Control Policy (SCP)** cuando se aplica a la configuración de AWS Systems Manager Parameter Store?",
+      "opciones": [
+        "a) Las SCP permiten modificar parámetros sensibles, mientras que las Declarative Policies los bloquean por completo",
+        "b) Las Declarative Policies imponen una configuración deseada (ej.: cifrado obligatorio) a nivel de organización, mientras que las SCP solo restringen permisos de acceso",
+        "c) Las SCP son aplicables a recursos externos, mientras que las Declarative Policies solo a cuentas internas",
+        "d) Las Declarative Policies requieren permisos de administrador para modificarse, mientras que las SCP no"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las **Declarative Policies** fijan una configuración deseada (como cifrado obligatorio o restricciones de visibilidad) en servicios como Parameter Store, asegurando que ninguna cuenta miembro pueda desviarse de ella, incluso con permisos de administrador. Las SCP, en cambio, solo restringen *quién* puede realizar acciones, no la configuración del recurso. *Fuente: Declarative Policies vs. SCP en el temario.*"
+    },
+    {
+      "id": "p14-20",
+      "enunciado": "¿Qué ventaja ofrece el patrón de **administrador delegado** (*delegated administrator*) en AWS Organizations para servicios como AWS GuardDuty, en comparación con asignar permisos directamente a la cuenta de gestión?",
+      "opciones": [
+        "a) Permite a la cuenta de gestión revocar permisos de GuardDuty en cualquier momento sin notificación",
+        "b) Reduce el riesgo de que la cuenta de gestión tenga permisos excesivos, al delegar la administración del servicio a una cuenta miembro designada",
+        "c) Obliga a todas las cuentas miembro a usar la misma clave de cifrado KMS para GuardDuty",
+        "d) Elimina la necesidad de configurar políticas de acceso en las cuentas miembro"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El patrón de **administrador delegado** delega la gestión de servicios de seguridad (como GuardDuty) a una cuenta miembro específica, evitando que la cuenta de gestión acumule permisos operativos innecesarios. Esto alinea con el principio de *mínimo privilegio* y reduce la superficie de ataque. *Fuente: Gestión centralizada de servicios de seguridad en el temario.*"
+    },
+    {
+      "id": "p14-21",
+      "enunciado": "¿Qué característica de las **Resource Control Policies (RCP)** en AWS Organizations permite controlar el acceso a un bucket S3 compartido entre cuentas externas (no miembros de la organización), incluso si dichas cuentas tienen permisos explícitos en el bucket?",
+      "opciones": [
+        "a) Las RCP pueden revocar permisos IAM asignados directamente en el bucket",
+        "b) Las RCP actúan sobre el recurso S3 para denegar acceso a cuentas externas, independientemente de los permisos configurados en el bucket",
+        "c) Las RCP requieren que la cuenta de gestión tenga permisos de administrador en el bucket para funcionar",
+        "d) Las RCP solo son efectivas si el bucket está en la misma región que la cuenta de gestión"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "Las **Resource Control Policies (RCP)** permiten centralizar el control de acceso a recursos como buckets S3, incluso cuando el acceso es solicitado por cuentas externas. A diferencia de las SCP (que actúan sobre identidades), las RCP se aplican directamente al recurso, denegando acceso basado en la pertenencia a la organización o reglas específicas, sin depender de permisos configurados en el bucket. *Fuente: RCP vs. SCP en el temario.*"
+    },
+    {
+      "id": "p14-22",
+      "enunciado": "En AWS Organizations, ¿qué tipo de política permite a una organización centralizar y garantizar que todas las cuentas miembro **no puedan crear recursos en regiones específicas**, incluso si dichas cuentas tienen permisos de administrador completo en IAM? Además, ¿qué mecanismo adicional podría usarse para **auditar** si alguna cuenta incumple esta restricción?",
+      "opciones": [
+        "a) Declarative Policies aplicadas a AWS Systems Manager Parameter Store y AWS Config Rules para monitorear la creación de recursos en regiones prohibidas.",
+        "b) Service Control Policies (SCP) con una regla que bloquee explícitamente la creación de recursos en regiones específicas, complementadas con AWS Config para detectar desviaciones.",
+        "c) Resource Control Policies (RCP) sobre los servicios VPC y EC2 para restringir la creación de instancias en regiones no autorizadas, sin necesidad de complementos adicionales.",
+        "d) Políticas de exclusión de servicios (AI service opt-out policies) configuradas para las regiones prohibidas, junto con un guardrail preventivo en AWS Control Tower."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La respuesta correcta es la opción **b**. Las **Service Control Policies (SCP)** son el mecanismo adecuado para restringir la creación de recursos en regiones específicas a nivel de toda la organización, incluso para cuentas con permisos de administrador completo. Además, AWS **Config** puede usarse para auditar y detectar desviaciones, como la creación de recursos en regiones prohibidas, al activar reglas de cumplimiento (*compliance rules*) que verifiquen la configuración de las regiones permitidas. Esto se alinea con el temario al combinar un control preventivo (SCP) con un mecanismo de detección (AWS Config)."
+    }
+  ]
+}

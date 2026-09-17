@@ -1,0 +1,282 @@
+{
+  "id": 12,
+  "titulo": "5.2 · Datos en reposo",
+  "bloque": "general",
+  "secciones": [
+    {
+      "titulo": "",
+      "contenido": "Segundo task statement de Protección de Datos: cómo proteger, mantener íntegro y gestionar el ciclo de vida de un dato que ya no está en movimiento.\n\nSELECCIÓN DEL SERVICIO Y TIPO DE CIFRADO\n\nAWS KMS gestiona claves multi-tenant y es la opción por defecto para cifrado en reposo en la práctica totalidad de servicios de almacenamiento (S3, EBS, RDS, DynamoDB). AWS CloudHSM ofrece hardware de seguridad dedicado de un solo inquilino, necesario cuando el requisito de cumplimiento exige control exclusivo del material criptográfico (por ejemplo, FIPS 140-2 nivel 3) que KMS multi-tenant no puede garantizar al mismo nivel. La otra decisión de diseño es cifrado del lado del servidor (server-side, donde AWS gestiona el proceso de cifrado/descifrado) frente a cifrado del lado del cliente (client-side, donde el dato ya llega cifrado desde la aplicación y AWS nunca ve la clave ni el texto plano) — la opción correcta depende de si el modelo de amenaza incluye a AWS mismo como parte no confiable, algo poco común pero que el examen plantea explícitamente en algún escenario.\n\nINTEGRIDAD DEL DATO\n\nS3 Object Lock aplica un modelo WORM (write-once-read-many) a nivel de objeto, impidiendo su eliminación o sobrescritura durante un periodo definido — protección directa contra ransomware que intente cifrar o borrar backups. S3 Glacier Vault Lock hace lo mismo a nivel de política de vault completo, con la particularidad de que, una vez bloqueada, la política no se puede modificar ni siquiera por el propietario de la cuenta. El versionado (versioning) de S3 conserva todas las versiones anteriores de un objeto, permitiendo recuperar una versión previa tras una sobrescritura maliciosa o accidental. La firma digital de código (code signing) verifica que un artefacto de software no ha sido alterado entre su publicación y su ejecución.\n\nGESTIÓN DE CICLO DE VIDA\n\nLas políticas de S3 Lifecycle mueven objetos automáticamente entre clases de almacenamiento (Standard → Infrequent Access → Glacier) o los eliminan tras un periodo, optimizando coste sin intervención manual. Amazon EFS Lifecycle hace lo equivalente para sistemas de ficheros compartidos, y las políticas de backup de Amazon FSx for Lustre automatizan copias de sistemas de ficheros de alto rendimiento usados en cargas de trabajo de HPC y machine learning.\n\nREPLICACIÓN Y COPIAS DE SEGURIDAD\n\nAmazon Data Lifecycle Manager automatiza la creación, retención y eliminación de snapshots de EBS según una política programada. AWS Backup centraliza la política de copia de seguridad de múltiples servicios de AWS (EBS, RDS, DynamoDB, EFS) desde un único punto de control, incluyendo protección específica frente a ransomware mediante copias inmutables y vaults con acceso restringido. AWS DataSync automatiza la transferencia y sincronización de datos a gran escala entre almacenamiento on-premises y AWS, o entre servicios de almacenamiento de AWS."
+    }
+  ],
+  "esquemas": [
+    {
+      "tipo": "mermaid",
+      "titulo": "Esquema del tema",
+      "codigo": "graph TD\nA[Datos en reposo] --> B[Seleccion de cifrado]\nB --> B1[AWS KMS]\nB --> B2[AWS CloudHSM]\nB --> B3[Cliente vs servidor]\nA --> C[Integridad]\nC --> C1[S3 Object Lock]\nC --> C2[S3 Glacier Vault Lock]\nC --> C3[Versioning]\nC --> C4[Firma de codigo]\nA --> D[Ciclo de vida]\nD --> D1[S3 Lifecycle]\nD --> D2[EFS Lifecycle]\nD --> D3[FSx for Lustre backup]\nA --> E[Replicacion y backup]\nE --> E1[Data Lifecycle Manager]\nE --> E2[AWS Backup]\nE --> E3[AWS DataSync]\nE --> E4[Proteccion ransomware]"
+    }
+  ],
+  "mapaMental": {
+    "nodos": [],
+    "aristas": []
+  },
+  "flashcards": [
+    {
+      "id": "fc12-01",
+      "pregunta": "¿Qué servicio de AWS es la opción por defecto para cifrado en reposo en servicios como S3, EBS o RDS?",
+      "respuesta": "AWS KMS (Key Management Service), que gestiona claves multi-tenant."
+    },
+    {
+      "id": "fc12-02",
+      "pregunta": "¿Cuándo se recomienda usar AWS CloudHSM frente a AWS KMS?",
+      "respuesta": "Cuando se requiere control exclusivo del material criptográfico (ej. cumplimiento FIPS 140-2 nivel 3)."
+    },
+    {
+      "id": "fc12-03",
+      "pregunta": "¿Qué diferencia hay entre cifrado del lado del servidor y del cliente en AWS?",
+      "respuesta": "Server-side: AWS gestiona cifrado/descifrado; Client-side: el dato llega cifrado desde la aplicación y AWS no ve claves ni texto plano."
+    },
+    {
+      "id": "fc12-04",
+      "pregunta": "¿Qué servicio de AWS protege contra ransomware al bloquear objetos de S3 durante un periodo?",
+      "respuesta": "S3 Object Lock (modelo WORM)."
+    },
+    {
+      "id": "fc12-05",
+      "pregunta": "¿Qué característica única tiene S3 Glacier Vault Lock frente a S3 Object Lock?",
+      "respuesta": "La política de vault no puede modificarse ni siquiera por el propietario de la cuenta."
+    },
+    {
+      "id": "fc12-06",
+      "pregunta": "¿Qué función de S3 permite recuperar versiones anteriores de un objeto sobrescrito?",
+      "respuesta": "El versionado (versioning) de S3."
+    },
+    {
+      "id": "fc12-07",
+      "pregunta": "¿Qué servicio automatiza la creación y retención de snapshots de EBS según políticas?",
+      "respuesta": "Amazon Data Lifecycle Manager."
+    },
+    {
+      "id": "fc12-08",
+      "pregunta": "¿Qué servicio centraliza políticas de backup para múltiples servicios de AWS (EBS, RDS, etc.)?",
+      "respuesta": "AWS Backup, incluyendo copias inmutables contra ransomware."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "p12-01",
+      "enunciado": "¿Qué servicio de AWS permite aplicar un modelo WORM (Write-Once-Read-Many) a nivel de objeto para proteger contra ataques de ransomware que intenten eliminar backups?",
+      "opciones": [
+        "a) AWS KMS",
+        "b) S3 Object Lock",
+        "c) AWS CloudHSM",
+        "d) S3 Versioning"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio **S3 Object Lock** implementa un modelo WORM que impide la eliminación o sobrescritura de objetos durante un periodo definido, protegiendo explícitamente contra ransomware que intente borrar backups (según el temario)."
+    },
+    {
+      "id": "p12-02",
+      "enunciado": "Si un cliente requiere que las políticas de protección de datos en un *vault* de S3 no puedan modificarse ni siquiera por el propietario de la cuenta, ¿qué mecanismo debe usarse?",
+      "opciones": [
+        "a) S3 Versioning",
+        "b) S3 Glacier Vault Lock",
+        "c) AWS KMS con claves de usuario",
+        "d) AWS Backup con snapshots inmutables"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**S3 Glacier Vault Lock** permite bloquear políticas de *vault* completos, haciendo que sean inmutables incluso para el propietario de la cuenta (según el temario)."
+    },
+    {
+      "id": "p12-03",
+      "enunciado": "¿Cuál de estos servicios NO gestiona automáticamente el ciclo de vida de datos mediante políticas de transición entre clases de almacenamiento (ej: Standard → Glacier)?",
+      "opciones": [
+        "a) S3 Lifecycle",
+        "b) Amazon EFS Lifecycle",
+        "c) AWS DataSync",
+        "d) Amazon FSx for Lustre (políticas de backup)"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "**AWS DataSync** se enfoca en la transferencia y sincronización de datos entre ubicaciones (on-premises/AWS), pero **no automatiza políticas de ciclo de vida de almacenamiento** como las otras opciones (temario)."
+    },
+    {
+      "id": "p12-04",
+      "enunciado": "Un equipo de desarrollo necesita garantizar que los artefactos de software descargados (ej: binarios) no hayan sido alterados desde su firma original. ¿Qué mecanismo de AWS cumple este requisito?",
+      "opciones": [
+        "a) AWS KMS con cifrado del lado del cliente",
+        "b) Firma digital de código (code signing)",
+        "c) S3 Object Lock",
+        "d) AWS Backup con snapshots inmutables"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**La firma digital de código (code signing)** verifica la integridad de los artefactos de software, asegurando que no hayan sido modificados entre su publicación y ejecución (mencionado en el temario)."
+    },
+    {
+      "id": "p12-05",
+      "enunciado": "¿Qué servicio de AWS permite a un cliente gestionar claves criptográficas de forma dedicada (single-tenant) para cumplir con estándares como FIPS 140-2 nivel 3, algo que AWS KMS no garantiza?",
+      "opciones": [
+        "a) AWS KMS",
+        "b) AWS CloudHSM",
+        "c) S3 Server-Side Encryption",
+        "d) AWS Backup con cifrado automático"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS CloudHSM** ofrece hardware de seguridad dedicado de un solo inquilino, necesario para requisitos de cumplimiento que exigen control exclusivo del material criptográfico (temario)."
+    },
+    {
+      "id": "p12-06",
+      "enunciado": "Un cliente desea cifrar datos en reposo en S3 **sin que AWS acceda nunca al texto plano ni a la clave de cifrado**. ¿Qué tipo de cifrado debe configurar?",
+      "opciones": [
+        "a) Cifrado del lado del servidor (server-side) con AWS KMS",
+        "b) Cifrado del lado del cliente (client-side) usando claves gestionadas por la aplicación",
+        "c) Cifrado con AWS CloudHSM integrado en S3",
+        "d) Cifrado mediante S3 Object Lock"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**El cifrado del lado del cliente (client-side)** garantiza que los datos lleguen cifrados a AWS y que la plataforma nunca manipule texto plano ni claves (temario)."
+    },
+    {
+      "id": "p12-07",
+      "enunciado": "¿Qué servicio de AWS automatiza la creación y eliminación programada de *snapshots* de volúmenes EBS según una política definida por el usuario?",
+      "opciones": [
+        "a) AWS Backup",
+        "b) Amazon Data Lifecycle Manager",
+        "c) S3 Lifecycle",
+        "d) AWS DataSync"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**Amazon Data Lifecycle Manager** gestiona automáticamente la retención y eliminación de *snapshots* de EBS según políticas programadas (temario)."
+    },
+    {
+      "id": "p12-08",
+      "enunciado": "Un centro de datos on-premises necesita sincronizar datos masivos con un almacenamiento en AWS de forma automatizada y eficiente. ¿Qué servicio de AWS es el adecuado para esta tarea?",
+      "opciones": [
+        "a) AWS Backup",
+        "b) AWS DataSync",
+        "c) S3 Glacier Vault Lock",
+        "d) Amazon EFS Lifecycle"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**AWS DataSync** automatiza la transferencia y sincronización de datos a gran escala entre almacenamiento on-premises y AWS (temario)."
+    },
+    {
+      "id": "p12-09",
+      "enunciado": "Un cliente necesita garantizar que los datos almacenados en un bucket de S3 no puedan ser sobrescritos ni eliminados durante un plazo mínimo de 5 años, incluso si el administrador de la cuenta intenta hacerlo. ¿Qué servicio de AWS debe configurar para cumplir este requisito?",
+      "opciones": [
+        "a) S3 Versioning",
+        "b) S3 Object Lock con configuración de retención legal",
+        "c) S3 Glacier Vault Lock",
+        "d) AWS Backup con políticas de retención"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "El servicio **S3 Object Lock** permite aplicar un modelo WORM (Write-Once-Read-Many) a nivel de objeto, garantizando que los datos no puedan ser modificados o eliminados durante un período definido. Sin embargo, para casos en los que **ni siquiera el propietario de la cuenta** pueda modificar la política de retención (cumpliendo requisitos legales o de cumplimiento estrictos), se recomienda usar **S3 Glacier Vault Lock**, que bloquea la política de vault completo y la hace inmutable. En este caso, la opción más adecuada para el enunciado es **S3 Object Lock con configuración de retención legal**, ya que el cliente solo requiere protección contra sobrescritura/eliminación durante un plazo fijo, no inmutabilidad absoluta frente al propietario."
+    },
+    {
+      "id": "p12-10",
+      "enunciado": "¿Qué servicio de AWS permite a un cliente implementar un sistema de cifrado del lado del cliente (client-side encryption) para datos en reposo en S3, asegurando que AWS nunca tenga acceso al texto plano ni a la clave de cifrado?",
+      "opciones": [
+        "a) AWS KMS con configuración de cifrado en reposo",
+        "b) S3 Server-Side Encryption con AWS KMS (SSE-KMS)",
+        "c) S3 Server-Side Encryption con claves proporcionadas por el cliente (SSE-C)",
+        "d) AWS CloudHSM para gestión de claves"
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "El **cifrado del lado del cliente** (client-side encryption) requiere que el cliente cifre los datos antes de enviarlos a AWS y descifre los datos al recuperarlos. Aunque **S3 Server-Side Encryption con claves proporcionadas por el cliente (SSE-C)** permite que el cliente proporcione sus propias claves, **AWS CloudHSM** es el servicio que garantiza la gestión de claves criptográficas de forma dedicada (single-tenant) y bajo control exclusivo del cliente, cumpliendo escenarios de alta seguridad donde ni siquiera AWS debe acceder al material criptográfico. Sin embargo, **SSE-C** es la opción que cumple con el requisito de que AWS **nunca acceda al texto plano ni a la clave de cifrado**, ya que el cliente maneja todo el proceso de cifrado/descifrado."
+    },
+    {
+      "id": "p12-11",
+      "enunciado": "Un equipo de desarrollo desea almacenar artefactos de software (ej: binarios) en S3 con la garantía de que, tras su firma original, no puedan ser alterados. ¿Qué combinación de servicios o características de AWS debe usar para lograr esto?",
+      "opciones": [
+        "a) S3 Versioning + AWS Signer para firmar los artefactos",
+        "b) S3 Object Lock + AWS CodeSigning",
+        "c) S3 Versioning + firma digital de los artefactos (code signing) antes de subirlos",
+        "d) AWS Backup con políticas de retención para los artefactos"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "La **firma digital de código (code signing)** es el mecanismo que verifica la integridad y autenticidad de los artefactos de software, asegurando que no hayan sido alterados desde su firma original. Aunque **S3 Versioning** permite recuperar versiones anteriores en caso de sobrescritura, **no garantiza por sí solo que los artefactos no hayan sido modificados**. La combinación correcta es usar **S3 Object Lock** para proteger contra sobrescrituras no autorizadas y aplicar **firma digital (code signing)** a los artefactos antes de subirlos a S3, pero la opción más precisa del enunciado es **S3 Versioning + firma digital de los artefactos (code signing) antes de subirlos**, ya que el versioning permite recuperar versiones previas y la firma garantiza que los artefactos no han sido alterados."
+    },
+    {
+      "id": "p12-12",
+      "enunciado": "Un cliente necesita automatizar la transición de datos entre clases de almacenamiento en S3 (por ejemplo, de Standard a Infrequent Access) y eliminar objetos antiguos tras un plazo específico, sin necesidad de intervención manual. ¿Qué servicio o característica de AWS debe configurar para lograr esto?",
+      "opciones": [
+        "a) AWS Backup con políticas de retención",
+        "b) S3 Lifecycle Policies",
+        "c) Amazon EFS Lifecycle",
+        "d) AWS DataSync para sincronización de datos"
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "**S3 Lifecycle Policies** permite definir reglas automáticas para mover objetos entre clases de almacenamiento (como Standard → Infrequent Access → Glacier) o eliminarlos tras un período de tiempo, optimizando costes y gestionando el ciclo de vida de los datos sin intervención manual."
+    },
+    {
+      "id": "p12-13",
+      "enunciado": "Un cliente requiere almacenar datos en un sistema de ficheros compartido (como un entorno de desarrollo colaborativo) y necesita que AWS automatice la transición de datos menos accesados a clases de almacenamiento más económicas (ej: Standard → Infrequent Access) sin configuración manual. ¿Qué servicio de AWS cumple este requisito?",
+      "opciones": [
+        "a) Amazon EFS con políticas de lifecycle",
+        "b) AWS Backup para sistemas de ficheros",
+        "c) S3 Lifecycle Policies",
+        "d) AWS DataSync para replicación de datos"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**Amazon EFS Lifecycle** permite automatizar la transición de datos entre clases de almacenamiento en sistemas de ficheros compartidos (como EFS), optimizando costes al mover datos menos accesados a clases más económicas (ej: Standard → Infrequent Access)."
+    },
+    {
+      "id": "p12-14",
+      "enunciado": "Un cliente desea proteger sus volúmenes EBS contra ransomware al garantizar que las copias de seguridad (*snapshots*) no puedan ser sobrescritas o eliminadas durante un período mínimo de 7 años. ¿Qué servicio de AWS debe usar para configurar esta protección?",
+      "opciones": [
+        "a) AWS Backup con políticas de retención inmutable",
+        "b) Amazon Data Lifecycle Manager para snapshots",
+        "c) S3 Glacier Vault Lock para snapshots de EBS",
+        "d) AWS KMS para cifrar los snapshots"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**AWS Backup** permite centralizar la gestión de copias de seguridad de múltiples servicios de AWS (incluyendo EBS) y configurar políticas de retención inmutable, protegiendo los *snapshots* contra sobrescritura o eliminación durante un período definido, incluso frente a ataques de ransomware."
+    },
+    {
+      "id": "p12-15",
+      "enunciado": "Un cliente utiliza Amazon FSx for Lustre para almacenar datos de alto rendimiento en entornos de *high-performance computing* (HPC) o *machine learning*. ¿Qué servicio de AWS puede automatizar la creación de copias de seguridad de estos datos según una política de retención definida?",
+      "opciones": [
+        "a) AWS Backup",
+        "b) Amazon EFS Lifecycle",
+        "c) S3 Lifecycle Policies",
+        "d) AWS DataSync"
+      ],
+      "respuestaCorrecta": 0,
+      "explicacion": "**AWS Backup** permite centralizar la gestión de copias de seguridad para múltiples servicios de AWS, incluyendo **Amazon FSx for Lustre**, y automatizar la creación y eliminación de copias según políticas de retención definidas por el usuario."
+    },
+    {
+      "id": "p12-16",
+      "enunciado": "Un cliente necesita almacenar datos sensibles en S3 con la garantía de que, incluso si un administrador de la cuenta intenta modificar las políticas de protección, estas no puedan alterarse. ¿Qué servicio de AWS debe configurar para cumplir este requisito?",
+      "opciones": [
+        "a) AWS KMS con políticas de clave estrictas",
+        "b) S3 Object Lock con retención legal",
+        "c) S3 Glacier Vault Lock",
+        "d) AWS Backup con políticas de retención"
+      ],
+      "respuestaCorrecta": 2,
+      "explicacion": "El servicio **S3 Glacier Vault Lock** permite aplicar políticas de retención inmutables a nivel de *vault* completo, garantizando que las políticas no puedan modificarse ni siquiera por el propietario de la cuenta, cumpliendo con requisitos de cumplimiento estrictos."
+    },
+    {
+      "id": "p12-17",
+      "enunciado": "Un cliente necesita almacenar datos confidenciales en S3 con la garantía de que, incluso en caso de que un administrador de la cuenta pierda acceso a sus credenciales, los datos permanezcan inaccesibles para AWS. ¿Qué combinación de servicios o características de AWS debe configurar para cumplir este requisito?",
+      "opciones": [
+        "a) Usar S3 con cifrado del lado del servidor (SSE-S3) y políticas de bucket estrictas.",
+        "b) Implementar cifrado del lado del cliente (client-side encryption) junto con AWS KMS para gestionar las claves maestras.",
+        "c) Configurar S3 Object Lock con retención de 10 años y activar el versionado de S3.",
+        "d) Utilizar AWS CloudHSM para generar y gestionar claves criptográficas, combinado con cifrado del lado del cliente para los datos en S3."
+      ],
+      "respuestaCorrecta": 3,
+      "explicacion": "La opción correcta es **d**, ya que el cifrado del lado del cliente (client-side encryption) garantiza que AWS nunca tenga acceso al texto plano ni a la clave de cifrado, incluso si el administrador pierde control. AWS CloudHSM se usa para gestionar claves criptográficas de forma dedicada (single-tenant), cumpliendo estándares como FIPS 140-2 nivel 3, lo que refuerza la seguridad en escenarios de alta sensibilidad. Esto cumple con el requisito de que los datos permanezcan inaccesibles para AWS en caso de pérdida de acceso administrativo."
+    },
+    {
+      "id": "p12-18",
+      "enunciado": "Un equipo de desarrollo almacena artefactos de software (ej: binarios) en S3 y requiere que, tras su firma original, no puedan ser alterados ni sobrescritos por ningún usuario, incluso si el administrador de la cuenta intenta modificarlos. ¿Qué servicio o característica de AWS debe combinar para lograr esta protección?",
+      "opciones": [
+        "a) Activar el versionado de S3 y configurar una política de S3 Lifecycle para eliminar versiones antiguas tras 30 días.",
+        "b) Usar S3 Object Lock con un plazo de retención indefinido y firmar los artefactos con un certificado digital externo.",
+        "c) Implementar AWS Backup con copias inmutables y activar el cifrado del lado del servidor (SSE-KMS) para los buckets.",
+        "d) Combinar el cifrado del lado del cliente con AWS CloudHSM para gestionar las claves y activar el versionado de S3."
+      ],
+      "respuestaCorrecta": 1,
+      "explicacion": "La opción correcta es **b**. **S3 Object Lock** impone un modelo WORM (Write-Once-Read-Many) a nivel de objeto, evitando que los artefactos sean sobrescritos o eliminados durante el plazo de retención configurado (en este caso, indefinido). La firma digital externa garantiza la integridad del artefacto desde su publicación, mientras que Object Lock protege contra modificaciones posteriores, incluso por parte del administrador de la cuenta. Esto cumple con el requisito de inmutabilidad absoluta tras la firma."
+    }
+  ]
+}
