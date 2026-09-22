@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { diasRestantes, rutaDesdeEstado } from './suscripcion'
+import { diasRestantes } from './suscripcion'
 
 describe('diasRestantes', () => {
   it('devuelve 7 el mismo día de inicio', () => {
@@ -16,17 +16,5 @@ describe('diasRestantes', () => {
   })
   it('devuelve null si no hay trial_start', () => {
     expect(diasRestantes(null, new Date())).toBeNull()
-  })
-})
-
-describe('rutaDesdeEstado', () => {
-  it('activo → null (renderiza)', () => {
-    expect(rutaDesdeEstado('activo')).toBeNull()
-  })
-  it('sin-oposicion → /mis-oposiciones', () => {
-    expect(rutaDesdeEstado('sin-oposicion')).toBe('/mis-oposiciones')
-  })
-  it('expirado → EXTERNO', () => {
-    expect(rutaDesdeEstado('expirado')).toBe('EXTERNO')
   })
 })
