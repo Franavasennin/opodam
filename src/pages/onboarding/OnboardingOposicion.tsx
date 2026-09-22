@@ -1,9 +1,11 @@
 // src/pages/onboarding/OnboardingOposicion.tsx
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../../data/oposiciones'
-import { crearPerfil, esOwner } from '../../services/supabase'
-import { setActiveSlug, setOposicionesLocales } from '../../services/storage'
+import { crearPerfil } from '../../services/supabase'
+import { setOposicionesLocales } from '../../services/storage'
+import { useOposicionStore } from '../../stores/oposicion'
+import { usePuedeVerPrivadas } from '../../stores/sesion'
 
 function Marca() {
   return (
@@ -32,9 +34,8 @@ export default function OnboardingOposicion() {
   const [seleccionadas, setSeleccionadas] = useState<string[]>([])
   const [cargando, setCargando] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [puedeVerPrivadas, setPuedeVerPrivadas] = useState(false)
   const navigate = useNavigate()
-  useEffect(() => { esOwner().then(setPuedeVerPrivadas) }, [])
+  const puedeVerPrivadas = usePuedeVerPrivadas()
   const opciones = OPOSICIONES.filter(op => !op.privado || puedeVerPrivadas)
 
   function toggleOposicion(slug: string) {
@@ -50,7 +51,7 @@ export default function OnboardingOposicion() {
 
     // 1. Guardar localmente primero (siempre funciona, sin red)
     setOposicionesLocales(seleccionadas)
-    setActiveSlug(seleccionadas[0])
+    useOposicionStore.getState().activar(seleccionadas[0])
 
     // 2. Intentar guardar en Supabase en segundo plano (no bloquea)
     crearPerfil(seleccionadas).catch(e =>

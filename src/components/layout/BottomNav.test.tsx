@@ -3,13 +3,24 @@ import { render, screen, within, act, cleanup } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { createMemoryRouter, RouterProvider } from 'react-router-dom'
 import { BottomNav } from './BottomNav'
+import { reiniciarSesionStore } from '../../stores/sesion'
 
 // BottomNav consulta el rol para decidir si lista oposiciones privadas, y
 // persiste el slug activo al cambiar de oposición. Ninguna de las dos cosas
-// debe tocar red ni almacenamiento en un test de interfaz.
+// debe tocar red ni almacenamiento en un test de interfaz. Ambas pasan por
+// los stores de Zustand, que leen storage/supabase: se mockea lo que escribe
+// o sale a red y se deja real el resto de storage (lectura de slug, avisos).
 const esOwner = vi.fn<() => Promise<boolean>>()
-vi.mock('../../services/supabase', () => ({ esOwner: () => esOwner() }))
-vi.mock('../../services/storage', () => ({ setActiveSlug: vi.fn() }))
+vi.mock('../../services/supabase', () => ({
+  esOwner: () => esOwner(),
+  obtenerUsuario: async () => null,
+  tieneAccesoOposicion: async () => false,
+  supabase: null,
+}))
+vi.mock('../../services/storage', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('../../services/storage')>()),
+  setActiveSlug: vi.fn(),
+}))
 
 /** Monta BottomNav en un router real para poder navegar de verdad. */
 function montar(rutaInicial = '/oposicion/cgpc') {
@@ -30,6 +41,8 @@ beforeEach(() => {
 
 afterEach(() => {
   cleanup()
+  // El rol se cachea en el store de sesión; cada test fija el suyo.
+  reiniciarSesionStore()
   document.body.style.overflow = ''
   vi.clearAllMocks()
 })

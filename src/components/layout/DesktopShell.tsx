@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../../data/oposiciones'
-import { setActiveSlug } from '../../services/storage'
-import { esOwner } from '../../services/supabase'
+import { useOposicionStore } from '../../stores/oposicion'
+import { usePuedeVerPrivadas } from '../../stores/sesion'
 import { Icon } from '../ui/Icon'
 import { BottomNav } from './BottomNav'
 import { navVisible, rutaNav } from './navItems'
@@ -23,18 +23,12 @@ export function DesktopShell({ children }: { children: ReactNode }) {
   const location = useLocation()
   const navigate = useNavigate()
   const [abierto, setAbierto] = useState(false)
-  const [puedeVerPrivadas, setPuedeVerPrivadas] = useState(false)
   const selector = useRef<HTMLDivElement>(null)
 
   // Mismo criterio que MisOposiciones y OnboardingOposicion: las oposiciones
   // marcadas `privado` solo se listan a los roles owner/beta. Antes esta barra
   // las mostraba a cualquiera.
-  // La guarda `vivo` evita escribir estado si la promesa resuelve tras desmontar.
-  useEffect(() => {
-    let vivo = true
-    esOwner().then(v => { if (vivo) setPuedeVerPrivadas(v) }).catch(() => {})
-    return () => { vivo = false }
-  }, [])
+  const puedeVerPrivadas = usePuedeVerPrivadas()
 
   const m = location.pathname.match(/^\/oposicion\/([^/]+)(\/([^/]+))?/)
   const slug = m?.[1]
@@ -61,7 +55,7 @@ export function DesktopShell({ children }: { children: ReactNode }) {
   }, [abierto])
 
   function cambiarOposicion(nuevo: string) {
-    setActiveSlug(nuevo)
+    useOposicionStore.getState().activar(nuevo)
     setAbierto(false)
     navigate(`/oposicion/${nuevo}`)
   }

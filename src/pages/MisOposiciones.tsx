@@ -1,9 +1,9 @@
 // src/pages/MisOposiciones.tsx
-import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../data/oposiciones'
-import { setActiveSlug } from '../services/storage'
-import { activarTrial, esOwner } from '../services/supabase'
+import { activarTrial } from '../services/supabase'
+import { useOposicionStore } from '../stores/oposicion'
+import { usePuedeVerPrivadas } from '../stores/sesion'
 import { BannerNutriplan } from '../components/promo/BannerNutriplan'
 import { Icon, type NombreIcono } from '../components/ui/Icon'
 
@@ -19,15 +19,14 @@ const GLYPH: Record<string, NombreIcono> = {
 
 export default function MisOposiciones() {
   const navigate = useNavigate()
-  const [puedeVerPrivadas, setPuedeVerPrivadas] = useState(false)
-  useEffect(() => { esOwner().then(setPuedeVerPrivadas) }, [])
+  const puedeVerPrivadas = usePuedeVerPrivadas()
 
   const visibles = OPOSICIONES.filter(op => !op.privado || puedeVerPrivadas)
   const disponibles = visibles.filter(op => op.disponible)
   const proximamente = visibles.filter(op => !op.disponible)
 
   async function handleEntrar(slug: string) {
-    setActiveSlug(slug)
+    useOposicionStore.getState().activar(slug)
     // Esperamos a marcar trial_start antes de navegar: si no, RutaProtegida
     // podría leer 'sin-oposicion' y rebotar al usuario de vuelta aquí.
     await activarTrial().catch(() => { /* fail-open: no bloquea la navegación */ })

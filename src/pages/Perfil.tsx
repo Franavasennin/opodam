@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { exportarProgreso, importarProgreso } from '../services/storage'
-import { enviarMagicLink, cerrarSesion, obtenerUsuario } from '../services/supabase'
+import { enviarMagicLink, cerrarSesion } from '../services/supabase'
 import { sincronizar } from '../services/sync'
 import { Icon } from '../components/ui/Icon'
-import type { User } from '@supabase/supabase-js'
+import { useSesionStore } from '../stores/sesion'
 
 const topbar: React.CSSProperties = {
   height: 52, borderBottom: '1px solid var(--border-soft)',
@@ -18,16 +18,12 @@ const topbar: React.CSSProperties = {
 type Aviso = { tipo: 'ok' | 'error' | 'info'; texto: string }
 
 export function Perfil() {
-  const [usuario, setUsuario] = useState<User | null>(null)
+  const usuario = useSesionStore(s => s.usuario)
   const [email, setEmail] = useState('')
   const [enviando, setEnviando] = useState(false)
   const [syncing, setSyncing] = useState(false)
   const [mensaje, setMensaje] = useState<Aviso | null>(null)
   const [ultimoSync, setUltimoSync] = useState<string | null>(null)
-
-  useEffect(() => {
-    obtenerUsuario().then(setUsuario)
-  }, [])
 
   async function handleMagicLink() {
     if (!email.includes('@')) { setMensaje({ tipo: 'error', texto: 'Introduce un email válido' }); return }
@@ -48,8 +44,8 @@ export function Perfil() {
   }
 
   async function handleCerrarSesion() {
+    // onAuthStateChange vacía el usuario del store de sesión.
     await cerrarSesion()
-    setUsuario(null)
     setMensaje({ tipo: 'info', texto: 'Sesión cerrada.' })
   }
 
