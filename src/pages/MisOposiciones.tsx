@@ -27,8 +27,7 @@ export default function MisOposiciones() {
 
   async function handleEntrar(slug: string) {
     useOposicionStore.getState().activar(slug)
-    // Esperamos a marcar trial_start antes de navegar: si no, RutaProtegida
-    // podría leer 'sin-oposicion' y rebotar al usuario de vuelta aquí.
+    // Marca trial_start (lo lee BannerTrial en el dashboard) antes de navegar.
     await activarTrial().catch(() => { /* fail-open: no bloquea la navegación */ })
     navigate(`/oposicion/${slug}`)
   }

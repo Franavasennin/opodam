@@ -11,7 +11,6 @@ vi.mock('../../services/supabase', () => ({
   obtenerUsuario: () => m.obtenerUsuario(),
   tieneAccesoOposicion: (slug: string) => m.tieneAccesoOposicion(slug),
   esOwner: async () => false,
-  estadoAcceso: async () => 'activo',
   supabase: null,
 }))
 

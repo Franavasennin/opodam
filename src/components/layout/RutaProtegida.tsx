@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
-import { estadoAcceso } from '../../services/supabase'
-import { rutaDesdeEstado } from '../../services/suscripcion'
 import { tieneCuenta, useSesion, useSesionStore } from '../../stores/sesion'
 import { esSlugConocido, useOposicionStore } from '../../stores/oposicion'
 
@@ -27,43 +25,6 @@ function useAlinearOposicionActiva(): boolean {
     if (pendiente && slug) useOposicionStore.getState().activar(slug)
   }, [pendiente, slug])
   return pendiente
-}
-
-type Fase = 'cargando' | 'render' | 'interno' | 'externo'
-
-const URL_EXPIRACION =
-  (import.meta.env.VITE_URL_EXPIRACION as string | undefined) ??
-  'https://opodam.vercel.app/precios'
-
-/** Modelo trial (retirado del routing; se conserva por si se recupera). */
-export function RutaProtegida({ children }: { children: React.ReactNode }) {
-  const { lista, usuario } = useSesion()
-  const conCuenta = tieneCuenta(usuario)
-  const [fase, setFase] = useState<Fase>('cargando')
-
-  useEffect(() => {
-    if (!lista || !conCuenta) return
-    let activo = true
-    ;(async () => {
-      const ruta = rutaDesdeEstado(await estadoAcceso())
-      if (!activo) return
-      if (ruta == null) setFase('render')
-      else if (ruta === 'EXTERNO') setFase('externo')
-      else setFase('interno')
-    })()
-    return () => { activo = false }
-  }, [lista, conCuenta])
-
-  useEffect(() => {
-    if (fase === 'externo') window.location.href = URL_EXPIRACION
-  }, [fase])
-
-  if (!lista) return <Cargando />
-  if (!conCuenta) return <Navigate to="/onboarding/email" replace />
-  if (fase === 'cargando') return <Cargando />
-  if (fase === 'interno') return <Navigate to="/mis-oposiciones" replace />
-  if (fase === 'externo') return null
-  return <>{children}</>
 }
 
 /** Requiere sesión con email (sin mirar suscripción). */
