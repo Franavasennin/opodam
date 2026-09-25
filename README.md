@@ -1,73 +1,42 @@
-# React + TypeScript + Vite
+# OpoDAM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PWA de estudio para la oposición al Cuerpo General de la Policía Canaria (CGPC) y otras oposiciones relacionadas (Policía Local, Auxiliar de Enfermería).
 
-Currently, two official plugins are available:
+## Qué hace
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Temario completo organizado por bloques, con esquemas y mapas mentales generados a partir del contenido oficial.
+- Generación de preguntas tipo test y simulacros de examen con temporizador, corrección y seguimiento de progreso.
+- Tutor y "entrevista" con IA (chat) para resolver dudas y practicar supuestos prácticos.
+- Sincronización de progreso entre dispositivos vía Supabase (login por magic link).
+- Búsqueda indexada sobre todo el temario.
+- Tests E2E con Playwright y unitarios con Vitest.
 
-## React Compiler
+## Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React + TypeScript + Vite
+- Supabase (auth + base de datos + RLS)
+- Netlify Functions (backend serverless: chat con IA, generación de preguntas, checkout)
+- Groq API (modelos LLM para tutor/entrevista/generación de contenido)
+- Stripe (suscripciones)
+- Tailwind CSS
 
-## Expanding the ESLint configuration
+## Cómo ejecutarlo en local
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+cp .env.example .env.local   # rellenar con tus propias claves (ver comentarios en el archivo)
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Variables de servidor (Groq, Stripe, SendGrid) se configuran como variables de entorno en Netlify, no en `.env.local`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Tests
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run test        # unitarios (Vitest)
+npm run test:e2e    # end-to-end (Playwright)
 ```
+
+## Estado
+
+Proyecto personal en desarrollo activo. El histórico de auditorías y planes de mejora aplicados está en `plans/` y `docs/`.
