@@ -2,6 +2,7 @@
 import { useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../data/oposiciones'
 import { activarTrial } from '../services/supabase'
+import { getActiveSlug } from '../services/storage'
 import { useOposicionStore } from '../stores/oposicion'
 import { usePuedeVerPrivadas } from '../stores/sesion'
 import { BannerNutriplan } from '../components/promo/BannerNutriplan'
@@ -48,7 +49,9 @@ export default function MisOposiciones() {
             >O</span>
             <span style={{ fontWeight: 600, fontSize: 15, letterSpacing: '-0.01em' }}>OpoDAM</span>
           </div>
-          <span className="eyebrow">Tu academia</span>
+          <button type="button" onClick={() => navigate(`/oposicion/${getActiveSlug()}/perfil`)} className="btn-editorial btn-sec" style={{ height: 44, padding: '0 14px', fontSize: 14 }}>
+            <Icon nombre="perfil" size={18} /> Mi cuenta
+          </button>
         </div>
 
         {/* Hero editorial */}

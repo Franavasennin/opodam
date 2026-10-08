@@ -155,6 +155,12 @@ export function BottomNav() {
             </div>
 
             <ul className="sheet__list">
+              <li>
+                <button type="button" className="sheet__link" onClick={() => irA(`/oposicion/${slug}/perfil`)}>
+                  <span className="sheet__icon"><Icon nombre="perfil" size={20} /></span>
+                  <span className="sheet__texto">Mi cuenta</span>
+                </button>
+              </li>
               {secundarios.map(item => (
                 <li key={item.seg}>
                   <NavLink
@@ -171,12 +177,6 @@ export function BottomNav() {
                 <button type="button" className="sheet__link" onClick={() => irA('/procoach')}>
                   <span className="sheet__icon"><Icon nombre="procoach" size={20} /></span>
                   <span className="sheet__texto">ProCoach AI</span>
-                </button>
-              </li>
-              <li>
-                <button type="button" className="sheet__link" onClick={() => irA(`/oposicion/${slug}/perfil`)}>
-                  <span className="sheet__icon"><Icon nombre="perfil" size={20} /></span>
-                  <span className="sheet__texto">Mi perfil</span>
                 </button>
               </li>
               <li>

@@ -151,6 +151,16 @@ export function DesktopShell({ children }: { children: ReactNode }) {
             })}
           </nav>
 
+          <Link
+            to={rutaNav(slug, 'perfil')}
+            className={`navside__link${seg === 'perfil' ? ' is-active' : ''}`}
+            aria-current={seg === 'perfil' ? 'page' : undefined}
+            style={{ margin: '0 12px' }}
+          >
+            <span className="navside__icon"><Icon nombre="perfil" size={18} /></span>
+            Mi cuenta
+          </Link>
+
           {/* ProCoach */}
           <Link
             to="/procoach"

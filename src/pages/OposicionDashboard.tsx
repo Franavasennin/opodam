@@ -103,7 +103,10 @@ export default function OposicionDashboard() {
           <button onClick={() => navigate('/mis-oposiciones')} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 14, display: 'flex', alignItems: 'center', gap: 4 }}>
             ← <span style={{ fontWeight: 500 }}>Inicio</span>
           </button>
-          <span className="pill mono">{oposicion.slug.toUpperCase()}</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+            <span className="pill mono">{oposicion.slug.toUpperCase()}</span>
+            <button type="button" className="icon-btn" onClick={() => ir('perfil')} aria-label="Mi cuenta"><Icon nombre="perfil" size={22} /></button>
+          </div>
         </header>
 
         <main className="max-w-2xl mx-auto px-4">
