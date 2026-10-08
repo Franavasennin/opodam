@@ -8,7 +8,8 @@ import { CuentaAtras } from '../components/ui/CuentaAtras'
 import { PanelEnRiesgo } from '../components/ui/PanelEnRiesgo'
 import { PanelPreExamen } from '../components/ui/PanelPreExamen'
 import { PanelPlan } from '../components/ui/PanelPlan'
-import { obtenerPerfil, tieneAccesoOposicion } from '../services/supabase'
+import { obtenerPerfil } from '../services/supabase'
+import { useSesionStore } from '../stores/sesion'
 import { BannerTrial } from '../components/ui/BannerTrial'
 import { BannerPaywall } from '../components/promo/BannerPaywall'
 import { BienvenidaGuiada } from '../components/ui/BienvenidaGuiada'
@@ -42,10 +43,11 @@ export default function OposicionDashboard() {
   const navigate = useNavigate()
   const { progreso } = useProgress()
   const oposicion = OPOSICIONES.find(op => op.slug === slug)
-  const [acceso, setAcceso] = useState<boolean | null>(null)
+  // Mismo resultado cacheado que usa RutaOposicion: no se repite la consulta.
+  const acceso = useSesionStore(s => (slug ? s.accesos[slug] ?? null : null))
 
   useEffect(() => {
-    if (slug) tieneAccesoOposicion(slug).then(setAcceso)
+    if (slug) void useSesionStore.getState().comprobarAcceso(slug)
   }, [slug])
 
   useEffect(() => {

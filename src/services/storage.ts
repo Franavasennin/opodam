@@ -29,12 +29,32 @@ export function setOposicionesLocales(oposiciones: string[]): void {
 const DEFAULT_SLUG = 'cgpc'
 const LEGACY_PROGRESO_KEY = PROGRESO_KEY
 
+// Avisos de escritura. storage.ts sigue siendo la única vía de persistencia
+// (los servicios leen y escriben aquí), y los stores de Zustand se suscriben
+// para que toda la UI vea el mismo estado sin que cada servicio los conozca.
+type OyenteSlug = (slug: string) => void
+type OyenteProgreso = (slug: string, progreso: Progreso) => void
+const oyentesSlug = new Set<OyenteSlug>()
+const oyentesProgreso = new Set<OyenteProgreso>()
+
+export function alCambiarSlug(fn: OyenteSlug): () => void {
+  oyentesSlug.add(fn)
+  return () => { oyentesSlug.delete(fn) }
+}
+
+export function alGuardarProgreso(fn: OyenteProgreso): () => void {
+  oyentesProgreso.add(fn)
+  return () => { oyentesProgreso.delete(fn) }
+}
+
 export function getActiveSlug(): string {
   return localStorage.getItem(ACTIVE_SLUG_KEY) ?? DEFAULT_SLUG
 }
 
 export function setActiveSlug(slug: string): void {
+  const anterior = localStorage.getItem(ACTIVE_SLUG_KEY)
   localStorage.setItem(ACTIVE_SLUG_KEY, slug)
+  if (anterior !== slug) oyentesSlug.forEach(fn => fn(slug))
 }
 
 export function getProgresoKey(slug?: string): string {
@@ -78,10 +98,19 @@ export function getProgreso(): Progreso {
 
 export function saveProgreso(progreso: Progreso): void {
   localStorage.setItem(getProgresoKey(), JSON.stringify(progreso))
+  if (oyentesProgreso.size === 0) return
+  // Copia: los servicios mutan el objeto que leyeron y el store debe ser inmutable.
+  const slug = getActiveSlug()
+  const copia = structuredClone(progreso)
+  oyentesProgreso.forEach(fn => fn(slug, copia))
 }
 
 export function resetProgreso(): void {
   localStorage.removeItem(getProgresoKey())
+  if (oyentesProgreso.size === 0) return
+  const slug = getActiveSlug()
+  const inicial = getProgreso()
+  oyentesProgreso.forEach(fn => fn(slug, inicial))
 }
 
 export function exportarProgreso(): string {

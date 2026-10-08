@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../../data/oposiciones'
-import { setActiveSlug } from '../../services/storage'
-import { esOwner } from '../../services/supabase'
+import { useOposicionStore } from '../../stores/oposicion'
+import { usePuedeVerPrivadas } from '../../stores/sesion'
 import { Icon } from '../ui/Icon'
 import { SEGS_MOVIL_PRIMARIOS, navVisible, rutaNav } from './navItems'
 
@@ -23,18 +23,13 @@ export function BottomNav() {
   const location = useLocation()
   const navigate = useNavigate()
   const [hoja, setHoja] = useState(false)
-  const [puedeVerPrivadas, setPuedeVerPrivadas] = useState(false)
   const botonMas = useRef<HTMLButtonElement>(null)
   const panel = useRef<HTMLDivElement>(null)
 
   // Mismo criterio que MisOposiciones y OnboardingOposicion: las oposiciones
-  // marcadas `privado` solo se listan a los roles owner/beta.
-  // La guarda `vivo` evita escribir estado si la promesa resuelve tras desmontar.
-  useEffect(() => {
-    let vivo = true
-    esOwner().then(v => { if (vivo) setPuedeVerPrivadas(v) }).catch(() => {})
-    return () => { vivo = false }
-  }, [])
+  // marcadas `privado` solo se listan a los roles owner/beta (rol cacheado
+  // en el store de sesión: una consulta para toda la app).
+  const puedeVerPrivadas = usePuedeVerPrivadas()
 
   const m = location.pathname.match(/^\/oposicion\/([^/]+)(\/([^/]+))?/)
   const slug = m?.[1]
@@ -100,7 +95,7 @@ export function BottomNav() {
   }
 
   function cambiarOposicion(nuevo: string) {
-    setActiveSlug(nuevo)
+    useOposicionStore.getState().activar(nuevo)
     setHoja(false)
     navigate(`/oposicion/${nuevo}`)
   }

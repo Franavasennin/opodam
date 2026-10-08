@@ -176,8 +176,6 @@ export interface Progreso {
   tiempoPorTema: Record<string, number>
 }
 
-export type EstadoAcceso = 'activo' | 'sin-oposicion' | 'expirado'
-
 export interface Perfil {
   id: string
   email: string
