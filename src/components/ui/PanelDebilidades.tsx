@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom'
+import { Icon } from './Icon'
 import { TEMAS_META } from '../../data/topics'
 import { calcularDebilidades, totalPreguntasRespondidas } from '../../services/adaptativo'
 import type { Progreso } from '../../types'
@@ -17,7 +18,7 @@ export function PanelDebilidades({ rendimiento }: Props) {
 
   return (
     <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
-      <div className="eyebrow" style={{ marginBottom: 14 }}>📊 Tus puntos débiles</div>
+      <div className="eyebrow" style={{ marginBottom: 14, display: 'flex', alignItems: 'center', gap: 6 }}><Icon nombre="tendencia" size={14} /> Tus puntos débiles</div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
         {debiles.map(temaId => {
           const r    = rendimiento[String(temaId)]!
@@ -27,15 +28,15 @@ export function PanelDebilidades({ rendimiento }: Props) {
             <div key={temaId}>
               <div className="flex justify-between" style={{ fontSize: 12, color: 'var(--mute)', marginBottom: 5 }}>
                 <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginRight: 8 }}>T{temaId} — {meta?.titulo.slice(0, 28) ?? '…'}</span>
-                <span className="num-display" style={{ flexShrink: 0, fontWeight: 600, color: pct < 50 ? 'var(--warn)' : '#a07a2c' }}>{pct}% ⚠️</span>
+                <span className="num-display" style={{ flexShrink: 0, fontWeight: 600, color: pct < 50 ? 'var(--warn)' : 'var(--gold)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>{pct}% <Icon nombre="alerta" size={14} /></span>
               </div>
-              <div className="bar"><div className="bar-fill" style={{ width: `${pct}%`, background: pct < 50 ? 'var(--warn)' : '#a07a2c' }} /></div>
+              <div className="bar"><div className="bar-fill" style={{ width: `${pct}%`, background: pct < 50 ? 'var(--warn)' : 'var(--gold)' }} /></div>
             </div>
           )
         })}
       </div>
       <button onClick={() => navigate(`/oposicion/${slug}/sesion-diaria`)}
-        style={{ width: '100%', marginTop: 14, background: 'none', border: 0, cursor: 'pointer', color: 'var(--accent)', fontSize: 13, fontWeight: 600, textAlign: 'left', textDecoration: 'underline' }}>
+        style={{ width: '100%', marginTop: 14, background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--accent)', fontSize: 13, fontWeight: 600, textAlign: 'left', textDecoration: 'underline' }}>
         → Ir a sesión de hoy
       </button>
     </div>

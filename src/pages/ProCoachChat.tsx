@@ -2,6 +2,7 @@
 // Chat con el agente DELTA (entrenador físico de oposiciones).
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Icon } from '../components/ui/Icon'
 import { enviarMensajeDelta, type MensajeChat, type PerfilDelta, type Cuerpo, type Nivel } from '../services/delta'
 
 const CLAVE_PERFIL = 'opodam.delta.perfil'
@@ -60,6 +61,7 @@ export default function ProCoachChat() {
   const [input, setInput] = useState('')
   const [cargando, setCargando] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [confirmandoBorrado, setConfirmandoBorrado] = useState(false)
   const [mostrarPerfil, setMostrarPerfil] = useState(() => !cargarPerfil().cuerpo)
   const finRef = useRef<HTMLDivElement | null>(null)
 
@@ -90,7 +92,7 @@ export default function ProCoachChat() {
   }
 
   function limpiarConversacion() {
-    if (!confirm('¿Borrar toda la conversación con DELTA?')) return
+    setConfirmandoBorrado(false)
     setMensajes([])
     setError(null)
   }
@@ -105,10 +107,10 @@ export default function ProCoachChat() {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <button onClick={() => navigate('/procoach')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <button onClick={() => navigate('/procoach')} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>DELTA</span>
-        <span className="num-display" style={{ fontSize: 11.5, color: 'var(--mute)' }}>· Preparador físico</span>
-        <button onClick={() => setMostrarPerfil(v => !v)} style={{ marginLeft: 'auto', background: 'none', border: 0, cursor: 'pointer', color: 'var(--accent)', fontSize: 12.5, fontWeight: 600 }}>
+        <span className="num-display" style={{ fontSize: 12, color: 'var(--mute)' }}>· Preparador físico</span>
+        <button onClick={() => setMostrarPerfil(v => !v)} style={{ marginLeft: 'auto', background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--accent)', fontSize: 12.5, fontWeight: 600 }}>
           {mostrarPerfil ? 'Ocultar perfil' : 'Editar perfil'}
         </button>
       </header>
@@ -152,7 +154,7 @@ export default function ProCoachChat() {
         <div className="max-w-2xl mx-auto" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {mensajes.length === 0 && !cargando && (
             <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
-              <p style={{ margin: '0 0 4px', fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>Hola, soy DELTA 🛡️</p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: 6, margin: '0 0 4px', fontSize: 16, fontWeight: 600, color: 'var(--ink)' }}><Icon nombre="escudo" size={16} /> Hola, soy DELTA</p>
               <p style={{ margin: 0, fontSize: 12.5, color: 'var(--mute)', lineHeight: 1.5 }}>
                 Tu preparador físico para oposiciones. Rellena tu perfil arriba y cuéntame qué necesitas:
                 un plan, una sesión, dudas de protocolo o tus marcas actuales.
@@ -183,8 +185,14 @@ export default function ProCoachChat() {
           <div className="flex flex-col gap-1">
             <button onClick={enviar} disabled={cargando || !input.trim()} className="btn-editorial btn-acc"
               style={{ paddingLeft: 18, paddingRight: 18, opacity: cargando || !input.trim() ? 0.4 : 1 }}>Enviar</button>
-            {mensajes.length > 0 && (
-              <button onClick={limpiarConversacion} style={{ background: 'none', border: 0, cursor: 'pointer', fontSize: 10, color: 'var(--mute)' }}>limpiar</button>
+            {mensajes.length > 0 && !confirmandoBorrado && (
+              <button onClick={() => setConfirmandoBorrado(true)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', fontSize: 12, color: 'var(--mute)' }}>Borrar chat</button>
+            )}
+            {confirmandoBorrado && (
+              <div role="alertdialog" aria-label="Confirmar borrado de la conversación" style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                <button onClick={limpiarConversacion} className="btn-editorial" style={{ height: 44, fontSize: 14, background: 'var(--err)', color: 'var(--bg)' }}>Borrar todo</button>
+                <button onClick={() => setConfirmandoBorrado(false)} className="btn-editorial btn-sec" style={{ height: 44, fontSize: 14 }}>Cancelar</button>
+              </div>
             )}
           </div>
         </div>

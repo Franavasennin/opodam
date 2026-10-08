@@ -1,4 +1,5 @@
 import { diasRestantes } from '../../services/suscripcion'
+import { Icon } from './Icon'
 
 /**
  * Banner informativo de cuenta atrás del trial.
@@ -17,7 +18,7 @@ export function BannerTrial({ trialStart, rol }: { trialStart: string | null; ro
         fontSize: 12.5, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 8,
       }}
     >
-      <span>⏳</span>
+      <Icon nombre="tiempo" size={16} />
       <span>
         {dias > 0
           ? `Te quedan ${dias} ${dias === 1 ? 'día' : 'días'} de prueba`

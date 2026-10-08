@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom'
+import { Icon } from './Icon'
 import { temasEnRiesgo } from '../../services/dominio'
 import type { Progreso } from '../../types'
 
@@ -22,16 +23,17 @@ export function PanelEnRiesgo({ temas, metas }: Props) {
 
   return (
     <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
-      <div className="eyebrow" style={{ marginBottom: 14 }}>🧠 En riesgo de olvido</div>
+      <div className="eyebrow" style={{ marginBottom: 14, display: 'flex', alignItems: 'center', gap: 6 }}><Icon nombre="psicotecnicos" size={14} /> En riesgo de olvido</div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
         {enRiesgo.map(t => {
           const meta = metas.find(m => m.id === t.id)
           const olvidado = t.estado === 'olvidado'
-          const color = olvidado ? 'var(--warn)' : '#a07a2c'
+          const color = olvidado ? 'var(--warn)' : 'var(--gold)'
           return (
             <button key={t.id} onClick={() => navigate(`/oposicion/${slug}/temario/${t.id}`)}
-              style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, background: 'none', border: 0, cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-              <span style={{ fontSize: 13 }}>{olvidado ? '🔴' : '🟡'}</span>
+              style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', textAlign: 'left', padding: 0 }}>
+              <span aria-hidden style={{ width: 10, height: 10, borderRadius: '50%', flexShrink: 0, background: olvidado ? 'var(--err)' : 'var(--gold)' }} />
+              <span className="sr-only">{olvidado ? 'Olvidado' : 'En riesgo'}</span>
               <span style={{ flex: 1, minWidth: 0, fontSize: 12.5, color: 'var(--ink)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 T{t.id} — {meta?.titulo ?? '…'}
               </span>
@@ -43,7 +45,7 @@ export function PanelEnRiesgo({ temas, metas }: Props) {
         })}
       </div>
       <button onClick={() => navigate(`/oposicion/${slug}/sesion-diaria`)}
-        style={{ width: '100%', marginTop: 14, background: 'none', border: 0, cursor: 'pointer', color: 'var(--accent)', fontSize: 13, fontWeight: 600, textAlign: 'left', textDecoration: 'underline' }}>
+        style={{ width: '100%', marginTop: 14, background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--accent)', fontSize: 13, fontWeight: 600, textAlign: 'left', textDecoration: 'underline' }}>
         → Repasar en la sesión de hoy
       </button>
     </div>

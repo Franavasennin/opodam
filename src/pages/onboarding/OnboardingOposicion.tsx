@@ -1,5 +1,6 @@
 // src/pages/onboarding/OnboardingOposicion.tsx
 import { useEffect, useState } from 'react'
+import { Icon } from '../../components/ui/Icon'
 import { useNavigate } from 'react-router-dom'
 import { OPOSICIONES } from '../../data/oposiciones'
 import { crearPerfil, esOwner } from '../../services/supabase'
@@ -8,9 +9,8 @@ import { setActiveSlug, setOposicionesLocales } from '../../services/storage'
 function Marca() {
   return (
     <div className="hero" style={{ borderRadius: '18px 18px 0 0', padding: 24, textAlign: 'center' }}>
-      <div className="hero-grain" />
       <div style={{ position: 'relative' }}>
-        <div style={{ fontSize: 34 }}>📘</div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}><Icon nombre="temario" size={34} /></div>
         <div className="display" style={{ fontSize: 24, marginTop: 4 }}>OpoDAM</div>
         <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.72)' }}>Prepara tu oposición</div>
       </div>
@@ -88,14 +88,14 @@ export default function OnboardingOposicion() {
                   }}
                 >
                   <span style={{
-                    width: 18, height: 18, flexShrink: 0, borderRadius: 5, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 11,
+                    width: 18, height: 18, flexShrink: 0, borderRadius: 5, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 12,
                     background: sel ? 'var(--accent)' : 'transparent',
                     color: sel ? 'var(--accent-ink)' : 'transparent',
                     border: `2px solid ${sel ? 'var(--accent)' : 'var(--border)'}`,
                   }}>{sel && '✓'}</span>
                   <div>
                     <div style={{ fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>{op.nombre}</div>
-                    <div style={{ fontSize: 11.5, color: 'var(--mute)' }}>
+                    <div style={{ fontSize: 12, color: 'var(--mute)' }}>
                       {op.disponible
                         ? op.numTemas ? `${op.numTemas} temas disponibles` : 'Disponible'
                         : 'Próximamente'}

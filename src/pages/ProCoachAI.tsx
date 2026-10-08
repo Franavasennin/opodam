@@ -10,12 +10,11 @@ export default function ProCoachAI() {
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <button onClick={() => navigate('/mis-oposiciones')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <button onClick={() => navigate('/mis-oposiciones')} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>ProCoach AI</span>
       </header>
       <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
         <div className="hero" style={{ padding: 24 }}>
-          <div className="hero-grain" />
           <div style={{ position: 'relative' }}>
             <div className="eyebrow" style={{ color: 'rgba(255,255,255,0.6)' }}>Preparación física</div>
             <h1 className="display" style={{ margin: '8px 0 6px', fontSize: 28 }}>ProCoach <span className="display-italic" style={{ color: 'var(--accent)' }}>AI</span></h1>
@@ -28,7 +27,7 @@ export default function ProCoachAI() {
         <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
           <div className="eyebrow" style={{ marginBottom: 12 }}>Agente</div>
           <div className="flex items-center gap-3">
-            <span className="pill pill-accent num-display" style={{ fontSize: 11 }}>DELTA</span>
+            <span className="pill pill-accent num-display" style={{ fontSize: 12 }}>DELTA</span>
             <div>
               <div style={{ fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>Oposiciones físicas</div>
               <div style={{ fontSize: 12, color: 'var(--mute)' }}>Especialista GC, Policía, FF.AA. España</div>

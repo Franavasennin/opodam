@@ -87,7 +87,6 @@ export default function OposicionDashboard() {
     { label: 'Días en racha', valor: String(racha), sub: 'estudio diario' },
     { label: 'Aciertos medios', valor: `${aciertosMedia}%`, sub: 'en tus tests' },
     { label: 'Temas estudiados', valor: `${estudiados} / ${total}`, sub: `${progresoPct}% del temario` },
-    { label: 'Progreso', valor: `${progresoPct}%`, sub: 'del programa' },
   ]
 
   return (
@@ -99,7 +98,7 @@ export default function OposicionDashboard() {
           className="sticky top-0 z-10 flex items-center justify-between px-4"
           style={{ height: 52, borderBottom: '1px solid var(--border-soft)', background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)' }}
         >
-          <button onClick={() => navigate('/mis-oposiciones')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 14, display: 'flex', alignItems: 'center', gap: 4 }}>
+          <button onClick={() => navigate('/mis-oposiciones')} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 14, display: 'flex', alignItems: 'center', gap: 4 }}>
             ← <span style={{ fontWeight: 500 }}>Inicio</span>
           </button>
           <span className="pill mono">{oposicion.slug.toUpperCase()}</span>
@@ -107,7 +106,6 @@ export default function OposicionDashboard() {
 
         <main className="max-w-2xl mx-auto px-4">
           <div className="hero" style={{ marginTop: 16 }}>
-            <div className="hero-grain" />
             <div style={{ position: 'relative' }}>
               <div className="eyebrow" style={{ color: 'rgba(255,255,255,0.55)', marginBottom: 10 }}>Plan de estudio</div>
               <h1 className="display" style={{ margin: 0, fontSize: 30, lineHeight: 1.06, letterSpacing: '-0.015em' }}>{oposicion.nombre}</h1>
@@ -121,6 +119,9 @@ export default function OposicionDashboard() {
             </div>
           </div>
 
+          <button onClick={() => ir('sesion-diaria')} className="btn-editorial btn-acc" style={{ width: '100%', marginTop: 16 }}>
+            <Icon nombre="rayo" size={18} /> Iniciar sesión diaria
+          </button>
           <div style={{ marginTop: 16 }}><CuentaAtras slug={slug!} /></div>
           <div style={{ marginTop: 12 }}><PanelPlan slug={slug!} temas={temasObj} total={total} /></div>
 
@@ -140,8 +141,8 @@ export default function OposicionDashboard() {
                 style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16 }}>
                 <span style={{ width: 44, height: 44, borderRadius: 12, background: 'var(--surface-2)', border: '1px solid var(--border-soft)', color: 'var(--mute)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><Icon nombre={item.icono} size={22} /></span>
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)', letterSpacing: '-0.01em' }}>{item.label}</div>
-                  <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 2 }}>{item.sub}</div>
+                  <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--ink)', letterSpacing: '-0.01em' }}>{item.label}</div>
+                  <div style={{ fontSize: 14, color: 'var(--mute)', marginTop: 2 }}>{item.sub}</div>
                 </div>
                 <span style={{ color: 'var(--mute)', fontSize: 18 }}>›</span>
               </button>
@@ -176,12 +177,12 @@ export default function OposicionDashboard() {
           </p>
 
           {/* Stats */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, marginTop: 28, borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1, marginTop: 28, borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
             {stats.map((s, i) => (
               <div key={i} style={{ padding: '18px 16px', borderLeft: i === 0 ? 'none' : '1px solid var(--border)' }}>
                 <div className="eyebrow" style={{ marginBottom: 8 }}>{s.label}</div>
                 <div className="num-display" style={{ fontSize: 30, color: i === 0 && racha > 0 ? 'var(--accent)' : 'var(--ink)' }}>{s.valor}</div>
-                <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 2 }}>{s.sub}</div>
+                <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 2 }}>{s.sub}</div>
               </div>
             ))}
           </div>
@@ -206,7 +207,6 @@ export default function OposicionDashboard() {
           {/* Plan diario + ProCoach */}
           <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 16, marginTop: 24 }}>
             <button onClick={() => ir('sesion-diaria')} className="hero" style={{ textAlign: 'left', border: 0, cursor: 'pointer' }}>
-              <div className="hero-grain" />
               <div style={{ position: 'relative' }}>
                 <div className="eyebrow" style={{ color: 'rgba(255,255,255,0.55)', marginBottom: 10 }}>Plan diario</div>
                 <h2 className="display" style={{ margin: 0, fontSize: 24, lineHeight: 1.12 }}>Tu sesión de hoy</h2>
@@ -220,11 +220,11 @@ export default function OposicionDashboard() {
             </button>
 
             <button onClick={() => navigate('/procoach')} className="card" style={{ textAlign: 'left', cursor: 'pointer', background: 'var(--accent-soft)', border: 0, borderRadius: 22, padding: 22 }}>
-              <div className="eyebrow" style={{ color: 'var(--accent)', marginBottom: 10 }}>ProCoach sugiere</div>
+              <div className="eyebrow" style={{ color: 'var(--accent-strong)', marginBottom: 10 }}>ProCoach sugiere</div>
               {(oposicion.ocultar ?? []).includes('entrevista') ? (
                 <>
                   <div className="display" style={{ fontSize: 22, lineHeight: 1.15, color: 'var(--accent)' }}>Repasa tus temas flojos.</div>
-                  <p style={{ marginTop: 10, fontSize: 12.5, color: 'var(--accent)', opacity: 0.85 }}>Resuelve dudas con el tutor inteligente.</p>
+                  <p style={{ marginTop: 10, fontSize: 14, color: 'var(--accent-strong)' }}>Resuelve dudas con el tutor inteligente.</p>
                 </>
               ) : (
                 <>

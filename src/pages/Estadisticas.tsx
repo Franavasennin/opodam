@@ -17,7 +17,7 @@ const topbar: React.CSSProperties = {
   background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
 }
 
-const SEM_COLOR: Record<Semaforo, string> = { verde: 'var(--accent)', ambar: '#a07a2c', rojo: 'var(--warn)' }
+const SEM_COLOR: Record<Semaforo, string> = { verde: 'var(--accent)', ambar: 'var(--gold)', rojo: 'var(--warn)' }
 const SEM_TEXTO: Record<Semaforo, string> = {
   verde: 'Vas encaminado. Mantén el ritmo.',
   ambar: 'Vas a medias. Aprieta la cobertura y los repasos.',
@@ -85,14 +85,14 @@ export function Estadisticas() {
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
             <div className="flex items-center justify-between" style={{ marginBottom: 4 }}>
               <div className="eyebrow" style={{ display: 'flex', alignItems: 'center', gap: 7 }}><Icon nombre="tendencia" size={14} /> Nota proyectada</div>
-              <span style={{ fontSize: 11, color: SEM_COLOR[prediccion.semaforo] }}>●</span>
+              <span style={{ fontSize: 12, color: SEM_COLOR[prediccion.semaforo] }}>●</span>
             </div>
             <div className="flex items-baseline gap-2">
               <span className="num-display" style={{ fontSize: 40, lineHeight: 1, color: SEM_COLOR[prediccion.semaforo] }}>{prediccion.nota.toFixed(1)}</span>
               <span style={{ fontSize: 14, color: 'var(--mute)' }}>± {prediccion.banda.toFixed(1)}</span>
             </div>
             <p style={{ fontSize: 12.5, color: 'var(--ink)', margin: '8px 0 0' }}>{SEM_TEXTO[prediccion.semaforo]}</p>
-            <p style={{ fontSize: 11, color: 'var(--mute)', margin: '6px 0 0' }}>
+            <p style={{ fontSize: 12, color: 'var(--mute)', margin: '6px 0 0' }}>
               Estimación orientativa sobre {prediccion.nSimulacros} simulacro{prediccion.nSimulacros === 1 ? '' : 's'} (media {prediccion.base.toFixed(1)}),
               cobertura {prediccion.coberturaPct}% del temario y retención {prediccion.retencionPct}%. No es una promesa de aprobado.
             </p>
@@ -116,7 +116,7 @@ export function Estadisticas() {
                     return <circle key={i} cx={x} cy={y} r="2.5" fill="var(--accent)" />
                   })}
                 </svg>
-                <div className="flex justify-between" style={{ fontSize: 10.5, color: 'var(--mute)', marginTop: 4 }}>
+                <div className="flex justify-between" style={{ fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>
                   <span>{evolucion[0].fecha.slice(5)}</span>
                   <span style={{ color: 'var(--border-strong, var(--mute))' }}>línea de aprobado (5,0)</span>
                   <span>{evolucion[evolucion.length - 1].fecha.slice(5)}</span>
@@ -172,12 +172,12 @@ export function Estadisticas() {
               <text x="280" y="150" fontSize="8" fill="var(--mute)">min</text>
             </svg>
             {relecturaPasiva.length > 0 ? (
-              <p style={{ display: 'flex', alignItems: 'flex-start', gap: 6, fontSize: 11.5, color: 'var(--warn)', margin: '8px 0 0' }}>
+              <p style={{ display: 'flex', alignItems: 'flex-start', gap: 6, fontSize: 12, color: 'var(--warn)', margin: '8px 0 0' }}>
                 <span style={{ display: 'inline-flex', flexShrink: 0 }}><Icon nombre="alerta" size={13} /></span>
                 <span>{relecturaPasiva.length === 1 ? 'El tema' : 'Los temas'} <b>{relecturaPasiva.map(p => `T${p.id}`).join(', ')}</b>: mucho tiempo y poco acierto. Cambia de método — haz test ANTES de releer.</span>
               </p>
             ) : (
-              <p style={{ fontSize: 11.5, color: 'var(--mute)', margin: '8px 0 0' }}>
+              <p style={{ fontSize: 12, color: 'var(--mute)', margin: '8px 0 0' }}>
                 Cada punto es un tema. Abajo-derecha (mucho tiempo, poco acierto) = relectura pasiva: cámbialo por tests.
               </p>
             )}
@@ -187,15 +187,15 @@ export function Estadisticas() {
         <div className="grid grid-cols-3 gap-3">
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18, textAlign: 'center' }}>
             <div className="num-display" style={{ fontSize: 34, color: 'var(--accent)', lineHeight: 1 }}>{progreso.racha.dias}</div>
-            <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>Días de racha</div>
+            <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 6 }}>Días de racha</div>
           </div>
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18, textAlign: 'center' }}>
             <div className="num-display" style={{ fontSize: 34, color: 'var(--accent)', lineHeight: 1 }}>{horas}h {mins}m</div>
-            <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>Tiempo total</div>
+            <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 6 }}>Tiempo total</div>
           </div>
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18, textAlign: 'center' }}>
             <div className="num-display" style={{ fontSize: 34, color: 'var(--accent)', lineHeight: 1 }}>{flashcardsPendientesHoy(progreso.flashcards).length}</div>
-            <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>Flashcards hoy</div>
+            <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 6 }}>Flashcards hoy</div>
           </div>
         </div>
 
@@ -203,10 +203,10 @@ export function Estadisticas() {
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
             <div className="flex items-center justify-between" style={{ marginBottom: 10 }}>
               <div className="eyebrow" style={{ display: 'flex', alignItems: 'center', gap: 7 }}><Icon nombre="psicotecnicos" size={14} /> Retención media</div>
-              <span className="num-display" style={{ fontSize: 22, color: retencion >= 70 ? 'var(--accent)' : retencion >= 40 ? '#a07a2c' : 'var(--warn)' }}>{retencion}%</span>
+              <span className="num-display" style={{ fontSize: 22, color: retencion >= 70 ? 'var(--accent)' : retencion >= 40 ? 'var(--gold)' : 'var(--warn)' }}>{retencion}%</span>
             </div>
-            <div className="bar"><div className="bar-fill" style={{ width: `${retencion}%`, background: retencion >= 70 ? 'var(--accent)' : retencion >= 40 ? '#a07a2c' : 'var(--warn)' }} /></div>
-            <p style={{ fontSize: 11.5, color: 'var(--mute)', margin: '10px 0 0' }}>
+            <div className="bar"><div className="bar-fill" style={{ width: `${retencion}%`, background: retencion >= 70 ? 'var(--accent)' : retencion >= 40 ? 'var(--gold)' : 'var(--warn)' }} /></div>
+            <p style={{ fontSize: 12, color: 'var(--mute)', margin: '10px 0 0' }}>
               Estimación de cuánto recuerdas de lo estudiado según el tiempo desde tu última revisión. Repasar a tiempo la sube.
             </p>
           </div>
@@ -216,15 +216,15 @@ export function Estadisticas() {
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
             <div className="flex items-center justify-between" style={{ marginBottom: 10 }}>
               <div className="eyebrow" style={{ display: 'flex', alignItems: 'center', gap: 7 }}><Icon nombre="diana" size={14} /> Calibración</div>
-              <span className="num-display" style={{ fontSize: 22, color: falsosSeguros > 20 ? 'var(--warn)' : falsosSeguros > 0 ? '#a07a2c' : 'var(--accent)' }}>{falsosSeguros}%</span>
+              <span className="num-display" style={{ fontSize: 22, color: falsosSeguros > 20 ? 'var(--warn)' : falsosSeguros > 0 ? 'var(--gold)' : 'var(--accent)' }}>{falsosSeguros}%</span>
             </div>
-            <div className="grid grid-cols-2 gap-2" style={{ fontSize: 11.5 }}>
+            <div className="grid grid-cols-2 gap-2" style={{ fontSize: 12 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: 'var(--warn)' }}><Icon nombre="alerta" size={13} /> Seguro + fallo: <b>{cal.seguroFallo}</b></div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: 'var(--accent)' }}><Icon nombre="check" size={13} /> Seguro + acierto: <b>{cal.seguroAcierto}</b></div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: 'var(--mute)' }}><Icon nombre="duda" size={13} /> Dudo + fallo: <b>{cal.dudoFallo}</b></div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: 'var(--mute)' }}><Icon nombre="duda" size={13} /> Dudo + acierto: <b>{cal.dudoAcierto}</b></div>
             </div>
-            <p style={{ fontSize: 11.5, color: 'var(--mute)', margin: '10px 0 0' }}>
+            <p style={{ fontSize: 12, color: 'var(--mute)', margin: '10px 0 0' }}>
               "Falsos seguros" = preguntas que creías dominar y fallaste. Cuanto más baja la cifra, mejor te conoces.
             </p>
           </div>
@@ -237,7 +237,7 @@ export function Estadisticas() {
               <div className="eyebrow" style={{ marginBottom: 14 }}>Rendimiento por tema</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                 {conDatos.map(t => {
-                  const color = t.aciertos >= 80 ? 'var(--accent)' : t.aciertos >= 50 ? '#a07a2c' : 'var(--warn)'
+                  const color = t.aciertos >= 80 ? 'var(--accent)' : t.aciertos >= 50 ? 'var(--gold)' : 'var(--warn)'
                   return (
                     <div key={t.id}>
                       <div className="flex justify-between" style={{ fontSize: 12, color: 'var(--mute)', marginBottom: 5 }}>

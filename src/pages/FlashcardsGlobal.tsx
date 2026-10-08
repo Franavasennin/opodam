@@ -99,7 +99,7 @@ export function FlashcardsGlobal() {
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>
           <Icon nombre="flashcards" size={16} /> Flashcards
         </span>
@@ -108,7 +108,7 @@ export function FlashcardsGlobal() {
             onClick={() => setAudio(a => { if (a) pararTTS(); return !a })}
             title={audio ? 'Desactivar audio' : 'Leer en voz alta'}
             aria-pressed={audio}
-            style={{ marginLeft: 'auto', display: 'inline-flex', background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', opacity: audio ? 1 : 0.5 }}>
+            style={{ marginLeft: 'auto', display: 'inline-flex', background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', opacity: audio ? 1 : 0.5 }}>
             <Icon nombre={audio ? 'sonido' : 'silencio'} size={18} />
           </button>
         )}
@@ -126,7 +126,7 @@ export function FlashcardsGlobal() {
         {verRespuesta && (
           <div className="grid grid-cols-3 gap-2">
             {(['dificil', 'dudoso', 'facil'] as const).map(cal => {
-              const color = cal === 'dificil' ? 'var(--warn)' : cal === 'dudoso' ? '#a07a2c' : 'var(--accent)'
+              const color = cal === 'dificil' ? 'var(--warn)' : cal === 'dudoso' ? 'var(--gold)' : 'var(--accent)'
               return (
                 <button key={cal} onClick={() => responder(cal)}
                   style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '10px 0', borderRadius: 12, fontSize: 13, fontWeight: 600, cursor: 'pointer', border: `1px solid ${color}`, color, background: 'transparent' }}>

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Icon } from './Icon'
 
 // ── P2.4 Pomodoro opcional (25/5) ────────────────────────────
 // Overlay discreto para estudiar en bloques con descanso. No persiste nada;
@@ -37,7 +38,7 @@ export function Pomodoro({ onCerrar }: { onCerrar: () => void }) {
 
   const total = fase === 'foco' ? FOCO : DESCANSO
   const pct = ((total - restante) / total) * 100
-  const color = fase === 'foco' ? 'var(--accent)' : '#3f7a4f'
+  const color = fase === 'foco' ? 'var(--accent)' : 'var(--ok)'
 
   return (
     <div
@@ -49,8 +50,8 @@ export function Pomodoro({ onCerrar }: { onCerrar: () => void }) {
       }}
     >
       <div className="flex items-center justify-between" style={{ marginBottom: 6 }}>
-        <span className="eyebrow" style={{ color }}>{fase === 'foco' ? '🍅 Enfoque' : '☕ Descanso'}</span>
-        <button onClick={onCerrar} aria-label="Cerrar Pomodoro" style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--mute)', fontSize: 15, lineHeight: 1 }}>×</button>
+        <span className="eyebrow" style={{ color, display: 'inline-flex', alignItems: 'center', gap: 6 }}><Icon nombre="tiempo" size={14} /> {fase === 'foco' ? 'Enfoque' : 'Descanso'}</span>
+        <button onClick={onCerrar} aria-label="Cerrar Pomodoro" style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--mute)', fontSize: 15, lineHeight: 1 }}>×</button>
       </div>
       <div className="num-display" style={{ fontSize: 30, lineHeight: 1, color, textAlign: 'center' }}>{mmss(restante)}</div>
       <div className="bar" style={{ margin: '8px 0' }}><div className="bar-fill" style={{ width: `${pct}%`, background: color }} /></div>

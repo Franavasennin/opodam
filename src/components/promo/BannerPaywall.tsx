@@ -1,6 +1,7 @@
 // src/components/promo/BannerPaywall.tsx
 import { useState } from 'react'
 import { iniciarCheckout } from '../../services/supabase'
+import { Icon } from '../ui/Icon'
 
 interface Props {
   slug: string
@@ -22,7 +23,7 @@ export function BannerPaywall({ slug, nombreOposicion }: Props) {
 
   return (
     <div style={{
-      background: 'linear-gradient(135deg, var(--accent, #c0764a) 0%, #9b5a30 100%)',
+      background: 'linear-gradient(135deg, var(--accent) 0%, #9b5a30 100%)',
       borderRadius: 16,
       padding: '20px 24px',
       marginBottom: 24,
@@ -32,7 +33,7 @@ export function BannerPaywall({ slug, nombreOposicion }: Props) {
       gap: 12,
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <span style={{ fontSize: 28 }}>🎯</span>
+        <Icon nombre="diana" size={28} />
         <div>
           <div style={{ fontWeight: 700, fontSize: 16, lineHeight: 1.2 }}>
             Accede a todo para {nombreOposicion}

@@ -43,7 +43,7 @@ describe('BottomNav — barra de pestañas', () => {
   it('muestra los cuatro destinos primarios más "Más", con nombre accesible', async () => {
     await act(async () => { montar() })
     const nav = screen.getByRole('navigation', { name: 'Navegación principal' })
-    for (const etiqueta of ['Resumen', 'Temario', 'Fichas', 'Tests']) {
+    for (const etiqueta of ['Resumen', 'Temario', 'Flashcards', 'Tests']) {
       expect(within(nav).getByRole('link', { name: etiqueta })).toBeInTheDocument()
     }
     expect(within(nav).getByRole('button', { name: 'Más' })).toBeInTheDocument()

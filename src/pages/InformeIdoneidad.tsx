@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Icon, type NombreIcono } from '../components/ui/Icon'
 import { useNavigate, useParams } from 'react-router-dom'
 import { supabase } from '../services/supabase'
 import { obtenerPerfil, calcularInforme } from '../services/psicologico'
@@ -6,8 +7,8 @@ import type { InformeIdoneidad as Informe, Veredicto } from '../types/psicologic
 
 const COLOR: Record<Veredicto, string> = {
   apto: 'var(--accent)',
-  riesgo: '#d97706',
-  'no-apto': '#dc2626',
+  riesgo: 'var(--gold)',
+  'no-apto': 'var(--err)',
 }
 
 const ETIQUETA: Record<Veredicto, string> = {
@@ -16,10 +17,10 @@ const ETIQUETA: Record<Veredicto, string> = {
   'no-apto': 'NO APTO',
 }
 
-const EMOJI: Record<Veredicto, string> = {
-  apto: '✅',
-  riesgo: '⚠️',
-  'no-apto': '❌',
+const ICONO: Record<Veredicto, NombreIcono> = {
+  apto: 'acierto',
+  riesgo: 'alerta',
+  'no-apto': 'fallo',
 }
 
 export default function InformeIdoneidad() {
@@ -51,7 +52,7 @@ export default function InformeIdoneidad() {
 
   if (!informe) return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-6" style={{ textAlign: 'center' }}>
-      <span style={{ fontSize: 40 }}>📋</span>
+      <Icon nombre="informe" size={40} />
       <p style={{ color: 'var(--mute)', fontSize: 15 }}>
         Aún no hay datos suficientes. Completa al menos psicotécnicos o personalidad.
       </p>
@@ -68,12 +69,12 @@ export default function InformeIdoneidad() {
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4 no-print"
         style={{ height: 52, borderBottom: '1px solid var(--border-soft)', background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)' }}>
         <button onClick={() => navigate(`/oposicion/${slug}`)}
-          style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+          style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Informe de idoneidad</span>
         <div style={{ flex: 1 }} />
         <button onClick={() => window.print()}
-          style={{ background: 'none', border: '1px solid var(--border)', borderRadius: 8, padding: '4px 12px', fontSize: 13, cursor: 'pointer', color: 'var(--ink)' }}>
-          🖨️ Imprimir
+          style={{ background: 'none', border: '1px solid var(--border)', borderRadius: 8, padding: '4px 12px', fontSize: 13, cursor: 'pointer', color: 'var(--ink)', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+          <Icon nombre="descargar" size={14} /> Imprimir
         </button>
       </header>
 
@@ -81,7 +82,7 @@ export default function InformeIdoneidad() {
 
         {/* Veredicto */}
         <div className="card" style={{ background: 'var(--surface)', border: `2px solid ${COLOR[informe.veredicto]}`, borderRadius: 20, padding: 28, textAlign: 'center' }}>
-          <div style={{ fontSize: 48, marginBottom: 8 }}>{EMOJI[informe.veredicto]}</div>
+          <div style={{ marginBottom: 8, color: COLOR[informe.veredicto] }}><Icon nombre={ICONO[informe.veredicto]} size={48} /></div>
           <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 13, letterSpacing: '0.08em', color: COLOR[informe.veredicto], fontWeight: 700, marginBottom: 6 }}>
             {ETIQUETA[informe.veredicto]}
           </div>
@@ -115,7 +116,7 @@ export default function InformeIdoneidad() {
               {informe.mejoras.map((m, i) => (
                 <div key={i} className="card"
                   style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 12, padding: '12px 16px', fontSize: 14, display: 'flex', gap: 10, alignItems: 'flex-start' }}>
-                  <span style={{ color: '#d97706', flexShrink: 0 }}>→</span>
+                  <span style={{ color: 'var(--gold)', flexShrink: 0 }}>→</span>
                   <span style={{ color: 'var(--ink)', lineHeight: 1.4 }}>{m}</span>
                 </div>
               ))}

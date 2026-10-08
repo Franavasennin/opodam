@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Icon } from './Icon'
 import { obtenerConvocatoria, type Convocatoria } from '../../services/convocatorias'
 
 function diasRestantes(iso: string): number {
@@ -32,14 +33,14 @@ export function CuentaAtras({ slug }: Props) {
   }, [slug])
 
   if (cargando) {
-    return <div style={card}><span style={{ fontSize: 18 }}>⏳</span><span style={{ fontSize: 13, color: 'var(--mute)' }}>Comprobando convocatoria…</span></div>
+    return <div style={card}><span style={{ display: 'inline-flex', color: 'var(--mute)' }}><Icon nombre="tiempo" size={20} /></span><span style={{ fontSize: 14, color: 'var(--mute)' }}>Comprobando convocatoria…</span></div>
   }
   if (!conv) return null
 
   const fuenteLabel = conv.fuente === 'BOE' ? 'BOE' : 'BOC'
   const Enlace = (
     <a href={conv.boletinUrl} target="_blank" rel="noopener noreferrer"
-      style={{ fontSize: 12, fontWeight: 600, color: 'var(--accent)', textDecoration: 'underline', whiteSpace: 'nowrap' }}
+      style={{ fontSize: 14, fontWeight: 600, color: 'var(--accent-strong)', textDecoration: 'underline', whiteSpace: 'nowrap' }}
       onClick={e => e.stopPropagation()}>
       Ver en el {fuenteLabel} ↗
     </a>
@@ -50,15 +51,20 @@ export function CuentaAtras({ slug }: Props) {
     const dias = diasRestantes(conv.fechaExamen)
     const hoy = dias === 0, vencido = dias < 0
     const titulo = hoy ? '¡Hoy es el examen!' : vencido ? 'Examen finalizado' : `Faltan ${dias} días`
+    const cuenta = !hoy && !vencido
     return (
-      <div style={card}>
-        <span style={{ fontSize: 22 }}>{hoy ? '🎯' : '⏳'}</span>
-        <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-            {!hoy && !vencido && <span className="num-display" style={{ fontSize: 24, color: 'var(--accent)', lineHeight: 1 }}>{dias}</span>}
-            <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)' }}>{titulo}</span>
+      <div style={{ ...card, padding: cuenta ? '16px 18px' : card.padding, gap: 16 }}>
+        {cuenta ? (
+          <div style={{ textAlign: 'center', minWidth: 64 }}>
+            <div className="num-display" style={{ fontSize: 56, lineHeight: 0.95, color: 'var(--accent-strong)' }}>{dias}</div>
+            <div className="eyebrow" style={{ marginTop: 4 }}>{dias === 1 ? 'día' : 'días'}</div>
           </div>
-          <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 2 }}>Examen el {formatear(conv.fechaExamen)}</div>
+        ) : (
+          <span style={{ display: 'inline-flex', color: 'var(--accent-strong)' }}><Icon nombre={hoy ? 'diana' : 'tiempo'} size={26} /></span>
+        )}
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--ink)' }}>{cuenta ? 'para el examen' : titulo}</div>
+          <div style={{ fontSize: 14, color: 'var(--mute)', marginTop: 2 }}>Examen el {formatear(conv.fechaExamen)}</div>
         </div>
         {Enlace}
       </div>
@@ -69,10 +75,10 @@ export function CuentaAtras({ slug }: Props) {
   if (conv.estado === 'activa') {
     return (
       <div style={card}>
-        <span style={{ fontSize: 22 }}>📣</span>
+        <span style={{ display: 'inline-flex', color: 'var(--accent-strong)' }}><Icon nombre="alerta" size={22} /></span>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)' }}>Convocatoria activa</div>
-          <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          <div style={{ fontSize: 14, color: 'var(--mute)', marginTop: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {conv.fechaPublicacion ? `Publicada el ${conv.fechaPublicacion} · ` : ''}consulta la fecha del examen en el {fuenteLabel}
           </div>
         </div>
@@ -84,12 +90,12 @@ export function CuentaAtras({ slug }: Props) {
   // 3) Sin convocatoria / parada
   return (
     <div style={card}>
-      <span style={{ fontSize: 22 }}>🗓️</span>
+      <span style={{ display: 'inline-flex', color: 'var(--mute)' }}><Icon nombre="calendario" size={22} /></span>
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink-soft)' }}>
           {conv.estado === 'parada' ? 'Oposición parada' : 'Sin convocatoria activa'}
         </div>
-        <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 2 }}>Por el momento no hay oposición activa o está parada.</div>
+        <div style={{ fontSize: 14, color: 'var(--mute)', marginTop: 2 }}>Por el momento no hay oposición activa o está parada.</div>
       </div>
       {Enlace}
     </div>

@@ -3,6 +3,7 @@ import { exportarProgreso, importarProgreso } from '../services/storage'
 import { enviarMagicLink, cerrarSesion, obtenerUsuario } from '../services/supabase'
 import { sincronizar } from '../services/sync'
 import { Icon } from '../components/ui/Icon'
+import { BotonTema } from '../components/ui/BotonTema'
 import type { User } from '@supabase/supabase-js'
 
 const topbar: React.CSSProperties = {
@@ -131,15 +132,23 @@ export function Perfil() {
               <div className="flex items-center justify-between">
                 <div>
                   <p style={{ display: 'flex', alignItems: 'center', gap: 6, margin: 0, fontSize: 13.5, fontWeight: 600, color: 'var(--accent)' }}><Icon nombre="acierto" size={15} /> {usuario.email}</p>
-                  {ultimoSync && <p className="num-display" style={{ display: 'flex', alignItems: 'center', gap: 5, margin: '2px 0 0', fontSize: 11.5, color: 'var(--mute)' }}><Icon nombre="repetir" size={13} /> Último sync: {ultimoSync}</p>}
+                  {ultimoSync && <p className="num-display" style={{ display: 'flex', alignItems: 'center', gap: 5, margin: '2px 0 0', fontSize: 12, color: 'var(--mute)' }}><Icon nombre="repetir" size={13} /> Último sync: {ultimoSync}</p>}
                 </div>
-                <button onClick={handleCerrarSesion} style={{ background: 'none', border: 0, cursor: 'pointer', fontSize: 12, color: 'var(--mute)', textDecoration: 'underline' }}>Cerrar sesión</button>
+                <button onClick={handleCerrarSesion} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', fontSize: 12, color: 'var(--mute)', textDecoration: 'underline' }}>Cerrar sesión</button>
               </div>
               <button onClick={handleSync} disabled={syncing} className="btn-editorial btn-acc" style={{ width: '100%', marginTop: 14, opacity: syncing ? 0.5 : 1 }}>
                 {syncing ? 'Sincronizando…' : <><Icon nombre="repetir" size={17} /> Sincronizar ahora</>}
               </button>
             </>
           )}
+        </div>
+
+        <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
+          <div className="eyebrow" style={{ marginBottom: 12 }}>Apariencia</div>
+          <BotonTema />
+          <p style={{ fontSize: 13, color: 'var(--mute)', marginTop: 10 }}>
+            Por defecto sigue el ajuste de tu sistema; aquí puedes forzar día o noche.
+          </p>
         </div>
 
         <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
@@ -151,7 +160,7 @@ export function Perfil() {
               <input type="file" accept=".json" onChange={handleImportar} className="hidden" />
             </label>
           </div>
-          <p style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 10 }}>
+          <p style={{ fontSize: 12, color: 'var(--mute)', marginTop: 10 }}>
             El backup incluye todo tu progreso, flashcards y resultados de exámenes.
           </p>
         </div>

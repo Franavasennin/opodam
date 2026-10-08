@@ -94,7 +94,6 @@ export function Tests() {
           Elige un tema o haz un <span className="display-italic" style={{ color: 'var(--accent)' }}>simulacro.</span>
         </h1>
         <button onClick={() => navigate(`/oposicion/${slug}/tests/simulacro`)} className="hero" style={{ width: '100%', textAlign: 'left', border: 0, cursor: 'pointer', marginBottom: 18 }}>
-          <div className="hero-grain" />
           <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 14 }}>
             <span style={{ display: 'inline-flex' }}><Icon nombre="diana" size={26} /></span>
             <div style={{ flex: 1 }}>
@@ -291,7 +290,7 @@ export function Tests() {
           <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600, fontSize: 13.5, letterSpacing: '-0.01em', overflow: 'hidden' }}>
             {esMezcla && <span style={{ display: 'inline-flex', flexShrink: 0 }}><Icon nombre="mezcla" size={15} /></span>}
             <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{esMezcla ? 'Mezcla inteligente' : tema.titulo}</span>
-            {modo === 'dificil' && <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, flexShrink: 0, fontSize: 11, fontWeight: 700, background: 'var(--warn)', color: '#fff', borderRadius: 6, padding: '1px 7px' }}><Icon nombre="dificil" size={11} /> DIFÍCIL</span>}
+            {modo === 'dificil' && <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, flexShrink: 0, fontSize: 12, fontWeight: 700, background: 'var(--warn)', color: '#fff', borderRadius: 6, padding: '1px 7px' }}><Icon nombre="dificil" size={11} /> DIFÍCIL</span>}
           </span>
         }
         onBack={() => esMezcla ? setTemaId(null) : setModo(null)}
@@ -308,7 +307,7 @@ export function Tests() {
                 return (
                   <button key={j} type="button" className="opt" onClick={() => setRespuestas(r => { const n = [...r]; n[i] = j; return n })}
                     style={sel ? { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent)' } : undefined}>
-                    <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: sel ? 'var(--accent-ink)' : 'var(--mute)', background: sel ? 'var(--accent)' : 'var(--surface)', border: `1px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
+                    <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: sel ? 'var(--accent-ink)' : 'var(--mute)', background: sel ? 'var(--accent)' : 'var(--surface)', border: `1px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
                     <span>{op}</span>
                   </button>
                 )
@@ -316,13 +315,13 @@ export function Tests() {
             </div>
             {respuestas[i] !== null && (
               <div className="flex items-center gap-2" style={{ marginTop: 10 }}>
-                <span style={{ fontSize: 11.5, color: 'var(--mute)' }}>¿Cómo de seguro?</span>
+                <span style={{ fontSize: 12, color: 'var(--mute)' }}>¿Cómo de seguro?</span>
                 {(['seguro', 'dudo'] as const).map(c => {
                   const activo = confianza[i] === c
-                  const color = c === 'seguro' ? 'var(--accent)' : '#a07a2c'
+                  const color = c === 'seguro' ? 'var(--accent)' : 'var(--gold)'
                   return (
                     <button key={c} type="button" onClick={() => setConfianza(prev => { const n = [...prev]; n[i] = c; return n })}
-                      style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 11.5, fontWeight: 600, cursor: 'pointer', borderRadius: 999, padding: '3px 12px', border: `1px solid ${activo ? color : 'var(--border)'}`, color: activo ? color : 'var(--mute)', background: activo ? 'color-mix(in srgb, ' + color + ' 12%, transparent)' : 'transparent' }}>
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 12, fontWeight: 600, cursor: 'pointer', borderRadius: 999, padding: '3px 12px', border: `1px solid ${activo ? color : 'var(--border)'}`, color: activo ? color : 'var(--mute)', background: activo ? 'color-mix(in srgb, ' + color + ' 12%, transparent)' : 'transparent' }}>
                       <Icon nombre={c === 'seguro' ? 'check' : 'duda'} size={13} />
                       {c === 'seguro' ? 'Seguro' : 'Dudo'}
                     </button>

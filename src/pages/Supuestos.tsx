@@ -23,7 +23,7 @@ export default function Supuestos() {
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4"
         style={{ height: 52, borderBottom: '1px solid var(--border-soft)', background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)' }}>
-        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Supuestos prácticos</span>
       </header>
 

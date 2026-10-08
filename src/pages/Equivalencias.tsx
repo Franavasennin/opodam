@@ -80,7 +80,7 @@ const SOLO_PL = [
 function estiloSolape(s: string): React.CSSProperties {
   switch (s) {
     case 'Total':     return { background: 'var(--accent-soft)', color: 'var(--accent)' }
-    case 'Alto':      return { background: 'color-mix(in srgb, #a07a2c 16%, transparent)', color: '#a07a2c' }
+    case 'Alto':      return { background: 'color-mix(in srgb, var(--gold) 16%, transparent)', color: 'var(--gold)' }
     case 'Medio':     return { background: 'var(--warn-soft)', color: 'var(--warn)' }
     case 'Solo PL':   return { background: 'var(--surface-2)', color: 'var(--ink-soft)' }
     case 'Solo CGPC': return { background: 'var(--surface-2)', color: 'var(--ink-soft)' }
@@ -107,7 +107,7 @@ function Tabla({ filas }: { filas: string[][] }) {
               <td className="num-display" style={{ padding: '8px', color: 'var(--mute)', whiteSpace: 'nowrap' }}>{cgpc}</td>
               <td className="num-display" style={{ padding: '8px', color: 'var(--mute)', whiteSpace: 'nowrap' }}>{pl}</td>
               <td style={{ padding: '8px 0 8px 8px' }}>
-                <span style={{ display: 'inline-block', borderRadius: 999, padding: '2px 8px', fontSize: 10, fontWeight: 600, ...estiloSolape(solape) }}>{solape}</span>
+                <span style={{ display: 'inline-block', borderRadius: 999, padding: '2px 8px', fontSize: 12, fontWeight: 600, ...estiloSolape(solape) }}>{solape}</span>
               </td>
             </tr>
           ))}
@@ -127,13 +127,12 @@ export default function Equivalencias() {
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <button onClick={() => navigate('/mis-oposiciones')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <button onClick={() => navigate('/mis-oposiciones')} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Equivalencias entre temarios</span>
       </header>
 
       <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
         <div className="hero" style={{ padding: 24 }}>
-          <div className="hero-grain" />
           <div style={{ position: 'relative' }}>
             <div className="eyebrow" style={{ color: 'rgba(255,255,255,0.6)' }}>Dos oposiciones, un esfuerzo</div>
             <h1 className="display" style={{ margin: '8px 0 6px', fontSize: 26 }}>CGPC <span className="display-italic" style={{ color: 'var(--accent)' }}>↔</span> Policía Local</h1>
@@ -145,25 +144,25 @@ export default function Equivalencias() {
 
         <section className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
           <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)' }}>Bloque general</div>
-          <p style={{ fontSize: 11.5, color: 'var(--mute)', margin: '2px 0 12px' }}>Derecho constitucional y administrativo</p>
+          <p style={{ fontSize: 12, color: 'var(--mute)', margin: '2px 0 12px' }}>Derecho constitucional y administrativo</p>
           <Tabla filas={FILAS_GENERAL} />
         </section>
 
         <section className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
           <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)' }}>Bloque específico</div>
-          <p style={{ fontSize: 11.5, color: 'var(--mute)', margin: '2px 0 12px' }}>Seguridad, derecho penal y procesal</p>
+          <p style={{ fontSize: 12, color: 'var(--mute)', margin: '2px 0 12px' }}>Seguridad, derecho penal y procesal</p>
           <Tabla filas={FILAS_ESPECIFICO} />
         </section>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <section className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
-            <div style={{ marginBottom: 8 }}><span style={{ display: 'inline-block', borderRadius: 999, padding: '2px 8px', fontSize: 10, fontWeight: 600, background: 'var(--surface-2)', color: 'var(--ink-soft)' }}>Solo CGPC</span></div>
+            <div style={{ marginBottom: 8 }}><span style={{ display: 'inline-block', borderRadius: 999, padding: '2px 8px', fontSize: 12, fontWeight: 600, background: 'var(--surface-2)', color: 'var(--ink-soft)' }}>Solo CGPC</span></div>
             <ul style={{ fontSize: 12, color: 'var(--ink-soft)', margin: 0, paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 4 }}>
               {SOLO_CGPC.map(t => <li key={t}>{t}</li>)}
             </ul>
           </section>
           <section className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18 }}>
-            <div style={{ marginBottom: 8 }}><span style={{ display: 'inline-block', borderRadius: 999, padding: '2px 8px', fontSize: 10, fontWeight: 600, background: 'var(--surface-2)', color: 'var(--ink-soft)' }}>Solo Policía Local</span></div>
+            <div style={{ marginBottom: 8 }}><span style={{ display: 'inline-block', borderRadius: 999, padding: '2px 8px', fontSize: 12, fontWeight: 600, background: 'var(--surface-2)', color: 'var(--ink-soft)' }}>Solo Policía Local</span></div>
             <ul style={{ fontSize: 12, color: 'var(--ink-soft)', margin: 0, paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 4 }}>
               {SOLO_PL.map(t => <li key={t}>{t}</li>)}
             </ul>

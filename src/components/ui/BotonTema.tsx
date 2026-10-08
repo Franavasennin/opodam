@@ -34,11 +34,11 @@ export function BotonTema() {
       type="button"
       onClick={() => setNoche(v => !v)}
       aria-pressed={noche}
-      aria-label={noche ? 'Cambiar a modo día' : 'Cambiar a modo noche'}
-      title={noche ? 'Modo día' : 'Modo noche'}
-      className="fab fab--2"
+      className="btn-editorial btn-sec"
+      style={{ width: '100%' }}
     >
-      <Icon nombre={noche ? 'sol' : 'luna'} size={20} />
+      <Icon nombre={noche ? 'sol' : 'luna'} size={18} />
+      Modo noche
     </button>
   )
 }

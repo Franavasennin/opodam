@@ -149,8 +149,6 @@ export function BottomNav() {
             className="sheet"
             onClick={e => e.stopPropagation()}
           >
-            <div className="sheet__grip" aria-hidden="true" />
-
             <div className="sheet__head">
               <p className="eyebrow">Más secciones</p>
               <button type="button" className="icon-btn" onClick={() => setHoja(false)} aria-label="Cerrar">

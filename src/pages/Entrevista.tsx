@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Icon } from '../components/ui/Icon'
 import { useNavigate, useParams } from 'react-router-dom'
 import { enviarTurnoEntrevista, type MensajeEntrevista, type ModoEntrevista } from '../services/entrevista'
 
@@ -57,7 +58,7 @@ export default function Entrevista() {
     return (
       <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
         <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-          <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+          <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
           <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Entrevista</span>
         </header>
         <main className="max-w-2xl mx-auto px-4 pt-4 pb-12">
@@ -68,12 +69,12 @@ export default function Entrevista() {
           <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             <button onClick={() => elegirModo('practica')} className="card"
               style={{ width: '100%', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '16px 18px' }}>
-              <div style={{ fontSize: 14.5, fontWeight: 600, color: 'var(--ink)' }}>🎯 Práctica</div>
+              <div style={{ fontSize: 14.5, fontWeight: 600, color: 'var(--ink)', display: 'inline-flex', alignItems: 'center', gap: 6 }}><Icon nombre="diana" size={16} /> Práctica</div>
               <div style={{ fontSize: 12.5, color: 'var(--mute)', marginTop: 3, lineHeight: 1.45 }}>Feedback didáctico tras cada respuesta (método STAR, versión modelo).</div>
             </button>
             <button onClick={() => elegirModo('examen')} className="card"
               style={{ width: '100%', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '16px 18px' }}>
-              <div style={{ fontSize: 14.5, fontWeight: 600, color: 'var(--ink)' }}>⏱️ Examen real</div>
+              <div style={{ fontSize: 14.5, fontWeight: 600, color: 'var(--ink)', display: 'inline-flex', alignItems: 'center', gap: 6 }}><Icon nombre="tiempo" size={16} /> Examen real</div>
               <div style={{ fontSize: 12.5, color: 'var(--mute)', marginTop: 3, lineHeight: 1.45 }}>Preguntas encadenadas con presión; el análisis va al informe final.</div>
             </button>
           </div>
@@ -86,10 +87,10 @@ export default function Entrevista() {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Entrevista</span>
-        <span className="num-display" style={{ fontSize: 11.5, color: 'var(--mute)' }}>· {modo === 'examen' ? 'Examen real' : 'Práctica'}</span>
-        <button onClick={() => { setModo(null); setMensajes([]); setError(null) }} style={{ marginLeft: 'auto', background: 'none', border: 0, cursor: 'pointer', color: 'var(--accent)', fontSize: 12.5, fontWeight: 600 }}>Reiniciar</button>
+        <span className="num-display" style={{ fontSize: 12, color: 'var(--mute)' }}>· {modo === 'examen' ? 'Examen real' : 'Práctica'}</span>
+        <button onClick={() => { setModo(null); setMensajes([]); setError(null) }} style={{ marginLeft: 'auto', background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--accent)', fontSize: 12.5, fontWeight: 600 }}>Reiniciar</button>
       </header>
 
       <main className="flex-1 overflow-y-auto px-4 py-4">

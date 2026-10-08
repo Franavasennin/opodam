@@ -77,7 +77,7 @@ export default function Landing() {
               <span style={{ flexShrink: 0, display: 'inline-flex', color: 'var(--accent)' }}><Icon nombre={op.icono} size={24} /></span>
               <div>
                 <div style={{ fontSize: 13.5, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.3 }}>{op.nombre}</div>
-                <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 2 }}>{op.temas} temas</div>
+                <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 2 }}>{op.temas} temas</div>
               </div>
             </div>
           ))}

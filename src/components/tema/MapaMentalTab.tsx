@@ -1,4 +1,5 @@
 import { ReactFlow, Background, Controls, MiniMap } from '@xyflow/react'
+import { Icon } from '../ui/Icon'
 import type { Node, Edge } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
 import type { Tema } from '../../types'
@@ -176,8 +177,8 @@ export function MapaMentalTab({ tema, onSeleccion }: Props) {
   return (
     <div>
       {onSeleccion && (
-        <p style={{ fontSize: 12, color: 'var(--mute)', margin: '0 0 8px', textAlign: 'center' }}>
-          💡 Toca un concepto para ir a esa parte de la teoría
+        <p style={{ fontSize: 12, color: 'var(--mute)', margin: '0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+          <Icon nombre="idea" size={14} /> Toca un concepto para ir a esa parte de la teoría
         </p>
       )}
       <div style={{ height: 500, border: '1px solid var(--border)' }} className="rounded-xl overflow-hidden">

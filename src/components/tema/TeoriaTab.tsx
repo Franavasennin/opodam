@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Icon } from '../ui/Icon'
 import type { Tema } from '../../types'
 import { parsearTeoria } from './parsearTeoria'
 
@@ -71,7 +72,7 @@ export function TeoriaTab({ tema, onTeoriaLeida, irASeccion }: Props) {
           className="btn-editorial btn-sec"
           style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 18 }}
         >
-          <span style={{ fontSize: 15 }}>{leyendo ? '⏹' : '🔊'}</span>
+          <Icon nombre={leyendo ? 'silencio' : 'sonido'} size={16} />
           {leyendo ? 'Detener lectura' : 'Leer temario'}
         </button>
       )}
@@ -90,7 +91,7 @@ export function TeoriaTab({ tema, onTeoriaLeida, irASeccion }: Props) {
           >
             {s.titulo && (
               <>
-                <span style={{ display: 'block', fontFamily: "'JetBrains Mono', monospace", fontSize: 10.5, letterSpacing: '0.06em', color: 'var(--mute)', textTransform: 'uppercase', marginBottom: 4 }}>
+                <span style={{ display: 'block', fontFamily: "'JetBrains Mono', monospace", fontSize: 12, letterSpacing: '0.06em', color: 'var(--mute)', textTransform: 'uppercase', marginBottom: 4 }}>
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <h3 style={{ marginTop: i === 0 ? 4 : 28, marginBottom: 12 }}>{s.titulo}</h3>
@@ -100,7 +101,7 @@ export function TeoriaTab({ tema, onTeoriaLeida, irASeccion }: Props) {
             {bloques.map((b, j) => {
               if (b.tipo === 'estructura') {
                 return (
-                  <p key={j} style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--accent)', margin: '22px 0 8px' }}>
+                  <p key={j} style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--accent)', margin: '22px 0 8px' }}>
                     {b.texto}
                   </p>
                 )

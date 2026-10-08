@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Icon } from '../components/ui/Icon'
 import { useNavigate, useParams } from 'react-router-dom'
 import { cargarCuestionario, puntuar, interpretacion, type ResultadoRasgo } from '../data/personalidad/index'
 import { supabase } from '../services/supabase'
@@ -60,11 +61,11 @@ export default function Personalidad() {
     return (
       <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
         <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-          <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+          <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
           <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Tu perfil</span>
         </header>
         <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-          <p className="rounded-xl px-3 py-2" style={{ fontSize: 11.5, background: 'var(--warn-soft)', color: 'var(--warn)' }}>⚠️ Resultado orientativo, no es un diagnóstico psicológico.</p>
+          <p className="rounded-xl px-3 py-2" style={{ fontSize: 12, background: 'var(--warn-soft)', color: 'var(--warn)', display: 'flex', alignItems: 'center', gap: 6 }}><Icon nombre="alerta" size={14} /> Resultado orientativo, no es un diagnóstico psicológico.</p>
           {resultado.map(r => (
             <div key={r.rasgo} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
               <div className="flex items-center justify-between">
@@ -85,7 +86,7 @@ export default function Personalidad() {
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Test de personalidad</span>
         <span className="num-display" style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--mute)' }}>{completos}/{total}</span>
       </header>
@@ -108,7 +109,7 @@ export default function Personalidad() {
                 )
               })}
             </div>
-            <div className="flex justify-between" style={{ fontSize: 10, color: 'var(--mute)', marginTop: 8 }}><span>En desacuerdo</span><span>De acuerdo</span></div>
+            <div className="flex justify-between" style={{ fontSize: 12, color: 'var(--mute)', marginTop: 8 }}><span>En desacuerdo</span><span>De acuerdo</span></div>
           </div>
         ))}
         <button onClick={verResultado} disabled={completos < total}

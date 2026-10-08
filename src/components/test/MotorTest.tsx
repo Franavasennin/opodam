@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { calcularPuntuacionTest } from '../../services/progress'
 import { ReviewOption } from './Shared'
+import { Icon } from '../ui/Icon'
 import { registrarEstudio } from '../../services/notificaciones'
 
 export interface PreguntaTest {
@@ -49,13 +50,13 @@ export function MotorTest({ preguntas, titulo, onTerminar }: Props) {
         <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, textAlign: 'center' }}>
           <div className="num-display" style={{ fontSize: 52, color: 'var(--accent)', lineHeight: 1 }}>{nota.toFixed(2)}</div>
           <div className="eyebrow" style={{ marginTop: 6 }}>sobre 10</div>
-          <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {aciertos} aciertos · ❌ {errores} errores</div>
+          <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}><span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, color: 'var(--ok)' }}><Icon nombre="acierto" size={15} /> {aciertos} aciertos</span> · <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, color: 'var(--err)' }}><Icon nombre="fallo" size={15} /> {errores} errores</span></div>
         </div>
         {preguntas.map((p, i) => {
           const elegida = respuestas[i]
           const ok = elegida === p.respuestaCorrecta
           return (
-            <div key={p.id} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16, borderLeft: `3px solid ${elegida === null ? 'var(--border)' : ok ? 'var(--accent)' : 'var(--warn)'}` }}>
+            <div key={p.id} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16, borderLeft: `3px solid ${elegida === null ? 'var(--border)' : ok ? 'var(--ok)' : 'var(--err)'}` }}>
               <p style={{ margin: '0 0 10px', fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>{p.enunciado}</p>
               {p.opciones.map((op, j) => {
                 const esCorr = j === p.respuestaCorrecta
@@ -93,11 +94,11 @@ export function MotorTest({ preguntas, titulo, onTerminar }: Props) {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
         {p.opciones.map((op, j) => (
           <button key={j} type="button" className="opt" onClick={() => elegir(j)}
-            style={sel === j ? { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent)' } : undefined}>
+            style={sel === j ? { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent-strong)' } : undefined}>
             <span style={{
               width: 22, height: 22, flexShrink: 0, borderRadius: 6,
               display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-              fontFamily: "'JetBrains Mono', monospace", fontSize: 11,
+              fontFamily: "'JetBrains Mono', monospace", fontSize: 12,
               color: sel === j ? 'var(--accent-ink)' : 'var(--mute)',
               background: sel === j ? 'var(--accent)' : 'var(--surface)',
               border: `1px solid ${sel === j ? 'var(--accent)' : 'var(--border)'}`,
@@ -108,7 +109,7 @@ export function MotorTest({ preguntas, titulo, onTerminar }: Props) {
       </div>
       <div className="flex justify-between pt-2">
         <button onClick={() => setIndice(i => Math.max(0, i - 1))} disabled={indice === 0}
-          style={{ background: 'none', border: 0, cursor: 'pointer', fontSize: 13.5, color: 'var(--mute)', opacity: indice === 0 ? 0.3 : 1 }}>← Anterior</button>
+          style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', fontSize: 13.5, color: 'var(--mute)', opacity: indice === 0 ? 0.3 : 1 }}>← Anterior</button>
         {esUltima
           ? <button onClick={finalizar} className="btn-editorial btn-acc" style={{ height: 40 }}>Finalizar</button>
           : <button onClick={() => setIndice(i => Math.min(preguntas.length - 1, i + 1))} className="btn-editorial btn-acc" style={{ height: 40 }}>Siguiente →</button>}

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
+import { Icon } from '../components/ui/Icon'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
 import { obtenerTopics } from '../data/topics'
@@ -60,11 +61,11 @@ export function TemaDetalle() {
       <header className="sticky top-0 z-10 px-4 pt-3 pb-2" style={{ background: 'color-mix(in srgb, var(--bg) 90%, transparent)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border-soft)' }}>
         <div className="max-w-2xl mx-auto">
           <div className="flex items-center justify-between">
-            <button onClick={() => navigate(`/oposicion/${slug}/temario`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 13.5, display: 'flex', alignItems: 'center', gap: 5 }}>
+            <button onClick={() => navigate(`/oposicion/${slug}/temario`)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 13.5, display: 'flex', alignItems: 'center', gap: 5 }}>
               ← <span style={{ fontWeight: 500 }}>Temario</span>
             </button>
             <div className="flex items-center gap-2">
-              {vueltas > 0 && <span className="pill">🔄 ×{vueltas}</span>}
+              {vueltas > 0 && <span className="pill" style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}><Icon nombre="repetir" size={12} /> ×{vueltas}</span>}
               <button
                 onClick={() => setPomodoroAbierto(v => !v)}
                 aria-label="Temporizador Pomodoro"
@@ -74,7 +75,7 @@ export function TemaDetalle() {
                   borderRadius: 10, padding: '4px 9px', cursor: 'pointer', fontSize: 14,
                   color: pomodoroAbierto ? 'var(--surface)' : 'var(--ink)',
                 }}
-              >🍅</button>
+              ><Icon nombre="tiempo" size={16} /></button>
             </div>
           </div>
           <div className="eyebrow" style={{ marginTop: 8 }}>Tema {temaId}</div>
@@ -87,7 +88,7 @@ export function TemaDetalle() {
           {(tema.videos?.length ? [...TABS_BASE, "Vídeos" as const] : TABS_BASE).map(t => (
             <button key={t} onClick={() => setTab(t)}
               style={{
-                padding: '11px 10px', fontSize: 13, fontWeight: 600, flexShrink: 0, background: 'none', border: 0,
+                padding: '11px 10px', fontSize: 13, fontWeight: 600, flexShrink: 0, background: 'none', border: 0, minHeight: 44, minWidth: 44,
                 borderBottom: `2px solid ${tab === t ? 'var(--accent)' : 'transparent'}`,
                 color: tab === t ? 'var(--accent)' : 'var(--mute)', cursor: 'pointer', letterSpacing: '-0.005em',
               }}>

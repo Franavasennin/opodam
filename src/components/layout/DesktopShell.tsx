@@ -101,7 +101,7 @@ export function DesktopShell({ children }: { children: ReactNode }) {
               >
                 <Icon nombre="escudo" size={18} />
                 <span style={{ flex: 1, minWidth: 0 }}>
-                  <span className="eyebrow" style={{ display: 'block', fontSize: 11 }}>Oposición</span>
+                  <span className="eyebrow" style={{ display: 'block', fontSize: 12 }}>Oposición</span>
                   <span style={{ display: 'block', fontSize: 13, fontWeight: 600, color: 'var(--ink)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{oposicion.nombre}</span>
                 </span>
                 <span style={{ display: 'inline-flex', color: 'var(--mute)', transform: abierto ? 'rotate(90deg)' : 'none', transition: 'transform 120ms' }}>

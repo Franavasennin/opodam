@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Icon } from '../components/ui/Icon'
 import { useNavigate, useParams } from 'react-router-dom'
 import { obtenerTopics } from '../data/topics'
 import { preguntasEnCuaderno, registrarLote, contarErrores, GRADUACION } from '../services/errores'
@@ -48,7 +49,7 @@ export function RepasoErrores() {
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <TestTopbar title="Repaso de errores" onBack={() => navigate(`/oposicion/${slug}/tests`)} />
       <main className="max-w-2xl mx-auto px-4 pt-16 pb-12" style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: 44 }}>🎉</div>
+        <div style={{ color: 'var(--accent)' }}><Icon nombre="celebracion" size={44} /></div>
         <h1 className="display" style={{ margin: '12px 0 8px', fontSize: 26 }}>Cuaderno limpio</h1>
         <p style={{ fontSize: 13.5, color: 'var(--mute)', margin: '0 auto', maxWidth: 320 }}>No tienes fallos pendientes de repasar. Sigue haciendo tests: cuando falles una pregunta, aparecerá aquí hasta que la domines.</p>
         <button onClick={() => navigate(`/oposicion/${slug}/tests`)} className="btn-editorial btn-acc" style={{ marginTop: 22 }}>Ir a los tests</button>
@@ -78,10 +79,12 @@ export function RepasoErrores() {
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, textAlign: 'center' }}>
             <div className="eyebrow" style={{ marginBottom: 6 }}>Repaso completado</div>
             <div className="num-display" style={{ fontSize: 44, color: 'var(--accent)', lineHeight: 1 }}>{aciertos}/{preguntas.length}</div>
-            <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {aciertos} acertadas · ❌ {errores} aún falladas</div>
+            <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}><Icon nombre="acierto" size={14} /> {aciertos} acertadas</span> · <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}><Icon nombre="fallo" size={14} /> {errores} aún falladas</span>
+            </div>
             <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 6 }}>
               {pendientes === 0
-                ? '¡Cuaderno limpio! 🎉'
+                ? '¡Cuaderno limpio!'
                 : `Te quedan ${pendientes} en el cuaderno. Cada pregunta se gradúa al acertarla ${GRADUACION} veces seguidas.`}
             </div>
           </div>
@@ -111,8 +114,8 @@ export function RepasoErrores() {
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <TestTopbar title={`Repaso de errores · ${preguntas.length}`} onBack={() => navigate(`/oposicion/${slug}/tests`)} />
       <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-        <div className="card" style={{ background: 'var(--accent-soft)', border: '1px solid var(--accent)', borderRadius: 14, padding: '10px 14px', fontSize: 12.5, color: 'var(--accent)' }}>
-          🩹 Estas son las preguntas que has fallado. Acierta cada una {GRADUACION} veces seguidas para sacarla del cuaderno.
+        <div className="card" style={{ background: 'var(--accent-soft)', border: '1px solid var(--accent)', borderRadius: 14, padding: '10px 14px', fontSize: 12.5, color: 'var(--accent)', display: 'flex', alignItems: 'center', gap: 8 }}>
+          <Icon nombre="tirita" size={16} /> Estas son las preguntas que has fallado. Acierta cada una {GRADUACION} veces seguidas para sacarla del cuaderno.
         </div>
         {preguntas.map((p, i) => (
           <div key={p.id} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
@@ -125,7 +128,7 @@ export function RepasoErrores() {
                 return (
                   <button key={j} type="button" className="opt" onClick={() => setRespuestas(r => { const n = [...r]; n[i] = j; return n })}
                     style={sel ? { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent)' } : undefined}>
-                    <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: sel ? 'var(--accent-ink)' : 'var(--mute)', background: sel ? 'var(--accent)' : 'var(--surface)', border: `1px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
+                    <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: sel ? 'var(--accent-ink)' : 'var(--mute)', background: sel ? 'var(--accent)' : 'var(--surface)', border: `1px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
                     <span>{op}</span>
                   </button>
                 )

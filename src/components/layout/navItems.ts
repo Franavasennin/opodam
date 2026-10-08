@@ -22,14 +22,14 @@ export interface ItemNav {
 export const NAV_OPOSICION: ItemNav[] = [
   { label: 'Resumen',            labelCorta: 'Resumen', seg: '',              icono: 'resumen' },
   { label: 'Temario',            labelCorta: 'Temario', seg: 'temario',       icono: 'temario' },
-  { label: 'Flashcards',         labelCorta: 'Fichas',  seg: 'flashcards',    icono: 'flashcards' },
+  { label: 'Flashcards',  seg: 'flashcards',    icono: 'flashcards' },
   { label: 'Tests y simulacros', labelCorta: 'Tests',   seg: 'tests',         icono: 'tests' },
-  { label: 'Tutor',              labelCorta: 'Tutor',   seg: 'tutor',         icono: 'tutor' },
-  { label: 'Psicotécnicos',      labelCorta: 'Psico',   seg: 'psicotecnicos', icono: 'psicotecnicos' },
-  { label: 'Supuestos',          labelCorta: 'Casos',   seg: 'supuestos',     icono: 'supuestos' },
-  { label: 'Entrevista',         labelCorta: 'Entrev.', seg: 'entrevista',    icono: 'entrevista' },
-  { label: 'Personalidad',       labelCorta: 'Person.', seg: 'personalidad',  icono: 'personalidad' },
-  { label: 'Estadísticas',       labelCorta: 'Stats',   seg: 'estadisticas',  icono: 'estadisticas' },
+  { label: 'Tutor',   seg: 'tutor',         icono: 'tutor' },
+  { label: 'Psicotécnicos',   seg: 'psicotecnicos', icono: 'psicotecnicos' },
+  { label: 'Supuestos',   seg: 'supuestos',     icono: 'supuestos' },
+  { label: 'Entrevista', seg: 'entrevista',    icono: 'entrevista' },
+  { label: 'Personalidad', seg: 'personalidad',  icono: 'personalidad' },
+  { label: 'Estadísticas',   seg: 'estadisticas',  icono: 'estadisticas' },
 ]
 
 /**

@@ -57,7 +57,7 @@ export default function Biodata() {
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
         <button onClick={() => navigate(`/oposicion/${slug}`)}
-          style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+          style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Biodata — {NOMBRE_CUERPO[slug ?? ''] ?? 'Cuerpo policial'}</span>
         <span className="num-display" style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--mute)' }}>
           {completos}/{total}
@@ -128,7 +128,7 @@ export default function Biodata() {
           </section>
         ))}
 
-        {error && <p style={{ color: '#dc2626', fontSize: 13 }}>{error}</p>}
+        {error && <p style={{ color: 'var(--err)', fontSize: 13 }}>{error}</p>}
 
         <button onClick={guardar} disabled={guardando || completos === 0}
           style={{

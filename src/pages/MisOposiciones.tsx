@@ -92,7 +92,7 @@ export default function MisOposiciones() {
                   <Icon nombre={GLYPH[op.slug] ?? 'temario'} size={26} />
                   <div style={{
                     position: 'absolute', bottom: 8, left: 0, right: 0, textAlign: 'center',
-                    fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: 'var(--mute)', letterSpacing: '0.06em',
+                    fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: 'var(--mute)', letterSpacing: '0.06em',
                   }}>{op.slug.toUpperCase()}</div>
                 </div>
                 <div style={{ flex: 1, padding: '14px 14px 12px', minWidth: 0 }}>
@@ -103,7 +103,7 @@ export default function MisOposiciones() {
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, marginTop: 10 }}>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: 5 }}>
                         <span className="num-display" style={{ fontSize: 18 }}>{op.numTemas}</span>
-                        <span style={{ fontSize: 11, color: 'var(--mute)' }}>temas</span>
+                        <span style={{ fontSize: 12, color: 'var(--mute)' }}>temas</span>
                       </div>
                       <span style={{ marginLeft: 'auto', color: 'var(--mute)', fontSize: 18 }}>›</span>
                     </div>
@@ -123,7 +123,7 @@ export default function MisOposiciones() {
                 <div key={op.slug} className="card" style={{ padding: 14, background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, opacity: 0.7 }}>
                   <span style={{ display: 'inline-flex', color: 'var(--ink-soft)' }}><Icon nombre={GLYPH[op.slug] ?? 'temario'} size={20} /></span>
                   <div style={{ fontWeight: 600, fontSize: 12.5, color: 'var(--ink-soft)', marginTop: 6 }}>{op.nombre}</div>
-                  <div style={{ fontSize: 11, color: 'var(--mute)' }}>{op.descripcion}</div>
+                  <div style={{ fontSize: 12, color: 'var(--mute)' }}>{op.descripcion}</div>
                 </div>
               ))}
             </div>

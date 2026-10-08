@@ -1,14 +1,14 @@
 // src/pages/onboarding/OnboardingConfirmar.tsx
 import { useState } from 'react'
+import { Icon } from '../../components/ui/Icon'
 import { useLocation } from 'react-router-dom'
 import { enviarMagicLink } from '../../services/supabase'
 
 function Marca() {
   return (
     <div className="hero" style={{ borderRadius: '18px 18px 0 0', padding: 24, textAlign: 'center' }}>
-      <div className="hero-grain" />
       <div style={{ position: 'relative' }}>
-        <div style={{ fontSize: 34 }}>📘</div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}><Icon nombre="temario" size={34} /></div>
         <div className="display" style={{ fontSize: 24, marginTop: 4 }}>OpoDAM</div>
         <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.72)' }}>Prepara tu oposición</div>
       </div>
@@ -47,7 +47,7 @@ export default function OnboardingConfirmar() {
         <Marca />
         <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderTop: 0, borderRadius: '0 0 18px 18px', padding: 24, textAlign: 'center' }}>
           <Puntos activo={1} />
-          <div style={{ fontSize: 44, marginBottom: 10 }}>✉️</div>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 10 }}><Icon nombre="informe" size={44} /></div>
           <p style={{ fontSize: 13.5, color: 'var(--ink-soft)', margin: 0 }}>Enlace enviado a</p>
           <p className="num-display" style={{ fontWeight: 600, color: 'var(--accent)', fontSize: 13.5, margin: '2px 0 0' }}>{email || 'tu email'}</p>
           <p style={{ fontSize: 12, color: 'var(--mute)', margin: '10px 0 18px' }}>Abre el email y pulsa el enlace para continuar.</p>

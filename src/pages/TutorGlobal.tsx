@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Icon } from '../components/ui/Icon'
 import { useNavigate, useParams } from 'react-router-dom'
 import { OPOSICIONES } from '../data/oposiciones'
 import { buscar } from '../services/retrieval'
@@ -124,16 +125,16 @@ export default function TutorGlobal() {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Tutor</span>
-        <span className="num-display" style={{ fontSize: 11.5, color: 'var(--mute)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>· {nombre}</span>
+        <span className="num-display" style={{ fontSize: 12, color: 'var(--mute)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>· {nombre}</span>
       </header>
 
       <main className="flex-1 overflow-y-auto px-4 py-4">
         <div className="max-w-2xl mx-auto" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {mensajes.length === 0 && !cargando && (
             <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
-              <p style={{ margin: '0 0 4px', fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>Hola, soy tu tutor 👨‍🏫</p>
+              <p style={{ margin: '0 0 4px', fontSize: 13.5, fontWeight: 600, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: 6 }}>Hola, soy tu tutor <Icon nombre="tutor" size={16} /></p>
               <p style={{ margin: 0, fontSize: 12.5, color: 'var(--mute)', lineHeight: 1.5 }}>
                 Pregúntame cualquier duda de <strong>todo el temario</strong> de {nombre}. Busco la respuesta en los temas y te digo de cuál sale.
               </p>
@@ -150,7 +151,7 @@ export default function TutorGlobal() {
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 6, maxWidth: '85%' }}>
                   {m.fuentes.map(f => (
                     <button key={f.temaId} onClick={() => navigate(`/oposicion/${slug}/temario/${f.temaId}`)}
-                      style={{ fontSize: 11, padding: '3px 9px', borderRadius: 999, cursor: 'pointer', background: 'var(--accent-soft)', color: 'var(--accent)', border: '1px solid var(--border-soft)' }}>
+                      style={{ fontSize: 12, padding: '3px 9px', borderRadius: 999, cursor: 'pointer', background: 'var(--accent-soft)', color: 'var(--accent)', border: '1px solid var(--border-soft)' }}>
                       Tema {f.temaId}
                     </button>
                   ))}
@@ -159,16 +160,16 @@ export default function TutorGlobal() {
               {m.role === 'assistant' && i === mensajes.length - 1 && !cargando && (
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 8 }}>
                   <button onClick={accionTest} disabled={accionCargando !== null}
-                    style={{ fontSize: 11.5, padding: '5px 11px', borderRadius: 999, cursor: 'pointer', background: 'var(--surface)', color: 'var(--ink)', border: '1px solid var(--border)' }}>
-                    {accionCargando === 'test' ? 'Generando…' : '📝 Ponérmelo a prueba'}
+                    style={{ fontSize: 12, padding: '5px 11px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', gap: 5, cursor: 'pointer', background: 'var(--surface)', color: 'var(--ink)', border: '1px solid var(--border)' }}>
+                    {accionCargando === 'test' ? 'Generando…' : <><Icon nombre="tests" size={14} /> Ponérmelo a prueba</>}
                   </button>
                   <button onClick={accionFlashcards} disabled={accionCargando !== null}
-                    style={{ fontSize: 11.5, padding: '5px 11px', borderRadius: 999, cursor: 'pointer', background: 'var(--surface)', color: 'var(--ink)', border: '1px solid var(--border)' }}>
-                    {accionCargando === 'flashcards' ? 'Generando…' : '🃏 Crear flashcards'}
+                    style={{ fontSize: 12, padding: '5px 11px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', gap: 5, cursor: 'pointer', background: 'var(--surface)', color: 'var(--ink)', border: '1px solid var(--border)' }}>
+                    {accionCargando === 'flashcards' ? 'Generando…' : <><Icon nombre="flashcards" size={14} /> Crear flashcards</>}
                   </button>
                   <button onClick={accionResumen} disabled={accionCargando !== null}
-                    style={{ fontSize: 11.5, padding: '5px 11px', borderRadius: 999, cursor: 'pointer', background: 'var(--surface)', color: 'var(--ink)', border: '1px solid var(--border)' }}>
-                    {accionCargando === 'resumen' ? 'Generando…' : '✨ Resúmemelo'}
+                    style={{ fontSize: 12, padding: '5px 11px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', gap: 5, cursor: 'pointer', background: 'var(--surface)', color: 'var(--ink)', border: '1px solid var(--border)' }}>
+                    {accionCargando === 'resumen' ? 'Generando…' : <><Icon nombre="procoach" size={14} /> Resúmemelo</>}
                   </button>
                 </div>
               )}
@@ -194,7 +195,7 @@ export default function TutorGlobal() {
           <div onClick={e => e.stopPropagation()} className="card" style={{ maxWidth: 640, width: '100%', marginTop: 24, background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
               <strong style={{ fontSize: 14 }}>Ponte a prueba</strong>
-              <button onClick={() => setTestPreguntas(null)} style={{ background: 'none', border: 0, cursor: 'pointer', fontSize: 18, color: 'var(--mute)' }}>✕</button>
+              <button onClick={() => setTestPreguntas(null)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', fontSize: 18, color: 'var(--mute)' }}>✕</button>
             </div>
             <MotorTest preguntas={testPreguntas} titulo="Mini-test del tutor" />
           </div>
@@ -205,7 +206,7 @@ export default function TutorGlobal() {
           <div onClick={e => e.stopPropagation()} className="card" style={{ maxWidth: 520, width: '100%', marginTop: 24, background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
               <strong style={{ fontSize: 14 }}>Flashcards de la duda</strong>
-              <button onClick={() => setFlashcards(null)} style={{ background: 'none', border: 0, cursor: 'pointer', fontSize: 18, color: 'var(--mute)' }}>✕</button>
+              <button onClick={() => setFlashcards(null)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', fontSize: 18, color: 'var(--mute)' }}>✕</button>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {flashcards.map((f, i) => (

@@ -1,14 +1,14 @@
 // src/pages/onboarding/OnboardingEmail.tsx
 import { useState } from 'react'
+import { Icon } from '../../components/ui/Icon'
 import { useNavigate } from 'react-router-dom'
 import { enviarMagicLink, iniciarSesionGoogle } from '../../services/supabase'
 
 function Marca() {
   return (
     <div className="hero" style={{ borderRadius: '18px 18px 0 0', padding: 24, textAlign: 'center' }}>
-      <div className="hero-grain" />
       <div style={{ position: 'relative' }}>
-        <div style={{ fontSize: 34 }}>📘</div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}><Icon nombre="temario" size={34} /></div>
         <div className="display" style={{ fontSize: 24, marginTop: 4 }}>OpoDAM</div>
         <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.72)' }}>Prepara tu oposición</div>
       </div>
@@ -76,7 +76,7 @@ export default function OnboardingEmail() {
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, margin: '14px 0' }}>
             <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
-            <span style={{ fontSize: 11, color: 'var(--mute)' }}>o con tu email</span>
+            <span style={{ fontSize: 12, color: 'var(--mute)' }}>o con tu email</span>
             <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
           </div>
 
@@ -88,7 +88,7 @@ export default function OnboardingEmail() {
               {cargando ? 'Enviando…' : 'Enviar enlace de acceso'}
             </button>
           </form>
-          <p style={{ fontSize: 11.5, color: 'var(--mute)', textAlign: 'center', marginTop: 12 }}>Sin contraseña. Te enviamos un enlace mágico gratuito.</p>
+          <p style={{ fontSize: 12, color: 'var(--mute)', textAlign: 'center', marginTop: 12 }}>Sin contraseña. Te enviamos un enlace mágico gratuito.</p>
         </div>
       </div>
     </div>

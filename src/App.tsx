@@ -33,7 +33,6 @@ import OnboardingOposicion from './pages/onboarding/OnboardingOposicion'
 import MisOposiciones from './pages/MisOposiciones'
 import OposicionDashboard from './pages/OposicionDashboard'
 import { BotonMusica } from './components/audio/BotonMusica'
-import { BotonTema } from './components/ui/BotonTema'
 import { DesktopShell } from './components/layout/DesktopShell'
 
 // Páginas existentes (lazy)
@@ -129,7 +128,6 @@ export default function App() {
         </DesktopShell>
       </Suspense>
       <BotonMusica />
-      <BotonTema />
     </>
   )
 }

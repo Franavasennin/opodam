@@ -60,7 +60,7 @@ export function BienvenidaGuiada({ esNuevo }: Props) {
       borderRadius: 18, padding: 20, position: 'relative', marginBottom: 4,
     }}>
       <button onClick={cerrar} aria-label="Cerrar"
-        style={{ position: 'absolute', top: 12, right: 14, background: 'none', border: 0, cursor: 'pointer', color: 'var(--mute)', fontSize: 18, lineHeight: 1 }}>×</button>
+        style={{ position: 'absolute', top: 12, right: 14, background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--mute)', fontSize: 18, lineHeight: 1 }}>×</button>
 
       {/* Barra de progreso de pasos */}
       <div style={{ display: 'flex', gap: 5, marginBottom: 14 }}>

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Icon } from '../ui/Icon'
 import type { Tema } from '../../types'
 import { preguntarTutor, type MensajeTutor, type ContextoTema } from '../../services/tutor'
 import { cargarHistorial, guardarHistorial } from '../../services/tutorHistorial'
@@ -84,7 +85,7 @@ export function TutorPanel({ oposicion, tema, abierto, onCerrar }: Props) {
         <main className="flex-1 overflow-y-auto px-4 py-4 space-y-3">
           {mensajes.length === 0 && !cargando && (
             <div className="rounded-2xl bg-white border border-slate-200 p-4">
-              <p className="text-sm font-semibold text-slate-900 mb-1">Hola, soy tu tutor 👨‍🏫</p>
+              <p className="text-sm font-semibold text-slate-900 mb-1 flex items-center gap-1.5">Hola, soy tu tutor <Icon nombre="tutor" size={16} /></p>
               <p className="text-xs text-slate-600">Pregúntame cualquier duda sobre «{tema.titulo}».</p>
             </div>
           )}
@@ -111,13 +112,13 @@ export function TutorPanel({ oposicion, tema, abierto, onCerrar }: Props) {
             <button
               onClick={() => enviarTexto(`Explícame por qué suelo fallar en «${tema.titulo}» y dame un ejemplo nuevo para no repetir el error.`)}
               disabled={cargando}
-              className="shrink-0 text-xs font-semibold rounded-full border border-slate-200 text-slate-600 px-3 py-1.5 hover:bg-slate-50 disabled:opacity-40"
-            >🔍 Explícame mi fallo</button>
+              className="shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold rounded-full border border-slate-200 text-slate-600 px-3 py-1.5 hover:bg-slate-50 disabled:opacity-40"
+            ><Icon nombre="duda" size={14} /> Explícame mi fallo</button>
             <button
               onClick={() => enviarTexto(`Ponme 3 preguntas tipo test nuevas sobre «${tema.titulo}», una a una, esperando mi respuesta antes de corregir.`)}
               disabled={cargando}
-              className="shrink-0 text-xs font-semibold rounded-full border border-slate-200 text-slate-600 px-3 py-1.5 hover:bg-slate-50 disabled:opacity-40"
-            >📝 3 preguntas nuevas</button>
+              className="shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold rounded-full border border-slate-200 text-slate-600 px-3 py-1.5 hover:bg-slate-50 disabled:opacity-40"
+            ><Icon nombre="tests" size={14} /> 3 preguntas nuevas</button>
           </div>
           <div className="flex items-end gap-2">
             <textarea

@@ -4,10 +4,10 @@ import { obtenerTopics } from '../data/topics'
 import { estadoDominio, diasEntre, type EstadoDominio } from '../services/dominio'
 import type { Bloque } from '../types'
 
-const CHIP: Record<Exclude<EstadoDominio, 'nuevo'>, { texto: string; color: string; bg: string }> = {
-  dominado: { texto: '🟢 Dominado', color: 'var(--accent)', bg: 'var(--accent-soft)' },
-  riesgo:   { texto: '🟡 En riesgo', color: '#a07a2c', bg: 'color-mix(in srgb, #a07a2c 14%, transparent)' },
-  olvidado: { texto: '🔴 Repasar', color: 'var(--warn)', bg: 'color-mix(in srgb, var(--warn) 14%, transparent)' },
+const CHIP: Record<Exclude<EstadoDominio, 'nuevo'>, { texto: string; punto: string; color: string; bg: string }> = {
+  dominado: { texto: 'Dominado', punto: 'var(--ok)', color: 'var(--accent)', bg: 'var(--accent-soft)' },
+  riesgo:   { texto: 'En riesgo', punto: 'var(--gold)', color: 'var(--gold)', bg: 'color-mix(in srgb, var(--gold) 14%, transparent)' },
+  olvidado: { texto: 'Repasar', punto: 'var(--err)', color: 'var(--warn)', bg: 'color-mix(in srgb, var(--warn) 14%, transparent)' },
 }
 
 export function Temario() {
@@ -44,7 +44,7 @@ export function Temario() {
         }}>{meta.id}</span>
         <div style={{ flex: 1, minWidth: 0 }}>
           <p style={{ margin: 0, fontSize: 13.5, fontWeight: 600, color: 'var(--ink)', letterSpacing: '-0.01em', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{meta.titulo}</p>
-          <p style={{ margin: '2px 0 0', fontSize: 11.5, color: 'var(--mute)' }}>
+          <p style={{ margin: '2px 0 0', fontSize: 12, color: 'var(--mute)' }}>
             {p?.ultimaRevision
               ? (() => { const d = diasEntre(p.ultimaRevision); return d === 0 ? 'Revisado hoy' : `Hace ${d} día${d === 1 ? '' : 's'}` })()
               : 'Sin estudiar'}
@@ -52,9 +52,9 @@ export function Temario() {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4, flexShrink: 0 }}>
           {chip
-            ? <span style={{ fontSize: 11, fontWeight: 600, color: chip.color, background: chip.bg, borderRadius: 999, padding: '3px 9px', whiteSpace: 'nowrap' }}>{chip.texto}</span>
+            ? <span style={{ fontSize: 12, fontWeight: 600, color: chip.color, background: chip.bg, borderRadius: 999, padding: '3px 9px', whiteSpace: 'nowrap', display: 'inline-flex', alignItems: 'center', gap: 6 }}><span aria-hidden style={{ width: 10, height: 10, borderRadius: '50%', background: chip.punto }} />{chip.texto}</span>
             : aciertos > 0
-              ? <span className="num-display" style={{ fontSize: 15, color: 'var(--accent)' }}>{aciertos}<span style={{ fontSize: 10 }}>%</span></span>
+              ? <span className="num-display" style={{ fontSize: 15, color: 'var(--accent)' }}>{aciertos}<span style={{ fontSize: 12 }}>%</span></span>
               : <span style={{ color: 'var(--mute)', fontSize: 16 }}>›</span>}
           {vueltas > 0 && <span className="eyebrow" style={{ letterSpacing: '0.04em' }}>×{vueltas}</span>}
         </div>
@@ -68,7 +68,7 @@ export function Temario() {
         className="sticky top-0 z-10 flex items-center gap-3 px-4"
         style={{ height: 52, borderBottom: '1px solid var(--border-soft)', background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)' }}
       >
-        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Temario</span>
       </header>
 

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { responderFlashcard, inicializarFlashcards } from '../../services/spaced-repetition'
+import { Icon } from '../ui/Icon'
 import type { Tema } from '../../types'
 import { getFlashcardFront, getFlashcardBack } from '../../types'
 
@@ -20,7 +21,7 @@ export function FlashcardsTab({ tema, onVueltaCompleta }: Props) {
 
   if (terminado) return (
     <div className="text-center py-12" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
-      <div style={{ fontSize: 48 }}>🎉</div>
+      <Icon nombre="celebracion" size={48} />
       <p className="display" style={{ margin: 0, fontSize: 24 }}>¡Flashcards completadas!</p>
       <p style={{ color: 'var(--mute)', fontSize: 13.5 }}>Vuelta sumada al tema.</p>
       <button onClick={() => { setIndice(0); setTerminado(false); setVerRespuesta(false) }} className="btn-editorial btn-acc">Repetir</button>
@@ -42,11 +43,12 @@ export function FlashcardsTab({ tema, onVueltaCompleta }: Props) {
       {verRespuesta && (
         <div className="grid grid-cols-3 gap-2">
           {(['dificil', 'dudoso', 'facil'] as const).map(cal => {
-            const color = cal === 'dificil' ? 'var(--warn)' : cal === 'dudoso' ? '#a07a2c' : 'var(--accent)'
+            const color = cal === 'dificil' ? 'var(--warn)' : cal === 'dudoso' ? 'var(--gold)' : 'var(--accent)'
             return (
               <button key={cal} onClick={() => responder(cal)}
-                style={{ padding: '10px 0', borderRadius: 12, fontSize: 13, fontWeight: 600, cursor: 'pointer', border: `1px solid ${color}`, color, background: 'transparent' }}>
-                {cal === 'dificil' ? '😓 Difícil' : cal === 'dudoso' ? '🤔 Dudoso' : '😊 Fácil'}
+                style={{ padding: '10px 0', borderRadius: 12, fontSize: 13, fontWeight: 600, cursor: 'pointer', border: `1px solid ${color}`, color, background: 'transparent', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                <Icon nombre={cal === 'dificil' ? 'triste' : cal === 'dudoso' ? 'duda' : 'contento'} size={16} />
+                {cal === 'dificil' ? 'Difícil' : cal === 'dudoso' ? 'Dudoso' : 'Fácil'}
               </button>
             )
           })}

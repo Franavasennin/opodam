@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Icon } from '../components/ui/Icon'
 import { useNavigate, useParams } from 'react-router-dom'
 import { calcularPuntuacionTest } from '../services/progress'
 import { registrarLote } from '../services/errores'
@@ -84,20 +85,19 @@ export function Simulacro() {
   if (!iniciado) return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <button onClick={() => navigate(`/oposicion/${slug}/tests`)} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <button onClick={() => navigate(`/oposicion/${slug}/tests`)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>Simulacro oficial</span>
       </header>
       <main className="max-w-2xl mx-auto px-4 pt-4 pb-12">
         <div className="hero" style={{ textAlign: 'center', padding: '36px 24px' }}>
-          <div className="hero-grain" />
           <div style={{ position: 'relative' }}>
-            <div style={{ fontSize: 44 }}>🎯</div>
+            <Icon nombre="diana" size={44} />
             <h1 className="display" style={{ margin: '12px 0 8px', fontSize: 30 }}>Simulacro <span className="display-italic" style={{ color: 'var(--accent)' }}>completo</span></h1>
             <p style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.72)', margin: 0 }}>{preguntas.length} preguntas · 120 min · {describirPenalizacion(pen)}</p>
             <button onClick={iniciar} className="btn-editorial btn-acc" style={{ marginTop: 22 }}>Comenzar examen</button>
           </div>
         </div>
-        <button onClick={() => navigate(`/oposicion/${slug}/tests`)} style={{ display: 'block', margin: '16px auto 0', background: 'none', border: 0, cursor: 'pointer', color: 'var(--mute)', fontSize: 13, textDecoration: 'underline' }}>Cancelar</button>
+        <button onClick={() => navigate(`/oposicion/${slug}/tests`)} style={{ display: 'block', margin: '16px auto 0', background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--mute)', fontSize: 13, textDecoration: 'underline' }}>Cancelar</button>
       </main>
     </div>
   )
@@ -117,12 +117,14 @@ export function Simulacro() {
             <div className="eyebrow" style={{ marginBottom: 6 }}>Nota equivalente</div>
             <div className="num-display" style={{ fontSize: 56, color: 'var(--accent)', lineHeight: 1 }}>{punt.toFixed(2)}</div>
             <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>sobre 10</div>
-            <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>✅ {aciertos} aciertos · ❌ {errores} errores · ⬜ {preguntas.length - aciertos - errores} en blanco</div>
-            <div style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>{describirPenalizacion(pen)}</div>
+            <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12 }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}><Icon nombre="acierto" size={14} /> {aciertos} aciertos</span> · <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}><Icon nombre="fallo" size={14} /> {errores} errores</span> · <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}><Icon nombre="blanco" size={14} /> {preguntas.length - aciertos - errores} en blanco</span>
+            </div>
+            <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 6 }}>{describirPenalizacion(pen)}</div>
           </div>
           {errores > 0 && (
-            <button onClick={() => navigate(`/oposicion/${slug}/repaso-errores`)} className="btn-editorial btn-acc" style={{ width: '100%' }}>
-              🩹 Repasar las {errores} falladas ahora
+            <button onClick={() => navigate(`/oposicion/${slug}/repaso-errores`)} className="btn-editorial btn-acc" style={{ width: '100%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+              <Icon nombre="tirita" size={16} /> Repasar las {errores} falladas ahora
             </button>
           )}
           <button onClick={() => navigate(`/oposicion/${slug}/estadisticas`)} className="btn-editorial btn-sec" style={{ width: '100%' }}>Ver estadísticas</button>
@@ -141,8 +143,8 @@ export function Simulacro() {
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center justify-between px-4" style={topbar}>
         <span className="num-display" style={{ fontSize: 13.5, color: 'var(--ink-soft)' }}>{indice + 1}/{preguntas.length}</span>
-        <span className="num-display" style={{ fontWeight: 600, fontSize: 15, color: tiempo < 600 ? 'var(--warn)' : 'var(--accent)' }}>⏱ {mins}:{segs}</span>
-        <button onClick={terminar} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--mute)', fontSize: 12, textDecoration: 'underline' }}>Terminar</button>
+        <span className="num-display" style={{ fontWeight: 600, fontSize: 15, color: tiempo < 600 ? 'var(--warn)' : 'var(--accent)', display: 'inline-flex', alignItems: 'center', gap: 5 }}><Icon nombre="tiempo" size={16} /> {mins}:{segs}</span>
+        <button onClick={terminar} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--mute)', fontSize: 12, textDecoration: 'underline' }}>Terminar</button>
       </header>
       <main className="max-w-2xl mx-auto px-4 pt-4 pb-12 w-full">
         <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
@@ -153,7 +155,7 @@ export function Simulacro() {
               return (
                 <button key={j} type="button" className="opt" onClick={() => setRespuestas(r => { const n = [...r]; n[indice] = j; return n })}
                   style={sel ? { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent)' } : undefined}>
-                  <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: sel ? 'var(--accent-ink)' : 'var(--mute)', background: sel ? 'var(--accent)' : 'var(--surface)', border: `1px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
+                  <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: sel ? 'var(--accent-ink)' : 'var(--mute)', background: sel ? 'var(--accent)' : 'var(--surface)', border: `1px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
                   <span>{op}</span>
                 </button>
               )

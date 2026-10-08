@@ -27,6 +27,9 @@
   --warn-soft: #f3e2d9;
   --gold: #826324;          /* antes #a07a2c → 3.59:1, fallaba AA */
   --gold-soft: #f1e7cf;
+  /* Semánticos acierto/error: verde y rojo reales, ya no dos terracotas casi iguales. */
+  --ok: #2c6a43;  --ok-soft: #e1efe2;   /* 5.4:1 sobre soft, 5.9:1 sobre papel */
+  --err: #b3261e; --err-soft: #f8e0dc;  /* 5.2:1 sobre soft, 5.9:1 sobre papel */
 
   /* Escala de espaciado (base 4px) */
   --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
@@ -44,33 +47,35 @@
   color-scheme: light;
 }
 
-/* Tema "forest" (noche) — moss profundo + acento verde claro */
+/* Tema noche — papel oscuro cálido + el MISMO acento terracota que de día
+   (antes era verde: la marca cambiaba de color según la hora). */
 html.dark {
-  --bg: #0f1310;
-  --surface: #151b17;
-  --surface-2: #1c2420;
-  --ink: #ecede6;
-  --ink-soft: #cfd2c8;
-  --mute: #8b9287;          /* antes #818879 → 4.33:1 sobre --surface-2 */
-  --mute-soft: #535851;     /* SOLO decorativo. Nunca texto. */
-  --border: #232b25;
-  --border-soft: #1b2220;
-  --accent: #6fb091;
-  --accent-strong: #6fb091; /* en noche el acento ya cumple AA sobre --accent-soft */
-  --accent-ink: #0d1310;
-  --accent-soft: #1c3128;
-  --warn: #d77a5e;
-  --warn-soft: #2e2017;
+  --bg: #14110e;
+  --surface: #1b1713;
+  --surface-2: #241e19;
+  --ink: #efe9df;
+  --ink-soft: #d3cabc;
+  --mute: #9a9082;
+  --mute-soft: #5a5148;     /* SOLO decorativo. Nunca texto. */
+  --border: #2c251f;
+  --border-soft: #221d18;
+  --accent: #e8896b;
+  --accent-strong: #e8896b;
+  --accent-ink: #1a0e09;
+  --accent-soft: #3a2219;
+  --warn: #e0a070;
+  --warn-soft: #33241a;
   --gold: #c4a25a;
-  --gold-soft: #2a2314;     /* antes .pill-gold tenía el fondo #f1e7cf fijo: 1.97:1 en noche */
+  --ok: #7fc79b;  --ok-soft: #1a2f23;
+  --err: #f08a80; --err-soft: #35201d;
+  --gold-soft: #2a2314;
   color-scheme: dark;
 }
 /* En noche, el hero "tinta" se eleva a superficie en vez de bloque claro */
 html.dark .hero { background: var(--surface-2); color: var(--ink); border: 1px solid var(--border); }
-html.dark .hero .hero-grain { background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px); }
 
 @layer base {
-  html { @apply h-full; }
+  html { @apply h-full; font-size: 100%; }
   body {
     @apply h-full;
     margin: 0;
@@ -79,7 +84,7 @@ html.dark .hero .hero-grain { background-image: radial-gradient(rgba(255,255,255
     font-family: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
     /* 16px: mínimo legible en móvil y, en iOS Safari, el umbral por debajo del
        cual el navegador hace zoom automático al enfocar un input. */
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -169,17 +174,6 @@ a.pill, button.pill { min-height: 32px; padding-inline: 12px; }
   background: var(--ink); color: var(--bg);
   border-radius: 22px; padding: 22px; position: relative; overflow: hidden;
 }
-.hero-grain {
-  position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 6px 6px;
-}
-
-/* ── Textura papel ──────────────────────────────────────────── */
-.paper-grain {
-  background-image: radial-gradient(rgba(0,0,0,0.025) 1px, transparent 1px);
-  background-size: 6px 6px;
-}
 
 /* ── Barra de progreso ──────────────────────────────────────── */
 .bar { position: relative; height: 3px; background: var(--border-soft); border-radius: 999px; overflow: hidden; }
@@ -190,14 +184,10 @@ a.pill, button.pill { min-height: 32px; padding-inline: 12px; }
   width: 100%; display: flex; align-items: flex-start; gap: 12px;
   padding: 14px 16px; border-radius: 14px;
   background: var(--surface); border: 1px solid var(--border);
-  text-align: left; cursor: pointer; font-size: 14.5px; line-height: 1.4; color: var(--ink);
+  text-align: left; cursor: pointer; font-size: 1rem; line-height: 1.4; color: var(--ink);
   transition: border-color 120ms ease, background 120ms ease, transform 80ms ease;
 }
 .opt:hover { border-color: var(--ink-soft); }
-/* El resultado de una pregunta no puede depender solo del color (WCAG 1.4.1):
-   además del tinte, el borde engrosa y el estado se anuncia en el marcado. */
-.opt[data-state="correct"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-strong); border-width: 2px; padding: 13px 15px; }
-.opt[data-state="wrong"]   { background: var(--warn-soft); border-color: var(--warn); color: var(--warn); border-width: 2px; padding: 13px 15px; }
 
 /* ── Lectura editorial (temas) ──────────────────────────────── */
 .editorial p { margin: 0 0 14px; }
@@ -286,7 +276,7 @@ a.pill, button.pill { min-height: 32px; padding-inline: 12px; }
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 3px; padding: 6px 2px;
   background: none; border: 0; cursor: pointer;
-  color: var(--mute); font-size: 11px; font-weight: 500; line-height: 1.1;
+  color: var(--mute); font-size: 12px; font-weight: 500; line-height: 1.1;
   text-decoration: none;
   transition: color 120ms ease;
 }
@@ -315,10 +305,6 @@ a.pill, button.pill { min-height: 32px; padding-inline: 12px; }
   border-top: 1px solid var(--border);
   padding: var(--sp-2) var(--sp-4) calc(var(--sp-6) + env(safe-area-inset-bottom, 0px));
   animation: sheetUp 200ms cubic-bezier(.2,.7,.2,1) both;
-}
-.sheet__grip {
-  width: 38px; height: 4px; margin: var(--sp-2) auto var(--sp-3);
-  border-radius: var(--r-full); background: var(--border);
 }
 .sheet__head {
   display: flex; align-items: center; justify-content: space-between;
@@ -382,8 +368,21 @@ a.pill, button.pill { min-height: 32px; padding-inline: 12px; }
 .fab--activo { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
 .fab--activo:hover { background: var(--accent-strong); }
 .fab--1 { bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px) + 12px); }
-.fab--2 { bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px) + 68px); }
 @media (min-width: 1024px) {
   .fab--1 { bottom: 16px; }
-  .fab--2 { bottom: 72px; }
+}
+
+/* ── Preferencias de accesibilidad del sistema ──────────────── */
+/* Contraste alto: los bordes de controles pasan de ~1.2:1 a >=3:1. */
+@media (prefers-contrast: more) {
+  :root { --border: #6d675e; --border-soft: #8a857b; --mute: #544f48; }
+  html.dark { --border: #9a9082; --border-soft: #6f665b; --mute: #c2b8a8; }
+}
+/* Transparencia reducida: la cabecera pegajosa deja de usar blur. */
+@media (prefers-reduced-transparency: reduce) {
+  header[style*="backdrop-filter"] { backdrop-filter: none !important; background: var(--bg) !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-editorial:active { transform: none; }
+  .bar-fill { transition: none; }
 }

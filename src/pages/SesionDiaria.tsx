@@ -138,7 +138,7 @@ export function SesionDiaria() {
         <p style={{ fontSize: 13.5, color: 'var(--mute)', margin: 0 }}>
           Racha: <span className="num-display" style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontWeight: 600, color: 'var(--accent)' }}>{progreso.racha.dias} días <Icon nombre="racha" size={14} /></span>
         </p>
-        <p style={{ fontSize: 11.5, color: 'var(--mute)', margin: '8px 0 20px' }}>Vuelve mañana para la siguiente sesión</p>
+        <p style={{ fontSize: 12, color: 'var(--mute)', margin: '8px 0 20px' }}>Vuelve mañana para la siguiente sesión</p>
         {restantes > 0 && (
           <button onClick={() => navigate(`/oposicion/${slug}/flashcards`)} className="btn-editorial btn-acc" style={{ maxWidth: 320, width: '100%', marginBottom: 10 }}>
             Seguir repasando ({restantes} pendientes) →
@@ -172,7 +172,7 @@ export function SesionDiaria() {
           {fcVerRespuesta && (
             <div className="grid grid-cols-3 gap-2">
               {(['dificil', 'dudoso', 'facil'] as const).map(cal => {
-                const color = cal === 'dificil' ? 'var(--warn)' : cal === 'dudoso' ? '#a07a2c' : 'var(--accent)'
+                const color = cal === 'dificil' ? 'var(--warn)' : cal === 'dudoso' ? 'var(--gold)' : 'var(--accent)'
                 return (
                   <button key={cal} onClick={() => responderFC(cal)}
                     style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '10px 0', borderRadius: 12, fontSize: 13, fontWeight: 600, cursor: 'pointer', border: `1px solid ${color}`, color, background: 'transparent' }}>
@@ -184,7 +184,7 @@ export function SesionDiaria() {
             </div>
           )}
           {preguntas.length > 0 && (
-            <button onClick={() => setFase('minitest')} style={{ width: '100%', background: 'none', border: 0, cursor: 'pointer', fontSize: 12, color: 'var(--mute)', textDecoration: 'underline' }}>
+            <button onClick={() => setFase('minitest')} style={{ width: '100%', background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', fontSize: 12, color: 'var(--mute)', textDecoration: 'underline' }}>
               Saltar a mini-test →
             </button>
           )}
@@ -223,11 +223,11 @@ export function SesionDiaria() {
               return (
                 <div key={j} style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
                   <button type="button" className="opt" disabled={mostrandoExplicacion} onClick={() => responderPregunta(j)} style={extra}>
-                    <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: activo ? 'var(--accent-ink)' : 'var(--mute)', background: activo ? (extra.borderColor as string) : 'var(--surface)', border: `1px solid ${activo ? (extra.borderColor as string) : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
-                    <span>{op}{mostrandoExplicacion && esEleg && <span style={{ marginLeft: 6, fontSize: 11, opacity: 0.85 }}>· tu respuesta</span>}</span>
+                    <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: activo ? 'var(--accent-ink)' : 'var(--mute)', background: activo ? (extra.borderColor as string) : 'var(--surface)', border: `1px solid ${activo ? (extra.borderColor as string) : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
+                    <span>{op}{mostrandoExplicacion && esEleg && <span style={{ marginLeft: 6, fontSize: 12, opacity: 0.85 }}>· tu respuesta</span>}</span>
                   </button>
                   {mostrandoExplicacion && detalle && (
-                    <p style={{ margin: '0 0 0 4px', fontSize: 11.5, color: esCorr ? 'var(--accent)' : esEleg ? 'var(--warn)' : 'var(--mute)', fontStyle: 'italic', lineHeight: 1.45 }}>{detalle}</p>
+                    <p style={{ margin: '0 0 0 4px', fontSize: 12, color: esCorr ? 'var(--accent)' : esEleg ? 'var(--warn)' : 'var(--mute)', fontStyle: 'italic', lineHeight: 1.45 }}>{detalle}</p>
                   )}
                 </div>
               )

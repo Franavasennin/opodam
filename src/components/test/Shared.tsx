@@ -1,3 +1,4 @@
+import { Icon } from '../ui/Icon'
 import React from 'react'
 
 const topbarStyle: React.CSSProperties = {
@@ -16,7 +17,7 @@ export function TestTopbar({ onBack, title, rightContent }: TestTopbarProps) {
     <header className="sticky top-0 z-10 flex items-center justify-between px-4" style={topbarStyle}>
       <div className="flex items-center gap-3">
         {onBack && (
-          <button onClick={onBack} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+          <button onClick={onBack} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         )}
         <span style={{ fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>{title}</span>
       </div>
@@ -39,18 +40,19 @@ export function ReviewOption({ opcion, index, esCorrecta, esElegida, detalle }: 
   return (
     <div style={{
       margin: '0 0 6px', padding: '7px 10px', borderRadius: 9,
-      background: esCorrecta ? 'var(--accent-soft)' : esElegida ? 'var(--warn-soft)' : 'transparent',
-      border: `1px solid ${esCorrecta ? 'var(--accent)' : esElegida ? 'var(--warn)' : 'var(--border)'}`,
+      background: esCorrecta ? 'var(--ok-soft)' : esElegida ? 'var(--err-soft)' : 'transparent',
+      border: `1px solid ${esCorrecta ? 'var(--ok)' : esElegida ? 'var(--err)' : 'var(--border)'}`,
     }}>
       <p style={{
-        margin: 0, fontSize: 12.5,
+        margin: 0, fontSize: 14,
         fontWeight: esCorrecta || esElegida ? 600 : 400,
-        color: esCorrecta ? 'var(--accent)' : esElegida ? 'var(--warn)' : 'var(--ink-soft)'
+        color: esCorrecta ? 'var(--ok)' : esElegida ? 'var(--err)' : 'var(--ink-soft)'
       }}>
-        {esCorrecta ? '✅' : esElegida ? '❌' : '○'} {LETRAS[index] ?? index + 1}. {opcion}
-        {esElegida && <span style={{ marginLeft: 6, fontSize: 11, opacity: 0.85 }}>· tu respuesta</span>}
+        <span className="sr-only">{esCorrecta ? 'Correcta. ' : esElegida ? 'Incorrecta. ' : ''}</span>
+        <span style={{ display: 'inline-flex', verticalAlign: -2, marginRight: 6 }}><Icon nombre={esCorrecta ? 'acierto' : esElegida ? 'fallo' : 'blanco'} size={15} /></span>{LETRAS[index] ?? index + 1}. {opcion}
+        {esElegida && <span style={{ marginLeft: 6, fontSize: 12, opacity: 0.85 }}>· tu respuesta</span>}
       </p>
-      {detalle && <p style={{ margin: '3px 0 0', fontSize: 11.5, color: 'var(--mute)', fontStyle: 'italic', lineHeight: 1.45 }}>{detalle}</p>}
+      {detalle && <p style={{ margin: '3px 0 0', fontSize: 12, color: 'var(--mute)', fontStyle: 'italic', lineHeight: 1.45 }}>{detalle}</p>}
     </div>
   )
 }

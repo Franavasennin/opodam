@@ -148,7 +148,7 @@ export function Examen() {
                 )
               })}
             </div>
-            <p style={{ fontSize: 11.5, color: 'var(--mute)', marginTop: 12, lineHeight: 1.5 }}>
+            <p style={{ fontSize: 12, color: 'var(--mute)', marginTop: 12, lineHeight: 1.5 }}>
               Fórmula CGPC: acierto +0,20 pts · cada 3 errores −0,20 pts · en blanco 0 pts · mínimo 5,00
             </p>
             <button onClick={iniciarExamen} disabled={cargando} className="btn-editorial btn-acc" style={{ width: '100%', marginTop: 14, opacity: cargando ? 0.5 : 1 }}>
@@ -186,7 +186,7 @@ export function Examen() {
           rightContent={
             <div className="flex items-center gap-4">
               <span className="num-display" style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontWeight: 600, fontSize: 15, color: tiempo < 300 ? 'var(--warn)' : 'var(--accent)' }}><Icon nombre="tiempo" size={15} /> {mins}:{segs}</span>
-              <button onClick={() => setFase('confirmacion')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'var(--mute)', fontSize: 12, textDecoration: 'underline' }}>Entregar</button>
+              <button onClick={() => setFase('confirmacion')} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--mute)', fontSize: 12, textDecoration: 'underline' }}>Entregar</button>
             </div>
           }
         />
@@ -203,7 +203,7 @@ export function Examen() {
         )}
         <main className="max-w-2xl mx-auto px-4 pt-4 pb-12 w-full">
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
-            {marcadas.has(p.id) && <p style={{ display: 'flex', alignItems: 'center', gap: 5, margin: '0 0 8px', fontSize: 11.5, fontWeight: 600, color: 'var(--warn)' }}><Icon nombre="marcador" size={13} /> Marcada para revisar</p>}
+            {marcadas.has(p.id) && <p style={{ display: 'flex', alignItems: 'center', gap: 5, margin: '0 0 8px', fontSize: 12, fontWeight: 600, color: 'var(--warn)' }}><Icon nombre="marcador" size={13} /> Marcada para revisar</p>}
             <p style={{ margin: '0 0 12px', fontSize: 14.5, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.4 }}>{p.enunciado}</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {p.opciones.map((op, j) => {
@@ -211,7 +211,7 @@ export function Examen() {
                 return (
                   <button key={j} type="button" className="opt" onClick={() => setRespuestas(r => ({ ...r, [p.id]: j }))}
                     style={sel ? { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent)' } : undefined}>
-                    <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: sel ? 'var(--accent-ink)' : 'var(--mute)', background: sel ? 'var(--accent)' : 'var(--surface)', border: `1px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
+                    <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: sel ? 'var(--accent-ink)' : 'var(--mute)', background: sel ? 'var(--accent)' : 'var(--surface)', border: `1px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
                     <span>{op}</span>
                   </button>
                 )
@@ -276,7 +276,7 @@ export function Examen() {
               <span style={{ color: 'var(--mute)' }}>·</span>
               <Icon nombre="blanco" size={15} /> {resultado.enBlanco}
             </div>
-            <div className="num-display" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, fontSize: 11.5, color: 'var(--mute)', marginTop: 6 }}>
+            <div className="num-display" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, fontSize: 12, color: 'var(--mute)', marginTop: 6 }}>
               <Icon nombre="tiempo" size={13} /> {mins}:{segs} empleados · {describirPenalizacion(pen)}
             </div>
           </div>
@@ -318,7 +318,7 @@ export function Examen() {
             const borde = elegida === null ? 'var(--border)' : elegida === correcta ? 'var(--accent)' : 'var(--warn)'
             return (
               <div key={p.id} className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderLeft: `3px solid ${borde}`, borderRadius: 16, padding: 16 }}>
-                <p className="num-display" style={{ margin: 0, fontSize: 11.5, color: 'var(--mute)' }}>Pregunta {i + 1}</p>
+                <p className="num-display" style={{ margin: 0, fontSize: 12, color: 'var(--mute)' }}>Pregunta {i + 1}</p>
                 <p style={{ margin: '6px 0 10px', fontSize: 13.5, fontWeight: 600, color: 'var(--ink)' }}>{p.enunciado}</p>
                 {p.opciones.map((op, j) => {
                   const esCorr = j === correcta

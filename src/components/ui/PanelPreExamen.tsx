@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Icon } from './Icon'
 import { useNavigate, useParams } from 'react-router-dom'
 import { obtenerConvocatoria } from '../../services/convocatorias'
 import { planPreExamen, type PlanPreExamen } from '../../services/repasoPreExamen'
@@ -38,7 +39,7 @@ export function PanelPreExamen({ temas, metas }: Props) {
 
   return (
     <div className="card" style={{ background: 'var(--accent-soft)', border: '1px solid var(--accent)', borderRadius: 16, padding: 18 }}>
-      <div className="eyebrow" style={{ color: 'var(--accent)', marginBottom: 6 }}>🎯 Modo pre-examen</div>
+      <div className="eyebrow" style={{ color: 'var(--accent)', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6 }}><Icon nombre="diana" size={14} /> Modo pre-examen</div>
       <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--accent)', marginBottom: 4 }}>{tit}</div>
       <p style={{ fontSize: 12.5, color: 'var(--accent)', opacity: 0.85, margin: '0 0 12px' }}>
         {plan.vedaContenidoNuevo
@@ -54,8 +55,9 @@ export function PanelPreExamen({ temas, metas }: Props) {
               const meta = metas.find(m => m.id === c.id)
               return (
                 <button key={c.id} onClick={() => navigate(`/oposicion/${slug}/temario/${c.id}`)}
-                  style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, background: 'none', border: 0, cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  <span style={{ fontSize: 13 }}>🔴</span>
+                  style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', textAlign: 'left', padding: 0 }}>
+                  <span aria-hidden style={{ width: 10, height: 10, borderRadius: '50%', flexShrink: 0, background: 'var(--err)' }} />
+                  <span className="sr-only">Repasar</span>
                   <span style={{ flex: 1, minWidth: 0, fontSize: 12.5, color: 'var(--accent)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                     T{c.id} — {meta?.titulo ?? '…'}
                   </span>
