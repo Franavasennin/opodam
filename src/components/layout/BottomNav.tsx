@@ -4,6 +4,7 @@ import { OPOSICIONES } from '../../data/oposiciones'
 import { useOposicionStore } from '../../stores/oposicion'
 import { usePuedeVerPrivadas } from '../../stores/sesion'
 import { Icon } from '../ui/Icon'
+import { useMusicaStore } from '../../stores/musica'
 import { SEGS_MOVIL_PRIMARIOS, navVisible, rutaNav } from './navItems'
 
 /**
@@ -24,6 +25,8 @@ export function BottomNav() {
   const navigate = useNavigate()
   const [hoja, setHoja] = useState(false)
   const botonMas = useRef<HTMLButtonElement>(null)
+  const musicaActiva = useMusicaStore(s => s.activa)
+  const alternarMusica = useMusicaStore(s => s.alternar)
   const panel = useRef<HTMLDivElement>(null)
 
   // Mismo criterio que MisOposiciones y OnboardingOposicion: las oposiciones
@@ -174,6 +177,13 @@ export function BottomNav() {
                 <button type="button" className="sheet__link" onClick={() => irA(`/oposicion/${slug}/perfil`)}>
                   <span className="sheet__icon"><Icon nombre="perfil" size={20} /></span>
                   <span className="sheet__texto">Mi perfil</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" className={`sheet__link${musicaActiva ? ' is-active' : ''}`} onClick={alternarMusica} aria-pressed={musicaActiva}>
+                  <span className="sheet__icon"><Icon nombre="nota" size={20} /></span>
+                  <span className="sheet__texto">Música de concentración</span>
+                  {musicaActiva && <Icon nombre="check" size={18} />}
                 </button>
               </li>
             </ul>

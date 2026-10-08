@@ -40,7 +40,7 @@ export function CuentaAtras({ slug }: Props) {
   const fuenteLabel = conv.fuente === 'BOE' ? 'BOE' : 'BOC'
   const Enlace = (
     <a href={conv.boletinUrl} target="_blank" rel="noopener noreferrer"
-      style={{ fontSize: 14, fontWeight: 600, color: 'var(--accent-strong)', textDecoration: 'underline', whiteSpace: 'nowrap' }}
+      style={{ display: 'inline-flex', alignItems: 'center', minHeight: 44, fontSize: 14, fontWeight: 600, color: 'var(--accent-strong)', textDecoration: 'underline', whiteSpace: 'nowrap' }}
       onClick={e => e.stopPropagation()}>
       Ver en el {fuenteLabel} ↗
     </a>

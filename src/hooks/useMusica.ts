@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
-
-const CLAVE = 'opodam.musica'
+import { useEffect, useRef } from 'react'
+import { useMusicaStore } from '../stores/musica'
 
 interface AudioState {
   ctx: AudioContext
@@ -104,7 +103,8 @@ function detener(state: AudioState | null) {
 }
 
 export function useMusica() {
-  const [activa, setActiva] = useState(() => localStorage.getItem(CLAVE) === 'on')
+  const activa = useMusicaStore(s => s.activa)
+  const alternar = useMusicaStore(s => s.alternar)
   const stateRef = useRef<AudioState | null>(null)
 
   useEffect(() => {
@@ -121,14 +121,6 @@ export function useMusica() {
     detener(stateRef.current)
     stateRef.current = null
   }, [])
-
-  function alternar() {
-    setActiva(prev => {
-      const siguiente = !prev
-      localStorage.setItem(CLAVE, siguiente ? 'on' : 'off')
-      return siguiente
-    })
-  }
 
   return { activa, alternar }
 }

@@ -10,7 +10,7 @@ export function BotonMusica() {
       aria-pressed={activa}
       aria-label={activa ? 'Desactivar música de concentración' : 'Activar música de concentración'}
       title={activa ? 'Desactivar música' : 'Activar música de concentración'}
-      className={`fab fab--1${activa ? ' fab--activo' : ''}`}
+      className={`fab fab--1 fab--escritorio${activa ? ' fab--activo' : ''}`}
     >
       <Icon nombre="nota" size={20} />
     </button>

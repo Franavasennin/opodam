@@ -365,6 +365,9 @@ a.pill, button.pill { min-height: 32px; padding-inline: 12px; }
 .fab:hover { background: var(--surface-2); }
 /* Solo para acciones que quedan "encendidas" (música). El conmutador de tema no
    lo usa: ya se distingue por el icono y teñirlo lo volvería ruido permanente. */
+/* En móvil el control de música vive en la hoja "Más": un botón flotante tapaba contenido. */
+.fab--escritorio { display: none; }
+@media (min-width: 1024px) { .fab--escritorio { display: inline-flex; } }
 .fab--activo { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
 .fab--activo:hover { background: var(--accent-strong); }
 .fab--1 { bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px) + 12px); }
