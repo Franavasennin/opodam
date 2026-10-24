@@ -13,6 +13,9 @@ import {
 import { registrarLote } from '../services/errores'
 import { getPenalizacion, describirPenalizacion } from '../services/nota'
 import { Icon } from '../components/ui/Icon'
+import { FluidCounter } from '../components/ui/FluidCounter'
+import { dispararConfetiOposicion } from '../components/ui/ConfettiBurst'
+import { toast } from '../stores/toast'
 
 type Fase = 'inicio' | 'en-curso' | 'confirmacion' | 'resultados' | 'revision'
 type Modo = 'completo' | 'mini'
@@ -119,6 +122,12 @@ export function Examen() {
     guardarExamen(res)
     refrescar()
     setResultado(res)
+    if (res.aprobado) {
+      dispararConfetiOposicion()
+      toast.success('¡Examen Aprobado!', `Nota: ${res.nota.toFixed(2)} pts sobre 10`)
+    } else {
+      toast.info('Examen finalizado', `Nota: ${res.nota.toFixed(2)} pts sobre 10`)
+    }
     setFase('resultados')
   }
 
@@ -140,7 +149,7 @@ export function Examen() {
               {(['completo', 'mini'] as const).map(m => {
                 const sel = modo === m
                 return (
-                  <button key={m} onClick={() => setModo(m)}
+                  <button key={m} onClick={() => setModo(m)} className="tactile-press"
                     style={{ padding: 14, borderRadius: 12, textAlign: 'left', cursor: 'pointer', background: sel ? 'var(--accent-soft)' : 'var(--surface-2)', border: `1.5px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>
                     <p style={{ margin: 0, fontWeight: 600, fontSize: 13.5, color: sel ? 'var(--accent)' : 'var(--ink)' }}>{m === 'completo' ? 'Examen completo' : 'Mini-examen'}</p>
                     <p className="num-display" style={{ margin: '4px 0 0', fontSize: 12, color: 'var(--mute)' }}>{CONFIG[m].preguntas} preguntas · {CONFIG[m].minutos} min</p>
@@ -151,7 +160,7 @@ export function Examen() {
             <p style={{ fontSize: 12, color: 'var(--mute)', marginTop: 12, lineHeight: 1.5 }}>
               Fórmula CGPC: acierto +0,20 pts · cada 3 errores −0,20 pts · en blanco 0 pts · mínimo 5,00
             </p>
-            <button onClick={iniciarExamen} disabled={cargando} className="btn-editorial btn-acc" style={{ width: '100%', marginTop: 14, opacity: cargando ? 0.5 : 1 }}>
+            <button onClick={iniciarExamen} disabled={cargando} className="btn-editorial btn-acc tactile-press" style={{ width: '100%', marginTop: 14, opacity: cargando ? 0.5 : 1 }}>
               {cargando ? 'Preparando…' : 'Comenzar examen'}
             </button>
           </div>
@@ -203,31 +212,59 @@ export function Examen() {
         )}
         <main className="max-w-2xl mx-auto px-4 pt-4 pb-12 w-full">
           <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 16 }}>
-            {marcadas.has(p.id) && <p style={{ display: 'flex', alignItems: 'center', gap: 5, margin: '0 0 8px', fontSize: 12, fontWeight: 600, color: 'var(--warn)' }}><Icon nombre="marcador" size={13} /> Marcada para revisar</p>}
+            {marcadas.has(p.id) && (
+              <p style={{ display: 'flex', alignItems: 'center', gap: 5, margin: '0 0 8px', fontSize: 12, fontWeight: 600, color: 'var(--warn)' }}>
+                <Icon nombre="marcador" size={13} /> Marcada para revisar
+              </p>
+            )}
             <p style={{ margin: '0 0 12px', fontSize: 14.5, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.4 }}>{p.enunciado}</p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {p.opciones.map((op, j) => {
                 const sel = respuestas[p.id] === j
                 return (
-                  <button key={j} type="button" className="opt" onClick={() => setRespuestas(r => ({ ...r, [p.id]: j }))}
-                    style={sel ? { borderColor: 'var(--accent)', background: 'var(--accent-soft)', color: 'var(--accent)' } : undefined}>
-                    <span style={{ width: 22, height: 22, flexShrink: 0, borderRadius: 6, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: sel ? 'var(--accent-ink)' : 'var(--mute)', background: sel ? 'var(--accent)' : 'var(--surface)', border: `1px solid ${sel ? 'var(--accent)' : 'var(--border)'}` }}>{LETRAS[j] ?? j + 1}</span>
-                    <span>{op}</span>
+                  <button
+                    key={j}
+                    type="button"
+                    className={`tactile-option opt ${sel ? 'is-selected' : ''}`}
+                    onClick={() => setRespuestas(r => ({ ...r, [p.id]: j }))}
+                  >
+                    <span style={{
+                      width: 24, height: 24, flexShrink: 0, borderRadius: 7,
+                      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                      fontFamily: "'JetBrains Mono', monospace", fontSize: 12, fontWeight: 600,
+                      color: sel ? 'var(--accent-ink)' : 'var(--mute)',
+                      background: sel ? 'var(--accent)' : 'var(--surface-2)',
+                      border: `1px solid ${sel ? 'var(--accent)' : 'var(--border)'}`,
+                      transition: 'all 0.15s ease',
+                    }}>{LETRAS[j] ?? j + 1}</span>
+                    <span style={{ flex: 1, textAlign: 'left' }}>{op}</span>
                   </button>
                 )
               })}
             </div>
           </div>
           <div style={{ display: 'flex', gap: 8, marginTop: 14 }}>
-            <button onClick={() => setMarcadas(m => {
-              const next = new Set(m); if (next.has(p.id)) { next.delete(p.id) } else { next.add(p.id) }; return next
-            })} className="btn-editorial btn-sec" style={{ paddingLeft: 14, paddingRight: 14, color: 'var(--warn)' }}>
+            <button
+              onClick={() => setMarcadas(m => {
+                const next = new Set(m)
+                if (next.has(p.id)) {
+                  next.delete(p.id)
+                  toast.info('Pregunta desmarcada')
+                } else {
+                  next.add(p.id)
+                  toast.info('Marcada para revisar', `Pregunta ${indice + 1}`)
+                }
+                return next
+              })}
+              className="btn-editorial btn-sec tactile-press"
+              style={{ paddingLeft: 14, paddingRight: 14, color: 'var(--warn)' }}
+            >
               <Icon nombre="marcador" size={15} /> {marcadas.has(p.id) ? 'Marcada' : 'Marcar'}
             </button>
-            {indice > 0 && <button onClick={() => setIndice(i => i - 1)} className="btn-editorial btn-sec" style={{ flex: 1 }}>← Anterior</button>}
+            {indice > 0 && <button onClick={() => setIndice(i => i - 1)} className="btn-editorial btn-sec tactile-press" style={{ flex: 1 }}>← Anterior</button>}
             {indice < preguntas.length - 1
-              ? <button onClick={() => setIndice(i => i + 1)} className="btn-editorial btn-acc" style={{ flex: 1 }}>Siguiente →</button>
-              : <button onClick={() => setFase('confirmacion')} className="btn-editorial btn-acc" style={{ flex: 1 }}>Entregar</button>
+              ? <button onClick={() => setIndice(i => i + 1)} className="btn-editorial btn-acc tactile-press" style={{ flex: 1 }}>Siguiente →</button>
+              : <button onClick={() => setFase('confirmacion')} className="btn-editorial btn-acc tactile-press" style={{ flex: 1 }}>Entregar</button>
             }
           </div>
           <div className="flex flex-wrap" style={{ gap: 5, marginTop: 14 }}>
@@ -236,7 +273,7 @@ export function Examen() {
               const marc = marcadas.has(q.id)
               const resp = respuestas[q.id] !== null
               return (
-                <button key={q.id} onClick={() => setIndice(i)} className="num-display"
+                <button key={q.id} onClick={() => setIndice(i)} className="num-display tactile-press"
                   style={{
                     width: 28, height: 28, fontSize: 12, borderRadius: 7, border: '1px solid var(--border-soft)', cursor: 'pointer',
                     background: actual ? 'var(--accent)' : marc ? 'var(--warn-soft)' : resp ? 'var(--accent-soft)' : 'var(--surface-2)',
@@ -258,14 +295,17 @@ export function Examen() {
       .filter(([, r]) => r.errores > 0)
       .sort(([, a], [, b]) => b.errores - a.errores)
       .slice(0, 3)
+
     return (
       <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
         <TestTopbar title="Resultado del examen" />
         <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-          <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, textAlign: 'center' }}>
-            <div className="eyebrow" style={{ marginBottom: 6 }}>Nota</div>
-            <div className="num-display" style={{ fontSize: 56, lineHeight: 1, color: resultado.aprobado ? 'var(--accent)' : 'var(--warn)' }}>{resultado.nota.toFixed(2)}</div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, fontSize: 12, color: 'var(--mute)', marginTop: 4 }}>
+          <div className="card specular-border" style={{ background: 'var(--surface)', borderRadius: 20, padding: 28, textAlign: 'center' }}>
+            <div className="eyebrow" style={{ marginBottom: 6 }}>Calificación Oficial</div>
+            <div className="num-display" style={{ fontSize: 58, lineHeight: 1, color: resultado.aprobado ? 'var(--accent)' : 'var(--warn)' }}>
+              <FluidCounter value={resultado.nota} decimals={2} />
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, fontSize: 12, color: 'var(--mute)', marginTop: 8 }}>
               <Icon nombre={resultado.aprobado ? 'acierto' : 'fallo'} size={13} />
               {resultado.aprobado ? 'APROBADO' : 'SUSPENSO'} · mínimo 5,00
             </div>

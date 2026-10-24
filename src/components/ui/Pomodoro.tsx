@@ -43,21 +43,25 @@ export function Pomodoro({ onCerrar }: { onCerrar: () => void }) {
   return (
     <div
       role="timer"
+      className="specular-border"
       style={{
         position: 'fixed', bottom: 84, right: 16, zIndex: 40,
-        background: 'var(--surface)', border: `1px solid var(--border)`, borderRadius: 16,
-        padding: '12px 14px', boxShadow: '0 6px 24px rgba(0,0,0,0.18)', width: 158,
+        background: 'var(--surface)', borderRadius: 18,
+        padding: '12px 14px', boxShadow: '0 12px 32px -8px rgba(0,0,0,0.22)', width: 168,
       }}
     >
       <div className="flex items-center justify-between" style={{ marginBottom: 6 }}>
         <span className="eyebrow" style={{ color, display: 'inline-flex', alignItems: 'center', gap: 6 }}><Icon nombre="tiempo" size={14} /> {fase === 'foco' ? 'Enfoque' : 'Descanso'}</span>
-        <button onClick={onCerrar} aria-label="Cerrar Pomodoro" style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--mute)', fontSize: 15, lineHeight: 1 }}>×</button>
+        <button onClick={onCerrar} aria-label="Cerrar Pomodoro" className="tactile-press" style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--mute)', fontSize: 16, lineHeight: 1 }}>×</button>
       </div>
-      <div className="num-display" style={{ fontSize: 30, lineHeight: 1, color, textAlign: 'center' }}>{mmss(restante)}</div>
-      <div className="bar" style={{ margin: '8px 0' }}><div className="bar-fill" style={{ width: `${pct}%`, background: color }} /></div>
+      <div className="num-display font-mono" style={{ fontSize: 32, lineHeight: 1, color, textAlign: 'center', letterSpacing: '-0.02em' }}>{mmss(restante)}</div>
+      <div className="bar" style={{ margin: '10px 0', height: 6, borderRadius: 99, background: 'var(--surface-2)' }}>
+        <div className="bar-fill" style={{ width: `${pct}%`, background: color, transition: 'width 0.4s ease-out' }} />
+      </div>
       <button
         onClick={() => setActivo(a => !a)}
-        style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 10, padding: '6px 0', cursor: 'pointer', color: 'var(--ink)', fontSize: 12.5, fontWeight: 600 }}
+        className="tactile-press"
+        style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 10, padding: '7px 0', cursor: 'pointer', color: 'var(--ink)', fontSize: 12.5, fontWeight: 600 }}
       >
         {activo ? 'Pausar' : 'Reanudar'}
       </button>

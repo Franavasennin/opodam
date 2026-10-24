@@ -113,7 +113,7 @@ export function BottomNav() {
             key={item.seg}
             to={rutaNav(slug, item.seg)}
             end={item.seg === ''}
-            className={({ isActive }) => `tabbar__item${isActive ? ' is-active' : ''}`}
+            className={({ isActive }) => `tabbar__item tactile-press${isActive ? ' is-active' : ''}`}
           >
             <Icon nombre={item.icono} size={22} />
             <span className="tabbar__label">{item.labelCorta ?? item.label}</span>
@@ -128,7 +128,7 @@ export function BottomNav() {
             aria-expanded={abierta}
             aria-controls="hoja-mas"
             aria-current={masActivo ? 'page' : undefined}
-            className={`tabbar__item${masActivo ? ' is-active' : ''}`}
+            className={`tabbar__item tactile-press${masActivo ? ' is-active' : ''}`}
           >
             <Icon nombre="mas" size={22} />
             <span className="tabbar__label">Más</span>

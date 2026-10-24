@@ -389,3 +389,78 @@ a.pill, button.pill { min-height: 32px; padding-inline: 12px; }
   .btn-editorial:active { transform: none; }
   .bar-fill { transition: none; }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   Emil Kowalski Craft UI System — Tactile Physics & Micro-Interactions
+   ───────────────────────────────────────────────────────────── */
+.tactile-press {
+  transition: transform 160ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 160ms ease;
+  user-select: none;
+  touch-action: manipulation;
+}
+.tactile-press:hover {
+  transform: translateY(-1.5px);
+}
+.tactile-press:active {
+  transform: scale(0.965) translateY(0);
+}
+
+.tactile-option {
+  position: relative;
+  transition: transform 140ms cubic-bezier(0.2, 0, 0, 1), background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  user-select: none;
+  touch-action: manipulation;
+}
+.tactile-option:hover {
+  transform: translateY(-1.5px);
+}
+.tactile-option:active {
+  transform: scale(0.98);
+}
+.tactile-option.is-selected {
+  border-color: var(--accent) !important;
+  background-color: var(--accent-soft) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent), 0 6px 16px -4px color-mix(in srgb, var(--accent) 20%, transparent) !important;
+}
+
+/* Brillo y relieve editorial con gradiente sutil */
+.specular-border {
+  position: relative;
+  background-clip: padding-box;
+  border: 1px solid var(--border);
+}
+.specular-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.35), transparent 60%, color-mix(in srgb, var(--accent) 15%, transparent));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes vaulFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aiBreathing {
+  0%, 100% {
+    box-shadow: 0 0 16px -2px color-mix(in srgb, var(--accent) 25%, transparent), 0 0 0 1px color-mix(in srgb, var(--accent) 15%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 32px 4px color-mix(in srgb, var(--accent) 45%, transparent), 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+}
+.ai-glow-breathe {
+  animation: aiBreathing 3s ease-in-out infinite;
+}
+
+/* Debe ir después de las reglas base para ganarles por orden */
+@media (prefers-reduced-motion: reduce) {
+  .tactile-press:hover, .tactile-press:active { transform: none; }
+  .tactile-option, .tactile-option:hover, .tactile-option:active { transform: none !important; }
+  .ai-glow-breathe { animation: none; }
+}

@@ -11,6 +11,8 @@ import {
 } from '../services/prediccion'
 import { puntosTiempoAcierto, temasRelecturaPasiva } from '../services/tiempo'
 import { Icon } from '../components/ui/Icon'
+import { FluidCounter } from '../components/ui/FluidCounter'
+import { TiltCard3D } from '../components/ui/TiltCard3D'
 
 const topbar: React.CSSProperties = {
   height: 52, borderBottom: '1px solid var(--border-soft)',
@@ -184,19 +186,25 @@ export function Estadisticas() {
           </div>
         )}
 
-        <div className="grid grid-cols-3 gap-3">
-          <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18, textAlign: 'center' }}>
-            <div className="num-display" style={{ fontSize: 34, color: 'var(--accent)', lineHeight: 1 }}>{progreso.racha.dias}</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <TiltCard3D maxTilt={6} glowColor="rgba(184, 73, 47, 0.16)" className="text-center">
+            <div className="num-display" style={{ fontSize: 34, color: 'var(--accent)', lineHeight: 1 }}>
+              <FluidCounter value={progreso.racha.dias} decimals={0} />
+            </div>
             <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 6 }}>Días de racha</div>
-          </div>
-          <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18, textAlign: 'center' }}>
-            <div className="num-display" style={{ fontSize: 34, color: 'var(--accent)', lineHeight: 1 }}>{horas}h {mins}m</div>
-            <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 6 }}>Tiempo total</div>
-          </div>
-          <div className="card" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 18, textAlign: 'center' }}>
-            <div className="num-display" style={{ fontSize: 34, color: 'var(--accent)', lineHeight: 1 }}>{flashcardsPendientesHoy(progreso.flashcards).length}</div>
-            <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 6 }}>Flashcards hoy</div>
-          </div>
+          </TiltCard3D>
+          <TiltCard3D maxTilt={6} glowColor="rgba(196, 162, 90, 0.16)" className="text-center">
+            <div className="num-display font-mono" style={{ fontSize: 32, color: 'var(--accent)', lineHeight: 1 }}>
+              {horas}h {mins}m
+            </div>
+            <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 6 }}>Tiempo total de estudio</div>
+          </TiltCard3D>
+          <TiltCard3D maxTilt={6} glowColor="rgba(44, 106, 67, 0.16)" className="text-center">
+            <div className="num-display" style={{ fontSize: 34, color: 'var(--accent)', lineHeight: 1 }}>
+              <FluidCounter value={flashcardsPendientesHoy(progreso.flashcards).length} decimals={0} />
+            </div>
+            <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 6 }}>Flashcards pendientes</div>
+          </TiltCard3D>
         </div>
 
         {retencion > 0 && (

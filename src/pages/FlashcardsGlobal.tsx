@@ -13,6 +13,9 @@ const topbar: React.CSSProperties = {
   background: 'color-mix(in srgb, var(--bg) 88%, transparent)', backdropFilter: 'blur(12px)',
 }
 
+import { FlipCard3D } from '../components/ui/FlipCard3D'
+import { dispararConfetiOposicion } from '../components/ui/ConfettiBurst'
+
 export function FlashcardsGlobal() {
   const navigate = useNavigate()
   const { slug } = useParams<{ slug: string }>()
@@ -75,16 +78,16 @@ export function FlashcardsGlobal() {
       <div style={{ marginBottom: 12, color: 'var(--accent)' }}><Icon nombre="acierto" size={52} /></div>
       <p className="display" style={{ margin: 0, fontSize: 26 }}>¡Todo al día!</p>
       <p style={{ color: 'var(--mute)', fontSize: 13.5, marginTop: 6 }}>Sin flashcards pendientes hoy.</p>
-      <button onClick={() => navigate(`/oposicion/${slug}`)} className="btn-editorial btn-sec" style={{ marginTop: 20 }}>← Volver</button>
+      <button onClick={() => navigate(`/oposicion/${slug}`)} className="btn-editorial btn-sec tactile-press" style={{ marginTop: 20 }}>← Volver</button>
     </div>
   )
 
   if (indice >= pendientes.length) return (
     <div className="min-h-screen fade-up flex flex-col items-center justify-center text-center px-4" style={{ background: 'var(--bg)' }}>
       <div style={{ marginBottom: 12, color: 'var(--accent)' }}><Icon nombre="celebracion" size={52} /></div>
-      <p className="display" style={{ margin: 0, fontSize: 26 }}>¡Sesión completada!</p>
-      <p style={{ color: 'var(--mute)', fontSize: 13.5, marginTop: 6 }}>{pendientes.length} flashcards repasadas hoy.</p>
-      <button onClick={() => navigate(`/oposicion/${slug}`)} className="btn-editorial btn-acc" style={{ marginTop: 20 }}>← Volver</button>
+      <p className="display" style={{ margin: 0, fontSize: 28 }}>¡Sesión completada!</p>
+      <p style={{ color: 'var(--mute)', fontSize: 14, marginTop: 6 }}>{pendientes.length} flashcards repasadas con éxito hoy.</p>
+      <button onClick={() => navigate(`/oposicion/${slug}`)} className="btn-editorial btn-acc tactile-press" style={{ marginTop: 20 }}>← Volver al panel</button>
     </div>
   )
 
@@ -92,45 +95,76 @@ export function FlashcardsGlobal() {
 
   function responder(cal: 'facil' | 'dudoso' | 'dificil') {
     responderFlashcard(card.id, cal)
-    setIndice(i => i + 1)
+    const siguiente = indice + 1
+    if (siguiente >= pendientes.length) {
+      dispararConfetiOposicion()
+    }
+    setIndice(siguiente)
     setVerRespuesta(false)
   }
 
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       <header className="sticky top-0 z-10 flex items-center gap-3 px-4" style={topbar}>
-        <button onClick={() => navigate(`/oposicion/${slug}`)} style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
+        <button onClick={() => navigate(`/oposicion/${slug}`)} className="tactile-press" style={{ background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', fontSize: 16 }}>←</button>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em' }}>
-          <Icon nombre="flashcards" size={16} /> Flashcards
+          <Icon nombre="flashcards" size={16} /> Flashcards 3D
         </span>
         {ttsDisponible() && (
           <button
             onClick={() => setAudio(a => { if (a) pararTTS(); return !a })}
             title={audio ? 'Desactivar audio' : 'Leer en voz alta'}
             aria-pressed={audio}
+            className="tactile-press"
             style={{ marginLeft: 'auto', display: 'inline-flex', background: 'none', border: 0, minHeight: 44, minWidth: 44, cursor: 'pointer', color: 'var(--ink)', opacity: audio ? 1 : 0.5 }}>
             <Icon nombre={audio ? 'sonido' : 'silencio'} size={18} />
           </button>
         )}
         <span className="num-display" style={{ marginLeft: ttsDisponible() ? 8 : 'auto', fontSize: 12, color: 'var(--mute)' }}>{indice + 1}/{pendientes.length}</span>
       </header>
-      <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-        <div onClick={() => setVerRespuesta(true)} className="card"
-          style={{ minHeight: 200, background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 18, padding: 24, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', textAlign: 'center' }}>
-          <p style={{ margin: 0, fontSize: 15, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.4 }}>{card.pregunta}</p>
-          {!verRespuesta
-            ? <p style={{ fontSize: 12, color: 'var(--mute)', marginTop: 16 }}>Toca para ver la respuesta</p>
-            : <p style={{ fontSize: 14, color: 'var(--accent)', fontWeight: 600, marginTop: 16, borderTop: '1px solid var(--border-soft)', paddingTop: 16, width: '100%' }}>{card.respuesta}</p>
-          }
+      <main className="max-w-2xl mx-auto px-4 pt-4 pb-12" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+        {/* Barra de progreso de la sesión */}
+        <div className="w-full bg-[var(--surface-2)] h-1.5 rounded-full overflow-hidden">
+          <div
+            className="bg-[var(--accent)] h-full transition-all duration-300 ease-out"
+            style={{ width: `${((indice + 1) / pendientes.length) * 100}%` }}
+          />
         </div>
+
+        {/* Tarjeta 3D con volteo físico */}
+        <FlipCard3D
+          front={card.pregunta}
+          back={card.respuesta}
+          isFlipped={verRespuesta}
+          onFlip={() => setVerRespuesta(v => !v)}
+        />
+
         {verRespuesta && (
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-3 pt-2">
             {(['dificil', 'dudoso', 'facil'] as const).map(cal => {
               const color = cal === 'dificil' ? 'var(--warn)' : cal === 'dudoso' ? 'var(--gold)' : 'var(--accent)'
               return (
-                <button key={cal} onClick={() => responder(cal)}
-                  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '10px 0', borderRadius: 12, fontSize: 13, fontWeight: 600, cursor: 'pointer', border: `1px solid ${color}`, color, background: 'transparent' }}>
-                  <Icon nombre={cal === 'dificil' ? 'triste' : cal === 'dudoso' ? 'duda' : 'contento'} size={15} />
+                <button
+                  key={cal}
+                  onClick={() => responder(cal)}
+                  className="tactile-press"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 6,
+                    padding: '12px 0',
+                    borderRadius: 14,
+                    fontSize: 13.5,
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    border: `1.5px solid ${color}`,
+                    color,
+                    background: 'var(--surface)',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+                  }}
+                >
+                  <Icon nombre={cal === 'dificil' ? 'triste' : cal === 'dudoso' ? 'duda' : 'contento'} size={16} />
                   {cal === 'dificil' ? 'Difícil' : cal === 'dudoso' ? 'Dudoso' : 'Fácil'}
                 </button>
               )

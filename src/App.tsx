@@ -21,8 +21,8 @@ function RootOrCallback() {
   return <Landing />
 }
 
-// Landing pública
-import Landing from './pages/Landing'
+// Landing pública (lazy: arrastra Three.js, no debe ir en el bundle inicial)
+const Landing = lazy(() => import('./pages/Landing'))
 
 // Onboarding (no protegidas)
 import OnboardingEmail from './pages/onboarding/OnboardingEmail'
@@ -34,6 +34,7 @@ import MisOposiciones from './pages/MisOposiciones'
 import OposicionDashboard from './pages/OposicionDashboard'
 import { BotonMusica } from './components/audio/BotonMusica'
 import { DesktopShell } from './components/layout/DesktopShell'
+import { SonnerToaster } from './components/ui/SonnerToaster'
 
 // Páginas existentes (lazy)
 const Temario = lazy(() => import('./pages/Temario').then(m => ({ default: m.Temario })))
@@ -128,6 +129,7 @@ export default function App() {
         </DesktopShell>
       </Suspense>
       <BotonMusica />
+      <SonnerToaster />
     </>
   )
 }

@@ -97,8 +97,13 @@ export function TutorPanel({ oposicion, tema, abierto, onCerrar }: Props) {
             </div>
           ))}
           {cargando && (
-            <div className="mr-auto rounded-2xl bg-white border border-slate-200 px-4 py-2.5 text-sm text-slate-400">
-              Tutor está escribiendo…
+            <div className="mr-auto rounded-2xl bg-white border border-[var(--accent-soft)] px-4 py-3 text-sm text-[var(--accent-strong)] ai-glow-breathe flex items-center gap-2">
+              <span className="flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-bounce" style={{ animationDelay: '0ms' }} />
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-bounce" style={{ animationDelay: '150ms' }} />
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-bounce" style={{ animationDelay: '300ms' }} />
+              </span>
+              <span className="text-xs font-medium">El tutor está pensando…</span>
             </div>
           )}
           {error && (
@@ -112,12 +117,12 @@ export function TutorPanel({ oposicion, tema, abierto, onCerrar }: Props) {
             <button
               onClick={() => enviarTexto(`Explícame por qué suelo fallar en «${tema.titulo}» y dame un ejemplo nuevo para no repetir el error.`)}
               disabled={cargando}
-              className="shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold rounded-full border border-slate-200 text-slate-600 px-3 py-1.5 hover:bg-slate-50 disabled:opacity-40"
+              className="tactile-press shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold rounded-full border border-slate-200 text-slate-600 px-3 py-1.5 hover:bg-slate-50 disabled:opacity-40"
             ><Icon nombre="duda" size={14} /> Explícame mi fallo</button>
             <button
               onClick={() => enviarTexto(`Ponme 3 preguntas tipo test nuevas sobre «${tema.titulo}», una a una, esperando mi respuesta antes de corregir.`)}
               disabled={cargando}
-              className="shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold rounded-full border border-slate-200 text-slate-600 px-3 py-1.5 hover:bg-slate-50 disabled:opacity-40"
+              className="tactile-press shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold rounded-full border border-slate-200 text-slate-600 px-3 py-1.5 hover:bg-slate-50 disabled:opacity-40"
             ><Icon nombre="tests" size={14} /> 3 preguntas nuevas</button>
           </div>
           <div className="flex items-end gap-2">
@@ -132,7 +137,7 @@ export function TutorPanel({ oposicion, tema, abierto, onCerrar }: Props) {
             <button
               onClick={enviar}
               disabled={cargando || !input.trim()}
-              className="bg-marca-600 hover:bg-marca-700 disabled:opacity-40 text-white text-sm font-semibold rounded-xl px-4 py-2 transition-colors"
+              className="tactile-press bg-marca-600 hover:bg-marca-700 disabled:opacity-40 text-white text-sm font-semibold rounded-xl px-4 py-2 transition-colors"
             >
               Enviar
             </button>

@@ -15,6 +15,8 @@ import { BannerPaywall } from '../components/promo/BannerPaywall'
 import { BienvenidaGuiada } from '../components/ui/BienvenidaGuiada'
 import { pedirPermiso, comprobarRacha } from '../services/notificaciones'
 import { Icon, type NombreIcono } from '../components/ui/Icon'
+import { FluidCounter } from '../components/ui/FluidCounter'
+import { TiltCard3D } from '../components/ui/TiltCard3D'
 import type { Perfil } from '../types'
 
 const MENU: { icono: NombreIcono; label: string; sub: string; path: string; soloSlugs?: string[] }[] = [
@@ -85,12 +87,6 @@ export default function OposicionDashboard() {
   const racha = progreso.racha?.dias ?? 0
   const progresoPct = total ? Math.round((estudiados / total) * 100) : 0
 
-  const stats = [
-    { label: 'Días en racha', valor: String(racha), sub: 'estudio diario' },
-    { label: 'Aciertos medios', valor: `${aciertosMedia}%`, sub: 'en tus tests' },
-    { label: 'Temas estudiados', valor: `${estudiados} / ${total}`, sub: `${progresoPct}% del temario` },
-  ]
-
   return (
     <div className="min-h-screen fade-up" style={{ background: 'var(--bg)' }}>
       {perfil && <BannerTrial trialStart={perfil.trial_start ?? null} rol={perfil.rol} />}
@@ -124,7 +120,7 @@ export default function OposicionDashboard() {
             </div>
           </div>
 
-          <button onClick={() => ir('sesion-diaria')} className="btn-editorial btn-acc" style={{ width: '100%', marginTop: 16 }}>
+          <button onClick={() => ir('sesion-diaria')} className="btn-editorial btn-acc tactile-press" style={{ width: '100%', marginTop: 16 }}>
             <Icon nombre="rayo" size={18} /> Iniciar sesión diaria
           </button>
           <div style={{ marginTop: 16 }}><CuentaAtras slug={slug!} /></div>
@@ -142,7 +138,7 @@ export default function OposicionDashboard() {
           <div className="eyebrow" style={{ margin: '22px 4px 10px' }}>Tu preparación</div>
           <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingBottom: 32 }}>
             {MENU.filter(item => !(oposicion.ocultar ?? []).includes(item.path) && (!item.soloSlugs || item.soloSlugs.includes(slug ?? ''))).map(item => (
-              <button key={item.path} onClick={() => ir(item.path)} className="card"
+              <button key={item.path} onClick={() => ir(item.path)} className="card tactile-press"
                 style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16 }}>
                 <span style={{ width: 44, height: 44, borderRadius: 12, background: 'var(--surface-2)', border: '1px solid var(--border-soft)', color: 'var(--mute)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><Icon nombre={item.icono} size={22} /></span>
                 <div style={{ flex: 1, minWidth: 0 }}>
@@ -166,7 +162,7 @@ export default function OposicionDashboard() {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             {racha > 0 && <span className="pill pill-accent"><Icon nombre="racha" size={13} /> {racha} días</span>}
-            <button onClick={() => ir('sesion-diaria')} className="btn-editorial btn-acc" style={{ height: 40 }}>Iniciar sesión diaria</button>
+            <button onClick={() => ir('sesion-diaria')} className="btn-editorial btn-acc tactile-press" style={{ height: 40 }}>Iniciar sesión diaria</button>
           </div>
         </header>
 
@@ -181,15 +177,32 @@ export default function OposicionDashboard() {
             {oposicion.descripcion} · {total} temas en el programa. Continúa tu plan diario: lectura, repaso y test.
           </p>
 
-          {/* Stats */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1, marginTop: 28, borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-            {stats.map((s, i) => (
-              <div key={i} style={{ padding: '18px 16px', borderLeft: i === 0 ? 'none' : '1px solid var(--border)' }}>
-                <div className="eyebrow" style={{ marginBottom: 8 }}>{s.label}</div>
-                <div className="num-display" style={{ fontSize: 30, color: i === 0 && racha > 0 ? 'var(--accent)' : 'var(--ink)' }}>{s.valor}</div>
-                <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 2 }}>{s.sub}</div>
+          {/* Stats con física 3D y números fluidos */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginTop: 28 }}>
+            <TiltCard3D maxTilt={7} glowColor="rgba(184, 73, 47, 0.15)">
+              <div className="eyebrow" style={{ marginBottom: 8 }}>Días en racha</div>
+              <div className="num-display" style={{ fontSize: 34, color: racha > 0 ? 'var(--accent)' : 'var(--ink)' }}>
+                <FluidCounter value={racha} decimals={0} />
               </div>
-            ))}
+              <div style={{ fontSize: 12.5, color: 'var(--mute)', marginTop: 4 }}>estudio diario consecutivo</div>
+            </TiltCard3D>
+
+            <TiltCard3D maxTilt={7} glowColor="rgba(196, 162, 90, 0.15)">
+              <div className="eyebrow" style={{ marginBottom: 8 }}>Aciertos medios</div>
+              <div className="num-display" style={{ fontSize: 34, color: 'var(--ink)' }}>
+                <FluidCounter value={aciertosMedia} decimals={0} suffix="%" />
+              </div>
+              <div style={{ fontSize: 12.5, color: 'var(--mute)', marginTop: 4 }}>en tus tests y simulacros</div>
+            </TiltCard3D>
+
+            <TiltCard3D maxTilt={7} glowColor="rgba(44, 106, 67, 0.15)">
+              <div className="eyebrow" style={{ marginBottom: 8 }}>Temas dominados</div>
+              <div className="num-display" style={{ fontSize: 34, color: 'var(--ink)' }}>
+                <FluidCounter value={estudiados} decimals={0} />
+                <span style={{ fontSize: 20, color: 'var(--mute)', marginLeft: 4 }}>/ {total}</span>
+              </div>
+              <div style={{ fontSize: 12.5, color: 'var(--mute)', marginTop: 4 }}>{progresoPct}% del temario oficial</div>
+            </TiltCard3D>
           </div>
 
           {/* Cuenta atrás examen + plan inverso (P1.6) */}

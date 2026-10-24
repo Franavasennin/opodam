@@ -6,6 +6,8 @@ import { generarPsicotecnicos } from '../services/practica'
 import { supabase } from '../services/supabase'
 import { obtenerPerfil, guardarPerfil } from '../services/psicologico'
 
+import { VisorPsicotecnico3D } from '../components/3d/VisorPsicotecnico3D'
+
 // Convierte % aciertos a percentil aproximado
 function pctToPercentil(pct: number): number {
   if (pct >= 90) return 95
@@ -79,9 +81,16 @@ export default function Psicotecnicos() {
             <h1 className="display" style={{ margin: '0 0 18px', fontSize: 30, letterSpacing: '-0.015em' }}>
               Entrena tu <span className="display-italic" style={{ color: 'var(--accent)' }}>mente.</span>
             </h1>
+
+            {/* Laboratorio 3D de Visión Espacial */}
+            <div style={{ marginBottom: 20 }}>
+              <VisorPsicotecnico3D />
+            </div>
+
+            <div className="eyebrow" style={{ marginBottom: 10 }}>Módulos de test</div>
             <div className="stagger" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {CATEGORIAS.map((c, i) => (
-                <button key={c.id} onClick={() => abrir(c.id, c.titulo)} className="card"
+                <button key={c.id} onClick={() => abrir(c.id, c.titulo)} className="card tactile-press"
                   style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', textAlign: 'left', cursor: 'pointer', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16 }}>
                   <span className="num-display" style={{ width: 38, height: 38, borderRadius: 10, background: 'var(--surface-2)', border: '1px solid var(--border-soft)', color: 'var(--ink-soft)', fontSize: 17, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{String(i + 1).padStart(2, '0')}</span>
                   <span style={{ flex: 1, fontSize: 14, fontWeight: 600, color: 'var(--ink)' }}>{c.titulo}</span>

@@ -20,8 +20,8 @@ const INTERACTIVA = 'block w-full text-left cursor-pointer transition-shadow hov
  *
  * Antes era siempre un <div> con `onClick`: no recibía foco, no respondía a
  * Enter/Espacio y los lectores de pantalla no la anunciaban como control
- * (WCAG 2.1.1 y 4.1.2). En Dashboard eso dejaba "Ver temario", "Simulacro" y
- * "Sesión de hoy" inalcanzables sin ratón.
+ * (WCAG 2.1.1 y 4.1.2), lo que dejaba las tarjetas de acción inalcanzables
+ * sin ratón.
  */
 export function Card({ children, className = '', to, onClick, ...resto }: CardProps) {
   const clases = `${BASE} ${className}`.trim()

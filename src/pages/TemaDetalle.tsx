@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
+import { motion } from 'motion/react'
 import { Icon } from '../components/ui/Icon'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useProgress } from '../hooks/useProgress'
@@ -84,17 +85,49 @@ export function TemaDetalle() {
       </header>
 
       <div className="px-4 shrink-0" style={{ borderBottom: '1px solid var(--border-soft)', background: 'var(--bg)' }}>
-        <div className="max-w-2xl mx-auto flex overflow-x-auto" style={{ gap: 4 }}>
-          {(tema.videos?.length ? [...TABS_BASE, "Vídeos" as const] : TABS_BASE).map(t => (
-            <button key={t} onClick={() => setTab(t)}
-              style={{
-                padding: '11px 10px', fontSize: 13, fontWeight: 600, flexShrink: 0, background: 'none', border: 0, minHeight: 44, minWidth: 44,
-                borderBottom: `2px solid ${tab === t ? 'var(--accent)' : 'transparent'}`,
-                color: tab === t ? 'var(--accent)' : 'var(--mute)', cursor: 'pointer', letterSpacing: '-0.005em',
-              }}>
-              {t}
-            </button>
-          ))}
+        <div className="max-w-2xl mx-auto flex overflow-x-auto" style={{ gap: 4, position: 'relative' }}>
+          {(tema.videos?.length ? [...TABS_BASE, "Vídeos" as const] : TABS_BASE).map(t => {
+            const activo = tab === t
+            return (
+              <button
+                key={t}
+                onClick={() => setTab(t)}
+                className="tactile-press"
+                style={{
+                  padding: '11px 12px',
+                  fontSize: 13,
+                  fontWeight: 600,
+                  flexShrink: 0,
+                  background: 'none',
+                  border: 0,
+                  minHeight: 44,
+                  minWidth: 44,
+                  position: 'relative',
+                  color: activo ? 'var(--accent)' : 'var(--mute)',
+                  cursor: 'pointer',
+                  letterSpacing: '-0.005em',
+                  transition: 'color 0.2s ease',
+                }}
+              >
+                {t}
+                {activo && (
+                  <motion.div
+                    layoutId="temaTabUnderline"
+                    transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+                    style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: 2.5,
+                      borderRadius: '3px 3px 0 0',
+                      background: 'var(--accent)',
+                    }}
+                  />
+                )}
+              </button>
+            )
+          })}
         </div>
       </div>
 
