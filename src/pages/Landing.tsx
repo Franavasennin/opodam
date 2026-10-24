@@ -67,9 +67,10 @@ export default function Landing() {
               color: 'var(--accent-strong)',
               letterSpacing: '0.04em',
               textTransform: 'uppercase',
+              whiteSpace: 'nowrap',
             }}
           >
-            3D Studio
+            by Skornet<span className="hidden min-[430px]:inline"> 3D Studio</span>
           </span>
         </div>
 
